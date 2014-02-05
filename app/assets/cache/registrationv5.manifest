@@ -1,0 +1,23 @@
+CACHE MANIFEST
+/assets/css/registration.css
+/assets/css/font-awesome.css
+/images/default_avatar_sq.png
+/fonts/fontawesome-webfont.eot
+/fonts/fontawesome-webfont.woff
+/js/includes.js
+/js/registration.js
+/js/lib/XBone.js
+/js/lib/butter.js
+/js/lib/ajax.js
+/js/lib/deploy.js
+/js/registration/registration.js
+/js/registration/people.js
+/js/registration/search.js
+NETWORK:
+*
+
+
+
+
+
+

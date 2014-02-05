@@ -1,0 +1,11 @@
+a(href="/duo/{{hash }}", id="duorow-{{ duoid }}", class="duorow", data-duoid="{{ duoid }}")
+	div(class="duo-stats")
+		div(class="duo-last-update")
+			span Last Updated
+			div(class="nicetime")
+				{{ last_update }}
+		div(class="duo-num-updates")
+			span Entries
+			| {{ num_updates}}	
+	div(class="duo-title")
+		| Your Duo with {{ with_name }}

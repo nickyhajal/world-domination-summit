@@ -1,0 +1,1 @@
+./node_modules/mocha/bin/mocha test/run.js test/apps/users-test.coffee

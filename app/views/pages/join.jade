@@ -1,0 +1,27 @@
+div(id="join", class="page")
+	div(class="left-sidebar", data-sidebar="signup")
+	div(class="main-content")
+		h2 Sign-Up to <span class="inviter-name"></span>'s Duo
+		p
+			| Hey, &nbsp;<span class="invitee-name"></span>! <span class="inviter-name"></span>
+			| wants to have a shared journal with you!
+		p
+			| Let's Duo will allow the two of you (and only the two of you) share a private journal
+			| you can use to reflect on your lives, stay accountable and get some outside perspective.
+		p
+			| To get started, just create an account below.
+		form(id="join-signup-form", action="post")
+			div(class="field-row")
+				div(class="field-box")
+					input(type="text", class="text", name="first_name", placeholder="First Name")
+				div(class="field-box")
+					input(type="text", class="text", name="last_name", placeholder="Last Name")
+			div(class="field-row")
+				div(class="field-box")
+					input(type="text", class="text", name="email", placeholder="E-Mail Address")
+			div(class="field-row")
+				div(class="field-box")
+					input(type="password", class="text", name="password", placeholder="Password")
+			div(class="field-row")
+				div(class="field-box")
+					input(type="submit", class="button", name="submit", value="Let's Do This!")

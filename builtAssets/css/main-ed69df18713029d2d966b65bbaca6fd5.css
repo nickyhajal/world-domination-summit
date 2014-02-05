@@ -1,0 +1,1909 @@
+div.textbox {
+    padding:                    20px;
+    border-radius:              4px 4px 4px 4px;
+    box-shadow:                 0pt 0pt 6px rgba(0, 0, 0, 0.21);
+    margin-top:                 -10px;
+    text-shadow:                1px 1px 0pt rgb(255, 255, 255);
+    color:                      rgb(111, 98, 58);
+    line-height:                140%;
+    background:                 none repeat scroll 0px 0px rgb(249, 249, 247);
+}
+a.place-list-btn {
+    background:                 linear-gradient(rgb(243, 249, 223), rgb(231, 237, 210)) repeat scroll 0px 0px transparent;
+    background:                 -webkit-linear-gradient(top, rgb(243, 249, 223), rgb(231, 237, 210)) repeat scroll 0px 0px transparent;
+    border-bottom:              1px solid rgb(213, 232, 190);
+    border-top:                 1px solid rgb(255, 255, 255);
+    display:                    block;
+    text-decoration:            none;
+    text-shadow:                1px 1px 0px rgb(254, 255, 252);
+    padding:                    15px;
+}
+p.info {
+    background:                 none repeat scroll 0pt 0pt rgb(237, 229, 205);
+    box-shadow:                 1px 0px 1px rgb(214, 209, 195);
+    text-shadow:                1px 1px 0px rgb(255, 251, 214);
+    color:                      rgb(132, 128, 105);
+}
+.page .content {
+    clear:                      both;
+    height:                     100%;
+    padding:                    0px 0px 80px;
+}
+h1.h2gleem {
+    position:                   relative;
+    z-index:                    100000 ! important;
+    overflow:                   hidden;
+    color:                      rgb(254, 251, 234) ! important;
+    height:                     16px;
+    margin-bottom:              -21px;
+}
+.header h1 {
+    position:                   relative;
+    text-shadow:                0px 1px 1px rgba(0, 0, 0, 0.4);
+    color:                      rgb(245, 242, 219);
+    font-family:                "Open Sans";
+    z-index:                    1;
+    font-size:                  15pt;
+    font-style:                 italic;
+    font-weight:                400;
+    left:                       0px;
+    margin-left:                15px;
+    margin-top:                 4px;
+    text-align:                 left;
+}
+.page div.header {
+    display:                    none;
+}
+.header {
+    text-align:                 center;
+    text-shadow:                -1px -1px 0pt rgb(103, 96, 77);
+    color:                      rgb(252, 249, 238);
+    font-family:                georgia;
+    font-size:                  8pt;
+    padding:                    11px 0pt 3px;
+    z-index:                    10;
+    box-shadow:                 0px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top:                 0px;
+    width:                      100%;
+    top:                        0px;
+    position:                   relative;
+    height:                     35px;
+    margin-bottom:              0px;
+    background:                 linear-gradient(rgb(211, 222, 39) 0%, rgb(166, 175, 24) 100%) repeat scroll 0% 0% transparent;
+    background:                 -webkit-linear-gradient(top, rgb(211, 222, 39) 0%, rgb(166, 175, 24) 100%) repeat scroll 0% 0% transparent;
+    border-top:                 1px solid rgb(235, 244, 177);
+    border-bottom:              1px solid rgb(162, 174, 76);
+}
+.ui-header {
+    height:                     38px;
+    padding:                    6px 0pt;
+}
+p.flash {
+    display:                    block;
+    text-align:                 center;
+    position:                   relative;
+    font-size:                  12pt;
+    padding:                    7px 0pt;
+    margin:                     -15px -15px 15px;
+}
+body {
+    background:                 none repeat scroll 0pt 0pt rgb(205, 198, 169);
+    height:                     100%;
+    position:                   relative;
+    margin:                     0px ! important;
+    overflow-y:                 auto;
+}
+.panels.visible {
+    display:                    block;
+    height:                     100%;
+    width:                      100%;
+    background:                 none repeat scroll 0pt 0pt blue;
+}
+div#panels {
+    position:                   relative;
+    background:                 none repeat scroll 0pt 0pt rgb(232, 229, 216);
+    margin-right:               auto;
+    margin-bottom:              0pt;
+    margin-left:                auto;
+    min-height:                 100%;
+    padding:                    64px 28px 0pt;
+}
+html {
+    width:                      100%;
+    height:                     auto;
+}
+div#ajaxMsg {
+    left:                       0pt;
+    bottom:                     0pt;
+    text-align:                 center;
+    font-style:                 italic;
+    font-family:                georgia;
+    display:                    none;
+    background:                 none repeat scroll 0pt 0pt rgba(48, 48, 48, 0.8);
+    height:                     20px;
+    padding:                    20px;
+    color:                      rgb(239, 235, 209);
+    font-size:                  12pt;
+    width:                      100%;
+    margin:                     0pt;
+    position:                   fixed;
+}
+ul.button-list {
+    list-style:                 none outside none;
+    padding:                    0pt;
+    margin:                     0pt;
+}
+div#topBarShell {
+    box-shadow:                 0pt 2px 5px rgba(0, 0, 0, 0.2);
+    color:                      rgb(252, 249, 238);
+    font-size:                  1.4em;
+    height:                     38px;
+    left:                       0pt;
+    text-shadow:                -1px -1px 0pt rgb(103, 96, 77);
+    z-index:                    1000;
+    top:                        0pt;
+    width:                      100%;
+    padding:                    6px 0pt;
+    position:                   absolute;
+    border-top:                 1px solid rgb(172, 200, 148);
+    border-bottom:              1px solid rgb(212, 214, 193);
+}
+input.fullsize-top {
+    width:                      100% ! important;
+}
+input.labeledInput-active.searchBar {
+    border-radius:              0px 0px 4px 4px ! important;
+}
+.attendeeSearchShell input.searchbar {
+    text-shadow:                1px 1px 0px rgb(248, 247, 231);
+    width:                      100%;
+    border-radius:              6px 6px 6px 6px;
+    box-shadow:                 1px 1px 3px rgba(0, 0, 0, 0.05) inset;
+    border-bottom:              1px solid rgb(251, 247, 235);
+    border-top:                 1px solid rgb(238, 234, 209);
+    border-left:                1px solid rgb(251, 247, 235);
+    background:                 linear-gradient(rgb(255, 255, 255), rgb(244, 244, 244)) repeat scroll 0px 0px rgb(255, 253, 234);
+    background:                 -webkit-linear-gradient(top, rgb(255, 255, 255), rgb(244, 244, 244)) repeat scroll 0px 0px rgb(255, 253, 234);
+    text-indent:                37px;
+    color:                      rgb(183, 183, 182);
+    font-weight:                400;
+}
+input.searchbar {
+    border:                     1px solid rgb(255, 255, 255);
+    border-radius:              4px 0pt 0pt 4px;
+    float:                      left;
+    font-family:                "Open Sans";
+    font-size:                  15px;
+    width:                      100%;
+    font-weight:                100;
+    height:                     24px;
+    text-indent:                10px;
+    padding:                    6px 0px;
+}
+img.userRow-pic {
+    border:                     0pt none;
+    width:                      35px;
+    position:                   absolute;
+    left:                       0pt;
+    z-index:                    10;
+    top:                        0pt;
+}
+div.clear {
+    clear:                      both;
+}
+div.userRowPicShell {
+    float:                      left;
+    margin-right:               12px;
+    position:                   relative;
+    top:                        0px;
+    box-shadow:                 0pt 0pt 3px rgba(0, 0, 0, 0.3);
+    overflow:                   hidden;
+    height:                     40px;
+    width:                      40px;
+}
+h4.answerPerson {
+    float:                      left;
+    margin-top:                 -5px ! important;
+    margin-left:                -8px;
+    margin-right:               9px;
+}
+.userRow h4 span {
+    float:                      right;
+    margin-right:               16px;
+}
+.userRow h4, .plan_row {
+    margin-bottom:              0pt;
+    margin-top:                 0pt;
+    position:                   relative;
+    font-size:                  10.5pt;
+    color:                      rgb(61, 85, 19);
+    top:                        12px;
+    text-shadow:                1px 1px 0pt rgb(255, 255, 255);
+    font-weight:                normal;
+}
+img.feed-userpic {
+    float:                      left;
+    margin-right:               10px;
+    border:                     1px solid rgb(225, 225, 225);
+    box-shadow:                 0pt 0pt 4px rgba(0, 0, 0, 0.25);
+    width:                      48px;
+}
+div.no-results {
+    text-align:                 center;
+    padding-top:                10px;
+    padding-bottom:             8px;
+    color:                      rgb(164, 0, 0);
+}
+p.info {
+    margin-top:                 0pt;
+    margin-bottom:              5px;
+    padding:                    13px;
+}
+a.userRow {
+    background:                 none repeat scroll 0% 0% rgb(252, 251, 247);
+    border-top:                 1px solid rgb(255, 255, 255);
+    border-bottom:              1px solid rgb(249, 247, 231);
+}
+.userRow, .plan_row, .feed-itemShell, .info, .meetup_row {
+    text-shadow:                1px 1px 0px rgb(255, 255, 255) ! important;
+    text-decoration:            none;
+    padding:                    0px;
+    color:                      rgb(51, 51, 51);
+    display:                    block;
+    font-weight:                normal;
+    margin-bottom:              0px;
+}
+div#templates {
+    display:                    none;
+}
+div.topBarShell-cont {
+    display:                    none;
+}
+div#topBarContShell {
+    margin:                     0pt auto;
+    position:                   relative;
+    width:                      800px;
+    padding:                    0pt 29px 0pt 30px;
+}
+.navShell a {
+    border-radius:              5px 5px 5px 5px;
+    box-shadow:                 0pt 0pt 7px rgba(122, 101, 0, 0.9);
+    color:                      rgb(74, 53, 18);
+    display:                    block;
+    float:                      left;
+    font-size:                  0.6em;
+    text-decoration:            none;
+    text-shadow:                1px 1px 0pt rgb(247, 228, 192);
+    padding:                    4px 6px;
+    margin-top:                 3px;
+    border-top:                 1px solid rgb(255, 253, 239);
+    margin-right:               4px;
+}
+div#topBarNav {
+    float:                      right;
+}
+div.large-image {
+    overflow:                   visible ! important;
+}
+div.profilePicShell {
+    width:                      125px;
+    float:                      left;
+    margin-left:                15px;
+    margin-right:               0px;
+    margin-bottom:              15px;
+}
+#profile h4 {
+    margin-top:                 0pt;
+}
+.large-image img {
+    position:                   relative;
+    z-index:                    1000;
+    box-shadow:                 0pt 0pt 8px rgba(0, 0, 0, 0.4);
+    width:                      175px ! important;
+}
+img.profile-pic {
+    margin:                     0px auto;
+    position:                   relative;
+    display:                    block;
+    max-width:                  125px;
+    box-shadow:                 3px 3px 4px rgba(0, 0, 0, 0.1);
+}
+a.notmet {
+    opacity:                    1;
+}
+a.met {
+    opacity:                    1;
+    text-shadow:                1px 1px 0px rgb(246, 255, 227) ! important;
+    background:                 linear-gradient(rgb(249, 255, 235) 0%, rgb(225, 230, 181) 95%, rgb(206, 214, 162) 91%) repeat scroll 0px 0px rgb(109, 106, 79) ! important;
+    background:                 -webkit-linear-gradient(top, rgb(249, 255, 235) 0%, rgb(225, 230, 181) 95%, rgb(206, 214, 162) 91%) repeat scroll 0px 0px rgb(109, 106, 79) ! important;
+}
+.metextra {
+    font-weight:                normal;
+    text-shadow:                1px 1px 0pt rgb(252, 251, 248);
+    color:                      rgb(147, 142, 119) ! important;
+    display:                    block;
+    margin:                     5px 0px -12px;
+    border-radius:              0pt 0pt 4px 4px;
+    box-shadow:                 0pt 4px 3px rgba(0, 0, 0, 0.03) inset;
+    padding:                    6px 5px 5px;
+    font-size:                  10.5pt;
+}
+a.metlink {
+    display:                    block;
+    text-decoration:            none;
+    text-align:                 center;
+}
+div.picSideContent {
+    text-indent:                2%;
+    position:                   relative;
+    padding-right:              15px;
+    margin-top:                 17px;
+    margin-left:                155px;
+    top:                        -3px;
+}
+a#cancelNote {
+    float:                      left;
+    margin-right:               10px;
+    width:                      100px;
+    border-radius:              0pt 0pt 4px 4px ! important;
+    margin-top:                 -1px ! important;
+    box-shadow:                 0pt 0px 2px rgba(0, 0, 0, 0.09);
+}
+a.addNoteButton {
+    position:                   relative;
+    z-index:                    1;
+    margin-top:                 -8px ! important;
+    border-radius:              0pt 0pt 4px 4px ! important;
+    padding:                    12px 0pt 9px ! important;
+}
+.hori_btn_selected {
+    background:                 linear-gradient(rgb(235, 229, 213), rgb(255, 252, 242)) repeat scroll 0px 0px transparent ! important;
+    background:                 -webkit-linear-gradient(top, rgb(235, 229, 213), rgb(255, 252, 242)) repeat scroll 0px 0px transparent ! important;
+    text-decoration:            none;
+    border-bottom:              1px solid rgb(245, 241, 219) ! important;
+}
+a.hori_btn {
+    border-radius:              0px 0px 0px 0px ! important;
+    border-top-width:           0px ! important;
+    border-right-width:         1px ! important;
+    border-left-width:          1px ! important;
+    float:                      left;
+    margin:                     0px ! important;
+    opacity:                    1;
+    padding:                    11px 0px ! important;
+    width:                      33.333%;
+    text-align:                 center;
+    font-weight:                100;
+    background:                 linear-gradient(rgb(254, 247, 224), rgb(235, 229, 213)) repeat scroll 0px 0px transparent;
+    background:                 -webkit-linear-gradient(top, rgb(254, 247, 224), rgb(235, 229, 213)) repeat scroll 0px 0px transparent;
+    text-decoration:            none;
+    border-bottom:              1px solid rgb(225, 221, 209);
+}
+a#clearSearch {
+    display:                    none;
+}
+a#rsvpButton {
+    margin-top:                 18px;
+}
+input.submit {
+    border:                     0pt none;
+    font-size:                  12pt;
+    display:                    block;
+    margin-top:                 2px;
+    width:                      100%;
+    margin-bottom:              30px;
+}
+a#tweetButton {
+    border-radius:              0pt 0pt 4px 0pt;
+    margin-top:                 -1px;
+    margin-left:                0pt;
+}
+a.goto {
+    display:                    block ! important;
+    height:                     80px;
+}
+a.following {
+    background:                 none repeat scroll 0pt 0pt rgb(84, 153, 22);
+}
+a#followButton {
+    width:                      112px ! important;
+    padding:                    13px 4px ! important;
+    float:                      right;
+    margin-top:                 20px;
+    margin-right:               15px;
+}
+a.planButton, a.meetupButton {
+    display:                    block;
+    width:                      100%;
+}
+a#saveNote {
+    float:                      right;
+    border-radius:              0px 0px 4px 4px;
+    margin-top:                 -1px;
+    padding-left:               40px;
+    padding-right:              40px;
+}
+.button-list li a, .button {
+    display:                    block;
+    margin-bottom:              5px;
+    margin-right:               0pt;
+    margin-top:                 0pt;
+    padding:                    8px 0pt;
+    text-align:                 center;
+    text-decoration:            none;
+    text-shadow:                none;
+    font-weight:                normal;
+}
+div#noteBox {
+    position:                   absolute;
+    width:                      100%;
+    z-index:                    100;
+    padding-top:                5px;
+}
+textarea#noteContent {
+    border:                     0pt none;
+    display:                    block;
+    font-size:                  12pt;
+    border-radius:              0pt 0pt 0pt 0pt;
+    box-shadow:                 0pt 0pt 5px rgba(0, 0, 0, 0.13);
+    width:                      96%;
+    padding:                    8px 2%;
+    height:                     63px;
+}
+div.note {
+    background:                 none repeat scroll 0pt 0pt rgb(252, 249, 238);
+    padding:                    5px 14px;
+    border-top:                 1px solid rgb(255, 255, 255);
+    margin-bottom:              0px;
+    border-bottom:              1px solid rgb(238, 229, 217);
+}
+div.questionShell:first-child, div.connect-box {
+    margin-top:                 -8px ! important;
+    padding-top:                17px ! important;
+}
+div.questionShell, div.connect-box {
+    margin-bottom:              4px;
+    padding:                    14px;
+    margin-top:                 -4px;
+    border-top:                 1px solid rgb(255, 255, 255);
+    background:                 none repeat scroll 0pt 0pt rgb(248, 246, 240);
+    border-bottom:              1px solid rgb(227, 224, 210);
+    text-shadow:                1px 1px 0px rgb(255, 255, 255);
+}
+div.question {
+    font-weight:                bold;
+    margin-bottom:              6px;
+    text-shadow:                1px 1px 0pt rgb(255, 255, 255);
+}
+div.addNoteButtonShell {
+    height:                     42px;
+    margin-top:                 -11px ! important;
+    margin-bottom:              11px;
+}
+h3 {
+    margin-bottom:              -12px ! important;
+    margin-top:                 10px;
+}
+div#plan-dateShell {
+    z-index:                    100000;
+}
+div#plan-dateShell, div#meetup-dateShell {
+    float:                      left;
+    margin-right:               10px;
+}
+#addMeetupShell label {
+    display:                    block;
+    font-weight:                bold;
+}
+#questionOfTheYear h1 {
+    margin:                     10px 0pt 3px;
+    color:                      rgb(64, 52, 16);
+    font-weight:                normal;
+    text-shadow:                1px 1px 0pt rgb(255, 255, 255);
+}
+div#theQuestion {
+    font-size:                  17pt;
+}
+div.form-row {
+    padding:                    4px 0pt;
+}
+#addMeetupShell .text {
+    border:                     1px solid rgb(170, 170, 170);
+    border-radius:              4px 4px 4px 4px;
+    box-shadow:                 1px 1px 4px rgba(0, 0, 0, 0.15) inset;
+    font-size:                  12pt;
+    padding:                    8px 0pt;
+    text-indent:                8px;
+    width:                      100%;
+}
+div#plan-maxShell, div#meetup-maxShell {
+    margin-bottom:              14px;
+    margin-top:                 10px;
+}
+#schedule .dayHead, h3 {
+    box-shadow:                 0pt 0pt 3px rgba(0, 0, 0, 0.1);
+    margin-bottom:              0px;
+    margin-left:                0px;
+    margin-right:               0px;
+    margin-top:                 0px ! important;
+    padding:                    4px 17px 0px;
+    background:                 linear-gradient(rgb(173, 140, 108), rgb(140, 108, 76)) repeat scroll 0px 0px transparent;
+    background:                 -webkit-linear-gradient(top, rgb(173, 140, 108), rgb(140, 108, 76)) repeat scroll 0px 0px transparent;
+    color:                      rgb(232, 224, 214);
+    border-top:                 1px solid rgb(222, 202, 177);
+}
+#addAPlan h3 {
+    margin-bottom:              7px ! important;
+}
+#taskList h3 {
+    margin-bottom:              0px ! important;
+}
+#plans h3.dayHead {
+    margin-top:                 40px ! important;
+    margin-bottom:              -12px ! important;
+}
+h3#notesHead {
+    margin-bottom:              -2px ! important;
+}
+#addPlanShell h3 {
+    margin-bottom:              0px ! important;
+}
+div.dayHead, h3 {
+    margin-top:                 20px;
+    font-weight:                normal;
+    position:                   relative;
+    z-index:                    3;
+    margin-bottom:              2px;
+    font-family:                "Populaire";
+    font-size:                  26px;
+    text-shadow:                -1px -1px 0px rgb(103, 87, 60);
+}
+a.isAttending {
+    border-left:                15px solid rgb(225, 225, 116);
+}
+a.isHosting {
+    border-left:                15px solid rgb(255, 234, 130);
+}
+a.isAttending:after, a.isHosting:after {
+    background:                 none repeat scroll 0px 0px transparent;
+    box-shadow:                 -1px 0px 3px rgba(0, 0, 0, 0.1) inset;
+    content:                    "";
+    display:                    block;
+    height:                     101%;
+    left:                       -15px;
+    position:                   absolute;
+    top:                        0px;
+    z-index:                    1000000;
+    width:                      15px;
+}
+a.meetup_row, a.plan_row {
+    display:                    block;
+    text-decoration:            none;
+}
+div.plan_time, div.meetup_time {
+    width:                      100px;
+    font-size:                  13pt;
+    line-height:                25px;
+}
+.plan_host a, .meetup_host a {
+    background:                 none repeat scroll 0pt 0pt rgb(234, 242, 215);
+    color:                      rgb(63, 71, 50);
+    margin-left:                2px;
+    padding:                    5px;
+    text-decoration:            none;
+}
+div.plan_host, div.meetup_host {
+    background:                 none repeat scroll 0pt 0pt rgb(252, 251, 237);
+    line-height:                26px;
+    padding:                    10px;
+}
+img.hostpic {
+    width:                      29px;
+    float:                      left;
+    margin-right:               10px;
+    margin-top:                 -1px;
+    margin-left:                -1px;
+}
+#addAPlan div.inset-content {
+    padding-top:                0px;
+}
+div.meetup-content, .inset-content {
+    text-shadow:                1px 1px 0pt rgb(255, 255, 255);
+    color:                      rgb(79, 68, 14);
+    padding:                    13px;
+}
+div.plan-content, div.meetup-content {
+    background:                 none repeat scroll 0pt 0pt rgb(252, 251, 237);
+    margin-bottom:              -4px;
+    padding:                    20px 15px 22px;
+}
+div.feed-itemShell {
+    padding:                    10px;
+    min-height:                 49px;
+    margin-bottom:              4px;
+    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+}
+div.feed-item-more {
+    display:                    none;
+    clear:                      both;
+    border-radius:              4px 4px 4px 4px;
+    padding:                    15px 10px 10px;
+}
+div.feed-item-comments {
+    display:                    none;
+}
+.feed-actions li {
+    float:                      left;
+    margin-left:                10px;
+}
+ul.feed-actions {
+    list-style:                 none outside none;
+    font-style:                 italic;
+    float:                      right;
+    clear:                      right;
+    margin-bottom:              -3px;
+}
+div.feed-content {
+    margin-bottom:              12px;
+}
+span.nicetime {
+    float:                      right;
+    color:                      rgb(126, 123, 107);
+}
+a.sched-who {
+    padding:                    4px 3px 5px;
+    margin-right:               4px;
+}
+a.feed-author, .feed-mention, .sched-who, .aPerson {
+    background:                 none repeat scroll 0pt 0pt rgb(234, 242, 215);
+    color:                      rgb(55, 91, 0) ! important;
+    text-decoration:            none;
+    padding:                    3px;
+}
+.feed-actions a {
+    text-decoration:            none;
+    font-weight:                bold;
+}
+a.feed-remove {
+    display:                    none;
+}
+.feed-content a {
+    color:                      rgb(64, 62, 14);
+    font-style:                 normal;
+}
+div.center {
+    text-align:                 center;
+}
+div.feed-item-q {
+    font-weight:                bold;
+}
+#addAPlan input.text {
+    border-radius:              0px 0px 0px 0px ! important;
+}
+input.text {
+    display:                    block;
+    font-size:                  12pt;
+    font-family:                Open Sans;
+    font-weight:                100;
+    box-shadow:                 4px 4px 3px rgba(0, 0, 0, 0.1) inset;
+    border-style:               solid;
+    border-image:               none;
+    border-color:               rgb(215, 215, 215) rgb(215, 215, 215) rgb(215, 215, 215) rgb(213, 208, 185);
+    padding:                    10px 0px;
+    width:                      100%;
+    text-indent:                10px;
+    border-width:               1px 0px;
+}
+#dispatchNav a {
+    margin-top:                 -5px ! important;
+}
+div#dispatchNav {
+    float:                      right;
+    margin-right:               5px;
+    height:                     19px;
+    border-right:               1px dotted;
+    margin-top:                 8px;
+    padding-right:              1px;
+}
+div#theDispatchLogo {
+    float:                      left;
+    font-size:                  17pt;
+    margin-top:                 -4px;
+}
+#theDispatchLogo span {
+    display:                    block;
+    font-size:                  10pt;
+    margin-bottom:              -11px;
+}
+div#tweetBox {
+    z-index:                    100;
+    position:                   relative;
+    padding:                    15px;
+    background:                 none repeat scroll 0pt 0pt rgb(238, 244, 231);
+    margin:                     4px 8px;
+    box-shadow:                 0pt 0pt 7px rgba(0, 0, 0, 0.15);
+}
+div#tweetBoxShell {
+    position:                   absolute;
+    top:                        48px;
+    width:                      100%;
+    background:                 none repeat scroll 0pt 0pt transparent;
+    left:                       0pt;
+    display:                    none;
+}
+textarea#tweet {
+    border:                     0pt none;
+    border-radius:              0pt 0pt 0pt 0pt;
+    width:                      100%;
+    height:                     81px;
+    font-size:                  12pt;
+}
+img#tweetAvatar {
+    float:                      left;
+    height:                     42px;
+    margin-right:               10px;
+    width:                      42px;
+}
+div#tweetAvatarShell {
+    width:                      42px;
+    height:                     42px;
+    float:                      left;
+    overflow:                   hidden;
+}
+div#tweetCount {
+    position:                   absolute;
+    z-index:                    1000;
+    right:                      28px;
+    font-size:                  15pt;
+    top:                        62px;
+}
+div.time, .prettyRowTopLeft {
+    box-shadow:                 2px 0px 3px rgba(0, 0, 0, 0.2);
+    color:                      rgb(255, 255, 255);
+    float:                      left;
+    padding-bottom:             9px;
+    padding-left:               0px;
+    padding-right:              0px;
+    padding-top:                5px ! important;
+    text-align:                 center;
+    width:                      80px;
+    background:                 url('/images/barbg.png?1') repeat scroll 0px -3px transparent;
+    border-radius:              0px 0px 1px 0px;
+    text-shadow:                0px 1px 1px rgba(0, 0, 0, 0.4);
+    font-size:                  13pt;
+    height:                     19px;
+    margin-top:                 0px;
+    margin-right:               11px;
+    line-height:                22px ! important;
+}
+div.title, .prettyRowBotCont {
+    text-shadow:                none;
+    background:                 linear-gradient(rgb(251, 250, 242), rgb(225, 225, 224)) repeat scroll 0pt 0pt rgb(207, 204, 179);
+    background:                 -webkit-linear-gradient(top, rgb(251, 250, 242), rgb(225, 225, 224)) repeat scroll 0pt 0pt rgb(207, 204, 179);
+    padding-left:               16px;
+    padding-top:                9px;
+    height:                     33px;
+    font-size:                  14pt;
+}
+div.sEventBotRow, .prettyBotRow {
+    display:                    none;
+}
+div.hasBotRow {
+    display:                    block ! important;
+    padding:                    6px 7px 11px;
+}
+div.taplink {
+    cursor:                     pointer;
+}
+div.sEventShell, .prettyRowShell {
+    background:                 none repeat scroll 0px 0px rgb(252, 252, 247);
+    border-bottom:              1px solid rgb(210, 209, 182);
+    border-top:                 0px solid rgb(254, 255, 232);
+    box-shadow:                 0px 0px 4px rgba(0, 0, 0, 0.2);
+    margin-left:                0px;
+    position:                   relative;
+    margin-bottom:              11px;
+    margin-right:               0px;
+}
+div.place, .prettyRowTopCont {
+    background:                 none repeat scroll 0pt 0pt rgb(239, 238, 230);
+    font-family:                Open Sans;
+    font-size:                  12pt;
+    font-style:                 italic;
+    height:                     28px;
+    padding-bottom:             0px;
+    padding-top:                5px;
+    text-shadow:                1px 1px 0px rgb(255, 255, 255);
+    font-weight:                400;
+}
+img.sched-avatar {
+    width:                      28px;
+    margin-bottom:              -9px;
+    margin-right:               0px;
+}
+div.hash {
+    float:                      right;
+    padding:                    2px 5px;
+    background:                 none repeat scroll 0pt 0pt rgb(244, 244, 244);
+    font-size:                  10pt;
+    margin-top:                 9px;
+    margin-right:               9px;
+}
+.button-list li {
+    position:                   relative;
+    display:                    block;
+    vertical-align:             middle;
+    text-align:                 center;
+    float:                      left;
+    width:                      48.8%;
+    margin-right:               1.2%;
+    margin-top:                 2px;
+    height:                     83px;
+}
+div.pushblock {
+    display:                    inline-block;
+    position:                   relative;
+    height:                     100%;
+    vertical-align:             middle;
+}
+div.button-col {
+    display:                    inline-block;
+    width:                      50%;
+}
+div.center-text {
+    display:                    inline-block;
+    vertical-align:             middle;
+}
+div.right-push {
+    padding-right:              4px;
+}
+div.left-push {
+    padding-left:               2px;
+}
+div.panel {
+    display:                    none;
+}
+a#clearSearchBarButton {
+    position:                   absolute;
+    right:                      10px;
+    z-index:                    100;
+    font-size:                  12pt;
+    top:                        5px;
+    display:                    none;
+    padding:                    1px 8px 2px 9px ! important;
+}
+.connect-box span {
+    display:                    block;
+    font-weight:                bold;
+}
+div#peopleTip {
+    background:                 none repeat scroll 0pt 0pt rgb(233, 245, 221);
+    padding:                    7px 10px 5px;
+    margin-bottom:              4px;
+}
+img.userRow-bgpic {
+    position:                   absolute;
+    top:                        0pt;
+    left:                       0pt;
+    z-index:                    11;
+    width:                      40px;
+}
+span.hilite {
+    padding:                    1px 3px;
+    background:                 none repeat scroll 0px 0px rgb(245, 235, 203);
+    font-family:                sans-serif;
+}
+div#splash {
+    top:                        0pt;
+    left:                       0pt;
+    height:                     100%;
+    width:                      100%;
+    position:                   fixed;
+    z-index:                    1000;
+    background:                 none repeat scroll 0pt 0pt rgb(218, 218, 205);
+    text-align:                 center;
+    display:                    none;
+}
+div#splashContent {
+    display:                    inline-block;
+    vertical-align:             middle;
+    font-size:                  30pt;
+    font-style:                 italic;
+    color:                      rgb(130, 125, 96);
+    text-shadow:                1px 1px 0pt rgb(247, 247, 247);
+}
+div#privateNote {
+    position:                   absolute;
+    font-size:                  11pt;
+    color:                      rgb(135, 135, 135);
+    bottom:                     45px;
+    right:                      30px;
+}
+a.clicked {
+    position:                   relative;
+    margin-left:                -100px ! important;
+}
+.plan_controls a, .meetup_controls a {
+    background:                 none repeat scroll 0pt 0pt rgb(235, 232, 213);
+    color:                      rgb(51, 51, 51);
+    float:                      right;
+    margin-left:                4px;
+    margin-top:                 -7px;
+    padding:                    6px;
+    text-decoration:            none;
+    text-shadow:                1px 1px 0pt rgb(255, 255, 255);
+}
+div.plan_controls, div.meetup_controls {
+    float:                      right;
+    margin-right:               -5px;
+}
+a.note-buttons {
+    float:                      right;
+    text-decoration:            none;
+    color:                      rgb(77, 77, 77);
+    background:                 none repeat scroll 0pt 0pt rgb(224, 227, 209);
+    font-size:                  13pt;
+    border-radius:              4px 4px 4px 4px;
+    padding:                    3px 11px ! important;
+    margin-right:               -9px ! important;
+    margin-left:                14px ! important;
+}
+div.form-row {
+    background:                 none repeat scroll 0pt 0pt rgb(240, 241, 231);
+    box-shadow:                 0px 0px 0px rgb(255, 255, 255) inset ! important;
+    margin-bottom:              4px;
+    min-height:                 45px;
+    padding:                    0px ! important;
+}
+div.push-right {
+    padding-right:              2px;
+}
+div.push-left {
+    padding-left:               2px;
+}
+div.footer {
+    width:                      100%;
+    background:                 none repeat scroll 0pt 0pt rgb(171, 187, 146);
+    position:                   relative;
+    z-index:                    100000;
+    border-top:                 1px solid rgb(202, 204, 171);
+    padding:                    15px 0pt 6px;
+}
+.footer img {
+    width:                      75px;
+}
+div#wrapper {
+    width:                      800px;
+    margin:                     0pt auto;
+    box-shadow:                 0pt 0pt 50px rgba(0, 0, 0, 0.2);
+    padding-bottom:             82px;
+    min-height:                 100%;
+    background:                 none repeat scroll 0pt 0pt rgb(232, 229, 216);
+}
+textarea.theAnswer {
+    border:                     0pt none;
+    padding:                    10px;
+    width:                      724px;
+    height:                     61px;
+}
+div.user-answer {
+    display:                    block;
+    position:                   relative;
+    line-height:                35px;
+    top:                        -8px;
+    padding:                    15px 15px 0pt;
+    margin-bottom:              -14px;
+}
+div.button-qcol {
+    display:                    inline-block;
+    width:                      25%;
+}
+div#meetup-dateShell {
+    float:                      left;
+    margin-right:               14px;
+}
+div#zipContent {
+    background:                 none repeat scroll 0pt 0pt rgb(252, 251, 231);
+    padding:                    4px 7px;
+    margin:                     6px 0pt -6px;
+    color:                      rgb(51, 51, 51);
+}
+.metcheck.met, .regcheck {
+    background:                 linear-gradient(rgb(248, 254, 192), rgb(219, 224, 168)) repeat scroll 0px 0px transparent ! important;
+    background:                 -webkit-linear-gradient(top, rgb(248, 254, 192), rgb(219, 224, 168)) repeat scroll 0px 0px transparent ! important;
+    opacity:                    1;
+    border-left:                1px solid rgb(205, 213, 135);
+}
+.regcheck {
+    width:                      130px ! important;
+}
+.metcheck, .regcheck {
+    float:                      right;
+    cursor:                     pointer;
+    font-size:                  10.5pt;
+    color:                      rgb(61, 85, 12) ! important;
+    display:                    block ! important;
+    width:                      83px;
+    text-shadow:                1px 1px 0px rgb(238, 252, 226);
+    position:                   relative;
+    margin-top:                 0px ! important;
+    margin-bottom:              0px ! important;
+    z-index:                    1000;
+    padding:                    12px 0px 11px ! important;
+    background:                 linear-gradient(rgb(254, 254, 254), rgb(222, 217, 201)) repeat scroll 0px 0px rgb(255, 253, 234) ! important;
+    background:                 -webkit-linear-gradient(top, rgb(254, 254, 254), rgb(222, 217, 201)) repeat scroll 0px 0px rgb(255, 253, 234) ! important;
+    margin-right:               0px ! important;
+    text-align:                 center;
+    text-decoration:            none;
+    border-width:               0px 0px 0px 1px;
+    border-left:                1px solid rgb(244, 237, 215);
+}
+.metcheck:hover, .regcheck:hover {
+    opacity:                    0.8;
+}
+div#footerContent {
+    margin:                     0pt auto 35px;
+    width:                      744px;
+}
+div#changeLocation {
+    width:                      300px;
+    float:                      right;
+    margin-top:                 7px;
+    color:                      rgb(40, 67, 18);
+    font-size:                  15px;
+    text-shadow:                1px 1px 0pt rgb(216, 217, 207);
+}
+#changeLocation .submit {
+    width:                      76px;
+    padding-top:                2px;
+    height:                     26px;
+}
+input#changeLocationInp {
+    float:                      left;
+    margin-right:               4px;
+    margin-top:                 0pt;
+}
+a#tumbleLogo {
+    position:                   relative;
+    top:                        19px;
+}
+div.userList {
+    margin:                     -20px 0px 24px;
+}
+a#goback {
+    border-right:               0px solid rgb(214, 210, 193);
+}
+a#gohome {
+    border-left:                0px solid rgb(239, 236, 222);
+}
+div#leftIcons a {
+    text-decoration:            none;
+    display:                    block;
+    width:                      37px ! important;
+    padding:                    11px 0px 9px;
+    font-size:                  11pt;
+    box-shadow:                 0px 1px 2px rgba(0, 0, 0, 0.1);
+    background:                 linear-gradient(rgb(254, 254, 254), rgb(222, 217, 201)) repeat scroll 0px 0px rgb(255, 253, 234);
+    background:                 -webkit-linear-gradient(top, rgb(254, 254, 254), rgb(222, 217, 201)) repeat scroll 0px 0px rgb(255, 253, 234);
+    text-shadow:                1px 1px 0px rgb(255, 249, 235) ! important;
+    color:                      rgb(89, 103, 63);
+    float:                      left;
+}
+div#leftIcons {
+    float:                      right;
+    margin-left:                -2px;
+    margin-right:               14px;
+    margin-top:                 -6px;
+    position:                   relative;
+    z-index:                    10;
+}
+a.metSearch {
+    border-radius:              0pt 4px 4px 0pt;
+}
+a.clearSearch {
+    font-size:                  11pt;
+    padding:                    11px 0pt 9px ! important;
+}
+div.searchControls a {
+    display:                    block;
+}
+div.searchControls {
+    margin-right:               8px;
+    float:                      right;
+}
+div.userSmallAvatar {
+    display:                    block;
+    height:                     40px;
+    width:                      40px;
+    background:                 url('http://worlddominationsummit.com/avs.jpg') repeat scroll 998px 2019px transparent;
+}
+div#userPointShell {
+    float:                      left;
+    width:                      50%;
+    border-right:               1px solid rgb(244, 244, 244);
+}
+div.userRaceVal {
+    font-size:                  23pt;
+    color:                      rgb(57, 94, 20);
+}
+#userRaceStatus h5 {
+    font-weight:                normal;
+    font-size:                  15pt;
+    margin:                     0pt 0pt 0px;
+    color:                      rgb(157, 141, 109);
+}
+div.task {
+    line-height:                145%;
+}
+div#userPoints {
+    float:                      left;
+}
+div#loading-heading, #uploading-heading {
+    background-size:            590% 763%;
+    width:                      170px;
+    margin:                     -20px auto 0px;
+    background-position:        0px -98px;
+    color:                      rgb(111, 84, 44);
+    text-shadow:                none ! important;
+    height:                     66px;
+    font-family:                sans-serif;
+}
+div#login-tip {
+    height:                     140px;
+    background-size:            595% 1190%;
+    background-position:        0px -276px;
+}
+div#loading-tip, #loading-heading, #login-tip, #uploading-heading {
+    background:                 url('/images/sprite.png') repeat scroll 0px -176px transparent;
+    color:                      rgb(85, 80, 47);
+    font-style:                 italic;
+    height:                     120px;
+    line-height:                140%;
+    margin:                     0px auto;
+    padding:                    13px 20px 7px;
+    position:                   relative;
+    text-align:                 center;
+    text-shadow:                1px 1px 0px rgb(234, 232, 225);
+    width:                      171px;
+    font-size:                  13pt;
+}
+div.meetup_your_host, .plan_you_host {
+    background:                 none repeat scroll 0pt 0pt rgb(236, 244, 223);
+    padding:                    11px;
+    border-bottom:              1px solid rgb(255, 254, 239);
+    box-shadow:                 0px -1px 4px rgba(0, 0, 0, 0.1) inset;
+    color:                      rgb(75, 123, 31);
+    text-shadow:                1px 1px 0pt rgb(244, 254, 241);
+    margin-bottom:              -4px;
+}
+div#mainFeed {
+    line-height:                145%;
+    overflow:                   hidden;
+}
+div#userNoteList {
+    background:                 none repeat scroll 0pt 0pt rgb(252, 249, 238);
+    padding-bottom:             1px;
+}
+div#you_have_no_plans {
+    padding:                    35px 15px;
+    text-align:                 center;
+    text-shadow:                none;
+    height:                     100%;
+}
+* {
+    line-height:                160%;
+    font-family:                Open Sans,sans-serif;
+}
+.feed-author {
+    font-weight:                bold;
+}
+div.hash {
+    padding:                    2px 5px;
+    background:                 none repeat scroll 0pt 0pt rgb(244, 244, 244);
+    font-size:                  10pt;
+    position:                   absolute;
+    z-index:                    100000;
+    top:                        76px;
+    right:                      0px;
+}
+div.button-container {
+    text-shadow:                1px 1px 0px rgb(255, 255, 255);
+    width:                      100% ! important;
+    border-bottom:              1px solid rgb(255, 254, 252);
+    position:                   relative;
+}
+.searching div#attendees {
+    display:                    block ! important;
+}
+.searching div#hq {
+    margin-bottom:              -100px ! important;
+}
+div#green_waves {
+    display:                    none;
+    position:                   absolute;
+    background:                 url('/images/green_waves.png') repeat scroll 0px 0px rgb(177, 186, 29);
+    height:                     100%;
+    top:                        0px;
+    width:                      100%;
+    z-index:                    1000;
+}
+div#loading, #login, #uploading {
+    position:                   relative;
+    z-index:                    10001;
+}
+div.page {
+    position:                   relative;
+    display:                    none;
+    height:                     100%;
+}
+.page-login .header-content h1 {
+    text-align:                 center;
+    margin-left:                76px;
+}
+.header div.header-content {
+    position:                   relative;
+    top:                        -5px;
+    font-size:                  14pt;
+    margin-left:                5px;
+    text-align:                 center;
+}
+ul.ui-listview a {
+    display:                    block;
+    border-top:                 1px solid rgb(249, 248, 226);
+    background:                 linear-gradient(rgb(252, 252, 252), rgb(234, 233, 232)) repeat scroll 0px 0px rgb(255, 253, 234);
+    background:                 -webkit-linear-gradient(top, rgb(252, 252, 252), rgb(234, 233, 232)) repeat scroll 0px 0px rgb(255, 253, 234);
+    font-family:                "Open Sans";
+    text-decoration:            none;
+    text-shadow:                1px 1px 0px rgb(255, 255, 255);
+    font-weight:                400;
+    padding:                    13px 16px;
+    margin-left:                0px;
+    border-bottom:              1px solid rgb(227, 227, 227);
+}
+ul.ui-listview li:first-child {
+    overflow:                   hidden;
+    display:                    block;
+    border-radius:              0px 0px 0px 0px;
+}
+ul.ui-listview li:last-child {
+    display:                    block;
+    overflow:                   hidden;
+    border-radius:              0pt 0pt 4px 4px;
+}
+.searching #main-menu, .searching #now-shell {
+    display:                    none ! important;
+}
+ul.ui-listview {
+    list-style:                 none outside none;
+    padding:                    0pt;
+    margin:                     -20px 0px 0px;
+}
+div.ui-btn-text a {
+    text-decoration:            none;
+    color:                      inherit;
+}
+.prettyRowBottom span.icon-chevron-right {
+    color:                      rgb(116, 116, 116);
+    margin-right:               6px;
+    padding:                    1px 5px 2px 6px ! important;
+}
+span.icon-chevron-right {
+    float:                      right ! important;
+    border:                     0px none ! important;
+    background:                 none repeat scroll 0% 0% transparent ! important;
+    box-shadow:                 none ! important;
+    font-size:                  16pt ! important;
+    margin-top:                 -5px ! important;
+    padding:                    3px 2px 2px ! important;
+    text-align:                 center;
+    position:                   relative;
+    left:                       12px;
+}
+span.icon-wds_schedule {
+    background:                 url('/images/icon_schedule.png') repeat scroll 0% 0% transparent;
+    display:                    block;
+    position:                   relative;
+    z-index:                    1000;
+    width:                      31px;
+    height:                     28px;
+    left:                       0px;
+    top:                        5px;
+}
+span.icon-wds_race {
+    background:                 url('/images/icon_uncrace.png?t') repeat scroll -1px 0px transparent;
+    position:                   relative;
+    height:                     29px;
+    z-index:                    1000;
+    margin-right:               12px ! important;
+    width:                      41px;
+    top:                        4px;
+}
+span.icon-wds_dispatch {
+    background:                 url('/images/icon_dispatch.png') repeat scroll 0px 1px transparent;
+    height:                     29px;
+    width:                      32px;
+    top:                        2px;
+    position:                   relative;
+    left:                       -1px;
+}
+.ui-listview span.icon {
+    border-radius:              0px 0px 0px 0px;
+    font-size:                  17pt;
+    float:                      left;
+    display:                    block;
+    color:                      rgb(227, 127, 28);
+    padding:                    13px 12px 9px;
+    margin-top:                 -16px;
+    margin-right:               7px;
+    background-repeat:          no-repeat;
+    margin-left:                -16px;
+}
+.attendeeSearchShell .clearSearch {
+    float:                      right;
+    position:                   absolute;
+    right:                      10px;
+    border:                     0px none;
+    margin-top:                 -2px;
+    display:                    none;
+}
+a.clearSearch {
+    display:                    none;
+}
+a.searchBtn {
+    float:                      left;
+    width:                      34px;
+    text-decoration:            none;
+    border-left:                1px solid rgb(255, 255, 255);
+    border-right:               1px solid rgb(204, 204, 204);
+    padding:                    8px 0pt 7px;
+}
+.attendeeSearchShell div.searchInpShell {
+    margin-right:               0px;
+}
+div.searchInpShell {
+    margin-right:               162px;
+}
+img.preload {
+    position:                   absolute;
+    top:                        -9999px;
+}
+.taskStatus span.icon {
+    position:                   relative;
+    font-size:                  31px;
+    top:                        0px;
+    color:                      rgb(249, 246, 231);
+}
+div#userRaceStatus {
+    border-radius:              0px 0px 3px 3px;
+    background:                 linear-gradient(rgb(255, 254, 252), rgb(239, 238, 233)) repeat scroll 0px 0px transparent;
+    background:                 -webkit-linear-gradient(top, rgb(255, 254, 252), rgb(239, 238, 233)) repeat scroll 0px 0px transparent;
+    box-shadow:                 0px 2px 3px rgba(0, 0, 0, 0.12);
+    padding:                    20px;
+    position:                   relative;
+    text-shadow:                1px 1px 0px rgb(255, 255, 255);
+    z-index:                    2;
+    border-bottom:              1px solid rgb(251, 249, 245);
+}
+div.prettyRowBottom {
+    padding:                    10px;
+}
+.textbox div.send-race {
+    float:                      none;
+    text-align:                 center;
+    width:                      46px;
+    padding:                    0pt;
+    line-height:                28px;
+}
+.send-race {
+    float:                      right;
+    font-size:                  18pt;
+    height:                     28px;
+    margin-right:               4px;
+    margin-top:                 -5px;
+    padding:                    0pt 20px;
+    text-decoration:            none;
+    color:                      rgb(62, 96, 46);
+}
+div#userRankShell {
+    padding-left:               20px;
+    height:                     71px;
+    border-left:                1px solid rgb(224, 224, 224);
+}
+div#userRankShell {
+    float:                      left;
+}
+h1 {
+    font-size:                  20pt;
+    font-weight:                100;
+    font-style:                 italic;
+    text-shadow:                1px 1px 0px rgb(255, 255, 255);
+    margin:                     30px 15px -13px;
+}
+div.icon-ok:before {
+    float:                      left;
+    margin-top:                 43px;
+    margin-left:                41px;
+}
+div.icon-ok {
+    background:                 none repeat scroll 0% 0% transparent ! important;
+    font-size:                  74pt;
+}
+div.icon-loading:after, #login-icon:after, #uploading:after {
+    content:                    "";
+    display:                    block;
+    height:                     188px;
+    left:                       -17px;
+    position:                   relative;
+    top:                        -12px;
+    width:                      212px;
+    z-index:                    -1;
+    background:                 url('/images/sprite.png') repeat scroll -181px 0px transparent;
+}
+div.icon-loading, .icon-login, .icon-uploading {
+    background:                 url('/images/sprite.png') repeat scroll 0px 0px transparent;
+    margin:                     0px auto 20px;
+    opacity:                    1;
+    width:                      173px;
+    height:                     169px;
+}
+.quicktiphead {
+    display:                    block;
+    color:                      rgb(156, 115, 80);
+    font-size:                  10pt;
+    font-style:                 normal;
+    font-weight:                600;
+    width:                      180px;
+    padding:                    6px 0px;
+    margin:                     -1px auto 7px;
+    font-family:                sans-serif;
+}
+div#loading-msg {
+    text-align:                 center;
+    font-size:                  19pt;
+    text-shadow:                1px 1px 0pt rgb(222, 222, 220);
+    color:                      rgb(73, 96, 32);
+    font-family:                georgia;
+}
+div.rank-gold {
+    background:                 none repeat scroll 0pt 0pt rgb(255, 230, 109) ! important;
+}
+div.rank-silver {
+    background:                 none repeat scroll 0pt 0pt rgb(239, 239, 239) ! important;
+}
+div.rank-bronze {
+    background:                 none repeat scroll 0pt 0pt rgb(232, 207, 138) ! important;
+}
+div.rank {
+    float:                      left;
+    text-align:                 center;
+    line-height:                37px;
+    font-size:                  17pt;
+    text-shadow:                1px 1px 0pt rgb(255, 255, 255);
+    padding-bottom:             3px;
+    color:                      rgb(82, 67, 42);
+    width:                      66px;
+    background:                 none repeat scroll 0pt 0pt rgb(237, 233, 208);
+}
+a#show-howto {
+    position:                   relative;
+    z-index:                    1;
+    margin-bottom:              0px;
+    margin-top:                 0px;
+}
+a#show-rankings, #show-howto {
+    background:                 none repeat scroll 0pt 0pt rgb(239, 238, 230);
+    border-radius:              0pt 0pt 4px 3px;
+    box-shadow:                 0pt 0pt 3px rgba(0, 0, 0, 0.15);
+    color:                      rgb(116, 110, 101);
+    display:                    block;
+    padding:                    16px 20px 12px;
+    position:                   relative;
+    text-decoration:            none;
+    top:                        -2px;
+    z-index:                    1;
+}
+#show-rankings span.icon-chevron-right, #show-howto span.icon-chevron-right {
+    padding:                    3px 7px 3px 8px ! important;
+}
+a#show-rankings span.icon-trophy, a#show-howto span.icon-book {
+    display:                    block;
+    float:                      left;
+    margin-right:               8px ! important;
+    margin-top:                 -3px;
+    padding:                    4px 5px 2px 6px;
+    color:                      rgb(139, 134, 71);
+}
+.bright_btn span.icon {
+    color:                      rgb(251, 251, 215);
+    margin-right:               2px;
+    padding:                    6px 5px 3px;
+    position:                   relative;
+    font-size:                  10pt;
+    top:                        -1px;
+}
+#addAPlan select {
+    font-family:                Open Sans;
+    font-size:                  12pt;
+}
+div#plan-hourShell {
+    width:                      94%;
+}
+#plan-dateShell, #plan-hourShell, #plan-max {
+    top:                        9px;
+    position:                   relative;
+    left:                       15px;
+    font-size:                  11pt;
+    font-family:                Open Sans;
+}
+select {
+    margin-right:               -4px;
+}
+div.speaker-br {
+    margin-top:                 7px;
+}
+a.planrowmarker {
+    z-index:                    100;
+    left:                       10px;
+    position:                   relative;
+    top:                        16px;
+}
+.place a.icon-map-marker, .meetup_addr a.icon-map-marker, .planrowmarker {
+    text-align:                 center;
+    text-decoration:            none;
+    width:                      24px;
+    color:                      rgb(106, 129, 39);
+    display:                    block;
+    float:                      right;
+    font-size:                  17pt;
+    height:                     28px;
+    line-height:                22pt;
+    margin-right:               14px;
+    margin-top:                 -3px;
+}
+div#rankList {
+    margin-left:                0px;
+    margin-right:               0px;
+    margin-top:                 0px;
+}
+div#userNoteShell {
+    padding-bottom:             10px;
+}
+span#theNote {
+    display:                    block;
+    margin-top:                 5px ! important;
+}
+div#mainFeedShell {
+    margin-right:               0px;
+    margin-left:                0px;
+}
+span.the-tweet {
+    white-space:                normal;
+    overflow:                   hidden;
+}
+div.eventNote {
+    background:                 none repeat scroll 0% 0% rgb(244, 242, 233);
+    box-shadow:                 0pt 3px 2px rgba(0, 0, 0, 0.06) inset;
+    border-top:                 1px solid rgb(224, 222, 205);
+    font-family:                Open Sans;
+    font-size:                  11pt;
+    font-style:                 italic;
+    padding:                    8px 15px 6px;
+    text-shadow:                1px 1px 0px rgb(255, 255, 255);
+    font-weight:                100;
+    color:                      rgb(88, 77, 56);
+}
+.meetup_addr a.icon-map-marker {
+    margin-top:                 0px;
+}
+input#twitterlessSubmit {
+    margin-top:                 10px;
+    width:                      100%;
+}
+input.btn {
+    border:                     0px none ! important;
+    margin-top:                 -1px;
+    font-size:                  12pt;
+    width:                      100%;
+    cursor:                     pointer;
+}
+div.errormsg {
+    padding:                    10px;
+    margin-bottom:              4px;
+    border-radius:              4px 4px 4px 4px;
+    box-shadow:                 0pt 0pt 2px rgba(0, 0, 0, 0.11) inset;
+    background:                 none repeat scroll 0pt 0pt rgb(244, 234, 230);
+}
+.textbox h4 {
+    margin-top:                 30px;
+    margin-bottom:              -10px;
+}
+#notifications {
+    border-top:                 1px solid rgb(255, 250, 227);
+    box-shadow:                 0pt -4px 3px rgba(0, 0, 0, 0.1);
+    display:                    block;
+    line-height:                25px;
+    text-align:                 center;
+    text-shadow:                1px 1px 0pt rgb(255, 255, 255);
+    position:                   relative;
+    width:                      100%;
+    z-index:                    1;
+    border-radius:              0pt 0pt 4px 4px;
+    margin-top:                 -21px;
+    padding:                    12px 0pt 11px;
+    text-decoration:            none;
+}
+div#login-content {
+    width:                      170px;
+    margin-top:                 5px;
+    margin-left:                1px;
+}
+div#loading-tip-content, #login-content {
+    color:                      rgb(106, 85, 53);
+    font-weight:                100;
+    line-height:                133%;
+    margin-top:                 -6px;
+    font-size:                  9pt;
+    font-family:                sans-serif;
+}
+div.searchTitle {
+    display:                    block;
+    padding:                    10px;
+    font-size:                  11pt;
+    color:                      rgb(65, 101, 32);
+    margin:                     -20px 0px 20px;
+    background:                 none repeat scroll 0pt 0pt rgb(238, 245, 203);
+}
+#happening-now {
+    width:                      80%;
+    padding:                    20px 10%;
+    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    height:                     234px;
+}
+body.page-loading {
+    font-family:                georgia ! important;
+}
+div.attendeeSearchShell {
+    clear:                      both;
+    background:                 linear-gradient(rgb(254, 254, 254), rgb(238, 236, 229)) repeat scroll 0px 0px rgb(255, 253, 234);
+    background:                 -webkit-linear-gradient(top, rgb(254, 254, 254), rgb(238, 236, 229)) repeat scroll 0px 0px rgb(255, 253, 234);
+    height:                     41px;
+    margin-top:                 -1px;
+    padding:                    7px 18px 3px;
+    margin-bottom:              20px;
+}
+.attendeeSearchShell span.icon-search {
+    float:                      left;
+    margin-bottom:              -40px;
+    position:                   relative;
+    font-size:                  17pt;
+    top:                        5px;
+    left:                       14px;
+    color:                      rgb(234, 234, 234);
+    text-shadow:                0px 1px 0px rgb(218, 215, 205);
+}
+#addPlanButton {
+    display:                    block;
+    font-family:                Open Sans;
+    text-align:                 center;
+    text-decoration:            none;
+}
+.big_btn {
+    margin:                     5px auto 0px;
+    display:                    block;
+    text-align:                 center;
+    text-decoration:            none;
+    border-radius:              4px 4px 4px 4px;
+    color:                      rgb(251, 251, 215);
+    padding:                    9px 0px;
+    font-weight:                bold;
+    text-shadow:                1px 1px 1px rgb(99, 103, 71);
+    box-shadow:                 0px 1px 2px rgba(0, 0, 0, 0.1);
+    background:                 linear-gradient(rgb(198, 203, 133) 0%, rgb(174, 177, 122) 96%, rgb(125, 130, 48) 98%) repeat scroll 0px 0px transparent;
+    background:                 -webkit-linear-gradient(top, rgb(198, 203, 133) 0%, rgb(174, 177, 122) 96%, rgb(125, 130, 48) 98%) repeat scroll 0px 0px transparent;
+}
+a#twitterless_btn {
+    display:                    block;
+    margin-bottom:              14px;
+}
+a.start-checkin:before {
+    width:                      100px;
+    content:                    "";
+    display:                    block;
+    background:                 url('/images/icon_pin.png') no-repeat scroll 0px 0px transparent;
+    height:                     64px;
+    left:                       49px;
+    position:                   absolute;
+    top:                        33px;
+}
+a.start-checkin {
+    display:                    block;
+    font-family:                populaire;
+    box-shadow:                 1px -1px 3px rgba(0, 0, 0, 0.1) inset;
+    background:                 url('/images/orange_waves.png?t') repeat scroll 0px 0px transparent;
+    color:                      rgb(200, 100, 1);
+    border-radius:              0px 0px 0px 104px;
+    position:                   absolute;
+    right:                      0px;
+    text-align:                 center;
+    text-decoration:            none;
+    text-indent:                18px;
+    text-shadow:                1px 1px 0px rgb(255, 255, 255);
+    top:                        0px;
+    width:                      116px;
+    font-size:                  19pt;
+    height:                     95px;
+    overflow:                   hidden;
+    padding-top:                6px;
+}
+a.close_checkin {
+    float:                      right;
+    margin-right:               30px;
+    text-decoration:            none;
+    margin-top:                 16px;
+}
+a {
+    color:                      rgb(97, 111, 42);
+}
+div#taskList {
+    margin-top:                 16px;
+}
+#plans div#planlist {
+    margin-top:                 -41px;
+}
+div#desktop-shell {
+    margin:                     0px auto;
+    box-shadow:                 0px 0px 34px rgba(0, 0, 0, 0.1);
+    width:                      768px;
+    position:                   relative;
+    overflow-x:                 hidden;
+    height:                     auto;
+    min-height:                 100%;
+}
+div.preload {
+    display:                    none;
+}
+span.icon-wds_meetups {
+    background:                 url('/images/icon_meetup.png') repeat scroll 0% 0% transparent;
+    height:                     30px;
+    position:                   relative;
+    left:                       -1px;
+    margin-right:               12px ! important;
+    width:                      41px;
+    top:                        4px;
+}
+div.btn_shell {
+    padding:                    0px 15px;
+}
+a#twitter_button {
+    margin-top:                 6px;
+    margin-left:                -13px;
+    margin-right:               -15px;
+}
+.orange_btn {
+    font-size:                  17pt;
+    text-decoration:            none;
+    font-style:                 normal;
+    display:                    block;
+    border-radius:              5px 5px 5px 5px;
+    color:                      rgb(255, 250, 233);
+    text-shadow:                1px 1px 0px rgb(143, 119, 91);
+    background:                 linear-gradient(rgb(248, 175, 102) 0%, rgb(255, 154, 55) 3%, rgb(227, 134, 43) 95%, rgb(173, 116, 60) 3%) repeat scroll 0px 0px transparent;
+    background:                 -webkit-linear-gradient(top, rgb(248, 175, 102) 0%, rgb(255, 154, 55) 3%, rgb(227, 134, 43) 95%, rgb(173, 116, 60) 3%) repeat scroll 0px 0px transparent;
+    padding:                    7px ! important;
+    cursor:                     pointer;
+    font-family:                Populaire ! important;
+}
+div.new_points {
+    margin-top:                 12px;
+    font-size:                  16px;
+}
+iframe#race_upload {
+    position:                   absolute;
+    top:                        -9999px;
+    left:                       -9999px;
+}
+#workshoplist, #attendee_leadlist {
+    margin-top:                 20px;
+}
+textarea.answer_input {
+    -moz-box-sizing:            border-box;
+    border-radius:              0px 0px 0px 0px ! important;
+    height:                     115px;
+    font-family:                open sans;
+    border:                     0px none ! important;
+    font-size:                  15pt;
+    width:                      100%;
+    padding:                    15px;
+    margin-top:                 -22px;
+    color:                      rgb(68, 68, 68);
+}
+form.answer_form {
+    margin-bottom:              30px;
+}
+div.dispatch_img img {
+    width:                      100%;
+    margin-top:                 6px;
+}
+div#now-shell {
+    padding:                    15px;
+    margin-top:                 0px;
+    position:                   relative;
+    background:                 none repeat scroll 0px 0px rgb(255, 253, 244);
+    min-height:                 100px;
+    overflow-x:                 hidden;
+}
+#now-shell h2 {
+    font-family:                Populaire;
+    font-size:                  31pt;
+    display:                    block;
+    margin:                     0px;
+    color:                      rgb(153, 88, 5);
+}
+div#place_list, #place_type_list {
+    margin:                     -15px;
+}
+div#now_descr {
+    font-size:                  11pt;
+    width:                      80%;
+}
+table#places-now-tbl {
+    width:                      100%;
+    overflow:                   hidden;
+    border-collapse:            collapse;
+    margin-top:                 16px;
+}
+div.show-more {
+    height:                     auto ! important;
+    padding-bottom:             30px;
+}
+div#things-happening-now {
+    overflow-y:                 hidden;
+    position:                   relative;
+    margin-top:                 16px;
+    height:                     352px;
+}
+#places-now-tbl tr:nth-child(2n+1) {
+    background:                 none repeat scroll 0px 0px rgb(239, 232, 215);
+}
+#places-now-tbl td {
+    font-size:                  10pt;
+    padding:                    2px 7px;
+    height:                     30px;
+}
+div#now-view {
+    text-align:                 center;
+    position:                   absolute;
+    bottom:                     0px;
+    width:                      100%;
+    background:                 linear-gradient(rgba(255, 252, 238, 0) -15%, rgb(255, 253, 244) 49%) no-repeat scroll 0px 0px transparent;
+    background:                 -webkit-linear-gradient(top, rgba(255, 252, 238, 0) -15%, rgb(255, 253, 244) 49%) no-repeat scroll 0px 0px transparent;
+    height:                     30px;
+    font-size:                  11pt;
+    line-height:                26pt;
+    cursor:                     pointer;
+    padding-bottom:             5px;
+}
+div.no-one {
+    background:                 none repeat scroll 0% 0% rgb(247, 244, 229);
+    margin:                     10px auto 0px;
+    padding:                    5px 4%;
+    text-align:                 center;
+    width:                      92%;
+    text-shadow:                none;
+}
+h5 {
+    font-size:                  15pt;
+    text-shadow:                none ! important;
+    color:                      rgb(87, 103, 64);
+    margin:                     5px 15px;
+    padding-top:                15px;
+}
+div#race_notice {
+    display:                    none;
+    font-size:                  22pt ! important;
+    padding:                    60px ! important;
+    text-align:                 center ! important;
+}
+* {
+    line-height:                inherit;
+}

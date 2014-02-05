@@ -1,0 +1,14 @@
+div(id="create", class="page")
+	div(class="left-sidebar", data-sidebar="signup")
+	div(class="main-content")
+		div(id="duo-create-shell")
+			h2 It Takes Two to Duo
+			p All you need to create a Duo is a friend!
+			p Enter your friend's first name below to get started.
+			form(id="create-form", action="post")
+				div(class="field-row")
+					div(class="field-box")
+						input(type="text", class="text", name="invitee", placeholder="Their First Name")
+				div(class="field-row")
+					div(class="field-box")
+						input(type="submit", class="button", name="submit", value="Create the Duo!")

@@ -1,0 +1,385 @@
+body {
+    padding:                    0px;
+    margin:                     0px;
+    background:                 none repeat scroll 0% 0% rgb(237, 236, 228);
+    font-family:                rosario;
+}
+h1 {
+    font-family:                rosario;
+    font-weight:                bold;
+}
+div.header h1 {
+    font-size:                  40pt;
+    font-weight:                bold;
+}
+div.break-header {
+    color:                      rgb(119, 113, 102);
+    background:                 none repeat scroll 0% 0% rgb(237, 236, 228);
+    margin-right:               -21px;
+    margin-left:                -21px;
+    text-align:                 center;
+    font-size:                  22pt;
+    padding:                    2px 0px;
+    position:                   relative;
+    top:                        -2px;
+    margin-top:                 32px;
+}
+div.header {
+    color:                      rgb(119, 113, 102);
+    margin:                     0px auto;
+    padding:                    3px 0px;
+    text-align:                 center;
+    width:                      1056px;
+}
+div.content {
+    padding:                    18px;
+}
+#content_shell.no-page {
+    background:                 none repeat scroll 0% 0% transparent;
+    box-shadow:                 none;
+    width:                      1056px;
+}
+div#content_shell {
+    padding:                    0px 18px 30px;
+    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    min-height:                 100px;
+    margin:                     0px auto 32px;
+    box-shadow:                 0px 1px 3px rgba(0, 0, 0, 0.2);
+    width:                      1020px;
+    position:                   relative;
+    transition:                 opacity 0.1s ease 0s;
+}
+.main-content {
+    margin-left:                250px;
+    max-width:                  580px;
+}
+.left-sidebar, .main-content, .right-sidebar {
+    float:                      left;
+}
+label {
+    font-weight:                bold;
+    display:                    block;
+}
+div.field-box {
+    float:                      left;
+    margin-right:               10px;
+}
+div.field-row {
+    clear:                      both;
+    height:                     50px;
+}
+input#new-duo-invite-url {
+    width:                      330px;
+    text-align:                 center;
+    top:                        -16px;
+    position:                   relative;
+    margin-bottom:              -7px;
+}
+input.text, textarea.text {
+    padding:                    8px;
+    font-size:                  11pt;
+    color:                      rgb(85, 85, 85);
+    border:                     0px none;
+    box-shadow:                 0px 0px 3px rgba(0, 0, 0, 0.1);
+}
+div#nav {
+    height:                     40px;
+    margin-bottom:              30px;
+    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    box-shadow:                 0px 1px 3px rgba(0, 0, 0, 0.1);
+    width:                      90%;
+    padding:                    10px 5%;
+}
+div.clear {
+    clear:                      both;
+}
+div.notice {
+    background:                 none repeat scroll 0px 0px rgb(204, 202, 188);
+}
+div.success {
+    background:                 none repeat scroll 0px 0px rgb(199, 222, 174);
+}
+div.alert {
+    background:                 none repeat scroll 0px 0px rgb(231, 150, 126);
+}
+div#notifications .a_notification {
+    padding:                    11px 20px;
+    width:                      1016px;
+    margin:                     0px auto 10px;
+    text-shadow:                1px 1px 0px rgba(255, 255, 255, 0.39);
+    position:                   relative;
+    color:                      rgba(0, 0, 0, 0.46);
+}
+div#notifications {
+    margin-top:                 -20px;
+}
+a.close:before {
+    content:                    "x";
+    display:                    block;
+    border-radius:              50%;
+    height:                     20px;
+    background:                 none repeat scroll 0px 0px rgba(106, 106, 112, 0.29);
+    color:                      rgba(69, 69, 69, 0.72);
+    line-height:                15px;
+    position:                   absolute;
+    right:                      18px;
+    text-align:                 center;
+    text-shadow:                none;
+    top:                        11px;
+    width:                      20px;
+    z-index:                    10;
+    text-indent:                1px;
+    cursor:                     pointer;
+}
+h2 {
+    font-size:                  30pt;
+    line-height:                110%;
+    color:                      rgb(119, 113, 102);
+    margin-bottom:              23px;
+}
+.entry-text p:last-child {
+    margin-bottom:              0px;
+}
+p, li {
+    color:                      rgb(162, 156, 145);
+    margin-top:                 0px;
+    font-size:                  16pt;
+}
+a#logo-home {
+    font-family:                skippy-sharp;
+    font-size:                  32pt;
+    position:                   relative;
+    text-decoration:            none;
+    line-height:                27pt;
+    color:                      rgb(220, 106, 40);
+}
+div.section-intro {
+    padding:                    40px;
+    font-size:                  17pt;
+    text-align:                 center;
+    width:                      420px;
+    margin:                     0px auto;
+    color:                      rgb(150, 146, 138);
+    line-height:                160%;
+}
+.centered-button {
+    margin-left:                auto;
+    margin-right:               auto;
+}
+.button:hover {
+    opacity:                    1;
+}
+a#button-signup {
+    width:                      205px;
+}
+a#button-go-to-duos {
+    width:                      245px;
+    margin-top:                 15px;
+}
+a#button-new-duo {
+    padding:                    2px 10px;
+    font-size:                  18pt;
+    margin:                     30px 0px 0px;
+    width:                      200px;
+}
+a#write-save-button {
+    min-width:                  20px;
+    font-size:                  20pt;
+    margin-right:               2px;
+    margin-bottom:              0px;
+    padding:                    2px 20px;
+    text-align:                 left;
+    width:                      161px;
+    position:                   absolute;
+    display:                    block;
+    z-index:                    1000;
+    right:                      16px;
+}
+#invite-form .field-row {
+    float:                      left;
+    clear:                      none;
+}
+#invite-form {
+    margin-top:                 -11px;
+}
+#invite-form input.button {
+    font-size:                  16pt;
+    padding:                    2px 0px;
+    margin-top:                 -1px;
+}
+.button {
+    background:                 none repeat scroll 0px 0px rgb(220, 106, 40);
+    border-radius:              4px;
+    color:                      rgb(255, 255, 255);
+    display:                    block;
+    font-family:                skippy-sharp;
+    font-size:                  25pt;
+    letter-spacing:             2pt;
+    margin-bottom:              20px;
+    opacity:                    0.9;
+    padding:                    2px 50px;
+    text-align:                 center;
+    text-decoration:            none;
+    transition:                 all 0.3s ease 0s;
+    min-width:                  200px;
+    border:                     0px none;
+    cursor:                     pointer;
+}
+div.safe-text {
+    clear:                      both;
+    font-size:                  10pt;
+    color:                      rgb(153, 153, 153);
+    position:                   relative;
+    top:                        -10px;
+    margin-bottom:              25px;
+}
+div.duo-title {
+    font-size:                  20pt;
+    font-weight:                bold;
+    color:                      rgb(154, 146, 130);
+}
+.duorow:hover {
+    background:                 none repeat scroll 0px 0px rgb(252, 250, 244);
+}
+.duorow {
+    cursor:                     pointer;
+    margin:                     0px -18px;
+    padding:                    20px 18px;
+    transition:                 all 0.3s ease 0s;
+    border-bottom:              1px solid rgb(232, 230, 225);
+    display:                    block;
+    text-decoration:            none;
+}
+div.duo-stats div span {
+    font-size:                  10pt;
+    display:                    block;
+}
+div.duo-stats > div {
+    text-align:                 center;
+    float:                      left;
+    margin-right:               24px;
+}
+div.duo-stats {
+    float:                      right;
+    font-size:                  16pt;
+    margin-top:                 -6px;
+    color:                      rgb(137, 134, 121);
+}
+div#loading-animation:before {
+    content:                    "Loading...";
+    text-align:                 center;
+    margin-top:                 0px;
+    margin-right:               auto;
+    margin-left:                auto;
+    width:                      300px;
+    display:                    block;
+    position:                   relative;
+    top:                        130px;
+    font-size:                  40px;
+    font-style:                 italic;
+    font-weight:                bold;
+    color:                      rgb(119, 109, 93);
+}
+div#loading-animation {
+    height:                     290px;
+}
+div#timeline {
+    margin-top:                 50px;
+}
+div#timeline-empty-message {
+    font-size:                  30px;
+    text-align:                 center;
+    color:                      rgb(119, 113, 102);
+    font-weight:                bold;
+    opacity:                    0.5;
+}
+div#write-starter {
+    position:                   relative;
+    top:                        17px;
+    margin-bottom:              100px;
+}
+span.dropdownarrow:before {
+    content:                    "▼";
+    font-size:                  10pt;
+    position:                   absolute;
+    top:                        12px;
+    right:                      13px;
+}
+span.dropdown-options span:hover {
+    background:                 none repeat scroll 0% 0% rgb(196, 89, 51);
+}
+span.dropdown-options span {
+    clear:                      both;
+    display:                    block;
+    margin:                     0px -20px -5px;
+    cursor:                     pointer;
+    padding:                    0px 20px 5px;
+}
+#write-save-button:hover span.dropdown-options {
+    display:                    block;
+    padding:                    0px 20px 7px;
+    margin:                     5px -20px auto;
+    height:                     auto;
+    border-top:                 1px dotted rgb(239, 103, 0);
+}
+span.dropdown-options {
+    display:                    block;
+    height:                     0px;
+    transition:                 all 0.1s ease 0s;
+    overflow:                   hidden;
+}
+div#post-stats {
+    float:                      right;
+    clear:                      both;
+    font-size:                  10pt;
+    color:                      rgb(238, 231, 218);
+    position:                   absolute;
+    z-index:                    10;
+    width:                      140px;
+    top:                        76px;
+    right:                      34px;
+}
+div.entry-text {
+    background:                 none repeat scroll 0px 0px rgb(255, 255, 255);
+    margin-bottom:              30px;
+    padding:                    65px 120px;
+}
+div.entry-stats {
+    color:                      rgb(119, 113, 102);
+    margin-left:                120px;
+    padding-top:                30px;
+    margin-top:                 -10px;
+    margin-bottom:              0px;
+    height:                     44px;
+    font-size:                  22pt;
+}
+div.entry-date {
+    float:                      left;
+    font-size:                  11pt;
+    padding-left:               10px;
+    margin-top:                 13px;
+    margin-left:                3px;
+}
+div.entry-by {
+    float:                      left;
+}
+div.entry-text {
+    clear:                      both;
+}
+div.entry-img-shell {
+    float:                      left;
+    border-radius:              50%;
+    width:                      80px;
+    height:                     80px;
+    display:                    block;
+    overflow:                   hidden;
+    text-align:                 center;
+    margin-left:                -100px;
+    margin-bottom:              -40px;
+}
+div#invite-success {
+    display:                    none;
+}
+* {
+    line-height:                inherit;
+}
