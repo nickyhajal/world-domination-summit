@@ -6,7 +6,6 @@ bcrypt = require('bcrypt')
 crypto = require('crypto')
 _ = require('underscore')
 Q = require('q')
-[Duo, Duos] = require('./duos')
 
 validatePasswordLength = (password) ->
     try

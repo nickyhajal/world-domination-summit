@@ -9,6 +9,13 @@ fs = require('fs')
 _ = require('underscore')
 execFile = require('child_process').execFile;
 routes = (app) ->
+	app.all '/git-hook', (req, res) ->
+		util = require('util'),
+	    exec = require('child_process').exec
+	    exec 'world-domination-summit-sync'
+		res.render "../views/git-hook",
+			layout: false
+
 	app.get '/*', (req, res) ->
 		page = 'index'
 		get_templates {}, 'pages', (tpls) ->
@@ -18,6 +25,7 @@ routes = (app) ->
 					env: '"'+process.env.NODE_ENV+'"'
 					authd: 1
 					tpls: JSON.stringify(tpls)
+
 
 get_templates = (tpls, type, cb) ->
 	rds.get 'tpls_'+type, (err) ->

@@ -7,15 +7,6 @@ config = (app, express, RedisStore, mysql) ->
 		app.set('twitter_consumer_key', 'rk0akB9FIpVVpdayafKD6w')
 		app.set('twitter_consumer_secret', 'rRDwE07S70OFqeCKrQDiwqjbCrHLN1sTslznZis')
 		app.set('uploadDir', '/tmp')
-		app.set 'db', 
-            client: 'mysql'
-            connection:
-            	host: 'localhost'
-            	user: 'letsduo'
-            	password: 'CeAMreCOAeRE299fm19AEcmAOeSa9sm'
-            	database: 'letsduo'
-            	charset: 'utf8'
-            debug: true
 		app.set 'mail', 
 			username: 'c5cc1518-87e4-4313-afc5-9a298ac033c7'
 			apiKey: 'c5cc1518-87e4-4313-afc5-9a298ac033c7'
@@ -34,8 +25,17 @@ config = (app, express, RedisStore, mysql) ->
 	
 
 	app.configure('development', ->
-		app.set('port', 2222);
+		app.set('port', 6767);
 		app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+		app.set 'db', 
+            client: 'mysql'
+            connection:
+            	host: 'localhost'
+            	user: 'letsduo'
+            	password: 'CeAMreCOAeRE299fm19AEcmAOeSa9sm'
+            	database: 'letsduo'
+            	charset: 'utf8'
+            debug: true
 	);
 
 	app.configure('test', ->
@@ -44,7 +44,16 @@ config = (app, express, RedisStore, mysql) ->
 	);
 
 	app.configure('production', ->
-		app.set('port', 2222);
+		app.set('port', 7676);
 		app.use(express.errorHandler());
+		app.set 'db', 
+            client: 'mysql'
+            connection:
+            	host: 'mysql'
+            	user: 'chrisgui_wdsfm'
+            	password: 'eAEcmAocesMAEckeSAOeckAlcska11819A'
+            	database: 'chrisgui_wds'
+            	charset: 'utf8'
+            debug: true
 	);
 module.exports = config

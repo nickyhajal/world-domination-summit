@@ -7,9 +7,7 @@ rds = redis.createClient()
 fs = require('fs')
 _ = require('underscore')
 execFile = require('child_process').execFile
-[Entry, Entries] = require('../models/entries')
 [User, Users] = require('../models/users')
-[Duo, Duos] = require('../models/duos')
 
 routes = (app) ->
 	ident = false
@@ -167,43 +165,6 @@ routes = (app) ->
 			.then (duo) ->
 				duo.sendInvite(req.me, req.query.email)
 				next()
-
-		app.post '/entry', (req, res, next) ->
-			getObj = ->
-				if req.query.entry?.entryid
-					new Entry({entryid: req.query.entry.entryid}).fetch()
-					.then (entry) ->
-						update entry
-				else
-					entry = new Entry
-						userid: req.me.get('userid')
-						duoid: req.query.duoid
-					update(entry)
-			update = (entry) ->
-				entry_text = req.query.entry_text ? ''
-				if entry.get('public') is 0 and req.query.public is 1
-					## CHECK IF PUBLIC AND SEND NOTIFICATION
-					## Template name: New Duo
-					## duo_buddy_first_name
-					## duo_link
-				entry.set
-					entry_text: req.query.entry_text
-					public: (req.query.public ? 0)
-				entry.save()
-				.then ->
-					_Duos = Duos.forge()
-					_Duos.getDuo(req.query.duoid, req.me, true)
-					.then (duo) ->
-						r.rsp.duo = duo
-						r.rsp.entry_save = true
-						r.rsp.entry = entry
-						r.rsp.duo
-						next()
-				, (err) ->
-					tk err
-
-			getObj()
-
 
 
 		###
