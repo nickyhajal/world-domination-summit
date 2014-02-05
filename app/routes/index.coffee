@@ -10,7 +10,7 @@ _ = require('underscore')
 execFile = require('child_process').execFile;
 routes = (app) ->
 	app.all '/git-hook', (req, res) ->
-		util = require('util'),
+		util = require('util')
 	    exec = require('child_process').exec
 	    exec 'world-domination-summit-sync'
 		res.render "../views/git-hook",
