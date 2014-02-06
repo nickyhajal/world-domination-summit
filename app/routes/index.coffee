@@ -10,12 +10,12 @@ _ = require('underscore')
 execFile = require('child_process').execFile;
 routes = (app) ->
 	app.all '/git-hook', (req, res) ->
-		util = require('util')
-		exec = require('child_process').exec
-		console.log req
-		#exec 'world-domination-summit-sync'
 		res.render "../views/git-hook",
 			layout: false
+		console.log req.query
+		execFile 'world-domination-summit-sync', (err, stdout, stderr) ->
+			tk err
+
 
 	app.get '/*', (req, res) ->
 		page = 'index'
