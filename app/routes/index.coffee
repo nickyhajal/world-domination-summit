@@ -14,7 +14,8 @@ routes = (app) ->
 			layout: false
 		console.log req.query
 		execFile 'world-domination-summit-sync', (err, stdout, stderr) ->
-			tk err
+			tk stdout
+			tk stderr
 
 
 	app.get '/*', (req, res) ->
