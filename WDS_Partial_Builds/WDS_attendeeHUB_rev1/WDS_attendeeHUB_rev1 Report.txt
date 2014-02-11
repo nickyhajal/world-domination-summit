@@ -1,0 +1,43 @@
+Package Report
+
+-----------------------------------------------------------------------------
+Document:
+Name: WDS_attendeeHUB_rev1.ai
+Color Mode: RGB color
+Color Profile: sRGB IEC61966-2.1
+Ruler Units: pixels
+Artboard Dimensions: 1100 px x 1599.4065 px
+Show Images in Outline Mode: OFF
+Highlight Substituted Fonts: OFF
+Highlight Substituted Glyphs: OFF
+Preserve Text Editability
+Simulate Colored Paper: OFF
+
+-----------------------------------------------------------------------------
+Spot Color Objects:
+PANTONE 718 U (Lab)
+PANTONE 7532 U (Lab)
+
+-----------------------------------------------------------------------------
+Missing Fonts:NONE
+
+-----------------------------------------------------------------------------
+Fonts:
+Populaire (OTF)
+Vitesse Book (OTF)
+Vitesse Medium (OTF)
+Vitesse Bold (OTF)
+Karla (OTF)
+Karla Bold (OTF)
+
+-----------------------------------------------------------------------------
+Embedded Fonts:
+NONE
+
+-----------------------------------------------------------------------------
+Missing Links:
+NONE
+
+-----------------------------------------------------------------------------
+Linked Images:
+NONE

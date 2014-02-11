@@ -38,6 +38,23 @@ routes = (app) ->
 			else
 				next()
 
+		# CONTENT
+		#########
+		app.get '/content', (req, res, next) ->
+			[Content, Contents] = require('../models/contents')
+			_Contents = Contents.forge()
+			_Contents
+			.query('column', 'contentid', 'type', 'data')
+			.query('where', 'contentid', '>', '0')
+			.query('orderBy', 'contentid', 'desc')
+			.fetch()
+			.then (contents) ->
+				r.rsp.content = contents
+				next()
+			, (err) ->
+				tk err
+
+
 
 		###########
 		## USERS ##
@@ -120,52 +137,6 @@ routes = (app) ->
 				res.statusCode = 400
 				errors.push(err.message)
 				next()
-
-		app.get '/duo', (req, res, next) ->
-			hash = req.query.hash ? req.query.duoid
-			inc_entries = req.query.inc_entries ? false
-			_Duos = Duos.forge()
-			_Duos.getDuo(hash, req.me, inc_entries)
-			.then (duo) ->
-				if req.query.clean
-					r.rsp = duo
-				else
-					r.rsp.duo = duo
-				next()
-
-		app.post '/duo', (req, res, next) ->
-			invitee = req.query.invitee
-			creatorid = req.me.get('userid')
-			duo = 
-				invitee: invitee
-				creatorid: creatorid
-			Duo.forge(duo)
-			.save()
-			.then (new_duo) ->
-				r.rsp.duo = new_duo
-				if req.me
-					_Users = Users.forge()
-					_Users.getUser(req.me.get('userid'))
-					.then (user) ->
-						user.getDuos()
-						.then (user) ->
-							r.rsp.me = user
-							next()
-				else
-					next()
-			, (err) ->
-				res.statusCode = 400;
-				errors.push(err.message)
-				next()
-
-		app.post '/invite', (req, res, next) ->
-			duoid = req.query.duoid
-			new Duo({duoid: duoid})
-			.fetch()
-			.then (duo) ->
-				duo.sendInvite(req.me, req.query.email)
-				next()
-
 
 		###
 		Finish

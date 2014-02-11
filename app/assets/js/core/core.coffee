@@ -11,6 +11,7 @@ user = {};
 ap.Views = {}
 ap.init = () ->
 	ap.initMe()
+	ap.Counter.init()
 	_.whenReady 'me', ->
 		ap.initRouter()
 
@@ -31,16 +32,6 @@ ap.initRouter = ->
 
 ap.navigate = (panel) ->
 	ap.Router.navigate(ap.getPanelPath(panel), {trigger: true})
-
-ap.getPanelPath = (panel)->
-	map = 
-		home: ''
-	if map[panel]?
-		path = map[panel]
-	else
-		path = panel
-
-	return '/'+path
 
 ap.api = (url, data, success = false, error = false, opts = {}) ->
 	bits = url.split(' ')

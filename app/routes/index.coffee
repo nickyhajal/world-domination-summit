@@ -23,7 +23,7 @@ routes = (app) ->
 		get_templates {}, 'pages', (tpls) ->
 			get_templates tpls, 'parts', (tpls) ->
 				res.render "../views/#{page}",
-					title: "Let's Duo!"
+					title: "World Domination Summit"
 					env: '"'+process.env.NODE_ENV+'"'
 					authd: 1
 					tpls: JSON.stringify(tpls)
