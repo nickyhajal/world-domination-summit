@@ -13,12 +13,41 @@ html(lang='en')
 			ap.templates = !{tpls};
 			ap.env = !{env};
 		link(rel='stylesheet', href='/images/apple-icon.png')
-		link(rel='stylesheet', type="text/css", href='/assets/css/styles.css')
+		link(rel='stylesheet', type="text/css", href='/app/assets/css/styles.css')
+		link(rel='stylesheet', type="text/css", href='/app/assets/css/fonts.css')
 		link(rel='stylesheet', type="text/css", href='/assets/css/font-awesome.css')
 		link(rel='stylesheet', type="text/css", href='/assets/css/tablet.css', media='screen and (max-width:1024px) and (min-width:628px)')
+		!= js('main')
 	body(class='ui-body-a')
 		div(class="preload")
-		div(id="nav")
-			a(href="/", id="logo-home") Let's Duo!
-		div(id="notifications")
-		!= body
+		nav(id="top-nav")
+			div(class="contentainer")
+				div(id="nav-links")
+					a(href="/story") Story
+					a(href="/schedule") Schedule
+					a(href="/headquarters") Headquarters
+					a(href="/Register") Register
+		header(id="main-header")
+			span(id="long-squiggly")
+			div(class="contentainer")
+				a(href="/", id="logo")
+				div(id="counter-shell")
+					h6 The Revolution Returns In:
+					div(class="clear")
+					div(id="counter-plane")
+					div(id="counter-days", class="counter-section")
+						span Days
+						div 365
+					div(id="counter-hours", class="counter-section")
+						span Hour 
+						div 23 
+					div(id="counter-mins", class="counter-section")
+						span Min 
+						div 59 
+					div(class="clear")
+					a(id="counter-register", class="counter-button" href="/register") Register
+					a(id="counter-login", class="counter-button", href="/login") Login
+
+		main(class="contentainer")
+			section(id="sidebar-shell")
+			!= body

@@ -1,9 +1,5 @@
 window.Router = Backbone.Router.extend
 	routes:
-		"signup/:": "signup"
-		"join-duo/:hash": "joinDuo"
-		"duo/:hash": "duo"
-		"invite/:hash": "invite"
 		"*actions": "defaultRoute"
 	before: ->
 	defaultRoute: (actions) ->
@@ -14,43 +10,6 @@ window.Router = Backbone.Router.extend
 			else
 				actions = 'login';
 		ap.goTo(actions)
-
-	joinDuo: (hash) ->
-		if ap.me
-			ap.loading()
-			ap.api 'get duo', {hash: hash}, (rsp) ->
-				ap.goTo 'join',
-					duo: new ap.Duo(rsp.duo)
-					hash: hash
-
-	duo: (hash) ->
-		if ap.me
-			ap.loading()
-			ap.api 'get duo', {hash: hash, inc_entries: true}, (rsp) ->
-				ap.goTo 'duo', 
-					duo: new ap.Duo(rsp.duo)
-		else
-			ap.navigate 'login'
-
-	invite: (hash) ->
-		if ap.me
-			ap.loading()
-			ap.Duos.getOrFetch {hash: hash}, (duo) ->
-				ap.goTo 'invite',
-					duo: duo
-		else
-			ap.navigate 'login'
-
-	###
-	 Profile Contoller
-	###
-	goToProfile: (id) ->
-		ap.onUser = id
-		if ap.onPanel?
-			ap.scrollPos[ap.onPanel] = $(window).scrollTop()
-		ap.users[id].renderProfile('#userProfile-content')
-		$.scrollTo(0)
-		ap.goTo()
 	logout: ->
 		ap.nav 'login'
 		_.a 'logout', {}, (rsp) ->
@@ -94,6 +53,7 @@ ap.goTo = (panel = '', options = {}) ->
 		setTimeout ->
 			ap.currentView = new ap.Views[panel] options
 		, 120
+		$('body').attr('id', 'page-'+panel)
 
 ap.back = ->
 	history.go(-1);

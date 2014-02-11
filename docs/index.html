@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>#</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page">
+            
+              
+              <a class="source" href="api.html">
+                api.coffee
+              </a>
+            
+              
+              <a class="source" href="index.html">
+                index.coffee
+              </a>
+            
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <h1 id="-">#</h1>
+<p>This is the main page that all is routed through
+actual routing happens by Backbone.js</p>
+<h1 id="-">#</h1>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>jade = <span class="hljs-built_in">require</span>(<span class="hljs-string">'jade'</span>)
+redis = <span class="hljs-built_in">require</span>(<span class="hljs-string">"redis"</span>)
+rds = redis.createClient()
+fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>)
+_ = <span class="hljs-built_in">require</span>(<span class="hljs-string">'underscore'</span>)
+execFile = <span class="hljs-built_in">require</span>(<span class="hljs-string">'child_process'</span>).execFile;
+<span class="hljs-function"><span class="hljs-title">routes</span> = <span class="hljs-params">(app)</span> -&gt;</span>
+	app.all <span class="hljs-string">'/git-hook'</span>, <span class="hljs-function"><span class="hljs-params">(req, res)</span> -&gt;</span>
+		res.render <span class="hljs-string">"../views/git-hook"</span>,
+			<span class="hljs-attribute">layout</span>: <span class="hljs-literal">false</span>
+		<span class="hljs-built_in">console</span>.log req.query
+		execFile <span class="hljs-string">'world-domination-summit-sync'</span>, <span class="hljs-function"><span class="hljs-params">(err, stdout, stderr)</span> -&gt;</span>
+			tk stdout
+			tk stderr
+
+
+	app.get <span class="hljs-string">'/*'</span>, <span class="hljs-function"><span class="hljs-params">(req, res)</span> -&gt;</span>
+		page = <span class="hljs-string">'index'</span>
+		get_templates {}, <span class="hljs-string">'pages'</span>, <span class="hljs-function"><span class="hljs-params">(tpls)</span> -&gt;</span>
+			get_templates tpls, <span class="hljs-string">'parts'</span>, <span class="hljs-function"><span class="hljs-params">(tpls)</span> -&gt;</span>
+				res.render <span class="hljs-string">"../views/<span class="hljs-subst">#{page}</span>"</span>,
+					<span class="hljs-attribute">title</span>: <span class="hljs-string">"World Domination Summit"</span>
+					<span class="hljs-attribute">env</span>: <span class="hljs-string">'"'</span>+process.env.NODE_ENV+<span class="hljs-string">'"'</span>
+					<span class="hljs-attribute">authd</span>: <span class="hljs-number">1</span>
+					<span class="hljs-attribute">tpls</span>: JSON.stringify(tpls)
+
+
+<span class="hljs-function"><span class="hljs-title">get_templates</span> = <span class="hljs-params">(tpls, type, cb)</span> -&gt;</span>
+	rds.get <span class="hljs-string">'tpls_'</span>+type, <span class="hljs-function"><span class="hljs-params">(err)</span> -&gt;</span>
+		execFile <span class="hljs-string">'find'</span>, [ __dirname + <span class="hljs-string">"/../views/"</span>+type], <span class="hljs-function"><span class="hljs-params">(err, stdout, stderr)</span> -&gt;</span>
+			files = stdout.split <span class="hljs-string">'\n'</span>
+			rsp = {}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>This will be called when all files are rendered</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			<span class="hljs-function"><span class="hljs-title">finishedRendering</span> = -&gt;</span>
+				rds.set <span class="hljs-string">'tpls'</span>, JSON.stringify(tpls),<span class="hljs-function"> -&gt;</span>
+					rds.expire <span class="hljs-string">'tpls_'</span>+type, <span class="hljs-number">1000</span>,<span class="hljs-function"> -&gt;</span>
+						cb tpls</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>This renders each file</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>			<span class="hljs-function"><span class="hljs-title">renderTplFile</span> = <span class="hljs-params">(files, index)</span> -&gt;</span>
+				<span class="hljs-keyword">if</span> files[index]?
+					file = files[index]
+					<span class="hljs-keyword">if</span> (file.indexOf <span class="hljs-string">'.jade'</span> ) &gt; -<span class="hljs-number">1</span> <span class="hljs-keyword">and</span> (file.indexOf <span class="hljs-string">'index'</span>) <span class="hljs-keyword">is</span> -<span class="hljs-number">1</span> <span class="hljs-keyword">and</span> (file.indexOf <span class="hljs-string">'response'</span>) <span class="hljs-keyword">is</span> -<span class="hljs-number">1</span>
+						jade.renderFile file, {<span class="hljs-attribute">pretty</span>: <span class="hljs-literal">false</span>}, <span class="hljs-function"><span class="hljs-params">(err, str)</span> -&gt;</span>
+							<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> err
+								name = _.last file.split <span class="hljs-string">'/'</span>
+								name = name.replace <span class="hljs-string">'.jade'</span>, <span class="hljs-string">''</span>
+								tpls[type+<span class="hljs-string">'_'</span>+name] = str
+							<span class="hljs-keyword">else</span>
+								tk <span class="hljs-string">'ERR IN: '</span>+file
+								tk err
+								tk <span class="hljs-string">'-----------------'</span>
+							renderTplFile files, (index + <span class="hljs-number">1</span>)
+					<span class="hljs-keyword">else</span>
+						renderTplFile files, (index + <span class="hljs-number">1</span>)
+				<span class="hljs-keyword">else</span>
+					finishedRendering()
+			renderTplFile files, <span class="hljs-number">0</span>
+<span class="hljs-built_in">module</span>.<span class="hljs-built_in">exports</span> = routes</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,79 +1,44 @@
 body {
     padding:                    0px;
     margin:                     0px;
-    background:                 none repeat scroll 0% 0% rgb(237, 236, 228);
-    font-family:                rosario;
+    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    font-family:                vitesse;
+}
+#page-home #header-title:after {
+    height:                     110px;
+    display:                    block;
+    content:                    "";
+    background:                 url("/images/zigzag_white.png?1") repeat-x scroll 0px 0px / 322px auto transparent;
+    left:                       9px;
+    position:                   absolute;
+    width:                      579px;
+    top:                        133px;
+    opacity:                    0.7;
+    z-index:                    10;
+}
+#page-home #header-title {
+    top:                        -228px;
+    text-transform:             uppercase;
+    text--webkit-transform:     uppercase;
+    text-align:                 center;
+    position:                   absolute;
+    padding-bottom:             40px;
+    left:                       0px;
+    font-size:                  15pt;
+    z-index:                    100;
+}
+h1#header-title {
+    width:                      596px;
+    top:                        -239px;
+    text-align:                 center;
+    position:                   absolute;
+    font-weight:                normal;
+    font-size:                  20pt;
+    left:                       58px ! important;
 }
 h1 {
-    font-family:                rosario;
-    font-weight:                bold;
-}
-div.header h1 {
-    font-size:                  40pt;
-    font-weight:                bold;
-}
-div.break-header {
-    color:                      rgb(119, 113, 102);
-    background:                 none repeat scroll 0% 0% rgb(237, 236, 228);
-    margin-right:               -21px;
-    margin-left:                -21px;
-    text-align:                 center;
-    font-size:                  22pt;
-    padding:                    2px 0px;
-    position:                   relative;
-    top:                        -2px;
-    margin-top:                 32px;
-}
-div.header {
-    color:                      rgb(119, 113, 102);
-    margin:                     0px auto;
-    padding:                    3px 0px;
-    text-align:                 center;
-    width:                      1056px;
-}
-div.content {
-    padding:                    18px;
-}
-#content_shell.no-page {
-    background:                 none repeat scroll 0% 0% transparent;
-    box-shadow:                 none;
-    width:                      1056px;
-}
-div#content_shell {
-    padding:                    0px 18px 30px;
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
-    min-height:                 100px;
-    margin:                     0px auto 32px;
-    box-shadow:                 0px 1px 3px rgba(0, 0, 0, 0.2);
-    width:                      1020px;
-    position:                   relative;
-    transition:                 opacity 0.1s ease 0s;
-}
-.main-content {
-    margin-left:                250px;
-    max-width:                  580px;
-}
-.left-sidebar, .main-content, .right-sidebar {
-    float:                      left;
-}
-label {
-    font-weight:                bold;
-    display:                    block;
-}
-div.field-box {
-    float:                      left;
-    margin-right:               10px;
-}
-div.field-row {
-    clear:                      both;
-    height:                     50px;
-}
-input#new-duo-invite-url {
-    width:                      330px;
-    text-align:                 center;
-    top:                        -16px;
-    position:                   relative;
-    margin-bottom:              -7px;
+    font-family:                Vitesse;
+    font-size:                  28pt;
 }
 input.text, textarea.text {
     padding:                    8px;
@@ -82,303 +47,259 @@ input.text, textarea.text {
     border:                     0px none;
     box-shadow:                 0px 0px 3px rgba(0, 0, 0, 0.1);
 }
-div#nav {
-    height:                     40px;
-    margin-bottom:              30px;
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
-    box-shadow:                 0px 1px 3px rgba(0, 0, 0, 0.1);
-    width:                      90%;
-    padding:                    10px 5%;
-}
 div.clear {
     clear:                      both;
-}
-div.notice {
-    background:                 none repeat scroll 0px 0px rgb(204, 202, 188);
-}
-div.success {
-    background:                 none repeat scroll 0px 0px rgb(199, 222, 174);
-}
-div.alert {
-    background:                 none repeat scroll 0px 0px rgb(231, 150, 126);
-}
-div#notifications .a_notification {
-    padding:                    11px 20px;
-    width:                      1016px;
-    margin:                     0px auto 10px;
-    text-shadow:                1px 1px 0px rgba(255, 255, 255, 0.39);
-    position:                   relative;
-    color:                      rgba(0, 0, 0, 0.46);
-}
-div#notifications {
-    margin-top:                 -20px;
-}
-a.close:before {
-    content:                    "x";
-    display:                    block;
-    border-radius:              50%;
-    height:                     20px;
-    background:                 none repeat scroll 0px 0px rgba(106, 106, 112, 0.29);
-    color:                      rgba(69, 69, 69, 0.72);
-    line-height:                15px;
-    position:                   absolute;
-    right:                      18px;
-    text-align:                 center;
-    text-shadow:                none;
-    top:                        11px;
-    width:                      20px;
-    z-index:                    10;
-    text-indent:                1px;
-    cursor:                     pointer;
-}
-h2 {
-    font-size:                  30pt;
-    line-height:                110%;
-    color:                      rgb(119, 113, 102);
-    margin-bottom:              23px;
-}
-.entry-text p:last-child {
-    margin-bottom:              0px;
 }
 p, li {
     color:                      rgb(162, 156, 145);
     margin-top:                 0px;
     font-size:                  16pt;
 }
-a#logo-home {
-    font-family:                skippy-sharp;
-    font-size:                  32pt;
-    position:                   relative;
-    text-decoration:            none;
-    line-height:                27pt;
-    color:                      rgb(220, 106, 40);
+header#main-header {
+    background:                 none repeat scroll 0% 0% rgb(177, 186, 30);
+    height:                     310px;
+    margin-top:                 41px;
 }
-div.section-intro {
-    padding:                    40px;
-    font-size:                  17pt;
-    text-align:                 center;
-    width:                      420px;
+nav#top-nav {
+    background:                 none repeat scroll 0% 0% rgb(33, 23, 10);
+    height:                     41px;
+    position:                   fixed;
+    width:                      100%;
+    top:                        0px;
+    left:                       0px;
+    z-index:                    10000;
+}
+div#nav-links a:last-of-type {
+    margin-right:               0px;
+}
+#nav-links a:hover {
+    color:                      rgb(255, 201, 147);
+}
+div#nav-links a {
+    color:                      rgb(226, 127, 28);
+    font-family:                vitesse;
+    text-transform:             uppercase;
+    text--webkit-transform:     uppercase;
+    margin-right:               80px;
+    text-decoration:            none;
+    display:                    block;
+    float:                      left;
+}
+div#nav-links {
+    float:                      right;
+    margin-top:                 11px;
+}
+.contentainer {
     margin:                     0px auto;
-    color:                      rgb(150, 146, 138);
-    line-height:                160%;
-}
-.centered-button {
-    margin-left:                auto;
-    margin-right:               auto;
-}
-.button:hover {
-    opacity:                    1;
-}
-a#button-signup {
-    width:                      205px;
-}
-a#button-go-to-duos {
-    width:                      245px;
-    margin-top:                 15px;
-}
-a#button-new-duo {
-    padding:                    2px 10px;
-    font-size:                  18pt;
-    margin:                     30px 0px 0px;
-    width:                      200px;
-}
-a#write-save-button {
-    min-width:                  20px;
-    font-size:                  20pt;
-    margin-right:               2px;
-    margin-bottom:              0px;
-    padding:                    2px 20px;
-    text-align:                 left;
-    width:                      161px;
-    position:                   absolute;
-    display:                    block;
-    z-index:                    1000;
-    right:                      16px;
-}
-#invite-form .field-row {
-    float:                      left;
-    clear:                      none;
-}
-#invite-form {
-    margin-top:                 -11px;
-}
-#invite-form input.button {
-    font-size:                  16pt;
-    padding:                    2px 0px;
-    margin-top:                 -1px;
-}
-.button {
-    background:                 none repeat scroll 0px 0px rgb(220, 106, 40);
-    border-radius:              4px;
-    color:                      rgb(255, 255, 255);
-    display:                    block;
-    font-family:                skippy-sharp;
-    font-size:                  25pt;
-    letter-spacing:             2pt;
-    margin-bottom:              20px;
-    opacity:                    0.9;
-    padding:                    2px 50px;
-    text-align:                 center;
-    text-decoration:            none;
-    transition:                 all 0.3s ease 0s;
-    min-width:                  200px;
-    border:                     0px none;
-    cursor:                     pointer;
-}
-div.safe-text {
-    clear:                      both;
-    font-size:                  10pt;
-    color:                      rgb(153, 153, 153);
     position:                   relative;
-    top:                        -10px;
-    margin-bottom:              25px;
+    width:                      990px;
 }
-div.duo-title {
-    font-size:                  20pt;
-    font-weight:                bold;
-    color:                      rgb(154, 146, 130);
-}
-.duorow:hover {
-    background:                 none repeat scroll 0px 0px rgb(252, 250, 244);
-}
-.duorow {
-    cursor:                     pointer;
-    margin:                     0px -18px;
-    padding:                    20px 18px;
-    transition:                 all 0.3s ease 0s;
-    border-bottom:              1px solid rgb(232, 230, 225);
-    display:                    block;
-    text-decoration:            none;
-}
-div.duo-stats div span {
-    font-size:                  10pt;
-    display:                    block;
-}
-div.duo-stats > div {
-    text-align:                 center;
-    float:                      left;
-    margin-right:               24px;
-}
-div.duo-stats {
-    float:                      right;
-    font-size:                  16pt;
-    margin-top:                 -6px;
-    color:                      rgb(137, 134, 121);
-}
-div#loading-animation:before {
-    content:                    "Loading...";
-    text-align:                 center;
-    margin-top:                 0px;
-    margin-right:               auto;
-    margin-left:                auto;
-    width:                      300px;
-    display:                    block;
-    position:                   relative;
-    top:                        130px;
-    font-size:                  40px;
-    font-style:                 italic;
-    font-weight:                bold;
-    color:                      rgb(119, 109, 93);
-}
-div#loading-animation {
-    height:                     290px;
-}
-div#timeline {
-    margin-top:                 50px;
-}
-div#timeline-empty-message {
-    font-size:                  30px;
-    text-align:                 center;
-    color:                      rgb(119, 113, 102);
-    font-weight:                bold;
-    opacity:                    0.5;
-}
-div#write-starter {
-    position:                   relative;
-    top:                        17px;
-    margin-bottom:              100px;
-}
-span.dropdownarrow:before {
-    content:                    "▼";
-    font-size:                  10pt;
-    position:                   absolute;
-    top:                        12px;
-    right:                      13px;
-}
-span.dropdown-options span:hover {
-    background:                 none repeat scroll 0% 0% rgb(196, 89, 51);
-}
-span.dropdown-options span {
-    clear:                      both;
-    display:                    block;
-    margin:                     0px -20px -5px;
-    cursor:                     pointer;
-    padding:                    0px 20px 5px;
-}
-#write-save-button:hover span.dropdown-options {
-    display:                    block;
-    padding:                    0px 20px 7px;
-    margin:                     5px -20px auto;
-    height:                     auto;
-    border-top:                 1px dotted rgb(239, 103, 0);
-}
-span.dropdown-options {
-    display:                    block;
-    height:                     0px;
-    transition:                 all 0.1s ease 0s;
-    overflow:                   hidden;
-}
-div#post-stats {
-    float:                      right;
-    clear:                      both;
-    font-size:                  10pt;
-    color:                      rgb(238, 231, 218);
-    position:                   absolute;
-    z-index:                    10;
-    width:                      140px;
-    top:                        76px;
-    right:                      34px;
-}
-div.entry-text {
-    background:                 none repeat scroll 0px 0px rgb(255, 255, 255);
-    margin-bottom:              30px;
-    padding:                    65px 120px;
-}
-div.entry-stats {
-    color:                      rgb(119, 113, 102);
-    margin-left:                120px;
-    padding-top:                30px;
-    margin-top:                 -10px;
-    margin-bottom:              0px;
-    height:                     44px;
-    font-size:                  22pt;
-}
-div.entry-date {
-    float:                      left;
-    font-size:                  11pt;
-    padding-left:               10px;
-    margin-top:                 13px;
-    margin-left:                3px;
-}
-div.entry-by {
-    float:                      left;
-}
-div.entry-text {
-    clear:                      both;
-}
-div.entry-img-shell {
-    float:                      left;
-    border-radius:              50%;
-    width:                      80px;
-    height:                     80px;
-    display:                    block;
-    overflow:                   hidden;
-    text-align:                 center;
-    margin-left:                -100px;
-    margin-bottom:              -40px;
-}
-div#invite-success {
+div.preload {
     display:                    none;
+}
+a#logo {
+    background:                 url("/images/logo.png") repeat scroll 0% 0% / 100% auto transparent;
+    height:                     215px;
+    display:                    block;
+    width:                      192px;
+    position:                   relative;
+    top:                        20px;
+    left:                       37px;
+}
+div.counter-fixed {
+    position:                   fixed ! important;
+    top:                        41px ! important;
+}
+div#counter-shell {
+    background:                 none repeat scroll 0px 0px rgb(33, 23, 10);
+    color:                      rgb(255, 255, 255);
+    top:                        255px;
+    position:                   absolute;
+    padding:                    17px;
+    left:                       15px;
+    width:                      210px;
+    z-index:                    1000;
+}
+#counter-shell h6 {
+    font-weight:                normal;
+    width:                      144px;
+    text-transform:             uppercase;
+    text--webkit-transform:     uppercase;
+    text-align:                 center;
+    margin:                     0px auto 12px;
+    font-size:                  11pt;
+}
+div.counter-section div {
+    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    color:                      rgb(33, 23, 10);
+    font-weight:                bold;
+    padding:                    17px 0px 11px;
+    font-size:                  19pt;
+}
+div#counter-days div {
+    border-radius:              12px 0px 0px 12px;
+}
+div#counter-mins div {
+    border-radius:              0px 12px 12px 0px;
+}
+div#counter-days, #counter-hours {
+    border-right:               2px solid rgb(33, 23, 10);
+}
+div.counter-section {
+    float:                      left;
+    text-align:                 center;
+    width:                      68px;
+}
+span#long-squiggly {
+    background:                 url("/images/squiggle_white.png") repeat scroll 0px 0px / 324px auto transparent;
+    display:                    block;
+    height:                     20px;
+    width:                      100%;
+    opacity:                    0.6;
+    z-index:                    0;
+    margin-top:                 -3px;
+}
+#page-home section#sidebar-shell {
+    display:                    none;
+}
+section#sidebar-shell {
+    float:                      left;
+    width:                      244px;
+    height:                     270px;
+    background:                 none repeat scroll 0px 0px rgb(224, 220, 211);
+}
+div#content_shell {
+    margin-left:                261px;
+    position:                   relative;
+}
+#header-title span {
+    font-family:                Populaire;
+    display:                    block;
+    font-size:                  36pt;
+    margin-top:                 7px;
+}
+#header-title span a {
+    color:                      rgb(255, 255, 255);
+    text-decoration:            none;
+    margin-left:                6px;
+}
+div#video {
+    background:                 url("/images/video.png") repeat scroll 0% 0% / 100% auto transparent;
+    height:                     312.5px;
+    width:                      555px;
+    top:                        8px;
+    position:                   absolute;
+    left:                       9px;
+}
+div#video-shell {
+    margin-left:                151px;
+    position:                   relative;
+    top:                        -28px;
+    z-index:                    1000;
+}
+div#video-underlay {
+    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    height:                     168px;
+    position:                   absolute;
+    top:                        0px;
+    left:                       0px;
+    width:                      573px;
+}
+.counter-section span {
+    color:                      rgb(226, 127, 28);
+    text-transform:             uppercase;
+    text--webkit-transform:     uppercase;
+}
+div#reg-open {
+    background-color:           transparent;
+    background-image:           url("/images/block_reg-open.png");
+    background-repeat:          repeat;
+    background-attachment:      scroll;
+    background-position:        0% 0%;
+    background-clip:            border-box;
+    background-origin:          padding-box;
+    width:                      435px;
+    height:                     278.5px;
+    top:                        140px;
+}
+div#reg-schedule {
+    background:                 url("/images/block_schedule.png") repeat scroll 0% 0% transparent;
+    width:                      349px;
+    height:                     255px;
+    top:                        418px;
+    left:                       259px;
+}
+div#reg-army {
+    background:                 url("/images/block_army.png") repeat scroll 0% 0% transparent;
+    width:                      383px;
+    top:                        293px;
+    left:                       607px;
+    height:                     380px;
+}
+div#reg-attendees {
+    background:                 url("/images/block_attendees.png?") repeat scroll 0px 0px transparent;
+    width:                      244px;
+    height:                     420px;
+    top:                        418px;
+    left:                       15px;
+}
+div#reg-chris {
+    background:                 url("/images/block_chris.png") repeat scroll 0% 0% transparent;
+    width:                      348px;
+    top:                        673px;
+    left:                       259px;
+    height:                     269px;
+}
+div#reg-story {
+    background:                 url("/images/block_story.png") repeat scroll 0% 0% transparent;
+    width:                      367px;
+    height:                     269px;
+    top:                        673px;
+    left:                       607px;
+}
+div#reg-headquarters {
+    background:                 url("/images/block_headquarters.png") repeat scroll 0% 0% transparent;
+    width:                      366px;
+    height:                     260px;
+    left:                       15px;
+    top:                        942px;
+}
+div#block-id-0 {
+    background:                 none repeat scroll 0% 0% rgb(101, 30, 30);
+}
+div.wall-space {
+    display:                    none;
+}
+.waterfall-content {
+    position:                   absolute;
+    display:                    block;
+    background-size:            100% 100% ! important;
+}
+div#waterfall {
+    position:                   relative;
+    margin-left:                -261px;
+    height:                     2000px;
+}
+a#counter-register {
+    border-radius:              12px 0px 0px 12px;
+    border-right:               2px solid rgb(0, 0, 0);
+}
+a#counter-login {
+    border-radius:              0px 12px 12px 0px;
+}
+a.counter-button:hover {
+    background:                 none repeat scroll 0% 0% rgb(255, 201, 147);
+    color:                      rgb(45, 45, 45);
+}
+a.counter-button {
+    width:                      103px;
+    text-align:                 center;
+    padding:                    6px 0px;
+    margin-top:                 17px;
+    float:                      left;
+    display:                    block;
+    background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
+    color:                      rgb(255, 255, 255);
 }
 * {
     line-height:                inherit;
