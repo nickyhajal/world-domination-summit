@@ -7,7 +7,7 @@ Content = Shelf.Model.extend
   permittedAttributes: [
     'contentid', 'type', 'uniqid', 'data', 'stamp'
   ]
-  hasTimestamps: true
+  idAttribute: 'contentid'
   initialize: ->
     this.on 'creating', this.creating, this
     this.on 'created', this.created, this

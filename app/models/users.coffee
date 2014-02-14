@@ -9,15 +9,20 @@ Q = require('q')
 
 validatePasswordLength = (password) ->
     try
-        Shelf.validator.check(password, "Make your password at least 8 characters so your journals are nice and safe.").len(8)
+        Shelf.validator.check(password, "Make your password at least 8 characters so your profile is nice and safe.").len(8)
     catch error
         return whn.reject(error)
     return whn.resolve()
 
 User = Shelf.Model.extend
-  tableName: 'users'
+  tableName: 'attendees'
   permittedAttributes: [
-    'userid', 'email', 'first_name', 'last_name', 'created'
+    'attendeeid', 'type', 'email', 'fname', 'lname', 'attending', 'attended11', 'attending12',
+    'attending13', 'attending14', 'email', 'fname', 'lname', 'hash',
+    'uname', 'phone', 'mf', 'twitter', 'pic', 'address', 'city',
+    'state', 'country', 'zip', 'lat', 'lon', 'distance', 'video', 'rss',
+    'pub_loc', 'pub_att', 'intro2011', 'marker', 'intro', 'intro13', 'picxy', 
+    'picupd', 'points13', 'points', 'lastShake', 'stamp'
   ]
   hasTimestamps: true
   initialize: ->
@@ -39,40 +44,6 @@ User = Shelf.Model.extend
 
   login: (req) ->
     req.session.ident = JSON.stringify(this)
-
-  getDuos: ->
-    deferred = Q.defer()
-    _Duos = Duos.forge()
-    query = _Duos.query()
-    _Duos
-    .query('where', 'creatorid', '=', @get('userid'))
-    .query('orWhere', 'acceptorid', '=', @get('userid'))
-    .fetch()
-    .then (rows) =>
-      if rows.models.length
-        getMeta = (duos, inx = 0, dfr = false) =>
-          if not dfr
-            dfr = Q.defer()
-          if duos[inx]?
-            duos[inx].getMeta(this)
-            .then (duo) ->
-              duos[inx] = duo
-              inx += 1
-              getMeta(duos, inx, dfr)
-          else
-            dfr.resolve duos
-          if inx is 0
-            return dfr.promise
-        getMeta(rows.models)
-        .then (duos) =>
-          @set
-            duos: duos
-          deferred.resolve(this)
-      else
-        @set
-          duos: []
-        deferred.resolve(this)
-    return deferred.promise
 
   creating: (e)->
     self = this

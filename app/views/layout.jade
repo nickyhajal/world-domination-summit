@@ -3,10 +3,8 @@ html(lang='en')
 	head
 		title= title
 		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
-		meta(name='apple-mobile-web-app-capable', content='yes')
-		meta(charset="utf-8")
-		| <script type="text/javascript" src="//use.typekit.net/acm5sii.js"></script>
-		| <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+		//- meta(name='apple-mobile-web-app-capable', content='yes')
+		meta(charset="UTF-8")
 		script.
 			var ap = {};
 			ap.authd = #{authd};
@@ -15,9 +13,9 @@ html(lang='en')
 		link(rel='stylesheet', href='/images/apple-icon.png')
 		link(rel='stylesheet', type="text/css", href='/app/assets/css/styles.css')
 		link(rel='stylesheet', type="text/css", href='/app/assets/css/fonts.css')
-		link(rel='stylesheet', type="text/css", href='/assets/css/font-awesome.css')
-		link(rel='stylesheet', type="text/css", href='/assets/css/tablet.css', media='screen and (max-width:1024px) and (min-width:628px)')
+		//- link(rel='stylesheet', type="text/css", href='/assets/css/tablet.css', media='screen and (max-width:1024px) and (min-width:628px)')
 		!= js('main')
+		script(type="text/javascript",src="https://maps.googleapis.com/maps/api/js?sensor=false&ver=3.7.1")
 	body(class='ui-body-a')
 		div(class="preload")
 		nav(id="top-nav")

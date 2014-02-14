@@ -36,7 +36,7 @@ config = (app, express, RedisStore, mysql) ->
             	password: 'a'
             	database: 'wdsfm13'
             	charset: 'utf8'
-            debug: true
+            debug: false
 
 	app.configure 'test', ->
 		app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
