@@ -51,7 +51,7 @@ config = (app, express, RedisStore, mysql) ->
             connection:
             	host: 'mysql'
             	user: 'chrisgui_wdsfm'
-            	password: 'eAEcmAocesMAEckeSAOeckAlcska11819A'
+            	password: 'eAEcmAocesMAEckeSAOeckAlcska11819A(cn'
             	database: 'chrisgui_wds'
             	charset: 'utf8'
             debug: true
