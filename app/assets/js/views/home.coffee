@@ -5,13 +5,29 @@ ap.Views.home = XView.extend
 		wall.init()
 
 window.wall =
+	###
 	grid: []
 	blocklist: []
 	_blocklist: []
 	blockcount: 0
 	blocks: {}
+	###
+
+	# Variables
+	used_content: {}
+	block_tpls: {}
+	tpls: []
+	contByType: {}
+	block_data: {}
+
+	# Methods
 	init: ->
+		$.scrollTo(0)
+		wall.$el = $('#waterfall')
+		wall.$q = $('#wall-queue')
 		$(window).on('scroll', wall.scroll)
+		@loadContent()
+		@loadTpls()
 	#	wall.registerInitialBlocks()
 	#	wall.fillNextBlock()
 	#	wall.fillWall()
@@ -20,11 +36,219 @@ window.wall =
 		$wall = $('#waterfall')
 		if (window.scrollY / window.scrollMaxY) * 10 > 8
 			$wall.css('height', ($wall.height()+800)+'px')
-			#wall.fillWall()
+			wall.displayPanels()
+
+	loadContent: ->
+		ap.api 'get content', {}, (rsp) =>
+			wall.content = _.shuffle rsp.content
+			for content in wall.content
+				if not wall.contByType[content.type]?
+					wall.contByType[content.type] = []
+				wall.contByType[content.type].push content
+
+			answers = {}
+			wall.ansByQ = {}
+			for answer in rsp.answers
+				unless answers[answer.userid]?
+					answers[answer.userid] = {}
+				unless wall.ansByQ[answer.questionid]?
+					wall.ansByQ[answer.questionid] = []
+					answers[answer.userid] = {}
+				wall.ansByQ[answer.questionid].push answer
+
+			wall.attendees = rsp.attendees
+			wall.atnById = {}
+			for atn in rsp.attendees
+				atn.distance = Math.ceil(atn.distance)
+				wall.atnById[atn.attendeeid] = atn
+			@fillContent($('.wall-section'))
+			@generateWallPanels()
+
+	loadTpls: ->
+		self = this
+		$('.tpl', '#wall-tpls').each ->
+			wall.tpls.push $(this).html()
+		$('#wall-tpls').remove()
+
+		$('.tpl', '#block-tpls').each ->
+			$t = $(this)
+			type = $t.data('type')
+			tpl =
+				html: $t.html()
+				type: type
+			unless wall.block_tpls[type]
+				wall.block_tpls[type] = []
+			wall.block_tpls[type].push tpl
+		$('#block-tpls').remove()
+
+	generateWallPanels: ->
+		while $('.wall-section', wall.$q).length < 10
+			@generateWallPanel()
+		@displayPanels()
+
+	generateWallPanel: ->
+		$tpl = @randTpl()
+		$tpl = @fillContent($tpl)
+		wall.$q.append($tpl)
+
+	displayPanels: ->
+		last = $('#waterfall .wall-section').last()
+		space = $('#waterfall').height() - (last.offset().top + last.height())
+		if space > 100
+			queue = $('.wall-section', wall.$q)
+			if queue? and queue.length
+				_next = $(queue[0])
+				next = _next.clone()
+				_next.remove()
+				wall.$el.append next
+				@postProcess next
+			queue = $('.wall-section', wall.$q)
+			if queue.length < 5
+				@generateWallPanels()
+			@displayPanels()
 
 	randTpl: ->
-	loadContent: ->
-		_.api 'get content', {}, (rsp) ->
+		tpl = $.random(0, wall.tpls.length-1)
+		return wall.tpls[tpl]
+
+	fillContent: ($tpl) ->
+		self = this
+		$tpl = $($tpl)
+		count = 0
+		$('.wall-content', $tpl).each ->
+			$t = $(this)
+			id = +(new Date())+'_'+count
+			$t.attr('id', id)
+			count += 1
+			type = $t.data('type')
+			opts = 
+				maxchars: $t.data('maxchars')
+				question: $t.data('question')
+				orientation: $t.data('orientation')
+			if opts.orientation
+				$t.addClass 'orientation-'+opts.orientation
+			if type is 'icon'
+				icon = _.shuffle(['zig-zag', 'dots', 'squiggle'])[0]
+				$t.addClass('icon-'+icon)
+			content = self.getContent(type, opts)
+			blocks = _.shuffle(wall.block_tpls[type])
+			block_html = _.template(blocks[0].html, content)
+			if type 
+				$t.addClass('wall-content-type-'+type)
+			$t.addClass('block-'+count)
+			$t.addClass('block')
+			$t.html block_html
+			wall.block_data[id] =
+				type: type
+				content: content
+				opts: opts
+		return $tpl
+
+	postProcess: ($tpl) ->
+		$('.attendee_map', $tpl).each ->
+			$t = $(this)
+			block = $t.closest('.block')
+			obj = wall.block_data[block.attr('id')]
+			content = obj.content
+			map = $t.attr('id', 'map-'+(+(new Date())))
+			profile_map_el = document.getElementById(map.attr('id'))
+			mapOptions = 
+				center: new google.maps.LatLng(content.lat, content.lon)
+				zoom: 8
+				scrollwheel: false
+				disableDefaultUI: true
+			profile_map = new google.maps.Map(profile_map_el, mapOptions)
+			line = [
+				new google.maps.LatLng(content.lat, content.lon),
+				new google.maps.LatLng('45.523452', '-122.676207'),
+			]
+			path = new google.maps.Polyline
+				path: line,
+				geodesic: true,
+				strokeColor: '#E27F1C',
+				strokeOpacity: 1.0,
+				strokeWeight: 3
+			path.setMap profile_map
+			bounds = new google.maps.LatLngBounds()
+			bounds.extend line[0]
+			bounds.extend line[1]
+			profile_map.fitBounds(bounds)
+
+	pruneUsed: (type)->
+		tk 'prune: '+type
+		tmp = []
+		###
+		count = 0
+		for cont in wall.used_content[type]
+			tmp.push cont
+			if (count > 5)
+				break
+			count += 1
+			###
+		wall.used_content[type] = tmp
+
+	getContent: (type, opts) ->
+		if type is 'icon'
+			icon =  
+				icon: ''
+			return icon
+
+		if type is 'speaker' or type is 'speaker_quote_photo'
+			type = 'speaker_quote'
+
+		if type is 'attendee'
+			attendees = _.shuffle(wall.attendees)
+			return attendees[0]
+
+		if type is 'attendee_map'
+			attendees = _.shuffle(wall.attendees)
+			for atn in attendees
+				if atn.distance > 300
+					return atn
+
+		if type is 'attendee_answer'
+			answers = _.shuffle(wall.ansByQ[opts.question])
+			for answer in answers
+				bits = opts.maxchars.split(':')
+				ans = answer.answer
+				if ans.length < +bits[1]
+					if wall.atnById[answer.userid]?
+						atn = wall.atnById[answer.userid]
+						atn.answer = ans
+						atn.pre_name  = ''
+						atn.post_name  = ''
+						if opts.question is 1
+							atn.answer = '<span class="answer_start">is coming to WDS because...</span> '+ans
+						if opts.question is 3
+							atn.post_name = "'s super-power is..."
+						return atn
+
+		fetchFrom = wall.contByType[type]
+		for content in fetchFrom
+			unless wall.used_content[type]
+				wall.used_content[type] = []
+			if (wall.used_content[type].indexOf(content.contentid) is -1)
+				data = JSON.parse(content.data)
+
+				pass = true
+
+				if opts.maxchars?
+					bits = opts.maxchars.split(':')
+					unless data[bits[0]].length < +bits[1]
+						pass = false
+
+				if opts.orientation?
+					unless data.orientation is opts.orientation
+						pass = false
+
+				if pass
+					wall.used_content[type].push content.contentid
+					return data
+
+		#If we made it here, we need to reset the used content and try again
+		@pruneUsed type
+		return @getContent type, opts
+
 
 
 
