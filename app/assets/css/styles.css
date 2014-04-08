@@ -197,6 +197,28 @@ div.speaker-year {
     text-align:                 center;
     color:                      rgb(32, 19, 10);
     font-size:                  15px;
+    font-family:                VitesseBold;
+}
+h2 {
+    margin-left:                -50px;
+    margin-right:               -50px;
+    margin-top:                 -50px;
+    font-size:                  12pt;
+    text-transform:             uppercase;
+    text--webkit-transform:     uppercase;
+    font-weight:                normal;
+    padding:                    22px 42px 18px;
+    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+}
+a:hover {
+    text-decoration:            none;
+}
+a {
+    color:                      rgb(226, 127, 28);
+}
+.pattern-bg b {
+    font-weight:                normal;
+    font-family:                VitesseBold;
 }
 * {
     line-height:                inherit;
@@ -205,7 +227,8 @@ body {
     padding:                    0px;
     margin:                     0px;
     background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
-    font-family:                vitesse;
+    font-family:                VitesseBook;
+    color:                      rgb(35, 31, 32);
 }
 #page-home #header-title:after {
     height:                     110px;
@@ -240,9 +263,9 @@ h1#header-title {
     left:                       58px ! important;
 }
 h1 {
-    font-family:                Vitesse;
-    font-weight:                normal;
-    font-size:                  26pt;
+    font-size:                  30px;
+    line-height:                140%;
+    font-family:                VitesseBook;
 }
 input.text, textarea.text {
     padding:                    8px;
@@ -302,7 +325,7 @@ div#nav-links a {
     color:                      rgb(226, 127, 28);
     display:                    block;
     float:                      left;
-    font-family:                vitesse;
+    font-family:                VitesseBook;
     margin-right:               0px;
     padding:                    5px 0px 6px;
     text-align:                 center;
@@ -684,12 +707,12 @@ div.block-content {
     margin-top:                 15px;
 }
 .speaker-name {
+    color:                      rgb(32, 19, 10);
+    font-size:                  15px;
     position:                   relative;
     text-align:                 center;
-    color:                      rgb(32, 19, 10);
     text-decoration:            underline;
-    font-size:                  15px;
-    font-weight:                bold;
+    font-family:                VitesseBold;
 }
 .tpl-1 div.wall-content-type-speaker_quote.block-7 {
     font-weight:                normal;
@@ -1248,7 +1271,7 @@ div.wall-content-type-featured_tweet {
     background:                 none repeat scroll 0px 0px rgb(255, 255, 255);
 }
 .tpl-1 .block-11 div.tweet {
-    font-family:                vitesse;
+    font-family:                VitesseBook;
     font-size:                  11pt;
     text-align:                 center;
     color:                      rgb(32, 19, 10);
