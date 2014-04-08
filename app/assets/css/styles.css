@@ -95,6 +95,16 @@ div#wall-queue {
     height:                     156px;
     border:                     11px solid rgb(242, 242, 234);
 }
+div#page_content:before {
+    display:                    block;
+    content:                    "";
+    position:                   absolute;
+    height:                     100px;
+    width:                      100px;
+    top:                        -20px;
+    background:                 none repeat scroll 0% 0% blue;
+    right:                      -100px;
+}
 div#page_content {
     background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
     margin-left:                -2px;
@@ -220,6 +230,23 @@ a {
     font-weight:                normal;
     font-family:                VitesseBold;
 }
+hr.zig-zags_blue {
+    background-color:           transparent;
+    background-image:           url("/images/separators/zig-zags_blue.png?1");
+    background-repeat:          no-repeat;
+    background-attachment:      scroll;
+    background-position:        0px 0px;
+    background-clip:            border-box;
+    background-origin:          padding-box;
+    height:                     90px;
+    display:                    block;
+    background-size:            100% auto ! important;
+    margin-left:                -15px;
+    width:                      720px;
+}
+hr {
+    border:                     0px none;
+}
 * {
     line-height:                inherit;
 }
@@ -264,9 +291,11 @@ h1#header-title {
     font-size:                  20pt;
 }
 h1 {
-    font-size:                  30px;
     line-height:                140%;
-    font-family:                VitesseBook;
+    font-family:                VitesseLight;
+    font-size:                  27px;
+    margin-top:                 0px;
+    width:                      604px;
 }
 input.text, textarea.text {
     padding:                    8px;

@@ -7,6 +7,11 @@ window.XView = Backbone.View.extend
 		output: false
 	initialize: ->
 		@initRender()
+		view = this.options.view
+		sidebar = ap.template_options['pages_'+view]?.sidebar ? false
+		if ap.template_options['pages_'+view]?
+			for opt_name,val of ap.template_options['pages_'+view]
+				this.options[opt_name] = val
 
 	initRender: ->
 		if @options
@@ -14,11 +19,18 @@ window.XView = Backbone.View.extend
 
 		if this.options.view?
 			view = this.options.view
-			sidebar = ap.template_options['pages_'+view]?.sidebar ? false
-			if sidebar
+			if this.options.sidebar?
 				html = ap.templates['sidebar_'+sidebar]
 				tk html
 				$('#sidebar_shell').html html
+
+	post: (html) ->
+		shell = $('<div/>').html(html)
+		icon = this.options.icon ? 'globe'
+		$('#page_content', shell).addClass('corner-icon-'+icon)
+		tk shell.html()
+		return shell.html()
+
 
 
 	##
@@ -30,6 +42,7 @@ window.XView = Backbone.View.extend
 		html = @out
 		if not html and @options.out?
 			html = @options.out
+		html = @post(html)
 		switch output_type
 			when 'html'
 				tmpEl = @el;
