@@ -1,2 +1,2 @@
 #! /bin/bash
-node-dev server.js
+NODE_ENV=development node-dev server.js

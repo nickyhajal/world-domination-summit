@@ -40,20 +40,21 @@ ap.goTo = (panel = '', options = {}) ->
 	else
 		ap.initd = true
 	ap.onPanel = panel
-	if ap.Views[panel]?
-		if ap.currentView?
-			ap.currentView.unbind()
-			ap.currentView.undelegateEvents()
-		$('#content_shell').attr('class', '')
-		options.el = $('#content_shell')
-		options.out = ap.templates['pages_'+panel] + '<div class="clear"></div>'
-		options.render = 'replace'
-		options.onRender = ->
-			$('#content_shell').css('opacity', '1')
-		setTimeout ->
-			ap.currentView = new ap.Views[panel] options
-		, 120
-		$('body').attr('id', 'page-'+panel)
+	view = ap.Views[panel] ? ap.Views.default
+	if ap.currentView?
+		ap.currentView.unbind()
+		ap.currentView.undelegateEvents()
+	$('#content_shell').attr('class', '')
+	options.el = $('#content_shell')
+	options.out = ap.templates['pages_'+panel] + '<div class="clear"></div>'
+	options.render = 'replace'
+	options.view = panel
+	options.onRender = ->
+		$('#content_shell').css('opacity', '1')
+	setTimeout ->
+		ap.currentView = new view options
+	, 120
+	$('body').attr('id', 'page-'+panel)
 
 ap.back = ->
 	history.go(-1);

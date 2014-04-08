@@ -1,7 +1,7 @@
 ## 
  # Extended backbone view
  ##
-window.XView = Backbone.View.extend(
+window.XView = Backbone.View.extend
 	out: ''
 	defaults: 
 		output: false
@@ -11,6 +11,15 @@ window.XView = Backbone.View.extend(
 	initRender: ->
 		if @options
 			@render @options.render
+
+		if this.options.view?
+			view = this.options.view
+			sidebar = ap.template_options['pages_'+view]?.sidebar ? false
+			if sidebar
+				html = ap.templates['sidebar_'+sidebar]
+				tk html
+				$('#sidebar_shell').html html
+
 
 	##
 	 # Render now simple outputs in the channel
@@ -41,8 +50,6 @@ window.XView = Backbone.View.extend(
 	rendered: ()->
 		# Child over-writes
 	
-)
-
 ##
  # Extended backbone model
  ##

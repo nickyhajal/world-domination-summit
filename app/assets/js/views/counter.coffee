@@ -2,6 +2,7 @@ ap.Counter =
 	init: ->
 		@cnt = $('#counter-shell')
 		@initEvents()
+		@countdown()
 	initEvents: ->
 		$(window).on('scroll', @scroll)
 	scroll: ->
@@ -13,3 +14,16 @@ ap.Counter =
 		else
 			cnt.removeClass('counter-fixed')
 			cnt.css('left', '15px')
+	countdown: ->
+		now = new Date().getTime()
+		end = new Date(2014,6,11).getTime()
+		diff = (end - now) / 1000
+		days = Math.floor(diff / 86400)
+		hours = Math.floor((diff % 86400) / 3600)
+		minutes = Math.floor(((diff % 86400) % 3600) / 60)
+		$('#counter-days div').text(days)
+		$('#counter-hours div').text(hours)
+		$('#counter-mins div').text(minutes)
+		setTimeout =>
+			@countdown()
+		, 60001

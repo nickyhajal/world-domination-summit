@@ -35,7 +35,7 @@ config = (app, express, RedisStore, mysql) ->
             	host: 'localhost'
             	user: 'root'
             	password: 'a'
-            	database: 'wdsfm13'
+            	database: 'wds'
             	charset: 'utf8'
             debug: false
 

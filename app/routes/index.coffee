@@ -7,54 +7,102 @@ redis = require("redis")
 rds = redis.createClient()
 fs = require('fs')
 _ = require('underscore')
+marked = require('marked')
 execFile = require('child_process').execFile;
+expire = 3600
 routes = (app) ->
-	app.all '/git-hook', (req, res) ->
-		res.render "../views/git-hook",
-			layout: false
-		console.log req.query
-		execFile 'world-domination-summit-sync', (err, stdout, stderr) ->
-			tk stdout
-			tk stderr
-
-
+	if app.settings.env is 'development'
+		expire = 10
 	app.get '/*', (req, res) ->
 		page = 'index'
 		get_templates {}, 'pages', (tpls) ->
 			get_templates tpls, 'parts', (tpls) ->
-				res.render "../views/#{page}",
-					title: "World Domination Summit"
-					env: '"'+process.env.NODE_ENV+'"'
-					authd: 1
-					tpls: JSON.stringify(tpls)
+				get_templates tpls, '_content', (tpls) ->
+					get_templates tpls, '_sidebars', (tpls) ->
+						res.render "../views/#{page}",
+							title: "World Domination Summit"
+							env: '"'+process.env.NODE_ENV+'"'
+							authd: 1
+							tpls: JSON.stringify(tpls)
 
 
 get_templates = (tpls, type, cb) ->
 	rds.get 'tpls_'+type, (err) ->
-		execFile 'find', [ __dirname + "/../views/"+type], (err, stdout, stderr) ->
+		if type is '_content' or type is '_sidebars'
+			path = "/../../" + type
+		else
+			path = "/../views/"+type
+		tk path
+		path = __dirname + path
+		execFile 'find', [ path ], (err, stdout, stderr) ->
 			files = stdout.split '\n'
 			rsp = {}
 
 			# This will be called when all files are rendered
 			finishedRendering = ->
 				rds.set 'tpls', JSON.stringify(tpls), ->
-					rds.expire 'tpls_'+type, 1000, ->
+					rds.expire 'tpls_'+type, expire, ->
 						cb tpls
 
 			# This renders each file
 			renderTplFile = (files, index) ->
 				if files[index]?
 					file = files[index]
-					if (file.indexOf '.jade' ) > -1 and (file.indexOf 'index') is -1 and (file.indexOf 'response') is -1
-						jade.renderFile file, {pretty: false}, (err, str) ->
-							if not err
+					if file.indexOf('.') > -1
+						ext = file.split(type)[1].split('.')?[1]
+						if ext is 'jade' or ext is 'md' or ext is 'html'
+							tpl_opts = ''
+							renderFile = file
+							renderOpts =
+								pretty: false
+
+							# If md or html, it's a content page
+							if ext is 'md' or ext is 'html'
+
+								# Check if it's a sidebar
+								if file.indexOf('_sidebar') > -1
+									tpl_type = 'sidebar'
+									renderFile = 'app/views/sidebar.jade'
+								else
+									tpl_type = 'pages'
+									renderFile = 'app/views/content.jade'
+
+								pre_content = fs.readFileSync(file,'utf8');
+								if ext is 'md'
+									pre_content = marked(pre_content)
+								name = file.split(/_[a-z]*\//)[1].split('.')[0]
+								content = ''
+								tplStarted = false
+								if tpl_type is 'pages'
+									for line in pre_content.split("\n")
+										if tplStarted
+											content += line+"\n"
+										else
+											if line.indexOf('<h1') > -1 or line.indexOf('<h2') > -1
+												content += line+"\n"
+												tplStarted = true
+											else
+												tpl_opts += line+"\n"
+								else
+									content = pre_content
+								if tpl_opts.length
+									tpl_opts = tpl_opts + '----tpl_opts----'
+								renderOpts.content = content
+							else
+								tpl_type = type
 								name = _.last file.split '/'
 								name = name.replace '.jade', ''
-								tpls[type+'_'+name] = str
-							else
-								tk 'ERR IN: '+file
-								tk err
-								tk '-----------------'
+
+
+							jade.renderFile renderFile, renderOpts, (err, str) ->
+								if not err
+									tpls[tpl_type+'_'+name] = tpl_opts + str
+								else
+									tk 'ERR IN: '+file
+									tk err
+									tk '-----------------'
+								renderTplFile files, (index + 1)
+						else
 							renderTplFile files, (index + 1)
 					else
 						renderTplFile files, (index + 1)
