@@ -33,7 +33,7 @@ ap.goTo = (panel = '', options = {}) ->
 	if panel isnt 'loading'
 		for timo in ap.loadingTimos
 			clearTimeout(timo)
-	panel = if panel and panel.length then panel else 'home'
+	panel = if panel and panel.length then _.trim(panel, '/') else 'home'
 	$s = $('#')
 	if ap.initd
 		$('#content_shell').css('opacity', '0')
