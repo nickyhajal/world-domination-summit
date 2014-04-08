@@ -27,6 +27,7 @@ app.set('oa', oa);
 require('./app/views/helpers')(app);
 require('./app/routes/api')(app);
 require('./app/routes/index')(app);
+require('./app/routes/git-hook')(app);
 app.listen(app.settings.port, function(){
   console.log("Express server listening on port %d in %s mode", app.settings.port, app.settings.env);
 });

@@ -1,6 +1,6 @@
 jQuery.fn.scan 
 	add: 
-		id: 'left-sidebar'
+		id: 'sidebar'
 		fnc: ->
 			$el = $(this)
 			type = $el.data('sidebar')

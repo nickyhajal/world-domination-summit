@@ -36,7 +36,8 @@
     "q": "~0.9.7",
     "coffee-trace": "~1.4.0",
     "mysql": "~2.0.0-rc2",
-    "elasticemail": "~0.1.0"
+    "elasticemail": "~0.1.0",
+    "marked": "~0.3.1"
   },
   "devDependencies": {
     "mocha": "~1.0.3",

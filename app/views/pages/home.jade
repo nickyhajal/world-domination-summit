@@ -5,92 +5,83 @@ h1(id="header-title")
 		a(href="/register") Join Us?
 	div(class="clear")
 section(id="body-content")
-	div(id="video-shell")
+	div(id="video-shell", class="link-block")
 		div(id="video-underlay")
 		div(id="video")
 	div(id="wall-queue")
 	div(id="waterfall")
 		div(class="wall-section tpl-0")
-			div(class="waterfall-content", id="reg-open")
+			div(class="waterfall-content link-block", id="reg-open")
 			div(class="waterfall-flare waterfall-dots")
-			div(class="waterfall-content", id="reg-schedule")
-			div(class="waterfall-content", id="reg-army")
+			div(class="waterfall-content link-block", id="reg-schedule")
+			div(class="waterfall-content link-block", id="reg-army")
 			div(class="waterfall-content", id="reg-attendees")
 			div(class="waterfall-content", id="reg-chris")
-			div(class="waterfall-content", id="reg-story")
-			div(class="waterfall-content", id="reg-headquarters")
-			div(class="wall-content", data-type="featured_tweet")
-			div(class="wall-content", data-type="featured_tweet")
+			div(class="waterfall-content link-block", id="reg-story")
+			div(class="waterfall-content link-block", id="reg-headquarters")
+			div(class="wall-content", data-type="attendee_answer", data-question="1", data-maxchars="answer:180")
+			div(class="wall-content", data-type="flickr_stream", data-orientation="landscape")
 			div(class="wall-content", data-type="icon")
 			div(class="wall-content", data-type="icon")
 			div(class="wall-content", data-type="icon")
 			div(class="wall-content", data-type="icon")
 
+	//- Add a template here to enter it into the random display
 	div(id="wall-tpls")
 		div(class="tpl")
 			div(class="wall-section tpl-1")
-				div(class="wall-content", data-type="featured_tweet")
-				div(class="wall-content", data-type="flickr_stream", data-orientation="portrait")
 				div(class="wall-content", data-type="icon")
 				div(class="wall-content", data-type="speaker")
-				div(class="wall-content", data-type="attendee")
-				div(class="wall-content", data-type="icon")
-				div(class="wall-content", data-type="speaker_quote")
-				div(class="wall-content", data-type="flickr_stream", data-orientation="landscape")
-				div(class="wall-content", data-type="featured_tweet")
-				div(class="wall-content", data-type="attendee")
-				div(class="wall-content", data-type="icon")
+				div(class="wall-content", data-type="attendee", data-atn_form="envelope")
 				div(class="wall-content", data-type="icon")
 				div(class="wall-content", data-type="flickr_stream", data-orientation="landscape")
+				div(class="wall-content", data-type="flickr_stream", data-orientation="portrait")
+				div(class="wall-content", data-type="speaker_quote", data-maxchars="quote:120")
+				div(class="wall-content", data-type="flickr_stream", data-orientation="landscape")
+				div(class="wall-content", data-type="attendee_map")
+				div(class="wall-content", data-type="icon")
+				div(class="wall-content", data-type="featured_tweet", data-maxchars="tweet:90")
 		div(class="tpl")
 			div(class="wall-section tpl-2")
+				div(class="wall-content", data-type="attendee_map", data-max="distance:1000")
+				div(class="wall-content", data-type="featured_tweet")
+				div(class="wall-content", data-type="flickr_stream", data-orientation="landscape")
+				div(class="wall-content", data-type="icon")
+				div(class="wall-content", data-type="flickr_stream", data-orientation="landscape")
 				div(class="wall-content", data-type="speaker")
-				div(class="wall-content", data-type="featured_tweet")
-				div(class="wall-content", data-type="icon")
-				div(class="wall-content", data-type="flickr_stream", data-orientation="landscape")
 				div(class="wall-content", data-type="attendee_answer", data-question="1", data-maxchars="answer:180")
-				div(class="wall-content", data-type="flickr_stream", data-orientation="landscape")
-				div(class="wall-content", data-type="icon")
-				div(class="wall-content", data-type="speaker_quote", data-maxchars="quote:200")
-				div(class="wall-content", data-type="featured_tweet")
-				div(class="wall-content", data-type="attendee_map")
-				div(class="wall-content", data-type="icon")
-
 		div(class="tpl")
 			div(class="wall-section tpl-3")
-				div(class="wall-content", data-type="flickr_stream", data-orientation="landscape")
-				div(class="wall-content", data-type="featured_tweet")
-				div(class="wall-content", data-type="icon")
-				div(class="wall-content", data-type="attendee_map")
+				div(class="wall-content", data-type="attendee", data-atn_form="box")
 				div(class="wall-content", data-type="flickr_stream", data-orientation="landscape")
 				div(class="wall-content", data-type="speaker")
-				div(class="wall-content", data-type="attendee_answer", data-question="1", data-maxchars="answer:180")
+				div(class="wall-content", data-type="icon")
 				div(class="wall-content", data-type="icon")
 				div(class="wall-content", data-type="featured_tweet")
+				div(class="wall-content", data-type="flickr_stream", data-orientation="portrait")
 				div(class="wall-content", data-type="speaker_quote", data-maxchars="quote:200")
+				div(class="wall-content", data-type="attendee_map")
 				div(class="wall-content", data-type="icon")
-
-
+				div(class="wall-content", data-type="flickr_stream", data-orientation="landscape")
 		div(class="tpl")
 			div(class="wall-section tpl-4")
 				div(class="wall-content", data-type="flickr_stream", data-orientation="landscape")
-				div(class="wall-content", data-type="speaker")
-				div(class="wall-content", data-type="featured_tweet")
-				div(class="wall-content", data-type="attendee_answer", data-question="1", data-maxchars="answer:380")
-				div(class="wall-content", data-type="flickr_stream", data-orientation="portrait")
 				div(class="wall-content", data-type="attendee_map")
+				div(class="wall-content", data-type="icon")
 				div(class="wall-content", data-type="flickr_stream", data-orientation="portrait")
-				div(class="wall-content", data-type="attendee_answer", data-question="3", data-maxchars="answer:180")
-				div(class="wall-content", data-type="speaker_quote", data-maxchars="quote:200")
+				div(class="wall-content", data-type="featured_tweet")
+				div(class="wall-content", data-type="flickr_stream", data-orientation="landscape")
+				div(class="wall-content", data-type="attendee_answer", data-question="1", data-maxchars="answer:135")
+				div(class="wall-content", data-type="attendee_map", data-max="distance:800")
+				div(class="wall-content", data-type="flickr_stream", data-orientation="landscape")
+				div(class="wall-content", data-type="flickr_stream", data-orientation="landscape")
+				div(class="wall-content", data-type="speaker")
 				div(class="wall-content", data-type="icon")
-				div(class="wall-content", data-type="icon")
-				div(class="wall-content", data-type="icon")
-				div(class="wall-content", data-type="icon")
-
 
 	div(id="block-tpls")
 		div(class="tpl", data-type="featured_tweet")
 			div(class="tweet-content")
+				div(class="tweet-avatar", style="background:url({{ tweeter_img }})")
 				div(class="tweet") {{ tweet }}
 				div(class="tweet-by") tweeted by @{{ tweeter }}
 
@@ -101,22 +92,29 @@ section(id="body-content")
 
 		div(class="tpl", data-type="attendee")
 			div(class="block-content")
-				span {{ fname }} {{ lname }} 
-				| is traveling {{ distance }} miles to WDS 2014
+				div(class="pattern-bg")
+					span {{ fname }} {{ lname }} 
+					| is traveling 
+					b {{ distance }} 
+					| miles to WDS 2014
 
 		div(class="tpl", data-type="attendee_map")
 			div(class="block-content")
 				div(class="attendee_map_text")
 					span {{ fname }} {{ lname }} 
-					| is traveling {{ distance }} miles to WDS 2014!
+					| is traveling 
+					b {{ distance }} 
+					| miles to WDS 2014!
 				div(class="attendee_map")
 
 		div(class="tpl", data-type="speaker")
 			div(class="speaker-photo", style="background:url({{ speaker_img }})")
 			div(class="speaker-name") {{ speaker }}
+			div(class="speaker-year") WDS {{ year }}
 
 		div(class="tpl", data-type="attendee_answer")
 			div(class="block-content")
+				div(class="answer-avatar", style="background:url({{ pic }})")
 				span {{ pre_name }}{{ fname }} {{ lname }}{{ post_name }}
 				div(class="answer") {{ answer }}
 
@@ -124,9 +122,11 @@ section(id="body-content")
 			div(class="block-content")
 				div(class="speaker-quote") {{ quote }}
 				div(class="speaker-name") {{ speaker }}
+				div(class="speaker-year") WDS {{ year }}
 
 		div(class="tpl", data-type="speaker_quote_photo")
 			div(class="block-content")
 				div(class="speaker-photo", style="background:url({{ speaker_img }})")
 				div(class="speaker-quote") {{ quote }}
 				div(class="speaker-name") {{ speaker }}
+				div(class="speaker-year") WDS {{ year }}
