@@ -21,7 +21,6 @@ window.XView = Backbone.View.extend
 			view = this.options.view
 			if this.options.sidebar?
 				html = ap.templates['sidebar_'+sidebar]
-				tk html
 				$('#sidebar_shell').html html
 
 	post: (html) ->
