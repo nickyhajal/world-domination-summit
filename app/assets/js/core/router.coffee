@@ -16,18 +16,26 @@ window.Router = Backbone.Router.extend
 		localStorage.clear()
 		@stop
 
-###
-Show Loading
-###
 ap.initd = false
 ap.loadingTimos = []
+
+###
+# Show Loading
+###
 ap.loading = ->
 	ap.loadingTimos.push setTimeout ->
 		ap.goTo 'loading'
 	, 50
+
+###
+#  Change the URL and trigger a page change
+###
 ap.nav = (uri) ->
 	Backbone.history.navigate uri, {trigger: true}
 
+###
+# This re-renders the page to show new content
+###
 ap.goTo = (panel = '', options = {}) ->
 	# Go to the panel
 	if panel isnt 'loading'
@@ -35,10 +43,6 @@ ap.goTo = (panel = '', options = {}) ->
 			clearTimeout(timo)
 	panel = if panel and panel.length then _.trim(panel, '/') else 'home'
 	$s = $('#')
-	if ap.initd
-		$('#content_shell').css('opacity', '0')
-	else
-		ap.initd = true
 	ap.onPanel = panel
 	view = ap.Views[panel] ? ap.Views.default
 	if ap.currentView?
@@ -49,8 +53,6 @@ ap.goTo = (panel = '', options = {}) ->
 	options.out = ap.templates['pages_'+panel] + '<div class="clear"></div>'
 	options.render = 'replace'
 	options.view = panel
-	options.onRender = ->
-		$('#content_shell').css('opacity', '1')
 	setTimeout ->
 		ap.currentView = new view options
 	, 120

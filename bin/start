@@ -1,2 +1,2 @@
 #! /bin/bash
-NODE_ENV=development node-dev server.js
+NODE_ENV=development DB_HOST=localhost DB_USER=root DB_PW=a DB=wds node-dev server.js
