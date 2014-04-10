@@ -32,7 +32,6 @@ get_templates = (tpls, type, cb) ->
 			path = "/../../" + type
 		else
 			path = "/../views/"+type
-		tk path
 		path = __dirname + path
 		execFile 'find', [ path ], (err, stdout, stderr) ->
 			files = stdout.split '\n'
@@ -59,7 +58,8 @@ get_templates = (tpls, type, cb) ->
 							# If md or html, it's a content page
 							if ext is 'md' or ext is 'html'
 
-								# Check if it's a sidebar
+								# Check if it's a sidebar and use the
+								# right content template
 								if file.indexOf('_sidebar') > -1
 									tpl_type = 'sidebar'
 									renderFile = 'app/views/sidebar.jade'
@@ -68,25 +68,36 @@ get_templates = (tpls, type, cb) ->
 									renderFile = 'app/views/content.jade'
 
 								pre_content = fs.readFileSync(file,'utf8');
+
+								# Process markdown
 								if ext is 'md'
 									pre_content = marked(pre_content)
+
+								# Get the slug
 								name = file.split(/_[a-z]*\//)[1].split('.')[0]
 								content = ''
+
+								# If a content page, figure out where the 
+								# properties stop and the content begins
 								tplStarted = false
 								if tpl_type is 'pages'
 									for line in pre_content.split("\n")
 										if tplStarted
 											content += line+"\n"
 										else
-											if line.indexOf('<h1') > -1 or line.indexOf('<h2') > -1
+											if line.replace('<p>', '').replace('</p>', '').indexOf('<') > -1
 												content += line+"\n"
 												tplStarted = true
 											else
 												tpl_opts += line+"\n"
 								else
 									content = pre_content
+
+								# Append a separator after the options that 
+								# we can use later
 								if tpl_opts.length
 									tpl_opts = tpl_opts + '----tpl_opts----'
+									
 								renderOpts.content = content
 							else
 								tpl_type = type

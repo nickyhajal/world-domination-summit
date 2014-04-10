@@ -20,4 +20,28 @@ icon: parachute
 		<div class="main-schedule-descr">Main Stage, Workshops, Fun</div>
 	</div>
 </div>
+<hr class="line-canvas">
 
+#### Featured Speakers
+Among other surprises our 2013 lineup included a guest appearance from Superman
+<div class="speaker-box">
+	<div class="speaker-name">Tom Cruise</div>
+	Tom is an actor duh, have you seen his films?
+</div>
+<div class="speaker-box">
+	<div class="speaker-name">Tom Cruise</div>
+	Tom is an actor duh, have you seen his films?
+</div>
+
+<hr class="line-canvas">
+
+#### Returning Speakers
+These featured speakers from previous years will return to lead workshops
+<div class="speaker-box">
+	<div class="speaker-name">Tom Cruise</div>
+	Tom is an actor duh, have you seen his films?
+</div>
+<div class="speaker-box">
+	<div class="speaker-name">Tom Cruise</div>
+	Tom is an actor duh, have you seen his films?
+</div>

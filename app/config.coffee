@@ -32,16 +32,12 @@ config = (app, express, RedisStore, mysql) ->
 		app.set 'db', 
             client: 'mysql'
             connection:
-            	host: 'localhost'
-            	user: 'root'
-            	password: 'a'
-            	database: 'wds'
+            	host: process.DB_HOST
+            	user: process.DB_USER
+            	password: process.DB_PW
+            	database: process.DB
             	charset: 'utf8'
             debug: false
-
-	app.configure 'test', ->
-		app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-		app.set('port', 2222);
 
 	app.configure 'production', ->
 		app.set('port', 7676);
@@ -49,11 +45,10 @@ config = (app, express, RedisStore, mysql) ->
 		app.set 'db', 
             client: 'mysql'
             connection:
-            	host: 'mysql'
-            	user: 'chrisgui_wdsfm'
-            	password: 'eAEcmAocesMAEckeSAOeckAlcska11819A(cn'
-            	database: 'chrisgui_wds'
+            	host: process.DB_HOST
+            	user: process.DB_USER
+            	password: process.DB_PW
+            	database: process.DB
             	charset: 'utf8'
-            debug: true
 
 module.exports = config
