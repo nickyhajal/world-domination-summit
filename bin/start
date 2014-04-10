@@ -1,2 +1,2 @@
 #! /bin/bash
-NODE_ENV=development DB_HOST=localhost DB_USER=root DB_PW=a DB=wds node-dev server.js
+NODE_ENV=development MM_USER=chris.guillebeau+wds@gmail.com MM_PW=a0c9527ce4fb84b792e439fcf8d7666a TWIT_KEY=rk0akB9FIpVVpdayafKD6w TWIT_PW=rRDwE07S70OFqeCKrQDiwqjbCrHLN1sTslznZis DB_HOST=localhost DB_USER=root DB_PW=a DB=wds SESS_SEC=aosemcaooem node-dev server.js

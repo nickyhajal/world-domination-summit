@@ -4,16 +4,13 @@ config = (app, express, RedisStore, mysql) ->
 		app.set('views', __dirname + '/views')
 		app.set('view engine', 'jade')
 		app.set('view options', { pretty: true });
-		app.set('twitter_consumer_key', 'rk0akB9FIpVVpdayafKD6w')
-		app.set('twitter_consumer_secret', 'rRDwE07S70OFqeCKrQDiwqjbCrHLN1sTslznZis')
+		app.set('twitter_consumer_key', process.env.TWIT_KEY)
+		app.set('twitter_consumer_secret', process.env.TWIT_SEC)
 		app.set('uploadDir', '/tmp')
-		app.set 'mail', 
-			username: 'c5cc1518-87e4-4313-afc5-9a298ac033c7'
-			apiKey: 'c5cc1518-87e4-4313-afc5-9a298ac033c7'
 
 		app.use(express.cookieParser())
 		app.use express.session
-			secret: 'SOcmAO239SCM01cm10cmAO2aoiesnrtoamOSEMCOemscoaesmc'
+			secret: process.env.SESS_SEC
 			store: new RedisStore
 		app.use(express.bodyParser({uploadDir:'/tmp_uploads', keepExtensions: true}))
 		app.use(express.methodOverride())
@@ -32,10 +29,10 @@ config = (app, express, RedisStore, mysql) ->
 		app.set 'db', 
             client: 'mysql'
             connection:
-            	host: process.DB_HOST
-            	user: process.DB_USER
-            	password: process.DB_PW
-            	database: process.DB
+            	host: process.env.DB_HOST
+            	user: process.env.DB_USER
+            	password: process.env.DB_PW
+            	database: process.env.DB
             	charset: 'utf8'
             debug: false
 
@@ -45,10 +42,10 @@ config = (app, express, RedisStore, mysql) ->
 		app.set 'db', 
             client: 'mysql'
             connection:
-            	host: process.DB_HOST
-            	user: process.DB_USER
-            	password: process.DB_PW
-            	database: process.DB
+            	host: process.env.DB_HOST
+            	user: process.env.DB_USER
+            	password: process.env.DB_PW
+            	database: process.env.DB
             	charset: 'utf8'
 
 module.exports = config
