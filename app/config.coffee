@@ -19,12 +19,12 @@ config = (app, express, RedisStore, mysql) ->
 			build: false
 		)
 		app.use(app.router)
-		app.use(express.static(__dirname + '/public'));
+		app.use(express.static(__dirname + '/public'))
+		app.set('port', process.env.PORT)
 
 	
 
 	app.configure 'development', ->
-		app.set('port', 6767);
 		app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 		app.set 'db', 
             client: 'mysql'
@@ -37,7 +37,6 @@ config = (app, express, RedisStore, mysql) ->
             debug: false
 
 	app.configure 'production', ->
-		app.set('port', 7676);
 		app.use(express.errorHandler());
 		app.set 'db', 
             client: 'mysql'
