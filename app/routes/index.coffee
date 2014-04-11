@@ -67,10 +67,10 @@ get_templates = (tpls, type, cb) ->
 								# right content template
 								if file.indexOf('_sidebar') > -1
 									tpl_type = 'sidebar'
-									renderFile = 'app/views/sidebar.jade'
+									renderFile = __dirname + '/../views/sidebar.jade'
 								else
 									tpl_type = 'pages'
-									renderFile = 'app/views/content.jade'
+									renderFile = __dirname + '/../views/content.jade'
 
 								pre_content = fs.readFileSync(file,'utf8');
 
