@@ -118,7 +118,6 @@ div.corner-icon-parachute:before {
     background-position:        -105px 0px ! important;
 }
 div#page_content:before {
-    background:                 url("/images/icon-sprites_corner.png?12") no-repeat scroll 0px center / 520px auto transparent;
     content:                    "";
     display:                    block;
     height:                     100px;
@@ -126,6 +125,7 @@ div#page_content:before {
     width:                      104px;
     right:                      -94px;
     top:                        -11px;
+    background:                 url("/images/icon-sprites_corner.png") no-repeat scroll 0px center / 520px auto transparent;
 }
 div.corner-icon-theater:before {
     background-position:        -208px 0px ! important;
@@ -175,8 +175,8 @@ a.sidebar-button:before {
     right:                      0px;
     margin:                     0px auto;
     top:                        25px;
-    background:                 url("/images/icon-sprites_sidebar.png?1") no-repeat scroll 0px 0px / 204px auto transparent;
     width:                      101px;
+    background:                 url("/images/icon-sprites_sidebar.png") no-repeat scroll 0px 0px / 204px auto transparent;
 }
 #sidebar a.sidebar-button {
     box-sizing:                 border-box;
@@ -365,7 +365,6 @@ a {
 }
 hr.zig-zags_blue {
     background-color:           transparent;
-    background-image:           url("/images/separators/zig-zags_blue.png?1");
     background-repeat:          no-repeat;
     background-attachment:      scroll;
     background-position:        0px 0px;
@@ -380,6 +379,7 @@ hr.zig-zags_blue {
     margin-left:                -15px;
     width:                      720px;
     margin-bottom:              37px;
+    background-image:           url("/images/separators/zig-zags_blue.png");
 }
 .line-canvas {
     width:                      568px;
@@ -690,8 +690,8 @@ div#nav-links a:last-of-type {
     margin-right:               0px;
 }
 #nav-links a:hover {
-    background:                 url("/images/button-sprites_nav-hover.png?1") repeat scroll 0px 0px / 730px auto transparent;
     color:                      rgb(33, 23, 10);
+    background:                 url("/images/button-sprites_nav-hover.png") repeat scroll 0px 0px / 730px auto transparent;
 }
 a#nav-story {
     width:                      100px;
@@ -746,6 +746,7 @@ a#logo {
     position:                   relative;
     top:                        20px;
     left:                       37px;
+    z-index:                    1;
 }
 div.counter-fixed {
     position:                   fixed ! important;
