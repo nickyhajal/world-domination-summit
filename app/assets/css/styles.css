@@ -737,6 +737,8 @@ div#nav-links {
 }
 div.preload {
     display:                    none;
+    position:                   absolute;
+    left:                       -9999px;
 }
 a#logo {
     background:                 url("/images/logo.png") repeat scroll 0% 0% / 100% auto transparent;
