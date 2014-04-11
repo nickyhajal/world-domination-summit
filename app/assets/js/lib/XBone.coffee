@@ -28,6 +28,7 @@ window.XView = Backbone.View.extend
 		shell = $('<div/>').html(html)
 		icon = @options.icon ? 'globe'
 		$('#page_content', shell).addClass('corner-icon-'+icon)
+		tk @options.photo_head
 		if @options.photo_head?
 			shell = @renderPhotoHeader(shell)
 		return shell.html()

@@ -36,7 +36,9 @@ ap.initTemplates = ->
 		opts = opts.split('\n')
 		for opt in opts
 			if opt.length
-				[name, val] = opt.split(':')
+				bits = opt.split(':')
+				name = bits[0]
+				val = bits.splice(1).join(':')
 				o[_.trim(name)] = _.trim(val)
 		ap.template_options[opt_name] = o
 

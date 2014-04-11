@@ -126,6 +126,7 @@ div#page_content:before {
     right:                      -94px;
     top:                        -11px;
     background:                 url("/images/icon-sprites_corner.png") no-repeat scroll 0px center / 520px auto transparent;
+    z-index:                    10;
 }
 div.corner-icon-theater:before {
     background-position:        -208px 0px ! important;
@@ -311,11 +312,15 @@ a.register-banner {
 }
 img.photo-head-active {
     display:                    block ! important;
+    position:                   relative ! important;
+    left:                       0px ! important;
 }
 .photo-header img {
-    display:                    none;
-    width:                      815px;
+    display:                    block;
     height:                     550px;
+    width:                      815px;
+    position:                   absolute;
+    left:                       -9999px;
 }
 div.place-row span {
     background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
@@ -346,6 +351,7 @@ a.photo-head-next {
     -webkit-background-size:    59px auto;
     background-position:        -30px center ! important;
     right:                      -68px;
+    z-index:                    1;
 }
 a.photo-head-prev {
     background:                 url("/images/wavering-arrows.png") repeat scroll 0% 0% / 59px auto transparent;
@@ -355,6 +361,7 @@ a.photo-head-prev {
     top:                        190px;
     position:                   absolute;
     left:                       15px;
+    z-index:                    1;
 }
 a {
     color:                      rgb(226, 127, 28);
