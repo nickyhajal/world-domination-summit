@@ -17,12 +17,16 @@ div#wall-queue {
 }
 .tpl-2 .block-1 div.speaker-photo {
     background-size:            100% auto ! important;
+    -webkit-background-size:    100% auto ! important;
     display:                    block;
     height:                     145px;
     width:                      145px;
     float:                      left;
     background-repeat:          no-repeat ! important;
     opacity:                    0.7;
+    -ms-filter:                 "alpha(opacity=70)";
+    filter:                     alpha(opacity=70);
+    zoom:                       1;
 }
 .tpl-2 div.block-4 .the_icon {
     margin-left:                24px;
@@ -37,6 +41,7 @@ div#wall-queue {
     height:                     310px;
     width:                      315px;
     background-size:            auto 100% ! important;
+    -webkit-background-size:    auto 100% ! important;
 }
 .tpl-2 .block-5 div.answer .answer_start {
     margin-left:                -15px;
@@ -65,7 +70,11 @@ div#wall-queue {
 }
 .tpl-3 .block-6 div.speaker-photo {
     background-size:            100% auto ! important;
+    -webkit-background-size:    100% auto ! important;
     opacity:                    0.8;
+    -ms-filter:                 "alpha(opacity=80)";
+    filter:                     alpha(opacity=80);
+    zoom:                       1;
     width:                      150px;
     margin-bottom:              6px;
     height:                     150px;
@@ -91,7 +100,10 @@ div#wall-queue {
     margin-bottom:              7px;
     width:                      156px;
     border-radius:              50%;
+    -moz-border-radius:         50%;
+    -webkit-border-radius:      50%;
     background-size:            100% auto ! important;
+    -webkit-background-size:    100% auto ! important;
     height:                     156px;
     border:                     11px solid rgb(242, 242, 234);
 }
@@ -155,7 +167,9 @@ div#sidebar-shell {
     text-align:                 center;
     padding:                    40px 25px;
     color:                      rgb(33, 23, 10);
+    box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
+    -webkit-box-sizing:         border-box;
     height:                     225px;
     width:                      244px;
 }
@@ -170,10 +184,13 @@ div#sidebar-shell {
     clear:                      both;
     float:                      left;
     transition:                 all 0.1s ease 0s;
+    -moz-transition:            all 0.1s ease 0s;
+    -webkit-transition:         all 0.1s ease 0s;
+    -o-transition:              all 0.1s ease 0s;
     padding:                    11px 11px 9px;
 }
 div#sidebar {
-    margin-top:                 15px;
+    margin-top:                 21px;
 }
 .tpl-3 .block-6 div.tweet-avatar {
     width:                      50px;
@@ -182,7 +199,10 @@ div#sidebar {
 }
 div.tweet-avatar {
     background-size:            100% auto ! important;
+    -webkit-background-size:    100% auto ! important;
     border-radius:              50%;
+    -moz-border-radius:         50%;
+    -webkit-border-radius:      50%;
     height:                     40px;
     margin:                     -10px auto 20px;
     width:                      40px;
@@ -191,10 +211,13 @@ div.answer-avatar {
     width:                      40px;
     height:                     40px;
     border-radius:              50%;
+    -moz-border-radius:         50%;
+    -webkit-border-radius:      50%;
     position:                   absolute;
     right:                      18px;
     top:                        18px;
     background-size:            100% auto ! important;
+    -webkit-background-size:    100% auto ! important;
 }
 .tpl-2 .block-1 .attendee_map {
     height:                     252px;
@@ -208,7 +231,9 @@ div.answer-avatar {
     background:                 url("/images/home/sprite-box.png?1") repeat scroll 0px 0px / 1152px auto transparent;
     height:                     192px;
     width:                      192px;
+    box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
+    -webkit-box-sizing:         border-box;
     padding:                    37px;
     text-align:                 center;
     display:                    table-cell;
@@ -266,6 +291,53 @@ a.register-banner {
     display:                    block;
     margin-top:                 40px;
 }
+img.photo-head-active {
+    display:                    block ! important;
+}
+.photo-header img {
+    display:                    none;
+    width:                      815px;
+    height:                     550px;
+}
+div.place-row span {
+    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    margin-left:                20px;
+    width:                      180px;
+    text-align:                 center;
+    padding:                    6px 10px;
+    margin-top:                 -5px;
+    font-size:                  14px;
+    font-family:                karla;
+    float:                      right;
+}
+a.photo-head-next {
+    height:                     34px;
+    position:                   absolute;
+    display:                    block;
+    top:                        190px;
+    width:                      29px;
+    background-color:           transparent;
+    background-image:           url("/images/wavering-arrows.png");
+    background-repeat:          repeat;
+    background-attachment:      scroll;
+    background-clip:            border-box;
+    -webkit-background-clip:    border-box;
+    background-origin:          padding-box;
+    -webkit-background-origin:  padding-box;
+    background-size:            59px auto;
+    -webkit-background-size:    59px auto;
+    background-position:        -30px center ! important;
+    right:                      -68px;
+}
+a.photo-head-prev {
+    background:                 url("/images/wavering-arrows.png") repeat scroll 0% 0% / 59px auto transparent;
+    display:                    block;
+    height:                     34px;
+    width:                      29px;
+    top:                        190px;
+    position:                   absolute;
+    left:                       15px;
+}
 a {
     color:                      rgb(226, 127, 28);
 }
@@ -280,9 +352,12 @@ hr.zig-zags_blue {
     background-attachment:      scroll;
     background-position:        0px 0px;
     background-clip:            border-box;
+    -webkit-background-clip:    border-box;
     background-origin:          padding-box;
+    -webkit-background-origin:  padding-box;
     display:                    block;
     background-size:            100% auto ! important;
+    -webkit-background-size:    100% auto ! important;
     height:                     20px;
     margin-left:                -15px;
     width:                      720px;
@@ -379,11 +454,33 @@ h4 {
 .color-green {
     color:                      rgb(177, 186, 30);
 }
+#page-headquarters h3:first-of-type:before {
+    display:                    none;
+}
+h3.side-icon-bridge:before {
+    background-position:        -149px center ! important;
+}
+#page-headquarters h3:before {
+    content:                    "";
+    height:                     50px;
+    background:                 url("/images/icon-sprites-grey-orange-circles.png") repeat scroll 0% 0% / 200px auto transparent;
+    width:                      51px;
+    top:                        -12px;
+    position:                   absolute;
+    left:                       -93px;
+}
+.side-icon-streetcar:before {
+    background-position:        -49px center ! important;
+}
+h3.side-icon-fork:before {
+    background-position:        -99px 0px ! important;
+}
 h3 {
     font-size:                  24px;
     font-family:                vitesselight;
     color:                      rgb(0, 115, 173);
     margin-bottom:              10px;
+    position:                   relative;
 }
 div.speaker-box {
     float:                      left;
@@ -393,7 +490,10 @@ div.speaker-box {
 }
 div.speaker-avatar {
     background-size:            100% auto ! important;
+    -webkit-background-size:    100% auto ! important;
     border-radius:              50%;
+    -moz-border-radius:         50%;
+    -webkit-border-radius:      50%;
     float:                      left;
     height:                     115px;
     width:                      115px;
@@ -434,9 +534,37 @@ div.half-col {
     float:                      left;
     margin-right:               30px;
 }
+div.photo-header {
+    margin-left:                -50px;
+    margin-top:                 -50px;
+}
+div.lifted-content {
+    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    display:                    block;
+    z-index:                    100;
+    position:                   relative;
+    width:                      667px;
+    padding:                    50px 65px 50px 50px;
+    margin:                     -199px 0px 0px -34px;
+}
+div.place-row span a {
+    color:                      rgb(226, 127, 28);
+    font-family:                karla;
+}
+div.place-row a {
+    color:                      rgb(35, 31, 32);
+    font-family:                karla;
+    font-size:                  14px;
+}
+div.place-row {
+    clear:                      both;
+    margin-bottom:              19px;
+}
 * {
     line-height:                inherit;
+    box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
+    -webkit-box-sizing:         border-box;
 }
 body {
     padding:                    0px;
@@ -452,6 +580,9 @@ body {
     position:                   absolute;
     width:                      579px;
     opacity:                    0.7;
+    -ms-filter:                 "alpha(opacity=70)";
+    filter:                     alpha(opacity=70);
+    zoom:                       1;
     z-index:                    10;
     content:                    "";
     background:                 url("/images/home/separator_zigzag-home.png?1") repeat-x scroll 0px 0px / 594px auto transparent;
@@ -494,6 +625,8 @@ input.text, textarea.text {
     color:                      rgb(85, 85, 85);
     border:                     0px none;
     box-shadow:                 0px 0px 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow:            0px 0px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow:         0px 0px 3px rgba(0, 0, 0, 0.1);
 }
 div.clear {
     clear:                      both;
@@ -511,10 +644,10 @@ div.clear {
 }
 #page_content p {
     font-family:                karla;
-    font-size:                  14px;
-    width:                      580px;
-    margin-bottom:              25px;
     line-height:                150%;
+    margin-bottom:              25px;
+    width:                      580px;
+    font-size:                  14px;
 }
 p, li {
     margin-top:                 0px;
@@ -567,6 +700,9 @@ div#nav-links a {
     text-transform:             uppercase;
     text--webkit-transform:     uppercase;
     transition:                 all 0.15s ease 0s;
+    -moz-transition:            all 0.15s ease 0s;
+    -webkit-transition:         all 0.15s ease 0s;
+    -o-transition:              all 0.15s ease 0s;
     background-repeat:          no-repeat ! important;
     margin-top:                 -4px;
 }
@@ -632,9 +768,13 @@ div.counter-section div {
 }
 div#counter-days div {
     border-radius:              12px 0px 0px 12px;
+    -moz-border-radius:         12px 0px 0px 12px;
+    -webkit-border-radius:      12px 0px 0px 12px;
 }
 div#counter-mins div {
     border-radius:              0px 12px 12px 0px;
+    -moz-border-radius:         0px 12px 12px 0px;
+    -webkit-border-radius:      0px 12px 12px 0px;
 }
 div#counter-days, #counter-hours {
     border-right:               2px solid rgb(33, 23, 10);
@@ -651,6 +791,9 @@ span#long-squiggly {
     z-index:                    0;
     margin-top:                 -3px;
     opacity:                    1;
+    -ms-filter:                 "alpha(opacity=100)";
+    filter:                     alpha(opacity=100);
+    zoom:                       1;
     background:                 url("/images/squiggle_white.png?7") repeat scroll 0px 0px / 324px auto transparent;
 }
 #page-home section#sidebar-shell {
@@ -718,7 +861,9 @@ div#reg-open {
     background-attachment:      scroll;
     background-position:        0% 0%;
     background-clip:            border-box;
+    -webkit-background-clip:    border-box;
     background-origin:          padding-box;
+    -webkit-background-origin:  padding-box;
     width:                      435px;
     height:                     278.5px;
     top:                        140px;
@@ -775,6 +920,7 @@ div.wall-space {
     position:                   absolute;
     display:                    block;
     background-size:            100% 100% ! important;
+    -webkit-background-size:    100% 100% ! important;
 }
 div#waterfall {
     position:                   relative;
@@ -783,25 +929,36 @@ div#waterfall {
 }
 a#counter-register {
     border-radius:              12px 0px 0px 12px;
+    -moz-border-radius:         12px 0px 0px 12px;
+    -webkit-border-radius:      12px 0px 0px 12px;
     border-right:               2px solid rgb(0, 0, 0);
 }
 a#counter-login {
     border-radius:              0px 12px 12px 0px;
+    -moz-border-radius:         0px 12px 12px 0px;
+    -webkit-border-radius:      0px 12px 12px 0px;
 }
 a.counter-button:hover {
     color:                      rgb(33, 23, 10);
     background:                 none repeat scroll 0px 0px rgb(255, 255, 255);
 }
 a.counter-button {
-    width:                      103px;
-    text-align:                 center;
-    padding:                    6px 0px;
-    margin-top:                 17px;
-    float:                      left;
-    display:                    block;
     background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
     color:                      rgb(255, 255, 255);
+    display:                    block;
+    float:                      left;
+    margin-top:                 17px;
+    font-family:                vitesse;
+    font-size:                  12pt;
+    width:                      103px;
     transition:                 all 0.15s ease 0s;
+    -moz-transition:            all 0.15s ease 0s;
+    -webkit-transition:         all 0.15s ease 0s;
+    -o-transition:              all 0.15s ease 0s;
+    text-transform:             uppercase;
+    text--webkit-transform:     uppercase;
+    text-align:                 center;
+    padding:                    7px 0px 6px;
 }
 div.tpl-3 .block-1 {
     z-index:                    1;
@@ -847,6 +1004,7 @@ div.tpl-1 {
 }
 div.wall-content-type-icon {
     background-size:            750px auto ! important;
+    -webkit-background-size:    750px auto ! important;
 }
 .tpl-2 div.block-3 {
     width:                      472px;
@@ -1131,10 +1289,14 @@ div.block-content {
 }
 .tpl-4 div.block-2 .speaker-photo {
     background-size:            100% auto ! important;
+    -webkit-background-size:    100% auto ! important;
     height:                     150px;
     width:                      150px;
     margin-bottom:              5px;
     opacity:                    0.8;
+    -ms-filter:                 "alpha(opacity=80)";
+    filter:                     alpha(opacity=80);
+    zoom:                       1;
 }
 .tpl-4 div.block-2 {
     z-index:                    1;
@@ -1201,6 +1363,7 @@ div.block-content {
 }
 div.orientation-portrait .flickr-photo {
     background-size:            100% auto ! important;
+    -webkit-background-size:    100% auto ! important;
 }
 .tpl-4 div.block-7 {
     left:                       485px;
@@ -1264,8 +1427,11 @@ div.icon-squiggle {
     background-attachment:      scroll;
     background-position:        0px 0px;
     background-clip:            border-box;
+    -webkit-background-clip:    border-box;
     background-origin:          padding-box;
+    -webkit-background-origin:  padding-box;
     background-size:            507px auto ! important;
+    -webkit-background-size:    507px auto ! important;
 }
 .tpl-3 div.block-4:before {
     background:                 url("/images/icon_suitcase.png") repeat scroll 0px 0px / 100% auto transparent;
@@ -1291,7 +1457,9 @@ div.icon-squiggle {
 }
 .tpl-1 div.block-3 .pattern-bg {
     background:                 url("/images/home/sprite-envelope.png?1") repeat scroll 0px 0px / 1050px auto transparent;
+    box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
+    -webkit-box-sizing:         border-box;
     height:                     187px;
     overflow:                   hidden;
     padding:                    37px 10px 0px;
@@ -1482,7 +1650,9 @@ div.wall-content {
     height:                     254px;
 }
 div.block {
+    box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
+    -webkit-box-sizing:         border-box;
 }
 .tpl-0 div.block-1 span.answer_start {
     margin-bottom:              23px;
@@ -1532,6 +1702,7 @@ div.tweet-by {
 .tpl-1.block-2 .flickr-photo {
     height:                     400px;
     background-size:            100% auto;
+    -webkit-background-size:    100% auto;
     position:                   absolute;
     left:                       100px;
     width:                      400px;
@@ -1554,11 +1725,13 @@ div.flickr-photo {
     width:                      100%;
     height:                     100%;
     background-size:            auto 100% ! important;
+    -webkit-background-size:    auto 100% ! important;
 }
 .tpl-1 .block-2 div.flickr-photo {
     width:                      300px;
     height:                     400px;
     background-size:            100% auto ! important;
+    -webkit-background-size:    100% auto ! important;
 }
 .tpl-2 .block-1 div.speaker-quote p {
     font-size:                  10pt;
