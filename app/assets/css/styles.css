@@ -162,16 +162,34 @@ div#sidebar-shell {
     display:                    block;
     text-decoration:            underline;
 }
+a#button-speaker-videos:before {
+    background-position:        -101px 0px;
+    width:                      102px;
+}
+a.sidebar-button:before {
+    content:                    "";
+    display:                    block;
+    height:                     100px;
+    position:                   absolute;
+    left:                       0px;
+    right:                      0px;
+    margin:                     0px auto;
+    top:                        25px;
+    background:                 url("/images/icon-sprites_sidebar.png?1") no-repeat scroll 0px 0px / 204px auto transparent;
+    width:                      101px;
+}
 #sidebar a.sidebar-button {
-    background:                 none repeat scroll 0px 0px rgb(255, 255, 255);
-    text-align:                 center;
-    padding:                    40px 25px;
-    color:                      rgb(33, 23, 10);
     box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
     -webkit-box-sizing:         border-box;
+    color:                      rgb(33, 23, 10);
     height:                     225px;
+    text-align:                 center;
     width:                      244px;
+    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    position:                   relative;
+    font-size:                  15px;
+    padding:                    145px 25px 40px;
 }
 #sidebar a {
     background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
@@ -382,6 +400,8 @@ footer {
     background:                 none repeat scroll 0% 0% rgb(33, 23, 10);
     padding:                    40px 0px;
     text-align:                 center;
+    position:                   relative;
+    z-index:                    1000;
 }
 div#footer-credits a {
     color:                      rgb(255, 255, 255);
