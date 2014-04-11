@@ -19,6 +19,7 @@ can be found [here](https://github.com/nickyhajal/world-domination-summit/wiki)
 * [Page Settings](#page-settings)
 * [Using MarkDown](#using-markdown)
 * [Setting a Sidebar](#setting-a-sidebar)
+* [Adding Decoration](#adding-decoration)
 
 ### Content Assets
 
