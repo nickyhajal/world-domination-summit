@@ -76,7 +76,13 @@ get_templates = (tpls, type, cb) ->
 
 								# Process markdown
 								if ext is 'md'
-									pre_content = marked(pre_content)
+
+									# Marked auto-parses links but we don't want that
+									pre_content = pre_content.replace(/https\:\/\//g, 'https%//')
+									pre_content = pre_content.replace(/http\:\/\//g, 'http%//')
+									pre_content = marked(pre_content, {gfm: true})
+									pre_content = pre_content.replace(/https\%\/\//g, 'https://')
+									pre_content = pre_content.replace(/http\%\/\//g, 'http://')
 
 								# Get the slug
 								name = file.split(/_[a-z]*\//)[1].split('.')[0]
