@@ -9,6 +9,7 @@ $ ->
 
 user = {};
 ap.Views = {}
+ap.Routes = {}
 ap.init = () ->
 	ap.initMe()
 	ap.Counter.init()
@@ -41,6 +42,7 @@ ap.initTemplates = ->
 
 # Start up Backbone's router
 ap.initRouter = ->
+	ap.createRouter()
 	ap.Router = new Router()
 	Backbone.history.start({pushState: true})
 	$('body').on 'click', "a[href=^'/']", (e) ->

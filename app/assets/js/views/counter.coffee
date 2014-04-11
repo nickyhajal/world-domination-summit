@@ -7,12 +7,15 @@ ap.Counter =
 		$(window).on('scroll', @scroll)
 	scroll: ->
 		cnt = $('#counter-shell')
+		side = $('#sidebar-shell')
 		left = cnt.offset().left
 		if window.scrollY > 271
 			cnt.addClass('counter-fixed')
+			side.addClass('sidebar-fixed')
 			cnt.css('left', left+'px')
 		else
 			cnt.removeClass('counter-fixed')
+			side.removeClass('sidebar-fixed')
 			cnt.css('left', '15px')
 	countdown: ->
 		now = new Date().getTime()

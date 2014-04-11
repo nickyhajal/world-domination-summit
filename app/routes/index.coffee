@@ -4,6 +4,7 @@
 ###
 jade = require('jade')
 redis = require("redis")
+[Speaker, Speakers] = require("../models/speakers")
 rds = redis.createClient()
 fs = require('fs')
 _ = require('underscore')
@@ -19,11 +20,15 @@ routes = (app) ->
 			get_templates tpls, 'parts', (tpls) ->
 				get_templates tpls, '_content', (tpls) ->
 					get_templates tpls, '_sidebars', (tpls) ->
-						res.render "../views/#{page}",
-							title: "World Domination Summit"
-							env: '"'+process.env.NODE_ENV+'"'
-							authd: 1
-							tpls: JSON.stringify(tpls)
+						_Speakers = Speakers.forge()
+						_Speakers.getByType()
+						.then (speakers) ->
+							res.render "../views/#{page}",
+								title: "World Domination Summit"
+								env: '"'+process.env.NODE_ENV+'"'
+								speakers: JSON.stringify(speakers)
+								authd: 1
+								tpls: JSON.stringify(tpls)
 
 
 get_templates = (tpls, type, cb) ->
