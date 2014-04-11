@@ -20,13 +20,64 @@ window.XView = Backbone.View.extend
 			view = @options.view
 		if @options.sidebar?
 			html = ap.templates['sidebar_'+@options.sidebar]
-			$('#sidebar-shell').html html
+			$('#sidebar-shell').html(html).show()
+		else
+			$('#sidebar-shell').hide()
 
 	post: (html) ->
 		shell = $('<div/>').html(html)
 		icon = @options.icon ? 'globe'
 		$('#page_content', shell).addClass('corner-icon-'+icon)
+		if @options.photo_head?
+			shell = @renderPhotoHeader(shell)
 		return shell.html()
+
+	renderPhotoHeader: (shell) ->
+		main_content = $('#page_content', shell).html()
+		content = $('#page_content', shell)
+		photos = '
+			<a href="#" class="photo-head-prev"></a>
+			<a href="#" class="photo-head-next"></a>
+		'
+		active = true
+		for photo in @options.photo_head.split(',')
+			photos += '<img src="'+photo+'"'
+			if active
+				active = false
+				photos += ' class="photo-head-active"'
+			photos += '/>'
+		main_content = '
+			<div class="photo-header">'+photos+'</div>
+			<div class="lifted-content">'+main_content+'</div>
+		'
+		content.html(main_content)
+
+		el = $(@el)
+		el.data('on-photo', 0)
+
+		goToPhoto = (dir) ->
+			$t = $(this)
+			$c = $t.closest('#page_content')
+			inx = el.data('on-photo') + (1 * dir)
+			num_photos = $('img', el).length
+			tk num_photos
+			tk inx
+			if (inx < 0)
+				inx = num_photos - 1
+			if (inx + 1 > num_photos)
+				inx = 0
+			$('.photo-head-active', $c).removeClass('photo-head-active')
+			$('.photo-header img', $c).eq(inx).addClass('photo-head-active')
+			el.data('on-photo', inx)
+			return false
+
+		$(@el)
+			.on('click', '.photo-head-next', -> return goToPhoto.call(this, 1))
+			.on('click', '.photo-head-prev', -> return goToPhoto.call(this, -1))
+
+		return shell
+
+
 
 
 

@@ -48,9 +48,15 @@ ap.initRouter = ->
 	$('body').on 'click', "a[href=^'/']", (e) ->
 		href = $(e.currentTarget).attr('href')
 
+		if href.indexOf('#') > -1
+			top = ($('a[name="'+href.replace('#', '')+'"]').offset().top - 100)
+			$.scrollTo(top)
+			return false
+
+
 		# Catch clicks on links to use our navigate function instead
 		# Skip if a super-key is being pushed
-		if !e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey
+		else if !e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey && href.indexOf('http') != 0
 		    e.preventDefault()
 		    url = href.replace(/^\//, '')
 		    ap.Router.navigate url, {trigger: true}

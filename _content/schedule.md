@@ -33,6 +33,8 @@ We'll conclude on Sunday evening in time for red-eye flights to the East Coast, 
 
 <div class="line-canvas"></div>
 
+<a name="speakers"></a>
+
 ### Featured Speakers
 Among other surprises our 2013 lineup included a guest appearance from Superman
 
@@ -54,7 +56,10 @@ In previous years, we heard from these speakers. They won’t be in town this ti
 
 <div class="clear"></div>
 
+
 ### Main Stage
+
+<a name="main-stage"></a>
 
 <img src="/images/schedule/schedule-circle-1.png" id="schedule-circle-1"/>
 
@@ -70,6 +75,8 @@ smaller workshop sessions to spend even more time with informal conversation.
 <img src="/images/schedule/schedule-circle-2.png" id="schedule-circle-2"/>
 
 <h3 class="color-green">Workshops</h3>
+
+<a name="workshops"></a>
 
 After we end in the main theatre each day, we'll head to breakout rooms of smaller groups for specific topics. You can choose from topics such as these:
 
@@ -91,6 +98,8 @@ After we end in the main theatre each day, we'll head to breakout rooms of small
 <img src="/images/schedule/schedule-circle-3.png" id="schedule-circle-3"/>
 
 <h3 class="color-orange">Everything Else</h3>
+
+<a name="everything-else"></a>
 
 We'll begin each morning in the Schnitzer Theatre, a beautiful auditorium where no seat is further than 60 feet from the stage. Speakers will share a short message that combines personal stories with practical ideas.
 
