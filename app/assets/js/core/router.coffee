@@ -50,7 +50,11 @@ ap.goTo = (panel = '', options = {}) ->
 		ap.currentView.undelegateEvents()
 	$('#content_shell').attr('class', '')
 	options.el = $('#content_shell')
-	options.out = ap.templates['pages_'+panel] + '<div class="clear"></div>'
+	if ap.templates['pages_'+panel]?
+		tpl = 'pages_'+panel
+	else
+		tpl = 'pages_404'
+	options.out = ap.templates[tpl] + '<div class="clear"></div>'
 	options.render = 'replace'
 	options.view = panel
 	setTimeout ->
