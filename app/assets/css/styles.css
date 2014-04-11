@@ -95,33 +95,69 @@ div#wall-queue {
     height:                     156px;
     border:                     11px solid rgb(242, 242, 234);
 }
+div.corner-icon-globe:before {
+    background-position:        -416px 0px ! important;
+}
+div.corner-icon-suitcase {
+    background-position:        0px center ! important;
+}
+div.corner-icon-parachute:before {
+    width:                      103px ! important;
+    background-position:        -105px 0px ! important;
+}
 div#page_content:before {
-    display:                    block;
+    background:                 url("/images/icon-sprites_corner.png?12") no-repeat scroll 0px center / 520px auto transparent;
     content:                    "";
-    position:                   absolute;
+    display:                    block;
     height:                     100px;
-    width:                      100px;
-    top:                        -20px;
-    background:                 none repeat scroll 0% 0% blue;
-    right:                      -100px;
+    position:                   absolute;
+    width:                      104px;
+    right:                      -94px;
+    top:                        -11px;
+}
+div.corner-icon-theater:before {
+    background-position:        -208px 0px ! important;
+    width:                      103px ! important;
+}
+div.corner-icon-pin:before {
+    background-position:        -311px 0px ! important;
 }
 div#page_content {
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 none repeat scroll 0px 0px rgb(255, 255, 255);
     margin-left:                -2px;
-    padding:                    50px;
     margin-top:                 -250px;
-    width:                      715px;
+    padding:                    50px;
+    min-height:                 768px;
+    width:                      815px;
 }
-div#sidebar_shell {
+div.sidebar-fixed {
+    position:                   fixed ! important;
+    top:                        240px ! important;
+}
+div#sidebar-shell {
     display:                    block;
     height:                     200px;
     width:                      259px;
     clear:                      both;
     position:                   absolute;
-    top:                        466px;
+    z-index:                    1000;
+    top:                        454px;
 }
 #sidebar a:hover {
     background:                 none repeat scroll 0% 0% rgb(33, 23, 10);
+}
+#sidebar a.sidebar-button b {
+    display:                    block;
+    text-decoration:            underline;
+}
+#sidebar a.sidebar-button {
+    background:                 none repeat scroll 0px 0px rgb(255, 255, 255);
+    text-align:                 center;
+    padding:                    40px 25px;
+    color:                      rgb(33, 23, 10);
+    -moz-box-sizing:            border-box;
+    height:                     225px;
+    width:                      244px;
 }
 #sidebar a {
     background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
@@ -223,6 +259,13 @@ h2 {
 a:hover {
     text-decoration:            none;
 }
+a.register-banner {
+    background:                 url("/images/register-banner.png") repeat scroll 0% 0% / 100% auto transparent;
+    width:                      570px;
+    height:                     160px;
+    display:                    block;
+    margin-top:                 40px;
+}
 a {
     color:                      rgb(226, 127, 28);
 }
@@ -238,17 +281,162 @@ hr.zig-zags_blue {
     background-position:        0px 0px;
     background-clip:            border-box;
     background-origin:          padding-box;
-    height:                     90px;
     display:                    block;
     background-size:            100% auto ! important;
+    height:                     20px;
     margin-left:                -15px;
     width:                      720px;
+    margin-bottom:              37px;
+}
+.line-canvas {
+    width:                      568px;
+    margin:                     53px 0px;
+    background:                 none repeat scroll 0% 0% rgb(216, 216, 210);
+    height:                     6px;
+    clear:                      both;
 }
 hr {
     border:                     0px none;
 }
+img#story-img-1 {
+    width:                      290px;
+    float:                      right;
+    margin:                     20px -80px 30px 30px;
+}
+footer {
+    background:                 none repeat scroll 0% 0% rgb(33, 23, 10);
+    padding:                    40px 0px;
+    text-align:                 center;
+}
+div#footer-credits a {
+    color:                      rgb(255, 255, 255);
+}
+div#footer-credits {
+    color:                      rgb(255, 255, 255);
+    font-size:                  13px;
+    font-family:                VitesseLight;
+}
+div#footer-links a {
+    text-decoration:            none;
+    margin-right:               18px;
+}
+div#footer-links {
+    margin-bottom:              10px;
+}
+div.main-schedule-box:after {
+    content:                    "";
+    display:                    block;
+    background:                 url("/images/schedule/pattern_schedule-main-description.png") repeat scroll 0px 0px / 100% auto transparent;
+    height:                     116px;
+    left:                       -4px;
+    position:                   absolute;
+    width:                      300px;
+    z-index:                    1;
+    bottom:                     -90px;
+}
+div.main-schedule-box {
+    background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
+    margin-left:                -50px;
+    width:                      310px;
+    padding:                    40px 40px 26px;
+    float:                      left;
+    margin-right:               30px;
+    position:                   relative;
+    margin-bottom:              160px;
+}
+.main-schedule-box h3 {
+    font-size:                  26px;
+    margin-top:                 0px;
+    font-family:                vitesselight;
+    color:                      rgb(35, 31, 32);
+}
+div.main-schedule-day {
+    text-transform:             uppercase;
+    text--webkit-transform:     uppercase;
+    font-size:                  15px;
+    color:                      rgb(242, 242, 234);
+    font-family:                vitesse;
+}
+div.main-schedule-time {
+    font-size:                  15px;
+    color:                      rgb(242, 242, 234);
+    font-family:                vitesselight;
+}
+div.main-schedule-descr {
+    margin-bottom:              27px;
+    font-family:                karla;
+}
+h4 {
+    text-transform:             uppercase;
+    text--webkit-transform:     uppercase;
+    font-family:                vitesselight;
+    margin-bottom:              -18px;
+    margin-top:                 60px;
+}
+.color-orange {
+    color:                      rgb(226, 127, 28);
+}
+.color-green {
+    color:                      rgb(177, 186, 30);
+}
+h3 {
+    font-size:                  24px;
+    font-family:                vitesselight;
+    color:                      rgb(0, 115, 173);
+    margin-bottom:              10px;
+}
+div.speaker-box {
+    float:                      left;
+    margin-bottom:              40px;
+    width:                      335px;
+    margin-right:               22px;
+}
+div.speaker-avatar {
+    background-size:            100% auto ! important;
+    border-radius:              50%;
+    float:                      left;
+    height:                     115px;
+    width:                      115px;
+    margin-right:               20px;
+}
+div.speaker-description {
+    font-family:                karla;
+    font-size:                  14px;
+}
+img#schedule-circle-1 {
+    width:                      417px;
+    float:                      right;
+    margin-right:               -185px;
+    margin-left:                29px;
+    margin-bottom:              45px;
+}
+img#schedule-circle-2 {
+    width:                      309px;
+    float:                      left;
+    margin-right:               40px;
+    margin-left:                -51px;
+    margin-bottom:              125px;
+}
+#page_content ul {
+    position:                   relative;
+    left:                       15px;
+}
+img#schedule-circle-3 {
+    float:                      right;
+    width:                      409px;
+    margin-right:               -186px;
+    margin-left:                52px;
+}
+div.half-col, .half-col p {
+    width:                      280px ! important;
+}
+div.half-col {
+    float:                      left;
+    margin-right:               30px;
+}
 * {
     line-height:                inherit;
+    -moz-box-sizing:            border-box;
 }
 body {
     padding:                    0px;
@@ -290,12 +478,15 @@ h1#header-title {
     font-weight:                normal;
     font-size:                  20pt;
 }
+#page_content h1 {
+    margin-bottom:              19px;
+}
 h1 {
     line-height:                140%;
     font-family:                VitesseLight;
-    font-size:                  27px;
     margin-top:                 0px;
-    width:                      604px;
+    font-size:                  26px;
+    width:                      581px;
 }
 input.text, textarea.text {
     padding:                    8px;
@@ -311,6 +502,19 @@ div.clear {
     text-align:                 center;
     font-size:                  20px;
     margin-bottom:              5px;
+}
+#page-schedule p.intro {
+    margin-top:                 53px;
+}
+#page_content p.intro {
+    font-size:                  15px;
+}
+#page_content p {
+    font-family:                karla;
+    font-size:                  14px;
+    width:                      580px;
+    margin-bottom:              25px;
+    line-height:                150%;
 }
 p, li {
     margin-top:                 0px;
@@ -393,12 +597,12 @@ div.counter-fixed {
 }
 div#counter-shell:before {
     background:                 url("/images/countdown-login-icon.png") repeat scroll 0px 0px / 100% auto transparent;
-    width:                      38px;
     height:                     38px;
     content:                    "";
     position:                   absolute;
     top:                        16px;
     left:                       -22px;
+    width:                      38px;
 }
 div#counter-shell {
     background:                 none repeat scroll 0px 0px rgb(33, 23, 10);
@@ -407,8 +611,8 @@ div#counter-shell {
     position:                   absolute;
     padding:                    17px;
     left:                       15px;
-    width:                      210px;
     z-index:                    1000;
+    width:                      244px;
 }
 #counter-shell h6 {
     font-weight:                normal;
@@ -735,6 +939,11 @@ div.block-content {
 .tpl-2 .block-8 .speaker-name {
     text-align:                 center;
     margin-top:                 15px;
+}
+#page_content div.speaker-name {
+    color:                      rgb(0, 115, 173);
+    text-align:                 left;
+    margin-bottom:              8px;
 }
 .speaker-name {
     color:                      rgb(32, 19, 10);

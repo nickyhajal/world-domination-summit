@@ -9,6 +9,7 @@ html(lang='en')
 			var ap = {};
 			ap.authd = #{authd};
 			ap.templates = !{tpls};
+			ap.speakers = !{speakers};
 			ap.env = !{env};
 		link(rel='stylesheet', href='/images/apple-icon.png')
 		link(rel='stylesheet', type="text/css", href='/app/assets/css/styles.css')
@@ -45,8 +46,17 @@ html(lang='en')
 					div(class="clear")
 					a(id="counter-register", class="counter-button" href="/register") Register
 					a(id="counter-login", class="counter-button", href="/login") Login
-				div(id="sidebar_shell")
+				div(id="sidebar-shell")
 
 		main(class="contentainer")
-			section(id="sidebar-shell")
 			!= body
+
+		footer
+			div(id="footer-links")
+				a(href="/faq") FAQ
+				a(href="/contact-us") Contact Us
+			div(id="footer-credits")
+				| © Chris Guillebeau 2011-2014 &nbsp; | &nbsp; Design by 
+				a(href="http://jolbyandfriends.com") Jolby & Friends
+				| &nbsp;&nbsp; | &nbsp; Programming by 
+				a(href="http://nickyhajal.com") Nicky Hajal

@@ -1,27 +1,27 @@
-window.Router = Backbone.Router.extend
-	routes:
-		"*actions": "defaultRoute"
-	before: ->
-	defaultRoute: (actions) ->
-		# If no action, figure it out
-		if (actions is '')
-			if (ap.authd)
-				actions = 'home';
-			else
-				actions = 'login';
-		ap.goTo(actions)
-	logout: ->
-		ap.nav 'login'
-		_.a 'logout', {}, (rsp) ->
-		localStorage.clear()
-		@stop
+###
+ The Router and routes are defined here
+ the functions that handle routes are in
+ /app/assets/js/routes
+###
+ap.createRouter = ->
+	window.Router = Backbone.Router.extend
+		routes:
+			"*actions": "defaultRoute"
+			"logout": "logout"
+		before: ap.Routes.before
+		defaultRoute: ap.Routes.defaultRoute
+		logout: ap.Routes.logout
 
-ap.initd = false
-ap.loadingTimos = []
+
+###
+ The following functions are vital
+ to the routing process
+###
 
 ###
 # Show Loading
 ###
+ap.loadingTimos = []
 ap.loading = ->
 	ap.loadingTimos.push setTimeout ->
 		ap.goTo 'loading'
@@ -54,9 +54,10 @@ ap.goTo = (panel = '', options = {}) ->
 	options.render = 'replace'
 	options.view = panel
 	setTimeout ->
+		$('body').attr('id', 'page-'+panel)
 		ap.currentView = new view options
+		$.scrollTo 0
 	, 120
-	$('body').attr('id', 'page-'+panel)
 
 ap.back = ->
 	history.go(-1);

@@ -1,3 +1,1 @@
-ap.Views.default = XView.extend
-	initialize: ->
-		@initRender()
+ap.Views.default = XView.extend()

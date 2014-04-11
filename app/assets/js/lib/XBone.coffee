@@ -6,28 +6,26 @@ window.XView = Backbone.View.extend
 	defaults: 
 		output: false
 	initialize: ->
-		@initRender()
 		view = this.options.view
 		sidebar = ap.template_options['pages_'+view]?.sidebar ? false
 		if ap.template_options['pages_'+view]?
 			for opt_name,val of ap.template_options['pages_'+view]
 				this.options[opt_name] = val
+		@initRender()
 
 	initRender: ->
 		if @options
 			@render @options.render
-
-		if this.options.view?
-			view = this.options.view
-			if this.options.sidebar?
-				html = ap.templates['sidebar_'+sidebar]
-				$('#sidebar_shell').html html
+		if @options.view?
+			view = @options.view
+		if @options.sidebar?
+			html = ap.templates['sidebar_'+@options.sidebar]
+			$('#sidebar-shell').html html
 
 	post: (html) ->
 		shell = $('<div/>').html(html)
-		icon = this.options.icon ? 'globe'
+		icon = @options.icon ? 'globe'
 		$('#page_content', shell).addClass('corner-icon-'+icon)
-		tk shell.html()
 		return shell.html()
 
 
