@@ -1,1 +1,3 @@
+icon: parachute
+
 Hello World
