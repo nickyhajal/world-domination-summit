@@ -183,7 +183,28 @@ icon  | globe, parachute, suitcase, pin, theater
 sidebar  | Any sidebar file-name in `_sidebars`
 photo_head | A comma-separated list of image URLs
 
+### Setting a Sidebar
+
+As mentioned above, you have total control over the sidebar that appears when your page is displayed.
+
+Sidebars are created exactly as pages are except instead of creating a file in the `_content` folder, you'll be working in the `_sidebars` folder.
+
+The filename should end in .md, just like a page, and the name you give the file is the value you'll use in your page settings to connect it.
+
+Normally, your entire sidebar file is just a list of Markdown links, [like this example for the foundation](https://raw.githubusercontent.com/nickyhajal/world-domination-summit/master/_sidebars/foundation.md).
+
+Those will automatically take on the style of the WDS site.
+
+Of course, you can also use normal HTML in these files if you want something more specific.
+
 ### Adding Decoration
+
+The following are snippets of HTML you can copy and paste into your content to add some visual decoration.
+
+Decoration | HTML
+Blue zig-zag separator | `<div class="zig-zags_blue"></div>`
+Canvas solid-line separator | `<div class="line-canvas"></div>`
+Register Button | `<a href="/register" class="register-banner"></a>`
 
 
 
