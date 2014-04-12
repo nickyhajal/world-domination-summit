@@ -28,7 +28,6 @@ window.XView = Backbone.View.extend
 		shell = $('<div/>').html(html)
 		icon = @options.icon ? 'globe'
 		$('#page_content', shell).addClass('corner-icon-'+icon)
-		tk @options.photo_head
 		if @options.photo_head?
 			shell = @renderPhotoHeader(shell)
 		return shell.html()
@@ -61,8 +60,6 @@ window.XView = Backbone.View.extend
 			$c = $t.closest('#page_content')
 			inx = el.data('on-photo') + (1 * dir)
 			num_photos = $('img', el).length
-			tk num_photos
-			tk inx
 			if (inx < 0)
 				inx = num_photos - 1
 			if (inx + 1 > num_photos)
@@ -77,9 +74,6 @@ window.XView = Backbone.View.extend
 			.on('click', '.photo-head-prev', -> return goToPhoto.call(this, -1))
 
 		return shell
-
-
-
 
 
 	##

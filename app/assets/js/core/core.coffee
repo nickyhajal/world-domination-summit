@@ -29,8 +29,14 @@ ap.initTemplates = ->
 	for name,html of ap.templates
 		if html.indexOf('----tpl_opts----') > -1
 			bits = html.split('----tpl_opts----')
-			ap.template_options[name] = bits[0].replace(/(<([^>]+)>)/ig,"")
-			ap.templates[name] = bits[1]
+			if name is 'pages_hello-world'
+				tk bits
+			if bits.length > 1
+				ap.template_options[name] = bits[0].replace(/(<([^>]+)>)/ig,"")
+				ap.templates[name] = bits[1]
+			else
+				ap.template_options[name] = {}
+				ap.templates[name] = html
 	for opt_name,opts of ap.template_options
 		o = {}
 		opts = opts.split('\n')

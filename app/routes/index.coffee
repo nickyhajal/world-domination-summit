@@ -101,6 +101,9 @@ get_templates = (tpls, type, cb) ->
 												tplStarted = true
 											else
 												tpl_opts += line+"\n"
+									unless tplStarted
+										content = tpl_opts
+										tpl_opts = ''
 								else
 									content = pre_content
 

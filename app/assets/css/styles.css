@@ -587,6 +587,13 @@ div.place-row {
     clear:                      both;
     margin-bottom:              19px;
 }
+div#logo-waves {
+    background:                 url("/images/logo-waves.png") repeat scroll 0% 0% / 100% auto transparent;
+    width:                      285px;
+    height:                     22px;
+    position:                   relative;
+    top:                        26px;
+}
 * {
     line-height:                inherit;
     box-sizing:                 border-box;
