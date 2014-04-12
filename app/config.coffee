@@ -4,8 +4,15 @@ config = (app, express, RedisStore, mysql) ->
 		app.set('views', __dirname + '/views')
 		app.set('view engine', 'jade')
 		app.set('view options', { pretty: true });
+		app.set('flickr_pub', process.env.FLCKR_PUB)
+		app.set('flickr_secret', process.env.FLCKR_SEC)
 		app.set('twitter_consumer_key', process.env.TWIT_KEY)
 		app.set('twitter_consumer_secret', process.env.TWIT_SEC)
+		app.set('twitter_token', process.env.TWIT_TOKEN)
+		app.set('twitter_token_secret', process.env.TWIT_TOKEN_SEC)
+		app.set('eb_key', process.env.EB_KEY)
+		app.set('eb_user', process.env.EB_USER)
+		app.set('eb_event', process.env.EB_EVENT)
 		app.set('uploadDir', '/tmp')
 
 		app.use(express.cookieParser())
