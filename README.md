@@ -51,7 +51,7 @@ The guide below explains all the details of how this system works.
 
 Let's get started!
 
-To create a file you'll first want to click into the `_content` file. This is the file where *all* content pages should be. The only other file you may need is `_sidebars` - you can ignore all other files listed.
+To create a file you'll first want to click into the `_content` folder. This is the folder where *all* content pages should be. The only other folder you may need is `_sidebars` - you can ignore all others listed.
 
 
 ![The _content folder is important](https://www.evernote.com/shard/s10/sh/571149cc-b6e5-4b8e-8c13-f2e1208558b0/abfdb283c302da807a238ff8c5d2d37c/res/10aeff6c-b68e-4aae-b096-3f668826ff80/skitch.png?resizeSmall&width=832)
