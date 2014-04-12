@@ -56,10 +56,13 @@ To create a file you'll first want to click into the `_content` folder. This is 
 
 ![The _content folder is important](https://www.evernote.com/shard/s10/sh/571149cc-b6e5-4b8e-8c13-f2e1208558b0/abfdb283c302da807a238ff8c5d2d37c/res/10aeff6c-b68e-4aae-b096-3f668826ff80/skitch.png?resizeSmall&width=832)
 
+---
 
 Once in the `_content` directory, click the small page-with-a-plus icon to create a new file there.
 
 ![Click the page-with-a-plus icon to create a file](https://www.evernote.com/shard/s10/sh/60d85ad9-82fb-4673-ada9-47c042fa6b0b/a556167fb0fd3d5b98600a89fee5f33b/res/364586cc-612d-45c3-8a03-bdaa0b10ef28/skitch.png?resizeSmall&width=832)
+
+---
 
 
 #### Welcome to the Text Editor
@@ -69,6 +72,8 @@ Now you're in the GitHub text editor, nice work so far!
 The first task is to name your file in the textbox that says "Name your file..."
 
 ![Name your file here](https://www.evernote.com/shard/s10/sh/790ef366-36f4-481a-9f8a-05d218727d0a/b6a24e6f91ee898163b9492b8d6c5685/res/e0f35281-1221-4bd6-b240-2cf605989f63/skitch.png?resizeSmall&width=832)
+
+---
 
 **Important**: The name of your file should always end in `.md` (as in: MarkDown)
 
@@ -81,6 +86,7 @@ So, if you create a file called: dont-stop-believin.md, that will create a page 
 Now, all you need to do is add some content into the big text area (more details on formatting that content below) and click the `Commit Changes` button - think of that as a "Save & Publish" button.
 
 ![Commit Changes Button Saves and Publishes Your Page](https://www.evernote.com/shard/s10/sh/e05ddfec-ad7c-4ca2-9685-04d8545abd7e/a00a8ee7323e2b8b9c8a725b58ce80c4/res/cca7e3d6-8fd5-40df-8858-8217bc2551b7/skitch.png?resizeSmall&width=832)
+---
 
 Boom! You just created a page!
 
@@ -93,5 +99,58 @@ To edit an existing page, click on the filename in the `_content` folder and the
 
 ### Formatting Content
 
+For the most part, you can just type and all your content will be properly formatted to fit the style of the WDS site but there are a few details to note.
 
+#### Markdown
+
+Markdown is an easy way to format text used all over the web - you may be using it without even realizing.
+
+If you've ever used `*asterisks*` to italicize something - that's Markdown!
+
+With Markdown you can also 
+
+Create links: `[Link Text](http://link-to-this-site.com)`
+Add images: `![Image title](http://link-to-image.com/the-image.png)`
+
+#### Headings in Markdown
+
+Every single page should have a main heading and sub-headings are an important part of creating readable pages - so let's take a second to talk about them.
+
+---
+
+In Markdown, any line starting with a pound sign (#) becomes a heading. A top level heading has just one pound sign and adding additional pound signs decreases the importance.
+
+`# This is a top-level heading in Markdown`
+`## This is a second-level heading`
+`### This is a third-level heading`
+
+**Important**: Every single page you create should either start with a first-level or second-level heading. 
+
+If you start with a first-level heading, the heading will look like this: 
+
+![Pages created with a first-level heading](https://www.evernote.com/shard/s10/sh/1995adf6-7c07-46b2-9589-2a9bd59ef7fd/d857298086fa5928f1a92401810db5e7/res/deed3354-375f-4315-b5f9-dbebe613925c/skitch.png?resizeSmall&width=832)
+
+---
+
+If you start with a second-level heading (Two pound signs), the heading will look like this: 
+
+![Pages created with a second-level heading](https://www.evernote.com/shard/s10/sh/f3f66ea6-c5fb-4e94-8db8-f3e33e7e1c0e/67c7b369f2c4a86b2018249f553b9a3d/res/5ee5559d-605b-496d-b92e-d9c69be71662/skitch.png?resizeSmall&width=832)
+
+---
+
+Notice above that once we're in the main body content, we use third-level and below headings (three pound signs!).
+
+#### Here's what's cool + learn more
+
+Here's what's awesome about this: you don't really have to worry about page styling at all. 
+
+Just right normal text with these few simple rules and then the site will automatically turn that into a beautiful page for you.
+
+**Want to learn more Markdown to spruce up your pages?** [Start with this guide.](https://guides.github.com/overviews/mastering-markdown/)
+
+#### HTML in Your Content
+
+You shouldn't ever **need** to use HTML in your page. *But you can!*
+
+This means that if more complex elements are needed on your page, you or someone on the dev-team can easily make them a reality.
 
