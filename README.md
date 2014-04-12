@@ -26,6 +26,11 @@ can be found [here](https://github.com/nickyhajal/world-domination-summit/wiki)
 * [Using Wufoo for Forms](#using-wufoo)
 * [How to Upload Images](#uploading-images)
 
+### Advanced
+
+* [Custom CSS](#custom-css)
+* [Private editing](#private-editing)
+
 ---------------------------------------
 
 ## Overview
