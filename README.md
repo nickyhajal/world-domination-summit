@@ -12,17 +12,18 @@ can be found [here](https://github.com/nickyhajal/world-domination-summit/wiki)
 
 * [How Content is Created and Edited for WDS](#overview)
 
-### Managing Content
+### Managing Content (Start Here)
 
 * [Creating a Page](#creating-a-page)
 * [Editing a Page](#editing-a-page)
 * [Formatting Content](#formatting-content)
 * [Page Settings](#page-settings)
 * [Setting a Sidebar](#setting-a-sidebar)
-* [Adding Decoration](#adding-decoration)
+
 
 ### Content Assets
 
+* [Adding Decoration](#adding-decoration)
 * [Using Wufoo for Forms](#using-wufoo)
 * [How to Upload Images](#uploading-images)
 
@@ -197,15 +198,17 @@ Those will automatically take on the style of the WDS site.
 
 Of course, you can also use normal HTML in these files if you want something more specific.
 
+
+## Content Assets
+
 ### Adding Decoration
 
 The following are snippets of HTML you can copy and paste into your content to add some visual decoration.
 
 Decoration | HTML
+-------|------
 Blue zig-zag separator | `<div class="zig-zags_blue"></div>`
-
 Canvas solid-line separator | `<div class="line-canvas"></div>`
-
 Register Button | `<a href="/register" class="register-banner"></a>`
 
 
