@@ -1,3 +1,5 @@
+icon:parachute
+
 ## Hello World - I'm excited to be writing to you ... and to shortly dominate you!
 
 ### My Plans for World Domination
