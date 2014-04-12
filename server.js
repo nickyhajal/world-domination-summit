@@ -8,9 +8,11 @@ var RedisStore = require('connect-redis')(express);
 var app = module.exports = express.createServer();
 require('./app/config')(app, express, RedisStore);
 require('express-namespace');
-process.db = app.settings.db
+db = process.db = app.settings.db
 process.mail = app.settings.mail
 
+require('./app/processors/content-grabber', app, db)
+require('./app/processors/eventbrite')(app, db)
 
 // Twitter OAuth
 var OAuth= require('oauth').OAuth;

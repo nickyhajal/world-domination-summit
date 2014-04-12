@@ -6,7 +6,7 @@ icon: globe
 
 <img id="story-img-1" src="/images/story/circle-1.jpg"/>
 
-Oh, and we also had a program... with great speakers and workshops. Jia Jiang told us about his 100 days of risk and rejection. Gretchen Rubin shared the secrets of happiness, and Tess Vigeland taught us about career reinvention. Darren Rowse appeared on stage in a Superman costume... twice.
+Oh, **and** we also had a *program*... with great speakers and workshops. Jia Jiang told us about his 100 days of risk and rejection. Gretchen Rubin shared the secrets of happiness, and Tess Vigeland taught us about career reinvention. Darren Rowse appeared on stage in a Superman costume... twice.
 
 One year later, we'll be scaling up... carefully. WDS 2013 sold out five months in advance with a waiting list of 5,000 people. At least four hundred people without tickets showed up from out of town just to hang out at unofficial events.
 

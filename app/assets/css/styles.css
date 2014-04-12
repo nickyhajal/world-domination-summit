@@ -594,6 +594,25 @@ div#logo-waves {
     position:                   relative;
     top:                        26px;
 }
+#page_content h1 em, #page_content h1 i {
+    font-family:                vitesselight;
+    font-style:                 italic;
+}
+#page_content h1 strong, #page_content h1 b, #page_content h2 strong, #page_content h2 b {
+    font-family:                vitessebold;
+}
+#page_content strong, #page_content b {
+    font-family:                karlabold;
+    font-weight:                normal;
+}
+#page_content h2 em, #page_content h2 img {
+    font-family:                vitessebook;
+    font-style:                 italic;
+}
+#page_content em, #page_content i {
+    font-family:                karlaitalic;
+    font-style:                 normal;
+}
 * {
     line-height:                inherit;
     box-sizing:                 border-box;
