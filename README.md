@@ -110,6 +110,7 @@ If you've ever used `*asterisks*` to italicize something - that's Markdown!
 With Markdown you can also 
 
 Create links: `[Link Text](http://link-to-this-site.com)`
+
 Add images: `![Image title](http://link-to-image.com/the-image.png)`
 
 #### Headings in Markdown
@@ -121,7 +122,9 @@ Every single page should have a main heading and sub-headings are an important p
 In Markdown, any line starting with a pound sign (#) becomes a heading. A top level heading has just one pound sign and adding additional pound signs decreases the importance.
 
 `# This is a top-level heading in Markdown`
+
 `## This is a second-level heading`
+
 `### This is a third-level heading`
 
 **Important**: Every single page you create should either start with a first-level or second-level heading. 
@@ -144,7 +147,7 @@ Notice above that once we're in the main body content, we use third-level and be
 
 Here's what's awesome about this: you don't really have to worry about page styling at all. 
 
-Just right normal text with these few simple rules and then the site will automatically turn that into a beautiful page for you.
+Just write normal text with these few simple rules and then the site will automatically turn that into a beautiful page for you.
 
 **Want to learn more Markdown to spruce up your pages?** [Start with this guide.](https://guides.github.com/overviews/mastering-markdown/)
 
@@ -153,4 +156,34 @@ Just right normal text with these few simple rules and then the site will automa
 You shouldn't ever **need** to use HTML in your page. *But you can!*
 
 This means that if more complex elements are needed on your page, you or someone on the dev-team can easily make them a reality.
+
+
+### Page Settings
+
+Each page can has some options that you're able to set like which icon should display in the corner or which sidebar should be displayed when that page is shown.
+
+If you want to include settings **they should be the very first thing entered in your file**. They're set with `setting_name: setting_value`.
+
+So, your file might look something like this:
+
+```
+icon: suitcase
+sidebar: foundation
+
+# The WDS Foundation was created to support people everywhere who want to start project aligned with the values of Community, Service and Adventure
+
+We want you to apply now...
+```
+
+#### Current Available Page Settings
+
+Name  | Available Values
+------------- | -------------
+icon  | globe, parachute, suitcase, pin, theater
+sidebar  | Any sidebar file-name in `_sidebars`
+photo_head | A comma-separated list of image URLs
+
+### Adding Decoration
+
+
 
