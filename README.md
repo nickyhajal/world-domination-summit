@@ -30,6 +30,16 @@ can be found [here](https://github.com/nickyhajal/world-domination-summit/wiki)
 
 ## Overview
 
+As of WDS 2014, all content on the WDS site is managed right here from GitHub. 
+
+You can easily create and edit pages from GitHub's interface, hit save and your changes are instantly sent to the WDS server and made live.
+
+A page is created just by typing normally - text can be styled with either Markdown (super-easy and explained more below) or normal HTML.
+
+Every change you make is tracked so if any problems occur, you can always roll back.
+
+The guide below explains all the details of how this system works.
+
 ## Managing Content
 
 ### Creating a File
