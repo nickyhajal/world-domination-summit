@@ -370,7 +370,7 @@ a {
     font-weight:                normal;
     font-family:                VitesseBold;
 }
-hr.zig-zags_blue {
+.zig-zags_blue {
     background-color:           transparent;
     background-repeat:          no-repeat;
     background-attachment:      scroll;
