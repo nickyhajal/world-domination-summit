@@ -58,6 +58,10 @@ ap.goTo = (panel = '', options = {}) ->
 	options.render = 'replace'
 	options.view = panel
 	setTimeout ->
+		if panel is 'home'
+			$('#logo-waves').hide()
+		else
+			$('#logo-waves').show()
 		$('body').attr('id', 'page-'+panel)
 		ap.currentView = new view options
 		$.scrollTo 0
