@@ -203,7 +203,9 @@ The following are snippets of HTML you can copy and paste into your content to a
 
 Decoration | HTML
 Blue zig-zag separator | `<div class="zig-zags_blue"></div>`
+
 Canvas solid-line separator | `<div class="line-canvas"></div>`
+
 Register Button | `<a href="/register" class="register-banner"></a>`
 
 
