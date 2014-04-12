@@ -11,8 +11,8 @@ require('express-namespace');
 db = process.db = app.settings.db
 process.mail = app.settings.mail
 
-require('./app/processors/content-grabber', app, db)
-require('./app/processors/eventbrite')(app, db)
+//require('./app/processors/content-grabber', app, db)
+//require('./app/processors/eventbrite')(app, db)
 
 // Twitter OAuth
 var OAuth= require('oauth').OAuth;
