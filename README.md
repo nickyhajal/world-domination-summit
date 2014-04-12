@@ -24,13 +24,13 @@ can be found [here](https://github.com/nickyhajal/world-domination-summit/wiki)
 ### Content Assets
 
 * [Adding Decoration](#adding-decoration)
-* [Using Wufoo for Forms](#using-wufoo)
+* [Using Wufoo for Forms](#using-wufoo-for-forms)
 * [How to Upload Images](#uploading-images)
 
 ### Advanced
 
 * [Custom CSS](#custom-css)
-* [Private editing](#private-editing)
+* [Private Editing](#private-editing)
 
 ---------------------------------------
 
@@ -212,4 +212,20 @@ Canvas solid-line separator | `<div class="line-canvas"></div>`
 Register Button | `<a href="/register" class="register-banner"></a>`
 
 
+### Using Wufoo for Forms
 
+We'll be using Wufoo for forms - more coming soon!
+
+### Uploading images
+
+I know you'll be needing to upload images to use for your pages - a simple system for this is coming soon!
+
+## Advanced
+
+### Using Custom CSS
+
+Coming soon!
+
+### Private Editing
+
+Coming soon!
