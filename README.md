@@ -9,9 +9,9 @@ Details about editing content for the page are directly below.
 
 ## Table of Contents
 
-### Videos!!
-
 ### Overview
+
+* [Getting Started Videos](#videos)
 
 * [How Content is Created and Edited for WDS](#overview)
 
