@@ -3,11 +3,15 @@ sidebar: hello-world
 
 # Hello World - I'm so ready to dominate you!
 
+<div class="zig-zags_blue"></div>
+
 ### This is how I started my journey.
 
 Lorem ipsum dolor sit amet, *consectetur adipiscing elit*. Vestibulum convallis quam vitae ultricies hendrerit. Nullam lectus sem, vehicula ut lacus a, adipiscing sagittis augue. **Duis consectetur ligula eu nulla dignissim imperdiet. In in felis sed quam facilisis dignissim quis non sapien.** 
 
 [Aenean vel lacus vestibulum](/story), mollis velit sed, convallis dui. Integer vitae ultrices tortor. Phasellus sodales tellus ligula, vel egestas libero ullamcorper in. Vestibulum non fringilla urna. Vivamus tempus magna quis risus aliquet pharetra. Donec venenatis, enim sit amet dignissim malesuada, enim lorem scelerisque lacus, in malesuada lacus est in augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur tempus blandit sapien vitae ornare.
+
+<div class="line-canvas"></div>
 
 ### It was time to dominate the World!
 
