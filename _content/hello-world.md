@@ -8,6 +8,8 @@ icon:parachute
 ### My Plans for World Domination
 Lorem ipsum dolor **sit amet**, consectetur adipiscing elit. Phasellus leo est, semper in elementum quis, interdum ut nulla. Phasellus in mi *feugiat, ultrices lorem ut, faucibus libero*. Ut sed pretium nibh. Duis sed fringilla tortor. Etiam viverra augue quis tincidunt lacinia. 
 
+<div class="line-canvas"></div>
+
 [Maecenas dignissim aliquet](/story). Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus fermentum at odio eu cursus. Praesent tellus lectus, tincidunt hendrerit mauris eget, venenatis vestibulum arcu. Duis blandit consectetur lectus eu molestie. Fusce aliquet diam vitae imperdiet tempor. Nulla vel urna magna. Suspendisse ac auctor libero. Curabitur auctor imperdiet urna, eu sodales massa fringilla sed. Donec consectetur pellentesque commodo.
 
 ### That's when I realized, I'm ready.
