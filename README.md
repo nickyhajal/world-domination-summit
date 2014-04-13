@@ -11,9 +11,9 @@ Details about editing content for the page are directly below.
 
 ### Overview
 
-* [Getting Started Videos](#videos)
-
 * [How Content is Created and Edited for WDS](#overview)
+
+* [Getting Started Videos](#videos)
 
 ### Managing Content (Start Here)
 
@@ -37,18 +37,6 @@ Details about editing content for the page are directly below.
 
 ---------------------------------------
 
-## Videos!!
-
-Here are two screencasts to help you get started - you can see the whole process from start to finish!
-
-A basic guide explaining things slowly: 
-
-[How to Create and Edit Pages at WDS.com](http://youtu.be/bMLC1Erj-mA)
-
-A realistic run through of creating a hypothetical page: 
-
-[A Realistic Example of Creating a Page at WDS.com](http://youtu.be/EZx0B7KBSAg)
-
 ## Overview
 
 As of WDS 2014, all content on the WDS site is managed right here from GitHub. 
@@ -60,6 +48,18 @@ A page is created just by typing normally - text can be styled with either Markd
 Every change you make is tracked so if any problems occur, you can always roll back.
 
 The guide below explains all the details of how this system works.
+
+### Videos!!
+
+Here are two screencasts to help you get started - you can see the whole process from start to finish!
+
+A basic guide explaining things slowly: 
+
+[How to Create and Edit Pages at WDS.com](http://youtu.be/bMLC1Erj-mA)
+
+A realistic run through of creating a hypothetical page: 
+
+[A Realistic Example of Creating a Page at WDS.com](http://youtu.be/EZx0B7KBSAg)
 
 ## Managing Content
 
