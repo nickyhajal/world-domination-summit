@@ -13,8 +13,7 @@ Details about editing content for the page are directly below.
 
 * [How Content is Created and Edited for WDS](#overview)
 
-* >>>>>>>>>>> [Getting Started Videos](#videos) <<<<<<<<<<<
-
+* ⇢⇢⇢⇢⇢⇢ [Getting Started Videos](#videos) ←←←←←←
 ### Managing Content (Start Here)
 
 * [Creating a Page](#creating-a-page)
