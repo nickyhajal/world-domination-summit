@@ -1,3 +1,5 @@
+icon: parachute
+
 # Hello World - I'm so ready to dominate you!
 
 ### This is how I started my journey.
