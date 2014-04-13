@@ -9,6 +9,8 @@ Details about editing content for the page are directly below.
 
 ## Table of Contents
 
+### Videos!!
+
 ### Overview
 
 * [How Content is Created and Edited for WDS](#overview)
@@ -34,6 +36,18 @@ Details about editing content for the page are directly below.
 * [Private Editing](#private-editing)
 
 ---------------------------------------
+
+## Videos!!
+
+Here are two screencasts to help you get started - you can see the whole process from start to finish!
+
+A basic guide explaining things slowly: 
+
+[How to Create and Edit Pages at WDS.com](http://youtu.be/bMLC1Erj-mA)
+
+A realistic run through of creating a hypothetical page: 
+
+[A Realistic Example of Creating a Page at WDS.com](http://youtu.be/EZx0B7KBSAg)
 
 ## Overview
 
