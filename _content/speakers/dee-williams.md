@@ -3,7 +3,7 @@ icon: pin
 
 <div class="zig-zags_blue"></div>
 
-**Dee Williams** Dee Williams is the co-owner of Portland Alternative Dwellings:padtinyhouses.com where she leads workshops focused on tiny houses, green building, and community design. She's the author of a how-to e-book, *Go House Go*, and her memoir, *The Big Tiny* (Blue Rider, Penguin/Random House) was just released in April 2014.
+**Dee Williams** Dee Williams is the co-owner of [Portland Alternative Dwellings](http://padtinyhouses.com) where she leads workshops focused on tiny houses, green building, and community design. She's the author of a how-to e-book, *Go House Go*, and her memoir, *The Big Tiny* (Blue Rider, Penguin/Random House) was just released in April 2014.
 
 <div class="line-canvas"></div>
 
