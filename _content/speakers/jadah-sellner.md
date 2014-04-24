@@ -3,7 +3,7 @@ icon: globe
 
 <div class="zig-zags_blue"></div>
 
-**Jadah Sellner** is a super-powered community-building strategist, marketing visionary, and the co-founder of Simple Green Smoothies, where her 30-Day Green Smoothie Challenge has empowered over 500,000 people to say yes to their health.**
+**Jadah Sellner** is a super-powered community-building strategist, marketing visionary, and the co-founder of Simple Green Smoothies, where her 30-Day Green Smoothie Challenge has empowered over 500,000 people to say yes to their health.
 
 <div class="line-canvas"></div>
 
