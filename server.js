@@ -10,9 +10,12 @@ require('./app/config')(app, express, RedisStore);
 require('express-namespace');
 db = process.db = app.settings.db
 process.mail = app.settings.mail
+process.year = '2014'
+process.lastYear = '2013'
+process.dmn = process.env.DOMAIN
 
 //require('./app/processors/content-grabber', app, db)
-//require('./app/processors/eventbrite')(app, db)
+require('./app/processors/eventbrite')(app, db)
 
 // Twitter OAuth
 var OAuth= require('oauth').OAuth;
@@ -26,8 +29,10 @@ var oa = new OAuth(
 	"HMAC-SHA1"
 );
 app.set('oa', oa);
+// require('./app/import')
 require('./app/views/helpers')(app);
 require('./app/routes/api')(app);
+require('./app/routes/upload')(app);
 require('./app/routes/index')(app);
 require('./app/routes/git-hook')(app);
 app.listen(app.settings.port, function(){

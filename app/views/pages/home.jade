@@ -93,7 +93,7 @@ section(id="body-content")
 		div(class="tpl", data-type="attendee")
 			div(class="block-content")
 				div(class="pattern-bg")
-					span {{ fname }} {{ lname }} 
+					span {{ first_name }} {{ last_name }} 
 					| is traveling 
 					b {{ distance }} 
 					| miles to WDS 2014
@@ -101,7 +101,7 @@ section(id="body-content")
 		div(class="tpl", data-type="attendee_map")
 			div(class="block-content")
 				div(class="attendee_map_text")
-					span {{ fname }} {{ lname }} 
+					span {{ first_name }} {{ last_name }} 
 					| is traveling 
 					b {{ distance }} 
 					| miles to WDS 2014!
@@ -115,7 +115,7 @@ section(id="body-content")
 		div(class="tpl", data-type="attendee_answer")
 			div(class="block-content")
 				div(class="answer-avatar", style="background:url({{ pic }})")
-				span {{ pre_name }}{{ fname }} {{ lname }}{{ post_name }}
+				span {{ pre_name }}{{ first_name }} {{ last_name }}{{ post_name }}
 				div(class="answer") {{ answer }}
 
 		div(class="tpl", data-type="speaker_quote")

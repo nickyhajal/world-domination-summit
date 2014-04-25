@@ -58,18 +58,18 @@ window.wall =
 			answers = {}
 			wall.ansByQ = {}
 			for answer in rsp.answers
-				unless answers[answer.userid]?
-					answers[answer.userid] = {}
-				unless wall.ansByQ[answer.questionid]?
-					wall.ansByQ[answer.questionid] = []
-					answers[answer.userid] = {}
-				wall.ansByQ[answer.questionid].push answer
+				unless answers[answer.user_id]?
+					answers[answer.user_id] = {}
+				unless wall.ansByQ[answer.question_id]?
+					wall.ansByQ[answer.question_id] = []
+					answers[answer.user_id] = {}
+				wall.ansByQ[answer.question_id].push answer
 
 			wall.attendees = rsp.attendees
 			wall.atnById = {}
 			for atn in rsp.attendees
 				atn.distance = Math.ceil(atn.distance)
-				wall.atnById[atn.attendeeid] = atn
+				wall.atnById[atn.user_id] = atn
 			@fillContent($('.wall-section'))
 			@generateWallPanels()
 
@@ -229,7 +229,6 @@ window.wall =
 
 		if type is 'attendee'
 			attendees = _.shuffle(wall.attendees)
-			tk attendees[0]
 			return attendees[0]
 
 		if type is 'attendee_map'
@@ -249,8 +248,8 @@ window.wall =
 				bits = opts.maxchars.split(':')
 				ans = answer.answer
 				if ans.length < +bits[1]
-					if wall.atnById[answer.userid]?
-						atn = wall.atnById[answer.userid]
+					if wall.atnById[answer.user_id]?
+						atn = wall.atnById[answer.user_id]
 						atn.answer = ans
 						atn.pre_name  = ''
 						atn.post_name  = ''
@@ -264,7 +263,7 @@ window.wall =
 		for content in fetchFrom
 			unless wall.used_content[type]
 				wall.used_content[type] = []
-			if (wall.used_content[type].indexOf(content.contentid) is -1)
+			if (wall.used_content[type].indexOf(content.content_id) is -1)
 				data = JSON.parse(content.data)
 
 				pass = true
@@ -279,7 +278,7 @@ window.wall =
 						pass = false
 
 				if pass
-					wall.used_content[type].push content.contentid
+					wall.used_content[type].push content.content_id
 					return data
 
 		#If we made it here, we need to reset the used content and try again

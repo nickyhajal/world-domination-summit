@@ -8,17 +8,10 @@ handler =
 		res.errors = []
 
 		# Get logged in user
-		ident = if req.session.ident then JSON.parse(req.session.ident) else false
-		if ident
-			id = ident.userid ? ident.id
-			_Users = Users.forge()
-			_Users.query('where', 'userid', id)
-			.fetch()
-			.then (rsp) ->
-				if rsp.models.length
-					req.me = rsp.models[0]
-				next()
-		else
+		Users.forge().getMe(req) 
+		.then (me) ->
+			if me
+				req.me = me
 			next()
 	finish: (req, res) ->
 		res.setHeader('Content-Type', 'application/json')

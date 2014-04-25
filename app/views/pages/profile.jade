@@ -1,0 +1,17 @@
+div(id="page_content")
+	h2 Attendee Profile
+	div(class="attendee-avatar", style="background:url({{ pic }})")
+	div(id="attendee-profile-map")
+	h3 {{ first_name }} {{ last_name }}
+	div(class="attendee-from")
+		| is making a {{ distance }} mile expedition to WDS
+		| all the way from {{ location }}
+	div(class="line-canvas")
+	h3 {{ first_name }} is interested in: 
+	div(class="attendee-interest-list") {{ interests }}
+	div(class="line-canvas")
+	h3 A bit about {{ first_name }}:
+	div(class="attendee-questions") {{ questions }}
+
+
+

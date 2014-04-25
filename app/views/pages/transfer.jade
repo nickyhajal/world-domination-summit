@@ -1,0 +1,51 @@
+div(id="page_content")
+	h2(id="header-title") 
+		| Ticket Transfer
+	h3 So sorry you can't make it for the adventure!
+	div(class="transfer-error form-error")
+		| Hm, seems like the information you submitted isn't quite right. Try again.
+	p Can't make it to the World Domination Summit after all? So sorry to miss you!
+	p We'll do our best to accommodate transfer requests for a $100 fee up to 60 days prior to the big event in July.
+	p If you find someone who wants your ticket, you can donate or sell it to them for up the same price you paid (no premiums, please), and then use the following form to finish the transfer.
+	p Hope to see you next year!
+
+	h3 Ticket Transfer Form
+	form(action="/api/transfer", method="post", id="login-form")
+		h4 New Attendee Contact Info
+		div(class="form-section")
+			div(class="form-box")
+				label Their First Name
+				input(type="text", name="first_name")
+			div(class="form-box")
+				label Their Last Name
+				input(type="text", name="last_name")
+		div(class="form-section")
+			div(class="form-box")
+				label Their E-Mail Address
+				input(type="text", name="email")
+		h4 New Attendee Address
+		div(class="form-section")
+			div(class="form-box")
+				label Their Country
+				input(type="hidden", name="country", id="country-select")
+		div(class="form-section")
+			div(class="form-box")
+				label Their Address
+				input(type="text", name="address")
+			div(class="form-box")
+				label Their Address 2
+				input(type="text", name="address2")
+		div(class="form-section")
+			div(class="form-box")
+				label Their City
+				input(type="text", name="city")
+			div(class="form-box")
+				label Their State
+				input(type="text", name="region")
+			div(class="form-box")
+				label Their Zip
+				input(type="text", name="region")
+		div(class="clear")
+		div(class="form-section")
+			input(type="submit", value="Process Transfer")
+			span(class='button-description') You'll be forwarded to PayPal to process your $100 transfer payment

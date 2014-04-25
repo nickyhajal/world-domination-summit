@@ -15,7 +15,7 @@ Notification = window.XModel.extend
 			prep: (output)->
 				@out = _.t 'parts_notification', 
 					msg: self.get('msg')
-					clss: self.get('clss')
+					state: self.get('state')
 				@render output
 				if (self.get('autoclose'))
 					setTimeout =>
@@ -31,7 +31,7 @@ ap.Notify =
 	now: (opts = {}) ->
 		opts = _.defaults opts,
 			msg: ''
-			clss: 'success'
+			state: 'success'
 			autoclose: 30
 			display: true
 		n = new Notification opts

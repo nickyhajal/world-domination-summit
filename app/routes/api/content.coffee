@@ -8,7 +8,7 @@ content =
 			_Contents = Contents.forge()
 			_Contents
 			.query('where', 'type', '=', 'flickr_stream')
-			.query('where', 'contentid', '>', '390')
+			.query('where', 'content_id', '>', '390')
 			.fetch()
 			.then (contents) ->
 				processImg = (content) ->
@@ -36,35 +36,37 @@ content =
 			_Contents = Contents.forge()
 			_Answers = Answers.forge()
 			_Contents
-			.query('where', 'contentid', '>', '0')
-			.query('orderBy', 'contentid', 'desc')
+			.query('where', 'content_id', '>', '0')
+			.query('orderBy', 'content_id', 'desc')
 			.fetch(
-				columns: ['contentid', 'type', 'data']
+				columns: ['content_id', 'type', 'data']
 			)
 			.then (contents) ->
 				_Users
 				.query('where', 'pub_loc', '=', '1')
 				.query('where', 'attending14', '=', '1')
 				.query('where', 'pic', '<>', '')
-				.query('orderBy', 'attendeeid', 'desc')
+				.query('orderBy', 'user_id', 'desc')
 				.fetch(
-					columns: ['attendeeid', 'fname', 'lname', 'uname', 'distance', 'lat', 'lon', 'pic']
+					columns: ['user_id', 'first_name', 'last_name', 'user_name', 'distance', 'lat', 'lon', 'pic']
 				)
 				.then (attendees) ->
 					_Answers
-					.query('join', 'attendees', 'answers.userid', '=', 'attendees.attendeeid')
-					.query('where', 'attendees.attending14', '=', '1')
+					.query('join', 'users', 'answers.user_id', '=', 'users.user_id')
+					.query('where', 'users.attending14', '=', '1')
 					.query('limit', '500')
 					.query('offset', offset)
-					.query('orderBy', 'attendeeid', 'desc')
+					.query('orderBy', 'users.user_id', 'desc')
 					.fetch(
-						columns: ['userid', 'questionid', 'answer']
+						columns: ['users.user_id', 'question_id', 'answer']
 					)
 					.then (answers) ->
 						res.r.answers = answers
 						res.r.content = contents
 						res.r.attendees = attendees
 						next()
+					, (err) ->
+						tk err
 				, (err) ->
 					tk err
 			, (err) ->

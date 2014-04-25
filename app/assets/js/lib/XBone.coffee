@@ -5,7 +5,7 @@ window.XView = Backbone.View.extend
 	out: ''
 	defaults: 
 		output: false
-	initialize: ->
+	initialize: (options) ->
 		view = this.options.view
 		sidebar = ap.template_options['pages_'+view]?.sidebar ? false
 		if ap.template_options['pages_'+view]?
@@ -20,7 +20,9 @@ window.XView = Backbone.View.extend
 			view = @options.view
 		if @options.sidebar?
 			html = ap.templates['sidebar_'+@options.sidebar]
-			$('#sidebar-shell').html(html).show()
+			if @options.sidebar_filler?
+				html = _.template html, @options.sidebar_filler
+			$('#sidebar-shell').html(html).show().scan()
 		else
 			$('#sidebar-shell').hide()
 
@@ -103,17 +105,31 @@ window.XView = Backbone.View.extend
 		@rendered()
 		if @options.onRender?
 			@options.onRender()
+	finish: ->
+		if @whenFinished?
+			@whenFinished()
+		@unbind()
 	rendered: ()->
 		# Child over-writes
 	
-##
- # Extended backbone model
- ##
-window.XModel = Backbone.Model.extend()
+###
+	Extended backbone model
+###
+window.XModel = Backbone.Model.extend
+	changedSinceSave: {}
+	trackChangesSinceSave: ->
+		@on 'change', (obj) =>
+			for key,val of obj.changed
+				@changedSinceSave[key] = val
+			if @idAttribute?
+				@changedSinceSave[@idAttribute] = @get(@idAttribute)
+		@on 'sync', (obj) =>
+			@changedSinceSave = {}
 
-##
- # Extended backbone collection
- ##
+
+###
+	Extended backbone collection
+###
 window.XCollection = Backbone.Collection.extend
 	indexByCid: (cid) -> 	 
 		for index, model of @models
