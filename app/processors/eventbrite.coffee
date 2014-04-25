@@ -10,7 +10,7 @@ moment = require 'moment'
 [Ticket, Tickets] = require '../models/tickets'
 [User, Users] = require '../models/users'
 
-shell = (app, db) ->
+shell = (app) ->
 	eb = Eventbrite
 		app_key: app.settings.eb_key
 		user_key: app.settings.eb_user

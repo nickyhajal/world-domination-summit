@@ -446,6 +446,20 @@ a.dispatch-content-comment-status {
     font-family:                karla;
     font-size:                  14px;
 }
+.collapsable-box a:first-of-type {
+    display:                    block;
+    margin:                     -15px -15px -40px;
+    text-decoration:            none;
+    padding:                    15px;
+}
+a#nav-foundation {
+    background-position:        -248px 0px ! important;
+    width:                      131px;
+}
+a#nav-academies {
+    background-position:        -118px 0px ! important;
+    width:                      125px;
+}
 a {
     color:                      rgb(226, 127, 28);
 }
@@ -612,6 +626,10 @@ img#schedule-circle-2 {
     margin-left:                -51px;
     margin-bottom:              125px;
 }
+#page-foundation ul {
+    margin-bottom:              30px;
+    margin-top:                 -10px;
+}
 #page_content ul {
     position:                   relative;
     left:                       15px;
@@ -770,6 +788,14 @@ input.dispatch-comment-submit {
     font-size:                  16px ! important;
     padding:                    5px 0px ! important;
     width:                      410px;
+}
+.collapsable-box a.button {
+    clear:                      both;
+    display:                    block;
+    width:                      180px;
+    text-align:                 center;
+    padding:                    5px 2px;
+    margin-top:                 10px;
 }
 input[type="submit"], .button {
     border:                     0px none;
@@ -1085,15 +1111,36 @@ span.button-description {
     width:                      246px;
     display:                    block;
 }
+.collapsable-box a h4 {
+    color:                      rgb(35, 31, 32);
+    text-decoration:            none ! important;
+    margin-top:                 10px;
+    margin-bottom:              10px;
+}
 h4 {
     clear:                      both;
     text-transform:             uppercase;
     text--webkit-transform:     uppercase;
     margin-bottom:              20px;
     margin-top:                 40px;
+    font-family:                vitesse;
 }
 div.transfer-problem, .transfer-success {
     display:                    none;
+}
+div.collapsable-content p {
+    font-family:                karla;
+}
+.collapsable-box-closed .collapsable-content {
+    display:                    none;
+}
+div.collapsable-content {
+    font-family:                karla;
+}
+div.collapsable-box {
+    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    padding:                    15px;
+    margin-bottom:              15px;
 }
 * {
     box-sizing:                 border-box;
@@ -1201,6 +1248,10 @@ div.clear {
     width:                      580px;
     font-size:                  16px;
 }
+#page-foundation li {
+    font-family:                karla;
+    margin-bottom:              10px;
+}
 p, li {
     margin-top:                 0px;
 }
@@ -1231,18 +1282,21 @@ div#nav-links a:last-of-type {
 }
 a#nav-story {
     width:                      100px;
+    margin-right:               -11px ! important;
 }
 a#nav-schedule {
-    background-position:        -248px 0px ! important;
-    width:                      132px;
+    background-position:        -118px 0px ! important;
+    width:                      125px;
 }
 a#nav-hq {
     background-position:        -384px 0px ! important;
     width:                      154px;
+    margin-right:               15px ! important;
 }
 a#nav-register {
-    background-position:        -117px 0px ! important;
-    width:                      130px;
+    background-position:        0px 0px ! important;
+    width:                      96px;
+    margin-right:               10px ! important;
 }
 div#nav-links a {
     color:                      rgb(226, 127, 28);
@@ -1250,7 +1304,6 @@ div#nav-links a {
     float:                      left;
     font-family:                VitesseBook;
     margin-right:               0px;
-    padding:                    5px 0px 6px;
     text-align:                 center;
     text-decoration:            none;
     text-transform:             uppercase;
@@ -1261,6 +1314,7 @@ div#nav-links a {
     -o-transition:              all 0.15s ease 0s;
     background-repeat:          no-repeat ! important;
     margin-top:                 -4px;
+    padding:                    5px 0px 6px;
 }
 div#nav-links {
     float:                      right;
