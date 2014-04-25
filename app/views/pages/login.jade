@@ -1,0 +1,17 @@
+div(id="page_content")
+	h2(id="header-title") 
+		| Login
+	h3 Login to Your WDS Account
+	div(class="login-error")
+		| Hm, seems like your login information isn't quite right. Give it another try!
+	p Use your email address or WDS username to login below. 
+		a(href="forgot-password") Forgot your password?
+	form(action="#", method="post", id="login-form")
+		div(class="form-row")
+			label E-Mail Address or Username
+			input(type="text", name="username")
+		div(class="form-row")
+			label Password
+			input(type="password", name="password")
+		div(class="form-row")
+			input(type="submit", value="Login")

@@ -10,8 +10,6 @@ _d.formToJson = (id)->
 	data = {};
 	form = _d.getForm(id)
 	for i in form.elements
-		d($(i).attr('name'))
-		d($(i).attr('name').length)
 		if $(i).attr('name')? and $(i).attr('name').length
 			data[$(i).attr('name')] = $(i).attr('value')
 	return data;

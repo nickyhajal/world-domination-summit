@@ -9,7 +9,10 @@ ap.Counter =
 		cnt = $('#counter-shell')
 		side = $('#sidebar-shell')
 		left = cnt.offset().left
-		if window.scrollY > 271
+		threshold = 271
+		if not cnt.is(':visible')
+			threshold = 305
+		if window.scrollY > threshold
 			cnt.addClass('counter-fixed')
 			side.addClass('sidebar-fixed')
 			cnt.css('left', left+'px')

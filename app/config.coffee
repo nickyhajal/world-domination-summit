@@ -19,6 +19,7 @@ config = (app, express, RedisStore, mysql) ->
 		app.use express.session
 			secret: process.env.SESS_SEC
 			store: new RedisStore
+			cookie:{maxAge:604800}
 		app.use(express.bodyParser({uploadDir:'/tmp_uploads', keepExtensions: true}))
 		app.use(express.methodOverride())
 		app.use require('connect-assets')(

@@ -1,4 +1,5 @@
 #= require includes.js
+#= require select2.js
 #= require_tree lib
 #= require_tree core
 #= require_tree routes

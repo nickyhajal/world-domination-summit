@@ -1,33 +1,71 @@
+# SS - User Model
+
 Shelf = require('./shelf')
-Bookshelf = require('bookshelf')
-whn = require('when')
-nodefn = require('when/node/function')
 bcrypt = require('bcrypt')
 crypto = require('crypto')
+geocoder = require('geocoder')
+geolib = require('geolib')
+countries = require('country-data').countries
 _ = require('underscore')
+_.str = require('underscore.string')
 Q = require('q')
 
-validatePasswordLength = (password) ->
-    try
-        Shelf.validator.check(password, "Make your password at least 8 characters so your profile is nice and safe.").len(8)
-    catch error
-        return whn.reject(error)
-    return whn.resolve()
+##
+[Ticket, Tickets] = require './tickets'
+[Answer, Answers] = require './answers'
+[UserInterest, UserInterests] = require './user_interests'
+[Connection, Connections] = require './connections'
 
 User = Shelf.Model.extend
-  tableName: 'attendees'
+  tableName: 'users'
   permittedAttributes: [
-    'attendeeid', 'type', 'email', 'fname', 'lname', 'attending', 'attended11', 'attending12',
-    'attending13', 'attending14', 'email', 'fname', 'lname', 'hash',
-    'uname', 'phone', 'mf', 'twitter', 'pic', 'address', 'city',
-    'state', 'country', 'zip', 'lat', 'lon', 'distance', 'video', 'rss',
-    'pub_loc', 'pub_att', 'intro2011', 'marker', 'intro', 'intro13', 'picxy', 
-    'picupd', 'points13', 'points', 'lastShake', 'stamp'
+    'user_id', 'type', 'email', 'first_name', 'last_name', 
+    'email', 'hash', 'user_name', 'mf', 'twitter', 'facebook', 'site', 'pic', 
+    'address', 'address2', 'city', 'region', 'country', 'zip', 'lat', 'lon', 'distance',
+    'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'lastShake'
   ]
+  defaults:
+    pic: ''
+    location: ''
+    address: ''
+    address2: ''
+    region: ''
+    city: ''
+    zip: ''
+  idAttribute: 'user_id'
   hasTimestamps: true
   initialize: ->
     this.on 'creating', this.creating, this
-    this.on 'created', this.created, this
+    this.on 'saved', this.saved, this
+    this.on 'saving', this.saving, this
+
+  creating: (e)->
+    self = this
+    userData = self.attributes
+    email_hash = crypto.createHash('md5').update(self.get('email')).digest('hex')
+    rand = (new Date()).valueOf().toString() + Math.random().toString()
+    user_hash = crypto.createHash('sha1').update(rand).digest('hex')
+    @set
+      email_hash: email_hash
+      user_name: user_hash
+      hash: user_hash
+    return true
+
+  saving: (e) ->
+    @saveChanging()
+
+  saved: (obj, rsp, opts) ->
+    @id = rsp
+    addressChanged = @lastDidChange [ 
+      'address', 'address2', 'city'
+      'region', 'country', 'zip'
+    ]
+    @addressChanged = addressChanged
+
+
+  ########
+  # AUTH #
+  ########
 
   authenticate: (clear, req) -> 
     dfr = Q.defer()
@@ -45,29 +83,194 @@ User = Shelf.Model.extend
   login: (req) ->
     req.session.ident = JSON.stringify(this)
 
-  creating: (e)->
-    self = this
-    userData = self.attributes
-    return validatePasswordLength(userData.password).then( ->
-      return User.forge({email: userData.email}).fetch()
-    ).then((user) ->
-        if (user)
-          return whn.reject(new Error('That email is already registered!'));
-    ).then( ->
-      return nodefn.call(bcrypt.genSalt);
-    ).then((salt)->
-      return nodefn.call(bcrypt.hash, userData.password, salt);
-    ).then((hash)->
-      email_hash = crypto.createHash('md5').update(self.get('email')).digest('hex');
-      self.set
-        password: hash
-        email_hash: email_hash 
-    )
-  created: (e) ->
-    setTimeout =>
-      @email('Welcome', "Welcome to Let's Duo!")
-    , 10
-  email: (email, subject, params) ->
+  updatePassword: (pw) ->
+    dfr = Q.defer()
+    if pw.length
+      bcrypt.genSalt 10, (err, salt) =>
+        bcrypt.hash pw, salt, (err, hash) =>
+          @set('password', hash)
+          @save()
+          .then (res) ->
+            x = res
+          , (err) ->
+            tk err
+          dfr.resolve(this)
+
+    else
+      dfr.resolve(false)
+    return dfr.promise
+
+  #######
+  # GET #
+  #######
+
+  getUrl: (text = false, clss = false, id = false) ->
+    user_name = @get('user_name')
+    clss = if clss then ' class="'+clss+'"' else ''
+    id = if id then ' id="'+id+'"' else ''
+    if user_name.length isnt 32
+      url = '/~'+user_name
+    else
+      url = '/slowpoke'
+    href = 'http://'+process.dmn+url
+    text = if text then text else href
+    return '< href="'+href+'"'+clss+id+'>'+text+'</a>'
+
+  # Distance from PDX
+  getDistanceFromPDX: (units = 'mi', opts = {}) ->
+    distance = @get('distance')
+    if unit is 'km'
+      out = (distance * 1.60934 ) + ' km'
+    else
+      out = distance + ' mi'
+    return Math.ceil(out)
+
+  getAnswers: ->
+    dfr = Q.defer()
+    Answers.forge()
+    .query('where', 'user_id', @get('user_id'))
+    .fetch()
+    .then (rsp) =>
+      @set('answers', JSON.stringify(rsp.models))
+      dfr.resolve this
+    , (err) ->
+      tk err
+    return dfr.promise
+
+  getInterests: ->
+    dfr = Q.defer()
+    UserInterests.forge()
+    .query('where', 'user_id', @get('user_id'))
+    .fetch()
+    .then (rsp) =>
+      interests = []
+      for interest in rsp.models
+        interests.push interest.get('interest_id')
+      @set('interests', JSON.stringify(interests))
+      dfr.resolve this
+    , (err) ->
+      tk err
+    return dfr.promise
+
+  getConnections: ->
+    dfr = Q.defer()
+    Connections.forge()
+    .query('where', 'user_id', @get('user_id'))
+    .fetch()
+    .then (connections) =>
+      connected_ids = []
+      for connection in connections.models 
+        connected_ids.push connection.get('to_id')
+      @set
+        connections: connections
+        connected_ids: connected_ids
+      dfr.resolve(this)
+    , (err) ->
+      console.log(err);
+    return dfr.promise
+
+
+  getAllTickets: ->
+    dfr = Q.defer()
+    Tickets.forge()
+    .query('where', 'user_id', @get('user_id'))
+    .fetch()
+    .then (rows) =>
+      @set('tickets', rows.models)
+      dfr.resolve this
+    return dfr.promise
+
+
+  ###########
+  # ADDRESS #
+  ###########
+
+  processAddress: ->
+    location = @getLocationString()
+    @set 'location', location
+    geocoder.geocode location, (err, data) =>
+      if data.results[0]
+        location = data.results[0].geometry.location
+        distance = geolib.getDistance
+          latitude: 45.51625
+          longitude: -122.683558
+        ,
+          latitude: location.lat
+          longitude: location.lng
+      @set
+        lat: location.lat
+        lon: location.lng
+        distance: ( (distance / 1000) * 0.6214 )
+      @save(null, {method: 'update'})
+
+  getLocationString: ->
+    address = @get('city')+', '
+    if (@get('country') is 'US' or @get('country') is 'GB') and @get('region')?
+      address += @get('region')
+    unless (@get('country') is 'US' or @get('country') is 'GB')
+      address += countries[@get('country')].name
+    return address
+
+
+  ###########
+  # TICKETS #
+  ###########
+  
+  registerTicket: (eventbrite_id) ->
+    dfr = Q.defer()
+    Ticket.forge
+      eventbrite_id: eventbrite_id
+      user_id: @get('user_id')
+      year: process.year
+    .save()
+    .then (ticket) ->
+      'send email here?'
+      dfr.resolve(ticket)
+    return dfr.promise
+
+  transferTicket: (transfer_to) ->
+    dfr = Q.defer()
+    @cancelTicket()
+    .then (ticket) ->
+      # regTransfer()
+      #.then (transfer) ->
+      User.forge(transfer_to)
+      .save()
+      .then (new_user) ->
+        Ticket.forge
+          user_id: new_user.get('user_id')
+          year: process.year
+          eventbrite_id: transfer.get('transfer_id')
+        .save()
+        .then (ticket) ->
+          dfr.resolve(ticket)
+    return dfr.promise
+
+  cancelTicket: ->
+    dfr = Q.defer()
+    Ticket.forge
+      user_id: @get('userid')
+      year: process.year
+    .fetch()
+    .then (ticket) =>
+      if ticket
+        ticket.set
+          status: 'canceled'
+        save()
+        .then =>
+          @removeFromList('WDS '+process.year+' Attendees')
+          .then =>
+            dfr.resolve [this, ticket]
+      dfr.reject("Doesn't have a ticket.")
+    return dfr.promise
+
+
+  #########
+  # EMAIL #
+  #########
+
+  sendEmail: (email, subject, params) ->
+    return false
     mailer = require('./mailer')
     user_params =
       first_name: @get('first_name')
@@ -77,23 +280,47 @@ User = Shelf.Model.extend
     mailer.send(email, subject, @get('email'), params)
     .then (err, rsp) ->
 
+  removeFromList: (list) ->
+    mimi.removeUser @get('email'), list, true
+
 Users = Shelf.Collection.extend
   model: User 
-  getUser: (userid, remove_password = true) ->
+  getMe: (req) ->
+    dfr = Q.defer()
+    ident = if req.session.ident then JSON.parse(req.session.ident) else false
+    if ident
+      id = ident.user_id ? ident.id
+      Users.forge().query('where', 'user_id', id)
+      .fetch()
+      .then (rsp) ->
+        if rsp.models.length
+          dfr.resolve rsp.models[0]
+        else
+          dfr.resolve false
+    else
+      dfr.resolve false
+    return dfr.promise
+
+  getUser: (user_id, remove_sensitive = true) ->
     dfr = Q.defer()
     _Users = Users.forge()
-    if typeof +userid is 'number'
-      type = 'userid'
-    else if typeof userid is 'string'
+
+    # Get user accepts user_id or email
+    if typeof +user_id is 'number'
+      type = 'user_id'
+    else if typeof user_id is 'string'
       type = 'email'
-    _Users.query('where', type, '=', userid)
+
+    # Run query
+    _Users.query('where', type, '=', user_id)
     .fetch()
     .then (rsp)->
       results = []
       if rsp.models?[0]?
         results = rsp.models[0]
-        if remove_password
+        if remove_sensitive
           results.password = null
+          results.hash = null
       dfr.resolve(results)
     return dfr.promise
 

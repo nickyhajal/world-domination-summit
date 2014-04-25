@@ -1,0 +1,150 @@
+div(id="page_content")
+	div(id="tab-shell-welcome_tabs")
+
+		div(id="tab-panel-welcome", class="tab-panel tab-panel-active")
+			h1(id="extra-big")
+				span(class="first-time") Welcome! 
+				span(class="returning") Welcome back!
+			div(class="zig-zags_blue")
+			div(class="first-time")
+				p We're so excited that you registered for the World Domination Summit 2014! 
+				p We've put together this site that will help you connect with your fellow adventurers. 
+				p We need some more information from you, so when you're ready, hit continue.
+			div(class="returning") 
+				p We're so excited that you'll be joining us again for the World Domination Summit 2014!
+				p This year we'll be using this site even more as a way to help WDSers connect.
+				p When you're ready, hit continue to verify that your info from last year is still correct.
+			a(href="#", class="tab-next button") Let's Go!
+
+		div(id="tab-panel-the-basics", class="tab-panel")
+			h2(id="extra-big") A Bit of Basic Info
+			h3 Even an Explorer Needs a Home(page)
+			p Every WDS attendee gets their very own home page to
+				| share information about themselves and connect with other attendees.
+			div(class="form-section")
+				label Set your username and WDS URL
+				span(class="sub-label")
+					| http://worlddominationsummit.com/~
+					span(class="user_name-preview")
+				input(type="text", class="model-me", name="user_name")
+
+			div(class="form-section")
+				h3 Let's Keep Your Account Safe!
+				label Set a Password for your WDS Account
+				span(class="sub-label")
+				input(type="password", class="model-me", name="new_password")
+			a(href="#", class="tab-next button") Save & Continue
+
+		div(id="tab-panel-location", class="tab-panel")
+			h2(id="extra-big") Your Location
+			h3 Sometimes we like to send things!
+			p Make sure the address we have for you is accurate
+			div(class="form-section")
+				div(class="form-box")
+					label Country 
+					input(type="hidden", name="country", id="country-select", class="model-me")
+			div(class="form-section")
+				div(class="form-box")
+					label Address
+					input(type="text", name="address", class="model-me")
+				div(class="form-box")
+					label Address 2
+					input(type="text", name="address2", class="model-me")
+			div(class="form-section")
+				div(class="form-box")
+					label City
+					input(type="text", name="city", class="model-me")
+				div(class="form-box")
+					div(id="region-shell")
+						label State/Region
+			div(class="form-section")
+				div(class="form-box")
+					label Portal Code
+					input(type="text", name="zip", class="model-me")
+			div(class="clear")
+
+			h3 Privacy: We Respect It!
+			p We want to show off that you're traveling {{ distance }} miles from Portland, OR. 
+			div(class="form-section")
+				label Is it cool if we use your location around the site?
+				select(class="box-select model-me", name="pub_loc")
+					option(value="1") Yep, sounds awesome!
+					option(value="0") No, thanks.
+			a(href="#", class="tab-next button") Save & Continue
+
+		div(id="tab-panel-more-about-you", class="tab-panel")
+			h2 More about you
+			h3 Tell Us A Bit More About You
+			div(class="form-section")
+				label Why did you decide to travel {{ distance }} miles to the World Domination Summit
+				textarea(class="attendee-answer", data-question_id="1")
+			div(class="form-section")
+				label What are you excited about these days?
+				textarea(class="attendee-answer", data-question_id="2")
+			div(class="form-section")
+				label What's your super-power?
+				textarea(class="attendee-answer", data-question_id="3")
+			div(class="form-section")
+				label What is your goal for WDS 2014?
+				textarea(class="attendee-answer", data-question_id="4")
+			a(href="#", class="tab-next button") Save & Continue
+
+		div(id="tab-panel-interests", class="tab-panel")
+			h2 The Things You Love
+			h3 What sorts of things are you interested in?
+			p Select some interests below so we can help connect you with other WDSers!
+			div(class="form-section")
+				div(class="interest-select-list")
+			a(href="#", class="tab-next button") Save & Continue
+
+		div(id="tab-panel-around-the-web", class="tab-panel")
+			h2 Connect 
+			h3 Where Can We Find You on the Web?
+			div(class="form-section")
+				div(class="twitter-connected")
+					label Twitter
+					div(class="twitter-connected-details")
+						| Connected to @{{ twitter }}
+						a(href="/api/user/twitter/connect", class="button") Use Different Account
+						a(href="#", class="twitter-disconnect button") Disconnect
+						div(class="clear")
+				div(class="twitter-not-connected")
+					label Click Below to Connect to Twitter
+					a(href="/api/user/twitter/connect", class="button") Connect to Twitter 
+
+			div(class="form-section")
+				label Facebook Username
+				input(type="text", name="facebook", class="model-me")
+			div(class="form-section")
+				label Instagram Username
+				input(type="text", name="facebook", class="model-me")
+			div(class="form-section")
+				label Your Website
+				span(class="sub-label") Just one site that represents your web presence best, please
+				input(type="text", name="site", class="model-me")
+			a(href="#", class="tab-next button") Save & Continue
+
+		div(id="tab-panel-your-smile", class="tab-panel")
+			h2 Your Avatar
+			h3 A Smile is Worth a Thousand Words
+			div(class="form-section")
+				div(class="form-section current-avatar")
+					label Your Current Avatar
+					div(class="avatar-shell")
+				div(class="form-section")
+					label Upload an Avatar
+					iframe(src="/upload-avatar", class="upload-avatar-frame")
+
+			a(href="#", class="tab-next button") Save & Continue
+
+		div(id="tab-panel-all-done", class="tab-panel")
+			h1 Woah, nice work, you're all done!
+			div(class="zig-zags_blue")
+			div(class="form-section")
+				div(class="tweet-box-shell")
+					h3 Let the World Know You're Going!
+					div(class="tweet-box")
+						textarea Just setup my attendee profile for WDS! Check it out: http://wds.fm/~nicky #wds2014
+						a(href="#", class="send-tweet button") Tweet it!
+			h3 Ready to meet your partners in World Domination? Let's head to the Attendee Hub!
+			a(href="#", class="finish-welcome button") Go to the Attendee Hub

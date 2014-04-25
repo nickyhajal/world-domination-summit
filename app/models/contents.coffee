@@ -3,11 +3,8 @@ _ = require('underscore')
 Q = require('q')
 
 Content = Shelf.Model.extend
-  tableName: 'content'
-  permittedAttributes: [
-    'contentid', 'type', 'uniqid', 'data', 'stamp'
-  ]
-  idAttribute: 'contentid'
+  tableName: 'featured_content'
+  idAttribute: 'content_id'
   initialize: ->
     this.on 'creating', this.creating, this
     this.on 'created', this.created, this
