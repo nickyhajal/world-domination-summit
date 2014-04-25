@@ -40,7 +40,8 @@ window.wall =
 		$wall = $('#waterfall')
 
 		# Determine if we're ready to add more panels
-		if (window.scrollY / window.scrollMaxY) * 10 > 8
+		if (window.scrollY / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 10 > 8
+			tk 'scroll'
 			$wall.css('height', ($wall.height()+800)+'px')
 			wall.displayPanels()
 
