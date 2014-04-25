@@ -330,6 +330,10 @@ div.speaker-year {
     font-size:                  15px;
     font-family:                VitesseBook;
 }
+h2.broadcast-active {
+    background:                 none repeat scroll 0px 0px rgb(33, 23, 10);
+    color:                      rgb(255, 255, 255);
+}
 h2 {
     margin-left:                -50px;
     margin-right:               -50px;
@@ -341,6 +345,10 @@ h2 {
     background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
     padding:                    22px 50px 18px;
     font-family:                vitesse;
+    transition:                 all 0.2s ease 0s;
+    -moz-transition:            all 0.2s ease 0s;
+    -webkit-transition:         all 0.2s ease 0s;
+    -o-transition:              all 0.2s ease 0s;
 }
 a:hover {
     text-decoration:            none;
@@ -580,6 +588,24 @@ h3.side-icon-bridge:before {
 }
 h3.side-icon-fork:before {
     background-position:        -99px 0px ! important;
+}
+.broadcast-box a:hover {
+    text-decoration:            underline;
+    color:                      rgb(255, 255, 255);
+}
+.broadcast-box a:hover span.broadcast-date {
+    text-decoration:            none ! important;
+}
+.broadcast-box .broadcast-area a {
+    display:                    block;
+    margin-top:                 15px;
+    text-decoration:            none;
+    width:                      580px;
+}
+.broadcast-box h3 {
+    color:                      rgb(255, 255, 255);
+    font-size:                  26px;
+    display:                    inline;
 }
 h3 {
     font-size:                  24px;
@@ -1141,6 +1167,64 @@ div.collapsable-box {
     background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
     padding:                    15px;
     margin-bottom:              15px;
+}
+div.broadcast-box h2 {
+    background:                 none repeat scroll 0px 0px rgb(33, 23, 10);
+    color:                      rgb(255, 255, 255);
+}
+.broadcast-box-close {
+    background-attachment:      scroll;
+    background-clip:            border-box;
+    -webkit-background-clip:    border-box;
+    background-color:           transparent;
+    background-image:           url("/images/icon-up-tick.png");
+    background-origin:          padding-box;
+    -webkit-background-origin:  padding-box;
+    background-position:        0px 0px;
+    background-repeat:          repeat;
+    background-size:            100% auto ! important;
+    -webkit-background-size:    100% auto ! important;
+    bottom:                     -3px;
+    content:                    "";
+    height:                     30px;
+    left:                       0px;
+    margin:                     0px auto;
+    position:                   absolute;
+    right:                      0px;
+    width:                      29px;
+}
+div.broadcast-box-closed {
+    opacity:                    0;
+    -ms-filter:                 "alpha(opacity=0)";
+    filter:                     alpha(opacity=0);
+    zoom:                       1;
+    height:                     0px ! important;
+    z-index:                    -1;
+    padding:                    0px 50px ! important;
+}
+div.broadcast-box {
+    background:                 none repeat scroll 0px 0px rgb(33, 23, 10);
+    margin-right:               -50px;
+    margin-left:                -50px;
+    margin-top:                 -14px;
+    box-sizing:                 content-box;
+    -moz-box-sizing:            content-box;
+    -webkit-box-sizing:         content-box;
+    z-index:                    1;
+    position:                   relative;
+    transition:                 all 0.2s ease 0s;
+    -moz-transition:            all 0.2s ease 0s;
+    -webkit-transition:         all 0.2s ease 0s;
+    -o-transition:              all 0.2s ease 0s;
+    padding:                    10px 50px 50px;
+}
+span.broadcast-date {
+    font-family:                karla;
+    margin-left:                10px;
+    font-size:                  14px;
+    font-weight:                normal;
+    color:                      rgb(177, 186, 30);
+    text-decoration:            none ! important;
 }
 * {
     box-sizing:                 border-box;
