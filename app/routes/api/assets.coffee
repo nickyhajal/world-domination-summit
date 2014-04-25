@@ -2,7 +2,7 @@ _ = require('underscore')
 redis = require("redis")
 rds = redis.createClient()
 twitterAPI = require('node-twitter-api')
-Q = require('Q')
+Q = require('q')
 async = require('async')
 
 routes = (app) ->
