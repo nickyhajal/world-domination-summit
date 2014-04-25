@@ -468,6 +468,14 @@ a#nav-academies {
     background-position:        -118px 0px ! important;
     width:                      125px;
 }
+a.broadcast-show-all {
+    float:                      right;
+    margin-right:               170px;
+    font-size:                  14px;
+    font-family:                karla;
+    color:                      rgb(255, 255, 255);
+    margin-top:                 -44px;
+}
 a {
     color:                      rgb(226, 127, 28);
 }
@@ -589,12 +597,9 @@ h3.side-icon-bridge:before {
 h3.side-icon-fork:before {
     background-position:        -99px 0px ! important;
 }
-.broadcast-box a:hover {
-    text-decoration:            underline;
+.broadcast-box .broadcast-area a:hover {
     color:                      rgb(255, 255, 255);
-}
-.broadcast-box a:hover span.broadcast-date {
-    text-decoration:            none ! important;
+    text-decoration:            underline;
 }
 .broadcast-box .broadcast-area a {
     display:                    block;
