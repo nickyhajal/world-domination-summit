@@ -1,9 +1,15 @@
-icon: globe
+icon: parachute
 photo_head: https://farm8.staticflickr.com/7255/7523483516_c9682b8b9c_b.jpg,https://farm8.staticflickr.com/7258/7523483078_2ecce33174_b.jpg,https://farm9.staticflickr.com/8153/7523483740_4a90710c5d_b.jpg,https://farm9.staticflickr.com/8168/7523484808_158d67f423_b.jpg
 
-# Brene Brown
+# Brené Brown spoke on happiness through imperfection, complete with a free lesson in Texas line-dancing. One thing is for sure - we'll never stop believin!
 
-Brené Brown, Ph.D., LMSW is a research professor at the University of Houston Graduate College of Social Work. She has spent the past decade studying vulnerability, courage, worthiness, and shame.
+<div class="zig-zags_blue"></div>
+
+**Brené Brown, Ph.D., LMSW** is a research professor at the University of Houston Graduate College of Social Work. She has spent the past decade studying vulnerability, courage, worthiness, and shame.
+
+<div class="line-canvas"></div>
+
+### A bit more about Brené
 
 Brené is a nationally renowned speaker and has won numerous teaching awards, including the College’s Outstanding Faculty Award. Her groundbreaking work has been featured on PBS, NPR, CNN, The Katie Show, and Oprah Winfrey’s Super Soul Sunday. 
 
