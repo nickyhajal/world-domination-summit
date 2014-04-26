@@ -22,7 +22,7 @@ User = Shelf.Model.extend
     'user_id', 'type', 'email', 'first_name', 'last_name', 
     'email', 'hash', 'user_name', 'mf', 'twitter', 'facebook', 'site', 'pic', 
     'address', 'address2', 'city', 'region', 'country', 'zip', 'lat', 'lon', 'distance',
-    'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'lastShake'
+    'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake'
   ]
   defaults:
     pic: ''
