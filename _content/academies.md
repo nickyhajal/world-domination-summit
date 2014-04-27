@@ -19,9 +19,12 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 		Spend the day with Darren Rowse and Chris Garrett—authors of ProBlogger the book—exploring how to build profitable blogs. Over the day you'll get insight from Darren and Chris on the four 'pillars' of Problogging—Creating Killer Content, Finding Readers, Building Community, and Monetization.
 
 		<h4>About Darren Rowse and Chris Garrett</h4>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum semper sem dapibus aliquet. Ut vel ullamcorper ligula. Aliquam gravida dui et consequat blandit. Suspendisse facilisis risus quis est vehicula sodales. Etiam cursus eros lobortis pretium vulputate. Nulla ornare eu erat sed suscipit.
+		Darren Rowse is a blogger, speaker, consultant and founder of several blogs and blog networks, including b5media and ProBlogger.net. He lives in Melbourne, Australia.
+		
+		Chris Garrett is an online business consultant, teacher, coach, new media industry commentator, writer (some might argue that point), speaker, and all-round web geek. He has been involved in several startups and has written for some of the web’s best-loved blogs, and works with Darren at Copyblogger.
 	</div>
 </div>
+
 <div class="collapsable-box collapsable-box-closed">
 	<a href="#"><h4>Travel Hacking Academy</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
@@ -30,10 +33,27 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 	<a href="#" class="button">Register</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
-		Spend the day with Darren Rowse and Chris Garrett—authors of ProBlogger the book—exploring how to build profitable blogs. Over the day you'll get insight from Darren and Chris on the four 'pillars' of Problogging—Creating Killer Content, Finding Readers, Building Community, and Monetization.
+		Master the art of travel hacking. You will learn how to build a strategy to earn big balances of airline and hotel points and miles that you can redeem to travel to your dream destinations. If you want to go places for free, this is the academy for you.
 
-		<h4>About Darren Rowse and Chris Garrett</h4>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum semper sem dapibus aliquet. Ut vel ullamcorper ligula. Aliquam gravida dui et consequat blandit. Suspendisse facilisis risus quis est vehicula sodales. Etiam cursus eros lobortis pretium vulputate. Nulla ornare eu erat sed suscipit.
+		<h4>About Stephanie Zito</h4>
+		Stephanie, aka @wanderingzito, is a traveler, professional do-gooder, avid hammocker, personal adventure coach and an evangelist for most things that make the world better.
+
+By day she teaches non-profits how to tell stories through digital media. By night she's an aspiring social entrepreneur and co-founder of Color Cloud Hammocks. And she's a professional travel hacker.
+	</div>
+</div>
+
+<div class="collapsable-box collapsable-box-closed">
+	<a href="#"><h4>Nerd Fitness Day Camp</h4></a>
+	<h5>9:00 am–4:00 pm</h5>
+	Led by Steve Kamb
+	Tickets: $xx
+	<a href="#" class="button">Register</a>
+	<div class="collapsable-content">
+		<h4>Summary</h4>
+		Whether you’re interested in learning strength training, yoga, parkour, becoming a better runner, or just spending a long weekend with friends you’ve gotten to know through the Nerd Fitness community, we’ve got you covered. It's kind of like a combination having fun with friends and learning new things about fitness and health.  This will not be a rigorous, intensive exercise all-day bootcamp, nor will it be a typical seminar where you sit in one room all day and listen to people talk for 10 hours.
+
+		<h4>About Steve Kamb</h4>
+		Steve is NOT a fitness expert. Although he obtained a basic personal training certification from AAAI a few years back, and has dedicated the past decade of his life to this stuff, his perspective comes from a normal guy down in the trenches with you – a nerd who sits at a computer all day long, loves to play video games, and really enjoys staying active while pushing himself to be in the best shape he can be.
 	</div>
 </div>
 
@@ -47,10 +67,12 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 	<a href="#" class="button">Register</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
-		Spend the day with Darren Rowse and Chris Garrett—authors of ProBlogger the book—exploring how to build profitable blogs. Over the day you'll get insight from Darren and Chris on the four 'pillars' of Problogging—Creating Killer Content, Finding Readers, Building Community, and Monetization.
+		This is a big, fun exploration of collaboration: how to do more of it, how to invite others into your work, what not to do. It will also be the launch of a co-creative art/story project by Gary Hirsch where participants take (literally) original artwork from the artist and use it as a launch pad for their own art, work, and stories.
 
-		<h4>About Darren Rowse and Chris Garrett</h4>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum semper sem dapibus aliquet. Ut vel ullamcorper ligula. Aliquam gravida dui et consequat blandit. Suspendisse facilisis risus quis est vehicula sodales. Etiam cursus eros lobortis pretium vulputate. Nulla ornare eu erat sed suscipit.
+In the session you'll play, collaborate, tell stories, get some free cool stuff, work with strangers, and let go a bit, which is always a good thing. This is a great session to get help with something that you are currently working on, and have a ridiculously good time!
+
+		<h4>About Gary Hirsch</h4>
+		Gary Hirsch is an artist, illustrator, improviser, and co-founder of On Your Feet—a consultancy that collides improv with business to help companies relate, create and collaborate, all while having a ridiculously good time.
 	</div>
 </div>
 <div class="collapsable-box collapsable-box-closed">
@@ -61,9 +83,24 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 	<a href="#" class="button">Register</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
-		Spend the day with Darren Rowse and Chris Garrett—authors of ProBlogger the book—exploring how to build profitable blogs. Over the day you'll get insight from Darren and Chris on the four 'pillars' of Problogging—Creating Killer Content, Finding Readers, Building Community, and Monetization.
+		Just what is “simple living,” anyway? And why does it seem to hard to… well, do? Conventional culture often defines living simply with a bunch of rules: shun the TV, ride only your bike, grow your own food, shower only when others complain. But the real definition is delightfully freeing, and it can be fleshed out in any lifestyle, at any age, at any place in the world. In this workshop, we’ll explore what living simply might look like for you. First, we’ll relish in the real definition of simple living. Then, you’ll find time and space to deconstruct parts of your life, followed by freedom to reassemble them using a new-to-you blueprint. Roll up your sleeves and treat yourself to a morning/an afternoon of personal reflection, brainstorming, and if you want, a chance to bounce around some fresh ideas on the nuts and bolts of making it all work. (Introverts who thrive on solo reflection are just as welcome as extroverts who need to chat it all out.) Bring your journal and a pencil for this one.
 
-		<h4>About Darren Rowse and Chris Garrett</h4>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum semper sem dapibus aliquet. Ut vel ullamcorper ligula. Aliquam gravida dui et consequat blandit. Suspendisse facilisis risus quis est vehicula sodales. Etiam cursus eros lobortis pretium vulputate. Nulla ornare eu erat sed suscipit.
+		<h4>About Tsh Oxenreider</h4>
+		Tsh (no, that's not a typo) writes about the art and science of living simpler at *The Art of Simple*.  She started the blog in early 2008 (it used to be called Simple Mom), and it grew pretty quickly, and she now shares the space with 20-plus amazing writers. In 2010, the blog expanded into a five-channel network, and in 2012, they added a sixth.
+	</div>
+</div>
+
+<div class="collapsable-box collapsable-box-closed">
+	<a href="#"><h4>The Nuts and Bolts of Long-Term Travel</h4></a>
+	<h5>1:00 pm–5:00 pm</h5>
+	Led by Jodi Ettenberg
+	Tickets: $xx
+	<a href="#" class="button">Register</a>
+	<div class="collapsable-content">
+		<h4>Summary</h4>
+		TK
+
+		<h4>About Jodi Ettenberg</h4>
+		Jodi is a former lawyer currently traveling (and eating!) her way around the world, one country at a time. She started Legal Nomads in 2008 when she quit her job and took off to see the world, having saved up money by lawyering for 5 years in New York City. She thought she would return to lawyering after a year or so on the road, but  that never happened.
 	</div>
 </div>
