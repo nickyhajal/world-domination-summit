@@ -80,7 +80,7 @@ smaller workshop sessions to spend even more time with informal conversation.
 
 <img src="/images/schedule/schedule-circle-2.png" id="schedule-circle-2"/>
 
-### Portland Experience
+<h3 class="color-green">Portland Experience</h3>
 
 <a name="portland-experience"></a>
 
@@ -102,11 +102,13 @@ After morning sessions end on Saturday, we're taking over the Park Blocks for a 
 
 <a name="everything-else"></a>
 
-<h4 class="color-orange">Attendee Meetups</h3>
+<div class="half-col">
+	<h4 class="color-orange">Attendee Meetups</h3>
 
-Both days, we'll set aside time for attendees to host informal meetups. You can go from the Get Rich Slowly meetup to the Location Independent meetup—and then over to the Minimalist group, where a fight will likely break out over who owns the fewest things.
+	Both days, we'll set aside time for attendees to host informal meetups. You can go from the Get Rich Slowly meetup to the Location Independent meetup—and then over to the Minimalist group, where a fight will likely break out over who owns the fewest things.
 
-And if you have your own blog, you can host a meetup too. (Our dedicated attendee web app will tell attendees where each meetup is being held.)
+	And if you have your own blog, you can host a meetup too. (Our dedicated attendee web app will tell attendees where each meetup is being held.)
+	</div>
 
 <div class="half-col">
 	<h4 class="color-orange">Mass book signing</h3>
