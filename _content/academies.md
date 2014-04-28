@@ -18,12 +18,13 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 	<a href="#" class="button">Register</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
-		Spend the day with Darren Rowse and Chris Garrett—authors of ProBlogger the book—exploring how to build profitable blogs. Over the day you'll get insight from Darren and Chris on the four 'pillars' of Problogging—Creating Killer Content, Finding Readers, Building Community, and Monetization.
+		Darren Rowse is the founder of ProBlogger, Digital Photography School and various other blogs. He’s been blogging since 2002 and has been involved in a variety of other projects including co-authoring ProBlogger the Book.
 
-		<h4>About Darren Rowse and Chris Garrett</h4>
-		Darren Rowse is a blogger, speaker, consultant and founder of several blogs and blog networks, including b5media and ProBlogger.net. He lives in Melbourne, Australia.
-		
-		Chris Garrett is an online business consultant, teacher, coach, new media industry commentator, writer (some might argue that point), speaker, and all-round web geek. He has been involved in several startups and has written for some of the web’s best-loved blogs, and works with Darren at Copyblogger.
+Darren's passion is for helping bloggers find their voice and build sustainable blogs and he speaks around the world on the topic of building profitable blogs.
+
+Chris Garrett is an online business consultant, teacher, coach, new media industry commentator, writer, speaker, and all-round web geek. He has been involved in several startups and has written for some of the web’s best-loved blogs.
+
+Chris also works as part of the team at Copyblogger as VP of Educational Content.
 	</div>
 </div>
 
@@ -39,9 +40,7 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 		Master the art of travel hacking. You will learn how to build a strategy to earn big balances of airline and hotel points and miles that you can redeem to travel to your dream destinations. If you want to go places for free, this is the academy for you.
 
 		<h4>About Stephanie Zito</h4>
-		Stephanie, aka @wanderingzito, is a traveler, professional do-gooder, avid hammocker, personal adventure coach and an evangelist for most things that make the world better.
-
-By day she teaches non-profits how to tell stories through digital media. By night she's an aspiring social entrepreneur and co-founder of Color Cloud Hammocks. And she's a professional travel hacker.
+		Stephanie Zito is a life long traveler and master of mileage. She redeemed her first international frequent flyer ticket in 1994 and has been hooked on free flights ever since. Stephanie has traveled to more than 117 countries and her current airport base is PDX. wanderingforgood.com / @wanderingzito
 	</div>
 </div>
 
@@ -77,7 +76,7 @@ By day she teaches non-profits how to tell stories through digital media. By nig
 In the session you'll play, collaborate, tell stories, get some free cool stuff, work with strangers, and let go a bit, which is always a good thing. This is a great session to get help with something that you are currently working on, and have a ridiculously good time!
 
 		<h4>About Gary Hirsch</h4>
-		Gary Hirsch is an artist, illustrator, improviser, and co-founder of On Your Feet—a consultancy that collides improv with business to help companies relate, create and collaborate, all while having a ridiculously good time.
+		Gary Hirsch is a collaboration junkie and the co-founder of [On Your Feet](http://oyf.com), a consultancy that uses improvisation and other interactive methods to help organizations generate new ideas, collaborate, engage audiences and walk their talk. After improv, Gary’s second love is art making, which is rooted in collaboration as well. Currently he is obsessed with making and launching thousands of small hand-painted domino robots into the world to see what will happen. Story telling, improvisation, and doodling are all inter-related for Gary, when he’s doing any of these there are never enough hours in the day.
 	</div>
 </div>
 <div class="collapsable-box collapsable-box-closed">
