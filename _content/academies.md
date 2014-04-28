@@ -21,13 +21,9 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 		Spend the day with Darren Rowse and Chris Garrett—authors of *ProBlogger* the book—exploring how to build profitable blogs. Over the day you'll get insight from Darren and Chris on the four 'pillars' of Problogging—Creating Killer Content, Finding Readers, Building Community, and Monetization.
 		
 		<h4>About the Hosts</h4>
-		<p>Darren Rowse is the founder of ProBlogger, Digital Photography School and various other blogs. He’s been blogging since 2002 and has been involved in a variety of other projects including co-authoring *ProBlogger* the Book.
-
-<p>Darren's passion is for helping bloggers find their voice and build sustainable blogs and he speaks around the world on the topic of building profitable blogs.
-
-<p>Chris Garrett is an online business consultant, teacher, coach, new media industry commentator, writer, speaker, and all-round web geek. He has been involved in several startups and has written for some of the web’s best-loved blogs.
-
-<p>Chris also works as part of the team at Copyblogger as VP of Educational Content.
+		Darren Rowse is the founder of ProBlogger, Digital Photography School and various other blogs. He’s been blogging since 2002 and has been involved in a variety of other projects including co-authoring *ProBlogger* the Book. Darren's passion is for helping bloggers find their voice and build sustainable blogs and he speaks around the world on the topic of building profitable blogs.
+&nbsp;
+Chris Garrett is an online business consultant, teacher, coach, new media industry commentator, writer, speaker, and all-round web geek. He has been involved in several startups and has written for some of the web’s best-loved blogs. Chris also works as part of the team at Copyblogger as VP of Educational Content.
 	</div>
 </div>
 
