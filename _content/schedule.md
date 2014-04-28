@@ -104,23 +104,21 @@ After morning sessions end on Saturday, we're taking over the Park Blocks for a 
 
 <h4 class="color-orange">Attendee Meetups</h3>
 
-Both days, we'll set aside time for attendees to host informal meetups. You can go from the Get Rich Slowly meetup to the Location Independent meetup—and then over to the Minimalist group, where a fight will likely break out over who owns the fewest things.
+	<p></p>
+	<p>Both days, we'll set aside time for attendees to host informal meetups. You can go from the Get Rich Slowly meetup to the Location Independent meetup—and then over to the Minimalist group, where a fight will likely break out over who owns the fewest things.</p>
 
-	And if you have your own blog, you can host a meetup too. (Our dedicated attendee web app will tell attendees where each meetup is being held.)
+	<p>And if you have your own blog, you can host a meetup too. (Our dedicated attendee web app will tell attendees where each meetup is being held.)</p>
 
 <div class="half-col">
 	<h4 class="color-orange">Meet the Authors</h3>
 	<p></p>
-	<p>
-		On Sunday afternoon—before we all head to the afterparty—we've set aside a space for our speakers to sign books and meet readers. Print books will be available for sale throughout the weekend, and if you're digital-only, you can stop by to say hi to your favorite author.
+	<p>On Sunday afternoon—before we all head to the afterparty—we've set aside a space for our speakers to sign books and meet readers. Print books will be available for sale throughout the weekend, and if you're digital-only, you can stop by to say hi to your favorite author.
 	</p>
 </div>
 <div class="half-col">
 	<h4 class="color-orange">See the city</h3>
 	<p></p>
-	<p>
-		Head out to see the town on your choice of self-guided walking tours in cooperation with other attendees.
-		Tours will begin on Thursday night (prior to the official opening) and continue through the following Monday.
+	<p>Head out to see the town on your choice of self-guided walking tours in cooperation with other attendees. Tours will begin on Thursday night (prior to the official opening) and continue through the following Monday.
 	</p>
 </div>
 
