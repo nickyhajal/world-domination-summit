@@ -75,10 +75,9 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 		<h4>About Gary Hirsch</h4>
 		Gary Hirsch is a collaboration junkie and the co-founder of [On Your Feet](http://oyf.com), a consultancy that uses improvisation and other interactive methods to help organizations generate new ideas, collaborate, engage audiences and walk their talk. After improv, Gary’s second love is art making, which is rooted in collaboration as well. Currently he is obsessed with making and launching thousands of small hand-painted domino robots into the world to see what will happen. Story telling, improvisation, and doodling are all inter-related for Gary, when he’s doing any of these there are never enough hours in the day.
 	</div>
-	<a name="art-of-simple"></a>
 </div>
 
-
+<a name="art-of-simple"></a>
 <div class="collapsable-box collapsable-box-open">
 	<a href="#"><h4>The Art of Simple: A Field Guide to Redesigning Your Simple Life</h4></a>
 	<h5>1:00 pm–5:00 pm</h5>
