@@ -11,7 +11,7 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 ### Thursday, July 10
 
 <div class="collapsable-box collapsable-box-open">
-	<a href="#"><h4>ProBlogger Academy: Building Profitable Blogs</h4></a>
+	<a href="#problogger"><h4>ProBlogger Academy: Building Profitable Blogs</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
 	Led by Darren Rowse and Chris Garrett
 	<a href="#" class="button">Register</a>
@@ -28,7 +28,7 @@ Chris also works as part of the team at Copyblogger as VP of Educational Content
 </div>
 
 <div class="collapsable-box collapsable-box-closed">
-	<a href="#"><h4>Travel Hacking Academy</h4></a>
+	<a href="#travel-hacking"><h4>Travel Hacking Academy</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
 	Led by Stephanie Zito
 	<a href="#" class="button">Register</a>
@@ -42,7 +42,7 @@ Chris also works as part of the team at Copyblogger as VP of Educational Content
 </div>
 
 <div class="collapsable-box collapsable-box-closed">
-	<a href="#"><h4>Nerd Fitness Day Camp</h4></a>
+	<a href="#nerd-fitness"><h4>Nerd Fitness Day Camp</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
 	Led by Steve Kamb
 	<a href="#" class="button">Register</a>
@@ -58,7 +58,7 @@ Chris also works as part of the team at Copyblogger as VP of Educational Content
 ### Monday, July 15
 
 <div class="collapsable-box collapsable-box-closed">
-	<a href="#"><h4>Making Art and Giving It Away</h4></a>
+	<a href="#making-art"><h4>Making Art and Giving It Away</h4></a>
 	<h6>9:00 am–4:00 pm</h6>
 	Led by Gary Hirsch
 	<a href="#" class="button">Register</a>
@@ -73,7 +73,7 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 	</div>
 </div>
 <div class="collapsable-box collapsable-box-closed">
-	<a href="#"><h4>The Art of Simple: A Field Guide to Redesigning Your Simple Life</h4></a>
+	<a href="#art-of-simple"><h4>The Art of Simple: A Field Guide to Redesigning Your Simple Life</h4></a>
 	<h5>1:00 pm–5:00 pm</h5>
 	Led by Tsh Oxenreider
 	<a href="#" class="button">Register</a>
@@ -87,7 +87,7 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 </div>
 
 <div class="collapsable-box collapsable-box-closed">
-	<a href="#"><h4>The Nuts and Bolts of Long-Term Travel</h4></a>
+	<a href="#long-term-travel"><h4>The Nuts and Bolts of Long-Term Travel</h4></a>
 	<h5>1:00 pm–5:00 pm</h5>
 	Led by Jodi Ettenberg
 	<a href="#" class="button">Register</a>
