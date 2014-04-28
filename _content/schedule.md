@@ -25,10 +25,6 @@ icon: parachute
 		<div class="main-schedule-time">7:00PM Onward</div>
 		<div class="main-schedule-descr">Closing Party</div>
 	</div>
-	<div class="main-schedule-item">
-		<div class="main-schedule-day">Full Schedule</div>
-		<div class="main-schedule-descr">Coming Soon!</div>
-	</div>
 </div>
 
 <p class="intro">We'll all arrive in the city for a welcoming party on Friday evening, July 11th. The main event kicks off in the beautiful Arlene Schnitzer Concert Hall on Saturday morning.</p>
