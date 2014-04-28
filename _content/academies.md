@@ -14,7 +14,7 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 <div class="collapsable-box collapsable-box-open">
 	<a href="#"><h4>ProBlogger Academy: Building Profitable Blogs</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
-	Led by Darren Rowse and Chris Garrett
+	Hosted by Darren Rowse and Chris Garrett
 	<a href="#" class="button">Register</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
@@ -29,7 +29,7 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 <div class="collapsable-box collapsable-box-open">
 	<a href="#"><h4>Travel Hacking Academy</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
-	Led by Stephanie Zito
+	Hosted by Stephanie Zito
 	<a href="#" class="button">Register</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
@@ -44,7 +44,7 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 <div class="collapsable-box collapsable-box-open">
 	<a href="#"><h4>Nerd Fitness Day Camp</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
-	Led by Steve Kamb
+	Hosted by Steve Kamb
 	<a href="#" class="button">Register</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
@@ -61,7 +61,7 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 <div class="collapsable-box collapsable-box-open">
 	<a href="#"><h4>Making Art and Giving It Away</h4></a>
 	<h6>9:00 am–4:00 pm</h6>
-	Led by Gary Hirsch
+	Hosted by Gary Hirsch
 	<a href="#" class="button">Register</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
@@ -78,7 +78,7 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 <div class="collapsable-box collapsable-box-open">
 	<a href="#"><h4>The Art of Simple: A Field Guide to Redesigning Your Simple Life</h4></a>
 	<h5>1:00 pm–5:00 pm</h5>
-	Led by Tsh Oxenreider
+	Hosted by Tsh Oxenreider
 	<a href="#" class="button">Register</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
@@ -93,7 +93,7 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 <div class="collapsable-box collapsable-box-open">
 	<a href="#"><h4>The Nuts and Bolts of Long-Term Travel</h4></a>
 	<h5>1:00 pm–5:00 pm</h5>
-	Led by Jodi Ettenberg
+	Hosted by Jodi Ettenberg
 	<a href="#" class="button">Register</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
