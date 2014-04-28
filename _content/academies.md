@@ -15,7 +15,7 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 	<a href="#"><h4>ProBlogger Academy: Building Profitable Blogs</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
 	Hosted by Darren Rowse and Chris Garrett
-	<a href="#" class="button">Register</a>
+	<a href="#" class="button">Tickets &rarr;</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		Spend the day with Darren Rowse and Chris Garrett—authors of *ProBlogger* the book—exploring how to build profitable blogs. Over the day you'll get insight from Darren and Chris on the four 'pillars' of Problogging—Creating Killer Content, Finding Readers, Building Community, and Monetization.
