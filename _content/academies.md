@@ -64,7 +64,7 @@ By day she teaches non-profits how to tell stories through digital media. By nig
 ### Monday, July 15
 
 <div class="collapsable-box collapsable-box-closed">
-	<a href="#"><h4>The Co-Creation Lab: Let go, Have Fun, and Make Things With Other People</h4></a>
+	<a href="#"><h4>Making Art and Giving It Away</h4></a>
 	<h6>9:00 am–4:00 pm</h6>
 	Led by Gary Hirsch
 	
