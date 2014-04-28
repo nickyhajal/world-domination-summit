@@ -10,8 +10,8 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 
 ### Thursday, July 10
 
+<a name="problogger"></a>
 <div class="collapsable-box collapsable-box-open">
-	<a name="problogger"></a>
 	<a href="#"><h4>ProBlogger Academy: Building Profitable Blogs</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
 	Led by Darren Rowse and Chris Garrett
@@ -28,8 +28,8 @@ Chris also works as part of the team at Copyblogger as VP of Educational Content
 	</div>
 </div>
 
-<div class="collapsable-box collapsable-box-closed">
-	<a name="travel-hacking"></a>
+<a name="travel-hacking"></a>
+<div class="collapsable-box collapsable-box-open">
 	<a href="#"><h4>Travel Hacking Academy</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
 	Led by Stephanie Zito
@@ -43,8 +43,8 @@ Chris also works as part of the team at Copyblogger as VP of Educational Content
 	</div>
 </div>
 
-<div class="collapsable-box collapsable-box-closed">
-	<a name="nerd-fitness"></a>
+<a name="nerd-fitness"></a>
+<div class="collapsable-box collapsable-box-open">
 	<a href="#"><h4>Nerd Fitness Day Camp</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
 	Led by Steve Kamb
@@ -60,8 +60,8 @@ Chris also works as part of the team at Copyblogger as VP of Educational Content
 
 ### Monday, July 15
 
-<div class="collapsable-box collapsable-box-closed">
-	<a name="making-art"></a>
+<a name="making-art"></a>
+<div class="collapsable-box collapsable-box-open">
 	<a href="#"><h4>Making Art and Giving It Away</h4></a>
 	<h6>9:00 am–4:00 pm</h6>
 	Led by Gary Hirsch
@@ -76,8 +76,9 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 		Gary Hirsch is a collaboration junkie and the co-founder of [On Your Feet](http://oyf.com), a consultancy that uses improvisation and other interactive methods to help organizations generate new ideas, collaborate, engage audiences and walk their talk. After improv, Gary’s second love is art making, which is rooted in collaboration as well. Currently he is obsessed with making and launching thousands of small hand-painted domino robots into the world to see what will happen. Story telling, improvisation, and doodling are all inter-related for Gary, when he’s doing any of these there are never enough hours in the day.
 	</div>
 </div>
-<div class="collapsable-box collapsable-box-closed">
-	<a name="art-of-simple"></a>
+
+<a name="art-of-simple"></a>
+<div class="collapsable-box collapsable-box-open">
 	<a href="#"><h4>The Art of Simple: A Field Guide to Redesigning Your Simple Life</h4></a>
 	<h5>1:00 pm–5:00 pm</h5>
 	Led by Tsh Oxenreider
@@ -91,8 +92,8 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 	</div>
 </div>
 
-<div class="collapsable-box collapsable-box-closed">
-	<a name="long-term-travel"></a>
+<a name="long-term-travel"></a>
+<div class="collapsable-box collapsable-box-open">
 	<a href="#"><h4>The Nuts and Bolts of Long-Term Travel</h4></a>
 	<h5>1:00 pm–5:00 pm</h5>
 	Led by Jodi Ettenberg
