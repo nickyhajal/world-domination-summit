@@ -80,9 +80,9 @@ smaller workshop sessions to spend even more time with informal conversation.
 
 <img src="/images/schedule/schedule-circle-2.png" id="schedule-circle-2"/>
 
-<h3 class="color-green">Workshops</h3>
+### Portland Experience
 
-<a name="workshops"></a>
+<a name="portland-experience"></a>
 
 After morning sessions end on Saturday, we're taking over the Park Blocks for a festival format. The all-new "Portland Experience" features:
 
