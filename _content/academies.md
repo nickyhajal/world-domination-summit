@@ -12,10 +12,10 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 
 <a name="problogger"></a>
 <div class="collapsable-box collapsable-box-open">
-	<a href="#"><h4>ProBlogger Academy: Building Profitable Blogs</h4></a>
+	<a href="https://www.eventbrite.com/e/wds-academy-problogger-academy-building-profitable-blogs-tickets-11339594031"><h4>ProBlogger Academy: Building Profitable Blogs</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
 	Hosted by Darren Rowse and Chris Garrett
-	<a href="#" class="button">Tickets &rarr;</a>
+	<a href="https://www.eventbrite.com/e/wds-academy-problogger-academy-building-profitable-blogs-tickets-11339594031" class="button">Tickets &rarr;</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		Spend the day with Darren Rowse and Chris Garrett—authors of *ProBlogger* the book—exploring how to build profitable blogs. Over the day you'll get insight from Darren and Chris on the four 'pillars' of Problogging—Creating Killer Content, Finding Readers, Building Community, and Monetization.
@@ -27,10 +27,10 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 
 <a name="travel-hacking"></a>
 <div class="collapsable-box collapsable-box-open">
-	<a href="#"><h4>Travel Hacking Academy</h4></a>
+	<a href="https://www.eventbrite.com/e/wds-academy-travel-hacking-tickets-11392203387"><h4>Travel Hacking Academy</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
 	Hosted by Stephanie Zito
-	<a href="#" class="button">Tickets &rarr;</a>
+	<a href="https://www.eventbrite.com/e/wds-academy-travel-hacking-tickets-11392203387" class="button">Tickets &rarr;</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		Master the art of travel hacking. You will learn how to build a strategy to earn big balances of airline and hotel points and miles that you can redeem to travel to your dream destinations. If you want to go places for free, this is the academy for you.
@@ -59,10 +59,10 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 
 <a name="making-art"></a>
 <div class="collapsable-box collapsable-box-open">
-	<a href="#"><h4>Making Art and Giving It Away</h4></a>
+	<a href="https://www.eventbrite.com/e/wds-academy-making-art-and-giving-it-away-tickets-11351507665"><h4>Making Art and Giving It Away</h4></a>
 	<h6>9:00 am–4:00 pm</h6>
 	Hosted by Gary Hirsch
-	<a href="#" class="button">Tickets &rarr;</a>
+	<a href="https://www.eventbrite.com/e/wds-academy-making-art-and-giving-it-away-tickets-11351507665" class="button">Tickets &rarr;</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		This is a big, fun exploration of collaboration: how to do more of it, how to invite others into your work, what not to do. It will also be the launch of a co-creative art/story project by Gary Hirsch where participants take (literally) original artwork from the artist and use it as a launch pad for their own art, work, and stories.
@@ -76,10 +76,10 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 
 <a name="art-of-simple"></a>
 <div class="collapsable-box collapsable-box-open">
-	<a href="#"><h4>The Art of Simple: A Field Guide to Redesigning Your Simple Life</h4></a>
+	<a href="https://www.eventbrite.com/e/wds-academy-the-art-of-simple-a-field-guide-to-redesigning-a-simple-life-tickets-11350996135"><h4>The Art of Simple: A Field Guide to Redesigning Your Simple Life</h4></a>
 	<h5>1:00 pm–5:00 pm</h5>
 	Hosted by Tsh Oxenreider
-	<a href="#" class="button">Tickets &rarr;</a>
+	<a href="https://www.eventbrite.com/e/wds-academy-the-art-of-simple-a-field-guide-to-redesigning-a-simple-life-tickets-11350996135" class="button">Tickets &rarr;</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		Just what is “simple living,” anyway? And why does it seem to hard to… well, do? Conventional culture often defines living simply with a bunch of rules: shun the TV, ride only your bike, grow your own food, shower only when others complain. But the real definition is delightfully freeing, and it can be fleshed out in any lifestyle, at any age, at any place in the world. In this workshop, we’ll explore what living simply might look like for you. First, we’ll relish in the real definition of simple living. Then, you’ll find time and space to deconstruct parts of your life, followed by freedom to reassemble them using a new-to-you blueprint. Roll up your sleeves and treat yourself to a morning/an afternoon of personal reflection, brainstorming, and if you want, a chance to bounce around some fresh ideas on the nuts and bolts of making it all work. (Introverts who thrive on solo reflection are just as welcome as extroverts who need to chat it all out.) Bring your journal and a pencil for this one.
@@ -91,10 +91,10 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 
 <a name="long-term-travel"></a>
 <div class="collapsable-box collapsable-box-open">
-	<a href="#"><h4>The Nuts and Bolts of Long-Term Travel</h4></a>
+	<a href="https://www.eventbrite.com/e/wds-academy-the-nuts-and-bolts-of-long-term-travel-tickets-11448588035"><h4>The Nuts and Bolts of Long-Term Travel</h4></a>
 	<h5>1:00 pm–5:00 pm</h5>
 	Hosted by Jodi Ettenberg
-	<a href="#" class="button">Tickets &rarr;</a>
+	<a href="https://www.eventbrite.com/e/wds-academy-the-nuts-and-bolts-of-long-term-travel-tickets-11448588035" class="button">Tickets &rarr;</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		TK
