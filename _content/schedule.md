@@ -6,6 +6,10 @@ icon: parachute
 	<h3>Main Schedule</h3>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Friday</div>
+		<div class="main-schedule-time">Morning</div>
+		<div class="main-schedule-descr">World Record Attempt</div>
+		<div class="main-schedule-time">12:00PM - 3:00PM</div>
+		<div class="main-schedule-descr">Registration</div>
 		<div class="main-schedule-time">7:00PM - 10:00PM</div>
 		<div class="main-schedule-descr">"Can't Wait" Welcoming Party</div>
 	</div>
