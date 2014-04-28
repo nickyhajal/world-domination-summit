@@ -18,7 +18,10 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 	<a href="#" class="button">Register</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
-		Darren Rowse is the founder of ProBlogger, Digital Photography School and various other blogs. He’s been blogging since 2002 and has been involved in a variety of other projects including co-authoring ProBlogger the Book.
+		Spend the day with Darren Rowse and Chris Garrett—authors of *ProBlogger* the book—exploring how to build profitable blogs. Over the day you'll get insight from Darren and Chris on the four 'pillars' of Problogging—Creating Killer Content, Finding Readers, Building Community, and Monetization.
+		
+		<h4>About the Hosts</h4>
+		Darren Rowse is the founder of ProBlogger, Digital Photography School and various other blogs. He’s been blogging since 2002 and has been involved in a variety of other projects including co-authoring *ProBlogger* the Book.
 
 Darren's passion is for helping bloggers find their voice and build sustainable blogs and he speaks around the world on the topic of building profitable blogs.
 
@@ -73,7 +76,7 @@ Chris also works as part of the team at Copyblogger as VP of Educational Content
 In the session you'll play, collaborate, tell stories, get some free cool stuff, work with strangers, and let go a bit, which is always a good thing. This is a great session to get help with something that you are currently working on, and have a ridiculously good time!
 
 		<h4>About Gary Hirsch</h4>
-		Gary Hirsch is a collaboration junkie and the co-founder of [On Your Feet](http://oyf.com), a consultancy that uses improvisation and other interactive methods to help organizations generate new ideas, collaborate, engage audiences and walk their talk. After improv, Gary’s second love is art making, which is rooted in collaboration as well. Currently he is obsessed with making and launching thousands of small hand-painted domino robots into the world to see what will happen. Story telling, improvisation, and doodling are all inter-related for Gary, when he’s doing any of these there are never enough hours in the day.
+		Gary Hirsch is a collaboration junkie and the co-founder of On Your Feet, a consultancy that uses improvisation and other interactive methods to help organizations generate new ideas, collaborate, engage audiences and walk their talk. After improv, Gary’s second love is art making, which is rooted in collaboration as well. Currently he is obsessed with making and launching thousands of small hand-painted domino robots into the world to see what will happen. Story telling, improvisation, and doodling are all inter-related for Gary, when he’s doing any of these there are never enough hours in the day.
 	</div>
 </div>
 
