@@ -1,5 +1,5 @@
 icon: parachute
-photo_head: https://flic.kr/p/f4isZH,https://www.flickr.com/photos/chrisguillebeau/9229137606/in/set-72157634653586214,https://www.flickr.com/photos/chrisguillebeau/9226354561/in/set-72157634653586214,https://www.flickr.com/photos/chrisguillebeau/9226351955/in/set-72157634653586214
+photo_head: https://flic.kr/p/f4isZH
 
 ## Academies
 
