@@ -2,6 +2,7 @@
 
 [Problogger](/academies#problogger)
 [Travel Hacking](/academies#travel-hacking)
+[Nerd Fitness](/academies#nerd-fitness)
 
 ## Monday
 
