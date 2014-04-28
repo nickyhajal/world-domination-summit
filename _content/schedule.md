@@ -102,19 +102,17 @@ After morning sessions end on Saturday, we're taking over the Park Blocks for a 
 
 <a name="everything-else"></a>
 
-<div class="half-col">
-	<h4 class="color-orange">Attendee Meetups</h3>
+<h4 class="color-orange">Attendee Meetups</h3>
 
-	Both days, we'll set aside time for attendees to host informal meetups. You can go from the Get Rich Slowly meetup to the Location Independent meetup—and then over to the Minimalist group, where a fight will likely break out over who owns the fewest things.
+Both days, we'll set aside time for attendees to host informal meetups. You can go from the Get Rich Slowly meetup to the Location Independent meetup—and then over to the Minimalist group, where a fight will likely break out over who owns the fewest things.
 
 	And if you have your own blog, you can host a meetup too. (Our dedicated attendee web app will tell attendees where each meetup is being held.)
-	</div>
 
 <div class="half-col">
-	<h4 class="color-orange">Mass book signing</h3>
+	<h4 class="color-orange">Meet the Authors</h3>
 	<p></p>
 	<p>
-		On Sunday night—before we all head to the afterparty—we've set aside a space for our speakers to sign books and meet readers. Print books will be available for sale, and if you're digital-only, you can stop by to say hi to your favorite author.
+		On Sunday afternoon—before we all head to the afterparty—we've set aside a space for our speakers to sign books and meet readers. Print books will be available for sale throughout the weekend, and if you're digital-only, you can stop by to say hi to your favorite author.
 	</p>
 </div>
 <div class="half-col">
