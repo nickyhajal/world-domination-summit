@@ -476,13 +476,13 @@ a.broadcast-show-all {
 }
 a.modal-close {
     background:                 url("/images/button-close.png") repeat scroll 0% 0% / 100% auto transparent;
-    width:                      22.5px;
-    height:                     22.5px;
     display:                    block;
     position:                   absolute;
     top:                        -12px;
     right:                      -11px;
     cursor:                     pointer;
+    height:                     22px;
+    width:                      22px;
 }
 .page-scrolled a#small-logo {
     opacity:                    1;
