@@ -15,7 +15,7 @@ jQuery.fn.scan
 
 			syncButton = ->
 				str = 'Follow'
-				if ap.me.isConnected(user_id)
+				if ap.me.isConnected?(user_id)
 					str = if format is 'short' then 'Following' else 'You Follow'
 				$t.html (str + ' ' + user.get('first_name'))
 
