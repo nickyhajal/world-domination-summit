@@ -24,6 +24,9 @@ window.wall =
 			@fillContent($('.wall-section'))
 			@generateWallPanels()
 		@loadTpls()
+		$('body')
+			.on('click', '.wall-content-type-flickr_stream', wall.showBiggerPhoto)
+			.on('click', '#video', wall.showVideo)
 
 	# Extending the Google Maps API
 	extendMaps: ->
@@ -182,6 +185,18 @@ window.wall =
 			$t.addClass('block')
 			$t.html block_html
 
+			if type is 'flickr_stream'
+				$t.attr('href', '#')
+			if type is 'attendee'
+				$t.attr('href', '/~'+content.user_name).attr('target', '_blank')
+			if type is 'attendee_map'
+				$t.attr('href', '/~'+content.user_name).attr('target', '_blank')
+			if type is 'speaker'
+				$t.attr('href', '/speaker/'+_.slugify(content.display_name)).attr('target', '_blank')
+			if type is 'speaker_quote'
+				$t.attr('href', '/speaker/'+_.slugify(content.display_name)).attr('target', '_blank')
+
+
 			# Post HTML Added
 			if type is 'icon'
 				ic_num = _.shuffle([1,2,3,4,5,6])[0]
@@ -216,6 +231,7 @@ window.wall =
 				zoom: 8
 				scrollwheel: false
 				disableDefaultUI: true
+				draggable: false
 			profile_map = new google.maps.Map(profile_map_el, mapOptions)
 			line = [
 				new google.maps.LatLng(content.lat, content.lon),
@@ -235,11 +251,35 @@ window.wall =
 			shift = $('.attendee_map_text', $t.closest('.block')).height() * -1
 			profile_map.shiftY(shift)
 
+	renderMap: ->
+		attendee = @options.attendee.attributes
+		profile_map_el = document.getElementById('army')
+		mapOptions = 
+			#center: new google.maps.LatLng(attendee.lat, attendee.lon)
+			zoom: 8
+			scrollwheel: false
+			disableDefaultUI: true
+		profile_map = new google.maps.Map(profile_map_el, mapOptions)
 	pruneUsed: (type)->
 		tmp = []
 
 		
 		wall.used_content[type] = tmp
+
+	showVideo: (e) ->
+		e.preventDefault()
+		ap.Modals.open('video')
+
+	showBiggerPhoto: (e) ->
+		e.preventDefault()
+		url = $('.flickr-photo', $(this)).data('url')
+		img = $('#modal-bigger-photo-img')
+		cont = $('.modal-content', $('#modal-bigger-photo'))
+		cont.attr('style', '')
+		img.attr('src', url).load ->
+			ap.Modals.open('bigger-photo')
+			cont.css('width', (img.width()+20)+'px')
+			cont.css('height', (img.height()+20)+'px')
 	getContent: (type, opts) ->
 		if type is 'icon'
 			icon =  

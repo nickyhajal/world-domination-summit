@@ -32,6 +32,7 @@ html(lang='en', class="#{hide_counter}")
 			div(id="the-loading-icon")
 		nav(id="top-nav")
 			div(class="contentainer")
+				a(id="small-logo", href="/")
 				div(id="nav-links")
 					a(id="nav-story", href="/story") Story
 					a(id="nav-schedule", href="/schedule") Schedule
@@ -80,3 +81,18 @@ html(lang='en', class="#{hide_counter}")
 				a(href="http://jolbyandfriends.com") Jolby & Friends
 				| &nbsp;&nbsp; | &nbsp; Programming by 
 				a(href="http://nickyhajal.com") Nicky Hajal
+
+		div(id="modals")
+			div(id="modal-army", class="modal")
+				div(class="model-content")
+					a(class="modal-close")
+					div(id="army-map")
+			div(id="modal-video", class="modal")
+				div(class="modal-content")
+					a(class="modal-close")
+					iframe(src="http://player.vimeo.com/video/74223936?title=0&amp;byline=0&amp;portrait=0&amp;color=656026", width="780", height="496", frameborder="0", autoplay)
+			div(id="modal-bigger-photo", class="modal")
+				div(class="modal-content")
+					a(class="modal-close")
+					img(src="#", id="modal-bigger-photo-img")
+

@@ -28,6 +28,7 @@ ap.init = () ->
 	_.whenReady 'me', ->
 		ap.initTemplates()
 		ap.initRouter()
+	ap.Modals.init()
 
 ap.initAssets = ->
 	assets = 'all_attendees,me'
@@ -74,7 +75,8 @@ ap.initRouter = ->
 	ap.Router = new Router()
 	Backbone.history.start({pushState: true})
 	$('body').on 'click', "a[href=^'/']", (e) ->
-		href = $(e.currentTarget).attr('href')
+		link = $(e.currentTarget)
+		href = link.attr('href')
 
 		if href.indexOf('#') > -1
 			anchor = $('a[name="'+href.replace('#', '')+'"]')
@@ -86,7 +88,7 @@ ap.initRouter = ->
 
 		# Catch clicks on links to use our navigate function instead
 		# Skip if a super-key is being pushed
-		else if !e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey && href.indexOf('http') != 0 && href.indexOf('/api/') < 0
+		else if link.attr('target') isnt '_blank' and !e.altKey and !e.ctrlKey and !e.metaKey and !e.shiftKey and href.indexOf('http') != 0 and href.indexOf('/api/') < 0
 		    e.preventDefault()
 		    url = href.replace(/^\//, '')
 		    ap.Router.navigate url, {trigger: true}

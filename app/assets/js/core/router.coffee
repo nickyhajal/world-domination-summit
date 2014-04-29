@@ -111,6 +111,7 @@ ap.goTo = (panel = '', options = {}, cb = false) ->
 		if ap.currentView? and ap.currentView
 			ap.currentView.finish()
 		ap.currentView = new view options
+		tk 'scrolllltooo'
 		$.scrollTo 0
 		ap.syncNav(panel)
 

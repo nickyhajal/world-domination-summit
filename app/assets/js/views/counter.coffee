@@ -6,6 +6,7 @@ ap.Counter =
 	initEvents: ->
 		$(window).on('scroll', @scroll)
 	scroll: ->
+		page = $('html')
 		cnt = $('#counter-shell')
 		side = $('#sidebar-shell')
 		left = cnt.offset().left
@@ -13,10 +14,12 @@ ap.Counter =
 		if not cnt.is(':visible')
 			threshold = 305
 		if window.scrollY > threshold
+			page.addClass('page-scrolled')
 			cnt.addClass('counter-fixed')
 			side.addClass('sidebar-fixed')
 			cnt.css('left', left+'px')
 		else
+			page.removeClass('page-scrolled')
 			cnt.removeClass('counter-fixed')
 			side.removeClass('sidebar-fixed')
 			cnt.css('left', '15px')
