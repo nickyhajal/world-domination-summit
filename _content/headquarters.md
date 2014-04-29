@@ -68,7 +68,7 @@ photo_head: /images/photos/theater.jpg,/images/photos/northwest.jpg,/images/phot
 <div class="line-canvas"></div>
 <h3 class="side-icon-fork">Food &amp; Dining</h3>
 <p>
-	Portland's famous food carts are six blocks away from the museum, with your choice of more than a dozen authentic, local options for less than $8 a meal. Voodoo Donuts will be on location throughout the weekend with a special "World Domination Glazed. 
+	Portland's famous food carts are six blocks away from the museum, with your choice of more than a dozen authentic, local options for less than $8 a meal. Voodoo Donuts will be on location throughout the weekend with a special "World Domination Glazed."
 </p>
 <div class="place-row">
 	<a href="">Tasty &amp; Alder</a>
