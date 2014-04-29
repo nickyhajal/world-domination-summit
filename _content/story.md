@@ -18,7 +18,6 @@ An expanded set of breakout sessions and smaller workshops will be held in nearb
 
 We'll have a Highly Sensitive Person Lounge with soothing hammocks and green tea for the introverts.
 
-Speaking of hotels, we're renting out every room in two partner hotels—every guest. 
-will be a WDS attendee. Hostels and other shared housing options will also be available.
+Speaking of hotels, we're renting out every room in two partner hotels—every guest will be a WDS attendee. Hostels and other shared housing options will also be available.
 
 <a href="/register" class="register-banner"></a>
