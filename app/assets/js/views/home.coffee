@@ -81,6 +81,17 @@ window.wall =
 						speaker.content_id = speaker.speakerid
 						wall.contByType['speaker'].push speaker
 
+				wall.contByType['speaker_quote'] = []
+				for type,list of ap.speakers
+					for speaker in list
+						inx = 0
+						for quote in speaker.quotes
+							speaker.quote = quote
+							speaker.data = JSON.stringify(speaker)
+							speaker.content_id = speaker.speakerid+inx
+							inx += 1
+							wall.contByType['speaker_quote'].push speaker
+
 				cb()
 		else
 			cb()
