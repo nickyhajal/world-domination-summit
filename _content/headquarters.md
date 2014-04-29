@@ -14,7 +14,7 @@ photo_head: /images/photos/theater.jpg,/images/photos/northwest.jpg,/images/phot
 </div>
 <div class="line-canvas"></div>
 <h3 class="side-icon-moon">Lodging</h3>
-<p>For all of these options, Portland's fast-and-easy light rail service goes directly from the airport to downtown for $2.30 - no need to rent a car during your whole time in the city. You can also come a day early or stay a day late, and the discount hotel rates are valid during the entire week surrounding the summit.</p>
+<p>Portland is an affordable destination, with the lowest hotel rates of any major west coast city. Every year we arrange a number of discounts from partner hotels. Other attendees rent through AirBnB or stay at a local hostel. A few options are listed below.</p>
 <div class="place-row">
 	<a href="">Portland Marriott City Center</a>
 	<span>
@@ -68,7 +68,7 @@ photo_head: /images/photos/theater.jpg,/images/photos/northwest.jpg,/images/phot
 <div class="line-canvas"></div>
 <h3 class="side-icon-fork">Food &amp; Dining</h3>
 <p>
-	Portland's famous food carts are six blocks away from the museum, with your choice of more than a dozen authentic, local options for less than $8 a meal. Voodoo Donuts will be on location at our opening party with a special "World Domination Glazed. 
+	Portland's famous food carts are six blocks away from the museum, with your choice of more than a dozen authentic, local options for less than $8 a meal. Voodoo Donuts will be on location throughout the weekend with a special "World Domination Glazed. 
 </p>
 <div class="place-row">
 	<a href="">Tasty &amp; Alder</a>
@@ -116,6 +116,6 @@ photo_head: /images/photos/theater.jpg,/images/photos/northwest.jpg,/images/phot
 <div class="line-canvas"></div>
 <h3 class="side-icon-bridge">City</h3>
 <p>
-	Our friends at Travel Portland and the Mayor's Office are preparing a special welcome for all out-of-town visitors. More details on lodging options and off-site activities will be sent to attendees at least two months before the summit. In short, it will be an amazing weekend in an incredible city.	
+	Our friends at Travel Portland and the Mayor's Office are preparing a special welcome for all out-of-town visitors. You'll have the chance to wander and explore. In short, it will be an amazing weekend in an incredible city (and for those attending from nearby, you'll enjoy meeting new friends while showing off our funky neighborhoods).	
 </p>
 <div class="line-canvas"></div>
