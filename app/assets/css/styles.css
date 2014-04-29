@@ -462,11 +462,9 @@ a.dispatch-content-comment-status {
 }
 a#nav-foundation {
     background-position:        -248px 0px ! important;
-    width:                      131px;
 }
 a#nav-academies {
     background-position:        -118px 0px ! important;
-    width:                      125px;
 }
 a.broadcast-show-all {
     float:                      right;
@@ -1430,12 +1428,9 @@ nav#top-nav {
     margin-right:               0px;
 }
 #nav-links a:hover, .nav-link-active {
+    background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
     color:                      rgb(33, 23, 10) ! important;
-    background:                 url("/images/button-sprites_nav-hover.png") repeat scroll 0px 0px / 730px auto transparent;
-}
-a#nav-story {
-    width:                      100px;
-    margin-right:               -11px ! important;
+    margin-top:                 -4px ! important;
 }
 a#nav-schedule {
     background-position:        -118px 0px ! important;
@@ -1443,31 +1438,27 @@ a#nav-schedule {
 }
 a#nav-headquarters {
     background-position:        -384px 0px ! important;
-    width:                      154px;
-    margin-right:               15px ! important;
 }
 a#nav-register {
     background-position:        0px 0px ! important;
-    width:                      96px;
-    margin-right:               10px ! important;
 }
 #nav-links a {
     color:                      rgb(226, 127, 28);
     display:                    block;
     float:                      left;
     font-family:                VitesseBook;
-    margin-right:               0px;
     text-align:                 center;
     text-decoration:            none;
     text-transform:             uppercase;
     text--webkit-transform:     uppercase;
     background-repeat:          no-repeat ! important;
     margin-top:                 -4px;
-    padding:                    5px 0px 6px;
     transition:                 color 0.15s ease 0s;
     -moz-transition:            color 0.15s ease 0s;
     -webkit-transition:         color 0.15s ease 0s;
     -o-transition:              color 0.15s ease 0s;
+    margin-right:               6px;
+    padding:                    5.5px 10px 4px ! important;
 }
 #nav-links {
     float:                      right;
