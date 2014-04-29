@@ -2,7 +2,7 @@ icon: parachute
 
 # Say Hello!
 
-But wait! Please review our [Frequently Asked Questions](/faq) to see if your question is addressed already.
+But wait! Please review our [Frequently Asked Questions](/faqs) to see if your question is addressed already.
 If you’re sure it isn’t, you’ve found the right place to get in touch.
 
 <div id="wufoo-mfc5ns40aeiur6">

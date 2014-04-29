@@ -16,7 +16,7 @@ icon: parachute
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Saturday</div>
 		<div class="main-schedule-time">9:00AM–7:00PM</div>
-		<div class="main-schedule-descr">Main Stage, Portland Experience</div>
+		<div class="main-schedule-descr">Main Stage, <br>Portland Experience</div>
 	</div>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Sunday</div>
@@ -27,25 +27,25 @@ icon: parachute
 	</div>
 </div>
 
-<p class="intro">We'll all arrive in the city for a welcoming party on Friday evening, July 11th. The main event kicks off in the beautiful Arlene Schnitzer Concert Hall on Saturday morning.</p>
+<p class="intro">We'll all arrive in the city for registration on Friday afternoon and an opening party on Friday evening. The main event kicks off in the beautiful Arlene Schnitzer Concert Hall on Saturday morning.</p>
 
-Throughout both weekend days, we'll alternate between the main stage for speaker talks, nearby alternate spaces for smaller-group workshops, and several smaller spaces for impromptu meetups.The evenings will find us set loose on the town, attending your choice of Portland group events.
+Throughout both weekend days, we'll alternate between the main stage for speaker talks, a park area for a mini-festival, and several smaller spaces for attendee-led meetups. The evenings will find us set loose on the town, attending your choice of group events or just out on your own.
 
-We'll conclude on Sunday evening in time for red-eye flights to the East Coast, or you can head out on another group event or stay for a Farewell party that goes as long as people are around. If you never need to sleep, afterparties and early-morning parties are scheduled for each day.
+We'll conclude on Sunday evening with a Farewell party that goes as long as people are around. If you never need to sleep, afterparties and early-morning parties are scheduled for each day. For the first time this year, additional "Academies" will be held on the days before and after the weekend.
 
 <div class="line-canvas"></div>
 
 <a name="speakers"></a>
 
-### Featured Speakers
-Among other surprises our 2013 lineup included a guest appearance from Superman
+### Featured Speakers (2013)
+Among other surprises, our 2013 lineup included a guest appearance from Superman.
 
 <div class="speaker_list" data-speaker-type="featured"></div>
 
 <div class="line-canvas"></div>
 
 ### Returning Speakers
-These featured speakers from previous years will return to lead workshops
+These featured speakers from previous years will return to lead workshops.
 
 <div class="speaker_list" data-speaker-type="returning"></div>
 
@@ -69,8 +69,7 @@ We'll begin each morning in the Schnitzer Theatre, a beautiful auditorium where 
 
 During breaks, you can visit the Hang-Out Hammock Lounge for a quick snooze—or just catch up with a new friend over a cup of coffee.
 
-Most presentations will devote at least 25% of the time to audience Q&A. Most speakers will also be available in 
-smaller workshop sessions to spend even more time with informal conversation.
+Most speakers will attend the entire weekend and be available for informal conversation.
 
 <div class="clear"></div>
 
@@ -90,7 +89,7 @@ After morning sessions end on Saturday, we're taking over the Park Blocks for a 
 
 *Interactive arts and crafts
 
-<p class="color-green">**Note:** Need a break? Our Highly-Sensitive Person lounge will be open all afternoon. You can also attend your choice of 100+ attendee-curated gatherings.</p>
+<p class="color-green">**Note:** Need a break? Our Highly-Sensitive Person zone will be open all afternoon. You can also attend your choice of 100+ attendee-led gatherings.</p>
 
 <img src="/images/schedule/schedule-circle-3.png" id="schedule-circle-3"/>
 
@@ -102,7 +101,7 @@ After morning sessions end on Saturday, we're taking over the Park Blocks for a 
 
 <p></p>
 <p>Both days, we'll set aside time for attendees to host informal meetups. You can go from the Get Rich Slowly meetup to the Location Independent meetup—and then over to the Minimalist group, where a fight will likely break out over who owns the fewest things.</p>
-<p>And if you have your own blog, you can host a meetup too. (Our dedicated attendee web app will tell attendees where each meetup is being held.)</p>
+<p>And if you have your own blog, you can host a meetup too. (Our dedicated attendee web app will tell you where each meetup is being held.)</p>
 
 <div class="half-col">
 	<h4 class="color-orange">Meet the Authors</h3>
