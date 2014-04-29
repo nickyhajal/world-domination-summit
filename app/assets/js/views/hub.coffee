@@ -31,7 +31,6 @@ ap.Views.hub = XView.extend
 
 		nextBroadcast = @broadcasts[_.ari(@broadcast_list[0].split('`'), 1)]
 		if nextBroadcast.options.date_iso > ap.me.get('last_broadcast')
-			tk 'show next'
 			@showBroadcast(nextBroadcast)
 	showBroadcast: (broadcast) ->
 			html = _.t 'parts_broadcast-box', broadcast.options

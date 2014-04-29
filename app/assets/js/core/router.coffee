@@ -77,6 +77,10 @@ ap.getPanelPath = (panel) ->
 		home: ''
 	return '/' + (map[panel] ? panel)
 
+ap.syncNav = (panel) ->
+	$('.nav-link-active').removeClass('nav-link-active')
+	$('#nav-'+panel).addClass('nav-link-active')
+
 ###
 	Re-render the page to show new content
 ###
@@ -108,6 +112,8 @@ ap.goTo = (panel = '', options = {}, cb = false) ->
 			ap.currentView.finish()
 		ap.currentView = new view options
 		$.scrollTo 0
+		ap.syncNav(panel)
+
 		if cb 
 			cb()
 	, 120

@@ -727,10 +727,10 @@ div.place-row {
 }
 div#logo-waves {
     background:                 url("/images/logo-waves.png") repeat scroll 0% 0% / 100% auto transparent;
-    width:                      285px;
     height:                     22px;
     position:                   relative;
     top:                        26px;
+    width:                      259px;
 }
 #page_content h1 em, #page_content h1 i {
     font-family:                vitesselight;
@@ -1308,9 +1308,6 @@ input.text, textarea.text {
     font-size:                  11pt;
     color:                      rgb(85, 85, 85);
     border:                     0px none;
-    box-shadow:                 0px 0px 3px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow:            0px 0px 3px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow:         0px 0px 3px rgba(0, 0, 0, 0.1);
 }
 div.clear {
     clear:                      both;
@@ -1365,8 +1362,8 @@ nav#top-nav {
 div#nav-links a:last-of-type {
     margin-right:               0px;
 }
-#nav-links a:hover {
-    color:                      rgb(33, 23, 10);
+#nav-links a:hover, .nav-link-active {
+    color:                      rgb(33, 23, 10) ! important;
     background:                 url("/images/button-sprites_nav-hover.png") repeat scroll 0px 0px / 730px auto transparent;
 }
 a#nav-story {
@@ -1377,7 +1374,7 @@ a#nav-schedule {
     background-position:        -118px 0px ! important;
     width:                      125px;
 }
-a#nav-hq {
+a#nav-headquarters {
     background-position:        -384px 0px ! important;
     width:                      154px;
     margin-right:               15px ! important;
@@ -1397,13 +1394,13 @@ div#nav-links a {
     text-decoration:            none;
     text-transform:             uppercase;
     text--webkit-transform:     uppercase;
-    transition:                 all 0.15s ease 0s;
-    -moz-transition:            all 0.15s ease 0s;
-    -webkit-transition:         all 0.15s ease 0s;
-    -o-transition:              all 0.15s ease 0s;
     background-repeat:          no-repeat ! important;
     margin-top:                 -4px;
     padding:                    5px 0px 6px;
+    transition:                 color 0.15s ease 0s;
+    -moz-transition:            color 0.15s ease 0s;
+    -webkit-transition:         color 0.15s ease 0s;
+    -o-transition:              color 0.15s ease 0s;
 }
 div#nav-links {
     float:                      right;
