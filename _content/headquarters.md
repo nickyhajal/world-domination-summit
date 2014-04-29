@@ -3,7 +3,7 @@ photo_head: /images/photos/theater.jpg,/images/photos/northwest.jpg,/images/phot
 
 <h3>Your Base in Portland, Or</h3>
 <p>
-	We'll base out of the Arlene Schnitzer Concert Hall, locate two blocks from a light-rail stop and directly across from South Park. On Saturday morning, one of the city's main Farmer's Markets will be open in the park, with cupcakes, fresh vegetables, and local art available for sale.
+	We'll base out of the Arlene Schnitzer Concert Hall, located two blocks from a light-rail stop and directly across from South Park. On Saturday morning, one of the city's main Farmer's Markets will be open in the park, with cupcakes, fresh vegetables, and local art available for sale.
 </p>
 <div class="place-row">
 	<a href="">1037 SW Broadway, Portland, Oregon 97205</a>
