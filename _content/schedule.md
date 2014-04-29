@@ -6,22 +6,24 @@ icon: parachute
 	<h3>Main Schedule</h3>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Friday</div>
-		<div class="main-schedule-time">7:00PM - 10:00PM</div>
+		<div class="main-schedule-time">8:00AM–11:00AM</div>
+		<div class="main-schedule-descr">World Record Attempt</div>
+		<div class="main-schedule-time">12:00PM–3:00PM</div>
+		<div class="main-schedule-descr">Registration</div>
+		<div class="main-schedule-time">7:00PM–10:00PM</div>
 		<div class="main-schedule-descr">"Can't Wait" Welcoming Party</div>
 	</div>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Saturday</div>
-		<div class="main-schedule-time">9:00PM - 10:00PM</div>
-		<div class="main-schedule-descr">Main Stage, Workshops, Fun</div>
+		<div class="main-schedule-time">9:00AM–7:00PM</div>
+		<div class="main-schedule-descr">Main Stage, Portland Experience</div>
 	</div>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Sunday</div>
-		<div class="main-schedule-time">9:00AM - 10:00PM</div>
-		<div class="main-schedule-descr">Main Stage, Workshops, Fun</div>
-	</div>
-	<div class="main-schedule-item">
-		<div class="main-schedule-day">Full Schedule</div>
-		<div class="main-schedule-descr">Coming Soon!</div>
+		<div class="main-schedule-time">9:00AM - 6:30PM</div>
+		<div class="main-schedule-descr">Main Stage, Fun</div>
+		<div class="main-schedule-time">7:00PM Onward</div>
+		<div class="main-schedule-descr">Closing Party</div>
 	</div>
 </div>
 
@@ -74,26 +76,21 @@ smaller workshop sessions to spend even more time with informal conversation.
 
 <img src="/images/schedule/schedule-circle-2.png" id="schedule-circle-2"/>
 
-<h3 class="color-green">Workshops</h3>
+<h3 class="color-green">Portland Experience</h3>
 
-<a name="workshops"></a>
+<a name="portland-experience"></a>
 
-After we end in the main theatre each day, we'll head to breakout rooms of smaller groups for specific topics. You can choose from topics such as these:
+After morning sessions end on Saturday, we're taking over the Park Blocks for a festival format. The all-new "Portland Experience" features:
 
-* Travel Hacking Anywhere in the World
+*Beer and wine tastings
 
-* How to Get a Book Deal
+*Hour-long yoga session with guest DJ
 
-* $100 Startup Entrepreneurship Group
+*Demonstrations from local vendors
 
-* How to Work Overseas
+*Interactive arts and crafts
 
-* Yoga on the Lawn
-
-* Become a Better Photographer in 
-60 Minutes
-
-<p class="color-green">Note: Workshops are available on a first-come, first-served basis. We'll also have yoga in the park (everyone's welcome) and other activities which are available to all attendees.</p>
+<p class="color-green">**Note:** Need a break? Our Highly-Sensitive Person lounge will be open all afternoon. You can also attend your choice of 100+ attendee-curated gatherings.</p>
 
 <img src="/images/schedule/schedule-circle-3.png" id="schedule-circle-3"/>
 
@@ -101,27 +98,23 @@ After we end in the main theatre each day, we'll head to breakout rooms of small
 
 <a name="everything-else"></a>
 
-We'll begin each morning in the Schnitzer Theatre, a beautiful auditorium where no seat is further than 60 feet from the stage. Speakers will share a short message that combines personal stories with practical ideas.
+<h4 class="color-orange">Attendee Meetups</h3>
 
-<h4 class="color-orange">Blogger Meetups</h3>
+	<p></p>
+	<p>Both days, we'll set aside time for attendees to host informal meetups. You can go from the Get Rich Slowly meetup to the Location Independent meetup—and then over to the Minimalist group, where a fight will likely break out over who owns the fewest things.</p>
 
-Both days, we'll set aside time for bloggers to host informal meetups. You can go from the Get Rich Slowly meetup to the Location Independent meetup—and then over to the Minimalist group, where a fight will likely break out over who owns the fewest things.
-
-And if you have your own blog, you can host a meetup too. (An e-bulletin board will tell attendees where each meetup is being held.)
+	<p>And if you have your own blog, you can host a meetup too. (Our dedicated attendee web app will tell attendees where each meetup is being held.)</p>
 
 <div class="half-col">
-	<h4 class="color-orange">Mass book signing</h3>
+	<h4 class="color-orange">Meet the Authors</h3>
 	<p></p>
-	<p>
-		On Sunday night—before we all head to the afterparty—we've set aside a space for our speakers to sign books and meet readers. Print books will be available for sale, and if you're digital-only, you can stop by to say hi to your favorite author.
+	<p>On Sunday afternoon—before we all head to the afterparty—we've set aside a space for our speakers to sign books and meet readers. Print books will be available for sale throughout the weekend, and if you're digital-only, you can stop by to say hi to your favorite author.
 	</p>
 </div>
 <div class="half-col">
 	<h4 class="color-orange">See the city</h3>
 	<p></p>
-	<p>
-		Head out to see the town on your choice of self-guided walking tours in cooperation with other attendees
-		Tours will begin on Thursday night (prior to the official opening) and continue through the following Monday.
+	<p>Head out to see the town on your choice of self-guided walking tours in cooperation with other attendees. Tours will begin on Thursday night (prior to the official opening) and continue through the following Monday.
 	</p>
 </div>
 
