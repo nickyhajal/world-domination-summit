@@ -313,16 +313,16 @@ a.tab-invisible {
     width:                      169px;
 }
 .the_icon {
-    background:                 url("/images/home/filler_icons_home.png?4") repeat scroll 0px 0px / 682px auto transparent;
-    display:                    block;
-    height:                     82px;
     vertical-align:             middle;
-    width:                      82px;
     position:                   absolute;
     top:                        50%;
     right:                      0px;
     left:                       0px;
-    margin:                     -40px auto auto;
+    width:                      88px;
+    display:                    block;
+    height:                     88px;
+    background:                 url("/images/home/filler_icons_home.png?10049") no-repeat scroll 0px 0px / 689px auto transparent;
+    margin:                     -44px auto auto;
 }
 .speaker-year {
     text-align:                 center;
@@ -2317,10 +2317,10 @@ a.counter-button {
 }
 .tpl-4 .block-10 {
     height:                     247px;
-    z-index:                    -1;
     top:                        535px;
     left:                       15px;
     width:                      264px;
+    z-index:                    1;
 }
 .tpl-4 .block-11 {
     background:                 none repeat scroll 0% 0% rgb(255, 255, 255);

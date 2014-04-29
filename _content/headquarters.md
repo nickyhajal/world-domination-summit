@@ -1,5 +1,6 @@
 icon: theater
 photo_head: /images/photos/theater.jpg,/images/photos/northwest.jpg,/images/photos/audience.jpg
+sidebar: headquarters
 
 <h3>Your Base in Portland, Or</h3>
 <p>
@@ -13,6 +14,9 @@ photo_head: /images/photos/theater.jpg,/images/photos/northwest.jpg,/images/phot
 	</span>
 </div>
 <div class="line-canvas"></div>
+
+<a name="lodging"></a>
+
 <h3 class="side-icon-moon">Lodging</h3>
 <p>Portland is an affordable destination, with the lowest hotel rates of any major west coast city. Every year we arrange a number of discounts from partner hotels. Other attendees rent through AirBnB or stay at a local hostel. A few options are listed below.</p>
 <div class="place-row">
@@ -51,6 +55,9 @@ photo_head: /images/photos/theater.jpg,/images/photos/northwest.jpg,/images/phot
 	</span>
 </div>
 <div class="line-canvas"></div>
+
+<a name="transportation"></a>
+
 <h3 class="side-icon-streetcar">Transportation</h3>
 <p>For all of these options, Portland's fast-and-easy light rail service goes directly from the airport to downtown for $2.30 - no need to rent a car during your whole time in the city. You can also come a day early or stay a day late, and the discount hotel rates are valid during the entire week surrounding the summit.</p> 
 <div class="place-row">
@@ -66,6 +73,9 @@ photo_head: /images/photos/theater.jpg,/images/photos/northwest.jpg,/images/phot
 	</span>
 </div>
 <div class="line-canvas"></div>
+
+<a name="food-dining"></a>
+
 <h3 class="side-icon-fork">Food &amp; Dining</h3>
 <p>
 	Portland's famous food carts are six blocks away from the museum, with your choice of more than a dozen authentic, local options for less than $8 a meal. Voodoo Donuts will be on location throughout the weekend with a special "World Domination Glazed."
@@ -114,6 +124,9 @@ photo_head: /images/photos/theater.jpg,/images/photos/northwest.jpg,/images/phot
 </div>
 
 <div class="line-canvas"></div>
+
+<a name="city"></a>
+
 <h3 class="side-icon-bridge">City</h3>
 <p>
 	Our friends at Travel Portland and the Mayor's Office are preparing a special welcome for all out-of-town visitors. You'll have the chance to wander and explore. In short, it will be an amazing weekend in an incredible city (and for those attending from nearby, you'll enjoy meeting new friends while showing off our funky neighborhoods).	
