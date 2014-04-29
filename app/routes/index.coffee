@@ -26,7 +26,7 @@ for province in all_provinces
 expire = 3600
 routes = (app) ->
 	if app.settings.env is 'development'
-		expire = 10
+		expire = 0
 	app.all '/upload-avatar', (req, res) ->
 		res.render "../views/upload",
 			title: "World Domination Summit - Avatar Upload"
@@ -59,7 +59,8 @@ routes = (app) ->
 									countries: JSON.stringify(countries)
 
 get_templates = (tpls, type, cb) ->
-	rds.get 'tpls_'+type, (err) ->
+	rds.get 'tpls_'+type, (err, existing_tpls) ->
+
 		if type is '_content' or type is '_sidebars'
 			path = "/../../" + type
 		else
@@ -140,10 +141,12 @@ get_templates = (tpls, type, cb) ->
 									if tpl_opts.length
 										tpl_opts = tpl_opts + '----tpl_opts----'
 										
+									content = content.replace(/\<script/g, '`script')
+									content = content.replace(/\<\/script/g, '`/script')
 									renderOpts.content = content
 								else
 									tpl_type = type
-									name = _.last file.split '/'
+									name = _.last file.split (path+'/')
 									name = name.replace '.jade', ''
 
 

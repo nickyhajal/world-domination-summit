@@ -20,7 +20,9 @@ window.wall =
 		wall.$el = $('#waterfall')
 		wall.$q = $('#wall-queue')
 		$(window).on('scroll', wall.scroll)
-		@loadContent()
+		@loadContent =>
+			@fillContent($('.wall-section'))
+			@generateWallPanels()
 		@loadTpls()
 
 	# Extending the Google Maps API
@@ -41,58 +43,67 @@ window.wall =
 
 		# Determine if we're ready to add more panels
 		if (window.scrollY / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 10 > 8
-			tk 'scroll'
 			$wall.css('height', ($wall.height()+800)+'px')
 			wall.displayPanels()
 
 	# Get content from API
 	# Note: currently gets all the content we have but
 	# this may need to change in the future
-	loadContent: ->
-		ap.api 'get content', {}, (rsp) =>
-			wall.content = _.shuffle rsp.content
-			for content in wall.content
-				if not wall.contByType[content.type]?
-					wall.contByType[content.type] = []
-				wall.contByType[content.type].push content
+	loadContent: (cb) ->
+		if not wall.content
+			ap.api 'get content', {}, (rsp) =>
+				wall.content = _.shuffle rsp.content
+				for content in wall.content
+					if not wall.contByType[content.type]?
+						wall.contByType[content.type] = []
+					wall.contByType[content.type].push content
 
-			answers = {}
-			wall.ansByQ = {}
-			for answer in rsp.answers
-				unless answers[answer.user_id]?
-					answers[answer.user_id] = {}
-				unless wall.ansByQ[answer.question_id]?
-					wall.ansByQ[answer.question_id] = []
-					answers[answer.user_id] = {}
-				wall.ansByQ[answer.question_id].push answer
+				answers = {}
+				wall.ansByQ = {}
+				for answer in rsp.answers
+					unless answers[answer.user_id]?
+						answers[answer.user_id] = {}
+					unless wall.ansByQ[answer.question_id]?
+						wall.ansByQ[answer.question_id] = []
+						answers[answer.user_id] = {}
+					wall.ansByQ[answer.question_id].push answer
 
-			wall.attendees = rsp.attendees
-			wall.atnById = {}
-			for atn in rsp.attendees
-				atn.distance = Math.ceil(atn.distance)
-				wall.atnById[atn.user_id] = atn
-			@fillContent($('.wall-section'))
-			@generateWallPanels()
+				wall.attendees = rsp.attendees
+				wall.atnById = {}
+				for atn in rsp.attendees
+					atn.distance = Math.ceil(atn.distance)
+					wall.atnById[atn.user_id] = atn
+
+				wall.contByType['speaker'] = []
+				for type,list of ap.speakers
+					for speaker in list
+						speaker.data = JSON.stringify(speaker)
+						speaker.content_id = speaker.speakerid
+						wall.contByType['speaker'].push speaker
+
+				cb()
+		else
+			cb()
 
 	# Load templates from the DOM and remove them
 	# Note: Maybe these should be in separae tpl files, but
 	# I like having everything relevant in home.jade
 	loadTpls: ->
-		self = this
-		$('.tpl', '#wall-tpls').each ->
-			wall.tpls.push $(this).html()
-		$('#wall-tpls').remove()
+			self = this
+			$('.tpl', '#wall-tpls').each ->
+				wall.tpls.push $(this).html()
+			$('#wall-tpls').remove()
 
-		$('.tpl', '#block-tpls').each ->
-			$t = $(this)
-			type = $t.data('type')
-			tpl =
-				html: $t.html()
-				type: type
-			unless wall.block_tpls[type]
-				wall.block_tpls[type] = []
-			wall.block_tpls[type].push tpl
-		$('#block-tpls').remove()
+			$('.tpl', '#block-tpls').each ->
+				$t = $(this)
+				type = $t.data('type')
+				tpl =
+					html: $t.html()
+					type: type
+				unless wall.block_tpls[type]
+					wall.block_tpls[type] = []
+				wall.block_tpls[type].push tpl
+			$('#block-tpls').remove()
 
 	# Generate panels until we have enough
 	generateWallPanels: ->
@@ -169,7 +180,6 @@ window.wall =
 				$t.append(the_icon)
 			if opts.atn_form is 'envelope'
 				bg = _.shuffle([1,2,3,4,5,6])[0]
-				tk $('.pattern-bg', $t)
 				$('.pattern-bg', $t).attr('style', 'background-position: -'+(bg*175)+'px 0 !important')
 			if opts.atn_form is 'box'
 				bg = _.shuffle([1,2,3,4,5,6])[0]
@@ -225,7 +235,7 @@ window.wall =
 				icon: ''
 			return icon
 
-		if type is 'speaker' or type is 'speaker_quote_photo'
+		if type is 'speaker_quote_photo'
 			type = 'speaker_quote'
 
 		if type is 'attendee'
@@ -277,6 +287,9 @@ window.wall =
 				if opts.orientation?
 					unless data.orientation is opts.orientation
 						pass = false
+
+				if type is 'flickr_stream' and not data.the_img_med?
+					pass = false
 
 				if pass
 					wall.used_content[type].push content.content_id
