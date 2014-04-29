@@ -100,10 +100,9 @@ After morning sessions end on Saturday, we're taking over the Park Blocks for a 
 
 <h4 class="color-orange">Attendee Meetups</h3>
 
-	<p></p>
-	<p>Both days, we'll set aside time for attendees to host informal meetups. You can go from the Get Rich Slowly meetup to the Location Independent meetup—and then over to the Minimalist group, where a fight will likely break out over who owns the fewest things.</p>
-
-	<p>And if you have your own blog, you can host a meetup too. (Our dedicated attendee web app will tell attendees where each meetup is being held.)</p>
+<p></p>
+<p>Both days, we'll set aside time for attendees to host informal meetups. You can go from the Get Rich Slowly meetup to the Location Independent meetup—and then over to the Minimalist group, where a fight will likely break out over who owns the fewest things.</p>
+<p>And if you have your own blog, you can host a meetup too. (Our dedicated attendee web app will tell attendees where each meetup is being held.)</p>
 
 <div class="half-col">
 	<h4 class="color-orange">Meet the Authors</h3>
