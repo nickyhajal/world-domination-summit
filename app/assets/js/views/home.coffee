@@ -260,6 +260,7 @@ window.wall =
 			scrollwheel: false
 			disableDefaultUI: true
 		profile_map = new google.maps.Map(profile_map_el, mapOptions)
+		
 	pruneUsed: (type)->
 		tmp = []
 
