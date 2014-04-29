@@ -37,15 +37,15 @@ We'll conclude on Sunday evening with a Farewell party that goes as long as peop
 
 <a name="speakers"></a>
 
-### Featured Speakers
-Among other surprises our 2013 lineup included a guest appearance from Superman
+### Featured Speakers (2013)
+Among other surprises, our 2013 lineup included a guest appearance from Superman.
 
 <div class="speaker_list" data-speaker-type="featured"></div>
 
 <div class="line-canvas"></div>
 
 ### Returning Speakers
-These featured speakers from previous years will return to lead workshops
+These featured speakers from previous years will return to lead workshops.
 
 <div class="speaker_list" data-speaker-type="returning"></div>
 
