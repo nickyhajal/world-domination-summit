@@ -83,14 +83,15 @@ sidebar: headquarters
 <a name="food-dining"></a>
 
 <h3 class="side-icon-fork">Food &amp; Dining</h3>
-<p>Portland is known for its 400+ **food carts**, located in 25 “pods” throughout the city. One popular pod is located at SW 10th and Alder. If you’re on the east side of town across the bridge, head to Cartopia at SE 12th and Hawthorne. Check out foodcartsportland.com for more information.
+
+Portland is known for its 400+ **food carts**, located in 25 “pods” throughout the city. One popular pod is located at SW 10th and Alder. If you’re on the east side of town across the bridge, head to Cartopia at SE 12th and Hawthorne. Check out foodcartsportland.com for more information.
 	
 A number of **great restaurants** are within easy walking distance or streetcar ride to the Pearl District. Some good restaurants in the area include Clyde Common (Ace Hotel), Metrovino, Grüner, Via Tri- bunali, Andina, Luc Lac, Little Bird, and Tasty and Alder. Sandwiches are available at Lardo and Addie’s. More options at pdx.eater.com/places.
 
 Portland’s world class **farmers market** is just down the street on the PSU campus. Check it out on Saturday from 8:30am to 2pm for tons of locally sourced prepared food and produce vendors. Just follow the park blocks all the way south until you hit the Portland State University campus.
 
 Rumor has it that the creative class was recruited to Portland on the basis of its **coffee shops**. To decide for yourself, check out Crema, Albina Press, Rocking Frog, Fresh Pot, Barista, Daily Cafe, or any number of Stumptown spots.
-</p>
+
 <div class="place-row">
 	<a href="http://tastyntasty.com/alder/">Tasty &amp; Alder</a>
 	<span>
