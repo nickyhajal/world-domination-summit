@@ -1,7 +1,7 @@
 sidebar: schedule
 icon: parachute
 
-# On [July 11-13,2004](/register) we're taking over Portland, Oregon. Our plan of action? Have fun and create meaningful adventure.
+# On [July 11-13, 2014](/register) we're taking over Portland, Oregon. Our plan of action? Have fun and create meaningful adventure.
 <div class="main-schedule-box">
 	<h3>Main Schedule</h3>
 	<div class="main-schedule-item">
