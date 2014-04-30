@@ -1,9 +1,9 @@
 icon: tree
-photo_head: 
+photo_head: https://farm4.staticflickr.com/3811/9229143020_fe1577a4c3_c.jpg,https://farm4.staticflickr.com/3809/9229130982_45863405f7_c.jpg
 
 ## 2014 Speaker
 
-# ![Dee Williams](http://link-to-image.com/the-image.png) Dee Williams
+# ![Dee Williams](http://imgs.wds.fm/dee-williams-round.png) Dee Williams
 
 <div class="zig-zags_blue"></div>
 
