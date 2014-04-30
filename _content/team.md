@@ -8,17 +8,17 @@ photo_head: https://farm4.staticflickr.com/3671/9242329960_d3a5e9c271_b.jpg,http
 <div class="line-canvas"></div>
 
 ### Chris Guillebeau
-#### Ringleader
+##### Ringleader
 
 bio
 
 ### Jolie Guillebeau
-#### Voice of Reason, Fixer
+##### Voice of Reason, Fixer
 
 bio
 
 ### Michelle Jones
-#### Team Magician
+##### Team Magician
 
 bio
 
