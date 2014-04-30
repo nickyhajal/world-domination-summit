@@ -1,7 +1,9 @@
 icon: map
 photo_head: https://farm8.staticflickr.com/7265/7531933544_8607b4d336_c.jpg,https://farm9.staticflickr.com/8014/7531933268_a7f05bd1f7_c.jpg,https://farm8.staticflickr.com/7257/7531930914_c8b9cd4433_c.jpg
 
-# "The opposite of fear is not courage or bravery; the opposite of fear is surrender...Fear is part of courage." —Chris Brogan, WDS 2012
+## 2012 Speaker
+
+# "The opposite of fear is not courage or bravery; the opposite of fear is surrender...Fear is part of courage."
 
 <div class="zig-zags_blue"></div>
 
