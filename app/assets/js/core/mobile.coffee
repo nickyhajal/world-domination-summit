@@ -5,6 +5,8 @@ ap.initMobile = ->
 ap.toggleNav = (force = false) ->
 	nav = $('#nav-links')
 	state = 'nav-links-open'
+	if (typeof force is 'object')
+		force.preventDefault()
 	if nav.hasClass(state) or (force and typeof force isnt 'object')
 		nav.removeClass(state)
 	else
@@ -12,3 +14,10 @@ ap.toggleNav = (force = false) ->
 
 ap.checkMobile = ->
 	width = $(window).outerWidth()
+	if width <= 768
+		$wall = $('#waterfall')
+		$video = $('#video')
+		scale = width/990
+		$video.css('height', (width*(9/16)+'px'))
+		$wall.css
+			'transform': 'scale('+scale+')'

@@ -92,61 +92,52 @@ div#video-underlay {
 div#video {
     height:                     400px;
     left:                       0px;
-    margin:                     0px;
     top:                        0px;
     width:                      100%;
     position:                   relative;
+    z-index:                    -1;
+    margin:                     0px 0px 178px;
 }
 div.counter-fixed {
     position:                   relative ! important;
     top:                        199px ! important;
 }
-#reg-open, #reg-schedule, #reg-army, #reg-headquarters, #reg-attendees, #reg-story, .waterfall-flare {
+#reg-open, #reg-schedule, #reg-army, #reg-headquarters, #reg-chris, #reg-story, #reg-attendees, .waterfall-flare {
     display:                    none;
 }
-div#reg-chris {
-    left:                       0px;
+div#reg-attendees {
     position:                   relative;
     top:                        151px;
     width:                      100%;
-    height:                     43%;
+    left:                       0px;
 }
 div#waterfall {
-    margin-left:                0px;
+    transform:                  scale(0.8);
+    -webkit-transform:          scale(0.8);
+    -moz-transform:             scale(0.8);
+    -moz--webkit-transform:     scale(0.8);
+    -webkit-transform:          scale(0.8);
+    -webkit--webkit-transform:  scale(0.8);
+    -o-transform:               scale(0.8);
+    -o--webkit-transform:       scale(0.8);
     clear:                      both;
-}
-div.wall-content {
-    position:                   relative;
-    width:                      100% ! important;
-}
-div.wall-content-type-icon {
-    display:                    none ! important;
-}
-a.wall-content-type-attendee_map {
-    display:                    none;
+    margin-left:                0px;
+    transform-origin:           left top 0px;
+    -webkit-transform-origin:   left top 0px;
+    -moz-transform-origin:      left top 0px;
+    -moz--webkit-transform-origin: left top 0px;
+    -webkit-transform-origin:   left top 0px;
+    -webkit--webkit-transform-origin: left top 0px;
+    -o-transform-origin:        left top 0px;
+    -o--webkit-transform-origin: left top 0px;
 }
 a.wall-content-type-speaker {
     width:                      100%;
 }
-.wall-content {
-    width:                      100% ! important;
-    top:                        0px ! important;
-    position:                   relative ! important;
-    left:                       0px ! important;
-}
-div.flickr-photo {
-    display:                    inline;
-    height:                     auto;
-}
-.tpl-1, .tpl-2, .tpl-3, .tpl-4 {
-    height:                     auto;
-}
-div.attendee_map {
-    width:                      100% ! important;
-}
-div.attendee_map_text {
-    width:                      100% ! important;
-    position:                   absolute;
+.tpl-3 .block-1 .block-content {
+    display:                    block;
+    padding-left:               50%;
+    margin-left:                -100px;
 }
 div#nav-links a {
     display:                    block;
@@ -199,6 +190,15 @@ img#schedule-circle-1 {
 }
 img#schedule-circle-3 {
     margin-right:               -120px;
+}
+a.photo-head-next {
+    right:                      15px;
+}
+div.tpl-0 {
+    display:                    none;
+}
+div.pattern-bg {
+    margin:                     0px auto ! important;
 }
 * {
     line-height:                inherit;

@@ -90,15 +90,12 @@ Just steps from the Schnitzer you'll be able to connect with friends based on sh
 The path to world domination starts in Portland, so it's about time you got to know the city!
 
 <p class="color-green">**Note:** Need a break? Our Highly-Sensitive Person zone will be open all afternoon. You can also attend your choice of 100+ attendee-led gatherings.</p>
-
-<img src="/images/schedule/schedule-circle-3.png" id="schedule-circle-3"/>
-
 <h3 class="color-orange">Everything Else</h3>
 
 <a name="everything-else"></a>
 
 <h4 class="color-orange">Attendee Meetups</h3>
-
+<img src="/images/schedule/schedule-circle-3.png" id="schedule-circle-3"/>
 <p></p>
 <p>Both days, we'll set aside time for attendees to host informal meetups. You can go from the Get Rich Slowly meetup to the Location Independent meetup—and then over to the Minimalist group, where a fight will likely break out over who owns the fewest things.</p>
 <p>And if you have your own blog, you can host a meetup too. (Our dedicated attendee web app will tell you where each meetup is being held.)</p>
