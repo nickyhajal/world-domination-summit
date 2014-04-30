@@ -108,32 +108,68 @@
     margin:                     0px auto 7px;
 }
 .corner-icon-globe:before {
-    background-position:        -416px 0px ! important;
+    background-position:        -524px 0px ! important;
 }
 .corner-icon-suitcase {
     background-position:        0px center ! important;
 }
 .corner-icon-parachute:before {
     width:                      103px ! important;
-    background-position:        -105px 0px ! important;
+    background-position:        -130px 0px ! important;
 }
 #page_content:before {
-    content:                    "";
     display:                    block;
     height:                     100px;
     position:                   absolute;
     width:                      104px;
     right:                      -94px;
     top:                        -11px;
-    background:                 url("/images/icon-sprites_corner.png") no-repeat scroll 0px center / 520px auto transparent;
     z-index:                    10;
+    content:                    "";
+    background:                 url("/images/icon-sprites_corner.png?2") no-repeat scroll 0px center / 2212px auto transparent;
 }
 .corner-icon-theater:before {
-    background-position:        -208px 0px ! important;
     width:                      103px ! important;
+    background-position:        -262px 0px ! important;
 }
 .corner-icon-pin:before {
-    background-position:        -311px 0px ! important;
+    background-position:        -392px 0px ! important;
+}
+.corner-icon-moon:before {
+    background-position:        -656px 0px ! important;
+}
+.corner-icon-chat:before {
+    background-position:        -788px 0px ! important;
+}
+.corner-icon-namaste:before {
+    background-position:        -919px 0px ! important;
+}
+.corner-icon-compass:before {
+    background-position:        -1052px 0px ! important;
+}
+.corner-icon-fork:before {
+    background-position:        -1180px 0px ! important;
+}
+.corner-icon-mic:before {
+    background-position:        -1316px 0px ! important;
+}
+.corner-icon-mountain:before {
+    background-position:        -1448px 0px ! important;
+}
+.corner-icon-trail:before {
+    background-position:        -1580px 0px ! important;
+}
+.corner-icon-beer:before {
+    background-position:        -1712px 0px ! important;
+}
+.corner-icon-tree:before {
+    background-position:        -1844px 0px ! important;
+}
+.corner-icon-bulb:before {
+    background-position:        -1977px 0px ! important;
+}
+.corner-icon-map:before {
+    background-position:        -2108px 0px ! important;
 }
 #page_content {
     background:                 none repeat scroll 0px 0px rgb(255, 255, 255);
@@ -757,6 +793,9 @@ img#schedule-circle-3 {
 .place-row {
     clear:                      both;
     margin-bottom:              19px;
+}
+#page-welcome div#logo-waves {
+    display:                    none;
 }
 #logo-waves {
     background:                 url("/images/logo-waves.png") repeat scroll 0% 0% / 100% auto transparent;
@@ -1490,7 +1529,6 @@ a#nav-register {
     background-position:        0px 0px ! important;
 }
 #nav-search {
-    background:                 url("/images/icon-search.png?19") repeat scroll center 3px / 21px auto rgb(242, 242, 234);
     box-sizing:                 content-box;
     -moz-box-sizing:            content-box;
     -webkit-box-sizing:         content-box;
@@ -1500,6 +1538,10 @@ a#nav-register {
     width:                      32px;
     height:                     29px;
     margin-left:                14px;
+    background:                 url("/images/icon-search.png?19") repeat scroll center 3px / 21px auto rgb(242, 242, 234);
+    border-radius:              15px;
+    -moz-border-radius:         15px;
+    -webkit-border-radius:      15px;
 }
 #nav-search:hover:before {
     content:                    "";

@@ -28,7 +28,7 @@ ap.Views.hub = XView.extend
 				@broadcasts[name] = 
 					content: page
 					options: options
-
+		@broadcast_list.sort().reverse()
 		nextBroadcast = @broadcasts[_.ari(@broadcast_list[0].split('`'), 1)]
 		if nextBroadcast.options.date_iso > ap.me.get('last_broadcast')
 			@showBroadcast(nextBroadcast)
