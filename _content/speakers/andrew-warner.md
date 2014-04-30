@@ -5,7 +5,7 @@ photo_head: https://farm3.staticflickr.com/2853/9231364559_bb191c566d_c.jpg,http
 
 # Entrepreneurial expert Andrew Warner shared a personal story of failure and growth, and explained the power of working with your true mind. He even led an on-stage meditation exercise.
 
-<div class="zig-zags_blue"></div>
+<div class="line-canvas"></div>
 
 **Andrew Warner** is the founder of Mixergy, a site where 900 proven entrepreneurs teach how they built their companies. The site began because of Andrew’s epic failure.
 
