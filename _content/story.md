@@ -12,15 +12,13 @@ One year later, we're scaling up... carefully. WDS 2013 sold out five months in 
 
 This time, we're prepared — and World Domination can no longer be contained to a single theater. Instead, we're taking over the whole city.
 
+**The Plan for 2014**
+
 Our main stage events will be held in the Arlene Schnitzer Concert Hall, a 2900-seat venue that includes a key feature: thanks to two tiers of orchestra seating, no seat is more than 100 feet from the stage. Even with a large group of awesome people, it will still be intimate.
 
-For the first time ever, WDS will produce the "Portland Experience," a mini-festival held in the park blocks behind the theater on Saturday afternoon. 
+For the first time ever, WDS will produce the *Portland Experience*, a mini-festival held in the park blocks behind the theater on Saturday afternoon. An expanded set of half-day Academies will also take place on the days surrounding the big weekend.
 
-An expanded set of Academies will take place on the days surrounding the big weekend.
-
-We'll have a Highly Sensitive Person Lounge with soothing hammocks and green tea for the introverts.
-
-We're booking out every room possible in four partner hotels. Hostels and other shared housing options are also available.
+We're booking out every room possible in four partner hotels. Hostels and other shared housing options are also available. We'll even have a Highly Sensitive Person Lounge with soothing hammocks and green tea for those who need a break.
 
 In short WDS 2014 will be an experience like no other. We hope to see you there!
 
