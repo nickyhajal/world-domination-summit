@@ -200,6 +200,9 @@ div.tpl-0 {
 div.pattern-bg {
     margin:                     0px auto ! important;
 }
+#page-headquarters h3:before {
+    display:                    none;
+}
 * {
     line-height:                inherit;
 }
