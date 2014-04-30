@@ -92,7 +92,7 @@ Portland’s world class **farmers market** is just down the street on the PSU c
 
 Rumor has it that the creative class was recruited to Portland on the basis of its **coffee shops**. To decide for yourself, check out Crema, Albina Press, Rocking Frog, Fresh Pot, Barista, Daily Cafe, or any number of Stumptown spots.
 
-<div class="place-row">
+<!-- <div class="place-row">
 	<a href="http://tastyntasty.com/alder/">Tasty &amp; Alder</a>
 	<span>
 		<a href="https://goo.gl/maps/xRS6w">0.5 Mi</a>
@@ -134,6 +134,7 @@ Rumor has it that the creative class was recruited to Portland on the basis of i
 		From Base
 	</span>
 </div>
+-->
 
 <div class="line-canvas"></div>
 
