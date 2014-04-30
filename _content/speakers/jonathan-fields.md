@@ -1,5 +1,5 @@
 icon: bulb
-photo_head: https://farm3.staticflickr.com/2032/5807194798_2928ec745c_s.jpg
+photo_head: https://farm3.staticflickr.com/2032/5807194798_2928ec745c_b.jpg
 
 ## 2011 Speaker
 
