@@ -1,14 +1,13 @@
-icon: theater
+icon: bulb
+photo_head: https://farm8.staticflickr.com/7369/9234155048_32e5bfbd30_c.jpg,https://farm3.staticflickr.com/2880/9242342406_c33d10069a_c.jpg
 
-# Sarah Lewis
+## 2014 Speaker
+
+# ![Sarah Lewis](http://imgs.wds.fm/sarah-lewis-round.png) Sarah Lewis
 
 <div class="zig-zags_blue"></div>
 
 **Sarah Lewis** has served on President Barack Obama’s Arts Policy Committee, been selected for Oprah’s “Power List,” and is a faculty member at Yale University, School of Art in the MFA program. She received her bachelor’s degree from Harvard University, an M. Phil from Oxford University, and just received her Ph.D. from Yale University in March 2014.
-
-<div class="line-canvas"></div>
-
-### A bit more about Sarah
 
 Her debut book, *The Rise: Creativity, the Gift of Failure, and the Search for Mastery* was just released by Simon & Schuster U.S., HarperCollins U.K. (March 2014) and has sold translation rights in Brazil, Holland, Thailand, and South Korea to date. *The Rise* is a layered, story-driven investigation of how innovation, discovery, and the creative progress are all spurred on by advantages gleaned from the improbable, the unlikely, even failure. 
 
