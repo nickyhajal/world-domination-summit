@@ -111,9 +111,11 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 	<a href="https://www.eventbrite.com/e/wds-academy-the-nuts-and-bolts-of-long-term-travel-tickets-11448588035" class="button">Tickets &rarr;</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
-		TK
+		This Academy provides a thorough crash course for those looking to travel long term. It aggregates the many moving pieces that go into planning a life travel—from the why, to the how, to the practical concerns when you are on the road—and for each, provides case studies and resources. With other experts in the field stopping in as guest speakers during the Academy, attending will arm you with the knowledge you need to confidently embark on a long journey, while also ensuring that we cover the downsides and risks to provide a 360 degree snapshot. This Academy is also useful for those interested in shorter-term travel, as it will provide a solid foundation for planning trips of all kinds.
 
 		<h4>About Jodi Ettenberg</h4>
-		Jodi is a former lawyer currently traveling (and eating!) her way around the world, one country at a time. She started Legal Nomads in 2008 when she quit her job and took off to see the world, having saved up money by lawyering for 5 years in New York City. She thought she would return to lawyering after a year or so on the road, but  that never happened.
+		Jodi Ettenberg is a former lawyer who quit her job in 2008 to travel the world. Now a writer, photographer and soup eater, she shares the stories behind the foods we eat on her site, Legal Nomads. Funding her lifestyle through a mixture of freelance writing, creative merchandise relating to the Legal Nomads brand and consulting work, she often speaks about successful career transitions and unconventional living.
+
+She gets the shakes if she goes too long without sticky rice.
 	</div>
 </div>
