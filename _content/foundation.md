@@ -56,7 +56,8 @@ Our selection committee will be looking at a number of factors to determine whic
 <div id="foundation-app-box" class="orange-box">
 	<h3>I'm in! How do I apply?</h3>
 	<p>Please complete the application below no later than 5:00pm on Friday, May 16, 2014.</p>
-	<p>If you have any questions, please contact Katie Hurst at <a href="mailto:foundation@wds.fm">foundation@wds.fm</a>. Applicants will be able to request their own award amount, ranging between $5,000-$25,000.</p>
+	<p>If you have any questions, please contact Katie Hurst at <a href="mailto:foundation@wds.fm">foundation@wds.fm</a>.</p>
+	<p>Applicants will be able to request their own award amount, ranging between $5,000-$25,000.</p>
 
 	<h4>Downloads</h4>
 	<a href="http://worlddominationsummit.com/scholarship-budget-worksheet.xlsx" class="button">Budget Worksheet</a>
