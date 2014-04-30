@@ -19,13 +19,13 @@ sidebar: headquarters
 
 <h3 class="side-icon-moon">Lodging</h3>
 <p>Portland is an affordable destination, with the lowest hotel rates of any major west coast city. Every year we arrange a number of discounts from partner hotels. Other attendees rent through AirBnB or stay at a local hostel. A few options are listed below.</p>
+
 <div class="place-row">
 	<a href="http://www.thenines.com">The Nines Hotel</a>
 	<span>
 		<a href="https://goo.gl/maps/A50cZ">0.3 Mi</a>
 		From Base
 	</span>
-</div>
 </div>
 <div class="place-row">
 	<a href="http://hotelmodera.com">Hotel Modera</a>
@@ -47,7 +47,7 @@ sidebar: headquarters
 		<a href="https://goo.gl/maps/MiriI">0.5 Mi</a>
 		From Base
 	</span>
-
+</div>
 <div class="place-row">
 	<a href="http://www.vintageplaza.com">Hotel Vintage Plaza</a>
 	<span>
