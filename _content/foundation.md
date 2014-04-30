@@ -37,7 +37,6 @@ Our selection committee will be looking at a number of factors to determine whic
 
 <p class="color-orange">Implemention</p>
 
-
 * Can the proposal be realistically completed in a year?
 * If part of a larger, long-term project, how does the proposal further the overall effort?
 * Does the applicant have the capacity to execute the proposed solution?
@@ -55,9 +54,9 @@ Our selection committee will be looking at a number of factors to determine whic
 
 <div id="foundation-app-box" class="orange-box">
 	<h3>I'm in! How do I apply?</h3>
-	<p>Please complete the application below no later than 5:00pm on Friday, May 16, 2014.</p>
+	<p>Please complete the application below no later than 5:00pm PST on Friday, May 16, 2014.</p>
 	<p>If you have any questions, please contact Katie Hurst at <a href="mailto:foundation@wds.fm">foundation@wds.fm</a>.</p>
-	<p>Applicants will be able to request their own award amount, ranging between $5,000-$25,000.</p>
+	<p>Applicants will be able to request their own award amount, ranging between $5,000–$25,000.</p>
 
 	<h4>Downloads</h4>
 	<a href="http://worlddominationsummit.com/scholarship-budget-worksheet.xlsx" class="button">Budget Worksheet</a>
