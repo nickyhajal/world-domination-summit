@@ -43,7 +43,14 @@ ap.User = window.XModel.extend
 
 # Create the Events collection and
 # instantiate it
-Users = XCollection.extend
+Users = Backbone.Collection.Lunr.extend
 	model: ap.User
 	url: '/api/users/'
+	lunroptions: 
+    fields: [
+        { name: "first_name", boost: 5 }
+        { name: "last_name", boost: 10 }
+        { name: "user_name"}
+        { name: "email"}
+    ]
 ap.Users = new Users()

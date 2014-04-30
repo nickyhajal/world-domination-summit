@@ -29,6 +29,7 @@ ap.init = () ->
 	_.whenReady 'me', ->
 		ap.initTemplates()
 		ap.initRouter()
+		ap.initSearch()
 	ap.Modals.init()
 
 ap.initAssets = ->
@@ -95,6 +96,20 @@ ap.initRouter = ->
 		    e.preventDefault()
 		    url = href.replace(/^\//, '')
 		    ap.Router.navigate url, {trigger: true}
+
+ap.initSearch = ->
+	_.whenReady 'users', ->
+		$('body')
+		.on 'keyup', '.search-input', ->
+			val = $(this).val()
+			if val.length > 2
+				results = ap.Users.search(val)
+				html = ''
+				for result in results
+					html += '<a class="result-link" href="/~'+result.get('user_name')+'">
+						<span style="background:url('+result.get('pic')+')"></span>
+					'+result.get('first_name')+' '+result.get('last_name')+'</a>'
+				$('.search-results').html(html)
 
 ###
 	Make an api call
