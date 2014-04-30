@@ -1,5 +1,5 @@
-icon: parachute
-photo_head: https://farm6.staticflickr.com/5340/9226363263_c77738b664_c.jpg
+icon: trail
+photo_head: https://farm4.staticflickr.com/3826/9229144412_21500924fb_c.jpg
 
 
 # ![A.J. Jacobs](http://imgs.wds.fm/AJ-Jacobs-avatar.png) A.J. Jacobs
@@ -7,10 +7,6 @@ photo_head: https://farm6.staticflickr.com/5340/9226363263_c77738b664_c.jpg
 <div class="zig-zags_blue"></div>
 
 **A.J. Jacobs** is a human guinea pig and the author of four New York Times bestsellers. Among them, *The Year of Living Biblically*, about his quest to follow the hundreds of rules in the Bible, and *Drop Dead Healthy*, about his project to become the healthiest person in the world.
-
-<div class="line-canvas"></div>
-
-### A bit more about A.J.
 
 He has also outsourced his life, lived by the rules of George Washington, and read the *Encyclopedia Britannica* from A to Z. He is the Editor at Large at *Esquire* magazine and a regular contributor to NPR.
 
