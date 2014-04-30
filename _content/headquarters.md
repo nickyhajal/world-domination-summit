@@ -2,7 +2,7 @@ icon: theater
 photo_head: /images/photos/theater.jpg,/images/photos/northwest.jpg,/images/photos/audience.jpg
 sidebar: headquarters
 
-<h3>Your Base in Portland, Or</h3>
+<h3>Your Base in Portland, Oregon</h3>
 <p>
 	We'll base out of the Arlene Schnitzer Concert Hall, located two blocks from a light-rail stop and directly across from South Park. On Saturday morning, one of the city's main Farmer's Markets will be open in the park, with cupcakes, fresh vegetables, and local art available for sale.
 </p>
