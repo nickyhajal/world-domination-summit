@@ -9,10 +9,7 @@ ap.Counter =
 		page = $('html')
 		cnt = $('#counter-shell')
 		side = $('#sidebar-shell')
-		tk $('#content_shell').offset().left 
 		left = $('#content_shell').offset().left - 246
-		tk left
-
 		threshold = 271
 		if not cnt.is(':visible')
 			threshold = 305

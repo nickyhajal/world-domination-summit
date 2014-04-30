@@ -1296,6 +1296,10 @@ img#modal-bigger-photo-img {
     max-height:                 100%;
     max-width:                  100%;
 }
+div#army-map {
+    width:                      780px;
+    height:                     498px;
+}
 * {
     box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
@@ -1315,6 +1319,7 @@ body {
     font-family:                VitesseBook;
     color:                      rgb(35, 31, 32);
     overflow-x:                 hidden;
+    position:                   relative;
 }
 #page-home #header-title:after {
     height:                     110px;
@@ -1434,7 +1439,6 @@ nav#top-nav {
 }
 a#nav-schedule {
     background-position:        -118px 0px ! important;
-    width:                      125px;
 }
 a#nav-headquarters {
     background-position:        -384px 0px ! important;
@@ -1453,12 +1457,12 @@ a#nav-register {
     text--webkit-transform:     uppercase;
     background-repeat:          no-repeat ! important;
     margin-top:                 -4px;
+    margin-right:               6px;
+    padding:                    5.5px 10px 4px ! important;
     transition:                 color 0.15s ease 0s;
     -moz-transition:            color 0.15s ease 0s;
     -webkit-transition:         color 0.15s ease 0s;
     -o-transition:              color 0.15s ease 0s;
-    margin-right:               6px;
-    padding:                    5.5px 10px 4px ! important;
 }
 #nav-links {
     float:                      right;
@@ -1617,19 +1621,19 @@ section#sidebar-shell {
     margin-left:                6px;
 }
 #video {
-    background:                 url("/images/video.png") repeat scroll 0% 0% / 100% auto transparent;
-    height:                     312.5px;
     width:                      555px;
     top:                        8px;
     position:                   absolute;
     left:                       9px;
     z-index:                    10000;
+    height:                     312.5px;
+    background:                 url("/images/video.png") no-repeat scroll 0px 0px / 100% auto transparent;
 }
 #video-shell {
-    margin-left:                151px;
-    position:                   relative;
-    top:                        -28px;
     z-index:                    990;
+    top:                        -28px;
+    position:                   relative;
+    margin-left:                151px;
 }
 .link-block:hover #video-underlay {
     height:                     159px;
@@ -1981,12 +1985,12 @@ a.counter-button {
     top:                        362px;
 }
 .tpl-2 .block-6 {
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
     width:                      230px;
     height:                     248px;
     left:                       395px;
     padding:                    18px 25px 25px;
     top:                        279px;
+    background:                 none repeat scroll 0px 0px rgb(255, 255, 255);
 }
 .tpl-2 .block-6 .flickr-photo {
     left:                       15px;
@@ -2324,12 +2328,12 @@ a.counter-button {
 }
 .tpl-4 .block-11 {
     background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
-    z-index:                    -1;
     width:                      228px;
     left:                       649px;
     top:                        535px;
     height:                     247px;
     padding:                    15px 25px 25px;
+    z-index:                    1;
 }
 .tpl-4 .block-13 {
     z-index:                    -1;
@@ -2472,10 +2476,10 @@ a.counter-button {
 .tpl-3 .block-3 {
     z-index:                    10;
     padding:                    15px 25px 25px;
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
     width:                      230px;
     left:                       620px;
     height:                     254px;
+    background:                 none repeat scroll 0px 0px rgb(255, 255, 255);
 }
 .block {
     box-sizing:                 border-box;
