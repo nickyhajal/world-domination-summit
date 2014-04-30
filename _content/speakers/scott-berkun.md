@@ -1,4 +1,4 @@
-icon: globe
+icon: hammer
 
 # Scott Berkun
 
