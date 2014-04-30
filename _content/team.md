@@ -7,46 +7,65 @@ photo_head: https://farm4.staticflickr.com/3671/9242329960_d3a5e9c271_b.jpg,http
 
 <div class="line-canvas"></div>
 
-### Chris Guillebeau: Ringleader
+### Chris Guillebeau
+#### Ringleader
 
 bio
 
-### Jolie Guillebeau: Voice of Reason, Fixer
+### Jolie Guillebeau
+#### Voice of Reason, Fixer
 
 bio
 
-### Michelle Jones: Team Magician
+### Michelle Jones
+#### Team Magician
 
 bio
 
-### Tyler Tervooren: Adventure Czar
+### Tyler Tervooren
+#### Adventure Czar
 
 bio
 
-### Sean Ogle: Man About Town
+### Sean Ogle
+#### Man About Town
 
 bio
 
-### Isaac Watson: Design Nazi, Production Manager
+### Isaac Watson
+#### Design Nazi, Production Manager
 
 bio
 
-### Wes and Tera Wages: Media Team
+### Wes and Tera Wages
+#### Media Team
 
 bio
 
-### Geoff Hartnell: Logistician, Ambassador Wrangler
+### Nicky Hajal
+#### Webinator
 
 bio
 
-### Tyler Hurst: Party Planner, Cider Advocate
+### Geoff Hartnell
+#### Logistician, Ambassador Wrangler
 
 bio
 
-### Katie Hurst: Foundation Director
+### Tyler Hurst
+#### Party Planner, Cider Advocate
 
+bio
+
+### Katie Hurst
+#### Foundation Director
+
+bio
 
 ## Former Team Members
 
 Tsilli Pines
 J.D. Roth
+
+## Special Friends
+Jolby & Friends
