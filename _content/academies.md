@@ -67,7 +67,8 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 ### Monday, July 15
 
 <div class="collapsable-box collapsable-box-open">
-	<img src="http://imgs.wds.fm/icon_sprites_Speaker_Photos_Gary_Hirsch.png" style="float:right;" height="100"><h4>Making Art and Giving It Away</h4></a>
+	<div style="float:right;"><img src="http://imgs.wds.fm/icon_sprites_Speaker_Photos_Gary_Hirsch.png" height="100"></div>
+	<h4>Making Art and Giving It Away</h4></a>
 	<h6>9:00 am–4:00 pm</h6>
 	Hosted by Gary Hirsch
 	<a href="https://www.eventbrite.com/e/wds-academy-making-art-and-giving-it-away-tickets-11351507665" class="button">Tickets &rarr;</a>
