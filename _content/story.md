@@ -8,16 +8,20 @@ icon: globe
 
 Oh, **and** we also had a *program*... with great speakers and workshops. Jia Jiang told us about his 100 days of risk and rejection. Gretchen Rubin shared the secrets of happiness, and Tess Vigeland taught us about career reinvention. Darren Rowse appeared on stage in a Superman costume... twice.
 
-One year later, we'll be scaling up... carefully. WDS 2013 sold out five months in advance with a waiting list of 5,000 people. At least four hundred people without tickets showed up from out of town just to hang out at unofficial events.
+One year later, we're scaling up... carefully. WDS 2013 sold out five months in advance with a waiting list of 5,000 people. At least four hundred people without tickets showed up from out of town just to hang out at unofficial events.
 
 This time, we're prepared — and World Domination can no longer be contained to a single theater. Instead, we're taking over the whole city.
 
 Our main stage events will be held in the Arlene Schnitzer Concert Hall, a 2900-seat venue that includes a key feature: thanks to two tiers of orchestra seating, no seat is more than 100 feet from the stage. Even with a large group of awesome people, it will still be intimate.
 
-An expanded set of breakout sessions and smaller workshops will be held in nearby locations. (Field trip!)
+For the first time ever, WDS will produce the "Portland Experience," a mini-festival held in the park blocks behind the theater on Saturday afternoon. 
+
+An expanded set of Academies will take place on the days surrounding the big weekend.
 
 We'll have a Highly Sensitive Person Lounge with soothing hammocks and green tea for the introverts.
 
-Speaking of hotels, we're booking out every room possible in two partner hotels. Hostels and other shared housing options will also be available.
+We're booking out every room possible in four partner hotels. Hostels and other shared housing options are also available.
+
+In short WDS 2014 will be an experience like no other. We hope to see you there!
 
 <a href="/register" class="register-banner"></a>
