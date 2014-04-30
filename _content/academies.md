@@ -68,10 +68,10 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 
 <div class="collapsable-box collapsable-box-open">
 	<div style="float:right;"><img src="http://imgs.wds.fm/icon_sprites_Speaker_Photos_Gary_Hirsch.png" height="100"></div>
-	<h4>Making Art and Giving It Away</h4></a>
+	<div><h4>Making Art and Giving It Away</h4></a>
 	<h6>9:00 am–4:00 pm</h6>
 	Hosted by Gary Hirsch
-	<a href="https://www.eventbrite.com/e/wds-academy-making-art-and-giving-it-away-tickets-11351507665" class="button">Tickets &rarr;</a>
+	<a href="https://www.eventbrite.com/e/wds-academy-making-art-and-giving-it-away-tickets-11351507665" class="button">Tickets &rarr;</a></div>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		This is a big, fun exploration of collaboration: how to do more of it, how to invite others into your work, what not to do. It will also be the launch of a co-creative art/story project by Gary Hirsch where participants take (literally) original artwork from the artist and use it as a launch pad for their own art, work, and stories.
