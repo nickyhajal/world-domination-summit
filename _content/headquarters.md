@@ -27,6 +27,7 @@ sidebar: headquarters
 		From Base
 	</span>
 </div>
+
 <div class="place-row">
 	<a href="http://hotelmodera.com">Hotel Modera</a>
 	<span>
@@ -34,6 +35,7 @@ sidebar: headquarters
 		From Base
 	</span>
 </div>
+
 <div class="place-row">
 	<a href="http://www.portlandparamount.com">Paramount Hotel</a>
 	<span>
@@ -41,6 +43,7 @@ sidebar: headquarters
 		From Base
 	</span>
 </div>
+
 <div class="place-row">
 	<a href="http://www.acehotel.com/portland">Ace Hotel</a>
 	<span>
@@ -48,6 +51,7 @@ sidebar: headquarters
 		From Base
 	</span>
 </div>
+
 <div class="place-row">
 	<a href="http://www.vintageplaza.com">Hotel Vintage Plaza</a>
 	<span>
@@ -55,6 +59,7 @@ sidebar: headquarters
 		From Base
 	</span>
 </div>
+
 <div class="line-canvas"></div>
 
 <a name="transportation"></a>
