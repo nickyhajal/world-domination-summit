@@ -5,7 +5,7 @@ photo_head: https://farm8.staticflickr.com/7265/7531933544_8607b4d336_c.jpg,http
 
 # "The opposite of fear is not courage or bravery; the opposite of fear is surrender...Fear is part of courage."
 
-<div class="zig-zags_blue"></div>
+<div class="line-canvas"></div>
 
 Chris Brogan is president of Human Business Works, a media and education company. He consults and speaks professionally with Fortune 100 and 500 companies like PepsiCo, General Motors, Microsoft, and more, about the intersection of business, technology and media. He is a New York Times bestselling co-author of *Trust Agents*, and a featured monthly columnist at *Entrepreneur* Magazine.
 
