@@ -3,7 +3,7 @@ photo_head: https://farm3.staticflickr.com/2179/5798014276_2c0698db3b_b.jpg,http
 
 ## 2011 Speaker
 
-# Danielle LaPorte conducted a one-hour open Q&A for all aspiring Firestarters. Emergency response teams were standing by.
+# Danielle LaPorte spoke in 2011, then returned to lead workshops in both 2012 an 2013. Emergency response teams were standing by all three years.
 
 <div class="line-canvas"></div>
 
