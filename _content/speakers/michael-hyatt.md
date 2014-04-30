@@ -5,7 +5,7 @@ photo_head: https://farm4.staticflickr.com/3822/9231400135_4f75023919_c.jpg
 
 # ![Michael Hyatt](http://imgs.wds.fm/michael-hyatt-round.png) Michael Hyatt
 
-<div class="zig-zags_blue"></div>
+<div class="line-canvas"></div>
 
 **Michael Hyatt** is the author of *Platform: Get Noticed in a Noisy World* (Thomas Nelson, 2012). It is a *New York Times*, *Wall Street Journal*, and *USA Today* bestseller. Recently, *Forbes* magazine named him one of the “Top 50 Social Media Influencers of 2013.”
 

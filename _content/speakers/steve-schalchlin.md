@@ -6,7 +6,7 @@ photo_head: https://farm8.staticflickr.com/7398/9239550931_f0ee765d1e_c.jpg,http
 
 # Steve Schalchlin let us in on what it's like to be living life in the "bonus round." Through a rousing musical performance, he took the audience on an emotional journey that earned him a standing ovation.
 
-<div class="zig-zags_blue"></div>
+<div class="line-canvas"></div>
 
 **Steve Schalchlin's** journey as an award-winning composer and lyricist began in Arkansas, the son of a preacher and a nurse. Playing in a gospel rock band in Texas, he left to develop a solo act of rock and jazz standards and original songs, touring all over the US and to fifty countries.
 

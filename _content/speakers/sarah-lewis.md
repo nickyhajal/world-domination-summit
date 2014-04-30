@@ -5,7 +5,7 @@ photo_head: https://farm8.staticflickr.com/7369/9234155048_32e5bfbd30_c.jpg
 
 # ![Sarah Lewis](http://imgs.wds.fm/sarah-lewis-round.png) Sarah Lewis
 
-<div class="zig-zags_blue"></div>
+<div class="line-canvas"></div>
 
 **Sarah Lewis** has served on President Barack Obama’s Arts Policy Committee, been selected for Oprah’s “Power List,” and is a faculty member at Yale University, School of Art in the MFA program. She received her bachelor’s degree from Harvard University, an M. Phil from Oxford University, and just received her Ph.D. from Yale University in March 2014.
 
