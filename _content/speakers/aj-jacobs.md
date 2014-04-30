@@ -1,4 +1,6 @@
 icon: parachute
+photo_head: https://farm6.staticflickr.com/5340/9226363263_c77738b664_c.jpg
+
 # A.J. Jacobs
 
 <div class="zig-zags_blue"></div>
