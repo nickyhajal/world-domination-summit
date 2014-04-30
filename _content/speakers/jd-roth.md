@@ -5,7 +5,7 @@ photo_head: https://farm9.staticflickr.com/8431/7537733108_8961c962db_c.jpg,http
 
 # "Action is the key to change...It's not the things we say that are our priorities; it's the things we do." Using his own life as an example, J.D. Roth explores three steps to personal transformation: the power of yes, the power of focus, and the power of action.
 
-<div class="zig-zags_blue"></div>
+<div class="line-canvas"></div>
 
 J.D. Roth is an accidental personal-finance expert—a regular guy who found himself deep in debt. After deciding to turn his life around, he read everything he could about money and finance. To share what he learned, he started the award-winning blog Get Rich Slowly (getrichslowly.org) in 2006, which Money magazine named the Web’s most inspiring personal-finance blog and which *Time* magazine named one of the 25 best blogs of 2011.
 
