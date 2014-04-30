@@ -10,6 +10,7 @@ We do this by providing what we call “Scholarships For Real Life.” The goal 
 Have a crazy project you want to bring to life? Want to take a trip around the earth and share what you learned with the world? Trying to building something that’s a bit out of your reach? Whatever it is, the WDS Foundation can help fund it. We look for inspiring projects that’ll make you and the world a better place.
 
 <a name="#eligibility">
+
 <div class="line-canvas"></div>
 
 ### Eligibility
@@ -17,6 +18,7 @@ Have a crazy project you want to bring to life? Want to take a trip around the e
 For our first year of the “Scholarships for Real Life” program, we’re opening the application only to those who have attended or will be attending a World Domination Summit (attendees, speakers, volunteers, etc). As the scholarship program progresses, we intend to open this up to a wider audience—so check back next year if you’re note currently eligible.
 
 <a name="#criteria">
+
 <div class="line-canvas"></div>
 
 ### Selection Criteria
@@ -50,6 +52,7 @@ Our selection committee will be looking at a number of factors to determine whic
 
 
 <a name="#how-to-apply">
+
 <div class="line-canvas"></div>
 
 <div id="foundation-app-box" class="orange-box">
