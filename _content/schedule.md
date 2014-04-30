@@ -100,6 +100,8 @@ The path to world domination starts in Portland, so it's about time you got to k
 
 When main stage sessions end for the afternoon, the good times roll on. Join your fellow attendees at your choice of extracurricular activities around town—from film screenings and river cruises, to world record attempts and more!
 
+Individual activities will be announced closer to the event, so stay tuned for details.
+
 <p class="color-blue">Note: all activities are first-come, first-served, and some require registration in advance.</p>
 
 
