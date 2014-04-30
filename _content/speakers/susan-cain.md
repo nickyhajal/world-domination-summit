@@ -1,7 +1,9 @@
 icon: moon
 photo_head: https://farm8.staticflickr.com/7251/7523489364_2d57cb687f_c.jpg,https://farm8.staticflickr.com/7115/7523490210_034ece4614_c.jpg,https://farm9.staticflickr.com/8288/7523489534_a9a950fc31_c.jpg
 
-# What is introversion? How are introverts different than extroverts? In 2012, Susan Cain and Jonathan Fields explored the implications of introversion in the modern world.
+## 2012 Speaker
+
+# What is introversion? How are introverts different than extroverts? Susan Cain and interviewer Jonathan Fields explored the implications of introversion in the modern world.
 
 <div class="zig-zags_blue"></div>
 

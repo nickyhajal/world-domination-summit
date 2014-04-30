@@ -1,6 +1,8 @@
 icon: handshake
 photo_head: https://farm9.staticflickr.com/8025/7523487602_f85c11bac8_c.jpg,https://farm9.staticflickr.com/8282/7523487892_c16fd092bd_c.jpg,https://farm8.staticflickr.com/7109/7523487438_54c13c58c4_c.jpg
 
+## 2012 Speaker
+
 # Scott tells the story behind the rise of the successful charity: water organization, which aims to bring clean drinking water to millions of people around the world, and challenged us all to give up something as simple as a birthday in support of his efforts.
 
 <div class="zig-zags_blue"></div>
