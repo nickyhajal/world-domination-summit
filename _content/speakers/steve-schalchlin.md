@@ -1,7 +1,7 @@
 icon: microphone
 photo_head: https://farm8.staticflickr.com/7398/9239550931_f0ee765d1e_c.jpg,https://farm4.staticflickr.com/3678/9242331528_3f389ec638_c.jpg,https://farm4.staticflickr.com/3680/9239544765_f6f358c6d4_c.jpg,https://farm4.staticflickr.com/3693/9242331036_ecd3436136_c.jpg
 
-# Steve Schalchlin let us in on what it's like to be living life in the "bonus round." Through a rousing and emotional musical performance, he took the audience through the rollercoaster that AIDS patients ride every day.
+# Steve Schalchlin let us in on what it's like to be living life in the "bonus round." Through a rousing musical performance, he took the audience on an emotional journey that earned him a standing ovation.
 
 <div class="zig-zags_blue"></div>
 
