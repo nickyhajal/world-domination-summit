@@ -58,6 +58,7 @@ In previous years, we heard from these speakers. They won’t be in town this ti
 
 <div class="clear"></div>
 
+<div class="line-canvas"></div>
 
 ### Main Stage
 
@@ -72,6 +73,8 @@ During breaks, you can visit the Hang-Out Hammock Lounge for a quick snooze—or
 Most speakers will attend the entire weekend and be available for informal conversation.
 
 <div class="clear"></div>
+
+<div class="line-canvas"></div>
 
 <img src="/images/schedule/schedule-circle-2.png" id="schedule-circle-2"/>
 
@@ -91,12 +94,16 @@ The path to world domination starts in Portland, so it's about time you got to k
 
 <p class="color-green">**Note:** Need a break? Our Highly-Sensitive Person zone will be open all afternoon. You can also attend your choice of 100+ attendee-led gatherings.</p>
 
+<div class="line-canvas"></div>
+
 ### Activities
 
 When main stage sessions end for the afternoon, the good times roll on. Join your fellow attendees at your choice of extracurricular activities around town—from film screenings and river cruises, to world record attempts and more!
 
 <p class="color-blue">Note: all activities are first-come, first-served, and some require registration in advance.</p>
 
+
+<div class="line-canvas"></div
 
 <h3 class="color-orange">Everything Else</h3>
 
