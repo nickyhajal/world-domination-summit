@@ -5,7 +5,7 @@ photo_head: https://farm6.staticflickr.com/5333/9242326206_960706b048_c.jpg,http
 
 # Donald Miller showed us why the best stories don't always end with "happily ever after." And when it comes down to it, we are more than our accomplishments.
 
-<div class="zig-zags_blue"></div>
+<div class="line-canvas"></div>
 
 **Donald Miller** is an author and the founder of Storyline, an organization that helps people plan their lives using the elements of story.
 

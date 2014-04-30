@@ -2,8 +2,6 @@ sidebar: academies
 icon: theater
 photo_head: https://farm8.staticflickr.com/7457/9226356063_2f05f24588_c.jpg,https://farm4.staticflickr.com/3680/9226354561_60e1c77986_c.jpg,https://farm8.staticflickr.com/7422/9226351955_26fafe47fe_c.jpg,https://farm3.staticflickr.com/2868/9229137606_aa502275bb_c.jpg,https://farm3.staticflickr.com/2317/5800027355_42530f678d_b.jpg,https://farm3.staticflickr.com/2031/5800591550_94fa52c7b4_b.jpg
 
-## Academies
-
 # As WDS grows, more and more people are arriving early and staying late. This year marks the launch of WDS Academies: a series of mini-events focused on specific topics that take place on the days surrounding WDS weekend. 
 
 Registration for Academies is separate from WDS itself. We'll offer registration for the academies first to WDS attendees, and then (for a slightly higher price) to the general public.
@@ -70,9 +68,10 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 
 <div class="collapsable-box collapsable-box-open">
 	<a href="https://www.eventbrite.com/e/wds-academy-making-art-and-giving-it-away-tickets-11351507665"><h4>Making Art and Giving It Away</h4></a>
-	<h6>9:00 am–4:00 pm</h6>
+	<h5>9:00 am–4:00 pm</h5>
 	Hosted by Gary Hirsch
 	<a href="https://www.eventbrite.com/e/wds-academy-making-art-and-giving-it-away-tickets-11351507665" class="button">Tickets &rarr;</a>
+	
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		This is a big, fun exploration of collaboration: how to do more of it, how to invite others into your work, what not to do. It will also be the launch of a co-creative art/story project by Gary Hirsch where participants take (literally) original artwork from the artist and use it as a launch pad for their own art, work, and stories.

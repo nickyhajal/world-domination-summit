@@ -5,7 +5,7 @@ photo_head: https://farm8.staticflickr.com/7413/9229138166_3926a210e7_c.jpg
 
 # ![Gavin Aung Than](http://imgs.wds.fm/gavin-aung-than-round.png) Gavin Aung Than
 
-<div class="zig-zags_blue"></div>
+<div class="line-canvas"></div>
 
 **Gavin Aung Than** is a cartoonist based in Melbourne, Australia. After working in the corporate graphic design industry for eight years he quit his unfulfilling job to focus on his true passion: drawing cartoons.
 

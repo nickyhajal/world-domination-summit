@@ -5,5 +5,5 @@ photo_head: https://farm8.staticflickr.com/7406/9242341728_1c680fa901_c.jpg,http
 
 # DJ Prashant is a WDS staple. Each year, he swings into town with a Bollywood performance and dance lesson in the middle of downtown Portland.
 
-<div class="zig-zags_blue"></div>
+<div class="line-canvas"></div>
 
