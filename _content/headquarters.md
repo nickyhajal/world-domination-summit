@@ -145,15 +145,19 @@ Rumor has it that the creative class was recruited to Portland on the basis of i
 </p>
 
 **Hawthorne Neighborhood**
+
 Stock up on your mustache wax in the hipster capital of the universe! Get there on the 14 bus, which stops at SW Madison and 4th, then get off about 10 minutes later on Hawthorne Boulevard, anywhere between 20th and 39th streets.
 
 **West Side / Downtown Neighborhoods**
+
 Northwest and the Pearl District, reachable by streetcar or a stroll, are the trendy side to Hawthorne’s old-school vibe. Check out the area around NW 23rd, with nice pubs and good ethnic food options.
 
 **Powell’s Books**
+
 No trip to Portland is complete without a pilgrimage to Powell’s City of Books, located on an entire city block at 1005 W Burnside.
 
 **Waterfront**
+
 Walk, jog, or bike the waterfront area, starting in the south end and continuing to the Steel Bridge near the train station area.
 
 <div class="line-canvas"></div>
