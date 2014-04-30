@@ -507,7 +507,7 @@ a#small-logo {
     -moz-transition:            opacity 0.2s ease 0s;
     -webkit-transition:         opacity 0.2s ease 0s;
     -o-transition:              opacity 0.2s ease 0s;
-    left:                       65px;
+    left:                       19px;
 }
 a {
     color:                      rgb(226, 127, 28);
@@ -783,6 +783,10 @@ img#schedule-circle-3 {
 #page_content em, #page_content i {
     font-family:                karlaitalic;
     font-style:                 normal;
+}
+input.search-input {
+    position:                   relative;
+    z-index:                    2147483647;
 }
 input[type="text"], input[type="password"] {
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
@@ -1300,6 +1304,45 @@ div#army-map {
     width:                      780px;
     height:                     498px;
 }
+#nav-search:hover div#search-box {
+    display:                    block;
+}
+div#search-box {
+    position:                   absolute;
+    right:                      0px;
+    top:                        35px;
+    width:                      350px;
+    padding:                    5px 10px;
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    display:                    none;
+}
+.search-results a span {
+    display:                    block;
+    float:                      left;
+    border-radius:              50%;
+    -moz-border-radius:         50%;
+    -webkit-border-radius:      50%;
+    background-size:            100% auto ! important;
+    -webkit-background-size:    100% auto ! important;
+    height:                     30px;
+    left:                       -15px;
+    margin-right:               -4px;
+    position:                   relative;
+    width:                      30px;
+    top:                        -5px;
+    background-color:           rgb(242, 242, 234) ! important;
+}
+#nav-links a.result-link:hover:first-of-type {
+    margin-top:                 5px ! important;
+}
+div.search-results a:first-of-type {
+    margin-top:                 5px ! important;
+}
+div.search-results {
+    margin-top:                 1px;
+    border-top:                 1px dotted rgb(226, 127, 28);
+    padding-top:                5px;
+}
 * {
     box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
@@ -1446,7 +1489,45 @@ a#nav-headquarters {
 a#nav-register {
     background-position:        0px 0px ! important;
 }
-#nav-links a {
+#nav-search {
+    background:                 url("/images/icon-search.png?19") repeat scroll center 3px / 21px auto rgb(242, 242, 234);
+    box-sizing:                 content-box;
+    -moz-box-sizing:            content-box;
+    -webkit-box-sizing:         content-box;
+    display:                    block;
+    padding:                    0px 5px ! important;
+    position:                   relative;
+    width:                      32px;
+    height:                     29px;
+    margin-left:                14px;
+}
+#nav-search:hover:before {
+    content:                    "";
+    position:                   absolute;
+    height:                     38px;
+    width:                      30px;
+    top:                        0px;
+    left:                       -29px;
+    background:                 none repeat scroll 0px 0px rgba(3, 0, 255, 0);
+}
+#nav-search:hover {
+    background:                 url("/images/icon-search.png?19") repeat scroll center 3px / 21px auto rgb(242, 242, 234);
+    padding:                    10px 5px 25px ! important;
+}
+.search-results a {
+    font-family:                karla ! important;
+    text-transform:             none ! important;
+    text--webkit-transform:     none ! important;
+    float:                      none ! important;
+    clear:                      both;
+    text-align:                 left ! important;
+    margin-left:                20px;
+    padding:                    5px 0px 5.5px ! important;
+}
+#nav-links a.result-link:hover {
+    color:                      rgb(242, 242, 234) ! important;
+}
+#nav-links a, #nav-search {
     color:                      rgb(226, 127, 28);
     display:                    block;
     float:                      left;
@@ -1457,12 +1538,12 @@ a#nav-register {
     text--webkit-transform:     uppercase;
     background-repeat:          no-repeat ! important;
     margin-top:                 -4px;
-    margin-right:               6px;
-    padding:                    5.5px 10px 4px ! important;
     transition:                 color 0.15s ease 0s;
     -moz-transition:            color 0.15s ease 0s;
     -webkit-transition:         color 0.15s ease 0s;
     -o-transition:              color 0.15s ease 0s;
+    margin-right:               6px;
+    padding:                    5.5px 10px 4px;
 }
 #nav-links {
     float:                      right;

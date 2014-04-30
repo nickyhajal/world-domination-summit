@@ -1,5 +1,7 @@
+#= require lunr.js
 #= require includes.js
 #= require select2.js
+#= require backlunr.js
 #= require_tree lib
 #= require_tree core
 #= require_tree routes
