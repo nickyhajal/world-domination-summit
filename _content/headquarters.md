@@ -20,37 +20,38 @@ sidebar: headquarters
 <h3 class="side-icon-moon">Lodging</h3>
 <p>Portland is an affordable destination, with the lowest hotel rates of any major west coast city. Every year we arrange a number of discounts from partner hotels. Other attendees rent through AirBnB or stay at a local hostel. A few options are listed below.</p>
 <div class="place-row">
-	<a href="">Portland Marriott City Center</a>
+	<a href="http://www.thenines.com">The Nines Hotel</a>
 	<span>
-		<a href="">1.2 Mi</a>
+		<a href="https://goo.gl/maps/A50cZ">0.3 Mi</a>
+		From Base
+	</span>
+</div>
+</div>
+<div class="place-row">
+	<a href="http://hotelmodera.com">Hotel Modera</a>
+	<span>
+		<a href="https://goo.gl/maps/QuHxk">0.3 Mi</a>
 		From Base
 	</span>
 </div>
 <div class="place-row">
-	<a href="">Hilton Portland</a>
+	<a href="http://www.portlandparamount.com">Paramount Hotel</a>
 	<span>
-		<a href="">0.4 Mi</a>
+		<a href="https://goo.gl/maps/5dQVo">0.2 Mi</a>
 		From Base
 	</span>
 </div>
 <div class="place-row">
-	<a href="">Embassy Suites Portland</a>
+	<a href="http://www.acehotel.com/portland">Ace Hotel</a>
 	<span>
-		<a href="">0.8 Mi</a>
+		<a href="https://goo.gl/maps/MiriI">0.5 Mi</a>
 		From Base
 	</span>
-</div>
+
 <div class="place-row">
-	<a href="">Hotel Modera</a>
+	<a href="http://www.vintageplaza.com">Hotel Vintage Plaza</a>
 	<span>
-		<a href="">1.0 Mi</a>
-		From Base
-	</span>
-</div>
-<div class="place-row">
-	<a href="">The Governor Hotel</a>
-	<span>
-		<a href="">0.9 Mi</a>
+		<a href="https://goo.gl/maps/v3Bcl">0.3 Mi</a>
 		From Base
 	</span>
 </div>
