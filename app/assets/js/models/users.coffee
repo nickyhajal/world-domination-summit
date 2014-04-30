@@ -5,11 +5,13 @@ ap.User = window.XModel.extend
 		tickets: []
 		questions: ''
 		interests: ''
-		pic: ''
+		pic: '/images/default-avatar.png'
 		distance: 0
 	idAttribute: 'user_id'
 	url: '/api/user'
 	initialize: (opts = {})->
+		if not @get('pic').length
+			@set('pic', '/images/default-avatar.png')
 		@trackChangesSinceSave()
 
 		# This should be done once on the server

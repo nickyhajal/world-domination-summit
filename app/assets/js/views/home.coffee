@@ -192,7 +192,7 @@ window.wall =
 				$t.attr('href', '/~'+content.user_name).attr('target', '_blank')
 			if type is 'attendee_map'
 				$t.attr('href', '/~'+content.user_name).attr('target', '_blank')
-			if type is 'attendee_map'
+			if type is 'attendee_answer'
 				$t.attr('href', '/~'+content.user_name).attr('target', '_blank')
 			if type is 'speaker'
 				$t.attr('href', '/speaker/'+_.slugify(content.display_name)).attr('target', '_blank')

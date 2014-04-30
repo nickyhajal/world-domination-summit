@@ -43,9 +43,14 @@ routes = (app) ->
 						.fetch
 							columns: ['user_id', 'first_name', 'last_name', 'user_name', 'distance', 'lat', 'lon', 'pic', 'location']
 						.then (attendees) ->
-							rds.set 'all_attendees', JSON.stringify(attendees.models), (err, rsp) ->
+							atns = []
+							for atn in attendees.models
+								if atn.get('user_name').length is 40
+									atn.set('user_name', 'no-profile')
+								atns.push atn
+							rds.set 'all_attendees', JSON.stringify(atns), (err, rsp) ->
 								rds.expire 'all_attendees', 1000, (err, rsp) ->
-									dfr.resolve(attendees.models)
+									dfr.resolve(atns)
 				return dfr.promise
 			me: (req) ->
 				dfr = Q.defer()
