@@ -1,5 +1,5 @@
 icon: tree
-photo_head: https://farm4.staticflickr.com/3811/9229143020_fe1577a4c3_c.jpg,https://farm4.staticflickr.com/3809/9229130982_45863405f7_c.jpg
+photo_head: https://farm4.staticflickr.com/3811/9229143020_fe1577a4c3_c.jpg
 
 ## 2014 Speaker
 
