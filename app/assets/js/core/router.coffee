@@ -114,6 +114,7 @@ ap.goTo = (panel = '', options = {}, cb = false) ->
 		ap.currentView = new view options
 		$.scrollTo 0
 		ap.syncNav(panel)
+		ap.checkMobile()
 
 		if cb 
 			cb()
