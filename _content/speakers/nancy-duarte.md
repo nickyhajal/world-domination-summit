@@ -1,6 +1,8 @@
 icon: chat
 photo_head: https://farm8.staticflickr.com/7432/9226362293_5e07e0afb8_c.jpg,https://farm8.staticflickr.com/7395/9226362127_9933b2b935_c.jpg,https://farm8.staticflickr.com/7353/9226362017_db7bc779a7_c.jpg
 
+## 2013 Speaker
+
 # Nancy Duarte is a specialist in persuasion and magic. She explained how stories can… and have changed the world. 
 
 <div class="zig-zags_blue"></div>
