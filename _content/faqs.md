@@ -11,7 +11,7 @@ The World Domination Summit (WDS) is a gathering of creative, interesting people
 
 The weekend consists of three primary activities: main-stage events with keynote speakers that are attended by the entire group, workshops that focus on specific topics, and lots of meetups, parties, and informal engagement. Despite the large number of people who attend, WDS is an introvert-friendly zone, and everyone who participates is a big part of the event.
 
-WDS was founded by Chris Guillebeau, explorer of the world and New York Times bestselling author of The $100 Startup.
+WDS was founded by <a href="http://chrisguillebeau.com" target="blank"> Chris Guillebeau</a>, explorer of the world and New York Times bestselling author of The $100 Startup.
 
 <div class="line-canvas"></div>
 
@@ -29,7 +29,7 @@ Please note: once tickets are gone, they're gone. We do not hold any tickets bac
 
 ### What is the refund/exchange policy on WDS tickets?
 
-All WDS tickets are non-refundable. Transfers and name changes on tickets are available for a $100 fee up to 60 days prior to the event. After May 11, 2014 no further transfers or name changes will be possible.
+All WDS tickets are non-refundable. Transfers and name changes on tickets are available for a $100 fee up to 60 days prior to the event. After **May 11, 2014** no further transfers or name changes will be possible.
 
 <div class="line-canvas"></div>
 
