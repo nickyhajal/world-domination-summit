@@ -27,6 +27,7 @@ window.wall =
 		$('body')
 			.on('click', '.wall-content-type-flickr_stream', wall.showBiggerPhoto)
 			.on('click', '#video', wall.showVideo)
+			.on('click', '#reg-army', wall.showArmy)
 
 	# Extending the Google Maps API
 	extendMaps: ->
@@ -191,6 +192,8 @@ window.wall =
 				$t.attr('href', '/~'+content.user_name).attr('target', '_blank')
 			if type is 'attendee_map'
 				$t.attr('href', '/~'+content.user_name).attr('target', '_blank')
+			if type is 'attendee_map'
+				$t.attr('href', '/~'+content.user_name).attr('target', '_blank')
 			if type is 'speaker'
 				$t.attr('href', '/speaker/'+_.slugify(content.display_name)).attr('target', '_blank')
 			if type is 'speaker_quote'
@@ -251,16 +254,45 @@ window.wall =
 			shift = $('.attendee_map_text', $t.closest('.block')).height() * -1
 			profile_map.shiftY(shift)
 
-	renderMap: ->
-		attendee = @options.attendee.attributes
-		profile_map_el = document.getElementById('army')
+	renderArmyMap: ->
+		army_map_el = document.getElementById('army-map')
 		mapOptions = 
-			#center: new google.maps.LatLng(attendee.lat, attendee.lon)
-			zoom: 8
+			center: new google.maps.LatLng(30.4419, -60.1419)
+			zoom: 3
 			scrollwheel: false
 			disableDefaultUI: true
-		profile_map = new google.maps.Map(profile_map_el, mapOptions)
-		
+		army_map = new google.maps.Map(army_map_el, mapOptions)
+
+		llid = (lat, lon) ->
+			return lat.replace('-', 'nn').replace('.', 'o')+lon.replace('-', 'nn').replace('.', 'o')
+
+		used = {}
+		getValidLatLon = (user) ->
+			uniq = false
+			lat = ''+user.get('lat')
+			lon = ''+user.get('lon')
+			while not uniq
+				ll = llid(lat, lon);
+				if not used[ll]?
+					used[ll] = true
+					uniq = true;
+				else
+					lat = lat.substr(0, lat.length-1);
+					lon = lon.substr(0, lon.length-1);
+					lat += Math.floor(Math.random()*11);
+					lon += Math.floor(Math.random()*11);
+			return new google.maps.LatLng(lat, lon)
+
+		ap.Users.each (user) ->
+			if user.get('lat')? and user.get('lon')? and user.get('pic')?.length
+				marker = new google.maps.Marker
+					position: getValidLatLon(user)
+					map: army_map
+					title:'View Profile'
+					icon: '/images/markers/'+user.get('user_name')+'_m.png',
+					width:10
+		@armyRendered = true
+
 	pruneUsed: (type)->
 		tmp = []
 
@@ -270,6 +302,12 @@ window.wall =
 	showVideo: (e) ->
 		e.preventDefault()
 		ap.Modals.open('video')
+
+	showArmy: (e) ->
+		e.preventDefault()
+		ap.Modals.open('army')
+		unless wall.armyRendered?
+			wall.renderArmyMap()
 
 	showBiggerPhoto: (e) ->
 		e.preventDefault()

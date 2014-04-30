@@ -80,6 +80,7 @@ ap.getPanelPath = (panel) ->
 ap.syncNav = (panel) ->
 	$('.nav-link-active').removeClass('nav-link-active')
 	$('#nav-'+panel).addClass('nav-link-active')
+	ap.toggleNav(true)
 
 ###
 	Re-render the page to show new content
@@ -111,7 +112,6 @@ ap.goTo = (panel = '', options = {}, cb = false) ->
 		if ap.currentView? and ap.currentView
 			ap.currentView.finish()
 		ap.currentView = new view options
-		tk 'scrolllltooo'
 		$.scrollTo 0
 		ap.syncNav(panel)
 

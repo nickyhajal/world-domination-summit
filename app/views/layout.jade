@@ -18,7 +18,8 @@ html(lang='en', class="#{hide_counter}")
 		link(rel='stylesheet', href='/images/apple-icon.png')
 		link(rel='stylesheet', type="text/css", href='/app/assets/css/styles.css')
 		link(rel='stylesheet', type="text/css", href='/app/assets/css/fonts.css')
-		//- link(rel='stylesheet', type="text/css", href='/assets/css/tablet.css', media='screen and (max-width:1024px) and (min-width:628px)')
+		link(rel='stylesheet', type="text/css", href='/app/assets/css/tablet.css', media='screen and (max-width:1024px)')
+		link(rel='stylesheet', type="text/css", href='/app/assets/css/phone.css', media='screen and (max-width:682)')
 		!= js('main')
 		script(type="text/javascript",src="https://maps.googleapis.com/maps/api/js?sensor=false&ver=3.7.1")
 	body(class='ui-body-a')
@@ -33,6 +34,10 @@ html(lang='en', class="#{hide_counter}")
 		nav(id="top-nav")
 			div(class="contentainer")
 				a(id="small-logo", href="/")
+				a(id="nav-link-expand", href="#")
+					div
+					div
+					div
 				div(id="nav-links")
 					a(id="nav-story", href="/story") Story
 					a(id="nav-schedule", href="/schedule") Schedule
@@ -50,22 +55,24 @@ html(lang='en', class="#{hide_counter}")
 					h6 The Revolution Returns In:
 					div(class="clear")
 					div(id="counter-plane")
-					div(id="counter-days", class="counter-section")
-						span Days
-						div 
-					div(id="counter-hours", class="counter-section")
-						span Hours
-						div 
-					div(id="counter-mins", class="counter-section")
-						span Mins
-						div 
+					div(class="counter-content")
+						div(id="counter-days", class="counter-section")
+							span Days
+							div 
+						div(id="counter-hours", class="counter-section")
+							span Hours
+							div 
+						div(id="counter-mins", class="counter-section")
+							span Mins
+							div 
 					div(class="clear")
-					div(class="logged-out")
-						a(id="counter-register", class="counter-button" href="/register") Register
-						a(id="counter-login", class="counter-button", href="/login") Login
-					div(class="logged-in")
-						a(id="counter-ops", class="counter-button", href="/hub") Hub
-						a(id="counter-account", class="counter-button", href="/settings") Account
+					div(class="counter-content")
+						div(class="logged-out")
+							a(id="counter-register", class="counter-button" href="/register") Register
+							a(id="counter-login", class="counter-button", href="/login") Login
+						div(class="logged-in")
+							a(id="counter-ops", class="counter-button", href="/hub") Hub
+							a(id="counter-account", class="counter-button", href="/settings") Account
 				div(id="sidebar-shell")
 
 		main(class="contentainer")
@@ -84,7 +91,7 @@ html(lang='en', class="#{hide_counter}")
 
 		div(id="modals")
 			div(id="modal-army", class="modal")
-				div(class="model-content")
+				div(class="modal-content")
 					a(class="modal-close")
 					div(id="army-map")
 			div(id="modal-video", class="modal")

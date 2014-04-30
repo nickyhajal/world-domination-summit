@@ -24,6 +24,7 @@ ap.init = () ->
 	if ap.me
 		$('html').addClass('is-logged-in')
 	ap.initAssets()
+	ap.initMobile()
 	ap.Counter.init()
 	_.whenReady 'me', ->
 		ap.initTemplates()
@@ -35,6 +36,7 @@ ap.initAssets = ->
 	ap.api 'get assets', {assets: assets}, (rsp) ->
 		if rsp.all_attendees
 			ap.Users.add(rsp.all_attendees)
+			_.isReady 'users'
 
 		if rsp.me
 			ap.login rsp.me
@@ -82,7 +84,8 @@ ap.initRouter = ->
 			anchor = $('a[name="'+href.replace('#', '')+'"]')
 			if anchor.length
 				top = anchor.offset().top - 100
-				$.scrollTo(top, 150)
+				$.scrollTo top, 150, 
+					axis: 'y'
 				e.preventDefault()
 
 
