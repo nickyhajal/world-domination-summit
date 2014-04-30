@@ -1,5 +1,5 @@
 icon: parachute
-photo-head: https://farm8.staticflickr.com/7298/9239561833_4d4337759e_c.jpg,https://farm4.staticflickr.com/3816/9242342662_d4379074a5_c.jpg,https://farm3.staticflickr.com/2827/9239560619_6bd8042b84_c.jpg,https://farm6.staticflickr.com/5475/9239561979_80bc39cdc3_c.jpg
+photo_head: https://farm8.staticflickr.com/7298/9239561833_4d4337759e_c.jpg,https://farm4.staticflickr.com/3816/9242342662_d4379074a5_c.jpg,https://farm3.staticflickr.com/2827/9239560619_6bd8042b84_c.jpg,https://farm6.staticflickr.com/5475/9239561979_80bc39cdc3_c.jpg
 
 # Tess Vigeland was remarkable—even without a bathtub full of kittens.
 
