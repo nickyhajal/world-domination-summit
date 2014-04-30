@@ -1,6 +1,6 @@
 icon: globe
 
-# Our final round of ticket sales for WDS 2014 will open on May 5 - but act fast, they go quickly!
+# Our final round of ticket sales for WDS 2014 will open on May 5—but act fast, they go quickly!
 
 Thanks for your interest in taking over the world. WDS tickets go very quickly. We're currently sold out of both initial rounds of ticket sales. The final round of sales will be held on **Tuesday, May 5th**, and the attendee manifest will close shortly thereafter.
 
