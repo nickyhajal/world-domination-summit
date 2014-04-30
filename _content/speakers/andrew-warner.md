@@ -1,6 +1,8 @@
 icon: bulb
 photo_head: https://farm3.staticflickr.com/2853/9231364559_bb191c566d_c.jpg,https://farm3.staticflickr.com/2821/9234145128_b47dbf3d0b_c.jpg,https://farm4.staticflickr.com/3752/9231362149_fe477ece15_c.jpg,https://farm8.staticflickr.com/7430/9234147328_2a3da9ce76_c.jpg
 
+## 2013 Speaker
+
 # Entrepreneurial expert Andrew Warner shared a personal story of failure and growth, and explained the power of working with your true mind. He even led an on-stage meditation exercise.
 
 <div class="zig-zags_blue"></div>
