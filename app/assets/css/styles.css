@@ -500,8 +500,8 @@ div.collapsable-box-closed:before {
     z-index:                    10;
     width:                      15px;
     top:                        24px;
-    right:                      22px;
     background:                 url("/images/dropdown-arrows.png?") repeat scroll 0px 0px / 32px auto transparent;
+    right:                      12px;
 }
 .collapsable-box a:first-of-type {
     display:                    block;
