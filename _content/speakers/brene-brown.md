@@ -9,7 +9,7 @@ photo_head: https://farm8.staticflickr.com/7255/7523483516_c9682b8b9c_b.jpg,http
 
 <div class="line-canvas"></div>
 
-<iframe src="//player.vimeo.com/video/57080852?byline=0&amp;portrait=0&amp;color=ff9933" width="720" height="405" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="//player.vimeo.com/video/57080852?byline=0&amp;portrait=0&amp;color=0073ad" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 <div class="line-canvas"></div>
 
