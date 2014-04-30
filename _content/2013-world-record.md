@@ -3,7 +3,7 @@ photo_head: https://farm3.staticflickr.com/2824/9219164399_e166f8f41f_c.jpg,http
 
 ## 2013 World Record
 
-# The World Float was awesome.
+# The World Float was epic.
 
 In 2013, 3,000 people descended on Portland for the 3rd Annual World Domination Summit. With so many amazing folks coming to town, we wanted to find a way to bring our attendees and Portlanders together to accomplish something truly spectacular. And we did just that in the creation of a world record attempt!
 
