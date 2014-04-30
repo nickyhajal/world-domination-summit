@@ -1,4 +1,4 @@
-icon: globe
+icon: map
 photo_head: https://farm6.staticflickr.com/5527/9226361671_bf39225e1b_c.jpg,https://farm3.staticflickr.com/2813/9229142338_451212eb1f_c.jpg,https://farm4.staticflickr.com/3746/9229141310_9dc114f7f8_c.jpg
 
 # The original Problogger, Darren Rowse arrived from Australia with his team of Aussie empire builders. He also challenged us to lead an unconventional life and follow a dream… from zero to hero.
