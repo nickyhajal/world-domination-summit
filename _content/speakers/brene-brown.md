@@ -9,6 +9,10 @@ photo_head: https://farm8.staticflickr.com/7255/7523483516_c9682b8b9c_b.jpg,http
 
 <div class="line-canvas"></div>
 
+<iframe src="//player.vimeo.com/video/57080852?byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+<div class="line-canvas"></div>
+
 ### A bit more about Brené
 
 Brené is a nationally renowned speaker and has won numerous teaching awards, including the College’s Outstanding Faculty Award. Her groundbreaking work has been featured on PBS, NPR, CNN, The Katie Show, and Oprah Winfrey’s Super Soul Sunday. 
