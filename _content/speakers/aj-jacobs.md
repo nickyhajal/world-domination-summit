@@ -1,9 +1,8 @@
 icon: parachute
 photo_head: https://farm6.staticflickr.com/5340/9226363263_c77738b664_c.jpg
 
-![A.J. Jacobs](http://imgs.wds.fm/AJ-Jacobs-avatar.png)
 
-# A.J. Jacobs
+# ![A.J. Jacobs](http://imgs.wds.fm/AJ-Jacobs-avatar.png) A.J. Jacobs
 
 <div class="zig-zags_blue"></div>
 
