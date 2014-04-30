@@ -90,6 +90,14 @@ Just steps from the Schnitzer you'll be able to connect with friends based on sh
 The path to world domination starts in Portland, so it's about time you got to know the city!
 
 <p class="color-green">**Note:** Need a break? Our Highly-Sensitive Person zone will be open all afternoon. You can also attend your choice of 100+ attendee-led gatherings.</p>
+
+### Activities
+
+When main stage sessions end for the afternoon, the good times roll on. Join your fellow attendees at your choice of extracurricular activities around town—from film screenings and river cruises, to world record attempts and more!
+
+<p class="color-blue">Note: all activities are first-come, first-served, and some require registration in advance.</p>
+
+
 <h3 class="color-orange">Everything Else</h3>
 
 <a name="everything-else"></a>
