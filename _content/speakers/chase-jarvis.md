@@ -1,7 +1,7 @@
 icon: camera
 photo_head: https://farm4.staticflickr.com/3790/9231310911_aa5bd45c35_c.jpg,https://farm6.staticflickr.com/5529/9234092316_59e9b3cc02_c.jpg,https://farm8.staticflickr.com/7419/9234098458_a0b7152e63_o.jpg
 
-# Chase Jarvis encouraged the audience with a new message on creativity in business and life.
+# Chase Jarvis encouraged the audience with a new message on creativity in business and life. By connecting millions of people to inspiring experts, we can unlock creativity the world over.
 
 <div class="zig-zags_blue"></div>
 
