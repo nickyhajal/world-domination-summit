@@ -23,49 +23,41 @@ bio
 bio
 
 ### Tyler Tervooren
-#### Adventure Czar
+##### Adventure Czar
 
 bio
 
 ### Sean Ogle
-#### Man About Town
+##### Man About Town
 
 bio
 
 ### Isaac Watson
-#### Design Nazi, Production Manager
+##### Design Nazi, Production Manager
 
 bio
 
 ### Wes and Tera Wages
-#### Media Team
+##### Media Team
 
 bio
 
 ### Nicky Hajal
-#### Webinator
+##### Webinator
 
 bio
 
 ### Geoff Hartnell
-#### Logistician, Ambassador Wrangler
+##### Logistician, Ambassador Wrangler
 
 bio
 
 ### Tyler Hurst
-#### Party Planner, Cider Advocate
+##### Party Planner, Cider Advocate
 
 bio
 
 ### Katie Hurst
-#### Foundation Director
+##### Foundation Director
 
 bio
-
-## Former Team Members
-
-Tsilli Pines
-J.D. Roth
-
-## Special Friends
-Jolby & Friends
