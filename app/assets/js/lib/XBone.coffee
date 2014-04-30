@@ -37,12 +37,15 @@ window.XView = Backbone.View.extend
 	renderPhotoHeader: (shell) ->
 		main_content = $('#page_content', shell).html()
 		content = $('#page_content', shell)
-		photos = '
-			<a href="#" class="photo-head-prev"></a>
-			<a href="#" class="photo-head-next"></a>
-		'
+		the_photos = @options.photo_head.split(',')
+		photos = ''
+		if the_photos.length > 1
+			photos = '
+				<a href="#" class="photo-head-prev"></a>
+				<a href="#" class="photo-head-next"></a>
+			'
 		active = true
-		for photo in @options.photo_head.split(',')
+		for photo in the_photos
 			photos += '<img src="'+photo+'"'
 			if active
 				active = false
