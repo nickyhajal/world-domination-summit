@@ -2,7 +2,7 @@ icon: theater
 photo_head: /images/photos/theater.jpg,/images/photos/northwest.jpg,/images/photos/audience.jpg
 sidebar: headquarters
 
-<h3>Your Base in Portland, Or</h3>
+<h3>Your Base in Portland, Oregon</h3>
 <p>
 	We'll base out of the Arlene Schnitzer Concert Hall, located two blocks from a light-rail stop and directly across from South Park. On Saturday morning, one of the city's main Farmer's Markets will be open in the park, with cupcakes, fresh vegetables, and local art available for sale.
 </p>
@@ -78,7 +78,7 @@ sidebar: headquarters
 
 <h3 class="side-icon-fork">Food &amp; Dining</h3>
 <p>
-	Portland's famous food carts are six blocks away from the museum, with your choice of more than a dozen authentic, local options for less than $8 a meal. Voodoo Donuts will be on location throughout the weekend with a special "World Domination Glazed."
+	Portland's famous food carts are six blocks from the theater, with your choice of more than a dozen authentic, local options for less than $8 a meal. Voodoo Donuts will be on location throughout the weekend with a special "World Domination Glazed."
 </p>
 <div class="place-row">
 	<a href="http://tastyntasty.com/alder/">Tasty &amp; Alder</a>

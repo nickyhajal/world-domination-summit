@@ -1,7 +1,9 @@
 icon: bulb
 photo_head: https://farm9.staticflickr.com/8167/7525314368_8d65e6b786_c.jpg,https://farm8.staticflickr.com/7274/7525313974_4ae42f0787_c.jpg,https://farm8.staticflickr.com/7247/7525313492_a831002c08_c.jpg
 
-# "Let's get stuff done!" In his 2012 talk, Scott Belksy shared how to make ideas happen. It's not about being creative —it's about CREATING.
+## 2012 Speaker
+
+# "Let's get stuff done!" In his talk, Scott Belksy shared how to make ideas happen. It's not about being creative—it's about CREATING.
 
 <div class="zig-zags_blue"></div>
 

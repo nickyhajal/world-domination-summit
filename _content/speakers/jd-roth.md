@@ -1,6 +1,8 @@
 icon: parachute
 photo_head: https://farm9.staticflickr.com/8431/7537733108_8961c962db_c.jpg,https://farm8.staticflickr.com/7116/7537729158_5a22d504b7_c.jpg,https://farm9.staticflickr.com/8019/7537731364_94946021b0_c.jpg
 
+## 2012 Speaker
+
 # "Action is the key to change...It's not the things we say that are our priorities; it's the things we do." Using his own life as an example, J.D. Roth explores three steps to personal transformation: the power of yes, the power of focus, and the power of action.
 
 <div class="zig-zags_blue"></div>

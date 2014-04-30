@@ -1,5 +1,5 @@
 icon: map
-photo_head: https://farm4.staticflickr.com/3743/9231403243_9fe13f2384_c.jpg,https://farm3.staticflickr.com/2854/9234119650_3accdef7a5_c.jpg
+photo_head: https://farm4.staticflickr.com/3743/9231403243_9fe13f2384_c.jpg
 
 ## 2014 Speaker
 
