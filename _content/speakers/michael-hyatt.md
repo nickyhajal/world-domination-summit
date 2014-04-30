@@ -1,13 +1,13 @@
-icon: suitcase
-# Michael Hyatt
+icon: mic
+photo_head: https://farm4.staticflickr.com/3822/9231400135_4f75023919_c.jpg,https://farm4.staticflickr.com/3758/9231390943_a66eda4f3d_c.jpg
+
+## 2014 Speaker
+
+# ![Michael Hyatt](http://imgs.wds.fm/michael-hyatt-round.png) Michael Hyatt
 
 <div class="zig-zags_blue"></div>
 
 **Michael Hyatt** is the author of *Platform: Get Noticed in a Noisy World* (Thomas Nelson, 2012). It is a *New York Times*, *Wall Street Journal*, and *USA Today* bestseller. Recently, *Forbes* magazine named him one of the “Top 50 Social Media Influencers of 2013.”
-
-<div class="line-canvas"></div>
-
-### A bit more about Michael
 
 Michael is the former Chairman & CEO of Thomas Nelson Publishers, the largest faith-based publisher in the world and now part of HarperCollins. He began his career at Word Publishing while a senior at Baylor University. In the 30 years since then, he has worked in nearly every facet of book publishing.
 
