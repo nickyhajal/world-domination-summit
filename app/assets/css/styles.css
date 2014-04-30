@@ -490,6 +490,19 @@ a.dispatch-content-comment-status {
     font-family:                karla;
     font-size:                  14px;
 }
+div.collapsable-box-closed:before {
+    background-position:        -18px center ! important;
+}
+.collapsable-box:before {
+    height:                     17px;
+    position:                   absolute;
+    content:                    "";
+    z-index:                    10;
+    width:                      15px;
+    top:                        24px;
+    right:                      22px;
+    background:                 url("/images/dropdown-arrows.png?") repeat scroll 0px 0px / 32px auto transparent;
+}
 .collapsable-box a:first-of-type {
     display:                    block;
     margin:                     -15px -15px -40px;
@@ -1263,6 +1276,7 @@ h4 {
     background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
     padding:                    15px;
     margin-bottom:              15px;
+    position:                   relative;
 }
 .broadcast-box h2 {
     background:                 none repeat scroll 0px 0px rgb(33, 23, 10);
