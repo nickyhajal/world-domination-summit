@@ -501,7 +501,7 @@ div.collapsable-box-closed:before {
     width:                      15px;
     background:                 url("/images/dropdown-arrows.png?") repeat scroll 0px 0px / 32px auto transparent;
     right:                      12px;
-    top:                        26px;
+    top:                        25px;
 }
 .collapsable-box a:first-of-type {
     display:                    block;
