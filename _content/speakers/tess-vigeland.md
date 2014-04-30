@@ -15,4 +15,4 @@ photo_head: https://farm8.staticflickr.com/7298/9239561833_4d4337759e_c.jpg,http
 
 ### A bit more about Tess
 
-Prior to that, Vigeland worked at public stations in Boston, and in Portland, Ore., where she co-hosted the weekly public affairs television program Seven Days. Vigeland also spent two years as a sports correspondent in Boston, where she once reported from inside Fenway Park’s famous Green Monster. She is the recipient of multiple national journalism awards and is a contributor to *The New York Times*. Vigeland is now the CEO of Tess Vigeland Productions, a Los Angeles-based multimedia company.
+Prior to her work at Marketplace, Vigeland worked at public stations in Boston, and in Portland, Ore., where she co-hosted the weekly public affairs television program Seven Days. Vigeland also spent two years as a sports correspondent in Boston, where she once reported from inside Fenway Park’s famous Green Monster. She is the recipient of multiple national journalism awards and is a contributor to *The New York Times*. Vigeland is now the CEO of Tess Vigeland Productions, a Los Angeles-based multimedia company.
