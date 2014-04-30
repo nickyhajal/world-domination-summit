@@ -1,7 +1,7 @@
 sidebar: schedule
 icon: parachute
 
-# On [July 11-13,2004](/register) we're taking over Portland, Oregon the second weekend of July. Our plan of action is: have fun and create meaningful adventure.
+# On [July 11-13,2004](/register) we're taking over Portland, Oregon. Our plan of action? Have fun and create meaningful adventure.
 <div class="main-schedule-box">
 	<h3>Main Schedule</h3>
 	<div class="main-schedule-item">
@@ -79,15 +79,15 @@ Most speakers will attend the entire weekend and be available for informal conve
 
 <a name="portland-experience"></a>
 
-After morning sessions end on Saturday, we're taking over the Park Blocks for a festival format. The all-new "Portland Experience" features:
+Over the years we've learned that two big reasons people come to WDS is to meet people with shared interests and experience some of what the great city of Portland has to offer. So this year we wracked out brains to figure out how we could do a better job of providing both of those things.
 
-*Beer and wine tastings
+The result? **The Portland Experience.**
 
-*Hour-long yoga session with guest DJ
+We're commandeering a 3-block section of the downtown Park Blocks and taking the best of Portland and bringing it directly to you. Food? Check. Drink? Check? Music, crafts, exercise? Check, check, and check.
 
-*Demonstrations from local vendors
+Just steps from the Schnitzer you'll be able to connect with friends based on shared interests, and experience a side of the city you might not have seen otherwise.
 
-*Interactive arts and crafts
+The path to world domination starts in Portland, so it's about time you got to know the city!
 
 <p class="color-green">**Note:** Need a break? Our Highly-Sensitive Person zone will be open all afternoon. You can also attend your choice of 100+ attendee-led gatherings.</p>
 
