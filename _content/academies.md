@@ -8,9 +8,12 @@ photo_head: https://farm8.staticflickr.com/7457/9226356063_2f05f24588_c.jpg,http
 
 Registration for Academies is separate from WDS itself. We'll offer registration for the academies first to WDS attendees, and then (for a slightly higher price) to the general public.
 
-### Thursday, July 10
+<div class="zig-zags_blue"></div>
 
 <a name="problogger"></a>
+### Thursday, July 10
+
+
 <div class="collapsable-box collapsable-box-open">
 	<a href="https://www.eventbrite.com/e/wds-academy-problogger-academy-building-profitable-blogs-tickets-11339594031"><h4>ProBlogger Academy: Building Profitable Blogs</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
@@ -25,7 +28,10 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 	</div>
 </div>
 
+
 <a name="travel-hacking"></a>
+<div class="line-canvas"></div>
+
 <div class="collapsable-box collapsable-box-open">
 	<a href="https://www.eventbrite.com/e/wds-academy-travel-hacking-tickets-11392203387"><h4>Travel Hacking Academy</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
@@ -41,6 +47,8 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 </div>
 
 <a name="nerd-fitness"></a>
+<div class="line-canvas"></div>
+
 <div class="collapsable-box collapsable-box-open">
 	<a href="#"><h4>Nerd Fitness Day Camp</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
@@ -55,9 +63,11 @@ Registration for Academies is separate from WDS itself. We'll offer registration
 	</div>
 </div>
 
-### Monday, July 15
+<div class="zig-zags_blue"></div>
 
 <a name="making-art"></a>
+### Monday, July 15
+
 <div class="collapsable-box collapsable-box-open">
 	<a href="https://www.eventbrite.com/e/wds-academy-making-art-and-giving-it-away-tickets-11351507665"><h4>Making Art and Giving It Away</h4></a>
 	<h6>9:00 am–4:00 pm</h6>
@@ -75,6 +85,8 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 </div>
 
 <a name="art-of-simple"></a>
+<div class="line-canvas"></div>
+
 <div class="collapsable-box collapsable-box-open">
 	<a href="https://www.eventbrite.com/e/wds-academy-the-art-of-simple-a-field-guide-to-redesigning-a-simple-life-tickets-11350996135"><h4>The Art of Simple: A Field Guide to Redesigning Your Simple Life</h4></a>
 	<h5>1:00 pm–5:00 pm</h5>
@@ -90,6 +102,8 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 </div>
 
 <a name="long-term-travel"></a>
+<div class="line-canvas"></div>
+
 <div class="collapsable-box collapsable-box-open">
 	<a href="https://www.eventbrite.com/e/wds-academy-the-nuts-and-bolts-of-long-term-travel-tickets-11448588035"><h4>The Nuts and Bolts of Long-Term Travel</h4></a>
 	<h5>1:00 pm–5:00 pm</h5>

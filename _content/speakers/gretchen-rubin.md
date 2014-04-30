@@ -1,4 +1,4 @@
-icon: pin
+icon: trail
 photo_head: https://farm8.staticflickr.com/7444/9231360227_ef972e9c3a_c.jpg,https://farm6.staticflickr.com/5519/9234165124_4f1ca905f8_c.jpg,https://farm8.staticflickr.com/7428/9231358917_657d19838f_c.jpg
 
 # Gretchen Rubin taught us how to be happy… even if you don't like to sing in the morning, read Aristotle, or clean your closet.

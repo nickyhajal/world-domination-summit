@@ -3,9 +3,11 @@ photo_head: https://farm6.staticflickr.com/5340/9226363263_c77738b664_c.jpg
 
 # A.J. Jacobs
 
+![A.J. Jacobs](http://imgs.wds.fm/AJ-Jacobs-avatar.png)
+
 <div class="zig-zags_blue"></div>
 
-**A.J. Jacobs** is a human guinea pig and the author of four New York Times bestsellers. Among them, "The Year of Living Biblically," about his quest to follow the hundreds of rules in the Bible, and "Drop Dead Healthy," about his project to become the healthiest person in the world.
+**A.J. Jacobs** is a human guinea pig and the author of four New York Times bestsellers. Among them, *The Year of Living Biblically*, about his quest to follow the hundreds of rules in the Bible, and *Drop Dead Healthy*, about his project to become the healthiest person in the world.
 
 <div class="line-canvas"></div>
 

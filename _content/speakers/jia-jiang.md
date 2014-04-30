@@ -1,4 +1,4 @@
-icon: parachute
+icon: compass
 photo_head: https://farm3.staticflickr.com/2860/9231321231_644547d47c_c.jpg,https://farm4.staticflickr.com/3686/9231319931_82d41bd4cd_c.jpg,https://farm8.staticflickr.com/7334/9234103568_31970e3523_c.jpg
 
 # Jia Jiang taught us to embrace rejection, not fear it. Can rejection be a love story? To overcome his fear of pain and rejection, Jia Jiang started a 100-day "rejection therapy" project. He showed us how to try new things with confidence.

@@ -81,44 +81,44 @@ sidebar: headquarters
 	Portland's famous food carts are six blocks away from the museum, with your choice of more than a dozen authentic, local options for less than $8 a meal. Voodoo Donuts will be on location throughout the weekend with a special "World Domination Glazed."
 </p>
 <div class="place-row">
-	<a href="">Tasty &amp; Alder</a>
+	<a href="http://tastyntasty.com/alder/">Tasty &amp; Alder</a>
 	<span>
-		<a href="">1.2 Mi</a>
+		<a href="https://goo.gl/maps/xRS6w">0.5 Mi</a>
 		From Base
 	</span>
 </div>
 <div class="place-row">
-	<a href="">Lardo</a>
+	<a href="http://lardopdx.com">Lardo</a>
 	<span>
-		<a href="">0.4 Mi</a>
+		<a href="https://goo.gl/maps/Ey2f3">0.5 Mi</a>
 		From Base
 	</span>
 </div>
 <div class="place-row">
-	<a href="">Nong's Khao Man Gai</a>
+	<a href="http://khaomangai.com">Nong's Khao Man Gai</a>
 	<span>
-		<a href="">0.8 Mi</a>
+		<a href="https://goo.gl/maps/WI7yh">0.4 Mi</a>
 		From Base
 	</span>
 </div>
 <div class="place-row">
-	<a href="">Oba</a>
+	<a href="http://www.obarestaurant.com">¡Oba!</a>
 	<span>
-		<a href="">1.0 Mi</a>
+		<a href="https://goo.gl/maps/Ev1ap">0.9 Mi</a>
 		From Base
 	</span>
 </div>
 <div class="place-row">
-	<a href="">Irving Kitchen</a>
+	<a href="http://www.irvingstreetkitchen.com">Irving Street Kitchen</a>
 	<span>
-		<a href="">0.9 Mi</a>
+		<a href="https://goo.gl/maps/otnbM">1.0 Mi</a>
 		From Base
 	</span>
 </div>
 <div class="place-row">
-	<a href="">Toro Bravo</a>
+	<a href="http://www.torobravopdx.com">Toro Bravo</a>
 	<span>
-		<a href="">3 Mi</a>
+		<a href="https://goo.gl/maps/6PrQ9">3 Mi</a>
 		From Base
 	</span>
 </div>
