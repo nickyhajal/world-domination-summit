@@ -1,5 +1,5 @@
 icon: mic
-photo_head: https://farm4.staticflickr.com/3822/9231400135_4f75023919_c.jpg,https://farm4.staticflickr.com/3758/9231390943_a66eda4f3d_c.jpg
+photo_head: https://farm4.staticflickr.com/3822/9231400135_4f75023919_c.jpg
 
 ## 2014 Speaker
 
