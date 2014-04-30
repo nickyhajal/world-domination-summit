@@ -1,4 +1,4 @@
-icon: globe
+icon: compass
 photo_head: https://farm8.staticflickr.com/7413/9229138166_3926a210e7_c.jpg,https://farm4.staticflickr.com/3674/9234091452_88ba6c82de_c.jpg
 
 ## 2014 Speaker
