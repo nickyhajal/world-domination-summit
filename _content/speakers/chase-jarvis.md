@@ -5,7 +5,7 @@ photo_head: https://farm4.staticflickr.com/3790/9231310911_aa5bd45c35_c.jpg,http
 
 # Chase Jarvis encouraged the audience with a new message on creativity in business and life. By connecting millions of people to inspiring experts, we can unlock creativity the world over.
 
-<div class="zig-zags_blue"></div>
+<div class="line-canvas"></div>
 
 **Chase Jarvis** is well known as a visionary photographer, director, and fine artist with a consistent ambition to break down the barriers between new- and traditional media, fine and commercial art.
 
