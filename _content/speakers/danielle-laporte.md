@@ -11,6 +11,6 @@ Danielle LaPorte is the outspoken creator of WhiteHotTruth.com, which has been c
 
 Danielle has been featured in *Elle*, *Body + Soul*, *Vogue Australia*, *Better Homes & Gardens*, *Globe & Mail*, *The National Post*, *The Huffington Post*, *Entertainment Tonight*, *USA Today* and BusinessWeek.com. Danielle was a news show commentator for CBC, and is a former director of a Washington-DC think tank, where she managed a team of analysts studying global trends for the likes of the Pentagon and the World Bank.
 
-She's based in Vancouver, BC, and wrote the popular book *The Firestarter Sessions*.
+She's based in Vancouver, BC.
 
 <div class="line-canvas"></div>
