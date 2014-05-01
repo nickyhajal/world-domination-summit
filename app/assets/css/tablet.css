@@ -59,13 +59,13 @@ div#counter-shell {
     display:                    none;
 }
 div#counter-shell {
-    float:                      left;
     left:                       0px ! important;
     width:                      100%;
-    margin-bottom:              -140px;
     position:                   relative;
     z-index:                    10;
     top:                        60px;
+    float:                      none;
+    margin-bottom:              0px;
 }
 main.contentainer {
     width:                      100%;
@@ -81,10 +81,11 @@ div.block counter-content {
 div.counter-content {
     width:                      208px;
     margin:                     0px auto;
+    height:                     53px;
 }
 div#video-shell {
     margin-left:                0px;
-    top:                        178px;
+    top:                        -1px;
 }
 div#video-underlay {
     display:                    none;
@@ -95,8 +96,8 @@ div#video {
     top:                        0px;
     width:                      100%;
     position:                   relative;
-    z-index:                    -1;
-    margin:                     0px 0px 178px;
+    margin:                     0px 0px -1px;
+    z-index:                    1;
 }
 div.counter-fixed {
     position:                   relative ! important;
