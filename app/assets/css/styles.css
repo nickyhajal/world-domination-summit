@@ -1035,7 +1035,7 @@ textarea {
     height:                     90px;
     padding:                    12px 10px 10px;
     width:                      100%;
-    font-size:15px;
+    font-size:                  15px;
 }
 .box-select-shell {
     height:                     38px;
@@ -1354,6 +1354,9 @@ span.broadcast-date {
     color:                      rgb(177, 186, 30);
     text-decoration:            none ! important;
 }
+div#modal-video .modal-content {
+    height:                     516px;
+}
 div.modal {
     position:                   fixed;
     top:                        0px;
@@ -1363,6 +1366,9 @@ div.modal {
     z-index:                    10000;
     display:                    none;
     background:                 none repeat scroll 0px 0px rgba(30, 27, 25, 0.5);
+}
+#modal-army div.modal-content {
+    height:                     519px;
 }
 div.modal-content {
     background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
@@ -1374,7 +1380,6 @@ div.modal-content {
     right:                      0px;
     top:                        0px;
     width:                      800px;
-    max-height:                 90%;
 }
 div#modal-bigger-photo-img {
     height:                     100%;
