@@ -1,5 +1,5 @@
-<a href="https://www.flickr.com/photos/chrisguillebeau/collections/" class="sidebar-button" id="button-photography-highlights">
-	<b>See Our Photograph Highlights</b>
+<a href="https://www.flickr.com/photos/chrisguillebeau/collections/72157644042232868/" class="sidebar-button" id="button-photography-highlights">
+	<b>See Our Photo Highlights</b>
 	from WDS 2011 - 2013
 </a>
 <a href="https://vimeo.com/album/2851823" class="sidebar-button" id="button-speaker-videos">
