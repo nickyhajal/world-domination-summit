@@ -13,6 +13,9 @@ h1#header-title {
     display:                    block;
     padding:                    0px 30px 20px ! important;
 }
+#page-welcome h1 {
+    margin-top:                 20px;
+}
 h1 {
     width:                      100%;
     font-size:                  20px;
@@ -40,6 +43,9 @@ div.main-schedule-box {
 }
 div.line-canvas {
     width:                      100%;
+}
+.broadcast-box h3 {
+    font-size:                  18px;
 }
 h3 {
     width:                      100%;
@@ -129,6 +135,45 @@ a.photo-head-prev, a.photo-head-next {
 }
 div.photo-header {
     margin-right:               -50px;
+}
+div.twitter-connected-details {
+    width:                      100%;
+    padding:                    10px;
+}
+.twitter-connected a.button {
+    width:                      100% ! important;
+    margin-top:                 10px;
+}
+div.tweet-box {
+    width:                      100%;
+}
+h2 {
+    margin-top:                 -12px;
+}
+.broadcast-box .broadcast-area a {
+    width:                      100%;
+    font-size:                  10px ! important;
+}
+a.broadcast-show-all {
+    position:                   absolute;
+    bottom:                     6px;
+    left:                       50px;
+}
+div.dispatch {
+    width:                      100%;
+}
+div.dispatch-controls {
+    width:                      100%;
+}
+div.dispatch-content-userpic {
+    width:                      50px;
+    height:                     50px;
+}
+div.dispatch-content-section {
+    margin-left:                68px;
+}
+div#counter-shell {
+    display:                    none ! important;
 }
 * {
     line-height:                inherit;

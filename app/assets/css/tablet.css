@@ -50,7 +50,7 @@ div#content_shell {
     margin-left:                0px;
 }
 #page-home div#counter-shell {
-    display:                    block;
+    display:                    block ! important;
 }
 #counter-shell:before {
     display:                    none;
