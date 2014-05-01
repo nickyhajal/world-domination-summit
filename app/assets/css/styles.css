@@ -1923,8 +1923,8 @@ a.link-block:hover {
     background-origin:          padding-box;
     -webkit-background-origin:  padding-box;
     width:                      435px;
-    height:                     278.5px;
     top:                        140px;
+    height:                     278px;
 }
 #reg-schedule {
     background:                 url("/images/block_schedule.png") repeat scroll 0% 0% transparent;
@@ -1941,11 +1941,11 @@ a.link-block:hover {
     height:                     381px;
 }
 #reg-attendees {
-    background:                 url("/images/block_attendees.png?") repeat scroll 0px 0px transparent;
     width:                      244px;
     height:                     420px;
     top:                        418px;
     left:                       15px;
+    background:                 url("/images/block_attendees.jpg?") repeat scroll 0px 0px transparent;
 }
 #reg-chris {
     background:                 url("/images/block_chris.png") repeat scroll 0% 0% transparent;
