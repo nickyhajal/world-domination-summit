@@ -1878,7 +1878,7 @@ section#sidebar-shell {
     left:                       9px;
     z-index:                    10000;
     height:                     312.5px;
-    background:                 url("/images/video.png") no-repeat scroll 0px 0px / 100% auto transparent;
+    background:                 url("/images/video.jpg") no-repeat scroll 0px 0px / 100% auto transparent;
 }
 #video-shell {
     z-index:                    990;
