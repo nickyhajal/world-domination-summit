@@ -75,14 +75,16 @@ header#main-header {
 }
 #page-home #header-title:after {
     width:                      100%;
-    top:                        119px;
+    top:                        152px;
 }
 #page-home #header-title {
     background:                 none repeat scroll 0% 0% rgb(177, 186, 30);
     left:                       0px ! important;
     position:                   relative;
-    width:                      100%;
     top:                        40px;
+    width:                      100%;
+    padding-left:               50px;
+    padding-right:              50px;
 }
 div#content_shell {
     margin-left:                0px;

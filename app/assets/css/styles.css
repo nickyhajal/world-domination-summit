@@ -1035,6 +1035,7 @@ textarea {
     height:                     90px;
     padding:                    12px 10px 10px;
     width:                      100%;
+    font-size:15px;
 }
 .box-select-shell {
     height:                     38px;
