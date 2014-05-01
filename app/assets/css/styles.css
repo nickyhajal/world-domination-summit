@@ -1979,10 +1979,6 @@ a.link-block:hover {
     display:                    block;
     background-size:            100% 100% ! important;
     -webkit-background-size:    100% 100% ! important;
-    transition:                 opacity 0.2s ease 0s;
-    -moz-transition:            opacity 0.2s ease 0s;
-    -webkit-transition:         opacity 0.2s ease 0s;
-    -o-transition:              opacity 0.2s ease 0s;
 }
 #waterfall {
     position:                   relative;
