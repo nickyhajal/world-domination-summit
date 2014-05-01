@@ -13,6 +13,7 @@ ap.Views.welcome = XView.extend
 	events: 
 		'click .twitter-disconnect': 'disconnectTwitter'
 		'click .finish-welcome': 'finishWelcome'
+		'click .send-tweet': 'sendTweet'
 
 	initialize: ->
 		@options.sidebar = 'welcome'
@@ -209,6 +210,21 @@ ap.Views.welcome = XView.extend
 		if not user_name? or not user_name.length
 			user_name = 'username'
 		$('.user_name-preview').html(user_name)
+
+	sendTweet: (e) ->
+		$t = $(e.currentTarget)
+		tweet = $('.tweet-box textarea').val()
+		$t.html('Tweeting...')
+		ap.api 'post user/tweet', {tweet: tweet}, (rsp) ->
+			$t.html('Tweet Sent!')
+			setTimeout ->
+				$('.tweet-box-shell')
+					.css('min-height', '0')
+					.css('height', '0')
+					.css('margin', '0')
+			, 1200
+
+
 
 	finishWelcome: (e) ->
 		e.preventDefault()

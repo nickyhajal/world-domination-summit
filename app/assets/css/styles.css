@@ -1402,11 +1402,11 @@ div#army-map {
 div#search-box {
     display:                    none;
     background:                 none repeat scroll 0% 0% rgb(33, 23, 10);
-    width:                      310px;
+    width:                      312px;
     top:                        35px;
     right:                      0px;
     position:                   absolute;
-    padding:                    5px 0px 0px;
+    padding:                    5px 1px 0px;
 }
 .search-results a span {
     display:                    block;
@@ -1494,6 +1494,14 @@ div.orange-box {
     width:                      618px;
     position:                   relative;
     margin-left:                -50px;
+}
+div.tweet-box-shell {
+    overflow:                   hidden;
+    transition:                 all 0.2s ease 0s;
+    -moz-transition:            all 0.2s ease 0s;
+    -webkit-transition:         all 0.2s ease 0s;
+    -o-transition:              all 0.2s ease 0s;
+    height:                     210px;
 }
 * {
     box-sizing:                 border-box;
