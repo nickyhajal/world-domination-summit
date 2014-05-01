@@ -10,6 +10,7 @@ ap.Views.hub = XView.extend
 		'click .broadcast-area a': 'saveLastBroadcast'
 	
 	initialize: ->
+		@options.sidebar_filler = ap.me.attributes
 		@options.sidebar = 'hub'
 		@initRender()
 		setTimeout =>

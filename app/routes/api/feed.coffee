@@ -30,15 +30,13 @@ routes = (app) ->
 						.save()
 						.then (feed) ->
 							next()
-						, (err) ->
-							tk err
 					else
 						res.r.msg = 'You already posted that!'
 						res.status(409)
 						next()
 			else
 				res.r.msg = 'You\'re not logged in!'
-				res.status(403)
+				res.status(401)
 				next()
 
 		add_comment: (req, res, next) ->

@@ -745,11 +745,11 @@ img#schedule-circle-1 {
     margin-bottom:              45px;
 }
 img#schedule-circle-2 {
+    float:                      right;
+    margin-left:                10px;
     width:                      309px;
-    float:                      left;
-    margin-right:               40px;
-    margin-left:                -51px;
-    margin-bottom:              125px;
+    margin-right:               -60px;
+    margin-bottom:              15px;
 }
 #page-foundation ul {
     margin-bottom:              30px;
@@ -762,8 +762,9 @@ img#schedule-circle-2 {
 img#schedule-circle-3 {
     float:                      right;
     width:                      409px;
-    margin-right:               -186px;
     margin-left:                52px;
+    margin-right:               -46px;
+    margin-top:                 -100px;
 }
 .half-col, .half-col p {
     width:                      280px ! important;
@@ -1644,16 +1645,17 @@ a#nav-register {
     background-position:        0px 0px ! important;
 }
 #nav-search {
+    margin-top:                 -5px ! important;
     width:                      25px;
     position:                   relative;
+    padding:                    0px 5px ! important;
     margin-left:                14px;
+    height:                     31px;
     display:                    block;
     box-sizing:                 content-box;
     -moz-box-sizing:            content-box;
     -webkit-box-sizing:         content-box;
-    background:                 url("/images/icon-search.png?12") repeat scroll center 3px / 21px auto rgb(226, 127, 28);
-    height:                     29px;
-    padding:                    0px 4px ! important;
+    background:                 url("/images/icon-search.png?12") repeat scroll center 4px / 21px auto rgb(226, 127, 28);
 }
 #nav-search:hover:before {
     content:                    "";
@@ -1668,8 +1670,8 @@ a#nav-register {
     background:                 none repeat scroll 0px 0px rgba(3, 0, 255, 0);
 }
 #nav-search:hover {
-    background:                 url("/images/icon-search.png?12") repeat scroll center 3px / 21px auto rgb(226, 127, 28);
-    padding:                    10px 4px 25px ! important;
+    padding:                    10px 5px 25px ! important;
+    background:                 url("/images/icon-search.png?12") repeat scroll center 4px / 21px auto rgb(226, 127, 28);
 }
 .search-results a {
     font-family:                karla ! important;

@@ -32,7 +32,6 @@ Speakers = Shelf.Collection.extend
           bytype[speaker.get('type')].push speaker.attributes
           cb()
       , ->
-        tk 'resolve'
         dfr.resolve(bytype)
     return dfr.promise
 

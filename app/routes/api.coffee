@@ -32,6 +32,7 @@ routes = (app) ->
 		app.get '/user/twitter/connect', user.twitter_connect
 		app.get '/user/twitter/callback', user.twitter_callback
 		app.delete '/user/twitter', user.del_twitter
+		app.post '/user/tweet', user.send_tweet
 		app.get '/user', user.get
 		app.get '/me', user.me
 

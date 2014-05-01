@@ -113,7 +113,7 @@ Individual activities will be announced closer to the event, so stay tuned for d
 <p class="color-blue">Note: all activities are first-come, first-served, and some require registration in advance.</p>
 
 
-<div class="line-canvas"></div
+<div class="line-canvas"></div>
 
 <h3 class="color-orange">Everything Else</h3>
 
