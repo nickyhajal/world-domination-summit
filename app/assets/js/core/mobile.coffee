@@ -14,10 +14,33 @@ ap.toggleNav = (force = false) ->
 
 ap.checkMobile = ->
 	width = $(window).outerWidth()
-	if width <= 768
-		$wall = $('#waterfall')
-		$video = $('#video')
+	$wall = $('#waterfall')
+	$video = $('#video')
+	if width <= 768 and width > 690
+		ap.isTablet = ap.isMobile = true
+		ap.isPhone = false
+	else if width < 690
+		ap.isPhone = ap.isMobile = true
+		ap.isTablet = false
+	else
+		ap.isPhone = ap.isTablet = ap.isMobile = false
+
+	if ap.isTablet
 		scale = width/990
-		$video.css('height', (width*(9/16)+'px'))
 		$wall.css
 			'transform': 'scale('+scale+')'
+	else
+		$wall.css
+			'transform': ''
+
+	if ap.isMobile
+		$video.css('height', (width*(9/16)+'px'))
+		header = $('#page-home #content_shell #header-title')
+		if header
+			header.remove()
+			$('#logo').after(header)
+	else
+		header = $('#page-home #main-header #header-title')
+		if header
+			header.remove()
+			$('#content_shell').prepend(header)

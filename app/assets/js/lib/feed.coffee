@@ -2,6 +2,7 @@
 	$.fn.feed = (fnc = false, opts = {})->
 
 		$t = $(this)
+		$d = $t.closest('.dispatch')
 		$el = $(this)
 		slf = this
 		defs = 
@@ -21,6 +22,10 @@
 			fnc = false
 
 		opts = _.defaults opts, defs
+		if $d.data('channel')?
+			opts.params.channel = $d.data('channel')
+		if $d.data('channel_type')?
+			opts.params.channel_type = $d.data('channel_type')
 
 		@renderFeed = (contents, render = 'replace') ->
 			html = ''
@@ -67,12 +72,21 @@
 							<a href="#" class="dispatch-content-comment-status">'+comments+'</a>
 								<div class="dispatch-content-comments-inner">
 									<div class="dispatch-content-comments"></div>
-									<form id="dispatch-content-comment-form'+content.feed_id+'" class="dispatch-content-comment-form" action="#" method="post">
-										<div class="dispatch-content-userpic" style="background:url('+ap.me.get('pic')+')"></div>
-										<textarea placeholder="Leave a comment" name="comment" class="dispatch-content-comment-inp"></textarea>
-										<input type="submit" class="dispatch-comment-submit" value="Share Comment"/>
-									</form>
-								</div>
+										<form id="dispatch-content-comment-form'+content.feed_id+'" class="dispatch-content-comment-form" action="#" method="post">
+										'
+			if ap.me
+				html += '
+						<div class="dispatch-content-userpic" style="background:url('+ap.me.get('pic')+')"></div>
+						<textarea placeholder="Leave a comment" name="comment" class="dispatch-content-comment-inp"></textarea>
+						<input type="submit" class="dispatch-comment-submit" value="Share Comment"/>
+				'
+			else
+				html+= '
+					<a href="/login" class="button login-to-comment">Login to Comment</a>
+				'
+			html += '
+							</form>
+							</div>
 						</div>
 					</div>
 					<div class="clear-left"></div>

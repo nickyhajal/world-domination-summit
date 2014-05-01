@@ -1,0 +1,125 @@
+h1#header-title span {
+    font-size:                  32px;
+    line-height:                110%;
+    display:                    block;
+}
+#page-home #header-title:after {
+    bottom:                     -120px ! important;
+    top:                        auto;
+    left:                       0px;
+}
+h1#header-title {
+    font-size:                  16px ! important;
+    display:                    block;
+    padding:                    0px 30px 20px ! important;
+}
+h1 {
+    width:                      100%;
+    font-size:                  20px;
+}
+div#page_content {
+    padding:                    12px 15px;
+}
+#page_content p {
+    width:                      100%;
+}
+a.register-banner {
+    width:                      100%;
+    background-repeat:          no-repeat;
+}
+#footer-credits {
+    display:                    block;
+    font-size:                  11px;
+    padding:                    0px 10px;
+}
+div.main-schedule-box {
+    margin-left:                -15px;
+    float:                      none;
+    margin-right:               -15px;
+    width:                      125%;
+}
+div.line-canvas {
+    width:                      100%;
+}
+h3 {
+    width:                      100%;
+}
+img#schedule-circle-2 {
+    float:                      none;
+    margin:                     0px 0px 0px -17px;
+}
+img#schedule-circle-3 {
+    float:                      none;
+    margin:                     28px 0px 1px;
+}
+div.lifted-content {
+    padding:                    12px 15px;
+    margin:                     -199px 0px 0px -15px;
+    width:                      105%;
+}
+.place-row span {
+    float:                      none;
+    display:                    block;
+    margin-top:                 10px;
+    width:                      100%;
+    margin-left:                0px;
+}
+div.foundation-criteria {
+    float:                      none;
+    margin:                     0px auto 22px;
+}
+div.orange-box {
+    margin:                     0px 0px 0px -15px ! important;
+    width:                      125%;
+    padding:                    12px 15px;
+}
+div.orange-box p {
+    width:                      100% ! important;
+}
+.orange-box a.button {
+    display:                    block;
+    text-align:                 center;
+    width:                      89%;
+    margin:                     0px 0px 4px;
+}
+div.wall-content-type-icon {
+    display:                    none ! important;
+}
+a.wall-content-type-attendee_map {
+    display:                    none ! important;
+}
+a.wall-content-type-attendee .block-content {
+    display:                    block ! important;
+    position:                   absolute ! important;
+    left:                       0px ! important;
+    right:                      0px ! important;
+    margin:                     0px auto ! important;
+    width:                      auto ! important;
+    padding-left:               0px ! important;
+}
+.wall-content {
+    position:                   relative;
+    clear:                      both;
+    left:                       0px ! important;
+    top:                        0px ! important;
+    display:                    block;
+    width:                      100% ! important;
+}
+.wall-section {
+    height:                     auto;
+}
+.tpl-1 .block-3 div.pattern-bg {
+    padding-top:                69px ! important;
+}
+.tpl-3 .block-1 div.pattern-bg {
+    padding-top:                45px;
+}
+div.pattern-bg {
+    margin-right:               auto;
+    margin-bottom:              0px;
+    margin-left:                auto;
+    display:                    block ! important;
+}
+* {
+    line-height:                inherit;
+}
