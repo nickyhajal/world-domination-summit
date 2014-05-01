@@ -1,14 +1,14 @@
-sidebar: academies
+sidebar: photos-videos
 icon: theater
 photo_head: https://farm8.staticflickr.com/7457/9226356063_2f05f24588_c.jpg,https://farm4.staticflickr.com/3680/9226354561_60e1c77986_c.jpg,https://farm8.staticflickr.com/7422/9226351955_26fafe47fe_c.jpg,https://farm3.staticflickr.com/2868/9229137606_aa502275bb_c.jpg,https://farm3.staticflickr.com/2317/5800027355_42530f678d_b.jpg,https://farm3.staticflickr.com/2031/5800591550_94fa52c7b4_b.jpg
 
 # As WDS grows, more and more people are arriving early and staying late. This year marks the launch of WDS Academies: a series of mini-events focused on specific topics that take place on the days surrounding WDS weekend. 
 
-Registration for Academies is separate from WDS itself. We'll offer registration for the academies first to WDS attendees, and then (for a slightly higher price) to the general public.
+Registration for Academies is separate from WDS itself. We'll offer registration for the academies first to WDS attendees, and then (for a slightly higher price) to the general public. Stay tuned for the details to be announced after the last wave of WDS ticket sales.
 
 <div class="zig-zags_blue"></div>
 
-<a name="problogger"></a>
+<!-- <a name="problogger"></a>
 ### Thursday, July 10
 
 
@@ -118,3 +118,4 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 She gets the shakes if she goes too long without sticky rice.
 	</div>
 </div>
+-->
