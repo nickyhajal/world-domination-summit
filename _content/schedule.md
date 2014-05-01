@@ -37,6 +37,14 @@ We'll conclude on Sunday evening with a Farewell party that goes as long as peop
 
 <a name="speakers"></a>
 
+### Your WDS 2014 Speakers
+
+Get ready for an unforgettable WDS where you'll hear from the following incredible speakers.
+
+<div class="speaker_list" data-speaker-type="upcoming"></div>
+
+<div class="line-canvas"></div>
+
 ### Featured Speakers (2013)
 Among other surprises, our 2013 lineup included a guest appearance from Superman.
 
