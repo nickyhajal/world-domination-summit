@@ -13,8 +13,11 @@ ap.Modals.open = (modal) ->
 
 ap.Modals.close = (modal = false) ->
 	if modal
+		$('.modal-remove', '#modal-'+modal).remove()
+		$('#modal-'+modal).hide()
 		$('#modal-'+modal).hide()
 	else 
+		$('.modal-remove').remove()
 		$('.modal').hide()
 
 ap.Modals.key = (e) ->
