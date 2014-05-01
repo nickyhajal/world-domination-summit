@@ -304,7 +304,7 @@ window.wall =
 			e.preventDefault()
 			ap.Modals.open('video')
 		else
-			location.href = 'http://pdl.vimeocdn.com/04742/403/190797832.mp4?token2=1398959498_d8c9826c574ed46a8fdc24b7c55d1906&aksessionid=20af3f7a27a06ddb'
+			location.href = 'http://player.vimeo.com/video/74223936?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1'
 
 	showArmy: (e) ->
 		e.preventDefault()
