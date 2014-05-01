@@ -302,6 +302,9 @@ window.wall =
 	showVideo: (e) ->
 		if not ap.isMobile
 			e.preventDefault()
+			setTimeout ->
+				$('#the-video').append('<iframe class="modal-remove" src="//player.vimeo.com/video/74223936?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="780" height="496" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>')
+			, 2
 			ap.Modals.open('video')
 		else
 			location.href = 'http://player.vimeo.com/video/74223936?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1'
