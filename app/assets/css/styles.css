@@ -326,7 +326,6 @@ a.tab-invisible {
 .tpl-3 .block-1 .pattern-bg {
     background:                 url("/images/home/sprite-box.png?1") repeat scroll 0px 0px / 1152px auto transparent;
     height:                     192px;
-    width:                      192px;
     box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
     -webkit-box-sizing:         border-box;
@@ -336,6 +335,7 @@ a.tab-invisible {
     vertical-align:             middle;
     text-transform:             uppercase;
     text--webkit-transform:     uppercase;
+    width:                      192px;
 }
 .tpl-3 .block-9 .attendee_map {
     height:                     275px;
@@ -2465,6 +2465,11 @@ a.counter-button {
     top:                        400px;
     left:                       675px;
     height:                     362px;
+}
+.lifted-content div.zig-zags_blue {
+    width:                      585px;
+    background-size:            115% auto ! important;
+    -webkit-background-size:    115% auto ! important;
 }
 .zig-zags_blue {
     background-color:           transparent;
