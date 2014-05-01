@@ -15,7 +15,7 @@ a#nav-link-expand div {
     -moz-border-radius:         2px;
     -webkit-border-radius:      2px;
     background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
-    margin-bottom:              4.5px;
+    margin-bottom:              4px;
 }
 a#nav-link-expand {
     height:                     33px;
@@ -43,8 +43,8 @@ header#main-header {
     background:                 none repeat scroll 0% 0% rgb(177, 186, 30);
     left:                       0px ! important;
     position:                   relative;
-    top:                        0px;
     width:                      100%;
+    top:                        40px;
 }
 div#content_shell {
     margin-left:                0px;
@@ -64,8 +64,8 @@ div#counter-shell {
     width:                      100%;
     margin-bottom:              -140px;
     position:                   relative;
-    top:                        199px;
     z-index:                    10;
+    top:                        60px;
 }
 main.contentainer {
     width:                      100%;
@@ -100,7 +100,7 @@ div#video {
 }
 div.counter-fixed {
     position:                   relative ! important;
-    top:                        199px ! important;
+    top:                        60px ! important;
 }
 #reg-open, #reg-schedule, #reg-army, #reg-headquarters, #reg-chris, #reg-story, #reg-attendees, .waterfall-flare {
     display:                    none;
@@ -112,14 +112,6 @@ div#reg-attendees {
     left:                       0px;
 }
 div#waterfall {
-    transform:                  scale(0.8);
-    -webkit-transform:          scale(0.8);
-    -moz-transform:             scale(0.8);
-    -moz--webkit-transform:     scale(0.8);
-    -webkit-transform:          scale(0.8);
-    -webkit--webkit-transform:  scale(0.8);
-    -o-transform:               scale(0.8);
-    -o--webkit-transform:       scale(0.8);
     clear:                      both;
     margin-left:                0px;
     transform-origin:           left top 0px;

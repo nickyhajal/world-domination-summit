@@ -4,4 +4,5 @@ jQuery.fn.scan
 		fnc: ->
 			$el = $(this)
 			channel = $el.data('channel')
-			new ap.Views.Dispatch({el: $el, channel: channel})
+			channel_type = $el.data('channel_type')
+			new ap.Views.Dispatch({el: $el, channel: channel, channel_type: channel_type})

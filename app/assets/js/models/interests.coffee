@@ -9,6 +9,11 @@ ap.Interest = window.XModel.extend
 Interests = XCollection.extend
 	model: ap.Interest
 	url: '/api/interests/'
+	getBySlug: (slug) ->
+		for model in @models
+			if _.slugify(model.get('interest')) is slug
+				return model
+		return false
 
 ap.Interests = new Interests()
 

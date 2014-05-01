@@ -936,6 +936,13 @@ input.dispatch-comment-submit {
     padding:                    5px 2px;
     margin-top:                 10px;
 }
+a.login-to-comment {
+    margin-left:                -10px;
+    position:                   relative;
+    top:                        6px;
+    padding:                    6px 20px;
+    font-size:                  16px;
+}
 input[type="submit"], .button {
     border:                     0px none;
     padding:                    8px 40px;

@@ -7,8 +7,8 @@ ap.Views.Dispatch = XView.extend
 
 	initialize: ->
 		defaults =
-			post_channel_id: 0
-			post_channel_type: 'global'
+			channel_id: 0
+			channel_type: 'global'
 		@options = _.defaults @options, defaults
 		@render()
 	render: ->
@@ -28,8 +28,8 @@ ap.Views.Dispatch = XView.extend
 		clearTimeout @controlsTimo
 		e.preventDefault()
 		post = $(e.currentTarget).formToJson()
-		post.channel = @options.post_channel_id
-		post.channel_type = @options.post_channel_type
+		post.channel = @options.channel
+		post.channel_type = @options.channel_type
 		setTimeout =>
 			@blurControls(e)
 			$('.dispatch-post-inp', $(e.currentTarget)).val('').css('height', '43px')
