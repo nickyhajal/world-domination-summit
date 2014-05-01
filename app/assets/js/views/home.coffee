@@ -300,8 +300,11 @@ window.wall =
 		wall.used_content[type] = tmp
 
 	showVideo: (e) ->
-		e.preventDefault()
-		ap.Modals.open('video')
+		if not ap.isMobile
+			e.preventDefault()
+			ap.Modals.open('video')
+		else
+			location.href = 'http://pdl.vimeocdn.com/04742/403/190797832.mp4?token2=1398959498_d8c9826c574ed46a8fdc24b7c55d1906&aksessionid=20af3f7a27a06ddb'
 
 	showArmy: (e) ->
 		e.preventDefault()
