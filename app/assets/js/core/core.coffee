@@ -36,8 +36,10 @@ ap.initAssets = ->
 	assets = 'all_attendees,me'
 	ap.api 'get assets', {assets: assets}, (rsp) ->
 		if rsp.all_attendees
-			ap.Users.add(rsp.all_attendees)
-			_.isReady 'users'
+			setTimeout ->
+				ap.Users.add(rsp.all_attendees)
+				_.isReady 'users'
+			, 1
 
 		if rsp.me
 			ap.login rsp.me

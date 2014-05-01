@@ -118,7 +118,7 @@ routes = (app) ->
 					, (err) ->
 						tk err
 			else
-				res.status(403)
+				res.status(401)
 				next()
 
 		reset: (req, res, next) ->
@@ -148,7 +148,7 @@ routes = (app) ->
 								next()
 					else
 						res.r.msg = 'That reset request isn\'t valid'
-						res.status(403)
+						res.status(401)
 
 		# Create a user
 		create: (req, res, next) ->
@@ -250,6 +250,19 @@ routes = (app) ->
 							.then ->
 								res.r.msg = 'Disconnected from Twitter'
 								next()
+			else
+				res.status(401)
+				next()
+
+		send_tweet: (req, res, next) ->
+			if req.me
+				req.me.sendTweet(req.query.tweet)
+				.then ->
+					res.r.msg = 'Tweet sent!'
+					next()
+			else
+				res.status(401)
+				next()
 
 		add_connection: (req, res, next) ->
 			if req.me
@@ -266,7 +279,8 @@ routes = (app) ->
 				, (err) ->
 					tk err
 			else
-				res.status(403)
+				res.status(401)
+				next()
 
 		del_connection: (req, res, next) ->
 			if req.me
@@ -284,6 +298,6 @@ routes = (app) ->
 							res.r.connected_ids = user.get('connected_ids')
 							next()
 			else
-				res.status(403)
+				res.status(401)
 
 module.exports = routes
