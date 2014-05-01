@@ -1503,6 +1503,12 @@ div.tweet-box-shell {
     -o-transition:              all 0.2s ease 0s;
     height:                     210px;
 }
+div.dispatch-loading {
+    background:                 url("/images/icon-loading.png") repeat scroll 0% 0% / 100% auto transparent;
+    margin:                     110px auto 0px;
+    width:                      220px;
+    height:                     50px;
+}
 * {
     box-sizing:                 border-box;
     -moz-box-sizing:            border-box;

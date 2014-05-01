@@ -32,6 +32,7 @@ ap.init = () ->
 		ap.initSearch()
 	ap.Modals.init()
 
+ap.allUsers = {}
 ap.initAssets = ->
 	assets = 'all_attendees,me'
 	ap.api 'get assets', {assets: assets}, (rsp) ->
@@ -39,7 +40,7 @@ ap.initAssets = ->
 			setTimeout ->
 				ap.Users.add(rsp.all_attendees)
 				_.isReady 'users'
-			, 1
+			, 500
 
 		if rsp.me
 			ap.login rsp.me

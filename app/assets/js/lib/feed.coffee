@@ -3,6 +3,7 @@
 
 		$t = $(this)
 		$d = $t.closest('.dispatch')
+		$t.empty()
 		$el = $(this)
 		slf = this
 		defs = 

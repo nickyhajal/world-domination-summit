@@ -276,13 +276,11 @@ User = Shelf.Model.extend
       user_id: @get('user_id')
     .fetch()
     .then (twitter_login) ->
-      tk twitter_login
       twit = new Twit
         consumer_key: process.env.TWIT_KEY
         consumer_secret: process.env.TWIT_SEC
         access_token: twitter_login.get('token')
         access_token_secret: twitter_login.get('secret')
-      tk twit
       dfr.resolve(twit)
     return dfr.promise
 
@@ -290,7 +288,6 @@ User = Shelf.Model.extend
     dfr = Q.defer()
     @getTwit()
     .then (twit) ->
-      tk twit
       twit.post 'statuses/update', 
         status: tweet, (err, reply) ->
           tk err
