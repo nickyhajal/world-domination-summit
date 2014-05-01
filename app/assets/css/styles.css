@@ -540,9 +540,7 @@ a.modal-close {
     zoom:                       1;
 }
 a#small-logo {
-    background:                 url("/images/logo-small.png") repeat scroll 0% 0% / 100% auto transparent;
     width:                      148.5px;
-    height:                     31px;
     display:                    block;
     margin-top:                 -4px;
     margin-bottom:              -28px;
@@ -556,7 +554,9 @@ a#small-logo {
     -moz-transition:            opacity 0.2s ease 0s;
     -webkit-transition:         opacity 0.2s ease 0s;
     -o-transition:              opacity 0.2s ease 0s;
-    left:                       19px;
+    left:                       60px;
+    height:                     31px;
+    background:                 url("/images/logo-small.png") no-repeat scroll 0px 0px / 100% auto transparent;
 }
 .orange-box a.button {
     background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
@@ -771,6 +771,9 @@ img#schedule-circle-3 {
 .half-col {
     float:                      left;
     margin-right:               30px;
+}
+div.photo-header {
+    height:                     430px;
 }
 .photo-header {
     margin-left:                -50px;

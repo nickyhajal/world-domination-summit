@@ -120,6 +120,16 @@ div.pattern-bg {
     margin-left:                auto;
     display:                    block ! important;
 }
+.photo-header img {
+    width:                      100%;
+    height:                     auto;
+}
+a.photo-head-prev, a.photo-head-next {
+    top:                        77px;
+}
+div.photo-header {
+    margin-right:               -50px;
+}
 * {
     line-height:                inherit;
 }
