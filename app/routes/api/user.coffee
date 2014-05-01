@@ -233,23 +233,24 @@ routes = (app) ->
 									req.me.save()
 									.then ->
 										res.redirect('/welcome')
+								, (err) ->
+									tk err
 							else
 								req.session.twitter_err = 1
 								res.redirect('/welcome')
 
 		del_twitter: (req, res, next) ->
 			if req.me
-				login = TwitterLogin.forge({user_id: req.me.get('user_id')})
-				.fetch()
-				.then (login) ->
-					if login
-						login.destroy()
-						.then ->
-							req.me.set('twitter', '')
-							.save()
-							.then ->
-								res.r.msg = 'Disconnected from Twitter'
-								next()
+				req.me.set('twitter', '')
+				.save()
+				.then ->
+					login = TwitterLogin.forge({user_id: req.me.get('user_id')})
+					.fetch()
+					.then (login) ->
+						if login
+							login.destroy()
+						res.r.msg = 'Disconnected from Twitter'
+						next()
 			else
 				res.status(401)
 				next()
@@ -289,7 +290,6 @@ routes = (app) ->
 				Connection.forge({user_id: user_id, to_id: to_id})
 				.fetch()
 				.then (connection) ->
-					tk connection
 					connection.destroy()
 					.then ->
 						req.me.getConnections()
