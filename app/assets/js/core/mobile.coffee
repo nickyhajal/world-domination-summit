@@ -25,14 +25,6 @@ ap.checkMobile = ->
 	else
 		ap.isPhone = ap.isTablet = ap.isMobile = false
 
-	if ap.isTablet
-		scale = width/990
-		$wall.css
-			'transform': 'scale('+scale+')'
-	else
-		$wall.css
-			'transform': ''
-
 	if ap.isMobile
 		$video.css('height', (width*(9/16)+'px'))
 		header = $('#page-home #content_shell #header-title')

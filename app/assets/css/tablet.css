@@ -1,3 +1,41 @@
+div.wall-content-type-icon {
+    display:                    none ! important;
+}
+a.wall-content-type-attendee_map {
+    display:                    none ! important;
+}
+a.wall-content-type-attendee .block-content {
+    display:                    block ! important;
+    position:                   absolute ! important;
+    left:                       0px ! important;
+    right:                      0px ! important;
+    margin:                     0px auto ! important;
+    width:                      auto ! important;
+    padding-left:               0px ! important;
+}
+.wall-content {
+    float:                      left ! important;
+    width:                      50% ! important;
+    top:                        0px ! important;
+    position:                   relative;
+    left:                       0px ! important;
+    display:                    block;
+}
+.wall-section {
+    height:                     auto;
+}
+.tpl-1 .block-3 div.pattern-bg {
+    padding-top:                69px ! important;
+}
+.tpl-3 .block-1 div.pattern-bg {
+    padding-top:                45px;
+}
+div.pattern-bg {
+    margin-right:               auto;
+    margin-bottom:              0px;
+    margin-left:                auto;
+    display:                    block ! important;
+}
 #page-home a#logo {
     display:                    block;
 }

@@ -7,8 +7,9 @@ ap.Modals.init = ->
 
 
 ap.Modals.open = (modal) ->
-	ap.Modals.close()
-	$('#modal-'+modal).show()
+	if not ap.isMobile
+		ap.Modals.close()
+		$('#modal-'+modal).show()
 
 ap.Modals.close = (modal = false) ->
 	if modal
