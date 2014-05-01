@@ -65,7 +65,6 @@ routes = (app) ->
 								.then (user) ->
 									user.getConnections()
 									.then (user) ->
-										tk user
 										dfr.resolve(user)
 				else
 					dfr.resolve(false)

@@ -59,7 +59,6 @@ ap.Views.hub = XView.extend
 	saveLastBroadcast: (e) ->
 		date = $(e.currentTarget).closest('.broadcast-box').data('date')
 		ap.me.set('last_broadcast', date)
-		tk ap.me.changedSinceSave
 		if ap.me.changedSinceSave.last_broadcast?
 			ap.me.save ap.me.changedSinceSave, {patch:true}
 

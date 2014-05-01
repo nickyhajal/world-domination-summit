@@ -14,8 +14,9 @@ ap.Views.Dispatch = XView.extend
 	render: ->
 		html = _.t 'parts_dispatch', {}
 		$(@el).html html
-		$('.dispatch-feed', @el).feed()
-		$('.dispatch-post-inp', @el).autosize()
+		_.whenReady 'users', ->
+			$('.dispatch-feed', @el).feed()
+			$('.dispatch-post-inp', @el).autosize()
 
 	focusControls: (e) ->
 		$(e.currentTarget).closest('.dispatch-controls').addClass('focused')
