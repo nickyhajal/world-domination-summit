@@ -128,9 +128,14 @@ ap.Views.welcome = XView.extend
 		if ap.me.get('twitter')?.length
 			$('.twitter-connected').show()
 			$('.twitter-not-connected').hide()
+			if ap.me.get('user_name')? and ap.me.get('user_name').length isnt 40
+				user_name = ap.me.get('user_name')
+				$('#tweet-box textarea').html('Just setup my attendee profile for WDS! Check it out: http://wds.fm/~'+user_name+' #wds2014')
+				$('#tweet-box').show()
 		else
 			$('.twitter-connected').hide()
 			$('.twitter-not-connected').show()
+			$('#tweet-box').hide()
 
 	###
 		Disconnect the user from twitter
@@ -167,29 +172,35 @@ ap.Views.welcome = XView.extend
 	###
 	saveAndContinue: (tab, switchTab) ->
 		btn = $('.tab-next:visible')
-		original_btn_val = btn.val()
-		btn.val('Saving...')
+		original_btn_val = btn.html()
+		btn.html('Saving...')
 		$('.tab-link').eq(tab.num+1).removeClass('tab-disabled')
-		if ap.me.get('intro') < tab.num + 1
-			ap.me.set('intro', tab.num+1)
-		if ap.me.changedSinceSave.user_id?
-			ap.me.save ap.me.changedSinceSave, 
-				patch: true
-				success: ->
-					switchTab()
-					$.scrollTo(0)
-					btn.val(original_btn_val)
-				error: (rsp) ->
-					ap.Notify
-						msg: rsp.msg
-						state: 'error'
-					btn.val 'Oops, small problem.'
-					setTimeout ->
-						btn.val(original_btn_val)
-					, 1000
+		if $('input[name="new_password"]').is(':visible') and $('input[name="new_password"]').val().length < 5
+			btn.html('Your password should be at least 6 characters.').addClass('btn-error')
+			setTimeout ->
+				btn.html(original_btn_val).removeClass('btn-error')
+			, 2000
 		else
-			switchTab()
-			$.scrollTo(0)
+			if ap.me.get('intro') < tab.num + 1
+				ap.me.set('intro', tab.num+1)
+			if ap.me.changedSinceSave.user_id?
+				ap.me.save ap.me.changedSinceSave, 
+					patch: true
+					success: ->
+						switchTab()
+						$.scrollTo(0)
+						btn.html(original_btn_val)
+					error: (rsp) ->
+						ap.Notify
+							msg: rsp.msg
+							state: 'error'
+						btn.html 'Oops, small problem.'
+						setTimeout ->
+							btn.html(original_btn_val)
+						, 1000
+			else
+				switchTab()
+				$.scrollTo(0)
 
 	###
 		Updates the username preview as it changes

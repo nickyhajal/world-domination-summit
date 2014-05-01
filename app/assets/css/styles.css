@@ -797,6 +797,9 @@ img#schedule-circle-3 {
     position:                   relative;
     margin-top:                 -2px;
 }
+div.lifted-content h2 {
+    margin-right:               -65px;
+}
 .lifted-content {
     background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
     display:                    block;
@@ -888,6 +891,10 @@ a.send-tweet {
     padding:                    4px 0px ! important;
     width:                      250px;
     margin-top:                 -3px;
+}
+a.btn-error {
+    background:                 none repeat scroll 0% 0% rgb(227, 47, 28);
+    font-size:                  14px ! important;
 }
 #page-welcome a.button, #page-settings a.button {
     font-size:                  20px;
@@ -1686,6 +1693,7 @@ a#nav-register {
 #nav-links {
     float:                      right;
     margin-top:                 11px;
+    margin-right:               -85px;
 }
 .contentainer {
     margin:                     0px auto;
