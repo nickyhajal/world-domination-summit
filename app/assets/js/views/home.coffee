@@ -195,9 +195,9 @@ window.wall =
 			if type is 'attendee_answer'
 				$t.attr('href', '/~'+content.user_name).attr('target', '_blank')
 			if type is 'speaker'
-				$t.attr('href', '/speaker/'+_.slugify(content.display_name)).attr('target', '_blank')
+				$t.attr('href', '/speakers/'+_.slugify(content.display_name)).attr('target', '_blank')
 			if type is 'speaker_quote'
-				$t.attr('href', '/speaker/'+_.slugify(content.display_name)).attr('target', '_blank')
+				$t.attr('href', '/speakers/'+_.slugify(content.display_name)).attr('target', '_blank')
 
 
 			# Post HTML Added

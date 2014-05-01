@@ -1399,13 +1399,13 @@ div#army-map {
     display:                    block;
 }
 div#search-box {
-    position:                   absolute;
-    right:                      0px;
-    top:                        35px;
-    width:                      350px;
-    padding:                    5px 10px;
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
     display:                    none;
+    background:                 none repeat scroll 0% 0% rgb(33, 23, 10);
+    width:                      310px;
+    top:                        35px;
+    right:                      0px;
+    position:                   absolute;
+    padding:                    5px 0px 0px;
 }
 .search-results a span {
     display:                    block;
@@ -1431,7 +1431,6 @@ div.search-results a:first-of-type {
 }
 div.search-results {
     margin-top:                 1px;
-    border-top:                 1px dotted rgb(226, 127, 28);
     padding-top:                5px;
 }
 div.foundation-criteria-fit {
@@ -1544,13 +1543,13 @@ body {
     font-family:                Vitesse;
 }
 h1#header-title {
-    width:                      596px;
     top:                        -239px;
     text-align:                 center;
     position:                   absolute;
     left:                       58px ! important;
     font-weight:                normal;
     font-size:                  20pt;
+    width:                      600px;
 }
 h1#extra-big {
     font-size:                  46pt;
@@ -1645,19 +1644,16 @@ a#nav-register {
     background-position:        0px 0px ! important;
 }
 #nav-search {
+    width:                      25px;
+    position:                   relative;
+    margin-left:                14px;
+    display:                    block;
     box-sizing:                 content-box;
     -moz-box-sizing:            content-box;
     -webkit-box-sizing:         content-box;
-    display:                    block;
-    padding:                    0px 5px ! important;
-    position:                   relative;
-    width:                      32px;
+    background:                 url("/images/icon-search.png?12") repeat scroll center 3px / 21px auto rgb(226, 127, 28);
     height:                     29px;
-    margin-left:                14px;
-    background:                 url("/images/icon-search.png?19") repeat scroll center 4px / 21px auto rgb(242, 242, 234);
-    border-radius:              12px;
-    -moz-border-radius:         12px;
-    -webkit-border-radius:      12px;
+    padding:                    0px 4px ! important;
 }
 #nav-search:hover:before {
     content:                    "";
@@ -1672,18 +1668,19 @@ a#nav-register {
     background:                 none repeat scroll 0px 0px rgba(3, 0, 255, 0);
 }
 #nav-search:hover {
-    padding:                    10px 5px 25px ! important;
-    background:                 url("/images/icon-search.png?19") repeat scroll center 4px / 21px auto rgb(242, 242, 234);
+    background:                 url("/images/icon-search.png?12") repeat scroll center 3px / 21px auto rgb(226, 127, 28);
+    padding:                    10px 4px 25px ! important;
 }
 .search-results a {
     font-family:                karla ! important;
-    text-transform:             none ! important;
-    text--webkit-transform:     none ! important;
     float:                      none ! important;
     clear:                      both;
-    text-align:                 left ! important;
     margin-left:                20px;
-    padding:                    5px 0px 5.5px ! important;
+    text-align:                 left ! important;
+    padding:                    5px 0px ! important;
+    text-transform:             none ! important;
+    text--webkit-transform:     none ! important;
+    border-bottom:              5px solid rgb(33, 23, 10);
 }
 #nav-links a.result-link:hover {
     color:                      rgb(242, 242, 234) ! important;
@@ -1704,6 +1701,7 @@ a#nav-register {
     -webkit-transition:         color 0.15s ease 0s;
     -o-transition:              color 0.15s ease 0s;
     margin-right:               6px;
+    cursor:                     pointer;
     padding:                    5.5px 10px 4px;
 }
 #nav-links {
