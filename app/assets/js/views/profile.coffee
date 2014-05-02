@@ -27,7 +27,7 @@ ap.Views.profile = XView.extend
 		, 5
 	renderQuestions: ->
 		questions = [
-			'Why did you travel {{ distance }} to the World Domination Summit'
+			'Why did you travel <span class="ceil">{{ distance }}</span> miles to the World Domination Summit'
 			'What are you excited about these days?'
 			'What\'s your super-power?'
 			'What is your goal for WDS 2014?'
