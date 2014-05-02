@@ -23,7 +23,7 @@ for province in all_provinces
 		provinces[province.country] = []
 	provinces[province.country].push province
 
-expire = 36000
+expire = 3600
 routes = (app) ->
 	if app.settings.env is 'development'
 		expire = 0
@@ -61,10 +61,8 @@ routes = (app) ->
 get_templates = (tpls, type, cb) ->
 	rds.get 'tpls_'+type, (err, existing_tpls) ->
 		if existing_tpls? and typeof JSON.parse(existing_tpls) is 'object'
-			tk 'existing'
 			cb JSON.parse(existing_tpls)
 		else
-			tk 'creating'
 			if type is '_content' or type is '_sidebars'
 				path = "/../../" + type
 			else
@@ -77,6 +75,8 @@ get_templates = (tpls, type, cb) ->
 
 					# This will be called when all files are rendered
 					finishedRendering = ->
+						tk 'tpls_'+type
+						tk expire
 						rds.set 'tpls_'+type, JSON.stringify(tpls), ->
 							rds.expire 'tpls_'+type, expire, ->
 								cb tpls
