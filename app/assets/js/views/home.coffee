@@ -84,6 +84,7 @@ window.wall =
 						speaker.data = JSON.stringify(speaker)
 						speaker.content_id = speaker.speakerid
 						wall.contByType['speaker'].push speaker
+				wall.contByType['speaker'] = _.shuffle(wall.contByType['speaker'])
 
 				wall.contByType['speaker_quote'] = []
 				for type,list of ap.speakers
@@ -95,6 +96,7 @@ window.wall =
 							speaker.content_id = speaker.speakerid+inx
 							inx += 1
 							wall.contByType['speaker_quote'].push speaker
+				wall.contByType['speaker_quote'] = _.shuffle(wall.contByType['speaker_quote'])
 
 				cb()
 		else
