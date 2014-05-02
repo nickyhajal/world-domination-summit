@@ -54,13 +54,13 @@ content =
 					_Answers
 					.query('join', 'users', 'answers.user_id', '=', 'users.user_id')
 					.query('where', 'users.attending14', '=', '1')
-					.query('limit', '500')
-					.query('offset', offset)
+					.query('where', 'dsp', '=', '1')
 					.query('orderBy', 'users.user_id', 'desc')
 					.fetch(
 						columns: ['users.user_id', 'question_id', 'answer']
 					)
 					.then (answers) ->
+						tk answers
 						res.r.answers = answers
 						res.r.content = contents
 						res.r.attendees = attendees

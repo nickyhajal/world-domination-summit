@@ -1,23 +1,36 @@
 _ = require('underscore')
 Q = require('q')
-elasticemail = require('elasticemail');
-client = elasticemail.createClient(process.mail)
+request = require('request')
+YAML = require('yamljs')
 
-module.exports = 
-	send: (mail, subject, to, more_params = [], opts = false) ->
-		tk mail
+mailer =
+	send: (mail, subject, to, params = {}) ->
 		dfr = Q.defer()
-		merge = {}
-		for i,p of more_params
-			merge['merge_'+i] = p
-		req =
-			template: mail
-			from: 'nicky@letsduo.com'
-			from_name: 'Nicky Hajal'
-			subject: '[LetsDuo] ' + subject	
-			to: to
-		req = _.defaults req, merge
-		tk req
-		client.mailer.send req, (err, rsp) =>
-			dfr.resolve(err, rsp)
+		email_options = 
+			promotion_name: mail
+			subject: '[WDS] '+subject
+			recipient: 'nhajal@gmail.com'
+			from: 'Chris Guillebeau <chris.guillebeau@gmail.com>'
+		@request('mailer', email_options, params)
+		.then (transaction_id) ->
+			tk 'MAILED: '+transaction_id
+			dfr.resolve(transaction_id)
 		return dfr.promise
+	request: (path, params, body = false) ->
+		dfr = Q.defer()
+		defs = 
+			username: process.env.MM_USER
+			api_key: process.env.MM_PW
+		params = _.defaults params, defs
+		call = 
+			url: 'https://api.madmimi.com/'+path
+			method: 'post'
+			form: params
+		if body
+			call.form.body = "--- \n"+YAML.stringify(body, 4)
+		tk call
+		request call, (err, code, rsp) ->
+			dfr.resolve(rsp)
+		return dfr.promise
+
+module.exports = mailer

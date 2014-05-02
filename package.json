@@ -47,7 +47,8 @@
     "node-twitter-api": "~1.2.0",
     "provinces": "~0.2.0",
     "async": "~0.7.0",
-    "request": "~2.34.0"
+    "request": "~2.34.0",
+    "yamljs": "~0.1.5"
   },
   "devDependencies": {
     "mocha": "~1.0.3",

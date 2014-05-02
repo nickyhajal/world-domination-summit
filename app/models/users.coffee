@@ -316,15 +316,16 @@ User = Shelf.Model.extend
   # EMAIL #
   #########
 
-  sendEmail: (email, subject, params) ->
-    return false
+  sendEmail: (promo, subject, params = {}) ->
     mailer = require('./mailer')
     user_params =
       first_name: @get('first_name')
       last_name: @get('last_name')
       email: @get('email')
     params = _.defaults user_params, params
-    mailer.send(email, subject, @get('email'), params)
+    tk mailer
+    tk params
+    mailer.send(promo, subject, @get('email'), params)
     .then (err, rsp) ->
 
   removeFromList: (list) ->
