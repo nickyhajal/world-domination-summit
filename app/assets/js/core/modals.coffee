@@ -5,7 +5,6 @@ ap.Modals.init = ->
 	.on('keyup', ap.Modals.key)
 	.on('click', '.modal-close', ap.Modals.click)
 
-
 ap.Modals.open = (modal) ->
 	if not ap.isMobile
 		ap.Modals.close()

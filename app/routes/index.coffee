@@ -75,8 +75,6 @@ get_templates = (tpls, type, cb) ->
 
 					# This will be called when all files are rendered
 					finishedRendering = ->
-						tk 'tpls_'+type
-						tk expire
 						rds.set 'tpls_'+type, JSON.stringify(tpls), ->
 							rds.expire 'tpls_'+type, expire, ->
 								cb tpls
