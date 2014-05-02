@@ -353,7 +353,6 @@ window.wall =
 
 		if type is 'attendee_answer'
 			answers = _.shuffle(wall.ansByQ[opts.question])
-			tk answers
 			for answer in answers
 				bits = opts.maxchars.split(':')
 				ans = answer.answer

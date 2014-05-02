@@ -1,7 +1,12 @@
+gm = require('gm')
+redis = require("redis")
+rds = redis.createClient()
+
+#
+
 [Content, Contents] = require('../../models/contents')
 [Answer, Answers] = require('../../models/answers')
 [User, Users] = require('../../models/users')
-gm = require('gm')
 
 content = 
 	parse: (req, res, next) ->
@@ -31,44 +36,49 @@ content =
 					processImg cont
 				next()
 	get: (req, res, next) ->
-			offset = Math.floor( Math.random() * (0 - 3000 + 1) ) + 3000
-			_Users = Users.forge()
-			_Contents = Contents.forge()
-			_Answers = Answers.forge()
-			_Contents
-			.query('where', 'content_id', '>', '0')
-			.query('orderBy', 'content_id', 'desc')
-			.fetch(
-				columns: ['content_id', 'type', 'data']
-			)
-			.then (contents) ->
-				_Users
-				.query('where', 'pub_loc', '=', '1')
-				.query('where', 'attending14', '=', '1')
-				.query('where', 'pic', '<>', '')
-				.query('orderBy', 'user_id', 'desc')
+		rds.get 'featured_content', (err, f_content) ->
+			if f_content? and typeof JSON.parse(f_content) is 'object'
+				res.r = JSON.parse(f_content)
+				next()
+			else
+				_Users = Users.forge()
+				_Contents = Contents.forge()
+				_Answers = Answers.forge()
+				_Contents
+				.query('where', 'content_id', '>', '0')
+				.query('orderBy', 'content_id', 'desc')
 				.fetch(
-					columns: ['user_id', 'first_name', 'last_name', 'user_name', 'distance', 'lat', 'lon', 'pic']
+					columns: ['content_id', 'type', 'data']
 				)
-				.then (attendees) ->
-					_Answers
-					.query('join', 'users', 'answers.user_id', '=', 'users.user_id')
-					.query('where', 'users.attending14', '=', '1')
-					.query('where', 'dsp', '=', '1')
-					.query('orderBy', 'users.user_id', 'desc')
+				.then (contents) ->
+					_Users
+					.query('where', 'pub_loc', '=', '1')
+					.query('where', 'attending14', '=', '1')
+					.query('where', 'pic', '<>', '')
+					.query('orderBy', 'user_id', 'desc')
 					.fetch(
-						columns: ['users.user_id', 'question_id', 'answer']
+						columns: ['user_id', 'first_name', 'last_name', 'user_name', 'distance', 'lat', 'lon', 'pic']
 					)
-					.then (answers) ->
-						tk answers
-						res.r.answers = answers
-						res.r.content = contents
-						res.r.attendees = attendees
-						next()
+					.then (attendees) ->
+						_Answers
+						.query('join', 'users', 'answers.user_id', '=', 'users.user_id')
+						.query('where', 'users.attending14', '=', '1')
+						.query('where', 'dsp', '=', '1')
+						.query('orderBy', 'users.user_id', 'desc')
+						.fetch(
+							columns: ['users.user_id', 'question_id', 'answer']
+						)
+						.then (answers) ->
+							res.r.answers = answers
+							res.r.content = contents
+							res.r.attendees = attendees
+							rds.set 'featured_content', JSON.stringify(res.r), ->
+								rds.expire 'featured_content', 3600
+							next()
+						, (err) ->
+							tk err
 					, (err) ->
 						tk err
 				, (err) ->
 					tk err
-			, (err) ->
-				tk err
 module.exports = content
