@@ -24,7 +24,7 @@ routes = (app) ->
 				.save()
 				.then (transfer) ->
 					params =
-						item_name_1: 'TEST - WDS Ticket Transfer'
+						item_name_1: 'WDS Ticket Transfer'
 						amount_1: '100.00'
 						item_num_1: '1'
 						quantity_1: '1'
