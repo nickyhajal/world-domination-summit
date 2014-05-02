@@ -16,6 +16,7 @@ ap.Views.hub = XView.extend
 		setTimeout =>
 			@initBroadcasts()
 		, 750
+		
 	initBroadcasts: ->
 		@broadcast_list = []
 		@broadcasts = {}
@@ -33,6 +34,7 @@ ap.Views.hub = XView.extend
 		nextBroadcast = @broadcasts[_.ari(@broadcast_list[0].split('`'), 1)]
 		if nextBroadcast.options.date_iso > ap.me.get('last_broadcast')
 			@showBroadcast(nextBroadcast)
+
 	showBroadcast: (broadcast) ->
 			html = _.t 'parts_broadcast-box', broadcast.options
 			$b = $('<div/>').append(html)
@@ -46,6 +48,7 @@ ap.Views.hub = XView.extend
 			setTimeout ->
 				bbox.css('height', ('110px'))
 			, 10
+
 	closeBroadcasts: (e) ->
 		$('h2', $(@el))
 			.first()
@@ -56,6 +59,7 @@ ap.Views.hub = XView.extend
 			$('.broadcast-box').remove()
 		, 205
 		@saveLastBroadcast(e)
+
 	saveLastBroadcast: (e) ->
 		date = $(e.currentTarget).closest('.broadcast-box').data('date')
 		ap.me.set('last_broadcast', date)
