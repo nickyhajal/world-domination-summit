@@ -32,7 +32,7 @@ fs.readFile __dirname + '/export.json', (err, data) ->
 	each data.tickets, (ticket) ->
 		Ticket.forge
 			user_id: ticket.user_id
-			year: ticket.year
+			year: ''+ticket.year
 			eventbrite_id: 'IMPORT_'+ticket.year+'_'+ticket.user_id
 			status: 'active'
 		.save(null, {method: 'insert'})
