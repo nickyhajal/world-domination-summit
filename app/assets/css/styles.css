@@ -604,6 +604,9 @@ footer {
     font-size:                  13px;
     font-family:                VitesseLight;
 }
+.is-logged-in #footer-links .logged-in {
+    display:                    inline;
+}
 #footer-links a {
     text-decoration:            none;
     margin-right:               18px;
