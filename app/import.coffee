@@ -7,7 +7,7 @@
 
 [User, Users] = require('./models/users')
 [Ticket, Tickets] = require './models/tickets'
-Q = require 'Q'
+Q = require 'q'
 fs = require('fs')
 
 each = (set, action, inx = 0) ->
