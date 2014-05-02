@@ -10,6 +10,7 @@
 Q = require('q')
 fs = require('fs')
 
+
 each = (set, action, inx = 0) ->
 	dfr = Q.defer()
 	if set[inx]?
@@ -19,7 +20,7 @@ each = (set, action, inx = 0) ->
 		dfr.resolve()
 	return dfr.promise
 
-fs.readFile __dirname + '/export.json', (err, data) ->
+fs.readFile __dirname + '/export.json', "utf-8", (err, data) ->
 	data = JSON.parse(data)
 	each data.users, (user) ->
 		user = User.forge(user)
@@ -30,7 +31,6 @@ fs.readFile __dirname + '/export.json', (err, data) ->
 		.off('saved')
 		.save(null, {method: 'insert'})
 	each data.tickets, (ticket) ->
-		tk ticket
 		Ticket.forge
 			user_id: ticket.user_id
 			year: ''+ticket.year
