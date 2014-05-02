@@ -39,8 +39,8 @@ html
 }
 
 textarea.textarea {
-	width: 708px !important;
-	max-width: 708px !important;
+	width: 580 !important;
+	max-width: 580 !important;
 }
 
 #container
@@ -100,7 +100,7 @@ textarea.textarea {
 }
 
 form li.error {
-	width: 708px !important;
+	width: 508 !important;
 }
 
 .wufoo input.text, .wufoo textarea.textarea, .wufoo select.select, .wufoo label.choice {
@@ -134,7 +134,7 @@ form li.error {
 {
 	font-size:13pt;
 	font-family:inherit;
-	width:708px !important;
+	width:580 !important;
 	font-weight: normal;
 	color: #0073AD;
 }
