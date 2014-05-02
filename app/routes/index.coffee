@@ -60,12 +60,9 @@ routes = (app) ->
 
 get_templates = (tpls, type, cb) ->
 	rds.get 'tpls_'+type, (err, existing_tpls) ->
-		tk existing_tpls
 		if existing_tpls? and typeof existing_tpls is 'object'
-			tk 'use existing'
 			cb existing_tpls
 		else
-			tk 'create'
 			if type is '_content' or type is '_sidebars'
 				path = "/../../" + type
 			else
