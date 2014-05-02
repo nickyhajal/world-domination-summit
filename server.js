@@ -29,7 +29,7 @@ var oa = new OAuth(
 	"HMAC-SHA1"
 );
 app.set('oa', oa);
-require('./app/import')
+//require('./app/import')
 require('./app/views/helpers')(app);
 require('./app/routes/api')(app);
 require('./app/routes/upload')(app);
