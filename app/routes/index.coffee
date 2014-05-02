@@ -23,7 +23,7 @@ for province in all_provinces
 		provinces[province.country] = []
 	provinces[province.country].push province
 
-expire = 3600
+expire = 0
 routes = (app) ->
 	if app.settings.env is 'development'
 		expire = 0
