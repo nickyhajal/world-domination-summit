@@ -1,0 +1,140 @@
+
+@font-face {font-family: "Karla"; src: url("https://worlddominationsummit.com/fonts/Karla-Regular.ttf") format("truetype");}
+#logo a
+{
+	background-image:url(http://wufoo.com/images/themes/logos/shark.png);
+	min-height:0;
+	height:40px;
+	display:none;
+}
+
+#header {
+	display:none;
+}
+* html #logo a
+{
+	background-image:none;
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://wufoo.com/images/themes/logos/shark.png",sizingMethod="crop");
+}
+
+#container, html.embed
+{
+	background:transparent !important;
+}
+html
+{
+	background-image:none;
+}
+.wufoo {
+	font-family:karla !important;
+}
+
+#logo
+{
+	background-image:none;
+	background-color:#690;
+}
+.wufoo li.focused {
+	background-color: transparent;
+}
+
+textarea.textarea {
+	width: 708px !important;
+	max-width: 708px !important;
+}
+
+#container
+{
+	border:0 solid #ccc;
+}
+
+.wufoo input.text,.wufoo textarea.textarea
+{
+	background:#FFF url(/images/fieldbg.gif) repeat-x top;
+}
+
+.wufoo .focused
+{
+	background:#FFF7C0;
+}
+
+.wufoo .instruct
+{
+	background-color:#F5F5F5;
+	border:1px solid #e6e6e6;
+	font-size:80%;
+	font-family:inherit;
+	color:#444;
+}
+
+.wufoo .info
+{
+	border-bottom:1px dotted #CCC;
+}
+
+.wufoo .info h2
+{
+	font-size:160%;
+	font-family:inherit;
+	color:#000;
+}
+
+.wufoo .section h3
+{
+	font-size:110%;
+	font-family:inherit;
+	background:#FFF;
+	color:#000;
+}
+
+.wufoo .section div
+{
+	font-size:85%;
+	font-family:inherit;
+	color:#444;
+}
+
+.wufoo li div,.wufoo li div label,.wufoo li span label
+{
+	font-family:inherit;
+}
+
+form li.error {
+	width: 708px !important;
+}
+
+.wufoo input.text, .wufoo textarea.textarea, .wufoo select.select, .wufoo label.choice {
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    border:                     0px none;
+    width:                      300px;
+    padding:                    9px;
+    color:                      rgb(33, 23, 10);
+    font-family:                karla ! important;
+    font-size:                  12pt;
+}
+.wufoo .btTxt {
+	 border:                     0px none;
+    padding:                    8px 40px;
+    color:                      rgb(255, 255, 255);
+    background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
+    cursor:                     pointer;
+    font-family:                karla;
+    text-decoration:            none;
+    font-size:                  18px;
+}
+.req {
+	display:none !important;
+}
+
+.wufoo label.choice
+{
+}
+
+.wufoo .info div,.wufoo label.desc,.wufoo legend.desc, .wufoo li.focused label.desc
+{
+	font-size:13pt;
+	font-family:inherit;
+	width:708px !important;
+	font-weight: normal;
+	color: #0073AD;
+}
