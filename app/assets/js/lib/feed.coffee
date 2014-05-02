@@ -57,42 +57,44 @@
 			return comments
 		@renderContent = (content) ->
 			author = ap.Users.get(content.user_id)
-			comments = @commentsStr +content.num_comments
-			html = '
-				<div class="dispatch-content-shell dispatch-content-unprocessed" data-content_id="'+content.feed_id+'">
-					<div class="dispatch-content-userpic" style="background:url('+author.get('pic').replace('_normal', '')+')"></div>
-					<div class="dispatch-content-section">
-						<a href="/~'+author.get('user_name')+'" class="dispatch-content-author">
-							'+author.get('first_name')+' '+author.get('last_name')+'
-						</a>
-						<div class="dispatch-content-message">'+content.content.replace(/\n/g, '<br>').replace(/<br>\s<br>/g, '<br>')+'</div>
-						<div class="dispatch-content-channel-shell">
-							<a href="#" class="dispatch-content-channel">/'+content.channel_type+'</a>
-						</div>
-						<div class="dispatch-content-comments-shell dispatch-content-comments-closed">
-							<a href="#" class="dispatch-content-comment-status">'+comments+'</a>
-								<div class="dispatch-content-comments-inner">
-									<div class="dispatch-content-comments"></div>
-										<form id="dispatch-content-comment-form'+content.feed_id+'" class="dispatch-content-comment-form" action="#" method="post">
-										'
-			if ap.me
+			html = ''
+			if author?
+				comments = @commentsStr +content.num_comments
+				html = '
+					<div class="dispatch-content-shell dispatch-content-unprocessed" data-content_id="'+content.feed_id+'">
+						<div class="dispatch-content-userpic" style="background:url('+author.get('pic').replace('_normal', '')+')"></div>
+						<div class="dispatch-content-section">
+							<a href="/~'+author.get('user_name')+'" class="dispatch-content-author">
+								'+author.get('first_name')+' '+author.get('last_name')+'
+							</a>
+							<div class="dispatch-content-message">'+content.content.replace(/\n/g, '<br>').replace(/<br>\s<br>/g, '<br>')+'</div>
+							<div class="dispatch-content-channel-shell">
+								<a href="#" class="dispatch-content-channel">/'+content.channel_type+'</a>
+							</div>
+							<div class="dispatch-content-comments-shell dispatch-content-comments-closed">
+								<a href="#" class="dispatch-content-comment-status">'+comments+'</a>
+									<div class="dispatch-content-comments-inner">
+										<div class="dispatch-content-comments"></div>
+											<form id="dispatch-content-comment-form'+content.feed_id+'" class="dispatch-content-comment-form" action="#" method="post">
+											'
+				if ap.me
+					html += '
+							<div class="dispatch-content-userpic" style="background:url('+ap.me.get('pic')+')"></div>
+							<textarea placeholder="Leave a comment" name="comment" class="dispatch-content-comment-inp"></textarea>
+							<input type="submit" class="dispatch-comment-submit" value="Share Comment"/>
+					'
+				else
+					html+= '
+						<a href="/login" class="button login-to-comment">Login to Comment</a>
+					'
 				html += '
-						<div class="dispatch-content-userpic" style="background:url('+ap.me.get('pic')+')"></div>
-						<textarea placeholder="Leave a comment" name="comment" class="dispatch-content-comment-inp"></textarea>
-						<input type="submit" class="dispatch-comment-submit" value="Share Comment"/>
-				'
-			else
-				html+= '
-					<a href="/login" class="button login-to-comment">Login to Comment</a>
-				'
-			html += '
-							</form>
+								</form>
+								</div>
 							</div>
 						</div>
+						<div class="clear-left"></div>
 					</div>
-					<div class="clear-left"></div>
-				</div>
-			'
+				'
 			return html
 
 		@process = ->
