@@ -9,7 +9,7 @@ mailer =
 		email_options = 
 			promotion_name: mail
 			subject: '[WDS] '+subject
-			recipient: 'nhajal@gmail.com'
+			recipient: to
 			from: 'Chris Guillebeau <chris.guillebeau@gmail.com>'
 		@request('mailer', email_options, params)
 		.then (transaction_id) ->
