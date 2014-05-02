@@ -20,6 +20,7 @@ ap.Views.welcome = XView.extend
 		@options.out = _.template @options.out, ap.me.attributes
 		@initRender()
 		self = this
+		$('#content_shell').addClass('start')
 		unless ap.upload_success?
 			ap.upload_success = (url) ->
 				ap.me.set('pic', url)
@@ -27,7 +28,6 @@ ap.Views.welcome = XView.extend
 
 	rendered: ->
 		# Setup Animation
-		$('#content_shell').addClass('start')
 		$('#sidebar-shell').addClass('faded-out')
 
 
