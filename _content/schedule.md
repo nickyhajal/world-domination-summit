@@ -39,7 +39,7 @@ We'll conclude on Sunday evening with a Farewell party that goes as long as peop
 
 ### Your WDS 2014 Speakers
 
-Get ready for an unforgettable WDS where you'll hear from the following incredible speakers.
+Get ready for an unforgettable WDS where you'll hear from these incredible speakers.
 
 <div class="speaker_list" data-speaker-type="upcoming"></div>
 
@@ -53,7 +53,7 @@ Among other surprises, our 2013 lineup included a guest appearance from Superman
 <div class="line-canvas"></div>
 
 ### Returning Speakers
-These featured speakers from previous years will return to lead workshops.
+These featured speakers from previous years will make a return visit.
 
 <div class="speaker_list" data-speaker-type="returning"></div>
 
@@ -90,7 +90,7 @@ Most speakers will attend the entire weekend and be available for informal conve
 
 <a name="portland-experience"></a>
 
-Over the years we've learned that two big reasons people come to WDS is to meet people with shared interests and experience some of what the great city of Portland has to offer. So this year we wracked out brains to figure out how we could do a better job of providing both of those things.
+Over the years we've learned that two big reasons people come to WDS is to meet people with shared interests and experience some of what the great city of Portland has to offer. So this year we racked our brains to figure out how we could do a better job of providing both of those things.
 
 The result? **The Portland Experience.**
 
