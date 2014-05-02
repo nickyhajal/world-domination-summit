@@ -30,6 +30,10 @@ fs.readFile __dirname + '/export.json', "utf-8", (err, data) ->
 		.off('creating')
 		.off('saved')
 		.save(null, {method: 'insert'})
+		.then ->
+			x = 0
+		, (err) ->
+			tk err
 	each data.tickets, (ticket) ->
 		Ticket.forge
 			user_id: ticket.user_id
