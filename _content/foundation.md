@@ -7,7 +7,7 @@ photo_head: /images/foundation/foundation.jpg
 
 We do this by providing what we call “Scholarships For Real Life.” The goal of these scholarships is to empower individuals to pursue their dreams and impact their community. 
 
-Have a crazy project you want to bring to life? Want to take a trip around the earth and share what you learned with the world? Trying to building something that’s a bit out of your reach? Whatever it is, the WDS Foundation can help fund it. We look for inspiring projects that’ll make you and the world a better place.
+Have a crazy project you want to bring to life? Want to take a trip around the earth and share what you learned with the world? Trying to build something that’s a bit out of your reach? Whatever it is, the WDS Foundation can help fund it. We look for inspiring projects that will improve your life *and* make the world a better place.
 
 <a name="#eligibility"></a>
 
@@ -15,7 +15,7 @@ Have a crazy project you want to bring to life? Want to take a trip around the e
 
 ### Eligibility
 
-For our first year of the “Scholarships for Real Life” program, we’re opening the application only to those who have attended or will be attending a World Domination Summit (attendees, speakers, volunteers, etc). As the scholarship program progresses, we intend to open this up to a wider audience—so check back next year if you’re note currently eligible.
+For our first year of the “Scholarships for Real Life” program, we’re opening the application only to those who have attended or will be attending a World Domination Summit. As the program progresses, we intend to open this up to a wider audience—so check back next year if you’re note currently eligible.
 
 <a name="#criteria"></a>
 
