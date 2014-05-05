@@ -1,4 +1,4 @@
 [Speakers](#speakers)
 [Main Stage](#main-stage)
-[Workshops](#workshops)
+[Festival](#festival)
 [Everything Else](#everything-else)
