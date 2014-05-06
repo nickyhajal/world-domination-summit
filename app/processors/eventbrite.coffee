@@ -20,9 +20,10 @@ shell = (app) ->
 		count: 10000
 		page: 1
 
+	tk 'Start EB...'
 	eb.event_list_attendees id: app.settings.eb_event, (err, data) ->
 		processAttendees = (attendees, inx = 0) ->
-			if attendees[inx]? and inx < 1
+			if attendees[inx]?
 				attendee = attendees[inx].attendee
 				inx += 1 # For the next attendee
 				eventbrite_id = attendee.barcode

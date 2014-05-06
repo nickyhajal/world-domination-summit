@@ -32,7 +32,7 @@ CredentialChange = Shelf.Model.extend
 		@save()
 		.then (change) ->
 			change_url = 'http://'+process.env.DOMAIN+'/reset-password/'+change.get('hash')
-			user.sendEmail('WDS_pw-reset', 'Reset Your Password', {change_url: change_url})
+			user.sendEmail('pw-reset', 'Reset Your Password', {change_url: change_url})
 			dfr.resolve()
 		, (err) ->
 			tk err

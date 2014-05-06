@@ -17,6 +17,7 @@ Q = require('q')
 [UserInterest, UserInterests] = require './user_interests'
 [Connection, Connections] = require './connections'
 [TwitterLogin, TwitterLogins] = require './twitter_logins'
+[Capability, Capabilities] = require './capabilities'
 
 User = Shelf.Model.extend
   tableName: 'users'
@@ -95,7 +96,7 @@ User = Shelf.Model.extend
           .then (res) ->
             x = res
           , (err) ->
-            tk err
+            console.error(err)
           dfr.resolve(this)
 
     else
@@ -136,8 +137,31 @@ User = Shelf.Model.extend
       @set('answers', JSON.stringify(rsp.models))
       dfr.resolve this
     , (err) ->
-      tk err
+      console.error(err)
     return dfr.promise
+
+  getCapabilities: ->
+    dfr = Q.defer()
+    Capabilities.forge()
+    .query('where', 'user_id', @get('user_id'))
+    .fetch()
+    .then (rsp) =>
+      if rsp.models.length
+        @set('capabilities', rsp.models)
+      dfr.resolve this
+    , (err) ->
+      console.error(err)
+    return dfr.promise
+
+  hasCapability: (capability) ->
+    map = 
+      user: 'manifest'
+    capability = map[capability] ? capability
+    if @get('capabilities')?
+      for cap in @get('capabilities')
+        if cap.get('capability') is capability
+          return true
+    return false
 
   getInterests: ->
     dfr = Q.defer()
@@ -151,7 +175,7 @@ User = Shelf.Model.extend
       @set('interests', JSON.stringify(interests))
       dfr.resolve this
     , (err) ->
-      tk err
+      console.error(err)
     return dfr.promise
 
   getConnections: ->
@@ -168,7 +192,7 @@ User = Shelf.Model.extend
         connected_ids: connected_ids
       dfr.resolve(this)
     , (err) ->
-      console.log(err);
+      console.error(err)
     return dfr.promise
 
 
@@ -180,6 +204,8 @@ User = Shelf.Model.extend
     .then (rows) =>
       @set('tickets', rows.models)
       dfr.resolve this
+    , (err) ->
+      console.error(err)
     return dfr.promise
 
 
@@ -290,7 +316,6 @@ User = Shelf.Model.extend
     .then (twit) ->
       twit.post 'statuses/update', 
         status: tweet, (err, reply) ->
-          tk err
           dfr.resolve(err, reply)
     return dfr.promise
 
@@ -323,8 +348,6 @@ User = Shelf.Model.extend
       last_name: @get('last_name')
       email: @get('email')
     params = _.defaults user_params, params
-    tk mailer
-    tk params
     mailer.send(promo, subject, @get('email'), params)
     .then (err, rsp) ->
 
