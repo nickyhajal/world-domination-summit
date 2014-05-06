@@ -1,5 +1,6 @@
 _ = require('underscore')
 redis = require("redis")
+async = require("async")
 rds = redis.createClient()
 twitterAPI = require('node-twitter-api')
 
@@ -58,13 +59,40 @@ routes = (app) ->
 
 		search: (req, res, next) ->
 			_Users = Users.forge()
-			for term in req.query.search.split(' ')
+			all = {}
+			async.each req.query.search.split(' '), (term, cb) ->
 				_Users.query('orWhere', 'first_name', 'LIKE', '%'+term+'%')
-				_Users.query('orWhere', 'last_name', 'LIKE', '%'+term+'%')
-				_Users.query('orWhere', 'email', 'LIKE', '%'+term+'%')
-			_Users.fetch()
-			.then (rsp) ->
-				res.r.users = rsp.models
+				_Users.fetch()
+				.then (byF) ->
+					_Users = Users.forge()
+					_Users.query('orWhere', 'last_name', 'LIKE', '%'+term+'%')
+					.fetch()
+					.then (byL) ->
+						_Users = Users.forge()
+						_Users.query('orWhere', 'email', 'LIKE', '%'+term+'%')
+						_Users.fetch()
+						.then (byE) ->
+								for f in byF.models
+									id = f.get('user_id')
+									all[id] = f.attributes unless all[id]
+									tk all
+									(all[id].score += 1) if all[id].score? else all[id].score = 1
+								for l in byL.models
+									id = l.get('user_id')
+									all[id] = l.attributes unless all[id]
+									(all[id].score += 1) if all[id].score? else all[id].score = 1
+								for e in byE.models
+									id = e.get('user_id')
+									all[id] = e.attributes unless all[id]
+									(all[id].score += 1) if all[id].score? else all[id].score = 1
+								tk all
+								cb()
+			, (err) ->
+				sortable = []
+				for user in all
+					sortable.push user
+				sortable.sort (-> return a[1] - b[1])
+				res.r.users = sortable
 				next()
 
 		# Authenticate a user

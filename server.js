@@ -15,7 +15,9 @@ process.lastYear = '2013'
 process.dmn = process.env.DOMAIN
 
 require('./app/processors/content-grabber')(app)
-require('./app/processors/eventbrite')(app)
+if (process.env.NODE_ENV === 'production') {
+	require('./app/processors/eventbrite')(app)
+}
 
 // Twitter OAuth
 var OAuth= require('oauth').OAuth;
