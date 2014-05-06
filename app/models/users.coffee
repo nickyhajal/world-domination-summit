@@ -338,7 +338,7 @@ User = Shelf.Model.extend
     user_params =
       first_name: @get('first_name')
       last_name: @get('last_name')
-      name: @get('first_name')+' '+@get('last_name')
+      name: @get('first_name')
       email: @get('email')
       hash: @get('hash')
     params = _.defaults user_params, params
