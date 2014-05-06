@@ -351,6 +351,9 @@ User = Shelf.Model.extend
       username: process.env.MM_USER
       api_key: process.env.MM_PW
       email: @get('email')
+      first_name: @get('first_name')
+      last_name: @get('last_name')
+      unique_link: @get('hash')
     call = 
       url: 'https://api.madmimi.com/audience_lists/'+list+'/add'
       method: 'post'
