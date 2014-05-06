@@ -61,7 +61,6 @@ routes = (app) ->
 						bits = part.split('=')
 						rsp[bits[0]] = bits[1]
 					ticket_id = rsp['custom']
-					tk rsp
 					Transfer.forge({transfer_id: rsp['custom']})
 					.fetch()
 					.then (xfer) ->

@@ -5,6 +5,18 @@ twitterAPI = require('node-twitter-api')
 Q = require('q')
 async = require('async')
 
+
+# We clear some items in our redis cache upon start-up
+clearCache = ->
+	clear = (key) ->
+		rds.expire key, 0
+	clear('tpls_pages')
+	clear('tpls_parts')
+	clear('tpls__content')
+	clear('tpls__sidebars')
+
+clearCache()
+
 routes = (app) ->
 
 	[User, Users] = require('../../models/users')
