@@ -34,6 +34,7 @@ routes = (app) ->
 		app.delete '/user/twitter', user.del_twitter
 		app.post '/user/tweet', user.send_tweet
 		app.get '/user', user.get
+		app.get '/users', user.search
 		app.get '/me', user.me
 
 		# Feed

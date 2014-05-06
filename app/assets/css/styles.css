@@ -1590,6 +1590,16 @@ div#manifest-start {
     text-align:                 center;
     font-size:                  21px;
 }
+div.user_name {
+    font-size:                  10pt;
+    margin-left:                29px;
+    margin-top:                 -8px;
+    margin-bottom:              5px;
+    opacity:                    0.4;
+    -ms-filter:                 "alpha(opacity=40)";
+    filter:                     alpha(opacity=40);
+    zoom:                       1;
+}
 * {
     line-height:                inherit;
     box-sizing:                 border-box;
