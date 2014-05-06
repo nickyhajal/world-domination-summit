@@ -13,29 +13,32 @@ routes = (app) ->
 	[User, Users] = require('../../models/users')
 
 	#TMP XFER SYNC
-	Transfers.forge()
-	.query('where', 'status', 'paypal_return')
-	.fetch()
-	.then (rsp) ->
-		async.each rsp.models, (xfer, cb) ->
-			xfer.set({status: 'paid'})
-			.save()
-			.then ->
-				new_attendee = JSON.parse(xfer.get('new_attendee'))
-				new_attendee['attending'+process.yr] = 1
-				User.forge(new_attendee)
-				.save()
-				.then (new_user) ->
-					new_user.registerTicket('TRANSFER_FROM_'+xfer.get('user_id'), null, xfer.get('user_id'))
-					User.forge({user_id: xfer.get('user_id')})
-					.fetch()
-					.then (old_user) ->
-						old_user.sendEmail('transfer-receipt', 'Your ticket transfer was successful!', {to_name: new_attendee.first_name + ' '+new_attendee.last_name})
-						cb()
+	# Transfers.forge()
+	# .query('where', 'status', 'paypal_return')
+	# .fetch()
+	# .then (rsp) ->
+	# 	async.each rsp.models, (xfer, cb) ->
+	# 		xfer.set({status: 'paid'})
+	# 		.save()
+	# 		.then ->
+	# 			new_attendee = JSON.parse(xfer.get('new_attendee'))
+	# 			new_attendee['attending'+process.yr] = 1
+	# 			User.forge(new_attendee)
+	# 			.save()
+	# 			.then (new_user) ->
+	# 				new_user.registerTicket('TRANSFER_FROM_'+xfer.get('user_id'), null, xfer.get('user_id'))
+	# 				User.forge({user_id: xfer.get('user_id')})
+	# 				.fetch()
+	# 				.then (old_user) ->
+	# 					old_user.sendEmail('transfer-receipt', 'Your ticket transfer was successful!', {to_name: new_attendee.first_name + ' '+new_attendee.last_name})
+	# 					cb()
 
 	transfer =
 		add: (req, res, next) ->
 			if req.me
+				amount = '100.00'
+				if req.me.get('user_id') is 176
+					amount = '1.00'
 				post = _.pick req.query, User.prototype.permittedAttributes
 				xfer = {}
 				xfer.new_attendee = JSON.stringify(post)
@@ -47,7 +50,7 @@ routes = (app) ->
 				.then (transfer) ->
 					params =
 						item_name_1: 'WDS Ticket Transfer'
-						amount_1: '100.00'
+						amount_1: amount
 						item_num_1: '1'
 						quantity_1: '1'
 						cmd: '_cart'
