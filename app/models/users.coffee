@@ -257,7 +257,7 @@ User = Shelf.Model.extend
       transfer_from: transfer_from
     .save()
     .then (ticket) =>
-      @addToList('WDS 2014 Attendees')
+      @addToList('WDS '+process.year+ ' Attendees')
       .then =>
         promo = 'Welcome'
         subject = "You're coming to WDS! Awesome! Now... Create your profile!"
@@ -283,6 +283,7 @@ User = Shelf.Model.extend
           .then =>
             @removeFromList('WDS '+process.year+' Attendees')
             .then =>
+              @addToList('WDS '+process.year+' Canceled')
               dfr.resolve [this, ticket]
         dfr.reject("Doesn't have a ticket.")
     return dfr.promise
