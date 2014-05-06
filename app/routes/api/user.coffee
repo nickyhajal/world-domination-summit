@@ -56,6 +56,17 @@ routes = (app) ->
 				errors.push(err.message)
 				next()
 
+		search: (req, res, next) ->
+			_Users = Users.forge()
+			for term in req.query.search.split(' ')
+				_Users.query('orWhere', 'first_name', 'LIKE', '%'+term+'%')
+				_Users.query('orWhere', 'last_name', 'LIKE', '%'+term+'%')
+				_Users.query('orWhere', 'email', 'LIKE', '%'+term+'%')
+			_Users.fetch()
+			.then (rsp) ->
+				res.r.users = rsp.models
+				next()
+
 		# Authenticate a user
 		login: (req, res, next) ->
 			finish = (user = false) ->
