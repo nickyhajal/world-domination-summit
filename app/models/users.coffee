@@ -267,7 +267,7 @@ User = Shelf.Model.extend
     dfr = Q.defer()
     @set('attending'+process.yr, '-1')
     .save()
-    .then ->
+    .then =>
       Ticket.forge
         user_id: @get('userid')
         year: process.year
@@ -358,7 +358,7 @@ User = Shelf.Model.extend
     request call, (err, code, rsp) ->
       dfr.resolve(rsp)
     return dfr.promise
-    
+
   removeFromList: (list) ->
     dfr = Q.defer()
     params = 
