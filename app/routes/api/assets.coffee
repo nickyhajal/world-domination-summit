@@ -28,7 +28,6 @@ routes = (app) ->
 				templates: 800
 				content: 120
 			get: (req, res, next) ->
-				tk req.query.assets
 				async.each req.query.assets.split(','), (asset, cb) ->
 					assets[asset](req)
 					.then (rsp) ->

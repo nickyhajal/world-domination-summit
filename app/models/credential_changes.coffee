@@ -35,7 +35,7 @@ CredentialChange = Shelf.Model.extend
 			user.sendEmail('pw-reset', 'Reset Your Password', {change_url: change_url})
 			dfr.resolve()
 		, (err) ->
-			tk err
+			console.error(err)
 		return dfr.promise
 
   isValid: ->

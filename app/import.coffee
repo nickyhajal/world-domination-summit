@@ -33,7 +33,7 @@ fs.readFile __dirname + '/export.json', "utf-8", (err, data) ->
 		.then ->
 			x = 0
 		, (err) ->
-			tk err
+			console.error(err)
 	each data.tickets, (ticket) ->
 		Ticket.forge
 			user_id: ticket.user_id
@@ -44,4 +44,4 @@ fs.readFile __dirname + '/export.json', "utf-8", (err, data) ->
 		.then ->
 			x = 0
 		, (err) ->
-			tk err
+			console.error(err)

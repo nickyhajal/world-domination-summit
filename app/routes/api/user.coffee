@@ -52,7 +52,7 @@ routes = (app) ->
 						res.r.user = user
 						next()
 			, (err) ->
-				tk err
+				console.error(err)
 				res.status(400)
 				errors.push(err.message)
 				next()
@@ -61,37 +61,37 @@ routes = (app) ->
 			_Users = Users.forge()
 			all = {}
 			async.each req.query.search.split(' '), (term, cb) ->
-				_Users.query('orWhere', 'first_name', 'LIKE', '%'+term+'%')
+				_Users.query('orWhere', 'first_name', 'LIKE', term+'%')
 				_Users.fetch()
 				.then (byF) ->
 					_Users = Users.forge()
-					_Users.query('orWhere', 'last_name', 'LIKE', '%'+term+'%')
+					_Users.query('orWhere', 'last_name', 'LIKE', term+'%')
 					.fetch()
 					.then (byL) ->
 						_Users = Users.forge()
 						_Users.query('orWhere', 'email', 'LIKE', '%'+term+'%')
 						_Users.fetch()
 						.then (byE) ->
-								for f in byF.models
-									id = f.get('user_id')
-									all[id] = f.attributes unless all[id]
-									tk all
-									(all[id].score += 1) if all[id].score? else all[id].score = 1
-								for l in byL.models
-									id = l.get('user_id')
-									all[id] = l.attributes unless all[id]
-									(all[id].score += 1) if all[id].score? else all[id].score = 1
-								for e in byE.models
-									id = e.get('user_id')
-									all[id] = e.attributes unless all[id]
-									(all[id].score += 1) if all[id].score? else all[id].score = 1
-								tk all
-								cb()
+							for f in byF.models
+								id = f.get('user_id')
+								all[id] = f.attributes unless all[id]
+								if all[id].score? then all[id].score += 2 else (all[id].score = 2)
+							for l in byL.models
+								id = l.get('user_id')
+								all[id] = l.attributes unless all[id]
+								if all[id].score? then all[id].score += 3 else (all[id].score = 3)
+							for e in byE.models
+								id = e.get('user_id')
+								all[id] = e.attributes unless all[id]
+								if all[id].score? then all[id].score += 1 else (all[id].score = 1)
+							cb()
 			, (err) ->
 				sortable = []
-				for user in all
+				for id,user of all
 					sortable.push user
-				sortable.sort (-> return a[1] - b[1])
+				sortable.sort (a, b) -> 
+					return a.score - b.score
+				sortable.reverse()
 				res.r.users = sortable
 				next()
 
@@ -155,7 +155,7 @@ routes = (app) ->
 							User.forge({user_id: post.user_id}).updatePassword(req.query.new_password)
 						next()
 					, (err) ->
-						tk err
+						console.error(err)
 			else
 				res.status(401)
 				next()
@@ -273,7 +273,7 @@ routes = (app) ->
 									.then ->
 										res.redirect('/welcome')
 								, (err) ->
-									tk err
+									console.error(err)
 							else
 								req.session.twitter_err = 1
 								res.redirect('/welcome')
@@ -317,7 +317,7 @@ routes = (app) ->
 						res.r.connected_ids = user.get('connected_ids')
 						next()
 				, (err) ->
-					tk err
+					console.error(err)
 			else
 				res.status(401)
 				next()

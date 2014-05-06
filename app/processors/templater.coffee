@@ -19,7 +19,6 @@ get_templates = (tpls, type, cb) ->
 			else
 				path = "/../views/"+type
 			path = __dirname + path
-			tk path
 			if fs.lstatSync(path).isDirectory()
 				execFile 'find', [ path ], (err, stdout, stderr) ->
 					files = stdout.split '\n'
@@ -109,7 +108,7 @@ get_templates = (tpls, type, cb) ->
 											tpls[tpl_type+'_'+name] = tpl_opts + str
 										else
 											tk 'ERR IN: '+file
-											tk err
+											console.error(err)
 											tk '-----------------'
 										renderTplFile files, (index + 1)
 								else

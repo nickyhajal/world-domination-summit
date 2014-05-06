@@ -1,6 +1,16 @@
 div(id="user-manifest-shell")
 	h1 {{ first_name }} {{ last_name }}
 		a(href="#", class="back button") Back to Search
+	h3 Tickets
+	div(class="ticket-shell")
+	h3 Attendee Account
+	div(class="form-section")
+		label Unique Link
+		input(type="text", class="account-input", value="http://worlddominationsummit.com/{{ hash }}")
+	div(class="form-section")
+		label Profile
+		input(type="text", class="account-input", value="http://worlddominationsummit.com/~{{ user_name }}")
+	h3 Attendee Info
 	form(id="admin-user-update")
 		div(class="form-section")
 			div(class="form-box")
@@ -36,4 +46,4 @@ div(id="user-manifest-shell")
 					input(type="text", name="zip", value="{{ zip }}")
 			div(class="clear")
 			div(class="form-section")
-				input(type="submit", value="Save Attendee")
+				input(type="submit", value="Save Attendee Info")

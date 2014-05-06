@@ -64,7 +64,7 @@ routes = (app) ->
 								.then (feed) ->
 										next()
 								, (err) ->
-									tk err
+									console.error(err)
 					else
 						res.r.msg = 'You already posted that!'
 						res.status(409)
@@ -120,6 +120,6 @@ routes = (app) ->
 				res.r.num_comments = result.models.length
 				next()
 			, (err) ->
-				tk err
+				console.error(err)
 
 module.exports = routes

@@ -37,7 +37,7 @@ ap.Views.admin_manifest = XView.extend
 			else
 				$('#manifest-start').show()
 				$('#manifests-results-shell').hide()
-		, 250
+		, 500
 	row_click: (e) ->
 		ap.lastSearch = $('.manifest-search').val()
 		user = $(e.currentTarget).data('user')
