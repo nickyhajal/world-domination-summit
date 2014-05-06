@@ -865,6 +865,9 @@ input.search-input {
 input.manifest-search {
     width:                      90% ! important;
 }
+input.account-input {
+    width:                      450px ! important;
+}
 input[type="text"], input[type="password"] {
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
     border:                     0px none;
@@ -1568,6 +1571,7 @@ table#manifests-results-shell {
     border-spacing:             0px;
     margin-top:                 40px;
     display:                    none;
+    width:                      90%;
 }
 #manifest-results tr td:first-of-type {
     text-align:                 left;

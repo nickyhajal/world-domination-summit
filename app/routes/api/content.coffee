@@ -76,9 +76,9 @@ content =
 								rds.expire 'featured_content', 3600
 							next()
 						, (err) ->
-							tk err
+							console.error(err)
 					, (err) ->
-						tk err
+						console.error(err)
 				, (err) ->
-					tk err
+					console.error(err)
 module.exports = content

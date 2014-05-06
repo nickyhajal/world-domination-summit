@@ -1,6 +1,5 @@
 ap.Views.SpeakerList = XView.extend
 	initialize: ->
-		tk 'render'
 		@render()
 	render: ->
 		html = ''

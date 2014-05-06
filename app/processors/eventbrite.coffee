@@ -63,7 +63,7 @@ shell = (app) ->
 										new_user.registerTicket(attendee.barcode)
 										processAttendees attendees, inx
 									, (err) ->
-										tk err
+										console.error(err)
 				else
 					setTimeout ->
 						do_eb()

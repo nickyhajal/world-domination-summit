@@ -32,7 +32,7 @@ Answers = Shelf.Collection.extend
       .then ->
         dfr.resolve answer
       , (err) ->
-        tk err
+        console.error(err)
     dfr.promise
 
   updateAnswers: (user_id, answers) ->
