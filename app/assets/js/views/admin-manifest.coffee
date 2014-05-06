@@ -1,16 +1,24 @@
 ap.Views.admin_manifest = XView.extend
 	timo: 0
 	events: 
-		'keyup .manifest-search': 'search'
+		'keyup .manifest-search': 'search_keyup'
 		'click #manifest-results tr': 'row_click'
 	initialize: ->
 		@initRender()
 
 	rendered: ->
-	search: (e) ->
+		if ap.lastSearch? and ap.lastSearch
+			$('.manifest-search').val(ap.lastSearch)
+			@search(ap.lastSearch)
+			ap.lastSearch = false
+
+
+	search_keyup: (e) ->
+		val = $(e.currentTarget).val()
+		@search(val)
+	search: (val) ->
 		clearTimeout(@timo)
 		@timo = setTimeout ->
-			val = $(e.currentTarget).val()
 			if val.length > 2
 				ap.api 'get users', {search: val}, (rsp) ->
 						html = ''
@@ -31,6 +39,7 @@ ap.Views.admin_manifest = XView.extend
 				$('#manifests-results-shell').hide()
 		, 250
 	row_click: (e) ->
+		ap.lastSearch = $('.manifest-search').val()
 		user = $(e.currentTarget).data('user')
 		ap.navigate('admin/user/'+user)
 
