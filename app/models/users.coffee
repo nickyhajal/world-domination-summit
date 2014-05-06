@@ -244,16 +244,19 @@ User = Shelf.Model.extend
   # TICKETS #
   ###########
   
-  registerTicket: (eventbrite_id) ->
+  registerTicket: (eventbrite_id, returning = false) ->
     dfr = Q.defer()
     Ticket.forge
       eventbrite_id: eventbrite_id
       user_id: @get('user_id')
       year: process.year
     .save()
-    .then (ticket) ->
-      'send email here?'
-      dfr.resolve(ticket)
+    .then (ticket) =>
+      promo = 'Welcome'
+      subject = "You're coming to WDS! Awesome! Now... Create your profile!"
+      if returning
+        promo = WelcomeBack
+      @sendEmail(promo, subject)
     return dfr.promise
 
   transferTicket: (transfer_to) ->
@@ -347,6 +350,7 @@ User = Shelf.Model.extend
       first_name: @get('first_name')
       last_name: @get('last_name')
       email: @get('email')
+      hash: @get('hash')
     params = _.defaults user_params, params
     mailer.send(promo, subject, @get('email'), params)
     .then (err, rsp) ->
