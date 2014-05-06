@@ -69,6 +69,7 @@ shell = (app) ->
 						do_eb()
 					, 120000
 			processAttendees(data.attendees)
+	do_eb()
 
 
 
