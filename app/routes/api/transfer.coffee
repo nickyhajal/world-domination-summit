@@ -5,11 +5,33 @@ twitterAPI = require('node-twitter-api')
 moment = require('moment')
 crypto = require('crypto')
 request = require('request')
+async = require('async')
 
 routes = (app) ->
 
 	[Transfer, Transfers] = require('../../models/transfers')
 	[User, Users] = require('../../models/users')
+
+	#TMP XFER SYNC
+	Transfers.forge()
+	.query('where', 'status', 'paypal_return')
+	.fetch()
+	.then (rsp) ->
+		async.each rsp.models, (xfer, cb) ->
+			xfer.set({status: 'paid'})
+			.save()
+			.then ->
+				new_attendee = JSON.parse(xfer.get('new_attendee'))
+				new_attendee['attending'+process.yr] = 1
+				User.forge(new_attendee)
+				.save()
+				.then (new_user) ->
+					new_user.registerTicket('TRANSFER_FROM_'+xfer.get('user_id'), null, xfer.get('user_id'))
+					User.forge({user_id: xfer.get('user_id')})
+					.fetch()
+					.then (old_user) ->
+						old_user.sendEmail('transfer-receipt', 'Your ticket transfer was successful!', {to_name: new_attendee.first_name + ' '+new_attendee.last_name})
+						cb()
 
 	transfer =
 		add: (req, res, next) ->
@@ -99,10 +121,20 @@ routes = (app) ->
 						if xfer.get('status') is 'paid'
 							res.redirect('/')
 						else
+							# We should check if we're transferring to an existing user
 							Transfer.forge({transfer_id: rsp['custom'], status: 'paid'})
 							.save()
 							.then ->
-								# TODO Create user here!
+								new_attendee = JSON.parse(xfer.get('new_attendee'))
+								new_attendee['attending'+process.yr] = 1
+								User.forge(new_attendee)
+								.save()
+								.then (new_user) ->
+									new_user.registerTicket('TRANSFER_FROM_'+xfer.get('user_id'), null, xfer.get('user_id'))
+									User.forge({user_id: xfer.get('user_id')})
+									.fetch()
+									.then (old_user) ->
+										old_user.sendMail('transfer-receipt', 'Your ticket transfer was successful!')
 								next()
 				else
 					next()

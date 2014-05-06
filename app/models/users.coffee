@@ -244,12 +244,13 @@ User = Shelf.Model.extend
   # TICKETS #
   ###########
   
-  registerTicket: (eventbrite_id, returning = false) ->
+  registerTicket: (eventbrite_id, returning = false, transfer_from = null) ->
     dfr = Q.defer()
     Ticket.forge
       eventbrite_id: eventbrite_id
       user_id: @get('user_id')
       year: process.year
+      transfer_from: transfer_from
     .save()
     .then (ticket) =>
       promo = 'Welcome'
@@ -349,6 +350,7 @@ User = Shelf.Model.extend
     user_params =
       first_name: @get('first_name')
       last_name: @get('last_name')
+      name: @get('first_name')+' '+@get('last_name')
       email: @get('email')
       hash: @get('hash')
     params = _.defaults user_params, params
