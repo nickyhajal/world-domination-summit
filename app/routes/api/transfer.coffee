@@ -37,7 +37,7 @@ routes = (app) ->
 		add: (req, res, next) ->
 			if req.me
 				amount = '100.00'
-				if req.me.get('user_id') is 176
+				if ''+req.me.get('user_id') is '176'
 					amount = '1.00'
 				post = _.pick req.query, User.prototype.permittedAttributes
 				xfer = {}

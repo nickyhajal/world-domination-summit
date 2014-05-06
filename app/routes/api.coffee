@@ -47,7 +47,7 @@ routes = (app) ->
 
 		# Ticket Transfers
 		app.post '/transfer', transfer.add
-		app.get '/transfer/ipn', transfer.ipn
+		app.all '/transfer/ipn', transfer.ipn
 		app.get '/transfer/return', transfer.pdt
 		app.get '/transfer/status', transfer.status
 
