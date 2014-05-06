@@ -10,6 +10,7 @@ countries = require('country-data').countries
 _ = require('underscore')
 _.str = require('underscore.string')
 Q = require('q')
+request = require('request')
 
 ##
 [Ticket, Tickets] = require './tickets'
@@ -253,47 +254,34 @@ User = Shelf.Model.extend
       transfer_from: transfer_from
     .save()
     .then (ticket) =>
-      promo = 'Welcome'
-      subject = "You're coming to WDS! Awesome! Now... Create your profile!"
-      if returning
-        promo = WelcomeBack
-      @sendEmail(promo, subject)
-    return dfr.promise
-
-  transferTicket: (transfer_to) ->
-    dfr = Q.defer()
-    @cancelTicket()
-    .then (ticket) ->
-      # regTransfer()
-      #.then (transfer) ->
-      User.forge(transfer_to)
-      .save()
-      .then (new_user) ->
-        Ticket.forge
-          user_id: new_user.get('user_id')
-          year: process.year
-          eventbrite_id: transfer.get('transfer_id')
-        .save()
-        .then (ticket) ->
-          dfr.resolve(ticket)
+      @addToList('WDS 2014 Attendees')
+      .then ->
+        promo = 'Welcome'
+        subject = "You're coming to WDS! Awesome! Now... Create your profile!"
+        if returning
+          promo = 'WelcomeBack'
+        @sendEmail(promo, subject)
     return dfr.promise
 
   cancelTicket: ->
     dfr = Q.defer()
-    Ticket.forge
-      user_id: @get('userid')
-      year: process.year
-    .fetch()
-    .then (ticket) =>
-      if ticket
-        ticket.set
-          status: 'canceled'
-        save()
-        .then =>
-          @removeFromList('WDS '+process.year+' Attendees')
+    @set('attending'+process.yr, '-1')
+    .save()
+    .then ->
+      Ticket.forge
+        user_id: @get('userid')
+        year: process.year
+      .fetch()
+      .then (ticket) =>
+        if ticket
+          ticket.set
+            status: 'canceled'
+          save()
           .then =>
-            dfr.resolve [this, ticket]
-      dfr.reject("Doesn't have a ticket.")
+            @removeFromList('WDS '+process.year+' Attendees')
+            .then =>
+              dfr.resolve [this, ticket]
+        dfr.reject("Doesn't have a ticket.")
     return dfr.promise
 
   ###########
@@ -357,8 +345,34 @@ User = Shelf.Model.extend
     mailer.send(promo, subject, @get('email'), params)
     .then (err, rsp) ->
 
+  addToList: (list) ->
+    dfr = Q.defer()
+    params = 
+      username: process.env.MM_USER
+      api_key: process.env.MM_PW
+      email: @get('email')
+    call = 
+      url: 'https://api.madmimi.com/audience_lists/'+list+'/add'
+      method: 'post'
+      form: params
+    request call, (err, code, rsp) ->
+      dfr.resolve(rsp)
+    return dfr.promise
+    
   removeFromList: (list) ->
-    mimi.removeUser @get('email'), list, true
+    dfr = Q.defer()
+    params = 
+      username: process.env.MM_USER
+      api_key: process.env.MM_PW
+      email: @get('email')
+    call = 
+      url: 'https://api.madmimi.com/audience_lists/'+list+'/remove'
+      method: 'post'
+      form: params
+    request call, (err, code, rsp) ->
+      dfr.resolve(rsp)
+    return dfr.promise
+
 
 Users = Shelf.Collection.extend
   model: User 
