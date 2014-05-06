@@ -13,25 +13,25 @@ routes = (app) ->
 	[User, Users] = require('../../models/users')
 
 	#TMP XFER SYNC
-	# Transfers.forge()
-	# .query('where', 'status', 'paypal_return')
-	# .fetch()
-	# .then (rsp) ->
-	# 	async.each rsp.models, (xfer, cb) ->
-	# 		xfer.set({status: 'paid'})
-	# 		.save()
-	# 		.then ->
-	# 			new_attendee = JSON.parse(xfer.get('new_attendee'))
-	# 			new_attendee['attending'+process.yr] = 1
-	# 			User.forge(new_attendee)
-	# 			.save()
-	# 			.then (new_user) ->
-	# 				new_user.registerTicket('TRANSFER_FROM_'+xfer.get('user_id'), null, xfer.get('user_id'))
-	# 				User.forge({user_id: xfer.get('user_id')})
-	# 				.fetch()
-	# 				.then (old_user) ->
-	# 					old_user.sendEmail('transfer-receipt', 'Your ticket transfer was successful!', {to_name: new_attendee.first_name + ' '+new_attendee.last_name})
-	# 					cb()
+	Transfers.forge()
+	.query('where', 'status', 'paypal_wait')
+	.fetch()
+	.then (rsp) ->
+		async.each rsp.models, (xfer, cb) ->
+			xfer.set({status: 'paid'})
+			.save()
+			.then ->
+				new_attendee = JSON.parse(xfer.get('new_attendee'))
+				new_attendee['attending'+process.yr] = 1
+				User.forge(new_attendee)
+				.save()
+				.then (new_user) ->
+					new_user.registerTicket('TRANSFER_FROM_'+xfer.get('user_id'), null, xfer.get('user_id'))
+					User.forge({user_id: xfer.get('user_id')})
+					.fetch()
+					.then (old_user) ->
+						old_user.sendEmail('transfer-receipt', 'Your ticket transfer was successful!', {to_name: new_attendee.first_name + ' '+new_attendee.last_name})
+						cb()
 
 	transfer =
 		add: (req, res, next) ->
