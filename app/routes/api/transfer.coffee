@@ -101,7 +101,6 @@ routes = (app) ->
 
 		ipn: (req, res, next) ->
 			form = {}
-			tk 'ipn'
 			for key,val of req.query
 				form[key] = val
 			form.cmd  = '_notify-validate'
@@ -111,7 +110,6 @@ routes = (app) ->
 				form: form
 			request call, (err, code, body) ->
 				parts = body.split('\n')
-				tk req
 				success = parts[0]
 				if success is 'VERIFIED'
 					rsp = {}
@@ -130,7 +128,6 @@ routes = (app) ->
 							.then ->
 								new_attendee = JSON.parse(xfer.get('new_attendee'))
 								new_attendee['attending'+process.yr] = 1
-								tk new_attendee
 								User.forge(new_attendee)
 								.save()
 								.then (new_user) ->
@@ -138,6 +135,7 @@ routes = (app) ->
 									User.forge({user_id: xfer.get('user_id')})
 									.fetch()
 									.then (old_user) ->
+										old_user.unregister()
 										old_user.sendMail('transfer-receipt', 'Your ticket transfer was successful!')
 								next()
 				else
