@@ -862,6 +862,9 @@ input.search-input {
     position:                   relative;
     z-index:                    2147483647;
 }
+input.manifest-search {
+    width:                      90% ! important;
+}
 input[type="text"], input[type="password"] {
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
     border:                     0px none;
@@ -949,6 +952,24 @@ a.login-to-comment {
     top:                        6px;
     padding:                    6px 20px;
     font-size:                  16px;
+}
+h1 a.button:hover {
+    background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
+    color:                      rgb(255, 255, 255);
+}
+h1 a.button {
+    font-size:                  13px;
+    font-weight:                normal;
+    position:                   relative;
+    padding:                    6px 9px 5px;
+    margin-left:                10px;
+    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    color:                      rgba(33, 23, 10, 0.26);
+    top:                        -5px;
+    transition:                 all 0.2s ease 0s;
+    -moz-transition:            all 0.2s ease 0s;
+    -webkit-transition:         all 0.2s ease 0s;
+    -o-transition:              all 0.2s ease 0s;
 }
 input[type="submit"], .button {
     border:                     0px none;
@@ -1512,11 +1533,68 @@ div.dispatch-loading {
     width:                      220px;
     height:                     50px;
 }
+div.manifest-avatar {
+    background-size:            100% auto ! important;
+    -webkit-background-size:    100% auto ! important;
+    border-radius:              50%;
+    -moz-border-radius:         50%;
+    -webkit-border-radius:      50%;
+    float:                      left;
+    height:                     30px;
+    left:                       -13px;
+    position:                   relative;
+    width:                      30px;
+    top:                        5px;
+}
+#manifest-shell td {
+    font-family:                karla;
+    text-align:                 center;
+    vertical-align:             middle ! important;
+    padding:                    5px 0px;
+}
+table#manifests-results-shell thead th, table#manifests-results-shell tfoot th {
+    width:                      300px;
+    font-weight:                normal;
+    padding:                    7px 0px;
+}
+#manifest-results tr:nth-of-type(2n) {
+    background:                 none repeat scroll 0px 0px rgb(248, 246, 234);
+}
+#manifest-results tr {
+    background:                 none repeat scroll 0% 0% rgb(239, 238, 229);
+    cursor:                     pointer;
+}
+table#manifests-results-shell {
+    border-spacing:             0px;
+    margin-top:                 40px;
+    display:                    none;
+}
+#manifest-results tr td:first-of-type {
+    text-align:                 left;
+    width:                      400px ! important;
+}
+#manifest-results tr td:first-of-type span {
+    display:                    table-cell;
+    height:                     40px;
+    position:                   relative;
+    vertical-align:             middle;
+}
+#manifest-results tr:hover {
+    opacity:                    0.9;
+    -ms-filter:                 "alpha(opacity=90)";
+    filter:                     alpha(opacity=90);
+    zoom:                       1;
+}
+div#manifest-start {
+    padding:                    70px 0px;
+    text-align:                 center;
+    font-size:                  21px;
+}
 * {
+    line-height:                inherit;
     box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
     -webkit-box-sizing:         border-box;
-    line-height:                inherit;
 }
 body#page-profile .line-canvas {
     margin:                     25px 0px;

@@ -21,6 +21,8 @@ ap.createRouter = ->
 			@route("reset-password/:hash", 'reset', ap.Routes.reset)
 			@route("interest/:interest", 'interest', ap.Routes.interest)
 			@route("your-transfer/:transfer_id", 'reset', ap.Routes.your_transfer)
+			@route("admin/:panel", 'admin', ap.Routes.admin)
+			@route("admin/:panel/:extra", 'admin', ap.Routes.admin)
 			@route("hub", 'hub', ap.Routes.hub)
 			@route(/^~(.)+/, 'profile', ap.Routes.profile)
 		before: ap.Routes.before
@@ -91,15 +93,23 @@ ap.goTo = (panel = '', options = {}, cb = false) ->
 	$s = $('#')
 	ap.onPanel = panel
 	view = ap.Views[panel.replace('-', '_')] ? ap.Views.default
+
+	# Unbind current view
 	if ap.currentView?
 		ap.currentView.unbind()
 		ap.currentView.undelegateEvents()
+
+	# Reset Shell
 	$('#content_shell').attr('class', '')
 	options.el = $('#content_shell')
+
+	# Get the template
 	if ap.templates['pages_'+panel]?
 		tpl = 'pages_'+panel
 	else
 		tpl = 'pages_404'
+
+	# Setup the template
 	options.out = ap.templates[tpl] + '<div class="clear"></div>'
 	options.render = 'replace'
 	options.view = panel
@@ -115,10 +125,9 @@ ap.goTo = (panel = '', options = {}, cb = false) ->
 		$.scrollTo 0
 		ap.syncNav(panel)
 		ap.checkMobile()
-
 		if cb 
 			cb()
-	, 120
+	, 60
 
 ap.back = ->
 	history.go(-1);

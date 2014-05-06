@@ -55,4 +55,11 @@ Users = Backbone.Collection.Lunr.extend
         { name: "user_name"}
         { name: "email"}
     ]
+  getByUsername: (username, cb) ->
+  	results = @search(username)
+  	for atn in results
+  		if atn.get('user_name') is username
+  			return atn
+  	return false
+
 ap.Users = new Users()

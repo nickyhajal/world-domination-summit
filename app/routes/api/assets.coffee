@@ -4,7 +4,7 @@ rds = redis.createClient()
 twitterAPI = require('node-twitter-api')
 Q = require('q')
 async = require('async')
-
+get_templates = require('../../processors/templater')
 
 # We clear some items in our redis cache upon start-up
 clearCache = ->
@@ -28,6 +28,7 @@ routes = (app) ->
 				templates: 800
 				content: 120
 			get: (req, res, next) ->
+				tk req.query.assets
 				async.each req.query.assets.split(','), (asset, cb) ->
 					assets[asset](req)
 					.then (rsp) ->
@@ -44,6 +45,21 @@ routes = (app) ->
 					if typeof value is object
 						return value
 				return false
+			admin_templates: (req) ->
+				dfr = Q.defer()
+				if req.me
+					req.me.getCapabilities()
+					.then (me) ->
+						get_templates {}, 'admin', (all_tpls) ->
+							tpls = {}
+							for name,tpl of all_tpls
+								name = name.replace('admin_', '')
+								if me.hasCapability(name)
+									tpls[name] = tpl
+							dfr.resolve(tpls)
+				else
+					dfr.resolve([])
+				return dfr.promise
 			all_attendees: ->
 				dfr = Q.defer()
 				rds.get 'all_attendees', (err, atns) ->

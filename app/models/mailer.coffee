@@ -4,10 +4,10 @@ request = require('request')
 YAML = require('yamljs')
 
 mailer =
-	send: (mail, subject, to, params = {}) ->
+	send: (promo, subject, to, params = {}) ->
 		dfr = Q.defer()
 		email_options = 
-			promotion_name: mail
+			promotion_name: 'WDS_'+promo
 			subject: '[WDS] '+subject
 			recipient: to
 			from: 'Chris Guillebeau <chris.guillebeau@gmail.com>'

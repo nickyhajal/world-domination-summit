@@ -15,7 +15,7 @@ process.lastYear = '2013'
 process.dmn = process.env.DOMAIN
 
 require('./app/processors/content-grabber')(app)
-//require('./app/processors/eventbrite')(app)
+require('./app/processors/eventbrite')(app)
 
 // Twitter OAuth
 var OAuth= require('oauth').OAuth;
@@ -29,7 +29,6 @@ var oa = new OAuth(
 	"HMAC-SHA1"
 );
 app.set('oa', oa);
-//require('./app/import')
 require('./app/views/helpers')(app);
 require('./app/routes/api')(app);
 require('./app/routes/upload')(app);
