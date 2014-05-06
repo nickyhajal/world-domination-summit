@@ -76,6 +76,7 @@ routes = (app) ->
 
 		ipn: (req, res, next) ->
 			form = {}
+			tk 'ipn'
 			for key,val of req.query
 				form[key] = val
 			form.cmd  = '_notify-validate'
@@ -85,6 +86,7 @@ routes = (app) ->
 				form: form
 			request call, (err, code, body) ->
 				parts = body.split('\n')
+				tk parts
 				success = parts[0]
 				if success is 'VERIFIED'
 					rsp = {}
