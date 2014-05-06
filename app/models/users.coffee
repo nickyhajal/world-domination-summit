@@ -255,7 +255,7 @@ User = Shelf.Model.extend
     .save()
     .then (ticket) =>
       @addToList('WDS 2014 Attendees')
-      .then ->
+      .then =>
         promo = 'Welcome'
         subject = "You're coming to WDS! Awesome! Now... Create your profile!"
         if returning
