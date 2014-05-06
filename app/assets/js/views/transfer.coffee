@@ -14,6 +14,7 @@ ap.Views.your_transfer = XView.extend
 				done = true
 				$('.transfer-status').hide()
 				$('.transfer-success').show()
+				$('.new-attendee').html(rsp.to)
 			else if rsp.status is 'paypal_wait'
 				$('.transfer-status').hide()
 				$('.transfer-problem').show()
