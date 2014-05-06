@@ -1,6 +1,24 @@
 _d = {}
 _d.ari = (a, i)->
 	return a[i];
+_d.btn = (el, during, done, reset = 1200) ->
+	fnc = 'html'
+	if el.prop('tagName') is 'INPUT'
+		fnc = 'val'
+	orig = el[fnc]()
+	el[fnc](during)
+	return {
+		el: el
+		during: during
+		done: done
+		reset: reset
+		finish: ->
+			el[fnc](done)
+			setTimeout ->
+				el[fnc](orig)
+			, reset
+	}
+
 	
 _d.getForm = (id)->
 	for form in document.forms

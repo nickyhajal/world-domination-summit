@@ -12,9 +12,8 @@ Shelf = Bookshelf.ap = Bookshelf.initialize(process.db);
 Shelf.client = process.db.client
 Shelf.validator = new Validator();
 Shelf.Model = Shelf.Model.extend
-  initialize: ->
-      this.on 'saving', this.pre_saving, this
   saveChanging: ->
+    @before_save = @_previousAttributes
     @last_changed = @changed
   lastDidChange: (attrs, opts = {}) ->
     if typeof attrs isnt 'object'

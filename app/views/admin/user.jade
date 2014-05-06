@@ -11,7 +11,8 @@ div(id="user-manifest-shell")
 		label Profile
 		input(type="text", class="account-input", value="http://worlddominationsummit.com/~{{ user_name }}")
 	h3 Attendee Info
-	form(id="admin-user-update")
+	form(id="admin-user-update", method="post", action="#")
+		input(type="hidden", name="user_id", value="{{ user_id }}")
 		div(class="form-section")
 			div(class="form-box")
 				label First Name
@@ -46,4 +47,4 @@ div(id="user-manifest-shell")
 					input(type="text", name="zip", value="{{ zip }}")
 			div(class="clear")
 			div(class="form-section")
-				input(type="submit", value="Save Attendee Info")
+				input(type="submit", value="Save Attendee Info", class="button")
