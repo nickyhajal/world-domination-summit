@@ -80,6 +80,8 @@ ap.initRouter = ->
 	ap.createRouter()
 	ap.Router = new Router()
 	Backbone.history.start({pushState: true})
+
+	$('body').on 'click', ".back", ap.back
 	$('body').on 'click', "a[href=^'/']", (e) ->
 		link = $(e.currentTarget)
 		href = link.attr('href')
