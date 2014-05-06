@@ -41,7 +41,7 @@ shell = (app) ->
 
 							# User exists, we just need to give them the ticket
 							if user
-								user.registerTicket(attendee.barcode)
+								user.registerTicket(attendee.barcode, 'returning')
 								processAttendees attendees, inx
 
 							# User doesn't exist, create and give ticket
@@ -56,6 +56,7 @@ shell = (app) ->
 									region: attendee.home_region
 									zip: attendee.home_postal_code
 									country: attendee.home_country_code
+									attending14: 1
 								.save()
 								.then (new_user, err) ->
 									new_user.registerTicket(attendee.barcode)
