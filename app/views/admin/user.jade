@@ -1,0 +1,39 @@
+div(id="user-manifest-shell")
+	h1 {{ first_name }} {{ last_name }}
+		a(href="#", class="back button") Back to Search
+	form(id="admin-user-update")
+		div(class="form-section")
+			div(class="form-box")
+				label First Name
+				input(name="first_name", type="text", value="{{ first_name }}")
+			div(class="form-box")
+				label Last Name
+				input(name="last_name", type="text", value="{{ last_name }}")
+			div(class="form-section")
+				div(class="form-box")
+					label E-Mail Address
+					input(type="text", name="email", value="{{ email }} ")
+			div(class="form-section")
+				div(class="form-box")
+					label Country
+					input(type="hidden", name="country", id="country-select", value="{{ country }}")
+			div(class="form-section")
+				div(class="form-box")
+					label Address
+					input(type="text", name="address", value="{{ address }}")
+				div(class="form-box")
+					label Address 2
+					input(type="text", name="address2", value="{{ address2 }}")
+			div(class="form-section")
+				div(class="form-box")
+					label City
+					input(type="text", name="city", value="{{ city }}")
+				div(class="form-box")
+					dive(id="region-shell", data-value="{{ region }}")
+			div(class="form-section")
+				div(class="form-box")
+					label Zip
+					input(type="text", name="zip", value="{{ zip }}")
+			div(class="clear")
+			div(class="form-section")
+				input(type="submit", value="Save Attendee")
