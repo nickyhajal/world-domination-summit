@@ -111,25 +111,26 @@ routes = (app) ->
 				form: form
 			request call, (err, code, body) ->
 				parts = body.split('\n')
-				tk parts
+				tk req
 				success = parts[0]
 				if success is 'VERIFIED'
 					rsp = {}
 					for part in parts.splice(1)
 						bits = part.split('=')
 						rsp[bits[0]] = bits[1]
-					Transfer.forge({transfer_id: rsp['custom']})
+					Transfer.forge({transfer_id: req.query.custom})
 					.fetch()
 					.then (xfer) ->
 						if xfer.get('status') is 'paid'
 							res.redirect('/')
 						else
 							# We should check if we're transferring to an existing user
-							Transfer.forge({transfer_id: rsp['custom'], status: 'paid'})
+							Transfer.forge({transfer_id: req.query.custom, status: 'paid'})
 							.save()
 							.then ->
 								new_attendee = JSON.parse(xfer.get('new_attendee'))
 								new_attendee['attending'+process.yr] = 1
+								tk new_attendee
 								User.forge(new_attendee)
 								.save()
 								.then (new_user) ->
