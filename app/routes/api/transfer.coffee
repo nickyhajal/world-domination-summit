@@ -135,7 +135,7 @@ routes = (app) ->
 									User.forge({user_id: xfer.get('user_id')})
 									.fetch()
 									.then (old_user) ->
-										old_user.unregister()
+										old_user.cancelTicket()
 										old_user.sendMail('transfer-receipt', 'Your ticket transfer was successful!')
 								next()
 				else
