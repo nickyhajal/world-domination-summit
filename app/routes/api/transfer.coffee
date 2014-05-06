@@ -147,6 +147,8 @@ routes = (app) ->
 			.fetch()
 			.then (xfer) ->
 				res.r.status = xfer.get('status')
+				new_atn = JSON.parse(xfer.get('new_attendee'))
+				res.r.to = new_atn.first_name+' '+new_atn.last_name
 				next()
 
 module.exports = routes
