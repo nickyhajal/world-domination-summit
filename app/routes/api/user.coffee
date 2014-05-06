@@ -136,26 +136,29 @@ routes = (app) ->
 		update: (req, res, next) ->
 			post = _.pick(req.query, User.prototype.permittedAttributes)
 			if req.me
-				if req.me.get('user_id') is post.user_id
-					User.forge(post)
-					.save()
+				if req.me.get('user_id') is post.user_id or req.me.hasCapability('manifest')
+					User.forge({user_id: post.user_id})
+					.fetch()
 					.then (user) ->
-						if user.addressChanged
-							User.forge({user_id: post.user_id})
-							.fetch()
-							.then (addr_user) ->
-								addr_user.processAddress()
+						user.set(post)
+						user.save()
+						.then (user) ->
+							if user.addressChanged
+								User.forge({user_id: post.user_id})
+								.fetch()
+								.then (addr_user) ->
+									addr_user.processAddress()
 
-						if req.query.answers?
-							Answers
-							.forge()
-							.updateAnswers(post.user_id, JSON.parse(req.query.answers))
+							if req.query.answers?
+								Answers
+								.forge()
+								.updateAnswers(post.user_id, JSON.parse(req.query.answers))
 
-						if req.query.new_password? and req.query.new_password.length
-							User.forge({user_id: post.user_id}).updatePassword(req.query.new_password)
-						next()
-					, (err) ->
-						console.error(err)
+							if req.query.new_password? and req.query.new_password.length
+								User.forge({user_id: post.user_id}).updatePassword(req.query.new_password)
+							next()
+						, (err) ->
+							console.error(err)
 			else
 				res.status(401)
 				next()

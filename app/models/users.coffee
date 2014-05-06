@@ -66,6 +66,9 @@ User = Shelf.Model.extend
     ]
     @addressChanged = addressChanged
 
+    if @lastDidChange ['email']
+      @syncEmail()
+
 
   ########
   # AUTH #
@@ -345,6 +348,10 @@ User = Shelf.Model.extend
     mailer.send(promo, subject, @get('email'), params)
     .then (err, rsp) ->
 
+  syncEmail: ->
+    @removeFromList 'WDS '+process.year+' Attendees', @before_save['email']
+    @addToList 'WDS '+process.year+' Attendees'
+
   addToList: (list) ->
     dfr = Q.defer()
     params = 
@@ -362,12 +369,12 @@ User = Shelf.Model.extend
       dfr.resolve(rsp)
     return dfr.promise
 
-  removeFromList: (list) ->
+  removeFromList: (list, email = false) ->
     dfr = Q.defer()
     params = 
       username: process.env.MM_USER
       api_key: process.env.MM_PW
-      email: @get('email')
+      email: email ? @get('email')
     call = 
       url: 'https://api.madmimi.com/audience_lists/'+list+'/remove'
       method: 'post'

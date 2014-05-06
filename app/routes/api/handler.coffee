@@ -12,7 +12,13 @@ handler =
 		.then (me) ->
 			if me
 				req.me = me
-			next()
+			if req.query.admin?
+				req.me.getCapabilities()
+				.then (capable_me) ->
+					req.me = capable_me
+					next()
+			else
+				next()
 	finish: (req, res) ->
 		res.setHeader('Content-Type', 'application/json')
 		if not req.query.clean?

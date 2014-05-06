@@ -23,6 +23,7 @@ routes = (app) ->
 
 		# User
 		app.patch '/user', user.update
+		app.put '/user', user.update
 		app.post '/user/login', user.login
 		app.post '/user/reset', user.reset
 		app.post '/user/interest', user.add_interest

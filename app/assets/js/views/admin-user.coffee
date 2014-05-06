@@ -2,6 +2,7 @@ ap.Views.admin_user = XView.extend
 	events: 
 		'keyup .manifest-search': 'search'
 		'click #manifest-results tr': 'row_click'
+		'submit #admin-user-update': 'userInfo_submit'
 	initialize: ->
 		ap.api 'get user', {user_name: @options.extra}, (rsp) =>
 			@options.out = _.template @options.out, rsp.user
@@ -25,7 +26,6 @@ ap.Views.admin_user = XView.extend
 		country_select.on 'change', (e) =>
 			@regionSync()
 		@regionSync()
-
 	regionSync: ->
 		shell = $('#region-shell')
 		val = false
@@ -69,4 +69,12 @@ ap.Views.admin_user = XView.extend
 		else
 			ap.me.set('region', '')	
 
+	userInfo_submit: (e) ->
+		e.preventDefault()
+		el = $(e.currentTarget)
+		btn = _.btn($('.button', el), 'Saving...', 'Saved!')
+		form = el.formToJson()
+		form.admin = 1
+		ap.api 'put user', form, (rsp) ->
+			btn.finish()
 
