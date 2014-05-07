@@ -153,7 +153,6 @@ routes = (app) ->
 					.fetch()
 					.then (user) ->
 						user.set(post)
-						tk post
 						user.save()
 						.then (user) ->
 							if user.addressChanged
