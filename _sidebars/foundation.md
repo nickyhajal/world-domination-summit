@@ -2,4 +2,4 @@
 [Eligibility](/foundation#eligibility)
 [Selection](/foundation#selection)
 [How to Apply](/foundation#how-to-apply)
-[Contact Us](mailto:foundation@wds.fm)
+<a href="mailto:foundation@wds.fm">Contact Us</a>
