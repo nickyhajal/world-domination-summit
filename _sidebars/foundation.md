@@ -1,4 +1,4 @@
-[The Story](/foundation#story)
+[The Story](/#story)
 [Eligibility](/foundation#eligibility)
 [Selection](/foundation#selection)
 [How to Apply](/foundation#how-to-apply)
