@@ -12,6 +12,7 @@ clearCache = ->
 		rds.expire key, 0
 	clear('tpls_pages')
 	clear('tpls_parts')
+	clear('tpls_admin')
 	clear('tpls__content')
 	clear('tpls__sidebars')
 
