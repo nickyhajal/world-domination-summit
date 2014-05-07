@@ -28,7 +28,6 @@
     }
 
     Lunr.prototype._lunrInitialize = function() {
-      console.info('oieanston')
       var _coll;
       _coll = this;
       _coll._lunrFields = [];

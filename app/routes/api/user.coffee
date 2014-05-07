@@ -49,6 +49,10 @@ routes = (app) ->
 				.then (user) ->
 					user.getInterests()
 					.then (user) ->
+						user.getAllTickets()
+						.then (user) ->
+							res.r.user = user
+							next()
 						res.r.user = user
 						next()
 			, (err) ->
@@ -133,6 +137,14 @@ routes = (app) ->
 					else 
 						finish()
 
+		create: (req, res, next) ->
+			post = _.pick(req.query, User.prototype.permittedAttributes)
+			user = User.forge(post)
+			.save()
+			.then (new_user, err) ->
+				new_user.registerTicket('ADDED_BY_'+req.me.get('user_id'))
+				next()
+
 		update: (req, res, next) ->
 			post = _.pick(req.query, User.prototype.permittedAttributes)
 			if req.me
@@ -141,6 +153,7 @@ routes = (app) ->
 					.fetch()
 					.then (user) ->
 						user.set(post)
+						tk post
 						user.save()
 						.then (user) ->
 							if user.addressChanged
@@ -191,27 +204,6 @@ routes = (app) ->
 					else
 						res.r.msg = 'That reset request isn\'t valid'
 						res.status(401)
-
-		# Create a user
-		create: (req, res, next) ->
-				startUser = ->
-					new_user = _.pick(req.query, ['first_name', 'last_name', 'email', 'password'])
-					x = User.forge(new_user)
-					.save()
-					.then (new_user)->
-						# login user
-						new_user.login(req)
-						finishUser new_user
-					, (err) ->
-						res.statusCode = 400;
-						errors.push(err.message)
-						next()
-
-				finishUser = (user) ->
-					new User(userid: user.attributes.id).fetch().then (user) ->
-						res.r.user = user
-						next()
-				startUser()
 
 		add_interest: (req, res, next) ->
 			if req.me

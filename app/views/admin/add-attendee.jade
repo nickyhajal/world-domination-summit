@@ -1,0 +1,40 @@
+div(id="user-manifest-shell")
+	h1 Add an Attendee
+		a(href="/admin/manifest", class="back button") Back to Manifest
+	h3 Attendee Info
+	form(id="admin-add-user", method="post", action="#")
+		div(class="form-section")
+			div(class="form-box")
+				label First Name
+				input(name="first_name", type="text")
+			div(class="form-box")
+				label Last Name
+				input(name="last_name", type="text")
+			div(class="form-section")
+				div(class="form-box")
+					label E-Mail Address
+					input(type="text", name="email")
+			div(class="form-section")
+				div(class="form-box")
+					label Country
+					input(type="hidden", name="country", id="country-select", value="US")
+			div(class="form-section")
+				div(class="form-box")
+					label Address
+					input(type="text", name="address")
+				div(class="form-box")
+					label Address 2
+					input(type="text", name="address2")
+			div(class="form-section")
+				div(class="form-box")
+					label City
+					input(type="text", name="city")
+				div(class="form-box")
+					dive(id="region-shell")
+			div(class="form-section")
+				div(class="form-box")
+					label Zip
+					input(type="text", name="zip")
+			div(class="clear")
+			div(class="form-section")
+				input(type="submit", value="Add Attendee", class="button")

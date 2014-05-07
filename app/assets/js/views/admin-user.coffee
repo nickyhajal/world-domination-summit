@@ -1,14 +1,19 @@
 ap.Views.admin_user = XView.extend
+	ticketTimo: 0
 	events: 
 		'keyup .manifest-search': 'search'
 		'click #manifest-results tr': 'row_click'
 		'submit #admin-user-update': 'userInfo_submit'
+		'click .toggle-ticket': 'ticketToggle_click'
+		'click .do-toggle-ticket': 'doTicketToggle_click'
 	initialize: ->
 		ap.api 'get user', {user_name: @options.extra}, (rsp) =>
+			@user = new ap.User(rsp.user)
 			@options.out = _.template @options.out, rsp.user
 			@initRender()
 	rendered: ->
 		@initSelect2()
+		@initTickets()
 	initSelect2: ->
 		country_select = $('#country-select')
 		countries = []
@@ -69,6 +74,22 @@ ap.Views.admin_user = XView.extend
 		else
 			ap.me.set('region', '')	
 
+	initTickets: ->
+		if @user.get('attending'+ap.yr) is '1'
+			text = 'Attending WDS '+ap.year
+			clss = 'cancel-ticket'
+			action = 'Cancel'
+		else
+			text = 'Not Attending WDS '+ap.year
+			clss = 'enable-ticket'
+			action = 'Give'
+
+		$('.ticket-shell').html('
+			<div class="active-ticket">
+				<h4>'+text+'</h4>
+				<a href="#" class="'+clss+' toggle-ticket button">'+action+' Ticket</a>
+			</div>
+		')
 	userInfo_submit: (e) ->
 		e.preventDefault()
 		el = $(e.currentTarget)
@@ -77,4 +98,33 @@ ap.Views.admin_user = XView.extend
 		form.admin = 1
 		ap.api 'put user', form, (rsp) ->
 			btn.finish()
+
+	ticketToggle_click: (e) ->
+		e.preventDefault()
+		el = $(e.currentTarget)
+		el.removeClass('toggle-ticket')
+		el.addClass('do-toggle-ticket')
+		if el.hasClass('cancel-ticket')
+			action = 'Cancel'
+		else
+			action = 'Give'
+		$(el).html('Click Again to '+action)
+		@ticketTimo =  setTimeout ->
+			el.html(action+' Ticket')
+			el.addClass('toggle-ticket')
+			el.removeClass('do-toggle-ticket')
+		, 1200
+
+	doTicketToggle_click: (e) ->
+		e.preventDefault()
+		el = $(e.currentTarget)
+		clearTimeout(@ticketTimo)
+		if el.hasClass('cancel-ticket')
+			val = '-1'
+		else
+			val = '1'
+		@user
+		.set('attending14', val)
+		.save({attending14: val, admin: 1, user_id: @user.get('user_id')}, {patch: true})
+		@initTickets()
 
