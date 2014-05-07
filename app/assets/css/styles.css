@@ -864,6 +864,8 @@ input.search-input {
 }
 input.manifest-search {
     width:                      90% ! important;
+    font-size:                  18px ! important;
+    padding:                    12px ! important;
 }
 input.account-input {
     width:                      450px ! important;
@@ -1569,9 +1571,9 @@ table#manifests-results-shell thead th, table#manifests-results-shell tfoot th {
 }
 table#manifests-results-shell {
     border-spacing:             0px;
-    margin-top:                 40px;
     display:                    none;
     width:                      90%;
+    margin-top:                 1px;
 }
 #manifest-results tr td:first-of-type {
     text-align:                 left;
@@ -1593,6 +1595,7 @@ div#manifest-start {
     padding:                    70px 0px;
     text-align:                 center;
     font-size:                  21px;
+    width:                      90%;
 }
 div.user_name {
     font-size:                  10pt;
@@ -1603,6 +1606,37 @@ div.user_name {
     -ms-filter:                 "alpha(opacity=40)";
     filter:                     alpha(opacity=40);
     zoom:                       1;
+}
+nav.admin-nav a {
+    float:                      right;
+    font-size:                  14px;
+    padding:                    8px 16px;
+}
+nav.admin-nav {
+    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    padding:                    5px 60px 10px 2px;
+    margin-top:                 -50px;
+    margin-left:                -50px;
+    margin-bottom:              40px;
+    height:                     43px;
+}
+div.active-ticket h4 {
+    margin-top:                 0px;
+    font-weight:                normal;
+    text-align:                 center;
+}
+div.active-ticket {
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    width:                      300px;
+    padding:                    20px;
+}
+div.active-ticket a {
+    width:                      100% ! important;
+    display:                    block;
+    text-align:                 center;
+    margin-top:                 -8px;
+    padding:                    6px;
+    font-size:                  16px;
 }
 * {
     line-height:                inherit;

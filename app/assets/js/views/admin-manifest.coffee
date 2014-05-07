@@ -12,10 +12,10 @@ ap.Views.admin_manifest = XView.extend
 			@search(ap.lastSearch)
 			ap.lastSearch = false
 
-
 	search_keyup: (e) ->
 		val = $(e.currentTarget).val()
 		@search(val)
+
 	search: (val) ->
 		clearTimeout(@timo)
 		@timo = setTimeout ->
@@ -43,4 +43,6 @@ ap.Views.admin_manifest = XView.extend
 		user = $(e.currentTarget).data('user')
 		ap.navigate('admin/user/'+user)
 
+	whenFinished: ->
+		ap.lastSearch = $('.manifest-search').val()
 

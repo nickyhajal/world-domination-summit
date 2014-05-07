@@ -23,7 +23,7 @@ request = require('request')
 User = Shelf.Model.extend
   tableName: 'users'
   permittedAttributes: [
-    'user_id', 'type', 'email', 'first_name', 'last_name', 
+    'user_id', 'type', 'email', 'first_name', 'last_name', 'attending14',
     'email', 'hash', 'user_name', 'mf', 'twitter', 'facebook', 'site', 'pic', 
     'address', 'address2', 'city', 'region', 'country', 'zip', 'lat', 'lon', 'distance',
     'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake'
@@ -68,6 +68,9 @@ User = Shelf.Model.extend
 
     if @lastDidChange ['email']
       @syncEmail()
+
+    if @lastDidChange ['attending14']
+      @syncEmailWithTicket()
 
 
   ########
@@ -160,6 +163,7 @@ User = Shelf.Model.extend
   hasCapability: (capability) ->
     map = 
       user: 'manifest'
+      "add-attendee": 'manifest'
     capability = map[capability] ? capability
     if @get('capabilities')?
       for cap in @get('capabilities')
@@ -353,6 +357,15 @@ User = Shelf.Model.extend
     @removeFromList 'WDS '+process.year+' Attendees', @before_save['email']
     @addToList 'WDS '+process.year+' Attendees'
 
+  syncEmailWithTicket: ->
+    if @get('attending14') is '1'
+      @addToList 'WDS '+process.year+' Attendees'
+      @removeFromList 'WDS '+process.year+' Canceled'
+    else
+      @removeFromList 'WDS '+process.year+' Attendees'
+      @addToList 'WDS '+process.year+' Canceled'
+
+
   addToList: (list) ->
     dfr = Q.defer()
     params = 
@@ -375,7 +388,9 @@ User = Shelf.Model.extend
     params = 
       username: process.env.MM_USER
       api_key: process.env.MM_PW
-      email: email ? @get('email')
+      email: @get('email')
+    if email
+      params.email = email
     call = 
       url: 'https://api.madmimi.com/audience_lists/'+list+'/remove'
       method: 'post'

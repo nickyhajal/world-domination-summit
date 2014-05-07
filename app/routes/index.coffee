@@ -46,6 +46,7 @@ routes = (app) ->
 									me: me
 									hide_counter: counter
 									year: process.year
+									yr: process.yr
 									tpls: JSON.stringify(tpls)
 									provinces: JSON.stringify(provinces)
 									countries: JSON.stringify(countries)

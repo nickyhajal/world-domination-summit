@@ -22,8 +22,12 @@ routes = (app) ->
 		app.get '/content', content.get
 
 		# User
+		app.get '/me', user.me
+		app.get '/users', user.search
 		app.patch '/user', user.update
 		app.put '/user', user.update
+		app.get '/user', user.get
+		app.post '/user', user.create
 		app.post '/user/login', user.login
 		app.post '/user/reset', user.reset
 		app.post '/user/interest', user.add_interest
@@ -34,9 +38,6 @@ routes = (app) ->
 		app.get '/user/twitter/callback', user.twitter_callback
 		app.delete '/user/twitter', user.del_twitter
 		app.post '/user/tweet', user.send_tweet
-		app.get '/user', user.get
-		app.get '/users', user.search
-		app.get '/me', user.me
 
 		# Feed
 		app.post '/feed', feed.add
