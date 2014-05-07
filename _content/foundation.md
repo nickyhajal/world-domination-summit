@@ -11,6 +11,7 @@ Have a crazy project you want to bring to life? Want to take a trip around the e
 
 <a name="eligibility"></a>
 
+
 <div class="line-canvas"></div>
 
 ### Eligibility
@@ -18,6 +19,7 @@ Have a crazy project you want to bring to life? Want to take a trip around the e
 For our first year of the “Scholarships for Real Life” program, we’re opening the application only to those who have attended or will be attending a World Domination Summit. As the program progresses, we intend to open this up to a wider audience—so check back next year if you’re note currently eligible.
 
 <a name="criteria"></a>
+
 
 <div class="line-canvas"></div>
 
