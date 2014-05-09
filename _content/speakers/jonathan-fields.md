@@ -5,7 +5,7 @@ photo_head: https://farm3.staticflickr.com/2032/5807194798_2928ec745c_b.jpg,http
 
 # Jonathan Fields has been coming to WDS since year one. Whether speaking from the main stage, facilitating a conversation, or leading a workshop, attendees love interacting with him all weekend long.
 
-<div class="line-canvas"></div>
+<div class="zig-zags_blue"></div>
 
 **Jonathan Fields** is a dad, husband, lawyer turned serial entrepreneur, speaker, innovation and creativity catalyst and blogger at JonathanFields.com. His book, *Uncertainty: Turning Fear and Doubt Into Fuel for Brilliance* was released in 2011. And his last book, *Career Renegade: How to Make a Great Living Doing What You Love* was named a Top 5 Summer Read by MSNBC’s Your Money and a Top 10 Small Biz Book by Small Business Trends.
 
