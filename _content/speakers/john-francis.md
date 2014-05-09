@@ -5,7 +5,7 @@ photo_head: https://farm4.staticflickr.com/3743/9231403243_9fe13f2384_c.jpg
 
 # ![John Francis](http://imgs.wds.fm/john-francis-round.png) John Francis
 
-<div class="line-canvas"></div>
+<div class="zig-zags_blue"></div>
 
 **John Francis** is known the wold over as the Planetwalker, and is the author of *Planetwalker: 17-Years of Silence, 22-Years of Walking*, and *The Ragged Edge of Silence: Finding Peace in a Noisy World*, published by the National Geographic Society.
 
