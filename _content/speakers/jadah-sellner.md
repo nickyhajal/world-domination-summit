@@ -5,7 +5,7 @@ photo_head: https://farm8.staticflickr.com/7354/9226384009_af4939368e_c.jpg
 
 # ![Jadah Sellner](http://imgs.wds.fm/jadah-sellner-round.png)Jadah Sellner
 
-<div class="line-canvas"></div>
+<div class="zig-zags_blue"></div>
 
 **Jadah Sellner** is a super-powered community-building strategist, marketing visionary, and the co-founder of Simple Green Smoothies, where her 30-Day Green Smoothie Challenge has empowered over 500,000 people to say yes to their health.
 
