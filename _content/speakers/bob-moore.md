@@ -5,7 +5,7 @@ photo_head: https://farm4.staticflickr.com/3789/9229138128_e73eed09da_c.jpg,http
 
 # Bob Moore is passionate about whole grains and investing in his employees. He shared his story about creating Bob's Red Mill and how important it is to put people before profit.
 
-<div class="line-canvas"></div>
+<div class="zig-zags_blue"></div>
 
 **Bob Moore’s** journey began serendipitously in the mid 1960s after coming across a book about old stone-grinding flour mills. His enthusiasm was immediate. Equipped with several sets of millstones from an old North Carolina water- powered flour mill, Bob and his wife, Charlee, began their first mill in Redding, California.
 
