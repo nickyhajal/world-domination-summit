@@ -5,7 +5,7 @@ photo_head: https://farm9.staticflickr.com/8025/7523487602_f85c11bac8_c.jpg,http
 
 # Scott tells the story behind the rise of the successful charity: water organization, which aims to bring clean drinking water to millions of people around the world, and challenged us all to give up something as simple as a birthday in support of his efforts.
 
-<div class="line-canvas"></div>
+<div class="zig-zags_blue"></div>
 
 Scott spent ten years as a nightclub promoter in New York City before leaving to volunteer on a hospital ship off the coast of Liberia, Africa as a volunteer photojournalist. Returning home to New York City two years later, he founded the non-profit organization charity: water in 2006. Turning his full attention to the global water crisis and the one billion people without clean water to drink, he created public installations and innovative online fundraising platforms to spread international awareness of the issue.
 
