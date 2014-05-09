@@ -5,7 +5,7 @@ photo_head: https://farm3.staticflickr.com/2179/5798014276_2c0698db3b_b.jpg,http
 
 # Danielle LaPorte spoke in 2011, then returned to lead workshops in both 2012 an 2013. Emergency response teams were standing by all three years.
 
-<div class="line-canvas"></div>
+<div class="zig-zags_blue"></div>
 
 Danielle LaPorte is the outspoken creator of WhiteHotTruth.com, which has been called “the best place on-line for kick-ass spirituality.” She is the author The Fire Starter Sessions: A Digital Experience for Entrepreneurs.
 
