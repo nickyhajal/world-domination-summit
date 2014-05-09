@@ -5,7 +5,7 @@ photo_head: https://farm9.staticflickr.com/8167/7525314368_8d65e6b786_c.jpg,http
 
 # "Let's get stuff done!" In his talk, Scott Belksy shared how to make ideas happen. It's not about being creative—it's about CREATING.
 
-<div class="line-canvas"></div>
+<div class="zig-zags_blue"></div>
 
 **Scott Belsky** has committed his professional life to help organize creative individuals, teams, and networks. Belsky is the co-founder and CEO of Behance, a company on a mission to organize and empower the creative world. Behance is the leading online platform to showcase and discover creative work, and serves as the backbone for AdWeek, LinkedIn, and thousands of other portfolio sites and online galleries of creative talent. Millions of people use Behance to display and find talent every month. Behance also runs the 99U think tank and conference, an annual gathering of creative leaders focused on the execution of ideas.
 
