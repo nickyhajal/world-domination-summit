@@ -5,4 +5,4 @@
 [RevolutionU](/academies#revolutionu)
 [Making Art](/academies#making-art)
 [Art of Simple](/academies#art-of-simple)
-[BUsiness Idea](/academies#business-idea)
+[Business Idea](/academies#business-idea)
