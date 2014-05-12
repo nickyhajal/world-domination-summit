@@ -130,6 +130,7 @@ Good question! Think of it like doing The Wave at a sports arena, except with yo
 We’ll have an unsecured storage area for you to leave a small bag of personal items. Make sure you come with your bag marked, and please leave anything very valuable at home. We’ll have volunteers watching the bag area, but it will not be fully secured.
 
 **Can I bring my friends/family?**
+
 Yes. Not only yes, but please do. Just make sure they have a ticket so we have a mat for them. This a “fun for all ages” event, and the more people you bring, the bigger the record and, of course, your sense of pride!
 
 <a href="https://www.eventbrite.com/e/the-great-namaste-tickets-11603603691" class="button">Register &rarr;</a>
