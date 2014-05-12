@@ -1,1 +1,7 @@
+[The Great Namaste](/2014-world-record#namaste)
+[What It's All About](/2014-world-record#about)
+[How to Participate](/2014-world-record#participate)
+[What to Bring](/2014-world-record#bring)
+[Waiver + Disclaimer](/2014-world-record#waiver)
+[FAQ](/2014-world-record#faq)
 [Register](https://www.eventbrite.com/e/the-great-namaste-tickets-11603603691)
