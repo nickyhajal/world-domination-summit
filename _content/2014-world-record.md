@@ -83,7 +83,7 @@ The World Domination Summit—and any of its affiliated partners or members—wi
 
 Lastly, we're going to do everything we can to break the record, but we can't 100% guarantee it will happen. We need everyone to show up! In the unlikely event we don't break it, we'll plan to try again.
 
-<a name="faq"
+<a name="faq">
 
 <div class="line-canvas"></div>
 
