@@ -29,6 +29,8 @@ Actually, you probably would. You seem like the adventurous type who understands
 
 With that, I’d like to welcome you to *The Great Namaste*.
 
+<a href="https://www.eventbrite.com/e/the-great-namaste-tickets-11603603691" class="button">Register &rarr;</a>
+
 <a name="about"></a>
 
 <div class="line-canvas"></div>
