@@ -75,7 +75,8 @@ What to bring:
 
 <div class="line-canvas"></div>
 
-### Waiver And Disclaimer (The Lawyers Said We Had To…)
+### Waiver And Disclaimer
+#### (The Lawyers Said We Had To…)
 
 There aren’t a lot of risks involved in an event like this, but the lawyers tell us we’re supposed to make it very clear that your participation is strictly “at your own risk.”
 
