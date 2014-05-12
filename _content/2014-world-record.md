@@ -6,7 +6,7 @@ sidebar: namaste
 
 # You'd better believe we're coming back this year with another world record attempt. This year, we're tackling the world's longest yoga chain.
 
-<a name="namaste">
+<a name="namaste"></a>
 
 <div class="zig-zags_blue"></div>
 
@@ -29,7 +29,7 @@ Actually, you probably would. You seem like the adventurous type who understands
 
 With that, I’d like to welcome you to *The Great Namaste*.
 
-<a name="about">
+<a name="about"></a>
 
 <div class="line-canvas"></div>
 
@@ -47,7 +47,7 @@ A fun event like this is the perfect marriage of community and adventure—two o
 
 In the spirit of service, we’ll be working with local yoga-based nonprofits that serve the Portland community.
 
-<a name="participate">
+<a name="participate"></a>
 
 <div class="line-canvas"></div>
 
@@ -59,7 +59,7 @@ In fact, you don’t need to know or have prior yoga experience to participate. 
 
 As you can see, there’s a small cost of $15 to participate. Your admission fee includes a fun WDS yoga mat—no need to bring your own—and helps us to cover the cost of organizing the event. This is not a for-profit event.
 
-<a name="bring">
+<a name="bring"></a>
 
 <div class="line-canvas"></div>
 
@@ -71,7 +71,7 @@ What to bring:
 * A friend! It’s more fun to break world records with friends.
 * An adventurous attitude
 
-<a name="waiver">
+<a name="waiver"></a>
 
 <div class="line-canvas"></div>
 
@@ -84,7 +84,7 @@ The World Domination Summit—and any of its affiliated partners or members—wi
 
 Lastly, we're going to do everything we can to break the record, but we can't 100% guarantee it will happen. We need everyone to show up! In the unlikely event we don't break it, we'll plan to try again.
 
-<a name="faq">
+<a name="faq"></a>
 
 <div class="line-canvas"></div>
 
