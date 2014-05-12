@@ -64,25 +64,31 @@ Lastly, we're going to do everything we can to break the record, but we can't 10
 
 Some of the most popular questions (and their attempted answers):
 
-Is it okay if I don’t know how to do yoga?
+**Is it okay if I don’t know how to do yoga?**
+
 Yes. Whether you’re a seasoned pro, a beginner, or hardly know what yoga is, you can be a part of The Great Namaste. Our instructors and volunteers will show you everything you need to know to participate, and we’ll have a round of practice as a whole group. We’d love to have you join us for this once-in-a-lifetime experience.
 
-What if I don’t have a yoga mat?
+**What if I don’t have a yoga mat?**
+
 This is no problem at all. Your entry fee includes a yoga mat, and you can take it home with you when you’re done. You’ll never have to ask, “What if I don’t have a yoga mat?” again.
 
-Can I bring my own mat?
+**Can I bring my own mat?**
+
 Feel free to bring a mat down, but please understand you will probably not be able to use it. This is because we are providing mats for everyone, and we’ll be arranging them into a color-coded  art form (you know, to make our world record attempt even more awesome). So we’ll be requiring everyone to use our mats in order to preserve the quality of the art. But it never hurts to have a spare.
 
-Will I have fun if I don’t know anyone there?
+**Will I have fun if I don’t know anyone there?**
+
 That’s kind of the whole point, right? We can all be a little shy at times, but this is an inclusive event where participants are coming from all over the world. And their goal is to have fun and meet you.
 If you want to meet some new friends who think big like you, this is a great place to do it. Or, if you just want to come be a part of the fun without feeling the pressure to socialize, that’s possible, too. Yoga really is for everyone.
 
-Will the weather be good?
+**Will the weather be good?**
+
 This is Oregon, so we really can’t promise anything. But we can’t remember the last time it rained on July 11. No really, we can’t remember at all; so we looked it up. The average rainfall for the month of July in Portland is 0.08 inches. That works out to less than .0026 inches for July 11.
 
 In other words, less rain than sweat on your brow from a yoga pose. We expect it to be quite dry!
 
-Will this actually work? Will you break the record?
+**Will this actually work? Will you break the record?**
+
 Only if you show up! This is another variable we cannot guarantee, but if you’re wondering if this is legit, let us assure you, it is. In fact, learn about the 600 people that helped us [break a world record](/2013-world-record) in 2013.
 
 <a href="https://www.eventbrite.com/e/the-great-namaste-tickets-11603603691" class="button">Register &rarr;</a>
