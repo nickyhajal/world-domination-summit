@@ -5,7 +5,7 @@ photo_head: https://farm8.staticflickr.com/7432/9226362293_5e07e0afb8_c.jpg,http
 
 # Nancy Duarte is a specialist in persuasion and magic. She explained how stories can… and have changed the world. 
 
-<div class="line-canvas"></div>
+<div class="zig-zags_blue"></div>
 
 Nancy Duarte is a communication expert who has been featured in *Fortune*, *Forbes*, *Fast Company*, *Wired*, *Wall Street Journal*, *New York Times*, *LA Times* and on CNN. Her firm, Duarte, Inc., is the global leader behind some of the most influential visual messages in business and culture and has created.
 

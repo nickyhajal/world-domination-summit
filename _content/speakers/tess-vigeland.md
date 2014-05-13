@@ -5,7 +5,7 @@ photo_head: https://farm8.staticflickr.com/7298/9239561833_4d4337759e_c.jpg,http
 
 # Tess Vigeland was remarkable—even without a bathtub full of kittens. A veteran journalist from NPR's Marketplace Money, she wowed us with a talk on giving up a sure thing for the chance to pursue a dream.
 
-<div class="line-canvas"></div>
+<div class="zig-zags_blue"></div>
 
 **Tess Vigeland** is a veteran journalist, and a well-known voice to millions of American radio listeners. She spent eleven years with the nationally-syndicated public radio business program Marketplace. There she hosted the daily business newscast Marketplace Morning Report and the weekly personal finance show Marketplace Money, interviewing politicians, business leaders, and celebrities, about finance and the economy.
 

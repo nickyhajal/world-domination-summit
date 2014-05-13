@@ -5,7 +5,7 @@ photo_head: https://farm6.staticflickr.com/5527/9226361671_bf39225e1b_c.jpg,http
 
 # The original Problogger, Darren Rowse arrived from Australia with his team of Aussie empire builders. He also challenged us to lead an unconventional life and follow a dream… from zero to hero.
 
-<div class="line-canvas"></div>
+<div class="zig-zags_blue"></div>
 
 In 2002, **Darren Rowse** started his first ever blog, not knowing that what would start as a personal hobby site would grow into a full time profession and business. Since that time, Darren has been involved in publishing numerous blogs but now focuses his time editing Digital Photography School and ProBlogger.
 
