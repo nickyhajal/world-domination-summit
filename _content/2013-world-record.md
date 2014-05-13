@@ -4,7 +4,7 @@ photo_head: https://farm3.staticflickr.com/2824/9219164399_e166f8f41f_c.jpg,http
 
 ## 2013 World Record
 
-# The World Float was, in a word, epic. 620 people on the Willamette River, holding hands and have a blast. Could you ask for more? We did. Can we get a world record up in here?
+# The World Float was, in a word, epic. 620 people on the Willamette River, holding hands and having a blast. Could you ask for more? We did. Can we get a world record up in here?
 
 <div class="zig-zags_blue"></div>
 
