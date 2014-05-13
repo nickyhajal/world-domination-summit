@@ -48,20 +48,65 @@ Registration for academies is separate from WDS itself. We'll offer registration
 <div class="line-canvas"></div>
 
 <div class="collapsable-box collapsable-box-open">
-	<a href="#"><h4>Nerd Fitness Day Camp</h4></a>
+	<a href="https://www.eventbrite.com/e/wds-academy-nerd-fitness-with-steve-kamb-tickets-11556996287"><h4>Nerd Fitness Live</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
 	Hosted by Steve Kamb
-	<a href="#" class="button">Tickets &rarr;</a>
+	<a href="https://www.eventbrite.com/e/wds-academy-nerd-fitness-with-steve-kamb-tickets-11556996287" class="button">Tickets &rarr;</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
-		Whether you’re interested in learning strength training, yoga, parkour, becoming a better runner, or just spending a long weekend with friends you’ve gotten to know through the Nerd Fitness community, we’ve got you covered. It's kind of like a combination having fun with friends and learning new things about fitness and health.  This will not be a rigorous, intensive exercise all-day bootcamp, nor will it be a typical seminar where you sit in one room all day and listen to people talk for 10 hours.
+		Nerd Fitness Academy Live will help you develop the skills you need to become a real life superhero. We’ll start by training our minds to process a totally different approach to fitness—one that breaks the rampant boom and bust fitness trends and leads to long-term sustainable habit change. We’ll then talk about how simple, small changes in our diet can “level up” our nutrition (and allow each attendee to achieve new personal results they didn’t think were really possible). Finally, we’ll demonstrate and perform a strength training workout that you can do ANYWHERE in the world. Everything we teach and share is based around the philosophy that we are normal, everyday people wanting a fun, sustainable, and genuine way to lead better lives together.
 
 		<h4>About Steve Kamb</h4>
-		Steve is NOT a fitness expert. Although he obtained a basic personal training certification from AAAI a few years back, and has dedicated the past decade of his life to this stuff, his perspective comes from a normal guy down in the trenches with you – a nerd who sits at a computer all day long, loves to play video games, and really enjoys staying active while pushing himself to be in the best shape he can be.
+		Steve Kamb is the creator and leader of NerdFitness.com, a fitness community dedicated to helping average Joes and desk jockeys live healthier lives. Over the past five years, he's taken Nerd Fitness from a simple one-man blog and developed it into a passionate “rebellion” of over 190,000 email subscribers, with hundreds joining the cause every day. While teaching others to get healthy, he's also managed to complete some pretty cool quests: exploring the ruins of Machu Picchu in Peru and Angkor Wat in Cambodia, diving with sharks on the Great Barrier Reef, flying a stunt plane in New Zealand, and living like James Bond in Monte Carlo.
 	</div>
 </div>
 
+
+<a name="language-lab"></a>
+
+
+<div class="collapsable-box collapsable-box-open">
+	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029"><h4>Language Lab: Learn How to Hack Any Language and Speak it Today</h4></a>
+	<h5>9:00 am–4:00 pm</h5>
+	Hosted by Bennie Lewis
+	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029" class="button">Tickets &rarr;</a>
+	<div class="collapsable-content">
+		<h4>Summary</h4>
+		"Some day" you'll learn a new language? Make "some day" TODAY. We will be tackling your doubts, and then giving you the hacks you need to have a basic conversation in any language you may want to learn, by the end of the lab. Then you will open up a whole new world, unreachable by English alone, and have the tools to skyrocket towards fluency after WDS. Anyone at any age can learn any language in the world. Talent is irrelevant.
+
+By the end of this Academy all language doubts will be squashed. Find out why adults are BETTER language learners than children, how to learn your language even if you are busy, and especially how to do it even if you can't travel abroad.
+		
+		<h4>About Bennie Lewis</h4>
+		Benny Lewis failed in language learning when growing up—getting a C in German, and spending six entire months living in Spain without able to ask the most basic questions in Spanish. But then everything changed! He now speaks 12 languages and runs the world's largest blog about language learning, "Fluent in 3 Months" and has this year released a book of the same title that became an instant international best seller. His travels through language learning have also earned him the title of National Geographic's Traveler of the Year.
+	</div>
+</div>
+
+
 <div class="zig-zags_blue"></div>
+
+
+<a name="revolutionu"></a>
+
+### Friday, July 11
+
+<div class="line-canvas"></div>
+
+<div class="collapsable-box collapsable-box-open">
+	<a href="https://www.eventbrite.com/e/wds-academy-revolutionu-with-jonathan-fields-tickets-11557391469"><h4>RevolutionU: How to Tap Revolution-Dynamics to Fuel Rapid Business Growth, Build an Army of Evangelists and Change the Damn World</h4></a>
+	<h5>3:00 pm–6:00 pm</h5>
+	Hosted by Jonathan Fields
+	<a href="https://www.eventbrite.com/e/wds-academy-revolutionu-with-jonathan-fields-tickets-11557391469" class="button">Tickets &rarr;</a>
+	<div class="collapsable-content">
+		<h4>Summary</h4>
+		In this WDS Academy, Fields will reveal the entire 18-step RevolutionU Framework, a highly-detailed, immediately-actionable roadmap to engineer your own business revolution, whether you’re just starting up or you need to breathe new life into your organization, venture or brand. Imagine how it will feel to fuel your business with the power of revolution.
+
+		<h4>About the Jonathan Fields</h4>
+		Nobody had any idea award-winning author, serial entrepreneur and Good Life Project founder, Jonathan Fields, was working on this. Not even his closest friends. Until he revealed it for the first time at an invite-only event just last year. When he did, jaws dropped.
+
+For years, Jonathan had been working in secret to deconstruct the key elements of nonviolent revolution and figure out how to apply them to entrepreneurship. Adding evangelist growth mechanics, social technology, response marketing, social dynamics and entrepreneurship to the mix, pieces of the puzzle began to fall into place. And by mid-2013, he'd developed an integrated, robust "business revolution" framework capable of fueling entrepreneurial movements that hold the potential for exponential growth and impact.
+	</div>
+</div>
+
 
 <a name="making-art"></a>
 ### Monday, July 15
@@ -96,26 +141,24 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 		Just what is “simple living,” anyway? And why does it seem to hard to… well, do? Conventional culture often defines living simply with a bunch of rules: shun the TV, ride only your bike, grow your own food, shower only when others complain. But the real definition is delightfully freeing, and it can be fleshed out in any lifestyle, at any age, at any place in the world. In this workshop, we’ll explore what living simply might look like for you. First, we’ll relish in the real definition of simple living. Then, you’ll find time and space to deconstruct parts of your life, followed by freedom to reassemble them using a new-to-you blueprint. Roll up your sleeves and treat yourself to a morning/an afternoon of personal reflection, brainstorming, and if you want, a chance to bounce around some fresh ideas on the nuts and bolts of making it all work. (Introverts who thrive on solo reflection are just as welcome as extroverts who need to chat it all out.) Bring your journal and a pencil for this one.
 
 		<h4>About Tsh Oxenreider</h4>
-		Tsh Oxenreider is passionate about people living simply so that others can simply live, and also firmly believes that a passport is one of life's greatest textbooks. She's the author of three books, including the new "Notes From a Blue Bike: The Art of Living Intentionally in a Chaotic World," and is the founder and chief spearheader of TheArtofSimple.net, a community blog about simple living. Tsh and her family travel frequently, but right now they live in beautiful Bend, Oregon.
+		Tsh Oxenreider is passionate about people living simply so that others can simply live, and also firmly believes that a passport is one of life's greatest textbooks. She's the author of three books, including the new *Notes From a Blue Bike: The Art of Living Intentionally in a Chaotic World*, and is the founder and chief spearheader of TheArtofSimple.net, a community blog about simple living. Tsh and her family travel frequently, but right now they live in beautiful Bend, Oregon.
 	</div>
 </div>
 
-<a name="long-term-travel"></a>
+<a name="business-idea"></a>
 <div class="line-canvas"></div>
 
 <div class="collapsable-box collapsable-box-open">
-	<a href="https://www.eventbrite.com/e/wds-academy-the-nuts-and-bolts-of-long-term-travel-tickets-11448588035"><h4>The Nuts and Bolts of Long-Term Travel</h4></a>
+	<a href="https://www.eventbrite.com/e/wds-academy-finding-and-refining-a-great-business-idea-with-fizzle-tickets-11584159533"><h4>Finding and Refining a Great Business Idea</h4></a>
 	<h5>1:00 pm–5:00 pm</h5>
-	Hosted by Jodi Ettenberg
-	<a href="https://www.eventbrite.com/e/wds-academy-the-nuts-and-bolts-of-long-term-travel-tickets-11448588035" class="button">Tickets &rarr;</a>
+	Hosted by Fizzle
+	<a href="https://www.eventbrite.com/e/wds-academy-finding-and-refining-a-great-business-idea-with-fizzle-tickets-11584159533" class="button">Tickets &rarr;</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
-		This Academy provides a thorough crash course for those looking to travel long term. It aggregates the many moving pieces that go into planning a life travel—from the why, to the how, to the practical concerns when you are on the road—and for each, provides case studies and resources. With other experts in the field stopping in as guest speakers during the Academy, attending will arm you with the knowledge you need to confidently embark on a long journey, while also ensuring that we cover the downsides and risks to provide a 360 degree snapshot. This Academy is also useful for those interested in shorter-term travel, as it will provide a solid foundation for planning trips of all kinds.
+		If you're searching for a great business idea or looking for ways to make your current idea much more compelling, this WDS Academy from the guys behind Fizzle is for you. You'll learn how to spot great business opportunities and how to turn a potentially common idea into a unique and powerful solution for a group of customers you care deeply about.
 
-		<h4>About Jodi Ettenberg</h4>
-		Jodi Ettenberg is a former lawyer who quit her job in 2008 to travel the world. Now a writer, photographer and soup eater, she shares the stories behind the foods we eat on her site, Legal Nomads. Funding her lifestyle through a mixture of freelance writing, creative merchandise relating to the Legal Nomads brand and consulting work, she often speaks about successful career transitions and unconventional living.
-
-She gets the shakes if she goes too long without sticky rice.
+		<h4>About the Fizzle Team</h4>
+		Fizzle is training and community for independent creatives and entrepreneurs building their thing online. The entire Fizzle team will be leading this session, including Corbett Barr, Chase Reeves, Caleb Wojcik and Barrett Brooks. We've built successful businesses and grappled with failures. Through our work with thousands of entrepreneurs we've identified a unique approach to finding and refining business ideas that will give any entrepreneur a better shot at earning a living doing something you love.
 	</div>
 </div>
 -->

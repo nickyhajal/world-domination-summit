@@ -5,7 +5,7 @@ photo_head: https://farm8.staticflickr.com/7118/7532100674_c43a5e961a_c.jpg,http
 
 # "The path to a passionate life is often way more complex than the simple advice 'follow your passion' would suggest." Cal argues that this common saying is astonishingly wrong.
 
-<div class="line-canvas"></div>
+<div class="zig-zags_blue"></div>
 
 Cal Newport is a writer and an assistant professor of Computer Science at Georgetown University. In his writing, Newport applies a systematic approach to decoding patterns of success.
 

@@ -5,7 +5,7 @@ photo_head: https://farm8.staticflickr.com/7444/9231360227_ef972e9c3a_c.jpg,http
 
 # Gretchen Rubin taught us how to be happy… even if you don't like to sing in the morning, read Aristotle, or clean your closet.
 
-<div class="line-canvas"></div>
+<div class="zig-zags_blue"></div>
 
 **Gretchen Rubin** is the author of the blockbuster New York Times bestsellers, *Happier at Home* and *The Happiness Project*, accounts of her experiences test-driving the wisdom of the ages, current scientific studies, and lessons from popular culture about how to be happier.
 

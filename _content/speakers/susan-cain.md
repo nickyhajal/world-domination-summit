@@ -5,7 +5,7 @@ photo_head: https://farm8.staticflickr.com/7251/7523489364_2d57cb687f_c.jpg,http
 
 # What is introversion? How are introverts different than extroverts? Susan Cain and interviewer Jonathan Fields explored the implications of introversion in the modern world.
 
-<div class="line-canvas"></div>
+<div class="zig-zags_blue"></div>
 
 **Susan Cain** is the author of the instant New York Times bestseller *QUIET: The Power of Introverts in A World That Can’t Stop Talking*, which has been translated into more than 20 languages. Her writing on introversion and shyness has appeared in the *The New York Times*; The Dallas Morning News; *O, The Oprah Magazine*; Time.com; and on PsychologyToday.com.
 

@@ -5,7 +5,7 @@ photo_head: https://farm3.staticflickr.com/2860/9231321231_644547d47c_c.jpg,http
 
 # Jia Jiang taught us to embrace rejection, not fear it. Can rejection be a love story? To overcome his fear of pain and rejection, Jia Jiang started a 100-day "rejection therapy" project. He showed us how to try new things with confidence.
 
-<div class="line-canvas"></div>
+<div class="zig-zags_blue"></div>
 
 **Jia Jiang** is an entrepreneur and blogger who lives in Austin, Texas. As a teenager in China, he met Bill Gates, which inspired him to come to the United States to pursue his dream of entrepreneurship.
 
