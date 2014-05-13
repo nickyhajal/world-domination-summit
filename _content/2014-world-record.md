@@ -1,5 +1,5 @@
 icon: namaste
-photo_head: https://farm4.staticflickr.com/3709/9229134668_541866be9a_b.jpg
+photo_head: https://farm9.staticflickr.com/8015/7523490756_2093fc5762_b.jpg,https://farm4.staticflickr.com/3709/9229134668_541866be9a_b.jpg
 sidebar: namaste
 
 ## 2014 World Record
