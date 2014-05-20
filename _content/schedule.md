@@ -7,7 +7,7 @@ icon: parachute
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Friday</div>
 		<div class="main-schedule-time">8:00AM–11:00AM</div>
-		<div class="main-schedule-descr">World Record Attempt</div>
+		<div class="main-schedule-descr">[World Record Attempt](/2014-world-record)</div>
 		<div class="main-schedule-time">12:00PM–3:00PM</div>
 		<div class="main-schedule-descr">Registration</div>
 		<div class="main-schedule-time">7:00PM–10:00PM</div>
