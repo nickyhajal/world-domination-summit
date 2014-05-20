@@ -61,6 +61,8 @@ In fact, you don’t need to know or have prior yoga experience to participate. 
 
 As you can see, there’s a small cost of $15 to participate. Your admission fee includes a fun WDS yoga mat—no need to bring your own—and helps us to cover the cost of organizing the event. This is not a for-profit event.
 
+<a href="https://www.eventbrite.com/e/the-great-namaste-tickets-11603603691" class="button">Register &rarr;</a>
+
 <a name="bring"></a>
 
 <div class="line-canvas"></div>
