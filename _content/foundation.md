@@ -59,19 +59,9 @@ Our selection committee will be looking at a number of factors to determine whic
 
 <div id="foundation-app-box" class="orange-box">
 	<h3>I'm in! How do I apply?</h3>
-	<p>Please complete the application below no later than 5:00pm PST on Friday, May 16, 2014.</p>
-	<p>If you have any questions, please contact Katie Hurst at <a href="mailto:foundation@wds.fm">foundation@wds.fm</a>.</p>
-	<p>Applicants will be able to request their own award amount, ranging between $5,000–$25,000.</p>
-
-	<h4>Downloads</h4>
-	<a href="http://worlddominationsummit.com/scholarship-budget-worksheet.xlsx" class="button">Budget Worksheet</a>
-	<a href="http://worlddominationsummit.com/sample-timeline.xlsx" class="button">Timeline Worksheet</a>
-</div>
-
-<div class="line-canvas"></div>
-
-<div id="wufoo-zts2y6k0pg4k7g">
-Fill out my <a href="https://worlddominationsummit.wufoo.com/forms/zts2y6k0pg4k7g">online form</a>.
+	<p><strong>So sorry we missed you!</strong> Applications for the Scholarship for Real Life program are currently closed.</p>
+	<p>If you would like to be notified when applications open for 2015, please email <a href="mailto:foundation@wds.fm">foundation@wds.fm</a> with your contact information.</p>
+	<p>Thank you everyone who submitted! Stay tuned for updates on our first class of Voyagers!</p>
 </div>
 <script type="text/javascript">var zts2y6k0pg4k7g;(function(d, t) {
 var s = d.createElement(t), options = {
