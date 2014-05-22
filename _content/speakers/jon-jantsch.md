@@ -3,7 +3,7 @@ photo_head: https://farm8.staticflickr.com/7438/9242331680_8926700e54_b.jpg
 
 ## 2014 Speaker
 
-![Jon Jantsch](http://imgs.wds.fm/jon-jantsch-round.png) # Jon Jantsch
+# ![Jon Jantsch](http://imgs.wds.fm/jon-jantsch-round.png) Jon Jantsch
 
 <div class="zig-zags_blue"></div>
 
