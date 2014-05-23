@@ -4,7 +4,7 @@ photo_head: https://farm8.staticflickr.com/7381/9226363615_e3d570a7f6_b.jpg,http
 
 # 3,000 attendees from dozens of countries are coming to Portland for the fourth annual World Domination Summit in July. Want to help?
 
-<div class="zigzags_blue"></div>
+<div class="zig-zags_blue"></div>
 
 Our entire team is composed of volunteers and has been working for a year to prepare. For the big weekend, we’ll be recruiting additional help. You’ll work directly with the WDS organizers in serving our attendees by making them feel welcome and ensuring that everything runs smoothly. Rewards include fame, pizza, and your very own Ambassador t-shirt! 
 
@@ -12,4 +12,4 @@ Our entire team is composed of volunteers and has been working for a year to pre
 
 To be considered for a spot, please fill out the application below.
 
-<div class="line_canvas"></div>
+<div class="line-canvas"></div>
