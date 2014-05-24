@@ -194,7 +194,7 @@ We want you to apply now...
 
 Name  | Available Values
 ------------- | -------------
-icon  | globe, parachute, suitcase, pin, theater, moon, chat, namaste, compass, fork, mic, moon, trail, beer, tree, bulb, map
+icon  | globe, parachute, suitcase, pin, theater, moon, chat, namaste, compass, fork, mic, moon, trail, beer, tree, bulb, map, plane, hands, camera, coins
 sidebar  | Any sidebar file-name in `_sidebars`
 photo_head | A comma-separated list of image URLs
 
