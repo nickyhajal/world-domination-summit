@@ -13,3 +13,30 @@ Our entire team is composed of volunteers and has been working for a year to pre
 To be considered for a spot, please fill out the application below.
 
 <div class="line-canvas"></div>
+
+So, you want to apply to be a WDS 2014 Ambassador? Awesome! Just fill out this brief form and tell us a little about yourself. 
+
+We do have a couple requirements that you must meet to be considered: (1) You must live in (or very close to) Portland, Oregon and (2) you must be available as a volunteer from 7am Friday, July 11th through 10pm Sunday, July 14th. We will also be hosting an Ambassador Orientation the evening of Monday, July 7th that you must attend. 
+
+Rock on, 
+The WDS Action Team
+
+<div id="wufoo-q8ejno60uybw98">
+Fill out my <a href="https://worlddominationsummit.wufoo.com/forms/q8ejno60uybw98">online form</a>.
+</div>
+<script type="text/javascript">var q8ejno60uybw98;(function(d, t) {
+var s = d.createElement(t), options = {
+'userName':'worlddominationsummit',
+'formHash':'q8ejno60uybw98',
+'autoResize':true,
+'height':'2241',
+'async':true,
+'host':'wufoo.com',
+'header':'show',
+'ssl':true};
+s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+s.onload = s.onreadystatechange = function() {
+var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+try { q8ejno60uybw98 = new WufooForm();q8ejno60uybw98.initialize(options);q8ejno60uybw98.display(); } catch (e) {}};
+var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, 'script');</script>
