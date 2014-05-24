@@ -16,7 +16,10 @@ To be considered for a spot, please fill out the application below.
 
 So, you want to apply to be a WDS 2014 Ambassador? Awesome! Just fill out this brief form and tell us a little about yourself. 
 
-We do have a couple requirements that you must meet to be considered: (1) you must live in (or very close to) Portland, Oregon and (2) you must be available as a volunteer from 7am Friday, July 11th through 10pm Sunday, July 14th. We will also be hosting an Ambassador Orientation the evening of Monday, July 7th that you must attend. 
+We do have a couple requirements that you must meet to be considered: 
+
+1. You must live in (or very close to) Portland, Oregon and 
+2. you must be available as a volunteer from 7am Friday, July 11th through 10pm Sunday, July 14th. We will also be hosting an Ambassador Orientation the evening of Monday, July 7th that you must attend. 
 
 Rock on, 
 The WDS Action Team
