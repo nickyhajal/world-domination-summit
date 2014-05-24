@@ -2,7 +2,7 @@ photo_head: https://farm8.staticflickr.com/7381/9226363615_e3d570a7f6_b.jpg,http
 
 ## Ambassadors
 
-# 3,000 attendees from dozens of countries are coming to Portland for the fourth annual World Domination Summit in July. Want to help?
+# Nearly 3,000 attendees from dozens of countries are coming to Portland for the fourth annual World Domination Summit in July. Want to help?
 
 <div class="zig-zags_blue"></div>
 
@@ -16,10 +16,6 @@ To be considered for a spot, please fill out the application below.
 
 So, you want to apply to be a WDS 2014 Ambassador? Awesome! Just fill out this brief form and tell us a little about yourself. 
 
-We do have a couple requirements that you must meet to be considered: (1) You must live in (or very close to) Portland, Oregon and (2) you must be available as a volunteer from 7am Friday, July 11th through 10pm Sunday, July 14th. We will also be hosting an Ambassador Orientation the evening of Monday, July 7th that you must attend. 
-
-Rock on, 
-The WDS Action Team
 
 <div id="wufoo-q8ejno60uybw98">
 Fill out my <a href="https://worlddominationsummit.wufoo.com/forms/q8ejno60uybw98">online form</a>.
