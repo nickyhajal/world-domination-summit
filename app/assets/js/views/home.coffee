@@ -15,6 +15,7 @@ window.wall =
 
 	# Methods
 	init: ->
+		@initSafari()
 		@extendMaps()
 		$.scrollTo(0)
 		wall.$el = $('#waterfall')
@@ -28,6 +29,21 @@ window.wall =
 			.on('click', '.wall-content-type-flickr_stream', wall.showBiggerPhoto)
 			.on('click', '#video', wall.showVideo)
 			.on('click', '#reg-army', wall.showArmy)
+
+	initSafari: ->
+		isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/)
+		if isSafari && !$('#safari-wall-styles').length
+			$('body').append '
+				<style type="text/css" id="safari-wall-styles">
+					.tpl-1 .wall-content-type-speaker_quote.block-7,
+					.tpl-0 .block-1,
+					.tpl-3 .block-8,
+					.tpl-2 .wall-content-type-featured_tweet.block-2 {
+						display: block !important;
+					}
+				</style>
+			'
+
 
 	# Extending the Google Maps API
 	extendMaps: ->

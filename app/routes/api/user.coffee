@@ -11,7 +11,6 @@ routes = (app) ->
 		consumerSecret: app.settings.twitter_consumer_secret
 		callback: process.dmn + '/api/user/twitter/callback'
 
-
 	[User, Users] = require('../../models/users')
 	[TwitterLogin, TwitterLogins] = require('../../models/twitter_logins')
 	[Answer, Answers] = require('../../models/answers')
