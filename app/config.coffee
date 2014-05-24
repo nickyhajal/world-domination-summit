@@ -30,8 +30,6 @@ config = (app, express, RedisStore, mysql) ->
 		app.use(express.static(__dirname + '/public'))
 		app.set('port', process.env.PORT)
 
-	
-
 	app.configure 'development', ->
 		app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 		app.set 'db', 

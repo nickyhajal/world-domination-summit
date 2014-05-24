@@ -53,6 +53,16 @@ routes = (app) ->
 		app.get '/transfer/return', transfer.pdt
 		app.get '/transfer/status', transfer.status
 
+		app.get '/startup_script', (req, res, next) ->
+			if req.me?.hasCapability('downloads')
+				res.attachment('wds-start.sh');
+				res.sendfile('wds-start.sh', {root: '/var/www/scripts/'});
+			else
+				res.r.msg = 'Not authorized!'
+				next()
+
+
+
 		# Finish
 		app.all '/*', handler.finish
 module.exports = routes
