@@ -126,7 +126,7 @@
     top:                        -11px;
     z-index:                    10;
     content:                    "";
-    background:                 url("/images/icon-sprites_corner.png?2") no-repeat scroll 0px center / 2212px auto transparent;
+    background:                 url("/images/icon-sprites_corner.png?2") no-repeat scroll 0px center / 2739px auto transparent;
 }
 .corner-icon-theater:before {
     width:                      103px ! important;
@@ -171,6 +171,19 @@
 .corner-icon-map:before {
     background-position:        -2108px 0px ! important;
 }
+.corner-icon-plane:before {
+    background-position:        -2241px 0px ! important;
+}
+.corner-icon-handshake:before {
+    background-position:        -2372px ! important;
+}
+.corner-icon-camera:before {
+    background-position:        -2504px ! important;
+}
+.corner-icon-coins:before {
+    background-position:        -2635px ! important;
+}
+
 #page_content {
     background:                 none repeat scroll 0px 0px rgb(255, 255, 255);
     margin-left:                -2px;
