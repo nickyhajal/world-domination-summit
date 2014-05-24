@@ -109,7 +109,7 @@ routes = (app) ->
 
 		get_comments: (req, res, next) ->
 			comments = FeedComments.forge()
-			comments.query('orderBy', 'feed_comment_id',  'DESC')
+			comments.query('orderBy', 'feed_comment_id')
 			comments.query('where', 'feed_id', '=', req.query.feed_id)
 			if req.query.since?
 				comments.query('where', 'feed_comment_id', '>', req.query.since)

@@ -165,7 +165,7 @@
 				$t = $(this)
 				$shell = $t.closest('.dispatch-content-shell')
 				$c = $('.dispatch-content-comments', $shell)
-				since = $('.comment-shell', $c).first().data('comment_id')
+				since = $('.comment-shell', $c).last().data('comment_id')
 				content_id = $shell.data('content_id')
 				if loadingComments.indexOf(content_id) < 0
 					loadingComments.push content_id
