@@ -141,7 +141,8 @@ routes = (app) ->
 			user = User.forge(post)
 			.save()
 			.then (new_user, err) ->
-				new_user.registerTicket('ADDED_BY_'+req.me.get('user_id'))
+				hash = require('crypto').createHash('md5').update(''+(+(new Date()))).digest("hex").substr(0,5)
+				new_user.registerTicket('ADDED_BY_'+req.me.get('user_id')+'_'+hash)
 				next()
 
 		update: (req, res, next) ->

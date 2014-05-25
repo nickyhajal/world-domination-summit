@@ -268,6 +268,8 @@ User = Shelf.Model.extend
         if returning
           promo = 'WelcomeBack'
         @sendEmail(promo, subject)
+    , (err) ->
+      tk err
     return dfr.promise
 
   cancelTicket: ->
