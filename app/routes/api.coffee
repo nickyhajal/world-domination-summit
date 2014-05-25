@@ -53,12 +53,18 @@ routes = (app) ->
 		app.get '/transfer/return', transfer.pdt
 		app.get '/transfer/status', transfer.status
 
-		app.get '/startup_script', (req, res, next) ->
-			if req.me?.hasCapability('downloads')
-				res.attachment('wds-start.sh');
-				res.sendfile('wds-start.sh', {root: '/var/www/scripts/'});
+		app.get '/admin/download', (req, res, next) ->
+			if req.me?
+				req.me.getCapabilities()
+				.then ->
+					if req.me?.hasCapability('downloads')
+						res.attachment(req.query.file);
+						res.sendfile(req.query.file, {root: '/var/www/secure_files/'});
+					else
+						res.r.msg = 'Not authorized'
+						next()
 			else
-				res.r.msg = 'Not authorized!'
+				res.r.msg = 'Not logged in'
 				next()
 
 

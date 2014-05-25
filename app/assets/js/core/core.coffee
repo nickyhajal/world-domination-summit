@@ -14,7 +14,6 @@ $ = jQuery
 $('html').addClass('jsOn')
 $ ->
 	ap.init();
-	butter.init()
 
 user = {};
 ap.Views = {}

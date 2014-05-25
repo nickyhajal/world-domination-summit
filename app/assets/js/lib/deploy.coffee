@@ -1,6 +1,8 @@
 _d = {}
+
 _d.ari = (a, i)->
 	return a[i];
+
 _d.btn = (el, during, done, reset = 1200) ->
 	fnc = 'html'
 	if el.prop('tagName') is 'INPUT'
@@ -19,23 +21,12 @@ _d.btn = (el, during, done, reset = 1200) ->
 			, reset
 	}
 
-	
-_d.getForm = (id)->
-	for form in document.forms
-		if $(form).attr('id') is id
-			return form
-_d.formToJson = (id)->
-	data = {};
-	form = _d.getForm(id)
-	for i in form.elements
-		if $(i).attr('name')? and $(i).attr('name').length
-			data[$(i).attr('name')] = $(i).attr('value')
-	return data;
 _d.unSlug = (str)->
 	str = str.split('-')
 	for i, v of str
 		str[i] = dpl.ucfirst(v)
 	return str.join(' ')
+
 _d.slugify = (str) ->
 	from = "ąàáäâãćęèéëêìíïîłńòóöôõùúüûñçżź"
 	to = "aaaaaaceeeeeiiiilnooooouuuunczz"
@@ -49,15 +40,17 @@ _d.slugify = (str) ->
 	)
 	return _.trim(str.replace(/[^\w\s-]/g, '').replace(/[-\s]+/g, '-'), '-')
 
-_d.stript = (input, allowed) ->
+_d.striptags = (input, allowed) ->
 	input = input.toString()
 	allowed = (((allowed || "") + "").toLowerCase().match(/<[a-z][a-z0-9]*>/g) || []).join('') 
 	tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi
 	commentsAndPhpTags = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi
 	return input.replace(commentsAndPhpTags, '').replace tags, ($0, $1) ->
 		return if allowed.indexOf('<' + $1.toLowerCase() + '>') > -1 then $0 else '' 
+
 _d.toRad = (val) ->
 	return val *  (Math.PI / 180)
+
 _d.getDistance = (lat1, lon1, lat2, lon2) ->
   a = 6378137
   b = 6356752.314245
@@ -93,7 +86,7 @@ _d.getDistance = (lat1, lon1, lat2, lon2) ->
   B = uSq / 1024 * (256 + uSq * (-128 + uSq * (74 - 47 * uSq)))
   deltaSigma = B * sinSigma * (cos2SigmaM + B / 4 * (cosSigma * (-1 + 2 * cos2SigmaM * cos2SigmaM) - B / 6 * cos2SigmaM * (-3 + 4 * sinSigma * sinSigma) * (-3 + 4 * cos2SigmaM * cos2SigmaM)))
   s = b * A * (sigma - deltaSigma)
-  s
+  return s
 
 _d.nicetime = (start, end = false, just=60) ->
 		# If no end is specified, use now
@@ -165,6 +158,7 @@ _d.t = (template, data) ->
 
 _d.addSlashes = (str)->
 	return (str+'').replace(/([\\"'])/g, "\\$1").replace(/\u0000/g, "\\0");
+
 _d.stripSlashes = (str)->
 	return (str+'').replace(/\\(.?)/g, (s, n1)->
 		switch (n1) 
@@ -177,15 +171,27 @@ _d.stripSlashes = (str)->
 			else
 				return n1
 	)
+
 _d.money = (num, opts = false) ->
 	opts = [] if not opts
 	opts.presign ?= '$'
 	opts.postsign ?= ''
 	opts.div ?= 100
 	return opts.presign + (( num * 1 ) / opts.div ).toFixed(2) + opts.postsign
+
+###
+ 
+ Readies allow you to wait for something else to complete
+ before executing a function.
+
+ If what you're waiting for already completed, your function
+ executes immediately
+
+###
 _d.readys = {};
 _d.whenReady = (id, fnc) ->
 	_d.ready(id, fnc)
+
 _d.ready = (id, fnc)->
 	if _.isUndefined(_d.readys[id])
 		_d.readys[id] = 
@@ -201,8 +207,10 @@ _d.ready = (id, fnc)->
 			fnc()
 	if _d.readys[id].ready
 		_d.doReady(id)
+
 _d.nowReady = (id)->
 	_d.isReady(id)
+
 _d.isReady = (id)->
 	if !_.isUndefined(_d.readys[id])
 		_d.readys[id].ready = true;
@@ -215,264 +223,6 @@ _d.doReady = (id)->
 	if _d.readys[id]? and _d.readys[id].fnc? and _d.readys[id].fnc
 		_d.readys[id].fnc();
 		_d.readys[id].fnc = null;
-
-_d.codeToCountry = (code, opts = {}) ->
-	opts = _.defaults opts, 
-		addComma: false
-	countries = {
-		AF: "Afghanistan"
-		AX: "Aland Islands"
-		AL: "Albania"
-		DZ: "Algeria"
-		AS: "American Samoa"
-		AD: "Andorra"
-		AO: "Angola"
-		AI: "Anguilla"
-		AQ: "Antarctica"
-		AG: "Antigua and Barbuda"
-		AR: "Argentina"
-		AM: "Armenia"
-		AW: "Aruba"
-		AU: "Australia"
-		AT: "Austria"
-		AZ: "Azerbaijan"
-		BS: "Bahamas"
-		BH: "Bahrain"
-		BD: "Bangladesh"
-		BB: "Barbados"
-		BY: "Belarus"
-		BE: "Belgium"
-		BZ: "Belize"
-		BJ: "Benin"
-		BM: "Bermuda"
-		BT: "Bhutan"
-		BO: "Bolivia"
-		BA: "Bosnia and Herzegovina"
-		BW: "Botswana"
-		BV: "Bouvet Island"
-		BR: "Brazil"
-		IO: "British Indian Ocean Territory"
-		BN: "Brunei"
-		BG: "Bulgaria"
-		BF: "Burkina Faso"
-		BI: "Burundi"
-		KH: "Cambodia"
-		CM: "Cameroon"
-		CA: "Canada"
-		CV: "Cape Verde"
-		KY: "Cayman Islands"
-		CF: "Central African Republic"
-		TD: "Chad"
-		CL: "Chile"
-		CN: "China"
-		CX: "Christmas Island"
-		CC: "Cocos Islands"
-		CO: "Colombia"
-		KM: "Comoros"
-		CG: "Congo"
-		CD: "Congo"
-		CK:  "Cook Islands"
-		CR: "Costa Rica"
-		CI: "C™te d'Ivoire"
-		HR: "Croatia"
-		CU: "Cuba"
-		CY: "Cyprus"
-		CZ:  "Czech Republic"
-		DK: "Denmark"
-		DJ: "Djibouti"
-		DM: "Dominica"
-		DO: "Dominican Republic"
-		EC: "Ecuador"
-		EG: "Egypt"
-		SV: "El Salvador"
-		GQ: "Equatorial Guinea"
-		ER: "Eritrea"
-		EE: "Estonia"
-		ET: "Ethiopia"
-		FK: "Falkland Islands"
-		FO: "Faroe Islands"
-		FJ: "Fiji"
-		FI: "Finland"
-		FR: "France"
-		GF:  "French Guiana"
-		PF: "French Polynesia"
-		TF: "French Southern Territories"
-		GA: "Gabon"
-		GM: "Gambia"
-		GE: "Georgia"
-		DE: "Germany"
-		GH: "Ghana"
-		GI: "Gibraltar"
-		GR: "Greece"
-		GL: "Greenland"
-		GD: "Grenada"
-		GP: "Guadeloupe"
-		GU: "Guam"
-		GT: "Guatemala"
-		GG: "Guernsey"
-		GN: "Guinea"
-		GW: "Guinea-Bissau"
-		GY: "Guyana"
-		HT: "Haiti"
-		HM: "Heard Island and McDonald Islands"
-		HN: "Honduras"
-		HK: "Hong Kong"
-		HU: "Hungary"
-		IS: "Iceland"
-		IN: "India"
-		ID: "Indonesia"
-		IR: "Iran"
-		IQ: "Iraq"
-		IE: "Ireland"
-		IM: "Isle of Man"
-		IL: "Israel"
-		IT: "Italy"
-		JM: "Jamaica"
-		JP: "Japan"
-		JE:  "Jersey"
-		JO: "Jordan"
-		KZ: "Kazakhstan"
-		KE: "Kenya"
-		KI: "Kiribati"
-		KW: "Kuwait"
-		KG: "Kyrgyzstan"
-		LA: "Laos"
-		LV: "Latvia"
-		LB: "Lebanon"
-		LS: "Lesotho"
-		LR: "Liberia"
-		LY: "Libya"
-		LI: "Liechtenstein"
-		LT: "Lithuania"
-		LU: "Luxembourg"
-		MO: "Macao"
-		MK: "Macedonia"
-		MG: "Madagascar"
-		MW: "Malawi"
-		MY: "Malaysia"
-		MV: "Maldives"
-		ML: "Mali"
-		MT: "Malta"
-		MH: "Marshall Islands"
-		MQ: "Martinique"
-		MR: "Mauritania"
-		MU: "Mauritius"
-		YT: "Mayotte"
-		MX: "Mexico"
-		FM: "Micronesia"
-		MD: "Moldova"
-		MC: "Monaco"
-		MN: "Mongolia"
-		ME: "Montenegro"
-		MS: "Montserrat"
-		MA:  "Morocco"
-		MZ: "Mozambique"
-		MM: "Myanmar"
-		NA: "Namibia"
-		NR: "Nauru"
-		NP: "Nepal"
-		NL: "Netherlands"
-		AN: "Netherlands Antilles"
-		NC: "New Caledonia"
-		NZ: "New Zealand"
-		NI: "Nicaragua"
-		NE:  "Niger"
-		NG: "Nigeria"
-		NU: "Niue"
-		NF: "Norfolk Island"
-		MP: "Northern Mariana Islands"
-		KP: "North Korea"
-		NO: "Norway"
-		OM: "Oman"
-		PK: "Pakistan"
-		PW: "Palau"
-		PS: "Palestinian Territories"
-		PA: "Panama"
-		PG: "Papua New Guinea"
-		PY: "Paraguay"
-		PE: "Peru"
-		PH: "Philippines"
-		PN: "Pitcairn"
-		PL: "Poland"
-		PT: "Portugal"
-		PR: "Puerto Rico"
-		QA: "Qatar"
-		RE: "Reunion"
-		RO: "Romania"
-		RU: "Russia"
-		RW: "Rwanda"
-		SH: "Saint Helena"
-		KN: "Saint Kitts and Nevis"
-		LC: "Saint Lucia"
-		PM: "Saint Pierre and Miquelon"
-		VC: "Saint Vincent and the Grenadines"
-		WS: "Samoa"
-		SM: "San Marino"
-		ST: "S‹o TomŽ and Pr’ncipe"
-		SA: "Saudi Arabia"
-		SN: "Senegal"
-		RS: "Serbia"
-		CS: "Serbia and Montenegro"
-		SC: "Seychelles"
-		SL: "Sierra Leone"
-		SG: "Singapore"
-		SK: "Slovakia"
-		SI: "Slovenia"
-		SB: "Solomon Islands"
-		SO: "Somalia"
-		ZA: "South Africa"
-		GS: "South Georgia and the South Sandwich Islands"
-		KR: "South Korea"
-		ES: "Spain"
-		LK: "Sri Lanka"
-		SD: "Sudan"
-		SR: "Suriname"
-		SJ: "Svalbard and Jan Mayen"
-		SZ: "Swaziland"
-		SE: "Sweden"
-		CH: "Switzerland"
-		SY: "Syria"
-		TW: "Taiwan"
-		TJ: "Tajikistan"
-		TZ: "Tanzania"
-		TH: "Thailand"
-		TL: "Timor-Leste"
-		TG: "Togo"
-		TK: "Tokelau"
-		TO: "Tonga"
-		TT: "Trinidad and Tobago"
-		TN: "Tunisia"
-		TR: "Turkey"
-		TM: "Turkmenistan"
-		TC: "Turks and Caicos Islands"
-		TV: "Tuvalu"
-		UG: "Uganda"
-		UA: "Ukraine"
-		AE: "United Arab Emirates"
-		GB: "United Kingdom"
-		US: "United States"
-		UM: "United States minor outlying islands"
-		UY: "Uruguay"
-		UZ: "Uzbekistan"
-		VU: "Vanuatu"
-		VA: "Vatican City"
-		VE: "Venezuela"
-		VN: "Vietnam"
-		VG: "Virgin Islands"
-		VI: "Virgin Islands"
-		WF: "Wallis and Futuna"
-		EH: "Western Sahara"
-		YE: "Yemen"
-		ZM: "Zambia"
-		ZW: "Zimbabwe"
-	}
-	str = ''
-	if countries[code]?
-		str = countries[code]
-		if opts.addComma
-			str = ', '+str
-		
-	return str
 
 if this._?
 	this._.mixin(_d)
