@@ -27,6 +27,7 @@ routes = (app) ->
 		app.patch '/user', user.update
 		app.put '/user', user.update
 		app.get '/user', user.get
+		app.get '/user/ticket', user.ticket
 		app.post '/user', user.create
 		app.post '/user/login', user.login
 		app.post '/user/reset', user.reset
