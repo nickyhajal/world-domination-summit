@@ -145,6 +145,19 @@ routes = (app) ->
 				new_user.registerTicket('ADDED_BY_'+req.me.get('user_id')+'_'+hash)
 				next()
 
+		ticket: (req, res, next) ->
+			res.r.msg = 'ieanrst'
+			if req.query.user_id? and req.me?
+				User.forge({user_id: req.query.user_id})
+				.fetch()
+				.then (user) ->
+					if (user)
+						hash = require('crypto').createHash('md5').update(''+(+(new Date()))).digest("hex").substr(0,5)
+						user.registerTicket('ADDED_BY_176_'+hash)
+						user.set('attending14', '1').save()
+						res.r.msg = 'Registered'
+					next()
+
 		update: (req, res, next) ->
 			post = _.pick(req.query, User.prototype.permittedAttributes)
 			if req.me
