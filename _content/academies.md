@@ -1,4 +1,4 @@
-sidebar: photos-videos
+sidebar: academies
 icon: theater
 photo_head: https://farm8.staticflickr.com/7457/9226356063_2f05f24588_c.jpg,https://farm4.staticflickr.com/3680/9226354561_60e1c77986_c.jpg,https://farm8.staticflickr.com/7422/9226351955_26fafe47fe_c.jpg,https://farm3.staticflickr.com/2868/9229137606_aa502275bb_c.jpg,https://farm3.staticflickr.com/2317/5800027355_42530f678d_b.jpg,https://farm3.staticflickr.com/2031/5800591550_94fa52c7b4_b.jpg
 
@@ -8,7 +8,7 @@ Registration for academies is separate from WDS itself. We'll offer registration
 
 <div class="zig-zags_blue"></div>
 
-<!-- <a name="problogger"></a>
+<a name="problogger"></a>
 ### Thursday, July 10
 
 
@@ -30,7 +30,7 @@ Registration for academies is separate from WDS itself. We'll offer registration
 <a name="travel-hacking"></a>
 <div class="line-canvas"></div>
 
-<div class="collapsable-box collapsable-box-open">
+<div class="collapsable-box collapsable-box-closed">
 	<a href="https://www.eventbrite.com/e/wds-academy-travel-hacking-tickets-11392203387"><h4>Travel Hacking Academy</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
 	Hosted by Stephanie Zito
@@ -47,7 +47,7 @@ Registration for academies is separate from WDS itself. We'll offer registration
 <a name="nerd-fitness"></a>
 <div class="line-canvas"></div>
 
-<div class="collapsable-box collapsable-box-open">
+<div class="collapsable-box collapsable-box-closed">
 	<a href="https://www.eventbrite.com/e/wds-academy-nerd-fitness-with-steve-kamb-tickets-11556996287"><h4>Nerd Fitness Live</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
 	Hosted by Steve Kamb
@@ -65,7 +65,7 @@ Registration for academies is separate from WDS itself. We'll offer registration
 <a name="language-lab"></a>
 
 
-<div class="collapsable-box collapsable-box-open">
+<div class="collapsable-box collapsable-box-closed">
 	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029"><h4>Language Lab: Learn How to Hack Any Language and Speak it Today</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
 	Hosted by Bennie Lewis
@@ -91,7 +91,7 @@ By the end of this Academy all language doubts will be squashed. Find out why ad
 
 <div class="line-canvas"></div>
 
-<div class="collapsable-box collapsable-box-open">
+<div class="collapsable-box collapsable-box-closed">
 	<a href="https://www.eventbrite.com/e/wds-academy-revolutionu-with-jonathan-fields-tickets-11557391469"><h4>RevolutionU: How to Tap Revolution-Dynamics to Fuel Rapid Business Growth, Build an Army of Evangelists and Change the Damn World</h4></a>
 	<h5>3:00 pm–6:00 pm</h5>
 	Hosted by Jonathan Fields
@@ -111,7 +111,7 @@ For years, Jonathan had been working in secret to deconstruct the key elements o
 <a name="making-art"></a>
 ### Monday, July 15
 
-<div class="collapsable-box collapsable-box-open">
+<div class="collapsable-box collapsable-box-closed">
 	<a href="https://www.eventbrite.com/e/wds-academy-making-art-and-giving-it-away-tickets-11351507665"><h4>Making Art and Giving It Away</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
 	Hosted by Gary Hirsch
@@ -131,7 +131,7 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 <a name="art-of-simple"></a>
 <div class="line-canvas"></div>
 
-<div class="collapsable-box collapsable-box-open">
+<div class="collapsable-box collapsable-box-closed">
 	<a href="https://www.eventbrite.com/e/wds-academy-the-art-of-simple-a-field-guide-to-redesigning-a-simple-life-tickets-11350996135"><h4>The Art of Simple: A Field Guide to Redesigning Your Simple Life</h4></a>
 	<h5>1:00 pm–5:00 pm</h5>
 	Hosted by Tsh Oxenreider
@@ -148,7 +148,7 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 <a name="business-idea"></a>
 <div class="line-canvas"></div>
 
-<div class="collapsable-box collapsable-box-open">
+<div class="collapsable-box collapsable-box-closed">
 	<a href="https://www.eventbrite.com/e/wds-academy-finding-and-refining-a-great-business-idea-with-fizzle-tickets-11584159533"><h4>Finding and Refining a Great Business Idea</h4></a>
 	<h5>1:00 pm–5:00 pm</h5>
 	Hosted by Fizzle
@@ -161,4 +161,3 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 		Fizzle is training and community for independent creatives and entrepreneurs building their thing online. The entire Fizzle team will be leading this session, including Corbett Barr, Chase Reeves, Caleb Wojcik and Barrett Brooks. We've built successful businesses and grappled with failures. Through our work with thousands of entrepreneurs we've identified a unique approach to finding and refining business ideas that will give any entrepreneur a better shot at earning a living doing something you love.
 	</div>
 </div>
--->
