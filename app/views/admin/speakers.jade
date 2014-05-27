@@ -1,2 +1,9 @@
-div(id="page_content")
-	h3 Add Content
+div(id="speakers-admin-shell")
+	nav(class="admin-nav")
+		a(href="/admin/add-speaker", class="button") Add a Speaker
+	h1 WDS Speakers
+	input(type="text", class="manifest-search", placeholder="Search Speakers by name or year")
+	div(id="speaker-start")
+		| Type an speakers name or year
+	table(id="speaker-results-shell")
+		tbody(id="speaker-results")
