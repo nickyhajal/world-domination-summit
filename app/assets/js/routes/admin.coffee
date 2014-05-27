@@ -9,4 +9,3 @@ ap.Routes.admin = (panel, extra = false) ->
 		for name,tpl of rsp.admin_templates
 			ap.templates['pages_admin_'+name] = '<div id="page_content">'+tpl+'</div>'
 		_.nowReady 'admin_templates'
-

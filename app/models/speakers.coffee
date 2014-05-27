@@ -7,8 +7,9 @@ async = require('async')
 
 Speaker = Shelf.Model.extend
   tableName: 'speakers'
+  idAttribute: 'speaker_id'
   permittedAttributes: [
-    'speakerid','display_name','display_avatar','descr','year','userid'
+    'speaker_id','display_name','display_avatar','descr','year','userid','type'
   ]
 Speakers = Shelf.Collection.extend
   model: Speaker
@@ -20,7 +21,7 @@ Speakers = Shelf.Collection.extend
       bytype = {}
       async.each rsp.models, (speaker, cb) ->
         Quotes.forge()
-        .query('where', 'speaker_id', speaker.get('speakerid'))
+        .query('where', 'speaker_id', speaker.get('speaker_id'))
         .fetch()
         .then (rsp) ->
           quotes = []

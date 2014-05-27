@@ -1,0 +1,31 @@
+div(id="user-manifest-shell")
+	h1 Add a Speaker
+		a(href="/admin/speakers", class="button") Back to Speakers
+	form(id="admin-add-speaker", method="post", action="#")
+		div(class="form-section")
+			div(class="form-box")
+				label Speaker Name
+				input(name="display_name", type="text")
+		div(class="form-section")
+			label Avatar URL
+			input(name="display_avatar", type="text")
+		div(class="form-section")
+			div(class="form-box")
+				label Description
+				textarea(type="text", name="descr")
+		div(class="form-section")
+			div(class="form-box")
+				label Year
+				input(type="text", name="year", value="2014")
+		div(class="form-section")
+			div(class="form-box")
+				label Type
+				select(name="type")
+					option(value="upcoming") Upcoming
+					option(value="alumni") Alumni
+					option(value="returning") Returning
+					option(value="featured") Featured
+		div(class="clear")
+		div(class="form-section")
+			input(type="hidden", name="attending14", value="1")
+			input(type="submit", value="Add Speaker", class="button")
