@@ -8,6 +8,7 @@ routes = (app) ->
 	assets = require('./api/assets')(app)
 	user = require('./api/user')(app)
 	feed = require('./api/feed')(app)
+	speaker = require('./api/speaker')(app)
 	transfer = require('./api/transfer')(app)
 	content = require('./api/content')
 	
@@ -39,6 +40,9 @@ routes = (app) ->
 		app.get '/user/twitter/callback', user.twitter_callback
 		app.delete '/user/twitter', user.del_twitter
 		app.post '/user/tweet', user.send_tweet
+
+		app.put '/speaker', speaker.update
+		app.post '/speaker', speaker.create
 
 		# Feed
 		app.post '/feed', feed.add

@@ -28,11 +28,12 @@ ap.Views.Dispatch = XView.extend
 	postFeed: (e) ->
 		clearTimeout @controlsTimo
 		e.preventDefault()
-		post = $(e.currentTarget).formToJson()
-		post.channel = @options.channel
-		post.channel_type = @options.channel_type
-		setTimeout =>
-			@blurControls(e)
-			$('.dispatch-post-inp', $(e.currentTarget)).val('').css('height', '43px')
-		, 500
-		ap.api 'post feed', post
+		if post.content.length > 0
+			post = $(e.currentTarget).formToJson()
+			post.channel = @options.channel
+			post.channel_type = @options.channel_type
+			setTimeout =>
+				@blurControls(e)
+				$('.dispatch-post-inp', $(e.currentTarget)).val('').css('height', '43px')
+			, 500
+			ap.api 'post feed', post

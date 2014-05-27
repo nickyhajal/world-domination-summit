@@ -175,15 +175,14 @@
     background-position:        -2241px 0px ! important;
 }
 .corner-icon-handshake:before {
-    background-position:        -2372px ! important;
+    background-position:        -2372px center ! important;
 }
 .corner-icon-camera:before {
-    background-position:        -2504px ! important;
+    background-position:        -2504px center ! important;
 }
 .corner-icon-coins:before {
-    background-position:        -2635px ! important;
+    background-position:        -2635px center ! important;
 }
-
 #page_content {
     background:                 none repeat scroll 0px 0px rgb(255, 255, 255);
     margin-left:                -2px;
@@ -875,7 +874,7 @@ input.search-input {
     position:                   relative;
     z-index:                    2147483647;
 }
-input.manifest-search {
+input.manifest-search, .speaker-search {
     width:                      90% ! important;
     font-size:                  18px ! important;
     padding:                    12px ! important;
@@ -1070,6 +1069,10 @@ textarea.dispatch-content-comment-inp {
     height:                     43px;
     margin-left:                62px;
     width:                      410px;
+}
+#admin-speaker-update textarea, #admin-add-speaker textarea {
+    width:                      300px;
+    height:                     70px;
 }
 textarea {
     background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
@@ -1551,7 +1554,10 @@ div.dispatch-loading {
     width:                      220px;
     height:                     50px;
 }
-div.manifest-avatar {
+.search-results div.speaker-avatar {
+    margin-bottom:              0px;
+}
+div.manifest-avatar, .speaker-avatar, .search-avatar {
     background-size:            100% auto ! important;
     -webkit-background-size:    100% auto ! important;
     border-radius:              50%;
@@ -1564,47 +1570,47 @@ div.manifest-avatar {
     width:                      30px;
     top:                        5px;
 }
-#manifest-shell td {
+#manifest-shell td, .search-shell th {
     font-family:                karla;
     text-align:                 center;
     vertical-align:             middle ! important;
     padding:                    5px 0px;
 }
-table#manifests-results-shell thead th, table#manifests-results-shell tfoot th {
+table#manifests-results-shell thead th, table#manifests-results-shell tfoot th, table.search-results-shell thead th, table.search-results-shell tfoot th {
     width:                      300px;
     font-weight:                normal;
     padding:                    7px 0px;
 }
-#manifest-results tr:nth-of-type(2n) {
+#manifest-results tr:nth-of-type(2n), .search-results tr:nth-of-type(2n) {
     background:                 none repeat scroll 0px 0px rgb(248, 246, 234);
 }
-#manifest-results tr {
+.manifest-results tr, .search-results tr {
     background:                 none repeat scroll 0% 0% rgb(239, 238, 229);
     cursor:                     pointer;
 }
-table#manifests-results-shell {
+table#manifests-results-shell, .search-results-shell {
     border-spacing:             0px;
     display:                    none;
     width:                      90%;
     margin-top:                 1px;
 }
-#manifest-results tr td:first-of-type {
+#manifest-results tr td:first-of-type, .search-results tr td:first-of-type {
     text-align:                 left;
     width:                      400px ! important;
 }
-#manifest-results tr td:first-of-type span {
+#manifest-results tr td:first-of-type span, .search-results tr td:first-of-type span {
     display:                    table-cell;
     height:                     40px;
     position:                   relative;
     vertical-align:             middle;
 }
-#manifest-results tr:hover {
+#manifest-results tr:hover, .search-results tr:hover {
     opacity:                    0.9;
     -ms-filter:                 "alpha(opacity=90)";
     filter:                     alpha(opacity=90);
     zoom:                       1;
 }
-div#manifest-start {
+div#manifest-start, div.search-start {
     padding:                    70px 0px;
     text-align:                 center;
     font-size:                  21px;

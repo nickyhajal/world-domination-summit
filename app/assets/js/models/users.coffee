@@ -50,8 +50,8 @@ Users = Backbone.Collection.Lunr.extend
 	url: '/api/users/'
 	lunroptions: 
     fields: [
-        { name: "first_name", boost: 5 }
-        { name: "last_name", boost: 10 }
+        { name: "first_name", boost: 10 }
+        { name: "last_name", boost: 5 }
         { name: "user_name"}
         { name: "email"}
     ]

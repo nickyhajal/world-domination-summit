@@ -218,21 +218,22 @@
 		@submitComment = ->
 			$f = $(this)
 			form = $f.formToJson()
-			$shell = $f.closest('.dispatch-content-shell')
-			content_id = $shell.data('content_id')
-			form.feed_id = content_id
-			btn = $('.dispatch-comment-submit', $f)
-			btn.val('Sharing...')
-			ap.api 'post feed/comment', form, (rsp) ->
-				if rsp.comment?
-					btn.val('Shared!')
-					slf.more_loadComments()
-				else if rsp.msg?
-					btn.val(rsp.msg)
-				setTimeout ->
-					btn.val('Share Comment')
-					$('.dispatch-content-comment-inp', $f).val('').height('46px')
-				, 1200
+			if form.comment.length > 0
+				$shell = $f.closest('.dispatch-content-shell')
+				content_id = $shell.data('content_id')
+				form.feed_id = content_id
+				btn = $('.dispatch-comment-submit', $f)
+				btn.val('Sharing...')
+				ap.api 'post feed/comment', form, (rsp) ->
+					if rsp.comment?
+						btn.val('Shared!')
+						slf.more_loadComments()
+					else if rsp.msg?
+						btn.val(rsp.msg)
+					setTimeout ->
+						btn.val('Share Comment')
+						$('.dispatch-content-comment-inp', $f).val('').height('46px')
+					, 1200
 			return false
 
 
