@@ -41,9 +41,6 @@ It will take 697 of us to swipe the record away from India. Are you up for it?
 	</div>
 </div>
 
-You'd better believe we're coming back this year with another world record attempt. This year, we're tackling the world's longest yoga chain.
-
-
 <a name="portland-spirit"></a>
 ### Saturday, July 12
 
@@ -67,9 +64,8 @@ That is, of course, a lie. But if it were true, it would cleverly underscore jus
 
 
 <div class="collapsable-box collapsable-box-open">
-	<h4>World Cup Live</h4>
+	<h4>World Cup Final Match</h4>
 	<h5>12:00–2:30 pm</h5>
-	<a href="#" class="button">More info coming soon</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		Calling all soccer fans! Join your fellow footballers and watch the final World Cup match as it's broadcast live right in Portland's Living Room—Pionner Courthouse Square. Grab your lunch after the morning session and root for your favorite team in the middle of downtown. Bonus points if we can hear you yelling from the main stage.
