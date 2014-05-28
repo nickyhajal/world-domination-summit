@@ -1557,7 +1557,7 @@ div.dispatch-loading {
 .search-results div.speaker-avatar {
     margin-bottom:              0px;
 }
-div.manifest-avatar, .speaker-avatar, .search-avatar {
+div.manifest-avatar, #speaker-results .speaker-avatar, .search-avatar {
     background-size:            100% auto ! important;
     -webkit-background-size:    100% auto ! important;
     border-radius:              50%;
