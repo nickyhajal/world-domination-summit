@@ -16,12 +16,12 @@ icon: parachute
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Saturday</div>
 		<div class="main-schedule-time">9:00am–6:30pm</div>
-		<div class="main-schedule-descr">Main Stage Sessions <br>Portland Experience <br>[Activities](/activities)</div>
+		<div class="main-schedule-descr">Main Stage Sessions <br>Portland Experience <br><a style="color: rgb(35,31,32) !important" href="/activities">Activities</a></div>
 	</div>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Sunday</div>
 		<div class="main-schedule-time">9:00am–6:30pm</div>
-		<div class="main-schedule-descr">Main Stage Sessions <br>[Activities](/activities)</div>
+		<div class="main-schedule-descr">Main Stage Sessions <br><a style="color: rgb(35,31,32) !important" href="/activities">Activities</a></div>
 		<div class="main-schedule-time">7:00pm–???</div>
 		<div class="main-schedule-descr">Closing Party</div>
 	</div>
