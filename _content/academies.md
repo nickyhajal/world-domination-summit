@@ -4,7 +4,7 @@ photo_head: https://farm8.staticflickr.com/7457/9226356063_2f05f24588_c.jpg,http
 
 # As WDS grows, more and more people are arriving early and staying late. This year marks the launch of WDS Academies: a series of mini-events focused on specific topics that take place on the days surrounding WDS weekend. 
 
-Registration for academies is separate from WDS itself. We'll offer registration first to WDS attendees, and then (depending on capacity) to the general public. Stay tuned for details to be announced after the final wave of WDS ticket sales.
+Registration for academies is separate from WDS itself. We'll offer registration first to WDS attendees, and then (depending on capacity) to the general public. We hope to see you there!be
 
 <div class="zig-zags_blue"></div>
 
@@ -68,7 +68,7 @@ Registration for academies is separate from WDS itself. We'll offer registration
 <div class="collapsable-box collapsable-box-closed">
 	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029"><h4>Language Lab: Learn How to Hack Any Language and Speak it Today</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
-	Hosted by Bennie Lewis
+	Hosted by Benny Lewis
 	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029" class="button">Tickets &rarr;</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
