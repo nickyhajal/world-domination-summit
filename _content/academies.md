@@ -4,7 +4,7 @@ photo_head: https://farm8.staticflickr.com/7457/9226356063_2f05f24588_c.jpg,http
 
 # As WDS grows, more and more people are arriving early and staying late. This year marks the launch of WDS Academies: a series of mini-events focused on specific topics that take place on the days surrounding WDS weekend. 
 
-Registration for academies is separate from WDS itself. We'll offer registration first to WDS attendees, and then (depending on capacity) to the general public. We hope to see you there!
+Registration for academies is separate from WDS itself. We'll offer registration both to WDS attendees as well as to the general public (for a slightly higher registration fee). We hope to see you there!
 
 (Be sure to check out other extracurricular [activities](/activities) as well to maximize your adventure during WDS.)
 
