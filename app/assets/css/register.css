@@ -1,0 +1,16 @@
+div#search_start table th {
+    text-align:                 left;
+    padding:                    7px;
+}
+input#register_search {
+    width:                      100%;
+    margin-bottom:              40px;
+    font-size:                  14pt;
+    padding:                    14px 17px;
+}
+div#search_start {
+    text-align:                 center;
+}
+* {
+    line-height:                inherit;
+}
