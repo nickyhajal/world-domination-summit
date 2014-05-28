@@ -104,11 +104,11 @@ The path to world domination starts in Portland, so it's about time you got to k
 
 <div class="line-canvas"></div>
 
-### Activities
+### [Activities](/activities)
 
 When main stage sessions end for the afternoon, the good times roll on. Join your fellow attendees at your choice of extracurricular activities around town—from film screenings and river cruises, to world record attempts and more!
 
-Individual activities will be announced closer to the event, so stay tuned for details.
+2014 activities have been announced! [Learn more.](/activities)
 
 <p class="color-blue">Note: all activities are first-come, first-served, and some require registration in advance.</p>
 
@@ -123,7 +123,7 @@ Individual activities will be announced closer to the event, so stay tuned for d
 <img src="/images/schedule/schedule-circle-3.png" id="schedule-circle-3"/>
 <p></p>
 <p>Both days, we'll set aside time for attendees to host informal meetups. You can go from the Get Rich Slowly meetup to the Location Independent meetup—and then over to the Minimalist group, where a fight will likely break out over who owns the fewest things.</p>
-<p>And if you have your own blog, you can host a meetup too. (Our dedicated attendee web app will tell you where each meetup is being held.)</p>
+<p>And if you have your own audience, you can host a meetup too. (Our dedicated attendee web app will tell you where each meetup is being held.)</p>
 
 <div class="half-col">
 	<h4 class="color-orange">Meet the Authors</h3>
