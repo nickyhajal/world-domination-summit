@@ -6,6 +6,8 @@ photo_head: https://farm8.staticflickr.com/7457/9226356063_2f05f24588_c.jpg,http
 
 Registration for academies is separate from WDS itself. We'll offer registration first to WDS attendees, and then (depending on capacity) to the general public. We hope to see you there!
 
+(Be sure to check out other extracurricular [activities](/activities) as well to maximize your adventure during WDS.)
+
 <div class="zig-zags_blue"></div>
 
 <a name="problogger"></a>
