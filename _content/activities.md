@@ -1,6 +1,8 @@
-icon: map
+icon: mountain
 
 # When main stage sessions end for the afternoon, the good times roll on. Join your fellow attendees at your choice of extracurricular activities around town—from film screenings and river cruises to world record attempts and more!
+
+If these aren't your cup of tea (or if you just can't get enough), be sure to check out the [WDS academies](/academies). And don't forget all the attendee meetups that will be organized through wds.fm.
 
 <div class="zig-zags_blue"></div>
 
