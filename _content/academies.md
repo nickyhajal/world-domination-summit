@@ -100,7 +100,7 @@ By the end of this Academy all language doubts will be squashed. Find out why ad
 		<h4>Summary</h4>
 		In this WDS Academy, Fields will reveal the entire 18-step RevolutionU Framework, a highly-detailed, immediately-actionable roadmap to engineer your own business revolution, whether you’re just starting up or you need to breathe new life into your organization, venture or brand. Imagine how it will feel to fuel your business with the power of revolution.
 
-		<h4>About the Jonathan Fields</h4>
+		<h4>About Jonathan Fields</h4>
 		Nobody had any idea award-winning author, serial entrepreneur and Good Life Project founder, Jonathan Fields, was working on this. Not even his closest friends. Until he revealed it for the first time at an invite-only event just last year. When he did, jaws dropped.
 
 For years, Jonathan had been working in secret to deconstruct the key elements of nonviolent revolution and figure out how to apply them to entrepreneurship. Adding evangelist growth mechanics, social technology, response marketing, social dynamics and entrepreneurship to the mix, pieces of the puzzle began to fall into place. And by mid-2013, he'd developed an integrated, robust "business revolution" framework capable of fueling entrepreneurial movements that hold the potential for exponential growth and impact.
