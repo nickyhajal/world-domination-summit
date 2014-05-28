@@ -6,23 +6,23 @@ icon: parachute
 	<h3>Main Schedule</h3>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Friday</div>
-		<div class="main-schedule-time">8:00AM–11:00AM</div>
+		<div class="main-schedule-time">8:30am–11:30am</div>
 		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="/2014-world-record">World Record Attempt</a></div>
-		<div class="main-schedule-time">12:00PM–3:00PM</div>
+		<div class="main-schedule-time">2:00pm–8:00pm</div>
 		<div class="main-schedule-descr">Registration</div>
-		<div class="main-schedule-time">7:00PM–10:00PM</div>
+		<div class="main-schedule-time">6:00pm–10:00pm</div>
 		<div class="main-schedule-descr">"Can't Wait" Welcoming Party</div>
 	</div>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Saturday</div>
-		<div class="main-schedule-time">9:00AM–7:00PM</div>
-		<div class="main-schedule-descr">Main Stage, <br>Portland Experience</div>
+		<div class="main-schedule-time">9:00am–6:30pm</div>
+		<div class="main-schedule-descr">Main Stage Sessions <br>Portland Experience <br><a style="color: rgb(35,31,32) !important" href="/activities">Activities</a></div>
 	</div>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Sunday</div>
-		<div class="main-schedule-time">9:00AM - 6:30PM</div>
-		<div class="main-schedule-descr">Main Stage, Fun</div>
-		<div class="main-schedule-time">7:00PM Onward</div>
+		<div class="main-schedule-time">9:00am–6:30pm</div>
+		<div class="main-schedule-descr">Main Stage Sessions <br><a style="color: rgb(35,31,32) !important" href="/activities">Activities</a></div>
+		<div class="main-schedule-time">7:00pm–???</div>
 		<div class="main-schedule-descr">Closing Party</div>
 	</div>
 </div>
@@ -104,11 +104,11 @@ The path to world domination starts in Portland, so it's about time you got to k
 
 <div class="line-canvas"></div>
 
-### Activities
+### [Activities](/activities)
 
 When main stage sessions end for the afternoon, the good times roll on. Join your fellow attendees at your choice of extracurricular activities around town—from film screenings and river cruises, to world record attempts and more!
 
-Individual activities will be announced closer to the event, so stay tuned for details.
+2014 activities have been announced! [Learn more &rarr;](/activities)
 
 <p class="color-blue">Note: all activities are first-come, first-served, and some require registration in advance.</p>
 
@@ -123,7 +123,7 @@ Individual activities will be announced closer to the event, so stay tuned for d
 <img src="/images/schedule/schedule-circle-3.png" id="schedule-circle-3"/>
 <p></p>
 <p>Both days, we'll set aside time for attendees to host informal meetups. You can go from the Get Rich Slowly meetup to the Location Independent meetup—and then over to the Minimalist group, where a fight will likely break out over who owns the fewest things.</p>
-<p>And if you have your own blog, you can host a meetup too. (Our dedicated attendee web app will tell you where each meetup is being held.)</p>
+<p>And if you have your own audience, you can host a meetup too. (Our dedicated attendee web app will tell you where each meetup is being held.)</p>
 
 <div class="half-col">
 	<h4 class="color-orange">Meet the Authors</h3>
