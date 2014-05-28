@@ -16,7 +16,7 @@ icon: parachute
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Saturday</div>
 		<div class="main-schedule-time">9:00am–6:30pm</div>
-		<div class="main-schedule-descr">Main Stage Sessions <br>Portland Experience</div>
+		<div class="main-schedule-descr">Main Stage Sessions <br>Portland Experience <br>Activities</div>
 	</div>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Sunday</div>
