@@ -98,7 +98,7 @@ window.wall =
 				for type,list of ap.speakers
 					for speaker in list
 						speaker.data = JSON.stringify(speaker)
-						speaker.content_id = speaker.speakerid
+						speaker.content_id = speaker.speaker_id
 						wall.contByType['speaker'].push speaker
 				wall.contByType['speaker'] = _.shuffle(wall.contByType['speaker'])
 
@@ -109,7 +109,7 @@ window.wall =
 						for quote in speaker.quotes
 							speaker.quote = quote
 							speaker.data = JSON.stringify(speaker)
-							speaker.content_id = speaker.speakerid+inx
+							speaker.content_id = speaker.speaker_id+inx
 							inx += 1
 							wall.contByType['speaker_quote'].push speaker
 				wall.contByType['speaker_quote'] = _.shuffle(wall.contByType['speaker_quote'])

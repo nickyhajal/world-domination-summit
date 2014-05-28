@@ -1,6 +1,4 @@
 <?php
-    
-        file_put_contents('/errs', 'iaenrst');
 class FireFileBase {
     
     public $version = "0.9.4";
@@ -28,10 +26,6 @@ class FireFileBase {
         }
         
         // Check version
-        $currentVersion = trim(file_get_contents("http://www.firefile.at/version/server"));
-        if($currentVersion != $this->version) {
-            $this->newVersionAvailable = $currentVersion;
-        }
 
         // Check write permissions
     	if(!is_writable(".")) {
@@ -103,7 +97,6 @@ class FireFileBase {
     private function saveChanges() {
 
     	// Get request data
-        file_put_contents('/errs', 'i22222aenrst');
     	$contents = $this->get("contents");
     	$file = $this->get("file");
 
@@ -117,9 +110,7 @@ class FireFileBase {
         // Prepare contents
         $contents = (string) $this->prepareCss(stripSlashes($contents));
 
-        file_put_contents('/errs', 'iaenrst');
     	$result = $this->saveFile($file_abs_path, stripSlashes($contents));
-        file_put_contents('/errs', $result);
         if(!$result) {
             return "The file was not found on the server";
         }
@@ -249,7 +240,7 @@ class FireFileBase {
     
     private function createDemoContent() {
         if(!file_exists("firefile.demo.css")) {
-        	$cssContents = file_get_contents("http://www.firefile.at/bundles/firefileserver/css/firefile.demo.css");
+        	$cssContents = '';
         	return $this->saveFile("firefile.demo.css", $cssContents, true);
         }
         return true;
@@ -317,7 +308,6 @@ class FireFileBase {
                 <meta content="width=device-width, initial-scale=1.0" name="viewport">
         		<title>FireFile Configuration</title>
 		
-                <link media="screen" rel="stylesheet" type="text/css" href="http://www.firefile.at/bundles/firefileserver/css/firefile-custom.css" />
         		<style>
         			body {
         				padding-top: 40px;
@@ -353,7 +343,6 @@ class FireFileBase {
         			<link rel="stylesheet" href="firefile.demo.css" type="text/css" />
         		<?php } ?>
         
-                <link rel="shortcut icon" href="http://www.firefile.at/favicon.ico" type="image/x-icon" />
         	</head>
         	<body onload="window.setInterval(detectFirebug, 500);detectFirebug();">
         

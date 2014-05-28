@@ -33,6 +33,7 @@ var oa = new OAuth(
 );
 app.set('oa', oa);
 require('./app/views/helpers')(app);
+require('./app/routes/registration')(app);
 require('./app/routes/api')(app);
 require('./app/routes/upload')(app);
 require('./app/routes/index')(app);
