@@ -1,4 +1,5 @@
 icon: mountain
+photo_head: https://farm4.staticflickr.com/3677/9221940328_d44b208f38_b.jpg,https://farm3.staticflickr.com/2769/5800562319_93efdd5c8d_b.jpg,https://farm9.staticflickr.com/8284/7522079880_35ca5e448d_b.jpg,https://farm8.staticflickr.com/7439/9219169223_c35d024c43_b.jpg,https://farm9.staticflickr.com/8149/7644901414_b65439b33a_b.jpg
 
 # When main stage sessions end for the afternoon, the good times roll on. Join your fellow attendees at your choice of extracurricular activities around town—from film screenings and river cruises to world record attempts and more!
 
