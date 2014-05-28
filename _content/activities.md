@@ -4,14 +4,14 @@ photo_head: https://farm4.staticflickr.com/3677/9221940328_d44b208f38_b.jpg,http
 
 # When main stage sessions end for the afternoon, the good times roll on. Join your fellow attendees at your choice of extracurricular activities around town—from film screenings and river cruises to world record attempts and more!
 
-If these aren't your cup of tea (or if you just can't get enough), be sure to check out the [WDS academies](/academies). And don't forget all the attendee meetups that will be organized through wds.fm.
+If these aren't your cup of tea (or if you just can't get enough), be sure to check out the [WDS academies](/academies). And don't forget all the attendee meetups that will be organized through our attendee hub.
 
 <div class="zig-zags_blue"></div>
 
-<a name="namaste"></a>
-### Friday, July 11
 
 <a name="5k-run"></a>
+### Friday, July 11
+
 
 <div class="collapsable-box collapsable-box-open">
 	<a href="https://www.eventbrite.com/e/wds-5k-fun-run-tickets-11776849875"><h4>5K Fun Run</h4></a>
@@ -25,6 +25,7 @@ We'll be meeting in front of the Arlene Schnitzer Concert Hall, running down to 
 	</div>
 </div>
 
+<a name="namaste"></a>
 
 <div class="collapsable-box collapsable-box-open">
 	<a href="/2014-world-record"><h4>The Great Namaste</h4></a>
@@ -66,11 +67,11 @@ That is, of course, a lie. But if it were true, it would cleverly underscore jus
 
 
 <div class="collapsable-box collapsable-box-open">
-	<a href="#"><h4>World Cup Live</h4></a>
+	<h4>World Cup Live</h4>
 	<h5>12:00–2:30 pm</h5>
-	<a href="#" class="button">Tickets &rarr;</a>
+	<a href="#" class="button">More info coming soon</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
-		Come watch the world cup as it's broadcast live in Portland's Living Room—Pionner Courthouse Square!
+		Calling all soccer fans! Join your fellow footballers and watch the final World Cup match as it's broadcast live right in Portland's Living Room—Pionner Courthouse Square. Grab your lunch after the morning session and root for your favorite team in the middle of downtown. Bonus points if we can hear you yelling from the main stage.
 	</div>
 </div>
