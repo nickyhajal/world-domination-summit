@@ -24,7 +24,7 @@ Registration for academies is separate from WDS itself. We'll offer registration
 		Spend the day with Darren Rowse and Chris Garrett—authors of *ProBlogger* the book—exploring how to build profitable blogs. Over the day you'll get insight from Darren and Chris on the four 'pillars' of Problogging—Creating Killer Content, Finding Readers, Building Community, and Monetization.
 		
 		<h4>About the Hosts</h4>
-		**Darren Rowse** is the founder of ProBlogger, Digital Photography School, and various other blogs. He’s been blogging since 2002 and has been involved in a variety of other projects including co-authoring *ProBlogger* the Book. Darren's passion is for helping bloggers find their voice and build sustainable blogs and he speaks around the world on the topic of building profitable blogs. **Chris Garrett** is an online business consultant, teacher, coach, new media industry commentator, writer, speaker, and all-round web geek. He has been involved in several startups and has written for some of the web’s best-loved blogs. Chris also works as part of the team at Copyblogger as VP of Educational Content.
+		**Darren Rowse** is the founder of ProBlogger, Digital Photography School, and various other blogs. He’s been blogging since 2002 and has been involved in a variety of other projects including co-authoring *ProBlogger* the Book. Darren is passionate about helping bloggers find their voice and build sustainable blogs. He speaks around the world on the topic of building profitable blogs. **Chris Garrett** is an online business consultant, teacher, coach, new media industry commentator, writer, speaker, and all-round web geek. He has been involved in several startups and has written for some of the web’s best-loved blogs. Chris also works as part of the team at Copyblogger as VP of Educational Content.
 	</div>
 </div>
 
@@ -39,10 +39,10 @@ Registration for academies is separate from WDS itself. We'll offer registration
 	<a href="https://www.eventbrite.com/e/wds-academy-travel-hacking-tickets-11392203387" class="button">Tickets &rarr;</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
-		Master the art of travel hacking. You will learn how to build a strategy to earn big balances of airline and hotel points and miles that you can redeem to travel to your dream destinations. If you want to go places for free, this is the academy for you.
+		Master the art of travel hacking. You will learn how to build a strategy to earn big balances of airline miles and hotel points that you can redeem for travel to your dream destinations. If you want to go places for free or nearly free, this is the workshop for you.
 
 		<h4>About Stephanie Zito</h4>
-		Stephanie Zito is a life long traveler and master of mileage. She redeemed her first international frequent flyer ticket in 1994 and has been hooked on free flights ever since. Stephanie has traveled to more than 117 countries and her current airport base is PDX. wanderingforgood.com / @wanderingzito
+		Stephanie Zito is a life long traveler and master of mileage. She redeemed her first international frequent flyer ticket in 1994 and has been hooked on free flights ever since. Stephanie has traveled to more than 117 countries and her current airport base is PDX. 
 	</div>
 </div>
 
@@ -56,7 +56,7 @@ Registration for academies is separate from WDS itself. We'll offer registration
 	<a href="https://www.eventbrite.com/e/wds-academy-nerd-fitness-with-steve-kamb-tickets-11556996287" class="button">Tickets &rarr;</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
-		Nerd Fitness Academy Live will help you develop the skills you need to become a real life superhero. We’ll start by training our minds to process a totally different approach to fitness—one that breaks the rampant boom and bust fitness trends and leads to long-term sustainable habit change. We’ll then talk about how simple, small changes in our diet can “level up” our nutrition (and allow each attendee to achieve new personal results they didn’t think were really possible). Finally, we’ll demonstrate and perform a strength training workout that you can do ANYWHERE in the world. Everything we teach and share is based around the philosophy that we are normal, everyday people wanting a fun, sustainable, and genuine way to lead better lives together.
+		Nerd Fitness Live will help you develop the skills you need to become a real life superhero. We’ll start by training our minds to process a totally different approach to fitness—one that breaks the rampant boom and bust fitness trends and leads to long-term sustainable habit change. We’ll then talk about how simple, small changes in our diet can “level up” our nutrition (and allow each attendee to achieve new personal results they didn’t think were really possible). Finally, we’ll demonstrate and perform a strength training workout that you can do ANYWHERE in the world. Everything we teach and share is based around the philosophy that we are normal, everyday people wanting a fun, sustainable, and genuine way to lead better lives together.
 
 		<h4>About Steve Kamb</h4>
 		Steve Kamb is the creator and leader of NerdFitness.com, a fitness community dedicated to helping average Joes and desk jockeys live healthier lives. Over the past five years, he's taken Nerd Fitness from a simple one-man blog and developed it into a passionate “rebellion” of over 190,000 email subscribers, with hundreds joining the cause every day. While teaching others to get healthy, he's also managed to complete some pretty cool quests: exploring the ruins of Machu Picchu in Peru and Angkor Wat in Cambodia, diving with sharks on the Great Barrier Reef, flying a stunt plane in New Zealand, and living like James Bond in Monte Carlo.
@@ -74,7 +74,7 @@ Registration for academies is separate from WDS itself. We'll offer registration
 	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029" class="button">Tickets &rarr;</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
-		"Some day" you'll learn a new language? Make "some day" TODAY. We will be tackling your doubts, and then giving you the hacks you need to have a basic conversation in any language you may want to learn, by the end of the lab. Then you will open up a whole new world, unreachable by English alone, and have the tools to skyrocket towards fluency after WDS. Anyone at any age can learn any language in the world. Talent is irrelevant.
+		"Someday" you'll learn a new language? Make "someday" TODAY. We will be tackling your doubts, and then giving you the hacks you need to have a basic conversation in any language you may want to learn, by the end of the lab. Then you will open up a whole new world, unreachable by English alone, and have the tools to skyrocket towards fluency after WDS. Anyone at any age can learn any language in the world. Talent is irrelevant.
 
 By the end of this Academy all language doubts will be squashed. Find out why adults are BETTER language learners than children, how to learn your language even if you are busy, and especially how to do it even if you can't travel abroad.
 		
@@ -128,7 +128,7 @@ For years, Jonathan had been working in secret to deconstruct the key elements o
 In the session you'll play, collaborate, tell stories, get some free cool stuff, work with strangers, and let go a bit, which is always a good thing. This is a great session to get help with something that you are currently working on, and have a ridiculously good time!
 
 		<h4>About Gary Hirsch</h4>
-		Gary Hirsch is a collaboration junkie and the co-founder of On Your Feet, a consultancy that uses improvisation and other interactive methods to help organizations generate new ideas, collaborate, engage audiences and walk their talk. After improv, Gary’s second love is art making, which is rooted in collaboration as well. Currently he is obsessed with making and launching thousands of small hand-painted domino robots into the world to see what will happen. Story telling, improvisation, and doodling are all inter-related for Gary, when he’s doing any of these there are never enough hours in the day.
+		Gary Hirsch is a collaboration junkie and the co-founder of On Your Feet, a consultancy that uses improvisation and other interactive methods to help organizations generate new ideas, collaborate, engage audiences and walk their talk. After improv, Gary’s second love is art making, which is rooted in collaboration as well. Currently he is obsessed with making and launching thousands of small hand-painted domino robots into the world to see what will happen. Storytelling, improvisation, and doodling are all inter-related for Gary. When he’s doing any of them, there are never enough hours in the day.
 	</div>
 </div>
 
@@ -145,7 +145,7 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 		Just what is “simple living,” anyway? And why does it seem to hard to… well, do? Conventional culture often defines living simply with a bunch of rules: shun the TV, ride only your bike, grow your own food, shower only when others complain. But the real definition is delightfully freeing, and it can be fleshed out in any lifestyle, at any age, at any place in the world. In this workshop, we’ll explore what living simply might look like for you. First, we’ll relish in the real definition of simple living. Then, you’ll find time and space to deconstruct parts of your life, followed by freedom to reassemble them using a new-to-you blueprint. Roll up your sleeves and treat yourself to a morning/an afternoon of personal reflection, brainstorming, and if you want, a chance to bounce around some fresh ideas on the nuts and bolts of making it all work. (Introverts who thrive on solo reflection are just as welcome as extroverts who need to chat it all out.) Bring your journal and a pencil for this one.
 
 		<h4>About Tsh Oxenreider</h4>
-		Tsh Oxenreider is passionate about people living simply so that others can simply live, and also firmly believes that a passport is one of life's greatest textbooks. She's the author of three books, including the new *Notes From a Blue Bike: The Art of Living Intentionally in a Chaotic World*, and is the founder and chief spearheader of TheArtofSimple.net, a community blog about simple living. Tsh and her family travel frequently, but right now they live in beautiful Bend, Oregon.
+		Tsh Oxenreider is passionate about people living simply so that others can simply live, and also firmly believes that a passport is one of life's greatest textbooks. She's the author of three books, including the new *Notes From a Blue Bike: The Art of Living Intentionally in a Chaotic World*, and is the founder of TheArtofSimple.net, a community blog about simple living. Tsh and her family travel frequently, but right now they live in beautiful Bend, Oregon.
 	</div>
 </div>
 
