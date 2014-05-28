@@ -30,7 +30,7 @@ Registration for academies is separate from WDS itself. We'll offer registration
 <a name="travel-hacking"></a>
 <div class="line-canvas"></div>
 
-<div class="collapsable-box collapsable-box-closed">
+<div class="collapsable-box collapsable-box-open">
 	<a href="https://www.eventbrite.com/e/wds-academy-travel-hacking-tickets-11392203387"><h4>Travel Hacking Academy</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
 	Hosted by Stephanie Zito
@@ -47,7 +47,7 @@ Registration for academies is separate from WDS itself. We'll offer registration
 <a name="nerd-fitness"></a>
 <div class="line-canvas"></div>
 
-<div class="collapsable-box collapsable-box-closed">
+<div class="collapsable-box collapsable-box-open">
 	<a href="https://www.eventbrite.com/e/wds-academy-nerd-fitness-with-steve-kamb-tickets-11556996287"><h4>Nerd Fitness Live</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
 	Hosted by Steve Kamb
@@ -65,7 +65,7 @@ Registration for academies is separate from WDS itself. We'll offer registration
 <a name="language-lab"></a>
 
 
-<div class="collapsable-box collapsable-box-closed">
+<div class="collapsable-box collapsable-box-open">
 	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029"><h4>Language Lab: Learn How to Hack Any Language and Speak it Today</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
 	Hosted by Benny Lewis
@@ -76,7 +76,7 @@ Registration for academies is separate from WDS itself. We'll offer registration
 
 By the end of this Academy all language doubts will be squashed. Find out why adults are BETTER language learners than children, how to learn your language even if you are busy, and especially how to do it even if you can't travel abroad.
 		
-		<h4>About Bennie Lewis</h4>
+		<h4>About Benny Lewis</h4>
 		Benny Lewis failed in language learning when growing up—getting a C in German, and spending six entire months living in Spain without able to ask the most basic questions in Spanish. But then everything changed! He now speaks 12 languages and runs the world's largest blog about language learning, "Fluent in 3 Months" and has this year released a book of the same title that became an instant international best seller. His travels through language learning have also earned him the title of National Geographic's Traveler of the Year.
 	</div>
 </div>
@@ -91,7 +91,7 @@ By the end of this Academy all language doubts will be squashed. Find out why ad
 
 <div class="line-canvas"></div>
 
-<div class="collapsable-box collapsable-box-closed">
+<div class="collapsable-box collapsable-box-open">
 	<a href="https://www.eventbrite.com/e/wds-academy-revolutionu-with-jonathan-fields-tickets-11557391469"><h4>RevolutionU: How to Tap Revolution-Dynamics to Fuel Rapid Business Growth, Build an Army of Evangelists and Change the Damn World</h4></a>
 	<h5>3:00 pm–6:00 pm</h5>
 	Hosted by Jonathan Fields
@@ -111,7 +111,7 @@ For years, Jonathan had been working in secret to deconstruct the key elements o
 <a name="making-art"></a>
 ### Monday, July 15
 
-<div class="collapsable-box collapsable-box-closed">
+<div class="collapsable-box collapsable-box-open">
 	<a href="https://www.eventbrite.com/e/wds-academy-making-art-and-giving-it-away-tickets-11351507665"><h4>Making Art and Giving It Away</h4></a>
 	<h5>9:00 am–4:00 pm</h5>
 	Hosted by Gary Hirsch
@@ -131,7 +131,7 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 <a name="art-of-simple"></a>
 <div class="line-canvas"></div>
 
-<div class="collapsable-box collapsable-box-closed">
+<div class="collapsable-box collapsable-box-open">
 	<a href="https://www.eventbrite.com/e/wds-academy-the-art-of-simple-a-field-guide-to-redesigning-a-simple-life-tickets-11350996135"><h4>The Art of Simple: A Field Guide to Redesigning Your Simple Life</h4></a>
 	<h5>1:00 pm–5:00 pm</h5>
 	Hosted by Tsh Oxenreider
@@ -148,7 +148,7 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 <a name="business-idea"></a>
 <div class="line-canvas"></div>
 
-<div class="collapsable-box collapsable-box-closed">
+<div class="collapsable-box collapsable-box-open">
 	<a href="https://www.eventbrite.com/e/wds-academy-finding-and-refining-a-great-business-idea-with-fizzle-tickets-11584159533"><h4>Finding and Refining a Great Business Idea</h4></a>
 	<h5>1:00 pm–5:00 pm</h5>
 	Hosted by Fizzle
