@@ -15,19 +15,13 @@ icon: parachute
 	</div>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Saturday</div>
-		<div class="main-schedule-time">9:00am–12:00pm</div>
-		<div class="main-schedule-descr">Morning Session</div>
-		<div class="main-schedule-time">12:00pm–4:00pm</div>
-		<div class="main-schedule-descr">Portland Experience</div>
-		<div class="main-schedule-time">4:00pm–6:30pm</div>
-		<div class="main-schedule-descr">Afternoon Session</div>
+		<div class="main-schedule-time">9:00am–6:30pm</div>
+		<div class="main-schedule-descr">Main Stage Sessions <br>Portland Experience</div>
 	</div>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Sunday</div>
-		<div class="main-schedule-time">9:00am–12:00pm</div>
-		<div class="main-schedule-descr">Morning Session</div>
-		<div class="main-schedule-time">4:00pm–6:30pm</div>
-		<div class="main-schedule-descr">Final Session</div>
+		<div class="main-schedule-time">9:00am–6:30pm</div>
+		<div class="main-schedule-descr">Main Stage Sessions <br>Activities</div>
 		<div class="main-schedule-time">7:00pm–???</div>
 		<div class="main-schedule-descr">Closing Party</div>
 	</div>
