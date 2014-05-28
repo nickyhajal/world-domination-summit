@@ -6,23 +6,29 @@ icon: parachute
 	<h3>Main Schedule</h3>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Friday</div>
-		<div class="main-schedule-time">8:00AM–11:00AM</div>
+		<div class="main-schedule-time">8:30am–11:30am</div>
 		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="/2014-world-record">World Record Attempt</a></div>
-		<div class="main-schedule-time">12:00PM–3:00PM</div>
+		<div class="main-schedule-time">2:00PM–8:00PM</div>
 		<div class="main-schedule-descr">Registration</div>
-		<div class="main-schedule-time">7:00PM–10:00PM</div>
+		<div class="main-schedule-time">6:00PM–10:00PM</div>
 		<div class="main-schedule-descr">"Can't Wait" Welcoming Party</div>
 	</div>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Saturday</div>
-		<div class="main-schedule-time">9:00AM–7:00PM</div>
-		<div class="main-schedule-descr">Main Stage, <br>Portland Experience</div>
+		<div class="main-schedule-time">9:00am–12:00pm</div>
+		<div class="main-schedule-descr">Morning Session</div>
+		<div class="main-schedule-time">12:00pm–4:00pm</div>
+		<div class="main-schedule-descr">Portland Experience</div>
+		<div class="main-schedule-time">4:00pm–6:30pm</div>
+		<div class="main-schedule-descr">Afternoon Session</div>
 	</div>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Sunday</div>
-		<div class="main-schedule-time">9:00AM - 6:30PM</div>
-		<div class="main-schedule-descr">Main Stage, Fun</div>
-		<div class="main-schedule-time">7:00PM Onward</div>
+		<div class="main-schedule-time">9:00am–12:00pm</div>
+		<div class="main-schedule-descr">Morning Session</div>
+		<div class="main-schedule-time">4:00pm–6:30pm</div>
+		<div class="main-schedule-descr">Final Session</div>
+		<div class="main-schedule-time">7:00pm–???</div>
 		<div class="main-schedule-descr">Closing Party</div>
 	</div>
 </div>
