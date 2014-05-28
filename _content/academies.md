@@ -108,6 +108,8 @@ For years, Jonathan had been working in secret to deconstruct the key elements o
 </div>
 
 
+<div class="zig-zags_blue"></div>
+
 <a name="making-art"></a>
 ### Monday, July 15
 
