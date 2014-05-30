@@ -520,6 +520,8 @@ div.collapsable-box-closed:before {
     margin:                     -15px -15px -40px;
     text-decoration:            none;
     padding:                    15px;
+    position:                   relative;
+    z-index:                    100;
 }
 a#nav-foundation {
     background-position:        -248px 0px ! important;
