@@ -55,7 +55,7 @@ It will take 697 of us to swipe the record away from India. Are you up for it?
 
 Abraham Lincoln once said, "All I need to be happy in life is a yacht, some good company, and a bag of Doritos."
 
-That is, of course, a lie. But if it were true, it would cleverly underscore just how amazing it'll be if you join us on Saturday night, July 6th for a cruise through Portland on the famous Portland Spirit—our very own yacht, or at least our very own yacht for a few hours.
+That is, of course, a lie. But if it were true, it would cleverly underscore just how amazing it'll be if you join us on Saturday night, July 12th for a cruise through Portland on the famous Portland Spirit—our very own yacht, or at least our very own yacht for a few hours.
 	</div>
 </div>
 
