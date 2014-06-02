@@ -9,6 +9,7 @@ routes = (app) ->
 	user = require('./api/user')(app)
 	feed = require('./api/feed')(app)
 	speaker = require('./api/speaker')(app)
+	admin= require('./api/admin')(app)
 	transfer = require('./api/transfer')(app)
 	content = require('./api/content')
 	
@@ -72,6 +73,12 @@ routes = (app) ->
 				res.r.msg = 'Not logged in'
 				next()
 
+		# Admin
+		# Anything in the /admin path will pull the users capabilities
+		# other paths require req.query.admin to be passed as true for
+		# capabilities to be grabbed automatically
+		app.all '/admin/*', admin.get_capabilities
+		app.get '/admin/user_export', admin.export
 
 
 		# Finish
