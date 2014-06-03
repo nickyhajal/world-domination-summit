@@ -10,7 +10,7 @@ At the Portland Experience we’ll have six of our favorite carts in the city on
 
 <div class="line-canvas"></div>
 
-### A Drink a Day…
+### A Drink a Day
 
 What good is food without something nice to wash it down with?
 
@@ -22,7 +22,7 @@ Each business takes pride in what they do, so along with samples they’ll be on
 
 <div class="line-canvas"></div>
 
-### There’s An Artist in All of Us…
+### There’s An Artist in All of Us
 
 Portland has become known not only for it’s entrepreneurial spirit, but also for it’s large focus on arts, crafts, and creativity.
 
