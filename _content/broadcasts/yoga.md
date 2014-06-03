@@ -1,4 +1,6 @@
-date: 4-23-14
-headline: Want to start WDS off right? Come help achieve our second World Record!
+date: 6-3-14
+headline: Make history this summer! Join us for our second world record attempt.
 
-# This year, we're taking world records to the next level with our new
+# We had so much fun last year that we decided to do it again. This time, we'll converge on Pioneer Courthouse Square for a "yoga domination" mini-event like no other.
+
+<a href="http://yogarecord.eventbrite.com">Have you signed up yet?</a>
