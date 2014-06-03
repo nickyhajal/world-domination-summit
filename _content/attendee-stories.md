@@ -1,3 +1,5 @@
+icon: handshake
+
 ## Attendee Stories
 
 # This is the headline for attendee stories and how awesome they are
