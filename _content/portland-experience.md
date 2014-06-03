@@ -1,3 +1,5 @@
+icon: theater
+
 # We're commandeering a 3-block section of the downtown Park Blocks and taking the best of Portland and bringing it directly to you. So what exactly does this look like? Let us show you.
 
 <div class="zig-zags_blue"></div>
