@@ -98,8 +98,13 @@ routes = (app) ->
 
 		get: (req, res, next) ->
 			feeds = Feeds.forge()
+			limit = req.query.per_page ? 50
+			page = req.query.page ? 1
 			feeds.query('orderBy', 'feed_id',  'DESC')
-			if req.query.since?
+			feeds.query('limit', limit)
+			if req.query.before?
+				feeds.query('where', 'feed_id', '<', req.query.before)
+			else if req.query.since?
 				feeds.query('where', 'feed_id', '>', req.query.since)
 			feeds
 			.fetch()
