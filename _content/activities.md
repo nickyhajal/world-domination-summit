@@ -68,6 +68,6 @@ That is, of course, a lie. But if it were true, it would cleverly underscore jus
 	<h5>12:00–2:30 pm</h5>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
-		Calling all soccer fans! Join your fellow footballers and watch the final World Cup match as it's broadcast live right in Portland's Living Room—Pionner Courthouse Square. Grab your lunch after the morning session and root for your favorite team in the middle of downtown. Bonus points if we can hear you yelling from the main stage.
+		Calling all soccer fans! Join your fellow footballers and watch the final World Cup match as it's broadcast live right in Portland's Living Room—Pioneer Courthouse Square. Grab your lunch after the morning session and root for your favorite team in the middle of downtown. Bonus points if we can hear you yelling from the main stage.
 	</div>
 </div>
