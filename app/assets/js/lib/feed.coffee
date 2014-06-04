@@ -11,8 +11,7 @@
 			update: 5000
 			params:
 				feed_type: 'personal' #change to opposite
-				page: 0
-				since: 0
+				page: 1
 
 		loadingComments = []
 
@@ -120,13 +119,14 @@
 				$t.addClass('open').html('Show Less')
 				$c.css('max-height', '100000px')
 
-		@getContent = (get_opts) ->
+		@getContent = (get_opts, extra = {}) ->
 			get_defs = 
 				render: opts.render
 				cb: false
 			get_opts = _.defaults get_opts, get_defs
 			opts.params.since = $('.dispatch-content-shell', $el).first().data('content_id')
-			ap.api 'get feed', opts.params, (rsp) =>
+			params = _.defaults extra, opts.params
+			ap.api 'get feed', params, (rsp) =>
 				if rsp.feed_contents?.length
 					@renderFeed(rsp.feed_contents, get_opts.render)
 				if get_opts.cb
@@ -236,6 +236,20 @@
 					, 1200
 			return false
 
+		loadingViaScroll = false
+		@scroll = =>
+			# Determine if we're ready to add more panels
+			scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
+			scrollPercent = window.scrollY / scrollHeight * 100
+			if scrollPercent > 80 and not loadingViaScroll
+				loadingViaScroll = true
+				@getContent
+					render: 'append'
+					cb: ->
+						loadingViaScroll = false
+				,
+					before: $('.dispatch-content-shell', $el).last().data('content_id')
+
 
 		@init = ->
 			@updateContent()
@@ -245,6 +259,7 @@
 				.on('mouseover', '.dispatch-content-comment-status', (e) => @mouseover_loadComments(e, this))
 				.on('click', '.dispatch-content-comment-status', @toggleComments)
 				.on('submit', '.dispatch-content-comment-form', @submitComment)
+			$(window).on('scroll', @scroll)
 
 		if not fnc
 			@init()
