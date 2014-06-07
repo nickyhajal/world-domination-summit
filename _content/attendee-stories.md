@@ -8,7 +8,9 @@ icon: handshake
 
 As we have done for the past several years, we will feature stories from the WDS community that can be told in impactful bite-size tales that are 2 minutes or less. If you have a story you would like to share with the WDS community in 2 minutes or less, please let us know by submitting a proposal here: 
 
-	<a href="https://worlddominationsummit.wufoo.com/forms/attendee-stories-proposal-submission/" class="button">Suggest a Story &rarr;</a>
+<a href="https://worlddominationsummit.wufoo.com/forms/attendee-stories-proposal-submission/" class="button">Suggest a Story &rarr;</a>
+
+<div class="line-canvas"></div>
 
 Here are some of the Attendee Stories from WDS 2013:
 
