@@ -2,11 +2,11 @@ icon: handshake
 
 ## Attendee Stories
 
-# This is the headline for attendee stories and how awesome they are
+# In addition to the great speakers we have lined up for main stage sessions, we're handing the mic over to attendees more than ever this year. 
 
 <div class="zig-zags_blue"></div>
 
-More info about what attendee stories are and why we love them/want them.
+As we have done for the past several years, we will feature stories from the WDS community that can be told in impactful bite-size tales that are 2 minutes or less. Here are some of the Attendee Stories from WDS 2013:
 
 <div class="line-canvas"></div>
 
