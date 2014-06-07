@@ -28,6 +28,11 @@ Featuring stories from the 2012 WDS $100 Investment: Jean MacDonald (AppCamp for
 
 <iframe src="//player.vimeo.com/video/70277493?title=0&amp;byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
+Hosted by WDS Action Team member, Michelle Jones. 
+
+Featuring 1 minute stories from Marian Schembari, Kevin Lee, Terry Jordan, Caroline Merner, and Mike Watts.
+
+
 <div class="line-canvas"></div>
 
 If you have a story you would like to share with the WDS community in 2 minutes or less, please let us know by submitting a proposal here: https://worlddominationsummit.wufoo.com/forms/attendee-stories-proposal-submission/
