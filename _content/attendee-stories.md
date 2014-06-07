@@ -12,11 +12,13 @@ As we have done for the past several years, we will feature stories from the WDS
 
 <iframe src="//player.vimeo.com/video/70277491?title=0&amp;byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-Featuring Mel Findlater ('lady in a box'), Apneet Jolly (ajollylife.com), Greg Berg (Radio Enso), Sasha Martin (@GlobalTble), Bo Cordle (sailingbo.com)
+Hosted by WDS Action Team member, Jolie Guillebeau. Featuring Mel Findlater ('lady in a box'), Apneet Jolly (ajollylife.com), Greg Berg (Radio Enso), Sasha Martin (@GlobalTble), and Bo Cordle (sailingbo.com)
 
 <div class="line-canvas"></div>
 
 <iframe src="//player.vimeo.com/video/70277492?title=0&amp;byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+Hosted by WDS Action Team member, Isaac Watson. Featuring stories from the 2012 WDS $100 Investment: Jean MacDonald (AppCamp for Girls), Amy Clover (StrongInsideOut.com), Rob Young (The $100 Club), and Rami Nuseir (gutstogeek.com)
 
 <div class="line-canvas"></div>
 
