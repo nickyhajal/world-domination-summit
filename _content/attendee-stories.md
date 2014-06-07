@@ -12,6 +12,8 @@ As we have done for the past several years, we will feature stories from the WDS
 
 <iframe src="//player.vimeo.com/video/70277491?title=0&amp;byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
+Featuring Mel Findlater ('lady in a box'), Apneet Jolly (ajollylife.com), Greg Berg (Radio Enso), Sasha Martin (@GlobalTble), Bo Cordle (sailingbo.com)
+
 <div class="line-canvas"></div>
 
 <iframe src="//player.vimeo.com/video/70277492?title=0&amp;byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
