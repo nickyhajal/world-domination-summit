@@ -22,4 +22,4 @@ As we have done for the past several years, we will feature stories from the WDS
 
 <div class="line-canvas"></div>
 
-[signup form goes here]
+If you have a story you would like to share with the WDS community in 2 minutes or less, please let us know by submitting a proposal here: https://worlddominationsummit.wufoo.com/forms/attendee-stories-proposal-submission/
