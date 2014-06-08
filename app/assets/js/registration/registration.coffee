@@ -26,6 +26,7 @@ ap.init = () ->
 	_.whenReady 'me', ->
 		ap.initSearch()
 
+
 ap.allUsers = {}
 ap.initAssets = ->
 	assets = 'all_attendees,me'
@@ -43,16 +44,22 @@ ap.initAssets = ->
 ap.initSearch = ->
 	_.whenReady 'users', ->
 		$('body')
-		.on 'keyup', '.search-input', ->
+		.on 'keyup', '#register_search', ->
 			val = $(this).val()
-			if val.length > 2
+			tk val.length
+			if val.length > 1
 				results = ap.Users.search(val)
+				tk results
 				html = ''
 				for result in results
-					html += '<a class="result-link" href="/~'+result.get('user_name')+'">
+					html += '<div class="search-row" href="/~'+result.get('user_name')+'">
 						<span style="background:url('+result.get('pic')+')"></span>
-					'+result.get('first_name')+' '+result.get('last_name')+'</a>'
-				$('.search-results').html(html)
+					'+result.get('first_name')+' '+result.get('last_name')+'</div>'
+				$('#search-results').html(html).show()
+				$('#search_start').hide()
+			else
+				$('#search-results').hide()
+				$('#search_start').show()
 
 ###
 	Make an api call

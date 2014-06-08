@@ -92,7 +92,7 @@ ap.goTo = (panel = '', options = {}, cb = false) ->
 	panel = if panel and panel.length then _.trim(panel, '/') else 'home'
 	$s = $('#')
 	ap.onPanel = panel
-	view = ap.Views[panel.replace('-', '_')] ? ap.Views.default
+	view = ap.Views[panel.replace(/\-/g, '_')] ? ap.Views.default
 
 	# Unbind current view
 	if ap.currentView?

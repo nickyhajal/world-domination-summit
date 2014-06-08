@@ -106,6 +106,8 @@ routes = (app) ->
 				feeds.query('where', 'feed_id', '<', req.query.before)
 			else if req.query.since?
 				feeds.query('where', 'feed_id', '>', req.query.since)
+			if req.query.user_id
+				feeds.query('where', 'user_id', '=', req.query.user_id)
 			feeds
 			.fetch()
 			.then (feed) ->

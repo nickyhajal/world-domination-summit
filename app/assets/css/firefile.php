@@ -46,7 +46,6 @@ class FireFileBase {
         // Read config file
         $this->readConfigValues();
         
-        file_put_contents('/errs', 'iaenrst');
         // Check for save request
         $token = $this->get("token");
         if($token) {

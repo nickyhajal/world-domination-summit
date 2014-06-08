@@ -1179,6 +1179,7 @@ the specific language governing permissions and limitations under the Apache Lic
 
         // abstract
         positionDropdown: function() {
+            window.s2 = this.container
             var $dropdown = this.dropdown,
                 offset = this.container.offset(),
                 height = this.container.outerHeight(false),
@@ -1189,7 +1190,7 @@ the specific language governing permissions and limitations under the Apache Lic
                 windowHeight = $window.height(),
                 viewPortRight = $window.scrollLeft() + windowWidth,
                 viewportBottom = $window.scrollTop() + windowHeight,
-                dropTop = offset.top + height,
+                dropTop = offset.top,
                 dropLeft = offset.left,
                 enoughRoomBelow = dropTop + dropHeight <= viewportBottom,
                 enoughRoomAbove = (offset.top - dropHeight) >= $window.scrollTop(),

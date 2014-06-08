@@ -1,0 +1,86 @@
+div(id="page_content")
+	h2(id="header-title") 
+		| Want to Host a WDS Meetup?
+	h3 Propose a Meetup
+	div(class="form-error")
+		| Hm, seems like the information you submitted isn't quite right. Take a look and try again.
+	p Want to host an adventure, hangout or something in between during this year's World Domination Summit? 
+	p Complete the form below with the details on what you have planned. We'll review your proposal and get back to you shortly.
+	p Once your proposal is accepted, it will be listed in our official directory of WDS meetups and made available to all the attendees!
+
+	h3 Meetup Proposal Form
+	form(action="#", method="post", id="meetup-proposal-form")
+		div(class="form-section")
+			div(class="form-box")
+				label What are you planning?
+				label(class="sub-label") This will be the name of your meetup
+				input(type="text", name="what")
+		div(class="form-section")
+			div(class="form-box")
+				label Briefly describe what you're planning
+				textarea(name="descr", class="meetup-descr-inp")
+		div(class="form-section")
+			div(class="form-box")
+				label Where will it be hosted?
+				label(class="sub-label") Your meetup is much more likely to be accepted if you have a venue planned
+				input(type="text", name="place")
+		div(class="form-section")
+			div(class="form-box")
+				label Venue Address
+				label(class="sub-label") Or meeting point if your meetup is on the move
+				input(type="text", name="address")
+		div(class="form-section")
+			div(class="form-box")
+				label What kind of person might enjoy this? Who's this for?
+				input(type="text", name="who")
+		div(class="form-section")
+				label What interests might be associated with your meetup?
+				div(class="interest-select-list", data-context="generic")
+		div(class="form-section")
+			label When will your meetup happen?
+			div(class="form-box")
+				select(name="date", class="select2", style="width:120px")
+					option(value="09") July 9th
+					option(value="10") July 10th
+					option(value="11") July 11th
+					option(value="12") July 12th
+					option(value="13") July 13th
+					option(value="14") July 14th
+					option(value="15") July 15th
+					option(value="16") July 16th
+			div(class="form-box")
+				select(name="hour", class="select2", style="width:120px")
+					option(value="01") 01
+					option(value="02") 02
+					option(value="03") 03
+					option(value="04") 04
+					option(value="05") 05
+					option(value="06") 06
+					option(value="07") 07
+					option(value="08") 08
+					option(value="09") 09
+					option(value="10") 10
+					option(value="11") 11
+					option(value="12") 12
+				select(name="minute", class="select2", style="width:65px")
+					option(value="00") 00
+					option(value="15") 15
+					option(value="30") 30
+					option(value="45") 45
+				select(name="pm", class="select2", style="width:65px")
+					option(value="0") am
+					option(value="12") pm
+		div(class="form-section")
+			label Roughly how many people can attend?
+			select(name="max", class="select2", style="width:175px")
+				option(value="05") 5
+				option(value="10") 10
+				option(value="20") 20
+				option(value="40") 40
+				option(value="80") 80
+				option(value="160") 160
+				option(value="320") 320
+				option(value="10000") Unlimited	
+		div(class="clear")
+		div(class="form-section")
+			input(type="submit", value="Submit Meetup")

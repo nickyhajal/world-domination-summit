@@ -3,4 +3,5 @@ jQuery.fn.scan
 		id: 'interest-select-list'
 		fnc: ->
 			$el = $(this)
-			new ap.Views.InterestList({el: $el})
+			context = $(this).data('context') ? 'user'
+			new ap.Views.InterestList({el: $el, context: context})

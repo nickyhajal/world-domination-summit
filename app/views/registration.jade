@@ -29,8 +29,8 @@ html(lang='en')
 				div(id="page_content")
 					h3 Registration
 					input(type="text", id="register_search", placeholder="Search for an Attendee")
+					div(id="search-results")
 					div(id="search_start", class="srch_msg")
-						| Type an Attendee First and/or Last Name Above
 						table
 							tr
 								th Registrations on this Device - Past 60 min
@@ -40,10 +40,10 @@ html(lang='en')
 								td(id="device_reg_all")
 							tr
 								th Total Registrations - Past 60 min
-								td(id="total_reg_hour") Not sure
+								td(id="total_reg_hour") Offline
 							tr
 								th Total Registrations - All-time
-								td(id="total_reg_all") Not sure
+								td(id="total_reg_all") Offline
 							tr
 								th Unsynced Changes
 								td(id="unsynced")
