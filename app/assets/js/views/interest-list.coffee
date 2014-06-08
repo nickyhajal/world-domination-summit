@@ -3,6 +3,7 @@ ap.Views.InterestList = XView.extend
 		'click .interest-button': 'addInterest'
 		'click .interest-remove-button': 'removeInterest'
 	initialize: ->
+		@context = @options.context
 		@selected = []
 		@$selected = $('.interests-selected', @el)
 		@interestById = {}
@@ -12,15 +13,31 @@ ap.Views.InterestList = XView.extend
 			@interestIds.push interest.interest_id
 
 		@render()
+		if @context is 'generic'
+			@input = $('<input/>').attr('name', 'interests').attr('type', 'hidden')
+			$(@el).before(@input)
 		
 	selectedInterests: ->
-		return JSON.parse(ap.me.get('interests'))
+		if @context is 'user'
+			return JSON.parse(ap.me.get('interests'))
+		else
+			return @selected
 
 	setInterests: (interests) ->
-		ap.me.set('interests', JSON.stringify(interests))
+		if @context is 'user'
+			ap.me.set('interests', JSON.stringify(interests))
+		else if @context is 'generic'
+			val = interests.join(',')
+			@selected = interests
+			@input.val(val)
 
 	render: ->
-		html = '
+		html = ''
+		if @context is 'generic'
+			label = 'Selected Interests'
+		else if @context is 'user'
+			label = 'Your Interests'
+		html += '
 			<label>Select Interests Below</label>
 		'
 		selected = @selectedInterests()
@@ -31,7 +48,7 @@ ap.Views.InterestList = XView.extend
 		if selected.length
 			html += '
 				<div class="clear"></div>
-				<label>Your Interests</label>
+				<label>'+label+'</label>
 			'
 			for interest in selected
 				interest = @interestById[interest].set('classes', 'interest-remove-button')
@@ -46,7 +63,9 @@ ap.Views.InterestList = XView.extend
 		selected = @selectedInterests()
 		selected.push interest_id
 		@setInterests(selected)
-		ap.api 'post user/interest', {interest_id: interest_id}
+
+		if @context is 'user'
+			ap.api 'post user/interest', {interest_id: interest_id}
 		@render()
 
 	removeInterest: (e) ->	
@@ -58,6 +77,7 @@ ap.Views.InterestList = XView.extend
 		for interest in selected
 			if interest isnt interest_id
 				tmp.push interest
-		ap.api 'delete user/interest', {interest_id: interest_id}
+		if @context is 'user'
+			ap.api 'delete user/interest', {interest_id: interest_id}
 		@setInterests(tmp)
 		@render()

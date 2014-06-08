@@ -723,6 +723,14 @@ h3.side-icon-fork:before {
 .orange-box h3 {
     color:                      rgb(35, 31, 32);
 }
+#sidebar h3 {
+    clear:                      both;
+    margin-left:                15px;
+    font-size:                  16pt;
+    position:                   relative;
+    top:                        12px;
+    color:                      rgb(35, 31, 32);
+}
 h3 {
     font-size:                  24px;
     font-family:                vitesselight;
@@ -892,6 +900,14 @@ input[type="text"], input[type="password"] {
     color:                      rgb(33, 23, 10);
     font-family:                karla ! important;
     font-size:                  12pt;
+}
+.sub-label {
+    font-size:                  10pt ! important;
+    color:                      rgb(118, 118, 118) ! important;
+    margin-bottom:              7px ! important;
+}
+#page-propose-a-meetup .interest-select-list label:first-of-type {
+    display:                    none;
 }
 #page_content label {
     display:                    block;
@@ -1076,14 +1092,17 @@ textarea.dispatch-content-comment-inp {
     width:                      300px;
     height:                     70px;
 }
+textarea.meetup-descr-inp {
+    width:                      410px;
+}
 textarea {
     background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
     border:                     0px none;
     font-family:                karla;
     height:                     90px;
     padding:                    12px 10px 10px;
-    width:                      100%;
     font-size:                  15px;
+    width:                      300px;
 }
 .box-select-shell {
     height:                     38px;

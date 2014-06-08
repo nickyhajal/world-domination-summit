@@ -16,12 +16,15 @@ div(id="user-manifest-shell")
 					input(type="text", name="email")
 			div(class="form-section")
 				div(class="form-box")
-					label Description
-					input(type="text", name="descr")
+					label Country
+					input(type="hidden", name="country", id="country-select", value="US")
 			div(class="form-section")
 				div(class="form-box")
-					label Year
-					input(type="text", name="year", value="2014")
+					label Address
+					input(type="text", name="address")
+				div(class="form-box")
+					label Address 2
+					input(type="text", name="address2")
 			div(class="form-section")
 				div(class="form-box")
 					label City
@@ -32,6 +35,14 @@ div(id="user-manifest-shell")
 				div(class="form-box")
 					label Zip
 					input(type="text", name="zip")
+			div(class="form-section")
+				div(class="form-box")
+					label Type
+					select(name="type", class="select2", style="width:140px")
+						option(value="attendee") Attendee
+						option(value="ambassador") Ambassador
+						option(value="staff") Staff
+						option(value="speaker") Speaker
 			div(class="clear")
 			div(class="form-section")
 				input(type="hidden", name="attending14", value="1")

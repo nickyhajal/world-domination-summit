@@ -11,6 +11,23 @@ input#register_search {
 div#search_start {
     text-align:                 center;
 }
+div.search-row {
+    padding:                    12px 0px;
+}
+div#search-results {
+    position:                   relative;
+    top:                        -30px;
+}
+#search_start table {
+    width:                      80%;
+    margin:                     0px auto;
+}
+header#main-header {
+    margin:                     0px;
+}
+#page_content h3 {
+    margin-top:                 0px;
+}
 * {
     line-height:                inherit;
 }

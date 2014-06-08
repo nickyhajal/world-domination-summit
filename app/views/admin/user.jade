@@ -46,6 +46,14 @@ div(id="user-manifest-shell")
 				div(class="form-box")
 					label Zip
 					input(type="text", name="zip", value="{{ zip }}")
+			div(class="form-section")
+				div(class="form-box")
+					label Type
+					select(name="type", class="select2", style="width:140px")
+						option(value="attendee") Attendee
+						option(value="ambassador") Ambassador
+						option(value="staff") Staff
+						option(value="speaker") Speaker
 			div(class="clear")
 			div(class="form-section")
 				input(type="submit", value="Save Attendee Info", class="button")

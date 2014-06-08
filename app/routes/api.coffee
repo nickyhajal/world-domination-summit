@@ -12,6 +12,7 @@ routes = (app) ->
 	admin= require('./api/admin')(app)
 	transfer = require('./api/transfer')(app)
 	content = require('./api/content')
+	event = require('./api/event')(app)
 	
 	app.namespace '/api', (req, res, next)->
 
@@ -42,8 +43,13 @@ routes = (app) ->
 		app.delete '/user/twitter', user.del_twitter
 		app.post '/user/tweet', user.send_tweet
 
+		# Speakers
 		app.put '/speaker', speaker.update
 		app.post '/speaker', speaker.create
+
+		# Events
+		app.post '/event', event.add
+		app.put '/event', event.upd
 
 		# Feed
 		app.post '/feed', feed.add
