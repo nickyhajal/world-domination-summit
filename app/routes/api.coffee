@@ -12,7 +12,7 @@ routes = (app) ->
 	admin= require('./api/admin')(app)
 	transfer = require('./api/transfer')(app)
 	content = require('./api/content')
-	
+
 	app.namespace '/api', (req, res, next)->
 
 		# Setup
@@ -78,6 +78,9 @@ routes = (app) ->
 		# other paths require req.query.admin to be passed as true for
 		# capabilities to be grabbed automatically
 		app.all '/admin/*', admin.get_capabilities
+		app.get '/admin/ambassadors', admin.ambassadors
+		app.get '/admin/ambassador/:id/accept', admin.ambassador_accept
+		app.get '/admin/ambassador/:id/reject', admin.ambassador_reject
 		app.get '/admin/user_export', admin.export
 
 

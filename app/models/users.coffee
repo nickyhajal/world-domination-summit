@@ -24,7 +24,7 @@ User = Shelf.Model.extend
   tableName: 'users'
   permittedAttributes: [
     'user_id', 'type', 'email', 'first_name', 'last_name', 'attending14',
-    'email', 'hash', 'user_name', 'mf', 'twitter', 'facebook', 'site', 'pic', 
+    'email', 'hash', 'user_name', 'mf', 'twitter', 'facebook', 'site', 'pic',
     'address', 'address2', 'city', 'region', 'country', 'zip', 'lat', 'lon', 'distance',
     'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake'
   ]
@@ -36,6 +36,7 @@ User = Shelf.Model.extend
     region: ''
     city: ''
     zip: ''
+    country: ''
   idAttribute: 'user_id'
   hasTimestamps: true
   initialize: ->
@@ -60,7 +61,7 @@ User = Shelf.Model.extend
 
   saved: (obj, rsp, opts) ->
     @id = rsp
-    addressChanged = @lastDidChange [ 
+    addressChanged = @lastDidChange [
       'address', 'address2', 'city'
       'region', 'country', 'zip'
     ]
@@ -77,10 +78,10 @@ User = Shelf.Model.extend
   # AUTH #
   ########
 
-  authenticate: (clear, req) -> 
+  authenticate: (clear, req) ->
     dfr = Q.defer()
     bcrypt.compare clear, @get('password'), (err, matched) =>
-      if matched 
+      if matched
         if req
           @login req
           dfr.resolve(true)
@@ -161,7 +162,7 @@ User = Shelf.Model.extend
     return dfr.promise
 
   hasCapability: (capability) ->
-    map = 
+    map =
       user: 'manifest'
       "add-attendee": 'manifest'
       speaker: 'speakers'
@@ -195,7 +196,7 @@ User = Shelf.Model.extend
     .fetch()
     .then (connections) =>
       connected_ids = []
-      for connection in connections.models 
+      for connection in connections.models
         connected_ids.push connection.get('to_id')
       @set
         connections: connections
@@ -253,7 +254,7 @@ User = Shelf.Model.extend
   ###########
   # TICKETS #
   ###########
-  
+
   registerTicket: (eventbrite_id, returning = false, transfer_from = null) ->
     dfr = Q.defer()
     Ticket.forge
@@ -299,7 +300,7 @@ User = Shelf.Model.extend
   ###########
   # TWITTER #
   ###########
-  
+
   getTwit: ->
     dfr = Q.defer()
     TwitterLogin.forge
@@ -318,7 +319,7 @@ User = Shelf.Model.extend
     dfr = Q.defer()
     @getTwit()
     .then (twit) ->
-      twit.post 'statuses/update', 
+      twit.post 'statuses/update',
         status: tweet, (err, reply) ->
           dfr.resolve(err, reply)
     return dfr.promise
@@ -326,7 +327,7 @@ User = Shelf.Model.extend
   follow: (screen_name, cb) ->
     dfr = Q.defer()
     @getTwit (twit) ->
-      twit.post 'friendships/create', 
+      twit.post 'friendships/create',
         screen_name: screen_name, (err, reply) ->
           dfr.resolve(err, reply)
     return dfr.promise
@@ -334,7 +335,7 @@ User = Shelf.Model.extend
   isFollowing: (screen_name, cb) ->
     dfr = Q.defer()
     @getTwit (twit) =>
-      twit.get 'friendships/exists', 
+      twit.get 'friendships/exists',
         screen_name_a: @twitter
         screen_name_b: screen_name
         , (err, reply) ->
@@ -372,14 +373,14 @@ User = Shelf.Model.extend
 
   addToList: (list) ->
     dfr = Q.defer()
-    params = 
+    params =
       username: process.env.MM_USER
       api_key: process.env.MM_PW
       email: @get('email')
       first_name: @get('first_name')
       last_name: @get('last_name')
       unique_link: @get('hash')
-    call = 
+    call =
       url: 'https://api.madmimi.com/audience_lists/'+list+'/add'
       method: 'post'
       form: params
@@ -389,13 +390,13 @@ User = Shelf.Model.extend
 
   removeFromList: (list, email = false) ->
     dfr = Q.defer()
-    params = 
+    params =
       username: process.env.MM_USER
       api_key: process.env.MM_PW
       email: @get('email')
     if email
       params.email = email
-    call = 
+    call =
       url: 'https://api.madmimi.com/audience_lists/'+list+'/remove'
       method: 'post'
       form: params
@@ -405,7 +406,7 @@ User = Shelf.Model.extend
 
 
 Users = Shelf.Collection.extend
-  model: User 
+  model: User
   getMe: (req) ->
     dfr = Q.defer()
     ident = if req.session.ident then JSON.parse(req.session.ident) else false

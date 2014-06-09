@@ -14,5 +14,12 @@ routes = (app) ->
 				res.r.msg = 'Success'
 			else
 				res.status(401)
+		ambassadors: (req, res, next) ->
+			Users.forge()
+				.query('where', 'type', 'potential-ambassador')
+				.fetch()
+				.then (model) ->
+					res.r.users = model
+					next()
 
 module.exports = routes
