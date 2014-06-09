@@ -21,5 +21,29 @@ routes = (app) ->
 				.then (model) ->
 					res.r.users = model
 					next()
+		ambassador_accept: (req, res, next) ->
+			if req.me.hasCapability('ambassadors')
+				User.forge
+					user_id: req.query.id
+				.fetch()
+				.then (model) ->
+					model.set('type', 'accepted-ambassador')
+					model.save()
+					res.redirect('/admin/ambassadors')
+			else
+				res.status(401)
+				next()
+		ambassador_reject: (req, res, next) ->
+			if req.me.hasCapability('ambassadors')
+				User.forge
+					user_id: req.query.id
+				.fetch()
+				.then (model) ->
+					model.set('type', 'rejected-ambassador')
+					model.save()
+					res.redirect('/admin/ambassadors')
+			else
+				res.status(401)
+				next()
 
 module.exports = routes
