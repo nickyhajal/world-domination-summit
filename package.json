@@ -49,7 +49,7 @@
     "async": "~0.7.0",
     "request": "~2.34.0",
     "yamljs": "~0.1.5",
-    "wufoo": "^1.0.0"
+    "wufoo": "icole/node-wufoo"
   },
   "devDependencies": {
     "mocha": "~1.0.3",
