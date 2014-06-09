@@ -27,7 +27,8 @@ routes = (app) ->
 					user_id: req.query.id
 				.fetch()
 				.then (model) ->
-					model.set('type', 'accepted-ambassador')
+					model.set('type', 'ambassador')
+					model.set('attending14', 1)
 					model.save()
 					res.redirect('/admin/ambassadors')
 			else
