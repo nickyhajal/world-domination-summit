@@ -14,13 +14,13 @@ routes = (app) ->
 				res.attachment 'attendees2014.csv'
 
 				# Headers
-				response = "First Name;Last Name;Email;Twitter;Type;Location\n"
+				response = "First Name;Last Name;Email;Twitter;Type;Location;City;State/Region;Country\n"
 
 				# Attendee list for 2014
 				Users.forge().query('where', 'attending14', '1').fetch().then (model) -> (
 					for i in [0 .. model.models.length - 1]
 						attendee = model.models[i]
-						response = response + attendee.get('first_name')+";"+attendee.get('last_name')+";"+attendee.get('email')+";"+attendee.get('twitter')+";"+attendee.get('type')+';"'+attendee.get('location')+'"' + "\n"
+						response = response + attendee.get('first_name')+";"+attendee.get('last_name')+";"+attendee.get('email')+";"+attendee.get('twitter')+";"+attendee.get('type')+';"'+attendee.get('location')+'";'+attendee.get('city')+';'+attendee.get('region')+';'+attendee.get('country')+"\n"
 					res.send response
 					res.r.msg = 'Success'
 				)
