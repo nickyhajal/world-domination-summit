@@ -10,5 +10,4 @@ However! Even though the main event is now closed, public registration for a ser
 
 Oh, and you can also join us for our <a href="http://yogarecord.eventbrite.com">2014 World Record Attempt</a>. Bring friends and family!
 
-
-
+<a href="/2014-world-record" class="button">The Great Namaste &rarr;</a>
