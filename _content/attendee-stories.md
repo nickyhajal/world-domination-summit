@@ -1,5 +1,5 @@
 icon: handshake
-photo_head: https://farm3.staticflickr.com/2805/9234107256_9b7af6280f_b.jpg,https://farm3.staticflickr.com/2853/9231335591_8811df6275_b.jpg
+photo_head: https://farm3.staticflickr.com/2805/9234107256_9b7af6280f_b.jpg,https://farm9.staticflickr.com/8293/7537750656_2a8da86427_b.jpg,https://farm3.staticflickr.com/2853/9231335591_8811df6275_b.jpg,https://farm9.staticflickr.com/8024/7537738118_8f3a08a2ba_b.jpg
 
 ## Attendee Stories
 
