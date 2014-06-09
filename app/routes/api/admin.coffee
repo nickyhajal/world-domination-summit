@@ -51,5 +51,6 @@ routes = (app) ->
 					res.r.msg = 'Success'
 			else
 				res.status(401)
+				next()
 
 module.exports = routes
