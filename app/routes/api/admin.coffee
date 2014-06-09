@@ -1,3 +1,4 @@
+async = require 'async'
 routes = (app) ->
 
 	[User, Users] = require('../../models/users')
@@ -8,6 +9,20 @@ routes = (app) ->
 			.then (capable_me) ->
 				req.me = capable_me
 				next()
+		process_locations: (req, res, next) ->
+			Users.forge()
+			.query('where', 'attending14', '=', '1')
+			.query('where', 'location', '=', '')
+			.fetch()
+			.then (rsp) ->
+				async.each rsp.models, (user, cb) ->
+					loc = user.getLocationString()
+					user.set({location: loc}).save().then ->
+						cb()
+				, ->
+					next()
+
+
 		download: (req, res, next) ->
 			if req.me?
 				if req.me?.hasCapability('downloads')

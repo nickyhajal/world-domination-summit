@@ -73,6 +73,7 @@ routes = (app) ->
 		app.all '/admin/*', admin.get_capabilities
 		app.get '/admin/download', admin.download
 		app.get '/admin/user_export', admin.export
+		app.get '/admin/locations', admin.process_locations
 
 
 		# Finish

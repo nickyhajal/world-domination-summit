@@ -246,7 +246,8 @@ User = Shelf.Model.extend
     if (@get('country') is 'US' or @get('country') is 'GB') and @get('region')?
       address += @get('region')
     unless (@get('country') is 'US' or @get('country') is 'GB')
-      address += countries[@get('country')].name
+      if countries[@get('country')]?
+        address += countries[@get('country')].name
     return address
 
 
