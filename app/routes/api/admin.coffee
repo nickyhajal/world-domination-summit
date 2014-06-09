@@ -9,7 +9,7 @@ routes = (app) ->
 				req.me = capable_me
 				next()
 		export: (req, res, next) ->
-			#if req.me.hasCapability('manifest')
+			if req.me.hasCapability('manifest')
 				res.status(200)
 				res.attachment 'attendees2014.csv'
 
@@ -24,7 +24,7 @@ routes = (app) ->
 					res.send response
 					res.r.msg = 'Success'
 				)
-			#else
-			#	res.status(401)
+			else
+				res.status(401)
 
 module.exports = routes
