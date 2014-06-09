@@ -44,12 +44,12 @@ routes = (app) ->
 
 				# Attendee list for 2014
 				Users.forge().query('where', 'attending14', '1').fetch().then (model) ->
-					for i in model.models
-						attendee = model.models[i]
+					for attendee in model.models
 						response = response + attendee.get('first_name')+";"+attendee.get('last_name')+";"+attendee.get('email')+";"+attendee.get('twitter')+";"+attendee.get('type')+';"'+attendee.get('location')+'";'+attendee.get('city')+';'+attendee.get('region')+';'+attendee.get('country')+"\n"
 					res.send response
 					res.r.msg = 'Success'
 			else
+				tk 2
 				res.status(401)
 				next()
 
