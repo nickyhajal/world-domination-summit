@@ -83,8 +83,8 @@ routes = (app) ->
 		# Anything in the /admin path will pull the users capabilities
 		# other paths require req.query.admin to be passed as true for
 		# capabilities to be grabbed automatically
-		app.get '/admin/user_export', admin.export
 		app.all '/admin/*', admin.get_capabilities
+		app.get '/admin/user_export', admin.export
 
 
 		# Finish
