@@ -876,7 +876,7 @@ input.search-input {
     position:                   relative;
     z-index:                    2147483647;
 }
-input.manifest-search, .speaker-search {
+input.manifest-search, .speaker-search, .ambassador-search {
     width:                      90% ! important;
     font-size:                  18px ! important;
     padding:                    12px ! important;
@@ -1559,7 +1559,7 @@ div.dispatch-loading {
 .search-results div.speaker-avatar {
     margin-bottom:              0px;
 }
-div.manifest-avatar, #speaker-results .speaker-avatar, .search-avatar {
+div.manifest-avatar, #speaker-results .speaker-avatar, .search-avatar, #ambassador-results {
     background-size:            100% auto ! important;
     -webkit-background-size:    100% auto ! important;
     border-radius:              50%;
