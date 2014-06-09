@@ -79,8 +79,8 @@ routes = (app) ->
 		# capabilities to be grabbed automatically
 		app.all '/admin/*', admin.get_capabilities
 		app.get '/admin/ambassadors', admin.ambassadors
-		app.get '/admin/ambassador/:id/accept', admin.ambassador_accept
-		app.get '/admin/ambassador/:id/reject', admin.ambassador_reject
+		app.get '/admin/ambassador_accept', admin.ambassador_accept
+		app.get '/admin/ambassador_reject', admin.ambassador_reject
 		app.get '/admin/user_export', admin.export
 
 

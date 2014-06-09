@@ -13,6 +13,7 @@ shell = (app, db) ->
         create_ambassador name, email
 
   create_ambassador = (name, email) ->
+    #Update or Create a User account
     User.forge({email: email})
     .fetch()
     .then (existing) ->
@@ -24,8 +25,10 @@ shell = (app, db) ->
           type: 'potential-ambassador'
         .save()
       else
-        existing.set('type', 'potential-ambassador')
-        existing.save()
+        #Only update their type if they aren't an ambassador
+        if existing.get('type').indexOf("ambassador") == -1
+          existing.set('type', 'potential-ambassador')
+          existing.save()
   grab_amb()
 
 module.exports = shell

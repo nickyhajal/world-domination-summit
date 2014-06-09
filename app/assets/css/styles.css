@@ -3559,3 +3559,7 @@ html[dir="rtl"] .select2-search-choice-close {
         background-position:    100% -21px ! important;
         }
 }
+.ambassador-button {
+  margin: 20px !important;
+  border-bottom: 0px !important;
+}

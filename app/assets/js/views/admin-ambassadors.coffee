@@ -28,7 +28,11 @@ ap.Views.admin_ambassadors = XView.extend
             <td>
               <span>'+atn.get('first_name')+' '+atn.get('last_name')+'</span>
             </td>
-            <td>'+atn.get('email')+'</td>'
+            <td>'+atn.get('email')+'</td>
+            <td>
+            <a href="/api/admin/ambassador_accept?id='+atn.get('user_id')+'" class="counter-button ambassador-button">Accept</a>
+            <a href="/api/admin/ambassador_reject?id='+atn.get('user_id')+'" class="counter-button ambassador-button">Reject</a>
+            </td>'
         $('#speaker-results').html(html)
         $('#ambassador-start').hide()
         $('#speaker-results-shell').show()
