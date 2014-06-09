@@ -8,6 +8,17 @@ routes = (app) ->
 			.then (capable_me) ->
 				req.me = capable_me
 				next()
+		download: (req, res, next) ->
+			if req.me?
+				if req.me?.hasCapability('downloads')
+					res.attachment(req.query.file);
+					res.sendfile(req.query.file, {root: '/var/www/secure_files/'});
+				else
+					res.r.msg = 'Not authorized'
+					next()
+			else
+				res.r.msg = 'Not logged in'
+				next()
 		export: (req, res, next) ->
 			if req.me.hasCapability('manifest')
 				res.status(200)
@@ -17,13 +28,12 @@ routes = (app) ->
 				response = "First Name;Last Name;Email;Twitter;Type;Location;City;State/Region;Country\n"
 
 				# Attendee list for 2014
-				Users.forge().query('where', 'attending14', '1').fetch().then (model) -> (
-					for i in [0 .. model.models.length - 1]
+				Users.forge().query('where', 'attending14', '1').fetch().then (model) ->
+					for i in model.models
 						attendee = model.models[i]
 						response = response + attendee.get('first_name')+";"+attendee.get('last_name')+";"+attendee.get('email')+";"+attendee.get('twitter')+";"+attendee.get('type')+';"'+attendee.get('location')+'";'+attendee.get('city')+';'+attendee.get('region')+';'+attendee.get('country')+"\n"
 					res.send response
 					res.r.msg = 'Success'
-				)
 			else
 				res.status(401)
 

@@ -65,25 +65,13 @@ routes = (app) ->
 		app.get '/transfer/return', transfer.pdt
 		app.get '/transfer/status', transfer.status
 
-		app.get '/admin/download', (req, res, next) ->
-			if req.me?
-				req.me.getCapabilities()
-				.then ->
-					if req.me?.hasCapability('downloads')
-						res.attachment(req.query.file);
-						res.sendfile(req.query.file, {root: '/var/www/secure_files/'});
-					else
-						res.r.msg = 'Not authorized'
-						next()
-			else
-				res.r.msg = 'Not logged in'
-				next()
 
 		# Admin
 		# Anything in the /admin path will pull the users capabilities
 		# other paths require req.query.admin to be passed as true for
 		# capabilities to be grabbed automatically
 		app.all '/admin/*', admin.get_capabilities
+		app.get '/admin/download', admin.download
 		app.get '/admin/user_export', admin.export
 
 
