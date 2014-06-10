@@ -28,8 +28,8 @@ ap.Views.Dispatch = XView.extend
 	postFeed: (e) ->
 		clearTimeout @controlsTimo
 		e.preventDefault()
+		post = $(e.currentTarget).formToJson()
 		if post.content.length > 0
-			post = $(e.currentTarget).formToJson()
 			post.channel = @options.channel
 			post.channel_type = @options.channel_type
 			setTimeout =>
