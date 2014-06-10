@@ -36,7 +36,7 @@ ap.Views.profile = XView.extend
 		html = ''
 		for answer in JSON.parse(@options.attendee.get('answers'))
 			html += '<div class="attendee-question-shell">'
-			html += '<div class="question">'+questions[count]+'</div><div class="answer">'+answer.answer+'</div>'
+			html += '<div class="question">'+questions[answer.question_id - 1]+'</div><div class="answer">'+answer.answer+'</div>'
 			html += '</div>'
 			count += 1
 		html += '<div class="clear"></div>'
