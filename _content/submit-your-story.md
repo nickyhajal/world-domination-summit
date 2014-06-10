@@ -4,6 +4,8 @@ icon: handshake
 
 Submit your story below!
 
+<div id="wufoo-s1wmwbs81n6u528">
+</div>
 <script type="text/javascript">var s1wmwbs81n6u528;(function(d, t) {
 var s = d.createElement(t), options = {
 'userName':'worlddominationsummit',
