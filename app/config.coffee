@@ -13,6 +13,9 @@ config = (app, express, RedisStore, mysql) ->
 		app.set('eb_key', process.env.EB_KEY)
 		app.set('eb_user', process.env.EB_USER)
 		app.set('eb_event', process.env.EB_EVENT)
+		app.set('wufoo_account', process.env.WUFOO_ACCOUNT)
+		app.set('wufoo_key', process.env.WUFOO_KEY)
+		app.set('wufoo_amb_form', process.env.WUFOO_AMB_FORM)
 		app.set('uploadDir', '/tmp')
 
 		app.use(express.cookieParser())
@@ -32,7 +35,7 @@ config = (app, express, RedisStore, mysql) ->
 
 	app.configure 'development', ->
 		app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-		app.set 'db', 
+		app.set 'db',
             client: 'mysql'
             connection:
             	host: process.env.DB_HOST
@@ -44,7 +47,7 @@ config = (app, express, RedisStore, mysql) ->
 
 	app.configure 'production', ->
 		app.use(express.errorHandler());
-		app.set 'db', 
+		app.set 'db',
             client: 'mysql'
             connection:
             	host: process.env.DB_HOST
