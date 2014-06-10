@@ -884,7 +884,7 @@ input.search-input {
     position:                   relative;
     z-index:                    2147483647;
 }
-input.manifest-search, .speaker-search {
+input.manifest-search, .speaker-search, .ambassador-search {
     width:                      90% ! important;
     font-size:                  18px ! important;
     padding:                    12px ! important;
@@ -1578,7 +1578,7 @@ div.dispatch-loading {
 .search-results div.speaker-avatar {
     margin-bottom:              0px;
 }
-div.manifest-avatar, #speaker-results .speaker-avatar, .search-avatar {
+div.manifest-avatar, #speaker-results .speaker-avatar, .search-avatar, #ambassador-results {
     background-size:            100% auto ! important;
     -webkit-background-size:    100% auto ! important;
     border-radius:              50%;
@@ -1618,6 +1618,13 @@ table#manifests-results-shell, .search-results-shell {
 #manifest-results tr td:first-of-type, .search-results tr td:first-of-type {
     text-align:                 left;
     width:                      400px ! important;
+}
+#ambassador-review-results tr td:first-of-type {
+    padding-left:               10px;
+}
+#ambassador-review-results td {
+    font-family:                karla;
+    font-size:                  11pt;
 }
 #manifest-results tr td:first-of-type span, .search-results tr td:first-of-type span {
     display:                    table-cell;
@@ -1677,6 +1684,10 @@ div.active-ticket a {
     margin-top:                 -8px;
     padding:                    6px;
     font-size:                  16px;
+}
+td.ambassador-review-actions {
+    padding-left:               11px;
+    width:                      323px;
 }
 * {
     line-height:                inherit;
@@ -1856,16 +1867,26 @@ a#nav-register {
     padding:                    10px 5px 25px ! important;
     background:                 url("/images/icon-search.png?12") repeat scroll center 4px / 21px auto rgb(226, 127, 28);
 }
+a.ambassador-button:hover {
+    background:                 none repeat scroll 0% 0% rgb(181, 43, 1);
+}
+.ambassador-review-actions a.ambassador-button:first-of-type {
+    border-right:               1px solid rgb(242, 173, 120);
+}
+a.ambassador-button {
+    float:                      left;
+    display:                    block;
+    text-align:                 center;
+    margin:                     0px;
+    font-size:                  11pt;
+    width:                      85px;
+}
 .search-results a {
-    font-family:                karla ! important;
-    float:                      none ! important;
-    clear:                      both;
-    margin-left:                20px;
-    text-align:                 left ! important;
-    padding:                    5px 0px ! important;
     text-transform:             none ! important;
     text--webkit-transform:     none ! important;
     border-bottom:              5px solid rgb(33, 23, 10);
+    font-family:                karla;
+    padding:                    5px 0px ! important;
 }
 #nav-links a.result-link:hover {
     color:                      rgb(242, 242, 234) ! important;
@@ -3577,4 +3598,7 @@ html[dir="rtl"] .select2-search-choice-close {
     .select2-search input {
         background-position:    100% -21px ! important;
         }
+}
+.ambassador-button {
+    border-bottom:              0px none ! important;
 }

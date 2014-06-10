@@ -21,8 +21,6 @@ routes = (app) ->
 						cb()
 				, ->
 					next()
-
-
 		download: (req, res, next) ->
 			if req.me?
 				if req.me?.hasCapability('downloads')
@@ -50,6 +48,37 @@ routes = (app) ->
 					res.r.msg = 'Success'
 			else
 				tk 2
+				res.status(401)
+		ambassadors: (req, res, next) ->
+			Users.forge()
+				.query('where', 'type', 'potential-ambassador')
+				.fetch()
+				.then (model) ->
+					res.r.users = model
+					next()
+		ambassador_accept: (req, res, next) ->
+			if req.me.hasCapability('ambassadors')
+				User.forge
+					user_id: req.query.user_id
+				.fetch()
+				.then (model) ->
+					model.set('type', 'ambassador')
+					model.set('attending14', 1)
+					model.save()
+					res.redirect('/admin/ambassadors')
+			else
+				res.status(401)
+				next()
+		ambassador_reject: (req, res, next) ->
+			if req.me.hasCapability('ambassadors')
+				User.forge
+					user_id: req.query.user_id
+				.fetch()
+				.then (model) ->
+					model.set('type', 'rejected-ambassador')
+					model.save()
+					res.redirect('/admin/ambassadors')
+			else
 				res.status(401)
 				next()
 
