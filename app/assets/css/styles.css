@@ -1081,6 +1081,7 @@ span.sidebar-num {
 }
 textarea.dispatch-post-inp {
     height:                     43px;
+    width:                      580px ! important;
 }
 textarea.dispatch-content-comment-inp {
     display:                    block;

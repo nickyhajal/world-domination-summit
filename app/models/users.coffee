@@ -67,7 +67,7 @@ User = Shelf.Model.extend
     ]
     @addressChanged = addressChanged
 
-    if @lastDidChange ['email']
+    if @lastDidChange ['email'] and @get('type') is 'attendee'
       @syncEmail()
 
     if @lastDidChange ['attending14']
