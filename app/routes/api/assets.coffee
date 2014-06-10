@@ -55,7 +55,6 @@ routes = (app) ->
 							for name,tpl of all_tpls
 								name = name.replace('admin_', '')
 								if me.hasCapability(name)
-									tk name
 									tpls[name] = tpl
 							dfr.resolve(tpls)
 				else
