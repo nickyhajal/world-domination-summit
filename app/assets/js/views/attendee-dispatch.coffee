@@ -1,7 +1,8 @@
 ap.Views.AttendeeDispatch = XView.extend
 	controlsTimo: 0
 	initialize: ->
-		@render()
+		x = 1
+		#@render()
 	render: ->
 		ap.api 'get feed', {user_id: @options.user_id}, (rsp) =>
 			html = ''
