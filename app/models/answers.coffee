@@ -6,7 +6,7 @@ Q = require('q')
 Answer = Shelf.Model.extend
   tableName: 'answers'
   permittedAttributes: [
-    'questionid', 'answer', 'userid'
+    'question_id', 'answer', 'user_id'
   ]
   idAttribute: 'answer_id'
   initialize: ->

@@ -892,19 +892,20 @@ input.manifest-search, .speaker-search, .ambassador-search {
 input.account-input {
     width:                      450px ! important;
 }
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="number"] {
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
     border:                     0px none;
-    width:                      300px;
-    padding:                    9px;
     color:                      rgb(33, 23, 10);
     font-family:                karla ! important;
     font-size:                  12pt;
+    width:                      300px;
+    padding:                    9px;
 }
 .sub-label {
     font-size:                  10pt ! important;
     color:                      rgb(118, 118, 118) ! important;
     margin-bottom:              7px ! important;
+    width:                      430px;
 }
 #page-propose-a-meetup .interest-select-list label:first-of-type {
     display:                    none;

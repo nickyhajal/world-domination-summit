@@ -1,6 +1,8 @@
 div#search_start table th {
     text-align:                 left;
     padding:                    7px;
+    font-weight:                normal;
+    font-family:                Vitesse;
 }
 input#register_search {
     width:                      100%;
@@ -11,22 +13,51 @@ input#register_search {
 div#search_start {
     text-align:                 center;
 }
+div.search-row:nth-child(2n) {
+    background:                 none repeat scroll 0px 0px rgb(255, 254, 249);
+}
 div.search-row {
-    padding:                    12px 0px;
+    background:                 none repeat scroll 0% 0% rgb(252, 250, 242);
+    padding:                    15px;
+    font-family:                karla;
 }
 div#search-results {
     position:                   relative;
-    top:                        -30px;
+    top:                        -40px;
 }
 #search_start table {
-    width:                      80%;
-    margin:                     0px auto;
+    margin:                     -40px auto 0px;
+    padding:                    40px;
+    width:                      100%;
+    background:                 none repeat scroll 0px 0px rgb(248, 247, 242);
 }
 header#main-header {
     margin:                     0px;
 }
 #page_content h3 {
     margin-top:                 0px;
+}
+a.register-button {
+    float:                      right;
+    display:                    block;
+    background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
+    padding:                    7px;
+    text-decoration:            none;
+    text-align:                 center;
+    width:                      150px;
+    color:                      rgb(255, 255, 255);
+    margin-right:               -5px;
+    margin-top:                 -7px;
+}
+div#page_content:before {
+    display:                    none;
+}
+div#page_content {
+    margin-left:                0px;
+    margin-top:                 0px ! important;
+}
+div#content_shell {
+    margin-left:                0px;
 }
 * {
     line-height:                inherit;

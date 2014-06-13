@@ -38,6 +38,7 @@ div(id="page_content")
 				div(class="interest-select-list", data-context="generic")
 		div(class="form-section")
 			label When will your meetup happen?
+			label(class="sub-label") We suggest: Thursday afternoon or evening, Friday afternoon, Saturday evening, Sunday afternoon, and Monday anytime
 			div(class="form-box")
 				select(name="date", class="select2", style="width:120px")
 					option(value="09") July 9th
@@ -72,15 +73,7 @@ div(id="page_content")
 					option(value="12") pm
 		div(class="form-section")
 			label Roughly how many people can attend?
-			select(name="max", class="select2", style="width:175px")
-				option(value="05") 5
-				option(value="10") 10
-				option(value="20") 20
-				option(value="40") 40
-				option(value="80") 80
-				option(value="160") 160
-				option(value="320") 320
-				option(value="10000") Unlimited	
+			input(type="number", name="max", min="1", max="5000")
 		div(class="clear")
 		div(class="form-section")
 			input(type="submit", value="Submit Meetup")

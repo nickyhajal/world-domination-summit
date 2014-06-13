@@ -9,7 +9,7 @@ Speaker = Shelf.Model.extend
   tableName: 'speakers'
   idAttribute: 'speaker_id'
   permittedAttributes: [
-    'speaker_id','display_name','display_avatar','descr','year','userid','type'
+    'speaker_id','display_name','display_avatar','descr','year','user_id','type'
   ]
 Speakers = Shelf.Collection.extend
   model: Speaker

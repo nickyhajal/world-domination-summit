@@ -1,0 +1,9 @@
+div(id="speakers-admin-shell")
+	nav(class="admin-nav")
+		a(href="/admin/add-event", class="button") Add a Event
+	h1 WDS Schedule
+	input(type="text", class="speaker-search", placeholder="Search Speakers by name or year")
+	div(id="speaker-start", class="search-start")
+		| Loading...
+	table(id="speaker-results-shell", class="search-results-shell")
+		tbody(id="speaker-results", class="search-results")
