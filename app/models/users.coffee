@@ -283,7 +283,7 @@ User = Shelf.Model.extend
     .save()
     .then =>
       Ticket.forge
-        user_id: @get('userid')
+        user_id: @get('user_id')
         year: process.year
       .fetch()
       .then (ticket) =>

@@ -21,6 +21,7 @@ clearCache()
 routes = (app) ->
 
 	[User, Users] = require('../../models/users')
+	[Registration, Registrations] = require('../../models/registrations')
 
 	assets =
 			expires:
@@ -96,6 +97,16 @@ routes = (app) ->
 										dfr.resolve(user)
 				else
 					dfr.resolve(false)
+				return dfr.promise
+			registrations: ->
+				dfr = Q.defer()
+				Registrations.forge().query('where', 'year', '=', process.year)
+				.fetch()
+				.then (rsp) ->
+					regs = {}
+					for reg in rsp.models
+						regs[reg.get('user_id')] = '1'
+					dfr.resolve(regs)
 				return dfr.promise
 
 
