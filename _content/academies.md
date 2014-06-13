@@ -16,7 +16,7 @@ Registration for academies is separate from WDS itself. We'll offer registration
 
 <div class="collapsable-box collapsable-box-open">
 	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029"><h4>Language Lab: Learn How to Hack Any Language and Speak it Today</h4></a>
-	<h5>9:00 am–4:00 pm</h5>
+	<h5>9:00 am–12:00 pm</h5>
 	Hosted by Benny Lewis
 	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029" class="button">Tickets &rarr;</a>
 	<div class="collapsable-content">
