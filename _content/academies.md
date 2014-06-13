@@ -10,9 +10,28 @@ Registration for academies is separate from WDS itself. We'll offer registration
 
 <div class="zig-zags_blue"></div>
 
-<a name="problogger"></a>
+<a name="language-lab"></a>
 ### Thursday, July 10
 
+
+<div class="collapsable-box collapsable-box-open">
+	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029"><h4>Language Lab: Learn How to Hack Any Language and Speak it Today</h4></a>
+	<h5>9:00 am–12:00 pm</h5>
+	Hosted by Benny Lewis
+	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029" class="button">Tickets &rarr;</a>
+	<div class="collapsable-content">
+		<h4>Summary</h4>
+		"Someday" you'll learn a new language? Make "someday" TODAY. We will be tackling your doubts, and then giving you the hacks you need to have a basic conversation in any language you may want to learn, by the end of the lab. Then you will open up a whole new world, unreachable by English alone, and have the tools to skyrocket towards fluency after WDS. Anyone at any age can learn any language in the world. Talent is irrelevant.
+
+By the end of this Academy all language doubts will be squashed. Find out why adults are BETTER language learners than children, how to learn your language even if you are busy, and especially how to do it even if you can't travel abroad.
+		
+		<h4>About Benny Lewis</h4>
+		Benny Lewis failed in language learning when growing up—getting a C in German, and spending six entire months living in Spain without able to ask the most basic questions in Spanish. But then everything changed! He now speaks 12 languages and runs the world's largest blog about language learning, "Fluent in 3 Months" and has this year released a book of the same title that became an instant international best seller. His travels through language learning have also earned him the title of National Geographic's Traveler of the Year.
+	</div>
+</div>
+
+<a name="problogger"></a>
+<div class="line-canvas"></div>
 
 <div class="collapsable-box collapsable-box-open">
 	<a href="https://www.eventbrite.com/e/wds-academy-problogger-academy-building-profitable-blogs-tickets-11339594031"><h4>ProBlogger Academy: Building Profitable Blogs</h4></a>
@@ -60,26 +79,6 @@ Registration for academies is separate from WDS itself. We'll offer registration
 
 		<h4>About Steve Kamb</h4>
 		Steve Kamb is the creator and leader of NerdFitness.com, a fitness community dedicated to helping average Joes and desk jockeys live healthier lives. Over the past five years, he's taken Nerd Fitness from a simple one-man blog and developed it into a passionate “rebellion” of over 190,000 email subscribers, with hundreds joining the cause every day. While teaching others to get healthy, he's also managed to complete some pretty cool quests: exploring the ruins of Machu Picchu in Peru and Angkor Wat in Cambodia, diving with sharks on the Great Barrier Reef, flying a stunt plane in New Zealand, and living like James Bond in Monte Carlo.
-	</div>
-</div>
-
-
-<a name="language-lab"></a>
-
-
-<div class="collapsable-box collapsable-box-open">
-	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029"><h4>Language Lab: Learn How to Hack Any Language and Speak it Today</h4></a>
-	<h5>9:00 am–4:00 pm</h5>
-	Hosted by Benny Lewis
-	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029" class="button">Tickets &rarr;</a>
-	<div class="collapsable-content">
-		<h4>Summary</h4>
-		"Someday" you'll learn a new language? Make "someday" TODAY. We will be tackling your doubts, and then giving you the hacks you need to have a basic conversation in any language you may want to learn, by the end of the lab. Then you will open up a whole new world, unreachable by English alone, and have the tools to skyrocket towards fluency after WDS. Anyone at any age can learn any language in the world. Talent is irrelevant.
-
-By the end of this Academy all language doubts will be squashed. Find out why adults are BETTER language learners than children, how to learn your language even if you are busy, and especially how to do it even if you can't travel abroad.
-		
-		<h4>About Benny Lewis</h4>
-		Benny Lewis failed in language learning when growing up—getting a C in German, and spending six entire months living in Spain without able to ask the most basic questions in Spanish. But then everything changed! He now speaks 12 languages and runs the world's largest blog about language learning, "Fluent in 3 Months" and has this year released a book of the same title that became an instant international best seller. His travels through language learning have also earned him the title of National Geographic's Traveler of the Year.
 	</div>
 </div>
 
