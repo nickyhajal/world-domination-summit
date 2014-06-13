@@ -14,9 +14,14 @@ ap.Views.Dispatch = XView.extend
 	render: ->
 		html = _.t 'parts_dispatch', {}
 		$(@el).html html
-		_.whenReady 'users', ->
-			$('.dispatch-feed', @el).feed()
+		_.whenReady 'users', =>
+			$('.dispatch-feed', @el).feed
+				user_id: @options.user_id
+				channel: @options.channel
+				channel_type: @options.channel_type
 			$('.dispatch-post-inp', @el).autosize()
+			if @options.channel_type = 'user'
+				$('.dispatch-post-form', $(@el)).remove()
 
 	focusControls: (e) ->
 		$(e.currentTarget).closest('.dispatch-controls').addClass('focused')

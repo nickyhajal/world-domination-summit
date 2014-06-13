@@ -100,6 +100,8 @@ routes = (app) ->
 			feeds = Feeds.forge()
 			limit = req.query.per_page ? 50
 			page = req.query.page ? 1
+			if req.query.channel_type is 'user'
+				feeds.query('where', 'user_id', '=', req.query.channel)
 			feeds.query('orderBy', 'feed_id',  'DESC')
 			feeds.query('limit', limit)
 			if req.query.before?
