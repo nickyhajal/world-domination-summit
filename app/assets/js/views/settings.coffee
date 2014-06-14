@@ -31,6 +31,7 @@ ap.Views.settings = XView.extend
 		, 5
 
 		ap.me.on('change:user_name', @usernameChanged, @)
+		XHook.hook('tab-before-show-settings_tabs', @saveMe)
 
 	###
 		Use Select2 to have nice select boxes for the address fields
@@ -126,7 +127,7 @@ ap.Views.settings = XView.extend
 		Saves the latest changes to ap.me
 		and allows the tab to switch
 	###
-	saveMe: (tab) ->
+	saveMe: (tab, switchTab) ->
 		btn = $('.tab-next:visible')
 		original_btn_val = btn.val()
 		btn.val('Saving...')
@@ -135,6 +136,7 @@ ap.Views.settings = XView.extend
 				patch: true
 				success: ->
 					btn.val('Saved!')
+					switchTab()
 					setTimeout ->
 						btn.val(original_btn_val)
 					, 1200
@@ -145,6 +147,7 @@ ap.Views.settings = XView.extend
 					, 2000
 		else
 			btn.val 'Saved!'
+			switchTab()
 			setTimeout ->
 				btn.val(original_btn_val)
 			, 1200
