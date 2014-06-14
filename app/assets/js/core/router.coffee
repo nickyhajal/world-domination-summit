@@ -12,7 +12,7 @@
 ap.createRouter = ->
 	window.Router = Backbone.Router.extend
 		protect: [
-			'hub', 'welcome', 'settings'
+			'hub', 'welcome', 'settings', 'propose-a-meetup'
 		]
 		initialize: ->
 			@route("*actions", 'default', ap.Routes.defaultRoute)
