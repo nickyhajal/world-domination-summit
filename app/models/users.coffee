@@ -169,6 +169,8 @@ User = Shelf.Model.extend
       speaker: 'speakers'
       "add-speaker": 'speakers'
       "ambassador-review": 'ambassadors'
+      "add-event": 'schedule'
+      "event": 'schedule'
     capability = map[capability] ? capability
     if @get('capabilities')?
       for cap in @get('capabilities')

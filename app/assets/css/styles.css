@@ -1476,21 +1476,21 @@ div#search-box {
     position:                   absolute;
     padding:                    5px 1px 0px;
 }
-.search-results a span {
-    display:                    block;
-    float:                      left;
+#nav-search .search-results a span {
+    background-color:           rgb(242, 242, 234) ! important;
+    background-size:            100% auto ! important;
+    -webkit-background-size:    100% auto ! important;
     border-radius:              50%;
     -moz-border-radius:         50%;
     -webkit-border-radius:      50%;
-    background-size:            100% auto ! important;
-    -webkit-background-size:    100% auto ! important;
+    display:                    block;
+    float:                      left;
     height:                     30px;
-    left:                       -15px;
-    margin-right:               -4px;
+    left:                       -9px;
+    margin-right:               0px;
     position:                   relative;
-    width:                      30px;
     top:                        -5px;
-    background-color:           rgb(242, 242, 234) ! important;
+    width:                      30px;
 }
 #nav-links a.result-link:hover:first-of-type {
     margin-top:                 5px ! important;
@@ -1607,6 +1607,20 @@ table#manifests-results-shell thead th, table#manifests-results-shell tfoot th, 
 #manifest-results tr:nth-of-type(2n), .search-results tr:nth-of-type(2n) {
     background:                 none repeat scroll 0px 0px rgb(248, 246, 234);
 }
+#schedule-shell tr td:first-of-type {
+    width:                      120px ! important;
+    text-align:                 center;
+}
+td.search-actions .button {
+    font-size:                  12pt;
+    padding:                    4px 15px;
+}
+td.search-actions {
+    text-align:                 right;
+}
+#schedule-shell td {
+    padding:                    8px;
+}
 .manifest-results tr, .search-results tr {
     background:                 none repeat scroll 0% 0% rgb(239, 238, 229);
     cursor:                     pointer;
@@ -1698,6 +1712,12 @@ div.upload-success {
     padding:                    12px;
     color:                      rgb(118, 113, 103);
     width:                      439px;
+}
+.search-results th {
+    text-align:                 left;
+    padding:                    9px 23px;
+    font-weight:                normal;
+    font-family:                Vitesse;
 }
 * {
     line-height:                inherit;
@@ -1891,12 +1911,16 @@ a.ambassador-button {
     font-size:                  11pt;
     width:                      85px;
 }
-.search-results a {
+#nav-search .search-results a {
+    font-family:                karla;
     text-transform:             none ! important;
     text--webkit-transform:     none ! important;
-    border-bottom:              5px solid rgb(33, 23, 10);
-    font-family:                karla;
-    padding:                    5px 0px ! important;
+    clear:                      both;
+    text-align:                 left;
+    padding:                    9px 0px 0px ! important;
+    border-bottom:              0px solid rgb(33, 23, 10);
+    margin-left:                0%;
+    width:                      100%;
 }
 #nav-links a.result-link:hover {
     color:                      rgb(242, 242, 234) ! important;

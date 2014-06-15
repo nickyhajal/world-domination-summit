@@ -27,18 +27,21 @@ routes = (app) ->
 				Event.forge(post)
 				.save()
 				.then (event) ->
-					EventHost.forge({event_id: event.get('event_id'), user_id: req.me.get('user_id')})
-					.save()
-					.then (host) ->
-						async.each req.query.interests.split(','), (interest, cb) ->
-							EventInterest.forge({event_id: event.get('event_id'), interest_id: interest})
-							.save()
-							.then (interest) ->
-								cb()
-						, ->
-							next()
-					, (err) ->
-						console.error(err)
+					if post.type is 'meetup'
+						EventHost.forge({event_id: event.get('event_id'), user_id: req.me.get('user_id')})
+						.save()
+						.then (host) ->
+							async.each req.query.interests.split(','), (interest, cb) ->
+								EventInterest.forge({event_id: event.get('event_id'), interest_id: interest})
+								.save()
+								.then (interest) ->
+									cb()
+							, ->
+								next()
+						, (err) ->
+							console.error(err)
+					else
+						next()
 				, (err) ->
 					console.error(err)
 			else

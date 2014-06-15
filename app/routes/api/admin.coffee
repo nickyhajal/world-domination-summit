@@ -2,6 +2,7 @@ async = require 'async'
 routes = (app) ->
 
 	[User, Users] = require('../../models/users')
+	[Event, Events] = require('../../models/events')
 
 	admin =
 		get_capabilities: (req, res, next) ->
@@ -41,7 +42,10 @@ routes = (app) ->
 				response = "First Name;Last Name;Email;Twitter;Type;Location;City;State/Region;Country\n"
 
 				# Attendee list for 2014
-				Users.forge().query('where', 'attending14', '1').fetch().then (model) ->
+				Users.forge()
+				.query('where', 'attending14', '1')
+				.query('where', 'user_id', '>', '6248')
+				.fetch().then (model) ->
 					for attendee in model.models
 						response = response + attendee.get('first_name')+";"+attendee.get('last_name')+";"+attendee.get('email')+";"+attendee.get('twitter')+";"+attendee.get('type')+';"'+attendee.get('location')+'";'+attendee.get('city')+';'+attendee.get('region')+';'+attendee.get('country')+"\n"
 					res.send response
@@ -49,6 +53,15 @@ routes = (app) ->
 			else
 				tk 2
 				res.status(401)
+		schedule: (req, res, next) ->
+			Events.forge()
+			.query('where', 'type', 'program')
+			.query('orderBy', 'start')
+			.fetch()
+			.then (events) ->
+				res.r.events = events
+				next()
+
 		ambassadors: (req, res, next) ->
 			Users.forge()
 				.query('where', 'type', 'potential-ambassador')
