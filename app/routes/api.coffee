@@ -43,6 +43,7 @@ routes = (app) ->
 		app.get '/user/twitter/callback', user.twitter_callback
 		app.delete '/user/twitter', user.del_twitter
 		app.post '/user/tweet', user.send_tweet
+		app.post '/user/logout', user.logout
 
 		# Speakers
 		app.put '/speaker', speaker.update
