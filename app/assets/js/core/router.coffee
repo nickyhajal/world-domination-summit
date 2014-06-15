@@ -24,6 +24,7 @@ ap.createRouter = ->
 			@route("admin/:panel", 'admin', ap.Routes.admin)
 			@route("admin/:panel/:extra", 'admin', ap.Routes.admin)
 			@route("hub", 'hub', ap.Routes.hub)
+			@route("logout", 'logout', ap.Routes.logout)
 			@route(/^~(.)+/, 'profile', ap.Routes.profile)
 		before: ap.Routes.before
 
@@ -67,6 +68,12 @@ ap.protect = ->
 ap.login = (me) ->
 	$('html').addClass('is-logged-in')
 	ap.me = new ap.User(me)
+
+ap.logout = ->
+	$('html').removeClass('is-logged-in')
+	ap.api 'post user/logout'
+	localStorage.clear()
+	ap.me = false
 
 ### 
 	Navigate to a new URL using push-state

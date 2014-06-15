@@ -1,5 +1,4 @@
 ap.Routes.logout = ->
-	ap.nav 'login'
-	ap.api 'post logout'
-	localStorage.clear()
 	@stop
+	ap.logout()
+	ap.navigate 'login'

@@ -99,6 +99,11 @@ routes = (app) ->
 				res.r.users = sortable
 				next()
 
+		logout: (req, res, next) ->
+			if req.session.ident?
+				req.session.destroy()
+			next()
+
 		# Authenticate a user
 		login: (req, res, next) ->
 			finish = (user = false) ->
