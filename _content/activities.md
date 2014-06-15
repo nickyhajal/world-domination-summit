@@ -41,10 +41,22 @@ It will take 697 of us to swipe the record away from India. Are you up for it?
 	</div>
 </div>
 
-<a name="portland-spirit"></a>
+<a name="yrp"></a>
 ### Saturday, July 12
 
+<div class="collapsable-box collapsable-box-open">
+	<a href="https://www.eventbrite.com/e/yoga-rocks-the-park-wds-style-tickets-11967895297"><h4>Yoga Rocks The Park - WDS Style</h4></a>
+	<h5>1:30–4:00 pm</h5>
+	<a href="https://www.eventbrite.com/e/yoga-rocks-the-park-wds-style-tickets-11967895297" class="button">Tickets &rarr;</a>
+	<div class="collapsable-content">
+		<h4>Summary</h4>
+		Join the Movement (literally). Yoga Rocks the Park brings its now global live music, yoga and community cultivating experience to the World Domination Summit.
+		
+		During this exclusive event, WDS ticket holders will be guided on a sound and movement journey by yoga superstar Jill Knouse and sound guru DJ Drez. This journey will leave you connected to yourself, the WDS community and the power that comes from practicing yoga in the presence of Mother Nature. 
+	</div>
+</div>
 
+<a name="portland-spirit"></a>
 <div class="collapsable-box collapsable-box-open">
 	<a href="http://www.eventbrite.com/e/river-cruise-on-the-portland-spirit-tickets-11773158835"><h4>Portland Spirit River Cruise</h4></a>
 	<h5>6:30–9:30 pm</h5>
