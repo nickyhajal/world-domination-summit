@@ -41,7 +41,7 @@ It will take 697 of us to swipe the record away from India. Are you up for it?
 	</div>
 </div>
 
-<a name="portland-spirit"></a>
+<a name="yrp"></a>
 ### Saturday, July 12
 
 <div class="collapsable-box collapsable-box-open">
@@ -56,7 +56,7 @@ It will take 697 of us to swipe the record away from India. Are you up for it?
 	</div>
 </div>
 
-
+<a name="portland-spirit"></a>
 <div class="collapsable-box collapsable-box-open">
 	<a href="http://www.eventbrite.com/e/river-cruise-on-the-portland-spirit-tickets-11773158835"><h4>Portland Spirit River Cruise</h4></a>
 	<h5>6:30–9:30 pm</h5>
