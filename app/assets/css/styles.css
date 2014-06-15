@@ -1691,6 +1691,14 @@ td.ambassador-review-actions {
     padding-left:               11px;
     width:                      323px;
 }
+div.upload-success {
+    font-size:                  17pt;
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    text-align:                 center;
+    padding:                    12px;
+    color:                      rgb(118, 113, 103);
+    width:                      439px;
+}
 * {
     line-height:                inherit;
     box-sizing:                 border-box;

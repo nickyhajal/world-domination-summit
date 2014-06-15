@@ -93,6 +93,7 @@ User = Shelf.Model.extend
 
   login: (req) ->
     req.session.ident = JSON.stringify(this)
+    req.session.save()
 
   updatePassword: (pw) ->
     dfr = Q.defer()
