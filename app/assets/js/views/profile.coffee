@@ -25,6 +25,7 @@ ap.Views.profile = XView.extend
 		setTimeout =>
 			@renderMap()
 		, 5
+		@hideEmptySections()
 	renderQuestions: ->
 		questions = [
 			'Why did you travel <span class="ceil">{{ distance }}</span> miles to the World Domination Summit'
@@ -60,6 +61,16 @@ ap.Views.profile = XView.extend
 			scrollwheel: false
 			disableDefaultUI: true
 		profile_map = new google.maps.Map(profile_map_el, mapOptions)
+
+	hideEmptySections: ->
+		if not $('.attendee-question-shell', $(@el)).length
+			$('#profile-questions-shell').hide()
+		if not $('.interest-button', $(@el)).length
+			$('#profile-interested-in-shell').hide()
+		setTimeout =>
+			if not $('.dispatch-content-section', $(@el)).length
+				$('#profile-dispatch-shell').hide()
+		, 1000
 		
 	syncAvatar: ->
 		if ap.me.get('pic')?
