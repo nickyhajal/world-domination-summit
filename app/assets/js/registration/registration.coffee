@@ -77,10 +77,10 @@ ap.initSearch = ->
 				$('#clear-inp').hide()
 				$('#search-results').hide()
 				$('#search_start').show()
-				
+
 		$('body')
 		.on 'click', '#clear-inp', ->
-			$('#register_search').val('').keyup()
+			$('#register_search').val('').keyup().focus()
 
 ap.poll = ->
 	now = (new Date()).getTime()
