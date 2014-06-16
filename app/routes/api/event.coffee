@@ -94,7 +94,7 @@ routes = (app) ->
 				next()
 
 		del: (req, res, next) ->
-			if req.me
+			if req.me? && req.me.hasCapability('events')
 				if req.query.feed_id?
 					Feed.forge req.query.feed_id
 					.fetch()
@@ -108,26 +108,23 @@ routes = (app) ->
 					res.status(400)
 					next()
 			else
-				res.r.msg = 'You\'re not logged in!'
-				res.status(403)
+				res.status(401)
 				next()
 
 		get: (req, res, next) ->
-			feeds = Feeds.forge()
-			limit = req.query.per_page ? 50
-			page = req.query.page ? 1
-			feeds.query('orderBy', 'feed_id',  'DESC')
-			feeds.query('limit', limit)
-			if req.query.before?
-				feeds.query('where', 'feed_id', '<', req.query.before)
-			else if req.query.since?
-				feeds.query('where', 'feed_id', '>', req.query.since)
-			if req.query.user_id
-				feeds.query('where', 'user_id', '=', req.query.user_id)
-			feeds
-			.fetch()
-			.then (feed) ->
-				res.r.feed_contents = feed.models
+			if req.me? && req.me.hasCapability('events')
+				events = Events.forge()
+				limit = req.query.per_page ? 50
+				page = req.query.page ? 1
+				events.query('orderBy', 'event_id',  'DESC')
+				events.query('limit', limit)
+				events
+				.fetch()
+				.then (event) ->
+					res.r.event_contents = event.models
+				next()
+			else
+				res.status(401)
 				next()
 
 module.exports = routes
