@@ -46,6 +46,10 @@ header#main-header {
     margin-bottom:              6px;
     width:                      100%;
 }
+a.unregistered {
+    background:                 none repeat scroll 0px 0px rgb(233, 245, 200) ! important;
+    color:                      rgb(166, 190, 97) ! important;
+}
 a.register-button {
     display:                    block;
     background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
@@ -90,10 +94,10 @@ div.location {
     float:                      right;
     margin-right:               15px;
 }
+a#clear-inp {
+    display:                    none;
+}
 a#clear-inp:before {
-    background:                 none repeat scroll 0px 0px rgb(204, 204, 204);
-    height:                     30px;
-    width:                      30px;
     content:                    "x";
     display:                    block;
     border-radius:              50%;
@@ -102,9 +106,15 @@ a#clear-inp:before {
     text-align:                 center;
     text-decoration:            none;
     position:                   absolute;
-    top:                        18px;
     right:                      17px;
-    color:                      rgb(0, 0, 0);
+    color:                      rgb(156, 151, 119) ! important;
+    font-size:                  15pt;
+    font-family:                vitesselight;
+    background:                 none repeat scroll 0px 0px rgba(224, 221, 203, 0.68);
+    width:                      36px;
+    padding-top:                5px;
+    height:                     30px;
+    top:                        16px;
 }
 div#input-shell {
     position:                   relative;
