@@ -171,6 +171,9 @@ User = Shelf.Model.extend
       "ambassador-review": 'ambassadors'
       "add-event": 'schedule'
       "event": 'schedule'
+      "racetasks": "race"
+      "add-racetask": "race"
+      "racetask": "race"
     capability = map[capability] ? capability
     if @get('capabilities')?
       for cap in @get('capabilities')

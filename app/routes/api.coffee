@@ -5,14 +5,16 @@
 routes = (app) ->
 
 	handler = require('./api/handler')
-	assets = require('./api/assets')(app)
-	user = require('./api/user')(app)
-	feed = require('./api/feed')(app)
-	speaker = require('./api/speaker')(app)
+
 	admin= require('./api/admin')(app)
-	transfer = require('./api/transfer')(app)
+	assets = require('./api/assets')(app)
 	content = require('./api/content')
 	event = require('./api/event')(app)
+	feed = require('./api/feed')(app)
+	racetask = require('./api/racetask')(app)
+	speaker = require('./api/speaker')(app)
+	transfer = require('./api/transfer')(app)
+	user = require('./api/user')(app)
 
 	app.namespace '/api', (req, res, next)->
 
@@ -66,6 +68,11 @@ routes = (app) ->
 		app.all '/transfer/ipn', transfer.ipn
 		app.get '/transfer/return', transfer.pdt
 		app.get '/transfer/status', transfer.status
+
+		# RaceTasks
+		app.post '/racetask', racetask.add
+		app.put '/racetask', racetask.upd
+		app.get '/racetasks', racetask.search
 
 
 		# Admin
