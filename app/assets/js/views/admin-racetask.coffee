@@ -14,6 +14,7 @@ ap.Views.admin_racetask = XView.extend
 
 	rendered: ->
 		$('select[name="type"]').select2('val', @task.type) 
+		$('select[name="section"]').select2('val', @task.section) 
 
 	update: (e) ->
 		e.preventDefault()

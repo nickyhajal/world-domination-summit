@@ -14,7 +14,7 @@ ap.Views.admin_racetasks= XView.extend
       lastSection = ''
       for task in rsp.racetasks
         if task.section isnt lastSection
-          html += '<tr class="search-mid-heading"><th colspan="10">'+task.section+'</th></tr>'
+          html += '<tr class="search-mid-heading"><th colspan="10">'+_.titleize(task.section.replace('-', ' '))+'</th></tr>'
           lastSection = task.section
         html += '<tr class="racetask-row" data-racetask_id="'+task.racetask_id+'">
           <td>'+task.task+'</td>
