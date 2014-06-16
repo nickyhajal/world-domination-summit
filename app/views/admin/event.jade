@@ -5,13 +5,13 @@ div(id="admin-add-event-shell")
 		div(class="form-section")
 			div(class="form-box")
 				label Event Name
-				input(name="what", type="text")
+				input(name="what", type="text", value="{{ what }}")
 		div(class="form-section")
 			label Venue Name
-			input(name="place", type="text")
+			input(name="place", type="text", value="{{ place }}")
 		div(class="form-section")
 			label Address
-			input(name="address", type="text")
+			input(name="address", type="text", value="{{ address }}")
 		div(class="form-section")
 			label Event Start
 			div(class="form-box")

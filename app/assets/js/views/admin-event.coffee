@@ -3,19 +3,30 @@ ap.Views.admin_event = XView.extend
 	events: 
 		'submit #admin-event-update': 'event_submit'
 	initialize: ->
-		speaker = event
-		ap.api 'get admin/schedule', (rsp) ->
+		theEvent = false
+		ap.api 'get admin/schedule', {}, (rsp) =>
 			events = rsp.events
-			theEvent = false
-			for ev of events
+			for ev in events
 				if +ev.event_id is +@options.extra
 					theEvent = ev
-		@options.out = _.template @options.out, theEvent
-		@event = theEvent
-		@initRender()
+			@options.out = _.template @options.out, theEvent
+			@event = theEvent
+			@initRender()
 
 	rendered: ->
-		$('select[name="type"]').val(@speaker.type)
+		start = moment(@event.start)
+		hour = start.format('HH')
+		pm = 0
+		if hour > 12
+			hour -= 12
+			if hour < 10
+				hour = '0'+hour
+			pm = 12
+		$('select[name="date"]').select2('val', start.format('DD'))
+		$('select[name="hour"]').select2('val', hour)
+		$('select[name="minute"]').select2('val', start.format('mm'))
+		$('select[name="pm"]').select2('val', pm)
+		tk start
 
 	event_submit: (e) ->
 		e.preventDefault()
