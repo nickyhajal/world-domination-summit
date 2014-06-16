@@ -80,7 +80,12 @@ ap.initSearch = ->
 
 		$('body')
 		.on 'click', '#clear-inp', ->
-			$('#register_search').val('').keyup().focus()
+			$('#register_search').val('').keyup()
+			setTimeout ->
+				tk $('#register_search')
+				tk 'FOCUS'
+				$('#register_search').focus()
+			, 100
 
 ap.poll = ->
 	now = (new Date()).getTime()
