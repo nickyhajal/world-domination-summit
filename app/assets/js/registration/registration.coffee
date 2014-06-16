@@ -82,8 +82,6 @@ ap.initSearch = ->
 		.on 'click', '#clear-inp', ->
 			$('#register_search').val('').keyup()
 			setTimeout ->
-				tk $('#register_search')
-				tk 'FOCUS'
 				$('#register_search').focus()
 			, 100
 
