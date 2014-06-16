@@ -1620,6 +1620,7 @@ td.search-actions {
 }
 #schedule-shell td, #racetask-shell td {
     padding:                    10px;
+    font-family:                karla;
 }
 .manifest-results tr, .search-results tr {
     background:                 none repeat scroll 0% 0% rgb(239, 238, 229);
