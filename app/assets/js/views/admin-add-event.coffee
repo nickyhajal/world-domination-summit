@@ -14,4 +14,4 @@ ap.Views.admin_add_event = XView.extend
 			btn.finish()
 			setTimeout ->
 				ap.navigate('admin/schedule')
-			, 1200
+			, 200
