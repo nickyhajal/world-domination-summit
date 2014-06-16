@@ -29,6 +29,7 @@ ap.init = () ->
 
 
 ap.allUsers = {}
+ap.registrations = {}
 ap.initAssets = ->
 	ap.register_sync()
 	assets = 'all_attendees,me'
