@@ -8,7 +8,12 @@ div(id="admin-add-event-shell")
 				input(name="task", type="text")
 		div(class="form-section")
 			label Section
-			input(name="section", type="text")
+			select(name="section", class="select2", style="width:180px")
+				option(value="before-arriving") Before Arriving
+				option(value="community") Community
+				option(value="adventure") Adventure
+				option(value="service") Service
+				option(value="bonus") Bonus
 		div(class="form-section")
 			label Type
 			div(class="form-box")
