@@ -14,7 +14,7 @@ ap.Views.admin_event = XView.extend
 			@initRender()
 
 	rendered: ->
-		start = moment(@event.start)
+		start = moment.utc(@event.start)
 		window.start = start
 		hour = start.format('HH')
 		pm = 0
