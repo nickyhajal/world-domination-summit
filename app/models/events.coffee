@@ -8,10 +8,10 @@ Event = Shelf.Model.extend
     'event_id', 'year', 'ignored', 'type', 'title', 'descr', 'what', 'active',
     'note', 'place', 'who', 'utc', 'end', 'venue', 'address', 'note', 'max'
   ]
-	defaults: {
-		descr: ''
-	}
-	test: 'coffee-script treating this object weird'
+  defaults: {
+  	descr: ''
+  }
+  test: 'coffee-script treating this object weird'
 
 Events = Shelf.Collection.extend
   model: Event
