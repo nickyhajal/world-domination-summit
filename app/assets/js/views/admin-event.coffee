@@ -15,6 +15,7 @@ ap.Views.admin_event = XView.extend
 
 	rendered: ->
 		start = moment(@event.start)
+		window.start = start
 		hour = start.format('HH')
 		pm = 0
 		if hour > 12
