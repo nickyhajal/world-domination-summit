@@ -17,6 +17,8 @@ routes = (app) ->
 			if req.me
 				post = _.pick req.query, Event::permittedAttributes
 				start = moment.utc(process.year+'-07-'+req.query.date+' '+req.query.hour+':'+req.query.minute+':00', 'YYYY-MM-DD HH:mm:ss')
+				if req.query.hour is '12'
+					req.query.pm = Math.abs(req.query.pm - 12)
 				post.start = start.add('hours', req.query.pm).format('YYYY-MM-DD HH:mm:ss')
 
 				if not post.type?
@@ -56,6 +58,9 @@ routes = (app) ->
 			if req.me
 				post = _.pick req.query, Event::permittedAttributes
 				start = moment.utc(process.year+'-07-'+req.query.date+' '+req.query.hour+':'+req.query.minute+':00', 'YYYY-MM-DD HH:mm:ss')
+				if req.query.hour is '12'
+					req.query.pm = Math.abs(req.query.pm - 12)
+				tk req.query.pm
 				post.start = start.add('hours', req.query.pm).format('YYYY-MM-DD HH:mm:ss')
 				Event.forge({event_id: post.event_id})
 				.fetch()

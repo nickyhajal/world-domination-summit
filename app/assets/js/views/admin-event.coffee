@@ -18,11 +18,14 @@ ap.Views.admin_event = XView.extend
 		window.start = start
 		hour = start.format('HH')
 		pm = 0
-		if hour > 12
-			hour -= 12
+		if hour >= 12
+			if hour > 12
+				hour -= 12
 			if hour < 10
 				hour = '0'+hour
 			pm = 12
+		if hour is '00'
+			hour = '12'
 		$('select[name="date"]').select2('val', start.format('DD'))
 		$('select[name="hour"]').select2('val', hour)
 		$('select[name="minute"]').select2('val', start.format('mm'))
