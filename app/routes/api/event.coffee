@@ -31,12 +31,15 @@ routes = (app) ->
 						EventHost.forge({event_id: event.get('event_id'), user_id: req.me.get('user_id')})
 						.save()
 						.then (host) ->
-							async.each req.query.interests.split(','), (interest, cb) ->
-								EventInterest.forge({event_id: event.get('event_id'), interest_id: interest})
-								.save()
-								.then (interest) ->
-									cb()
-							, ->
+							if req.query.interests? and req.query.interests.length
+								async.each req.query.interests.split(','), (interest, cb) ->
+									EventInterest.forge({event_id: event.get('event_id'), interest_id: interest})
+									.save()
+									.then (interest) ->
+										cb()
+								, ->
+									next()
+							else
 								next()
 						, (err) ->
 							console.error(err)
