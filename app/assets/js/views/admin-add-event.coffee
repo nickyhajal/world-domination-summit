@@ -13,5 +13,5 @@ ap.Views.admin_add_event = XView.extend
 			ap.events = rsp.events
 			btn.finish()
 			setTimeout ->
-				ap.navigate('admin/events')
+				ap.navigate('admin/schedule')
 			, 1200

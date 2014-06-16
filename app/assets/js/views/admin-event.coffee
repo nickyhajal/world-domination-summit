@@ -37,3 +37,4 @@ ap.Views.admin_event = XView.extend
 		ap.api 'put event', form, (rsp) ->
 			#ap.schedule = rsp.schedule
 			btn.finish()
+			ap.navigate('admin/schedule')
