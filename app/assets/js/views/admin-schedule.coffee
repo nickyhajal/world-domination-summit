@@ -13,7 +13,7 @@ ap.Views.admin_schedule = XView.extend
       html = ''
       lastDay = '0'
       for ev in rsp.events
-        start = moment(ev.start)
+        start = moment.utc(ev.start)
         if start.format('D') isnt lastDay
           html += '<tr class="search-mid-heading"><th colspan="10">July '+start.format('Do')+'</th></tr>'
           lastDay = start.format('D')
