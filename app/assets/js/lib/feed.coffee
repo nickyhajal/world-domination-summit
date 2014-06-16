@@ -66,7 +66,7 @@
 							<a href="/~'+author.get('user_name')+'" class="dispatch-content-author">
 								'+author.get('first_name')+' '+author.get('last_name')+'
 							</a>
-							<div class="dispatch-content-message">'+content.content.replace(/\n/g, '<br>').replace(/<br>\s<br>/g, '<br>')+'</div>
+							<div class="dispatch-content-message">'+Autolinker.link(content.content.replace(/\n/g, '<br>').replace(/<br>\s<br>/g, '<br>'))+'</div>
 							<div class="dispatch-content-channel-shell">
 								<a href="#" class="dispatch-content-channel">/'+content.channel_type+'</a>
 							</div>
@@ -102,7 +102,7 @@
 				$c = $('.dispatch-content-message', $t)
 				$c.css('max-height', '10000px')
 				height = $c.height()
-				$c.css('max-height', '66px')
+				$c.css('max-height', '80px')
 				if height > 66
 					$('<div/>').attr('class', 'dispatch-content-seemore').html('Read More').insertAfter($c)
 				$t.removeClass('dispatch-content-unprocessed')
@@ -114,7 +114,7 @@
 			$c = $('.dispatch-content-message', $s)
 			if $t.hasClass('open')
 				$t.removeClass('open').html('Read More')
-				$c.css('max-height', '66px')
+				$c.css('max-height', '80px')
 			else
 				$t.addClass('open').html('Show Less')
 				$c.css('max-height', '100000px')
