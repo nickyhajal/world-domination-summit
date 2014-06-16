@@ -71,7 +71,7 @@ routes = (app) ->
 					EventHost.forge({event_id: post.event_id, user_id: req.me.get('user_id')})
 					.fetch()
 					.then (host) ->
-						if not host 
+						if not host
 							req.me.getCapabilities()
 							.then ->
 								if req.me.hasCapability('schedule')
@@ -121,8 +121,8 @@ routes = (app) ->
 				events
 				.fetch()
 				.then (event) ->
-					res.r.event_contents = event.models
-				next()
+					res.r.events = event.models
+					next()
 			else
 				res.status(401)
 				next()

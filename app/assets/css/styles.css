@@ -1649,6 +1649,14 @@ table#manifests-results-shell, .search-results-shell {
     font-family:                karla;
     font-size:                  11pt;
 }
+#event-review-results tr td:first-of-type {
+    padding-left:               10px;
+    width:                      200px ! important;
+}
+#event-review-results td {
+    font-family:                karla;
+    font-size:                  11pt;
+}
 #manifest-results tr td:first-of-type span, .search-results tr td:first-of-type span {
     display:                    table-cell;
     height:                     40px;
@@ -1711,6 +1719,10 @@ div.active-ticket a {
 td.ambassador-review-actions {
     padding-left:               11px;
     width:                      323px;
+}
+td.event-review-actions {
+    padding-left:               11px;
+    width:                      300px;
 }
 div.upload-success {
     font-size:                  17pt;
@@ -1910,13 +1922,17 @@ a.ambassador-button:hover {
 .ambassador-review-actions a.ambassador-button:first-of-type {
     border-right:               1px solid rgb(242, 173, 120);
 }
+.event-review-actions a.event-button:first-of-type {
+    border-right:               1px solid rgb(242, 173, 120);
+}
 a.ambassador-button {
     float:                      left;
     display:                    block;
     text-align:                 center;
     margin:                     0px;
     font-size:                  11pt;
-    width:                      85px;
+    width:                      auto;
+    margin:                     5px;
 }
 #nav-search .search-results a {
     font-family:                karla;
