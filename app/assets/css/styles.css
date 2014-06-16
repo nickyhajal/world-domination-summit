@@ -816,7 +816,7 @@ div.photo-header {
     background:                 -webkit-linear-gradient(top, rgba(255, 254, 252, 0.23) 0%, rgb(255, 255, 255) 100%) repeat scroll 0px 0px transparent;
     height:                     22px;
     width:                      100%;
-    top:                        -24px;
+    top:                        -22px;
 }
 .dispatch-content-seemore {
     text-align:                 left;
@@ -1232,6 +1232,9 @@ html.is-logged-in .logged-out {
 .dispatch-content-section {
     padding-top:                5px;
     margin-left:                98px;
+}
+div.dispatch-content-message a {
+    color:                      rgb(54, 51, 46);
 }
 .dispatch-content-message {
     font-family:                karla;
