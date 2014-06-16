@@ -1,9 +1,7 @@
 ###
 
-Initializes the client-side of the WDS site
-
-Includes anything that happens before routing
-and extremely broad tasks (like calling the api)
+ Primary client side code powering the WDS
+ registration app
 
 ###
 
@@ -55,26 +53,34 @@ ap.initSearch = ->
 		.on 'keyup', '#register_search', ->
 			val = $(this).val()
 			if val.length > 1
+				$('#clear-inp').show()
 				results = ap.Users.search(val)
 				html = ''
 				for result in results
 					if ap.registrations[result.get('user_id')]
 						str = 'Unregister'
+						reg_class = 'unregistered'
 					else
 						str = 'Register'
+						reg_class = 'registered'
 					html += '
 						<div class="search-row" href="/~'+result.get('user_name')+'">
 							<span style="background:url('+result.get('pic')+')"></span>
 						'+result.get('first_name')+' '+result.get('last_name')+'
-						<a href="#" data-user_id="'+result.get('user_id')+'" class="register-button">'+str+'</a>
+						<a href="#" data-user_id="'+result.get('user_id')+'" class="register-button '+reg_class+'">'+str+'</a>
 						<div class="location">'+result.get('location')+'</div>
 						</div>
 					'
 				$('#search-results').html(html).show()
 				$('#search_start').hide()
 			else
+				$('#clear-inp').hide()
 				$('#search-results').hide()
 				$('#search_start').show()
+				
+		$('body')
+		.on 'click', '#clear-inp', ->
+			$('#register_search').val('').keyup()
 
 ap.poll = ->
 	now = (new Date()).getTime()
@@ -126,11 +132,11 @@ ap.register_click = (e) ->
 	user_id = el.data('user_id')
 	if ap.registrations[user_id]?
 		action = 'unregister'
-		el.html('Register')
+		el.html('Register').addClass('registered').removeClass('unregistered')
 		delete ap.registrations[user_id]
 	else
 		action = 'register'
-		el.html('Unregister')
+		el.html('Unregister').addClass('unregistered').removeClass('registered')
 		ap.registrations[user_id] = '1'
 	ap.register(user_id, action)
 
