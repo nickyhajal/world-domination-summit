@@ -5,7 +5,7 @@ Event = Shelf.Model.extend
   hasTimestamps: true
   idAttribute: 'event_id'
   permittedAttributes: [
-    'event_id', 'year', 'ignored', 'type', 'title', 'descr', 'what',
+    'event_id', 'year', 'ignored', 'type', 'title', 'descr', 'what', 'active',
     'note', 'place', 'who', 'utc', 'end', 'venue', 'address', 'note', 'max'
   ]
 	defaults: {
@@ -15,8 +15,5 @@ Event = Shelf.Model.extend
 
 Events = Shelf.Collection.extend
   model: Event
-  getAll: ->
-  	Events.forge()
-  	.fetch()
 
 module.exports = [Event, Events]

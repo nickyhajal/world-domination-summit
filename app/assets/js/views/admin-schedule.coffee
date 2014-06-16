@@ -18,7 +18,7 @@ ap.Views.admin_schedule = XView.extend
           html += '<tr class="search-mid-heading"><th colspan="10">July '+start.format('Do')+'</th></tr>'
           lastDay = start.format('D')
         html += '<tr class="event-row" data-event_id="'+ev.event_id+'">
-          <td>'+start.format('H:mm a')+'</td>
+          <td>'+start.format('h:mm a')+'</td>
           <td>
             <span>'+ev.what+'</span>
           </td>

@@ -26,7 +26,7 @@ ap.Views.admin_event = XView.extend
 		$('select[name="hour"]').select2('val', hour)
 		$('select[name="minute"]').select2('val', start.format('mm'))
 		$('select[name="pm"]').select2('val', pm)
-		tk start
+		$('select[name="active"]').select2('val', @event.active)
 
 	event_submit: (e) ->
 		e.preventDefault()

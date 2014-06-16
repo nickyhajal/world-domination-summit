@@ -32,7 +32,7 @@ div(id="admin-add-event-shell")
 					option(value="09") 09
 					option(value="10") 10
 					option(value="11") 11
-					option(value="12") 12
+					option(value="12", selected="selected") 12
 				select(name="minute", class="select2", style="width:65px")
 					option(value="00") 00
 					option(value="15") 15
@@ -40,8 +40,13 @@ div(id="admin-add-event-shell")
 					option(value="45") 45
 				select(name="pm", class="select2", style="width:65px")
 					option(value="0") am
-					option(value="12") pm
+					option(value="12", selected="selected") pm
+		div(class="form-section")
+			label Publicly Visible
+			div(class="form-box")
+				select(name="active", class="select2", style="width:120px")
+					option(value="1") Yes
+					option(value="0") No
 		div(class="clear")
 		div(class="form-section")
-			input(type="hidden", name="active", value="1")
 			input(type="submit", value="Add Event", class="button")

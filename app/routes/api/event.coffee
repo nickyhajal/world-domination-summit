@@ -15,7 +15,7 @@ routes = (app) ->
 	event =
 		add: (req, res, next) ->
 			if req.me
-				post = _.pick req.query, Event.prototype.permittedAttributes
+				post = _.pick req.query, Event::permittedAttributes
 				start = moment(process.year+'-07-'+req.query.date+' '+req.query.hour+':'+req.query.min+':00', 'YYYY-MM-DD HH:mm:ss')
 				post.start = start.add('hours', req.query.pm).format('YYYY-MM-DD HH:mm:ss')
 
@@ -53,7 +53,37 @@ routes = (app) ->
 				next()
 
 		upd: (req, res, next) ->
-			feed.add(req,res,next)
+			if req.me
+				post = _.pick req.query, Event::permittedAttributes
+				start = moment(process.year+'-07-'+req.query.date+' '+req.query.hour+':'+req.query.min+':00', 'YYYY-MM-DD HH:mm:ss')
+				post.start = start.add('hours', req.query.pm).format('YYYY-MM-DD HH:mm:ss')
+				Event.forge({event_id: post.event_id})
+				.fetch()
+				.then (ev) ->
+					EventHost.forge({event_id: post.event_id, user_id: req.me.get('user_id')})
+					.fetch()
+					.then (host) ->
+						if not host 
+							req.me.getCapabilities()
+							.then ->
+								if req.me.hasCapability('schedule')
+									ev.set(post)
+									.save()
+									.then ->
+										next()
+								else
+									res.r.msg = 'You don\'t have permission to do that!'
+									res.status(403)
+									next()
+						else
+								ev.set(post)
+								.save()
+								.then ->
+									next()
+			else
+				res.r.msg = 'You don\'t have permission to do that!'
+				res.status(403)
+				next()
 
 		del: (req, res, next) ->
 			if req.me
