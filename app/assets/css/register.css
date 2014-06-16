@@ -47,7 +47,6 @@ header#main-header {
     width:                      100%;
 }
 a.register-button {
-    float:                      right;
     display:                    block;
     background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
     text-decoration:            none;
@@ -57,6 +56,7 @@ a.register-button {
     margin-top:                 -14px;
     padding:                    14px;
     margin-right:               -6px;
+    float:                      right;
 }
 div#page_content {
     padding:                    20px 0px;
@@ -86,8 +86,28 @@ body {
     background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
 }
 div.location {
-    display:                    inline;
     color:                      rgb(142, 135, 125);
+    float:                      right;
+    margin-right:               15px;
+}
+a#clear-inp:before {
+    background:                 none repeat scroll 0px 0px rgb(204, 204, 204);
+    height:                     30px;
+    width:                      30px;
+    content:                    "x";
+    display:                    block;
+    border-radius:              50%;
+    -moz-border-radius:         50%;
+    -webkit-border-radius:      50%;
+    text-align:                 center;
+    text-decoration:            none;
+    position:                   absolute;
+    top:                        18px;
+    right:                      17px;
+    color:                      rgb(0, 0, 0);
+}
+div#input-shell {
+    position:                   relative;
 }
 * {
     line-height:                inherit;

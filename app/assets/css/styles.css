@@ -892,14 +892,17 @@ input.manifest-search, .speaker-search, .ambassador-search {
 input.account-input {
     width:                      450px ! important;
 }
-input[type="text"], input[type="password"], input[type="number"] {
+span.pre-input {
+    background:                 none repeat scroll 0px 0px rgb(248, 248, 244);
+}
+input[type="text"], input[type="password"], input[type="number"], .pre-input {
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
     border:                     0px none;
     color:                      rgb(33, 23, 10);
     font-family:                karla ! important;
     font-size:                  12pt;
-    width:                      300px;
     padding:                    9px;
+    width:                      300px;
 }
 .sub-label {
     font-size:                  10pt ! important;
