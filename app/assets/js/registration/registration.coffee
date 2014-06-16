@@ -61,11 +61,14 @@ ap.initSearch = ->
 						str = 'Unregister'
 					else
 						str = 'Register'
-					html += '<div class="search-row" href="/~'+result.get('user_name')+'">
-						<span style="background:url('+result.get('pic')+')"></span>
-					'+result.get('first_name')+' '+result.get('last_name')+'
-					<a href="#" data-user_id="'+result.get('user_id')+'" class="register-button">'+str+'</a>
-					</div>'
+					html += '
+						<div class="search-row" href="/~'+result.get('user_name')+'">
+							<span style="background:url('+result.get('pic')+')"></span>
+						'+result.get('first_name')+' '+result.get('last_name')+'
+						<div class="location"> - '+result.get('location')+'</div>
+						<a href="#" data-user_id="'+result.get('user_id')+'" class="register-button">'+str+'</a>
+						</div>
+					'
 				$('#search-results').html(html).show()
 				$('#search_start').hide()
 			else
