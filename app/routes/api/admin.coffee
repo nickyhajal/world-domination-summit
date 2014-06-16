@@ -51,8 +51,8 @@ routes = (app) ->
 					res.send response
 					res.r.msg = 'Success'
 			else
-				tk 2
 				res.status(401)
+
 		schedule: (req, res, next) ->
 			Events.forge()
 			.query('where', 'type', 'program')

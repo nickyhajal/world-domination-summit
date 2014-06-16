@@ -1609,7 +1609,7 @@ table#manifests-results-shell thead th, table#manifests-results-shell tfoot th, 
 }
 #schedule-shell tr td:first-of-type {
     width:                      120px ! important;
-    text-align:                 center;
+    text-align:                 left;
 }
 td.search-actions .button {
     font-size:                  12pt;
@@ -1618,8 +1618,8 @@ td.search-actions .button {
 td.search-actions {
     text-align:                 right;
 }
-#schedule-shell td {
-    padding:                    8px;
+#schedule-shell td, #racetask-shell td {
+    padding:                    10px;
 }
 .manifest-results tr, .search-results tr {
     background:                 none repeat scroll 0% 0% rgb(239, 238, 229);
@@ -1715,9 +1715,9 @@ div.upload-success {
 }
 .search-results th {
     text-align:                 left;
-    padding:                    9px 23px;
     font-weight:                normal;
     font-family:                Vitesse;
+    padding:                    10px;
 }
 * {
     line-height:                inherit;
