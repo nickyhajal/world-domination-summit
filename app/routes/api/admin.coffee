@@ -59,7 +59,14 @@ routes = (app) ->
 			.query('orderBy', 'start')
 			.fetch()
 			.then (events) ->
-				res.r.events = events
+				evs = []
+				for ev in events.models
+					tmp = ev.attributes
+					start = (tmp.start+'').split(' GMT')
+					start = moment(start[0])
+					tmp.start = start.format('YYYY-MM-DD HH:mm:ss')
+					evs.push(tmp)
+				res.r.events = evs
 				next()
 
 		ambassadors: (req, res, next) ->
