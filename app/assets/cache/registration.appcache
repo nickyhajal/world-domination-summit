@@ -1,7 +1,6 @@
 CACHE MANIFEST
 # Version 13
 
-CACHE:
 /app/assets/css/register.css
 /js/lunr.js
 /js/includes.js
@@ -13,4 +12,5 @@ CACHE:
 /js/models/users.js
 
 NETWORK:
+
 *
