@@ -102,7 +102,7 @@ routes = (app) ->
 			page = req.query.page ? 1
 			if req.query.channel_type is 'user'
 				feeds.query('where', 'user_id', '=', req.query.channel)
-			else if req.query.channel_type isnt 'global'
+			else if req.query.channel_type isnt 'hub'
 				feeds.query('where', 'channel_type', '=', req.query.channel_type)
 				feeds.query('where', 'channel_id', '=', req.query.channel)
 			feeds.query('orderBy', 'feed_id',  'DESC')
