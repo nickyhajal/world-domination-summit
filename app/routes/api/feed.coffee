@@ -102,6 +102,9 @@ routes = (app) ->
 			page = req.query.page ? 1
 			if req.query.channel_type is 'user'
 				feeds.query('where', 'user_id', '=', req.query.channel)
+			else if req.query.channel_type isnt 'global'
+				feeds.query('where', 'channel_type', '=', req.query.channel_type)
+				feeds.query('where', 'channel_id', '=', req.query.channel)
 			feeds.query('orderBy', 'feed_id',  'DESC')
 			feeds.query('limit', limit)
 			if req.query.before?
@@ -115,6 +118,8 @@ routes = (app) ->
 			.then (feed) ->
 				res.r.feed_contents = feed.models
 				next()
+			, (err) ->
+				console.error(err)
 
 		get_comments: (req, res, next) ->
 			comments = FeedComments.forge()
