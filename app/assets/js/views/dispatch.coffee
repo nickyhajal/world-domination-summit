@@ -20,7 +20,7 @@ ap.Views.Dispatch = XView.extend
 				channel: @options.channel
 				channel_type: @options.channel_type
 			$('.dispatch-post-inp', @el).autosize()
-			if @options.channel_type = 'user'
+			if @options.channel_type is 'user'
 				$('.dispatch-post-form', $(@el)).remove()
 
 	focusControls: (e) ->
