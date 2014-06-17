@@ -1654,7 +1654,7 @@ table#manifests-results-shell, .search-results-shell {
 }
 #event-review-results tr td:first-of-type {
     padding-left:               10px;
-    width:                      200px ! important;
+    width:                      280px ! important;
 }
 #event-review-results td {
     font-family:                karla;
@@ -1725,7 +1725,7 @@ td.ambassador-review-actions {
 }
 td.event-review-actions {
     padding-left:               11px;
-    width:                      300px;
+    width:                      184px;
 }
 div.upload-success {
     font-size:                  17pt;
@@ -1942,10 +1942,13 @@ a.ambassador-button:hover {
 .event-review-actions a.event-button:first-of-type {
     border-right:               1px solid rgb(242, 173, 120);
 }
+.event-review-actions .button:nth-of-type(2) {
+    margin-right:               -3px ! important;
+}
 .event-review-actions .button {
-    width:                      110px;
-    padding:                    7px;
     float:                      right;
+    width:                      80px;
+    padding:                    5px;
 }
 a.ambassador-button {
     float:                      left;
