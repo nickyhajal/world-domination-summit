@@ -9,18 +9,18 @@ ap.Views.admin_event_review = XView.extend
     @listing()
 
   listing: ->
-    ap.api 'get admin/events', {}, (rsp) ->
+    ap.api 'get admin/events', {active: 0}, (rsp) ->
       html = ''
       for atn in rsp.events
       #   atn = new ap.Event(atn)
-        html += '<tr data-user_id="'+atn.event_id+'">
+        html += '<tr data-event_id="'+atn.event_id+'">
           <td>
             <span>'+atn.who+'</span>
           </td>
           <td>'+atn.place+'</td>
           <td class="event-review-actions">
-          <a data-action="accept" href="/api/admin/event_accept?id='+atn.event_id+'" class="button ambassador-button">Accept</a>
-          <a data-action="reject" href="/api/admin/event_reject?id='+atn.event_id+'" class="button ambassador-button">Reject</a>
+          <a data-action="accept" href="/api/admin/event_accept?id='+atn.event_id+'" class="button ambassador-button event-button">Accept</a>
+          <a data-action="reject" href="/api/admin/event_reject?id='+atn.event_id+'" class="button ambassador-button event-button">Reject</a>
           </td>'
       $('#event-review-results').html(html)
       $('#event-start').hide()

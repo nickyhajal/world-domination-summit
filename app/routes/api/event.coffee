@@ -112,12 +112,15 @@ routes = (app) ->
 				next()
 
 		get: (req, res, next) ->
-			if req.me? && req.me.hasCapability('events')
+			if req.me.hasCapability('events')
 				events = Events.forge()
 				limit = req.query.per_page ? 50
 				page = req.query.page ? 1
+				active = req.query.active ? 1
 				events.query('orderBy', 'event_id',  'DESC')
 				events.query('limit', limit)
+				events.query('where', 'active', active)
+				events.query('where', 'ignored', 0)
 				events
 				.fetch()
 				.then (event) ->
@@ -126,5 +129,34 @@ routes = (app) ->
 			else
 				res.status(401)
 				next()
+
+		accept: (req, res, next) ->
+			if req.me.hasCapability('events')
+				Event.forge
+					event_id: req.query.event_id
+				.fetch()
+				.then (model) ->
+					model.set('active', 1)
+					model.save()
+					next()
+			else
+				res.status(401)
+				next()
+
+		reject: (req, res, next) ->
+			if req.me.hasCapability('events')
+				Event.forge
+					event_id: req.query.event_id
+				.fetch()
+				.then (model) ->
+					model.set('ignored', 1)
+					model.save()
+					next()
+				, (err) ->
+					console.error(err)
+			else
+				res.status(401)
+				next()
+
 
 module.exports = routes
