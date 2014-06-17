@@ -24,7 +24,7 @@ User = Shelf.Model.extend
   tableName: 'users'
   permittedAttributes: [
     'user_id', 'type', 'email', 'first_name', 'last_name', 'attending14',
-    'email', 'hash', 'user_name', 'mf', 'twitter', 'facebook', 'site', 'pic',
+    'email', 'hash', 'user_name', 'mf', 'twitter', 'facebook', 'site', 'pic', 'instagram'
     'address', 'address2', 'city', 'region', 'country', 'zip', 'lat', 'lon', 'distance',
     'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake'
   ]

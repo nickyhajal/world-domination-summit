@@ -38,7 +38,7 @@
 					html += @renderContent content
 			else if not $('.dispatch-content-shell', $el).length
 				render = 'replace'
-				html += '<div class="dispatch-empty">No posts yet, add one!</div>'
+				html += '<div class="dispatch-empty">No posts yet! Why don\'t you get things started?</div>'
 			if render is 'replace'
 				$inner.html html
 			else if render is 'append'
