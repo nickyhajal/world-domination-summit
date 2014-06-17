@@ -14,10 +14,12 @@ ap.Views.Dispatch = XView.extend
 	render: ->
 		html = _.t 'parts_dispatch', {}
 		$(@el).html html
+		if @options.placeholder
+			$('.dispatch-post-inp', $(@el)).attr('placeholder', @options.placeholder)
 		_.whenReady 'users', =>
 			$('.dispatch-feed', @el).feed
 				user_id: @options.user_id
-				channel: @options.channel
+				channel_id: @options.channel_id
 				channel_type: @options.channel_type
 			$('.dispatch-post-inp', @el).autosize()
 			if @options.channel_type is 'user'
@@ -35,7 +37,7 @@ ap.Views.Dispatch = XView.extend
 		e.preventDefault()
 		post = $(e.currentTarget).formToJson()
 		if post.content.length > 0
-			post.channel = @options.channel
+			post.channel_id = @options.channel_id
 			post.channel_type = @options.channel_type
 			setTimeout =>
 				@blurControls(e)
