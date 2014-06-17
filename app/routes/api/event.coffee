@@ -16,9 +16,6 @@ routes = (app) ->
 		add: (req, res, next) ->
 			if req.me
 				post = _.pick req.query, Event.permittedAttributes
-				tk Event.permittedAttributes
-				tk Event::permittedAttributes
-				tk post
 				start = moment.utc(process.year+'-07-'+req.query.date+' '+req.query.hour+':'+req.query.minute+':00', 'YYYY-MM-DD HH:mm:ss')
 				if req.query.hour is '12'
 					req.query.pm = Math.abs(req.query.pm - 12)
@@ -116,17 +113,27 @@ routes = (app) ->
 				events = Events.forge()
 				limit = req.query.per_page ? 50
 				page = req.query.page ? 1
-				active = req.query.active ? 1
+				if req.query.active?
+					active = req.query.active
+					events.query('where', 'active', active)
 				if req.query.type?
 					events.query('where', 'type', req.query.type)
+				if req.query.event_id
+					events.query('where', 'event_id', req.query.event_id)
 				events.query('orderBy', 'event_id',  'DESC')
 				events.query('limit', limit)
-				events.query('where', 'active', active)
 				events.query('where', 'ignored', 0)
 				events
 				.fetch()
-				.then (event) ->
-					res.r.events = event.models
+				.then (events) ->
+					evs = []
+					for ev in events.models
+						tmp = ev.attributes
+						start = (tmp.start+'').split(' GMT')
+						start = moment(start[0])
+						tmp.start = start.format('YYYY-MM-DD HH:mm:ss')
+						evs.push(tmp)
+					res.r.events = evs
 					next()
 			else
 				res.status(401)
