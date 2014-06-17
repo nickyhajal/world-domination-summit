@@ -71,7 +71,7 @@ routes = (app) ->
 					EventHost.forge({event_id: post.event_id, user_id: req.me.get('user_id')})
 					.fetch()
 					.then (host) ->
-						if not host 
+						if not host
 							req.me.getCapabilities()
 							.then ->
 								if req.me.hasCapability('schedule')
@@ -94,7 +94,7 @@ routes = (app) ->
 				next()
 
 		del: (req, res, next) ->
-			if req.me
+			if req.me? && req.me.hasCapability('events')
 				if req.query.feed_id?
 					Feed.forge req.query.feed_id
 					.fetch()
@@ -108,26 +108,55 @@ routes = (app) ->
 					res.status(400)
 					next()
 			else
-				res.r.msg = 'You\'re not logged in!'
-				res.status(403)
+				res.status(401)
 				next()
 
 		get: (req, res, next) ->
-			feeds = Feeds.forge()
-			limit = req.query.per_page ? 50
-			page = req.query.page ? 1
-			feeds.query('orderBy', 'feed_id',  'DESC')
-			feeds.query('limit', limit)
-			if req.query.before?
-				feeds.query('where', 'feed_id', '<', req.query.before)
-			else if req.query.since?
-				feeds.query('where', 'feed_id', '>', req.query.since)
-			if req.query.user_id
-				feeds.query('where', 'user_id', '=', req.query.user_id)
-			feeds
-			.fetch()
-			.then (feed) ->
-				res.r.feed_contents = feed.models
+			if req.me.hasCapability('events')
+				events = Events.forge()
+				limit = req.query.per_page ? 50
+				page = req.query.page ? 1
+				active = req.query.active ? 1
+				events.query('orderBy', 'event_id',  'DESC')
+				events.query('limit', limit)
+				events.query('where', 'active', active)
+				events.query('where', 'ignored', 0)
+				events
+				.fetch()
+				.then (event) ->
+					res.r.events = event.models
+					next()
+			else
+				res.status(401)
 				next()
+
+		accept: (req, res, next) ->
+			if req.me.hasCapability('events')
+				Event.forge
+					event_id: req.query.event_id
+				.fetch()
+				.then (model) ->
+					model.set('active', 1)
+					model.save()
+					next()
+			else
+				res.status(401)
+				next()
+
+		reject: (req, res, next) ->
+			if req.me.hasCapability('events')
+				Event.forge
+					event_id: req.query.event_id
+				.fetch()
+				.then (model) ->
+					model.set('ignored', 1)
+					model.save()
+					next()
+				, (err) ->
+					console.error(err)
+			else
+				res.status(401)
+				next()
+
 
 module.exports = routes
