@@ -21,8 +21,8 @@ ap.Views.admin_event_review = XView.extend
           </td>
           <td>'+place+'</td>
           <td class="event-review-actions">
-          <a data-action="accept" href="/api/admin/event_accept?id='+atn.event_id+'" class="button ambassador-button event-button">Accept</a>
           <a data-action="reject" href="/api/admin/event_reject?id='+atn.event_id+'" class="button ambassador-button event-button">Reject</a>
+          <a data-action="accept" href="/api/admin/event_accept?id='+atn.event_id+'" class="button ambassador-button event-button">Accept</a>
           </td></tr>
           <tr id="event-detail-'+atn.event_id+'" class="event-detail" style="display:none;">
           <td colspan="3">
