@@ -1732,6 +1732,10 @@ div.upload-success {
     color:                      rgb(118, 113, 103);
     width:                      439px;
 }
+.tbl-head th {
+    text-align:                 center ! important;
+    padding:                    10px 0px ! important;
+}
 .search-results th {
     text-align:                 left;
     font-weight:                normal;
@@ -1744,6 +1748,9 @@ div.dispatch-empty {
     margin-top:                 50px;
     font-size:                  17pt;
     color:                      rgb(190, 190, 176);
+}
+tr.event-detail td {
+    padding:                    20px ! important;
 }
 * {
     line-height:                inherit;
@@ -1932,11 +1939,13 @@ a.ambassador-button:hover {
 .event-review-actions a.event-button:first-of-type {
     border-right:               1px solid rgb(242, 173, 120);
 }
+.event-review-actions .button {
+    width:                      133px;
+}
 a.ambassador-button {
     float:                      left;
     display:                    block;
     text-align:                 center;
-    margin:                     0px;
     font-size:                  11pt;
     width:                      auto;
     margin:                     5px;

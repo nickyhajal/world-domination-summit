@@ -94,7 +94,7 @@ routes = (app) ->
 				next()
 
 		del: (req, res, next) ->
-			if req.me? && req.me.hasCapability('events')
+			if req.me? && req.me.hasCapability('schedule')
 				if req.query.feed_id?
 					Feed.forge req.query.feed_id
 					.fetch()
@@ -112,11 +112,13 @@ routes = (app) ->
 				next()
 
 		get: (req, res, next) ->
-			if req.me.hasCapability('events')
+			if req.me.hasCapability('schedule')
 				events = Events.forge()
 				limit = req.query.per_page ? 50
 				page = req.query.page ? 1
 				active = req.query.active ? 1
+				if req.query.type?
+					events.query('where', 'type', req.query.type)
 				events.query('orderBy', 'event_id',  'DESC')
 				events.query('limit', limit)
 				events.query('where', 'active', active)
@@ -131,7 +133,7 @@ routes = (app) ->
 				next()
 
 		accept: (req, res, next) ->
-			if req.me.hasCapability('events')
+			if req.me.hasCapability('schedule')
 				Event.forge
 					event_id: req.query.event_id
 				.fetch()
@@ -144,7 +146,7 @@ routes = (app) ->
 				next()
 
 		reject: (req, res, next) ->
-			if req.me.hasCapability('events')
+			if req.me.hasCapability('schedule')
 				Event.forge
 					event_id: req.query.event_id
 				.fetch()
