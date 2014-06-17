@@ -63,8 +63,8 @@ ap.Views.profile = XView.extend
 
 		# Facebook has a bunch of processing to either get a username
 		# or detect an email/full name and forward to a search link instead
-		if atn.get('facebook').length
-			fb = atn.get('facebook')?.toLowerCase()
+		if atn.get('facebook')?.length
+			fb = atn.get('facebook').toLowerCase()
 			if fb.indexOf('/pages/') < 0 and fb.indexOf('profile.php') < 0
 				fb = fb.split('/')
 				fb = fb[fb.length - 1].split('?')
