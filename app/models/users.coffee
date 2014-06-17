@@ -171,6 +171,7 @@ User = Shelf.Model.extend
       "ambassador-review": 'ambassadors'
       "add-event": 'schedule'
       "event": 'schedule'
+      "event-review": 'schedule'
       "racetasks": "race"
       "add-racetask": "race"
       "racetask": "race"

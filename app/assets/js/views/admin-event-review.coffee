@@ -10,25 +10,30 @@ ap.Views.admin_event_review = XView.extend
     @listing()
 
   listing: ->
-    ap.api 'get admin/events', {active: 0}, (rsp) ->
-      html = ''
+    ap.api 'get admin/events', {active: 0, type: 'meetup'}, (rsp) ->
+      html = '<tr class="tbl-head"><th>Meetup</th><th>Venue</th><th>Actions</th></tr>'
       for atn in rsp.events
       #   atn = new ap.Event(atn)
+        place = if atn.place.length then atn.place else 'No Venue'
         html += '<tr data-event_id="'+atn.event_id+'">
           <td>
-            <span>'+atn.who+'</span>
+            <span>'+atn.what+'</span>
           </td>
-          <td>'+atn.place+'</td>
+          <td>'+place+'</td>
           <td class="event-review-actions">
           <a data-action="accept" href="/api/admin/event_accept?id='+atn.event_id+'" class="button ambassador-button event-button">Accept</a>
           <a data-action="reject" href="/api/admin/event_reject?id='+atn.event_id+'" class="button ambassador-button event-button">Reject</a>
           </td></tr>
-          <tr class="event-detail" style="display:none;">
-          <td>
-            <span>'+atn.venue+'</span>
+          <tr id="event-detail-'+atn.event_id+'" class="event-detail" style="display:none;">
+          <td colspan="3">
+            <b>Description</b>
+            <div>'+atn.descr+'</div>
+            <br/>
+            <b>Who it\'s for</b>
+            <div>'+atn.who+'</div>
           </td>
-          <td>'+atn.descr+'</td>
           </tr>'
+      html += '<tr class="tbl-head"><th>Meetup</th><th>Venue</th><th>Actions</th></tr>'
       $('#event-review-results').html(html)
       $('#event-start').hide()
       $('#event-review-results-shell').show()
@@ -44,7 +49,9 @@ ap.Views.admin_event_review = XView.extend
       btn.finish()
       setTimeout ->
         el.closest('tr').remove()
+        $('#event-detail-'+event_id).remove()
       , 500
+    return false
 
   row_click: (e) ->
     $(e.currentTarget).next('tr').toggle()
