@@ -26,11 +26,18 @@ ap.Views.admin_meetup_review = XView.extend
           </td></tr>
           <tr id="event-detail-'+atn.event_id+'" class="event-detail" style="display:none;">
           <td colspan="3">
+            <a href="/admin/meetup/'+atn.event_id+'" class="meetup-edit">Edit Meetup</a>
             <b>Description</b>
             <div>'+atn.descr+'</div>
             <br/>
             <b>Who it\'s for</b>
             <div>'+atn.who+'</div>
+            <br/>
+            <b>Happening</b>
+            <div>'+moment.utc(atn.start).format('MMMM Do [at] h:mm a')+'</div>
+            <br>
+            <b>Capacity</b>
+            <div>'+atn.max+'</div>
           </td>
           </tr>'
       html += '<tr class="tbl-head"><th>Meetup</th><th>Venue</th><th>Actions</th></tr>'
