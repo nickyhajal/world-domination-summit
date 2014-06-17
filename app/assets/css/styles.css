@@ -1940,7 +1940,9 @@ a.ambassador-button:hover {
     border-right:               1px solid rgb(242, 173, 120);
 }
 .event-review-actions .button {
-    width:                      133px;
+    width:                      110px;
+    padding:                    7px;
+    float:                      right;
 }
 a.ambassador-button {
     float:                      left;
