@@ -2,6 +2,7 @@ ap.Views.admin_event_review = XView.extend
   timo: 0
   events:
     'click .event-button': 'review'
+    'click #event-review-results tr': 'row_click'
   initialize: ->
     @initRender()
 
@@ -21,7 +22,13 @@ ap.Views.admin_event_review = XView.extend
           <td class="event-review-actions">
           <a data-action="accept" href="/api/admin/event_accept?id='+atn.event_id+'" class="button ambassador-button event-button">Accept</a>
           <a data-action="reject" href="/api/admin/event_reject?id='+atn.event_id+'" class="button ambassador-button event-button">Reject</a>
-          </td>'
+          </td></tr>
+          <tr class="event-detail" style="display:none;">
+          <td>
+            <span>'+atn.venue+'</span>
+          </td>
+          <td>'+atn.descr+'</td>
+          </tr>'
       $('#event-review-results').html(html)
       $('#event-start').hide()
       $('#event-review-results-shell').show()
@@ -38,3 +45,6 @@ ap.Views.admin_event_review = XView.extend
       setTimeout ->
         el.closest('tr').remove()
       , 500
+
+  row_click: (e) ->
+    $(e.currentTarget).next('tr').toggle()
