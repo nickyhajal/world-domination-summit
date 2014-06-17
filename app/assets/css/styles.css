@@ -1726,6 +1726,13 @@ div.upload-success {
     font-family:                Vitesse;
     padding:                    10px;
 }
+div.dispatch-empty {
+    padding:                    13px;
+    text-align:                 center;
+    margin-top:                 50px;
+    font-size:                  17pt;
+    color:                      rgb(190, 190, 176);
+}
 * {
     line-height:                inherit;
     box-sizing:                 border-box;

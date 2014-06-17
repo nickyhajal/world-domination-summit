@@ -22,8 +22,8 @@
 			fnc = false
 
 		opts = _.defaults opts, defs
-		if $d.data('channel')?
-			opts.params.channel = $d.data('channel')
+		if $d.data('channel_id')?
+			opts.params.channel_id = $d.data('channel_id')
 		if $d.data('channel_type')?
 			opts.params.channel_type = $d.data('channel_type')
 
@@ -33,8 +33,12 @@
 			if !$inner.length
 				$el.append('<div class="dispatch-container"/>')
 				$inner = $('.dispatch-container', $el)
-			for content in contents
-				html += @renderContent content
+			if contents.length
+				for content in contents
+					html += @renderContent content
+			else if not $('.dispatch-content-shell', $el).length
+				render = 'replace'
+				html += '<div class="dispatch-empty">No posts yet, add one!</div>'
 			if render is 'replace'
 				$inner.html html
 			else if render is 'append'
@@ -59,6 +63,13 @@
 			html = ''
 			if author?
 				comments = @commentsStr +content.num_comments
+				channel_name = content.channel_type
+				channel_url = '#'
+				if channel_name is 'interest'
+					tk ap.Interests
+					tk content.channel_id
+					channel_name = ap.Interests.get(content.channel_id).get('interest').toLowerCase()
+					channel_url = '/interest/'+channel_name
 				html = '
 					<div class="dispatch-content-shell dispatch-content-unprocessed" data-content_id="'+content.feed_id+'">
 						<div class="dispatch-content-userpic" style="background:url('+author.get('pic').replace('_normal', '')+')"></div>
@@ -68,7 +79,7 @@
 							</a>
 							<div class="dispatch-content-message">'+Autolinker.link(content.content.replace(/\n/g, '<br>').replace(/<br>\s<br>/g, '<br>'))+'</div>
 							<div class="dispatch-content-channel-shell">
-								<a href="#" class="dispatch-content-channel">/'+content.channel_type+'</a>
+								<a href="'+channel_url+'" class="dispatch-content-channel">/'+channel_name+'</a>
 							</div>
 							<div class="dispatch-content-comments-shell dispatch-content-comments-closed">
 								<a href="#" class="dispatch-content-comment-status">'+comments+'</a>
@@ -127,8 +138,7 @@
 			opts.params.since = $('.dispatch-content-shell', $el).first().data('content_id')
 			params = _.defaults extra, opts.params
 			ap.api 'get feed', params, (rsp) =>
-				if rsp.feed_contents?.length
-					@renderFeed(rsp.feed_contents, get_opts.render)
+				@renderFeed(rsp.feed_contents, get_opts.render)
 				if get_opts.cb
 					get_opts.cb()
 
