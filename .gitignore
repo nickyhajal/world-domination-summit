@@ -16,5 +16,5 @@ node_modules
 images/markers
 images/avatars
 firefile.config.php
+dump.rdb
 wds-start.sh
-*.rdb
