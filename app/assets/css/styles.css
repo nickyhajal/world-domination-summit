@@ -278,6 +278,10 @@ a.tab-disabled {
 a.tab-invisible {
     display:                    none ! important;
 }
+a.subtle-link {
+    color:                      rgb(174, 174, 160) ! important;
+    background:                 none repeat scroll 0px 0px rgb(225, 225, 213) ! important;
+}
 #sidebar a {
     background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
     margin-right:               0px;

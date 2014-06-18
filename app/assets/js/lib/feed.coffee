@@ -58,6 +58,18 @@
 			else
 				comments = 'Add a Comment'
 			return comments
+		@likeStr = (feed_id, num_likes) ->
+			str = '<div class="dispatch-content-like-status">'
+			if num_likes > 1
+				str = num_likes + ' Likes</div>'
+			else if num_likes
+				str = num_likes + ' Like</div>'
+			if ap.me
+				if ap.me.likes? && (ap.me.likes.indexOf(feed_id) > -1)
+					str += '<span>Liked!</span>'
+				else
+					str += '<a href="#" class="dispatch-content-like">Like</a>'
+
 		@renderContent = (content) ->
 			author = ap.Users.get(content.user_id)
 			html = ''
@@ -66,8 +78,6 @@
 				channel_name = content.channel_type
 				channel_url = '#'
 				if channel_name is 'interest'
-					tk ap.Interests
-					tk content.channel_id
 					channel_name = ap.Interests.get(content.channel_id).get('interest').toLowerCase()
 					channel_url = '/interest/'+channel_name
 				html = '
@@ -82,6 +92,7 @@
 								<a href="'+channel_url+'" class="dispatch-content-channel">/'+channel_name+'</a>
 							</div>
 							<div class="dispatch-content-comments-shell dispatch-content-comments-closed">
+								' + like + '
 								<a href="#" class="dispatch-content-comment-status">'+comments+'</a>
 									<div class="dispatch-content-comments-inner">
 										<div class="dispatch-content-comments"></div>
