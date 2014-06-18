@@ -69,12 +69,14 @@
 					str += '<span>Liked!</span>'
 				else
 					str += '<a href="#" class="dispatch-content-like">Like</a>'
+			return ''
 
 		@renderContent = (content) ->
 			author = ap.Users.get(content.user_id)
 			html = ''
 			if author?
 				comments = @commentsStr +content.num_comments
+				like = @likeStr(content.feed_id, 0)
 				channel_name = content.channel_type
 				channel_url = '#'
 				if channel_name is 'interest'
