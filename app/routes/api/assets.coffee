@@ -96,10 +96,22 @@ routes = (app) ->
 									.then (user) ->
 										user.getFeedLikes()
 										.then (user) ->
-											tk user
 											dfr.resolve(user)
 				else
 					dfr.resolve(false)
+				return dfr.promise
+			notifications: ->
+				dfr = Q.defer()
+				if req.me
+					Notifications.forge()
+					.query('where', 'user_id', '=', req.me.get('user_id'))
+					.query('where', 'read', '=', '0')
+					.fetch()
+					.then (notifications) ->
+						dfr.resolve(notifications.models)
+				else
+					dfr.resolve([])
+
 				return dfr.promise
 			registrations: ->
 				dfr = Q.defer()

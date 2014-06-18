@@ -10,6 +10,7 @@ routes = (app) ->
 	[Feed, Feeds] = require('../../models/feeds')
 	[FeedComment, FeedComments] = require('../../models/feed_comments')
 	[FeedLike, FeedLikes] = require('../../models/feed_likes')
+	[Notification, Notifications] = require('../../models/notifications')
 
 	feed =
 		add: (req, res, next) ->
@@ -86,6 +87,11 @@ routes = (app) ->
 								feed.set({num_comments: (feed.get('num_comments') + 1)})
 								.save()
 								.then (feed) ->
+										Notification.forge
+											user_id: feed.get('user_id')
+											notification: req.me.get('first_name')+' '+req.me.get('last_name')+' commented on your post!'
+											link: '/dispatch/'+req.query.feed_id
+										.save()
 										next()
 								, (err) ->
 									console.error(err)
