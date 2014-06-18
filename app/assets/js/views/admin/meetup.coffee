@@ -32,6 +32,10 @@ ap.Views.admin_meetup = XView.extend
 		$('select[name="minute"]').select2('val', start.format('mm'))
 		$('select[name="pm"]').select2('val', pm)
 		$('select[name="active"]').select2('val', @event.active)
+		if +@event.active
+			$('h1 a')
+			.html('Back to Meetups')
+			.attr('href', '/admin/meetups')
 
 	meetup_submit: (e) ->
 		e.preventDefault()
