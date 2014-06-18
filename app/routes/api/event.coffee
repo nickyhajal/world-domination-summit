@@ -11,6 +11,7 @@ routes = (app) ->
 	[Event, Events] = require('../../models/events')
 	[EventHost, EventHosts] = require('../../models/event_hosts')
 	[EventInterest, EventInterests] = require('../../models/event_interests')
+	[User, Users] = require('../../models/users')
 
 	event =
 		add: (req, res, next) ->
@@ -145,9 +146,16 @@ routes = (app) ->
 					event_id: req.query.event_id
 				.fetch()
 				.then (model) ->
-					model.set('active', 1)
-					model.save()
-					next()
+					EventHost.forge({event_id: req.query.event_id})
+					.fetch()
+					.then (host) ->
+						User.forge({user_id: host.get('user_id')})
+						.fetch()
+						.then (host) ->
+							host.sendEmail('meetup-approved', 'Thanks for your meetup proposal!')
+							model.set('active', 1)
+							model.save()
+							next()
 			else
 				res.status(401)
 				next()
@@ -158,9 +166,16 @@ routes = (app) ->
 					event_id: req.query.event_id
 				.fetch()
 				.then (model) ->
-					model.set('ignored', 1)
-					model.save()
-					next()
+					EventHost.forge({event_id: req.query.event_id})
+					.fetch()
+					.then (host) ->
+						User.forge({user_id: host.get('user_id')})
+						.fetch()
+						.then (host) ->
+							host.sendEmail('meetup-declined', 'Thanks for your meetup proposal!')
+							model.set('ignored', 1)
+							model.save()
+							next()
 				, (err) ->
 					console.error(err)
 			else
