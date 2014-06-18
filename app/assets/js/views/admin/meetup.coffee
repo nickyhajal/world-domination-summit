@@ -43,6 +43,5 @@ ap.Views.admin_meetup = XView.extend
 		btn = _.btn($('.button', el), 'Saving...', 'Saved!')
 		form = el.formToJson()
 		ap.api 'put event', form, (rsp) ->
-			#ap.schedule = rsp.schedule
 			btn.finish()
 			ap.navigate('admin/meetup-review')
