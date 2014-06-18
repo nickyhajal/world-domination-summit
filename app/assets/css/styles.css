@@ -502,7 +502,33 @@ a.dispatch-content-author {
     text-decoration:            none;
     font-family:                vitesse;
 }
-a.dispatch-content-comment-status {
+.dispatch-content-like, .dispatch-content-liked {
+    margin-right:               8px;
+}
+div.dispatch-content-like-status:before {
+    background:                 none repeat scroll 0% 0% rgb(204, 204, 204);
+    width:                      1px;
+    content:                    "";
+    z-index:                    100;
+    position:                   absolute;
+    top:                        2px;
+    height:                     11px;
+    right:                      -7px;
+}
+.dispatch-content-like-status {
+    float:                      left;
+    margin-top:                 3px;
+    font-family:                vitesse ! important;
+    font-size:                  10pt ! important;
+    color:                      rgb(171, 171, 157);
+    position:                   relative;
+    margin-right:               14px;
+}
+a.dispatch-content-liked {
+    cursor:                     default;
+    text-decoration:            none;
+}
+a.dispatch-content-comment-status, .dispatch-content-like, .dispatch-content-like-status, .dispatch-content-liked {
     font-family:                karla;
     font-size:                  14px;
 }
@@ -1792,6 +1818,9 @@ div.connect {
     position:                   relative;
     padding:                    15px 0px 22px;
     width:                      600px;
+}
+div.dispatch-content-like-shell {
+    float:                      left;
 }
 * {
     line-height:                inherit;

@@ -3,6 +3,7 @@ ap.User = window.XModel.extend
 		model: 'Users'
 		answers: []
 		tickets: []
+		feed_likes: []
 		questions: ''
 		interests: ''
 		pic: '/images/default-avatar.png'

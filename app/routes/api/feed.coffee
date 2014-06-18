@@ -9,6 +9,7 @@ routes = (app) ->
 
 	[Feed, Feeds] = require('../../models/feeds')
 	[FeedComment, FeedComments] = require('../../models/feed_comments')
+	[FeedLike, FeedLikes] = require('../../models/feed_likes')
 
 	feed =
 		add: (req, res, next) ->
@@ -37,6 +38,29 @@ routes = (app) ->
 			else
 				res.r.msg = 'You\'re not logged in!'
 				res.status(401)
+				next()
+
+		add_like: (req, res, next) ->
+			if req.me
+				post = _.pick req.query, FeedLike::permittedAttributes
+				post.user_id = req.me.get('user_id')
+				FeedLike.forge(post)
+				.save()
+				.then (like) ->
+					Feed.forge({feed_id: req.query.feed_id})
+					.fetch()
+					.then (feed) ->
+						num_likes = feed.get('num_likes') + 1
+						feed.set({num_likes: num_likes})
+						.save()
+						.then ->
+								res.r.num_likes = num_likes
+								next()
+						, (err) ->
+							console.error(err)
+			else
+				res.r.msg = 'You\'re not logged in!'
+				res.status(403)
 				next()
 
 		add_comment: (req, res, next) ->
