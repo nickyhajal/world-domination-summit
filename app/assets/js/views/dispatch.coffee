@@ -10,7 +10,8 @@ ap.Views.Dispatch = XView.extend
 			channel_id: 0
 			channel_type: 'global'
 		@options = _.defaults @options, defaults
-		@render()
+		_.whenReady 'me', =>
+			@render()
 	render: ->
 		html = _.t 'parts_dispatch', {}
 		$(@el).html html

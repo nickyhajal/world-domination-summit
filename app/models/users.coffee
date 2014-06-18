@@ -19,6 +19,7 @@ request = require('request')
 [Connection, Connections] = require './connections'
 [TwitterLogin, TwitterLogins] = require './twitter_logins'
 [Capability, Capabilities] = require './capabilities'
+[FeedLike, FeedLikes] = require './feed_likes'
 
 User = Shelf.Model.extend
   tableName: 'users'
@@ -215,6 +216,21 @@ User = Shelf.Model.extend
       console.error(err)
     return dfr.promise
 
+  getFeedLikes: ->
+    dfr = Q.defer()
+    FeedLikes.forge()
+    .query('where', 'user_id', @get('user_id'))
+    .fetch()
+    .then (likes) =>
+      like_ids = []
+      for like in likes.models
+        like_ids.push like.get('feed_id')
+      @set
+        feed_likes: like_ids
+      dfr.resolve(this)
+    , (err) ->
+      console.error(err)
+    return dfr.promise
 
   getAllTickets: ->
     dfr = Q.defer()

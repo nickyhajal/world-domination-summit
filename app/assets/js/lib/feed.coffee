@@ -59,24 +59,26 @@
 				comments = 'Add a Comment'
 			return comments
 		@likeStr = (feed_id, num_likes) ->
-			str = '<div class="dispatch-content-like-status">'
+			str = ''
+			if num_likes > 0
+				str += '<div class="dispatch-content-like-status">'
 			if num_likes > 1
-				str = num_likes + ' Likes</div>'
+				str += num_likes + ' Likes</div>'
 			else if num_likes
-				str = num_likes + ' Like</div>'
+				str += num_likes + ' Like</div>'
 			if ap.me
-				if ap.me.likes? && (ap.me.likes.indexOf(feed_id) > -1)
-					str += '<span>Liked!</span>'
+				if ap.me.get('feed_likes')? && (ap.me.get('feed_likes').indexOf(feed_id) > -1)
+					str += '<a href="#" class="dispatch-content-liked">Liked!</a>'
 				else
 					str += '<a href="#" class="dispatch-content-like">Like</a>'
-			return ''
+			return str
 
 		@renderContent = (content) ->
 			author = ap.Users.get(content.user_id)
 			html = ''
 			if author?
 				comments = @commentsStr +content.num_comments
-				like = @likeStr(content.feed_id, 0)
+				like = @likeStr(content.feed_id, +content.num_likes)
 				channel_name = content.channel_type
 				channel_url = '#'
 				if channel_name is 'interest'
@@ -94,7 +96,7 @@
 								<a href="'+channel_url+'" class="dispatch-content-channel">/'+channel_name+'</a>
 							</div>
 							<div class="dispatch-content-comments-shell dispatch-content-comments-closed">
-								' + like + '
+								<div class="dispatch-content-like-shell">' + like + '</div>
 								<a href="#" class="dispatch-content-comment-status">'+comments+'</a>
 									<div class="dispatch-content-comments-inner">
 										<div class="dispatch-content-comments"></div>
@@ -259,6 +261,20 @@
 					, 1200
 			return false
 
+		@like = ->
+			btn = $(this)
+			$shell = btn.closest('.dispatch-content-shell')
+			content_id = $shell.data('content_id')
+			ap.api 'post feed/like', {feed_id: content_id}, (rsp) =>
+				if rsp.num_likes
+					likes = ap.me.get('feed_likes')
+					likes.push(content_id)
+					ap.me.set('feed_likes', likes)
+					likeStr = slf.likeStr(content_id, rsp.num_likes)
+					$('.dispatch-content-like-shell', $shell).html(likeStr)
+
+			return false
+
 		loadingViaScroll = false
 		@scroll = =>
 			# Determine if we're ready to add more panels
@@ -281,6 +297,7 @@
 				.on('click', '.dispatch-content-seemore', @toggleMore)
 				.on('mouseover', '.dispatch-content-comment-status', (e) => @mouseover_loadComments(e, this))
 				.on('click', '.dispatch-content-comment-status', @toggleComments)
+				.on('click', '.dispatch-content-like', @like)
 				.on('submit', '.dispatch-content-comment-form', @submitComment)
 			$(window).on('scroll', @scroll)
 

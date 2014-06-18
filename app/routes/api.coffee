@@ -62,6 +62,7 @@ routes = (app) ->
 		app.get '/feed', feed.get
 		app.post '/feed/comment', feed.add_comment
 		app.get '/feed/comments', feed.get_comments
+		app.post '/feed/like', feed.add_like
 
 		# Ticket Transfers
 		app.post '/transfer', transfer.add

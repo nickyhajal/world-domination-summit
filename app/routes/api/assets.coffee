@@ -94,7 +94,10 @@ routes = (app) ->
 								.then (user) ->
 									user.getConnections()
 									.then (user) ->
-										dfr.resolve(user)
+										user.getFeedLikes()
+										.then (user) ->
+											tk user
+											dfr.resolve(user)
 				else
 					dfr.resolve(false)
 				return dfr.promise
