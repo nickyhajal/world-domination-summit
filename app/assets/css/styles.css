@@ -518,11 +518,11 @@ div.dispatch-content-like-status:before {
 .dispatch-content-like-status {
     float:                      left;
     margin-top:                 3px;
-    font-family:                vitesse ! important;
     font-size:                  10pt ! important;
     color:                      rgb(171, 171, 157);
     position:                   relative;
     margin-right:               14px;
+    font-family:                vitessebook ! important;
 }
 a.dispatch-content-liked {
     cursor:                     default;
