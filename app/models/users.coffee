@@ -13,6 +13,7 @@ Q = require('q')
 request = require('request')
 
 ##
+
 [Ticket, Tickets] = require './tickets'
 [Answer, Answers] = require './answers'
 [UserInterest, UserInterests] = require './user_interests'
@@ -20,6 +21,7 @@ request = require('request')
 [TwitterLogin, TwitterLogins] = require './twitter_logins'
 [Capability, Capabilities] = require './capabilities'
 [FeedLike, FeedLikes] = require './feed_likes'
+[Notification, Notifications] = require './notifications'
 
 User = Shelf.Model.extend
   tableName: 'users'
@@ -396,7 +398,6 @@ User = Shelf.Model.extend
     else
       @removeFromList 'WDS '+process.year+' Attendees'
       @addToList 'WDS '+process.year+' Canceled'
-
 
   addToList: (list) ->
     dfr = Q.defer()
