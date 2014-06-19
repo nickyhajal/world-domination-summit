@@ -122,3 +122,4 @@ ap.Views.profile = XView.extend
 			$('.avatar-shell').empty().append $('<img/>').attr('src', ap.me.get('pic').replace('_normal', ''))
 
 	whenFinished: ->
+		$('.dispatch-feed').data('feed').stop()

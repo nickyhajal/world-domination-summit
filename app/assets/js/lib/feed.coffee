@@ -83,7 +83,7 @@
 				channel_url = '#'
 				if channel_name is 'interest'
 					channel_name = ap.Interests.get(content.channel_id).get('interest').toLowerCase()
-					channel_url = '/interest/'+channel_name
+					channel_url = '/community/'+channel_name
 				html = '
 					<div class="dispatch-content-shell dispatch-content-unprocessed" data-content_id="'+content.feed_id+'">
 						<div class="dispatch-content-userpic" style="background:url('+author.get('pic').replace('_normal', '')+')"></div>
@@ -176,6 +176,7 @@
 				.off('mouseover', '.dispatch-content-comment-status', (e) => @mouseover_loadComments(e, this))
 				.off('click', '.dispatch-content-comment-status', @toggleComments)
 				.off('submit', '.dispatch-content-comment-form', @submitComment)
+			return 'stopped'
 
 		@mouseover_loadComments = (e, self) ->
 			$t = $(e.currentTarget)
@@ -288,7 +289,6 @@
 						loadingViaScroll = false
 				,
 					before: $('.dispatch-content-shell', $el).last().data('content_id')
-
 
 		@init = ->
 			@updateContent()

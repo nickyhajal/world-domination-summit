@@ -18,6 +18,7 @@ routes = (app) ->
 	[CredentialChange, CredentialChanges] = require('../../models/credential_changes')
 	[Connection, Connections] = require('../../models/connections')
 	[Registration, Registrations] = require('../../models/registrations')
+	[Notification, Notifications] = require('../../models/notifications')
 
 	user =
 		# Get logged in user
@@ -328,6 +329,22 @@ routes = (app) ->
 					.then (user) ->
 						res.r.connections = user.get('connections')
 						res.r.connected_ids = user.get('connected_ids')
+						tk 'connected'
+						Notification.forge
+							type: 'connected'
+							channel_type: 'connection'
+							channel_id: '0'
+							user_id: to_id
+							content: JSON.stringify
+								from_id: req.me.get('user_id')
+							link: '~'+req.me.get('user_name')
+						.save()
+						.then ->
+							tk 'ok'
+							x = 1
+						, (err) ->
+							tk 'oenarsoten'
+							console.error(err)
 						next()
 				, (err) ->
 					console.error(err)
