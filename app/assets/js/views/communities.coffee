@@ -7,7 +7,7 @@ ap.Views.communities = XView.extend
 		others_html = ''
 		for interest in ap.interests
 			button = '
-				<a href="/interest/'+_.slugify(interest.interest)+'" class="interest-button">'+interest.interest+'</a>
+				<a href="/community/'+_.slugify(interest.interest)+'" class="interest-button">'+interest.interest+'</a>
 			'
 			if yours.indexOf(interest.interest_id) > -1
 				yours_html += button

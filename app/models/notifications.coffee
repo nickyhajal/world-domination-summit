@@ -19,6 +19,8 @@ Notifications = Shelf.Collection.extend
   	.then (rsp) ->
   		user_id = 0
   		for notification in rsp.models
+  			x = 1
+
 
 
 

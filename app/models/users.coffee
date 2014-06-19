@@ -432,6 +432,8 @@ User = Shelf.Model.extend
       dfr.resolve(rsp)
     return dfr.promise
 
+  checkFeedActivity: ->
+    
 
 Users = Shelf.Collection.extend
   model: User
