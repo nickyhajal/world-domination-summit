@@ -6,12 +6,19 @@ div(id="page_content")
 	div(class="attendee-from")
 		| is making a <span class="ceil">{{ distance }}</span> mile expedition to WDS
 		| all the way from {{ location }}
+	div(class="connect") {{ connect }}
 	div(class="line-canvas")
-	h3 {{ first_name }} is interested in: 
-	div(class="attendee-interest-list") {{ interests }}
-	div(class="line-canvas")
-	h3 A bit about {{ first_name }}:
-	div(class="attendee-questions") {{ questions }}
+	div(id="profile-interested-in-shell")
+		h3 {{ first_name }} is interested in: 
+		div(class="attendee-interest-list") {{ interests }}
+		div(class="line-canvas")
+	div(id="profile-questions-shell")
+		h3 A bit about {{ first_name }}:
+		div(class="attendee-questions") {{ questions }}
+		div(class="line-canvas")
+	div(id="profile-dispatch-shell")
+		h3 {{ first_name }}'s Dispatch
+		div(class="dispatch", data-channel_type="user", data-channel_id='{{ user_id }}')
 
 
 

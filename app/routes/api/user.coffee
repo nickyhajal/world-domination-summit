@@ -17,6 +17,8 @@ routes = (app) ->
 	[UserInterest, UserInterests] = require('../../models/user_interests')
 	[CredentialChange, CredentialChanges] = require('../../models/credential_changes')
 	[Connection, Connections] = require('../../models/connections')
+	[Registration, Registrations] = require('../../models/registrations')
+	[Notification, Notifications] = require('../../models/notifications')
 
 	user =
 		# Get logged in user
@@ -99,6 +101,11 @@ routes = (app) ->
 				sortable.reverse()
 				res.r.users = sortable
 				next()
+
+		logout: (req, res, next) ->
+			if req.session.ident?
+				req.session.destroy()
+			next()
 
 		# Authenticate a user
 		login: (req, res, next) ->
@@ -331,6 +338,22 @@ routes = (app) ->
 					.then (user) ->
 						res.r.connections = user.get('connections')
 						res.r.connected_ids = user.get('connected_ids')
+						tk 'connected'
+						Notification.forge
+							type: 'connected'
+							channel_type: 'connection'
+							channel_id: '0'
+							user_id: to_id
+							content: JSON.stringify
+								from_id: req.me.get('user_id')
+							link: '~'+req.me.get('user_name')
+						.save()
+						.then ->
+							tk 'ok'
+							x = 1
+						, (err) ->
+							tk 'oenarsoten'
+							console.error(err)
 						next()
 				, (err) ->
 					console.error(err)
@@ -354,5 +377,52 @@ routes = (app) ->
 							next()
 			else
 				res.status(401)
+
+		registrations: (req, res, next) ->
+			regs = req.query.regs ? []
+			successes = []
+			async.each regs, (reg, cb) ->
+				Registration.forge({user_id: reg.user_id, year: process.yr})
+				.fetch()
+				.then (existing) ->
+					if existing and reg.action is 'unregister'
+						existing.destroy().then ->
+							res.r.msg = 'Unregistered!'
+							successes.push(reg)
+							cb()
+					else if reg.action is 'register' and not existing
+						Registration.forge({user_id: reg.user_id, year: process.yr})
+						.save()
+						.then ->
+							successes.push(reg)
+							res.r.msg = 'Registered!'
+							cb()
+						, (err) ->
+							console.error(err)
+					else
+						successes.push(reg)
+						cb()
+			, ->
+				_Rs = Registrations.forge()
+				_Rs
+				.query('where', 'year', '=', process.yr)
+				.query('where', 'created_at', '>', (new Date(new Date().getTime() - 3600000)))
+				.fetch()
+				.then (past_hour) ->
+					_Rs
+					.query('where', 'year', '=', process.yr)
+					.fetch()
+					.then (all_time) ->
+						res.r.reg_past_hour = past_hour.models.length
+						res.r.reg_all = all_time.models.length
+						res.r.successes = successes
+						regs = {}
+						for reg in all_time.models
+							regs[reg.get('user_id')] = '1'
+						res.r.registrations = regs
+						next()
+				, (err) ->
+					console.error(err)
+
 
 module.exports = routes

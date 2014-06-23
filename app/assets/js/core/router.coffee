@@ -12,18 +12,19 @@
 ap.createRouter = ->
 	window.Router = Backbone.Router.extend
 		protect: [
-			'hub', 'welcome', 'settings'
+			'hub', 'welcome', 'settings', 'propose-a-meetup'
 		]
 		initialize: ->
 			@route("*actions", 'default', ap.Routes.defaultRoute)
 			@route(/^[0-9a-z]{40}$/, 'hash', ap.Routes.hashLogin)
 			@route("logout", 'logout', ap.Routes.logout)
 			@route("reset-password/:hash", 'reset', ap.Routes.reset)
-			@route("interest/:interest", 'interest', ap.Routes.interest)
+			@route("community/:community", 'community', ap.Routes.community)
 			@route("your-transfer/:transfer_id", 'reset', ap.Routes.your_transfer)
 			@route("admin/:panel", 'admin', ap.Routes.admin)
 			@route("admin/:panel/:extra", 'admin', ap.Routes.admin)
 			@route("hub", 'hub', ap.Routes.hub)
+			@route("logout", 'logout', ap.Routes.logout)
 			@route(/^~(.)+/, 'profile', ap.Routes.profile)
 		before: ap.Routes.before
 
@@ -67,6 +68,12 @@ ap.protect = ->
 ap.login = (me) ->
 	$('html').addClass('is-logged-in')
 	ap.me = new ap.User(me)
+
+ap.logout = ->
+	$('html').removeClass('is-logged-in')
+	ap.api 'post user/logout'
+	localStorage.clear()
+	ap.me = false
 
 ### 
 	Navigate to a new URL using push-state

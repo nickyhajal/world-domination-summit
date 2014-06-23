@@ -99,13 +99,16 @@ div(id="page_content")
 
 			div(class="form-section")
 				label Facebook Username
+				span(class="pre-input") facebook.com/
 				input(type="text", name="facebook", class="model-me")
 			div(class="form-section")
 				label Instagram Username
-				input(type="text", name="facebook", class="model-me")
+				span(class="pre-input") instagram.com/
+				input(type="text", name="instagram", class="model-me")
 			div(class="form-section")
 				label Your Website
 				span(class="sub-label") Just one site that represents your web presence best, please
+				span(class="pre-input") http://
 				input(type="text", name="site", class="model-me")
 			a(href="#", class="tab-next button") Save & Continue
 
@@ -120,7 +123,7 @@ div(id="page_content")
 					label Upload an Avatar
 					iframe(src="/upload-avatar", class="upload-avatar-frame")
 
-			a(href="#", class="tab-next button") Save & Continue
+			a(href="/hub", class="tab-next button") Save & Continue
 
 		div(id="tab-panel-all-done", class="tab-panel")
 			h1 Woah, nice work, you're all done!

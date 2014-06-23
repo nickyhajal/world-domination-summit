@@ -38,6 +38,11 @@ routes = (app) ->
 								counter = ''
 								if path.length is 40 or path is 'welcome'
 									counter = 'hide-counter'
+								countries_out = {all: []}
+								for country in countries.all
+									countries_out.all.push
+										alpha2: country.alpha2
+										name: country.name
 								res.render "../views/#{page}",
 									title: "World Domination Summit"
 									env: '"'+process.env.NODE_ENV+'"'
@@ -49,6 +54,6 @@ routes = (app) ->
 									yr: process.yr
 									tpls: JSON.stringify(tpls)
 									provinces: JSON.stringify(provinces)
-									countries: JSON.stringify(countries)
+									countries: JSON.stringify(countries_out)
 
 module.exports = routes

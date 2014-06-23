@@ -278,6 +278,10 @@ a.tab-disabled {
 a.tab-invisible {
     display:                    none ! important;
 }
+a.subtle-link {
+    color:                      rgb(174, 174, 160) ! important;
+    background:                 none repeat scroll 0px 0px rgb(225, 225, 213) ! important;
+}
 #sidebar a {
     background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
     margin-right:               0px;
@@ -498,7 +502,33 @@ a.dispatch-content-author {
     text-decoration:            none;
     font-family:                vitesse;
 }
-a.dispatch-content-comment-status {
+.dispatch-content-like, .dispatch-content-liked {
+    margin-right:               8px;
+}
+div.dispatch-content-like-status:before {
+    background:                 none repeat scroll 0% 0% rgb(204, 204, 204);
+    width:                      1px;
+    content:                    "";
+    z-index:                    100;
+    position:                   absolute;
+    top:                        2px;
+    height:                     11px;
+    right:                      -7px;
+}
+.dispatch-content-like-status {
+    float:                      left;
+    margin-top:                 3px;
+    font-size:                  10pt ! important;
+    color:                      rgb(171, 171, 157);
+    position:                   relative;
+    margin-right:               14px;
+    font-family:                vitessebook ! important;
+}
+a.dispatch-content-liked {
+    cursor:                     default;
+    text-decoration:            none;
+}
+a.dispatch-content-comment-status, .dispatch-content-like, .dispatch-content-like-status, .dispatch-content-liked {
     font-family:                karla;
     font-size:                  14px;
 }
@@ -580,6 +610,17 @@ a#small-logo {
 }
 .orange-box a {
     color:                      rgb(242, 242, 234);
+}
+a.meetup-edit {
+    display:                    block;
+    float:                      right;
+    text-decoration:            none;
+    background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
+    margin-right:               -14px;
+    margin-top:                 -14px;
+    color:                      rgb(255, 255, 255);
+    font-size:                  10pt;
+    padding:                    7px 11px;
 }
 a {
     color:                      rgb(226, 127, 28);
@@ -731,6 +772,10 @@ h3.side-icon-fork:before {
     top:                        12px;
     color:                      rgb(35, 31, 32);
 }
+h3.profile-heading {
+    float:                      left;
+    width:                      auto;
+}
 h3 {
     font-size:                  24px;
     font-family:                vitesselight;
@@ -816,7 +861,7 @@ div.photo-header {
     background:                 -webkit-linear-gradient(top, rgba(255, 254, 252, 0.23) 0%, rgb(255, 255, 255) 100%) repeat scroll 0px 0px transparent;
     height:                     22px;
     width:                      100%;
-    top:                        -24px;
+    top:                        -22px;
 }
 .dispatch-content-seemore {
     text-align:                 left;
@@ -892,19 +937,23 @@ input.manifest-search, .speaker-search, .ambassador-search {
 input.account-input {
     width:                      450px ! important;
 }
-input[type="text"], input[type="password"] {
+span.pre-input {
+    background:                 none repeat scroll 0px 0px rgb(248, 248, 244);
+}
+input[type="text"], input[type="password"], input[type="number"], .pre-input {
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
     border:                     0px none;
-    width:                      300px;
-    padding:                    9px;
     color:                      rgb(33, 23, 10);
     font-family:                karla ! important;
     font-size:                  12pt;
+    padding:                    9px;
+    width:                      300px;
 }
 .sub-label {
     font-size:                  10pt ! important;
     color:                      rgb(118, 118, 118) ! important;
     margin-bottom:              7px ! important;
+    width:                      430px;
 }
 #page-propose-a-meetup .interest-select-list label:first-of-type {
     display:                    none;
@@ -1143,6 +1192,7 @@ iframe.upload-avatar-frame {
     text--webkit-transform:     uppercase;
     font-family:                vitesse;
     font-size:                  17px;
+    clear:                      both;
 }
 .attendee-interest-list {
     width:                      580px;
@@ -1228,6 +1278,9 @@ html.is-logged-in .logged-out {
 .dispatch-content-section {
     padding-top:                5px;
     margin-left:                98px;
+}
+div.dispatch-content-message a {
+    color:                      rgb(54, 51, 46);
 }
 .dispatch-content-message {
     font-family:                karla;
@@ -1475,21 +1528,21 @@ div#search-box {
     position:                   absolute;
     padding:                    5px 1px 0px;
 }
-.search-results a span {
-    display:                    block;
-    float:                      left;
+#nav-search .search-results a span {
+    background-color:           rgb(242, 242, 234) ! important;
+    background-size:            100% auto ! important;
+    -webkit-background-size:    100% auto ! important;
     border-radius:              50%;
     -moz-border-radius:         50%;
     -webkit-border-radius:      50%;
-    background-size:            100% auto ! important;
-    -webkit-background-size:    100% auto ! important;
+    display:                    block;
+    float:                      left;
     height:                     30px;
-    left:                       -15px;
-    margin-right:               -4px;
+    left:                       -9px;
+    margin-right:               0px;
     position:                   relative;
-    width:                      30px;
     top:                        -5px;
-    background-color:           rgb(242, 242, 234) ! important;
+    width:                      30px;
 }
 #nav-links a.result-link:hover:first-of-type {
     margin-top:                 5px ! important;
@@ -1603,8 +1656,26 @@ table#manifests-results-shell thead th, table#manifests-results-shell tfoot th, 
     font-weight:                normal;
     padding:                    7px 0px;
 }
+#events-shell #event-review-results tr:nth-of-type(4n) {
+    background:                 none repeat scroll 0px 0px rgb(255, 254, 249) ! important;
+}
 #manifest-results tr:nth-of-type(2n), .search-results tr:nth-of-type(2n) {
-    background:                 none repeat scroll 0px 0px rgb(248, 246, 234);
+    background:                 none repeat scroll 0px 0px rgb(248, 246, 236);
+}
+#schedule-shell tr td:first-of-type {
+    width:                      120px ! important;
+    text-align:                 left;
+}
+td.search-actions .button {
+    font-size:                  12pt;
+    padding:                    4px 15px;
+}
+td.search-actions {
+    text-align:                 right;
+}
+#schedule-shell td, #racetask-shell td {
+    padding:                    10px;
+    font-family:                karla;
 }
 .manifest-results tr, .search-results tr {
     background:                 none repeat scroll 0% 0% rgb(239, 238, 229);
@@ -1624,6 +1695,14 @@ table#manifests-results-shell, .search-results-shell {
     padding-left:               10px;
 }
 #ambassador-review-results td {
+    font-family:                karla;
+    font-size:                  11pt;
+}
+#event-review-results tr td:first-of-type {
+    padding-left:               10px;
+    width:                      280px ! important;
+}
+#event-review-results td {
     font-family:                karla;
     font-size:                  11pt;
 }
@@ -1689,6 +1768,59 @@ div.active-ticket a {
 td.ambassador-review-actions {
     padding-left:               11px;
     width:                      323px;
+}
+td.event-review-actions {
+    padding-left:               11px;
+    width:                      240px;
+}
+div.upload-success {
+    font-size:                  17pt;
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    text-align:                 center;
+    padding:                    12px;
+    color:                      rgb(118, 113, 103);
+    width:                      439px;
+}
+.tbl-head th {
+    text-align:                 center ! important;
+    padding:                    10px 0px ! important;
+}
+.search-results th {
+    text-align:                 left;
+    font-weight:                normal;
+    font-family:                Vitesse;
+    padding:                    10px;
+}
+div.dispatch-empty {
+    padding:                    13px;
+    text-align:                 center;
+    margin-top:                 50px;
+    font-size:                  17pt;
+    color:                      rgb(190, 190, 176);
+}
+tr.event-detail td {
+    padding:                    20px ! important;
+}
+div.connect a:hover {
+    color:                      rgb(226, 127, 28);
+}
+div.connect a {
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    text-decoration:            none;
+    font-family:                karla;
+    margin-right:               6px;
+    float:                      left;
+    padding:                    7px 9px 9px;
+    margin-bottom:              6px;
+    color:                      rgb(174, 174, 160);
+}
+div.connect {
+    position:                   relative;
+    padding:                    15px 0px 22px;
+    width:                      600px;
+}
+div.dispatch-content-like-shell {
+    float:                      left;
 }
 * {
     line-height:                inherit;
@@ -1874,20 +2006,35 @@ a.ambassador-button:hover {
 .ambassador-review-actions a.ambassador-button:first-of-type {
     border-right:               1px solid rgb(242, 173, 120);
 }
+.event-review-actions a.event-button:first-of-type {
+    border-right:               1px solid rgb(242, 173, 120);
+}
+.event-review-actions .button:nth-of-type(2) {
+    margin-right:               -3px ! important;
+}
+.event-review-actions .button {
+    float:                      right;
+    width:                      80px;
+    padding:                    5px;
+}
 a.ambassador-button {
     float:                      left;
     display:                    block;
     text-align:                 center;
-    margin:                     0px;
     font-size:                  11pt;
-    width:                      85px;
+    width:                      auto;
+    margin:                     5px;
 }
-.search-results a {
+#nav-search .search-results a {
+    font-family:                karla;
     text-transform:             none ! important;
     text--webkit-transform:     none ! important;
-    border-bottom:              5px solid rgb(33, 23, 10);
-    font-family:                karla;
-    padding:                    5px 0px ! important;
+    clear:                      both;
+    text-align:                 left;
+    padding:                    9px 0px 0px ! important;
+    border-bottom:              0px solid rgb(33, 23, 10);
+    margin-left:                0%;
+    width:                      100%;
 }
 #nav-links a.result-link:hover {
     color:                      rgb(242, 242, 234) ! important;

@@ -1,5 +1,5 @@
 doctype html
-html(lang='en')
+html(manifest="/app/assets/cache/registration.appcache")
 	head
 		title= title
 		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
@@ -16,28 +16,23 @@ html(lang='en')
 		link(rel='stylesheet', type="text/css", href='/app/assets/css/fonts.css')
 		link(rel='stylesheet', type="text/css", href='/app/assets/css/tablet.css', media='screen and (max-width:1024px)')
 		!= js('registration')
-		script(type="text/javascript",src="https://maps.googleapis.com/maps/api/js?sensor=false&ver=3.7.1")
 	body(class='ui-body-a')
-		div(class="preload")
-		header(id="main-header")
-			div(class="contentainer")
-				a(href="/", id="logo")
-				div(id="logo-waves")
-
 		main(class="contentainer")
 			div(id="content_shell")
 				div(id="page_content")
-					h3 Registration
-					input(type="text", id="register_search", placeholder="Search for an Attendee")
+					h3 WDS Registration App
+					div(id="input-shell")
+						input(type="text", id="register_search", placeholder="Type Here to Search for an Attendee")
+						a(href="#", id="clear-inp")
 					div(id="search-results")
 					div(id="search_start", class="srch_msg")
 						table
 							tr
 								th Registrations on this Device - Past 60 min
-								td(id="device_reg_hour")
+								td(id="device_reg_hour") -
 							tr
 								th Registrations on this Device - All-time
-								td(id="device_reg_all")
+								td(id="device_reg_all") -
 							tr
 								th Total Registrations - Past 60 min
 								td(id="total_reg_hour") Offline
@@ -46,7 +41,7 @@ html(lang='en')
 								td(id="total_reg_all") Offline
 							tr
 								th Unsynced Changes
-								td(id="unsynced")
+								td(id="unsynced") -
 							tr
 								th Next Sync In
-								td(id="next_sync")
+								td(id="next_sync") -

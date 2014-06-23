@@ -1,6 +1,7 @@
 #= require js/lunr.js
 #= require js/includes.js
 #= require js/select2.js
+#= require js/autolinker.js
 #= require js/backlunr.js
 #= require_tree lib
 #= require_tree core

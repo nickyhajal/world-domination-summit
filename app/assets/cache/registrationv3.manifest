@@ -1,0 +1,20 @@
+CACHE MANIFEST
+# Version 5
+/app/assets/css/register.css
+/js/lunr.js
+/js/includes.js
+/js/backlunr.js
+/js/registration.js
+/js/lib/XBone.js
+/js/lib/deploy.js
+/js/registration/registration.js
+/js/models/users.js
+
+NETWORK:
+*
+
+
+
+
+
+

@@ -30,7 +30,6 @@
     "bookshelf": "~0.5.7",
     "knex": "~0.4.13",
     "underscore": "~1.5.2",
-    "string": "~1.6.1",
     "underscore.string": "~2.3.3",
     "bcrypt": "~0.7.7",
     "q": "~0.9.7",

@@ -22,8 +22,8 @@
 			fnc = false
 
 		opts = _.defaults opts, defs
-		if $d.data('channel')?
-			opts.params.channel = $d.data('channel')
+		if $d.data('channel_id')?
+			opts.params.channel_id = $d.data('channel_id')
 		if $d.data('channel_type')?
 			opts.params.channel_type = $d.data('channel_type')
 
@@ -33,8 +33,12 @@
 			if !$inner.length
 				$el.append('<div class="dispatch-container"/>')
 				$inner = $('.dispatch-container', $el)
-			for content in contents
-				html += @renderContent content
+			if contents.length
+				for content in contents
+					html += @renderContent content
+			else if not $('.dispatch-content-shell', $el).length
+				render = 'replace'
+				html += '<div class="dispatch-empty">No posts yet! Why don\'t you get things started?</div>'
 			if render is 'replace'
 				$inner.html html
 			else if render is 'append'
@@ -54,11 +58,32 @@
 			else
 				comments = 'Add a Comment'
 			return comments
+		@likeStr = (feed_id, num_likes) ->
+			str = ''
+			if num_likes > 0
+				str += '<div class="dispatch-content-like-status">'
+			if num_likes > 1
+				str += num_likes + ' Likes</div>'
+			else if num_likes
+				str += num_likes + ' Like</div>'
+			if ap.me
+				if ap.me.get('feed_likes')? && (ap.me.get('feed_likes').indexOf(feed_id) > -1)
+					str += '<a href="#" class="dispatch-content-liked">Liked!</a>'
+				else
+					str += '<a href="#" class="dispatch-content-like">Like</a>'
+			return str
+
 		@renderContent = (content) ->
 			author = ap.Users.get(content.user_id)
 			html = ''
 			if author?
 				comments = @commentsStr +content.num_comments
+				like = @likeStr(content.feed_id, +content.num_likes)
+				channel_name = content.channel_type
+				channel_url = '#'
+				if channel_name is 'interest'
+					channel_name = ap.Interests.get(content.channel_id).get('interest').toLowerCase()
+					channel_url = '/community/'+channel_name
 				html = '
 					<div class="dispatch-content-shell dispatch-content-unprocessed" data-content_id="'+content.feed_id+'">
 						<div class="dispatch-content-userpic" style="background:url('+author.get('pic').replace('_normal', '')+')"></div>
@@ -66,11 +91,12 @@
 							<a href="/~'+author.get('user_name')+'" class="dispatch-content-author">
 								'+author.get('first_name')+' '+author.get('last_name')+'
 							</a>
-							<div class="dispatch-content-message">'+content.content.replace(/\n/g, '<br>').replace(/<br>\s<br>/g, '<br>')+'</div>
+							<div class="dispatch-content-message">'+Autolinker.link(content.content.replace(/\n/g, '<br>').replace(/<br>\s<br>/g, '<br>'))+'</div>
 							<div class="dispatch-content-channel-shell">
-								<a href="#" class="dispatch-content-channel">/'+content.channel_type+'</a>
+								<a href="'+channel_url+'" class="dispatch-content-channel">/'+channel_name+'</a>
 							</div>
 							<div class="dispatch-content-comments-shell dispatch-content-comments-closed">
+								<div class="dispatch-content-like-shell">' + like + '</div>
 								<a href="#" class="dispatch-content-comment-status">'+comments+'</a>
 									<div class="dispatch-content-comments-inner">
 										<div class="dispatch-content-comments"></div>
@@ -102,7 +128,7 @@
 				$c = $('.dispatch-content-message', $t)
 				$c.css('max-height', '10000px')
 				height = $c.height()
-				$c.css('max-height', '66px')
+				$c.css('max-height', '80px')
 				if height > 66
 					$('<div/>').attr('class', 'dispatch-content-seemore').html('Read More').insertAfter($c)
 				$t.removeClass('dispatch-content-unprocessed')
@@ -114,7 +140,7 @@
 			$c = $('.dispatch-content-message', $s)
 			if $t.hasClass('open')
 				$t.removeClass('open').html('Read More')
-				$c.css('max-height', '66px')
+				$c.css('max-height', '80px')
 			else
 				$t.addClass('open').html('Show Less')
 				$c.css('max-height', '100000px')
@@ -127,8 +153,7 @@
 			opts.params.since = $('.dispatch-content-shell', $el).first().data('content_id')
 			params = _.defaults extra, opts.params
 			ap.api 'get feed', params, (rsp) =>
-				if rsp.feed_contents?.length
-					@renderFeed(rsp.feed_contents, get_opts.render)
+				@renderFeed(rsp.feed_contents, get_opts.render)
 				if get_opts.cb
 					get_opts.cb()
 
@@ -151,6 +176,7 @@
 				.off('mouseover', '.dispatch-content-comment-status', (e) => @mouseover_loadComments(e, this))
 				.off('click', '.dispatch-content-comment-status', @toggleComments)
 				.off('submit', '.dispatch-content-comment-form', @submitComment)
+			return 'stopped'
 
 		@mouseover_loadComments = (e, self) ->
 			$t = $(e.currentTarget)
@@ -236,6 +262,20 @@
 					, 1200
 			return false
 
+		@like = ->
+			btn = $(this)
+			$shell = btn.closest('.dispatch-content-shell')
+			content_id = $shell.data('content_id')
+			ap.api 'post feed/like', {feed_id: content_id}, (rsp) =>
+				if rsp.num_likes
+					likes = ap.me.get('feed_likes')
+					likes.push(content_id)
+					ap.me.set('feed_likes', likes)
+					likeStr = slf.likeStr(content_id, rsp.num_likes)
+					$('.dispatch-content-like-shell', $shell).html(likeStr)
+
+			return false
+
 		loadingViaScroll = false
 		@scroll = =>
 			# Determine if we're ready to add more panels
@@ -250,7 +290,6 @@
 				,
 					before: $('.dispatch-content-shell', $el).last().data('content_id')
 
-
 		@init = ->
 			@updateContent()
 			$(this).data('feed', @)
@@ -258,6 +297,7 @@
 				.on('click', '.dispatch-content-seemore', @toggleMore)
 				.on('mouseover', '.dispatch-content-comment-status', (e) => @mouseover_loadComments(e, this))
 				.on('click', '.dispatch-content-comment-status', @toggleComments)
+				.on('click', '.dispatch-content-like', @like)
 				.on('submit', '.dispatch-content-comment-form', @submitComment)
 			$(window).on('scroll', @scroll)
 

@@ -15,16 +15,20 @@ ap.Views.profile = XView.extend
 		@options.sidebar_filler = @options.attendee.attributes
 		@renderInterests()
 		@renderQuestions()
+		@renderConnect()
 		@options.attendee.set
 			pic: @options.attendee.get('pic').replace('_normal', '')
 		@options.out = _.template @options.out, @options.attendee.attributes
 		@options.out = _.template @options.out, @options.attendee.attributes
 		@initRender()
 		self = this
+
 	rendered: ->
 		setTimeout =>
 			@renderMap()
 		, 5
+		@hideEmptySections()
+
 	renderQuestions: ->
 		questions = [
 			'Why did you travel <span class="ceil">{{ distance }}</span> miles to the World Domination Summit'
@@ -42,6 +46,47 @@ ap.Views.profile = XView.extend
 		html += '<div class="clear"></div>'
 		@options.attendee.set
 			questions: html
+
+	renderConnect: ->
+		atn = @options.attendee
+		html = ''
+
+		# Site with all prefixes removed
+		if atn.get('site')?.length
+			site = atn.get('site').replace('http://', '').toLowerCase()
+			html += '<a target="_blank" href="http://'+site+'">'+site.replace('www.', '')+'</a>'
+
+		# Twitter, removing an at sign if it gets in there
+		if atn.get('twitter')?.length
+			twit = atn.get('twitter').replace('@', '').toLowerCase()
+			html += '<a target="_blank" href="http://twitter.com/'+twit+'">@'+twit+'</a>'
+
+		# Facebook has a bunch of processing to either get a username
+		# or detect an email/full name and forward to a search link instead
+		if atn.get('facebook')?.length
+			fb = atn.get('facebook').toLowerCase()
+			if fb.indexOf('/pages/') < 0 and fb.indexOf('profile.php') < 0
+				fb = fb.split('/')
+				fb = fb[fb.length - 1].split('?')
+				fb = fb[0]
+				at = fb.indexOf('@')
+				if at is 0
+					fb.str_replace('@', '')
+				if at > 0 or fb.indexOf(' ') > 0
+					link = 'https://facebook.com/search/results.php?type=users&q='+fb
+				else
+					link = 'https://facebook.com/'+fb
+				fb = 'fb.com/'+fb
+				html += '<a target="_blank" href="'+link+'">'+fb+'</a>'
+
+		# instagram is like twitter
+		if atn.get('instagram')?.length
+			ig = atn.get('instagram').replace('@', '').toLowerCase()
+			html += '<a target="_blank" href="http://instagram.com/'+ig+'">ig.com/'+ig+'</a>'
+
+		@options.attendee.set
+			connect: html
+
 	renderInterests: ->
 		html = ''
 		for interest in JSON.parse(@options.attendee.get('interests'))
@@ -60,6 +105,16 @@ ap.Views.profile = XView.extend
 			scrollwheel: false
 			disableDefaultUI: true
 		profile_map = new google.maps.Map(profile_map_el, mapOptions)
+
+	hideEmptySections: ->
+		if not $('.attendee-question-shell', $(@el)).length
+			$('#profile-questions-shell').hide()
+		if not $('.interest-button', $(@el)).length
+			$('#profile-interested-in-shell').hide()
+		setTimeout =>
+			if not $('.dispatch-content-section', $(@el)).length
+				$('#profile-dispatch-shell').hide()
+		, 1000
 		
 	syncAvatar: ->
 		if ap.me.get('pic')?
@@ -67,3 +122,4 @@ ap.Views.profile = XView.extend
 			$('.avatar-shell').empty().append $('<img/>').attr('src', ap.me.get('pic').replace('_normal', ''))
 
 	whenFinished: ->
+		$('.dispatch-feed').data('feed').stop()
