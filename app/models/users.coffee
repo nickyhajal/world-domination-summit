@@ -13,18 +13,21 @@ Q = require('q')
 request = require('request')
 
 ##
+
 [Ticket, Tickets] = require './tickets'
 [Answer, Answers] = require './answers'
 [UserInterest, UserInterests] = require './user_interests'
 [Connection, Connections] = require './connections'
 [TwitterLogin, TwitterLogins] = require './twitter_logins'
 [Capability, Capabilities] = require './capabilities'
+[FeedLike, FeedLikes] = require './feed_likes'
+[Notification, Notifications] = require './notifications'
 
 User = Shelf.Model.extend
   tableName: 'users'
   permittedAttributes: [
     'user_id', 'type', 'email', 'first_name', 'last_name', 'attending14',
-    'email', 'hash', 'user_name', 'mf', 'twitter', 'facebook', 'site', 'pic',
+    'email', 'hash', 'user_name', 'mf', 'twitter', 'facebook', 'site', 'pic', 'instagram'
     'address', 'address2', 'city', 'region', 'country', 'zip', 'lat', 'lon', 'distance',
     'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake'
   ]
@@ -93,6 +96,7 @@ User = Shelf.Model.extend
 
   login: (req) ->
     req.session.ident = JSON.stringify(this)
+    req.session.save()
 
   updatePassword: (pw) ->
     dfr = Q.defer()
@@ -179,7 +183,6 @@ User = Shelf.Model.extend
     return dfr.promise
 
   hasCapability: (capability) ->
-    # The requested capability can either be directly in DB or part of the capabilities map defined on this object
     if @get('capabilities')?
       for cap in @get('capabilities')
           test_capability = cap.get('capability')
@@ -256,6 +259,21 @@ User = Shelf.Model.extend
       console.error(err)
     return dfr.promise
 
+  getFeedLikes: ->
+    dfr = Q.defer()
+    FeedLikes.forge()
+    .query('where', 'user_id', @get('user_id'))
+    .fetch()
+    .then (likes) =>
+      like_ids = []
+      for like in likes.models
+        like_ids.push like.get('feed_id')
+      @set
+        feed_likes: like_ids
+      dfr.resolve(this)
+    , (err) ->
+      console.error(err)
+    return dfr.promise
 
   getAllTickets: ->
     dfr = Q.defer()
@@ -332,7 +350,7 @@ User = Shelf.Model.extend
     .save()
     .then =>
       Ticket.forge
-        user_id: @get('userid')
+        user_id: @get('user_id')
         year: process.year
       .fetch()
       .then (ticket) =>
@@ -421,7 +439,6 @@ User = Shelf.Model.extend
       @removeFromList 'WDS '+process.year+' Attendees'
       @addToList 'WDS '+process.year+' Canceled'
 
-
   addToList: (list) ->
     dfr = Q.defer()
     params =
@@ -455,13 +472,17 @@ User = Shelf.Model.extend
       dfr.resolve(rsp)
     return dfr.promise
 
+  checkFeedActivity: ->
+
+
 User.capabilities_map =
   speakers: ["add-speaker", "speaker"]
   ambassadors: ["ambassador-review"]
   manifest: ['add-attendee', 'attendee', 'user']
-  schedule: ['add-event', 'event']
-  racetasks: ['add-racetask', 'racetask']
+  schedule: ['add-event', 'event', 'meetup', 'meetups', 'meetup-review', 'event-review']
+  race: ['add-racetask', 'racetask', 'racetasks']
   downloads: ['admin_downloads']
+
 
 Users = Shelf.Collection.extend
   model: User

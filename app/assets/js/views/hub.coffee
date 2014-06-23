@@ -72,3 +72,4 @@ ap.Views.hub = XView.extend
 		$('#counter-shell').show()
 		$('.settings-link').unbind()
 		$('html').removeClass('attended-before')
+		$('.dispatch-feed').data('feed').stop()

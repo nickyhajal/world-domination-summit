@@ -4,11 +4,14 @@ rds = redis.createClient()
 twitterAPI = require('node-twitter-api')
 moment = require('moment')
 crypto = require('crypto')
+_s = require('underscore.string')
 
 routes = (app) ->
 
 	[Feed, Feeds] = require('../../models/feeds')
 	[FeedComment, FeedComments] = require('../../models/feed_comments')
+	[FeedLike, FeedLikes] = require('../../models/feed_likes')
+	[Notification, Notifications] = require('../../models/notifications')
 
 	feed =
 		add: (req, res, next) ->
@@ -39,6 +42,39 @@ routes = (app) ->
 				res.status(401)
 				next()
 
+		add_like: (req, res, next) ->
+			if req.me
+				post = _.pick req.query, FeedLike::permittedAttributes
+				post.user_id = req.me.get('user_id')
+				FeedLike.forge(post)
+				.save()
+				.then (like) ->
+					Feed.forge({feed_id: req.query.feed_id})
+					.fetch()
+					.then (feed) ->
+						num_likes = feed.get('num_likes') + 1
+						feed.set({num_likes: num_likes})
+						.save()
+						.then ->
+								res.r.num_likes = num_likes
+								Notification.forge
+									type: 'feed_like'
+									channel_type:  feed.get('channel_type')
+									channel_id:  feed.get('channel_id')
+									user_id: feed.get('user_id')
+									content: JSON.stringify
+										liker_id: req.me.get('user_id')
+										content_str: _s.truncate(feed.get('content'), 100)
+									link: '/dispatch/'+feed.get('feed_id')
+								.save()
+								next()
+						, (err) ->
+							console.error(err)
+			else
+				res.r.msg = 'You\'re not logged in!'
+				res.status(403)
+				next()
+
 		add_comment: (req, res, next) ->
 			if req.me
 				post = _.pick req.query, FeedComment.prototype.permittedAttributes
@@ -62,6 +98,16 @@ routes = (app) ->
 								feed.set({num_comments: (feed.get('num_comments') + 1)})
 								.save()
 								.then (feed) ->
+										Notification.forge
+											type: 'feed_comment'
+											channel_type:  feed.get('channel_type')
+											channel_id:  feed.get('channel_id')
+											user_id: feed.get('user_id')
+											content: JSON.stringify
+												commenter_id: req.me.get('user_id')
+												content_str: _s.truncate(feed.get('content'), 100)
+											link: '/dispatch/'+feed.get('feed_id')
+										.save()
 										next()
 								, (err) ->
 									console.error(err)
@@ -100,6 +146,11 @@ routes = (app) ->
 			feeds = Feeds.forge()
 			limit = req.query.per_page ? 50
 			page = req.query.page ? 1
+			if req.query.channel_type is 'user'
+				feeds.query('where', 'user_id', '=', req.query.channel_id)
+			else if req.query.channel_type isnt 'global'
+				feeds.query('where', 'channel_type', '=', req.query.channel_type)
+				feeds.query('where', 'channel_id', '=', req.query.channel_id)
 			feeds.query('orderBy', 'feed_id',  'DESC')
 			feeds.query('limit', limit)
 			if req.query.before?
@@ -113,6 +164,8 @@ routes = (app) ->
 			.then (feed) ->
 				res.r.feed_contents = feed.models
 				next()
+			, (err) ->
+				console.error(err)
 
 		get_comments: (req, res, next) ->
 			comments = FeedComments.forge()

@@ -1,0 +1,39 @@
+div(id="admin-add-event-shell")
+	h1 {{ task }}
+		a(href="/admin/racetasks", class="button") Back to Race Tasks
+	form(id="admin-racetask-update", method="post", action="#")
+		div(class="form-section")
+			div(class="form-box")
+				label Task
+				input(name="task", type="text", value="{{ task }}")
+		div(class="form-section")
+			label Section
+			select(name="section", class="select2", style="width:180px")
+				option(value="before-arriving") Before Arriving
+				option(value="community") Community
+				option(value="adventure") Adventure
+				option(value="service") Service
+				option(value="bonus") Bonus
+		div(class="form-section")
+			label Type
+			div(class="form-box")
+				select(name="type", class="select2", style="width:120px")
+					option(value="photo") Photo
+					option(value="video") Video
+					option(value="auto") Automatic
+		div(class="form-section")
+			label Points
+			input(name="points", type="number", max="50", min="1", value="{{ points }}")
+		div(class="form-section")
+			label Max Usage Per Attendee
+			input(name="attendee_max", type="number", max="50", min="1", value="{{ attendee_max }}")
+		div(class="form-section")
+			label Max Usage Overall (Zero is unlimited)
+			input(name="global_max", type="number", max="50", min="0", value="{{ global_max }}")
+		div(class="form-section")
+			label Extra Note/Explanation
+			textarea(name="note") {{ note }}
+		div(class="clear")
+		div(class="form-section")
+			input(type="hidden", name="racetask_id", value="{{ racetask_id }}")
+			input(type="submit", value="Save Task", class="button")

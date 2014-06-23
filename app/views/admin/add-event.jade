@@ -1,0 +1,54 @@
+div(id="admin-add-event-shell")
+	h1 Add an Event
+		a(href="/admin/schedule", class="button") Back to Schedule
+	form(id="admin-add-event", method="post", action="#")
+		div(class="form-section")
+			div(class="form-box")
+				label Event Name
+				input(name="what", type="text")
+		div(class="form-section")
+			label Venue Name
+			input(name="place", type="text")
+		div(class="form-section")
+			label Address
+			input(name="address", type="text")
+		div(class="form-section")
+			label Event Start
+			div(class="form-box")
+				select(name="date", class="select2", style="width:120px")
+					option(value="10") July 10th
+					option(value="11") July 11th
+					option(value="12") July 12th
+					option(value="13") July 13th
+					option(value="14") July 14th
+			div(class="form-box")
+				select(name="hour", class="select2", style="width:120px")
+					option(value="01") 01
+					option(value="02") 02
+					option(value="03") 03
+					option(value="04") 04
+					option(value="05") 05
+					option(value="06") 06
+					option(value="07") 07
+					option(value="08") 08
+					option(value="09") 09
+					option(value="10") 10
+					option(value="11") 11
+					option(value="12", selected="selected") 12
+				select(name="minute", class="select2", style="width:65px")
+					option(value="00") 00
+					option(value="15") 15
+					option(value="30") 30
+					option(value="45") 45
+				select(name="pm", class="select2", style="width:65px")
+					option(value="0") am
+					option(value="12", selected="selected") pm
+		div(class="form-section")
+			label Publicly Visible
+			div(class="form-box")
+				select(name="active", class="select2", style="width:120px")
+					option(value="1") Yes
+					option(value="0") No
+		div(class="clear")
+		div(class="form-section")
+			input(type="submit", value="Add Event", class="button")

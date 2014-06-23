@@ -113,7 +113,7 @@ ap.initSearch = ->
 					html += '<a class="result-link" href="/~'+result.get('user_name')+'">
 						<span style="background:url('+result.get('pic')+')"></span>
 					'+result.get('first_name')+' '+result.get('last_name')+'</a>'
-				$('.search-results').html(html)
+				$('#nav-search .search-results').html(html)
 
 ###
 	Make an api call

@@ -5,14 +5,16 @@
 routes = (app) ->
 
 	handler = require('./api/handler')
-	assets = require('./api/assets')(app)
-	user = require('./api/user')(app)
-	feed = require('./api/feed')(app)
-	speaker = require('./api/speaker')(app)
+
 	admin= require('./api/admin')(app)
-	transfer = require('./api/transfer')(app)
+	assets = require('./api/assets')(app)
 	content = require('./api/content')
 	event = require('./api/event')(app)
+	feed = require('./api/feed')(app)
+	racetask = require('./api/racetask')(app)
+	speaker = require('./api/speaker')(app)
+	transfer = require('./api/transfer')(app)
+	user = require('./api/user')(app)
 
 	app.namespace '/api', (req, res, next)->
 
@@ -34,6 +36,7 @@ routes = (app) ->
 		app.post '/user', user.create
 		app.post '/user/login', user.login
 		app.post '/user/reset', user.reset
+		app.post '/user/registrations', user.registrations
 		app.post '/user/interest', user.add_interest
 		app.post '/user/connection', user.add_connection
 		app.delete '/user/connection', user.del_connection
@@ -42,6 +45,7 @@ routes = (app) ->
 		app.get '/user/twitter/callback', user.twitter_callback
 		app.delete '/user/twitter', user.del_twitter
 		app.post '/user/tweet', user.send_tweet
+		app.post '/user/logout', user.logout
 
 		# Speakers
 		app.put '/speaker', speaker.update
@@ -58,12 +62,18 @@ routes = (app) ->
 		app.get '/feed', feed.get
 		app.post '/feed/comment', feed.add_comment
 		app.get '/feed/comments', feed.get_comments
+		app.post '/feed/like', feed.add_like
 
 		# Ticket Transfers
 		app.post '/transfer', transfer.add
 		app.all '/transfer/ipn', transfer.ipn
 		app.get '/transfer/return', transfer.pdt
 		app.get '/transfer/status', transfer.status
+
+		# RaceTasks
+		app.post '/racetask', racetask.add
+		app.put '/racetask', racetask.upd
+		app.get '/racetasks', racetask.search
 
 
 		# Admin
@@ -72,11 +82,15 @@ routes = (app) ->
 		# capabilities to be grabbed automatically
 		app.all '/admin/*', admin.get_capabilities
 		app.get '/admin/download', admin.download
+		app.get '/admin/schedule', admin.schedule
 		app.get '/admin/ambassadors', admin.ambassadors
 		app.get '/admin/ambassador_accept', admin.ambassador_accept
 		app.get '/admin/ambassador_reject', admin.ambassador_reject
 		app.get '/admin/user_export', admin.export
 		app.get '/admin/locations', admin.process_locations
+		app.get '/admin/events', event.get
+		app.get '/admin/event_accept', event.accept
+		app.get '/admin/event_reject', event.reject
 
 
 		# Finish
