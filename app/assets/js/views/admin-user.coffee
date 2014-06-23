@@ -31,6 +31,7 @@ ap.Views.admin_user = XView.extend
 		country_select.on 'change', (e) =>
 			@regionSync()
 		@regionSync()
+		@initCapabilities()
 	regionSync: ->
 		shell = $('#region-shell')
 		val = false
@@ -90,6 +91,25 @@ ap.Views.admin_user = XView.extend
 				<a href="#" class="'+clss+' toggle-ticket button">'+action+' Ticket</a>
 			</div>
 		')
+
+	initCapabilities: ->
+                capabilities = @user.get('capabilities')
+                available_top_level_capabilities = @user.get('available_top_level_capabilities')
+                capabilities_select = $('#capabilities-select')
+                capabilities = Array()
+                capabilities.push {id: capability, text: capability} for capability in available_top_level_capabilities
+
+                capabilities_select.select2
+                        placeholder: "Capabilities"
+                        data: capabilities
+                        multiple: true
+                        initSelection: (el, cb) ->
+                                selection = Array()
+                                selection.push({id: cap, text: cap}) for cap in el.val().split(",")
+                                cb selection
+                        width: '300px'
+
+                        
 	userInfo_submit: (e) ->
 		e.preventDefault()
 		el = $(e.currentTarget)

@@ -57,19 +57,8 @@ div(id="user-manifest-shell")
 						option(value="speaker") Speaker
 				div(class="form-box")
 					label SuperPowers
-					select(name="capabilities", class="select2", multiple="true", style="width: 300px")
-						option(value="test1") Test 1
-						option(value="test2") Test 2
-						option(value="test3") Test 3
-						option(value="test4") Test 4
-						option(value="test5") Test 5
-						option(value="test6") Test 6
-						option(value="test7") Test 7
-						option(value="test8") Test 8
-						option(value="test9") Test 9
-						option(value="test10") Test 10
-						option(value="test11") Test 11
-						option(value="test12") Test 12
+					input(type="hidden" name="capabilities_update" value="yes")
+					input(type="hidden" name="capabilities", id="capabilities-select", value="{{ capabilities }}")
 			div(class="clear")
 			div(class="form-section")
 				input(type="submit", value="Save Attendee Info", class="button")
