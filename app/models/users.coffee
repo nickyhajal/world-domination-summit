@@ -174,27 +174,69 @@ User = Shelf.Model.extend
       console.error(err)
     return dfr.promise
 
+  getReadableCapabilities: ->
+    dfr = Q.defer()
+    Capabilities.forge()
+    .query('where', 'user_id', @get('user_id'))
+    .fetch()
+    .then (rsp) =>
+      if rsp.models.length
+        retval = Array()
+        for cap in rsp.models
+          retval.push cap.get 'capability'
+        @set('capabilities', retval)
+        @set('available_top_level_capabilities', Object.keys(User.capabilities_map))
+      dfr.resolve this
+    , (err) ->
+      console.error err
+    return dfr.promise
+
   hasCapability: (capability) ->
-    map =
-      user: 'manifest'
-      "add-attendee": 'manifest'
-      speaker: 'speakers'
-      "add-speaker": 'speakers'
-      "ambassador-review": 'ambassadors'
-      "add-event": 'schedule'
-      "event": 'schedule'
-      "meetup-review": 'schedule'
-      "meetup": 'schedule'
-      "meetups": 'schedule'
-      "racetasks": "race"
-      "add-racetask": "race"
-      "racetask": "race"
-    capability = map[capability] ? capability
     if @get('capabilities')?
       for cap in @get('capabilities')
-        if cap.get('capability') is capability
-          return true
+          test_capability = cap.get('capability')
+          if test_capability is capability
+            return true
+          else
+            for master_capability, sub_capability of User.capabilities_map
+              if test_capability is master_capability and capability in sub_capability
+                return true
     return false
+
+  setCapabilities: (new_capabilities) ->
+    dfr = Q.defer()
+    user_id = @get('user_id')
+    Capabilities.forge()
+    .query('where', 'user_id', user_id)
+    .fetch()
+    .then (rsp) =>
+      db_capabilities = Array()
+      
+      if rsp.models.length
+        db_capabilities = rsp.models
+
+      actual_db_capabilities = Array()
+      for db_capability in db_capabilities
+        actual_db_capabilities.push(db_capability.get('capability'))
+      for new_capability in new_capabilities
+        if new_capability not in actual_db_capabilities
+          Capability.forge({user_id: user_id, capability: new_capability}).save()
+      for previous_capability in db_capabilities
+        if previous_capability.get('capability') not in new_capabilities
+          Capabilities.forge().query('where', 'capability_id', previous_capability.get('capability_id')).fetch().then (rsp2) =>
+            if rsp2.models.length
+              if rsp2.models.length > 1
+                console.log "WARNING: more than one model for a single capability ID. Destroying first only"
+              to_destroy = rsp2.models[0]
+              to_destroy.destroy()
+            else
+              console.log("WARNING: Attempting to destroy non-existant capability")
+            model.destroy()
+      dfr.resolve this
+    , (err) ->
+      console.error(err)
+    return dfr.promise
+
 
   getInterests: ->
     dfr = Q.defer()
@@ -453,33 +495,14 @@ User = Shelf.Model.extend
       dfr.resolve(rsp)
     return dfr.promise
 
-  checkFeedActivity: ->
-    Notifications.forge() 
-    .query('where', 'user_id', @get('user_id'))
-    .query('where', 'type', 'feed_new')
-    .fetch()
-    .then (rsp) =>
-      async.each rsp.models, (row, cb) =>
-        row.destroy()
-        cb()
-      , =>
-        totalNew = 0
-        incInterests = []
-        @getInterests().then (user) ->
-          async.each JSON.parse(user.get('interests')), (interest, cb) =>
-              Feeds.forge()
-              .query('where', 'channel_type', 'interest')
-              .query('where', 'channel_type', 'interest')
-              .query('where', 'created_at', '>', @get('last_shake'))
-              .fetch()
-              .then (rsp) ->
-                if rsp.models.count
-                  totalNew += rsp.models.count
-                  incInterests.push(interest)
 
-            cb()
-
-
+User.capabilities_map =
+  speakers: ["add-speaker", "speaker"]
+  ambassadors: ["ambassador-review"]
+  manifest: ['add-attendee', 'attendee', 'user']
+  schedule: ['add-event', 'event', 'meetup', 'meetups', 'meetup-review', 'event-review']
+  race: ['add-racetask', 'racetask', 'racetasks']
+  downloads: ['admin_downloads']
 
 Users = Shelf.Collection.extend
   model: User
