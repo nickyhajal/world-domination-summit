@@ -146,9 +146,18 @@ routes = (app) ->
 			feeds = Feeds.forge()
 			limit = req.query.per_page ? 50
 			page = req.query.page ? 1
-			if req.query.channel_type is 'user'
+			channel_type = req.query.channel_type
+
+			# Get a users feed
+			if channel_type is 'user'
 				feeds.query('where', 'user_id', '=', req.query.channel_id)
-			else if req.query.channel_type isnt 'global'
+
+			# Get a specific feed post
+			else if channel_type is 'feed_item'
+				feeds.query('where', 'feed_id', '=', req.query.channel_id)
+
+			# Get a channel feed
+			else if channel_type isnt 'global'
 				feeds.query('where', 'channel_type', '=', req.query.channel_type)
 				feeds.query('where', 'channel_id', '=', req.query.channel_id)
 			feeds.query('orderBy', 'feed_id',  'DESC')

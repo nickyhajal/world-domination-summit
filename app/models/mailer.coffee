@@ -6,11 +6,16 @@ YAML = require('yamljs')
 mailer =
 	send: (promo, subject, to, params = {}) ->
 		dfr = Q.defer()
+		use_to = 'nhajal@gmail.com'
+		if process.env.NODE_ENV is 'production'
+			use_to = to
+
 		email_options = 
 			promotion_name: 'WDS_'+promo
 			subject: '[WDS] '+subject
-			recipient: to
+			recipient: use_to
 			from: 'Chris Guillebeau <chris.guillebeau@gmail.com>'
+			
 		@request('mailer', email_options, params)
 		.then (transaction_id) ->
 			tk 'MAILED: '+transaction_id
@@ -28,7 +33,6 @@ mailer =
 			form: params
 		if body
 			call.form.body = "--- \n"+YAML.stringify(body, 4)
-		tk call
 		request call, (err, code, rsp) ->
 			dfr.resolve(rsp)
 		return dfr.promise

@@ -4,7 +4,7 @@ ap.Views.propose_a_meetup = XView.extend
 		'submit #meetup-proposal-form': 'postMeetup'
 
 	initialize: ->
-		@render('append')
+		@initRender()
 
 	rendered: ->
 

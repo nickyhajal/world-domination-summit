@@ -33,8 +33,8 @@ ap.init = () ->
 
 ap.allUsers = {}
 ap.initAssets = ->
-	assets = 'all_attendees,me'
-	ap.api 'get assets', {assets: assets}, (rsp) ->
+	assets = ['all_attendees','me','events']
+	ap.api 'get assets', {assets: assets.join(',')}, (rsp) ->
 		if rsp.all_attendees
 			setTimeout ->
 				ap.Users.add(rsp.all_attendees)
@@ -44,6 +44,10 @@ ap.initAssets = ->
 		if rsp.me
 			ap.login rsp.me
 		_.isReady 'me'
+
+		if rsp.events
+			ap.events = rsp.events
+			_.isReady 'events'
 
 ###
 	Process templates for template optiosn

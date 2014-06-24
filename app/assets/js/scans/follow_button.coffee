@@ -15,9 +15,9 @@ jQuery.fn.scan
 				user = ap.Users.get(user_id)
 
 				syncButton = ->
-					str = 'Follow'
+					str = 'Friend '
 					if ap.me.isConnected?(user_id)
-						str = if format is 'short' then 'Following' else 'You Follow'
+						str = if format is 'short' then 'Friends with' else 'Friends with'
 					$t.html (str + ' ' + user.get('first_name'))
 
 				changeFnc = (e) ->

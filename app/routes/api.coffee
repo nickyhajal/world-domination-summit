@@ -54,12 +54,15 @@ routes = (app) ->
 		# Events
 		app.post '/event', event.add
 		app.put '/event', event.upd
+		app.get '/event/attendees', event.get_attendees
+		app.post '/event/rsvp', event.rsvp
 
 		# Feed
 		app.post '/feed', feed.add
 		app.put '/feed', feed.upd
 		app.delete '/feed', feed.del
 		app.get '/feed', feed.get
+		app.get '/feed/item', feed.get_item
 		app.post '/feed/comment', feed.add_comment
 		app.get '/feed/comments', feed.get_comments
 		app.post '/feed/like', feed.add_like

@@ -9,6 +9,7 @@
 ###
 	Create the router
 ###
+ap.scrollPos = {}
 ap.createRouter = ->
 	window.Router = Backbone.Router.extend
 		protect: [
@@ -20,6 +21,8 @@ ap.createRouter = ->
 			@route("logout", 'logout', ap.Routes.logout)
 			@route("reset-password/:hash", 'reset', ap.Routes.reset)
 			@route("community/:community", 'community', ap.Routes.community)
+			@route("dispatch/:feed_id", 'dispatch', ap.Routes.dispatch)
+			@route("meetup/:meetup", 'meetup', ap.Routes.meetup)
 			@route("your-transfer/:transfer_id", 'reset', ap.Routes.your_transfer)
 			@route("admin/:panel", 'admin', ap.Routes.admin)
 			@route("admin/:panel/:extra", 'admin', ap.Routes.admin)
@@ -103,6 +106,7 @@ ap.goTo = (panel = '', options = {}, cb = false) ->
 
 	# Unbind current view
 	if ap.currentView?
+		$('.dispatch-feed')?.data('feed')?.stop()
 		ap.currentView.unbind()
 		ap.currentView.undelegateEvents()
 
@@ -129,7 +133,11 @@ ap.goTo = (panel = '', options = {}, cb = false) ->
 		if ap.currentView? and ap.currentView
 			ap.currentView.finish()
 		ap.currentView = new view options
-		$.scrollTo 0
+		if ap.scrollPos?[panel]?
+			scrollTo = ap.scrollPos[panel]
+		else
+			scrollTo = 0
+		$.scrollTo scrollTo
 		ap.syncNav(panel)
 		ap.checkMobile()
 		if cb 
