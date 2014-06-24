@@ -1996,6 +1996,9 @@ div.meetup-hosted-by {
     top:                        10px;
     font-family:                vitesse;
 }
+#manifest-results tr {
+    cursor:                     pointer;
+}
 * {
     line-height:                inherit;
     box-sizing:                 border-box;
@@ -3781,7 +3784,7 @@ span.answer_start {
     background-color:           rgb(242, 242, 234);
 }
 #page_content .select2-container-multi ul.select2-choices {
-    left: 0px;
+    left:                       0px;
 }
 .select2-locked {
     padding:                    3px 5px ! important;
