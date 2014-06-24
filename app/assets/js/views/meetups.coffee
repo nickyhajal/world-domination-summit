@@ -13,7 +13,7 @@ ap.Views.meetups = XView.extend
 		html = ''
 		ap.Events.each (ev) =>
 			if ev.get('type') is 'meetup'
-				time = moment.utc(ev.get('start')).subtract('hours', '7')
+				time = moment.utc(ev.get('start'))
 				day = time.format('MMMM Do')
 				if day isnt lastDay
 					lastDay = day
