@@ -9,7 +9,7 @@ ap.Views.admin_user = XView.extend
 	initialize: ->
 		ap.api 'get user', {user_name: @options.extra}, (rsp) =>
 			@user = new ap.User(rsp.user)
-			@options.out = _.template @options.out, rsp.user
+			@options.out = _.template @options.out, @user.attributes
 			@initRender()
 	rendered: ->
 		@initSelect2()
