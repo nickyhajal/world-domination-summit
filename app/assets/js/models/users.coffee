@@ -9,6 +9,7 @@ ap.User = window.XModel.extend
 		pic: '/images/default-avatar.png'
 		distance: 0
 		capabilities: ''
+		available_top_level_capabilities: ''
 	idAttribute: 'user_id'
 	url: '/api/user'
 	initialize: (opts = {})->

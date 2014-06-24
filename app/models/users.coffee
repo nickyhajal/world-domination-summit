@@ -176,6 +176,7 @@ User = Shelf.Model.extend
 
   getReadableCapabilities: ->
     dfr = Q.defer()
+    @set('available_top_level_capabilities', Object.keys(User.capabilities_map))
     Capabilities.forge()
     .query('where', 'user_id', @get('user_id'))
     .fetch()
@@ -185,7 +186,6 @@ User = Shelf.Model.extend
         for cap in rsp.models
           retval.push cap.get 'capability'
         @set('capabilities', retval)
-        @set('available_top_level_capabilities', Object.keys(User.capabilities_map))
       dfr.resolve this
     , (err) ->
       console.error err
@@ -194,13 +194,13 @@ User = Shelf.Model.extend
   hasCapability: (capability) ->
     if @get('capabilities')?
       for cap in @get('capabilities')
-          test_capability = cap.get('capability')
-          if test_capability is capability
-            return true
-          else
-            for master_capability, sub_capability of User.capabilities_map
-              if test_capability is master_capability and capability in sub_capability
-                return true
+        test_capability = cap.get('capability')
+        if test_capability is capability
+          return true
+        else
+          for master_capability, sub_capability of User.capabilities_map
+            if test_capability is master_capability and capability in sub_capability
+              return true
     return false
 
   setCapabilities: (new_capabilities) ->
