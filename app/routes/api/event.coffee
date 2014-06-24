@@ -10,6 +10,7 @@ routes = (app) ->
 
 	[Event, Events] = require('../../models/events')
 	[EventHost, EventHosts] = require('../../models/event_hosts')
+	[EventRsvp, EventRsvps] = require('../../models/event_rsvps')
 	[EventInterest, EventInterests] = require('../../models/event_interests')
 	[User, Users] = require('../../models/users')
 
@@ -61,7 +62,6 @@ routes = (app) ->
 				start = moment.utc(process.year+'-07-'+req.query.date+' '+req.query.hour+':'+req.query.minute+':00', 'YYYY-MM-DD HH:mm:ss')
 				if req.query.hour is '12'
 					req.query.pm = Math.abs(req.query.pm - 12)
-				tk req.query.pm
 				post.start = start.add('hours', req.query.pm).format('YYYY-MM-DD HH:mm:ss')
 				Event.forge({event_id: post.event_id})
 				.fetch()
@@ -182,5 +182,31 @@ routes = (app) ->
 				res.status(401)
 				next()
 
+		get_attendees: (req, res, next) ->
+			EventRsvps.forge()
+			.query('where', 'event_id', '=', req.query.event_id)
+			.fetch()
+			.then (rsp) ->
+				atns = []
+				for atn in rsp.models
+					atns.push(atn.get('user_id'))
+				res.r.attendees = atns
+				next()
+			, (err) ->
+				console.err(err)
+
+		rsvp: (req, res, next) ->
+			if req.me
+				rsvp = EventRsvp.forge({user_id: req.me.get('user_id'), event_id: req.query.event_id})
+				rsvp	
+				.fetch()
+				.then (existing) ->
+					if existing
+						res.r.action = 'cancel'
+						existing.destroy()
+					else
+						res.r.action = 'rsvp'
+						rsvp.save()
+					next()
 
 module.exports = routes

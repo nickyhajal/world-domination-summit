@@ -4,5 +4,6 @@
 	<a href="#" class="tab-link" data-tabname="more-about-you">More About You</a>
 	<a href="#" class="tab-link" data-tabname="interests">Interests</a>
 	<a href="#" class="tab-link" data-tabname="around-the-web">Around the Web</a>
+	<a href="#" class="tab-link" data-tabname="notifications">Notifications</a>
 	<a href="#" class="tab-link" data-tabname="your-smile">Your Smile</a>
 </div>

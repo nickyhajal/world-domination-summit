@@ -1,1 +1,1 @@
-<a href="#" class="follow-button" data-user_id="{{ user_id }}">Follow {{ first_name }}</a>
+<a href="#" class="follow-button" data-user_id="{{ user_id }}">Friend {{ first_name }}</a>

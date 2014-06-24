@@ -21,7 +21,10 @@ clearCache()
 routes = (app) ->
 
 	[User, Users] = require('../../models/users')
+	[Event, Events] = require('../../models/events')
+	[EventRsvp, EventRsvps] = require('../../models/event_rsvps')
 	[Registration, Registrations] = require('../../models/registrations')
+	[EventHost, EventHosts] = require('../../models/event_hosts')
 
 	assets =
 			expires:
@@ -31,8 +34,10 @@ routes = (app) ->
 				content: 120
 			get: (req, res, next) ->
 				async.each req.query.assets.split(','), (asset, cb) ->
+					tk asset
 					assets[asset](req)
 					.then (rsp) ->
+						tk asset
 						res.r[asset] = rsp
 						cb()
 				, ->
@@ -96,9 +101,35 @@ routes = (app) ->
 									.then (user) ->
 										user.getFeedLikes()
 										.then (user) ->
-											dfr.resolve(user)
+											user.getRsvps()
+											.then (user) ->
+												dfr.resolve(user)
 				else
 					dfr.resolve(false)
+				return dfr.promise
+			events: (req) ->
+				dfr = Q.defer()
+				Events.forge()
+				.fetch()
+				.then (rsp) ->
+					evs = []
+					async.each rsp.models, (ev, cb) ->
+						EventHosts.forge()
+						.query('where', 'event_id', ev.get('event_id'))
+						.fetch()
+						.then (rsp) ->
+							hosts = []
+							for host in rsp.models
+								hosts.push host.get('user_id')
+							ev.set('hosts', hosts)
+							evs.push ev
+							cb()
+						, (err) ->
+							console.err(err)
+					, ->
+						dfr.resolve(evs)
+				, (err) ->
+					console.log(err)
 				return dfr.promise
 			notifications: ->
 				dfr = Q.defer()

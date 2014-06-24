@@ -112,6 +112,22 @@ div(id="page_content")
 				input(type="text", name="site", class="model-me")
 			a(href="#", class="tab-next button") Save & Continue
 
+		div(id="tab-panel-notifications", class="tab-panel")
+			h2 Community Notifications
+			h3 We'll Keep You Posted on the Things You Care About
+			p If you participate in the WDS Community online, we'll send you
+				| notifications relevant to you, only as often as you like.
+			div(class="form-section")
+				div(class="form-section")
+					label How often should we send notifications?
+					select(name="notification_interval", class="select2 model-me", style="width:300px")
+						option(value="3600") Hourly
+						option(value="43200") Twice a Day
+						option(value="86400") Once a Day
+						option(value="302400") Twice a Week
+						option(value="0") Never
+			a(href="#", class="tab-next button") Save & Continue
+
 		div(id="tab-panel-your-smile", class="tab-panel")
 			h2 Your Avatar
 			h3 A Smile is Worth a Thousand Words

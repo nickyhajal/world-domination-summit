@@ -120,6 +120,3 @@ ap.Views.profile = XView.extend
 		if ap.me.get('pic')?
 			$('.current-avatar').show()
 			$('.avatar-shell').empty().append $('<img/>').attr('src', ap.me.get('pic').replace('_normal', ''))
-
-	whenFinished: ->
-		$('.dispatch-feed').data('feed').stop()

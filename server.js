@@ -22,6 +22,7 @@ if (process.env.NODE_ENV === 'production') {
 	require('./app/processors/eventbrite')(app)
 }
 
+
 // Twitter OAuth
 var OAuth= require('oauth').OAuth;
 var oa = new OAuth(
@@ -43,3 +44,7 @@ require('./app/routes/git-hook')(app);
 app.listen(app.settings.port, function(){
   console.log("Express server listening on port %d in %s mode", app.settings.port, app.settings.env);
 });
+setTimeout(function(){
+	Notifications = require('./app/models/notifications')[1]
+	Notifications.prototype.process()
+}, 500)

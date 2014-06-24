@@ -21,6 +21,9 @@ _d.btn = (el, during, done, reset = 1200) ->
 			, reset
 	}
 
+_d.autop = (str) ->
+	return '<p>' + str.replace(/\n/g, '</p><p>') + '</p>'
+
 _d.unSlug = (str)->
 	str = str.split('-')
 	for i, v of str

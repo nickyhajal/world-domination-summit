@@ -42,6 +42,9 @@ ap.Views.admin_meetup = XView.extend
 		el = $(e.currentTarget)
 		btn = _.btn($('.button', el), 'Saving...', 'Saved!')
 		form = el.formToJson()
-		ap.api 'put event', form, (rsp) ->
+		ap.api 'put event', form, (rsp) =>
 			btn.finish()
-			ap.navigate('admin/meetup-review')
+			if +@event.active
+				ap.navigate('admin/meetups')
+			else
+				ap.navigate('admin/meetup-review')

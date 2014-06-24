@@ -11,6 +11,7 @@ _ = require('underscore')
 _.str = require('underscore.string')
 Q = require('q')
 request = require('request')
+async = require('async')
 
 ##
 
@@ -21,7 +22,9 @@ request = require('request')
 [TwitterLogin, TwitterLogins] = require './twitter_logins'
 [Capability, Capabilities] = require './capabilities'
 [FeedLike, FeedLikes] = require './feed_likes'
+[Feed, Feeds] = require './feeds'
 [Notification, Notifications] = require './notifications'
+[EventRsvp, EventRsvps] = require './event_rsvps'
 
 User = Shelf.Model.extend
   tableName: 'users'
@@ -29,7 +32,7 @@ User = Shelf.Model.extend
     'user_id', 'type', 'email', 'first_name', 'last_name', 'attending14',
     'email', 'hash', 'user_name', 'mf', 'twitter', 'facebook', 'site', 'pic', 'instagram'
     'address', 'address2', 'city', 'region', 'country', 'zip', 'lat', 'lon', 'distance',
-    'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake'
+    'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake', 'notification_interval'
   ]
   defaults:
     pic: ''
@@ -119,6 +122,11 @@ User = Shelf.Model.extend
   # GET #
   #######
 
+  getPic: ->
+    pic = @get('pic')
+    unless pic.indexOf('http') > -1
+      pic = 'http://worlddominationsummit.com'+pic
+    return pic
   getUrl: (text = false, clss = false, id = false) ->
     user_name = @get('user_name')
     clss = if clss then ' class="'+clss+'"' else ''
@@ -247,6 +255,18 @@ User = Shelf.Model.extend
       console.error(err)
     return dfr.promise
 
+  getRsvps: ->
+    dfr = Q.defer()
+    EventRsvps.forge()
+    .query('where', 'user_id', @get('user_id'))
+    .fetch()
+    .then (rsp) =>
+      rsvps = []
+      for rsvp in rsp.models
+        rsvps.push rsvp.get('event_id')
+      @set('rsvps', rsvps)
+      dfr.resolve(@)
+    return dfr.promise
 
   ###########
   # ADDRESS #
@@ -433,7 +453,32 @@ User = Shelf.Model.extend
     return dfr.promise
 
   checkFeedActivity: ->
-    
+    Notifications.forge() 
+    .query('where', 'user_id', @get('user_id'))
+    .query('where', 'type', 'feed_new')
+    .fetch()
+    .then (rsp) =>
+      async.each rsp.models, (row, cb) =>
+        row.destroy()
+        cb()
+      , =>
+        totalNew = 0
+        incInterests = []
+        @getInterests().then (user) ->
+          async.each JSON.parse(user.get('interests')), (interest, cb) =>
+              Feeds.forge()
+              .query('where', 'channel_type', 'interest')
+              .query('where', 'channel_type', 'interest')
+              .query('where', 'created_at', '>', @get('last_shake'))
+              .fetch()
+              .then (rsp) ->
+                if rsp.models.count
+                  totalNew += rsp.models.count
+                  incInterests.push(interest)
+
+            cb()
+
+
 
 Users = Shelf.Collection.extend
   model: User

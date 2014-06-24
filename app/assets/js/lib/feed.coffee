@@ -83,7 +83,9 @@
 				channel_url = '#'
 				if channel_name is 'interest'
 					channel_name = ap.Interests.get(content.channel_id).get('interest').toLowerCase()
-					channel_url = '/community/'+channel_name
+					channel_url = '/community/'+_.slugify(channel_name)
+				else if channel_name is 'global'
+					channel_url = '/hub'
 				html = '
 					<div class="dispatch-content-shell dispatch-content-unprocessed" data-content_id="'+content.feed_id+'">
 						<div class="dispatch-content-userpic" style="background:url('+author.get('pic').replace('_normal', '')+')"></div>
@@ -134,6 +136,8 @@
 				$t.removeClass('dispatch-content-unprocessed')
 				$('textarea', $t).autosize()
 
+				if slf.isSingle
+					$('.dispatch-content-comment-status').click()
 		@toggleMore = ->
 			$t = $(this)
 			$s = $t.closest('.dispatch-content-shell')
@@ -164,6 +168,7 @@
 					x = 3
 					# Animate
 			@more_loadComments()
+
 			updTimo = setTimeout =>
 				@updateContent()
 			, opts.update
@@ -290,6 +295,11 @@
 				,
 					before: $('.dispatch-content-shell', $el).last().data('content_id')
 
+		@initFeedItem = ->
+			clearTimeout(updTimo)
+			$('.dispatch-controls:visible').remove()
+			@isSingle = true
+
 		@init = ->
 			@updateContent()
 			$(this).data('feed', @)
@@ -299,6 +309,8 @@
 				.on('click', '.dispatch-content-comment-status', @toggleComments)
 				.on('click', '.dispatch-content-like', @like)
 				.on('submit', '.dispatch-content-comment-form', @submitComment)
+			if opts.params.channel_type is 'feed_item'
+				@initFeedItem()
 			$(window).on('scroll', @scroll)
 
 		if not fnc
