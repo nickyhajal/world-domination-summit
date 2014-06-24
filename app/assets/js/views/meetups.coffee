@@ -44,7 +44,7 @@ ap.Views.meetups = XView.extend
 			if host
 				html += '
 					<div class="meetup-descr-host-shell">
-						<div class="meetup-descr-host-avatar" style="background:url('+host.get('pic')+'"></div>
+						<div class="meetup-descr-host-avatar" style="background:url('+host.get('pic')+')"></div>
 						<div class="meetup-descr-host-name">'+host.get('first_name')+' '+host.get('last_name')+'</div>
 					</div>
 				'
