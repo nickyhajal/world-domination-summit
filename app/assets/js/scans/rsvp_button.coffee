@@ -8,20 +8,23 @@ jQuery.fn.scan
 			cancel = $t.data('cancel') ? 'Cancel Your RSVP'
 
 			$t.click ->
-				ap.api 'post event/rsvp', {event_id: event_id}, (rsp) ->
-					rsvps =	ap.me.get('rsvps')
-					if rsp.action is 'rsvp'
-						rsvps.push(event_id)
-						ap.me.set('rsvps', rsvps)
-					else
-						tmp = []	
-						for rsvp in rsvps
-							if rsvp isnt event_id
-								tmp.push rsvp
-						ap.me.set('rsvps', tmp)
-					buttonText()
-					if ap.currentView.renderAttendees?
-						ap.currentView.renderAttendees()
+				if ap.me? and ap.me
+					ap.api 'post event/rsvp', {event_id: event_id}, (rsp) ->
+						rsvps =	ap.me.get('rsvps')
+						if rsp.action is 'rsvp'
+							rsvps.push(event_id)
+							ap.me.set('rsvps', rsvps)
+						else
+							tmp = []	
+							for rsvp in rsvps
+								if rsvp isnt event_id
+									tmp.push rsvp
+							ap.me.set('rsvps', tmp)
+						buttonText()
+						if ap.currentView.renderAttendees?
+							ap.currentView.renderAttendees()
+				else
+					ap.navigate('login')
 				return false
 
 			buttonText = ->
