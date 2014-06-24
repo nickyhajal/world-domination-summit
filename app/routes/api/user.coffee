@@ -46,14 +46,19 @@ routes = (app) ->
 				user_name: req.query.user_name
 			.fetch()
 			.then (user) ->
+				tk '0'
 				user.getReadableCapabilities()
 				.then (user) ->
+					tk '1'
 					user.getAnswers()
 					.then (user) ->
+						tk '2'
 						user.getInterests()
 						.then (user) ->
+							tk '3'
 							user.getAllTickets()
 							.then (user) ->
+								tk '4'
 								res.r.user = user
 								next()
 							res.r.user = user
