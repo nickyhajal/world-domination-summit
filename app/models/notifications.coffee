@@ -53,14 +53,17 @@ Notifications = Shelf.Collection.extend
 
 											notn_str = if rsp.models.length is 1 then 'notification' else 'notifications'
 
-											user.sendEmail 'notification', rsp.models.length+' new '+notn_str+' from your WDS Community',
-												notification_html: html
+											#user.sendEmail 'notification', rsp.models.length+' new '+notn_str+' from the WDS Community',
+											#	notification_html: html
 								else
 									cb()
 					else
 						cb()
 			, ->
 				tk 'Done sending notifications to '+sentCount+' users'
+				setTimeout ->
+					Notifications::process()
+				, 1800000
 	notificationText: (notn) ->
 		[User, Users] = require './users'
 		dfr = Q.defer()
