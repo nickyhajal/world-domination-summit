@@ -46,16 +46,18 @@ routes = (app) ->
 				user_name: req.query.user_name
 			.fetch()
 			.then (user) ->
-				user.getAnswers()
+				user.getReadableCapabilities()
 				.then (user) ->
-					user.getInterests()
+					user.getAnswers()
 					.then (user) ->
-						user.getAllTickets()
+						user.getInterests()
 						.then (user) ->
+							user.getAllTickets()
+							.then (user) ->
+								res.r.user = user
+								next()
 							res.r.user = user
 							next()
-						res.r.user = user
-						next()
 			, (err) ->
 				console.error(err)
 				res.status(400)
@@ -188,6 +190,13 @@ routes = (app) ->
 
 							if req.query.new_password? and req.query.new_password.length
 								User.forge({user_id: post.user_id}).updatePassword(req.query.new_password)
+
+							if req.query.capabilities_update
+								user.getCapabilities
+								if req.query.capabilities
+									user.setCapabilities req.query.capabilities.split(",")
+								else
+									user.setCapabilities {}
 							next()
 						, (err) ->
 							console.error(err)

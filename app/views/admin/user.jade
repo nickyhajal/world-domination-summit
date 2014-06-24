@@ -11,9 +11,9 @@ div(id="user-manifest-shell")
 		div(class="form-box")
 			label Profile
 			input(type="text", value="http://worlddominationsummit.com/~{{ user_name }}")
-	h3 Attendee Info
 	form(id="admin-user-update", method="post", action="#")
 		input(type="hidden", name="user_id", value="{{ user_id }}")
+		h3 Attendee Info
 		div(class="form-section")
 			div(class="form-box")
 				label First Name
@@ -49,12 +49,16 @@ div(id="user-manifest-shell")
 			div(class="form-section")
 				div(class="form-box")
 					label Type
-					select(name="type", class="select2", style="width:140px")
+					select(name="type", class="select2", style="width: 300px")
 						option(value="attendee") Attendee
 						option(value="ambassador") Ambassador
 						option(value="potential-ambassador") Potential Ambassador
 						option(value="staff") Staff
 						option(value="speaker") Speaker
+				div(class="form-box")
+					label SuperPowers
+					input(type="hidden" name="capabilities_update" value="yes")
+					input(type="hidden" name="capabilities", id="capabilities-select", value="{{ capabilities }}")
 			div(class="clear")
 			div(class="form-section")
 				input(type="submit", value="Save Attendee Info", class="button")
