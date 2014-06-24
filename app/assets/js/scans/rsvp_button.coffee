@@ -25,7 +25,7 @@ jQuery.fn.scan
 				return false
 
 			buttonText = ->
-				if ap.me?
+				if ap.me? and ap.me
 					rsvps = ap.me.get('rsvps')
 					if rsvps.indexOf(event_id) > -1
 						$t.html(cancel)
