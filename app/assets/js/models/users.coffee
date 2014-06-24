@@ -8,7 +8,7 @@ ap.User = window.XModel.extend
 		interests: ''
 		pic: '/images/default-avatar.png'
 		distance: 0
-		capabilities: []
+		capabilities: ''
 	idAttribute: 'user_id'
 	url: '/api/user'
 	initialize: (opts = {})->
