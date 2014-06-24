@@ -153,7 +153,6 @@ Notifications = Shelf.Collection.extend
 			juice.juiceContent html, 
 				url: 'http://worlddominationsummit.com'
 			, (err, html) ->
-				tk html
 				dfr.resolve(html)
 		return dfr.promise
 
