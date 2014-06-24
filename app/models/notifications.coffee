@@ -53,8 +53,8 @@ Notifications = Shelf.Collection.extend
 
 											notn_str = if rsp.models.length is 1 then 'notification' else 'notifications'
 
-											#user.sendEmail 'notification', rsp.models.length+' new '+notn_str+' from the WDS Community',
-											#	notification_html: html
+											user.sendEmail 'notification', rsp.models.length+' new '+notn_str+' from the WDS Community',
+												notification_html: html
 								else
 									cb()
 					else
