@@ -110,6 +110,7 @@ routes = (app) ->
 			events: (req) ->
 				dfr = Q.defer()
 				Events.forge()
+				.query('where', 'active', '1')
 				.fetch()
 				.then (rsp) ->
 					evs = []
