@@ -137,7 +137,9 @@
 				$('textarea', $t).autosize()
 
 				if slf.isSingle
-					$('.dispatch-content-comment-status').click()
+					setTimeout ->
+						$('.dispatch-content-comment-status').click()
+					, 200
 		@toggleMore = ->
 			$t = $(this)
 			$s = $t.closest('.dispatch-content-shell')

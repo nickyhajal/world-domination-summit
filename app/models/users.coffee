@@ -127,6 +127,7 @@ User = Shelf.Model.extend
     unless pic.indexOf('http') > -1
       pic = 'http://worlddominationsummit.com'+pic
     return pic
+    
   getUrl: (text = false, clss = false, id = false) ->
     user_name = @get('user_name')
     clss = if clss then ' class="'+clss+'"' else ''
