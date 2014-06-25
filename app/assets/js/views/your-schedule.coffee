@@ -11,7 +11,6 @@ ap.Views.your_schedule = XView.extend
 	renderEvents: ->
 		lastDay = ''
 		html = ''
-		tk 'hey'
 		ap.Events.each (ev) =>
 			if ap.me and ap.me.isAttendingEvent(ev)
 				time = moment.utc(ev.get('start'))
