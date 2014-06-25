@@ -93,7 +93,7 @@
 							<a href="/~'+author.get('user_name')+'" class="dispatch-content-author">
 								'+author.get('first_name')+' '+author.get('last_name')+'
 							</a>
-							<div class="dispatch-content-message">'+Autolinker.link(_.autop(content.content.))+'</div>
+							<div class="dispatch-content-message">'+Autolinker.link(_.autop(content.content))+'</div>
 							<div class="dispatch-content-channel-shell">
 								<a href="'+channel_url+'" class="dispatch-content-channel">/'+channel_name+'</a>
 							</div>
