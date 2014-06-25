@@ -2,9 +2,7 @@ div(class="schedule-row")
 	div(class="schedule-top")
 		div(class="schedule-time") {{ time }}
 		div(class="schedule-place") {{ place }}
-		a(href="{{ directions_link }}" class="schedule-directions")
+		a(href="{{ directions_link }}" target="_blank" class="schedule-directions")
 	div(class="schedule-main")
 		div(class="schedule-what") {{ what }}
-	div(class="schedule-extra")
-		div(class="schedule-hosts") {{ hosts }}
-		div(class="schedule-note") {{ note }}
+	div(class="schedule-extra") {{ hosts }} {{ note }}
