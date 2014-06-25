@@ -84,6 +84,8 @@
 				if channel_name is 'interest'
 					channel_name = ap.Interests.get(content.channel_id).get('interest').toLowerCase()
 					channel_url = '/community/'+_.slugify(channel_name)
+				else if channel_name is 'meetup'
+					channel_url = '/meetup/'+_.slugify(ap.Events.get(content.channel_id).get('what').toLowerCase())
 				else if channel_name is 'global'
 					channel_url = '/hub'
 				html = '
