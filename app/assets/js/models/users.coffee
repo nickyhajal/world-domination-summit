@@ -46,6 +46,12 @@ ap.User = window.XModel.extend
 			if +ticket.year < +ap.year
 				return true
 
+	isAttendingEvent: (event) ->
+		if event.get('type') is 'program'
+			return true
+		else
+			return ap.me.get('rsvps').indexOf(event.get('event_id')) > -1
+
 # Create the Events collection and
 # instantiate it
 Users = Backbone.Collection.Lunr.extend
@@ -66,3 +72,4 @@ Users = Backbone.Collection.Lunr.extend
   	return false
 
 ap.Users = new Users()
+ap.login(ap.me)

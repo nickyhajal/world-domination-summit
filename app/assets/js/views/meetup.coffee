@@ -84,7 +84,7 @@ ap.Views.meetup = XView.extend
 
 	renderAttendee: (atn) ->
 		return '<div class="meetup-attendee">
-			<div class="meetup-attendee-avatar" style="background:url('+atn.get('pic')+'"></div>
+			<div class="meetup-attendee-avatar" style="background:url('+atn.get('pic')+')"></div>
 			<div class="meetup-attendee-name">'+atn.get('first_name')+'<br>'+atn.get('last_name')+'</div>
 		</div>'
 

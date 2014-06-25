@@ -13,7 +13,7 @@ ap.scrollPos = {}
 ap.createRouter = ->
 	window.Router = Backbone.Router.extend
 		protect: [
-			'hub', 'welcome', 'settings', 'propose-a-meetup'
+			'hub', 'welcome', 'settings', 'propose-a-meetup', 'communities', 'your-schedule', 'meetups'
 		]
 		initialize: ->
 			@route("*actions", 'default', ap.Routes.defaultRoute)
@@ -69,8 +69,9 @@ ap.protect = ->
 
 
 ap.login = (me) ->
-	$('html').addClass('is-logged-in')
-	ap.me = new ap.User(me)
+	if me
+		$('html').addClass('is-logged-in')
+		ap.me = new ap.User(me)
 
 ap.logout = ->
 	$('html').removeClass('is-logged-in')

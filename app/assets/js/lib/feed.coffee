@@ -84,6 +84,8 @@
 				if channel_name is 'interest'
 					channel_name = ap.Interests.get(content.channel_id).get('interest').toLowerCase()
 					channel_url = '/community/'+_.slugify(channel_name)
+				else if channel_name is 'meetup'
+					channel_url = '/meetup/'+_.slugify(ap.Events.get(content.channel_id).get('what').toLowerCase())
 				else if channel_name is 'global'
 					channel_url = '/hub'
 				html = '
@@ -93,7 +95,7 @@
 							<a href="/~'+author.get('user_name')+'" class="dispatch-content-author">
 								'+author.get('first_name')+' '+author.get('last_name')+'
 							</a>
-							<div class="dispatch-content-message">'+Autolinker.link(content.content.replace(/\n/g, '<br>').replace(/<br>\s<br>/g, '<br>'))+'</div>
+							<div class="dispatch-content-message">'+Autolinker.link(_.autop(content.content))+'</div>
 							<div class="dispatch-content-channel-shell">
 								<a href="'+channel_url+'" class="dispatch-content-channel">/'+channel_name+'</a>
 							</div>
@@ -219,7 +221,7 @@
 								<a href="/~'+author.get('user_name')+'" class="dispatch-content-author">
 									'+author.get('first_name')+' '+author.get('last_name')+'
 								</a>
-								<div class="comment-message">'+comment.comment.replace(/\n/g, '<br>').replace(/<br>\s<br>/g, '<br>')+'</div>
+								<div class="comment-message">'+Autolinker.link(_.autop(comment.comment))+'</div>
 							</div>
 						'
 						commentStr = self.commentsStr +rsp.num_comments

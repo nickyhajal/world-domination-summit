@@ -77,6 +77,7 @@ User = Shelf.Model.extend
 
   # Getters
   getPic: getters.getPic
+  getMe: getters.getMe
   getUrl: getters.getUrl
   getDistanceFromPDX: getters.getDistanceFromPDX
   getAnswers: getters.getAnswers

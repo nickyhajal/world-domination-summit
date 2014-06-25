@@ -643,6 +643,10 @@ a.meetup-edit {
     padding:                    9px 8px 7px;
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
 }
+a.schedule-directions:before {
+    content:                    "Directions";
+    float:                      right;
+}
 a {
     color:                      rgb(226, 127, 28);
 }
@@ -1213,8 +1217,8 @@ div#meetup-profile-map {
     height:                     200px;
     position:                   absolute ! important;
     right:                      -84px;
-    top:                        74px;
     width:                      550px;
+    top:                        73px;
 }
 .attendee-from, .meetup-who {
     clear:                      both;
@@ -1356,12 +1360,12 @@ form.dispatch-content-comment-form {
     margin-left:                -98px;
 }
 .comment-shell {
-    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
     margin-left:                97px;
-    padding:                    10px;
     clear:                      both;
     margin-bottom:              1px;
     position:                   relative;
+    background:                 none repeat scroll 0px 0px rgba(251, 247, 244, 0.54);
+    padding:                    25px 20px;
 }
 .dispatch-content-comments {
     padding-top:                6px;
@@ -1385,6 +1389,7 @@ form.dispatch-content-comment-form {
     font-family:                karla;
     margin-top:                 3px;
     margin-left:                63px;
+    font-size:                  10.5pt;
 }
 .dispatch-content-message br {
     margin-bottom:              10px;
@@ -1999,11 +2004,76 @@ div.meetup-hosted-by {
 #manifest-results tr {
     cursor:                     pointer;
 }
+div.schedule-row {
+    width:                      550px;
+    margin-bottom:              2px;
+}
+div.schedule-time {
+    float:                      left;
+    background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
+    color:                      rgb(255, 255, 255);
+    padding:                    8px 8px 4px;
+    margin-left:                -10px;
+    margin-top:                 -10px;
+}
+.schedule-place {
+    float:                      left;
+    font-family:                karla;
+    margin-left:                7px;
+    margin-top:                 -1px;
+}
+div.schedule-main {
+    clear:                      both;
+    background:                 none repeat scroll 0px 0px rgb(248, 248, 242);
+    padding:                    12px 10px 10px;
+}
+div.schedule-top {
+    font-size:                  11pt;
+    padding:                    10px;
+    height:                     32px;
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+}
+.schedule-host-shell {
+    background:                 none repeat scroll 0px 0px rgba(248, 248, 242, 0.59);
+    padding:                    12px;
+    height:                     36px;
+}
+div.schedule-note {
+    font-family:                karlaitalic;
+    font-size:                  11pt;
+    background:                 none repeat scroll 0px 0px rgba(248, 248, 242, 0.59);
+    margin-top:                 0px;
+    padding:                    5px 10px;
+    color:                      rgb(166, 160, 147);
+}
+div.schedule-host-avatar {
+    background-size:            100% auto ! important;
+    -webkit-background-size:    100% auto ! important;
+    float:                      left;
+    margin-top:                 -9px;
+    border-radius:              50%;
+    -moz-border-radius:         50%;
+    -webkit-border-radius:      50%;
+    width:                      28px;
+    height:                     28px;
+    margin-right:               -14px;
+    position:                   relative;
+}
+.schedule-host-name {
+    font-family:                karla;
+    font-size:                  11pt;
+    display:                    block;
+    float:                      left;
+    margin-top:                 -9px;
+    text-decoration:            none;
+    padding:                    6px 10px 5px 22px;
+    background:                 none repeat scroll 0px 0px rgb(254, 241, 220);
+}
 * {
-    line-height:                inherit;
     box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
     -webkit-box-sizing:         border-box;
+    line-height:                inherit;
 }
 body#page-profile .line-canvas {
     margin:                     25px 0px;
@@ -2098,6 +2168,10 @@ input.text, textarea.text {
 }
 p.color-blue {
     color:                      rgb(0, 115, 173);
+}
+.dispatch-content-shell p {
+    width:                      100% ! important;
+    margin-bottom:              9px ! important;
 }
 #page_content p {
     font-family:                karla;

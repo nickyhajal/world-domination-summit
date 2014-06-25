@@ -4,7 +4,7 @@ jQuery.fn.scan
 		fnc: ->
 			$t = $(this)
 			format = $t.data('format')
-			time = moment.utc(($t.html())).subtract('hours', '7')
+			time = moment.utc(($t.html()))
 			$t.html(time.format(format))
 
 
