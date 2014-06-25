@@ -14,7 +14,7 @@ ap.Views.your_schedule = XView.extend
 		tk 'hey'
 		ap.Events.each (ev) =>
 			if ap.me and ap.me.isAttendingEvent(ev)
-				time = moment.utc(ev.get('start')).subtract('hours', 7)
+				time = moment.utc(ev.get('start'))
 				day = time.format('MMMM Do')
 				if day isnt lastDay
 					lastDay = day
