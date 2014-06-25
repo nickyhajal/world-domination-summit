@@ -69,8 +69,9 @@ ap.protect = ->
 
 
 ap.login = (me) ->
-	$('html').addClass('is-logged-in')
-	ap.me = new ap.User(me)
+	if me
+		$('html').addClass('is-logged-in')
+		ap.me = new ap.User(me)
 
 ap.logout = ->
 	$('html').removeClass('is-logged-in')

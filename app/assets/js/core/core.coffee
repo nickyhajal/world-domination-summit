@@ -73,10 +73,8 @@ ap.update.all_attendees = ->
 	return false
 
 ap.update.me = ->
-	if ap.me.user_id?
+	if ap.me
 		ap.login ap.me
-	else
-		ap.me = false
 	return true
 
 ap.update.tpls = ->

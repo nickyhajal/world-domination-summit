@@ -72,4 +72,4 @@ Users = Backbone.Collection.Lunr.extend
   	return false
 
 ap.Users = new Users()
-ap.me = new ap.User(ap.me)
+ap.login(ap.me)
