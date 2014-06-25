@@ -6,6 +6,8 @@ redis = require("redis")
 all_provinces = require('provinces')
 countries = require('country-data').countries
 get_templates = require('../processors/templater')
+_ = require('underscore')
+_s = require('underscore.string')
 
 #
 
@@ -36,6 +38,14 @@ routes = (app) ->
 							.then (interests) ->
 								path = req.path.substr(1)
 								counter = ''
+
+								out = {}
+								this_page = 'pages_'+_s.trim(req.path, '/').replace('/', '_')
+								out = _.pick(tpls, ['pages_home', 'pages_login', 'pages_404', this_page])
+								for name,tpl of tpls
+									if tpl.indexOf('pages_') isnt 0
+										out[name] = tpl
+
 								if path.length is 40 or path is 'welcome'
 									counter = 'hide-counter'
 								countries_out = {all: []}
@@ -52,7 +62,7 @@ routes = (app) ->
 									hide_counter: counter
 									year: process.year
 									yr: process.yr
-									tpls: JSON.stringify(tpls)
+									tpls: JSON.stringify(out)
 									provinces: JSON.stringify(provinces)
 									countries: JSON.stringify(countries_out)
 
