@@ -25,24 +25,34 @@ routes = (app) ->
 	[EventRsvp, EventRsvps] = require('../../models/event_rsvps')
 	[Registration, Registrations] = require('../../models/registrations')
 	[EventHost, EventHosts] = require('../../models/event_hosts')
+	[Speaker, Speakers] = require('../../models/speakers')
+	[Interest, Interests] = require('../../models/interests')
 
 	assets =
+
+			# How long before an asset expires (in minutes)
 			expires:
 				me: 0
-				userobjs: 500
-				templates: 800
-				content: 120
+				tpls: 60
+				all_attendees: 60
+				speakers: 300
+				interests: 5
+				events: 5
+
 			get: (req, res, next) ->
-				async.each req.query.assets.split(','), (asset, cb) ->
-					assets[asset](req)
-					.then (rsp) ->
-						res.r[asset] = rsp
+				tracker = req.query.tracker ? {}
+				async.each req.query.assets.split(','), (asset, cb) =>
+					last = tracker[asset] ? 0
+					now = Math.floor(+(new Date()) / 1000)
+					if assets[asset]? and (last + (assets.expires[asset] * 60)) < now
+						assets[asset](req)
+						.then (rsp) ->
+							res.r[asset] = rsp
+							cb()
+					else
 						cb()
 				, ->
 					next()
-			isExpired: (asset, last) ->	
-				expire_ms = assets.expires[assets] * 60 * 1000
-				return (+(new Date()) - last) > expire_ms
 			redisValue: (value) ->
 				if value? and value
 					value = JSON.parse(value)
@@ -89,22 +99,29 @@ routes = (app) ->
 				if req.me
 					Users.forge().getUser(req.me.get('user_id'))
 					.then (user) ->
-						user.getAllTickets()
-						.then (user) ->
-							user.getAnswers()
-							.then (user) ->
-								user.getInterests()
-								.then (user) ->
-									user.getConnections()
-									.then (user) ->
-										user.getFeedLikes()
-										.then (user) ->
-											user.getRsvps()
-											.then (user) ->
-												dfr.resolve(user)
+						user.getMe()
+						.then ->
+							dfr.resolve(user)
 				else
 					dfr.resolve(false)
 				return dfr.promise
+
+			speakers: (req) ->
+				dfr = Q.defer()
+				Speakers.forge().getByType()
+				.then (speakers) ->
+					tk 'spks'
+					dfr.resolve(speakers)
+				return dfr.promise
+
+			interests: (req) ->
+				dfr = Q.defer()
+				Interests.forge().fetch()
+				.then (interests) ->
+					tk 'ints'
+					dfr.resolve(interests)
+				return dfr.promise
+
 			events: (req) ->
 				dfr = Q.defer()
 				Events.forge()

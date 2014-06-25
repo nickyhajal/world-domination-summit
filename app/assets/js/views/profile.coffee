@@ -89,12 +89,13 @@ ap.Views.profile = XView.extend
 
 	renderInterests: ->
 		html = ''
-		for interest in JSON.parse(@options.attendee.get('interests'))
-			interest = ap.Interests.get(interest)
-			html += '<a href="/group/'+_.slugify(interest.get('interest'))+'" class="interest-button">'+interest.get('interest')+'</a>'
-		html += '<div class="clear"></div>'
-		@options.attendee.set
-			interests: html
+		_.whenReady 'assets', =>
+			for interest in JSON.parse(@options.attendee.get('interests'))
+				interest = ap.Interests.get(interest)
+				html += '<a href="/group/'+_.slugify(interest.get('interest'))+'" class="interest-button">'+interest.get('interest')+'</a>'
+			html += '<div class="clear"></div>'
+			@options.attendee.set
+				interests: html
 
 	renderMap: ->
 		attendee = @options.attendee.attributes

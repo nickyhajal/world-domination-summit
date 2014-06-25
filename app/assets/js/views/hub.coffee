@@ -13,9 +13,10 @@ ap.Views.hub = XView.extend
 		@options.sidebar_filler = ap.me.attributes
 		@options.sidebar = 'hub'
 		@initRender()
-		setTimeout =>
-			@initBroadcasts()
-		, 750
+		_.whenReady 'tpls', =>
+			setTimeout =>
+				@initBroadcasts()
+			, 750
 		
 	initBroadcasts: ->
 		@broadcast_list = []

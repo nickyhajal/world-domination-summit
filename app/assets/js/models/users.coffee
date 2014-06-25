@@ -50,8 +50,6 @@ ap.User = window.XModel.extend
 		if event.get('type') is 'program'
 			return true
 		else
-			tk ap.me.get('rsvps')
-			tk event.get('event_id')
 			return ap.me.get('rsvps').indexOf(event.get('event_id')) > -1
 
 # Create the Events collection and
@@ -74,3 +72,4 @@ Users = Backbone.Collection.Lunr.extend
   	return false
 
 ap.Users = new Users()
+ap.me = new ap.User(ap.me)
