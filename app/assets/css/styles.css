@@ -2036,7 +2036,7 @@ div.schedule-top {
 .schedule-host-shell {
     background:                 none repeat scroll 0px 0px rgba(248, 248, 242, 0.59);
     padding:                    12px;
-    height:                     40px;
+    height:                     36px;
 }
 div.schedule-note {
     font-family:                karlaitalic;
@@ -2051,19 +2051,23 @@ div.schedule-host-avatar {
     -webkit-background-size:    100% auto ! important;
     float:                      left;
     margin-top:                 -9px;
-    margin-right:               7px;
     border-radius:              50%;
     -moz-border-radius:         50%;
     -webkit-border-radius:      50%;
     width:                      28px;
     height:                     28px;
+    margin-right:               -14px;
+    position:                   relative;
 }
 .schedule-host-name {
     font-family:                karla;
     font-size:                  11pt;
-    margin-top:                 -3px;
     display:                    block;
     float:                      left;
+    margin-top:                 -9px;
+    text-decoration:            none;
+    padding:                    6px 10px 5px 22px;
+    background:                 none repeat scroll 0px 0px rgb(254, 241, 220);
 }
 * {
     box-sizing:                 border-box;

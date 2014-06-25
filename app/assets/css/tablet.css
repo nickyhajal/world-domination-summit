@@ -236,6 +236,9 @@ div.pattern-bg {
 #page-headquarters h3:before {
     display:                    none;
 }
+div.schedule-row {
+    width:                      100%;
+}
 * {
     line-height:                inherit;
 }
