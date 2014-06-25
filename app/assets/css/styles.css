@@ -2165,6 +2165,10 @@ input.text, textarea.text {
 p.color-blue {
     color:                      rgb(0, 115, 173);
 }
+.dispatch-content-shell p {
+    width:                      100% ! important;
+    margin-bottom:              9px ! important;
+}
 #page_content p {
     font-family:                karla;
     line-height:                150%;
