@@ -57,16 +57,17 @@ routes = (app) ->
 						.save()
 						.then ->
 								res.r.num_likes = num_likes
-								Notification.forge
-									type: 'feed_like'
-									channel_type:  feed.get('channel_type')
-									channel_id:  feed.get('channel_id')
-									user_id: feed.get('user_id')
-									content: JSON.stringify
-										liker_id: req.me.get('user_id')
-										content_str: _s.truncate(feed.get('content'), 100)
-									link: '/dispatch/'+feed.get('feed_id')
-								.save()
+								if feed.get('user_id') isnt req.me.get('user_id')
+									Notification.forge
+										type: 'feed_like'
+										channel_type:  feed.get('channel_type')
+										channel_id:  feed.get('channel_id')
+										user_id: feed.get('user_id')
+										content: JSON.stringify
+											liker_id: req.me.get('user_id')
+											content_str: _s.truncate(feed.get('content'), 100)
+										link: '/dispatch/'+feed.get('feed_id')
+									.save()
 								next()
 						, (err) ->
 							console.error(err)
@@ -98,16 +99,17 @@ routes = (app) ->
 								feed.set({num_comments: (feed.get('num_comments') + 1)})
 								.save()
 								.then (feed) ->
-										Notification.forge
-											type: 'feed_comment'
-											channel_type:  feed.get('channel_type')
-											channel_id:  feed.get('channel_id')
-											user_id: feed.get('user_id')
-											content: JSON.stringify
-												commenter_id: req.me.get('user_id')
-												content_str: _s.truncate(feed.get('content'), 100)
-											link: '/dispatch/'+feed.get('feed_id')
-										.save()
+										if feed.get('user_id') isnt req.me.get('user_id')
+											Notification.forge
+												type: 'feed_comment'
+												channel_type:  feed.get('channel_type')
+												channel_id:  feed.get('channel_id')
+												user_id: feed.get('user_id')
+												content: JSON.stringify
+													commenter_id: req.me.get('user_id')
+													content_str: _s.truncate(feed.get('content'), 100)
+												link: '/dispatch/'+feed.get('feed_id')
+											.save()
 										next()
 								, (err) ->
 									console.error(err)
