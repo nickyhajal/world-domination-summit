@@ -21,10 +21,11 @@ window.wall =
 		wall.$el = $('#waterfall')
 		wall.$q = $('#wall-queue')
 		$(window).on('scroll', wall.scroll)
-		@loadContent =>
-			@fillContent($('.wall-section'))
-			@generateWallPanels()
-		@loadTpls()
+		_.whenReady 'assets', =>
+			@loadContent =>
+				@fillContent($('.wall-section'))
+				@generateWallPanels()
+			@loadTpls()
 		$('body')
 			.on('click', '.wall-content-type-flickr_stream', wall.showBiggerPhoto)
 			.on('click', '#video', wall.showVideo)

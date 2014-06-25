@@ -17,6 +17,7 @@ Interests = XCollection.extend
 
 ap.Interests = new Interests()
 
-for interest in ap.interests
-	interest = new ap.Interest(interest)
-	ap.Interests.add interest
+_.whenReady 'interests', ->
+	for interest in ap.interests
+		interest = new ap.Interest(interest)
+		ap.Interests.add interest

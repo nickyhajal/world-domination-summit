@@ -32,26 +32,54 @@ ap.init = () ->
 	ap.Modals.init()
 
 ap.allUsers = {}
+
+###
+
+ Get assets, cache in localStorage and update when necessary
+
+###
+
+ap.update = {}
 ap.initAssets = ->
-	assets = ['all_attendees','me','events', 'tpls']
-	ap.api 'get assets', {assets: assets.join(',')}, (rsp) ->
-		if rsp.all_attendees
-			setTimeout ->
-				ap.Users.add(rsp.all_attendees)
-				_.isReady 'users'
-			, 500
+	tracker = ap.get('tracker')
+	assets = ['all_attendees','me','events', 'tpls', 'interests', 'speakers']
+	ap.api 'get assets', {tracker: tracker, assets: assets.join(',')}, (rsp) ->
+		for asset in assets
+			ready = true
+			if rsp[asset]?
+				ap[asset] = rsp[asset]
+				ap.put(asset, rsp[asset])
+				ap.track(asset)
+			else
+				ap[asset] = ap.get(asset)
 
-		if rsp.me
-			ap.login rsp.me
-		_.isReady 'me'
+			if ap.update[asset]?
+				ready = ap.update[asset]()
+			if ready
+				_.nowReady asset
 
-		if rsp.events
-			ap.events = rsp.events
-			_.isReady 'events'
+		_.nowReady('assets')
 
-		if rsp.tpls
-			ap.templates = rsp.tpls
-			ap.initTemplates()
+ap.track = (asset, updated = false) -> 
+	tracker = ap.get('tracker')
+	tracker[asset] = Math.floor((+(new Date())) / 1000)
+	ap.put('tracker', tracker)
+
+ap.update.all_attendees = ->
+	setTimeout ->
+		ap.Users.add(ap.all_attendees)
+		_.nowReady 'users'
+	, 200
+	return false
+
+ap.update.me = ->
+	ap.login ap.me
+	return true
+
+ap.update.tpls = ->
+	ap.templates = ap.tpls
+	ap.initTemplates()
+	return true
 
 ###
 	Process templates for template optiosn

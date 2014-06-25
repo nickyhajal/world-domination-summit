@@ -1,30 +1,24 @@
-# SS - User Model
-
 Shelf = require('./shelf')
-bcrypt = require('bcrypt')
 crypto = require('crypto')
 geocoder = require('geocoder')
 geolib = require('geolib')
 Twit = require('twit')
-countries = require('country-data').countries
-_ = require('underscore')
-_.str = require('underscore.string')
 Q = require('q')
-request = require('request')
-async = require('async')
 
 ##
 
-[Ticket, Tickets] = require './tickets'
-[Answer, Answers] = require './answers'
-[UserInterest, UserInterests] = require './user_interests'
-[Connection, Connections] = require './connections'
-[TwitterLogin, TwitterLogins] = require './twitter_logins'
 [Capability, Capabilities] = require './capabilities'
-[FeedLike, FeedLikes] = require './feed_likes'
-[Feed, Feeds] = require './feeds'
-[Notification, Notifications] = require './notifications'
-[EventRsvp, EventRsvps] = require './event_rsvps'
+
+##
+
+getters = require('./users/getters')
+auth = require('./users/auth')
+emails = require('./users/emails')
+race = require('./users/race')
+twitter = require('./users/twitter')
+ticket = require('./users/ticket')
+
+##
 
 User = Shelf.Model.extend
   tableName: 'users'
@@ -49,7 +43,6 @@ User = Shelf.Model.extend
     this.on 'creating', this.creating, this
     this.on 'saved', this.saved, this
     this.on 'saving', this.saving, this
-
   creating: (e)->
     self = this
     userData = self.attributes
@@ -61,10 +54,8 @@ User = Shelf.Model.extend
       user_name: user_hash
       hash: user_hash
     return true
-
   saving: (e) ->
     @saveChanging()
-
   saved: (obj, rsp, opts) ->
     @id = rsp
     addressChanged = @lastDidChange [
@@ -79,101 +70,60 @@ User = Shelf.Model.extend
     if @lastDidChange ['attending14']
       @syncEmailWithTicket()
 
+  # Auth
+  authenticate: auth.authenticate
+  login: auth.login
+  updatePassword: auth.updatePassword
 
-  ########
-  # AUTH #
-  ########
+  # Getters
+  getPic: getters.getPic
+  getMe: getters.getMe
+  getUrl: getters.getUrl
+  getDistanceFromPDX: getters.getDistanceFromPDX
+  getAnswers: getters.getAnswers
+  getCapabilities: getters.getCapabilities
+  getInterests: getters.getInterests
+  getConnections: getters.getConnections
+  getFeedLikes: getters.getFeedLikes
+  getAllTickets: getters.getAllTickets
+  getRsvps: getters.getRsvps
+  getLocationString: getters.getLocationString
 
-  authenticate: (clear, req) ->
-    dfr = Q.defer()
-    bcrypt.compare clear, @get('password'), (err, matched) =>
-      if matched
-        if req
-          @login req
-          dfr.resolve(true)
+  # Emails
+  sendEmail: emails.sendEmail
+  syncEmail: emails.syncEmail
+  syncEmailWithTicket: emails.syncEmailWithTicket
+  addToList: emails.addToList
+  removeFromList: emails.removeFromList
+
+  # Race
+  raceCheck: race.raceCheck
+  achieved: race.achieved
+  processPoints: race.processPoints
+  getAchievements: race.getAchevements
+
+  # Twitter
+  getTwit: twitter.getTwit
+  sendTweet: twitter.sendTweet
+  follow: twitter.follow
+  isFollowing: twitter.isFollowing
+
+  # Ticket
+  registerTicket: ticket.registerTicket
+  cancelTicket: ticket.cancelTicket
+
+  # Capabilities
+  hasCapability: (capability) ->
+    if @get('capabilities')?
+      for cap in @get('capabilities')
+        test_capability = cap.get('capability')
+        if test_capability is capability
+          return true
         else
-          dfr.resolve(false)
-      else
-          dfr.resolve(false)
-    return dfr.promise
-
-  login: (req) ->
-    req.session.ident = JSON.stringify(this)
-    req.session.save()
-
-  updatePassword: (pw) ->
-    dfr = Q.defer()
-    if pw.length
-      bcrypt.genSalt 10, (err, salt) =>
-        bcrypt.hash pw, salt, (err, hash) =>
-          @set('password', hash)
-          @save()
-          .then (res) ->
-            x = res
-          , (err) ->
-            console.error(err)
-          dfr.resolve(this)
-
-    else
-      dfr.resolve(false)
-    return dfr.promise
-
-  #######
-  # GET #
-  #######
-
-  getPic: ->
-    pic = @get('pic')
-    unless pic.indexOf('http') > -1
-      pic = 'http://worlddominationsummit.com'+pic
-    return pic
-    
-  getUrl: (text = false, clss = false, id = false) ->
-    user_name = @get('user_name')
-    clss = if clss then ' class="'+clss+'"' else ''
-    id = if id then ' id="'+id+'"' else ''
-    if user_name.length isnt 32
-      url = '/~'+user_name
-    else
-      url = '/slowpoke'
-    href = 'http://'+process.dmn+url
-    text = if text then text else href
-    return '< href="'+href+'"'+clss+id+'>'+text+'</a>'
-
-  # Distance from PDX
-  getDistanceFromPDX: (units = 'mi', opts = {}) ->
-    distance = @get('distance')
-    if unit is 'km'
-      out = (distance * 1.60934 ) + ' km'
-    else
-      out = distance + ' mi'
-    return Math.ceil(out)
-
-  getAnswers: ->
-    dfr = Q.defer()
-    Answers.forge()
-    .query('where', 'user_id', @get('user_id'))
-    .fetch()
-    .then (rsp) =>
-      @set('answers', JSON.stringify(rsp.models))
-      dfr.resolve this
-    , (err) ->
-      console.error(err)
-    return dfr.promise
-
-  getCapabilities: ->
-    dfr = Q.defer()
-    Capabilities.forge()
-    .query('where', 'user_id', @get('user_id'))
-    .fetch()
-    .then (rsp) =>
-      if rsp.models.length
-        @set('capabilities', rsp.models)
-      dfr.resolve this
-    , (err) ->
-      console.error(err)
-    return dfr.promise
-
+          for master_capability, sub_capability of User.capabilities_map
+            if test_capability is master_capability and capability in sub_capability
+              return true
+    return false
   getReadableCapabilities: ->
     dfr = Q.defer()
     @set('available_top_level_capabilities', Object.keys(User.capabilities_map))
@@ -190,18 +140,6 @@ User = Shelf.Model.extend
     , (err) ->
       console.error err
     return dfr.promise
-
-  hasCapability: (capability) ->
-    if @get('capabilities')?
-      for cap in @get('capabilities')
-        test_capability = cap.get('capability')
-        if test_capability is capability
-          return true
-        else
-          for master_capability, sub_capability of User.capabilities_map
-            if test_capability is master_capability and capability in sub_capability
-              return true
-    return false
 
   setCapabilities: (new_capabilities) ->
     dfr = Q.defer()
@@ -237,84 +175,6 @@ User = Shelf.Model.extend
       console.error(err)
     return dfr.promise
 
-
-  getInterests: ->
-    dfr = Q.defer()
-    UserInterests.forge()
-    .query('where', 'user_id', @get('user_id'))
-    .fetch()
-    .then (rsp) =>
-      interests = []
-      for interest in rsp.models
-        interests.push interest.get('interest_id')
-      @set('interests', JSON.stringify(interests))
-      dfr.resolve this
-    , (err) ->
-      console.error(err)
-    return dfr.promise
-
-  getConnections: ->
-    dfr = Q.defer()
-    Connections.forge()
-    .query('where', 'user_id', @get('user_id'))
-    .fetch()
-    .then (connections) =>
-      connected_ids = []
-      for connection in connections.models
-        connected_ids.push connection.get('to_id')
-      @set
-        connections: connections
-        connected_ids: connected_ids
-      dfr.resolve(this)
-    , (err) ->
-      console.error(err)
-    return dfr.promise
-
-  getFeedLikes: ->
-    dfr = Q.defer()
-    FeedLikes.forge()
-    .query('where', 'user_id', @get('user_id'))
-    .fetch()
-    .then (likes) =>
-      like_ids = []
-      for like in likes.models
-        like_ids.push like.get('feed_id')
-      @set
-        feed_likes: like_ids
-      dfr.resolve(this)
-    , (err) ->
-      console.error(err)
-    return dfr.promise
-
-  getAllTickets: ->
-    dfr = Q.defer()
-    Tickets.forge()
-    .query('where', 'user_id', @get('user_id'))
-    .fetch()
-    .then (rows) =>
-      @set('tickets', rows.models)
-      dfr.resolve this
-    , (err) ->
-      console.error(err)
-    return dfr.promise
-
-  getRsvps: ->
-    dfr = Q.defer()
-    EventRsvps.forge()
-    .query('where', 'user_id', @get('user_id'))
-    .fetch()
-    .then (rsp) =>
-      rsvps = []
-      for rsvp in rsp.models
-        rsvps.push rsvp.get('event_id')
-      @set('rsvps', rsvps)
-      dfr.resolve(@)
-    return dfr.promise
-
-  ###########
-  # ADDRESS #
-  ###########
-
   processAddress: ->
     location = @getLocationString()
     @set 'location', location
@@ -332,219 +192,6 @@ User = Shelf.Model.extend
         lon: location.lng
         distance: ( (distance / 1000) * 0.6214 )
       @save(null, {method: 'update'})
-
-  getLocationString: ->
-    address = @get('city')+', '
-    if (@get('country') is 'US' or @get('country') is 'GB') and @get('region')?
-      address += @get('region')
-    unless (@get('country') is 'US' or @get('country') is 'GB')
-      if countries[@get('country')]?
-        address += countries[@get('country')].name
-    return address
-
-
-  ###########
-  # TICKETS #
-  ###########
-
-  registerTicket: (eventbrite_id, returning = false, transfer_from = null) ->
-    dfr = Q.defer()
-    Ticket.forge
-      eventbrite_id: eventbrite_id
-      user_id: @get('user_id')
-      year: process.year
-      transfer_from: transfer_from
-    .save()
-    .then (ticket) =>
-      @addToList('WDS '+process.year+ ' Attendees')
-      .then =>
-        promo = 'Welcome'
-        subject = "You're coming to WDS! Awesome! Now... Create your profile!"
-        if returning
-          promo = 'WelcomeBack'
-        @sendEmail(promo, subject)
-    , (err) ->
-      tk err
-    return dfr.promise
-
-  cancelTicket: ->
-    dfr = Q.defer()
-    @set('attending'+process.yr, '-1')
-    .save()
-    .then =>
-      Ticket.forge
-        user_id: @get('user_id')
-        year: process.year
-      .fetch()
-      .then (ticket) =>
-        if ticket
-          ticket.set
-            status: 'canceled'
-          save()
-          .then =>
-            @removeFromList('WDS '+process.year+' Attendees')
-            .then =>
-              @addToList('WDS '+process.year+' Canceled')
-              dfr.resolve [this, ticket]
-        dfr.reject("Doesn't have a ticket.")
-    return dfr.promise
-
-  ###########
-  # TWITTER #
-  ###########
-
-  getTwit: ->
-    dfr = Q.defer()
-    TwitterLogin.forge
-      user_id: @get('user_id')
-    .fetch()
-    .then (twitter_login) ->
-      twit = new Twit
-        consumer_key: process.env.TWIT_KEY
-        consumer_secret: process.env.TWIT_SEC
-        access_token: twitter_login.get('token')
-        access_token_secret: twitter_login.get('secret')
-      dfr.resolve(twit)
-    return dfr.promise
-
-  sendTweet: (tweet) ->
-    dfr = Q.defer()
-    @getTwit()
-    .then (twit) ->
-      twit.post 'statuses/update',
-        status: tweet, (err, reply) ->
-          dfr.resolve(err, reply)
-    return dfr.promise
-
-  follow: (screen_name, cb) ->
-    dfr = Q.defer()
-    @getTwit (twit) ->
-      twit.post 'friendships/create',
-        screen_name: screen_name, (err, reply) ->
-          dfr.resolve(err, reply)
-    return dfr.promise
-
-  isFollowing: (screen_name, cb) ->
-    dfr = Q.defer()
-    @getTwit (twit) =>
-      twit.get 'friendships/exists',
-        screen_name_a: @twitter
-        screen_name_b: screen_name
-        , (err, reply) ->
-          dfr.resolve(err, reply)
-    return dfr.promise
-
-  #########
-  # EMAIL #
-  #########
-
-  sendEmail: (promo, subject, params = {}) ->
-    mailer = require('./mailer')
-    user_params =
-      first_name: @get('first_name')
-      last_name: @get('last_name')
-      name: @get('first_name')
-      email: @get('email')
-      hash: @get('hash')
-    params = _.defaults user_params, params
-    mailer.send(promo, subject, @get('email'), params)
-    .then (err, rsp) ->
-
-  syncEmail: ->
-    @removeFromList 'WDS '+process.year+' Attendees', @before_save['email']
-    @addToList 'WDS '+process.year+' Attendees'
-
-  syncEmailWithTicket: ->
-    if @get('attending14') is '1'
-      @addToList 'WDS '+process.year+' Attendees'
-      @removeFromList 'WDS '+process.year+' Canceled'
-    else
-      @removeFromList 'WDS '+process.year+' Attendees'
-      @addToList 'WDS '+process.year+' Canceled'
-
-  addToList: (list) ->
-    dfr = Q.defer()
-    params =
-      username: process.env.MM_USER
-      api_key: process.env.MM_PW
-      email: @get('email')
-      first_name: @get('first_name')
-      last_name: @get('last_name')
-      unique_link: @get('hash')
-    call =
-      url: 'https://api.madmimi.com/audience_lists/'+list+'/add'
-      method: 'post'
-      form: params
-    request call, (err, code, rsp) ->
-      dfr.resolve(rsp)
-    return dfr.promise
-
-  removeFromList: (list, email = false) ->
-    dfr = Q.defer()
-    params =
-      username: process.env.MM_USER
-      api_key: process.env.MM_PW
-      email: @get('email')
-    if email
-      params.email = email
-    call =
-      url: 'https://api.madmimi.com/audience_lists/'+list+'/remove'
-      method: 'post'
-      form: params
-    request call, (err, code, rsp) ->
-      dfr.resolve(rsp)
-    return dfr.promise
-
-  ########
-  # RACE #
-  ########
-
-  raceCheck: ->
-    dfr = Q.defer()
-    user = this
-    muts = []
-    achs = []
-    checks:
-      check_distance: (cb) ->
-        if not user.achieved('distance', 3)
-          x =1
-
-    @getAchievements()
-    .then (achs) ->
-      async.each checks, (check, cb) ->
-        check(cb)
-      , ->
-        user.processPoints()
-        .then ->
-          dfr.resolve()
-    return dfr.promise
-
-
-
-  achieved: (task_id, achs) ->
-    count = 0
-    for ach in achs
-      if task_id is ach.get('task_id')
-        count += 1
-    return count
-
-  processPoints: ->
-    dfr = Q.defer()
-    Achievements.forge()
-    .processPoints(@get('user_id'))
-    .then (points) ->
-      dfr.resolve(points)
-    return dfr.promise
-
-  getAchievements: ->
-    dfr = Q.defer()
-    Achievements.forge()
-    .query('where', 'user_id', @get('user_id'))
-    .fetch()
-    .then (achs) ->
-      dfr.resolve(achs.models)
-    return dfr.promise
-
 
 
 
