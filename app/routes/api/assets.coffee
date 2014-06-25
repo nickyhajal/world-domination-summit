@@ -34,10 +34,8 @@ routes = (app) ->
 				content: 120
 			get: (req, res, next) ->
 				async.each req.query.assets.split(','), (asset, cb) ->
-					tk asset
 					assets[asset](req)
 					.then (rsp) ->
-						tk asset
 						res.r[asset] = rsp
 						cb()
 				, ->
@@ -131,6 +129,15 @@ routes = (app) ->
 						dfr.resolve(evs)
 				, (err) ->
 					console.log(err)
+				return dfr.promise
+			tpls: ->
+				get_templates = require('../../processors/templater')
+				dfr = Q.defer()
+				get_templates {}, 'pages', (tpls) ->
+					get_templates tpls, 'parts', (tpls) ->
+						get_templates tpls, '_content', (tpls) ->
+							get_templates tpls, '_sidebars', (tpls) ->
+								dfr.resolve(tpls)
 				return dfr.promise
 			notifications: ->
 				dfr = Q.defer()

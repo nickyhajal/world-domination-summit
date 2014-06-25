@@ -25,15 +25,15 @@ ap.init = () ->
 	ap.initAssets()
 	ap.initMobile()
 	ap.Counter.init()
+	ap.initTemplates()
+	ap.initRouter()
 	_.whenReady 'me', ->
-		ap.initTemplates()
-		ap.initRouter()
 		ap.initSearch()
 	ap.Modals.init()
 
 ap.allUsers = {}
 ap.initAssets = ->
-	assets = ['all_attendees','me','events']
+	assets = ['all_attendees','me','events', 'tpls']
 	ap.api 'get assets', {assets: assets.join(',')}, (rsp) ->
 		if rsp.all_attendees
 			setTimeout ->
@@ -48,6 +48,10 @@ ap.initAssets = ->
 		if rsp.events
 			ap.events = rsp.events
 			_.isReady 'events'
+
+		if rsp.tpls
+			ap.templates = rsp.tpls
+			ap.initTemplates()
 
 ###
 	Process templates for template optiosn
