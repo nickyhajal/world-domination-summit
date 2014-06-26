@@ -38,6 +38,7 @@ routes = (app) ->
 				speakers: 300
 				interests: 5
 				events: 5
+				admin_templates: 0
 
 			get: (req, res, next) ->
 				tracker = req.query.tracker ? {}
