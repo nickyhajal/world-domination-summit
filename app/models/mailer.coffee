@@ -5,6 +5,7 @@ YAML = require('yamljs')
 
 mailer =
 	send: (promo, subject, to, params = {}) ->
+		tk 'sendddddd'
 		dfr = Q.defer()
 		use_to = 'nhajal@gmail.com'
 		if process.env.NODE_ENV is 'production'
@@ -15,7 +16,6 @@ mailer =
 			subject: '[WDS] '+subject
 			recipient: use_to
 			from: 'Chris Guillebeau <chris.guillebeau@gmail.com>'
-			
 		@request('mailer', email_options, params)
 		.then (transaction_id) ->
 			tk 'MAILED: '+transaction_id
