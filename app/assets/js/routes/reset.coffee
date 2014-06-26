@@ -1,3 +1,4 @@
 ap.Routes.reset = (hash) ->
-	ap.goTo('reset-password', {hash: hash})
+	_.whenReady 'tpls', =>
+		ap.goTo('reset-password', {hash: hash})
 
