@@ -3,7 +3,11 @@ ap.Routes.defaultRoute = (actions) ->
 	# If no action, figure it out
 	unless actions
 		actions = 'home'
-	if actions.length is 40
+	if actions is 'meetup'
+		actions = false
+		_.whenReady 'tpls', ->
+			ap.navigate('meetups')
+	else if actions.length is 40
 		actions = false
 		ap.goTo 'blank', {}, ->
 			ap.loading()
