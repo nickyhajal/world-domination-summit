@@ -25,6 +25,7 @@ icon: parachute
 		<div class="main-schedule-time">7:00pm–???</div>
 		<div class="main-schedule-descr">Closing Party</div>
 	</div>
+	<div class="main-schedule-descr"><em>Looking for a detailed schedule? Sign into the Hub on the left and click on "My Schedule".</em></div>
 </div>
 
 <p class="intro">We'll all arrive in the city for registration on Friday afternoon and an opening party on Friday evening. The main event kicks off in the beautiful Arlene Schnitzer Concert Hall on Saturday morning.</p>
