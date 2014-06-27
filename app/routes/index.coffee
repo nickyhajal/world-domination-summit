@@ -53,7 +53,7 @@ routes = (app) ->
 			counter = ''
 			out = {}
 			this_page = 'pages_'+_s.trim(req.path, '/').replace('/', '_')
-			out = _.pick(templates, ['pages_home', 'pages_login', 'pages_404', 'pages_profile', 'pages_meetup', 'pages_dispatch', 'pages_welcome', 'pages_hub', 'pages_settings', this_page])
+			out = _.pick(templates, ['pages_home', 'pages_login', 'pages_404', 'pages_profile', 'pages_meetup', 'pages_dispatch', 'pages_welcome', 'pages_hub', 'pages_settings', 'pages_empty', this_page])
 			for name,tpl of templates
 				if name.indexOf('pages_') isnt 0
 					out[name] = tpl
