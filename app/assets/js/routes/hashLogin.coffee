@@ -1,6 +1,6 @@
 ap.Routes.hashLogin = () ->
 	hash = location.pathname.substr(1)
-	_.whenReady 'assets' =>
+	_.whenReady 'assets', =>
 		ap.goTo 'empty', {}, ->
 			ap.api 'post user/login', {hash: hash}, (rsp) ->
 				if rsp.loggedin
