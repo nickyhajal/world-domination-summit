@@ -45,7 +45,7 @@ routes = (app) ->
 				async.each req.query.assets.split(','), (asset, cb) =>
 					last = tracker[asset] ? 0
 					now = Math.floor(+(new Date()) / 1000)
-					if assets[asset]? and (last + (assets.expires[asset] * 60)) < now
+					if assets[asset]? and (+last + +(assets.expires[asset] * 60)) < now
 						assets[asset](req)
 						.then (rsp) ->
 							res.r[asset] = rsp
