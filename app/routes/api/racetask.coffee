@@ -52,4 +52,6 @@ routes = (app) ->
 				res.r.racetasks = tasks.models
 				next()
 
+		raceCheck: (req, res, nxet) ->
+
 module.exports = routes

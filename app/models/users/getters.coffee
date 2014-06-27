@@ -1,6 +1,7 @@
 # SS - User Model
 
 Q = require('q')
+async = require('async')
 
 ##
 
@@ -14,7 +15,6 @@ Q = require('q')
 [EventRsvp, EventRsvps] = require '../event_rsvps'
 
 getters = 
-
   getMe: ->
     dfr = Q.defer()
     @getAllTickets()
@@ -30,6 +30,22 @@ getters =
               @getRsvps()
               .then (user) =>
                 dfr.resolve(user)
+    return dfr.promise
+  getFriends: ->
+    dfr = Q.defer()
+    Connections.forge()
+    .query('where', 'from_id', @get('user_id'))
+    .fetch()
+    .then (rsp)
+      dfr.resolve(rsp.models)
+    return dfr.promise
+  getFriendedMe: ->
+    dfr = Q.defer()
+    Connections.forge()
+    .query('where', 'to_id', @get('user_id'))
+    .fetch()
+    .then (rsp)
+      dfr.resolve(rsp.models)
     return dfr.promise
   getPic: ->
     pic = @get('pic')

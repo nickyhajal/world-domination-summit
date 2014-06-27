@@ -194,6 +194,34 @@ User = Shelf.Model.extend
       @save(null, {method: 'update'})
 
 
+  getMutualFriends: ->
+    dfr = Q.defer()
+    mutual_ids = []
+    mutuals = []
+
+    # Get people I friended
+    @getFriends()
+    .then (my_friends) =>
+
+      # Get people who friended me
+      @getFriendedMe()
+      .then (friended_mes) =>
+        for my_friend in my_friends
+          for friended_me in friended_mes
+
+            # Compare the IDs I friended to the IDs who friended me
+            if my_friend.get('to_id') is friended_mes.get('from_id')
+              mutual_ids.push(friended_mes.get('from_id'))
+
+        async.each mutual_ids, (mutual_id, cb) =>
+          User.forge({user_id: mutual_id})
+          .fetch()
+          .then (mutual) ->
+            mutuals.push mutual
+            cb()
+        , ->
+          dfr.resolve(mutuals)
+    return dfr.promise
 
 User.capabilities_map =
   speakers: ["add-speaker", "speaker"]
