@@ -2007,6 +2007,7 @@ div.meetup-hosted-by {
 div.schedule-row {
     width:                      550px;
     margin-bottom:              2px;
+    clear: both;
 }
 div.schedule-time {
     float:                      left;
