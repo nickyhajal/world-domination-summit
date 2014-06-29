@@ -5,11 +5,12 @@ ap.Views.meetup = XView.extend
 
 	initialize: ->
 
-		@options.meetup = ap.Events.getBySlug(@options.meetup)
-		@options.out = _.template @options.out, @options.meetup.attributes
-		@options.sidebar = 'meetup'
-		@options.sidebar_filler = @options.meetup.attributes
-		@initRender()
+		_.whenReady 'assets', =>
+			@options.meetup = ap.Events.getBySlug(@options.meetup)
+			@options.out = _.template @options.out, @options.meetup.attributes
+			@options.sidebar = 'meetup'
+			@options.sidebar_filler = @options.meetup.attributes
+			@initRender()
 
 	rendered: ->
 		@renderMap()
