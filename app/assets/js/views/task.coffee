@@ -31,6 +31,9 @@ ap.Views.task = XView.extend
 			@initRender()
 
 	rendered: ->
+		if not @options.task.note.length
+			$('.task-explanation').remove()
+
 	submitPhoto: (e) ->
 		e.stopPropagation()
 		task = @options.task

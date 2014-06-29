@@ -3,6 +3,9 @@ redis = require("redis")
 async = require("async")
 rds = redis.createClient()
 twitterAPI = require('node-twitter-api')
+fs = require('fs')
+crypto = require('crypto')
+gm = require('gm')
 
 routes = (app) ->
 
@@ -423,5 +426,15 @@ routes = (app) ->
 				, (err) ->
 					console.error(err)
 
-
+		race_submission: (req, res, next) ->
+			if req.files
+				ext = req.files.pic.path.split('.')
+				ext = ext[ext.length - 1]
+				url = "/images/race_submissions/"+me.get('user_id')+'.'+ext
+				newPath = __dirname + '/../..' + url
+				gm(req.files.pic.path)
+				.resize('1024^')
+				.write newPath, (err) ->
+					
+					next()
 module.exports = routes

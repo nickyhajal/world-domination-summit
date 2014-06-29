@@ -46,6 +46,7 @@ routes = (app) ->
 		app.delete '/user/twitter', user.del_twitter
 		app.post '/user/tweet', user.send_tweet
 		app.post '/user/logout', user.logout
+		app.post '/user/task', user.race_submission
 
 		# Speakers
 		app.put '/speaker', speaker.update

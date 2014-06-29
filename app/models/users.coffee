@@ -125,6 +125,7 @@ User = Shelf.Model.extend
             if test_capability is master_capability and capability in sub_capability
               return true
     return false
+    
   getReadableCapabilities: ->
     dfr = Q.defer()
     @set('available_top_level_capabilities', Object.keys(User.capabilities_map))
