@@ -2037,6 +2037,7 @@ div.schedule-top {
     background:                 none repeat scroll 0px 0px rgba(248, 248, 242, 0.59);
     padding:                    12px;
     height:                     36px;
+    float:                      left;
 }
 div.schedule-note {
     font-family:                karlaitalic;
