@@ -21,6 +21,10 @@ for province in all_provinces
 
 
 routes = (app) ->
+	app.all '/upload-race', (req, res) ->
+		res.render "../views/race_upload",
+			title: "World Domination Summit - Avatar Upload"
+			layout: false
 	app.all '/upload-avatar', (req, res) ->
 		res.render "../views/upload",
 			title: "World Domination Summit - Avatar Upload"

@@ -70,9 +70,6 @@ race =
         dfr.resolve(ach)
     return dfr.promise
 
-
-
-
   raceCheck: ->
     dfr = Q.defer()
     user = this
@@ -178,17 +175,32 @@ race =
               @markAchieved('hometown')
               break
         cb()
-      
-
-
-
-
       distance: (cb) ->
-        if not user.achieved('distance')
+        if not @achieved('distance')
+          Connection.forge
+            from_id: @get('user_id')
+            to_id: '3712' # GET ACTUAL USER ID
+          .fetch()
+          .then (connection) =>
+            if connection
+              @markAchieved('distance')
+            cb()
+        else
+          cb()
+      community: ->
+        if not @achieved('wds-community')
+          Feed.forge
+            channel_type: 'interest'
+            user_id: @get('user_id')
+          .fetch()
+          .then (post) ->
+            if post
+              @markAchieved('wds-community')
+            cb()
+        else
+          cb()
 
 
     return dfr.promise
-
-
 
 module.exports = race

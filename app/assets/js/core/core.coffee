@@ -42,7 +42,7 @@ ap.allUsers = {}
 ap.update = {}
 ap.initAssets = ->
 	tracker = ap.get('tracker')
-	assets = ['all_attendees','me','events', 'tpls', 'interests', 'speakers']
+	assets = ['all_attendees','me','events', 'tpls', 'interests', 'speakers', 'ranks', 'tasks']
 	ap.api 'get assets', {tracker: tracker, assets: assets.join(',')}, (rsp) ->
 		for asset in assets
 			ready = true
@@ -81,6 +81,17 @@ ap.update.tpls = ->
 	ap.templates = ap.tpls
 	ap.initTemplates()
 	return true
+
+ap.update.ranks = ->
+	_.whenReady 'me', =>
+		user_id = ap.me.get('user_id')
+		count = 1
+		for rank in ap.ranks
+			if rank.user_id is user_id
+				ap.me.set('rank', count)
+			count += 1
+		_.isReady 'ranks'
+
 
 ###
 	Process templates for template optiosn

@@ -2,7 +2,18 @@ div(id="page_content")
 	h2 Unconventional Race
 	br
 	div(id="race-user-status")
-		div(id="your-points") {{ points }}
-		div(id="your-rank") {{ rank }}
-	h3 Tasks
+		div(id="your-points")
+				label Your Points
+				span {{ points }}
+		div(id="your-rank") 
+			label Your Rank
+			span {{ rank }}
+	br
+	br
+	h1 Race Challenges
+	div(class="zig-zags_blue")
+	h3 Before Arriving
+	div(class="tasks-label")
+		span(class="points-label") Points
+		span(class="tasks-label") Task
 	div(id="race-task-list")

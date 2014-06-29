@@ -9,4 +9,4 @@ Achievement = Shelf.Model.extend
 Achievements = Shelf.Collection.extend
   model: Achievement
 
-module.exports = [Achievementl, Achievements]
+module.exports = [Achievement, Achievements]

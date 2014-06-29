@@ -12,9 +12,9 @@ Content = Shelf.Model.extend
     this.on 'created', this.created, this
 
 Contents = Shelf.Collection.extend
-  model: Content
-  getFeaturedTweeters: ->
-  	dfr = Q.defer()
+	model: Content
+	getFeaturedTweeters: ->
+		dfr = Q.defer()
 		rds.get 'featured_tweeters', (err, ids) ->
 			if ids? and typeof JSON.parse(ids) is 'object'
 				dfr.resolve(JSON.parse(ids))
@@ -37,7 +37,6 @@ Contents = Shelf.Collection.extend
 						rds.set 'featured_tweeters', JSON.stringify(ids), ->
 							rds.expire 'featured_tweeters', 300, ->
 					  		dfr.resolve(ids)
-
 	  return dfr.promise
 
 module.exports = [Content, Contents]

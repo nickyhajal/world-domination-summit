@@ -989,6 +989,22 @@ input[type="text"], input[type="password"], input[type="number"], .pre-input {
 #page-propose-a-meetup .interest-select-list label:first-of-type {
     display:                    none;
 }
+#your-points label, #your-rank label {
+    font-family:                vitesse ! important;
+    color:                      rgb(255, 255, 255) ! important;
+    font-size:                  21px ! important;
+    text-transform:             uppercase;
+    text--webkit-transform:     uppercase;
+}
+.task-detail-block label {
+    color:                      rgb(255, 255, 255) ! important;
+    font-family:                vitesselight ! important;
+    font-size:                  12px ! important;
+    font-weight:                normal;
+    padding:                    0px ! important;
+    text-transform:             uppercase;
+    text--webkit-transform:     uppercase;
+}
 #page_content label {
     display:                    block;
     font-family:                karla;
@@ -1034,7 +1050,6 @@ a.btn-error {
 input.photo-submit {
     width:                      400px;
     margin-top:                 0px;
-    display:                    none;
 }
 .dispatch-control-details input[type="submit"] {
     padding:                    6px 40px;
@@ -1085,6 +1100,11 @@ h1 a.button {
     -moz-transition:            all 0.2s ease 0s;
     -webkit-transition:         all 0.2s ease 0s;
     -o-transition:              all 0.2s ease 0s;
+}
+a#camera-button {
+    display:                    block;
+    text-align:                 center;
+    margin-top:                 30px;
 }
 input[type="submit"], .button {
     border:                     0px none;
@@ -1429,13 +1449,17 @@ span.button-description {
 .orange-box h4 {
     color:                      rgb(242, 242, 234);
 }
+h4#challenge-title {
+    margin:                     0px 0px 3px;
+}
 h4 {
     clear:                      both;
     text-transform:             uppercase;
     text--webkit-transform:     uppercase;
     margin-bottom:              20px;
     margin-top:                 40px;
-    font-family:                vitesse;
+    font-weight:                normal;
+    font-family:                vitessebold;
 }
 .transfer-problem, .transfer-success {
     display:                    none;
@@ -2069,6 +2093,134 @@ div.schedule-host-avatar {
     padding:                    6px 10px 5px 22px;
     background:                 none repeat scroll 0px 0px rgb(254, 241, 220);
 }
+div#your-points, #your-rank {
+    display:                    inline-block;
+    text-align:                 center;
+    color:                      rgb(255, 255, 255);
+    font-size:                  28pt;
+    width:                      35%;
+    margin-right:               24px;
+}
+div#race-user-status:after {
+    background-image:           url("/images/foundation/pattern_application.png");
+    background-size:            253px auto ! important;
+    -webkit-background-size:    253px auto ! important;
+    content:                    "";
+    position:                   absolute;
+    width:                      254px;
+    height:                     111px;
+    left:                       378px;
+    top:                        38px;
+}
+div#race-user-status {
+    padding:                    30px;
+    background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
+    width:                      630px;
+    margin-top:                 -35px;
+    margin-left:                -50px;
+    position:                   relative;
+}
+a.task-row:nth-of-type(2n) {
+    background:                 none repeat scroll 0px 0px rgb(237, 234, 222);
+}
+a.task-row {
+    display:                    block;
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    margin-left:                -50px;
+    padding:                    20px;
+    margin-bottom:              0px;
+}
+span.task-points {
+    display:                    block;
+    margin-top:                 -20px;
+    margin-left:                -20px;
+    margin-right:               20px;
+    color:                      rgb(255, 255, 255);
+    font-size:                  23pt;
+    float:                      left;
+    text-align:                 right;
+    width:                      90px;
+    background:                 none repeat scroll 0px 0px rgb(181, 169, 150);
+    padding:                    11px 19px 10px;
+    clear:                      both;
+    height:                     100%;
+}
+a.task-row:hover {
+    background:                 none repeat scroll 0px 0px rgb(225, 218, 200);
+}
+a.task-row {
+    text-decoration:            none ! important;
+}
+span.task-title {
+    font-family:                vitesse;
+    font-size:                  14pt;
+}
+span.points-label {
+    display:                    block ! important;
+    margin-left:                -50px;
+    text-align:                 right;
+    background:                 none repeat scroll 0% 0% rgb(235, 234, 229);
+    width:                      90px;
+    float:                      left;
+    height:                     30px;
+    color:                      rgb(160, 148, 129);
+    padding:                    6px 14px 4px;
+}
+div.tasks-label {
+    height:                     30px;
+    background:                 none repeat scroll 0px 0px rgb(249, 248, 244);
+    width:                      580px;
+}
+span.tasks-label {
+    display:                    block;
+    margin-left:                50px;
+    color:                      rgb(160, 148, 129);
+    padding:                    7px;
+}
+div#race-task-list {
+    width:                      580px;
+}
+div.task-explanation {
+    width:                      580px;
+    font-family:                karla;
+    vertical-align:             middle;
+    height:                     72px;
+    margin-top:                 -3px;
+}
+span.task-detail-block {
+    background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
+    color:                      rgb(255, 255, 255);
+    display:                    block ! important;
+    font-family:                vitesse;
+    font-size:                  24pt;
+    text-align:                 center;
+    width:                      75px;
+    float:                      right;
+    margin-right:               135px;
+    padding:                    7px 0px;
+    margin-top:                 -34px;
+    margin-bottom:              -24px;
+}
+div.task-how-to-complete iframe {
+    border:                     0px none;
+    margin-top:                 20px;
+    background:                 none repeat scroll 0% 0% transparent;
+    overflow-x:                 hidden;
+    width:                      400px;
+    height:                     80px;
+}
+div.task-how-to-complete {
+    padding:                    20px;
+    font-family:                karla;
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    width:                      580px;
+}
+div.task-photo-device iframe {
+    display:                    none;
+}
+div.task-photo-desktop #camera-button {
+    display:                    none;
+}
 * {
     box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
@@ -2131,6 +2283,9 @@ h1#extra-big {
 }
 #tab-panel-all-done h1:first-of-type {
     font-size:                  26pt;
+}
+#page-race h1 {
+    font-size:                  32px;
 }
 #page_content h1 {
     margin-bottom:              19px;

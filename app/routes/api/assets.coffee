@@ -27,6 +27,7 @@ routes = (app) ->
 	[EventHost, EventHosts] = require('../../models/event_hosts')
 	[Speaker, Speakers] = require('../../models/speakers')
 	[Interest, Interests] = require('../../models/interests')
+	[RaceTask, RaceTasks] = require('../../models/racetasks')
 
 	assets =
 
@@ -38,13 +39,19 @@ routes = (app) ->
 				speakers: 300
 				interests: 5
 				events: 5
+				ranks: 5
+				tasks: 5
 
 			get: (req, res, next) ->
 				tracker = req.query.tracker ? {}
 				async.each req.query.assets.split(','), (asset, cb) =>
 					last = tracker[asset] ? 0
 					now = Math.floor(+(new Date()) / 1000)
-					if assets[asset]? and (last + (assets.expires[asset] * 60)) < now
+					if process.env.NODE_ENV is 'production'
+						expires = (+last + +(assets.expires[asset] * 60))
+					expires = 0
+					expired = expires < now
+					if assets[asset]? and expired
 						assets[asset](req)
 						.then (rsp) ->
 							res.r[asset] = rsp
@@ -94,6 +101,7 @@ routes = (app) ->
 								rds.expire 'all_attendees', 1000, (err, rsp) ->
 									dfr.resolve(atns)
 				return dfr.promise
+
 			me: (req) ->
 				dfr = Q.defer()
 				if req.me
@@ -101,9 +109,35 @@ routes = (app) ->
 					.then (user) ->
 						user.getMe()
 						.then ->
+							user = user.toJSON()
+							delete user.password
+							delete user.hash
+							delete user.tickets
 							dfr.resolve(user)
 				else
 					dfr.resolve(false)
+				return dfr.promise
+
+			tasks: (req) ->
+				dfr = Q.defer()
+				RaceTasks.forge()
+				.fetch()
+				.then (rsp) ->
+					tk 'oeanst'
+					dfr.resolve(rsp.models)
+				dfr.promise
+
+			ranks: (req) ->
+				dfr = Q.defer()
+				Users.forge()
+				.query('where', 'attending14', '1')
+				.query('where', 'points', '>', '0')
+				.query('orderBy', 'points', 'desc')
+				.fetch({columns: ['user_id', 'points']})
+				.then (rsp) ->
+					dfr.resolve(rsp.models)
+				, (err) ->
+					console.error(err)
 				return dfr.promise
 
 			speakers: (req) ->

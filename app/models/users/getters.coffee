@@ -36,7 +36,7 @@ getters =
     Connections.forge()
     .query('where', 'from_id', @get('user_id'))
     .fetch()
-    .then (rsp)
+    .then (rsp) ->
       dfr.resolve(rsp.models)
     return dfr.promise
   getFriendedMe: ->
@@ -44,7 +44,7 @@ getters =
     Connections.forge()
     .query('where', 'to_id', @get('user_id'))
     .fetch()
-    .then (rsp)
+    .then (rsp) ->
       dfr.resolve(rsp.models)
     return dfr.promise
   getPic: ->

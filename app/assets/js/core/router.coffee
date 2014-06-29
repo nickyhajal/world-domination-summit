@@ -22,6 +22,7 @@ ap.createRouter = ->
 			@route("reset-password/:hash", 'reset', ap.Routes.reset)
 			@route("community/:community", 'community', ap.Routes.community)
 			@route("dispatch/:feed_id", 'dispatch', ap.Routes.dispatch)
+			@route("task/:task_slug", 'task', ap.Routes.task)
 			@route("meetup/:meetup", 'meetup', ap.Routes.meetup)
 			@route("your-transfer/:transfer_id", 'reset', ap.Routes.your_transfer)
 			@route("admin/:panel", 'admin', ap.Routes.admin)
