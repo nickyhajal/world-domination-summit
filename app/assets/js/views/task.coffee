@@ -36,25 +36,29 @@ ap.Views.task = XView.extend
 
 	submitPhoto: (e) ->
 		e.stopPropagation()
+		e.preventDefault()
 		task = @options.task
+		tk task
 		slug = task.slug
-		task_id = task.task_id
+		task_id = task.racetask_id
 		frame = $('#race_upload_frame').contents()
 
 		## Loading Screen
 		#$('#loading').show()
 		#$('#loading-heading').html('Capturing...')
 		#$.scrollTo(0)
-		$('#task_upload', frame).change ->
+		$('#file-upload-button', frame).change ->
 			if $(this).val().length
-				$('#race').hide()
 				$('#loading').show()
-				$('#loading-heading').html('Uploading...')
 				$.scrollTo(0)
 				$('#task_user_id', frame).val(ap.me.get('user_id'))
 				$('#task_cur_points', frame).val(ap.me.get('points'))
 				$('#task_slug', frame).val(slug)
 				$('#task_id', frame).val(task_id)
 				$('#race_form', frame).submit()
+
 		$('#file-upload-button', frame).click()
 
+ap.race_submission_success = ->
+	tk 'rsp'
+	$('#loading').hide()

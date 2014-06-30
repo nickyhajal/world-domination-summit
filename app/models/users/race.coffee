@@ -16,6 +16,7 @@ async = require('async')
 [Registration, Registrations] = require '../registrations'
 [Content, Contents] = require '../contents'
 [Achievement, Achievements] = require '../achievements'
+[RaceTask, RaceTasks] = require '../racetasks'
 
 ##
 
@@ -31,8 +32,7 @@ race =
 
   processPoints: ->
     dfr = Q.defer()
-    Achievements.forge()
-    .processPoints(@get('user_id'))
+    Achievements::processPoints(@get('user_id'))
     .then (points) ->
       dfr.resolve(points)
     return dfr.promise
@@ -47,14 +47,30 @@ race =
     return dfr.promise
 
   markAchieved: (task_slug, custom_points = 0) ->
+    # More advanced racetask checking
     dfr = Q.defer()
-    Achievement.forge({slug:task_slug})
-    .set
-      user_id: @get('user_id')
-      custom_points: custom_points
-    .save()
-    .then (ach) ->
-      dfr.resolve(ach)
+    RaceTask.forge({slug: task_slug})
+    .fetch()
+    .then (task) =>
+      task_id = task.get('racetask_id')
+      Achievement.forge()
+      .set
+        user_id: @get('user_id')
+        task_id: task_id
+        custom_points: custom_points
+      .save()
+      .then (ach) =>
+        rsp = 
+          ach_id: ach.get('ach_id')
+        @processPoints()
+        .then (points) =>
+          @set('points', points)
+          .save()
+          .then ->
+            rsp.points = points
+            dfr.resolve(rsp)
+      , (err) ->
+        console.error(err)
     return dfr.promise
 
   updateAchieved: (task_slug, custom_points = 0) ->

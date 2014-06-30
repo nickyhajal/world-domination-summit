@@ -7,6 +7,10 @@ html(lang='en')
 		link(rel="stylesheet" type="text/css" href="/app/assets/css/fonts.css")
 		script(src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
 		script(type="text/javascript").
+			var rsp = !{rsp};
+			if (rsp) {
+				parent.ap.race_submission_success(rsp)
+			}
 			$(function(){
 				$("#file-upload-button").change(function () {
 					var fileName = $(this).val().replace('C:\\fakepath\\', '');
@@ -15,7 +19,7 @@ html(lang='en')
 				});
 			});
 	body(class='ui-body-a', style="background:#FFFFFF !important")
-		form(action="/user/race", id="race_form", enctype="multipart/form-data", method="post")
+		form(action="/api/user/task", id="race_form", enctype="multipart/form-data", method="post")
 			div(class="file-upload-container")
 				div(class="file-upload-override-button left")
 					| Choose file
@@ -26,4 +30,4 @@ html(lang='en')
 			input(type="hidden", name="cur_points", id="task_cur_points")
 			input(type="hidden", name="slug", id="task_slug")
 			input(type="hidden", name="task_id", id="task_id")
-			input(class="photo-submit", id="task_upload", name='submit', type='submit', value='Upload Photo')
+			input(class="photo-submit", id="task_upload", type='submit', value='Upload Photo')

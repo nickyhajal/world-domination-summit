@@ -1123,9 +1123,9 @@ input[type="submit"], .button {
     width:                      100%;
     height:                     100%;
     position:                   absolute;
-    z-index:                    100;
     background:                 none repeat scroll 0px 0px rgba(255, 255, 255, 0.9);
     display:                    none;
+    z-index:                    100000;
 }
 #the-loading-icon {
     background:                 url("/images/icon-loading.png") repeat scroll 0px 0px / 100% auto transparent;
@@ -1133,7 +1133,6 @@ input[type="submit"], .button {
     height:                     55px;
     position:                   relative;
     margin:                     280px auto 0px;
-    left:                       75px;
 }
 .attended-never .returning {
     display:                    none;
@@ -2208,15 +2207,14 @@ div.task-how-to-complete iframe {
     overflow-x:                 hidden;
     width:                      400px;
     height:                     80px;
+    position:                   absolute;
+    left:                       -99999px;
 }
 div.task-how-to-complete {
     padding:                    20px;
     font-family:                karla;
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
     width:                      580px;
-}
-div.task-photo-device iframe {
-    display:                    none;
 }
 div.task-photo-desktop #camera-button {
     display:                    none;

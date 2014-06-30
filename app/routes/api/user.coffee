@@ -6,6 +6,7 @@ twitterAPI = require('node-twitter-api')
 fs = require('fs')
 crypto = require('crypto')
 gm = require('gm')
+mkdirp = require('mkdirp')
 
 routes = (app) ->
 
@@ -22,6 +23,7 @@ routes = (app) ->
 	[Connection, Connections] = require('../../models/connections')
 	[Registration, Registrations] = require('../../models/registrations')
 	[Notification, Notifications] = require('../../models/notifications')
+	[RaceSubmission, RaceSubmissions] = require('../../models/race_submissions')
 
 	user =
 		# Get logged in user
@@ -49,19 +51,14 @@ routes = (app) ->
 				user_name: req.query.user_name
 			.fetch()
 			.then (user) ->
-				tk '0'
 				user.getReadableCapabilities()
 				.then (user) ->
-					tk '1'
 					user.getAnswers()
 					.then (user) ->
-						tk '2'
 						user.getInterests()
 						.then (user) ->
-							tk '3'
 							user.getAllTickets()
 							.then (user) ->
-								tk '4'
 								res.r.user = user
 								next()
 							res.r.user = user
@@ -427,14 +424,43 @@ routes = (app) ->
 					console.error(err)
 
 		race_submission: (req, res, next) ->
-			if req.files
-				ext = req.files.pic.path.split('.')
-				ext = ext[ext.length - 1]
-				url = "/images/race_submissions/"+me.get('user_id')+'.'+ext
-				newPath = __dirname + '/../..' + url
-				gm(req.files.pic.path)
-				.resize('1024^')
-				.write newPath, (err) ->
-					
-					next()
+			if req.me and req.query.slug?.length
+				slug = req.query.slug
+				if req.files 
+					req.me.markAchieved(slug)
+					.then (ach_rsp) ->
+						ext = req.files.pic.path.split('.')
+						ext = ext[ext.length - 1]
+						hash = crypto.createHash('md5').update((new Date().getTime())+'').digest("hex").substr(0, 5)
+						name = hash+'.'+ext
+						newPath = __dirname + '/../../../images/race_submissions/'+req.me.get('user_name')+'/'+slug
+						fullPath = newPath+'/'+name
+						smallPath = newPath+'/w600_'+name
+						mkdirp newPath, (err, path) ->
+							gm(req.files.pic.path)
+							.autoOrient()
+							.resize('1024^')
+							.write fullPath, (err) ->
+								gm(fullPath)
+								.resize('600^')
+								.write smallPath, (err) ->
+									RaceSubmission.forge
+										user_id: req.me.get('user_id')
+										ach_id: ach_rsp.ach_id
+										slug: slug
+										hash: hash
+										ext: ext
+									.save()
+									.then ->
+										rsp = JSON.stringify
+											points: ach_rsp.points
+											new_points: ach_rsp.points - req.query.cur_ponts
+											task_id: req.query.task_id
+										res.redirect('/upload-race?rsp='+rsp)
+									, (err) ->
+										console.error(err)
+
+
+										next()
+
 module.exports = routes

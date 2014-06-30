@@ -100,6 +100,7 @@ User = Shelf.Model.extend
   # Race
   raceCheck: race.raceCheck
   achieved: race.achieved
+  markAchieved: race.markAchieved
   processPoints: race.processPoints
   getAchievements: race.getAchevements
 
