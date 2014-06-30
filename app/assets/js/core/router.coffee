@@ -13,7 +13,7 @@ ap.scrollPos = {}
 ap.createRouter = ->
 	window.Router = Backbone.Router.extend
 		protect: [
-			'hub', 'welcome', 'settings', 'propose-a-meetup', 'communities', 'your-schedule', 'meetups'
+			'hub', 'welcome', 'settings', 'propose-a-meetup', 'communities', 'your-schedule', 'meetups', 'your-schedule'
 		]
 		initialize: ->
 			@route("*actions", 'default', ap.Routes.defaultRoute)
