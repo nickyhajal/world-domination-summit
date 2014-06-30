@@ -18,7 +18,7 @@ Registration for academies is separate from WDS itself. We'll offer registration
 	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029"><h4>Language Lab: Learn How to Hack Any Language and Speak it Today</h4></a>
 	<h5>9:00 am–12:00 pm</h5>
 	Hosted by Benny Lewis
-	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029" class="button">Tickets &rarr;</a>
+	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029" class="button">Sold Out! &rarr;</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		"Someday" you'll learn a new language? Make "someday" TODAY. We will be tackling your doubts, and then giving you the hacks you need to have a basic conversation in any language you may want to learn, by the end of the lab. Then you will open up a whole new world, unreachable by English alone, and have the tools to skyrocket towards fluency after WDS. Anyone at any age can learn any language in the world. Talent is irrelevant.
