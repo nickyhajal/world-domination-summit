@@ -17,7 +17,10 @@ ap.Views.meetups = XView.extend
 				day = time.format('MMMM Do')
 				if day isnt lastDay
 					lastDay = day
+					daylink = _.slugify(day)
+					html += '<a href="#" name="'+daylink+'"></a>'
 					html += '<h3>'+day+'</h3>'
+					$('#meetup-sidebar').append('<a href="#'+daylink+'">'+day+'</a>')
 				hosts = @renderHosts(ev)
 				html += '
 					<div class="meetup-descr-shell">
