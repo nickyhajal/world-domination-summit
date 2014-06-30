@@ -18,7 +18,7 @@ Registration for academies is separate from WDS itself. We'll offer registration
 	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029"><h4>Language Lab: Learn How to Hack Any Language and Speak it Today</h4></a>
 	<h5>9:00 am–12:00 pm</h5>
 	Hosted by Benny Lewis
-	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029" class="button">Tickets &rarr;</a>
+	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029" class="button">Sold Out! &rarr;</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		"Someday" you'll learn a new language? Make "someday" TODAY. We will be tackling your doubts, and then giving you the hacks you need to have a basic conversation in any language you may want to learn, by the end of the lab. Then you will open up a whole new world, unreachable by English alone, and have the tools to skyrocket towards fluency after WDS. Anyone at any age can learn any language in the world. Talent is irrelevant.
@@ -96,7 +96,7 @@ By the end of this Academy all language doubts will be squashed. Find out why ad
 	<a href="https://www.eventbrite.com/e/wds-academy-revolutionu-with-jonathan-fields-tickets-11557391469"><h4>RevolutionU: How to Tap Revolution-Dynamics to Fuel Rapid Business Growth, Build an Army of Evangelists and Change the Damn World</h4></a>
 	<h5>3:00 pm–6:00 pm</h5>
 	Hosted by Jonathan Fields
-	<a href="https://www.eventbrite.com/e/wds-academy-revolutionu-with-jonathan-fields-tickets-11557391469" class="button">Tickets &rarr;</a>
+	<a href="https://www.eventbrite.com/e/wds-academy-revolutionu-with-jonathan-fields-tickets-11557391469" class="button">Sold Out!</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		In this WDS Academy, Fields will reveal the entire 18-step RevolutionU Framework, a highly-detailed, immediately-actionable roadmap to engineer your own business revolution, whether you’re just starting up or you need to breathe new life into your organization, venture or brand. Imagine how it will feel to fuel your business with the power of revolution.
