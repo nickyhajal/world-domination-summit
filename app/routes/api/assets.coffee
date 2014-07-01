@@ -28,6 +28,7 @@ routes = (app) ->
 	[Speaker, Speakers] = require('../../models/speakers')
 	[Interest, Interests] = require('../../models/interests')
 	[RaceTask, RaceTasks] = require('../../models/racetasks')
+	[Achievement, Achievements] = require('../../models/achievements')
 
 	assets =
 
@@ -41,6 +42,7 @@ routes = (app) ->
 				events: 5
 				ranks: 5
 				tasks: 5
+				achievements: 0
 
 			get: (req, res, next) ->
 				tracker = req.query.tracker ? {}
@@ -147,6 +149,18 @@ routes = (app) ->
 					tk 'spks'
 					dfr.resolve(speakers)
 				return dfr.promise
+
+			achievements: (req) ->
+				dfr = Q.defer()
+				Achievements.forge()
+				.query('where', 'user_id', req.me.get('user_id'))
+				.fetch
+					columns: ['task_id', 'custom_points', 'add_points', 'hash', 'slug', 'ext', 'rating']
+					withRelated: 'submission'
+				.then (achs) ->
+					dfr.resolve(achs)
+				return dfr.promise
+
 
 			interests: (req) ->
 				dfr = Q.defer()

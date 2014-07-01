@@ -38,15 +38,10 @@ ap.Views.task = XView.extend
 		e.stopPropagation()
 		e.preventDefault()
 		task = @options.task
-		tk task
 		slug = task.slug
 		task_id = task.racetask_id
 		frame = $('#race_upload_frame').contents()
 
-		## Loading Screen
-		#$('#loading').show()
-		#$('#loading-heading').html('Capturing...')
-		#$.scrollTo(0)
 		$('#file-upload-button', frame).change ->
 			if $(this).val().length
 				$('#loading').show()
@@ -60,5 +55,4 @@ ap.Views.task = XView.extend
 		$('#file-upload-button', frame).click()
 
 ap.race_submission_success = ->
-	tk 'rsp'
 	$('#loading').hide()

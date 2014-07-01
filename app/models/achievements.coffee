@@ -6,7 +6,10 @@ Achievement = Shelf.Model.extend
   tableName: 'race_achievements'
   idAttribute: 'ach_id'
   hasTimestamps: true
-  
+  submission: ->
+  	[RaceSubmission, RaceSubmissions] = require('./race_submissions')
+  	return @hasOne(RaceSubmission)
+
 Achievements = Shelf.Collection.extend
 	model: Achievement
 	processPoints: (user_id) ->
