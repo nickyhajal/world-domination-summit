@@ -69,7 +69,7 @@ routes = (app) ->
 							tpls = {}
 							for name,tpl of all_tpls
 								name = name.replace('admin_', '')
-								if me.hasCapability(name)
+								if me.hasCapability(name) or name is 'index'
 									tpls[name] = tpl
 							dfr.resolve(tpls)
 				else
