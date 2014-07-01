@@ -11,12 +11,8 @@ ap.Routes.admin = (panel, extra = false) ->
 			_.nowReady 'admin_templates'
 
 	_.whenReady 'admin_templates', ->
-		tk 'hey'
 		options = {}
-		tk panel
-		tk ap.templates
 		if ap.templates['pages_admin_'+panel]?
-			tk 'no'
 			if extra
 				options.extra = extra
 			ap.goTo('admin_'+panel, options)
