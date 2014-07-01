@@ -48,7 +48,7 @@ ap.Views.your_schedule = XView.extend
 				html += '
 					<div class="schedule-host-shell">
 						<div class="schedule-host-avatar" style="background:url('+host.get('pic')+')"></div>
-						<a href="/~"'+host.get('user_name')+'" class="schedule-host-name">'+host.get('first_name')+' '+host.get('last_name')+'</a>
+						<a href="/~'+host.get('user_name')+'" class="schedule-host-name">'+host.get('first_name')+' '+host.get('last_name')+'</a>
 					</div>
 				'
 		return html
