@@ -53,6 +53,7 @@ ap.Views.meetups = XView.extend
 					maxed_html += event_html
 				else
 					html += event_html
+		html += maxed_html
 		$('#meetup-list').html(html).scan()
 
 	renderEvent: (ev) ->
