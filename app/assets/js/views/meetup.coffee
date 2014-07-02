@@ -12,6 +12,15 @@ ap.Views.meetup = XView.extend
 			@options.sidebar_filler = @options.meetup.attributes
 			@initRender()
 
+	sidebarRendered: ->
+		ev = @options.meetup
+		maxed = false
+		if ev.get('num_rsvps')? and ev.get('num_rsvps') > ev.get('max')
+			maxed = true
+		if maxed
+			$('.rsvp-button', '#sidebar').attr('data-maxed', 'true')
+			tk $('.rsvp-button', '#sidebar')
+
 	rendered: ->
 		@renderMap()
 		_.whenReady 'users', =>
