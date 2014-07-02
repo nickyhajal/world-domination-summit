@@ -4,11 +4,14 @@ jQuery.fn.scan
 		fnc: ->
 			$t = $(this)
 			event_id = $t.data('event_id')
-			start = $t.data('start') ? 'RSVP to this Meetup'
 			cancel = $t.data('cancel') ? 'Cancel Your RSVP'
+			maxed = $t.data('maxed')?
+			start = $t.data('start') ? 'RSVP to this Meetup'
+			if maxed
+				start = 'Event Full'
 
 			$t.click ->
-				if ap.me? and ap.me
+				if ap.me? and ap.me and not maxed
 					ap.api 'post event/rsvp', {event_id: event_id}, (rsp) ->
 						rsvps =	ap.me.get('rsvps')
 						if rsp.action is 'rsvp'
@@ -23,7 +26,7 @@ jQuery.fn.scan
 						buttonText()
 						if ap.currentView.renderAttendees?
 							ap.currentView.renderAttendees()
-				else
+				else if not ap.me
 					ap.navigate('login')
 				return false
 
