@@ -214,7 +214,7 @@ routes = (app) ->
 				.then (user) ->
 					CredentialChange
 					.forge()
-					.create(user)
+					.create(user, req.ip)
 					.then (rsp) ->
 						next()
 			else if req.query.hash? && req.query.password?
