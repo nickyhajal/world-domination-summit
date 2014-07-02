@@ -12,7 +12,7 @@ jQuery.fn.scan
 
 			$t.click ->
 				if ap.me? and ap.me
-					if (maxed and ($t.html() isnt cancel)) or not maxed
+					if (maxed and ($t.html() is cancel)) or not maxed
 						ap.api 'post event/rsvp', {event_id: event_id}, (rsp) ->
 							rsvps =	ap.me.get('rsvps')
 							if rsp.action is 'rsvp'
