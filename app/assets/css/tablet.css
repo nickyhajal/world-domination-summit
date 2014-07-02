@@ -239,6 +239,34 @@ div.pattern-bg {
 div.schedule-row {
     width:                      100%;
 }
+h2 {
+    padding:                    12px 15px;
+}
+span.task-detail-block {
+    margin-right:               -2px;
+}
+div.task-how-to-complete {
+    width:                      100%;
+}
+div#race-user-status:after {
+    left:                       auto;
+    right:                      -8px;
+}
+div#race-user-status {
+    width:                      auto ! important;
+    margin-right:               -50px;
+}
+div.tasks-label {
+    width:                      auto;
+    margin-right:               -50px;
+}
+div#race-task-list {
+    width:                      auto;
+    margin-right:               -50px;
+}
+div.task-explanation {
+    width:                      100%;
+}
 * {
     line-height:                inherit;
 }

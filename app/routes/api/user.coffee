@@ -452,11 +452,14 @@ routes = (app) ->
 										ext: ext
 									.save()
 									.then ->
-										rsp = JSON.stringify
-											points: ach_rsp.points
-											new_points: ach_rsp.points - req.query.cur_ponts
-											task_id: req.query.task_id
-										res.redirect('/upload-race?rsp='+rsp)
+										req.me.getAchievedTasks()
+										.then (achievements) ->
+											rsp = JSON.stringify
+												points: ach_rsp.points
+												new_points: ach_rsp.points - req.query.cur_ponts
+												task_id: req.query.task_id
+												achievements: achievements
+											res.redirect('/upload-race?rsp='+rsp)
 									, (err) ->
 										console.error(err)
 

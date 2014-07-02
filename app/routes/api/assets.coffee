@@ -152,15 +152,10 @@ routes = (app) ->
 
 			achievements: (req) ->
 				dfr = Q.defer()
-				Achievements.forge()
-				.query('where', 'user_id', req.me.get('user_id'))
-				.fetch
-					columns: ['task_id', 'custom_points', 'add_points', 'hash', 'slug', 'ext', 'rating']
-					withRelated: 'submission'
+				req.me.getAchievedTasks()
 				.then (achs) ->
-					dfr.resolve(achs)
+					dfr.resolve(achs.toJSON())
 				return dfr.promise
-
 
 			interests: (req) ->
 				dfr = Q.defer()

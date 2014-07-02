@@ -33,6 +33,26 @@ ap.Views.task = XView.extend
 	rendered: ->
 		if not @options.task.note.length
 			$('.task-explanation').remove()
+		@checkCompleted()
+
+	checkCompleted: ->
+		task = @options.task
+		task_id = @options.task.racetask_id
+		achieved = ap.me.achieved(task_id)
+		if achieved
+			points = task.points
+			if achieved.custom_points > 0
+				points = +achieved.custom_points
+			if achieved.add_points
+				points += +achieved.add_points
+			if points > 1
+				points = points+' points'
+			else
+				points = points+' point'
+			msg = 'You completed this challenge and earned '+points+'!'
+			$('#challenge-title').html('Challenge Completed!').addClass('achieved')
+			$('.task-detail-block').addClass('achieved')
+			$('#task-completed-message').html(msg).addClass('achieved')
 
 	submitPhoto: (e) ->
 		e.stopPropagation()
@@ -54,5 +74,7 @@ ap.Views.task = XView.extend
 
 		$('#file-upload-button', frame).click()
 
-ap.race_submission_success = ->
+ap.race_submission_success = (rsp) ->
+	ap.achievements = rsp.achievements
 	$('#loading').hide()
+	ap.currentView.checkCompleted()

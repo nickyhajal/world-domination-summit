@@ -88,6 +88,7 @@ User = Shelf.Model.extend
   getFeedLikes: getters.getFeedLikes
   getAllTickets: getters.getAllTickets
   getRsvps: getters.getRsvps
+  getAchievedTasks: getters.getAchievedTasks
   getLocationString: getters.getLocationString
 
   # Emails

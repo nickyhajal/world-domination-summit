@@ -33,6 +33,18 @@ ap.init = () ->
 
 ap.allUsers = {}
 
+ap.onResizes = {}
+$(window).resize ->
+	for id,fnc of ap.onResizes
+		fnc()
+
+ap.bindResize = (id, fnc) ->
+	ap.onResizes[id] = fnc
+
+ap.unbindResize = (id) ->
+	delete ap.onResizes[id]
+
+
 ###
 
  Get assets, cache in localStorage and update when necessary
@@ -42,7 +54,7 @@ ap.allUsers = {}
 ap.update = {}
 ap.initAssets = ->
 	tracker = ap.get('tracker')
-	assets = ['all_attendees','me','events', 'tpls', 'interests', 'speakers', 'ranks', 'tasks']
+	assets = ['all_attendees','me','events', 'tpls', 'interests', 'speakers', 'ranks', 'tasks', 'achievements']
 	ap.api 'get assets', {tracker: tracker, assets: assets.join(',')}, (rsp) ->
 		for asset in assets
 			ready = true

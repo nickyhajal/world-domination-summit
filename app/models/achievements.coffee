@@ -8,7 +8,7 @@ Achievement = Shelf.Model.extend
   hasTimestamps: true
   submission: ->
   	[RaceSubmission, RaceSubmissions] = require('./race_submissions')
-  	return @hasOne(RaceSubmission)
+  	return @hasOne(RaceSubmission, 'submission_id')
 
 Achievements = Shelf.Collection.extend
 	model: Achievement

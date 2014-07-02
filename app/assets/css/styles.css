@@ -647,6 +647,22 @@ a.schedule-directions:before {
     content:                    "Directions";
     float:                      right;
 }
+a.rank-row:nth-of-type(2n+1) {
+    background:                 none repeat scroll 0px 0px rgb(237, 234, 222);
+}
+a.rank-row:hover {
+    background:                 none repeat scroll 0px 0px rgb(225, 218, 200);
+}
+a.rank-row {
+    clear:                      both;
+    display:                    block;
+    height:                     68px;
+    margin-left:                -50px;
+    margin-right:               -50px;
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    text-decoration:            none;
+    margin-bottom:              2px;
+}
 a {
     color:                      rgb(226, 127, 28);
 }
@@ -1448,8 +1464,14 @@ span.button-description {
 .orange-box h4 {
     color:                      rgb(242, 242, 234);
 }
+h4#challenge-title.achieved {
+    color:                      rgb(148, 156, 23);
+}
 h4#challenge-title {
-    margin:                     0px 0px 3px;
+    margin:                     0px 0px 3px ! important;
+}
+#page-task h4 {
+    margin-bottom:              10px;
 }
 h4 {
     clear:                      both;
@@ -2127,9 +2149,12 @@ a.task-row {
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
     margin-left:                -50px;
     padding:                    20px;
-    margin-bottom:              0px;
+    margin-bottom:              2px;
 }
-span.task-points {
+.task-points.achieved {
+    background:                 none repeat scroll 0px 0px rgb(177, 186, 30);
+}
+.task-points {
     display:                    block;
     margin-top:                 -20px;
     margin-left:                -20px;
@@ -2138,11 +2163,14 @@ span.task-points {
     font-size:                  23pt;
     float:                      left;
     text-align:                 right;
-    width:                      90px;
     background:                 none repeat scroll 0px 0px rgb(181, 169, 150);
-    padding:                    11px 19px 10px;
     clear:                      both;
     height:                     100%;
+    box-sizing:                 content-box;
+    -moz-box-sizing:            content-box;
+    -webkit-box-sizing:         content-box;
+    width:                      64px;
+    padding:                    14px 13px 26px;
 }
 a.task-row:hover {
     background:                 none repeat scroll 0px 0px rgb(225, 218, 200);
@@ -2183,8 +2211,10 @@ div.task-explanation {
     width:                      580px;
     font-family:                karla;
     vertical-align:             middle;
-    height:                     72px;
     margin-top:                 -3px;
+}
+span.task-detail-block.achieved {
+    background:                 none repeat scroll 0px 0px rgb(177, 186, 30);
 }
 span.task-detail-block {
     background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
@@ -2196,9 +2226,9 @@ span.task-detail-block {
     width:                      75px;
     float:                      right;
     margin-right:               135px;
-    padding:                    7px 0px;
     margin-top:                 -34px;
-    margin-bottom:              -24px;
+    padding:                    6px 0px;
+    margin-bottom:              -12px;
 }
 div.task-how-to-complete iframe {
     border:                     0px none;
@@ -2218,6 +2248,40 @@ div.task-how-to-complete {
 }
 div.task-photo-desktop #camera-button {
     display:                    none;
+}
+div#task-completed-message.achieved {
+    margin:                     -20px -20px 20px;
+    color:                      rgb(255, 255, 255);
+    background:                 none repeat scroll 0px 0px rgb(177, 186, 30);
+    padding:                    10px 20px;
+}
+#rank-2 .rank-therank {
+    background:                 none repeat scroll 0% 0% rgb(210, 207, 188) ! important;
+}
+#rank-1 span.rank-therank, #rank-2 .rank-therank, #rank-3 .rank-therank {
+    font-size:                  39px;
+    padding-top:                13px;
+    font-family:                vitesse;
+    color:                      rgb(103, 93, 79);
+    background:                 none repeat scroll 0px 0px rgb(255, 233, 48);
+}
+#rank-3 span.rank-therank {
+    background:                 none repeat scroll 0px 0px rgb(230, 167, 75) ! important;
+}
+span.rank-therank {
+    float:                      left;
+    font-size:                  30px;
+    text-align:                 right;
+    color:                      rgb(255, 255, 255);
+    background:                 none repeat scroll 0px 0px rgb(181, 169, 150);
+    margin-right:               20px;
+    height:                     68px;
+    padding:                    18px 19px 10px;
+    width:                      118px;
+}
+div.rank-attendee {
+    font-size:                  19px;
+    padding-top:                23px;
 }
 * {
     box-sizing:                 border-box;

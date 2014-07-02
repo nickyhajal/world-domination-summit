@@ -13,6 +13,7 @@ async = require('async')
 [FeedLike, FeedLikes] = require '../feed_likes'
 [Feed, Feeds] = require '../feeds'
 [EventRsvp, EventRsvps] = require '../event_rsvps'
+[Achievement, Achievements] = require '../achievements'
 
 getters = 
   getMe: ->
@@ -31,6 +32,7 @@ getters =
               .then (user) =>
                 dfr.resolve(user)
     return dfr.promise
+    
   getFriends: ->
     dfr = Q.defer()
     Connections.forge()
@@ -52,6 +54,18 @@ getters =
     unless pic.indexOf('http') > -1
       pic = 'http://worlddominationsummit.com'+pic
     return pic
+
+  getAchievedTasks: ->
+    dfr = Q.defer()
+    Achievements.forge()
+    .query('where', 'race_achievements.user_id', @get('user_id'))
+    .query (qb) ->
+      qb.join('race_submissions', 'race_achievements.ach_id', '=', 'race_submissions.ach_id')
+    .fetch
+      columns: ['task_id', 'custom_points', 'add_points']
+    .then (achs) ->
+      dfr.resolve(achs)
+    return dfr.promise
     
   getUrl: (text = false, clss = false, id = false) ->
     user_name = @get('user_name')

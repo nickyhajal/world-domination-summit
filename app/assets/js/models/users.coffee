@@ -36,6 +36,13 @@ ap.User = window.XModel.extend
 				if cb
 					cb()
 
+	achieved: (task_id) ->
+		if ap.achievements?.length
+			for ach in ap.achievements
+				if ach.task_id is task_id
+					return ach
+		return false
+
 	isConnected: (user_id) ->
 		if @get('connected_ids')?.length
 			return @get('connected_ids').indexOf(user_id) > -1
