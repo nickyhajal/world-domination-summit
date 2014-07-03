@@ -196,17 +196,32 @@ routes = (app) ->
 				console.err(err)
 
 		rsvp: (req, res, next) ->
+			event_id = req.query.event_id
 			if req.me
-				rsvp = EventRsvp.forge({user_id: req.me.get('user_id'), event_id: req.query.event_id})
+				rsvp = EventRsvp.forge({user_id: req.me.get('user_id'), event_id: event_id})
 				rsvp	
 				.fetch()
 				.then (existing) ->
 					if existing
 						res.r.action = 'cancel'
 						existing.destroy()
+						.then ->
+							finish()
 					else
 						res.r.action = 'rsvp'
 						rsvp.save()
-					next()
+						.then ->
+							finish()
+
+					finish = ->
+						EventRsvps.forge()
+						.query('where', 'event_id', event_id)
+						.fetch()
+						.then (rsp) ->
+							Event.forge
+								event_id: event_id
+								num_rsvps: rsp.models.length
+							.save()
+						next()
 
 module.exports = routes

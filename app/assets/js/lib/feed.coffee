@@ -215,17 +215,18 @@
 					html = ''
 					for comment in rsp.comments
 						author = ap.Users.get(comment.user_id	)
-						html += '
-							<div class="comment-shell" data-comment_id="'+comment.feed_comment_id+'">
-								<div class="dispatch-content-userpic" style="background:url('+author.get('pic')+')"></div>
-								<a href="/~'+author.get('user_name')+'" class="dispatch-content-author">
-									'+author.get('first_name')+' '+author.get('last_name')+'
-								</a>
-								<div class="comment-message">'+Autolinker.link(_.autop(comment.comment))+'</div>
-							</div>
-						'
-						commentStr = self.commentsStr +rsp.num_comments
-						$('.dispatch-content-comment-status', shell.closest('.dispatch-content-shell')).html commentStr
+						if author?
+							html += '
+								<div class="comment-shell" data-comment_id="'+comment.feed_comment_id+'">
+									<div class="dispatch-content-userpic" style="background:url('+author.get('pic')+')"></div>
+									<a href="/~'+author.get('user_name')+'" class="dispatch-content-author">
+										'+author.get('first_name')+' '+author.get('last_name')+'
+									</a>
+									<div class="comment-message">'+Autolinker.link(_.autop(comment.comment))+'</div>
+								</div>
+							'
+					commentStr = self.commentsStr +rsp.num_comments
+					$('.dispatch-content-comment-status', shell.closest('.dispatch-content-shell')).html commentStr
 					if with_content == 'replace'
 						shell.html html
 					else if with_content == 'append'

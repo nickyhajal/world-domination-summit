@@ -11,23 +11,34 @@ ap.Views.meetups = XView.extend
 	renderEvents: ->
 		lastDay = ''
 		html = ''
+		maxed_html = ''
 		ap.Events.each (ev) =>
 			if ev.get('type') is 'meetup'
+				maxed = false
+				if ev.get('num_rsvps')? and ev.get('num_rsvps') > ev.get('max')
+					maxed = true
+				maxed_class = if maxed then ' meetup-maxed' else ''
 				time = moment.utc(ev.get('start'))
 				day = time.format('MMMM Do')
 				if day isnt lastDay
 					lastDay = day
 					daylink = _.slugify(day)
+					html += maxed_html
 					html += '<a href="#" name="'+daylink+'"></a>'
 					html += '<h3>'+day+'</h3>'
+					maxed_html = ''
 					$('#meetup-sidebar').append('<a href="#'+daylink+'">'+day+'</a>')
 				hosts = @renderHosts(ev)
-				html += '
-					<div class="meetup-descr-shell">
+
+				if maxed
+					button_maxed = ' data-maxed="true"'
+				event_button = '<a href="#"'+button_maxed+' data-event_id="'+ev.get('event_id')+'" data-start="RSVP" data-cancel="unRSVP" class="rsvp-button">RSVP</a>'
+				event_html = '
+					<div class="meetup-descr-shell'+maxed_class+'">
 						<div class="meetup-sidebar">
 							<div class="meetup-time">'+time.format('h:mm a')+'</div>
 							<div class="meetup-host">'+hosts+'</div>
-							<a href="#" data-event_id="'+ev.get('event_id')+'" data-start="RSVP" data-cancel="unRSVP" class="rsvp-button">RSVP</a>
+							' + event_button + '
 							<a href="/meetup/'+_.slugify(ev.get('what'))+'">More Details</a>
 						</div>
 						<div class="meetup-content">
@@ -38,7 +49,14 @@ ap.Views.meetups = XView.extend
 					</div>
 					<div class="clear"></div>
 				'
+				if maxed
+					maxed_html += event_html
+				else
+					html += event_html
+		html += maxed_html
 		$('#meetup-list').html(html).scan()
+
+	renderEvent: (ev) ->
 
 	renderHosts: (ev) ->
 		html = ''
