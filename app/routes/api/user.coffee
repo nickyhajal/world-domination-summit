@@ -423,6 +423,24 @@ routes = (app) ->
 				, (err) ->
 					console.error(err)
 
+		race_check: (req, res, next) ->
+			if req.me
+				req.me.raceCheck()
+				.then (points) ->
+					req.me.getAchievedTasks()
+					.then (achievements) ->
+						res.r.achievements = achievements
+						res.r.points = points
+						next()
+
+
+
+		achieved: (req, res, next) ->
+			if req.me
+				req.me.markAchieved(req.query.slug)
+				.then ->
+					next()
+
 		race_submission: (req, res, next) ->
 			if req.me and req.query.slug?.length
 				slug = req.query.slug
@@ -459,6 +477,11 @@ routes = (app) ->
 												new_points: ach_rsp.points - req.query.cur_ponts
 												task_id: req.query.task_id
 												achievements: achievements
+
+											# Expire rank cache so next rank request
+											# is recalculated
+											rds.expire 'ranks', 0
+
 											res.redirect('/upload-race?rsp='+rsp)
 									, (err) ->
 										console.error(err)

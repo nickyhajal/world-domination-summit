@@ -4,6 +4,7 @@ geocoder = require('geocoder')
 geolib = require('geolib')
 Twit = require('twit')
 Q = require('q')
+async = require('async')
 
 ##
 
@@ -90,6 +91,8 @@ User = Shelf.Model.extend
   getRsvps: getters.getRsvps
   getAchievedTasks: getters.getAchievedTasks
   getLocationString: getters.getLocationString
+  getFriends: getters.getFriends
+  getFriendedMe: getters.getFriendedMe
 
   # Emails
   sendEmail: emails.sendEmail
@@ -102,8 +105,9 @@ User = Shelf.Model.extend
   raceCheck: race.raceCheck
   achieved: race.achieved
   markAchieved: race.markAchieved
+  updateAchieved: race.updateAchieved
   processPoints: race.processPoints
-  getAchievements: race.getAchevements
+  getAchievements: race.getAchievements
 
   # Twitter
   getTwit: twitter.getTwit
@@ -212,10 +216,9 @@ User = Shelf.Model.extend
       .then (friended_mes) =>
         for my_friend in my_friends
           for friended_me in friended_mes
-
-            # Compare the IDs I friended to the IDs who friended me
-            if my_friend.get('to_id') is friended_mes.get('from_id')
-              mutual_ids.push(friended_mes.get('from_id'))
+            if my_friend.get('to_id') isnt my_friend.get('user_id')
+              if my_friend.get('to_id') is friended_me.get('user_id')
+                mutual_ids.push(my_friend.get('to_id'))
 
         async.each mutual_ids, (mutual_id, cb) =>
           User.forge({user_id: mutual_id})

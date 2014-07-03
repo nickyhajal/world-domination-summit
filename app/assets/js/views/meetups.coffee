@@ -1,4 +1,5 @@
 ap.Views.meetups = XView.extend
+	saveScrollPosition: true
 	initialize: ->
 		@options.sidebar = 'meetups'
 		@initRender()
@@ -49,6 +50,3 @@ ap.Views.meetups = XView.extend
 					</div>
 				'
 		return html
-
-	whenFinished: ->
-		ap.scrollPos['meetups'] = window.scrollY

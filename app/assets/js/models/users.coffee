@@ -59,6 +59,16 @@ ap.User = window.XModel.extend
 		else
 			return ap.me.get('rsvps').indexOf(event.get('event_id')) > -1
 
+	setRank: ->
+		user_id = @get('user_id')
+		count = 1
+		for rank in ap.ranks
+			if rank.user_id is user_id
+				@set('rank', count)
+				@set('points', rank.points)
+				break;
+			count += 1
+
 # Create the Events collection and
 # instantiate it
 Users = Backbone.Collection.Lunr.extend

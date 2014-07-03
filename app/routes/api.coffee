@@ -47,6 +47,8 @@ routes = (app) ->
 		app.post '/user/tweet', user.send_tweet
 		app.post '/user/logout', user.logout
 		app.post '/user/task', user.race_submission
+		app.post '/user/achieved', user.achieved
+		app.get '/user/racecheck', user.race_check
 
 		# Speakers
 		app.put '/speaker', speaker.update

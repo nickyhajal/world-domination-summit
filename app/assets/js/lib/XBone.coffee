@@ -109,6 +109,8 @@ window.XView = Backbone.View.extend
 		if @options.onRender?
 			@options.onRender()
 	finish: ->
+		if @saveScrollPosition? and @saveScrollPosition
+			ap.scrollPos[@options.view] = window.scrollY
 		if @whenFinished?
 			@whenFinished()
 		@unbind()

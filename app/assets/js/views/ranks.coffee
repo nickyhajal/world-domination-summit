@@ -1,9 +1,12 @@
 ap.Views.ranks = XView.extend
 	initialize: ->
 		@initRender()
+
 	rendered: ->
 		_.whenReady 'users', =>
 			@renderRanks()
+			@updateRanks()
+
 	renderRanks: ->
 		html = ''
 		count = 1
@@ -18,4 +21,13 @@ ap.Views.ranks = XView.extend
 			'
 			count += 1
 		$('#race-rank-list').html(html)
+
+	updateRanks: ->
+		ap.api 'get assets', {assets:'ranks'}, (rsp) =>
+			ap.ranks = rsp.ranks
+			ap.me.setRank()
+			@renderRanks()
+		setTimeout =>
+			@updateRanks()
+		, 6000
 

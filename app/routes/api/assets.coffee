@@ -40,13 +40,15 @@ routes = (app) ->
 				speakers: 300
 				interests: 5
 				events: 5
-				ranks: 5
+				ranks: 1
 				tasks: 5
 				achievements: 0
 
 			get: (req, res, next) ->
+				start = +(new Date())
 				tracker = req.query.tracker ? {}
 				async.each req.query.assets.split(','), (asset, cb) =>
+					assetStart = +(new Date())
 					last = tracker[asset] ? 0
 					now = Math.floor(+(new Date()) / 1000)
 					if process.env.NODE_ENV is 'production'
@@ -57,10 +59,12 @@ routes = (app) ->
 						assets[asset](req)
 						.then (rsp) ->
 							res.r[asset] = rsp
+							tk 'Grabbing '+asset+ ' took: '+(+(new Date()) - assetStart)+' milliseconds'
 							cb()
 					else
 						cb()
 				, ->
+					tk 'Asset grab took: '+(+(new Date()) - start)+' milliseconds'
 					next()
 			redisValue: (value) ->
 				if value? and value
@@ -122,32 +126,48 @@ routes = (app) ->
 
 			tasks: (req) ->
 				dfr = Q.defer()
-				RaceTasks.forge()
-				.fetch()
-				.then (rsp) ->
-					tk 'oeanst'
-					dfr.resolve(rsp.models)
+				rds.get 'tasks', (err, tasks) ->
+					if tasks? and tasks and typeof JSON.parse(tasks) is 'object'
+						dfr.resolve(JSON.parse(tasks))
+					else
+						RaceTasks.forge()
+						.fetch()
+						.then (rsp) ->
+							dfr.resolve(rsp.models)
+							rds.set 'tasks', JSON.stringify(rsp.models), ->
+								rds.expire 'tasks', 5000
 				dfr.promise
 
 			ranks: (req) ->
 				dfr = Q.defer()
-				Users.forge()
-				.query('where', 'attending14', '1')
-				.query('where', 'points', '>', '0')
-				.query('orderBy', 'points', 'desc')
-				.fetch({columns: ['user_id', 'points']})
-				.then (rsp) ->
-					dfr.resolve(rsp.models)
-				, (err) ->
-					console.error(err)
+				rds.get 'ranks', (err, ranks) ->
+					if ranks? and ranks and typeof JSON.parse(ranks) is 'object'
+						dfr.resolve(JSON.parse(ranks))
+					else
+						Users.forge()
+						.query('where', 'attending14', '1')
+						.query('where', 'points', '>', '0')
+						.query('orderBy', 'points', 'desc')
+						.fetch({columns: ['user_id', 'points']})
+						.then (rsp) ->
+							dfr.resolve(rsp.models)
+							rds.set 'ranks', JSON.stringify(rsp.models), ->
+								rds.expire 'ranks', 60
+						, (err) ->
+							console.error(err)
 				return dfr.promise
 
 			speakers: (req) ->
 				dfr = Q.defer()
-				Speakers.forge().getByType()
-				.then (speakers) ->
-					tk 'spks'
-					dfr.resolve(speakers)
+				rds.get 'speakers', (err, spks) ->
+					if spks? and spks and typeof JSON.parse(spks) is 'object'
+						dfr.resolve(JSON.parse(spks))
+					else
+						Speakers.forge().getByType()
+						.then (speakers) ->
+							dfr.resolve(speakers)
+							rds.set 'speakers', JSON.stringify(speakers), (err, rsp) ->
+								rds.expire 'speakers', 10000
 				return dfr.promise
 
 			achievements: (req) ->
@@ -159,36 +179,43 @@ routes = (app) ->
 
 			interests: (req) ->
 				dfr = Q.defer()
-				Interests.forge().fetch()
-				.then (interests) ->
-					tk 'ints'
-					dfr.resolve(interests)
+				rds.get 'interests', (err, interests) ->
+					if interests? and interests and typeof JSON.parse(interests) is 'object'
+						dfr.resolve(JSON.parse(interests))
+					else
+						Interests.forge().fetch()
+						.then (interests) ->
+							dfr.resolve(interests)
+							rds.set 'interests', JSON.stringify(interests), (err, rsp) ->
+								rds.expire 'interests', 10000
 				return dfr.promise
 
 			events: (req) ->
 				dfr = Q.defer()
-				Events.forge()
-				.query('where', 'active', '1')
-				.fetch()
-				.then (rsp) ->
-					evs = []
-					async.each rsp.models, (ev, cb) ->
-						EventHosts.forge()
-						.query('where', 'event_id', ev.get('event_id'))
+				rds.get 'events', (err, events) ->
+					if events? and events and typeof JSON.parse(events) is 'object'
+						dfr.resolve(JSON.parse(events))
+					else
+						Events.forge()
+						.query('where', 'active', '1')
 						.fetch()
 						.then (rsp) ->
-							hosts = []
-							for host in rsp.models
-								hosts.push host.get('user_id')
-							ev.set('hosts', hosts)
-							evs.push ev
-							cb()
-						, (err) ->
-							console.err(err)
-					, ->
-						dfr.resolve(evs)
-				, (err) ->
-					console.log(err)
+							evs = []
+							async.each rsp.models, (ev, cb) ->
+								EventHosts.forge()
+								.query('where', 'event_id', ev.get('event_id'))
+								.fetch()
+								.then (rsp) ->
+									hosts = []
+									for host in rsp.models
+										hosts.push host.get('user_id')
+									ev.set('hosts', hosts)
+									evs.push ev
+									cb()
+							, ->
+								dfr.resolve(evs)
+								rds.set 'events', JSON.stringify(evs), (err, rsp) ->
+									rds.expire 'events', 240
 				return dfr.promise
 			tpls: ->
 				get_templates = require('../../processors/templater')

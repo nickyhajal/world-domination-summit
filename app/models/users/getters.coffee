@@ -17,30 +17,36 @@ async = require('async')
 
 getters = 
   getMe: ->
+
     dfr = Q.defer()
-    @getAllTickets()
-    .then (user) =>
-      @getAnswers()
+    @raceCheck()
+    .then =>
+      @getAllTickets()
       .then (user) =>
-        @getInterests()
+        @getAnswers()
         .then (user) =>
-          @getConnections()
+          @getInterests()
           .then (user) =>
-            @getFeedLikes()
+            @getConnections()
             .then (user) =>
-              @getRsvps()
+              @getFeedLikes()
               .then (user) =>
-                dfr.resolve(user)
+                @getRsvps()
+                .then (user) =>
+                  dfr.resolve(user)
     return dfr.promise
     
   getFriends: ->
     dfr = Q.defer()
     Connections.forge()
-    .query('where', 'from_id', @get('user_id'))
+    .query('where', 'user_id', @get('user_id'))
     .fetch()
     .then (rsp) ->
       dfr.resolve(rsp.models)
+    , (err) ->
+      console.error(err)
     return dfr.promise
+
   getFriendedMe: ->
     dfr = Q.defer()
     Connections.forge()
@@ -55,13 +61,13 @@ getters =
       pic = 'http://worlddominationsummit.com'+pic
     return pic
 
-  getAchievedTasks: ->
+  getAchievedTasks: (with_submissions = false) ->
     dfr = Q.defer()
-    Achievements.forge()
+    achs = Achievements.forge()
     .query('where', 'race_achievements.user_id', @get('user_id'))
-    .query (qb) ->
-      qb.join('race_submissions', 'race_achievements.ach_id', '=', 'race_submissions.ach_id')
-    .fetch
+    if with_submissions
+      achs.query('join', 'race_submissions', 'race_achievements.ach_id', '=', 'race_submissions.ach_id', 'left')
+    achs.fetch
       columns: ['task_id', 'custom_points', 'add_points']
     .then (achs) ->
       dfr.resolve(achs)

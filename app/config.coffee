@@ -43,7 +43,7 @@ config = (app, express, RedisStore, mysql) ->
             	password: process.env.DB_PW
             	database: process.env.DB
             	charset: 'utf8'
-            debug: true 
+            debug: false 
 
 	app.configure 'production', ->
 		app.use(express.errorHandler());

@@ -96,12 +96,7 @@ ap.update.tpls = ->
 
 ap.update.ranks = ->
 	_.whenReady 'me', =>
-		user_id = ap.me.get('user_id')
-		count = 1
-		for rank in ap.ranks
-			if rank.user_id is user_id
-				ap.me.set('rank', count)
-			count += 1
+		ap.me.setRank()
 		_.isReady 'ranks'
 
 

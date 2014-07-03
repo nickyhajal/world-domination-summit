@@ -1,4 +1,5 @@
 ap.Views.race = XView.extend
+	saveScrollPosition: true
 	initialize: ->
 		_.whenReady 'ranks', =>
 			@options.out = _.template @options.out, ap.me.attributes
@@ -7,6 +8,7 @@ ap.Views.race = XView.extend
 	rendered: ->
 		_.whenReady 'tasks', =>
 			@renderTasks()
+			@updateStatus()
 	renderTasks: ->
 		html = ''
 		_.whenReady 'achievements', =>
@@ -27,6 +29,15 @@ ap.Views.race = XView.extend
 			$t.css('height', $t.outerHeight()+'px')
 	resize: ->
 		@setRowHeights()
+	updateStatus: ->
+		ap.api 'get assets', {assets: 'ranks'}, (rsp) ->
+			ap.ranks = rsp.ranks
+			ap.me.setRank()
+			$('span', '#your-points').html(ap.me.get('points'))
+			$('span', '#your-rank').html(ap.me.get('rank'))
+		setTimeout =>
+			@updateStatus()
+		, 60000
 	whenFinished: ->
 		ap.unbindResize('race')
 
