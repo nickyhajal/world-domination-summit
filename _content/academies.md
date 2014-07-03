@@ -55,7 +55,7 @@ By the end of this Academy all language doubts will be squashed. Find out why ad
 	<a href="https://www.eventbrite.com/e/wds-academy-travel-hacking-tickets-11392203387"><h4>Travel Hacking Academy</h4></a>
 	<h5>1:00 pm–5:00 pm</h5>
 	Hosted by Stephanie Zito
-	<a href="https://www.eventbrite.com/e/wds-academy-travel-hacking-tickets-11392203387" class="button">Tickets &rarr;</a>
+	<a href="https://www.eventbrite.com/e/wds-academy-travel-hacking-tickets-11392203387" class="button">Sold Out! &rarr;</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		Master the art of travel hacking. You will learn how to build a strategy to earn big balances of airline miles and hotel points that you can redeem for travel to your dream destinations. If you want to go places for free or nearly free, this is the workshop for you.
