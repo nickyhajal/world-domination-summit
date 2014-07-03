@@ -1928,6 +1928,12 @@ div.meetup-time {
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
     width:                      100%;
 }
+div.meetup-maxed {
+    opacity:                    0.4;
+    -ms-filter:                 "alpha(opacity=40)";
+    filter:                     alpha(opacity=40);
+    zoom:                       1;
+}
 div.meetup-descr-shell {
     clear:                      both;
     position:                   relative;
@@ -2007,7 +2013,7 @@ div.meetup-hosted-by {
 div.schedule-row {
     width:                      550px;
     margin-bottom:              2px;
-    clear: both;
+    clear:                      both;
 }
 div.schedule-time {
     float:                      left;
