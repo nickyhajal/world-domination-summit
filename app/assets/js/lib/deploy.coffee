@@ -191,13 +191,13 @@ _d.money = (num, opts = false) ->
  executes immediately
 
 ###
-_d.readys = {};
+_d.readys = {}
 _d.whenReady = (id, fnc) ->
 	_d.ready(id, fnc)
 
 _d.ready = (id, fnc)->
 	if _.isUndefined(_d.readys[id])
-		_d.readys[id] = 
+		_d.readys[id] =
 			ready: false
 			fnc: false
 	if _.isFunction(_d.readys[id].fnc)
@@ -205,7 +205,7 @@ _d.ready = (id, fnc)->
 		_d.readys[id].fnc = ->
 			fnc()
 			existing()
-	else 
+	else
 		_d.readys[id].fnc = ->
 			fnc()
 	if _d.readys[id].ready
@@ -216,20 +216,21 @@ _d.nowReady = (id)->
 
 _d.isReady = (id)->
 	if !_.isUndefined(_d.readys[id])
-		_d.readys[id].ready = true;
+		_d.readys[id].ready = true
 		_d.doReady(id)
 	else
-		_d.readys[id] = 
+		_d.readys[id] =
 			ready: true
 			fnc: false
 _d.doReady = (id)->
 	if _d.readys[id]? and _d.readys[id].fnc? and _d.readys[id].fnc
-		_d.readys[id].fnc();
-		_d.readys[id].fnc = null;
+		toExec = _d.readys[id].fnc
+		_d.readys[id].fnc = null
+		toExec()
 
 if this._?
 	this._.mixin(_d)
-else 
+else
 	this._ = _d
 
 _.readys = _d.readys

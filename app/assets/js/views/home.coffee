@@ -31,6 +31,69 @@ window.wall =
 			.on('click', '#video', wall.showVideo)
 			.on('click', '#reg-army', wall.showArmy)
 
+		url_params = @urlParams()
+		if url_params['screenmode']=='1'
+			_.whenReady 'firstpanel', =>
+				@initScreenMode()
+				if url_params['delay']?
+					@autoScrollDelay = url_params['delay']
+				else
+					@autoScrollDelay = 100
+
+	urlParams: ->
+		urlParams = Array()
+
+		pageUrl = window.location.search.substring(1)
+		urlVariables = pageUrl.split('&')
+		for variable in urlVariables
+			param = variable.split('=')
+			urlParams[param[0]] = param[1]
+		urlParams
+
+	initScreenMode: ->
+		hideMe = ['#top-nav', '#notifications', '#main-header', '#header-title', '.tpl-0', '#video-shell', 'footer']
+		for el in hideMe
+			$(el).toggle()
+		@scaleForScreenMode()
+		$(window).resize =>
+			@scaleForScreenMode()
+		@autoScroll()
+
+	scaleForScreenMode: ->
+		viewportSize = $(window).width()
+		unless @originalContentainerSize?
+			@originalContentainerSize = $('main.contentainer').innerWidth()
+		$('body').css('transform', 'scale(' + (viewportSize / @originalContentainerSize)+')')
+		         .css('-moz-transform', 'scale(' + (viewportSize / @originalContentainerSize)+')')
+		         .css('-ms-transform', 'scale(' + (viewportSize / @originalContentainerSize)+')')
+		         .css('-o-transform', 'scale(' + (viewportSize / @originalContentainerSize)+')')
+		         .css('-webkit-transform', 'scale(' + (viewportSize / @originalContentainerSize)+')')
+		         .css('overflow', 'hidden')
+		$('main').css('position', 'absolute')
+		         .css('top', '0px')
+			 .css('left', (viewportSize - @originalContentainerSize) / 2 + 'px')
+
+	autoScroll: ->
+		rightNow = new Date().getTime()
+
+		unless @autoScrollTimerStart?
+			@autoScrollTimerStart = rightNow
+
+		diff = rightNow - @autoScrollTimerStart
+		pixels = Math.round(diff / @autoScrollDelay)
+
+		if diff > @autoScrollDelay
+			newDelay = 0
+		else
+			newDelay = @autoScrollDelay - diff
+
+		@autoScrollTimerStart = rightNow
+		window.scrollBy(0,pixels)
+
+		setTimeout =>
+			@autoScroll()
+		, newDelay
+
 	initSafari: ->
 		isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/)
 		if isSafari && !$('#safari-wall-styles').length
@@ -48,16 +111,18 @@ window.wall =
 
 	# Extending the Google Maps API
 	extendMaps: ->
-		google.maps.Map.prototype.shiftY= (offsetY) ->
-		    map = this
-		    ov = new google.maps.OverlayView()
-		    ov.onAdd = ->
-		        proj = this.getProjection()
-		        aPoint = proj.fromLatLngToContainerPixel(map.getCenter())
-		        aPoint.y = aPoint.y+offsetY
-		        map.setCenter(proj.fromContainerPixelToLatLng(aPoint))
-		    ov.draw = (->)
-		    ov.setMap(this)
+		_.whenReady 'googlemaps', =>
+			google.maps.Map.prototype.shiftY= (offsetY) ->
+			    map = this
+			    ov = new google.maps.OverlayView()
+			    ov.onAdd = ->
+			        proj = this.getProjection()
+			        aPoint = proj.fromLatLngToContainerPixel(map.getCenter())
+			        aPoint.y = aPoint.y+offsetY
+			        map.setCenter(proj.fromContainerPixelToLatLng(aPoint))
+			    ov.draw = (->)
+			    ov.setMap(this)
+			_.nowReady 'googlemapsextended'
 
 	scroll: ->
 		$wall = $('#waterfall')
@@ -72,50 +137,51 @@ window.wall =
 	# this may need to change in the future
 	loadContent: (cb) ->
 		if not wall.content
-			ap.api 'get content', {}, (rsp) =>
-				wall.content = _.shuffle rsp.content
-				for content in wall.content
-					if not wall.contByType[content.type]?
-						wall.contByType[content.type] = []
-					wall.contByType[content.type].push content
+			_.whenReady 'assets', =>
+				ap.api 'get content', {}, (rsp) =>
+					wall.content = _.shuffle rsp.content
+					for content in wall.content
+						if not wall.contByType[content.type]?
+							wall.contByType[content.type] = []
+						wall.contByType[content.type].push content
 
-				answers = {}
-				wall.ansByQ = {}
-				for answer in rsp.answers
-					unless answers[answer.user_id]?
-						answers[answer.user_id] = {}
-					unless wall.ansByQ[answer.question_id]?
-						wall.ansByQ[answer.question_id] = []
-						answers[answer.user_id] = {}
-					wall.ansByQ[answer.question_id].push answer
+					answers = {}
+					wall.ansByQ = {}
+					for answer in rsp.answers
+						unless answers[answer.user_id]?
+							answers[answer.user_id] = {}
+						unless wall.ansByQ[answer.question_id]?
+							wall.ansByQ[answer.question_id] = []
+							answers[answer.user_id] = {}
+						wall.ansByQ[answer.question_id].push answer
 
-				wall.attendees = rsp.attendees
-				wall.atnById = {}
-				for atn in rsp.attendees
-					atn.distance = Math.ceil(atn.distance)
-					wall.atnById[atn.user_id] = atn
+					wall.attendees = rsp.attendees
+					wall.atnById = {}
+					for atn in rsp.attendees
+						atn.distance = Math.ceil(atn.distance)
+						wall.atnById[atn.user_id] = atn
 
-				wall.contByType['speaker'] = []
-				for type,list of ap.speakers
-					for speaker in list
-						speaker.data = JSON.stringify(speaker)
-						speaker.content_id = speaker.speaker_id
-						wall.contByType['speaker'].push speaker
-				wall.contByType['speaker'] = _.shuffle(wall.contByType['speaker'])
-
-				wall.contByType['speaker_quote'] = []
-				for type,list of ap.speakers
-					for speaker in list
-						inx = 0
-						for quote in speaker.quotes
-							speaker.quote = quote
+					wall.contByType['speaker'] = []
+					for type,list of ap.speakers
+						for speaker in list
 							speaker.data = JSON.stringify(speaker)
-							speaker.content_id = speaker.speaker_id+inx
-							inx += 1
-							wall.contByType['speaker_quote'].push speaker
-				wall.contByType['speaker_quote'] = _.shuffle(wall.contByType['speaker_quote'])
+							speaker.content_id = speaker.speaker_id
+							wall.contByType['speaker'].push speaker
+					wall.contByType['speaker'] = _.shuffle(wall.contByType['speaker'])
 
-				cb()
+					wall.contByType['speaker_quote'] = []
+					for type,list of ap.speakers
+						for speaker in list
+							inx = 0
+							for quote in speaker.quotes
+								speaker.quote = quote
+								speaker.data = JSON.stringify(speaker)
+								speaker.content_id = speaker.speaker_id+inx
+								inx += 1
+								wall.contByType['speaker_quote'].push speaker
+					wall.contByType['speaker_quote'] = _.shuffle(wall.contByType['speaker_quote'])
+
+					cb()
 		else
 			cb()
 
@@ -158,6 +224,7 @@ window.wall =
 		if space > 100
 			queue = $('.wall-section', wall.$q)
 			if queue? and queue.length
+				_.nowReady('firstpanel')
 				_next = $(queue[0])
 				next = _next.clone()
 				_next.remove()
@@ -241,37 +308,39 @@ window.wall =
 	# Handle anything that needs to happen to a block
 	# after it's loaded into the DOM
 	postProcess: ($tpl) ->
-		$('.attendee_map', $tpl).each ->
-			$t = $(this)
-			block = $t.closest('.block')
-			obj = wall.block_data[block.attr('id')]
-			content = obj.content
-			map = $t.attr('id', 'map-'+(+(new Date())))
-			profile_map_el = document.getElementById(map.attr('id'))
-			mapOptions = 
-				center: new google.maps.LatLng(content.lat, content.lon)
-				zoom: 8
-				scrollwheel: false
-				disableDefaultUI: true
-				draggable: false
-			profile_map = new google.maps.Map(profile_map_el, mapOptions)
-			line = [
-				new google.maps.LatLng(content.lat, content.lon),
-				new google.maps.LatLng('45.523452', '-122.676207'),
-			]
-			path = new google.maps.Polyline
-				path: line,
-				geodesic: true,
-				strokeColor: '#E27F1C',
-				strokeOpacity: 1.0,
-				strokeWeight: 3
-			path.setMap profile_map
-			bounds = new google.maps.LatLngBounds()
-			bounds.extend line[0]
-			bounds.extend line[1]
-			profile_map.fitBounds(bounds)
-			shift = $('.attendee_map_text', $t.closest('.block')).height() * -1
-			profile_map.shiftY(shift)
+		_.whenReady 'googlemaps', =>
+			_.whenReady 'googlemapsextended', =>
+				$('.attendee_map', $tpl).each ->
+					$t = $(this)
+					block = $t.closest('.block')
+					obj = wall.block_data[block.attr('id')]
+					content = obj.content
+					map = $t.attr('id', 'map-'+(+(new Date())))
+					profile_map_el = document.getElementById(map.attr('id'))
+					mapOptions =
+						center: new google.maps.LatLng(content.lat, content.lon)
+						zoom: 8
+						scrollwheel: false
+						disableDefaultUI: true
+						draggable: false
+					profile_map = new google.maps.Map(profile_map_el, mapOptions)
+					line = [
+						new google.maps.LatLng(content.lat, content.lon),
+						new google.maps.LatLng('45.523452', '-122.676207'),
+					]
+					path = new google.maps.Polyline
+						path: line,
+						geodesic: true,
+						strokeColor: '#E27F1C',
+						strokeOpacity: 1.0,
+						strokeWeight: 3
+					path.setMap profile_map
+					bounds = new google.maps.LatLngBounds()
+					bounds.extend line[0]
+					bounds.extend line[1]
+					profile_map.fitBounds(bounds)
+					shift = $('.attendee_map_text', $t.closest('.block')).height() * -1
+					profile_map.shiftY(shift)
 
 	renderArmyMap: ->
 		army_map_el = document.getElementById('army-map')
