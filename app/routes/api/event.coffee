@@ -112,7 +112,7 @@ routes = (app) ->
 		get: (req, res, next) ->
 			if req.me.hasCapability('schedule')
 				events = Events.forge()
-				limit = req.query.per_page ? 50
+				limit = req.query.per_page ? 500
 				page = req.query.page ? 1
 				if req.query.active?
 					active = req.query.active
