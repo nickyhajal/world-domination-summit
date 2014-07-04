@@ -98,14 +98,15 @@ ap.Views.profile = XView.extend
 				interests: html
 
 	renderMap: ->
-		attendee = @options.attendee.attributes
-		profile_map_el = document.getElementById('attendee-profile-map')
-		mapOptions = 
-			center: new google.maps.LatLng(attendee.lat, attendee.lon)
-			zoom: 8
-			scrollwheel: false
-			disableDefaultUI: true
-		profile_map = new google.maps.Map(profile_map_el, mapOptions)
+		_.whenReady 'googlemaps', =>
+			attendee = @options.attendee.attributes
+			profile_map_el = document.getElementById('attendee-profile-map')
+			mapOptions = 
+				center: new google.maps.LatLng(attendee.lat, attendee.lon)
+				zoom: 8
+				scrollwheel: false
+				disableDefaultUI: true
+			profile_map = new google.maps.Map(profile_map_el, mapOptions)
 
 	hideEmptySections: ->
 		if not $('.attendee-question-shell', $(@el)).length
