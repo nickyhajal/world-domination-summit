@@ -170,13 +170,25 @@ routes = (app) ->
 				feeds.query('where', 'feed_id', '>', req.query.since)
 			if req.query.user_id
 				feeds.query('where', 'user_id', '=', req.query.user_id)
-			feeds
-			.fetch()
-			.then (feed) ->
-				res.r.feed_contents = feed.models
-				next()
-			, (err) ->
-				console.error(err)
+
+			raw_filters = req.query.filters ? {}
+			filters = []
+			for key,val of raw_filters
+				filters.push({name: key, val: val})
+			async.each filters, (filter, cb) ->
+				if +filter.val
+					if filter.name is 'twitter'
+						feeds.query('where', 'channel_type', '!=', 'twitter')
+					if filter.name is 'following'
+						feeds.query('whereIn', 'user_id', req.me.getFollowingIds())
+			, ->
+				feeds
+				.fetch()
+				.then (feed) ->
+					res.r.feed_contents = feed.models
+					next()
+				, (err) ->
+					console.error(err)
 
 		get_comments: (req, res, next) ->
 			comments = FeedComments.forge()

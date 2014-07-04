@@ -12,6 +12,7 @@ ap.Views.meetups = XView.extend
 		lastDay = ''
 		html = ''
 		maxed_html = ''
+		sidebar_html = ''
 		ap.Events.each (ev) =>
 			if ev.get('type') is 'meetup'
 				maxed = false
@@ -27,7 +28,7 @@ ap.Views.meetups = XView.extend
 					html += '<a href="#" name="'+daylink+'"></a>'
 					html += '<h3>'+day+'</h3>'
 					maxed_html = ''
-					$('#meetup-sidebar').append('<a href="#'+daylink+'">'+day+'</a>')
+					sidebar_html += '<a href="#'+daylink+'">'+day+'</a>'
 				hosts = @renderHosts(ev)
 
 				if maxed
@@ -55,6 +56,7 @@ ap.Views.meetups = XView.extend
 					html += event_html
 		html += maxed_html
 		$('#meetup-list').html(html).scan()
+		$('#meetup-sidebar').html(sidebar_html)
 
 	renderEvent: (ev) ->
 
