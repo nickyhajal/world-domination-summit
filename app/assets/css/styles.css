@@ -2115,8 +2115,8 @@ div.dipatch-filter-shell {
     color:                      rgb(255, 255, 255);
     padding:                    20px;
     width:                      300px;
-    display:                    block;
     z-index:                    10000;
+    display:                    none;
 }
 div.dispatch-control {
     margin-bottom:              8px;
