@@ -11,7 +11,6 @@
 			params:
 				feed_type: 'personal' #change to opposite
 				page: 1
-
 		loadingComments = []
 
 		updTimo = 0
