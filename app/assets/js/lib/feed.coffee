@@ -158,8 +158,12 @@
 				render: opts.render
 				cb: false
 			get_opts = _.defaults get_opts, get_defs
-			opts.params.since = $('.dispatch-content-shell', $el).first().data('content_id')
 			params = _.defaults extra, opts.params
+			if get_opts.render is 'replace'
+				$('.dispatch-container').html('<div class="dispatch-loading"></div>')
+				params.since = 0
+			else
+				params.since = $('.dispatch-content-shell', $el).first().data('content_id')
 			ap.api 'get feed', params, (rsp) =>
 				@renderFeed(rsp.feed_contents, get_opts.render)
 				if get_opts.cb
@@ -312,7 +316,8 @@
 			key = $(this).data('filter')
 			opts.params.filters[key] = val
 			ap.put(slf.filter_key, opts.params.filters)
-			slf.getContent('replace')
+			slf.getContent
+				render: 'replace'
 		@initFilters = ->
 			$('.dispatch-filter').scan()
 			opts.params.filters = {}
