@@ -466,7 +466,8 @@ a.photo-head-prev {
     z-index:                    1;
 }
 a.box-select-option-selected {
-    background:                 none repeat scroll 0% 0% rgb(216, 216, 210) ! important;
+    background:                 none repeat scroll 0px 0px rgb(255, 230, 109) ! important;
+    color:                      rgb(184, 108, 32) ! important;
 }
 a.box-select-option {
     display:                    block;
@@ -1184,6 +1185,11 @@ textarea {
     padding:                    12px 10px 10px;
     font-size:                  15px;
     width:                      300px;
+}
+.dispatch-control a.box-select-option {
+    padding:                    6px 0px;
+    width:                      130px;
+    text-align:                 center;
 }
 .box-select-shell {
     height:                     38px;
@@ -2076,6 +2082,44 @@ div.schedule-host-avatar {
     text-decoration:            none;
     padding:                    6px 10px 5px 22px;
     background:                 none repeat scroll 0px 0px rgb(254, 241, 220);
+}
+div.dispatch-filter {
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    color:                      rgb(226, 127, 28);
+    font-family:                karla;
+    padding:                    7px 25px;
+    cursor:                     pointer;
+}
+div.dispatch-filter:hover {
+    background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
+    color:                      rgb(242, 242, 234);
+}
+div.dispatch-filter:hover .dispatch-filter-shell {
+    display:                    block;
+}
+div.dispatch-filter {
+    float:                      right;
+    position:                   relative;
+    margin-top:                 -44px;
+}
+div.dipatch-filter-shell label {
+    color:                      rgb(255, 255, 255) ! important;
+}
+.dispatch-filter:hover div.dipatch-filter-shell {
+    display:                    block;
+}
+div.dipatch-filter-shell {
+    position:                   absolute;
+    right:                      0px;
+    background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
+    color:                      rgb(255, 255, 255);
+    padding:                    20px;
+    width:                      300px;
+    display:                    block;
+    z-index:                    10000;
+}
+div.dispatch-control {
+    margin-bottom:              8px;
 }
 * {
     box-sizing:                 border-box;
