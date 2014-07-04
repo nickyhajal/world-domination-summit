@@ -58,6 +58,7 @@
 			else
 				comments = 'Add a Comment'
 			return comments
+
 		@likeStr = (feed_id, num_likes) ->
 			str = ''
 			if num_likes > 0
@@ -140,6 +141,7 @@
 
 				if slf.isSingle
 					$('.dispatch-content-comment-status').mouseover().click()
+
 		@toggleMore = ->
 			$t = $(this)
 			$s = $t.closest('.dispatch-content-shell')
@@ -156,8 +158,12 @@
 				render: opts.render
 				cb: false
 			get_opts = _.defaults get_opts, get_defs
-			opts.params.since = $('.dispatch-content-shell', $el).first().data('content_id')
 			params = _.defaults extra, opts.params
+			if get_opts.render is 'replace'
+				$('.dispatch-container').html('<div class="dispatch-loading"></div>')
+				params.since = 0
+			else
+				params.since = $('.dispatch-content-shell', $el).first().data('content_id')
 			ap.api 'get feed', params, (rsp) =>
 				@renderFeed(rsp.feed_contents, get_opts.render)
 				if get_opts.cb
@@ -285,6 +291,7 @@
 			return false
 
 		loadingViaScroll = false
+
 		@scroll = =>
 			# Determine if we're ready to add more panels
 			scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
@@ -303,7 +310,27 @@
 			$('.dispatch-controls:visible').remove()
 			@isSingle = true
 
+		@filter_key = 'filters_'+ap.currentView.options.view
+		@filterChange = ->
+			val = $(this).val()
+			key = $(this).data('filter')
+			opts.params.filters[key] = val
+			ap.put(slf.filter_key, opts.params.filters)
+			slf.getContent
+				render: 'replace'
+		@initFilters = ->
+			$('.dispatch-filter').scan()
+			opts.params.filters = {}
+			filters = ap.get @filter_key
+			if filters
+				for key,val of filters
+					$('#dispatch-filter-'+key).val(val).change()
+					opts.params.filters[key] = val
+			$('.dispatch-filter-select').change(@filterChange)
+
+
 		@init = ->
+			@initFilters()
 			@updateContent()
 			$(this).data('feed', @)
 			$(this)
