@@ -53,6 +53,10 @@ div(id="admin-add-meetup-shell")
 					option(value="0") am
 					option(value="12") pm
 		div(class="form-section")
+			label How many people can attend?
+			label(class="sub-label") We'll close the meetup after it has this many RSVPs
+			input(type="number", name="max", min="1", max="5000", value="{{ max }}")
+		div(class="form-section")
 			label Accepted
 			div(class="form-box")
 				select(name="active", class="select2", style="width:120px")
