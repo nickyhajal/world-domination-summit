@@ -28,16 +28,17 @@ ap.Views.meetup = XView.extend
 			@renderAttendees()
 
 	renderMap: ->
-		attendee = @options.meetup.attributes
-		profile_map_el = document.getElementById('meetup-profile-map')
-		latlon = new google.maps.LatLng(attendee.lat, attendee.lon)
-		mapOptions = 
-			center: latlon
-			zoom: 16
-			scrollwheel: false
-			disableDefaultUI: true
-		profile_map = new google.maps.Map(profile_map_el, mapOptions)
-		marker = new google.maps.Marker
+		_.whenReady 'googlemaps', =>
+			attendee = @options.meetup.attributes
+			profile_map_el = document.getElementById('meetup-profile-map')
+			latlon = new google.maps.LatLng(attendee.lat, attendee.lon)
+			mapOptions = 
+				center: latlon
+				zoom: 16
+				scrollwheel: false
+				disableDefaultUI: true
+			profile_map = new google.maps.Map(profile_map_el, mapOptions)
+			marker = new google.maps.Marker
       position: latlon
       map: profile_map
       title: 'Your Meetup\'s Venue'
