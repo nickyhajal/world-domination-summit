@@ -1,6 +1,5 @@
 (($)->
 	$.fn.feed = (fnc = false, opts = {})->
-
 		$t = $(this)
 		$d = $t.closest('.dispatch')
 		$t.empty()
@@ -319,7 +318,7 @@
 			slf.getContent
 				render: 'replace'
 		@initFilters = ->
-			if $d.data('filter')?
+			if $d.attr('class').indexOf('dispatch-filters-on') > -1
 				$('.dispatch-filter').show().scan()
 				opts.params.filters = {}
 				filters = ap.get @filter_key
