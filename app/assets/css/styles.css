@@ -2101,6 +2101,7 @@ div.dispatch-filter {
     float:                      right;
     position:                   relative;
     margin-top:                 -44px;
+    display:                    none;
 }
 div.dipatch-filter-shell label {
     color:                      rgb(255, 255, 255) ! important;

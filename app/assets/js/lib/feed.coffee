@@ -319,14 +319,15 @@
 			slf.getContent
 				render: 'replace'
 		@initFilters = ->
-			$('.dispatch-filter').scan()
-			opts.params.filters = {}
-			filters = ap.get @filter_key
-			if filters
-				for key,val of filters
-					$('#dispatch-filter-'+key).val(val).change()
-					opts.params.filters[key] = val
-			$('.dispatch-filter-select').change(@filterChange)
+			if $d.data('filter')?
+				$('.dispatch-filter').show().scan()
+				opts.params.filters = {}
+				filters = ap.get @filter_key
+				if filters
+					for key,val of filters
+						$('#dispatch-filter-'+key).val(val).change()
+						opts.params.filters[key] = val
+				$('.dispatch-filter-select').change(@filterChange)
 
 
 		@init = ->

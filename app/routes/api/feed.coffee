@@ -177,7 +177,6 @@ routes = (app) ->
 			for key,val of raw_filters
 				filters.push({name: key, val: val})
 			async.each filters, (filter, cb) ->
-				tk filter.name
 				if +filter.val
 					if filter.name is 'twitter'
 						feeds.query('where', 'channel_type', '!=', 'twitter')
