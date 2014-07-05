@@ -5,6 +5,7 @@ twitterAPI = require('node-twitter-api')
 moment = require('moment')
 crypto = require('crypto')
 _s = require('underscore.string')
+async = require('async')
 
 routes = (app) ->
 
@@ -158,6 +159,9 @@ routes = (app) ->
 			else if channel_type is 'feed_item'
 				feeds.query('where', 'feed_id', '=', req.query.channel_id)
 
+			else if channel_type is 'community'
+				feeds.query('where', 'channel_type', '=', 'interest')
+
 			# Get a channel feed
 			else if channel_type isnt 'global'
 				feeds.query('where', 'channel_type', '=', req.query.channel_type)
@@ -170,13 +174,45 @@ routes = (app) ->
 				feeds.query('where', 'feed_id', '>', req.query.since)
 			if req.query.user_id
 				feeds.query('where', 'user_id', '=', req.query.user_id)
-			feeds
-			.fetch()
-			.then (feed) ->
-				res.r.feed_contents = feed.models
-				next()
-			, (err) ->
-				console.error(err)
+
+			raw_filters = req.query.filters ? {}
+			filters = []
+			for key,val of raw_filters
+				filters.push({name: key, val: val})
+			async.each filters, (filter, cb) ->
+				if +filter.val
+					if filter.name is 'twitter'
+						feeds.query('where', 'channel_type', '!=', 'twitter')
+						cb()
+					if filter.name is 'following'
+						req.me.getConnections()
+						.then (rsp) ->
+							ids = rsp.get('connected_ids')
+							if not ids.length
+								ids = [0]
+							feeds.query('whereIn', 'user_id', ids)
+							cb()
+					if filter.name is 'communities'
+						req.me.getInterests()
+						.then (rsp) ->
+							interests = JSON.parse(rsp.get('interests')).join(',')
+							req.me.getRsvps()
+							.then (rsp) ->
+								meetups = rsp.get('rsvps').join(',')
+								feeds.query 'whereRaw', "(`channel_type` != 'meetup' OR (`channel_type` = 'meetup' AND `channel_id` IN ("+meetups+")))"
+								feeds.query 'whereRaw', "(`channel_type` != 'interest' OR (`channel_type` = 'interest' AND `channel_id` IN ("+interests+")))"
+								cb()
+				else
+					cb()
+			, ->
+				feeds
+				.query('debug')
+				.fetch()
+				.then (feed) ->
+					res.r.feed_contents = feed.models
+					next()
+				, (err) ->
+					console.error(err)
 
 		get_comments: (req, res, next) ->
 			comments = FeedComments.forge()

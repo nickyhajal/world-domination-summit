@@ -1,3 +1,24 @@
+div(class="dispatch-filter")
+	span Filter
+	div(class="dipatch-filter-shell")
+		div(class="dispatch-filter-section")
+			Label Include Twitter
+			div(class="dispatch-control")
+				select(id="dispatch-filter-twitter", name="twitter", class="dispatch-filter-select box-select", data-filter="twitter")
+					option(value="0") Yes
+					option(value="1") No
+		div(class="dispatch-filter-section")
+			Label Attendees
+			div(class="dispatch-control")
+				select(id="dispatch-filter-following", name="following", class="dispatch-filter-select box-select", data-filter="following")
+					option(value="0") Show All
+					option(value="1") My Friends
+		div(class="dispatch-filter-section")
+			Label Communities & Meetups
+			div(class="dispatch-control")
+				select(id="dispatch-filter-communities", name="communities", class="dispatch-filter-select box-select", data-filter="communities")
+					option(value="0") Show All
+					option(value="1") Just Mine
 div(class="dispatch-controls")
 	form(class="dispatch-post-form", method="post", action="#")
 		textarea(class='dispatch-post-inp', name="content", placeholder="Share a message with the WDS Community")

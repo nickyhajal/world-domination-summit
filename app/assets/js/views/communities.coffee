@@ -1,6 +1,7 @@
 ap.Views.communities = XView.extend
 	initialize: ->
-		@initRender()
+		_.whenReady 'assets', =>
+			@initRender()
 	rendered: ->
 		yours = ap.me.get('interests')
 		yours_html = ''

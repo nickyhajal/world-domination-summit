@@ -14,6 +14,7 @@ ap.Views.admin_meetup_review = XView.extend
       html = '<tr class="tbl-head"><th>Meetup</th><th>Venue</th><th>Actions</th></tr>'
       for atn in rsp.events
       #   atn = new ap.Event(atn)
+        host = ap.Users.get(atn.hosts[0])
         place = if atn.place.length then atn.place else 'No Venue'
         html += '<tr data-event_id="'+atn.event_id+'">
           <td>
@@ -27,6 +28,9 @@ ap.Views.admin_meetup_review = XView.extend
           <tr id="event-detail-'+atn.event_id+'" class="event-detail" style="display:none;">
           <td colspan="3">
             <a href="/admin/meetup/'+atn.event_id+'" class="meetup-edit">Edit Meetup</a>
+            <b>Host</b>
+            <div>'+host.get('first_name')+' '+host.get('last_name')+'</div>
+            <br/>
             <b>Description</b>
             <div>'+atn.descr+'</div>
             <br/>

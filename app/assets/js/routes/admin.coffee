@@ -15,4 +15,5 @@ ap.Routes.admin = (panel, extra = false) ->
 		if ap.templates['pages_admin_'+panel]?
 			if extra
 				options.extra = extra
+			options.sidebar = 'admin'
 			ap.goTo('admin_'+panel, options)
