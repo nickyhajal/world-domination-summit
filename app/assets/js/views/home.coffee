@@ -20,7 +20,8 @@ window.wall =
 		$.scrollTo(0)
 		wall.$el = $('#waterfall')
 		wall.$q = $('#wall-queue')
-		$(window).on('scroll', wall.scroll)
+		wall.drawnHeight = 0
+		$(window).on('scroll', @loadMoreContentIfWeScrolledDownEnough)
 		_.whenReady 'assets', =>
 			@loadContent =>
 				@fillContent($('.wall-section'))
@@ -31,14 +32,15 @@ window.wall =
 			.on('click', '#video', wall.showVideo)
 			.on('click', '#reg-army', wall.showArmy)
 
+		wall.zoomFactor = 1
 		url_params = @urlParams()
 		if url_params['screenmode']=='1'
 			_.whenReady 'firstpanel', =>
-				@initScreenMode()
 				if url_params['delay']?
 					@autoScrollDelay = url_params['delay']
 				else
 					@autoScrollDelay = 100
+				@initScreenMode()
 
 	urlParams: ->
 		urlParams = Array()
@@ -54,24 +56,48 @@ window.wall =
 		hideMe = ['#top-nav', '#notifications', '#main-header', '#header-title', '.tpl-0', '#video-shell', 'footer']
 		for el in hideMe
 			$(el).toggle()
+		$('*').css('cursor', 'none')
+
 		@scaleForScreenMode()
+
 		$(window).resize =>
 			@scaleForScreenMode()
+
 		@autoScroll()
 
+	# Will load more content if we scroll down low enough
+	loadMoreContentIfWeScrolledDownEnough: ->
+		_.whenReady 'firstpanel', =>
+			wall = window.wall
+			if wall.zoomFactor?
+				determineNextReload = ->
+					wall.nextReloadHappeningWhenScrollTopIsAt = document.getElementById('waterfall').getBoundingClientRect().height - 4 * $(window).height()
+
+				unless wall.nextReloadHappeningWhenScrollTopIsAt?
+					determineNextReload()
+
+				if $(window).scrollTop() > wall.nextReloadHappeningWhenScrollTopIsAt
+					wall.$el.css('height', Math.max($(window).scrollTop() + 4 * $(window).height(), wall.$el.height()) + 'px')
+					determineNextReload()
+					wall.displayPanels()
+
+
 	scaleForScreenMode: ->
-		viewportSize = $(window).width()
-		unless @originalContentainerSize?
-			@originalContentainerSize = $('main.contentainer').innerWidth()
-		$('body').css('transform', 'scale(' + (viewportSize / @originalContentainerSize)+')')
-		         .css('-moz-transform', 'scale(' + (viewportSize / @originalContentainerSize)+')')
-		         .css('-ms-transform', 'scale(' + (viewportSize / @originalContentainerSize)+')')
-		         .css('-o-transform', 'scale(' + (viewportSize / @originalContentainerSize)+')')
-		         .css('-webkit-transform', 'scale(' + (viewportSize / @originalContentainerSize)+')')
-		         .css('overflow', 'hidden')
-		$('main').css('position', 'absolute')
-		         .css('top', '0px')
-			 .css('left', (viewportSize - @originalContentainerSize) / 2 + 'px')
+		_.whenReady 'firstpanel', =>
+			viewportSize = $(window).width()
+			unless @originalContentainerSize?
+				@originalContentainerSize = $('main.contentainer').innerWidth()
+			@zoomFactor = viewportSize / @originalContentainerSize
+
+			$('body').css('transform', 'scale(' + @zoomFactor + ')')
+				 .css('-moz-transform', 'scale(' + @zoomFactor + ')')
+				 .css('-ms-transform', 'scale(' + @zoomFactor + ')')
+				 .css('-o-transform', 'scale(' + @zoomFactor + ')')
+				 .css('-webkit-transform', 'scale(' + @zoomFactor + ')')
+				 .css('overflow', 'hidden')
+			$('main').css('position', 'absolute')
+				 .css('top', '0px')
+				 .css('left', (viewportSize - @originalContentainerSize) / 2 + 'px')
 
 	autoScroll: ->
 		rightNow = new Date().getTime()
@@ -123,14 +149,6 @@ window.wall =
 			    ov.draw = (->)
 			    ov.setMap(this)
 			_.nowReady 'googlemapsextended'
-
-	scroll: ->
-		$wall = $('#waterfall')
-
-		# Determine if we're ready to add more panels
-		if (window.scrollY / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 10 > 8
-			$wall.css('height', ($wall.height()+800)+'px')
-			wall.displayPanels()
 
 	# Get content from API
 	# Note: currently gets all the content we have but
@@ -219,8 +237,7 @@ window.wall =
 		wall.$q.append($tpl)
 
 	displayPanels: ->
-		last = $('#waterfall .wall-section').last()
-		space = $('#waterfall').height() - (last.offset().top + last.height())
+		space = $('#waterfall').height() - wall.drawnHeight
 		if space > 100
 			queue = $('.wall-section', wall.$q)
 			if queue? and queue.length
@@ -229,6 +246,7 @@ window.wall =
 				next = _next.clone()
 				_next.remove()
 				wall.$el.append next
+				wall.drawnHeight += next.height()
 				@postProcess next
 			queue = $('.wall-section', wall.$q)
 			if queue.length < 5
@@ -344,7 +362,7 @@ window.wall =
 
 	renderArmyMap: ->
 		army_map_el = document.getElementById('army-map')
-		mapOptions = 
+		mapOptions =
 			center: new google.maps.LatLng(30.4419, -60.1419)
 			zoom: 3
 			scrollwheel: false
