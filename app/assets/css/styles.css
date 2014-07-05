@@ -1747,8 +1747,9 @@ table#manifests-results-shell, .search-results-shell {
     width:                      280px ! important;
 }
 #event-review-results td {
-    font-family:                karla;
-    font-size:                  11pt;
+    font-family: karla;
+    font-size: 11pt;
+    height: 44px;
 }
 #manifest-results tr td:first-of-type span, .search-results tr td:first-of-type span {
     display:                    table-cell;
