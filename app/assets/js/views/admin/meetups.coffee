@@ -10,23 +10,24 @@ ap.Views.admin_meetups = XView.extend
 
   listing: ->
     ap.api 'get admin/events', {active: 1, type: 'meetup'}, (rsp) ->
-      html = '<tr class="tbl-head"><th>Host</th><th>Meetup</th><th>Venue</th></tr>'
-      for atn in rsp.events
-        host = ap.Users.get(atn.hosts[0])
-        place = if atn.place.length then atn.place else 'No Venue'
-        html += '
-        <tr data-event_id="'+atn.event_id+'">
-          <td>'+host.get('first_name')+' '+host.get('last_name')+'</td>
-          <td>
-            <span>'+atn.what+'</span>
-          </td>
-          <td>'+place+'</td>
-        </tr>
-      '
-      html += '<tr class="tbl-head"><th>Host</th><th>Meetup</th><th>Venue</th></tr>'
-      $('#event-review-results').html(html)
-      $('#event-start').hide()
-      $('#event-review-results-shell').show()
+      _.whenReady 'users', =>
+        html = '<tr class="tbl-head"><th>Host</th><th>Meetup</th><th>Venue</th></tr>'
+        for atn in rsp.events
+          host = ap.Users.get(atn.hosts[0])
+          place = if atn.place.length then atn.place else 'No Venue'
+          html += '
+          <tr data-event_id="'+atn.event_id+'">
+            <td>'+host.get('first_name')+' '+host.get('last_name')+'</td>
+            <td>
+              <span>'+atn.what+'</span>
+            </td>
+            <td>'+place+'</td>
+          </tr>
+        '
+        html += '<tr class="tbl-head"><th>Host</th><th>Meetup</th><th>Venue</th></tr>'
+        $('#event-review-results').html(html)
+        $('#event-start').hide()
+        $('#event-review-results-shell').show()
 
   row_click: (e) ->
     e.preventDefault()
