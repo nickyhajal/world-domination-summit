@@ -1,6 +1,5 @@
 (($)->
 	$.fn.feed = (fnc = false, opts = {})->
-
 		$t = $(this)
 		$d = $t.closest('.dispatch')
 		$t.empty()
@@ -12,7 +11,6 @@
 			params:
 				feed_type: 'personal' #change to opposite
 				page: 1
-
 		loadingComments = []
 
 		updTimo = 0
@@ -58,6 +56,7 @@
 			else
 				comments = 'Add a Comment'
 			return comments
+
 		@likeStr = (feed_id, num_likes) ->
 			str = ''
 			if num_likes > 0
@@ -140,6 +139,7 @@
 
 				if slf.isSingle
 					$('.dispatch-content-comment-status').mouseover().click()
+
 		@toggleMore = ->
 			$t = $(this)
 			$s = $t.closest('.dispatch-content-shell')
@@ -156,8 +156,12 @@
 				render: opts.render
 				cb: false
 			get_opts = _.defaults get_opts, get_defs
-			opts.params.since = $('.dispatch-content-shell', $el).first().data('content_id')
 			params = _.defaults extra, opts.params
+			if get_opts.render is 'replace'
+				$('.dispatch-container').html('<div class="dispatch-loading"></div>')
+				params.since = 0
+			else
+				params.since = $('.dispatch-content-shell', $el).first().data('content_id')
 			ap.api 'get feed', params, (rsp) =>
 				@renderFeed(rsp.feed_contents, get_opts.render)
 				if get_opts.cb
@@ -215,17 +219,18 @@
 					html = ''
 					for comment in rsp.comments
 						author = ap.Users.get(comment.user_id	)
-						html += '
-							<div class="comment-shell" data-comment_id="'+comment.feed_comment_id+'">
-								<div class="dispatch-content-userpic" style="background:url('+author.get('pic')+')"></div>
-								<a href="/~'+author.get('user_name')+'" class="dispatch-content-author">
-									'+author.get('first_name')+' '+author.get('last_name')+'
-								</a>
-								<div class="comment-message">'+Autolinker.link(_.autop(comment.comment))+'</div>
-							</div>
-						'
-						commentStr = self.commentsStr +rsp.num_comments
-						$('.dispatch-content-comment-status', shell.closest('.dispatch-content-shell')).html commentStr
+						if author?
+							html += '
+								<div class="comment-shell" data-comment_id="'+comment.feed_comment_id+'">
+									<div class="dispatch-content-userpic" style="background:url('+author.get('pic')+')"></div>
+									<a href="/~'+author.get('user_name')+'" class="dispatch-content-author">
+										'+author.get('first_name')+' '+author.get('last_name')+'
+									</a>
+									<div class="comment-message">'+Autolinker.link(_.autop(comment.comment))+'</div>
+								</div>
+							'
+					commentStr = self.commentsStr +rsp.num_comments
+					$('.dispatch-content-comment-status', shell.closest('.dispatch-content-shell')).html commentStr
 					if with_content == 'replace'
 						shell.html html
 					else if with_content == 'append'
@@ -284,6 +289,7 @@
 			return false
 
 		loadingViaScroll = false
+
 		@scroll = =>
 			# Determine if we're ready to add more panels
 			scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
@@ -302,7 +308,28 @@
 			$('.dispatch-controls:visible').remove()
 			@isSingle = true
 
+		@filter_key = 'filters_'+ap.currentView.options.view
+		@filterChange = ->
+			val = $(this).val()
+			key = $(this).data('filter')
+			opts.params.filters[key] = val
+			ap.put(slf.filter_key, opts.params.filters)
+			slf.getContent
+				render: 'replace'
+		@initFilters = ->
+			if $d.attr('class').indexOf('dispatch-filters-on') > -1
+				$('.dispatch-filter').show().scan()
+				opts.params.filters = {}
+				filters = ap.get @filter_key
+				if filters
+					for key,val of filters
+						$('#dispatch-filter-'+key).val(val).change()
+						opts.params.filters[key] = val
+				$('.dispatch-filter-select').change(@filterChange)
+
+
 		@init = ->
+			@initFilters()
 			@updateContent()
 			$(this).data('feed', @)
 			$(this)

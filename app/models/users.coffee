@@ -119,6 +119,7 @@ User = Shelf.Model.extend
   registerTicket: ticket.registerTicket
   cancelTicket: ticket.cancelTicket
 
+
   # Capabilities
   hasCapability: (capability) ->
     if @get('capabilities')?

@@ -15,7 +15,6 @@ mailer =
 			subject: '[WDS] '+subject
 			recipient: use_to
 			from: 'Chris Guillebeau <chris.guillebeau@gmail.com>'
-			
 		@request('mailer', email_options, params)
 		.then (transaction_id) ->
 			tk 'MAILED: '+transaction_id

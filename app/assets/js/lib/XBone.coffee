@@ -22,7 +22,9 @@ window.XView = Backbone.View.extend
 			html = ap.templates['sidebar_'+@options.sidebar]
 			if @options.sidebar_filler?
 				html = _.template html, @options.sidebar_filler
-			$('#sidebar-shell').html(html).show().scan()
+			$('#sidebar-shell').html(html).show()
+			@sidebarRendered()
+			$('#sidebar-shell').scan()
 		else
 			$('#sidebar-shell').hide()
 
@@ -114,7 +116,9 @@ window.XView = Backbone.View.extend
 		if @whenFinished?
 			@whenFinished()
 		@unbind()
-	rendered: ()->
+	rendered: ->
+		# Child over-writes
+	sidebarRendered: ->
 		# Child over-writes
 	
 ###

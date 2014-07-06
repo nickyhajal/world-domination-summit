@@ -466,7 +466,8 @@ a.photo-head-prev {
     z-index:                    1;
 }
 a.box-select-option-selected {
-    background:                 none repeat scroll 0% 0% rgb(216, 216, 210) ! important;
+    background:                 none repeat scroll 0px 0px rgb(255, 230, 109) ! important;
+    color:                      rgb(184, 108, 32) ! important;
 }
 a.box-select-option {
     display:                    block;
@@ -1223,6 +1224,11 @@ textarea {
     font-size:                  15px;
     width:                      300px;
 }
+.dispatch-control a.box-select-option {
+    padding:                    6px 0px;
+    width:                      130px;
+    text-align:                 center;
+}
 .box-select-shell {
     height:                     38px;
 }
@@ -1784,13 +1790,21 @@ table#manifests-results-shell, .search-results-shell {
     font-family:                karla;
     font-size:                  11pt;
 }
+#page-admin a.button {
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-right: 5px !important;
+    text-align: center;
+    width: auto;
+}
 #event-review-results tr td:first-of-type {
     padding-left:               10px;
     width:                      280px ! important;
 }
 #event-review-results td {
-    font-family:                karla;
-    font-size:                  11pt;
+    font-family: karla;
+    font-size: 11pt;
+    height: 44px;
 }
 #manifest-results tr td:first-of-type span, .search-results tr td:first-of-type span {
     display:                    table-cell;
@@ -1976,6 +1990,12 @@ div.meetup-time {
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
     width:                      100%;
 }
+div.meetup-maxed {
+    opacity:                    0.4;
+    -ms-filter:                 "alpha(opacity=40)";
+    filter:                     alpha(opacity=40);
+    zoom:                       1;
+}
 div.meetup-descr-shell {
     clear:                      both;
     position:                   relative;
@@ -2055,6 +2075,7 @@ div.meetup-hosted-by {
 div.schedule-row {
     width:                      550px;
     margin-bottom:              2px;
+    clear:                      both;
 }
 div.schedule-time {
     float:                      left;
@@ -2085,6 +2106,7 @@ div.schedule-top {
     background:                 none repeat scroll 0px 0px rgba(248, 248, 242, 0.59);
     padding:                    12px;
     height:                     36px;
+    float:                      left;
 }
 div.schedule-note {
     font-family:                karlaitalic;
@@ -2117,6 +2139,7 @@ div.schedule-host-avatar {
     padding:                    6px 10px 5px 22px;
     background:                 none repeat scroll 0px 0px rgb(254, 241, 220);
 }
+<<<<<<< HEAD
 div#your-points, #your-rank {
     display:                    inline-block;
     text-align:                 center;
@@ -2285,6 +2308,45 @@ span.rank-therank {
 div.rank-attendee {
     font-size:                  19px;
     padding-top:                23px;
+=======
+div.dispatch-filter {
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    color:                      rgb(226, 127, 28);
+    font-family:                karla;
+    padding:                    7px 25px;
+    cursor:                     pointer;
+}
+div.dispatch-filter:hover {
+    background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
+    color:                      rgb(242, 242, 234);
+}
+div.dispatch-filter:hover .dispatch-filter-shell {
+    display:                    block;
+}
+div.dispatch-filter {
+    float:                      right;
+    position:                   relative;
+    margin-top:                 -44px;
+    display:                    none;
+}
+div.dipatch-filter-shell label {
+    color:                      rgb(255, 255, 255) ! important;
+}
+.dispatch-filter:hover div.dipatch-filter-shell {
+    display:                    block;
+}
+div.dipatch-filter-shell {
+    position:                   absolute;
+    right:                      0px;
+    background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
+    color:                      rgb(255, 255, 255);
+    padding:                    20px;
+    width:                      300px;
+    z-index:                    10000;
+    display:                    none;
+}
+div.dispatch-control {
+    margin-bottom:              8px;
 }
 * {
     box-sizing:                 border-box;

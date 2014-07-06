@@ -43,6 +43,7 @@ routes = (app) ->
 				ranks: 1
 				tasks: 5
 				achievements: 0
+				admin_templates: 0
 
 			get: (req, res, next) ->
 				start = +(new Date())
@@ -81,7 +82,7 @@ routes = (app) ->
 							tpls = {}
 							for name,tpl of all_tpls
 								name = name.replace('admin_', '')
-								if me.hasCapability(name)
+								if me.hasCapability(name) or name is 'index'
 									tpls[name] = tpl
 							dfr.resolve(tpls)
 				else

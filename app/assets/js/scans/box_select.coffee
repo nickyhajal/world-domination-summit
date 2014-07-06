@@ -22,7 +22,7 @@ jQuery.fn.scan
 			$t.change (e) ->
 					val = $t.val()
 					$('a', $box).removeClass('box-select-option-selected')
-					$('a[data-value="'+val+'"]').addClass('box-select-option-selected')
+					$('a[data-value="'+val+'"]', $box).addClass('box-select-option-selected')
 			$box
 				.on 'click', 'a', (e) ->
 					$a = $(this)

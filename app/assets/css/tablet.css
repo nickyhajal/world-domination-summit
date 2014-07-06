@@ -248,6 +248,7 @@ div.pattern-bg {
 div.schedule-row {
     width:                      100%;
 }
+<<<<<<< HEAD
 h2 {
     padding:                    12px 15px;
 }
@@ -329,6 +330,50 @@ div.search-results {
 }
 div#primary-links {
     margin-top:                 6px;
+}
+div.dispatch {
+    width:                      100%;
+}
+div.dispatch-controls {
+    width:                      100%;
+}
+textarea.dispatch-post-inp {
+    width:                      100% ! important;
+}
+textarea.dispatch-content-comment-inp {
+    margin-left:                5%;
+    width:                      95%;
+}
+.dispatch-content-comment-form .dispatch-content-userpic {
+    display:                    none ! important;
+}
+form.dispatch-content-comment-form {
+    margin-left:                0px;
+}
+div.dispatch-content-comments-inner {
+    margin-left:                -69px;
+}
+input.dispatch-comment-submit {
+    margin-left:                5%;
+    width:                      95%;
+}
+div.dispatch-content-like-shell {
+    margin-left:                -66px;
+}
+a.dispatch-content-comment-status {
+    margin-left:                -24px;
+    display:                    block;
+    margin-top:                 23px;
+}
+div.dispatch-content-channel-shell a {
+    font-size:                  8pt ! important;
+    margin-top:                 15px;
+}
+div.dispatch-content-channel-shell {
+    width:                      140px;
+}
+div.dispatch-content-comments-shell {
+    margin-top:                 -7px;
 }
 * {
     line-height:                inherit;

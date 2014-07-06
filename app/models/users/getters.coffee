@@ -179,6 +179,8 @@ getters =
       console.error(err)
     return dfr.promise
 
+  getFollowingIds: ->
+
   getRsvps: ->
     dfr = Q.defer()
     EventRsvps.forge()

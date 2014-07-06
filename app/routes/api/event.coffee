@@ -112,7 +112,7 @@ routes = (app) ->
 		get: (req, res, next) ->
 			if req.me.hasCapability('schedule')
 				events = Events.forge()
-				limit = req.query.per_page ? 50
+				limit = req.query.per_page ? 500
 				page = req.query.page ? 1
 				if req.query.active?
 					active = req.query.active
@@ -128,14 +128,23 @@ routes = (app) ->
 				.fetch()
 				.then (events) ->
 					evs = []
-					for ev in events.models
+					async.each events.models, (ev, cb) ->
 						tmp = ev.attributes
+						tmp.hosts = []
 						start = (tmp.start+'').split(' GMT')
 						start = moment(start[0])
 						tmp.start = start.format('YYYY-MM-DD HH:mm:ss')
-						evs.push(tmp)
-					res.r.events = evs
-					next()
+						EventHosts.forge()
+						.query('where', 'event_id', '=', tmp.event_id)
+						.fetch()
+						.then (rsp) ->
+							for host in rsp.models
+								tmp.hosts.push(host.get('user_id'))
+							evs.push(tmp)
+							cb()
+					, ->
+						res.r.events = evs
+						next()
 			else
 				res.status(401)
 				next()
@@ -172,7 +181,7 @@ routes = (app) ->
 						User.forge({user_id: host.get('user_id')})
 						.fetch()
 						.then (host) ->
-							host.sendEmail('meetup-declined', 'Thanks for your meetup proposal!')
+		#					host.sendEmail('meetup-declined', 'Thanks for your meetup proposal!')
 							model.set('ignored', 1)
 							model.save()
 							next()
@@ -196,17 +205,32 @@ routes = (app) ->
 				console.err(err)
 
 		rsvp: (req, res, next) ->
+			event_id = req.query.event_id
 			if req.me
-				rsvp = EventRsvp.forge({user_id: req.me.get('user_id'), event_id: req.query.event_id})
+				rsvp = EventRsvp.forge({user_id: req.me.get('user_id'), event_id: event_id})
 				rsvp	
 				.fetch()
 				.then (existing) ->
 					if existing
 						res.r.action = 'cancel'
 						existing.destroy()
+						.then ->
+							finish()
 					else
 						res.r.action = 'rsvp'
 						rsvp.save()
-					next()
+						.then ->
+							finish()
+
+					finish = ->
+						EventRsvps.forge()
+						.query('where', 'event_id', event_id)
+						.fetch()
+						.then (rsp) ->
+							Event.forge
+								event_id: event_id
+								num_rsvps: rsp.models.length
+							.save()
+						next()
 
 module.exports = routes

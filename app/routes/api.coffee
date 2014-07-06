@@ -58,6 +58,7 @@ routes = (app) ->
 		app.post '/event', event.add
 		app.put '/event', event.upd
 		app.get '/event/attendees', event.get_attendees
+		app.get '/event/hosts', event.get_hosts
 		app.post '/event/rsvp', event.rsvp
 
 		# Feed

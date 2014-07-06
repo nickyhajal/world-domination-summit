@@ -5,11 +5,21 @@ ap.Views.meetup = XView.extend
 
 	initialize: ->
 
-		@options.meetup = ap.Events.getBySlug(@options.meetup)
-		@options.out = _.template @options.out, @options.meetup.attributes
-		@options.sidebar = 'meetup'
-		@options.sidebar_filler = @options.meetup.attributes
-		@initRender()
+		_.whenReady 'assets', =>
+			@options.meetup = ap.Events.getBySlug(@options.meetup)
+			@options.out = _.template @options.out, @options.meetup.attributes
+			@options.sidebar = 'meetup'
+			@options.sidebar_filler = @options.meetup.attributes
+			@initRender()
+
+	sidebarRendered: ->
+		ev = @options.meetup
+		maxed = false
+		if ev.get('num_rsvps')? and ev.get('num_rsvps') > ev.get('max')
+			maxed = true
+		if maxed
+			$('.rsvp-button', '#sidebar').attr('data-maxed', 'true')
+			tk $('.rsvp-button', '#sidebar')
 
 	rendered: ->
 		@renderMap()
@@ -18,16 +28,17 @@ ap.Views.meetup = XView.extend
 			@renderAttendees()
 
 	renderMap: ->
-		attendee = @options.meetup.attributes
-		profile_map_el = document.getElementById('meetup-profile-map')
-		latlon = new google.maps.LatLng(attendee.lat, attendee.lon)
-		mapOptions = 
-			center: latlon
-			zoom: 16
-			scrollwheel: false
-			disableDefaultUI: true
-		profile_map = new google.maps.Map(profile_map_el, mapOptions)
-		marker = new google.maps.Marker
+		_.whenReady 'googlemaps', =>
+			attendee = @options.meetup.attributes
+			profile_map_el = document.getElementById('meetup-profile-map')
+			latlon = new google.maps.LatLng(attendee.lat, attendee.lon)
+			mapOptions = 
+				center: latlon
+				zoom: 16
+				scrollwheel: false
+				disableDefaultUI: true
+			profile_map = new google.maps.Map(profile_map_el, mapOptions)
+			marker = new google.maps.Marker
       position: latlon
       map: profile_map
       title: 'Your Meetup\'s Venue'

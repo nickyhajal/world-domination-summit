@@ -47,6 +47,7 @@ routes = (app) ->
 
 		search: (req, res, next) ->
 			RaceTasks.forge()
+			.query('orderBy', 'section')
 			.fetch()
 			.then (tasks) ->
 				res.r.racetasks = tasks.models

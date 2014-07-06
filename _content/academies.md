@@ -10,28 +10,9 @@ Registration for academies is separate from WDS itself. We'll offer registration
 
 <div class="zig-zags_blue"></div>
 
-<a name="language-lab"></a>
-### Thursday, July 10
-
-
-<div class="collapsable-box collapsable-box-open">
-	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029"><h4>Language Lab: Learn How to Hack Any Language and Speak it Today</h4></a>
-	<h5>9:00 am–12:00 pm</h5>
-	Hosted by Benny Lewis
-	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029" class="button">Tickets &rarr;</a>
-	<div class="collapsable-content">
-		<h4>Summary</h4>
-		"Someday" you'll learn a new language? Make "someday" TODAY. We will be tackling your doubts, and then giving you the hacks you need to have a basic conversation in any language you may want to learn, by the end of the lab. Then you will open up a whole new world, unreachable by English alone, and have the tools to skyrocket towards fluency after WDS. Anyone at any age can learn any language in the world. Talent is irrelevant.
-
-By the end of this Academy all language doubts will be squashed. Find out why adults are BETTER language learners than children, how to learn your language even if you are busy, and especially how to do it even if you can't travel abroad.
-		
-		<h4>About Benny Lewis</h4>
-		Benny Lewis failed in language learning when growing up—getting a C in German, and spending six entire months living in Spain without able to ask the most basic questions in Spanish. But then everything changed! He now speaks 12 languages and runs the world's largest blog about language learning, "Fluent in 3 Months" and has this year released a book of the same title that became an instant international best seller. His travels through language learning have also earned him the title of National Geographic's Traveler of the Year.
-	</div>
-</div>
-
 <a name="problogger"></a>
-<div class="line-canvas"></div>
+
+### Thursday, July 10
 
 <div class="collapsable-box collapsable-box-open">
 	<a href="https://www.eventbrite.com/e/wds-academy-problogger-academy-building-profitable-blogs-tickets-11339594031"><h4>ProBlogger Academy: Building Profitable Blogs</h4></a>
@@ -44,24 +25,6 @@ By the end of this Academy all language doubts will be squashed. Find out why ad
 		
 		<h4>About the Hosts</h4>
 		**Darren Rowse** is the founder of ProBlogger, Digital Photography School, and various other blogs. He’s been blogging since 2002 and has been involved in a variety of other projects including co-authoring *ProBlogger* the Book. Darren is passionate about helping bloggers find their voice and build sustainable blogs. He speaks around the world on the topic of building profitable blogs. **Chris Garrett** is an online business consultant, teacher, coach, new media industry commentator, writer, speaker, and all-round web geek. He has been involved in several startups and has written for some of the web’s best-loved blogs. Chris also works as part of the team at Copyblogger as Chief Digital Officer.
-	</div>
-</div>
-
-
-<a name="travel-hacking"></a>
-<div class="line-canvas"></div>
-
-<div class="collapsable-box collapsable-box-open">
-	<a href="https://www.eventbrite.com/e/wds-academy-travel-hacking-tickets-11392203387"><h4>Travel Hacking Academy</h4></a>
-	<h5>1:00 pm–5:00 pm</h5>
-	Hosted by Stephanie Zito
-	<a href="https://www.eventbrite.com/e/wds-academy-travel-hacking-tickets-11392203387" class="button">Tickets &rarr;</a>
-	<div class="collapsable-content">
-		<h4>Summary</h4>
-		Master the art of travel hacking. You will learn how to build a strategy to earn big balances of airline miles and hotel points that you can redeem for travel to your dream destinations. If you want to go places for free or nearly free, this is the workshop for you.
-
-		<h4>About Stephanie Zito</h4>
-		Stephanie Zito is a life long traveler and master of mileage. She redeemed her first international frequent flyer ticket in 1994 and has been hooked on free flights ever since. Stephanie has traveled to more than 117 countries and her current airport base is PDX. 
 	</div>
 </div>
 
@@ -82,6 +45,43 @@ By the end of this Academy all language doubts will be squashed. Find out why ad
 	</div>
 </div>
 
+<a name="language-lab"></a>
+<div class="line-canvas"></div>
+
+<div class="collapsable-box collapsable-box-open">
+	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029"><h4>Language Lab: Learn How to Hack Any Language and Speak it Today</h4></a>
+	<h5>9:00 am–12:00 pm</h5>
+	Hosted by Benny Lewis
+	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029" class="button">Sold Out!</a>
+	<div class="collapsable-content">
+		<h4>Summary</h4>
+		"Someday" you'll learn a new language? Make "someday" TODAY. We will be tackling your doubts, and then giving you the hacks you need to have a basic conversation in any language you may want to learn, by the end of the lab. Then you will open up a whole new world, unreachable by English alone, and have the tools to skyrocket towards fluency after WDS. Anyone at any age can learn any language in the world. Talent is irrelevant.
+
+By the end of this Academy all language doubts will be squashed. Find out why adults are BETTER language learners than children, how to learn your language even if you are busy, and especially how to do it even if you can't travel abroad.
+		
+		<h4>About Benny Lewis</h4>
+		Benny Lewis failed in language learning when growing up—getting a C in German, and spending six entire months living in Spain without able to ask the most basic questions in Spanish. But then everything changed! He now speaks 12 languages and runs the world's largest blog about language learning, "Fluent in 3 Months" and has this year released a book of the same title that became an instant international best seller. His travels through language learning have also earned him the title of National Geographic's Traveler of the Year.
+	</div>
+</div>
+
+
+<a name="travel-hacking"></a>
+<div class="line-canvas"></div>
+
+<div class="collapsable-box collapsable-box-open">
+	<a href="https://www.eventbrite.com/e/wds-academy-travel-hacking-tickets-11392203387"><h4>Travel Hacking Academy</h4></a>
+	<h5>1:00 pm–5:00 pm</h5>
+	Hosted by Stephanie Zito
+	<a href="https://www.eventbrite.com/e/wds-academy-travel-hacking-tickets-11392203387" class="button">Sold Out!</a>
+	<div class="collapsable-content">
+		<h4>Summary</h4>
+		Master the art of travel hacking. You will learn how to build a strategy to earn big balances of airline miles and hotel points that you can redeem for travel to your dream destinations. If you want to go places for free or nearly free, this is the workshop for you.
+
+		<h4>About Stephanie Zito</h4>
+		Stephanie Zito is a life long traveler and master of mileage. She redeemed her first international frequent flyer ticket in 1994 and has been hooked on free flights ever since. Stephanie has traveled to more than 117 countries and her current airport base is PDX. 
+	</div>
+</div>
+
 
 <div class="zig-zags_blue"></div>
 
@@ -96,7 +96,7 @@ By the end of this Academy all language doubts will be squashed. Find out why ad
 	<a href="https://www.eventbrite.com/e/wds-academy-revolutionu-with-jonathan-fields-tickets-11557391469"><h4>RevolutionU: How to Tap Revolution-Dynamics to Fuel Rapid Business Growth, Build an Army of Evangelists and Change the Damn World</h4></a>
 	<h5>3:00 pm–6:00 pm</h5>
 	Hosted by Jonathan Fields
-	<a href="https://www.eventbrite.com/e/wds-academy-revolutionu-with-jonathan-fields-tickets-11557391469" class="button">Tickets &rarr;</a>
+	<a href="https://www.eventbrite.com/e/wds-academy-revolutionu-with-jonathan-fields-tickets-11557391469" class="button">Sold Out!</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		In this WDS Academy, Fields will reveal the entire 18-step RevolutionU Framework, a highly-detailed, immediately-actionable roadmap to engineer your own business revolution, whether you’re just starting up or you need to breathe new life into your organization, venture or brand. Imagine how it will feel to fuel your business with the power of revolution.
@@ -118,7 +118,7 @@ For years, Jonathan had been working in secret to deconstruct the key elements o
 	<a href="https://www.eventbrite.com/e/wds-academy-making-art-and-giving-it-away-tickets-11351507665"><h4>Making Art and Giving It Away</h4></a>
 	<h5>9:00 am–12:00 pm</h5>
 	Hosted by Gary Hirsch
-	<a href="https://www.eventbrite.com/e/wds-academy-making-art-and-giving-it-away-tickets-11351507665" class="button">Tickets &rarr;</a>
+	<a href="https://www.eventbrite.com/e/wds-academy-making-art-and-giving-it-away-tickets-11351507665" class="button">Sold Out!</a>
 	
 	<div class="collapsable-content">
 		<h4>Summary</h4>
@@ -155,7 +155,7 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 	<a href="https://www.eventbrite.com/e/wds-academy-finding-and-refining-a-great-business-idea-with-fizzle-tickets-11584159533"><h4>Finding and Refining a Great Business Idea</h4></a>
 	<h5>1:00 pm–5:00 pm</h5>
 	Hosted by Fizzle
-	<a href="https://www.eventbrite.com/e/wds-academy-finding-and-refining-a-great-business-idea-with-fizzle-tickets-11584159533" class="button">Tickets &rarr;</a>
+	<a href="https://www.eventbrite.com/e/wds-academy-finding-and-refining-a-great-business-idea-with-fizzle-tickets-11584159533" class="button">Sold Out!</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		If you're searching for a great business idea or looking for ways to make your current idea much more compelling, this WDS Academy from the guys behind Fizzle is for you. You'll learn how to spot great business opportunities and how to turn a potentially common idea into a unique and powerful solution for a group of customers you care deeply about.

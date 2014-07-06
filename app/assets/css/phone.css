@@ -151,9 +151,10 @@ div.tweet-box {
     width:                      100%;
 }
 h2 {
-    margin-top:                 -11px;
-    margin-left:                -15px;
-    margin-right:               -15px;
+    margin-top:                 -12px;
+    padding:                    11px 50px 9px;
+    font-size:                  11pt;
+    text-align:                 center;
 }
 .broadcast-box .broadcast-area a {
     width:                      100%;
