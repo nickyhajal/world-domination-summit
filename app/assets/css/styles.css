@@ -663,6 +663,9 @@ a.rank-row {
     text-decoration:            none;
     margin-bottom:              2px;
 }
+a#back-button {
+    display:                    none;
+}
 a {
     color:                      rgb(226, 127, 28);
 }

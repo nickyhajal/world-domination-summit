@@ -16,6 +16,7 @@ ap.createRouter = ->
 			'hub', 'welcome', 'settings', 'propose-a-meetup', 'communities', 'your-schedule', 'meetups'
 		]
 		initialize: ->
+			$('#back-button').click(ap.back)
 			@route("*actions", 'default', ap.Routes.defaultRoute)
 			@route(/^[0-9a-z]{40}$/, 'hash', ap.Routes.hashLogin)
 			@route("logout", 'logout', ap.Routes.logout)
@@ -100,6 +101,9 @@ ap.syncNav = (panel) ->
 	Re-render the page to show new content
 ###
 ap.goTo = (panel = '', options = {}, cb = false) ->
+
+	ap.toggleNav('force-closed')
+
 	# Go to the panel
 	panel = if panel and panel.length then _.trim(panel, '/') else 'home'
 	$s = $('#')
@@ -146,6 +150,11 @@ ap.goTo = (panel = '', options = {}, cb = false) ->
 			cb()
 	, 60
 
+	history_length = history.length
+	if history_length > 1
+		$('#back-button').show()
+	else
+		$('#back-button').hide()
 ap.back = ->
 	history.go(-1);
 	return false;

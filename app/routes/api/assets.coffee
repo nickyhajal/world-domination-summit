@@ -172,9 +172,12 @@ routes = (app) ->
 
 			achievements: (req) ->
 				dfr = Q.defer()
-				req.me.getAchievedTasks()
-				.then (achs) ->
-					dfr.resolve(achs.toJSON())
+				if req.me
+					req.me.getAchievedTasks()
+					.then (achs) ->
+						dfr.resolve(achs.toJSON())
+				else
+						dfr.resolve([])
 				return dfr.promise
 
 			interests: (req) ->

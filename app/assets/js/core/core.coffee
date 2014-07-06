@@ -169,6 +169,12 @@ ap.initSearch = ->
 						<span style="background:url('+result.get('pic')+')"></span>
 					'+result.get('first_name')+' '+result.get('last_name')+'</a>'
 				$('#nav-search .search-results').html(html)
+				if ap.isMobile
+					$('#primary-links').hide()
+			else if val.length is 0
+				if ap.isMobile
+					$('#primary-links').show()
+					$('#nav-search .search-results').empty()
 
 ###
 	Make an api call
