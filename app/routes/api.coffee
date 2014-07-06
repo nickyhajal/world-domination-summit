@@ -12,6 +12,7 @@ routes = (app) ->
 	event = require('./api/event')(app)
 	feed = require('./api/feed')(app)
 	racetask = require('./api/racetask')(app)
+	screens = require('./api/screens')(app)
 	speaker = require('./api/speaker')(app)
 	transfer = require('./api/transfer')(app)
 	user = require('./api/user')(app)
@@ -79,6 +80,9 @@ routes = (app) ->
 		app.put '/racetask', racetask.upd
 		app.get '/racetasks', racetask.search
 
+		# Screens
+		app.get '/screens', screens.get
+		app.put '/screens', screens.update
 
 		# Admin
 		# Anything in the /admin path will pull the users capabilities
