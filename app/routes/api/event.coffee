@@ -172,7 +172,7 @@ routes = (app) ->
 						User.forge({user_id: host.get('user_id')})
 						.fetch()
 						.then (host) ->
-							host.sendEmail('meetup-declined', 'Thanks for your meetup proposal!')
+		#					host.sendEmail('meetup-declined', 'Thanks for your meetup proposal!')
 							model.set('ignored', 1)
 							model.save()
 							next()
