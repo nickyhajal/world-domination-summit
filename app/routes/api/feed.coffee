@@ -206,7 +206,6 @@ routes = (app) ->
 				.query('debug')
 				.fetch()
 				.then (feed) ->
-					tk feed
 					res.r.feed_contents = feed.models
 					next()
 				, (err) ->
