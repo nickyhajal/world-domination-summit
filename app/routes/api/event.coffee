@@ -128,14 +128,23 @@ routes = (app) ->
 				.fetch()
 				.then (events) ->
 					evs = []
-					for ev in events.models
+					async.each events.models, (ev, cb) ->
 						tmp = ev.attributes
+						tmp.hosts = []
 						start = (tmp.start+'').split(' GMT')
 						start = moment(start[0])
 						tmp.start = start.format('YYYY-MM-DD HH:mm:ss')
-						evs.push(tmp)
-					res.r.events = evs
-					next()
+						EventHosts.forge()
+						.query('where', 'event_id', '=', tmp.event_id)
+						.fetch()
+						.then (rsp) ->
+							for host in rsp.models
+								tmp.hosts.push(host.get('user_id'))
+							evs.push(tmp)
+							cb()
+					, ->
+						res.r.events = evs
+						next()
 			else
 				res.status(401)
 				next()

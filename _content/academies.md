@@ -118,7 +118,7 @@ For years, Jonathan had been working in secret to deconstruct the key elements o
 	<a href="https://www.eventbrite.com/e/wds-academy-making-art-and-giving-it-away-tickets-11351507665"><h4>Making Art and Giving It Away</h4></a>
 	<h5>9:00 am–12:00 pm</h5>
 	Hosted by Gary Hirsch
-	<a href="https://www.eventbrite.com/e/wds-academy-making-art-and-giving-it-away-tickets-11351507665" class="button">Tickets &rarr;</a>
+	<a href="https://www.eventbrite.com/e/wds-academy-making-art-and-giving-it-away-tickets-11351507665" class="button">Sold Out!</a>
 	
 	<div class="collapsable-content">
 		<h4>Summary</h4>
@@ -155,7 +155,7 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 	<a href="https://www.eventbrite.com/e/wds-academy-finding-and-refining-a-great-business-idea-with-fizzle-tickets-11584159533"><h4>Finding and Refining a Great Business Idea</h4></a>
 	<h5>1:00 pm–5:00 pm</h5>
 	Hosted by Fizzle
-	<a href="https://www.eventbrite.com/e/wds-academy-finding-and-refining-a-great-business-idea-with-fizzle-tickets-11584159533" class="button">Tickets &rarr;</a>
+	<a href="https://www.eventbrite.com/e/wds-academy-finding-and-refining-a-great-business-idea-with-fizzle-tickets-11584159533" class="button">Sold Out!</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		If you're searching for a great business idea or looking for ways to make your current idea much more compelling, this WDS Academy from the guys behind Fizzle is for you. You'll learn how to spot great business opportunities and how to turn a potentially common idea into a unique and powerful solution for a group of customers you care deeply about.

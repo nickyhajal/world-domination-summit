@@ -1,4 +1,4 @@
-ap.Views.admin_index = XView.extend
+ap.Views.admin = XView.extend
         initialize: ->
                 ap.api 'get me', {}, (rsp) =>
                         ap.api 'get user', {user_name: rsp.me.user_name}, (rsp2) =>
@@ -73,7 +73,7 @@ ap.Views.admin_index = XView.extend
                                         new_div.find('h3').html(capabilityTitle)
                                         a_el = new_div.find('a')
                                         for page in @pageMap[capability]['pages']
-                                                a_el.clone().attr('href', '/admin/' + page.page).html(page.title).insertBefore(a_el).toggle()
+                                                a_el.clone().attr('href', '/admin/' + page.page).html(page.title).insertBefore(a_el).toggle().addClass('button')
                                         a_el.remove()
                                         new_div.insertBefore('#link-stub').toggle()
 
