@@ -159,6 +159,9 @@ routes = (app) ->
 			else if channel_type is 'feed_item'
 				feeds.query('where', 'feed_id', '=', req.query.channel_id)
 
+			else if channel_type is 'community'
+				feeds.query('where', 'channel_type', '=', 'interest')
+
 			# Get a channel feed
 			else if channel_type isnt 'global'
 				feeds.query('where', 'channel_type', '=', req.query.channel_type)
