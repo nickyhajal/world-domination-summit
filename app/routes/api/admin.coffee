@@ -3,6 +3,7 @@ routes = (app) ->
 
 	[User, Users] = require('../../models/users')
 	[Event, Events] = require('../../models/events')
+	[RaceSubmission, RaceSubmissions] = require('../../models/race_submissions')
 
 	admin =
 		get_capabilities: (req, res, next) ->
@@ -22,6 +23,15 @@ routes = (app) ->
 						cb()
 				, ->
 					next()
+		rate: (req, res, next) ->
+			submission_id = req.query.submission_id
+			rating = +req.query.rating
+			RaceSubmission.forge
+				submission_id: submission_id
+				rating: rating
+			.save()
+
+
 		download: (req, res, next) ->
 			if req.me?
 				if req.me?.hasCapability('downloads')
