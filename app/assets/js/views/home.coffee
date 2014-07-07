@@ -62,8 +62,12 @@ window.wall =
 
 		$(window).resize =>
 			@scaleForScreenMode()
+			if ($("#home-screen-overlay").length)
+				$("#home-screen-overlay").css("width", $(window).width())
+							 .css('height', $(window).height())
 
 		@autoScroll()
+		@screenMessage()
 
 	# Will load more content if we scroll down low enough
 	loadMoreContentIfWeScrolledDownEnough: ->
@@ -89,15 +93,41 @@ window.wall =
 				@originalContentainerSize = $('main.contentainer').innerWidth()
 			@zoomFactor = viewportSize / @originalContentainerSize
 
-			$('body').css('transform', 'scale(' + @zoomFactor + ')')
-				 .css('-moz-transform', 'scale(' + @zoomFactor + ')')
-				 .css('-ms-transform', 'scale(' + @zoomFactor + ')')
-				 .css('-o-transform', 'scale(' + @zoomFactor + ')')
-				 .css('-webkit-transform', 'scale(' + @zoomFactor + ')')
-				 .css('overflow', 'hidden')
-			$('main').css('position', 'absolute')
-				 .css('top', '0px')
-				 .css('left', (viewportSize - @originalContentainerSize) / 2 + 'px')
+			$('#waterfall').css('transform', 'scale(' + @zoomFactor + ')')
+				       .css('-moz-transform', 'scale(' + @zoomFactor + ')')
+				       .css('-ms-transform', 'scale(' + @zoomFactor + ')')
+				       .css('-o-transform', 'scale(' + @zoomFactor + ')')
+				       .css('-webkit-transform', 'scale(' + @zoomFactor + ')')
+				       .css('top', (1200 * @zoomFactor) + 'px')
+
+			$('body').css('overflow', 'hidden')
+
+	replaceNewLineWithBr: (str) ->
+		str.replace(/(?:\r\n|\r|\n)/g, '<br />')
+
+	screenMessage: ->
+		ap.api 'get screens', {}, (rsp) ->
+			if rsp.message?
+				console.log("FFF: " + JSON.stringify($('#home-screen-overlay').length))
+				if rsp.message.activated == "yes"
+					if !$('#home-screen-overlay').length
+						wall.stopAutoScroll()
+						$('body').append('<div id="home-screen-overlay" style="display: none"><h1>' + rsp.message.title + '</h1><p>' + wall.replaceNewLineWithBr rsp.message.message + '</p></div>')
+						$("#home-screen-overlay").css("width", $(window).width())
+									 .css('height', $(window).height())
+									 .fadeIn("slow")
+					else if (wall.message.message != rsp.message.message) or (wall.message.title != rsp.message.title)
+						$("#home-screen-overlay").html('<h1>' + rsp.message.title + '</h1><p>' + wall.replaceNewLineWithBr rsp.message.message + '</p>')
+				else if (rsp.message.activated == "no") and $('#home-screen-overlay').length
+					$("#home-screen-overlay").fadeOut "slow", ->
+						$('#home-screen-overlay').remove()
+						wall.autoScroll()
+
+				wall.message = rsp.message
+
+			setTimeout =>
+				wall.screenMessage()
+			, 1000
 
 	autoScroll: ->
 		rightNow = new Date().getTime()
@@ -116,9 +146,15 @@ window.wall =
 		@autoScrollTimerStart = rightNow
 		window.scrollBy(0,pixels)
 
-		setTimeout =>
+		@autoScrollTimo = setTimeout =>
 			@autoScroll()
 		, newDelay
+
+	stopAutoScroll: ->
+		if @autoScrollTimo?
+			clearTimeout(@autoScrollTimo)
+		@autoScrollTimo = null
+		@autoScrollTimerStart = null
 
 	initSafari: ->
 		isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/)
@@ -378,15 +414,15 @@ window.wall =
 			lat = ''+user.get('lat')
 			lon = ''+user.get('lon')
 			while not uniq
-				ll = llid(lat, lon);
+				ll = llid(lat, lon)
 				if not used[ll]?
 					used[ll] = true
-					uniq = true;
+					uniq = true
 				else
-					lat = lat.substr(0, lat.length-1);
-					lon = lon.substr(0, lon.length-1);
-					lat += Math.floor(Math.random()*11);
-					lon += Math.floor(Math.random()*11);
+					lat = lat.substr(0, lat.length-1)
+					lon = lon.substr(0, lon.length-1)
+					lat += Math.floor(Math.random()*11)
+					lon += Math.floor(Math.random()*11)
 			return new google.maps.LatLng(lat, lon)
 
 		ap.Users.each (user) ->
