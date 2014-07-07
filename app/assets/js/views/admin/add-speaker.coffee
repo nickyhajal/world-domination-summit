@@ -2,7 +2,6 @@ ap.Views.admin_add_speaker = XView.extend
 	events: 
 		'submit #admin-add-speaker': 'addUser_submit'
 	initialize: ->
-		tk 'oianst'
 		@initRender()
 	addUser_submit: (e) ->
 		e.preventDefault()

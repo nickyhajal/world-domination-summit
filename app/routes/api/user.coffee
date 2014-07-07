@@ -218,7 +218,6 @@ routes = (app) ->
 				User.forge(query)
 				.fetch()
 				.then (user) ->
-					tk req.headers
 					CredentialChange
 					.forge()
 					.create(user, req.headers['x-real-ip'])
