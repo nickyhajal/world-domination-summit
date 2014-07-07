@@ -101,7 +101,7 @@ routes = (app) ->
 				sortable = []
 				for id,user of all
 					sortable.push user
-				sortable.sort (a, b) -> 
+				sortable.sort (a, b) ->
 					return a.score - b.score
 				sortable.reverse()
 				res.r.users = sortable
@@ -145,7 +145,7 @@ routes = (app) ->
 								finish(user)
 							else
 								finish()
-					else 
+					else
 						finish()
 
 		create: (req, res, next) ->
