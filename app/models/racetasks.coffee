@@ -16,7 +16,7 @@ RaceTasks = Shelf.Collection.extend
 	getById: (type = false) ->
 		dfr = Q.defer()
 		if type is 'instagram'
-			key = 'tasksByIgId2'
+			key = 'tasksByIgId'
 		else
 			key = 'tasksById'
 		rds.get key, (err, tasksById) ->
