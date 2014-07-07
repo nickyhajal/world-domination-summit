@@ -45,17 +45,17 @@ sidebar: headquarters
 </div>
 
 <div class="place-row">
-	<a href="http://www.acehotel.com/portland">Ace Hotel</a>
+	<a href="http://www.westinportland.com">The Westin</a>
 	<span>
-		<a href="https://goo.gl/maps/MiriI">0.5 Mi</a>
+		<a href="https://www.google.com/maps/place/Westin+Hotel/@45.520164,-122.680092,17z/data=!3m1!4b1!4m2!3m1!1s0x54950a048b6d5263:0xa6bb040d19c42d2f">0.3 Mi</a>
 		From Base
 	</span>
 </div>
 
 <div class="place-row">
-	<a href="http://www.vintageplaza.com">Hotel Vintage Plaza</a>
+	<a href="http://www.markspencer.com">Mark Spencer Hotel</a>
 	<span>
-		<a href="https://goo.gl/maps/v3Bcl">0.3 Mi</a>
+		<a href="https://www.google.com/maps/place/Mark+Spencer+Hotel/@45.522163,-122.682373,17z/data=!3m2!4b1!5s0x54950a030a3e934b:0x76d4833ac4e72712!4m2!3m1!1s0x54950a030a420acf:0x5309db9e6531d701">0.5 Mi</a>
 		From Base
 	</span>
 </div>
@@ -65,7 +65,7 @@ sidebar: headquarters
 <a name="transportation"></a>
 
 <h3 class="side-icon-streetcar">Transportation</h3>
-<p>For all of these options, Portland's fast-and-easy light rail service goes directly from the airport to downtown for $2.30 - no need to rent a car during your whole time in the city. You can also come a day early or stay a day late, and the discount hotel rates are valid during the entire week surrounding the summit.</p> 
+<p>For all of these options, Portland's fast-and-easy light rail service goes directly from the airport to downtown for $2.50 - no need to rent a car during your whole time in the city. You can also come a day early or stay a day late, and the discount hotel rates are valid during the entire week surrounding the summit.</p> 
 <div class="place-row">
 	<a href="http://www.portlandstreetcar.org">Portland Streetcar</a>
 	<span>
@@ -142,7 +142,7 @@ Rumor has it that the creative class was recruited to Portland on the basis of i
 
 <h3 class="side-icon-bridge">City</h3>
 <p>
-	Our friends at Travel Portland and the Mayor's Office are preparing a special welcome for all out-of-town visitors. You'll have the chance to wander and explore. In short, it will be an amazing weekend in an incredible city (and for those attending from nearby, you'll enjoy meeting new friends while showing off our funky neighborhoods).
+	You'll have the chance to wander and explore. In short, it will be an amazing weekend in an incredible city (and for those attending from nearby, you'll enjoy meeting new friends while showing off our funky neighborhoods).
 </p>
 
 **Hawthorne Neighborhood**
