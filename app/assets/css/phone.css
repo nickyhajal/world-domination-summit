@@ -215,14 +215,15 @@ div.zig-zags_blue {
 }
 div#your-points, #your-rank {
     font-size:                  20pt;
-    margin-left:                8px;
-    margin-right:               -2px;
+    width:                      50%;
+    margin-right:               -15px;
 }
 #your-points label, #your-rank label {
     font-size:                  16px ! important;
 }
 div#race-user-status:after {
-    top:                        19px;
+    top:                        12px;
+    right:                      -30px;
 }
 div#race-user-status {
     margin-bottom:              -5px;
@@ -243,6 +244,13 @@ span.rank-therank {
 }
 div.rank-attendee {
     padding-top:                12px;
+}
+div#race-buttons {
+    margin-left:                -15px;
+    margin-right:               -15px;
+}
+div#race-buttons a {
+    padding:                    14px 0px 11px;
 }
 * {
     line-height:                inherit;

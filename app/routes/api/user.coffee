@@ -180,6 +180,7 @@ routes = (app) ->
 					.fetch()
 					.then (user) ->
 						user.set(post)
+						user.set('last_broadcast', new Date(user.get('last_broadcast')))
 						user.save()
 						.then (user) ->
 							if user.addressChanged

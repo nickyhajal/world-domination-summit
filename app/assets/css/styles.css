@@ -665,7 +665,7 @@ a.rank-row {
     margin-bottom:              2px;
 }
 a#back-button {
-    display:                    none;
+    display:                    none ! important;
 }
 a {
     color:                      rgb(226, 127, 28);
@@ -990,6 +990,12 @@ input.account-input {
 }
 span.pre-input {
     background:                 none repeat scroll 0px 0px rgb(248, 248, 244);
+}
+.task-how-to-complete input[type="text"] {
+    background:                 none repeat scroll 0% 0% rgb(255, 255, 251);
+    margin-top:                 18px;
+    font-size:                  13pt;
+    padding:                    10px;
 }
 input[type="text"], input[type="password"], input[type="number"], .pre-input {
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
@@ -1791,20 +1797,20 @@ table#manifests-results-shell, .search-results-shell {
     font-size:                  11pt;
 }
 #page-admin a.button {
-    display: inline-block;
-    margin-bottom: 5px;
-    margin-right: 5px !important;
-    text-align: center;
-    width: auto;
+    display:                    inline-block;
+    margin-bottom:              5px;
+    margin-right:               5px ! important;
+    text-align:                 center;
+    width:                      auto;
 }
 #event-review-results tr td:first-of-type {
     padding-left:               10px;
     width:                      280px ! important;
 }
 #event-review-results td {
-    font-family: karla;
-    font-size: 11pt;
-    height: 44px;
+    font-family:                karla;
+    font-size:                  11pt;
+    height:                     44px;
 }
 #manifest-results tr td:first-of-type span, .search-results tr td:first-of-type span {
     display:                    table-cell;
@@ -2139,7 +2145,6 @@ div.schedule-host-avatar {
     padding:                    6px 10px 5px 22px;
     background:                 none repeat scroll 0px 0px rgb(254, 241, 220);
 }
-<<<<<<< HEAD
 div#your-points, #your-rank {
     display:                    inline-block;
     text-align:                 center;
@@ -2308,7 +2313,7 @@ span.rank-therank {
 div.rank-attendee {
     font-size:                  19px;
     padding-top:                23px;
-=======
+}
 div.dispatch-filter {
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
     color:                      rgb(226, 127, 28);
@@ -2347,6 +2352,31 @@ div.dipatch-filter-shell {
 }
 div.dispatch-control {
     margin-bottom:              8px;
+}
+div#race-buttons {
+    margin-left:                -50px;
+    margin-right:               -50px;
+    width:                      630px;
+}
+span#race-latest-update span {
+    margin-right:               4px;
+}
+span#race-latest-update {
+    color:                      rgb(183, 180, 162);
+    position:                   relative;
+    display:                    block;
+    font-family:                Karlaitalic;
+    top:                        -11px;
+    font-size:                  10pt;
+}
+div#primary-links {
+    float:                      left;
+}
+.task-how-to-complete h5 {
+    font-weight:                normal;
+    font-family:                vitessebold;
+    margin-bottom:              9px;
+    font-size:                  12pt;
 }
 * {
     box-sizing:                 border-box;
@@ -2572,10 +2602,12 @@ a.ambassador-button {
 #nav-links a.result-link:hover {
     color:                      rgb(242, 242, 234) ! important;
 }
+a.if-mobile {
+    display:                    none ! important;
+}
 #nav-links a, #nav-search {
     color:                      rgb(226, 127, 28);
     display:                    block;
-    float:                      left;
     font-family:                VitesseBook;
     text-align:                 center;
     text-decoration:            none;
@@ -2590,6 +2622,7 @@ a.ambassador-button {
     margin-right:               6px;
     cursor:                     pointer;
     padding:                    5.5px 10px 4px;
+    float:                      left;
 }
 #nav-links {
     float:                      right;
@@ -4276,6 +4309,18 @@ html[dir="rtl"] .select2-search-choice-close {
     width:                      100px;
     height:                     100px;
     overflow:                   scroll;
+}
+div#race-buttons a {
+    width:                      50%;
+    text-align:                 center;
+    display:                    block;
+    float:                      left;
+    color:                      rgb(226, 127, 28);
+    font-family:                karla;
+    text-decoration:            none;
+    margin-bottom:              45px;
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    padding:                    12px 0px 11px;
 }
 @media not all, only screen and (min-resolution: 2dppx) {
     .select2-search input, .select2-search-choice-close, .select2-container .select2-choice abbr, .select2-container .select2-choice .select2-arrow b {

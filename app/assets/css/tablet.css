@@ -176,12 +176,20 @@ a.wall-content-type-speaker {
     padding:                    9px 0px 8px ! important;
     margin-left:                24px;
 }
+#nav-links a:hover, .nav-link-active {
+    margin-top:                 0px ! important;
+}
+a.if-mobile {
+    display:                    block ! important;
+}
 div#nav-links a {
     display:                    block;
     float:                      none;
     text-align:                 left;
     padding:                    10px ! important;
     margin-left:                15px;
+    margin-bottom:              3px ! important;
+    margin-top:                 0px;
 }
 div.nav-links-open {
     right:                      0px ! important;
@@ -248,10 +256,6 @@ div.pattern-bg {
 div.schedule-row {
     width:                      100%;
 }
-<<<<<<< HEAD
-h2 {
-    padding:                    12px 15px;
-}
 span.task-detail-block {
     margin-right:               -2px;
 }
@@ -283,15 +287,16 @@ a#back-button {
     color:                      rgb(33, 23, 10);
     text-align:                 center;
     text-decoration:            none;
-    width:                      42px;
     display:                    block ! important;
     border-radius:              1px;
     -moz-border-radius:         1px;
     -webkit-border-radius:      1px;
-    height:                     29px;
-    padding-top:                4px;
     margin-top:                 9px;
     margin-left:                14px;
+    width:                      30px;
+    height:                     29px;
+    font-size:                  16pt;
+    padding-top:                1px;
 }
 #nav-search:hover {
     padding:                    0px 5px ! important;
@@ -317,6 +322,8 @@ input.search-input {
     color:                      rgb(255, 255, 255);
     text-align:                 left;
     width:                      159px;
+    position:                   relative;
+    top:                        -1px;
 }
 div.search-results {
     background:                 none repeat scroll 0% 0% rgb(33, 23, 10);
@@ -374,6 +381,9 @@ div.dispatch-content-channel-shell {
 }
 div.dispatch-content-comments-shell {
     margin-top:                 -7px;
+}
+div#race-buttons {
+    width:                      auto;
 }
 * {
     line-height:                inherit;

@@ -10,6 +10,7 @@ ap.Views.ranks = XView.extend
 	renderRanks: ->
 		html = ''
 		count = 1
+		latest = '<span>Last updated:</span>'+moment().format('MMMM Do [at] h:mm a')
 		for rank in ap.ranks
 			user_id = rank.user_id
 			user = ap.Users.get(user_id)
@@ -21,6 +22,7 @@ ap.Views.ranks = XView.extend
 			'
 			count += 1
 		$('#race-rank-list').html(html)
+		$('#race-latest-update').html(latest)
 
 	updateRanks: ->
 		ap.api 'get assets', {assets:'ranks'}, (rsp) =>

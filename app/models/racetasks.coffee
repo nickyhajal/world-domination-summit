@@ -13,9 +13,13 @@ RaceTask = Shelf.Model.extend
 
 RaceTasks = Shelf.Collection.extend
 	model: RaceTask
-	getById: ->
+	getById: (type = false) ->
 		dfr = Q.defer()
-		rds.get 'tasksById', (err, tasksById) ->
+		if type is 'instagram'
+			key = 'tasksByIgId2'
+		else
+			key = 'tasksById'
+		rds.get key, (err, tasksById) ->
 			if tasksById? and typeof JSON.parse(tasksById) is 'object'
 				dfr.resolve(JSON.parse(tasksById))
 			else
@@ -24,9 +28,13 @@ RaceTasks = Shelf.Collection.extend
 				.then (tasks) ->
 					tasksById = {}
 					for task in tasks.models
-						tasksById[task.get('racetask_id')] = task.toJSON()
-					rds.set 'tasksById', JSON.stringify(tasksById), ->
-						rds.expire 'tasksById', 500, ->
+						if type is 'instagram'
+							id = task.get('slug').replace('-', '')
+						else
+							id = task.get('racetask_id')
+						tasksById[id] = task.toJSON()
+					rds.set key, JSON.stringify(tasksById), ->
+						rds.expire key, 500, ->
 							dfr.resolve(tasksById)
 		return dfr.promise
 
