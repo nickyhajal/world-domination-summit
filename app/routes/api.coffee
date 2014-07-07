@@ -98,6 +98,7 @@ routes = (app) ->
 		app.get '/admin/events', event.get
 		app.get '/admin/event_accept', event.accept
 		app.get '/admin/event_reject', event.reject
+		app.get '/admin/rate', admin.rate
 
 
 		# Finish

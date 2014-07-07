@@ -1,32 +1,11 @@
 div(id="user-manifest-shell")
-	h1 {{ display_name }}
-		a(href="/admin/speakers", class="button") Back to Speakers
-	form(id="admin-speaker-update", method="post", action="#")
-		input(type="hidden", name="speaker_id", value="{{ speaker_id }}")
-		div(class="form-section")
-			div(class="form-box")
-				label Speaker Name
-				input(name="display_name", type="text", value="{{ display_name }}")
-			div(class="form-section")
-				div(class="form-box")
-					label URL to Avatar
-					input(type="text", name="display_avatar", value="{{ display_avatar }} ")
-			div(class="form-section")
-				div(class="form-box")
-					label Year
-					input(type="text", name="year", value="{{ year }} ")
-			div(class="form-section")
-				div(class="form-box")
-					label Description
-					textarea(type="text", name="descr") {{ descr }}
-		div(class="form-section")
-			div(class="form-box")
-				label Type
-				select(name="type")
-					option(value="upcoming") Upcoming
-					option(value="alumni") Alumni
-					option(value="returning") Returning
-					option(value="featured") Featured
-			div(class="clear")
-			div(class="form-section")
-				input(type="submit", value="Save Speaker", class="button")
+	h2 Submission Rating
+	div(id="rate-shell")
+		div(id="rate-task")
+		div(id="rate-attendee")
+		div(id="rate-content")
+		div(id="rate-buttons")
+			a(href="#", class="rate-button", data-rating="-1") Not Relevant
+			a(href="#", class="rate-button", data-rating="1") Acceptable
+			a(href="#", class="rate-button", data-rating="2") Great
+			a(href="#", class="rate-button", data-rating="4") Awesome!!!
