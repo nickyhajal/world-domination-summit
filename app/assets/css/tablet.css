@@ -385,6 +385,243 @@ div.dispatch-content-comments-shell {
 div#race-buttons {
     width:                      auto;
 }
+a#nav-link-expand div {
+    width:                      100%;
+    height:                     3px;
+    border-radius:              2px;
+    -moz-border-radius:         2px;
+    -webkit-border-radius:      2px;
+    background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
+    margin-bottom:              4px;
+}
+a#nav-link-expand {
+    height:                     33px;
+    float:                      right;
+    display:                    block ! important;
+    border:                     0px none ! important;
+    position:                   relative;
+    z-index:                    100;
+    width:                      26px;
+    right:                      14px;
+    top:                        12px;
+}
+div.contentainer {
+    width:                      100%;
+    padding:                    0px 0px 60px;
+}
+header#main-header {
+    height:                     auto;
+}
+#page-home #header-title:after {
+    width:                      100%;
+    top:                        152px;
+}
+#page-home #header-title {
+    background:                 none repeat scroll 0% 0% rgb(177, 186, 30);
+    left:                       0px ! important;
+    position:                   relative;
+    top:                        40px;
+    width:                      100%;
+    padding-left:               50px;
+    padding-right:              50px;
+}
+div#content_shell {
+    margin-left:                0px;
+}
+#page-home div#counter-shell {
+    display:                    block ! important;
+}
+#counter-shell:before {
+    display:                    none;
+}
+div#counter-shell {
+    display:                    none;
+}
+div#counter-shell {
+    left:                       0px ! important;
+    width:                      100%;
+    position:                   relative;
+    z-index:                    10;
+    top:                        60px;
+    float:                      none;
+    margin-bottom:              0px;
+}
+main.contentainer {
+    width:                      100%;
+}
+div.block counter-content {
+    margin:                     0px auto;
+    width:                      208px;
+}
+#counter-shell h6 {
+    width:                      100%;
+    padding:                    0px 20%;
+}
+div.counter-content {
+    width:                      208px;
+    margin:                     0px auto;
+    height:                     53px;
+}
+div#video-shell {
+    margin-left:                0px;
+    top:                        -1px;
+}
+div#video-underlay {
+    display:                    none;
+}
+div#video {
+    height:                     400px;
+    left:                       0px;
+    top:                        0px;
+    width:                      100%;
+    position:                   relative;
+    margin:                     0px 0px -1px;
+    z-index:                    1;
+}
+div.counter-fixed {
+    position:                   relative ! important;
+    top:                        60px ! important;
+}
+#reg-open, #reg-schedule, #reg-army, #reg-headquarters, #reg-chris, #reg-story, #reg-attendees, .waterfall-flare {
+    display:                    none;
+}
+div#reg-attendees {
+    position:                   relative;
+    top:                        151px;
+    width:                      100%;
+    left:                       0px;
+}
+div#waterfall {
+    clear:                      both;
+    margin-left:                0px;
+    transform-origin:           left top 0px;
+    -webkit-transform-origin:   left top 0px;
+    -moz-transform-origin:      left top 0px;
+    -moz--webkit-transform-origin: left top 0px;
+    -webkit-transform-origin:   left top 0px;
+    -webkit--webkit-transform-origin: left top 0px;
+    -o-transform-origin:        left top 0px;
+    -o--webkit-transform-origin: left top 0px;
+}
+a.wall-content-type-speaker {
+    width:                      100%;
+}
+.tpl-3 .block-1 .block-content {
+    display:                    block;
+    padding-left:               50%;
+    margin-left:                -100px;
+}
+div#nav-links a {
+    display:                    block;
+    float:                      none;
+    text-align:                 left;
+    margin-left:                15px;
+    padding:                    10px ! important;
+}
+div.nav-links-open {
+    right:                      0px ! important;
+}
+div#nav-links {
+    float:                      none;
+    position:                   fixed;
+    height:                     100%;
+    width:                      300px;
+    right:                      -300px;
+    padding-top:                50px;
+    transition:                 right 0.15s ease 0s;
+    -moz-transition:            right 0.15s ease 0s;
+    -webkit-transition:         right 0.15s ease 0s;
+    -o-transition:              right 0.15s ease 0s;
+    background:                 none repeat scroll 0px 0px rgb(33, 23, 10);
+    top:                        30px;
+}
+a#small-logo {
+    opacity:                    1;
+    -ms-filter:                 "alpha(opacity=100)";
+    filter:                     alpha(opacity=100);
+    zoom:                       1;
+    left:                       15px;
+}
+div#sidebar-shell {
+    display:                    none ! important;
+}
+#page_content:before {
+    display:                    none;
+}
+div#page_content {
+    margin-top:                 -99px;
+    width:                      100%;
+    margin-left:                0px;
+    margin-right:               0px;
+}
+img#story-img-1 {
+    margin:                     20px 0px 30px 30px;
+}
+img#schedule-circle-1 {
+    margin-right:               -120px;
+}
+img#schedule-circle-3 {
+    margin-right:               -120px;
+}
+a.photo-head-next {
+    right:                      15px;
+}
+div.tpl-0 {
+    display:                    none;
+}
+div.pattern-bg {
+    margin:                     0px auto ! important;
+}
+#page-headquarters h3:before {
+    display:                    none;
+}
+div.schedule-row {
+    width:                      100%;
+}
+div.dispatch {
+    width:                      100%;
+}
+div.dispatch-controls {
+    width:                      100%;
+}
+textarea.dispatch-post-inp {
+    width:                      100% ! important;
+}
+textarea.dispatch-content-comment-inp {
+    margin-left:                5%;
+    width:                      95%;
+}
+.dispatch-content-comment-form .dispatch-content-userpic {
+    display:                    none ! important;
+}
+form.dispatch-content-comment-form {
+    margin-left:                0px;
+}
+div.dispatch-content-comments-inner {
+    margin-left:                -69px;
+}
+input.dispatch-comment-submit {
+    margin-left:                5%;
+    width:                      95%;
+}
+div.dispatch-content-like-shell {
+    margin-left:                -66px;
+}
+a.dispatch-content-comment-status {
+    margin-left:                -24px;
+    display:                    block;
+    margin-top:                 23px;
+}
+div.dispatch-content-channel-shell a {
+    font-size:                  8pt ! important;
+    margin-top:                 15px;
+}
+div.dispatch-content-channel-shell {
+    width:                      140px;
+}
+div.dispatch-content-comments-shell {
+    margin-top:                 -7px;
+}
 * {
     line-height:                inherit;
 }

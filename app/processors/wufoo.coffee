@@ -7,7 +7,6 @@ shell = (app, db) ->
     tk 'Grabbing Ambassadors...'
     wf = new Wufoo app.settings.wufoo_account, app.settings.wufoo_key
     wf.getFormEntries app.settings.wufoo_amb_form, (err, entries) ->
-      tk entries.length
       for entry in entries
         name = entry['field224'].split(" ")
         email = entry['field4']

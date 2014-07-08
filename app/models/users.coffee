@@ -29,6 +29,7 @@ User = Shelf.Model.extend
     'address', 'address2', 'city', 'region', 'country', 'zip', 'lat', 'lon', 'distance',
     'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake', 
     'notification_interval', 'points'
+    'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake', 'notification_interval'
   ]
   defaults:
     pic: ''
@@ -93,6 +94,7 @@ User = Shelf.Model.extend
   getLocationString: getters.getLocationString
   getFriends: getters.getFriends
   getFriendedMe: getters.getFriendedMe
+  getLocationString: getters.getLocationString
 
   # Emails
   sendEmail: emails.sendEmail
@@ -108,6 +110,8 @@ User = Shelf.Model.extend
   updateAchieved: race.updateAchieved
   processPoints: race.processPoints
   getAchievements: race.getAchievements
+  processPoints: race.processPoints
+  getAchievements: race.getAchevements
 
   # Twitter
   getTwit: twitter.getTwit
@@ -132,7 +136,7 @@ User = Shelf.Model.extend
             if test_capability is master_capability and capability in sub_capability
               return true
     return false
-    
+
   getReadableCapabilities: ->
     dfr = Q.defer()
     @set('available_top_level_capabilities', Object.keys(User.capabilities_map))

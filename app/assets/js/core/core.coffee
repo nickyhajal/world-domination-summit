@@ -99,6 +99,10 @@ ap.update.ranks = ->
 		ap.me.setRank()
 		_.isReady 'ranks'
 
+ap.update.tpls = ->
+	ap.templates = ap.tpls
+	ap.initTemplates()
+	return true
 
 ###
 	Process templates for template optiosn

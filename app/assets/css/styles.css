@@ -381,6 +381,50 @@ a.subtle-link {
     color:                      rgb(32, 19, 10);
     font-size:                  15px;
     font-family:                VitesseBook;
+<<<<<<< HEAD
+}
+h2.broadcast-active {
+    background:                 none repeat scroll 0px 0px rgb(33, 23, 10);
+    color:                      rgb(255, 255, 255);
+}
+h2 {
+    margin-left:                -50px;
+    margin-right:               -50px;
+    margin-top:                 -50px;
+    font-size:                  12pt;
+    text-transform:             uppercase;
+    text--webkit-transform:     uppercase;
+    font-weight:                normal;
+    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    padding:                    22px 50px 18px;
+    font-family:                vitesse;
+    transition:                 all 0.2s ease 0s;
+    -moz-transition:            all 0.2s ease 0s;
+    -webkit-transition:         all 0.2s ease 0s;
+    -o-transition:              all 0.2s ease 0s;
+}
+a:hover {
+    text-decoration:            none;
+}
+a.register-banner {
+    background:                 url("/images/register-banner.png") repeat scroll 0% 0% / 100% auto transparent;
+    width:                      570px;
+    height:                     160px;
+    display:                    block;
+    margin-top:                 40px;
+}
+img.photo-head-active {
+    display:                    block ! important;
+    position:                   relative ! important;
+    left:                       0px ! important;
+}
+.photo-header img {
+    display:                    block;
+    height:                     550px;
+    width:                      815px;
+    position:                   absolute;
+    left:                       -9999px;
+}
 }
 h2.broadcast-active {
     background:                 none repeat scroll 0px 0px rgb(33, 23, 10);
@@ -648,6 +692,7 @@ a.schedule-directions:before {
     content:                    "Directions";
     float:                      right;
 }
+<<<<<<< HEAD
 a.rank-row:nth-of-type(2n+1) {
     background:                 none repeat scroll 0px 0px rgb(237, 234, 222);
 }
@@ -666,6 +711,38 @@ a.rank-row {
 }
 a#back-button {
     display:                    none ! important;
+}
+a {
+    color:                      rgb(226, 127, 28);
+}
+.pattern-bg b {
+    font-weight:                normal;
+    font-family:                VitesseBold;
+}
+.line-canvas {
+    width:                      568px;
+    background:                 none repeat scroll 0% 0% rgb(216, 216, 210);
+    height:                     6px;
+    clear:                      both;
+    margin:                     46px 0px;
+}
+hr {
+    border:                     0px none;
+}
+img#story-img-1 {
+    width:                      290px;
+    float:                      right;
+    margin:                     20px -80px 30px 30px;
+}
+footer {
+    background:                 none repeat scroll 0% 0% rgb(33, 23, 10);
+    padding:                    40px 0px;
+    text-align:                 center;
+    position:                   relative;
+    z-index:                    1000;
+}
+#footer-credits a {
+    color:                      rgb(255, 255, 255);
 }
 a {
     color:                      rgb(226, 127, 28);
@@ -1076,6 +1153,7 @@ a.btn-error {
 input.photo-submit {
     width:                      400px;
     margin-top:                 0px;
+    display:                    none;
 }
 .dispatch-control-details input[type="submit"] {
     padding:                    6px 40px;
@@ -1149,9 +1227,9 @@ input[type="submit"], .button {
     width:                      100%;
     height:                     100%;
     position:                   absolute;
+    z-index:                    100000;
     background:                 none repeat scroll 0px 0px rgba(255, 255, 255, 0.9);
     display:                    none;
-    z-index:                    100000;
 }
 #the-loading-icon {
     background:                 url("/images/icon-loading.png") repeat scroll 0px 0px / 100% auto transparent;
@@ -1479,6 +1557,7 @@ span.button-description {
 .orange-box h4 {
     color:                      rgb(242, 242, 234);
 }
+<<<<<<< HEAD
 h4#challenge-title.achieved {
     color:                      rgb(148, 156, 23);
 }
@@ -1495,7 +1574,7 @@ h4 {
     margin-bottom:              20px;
     margin-top:                 40px;
     font-weight:                normal;
-    font-family:                vitessebold;
+    font-family:                vitesse;
 }
 .transfer-problem, .transfer-success {
     display:                    none;
@@ -2145,6 +2224,7 @@ div.schedule-host-avatar {
     padding:                    6px 10px 5px 22px;
     background:                 none repeat scroll 0px 0px rgb(254, 241, 220);
 }
+<<<<<<< HEAD
 div#your-points, #your-rank {
     display:                    inline-block;
     text-align:                 center;
@@ -2353,6 +2433,7 @@ div.dipatch-filter-shell {
 div.dispatch-control {
     margin-bottom:              8px;
 }
+<<<<<<< HEAD
 div#race-buttons {
     margin-left:                -50px;
     margin-right:               -50px;
@@ -2608,6 +2689,7 @@ a.if-mobile {
 #nav-links a, #nav-search {
     color:                      rgb(226, 127, 28);
     display:                    block;
+    float:                      left;
     font-family:                VitesseBook;
     text-align:                 center;
     text-decoration:            none;
@@ -2622,7 +2704,6 @@ a.if-mobile {
     margin-right:               6px;
     cursor:                     pointer;
     padding:                    5.5px 10px 4px;
-    float:                      left;
 }
 #nav-links {
     float:                      right;

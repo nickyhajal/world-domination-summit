@@ -7,8 +7,6 @@ async = require 'async'
 rds = redis.createClient()
 ig = require('instagram-node').instagram({})
 
-
-
 #
 
 [Feed, Feeds] = require('../models/feeds')
@@ -70,13 +68,15 @@ shell = (app, db) ->
 											cb()
 						else
 							tk 'No new instagrams'
+	grab = ->
+		grabs = 
 			tweet: ->
 				rds.get 'feed_twitter_since', (err, since_id) ->
 
 					if not since_id
 						since_id = '0'
-
 					tk 'Check Twitter'
+					tk since_id
 					twit.get 'search/tweets', {q: '#wds2014', since_id: since_id, result_type:'recent', count:'100'}, (err, twts) ->
 						if twts.statuses?.length
 							last_id = false

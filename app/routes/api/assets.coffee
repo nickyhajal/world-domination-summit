@@ -61,6 +61,17 @@ routes = (app) ->
 						.then (rsp) ->
 							res.r[asset] = rsp
 							tk 'Grabbing '+asset+ ' took: '+(+(new Date()) - assetStart)+' milliseconds'
+				admin_templates: 0
+
+			get: (req, res, next) ->
+				tracker = req.query.tracker ? {}
+				async.each req.query.assets.split(','), (asset, cb) =>
+					last = tracker[asset] ? 0
+					now = Math.floor(+(new Date()) / 1000)
+					if assets[asset]? and (+last + +(assets.expires[asset] * 60)) < now
+						assets[asset](req)
+						.then (rsp) ->
+							res.r[asset] = rsp
 							cb()
 					else
 						cb()
@@ -179,6 +190,12 @@ routes = (app) ->
 						dfr.resolve(achs.toJSON())
 				else
 						dfr.resolve([])
+			speakers: (req) ->
+				dfr = Q.defer()
+				Speakers.forge().getByType()
+				.then (speakers) ->
+					tk 'spks'
+					dfr.resolve(speakers)
 				return dfr.promise
 
 			interests: (req) ->
@@ -192,6 +209,10 @@ routes = (app) ->
 							dfr.resolve(interests)
 							rds.set 'interests', JSON.stringify(interests), (err, rsp) ->
 								rds.expire 'interests', 10000
+				Interests.forge().fetch()
+				.then (interests) ->
+					tk 'ints'
+					dfr.resolve(interests)
 				return dfr.promise
 
 			events: (req) ->
@@ -220,6 +241,28 @@ routes = (app) ->
 								dfr.resolve(evs)
 								rds.set 'events', JSON.stringify(evs), (err, rsp) ->
 									rds.expire 'events', 240
+				Events.forge()
+				.query('where', 'active', '1')
+				.fetch()
+				.then (rsp) ->
+					evs = []
+					async.each rsp.models, (ev, cb) ->
+						EventHosts.forge()
+						.query('where', 'event_id', ev.get('event_id'))
+						.fetch()
+						.then (rsp) ->
+							hosts = []
+							for host in rsp.models
+								hosts.push host.get('user_id')
+							ev.set('hosts', hosts)
+							evs.push ev
+							cb()
+						, (err) ->
+							console.err(err)
+					, ->
+						dfr.resolve(evs)
+				, (err) ->
+					console.log(err)
 				return dfr.promise
 			tpls: ->
 				get_templates = require('../../processors/templater')

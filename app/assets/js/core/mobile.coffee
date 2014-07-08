@@ -46,3 +46,13 @@ ap.checkMobile = ->
 		if search
 			search.remove()
 			$('#nav-links').append(search)
+		$video.css('height', (width*(9/16)+'px'))
+		header = $('#page-home #content_shell #header-title')
+		if header
+			header.remove()
+			$('#logo').after(header)
+	else
+		header = $('#page-home #main-header #header-title')
+		if header
+			header.remove()
+			$('#content_shell').prepend(header)

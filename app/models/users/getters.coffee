@@ -55,6 +55,26 @@ getters =
     .then (rsp) ->
       dfr.resolve(rsp.models)
     return dfr.promise
+
+getters = 
+
+  getMe: ->
+    dfr = Q.defer()
+    @getAllTickets()
+    .then (user) =>
+      @getAnswers()
+      .then (user) =>
+        @getInterests()
+        .then (user) =>
+          @getConnections()
+          .then (user) =>
+            @getFeedLikes()
+            .then (user) =>
+              @getRsvps()
+              .then (user) =>
+                dfr.resolve(user)
+    return dfr.promise
+
   getPic: ->
     pic = @get('pic')
     unless pic.indexOf('http') > -1

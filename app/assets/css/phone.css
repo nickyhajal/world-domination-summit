@@ -21,7 +21,7 @@ h1#header-title {
 }
 h1 {
     width:                      100%;
-    font-size:                  26px;
+    font-size:                  20px;
 }
 div#page_content {
     padding:                    12px 15px;
@@ -181,6 +181,7 @@ div.dispatch-content-section {
 div#counter-shell {
     display:                    none ! important;
 }
+<<<<<<< HEAD
 span.task-detail-block {
     font-size:                  19pt;
     margin-right:               -15px;

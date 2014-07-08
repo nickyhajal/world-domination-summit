@@ -46,9 +46,6 @@ routes = (app) ->
 					.save()
 				next()
 
-
-
-
 		download: (req, res, next) ->
 			if req.me?
 				if req.me?.hasCapability('downloads')
