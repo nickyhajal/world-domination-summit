@@ -61,23 +61,13 @@ routes = (app) ->
 						.then (rsp) ->
 							res.r[asset] = rsp
 							tk 'Grabbing '+asset+ ' took: '+(+(new Date()) - assetStart)+' milliseconds'
-				admin_templates: 0
-
-			get: (req, res, next) ->
-				tracker = req.query.tracker ? {}
-				async.each req.query.assets.split(','), (asset, cb) =>
-					last = tracker[asset] ? 0
-					now = Math.floor(+(new Date()) / 1000)
-					if assets[asset]? and (+last + +(assets.expires[asset] * 60)) < now
-						assets[asset](req)
-						.then (rsp) ->
-							res.r[asset] = rsp
 							cb()
 					else
 						cb()
 				, ->
 					tk 'Asset grab took: '+(+(new Date()) - start)+' milliseconds'
 					next()
+
 			redisValue: (value) ->
 				if value? and value
 					value = JSON.parse(value)
@@ -126,7 +116,7 @@ routes = (app) ->
 					Users.forge().getUser(req.me.get('user_id'))
 					.then (user) ->
 						user.getMe()
-						.then ->
+						.then (user) ->
 							user = user.toJSON()
 							delete user.password
 							delete user.hash
@@ -190,14 +180,6 @@ routes = (app) ->
 						dfr.resolve(achs.toJSON())
 				else
 						dfr.resolve([])
-			speakers: (req) ->
-				dfr = Q.defer()
-				Speakers.forge().getByType()
-				.then (speakers) ->
-					tk 'spks'
-					dfr.resolve(speakers)
-				return dfr.promise
-
 			interests: (req) ->
 				dfr = Q.defer()
 				rds.get 'interests', (err, interests) ->

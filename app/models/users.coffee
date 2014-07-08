@@ -91,7 +91,6 @@ User = Shelf.Model.extend
   getAllTickets: getters.getAllTickets
   getRsvps: getters.getRsvps
   getAchievedTasks: getters.getAchievedTasks
-  getLocationString: getters.getLocationString
   getFriends: getters.getFriends
   getFriendedMe: getters.getFriendedMe
   getLocationString: getters.getLocationString
@@ -110,8 +109,6 @@ User = Shelf.Model.extend
   updateAchieved: race.updateAchieved
   processPoints: race.processPoints
   getAchievements: race.getAchievements
-  processPoints: race.processPoints
-  getAchievements: race.getAchevements
 
   # Twitter
   getTwit: twitter.getTwit
