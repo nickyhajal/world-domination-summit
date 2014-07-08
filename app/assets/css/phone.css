@@ -27,7 +27,7 @@ div#page_content {
     padding:                    12px 15px;
 }
 #page_content p {
-    width:                      100%;
+    width:                      100% ! important;
 }
 a.register-banner {
     width:                      100%;

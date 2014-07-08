@@ -23,6 +23,7 @@ jQuery.fn.scan
 						else
 							str = 'Friends with '+name
 					else
+						$t.removeClass('following')
 						if format is 'short'
 							str = 'Friend'
 						else
