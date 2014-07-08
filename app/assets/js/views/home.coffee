@@ -3,6 +3,9 @@ ap.Views.home = XView.extend
 		@initRender()
 	rendered: ->
 		wall.init()
+	whenFinished: ->
+		tk 'unbind'
+		$(window).off('scroll', wall.scroll)
 
 window.wall =
 
@@ -39,9 +42,6 @@ window.wall =
 					@autoScrollDelay = url_params['delay']
 				else
 					@autoScrollDelay = 100
-					
-	whenFinished: ->
-		$(window).off('scroll', wall.scroll)
 
 	urlParams: ->
 		urlParams = Array()
