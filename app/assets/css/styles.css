@@ -381,7 +381,6 @@ a.subtle-link {
     color:                      rgb(32, 19, 10);
     font-size:                  15px;
     font-family:                VitesseBook;
-<<<<<<< HEAD
 }
 h2.broadcast-active {
     background:                 none repeat scroll 0px 0px rgb(33, 23, 10);
@@ -424,11 +423,6 @@ img.photo-head-active {
     width:                      815px;
     position:                   absolute;
     left:                       -9999px;
-}
-}
-h2.broadcast-active {
-    background:                 none repeat scroll 0px 0px rgb(33, 23, 10);
-    color:                      rgb(255, 255, 255);
 }
 h2 {
     margin-left:                -50px;
@@ -691,10 +685,6 @@ a.meetup-edit {
 a.schedule-directions:before {
     content:                    "Directions";
     float:                      right;
-}
-<<<<<<< HEAD
-a.rank-row:nth-of-type(2n+1) {
-    background:                 none repeat scroll 0px 0px rgb(237, 234, 222);
 }
 a.rank-row:hover {
     background:                 none repeat scroll 0px 0px rgb(225, 218, 200);
@@ -1557,10 +1547,6 @@ span.button-description {
 .orange-box h4 {
     color:                      rgb(242, 242, 234);
 }
-<<<<<<< HEAD
-h4#challenge-title.achieved {
-    color:                      rgb(148, 156, 23);
-}
 h4#challenge-title {
     margin:                     0px 0px 3px ! important;
 }
@@ -2224,15 +2210,6 @@ div.schedule-host-avatar {
     padding:                    6px 10px 5px 22px;
     background:                 none repeat scroll 0px 0px rgb(254, 241, 220);
 }
-<<<<<<< HEAD
-div#your-points, #your-rank {
-    display:                    inline-block;
-    text-align:                 center;
-    color:                      rgb(255, 255, 255);
-    font-size:                  28pt;
-    width:                      35%;
-    margin-right:               24px;
-}
 div#race-user-status:after {
     background-image:           url("/images/foundation/pattern_application.png");
     background-size:            253px auto ! important;
@@ -2433,12 +2410,6 @@ div.dipatch-filter-shell {
 div.dispatch-control {
     margin-bottom:              8px;
 }
-<<<<<<< HEAD
-div#race-buttons {
-    margin-left:                -50px;
-    margin-right:               -50px;
-    width:                      630px;
-}
 span#race-latest-update span {
     margin-right:               4px;
 }
@@ -2458,6 +2429,10 @@ div#primary-links {
     font-family:                vitessebold;
     margin-bottom:              9px;
     font-size:                  12pt;
+}
+div#rate-task {
+    font-size:                  21pt;
+    margin-top:                 50px;
 }
 * {
     box-sizing:                 border-box;

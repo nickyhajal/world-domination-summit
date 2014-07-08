@@ -59,6 +59,8 @@ routes = (app) ->
 					if assets[asset]? and expired
 						assets[asset](req)
 						.then (rsp) ->
+							tk '>>>'
+							tk rsp
 							res.r[asset] = rsp
 							tk 'Grabbing '+asset+ ' took: '+(+(new Date()) - assetStart)+' milliseconds'
 							cb()
@@ -138,7 +140,7 @@ routes = (app) ->
 							dfr.resolve(rsp.models)
 							rds.set 'tasks', JSON.stringify(rsp.models), ->
 								rds.expire 'tasks', 5000
-				dfr.promise
+				return dfr.promise
 
 			ranks: (req) ->
 				dfr = Q.defer()
@@ -179,7 +181,8 @@ routes = (app) ->
 					.then (achs) ->
 						dfr.resolve(achs.toJSON())
 				else
-						dfr.resolve([])
+					dfr.resolve([])
+				return dfr.promise
 			interests: (req) ->
 				dfr = Q.defer()
 				rds.get 'interests', (err, interests) ->

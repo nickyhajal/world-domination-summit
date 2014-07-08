@@ -57,6 +57,7 @@ routes = (app) ->
 		get_submissions: (req, res, next) ->
 			RaceSubmissions.forge()
 			.query('where', 'rating', '0')
+			.fetch()
 			.then (rsp) ->
 				res.r.submissions = rsp.models
 				next()

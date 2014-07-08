@@ -96,8 +96,9 @@ ap.update.tpls = ->
 
 ap.update.ranks = ->
 	_.whenReady 'me', =>
-		ap.me.setRank()
-		_.isReady 'ranks'
+		if ap.me
+			ap.me.setRank()
+			_.isReady 'ranks'
 
 ap.update.tpls = ->
 	ap.templates = ap.tpls
