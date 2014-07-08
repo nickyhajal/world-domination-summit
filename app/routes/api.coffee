@@ -81,6 +81,7 @@ routes = (app) ->
 		app.post '/racetask', racetask.add
 		app.put '/racetask', racetask.upd
 		app.get '/racetasks', racetask.search
+		app.get '/racetask/submissions', racetask.get_submissions
 
 
 		# Admin
@@ -98,7 +99,7 @@ routes = (app) ->
 		app.get '/admin/events', event.get
 		app.get '/admin/event_accept', event.accept
 		app.get '/admin/event_reject', event.reject
-		app.get '/admin/rate', admin.rate
+		app.post '/admin/rate', admin.rate
 
 
 		# Finish

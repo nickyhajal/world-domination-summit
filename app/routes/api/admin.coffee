@@ -4,6 +4,7 @@ routes = (app) ->
 	[User, Users] = require('../../models/users')
 	[Event, Events] = require('../../models/events')
 	[RaceSubmission, RaceSubmissions] = require('../../models/race_submissions')
+	[Achievement, Achievements] = require('../../models/achievements')
 
 	admin =
 		get_capabilities: (req, res, next) ->
@@ -23,13 +24,29 @@ routes = (app) ->
 						cb()
 				, ->
 					next()
+					
 		rate: (req, res, next) ->
 			submission_id = req.query.submission_id
 			rating = +req.query.rating
+			ach_id = req.query.ach_id
 			RaceSubmission.forge
 				submission_id: submission_id
 				rating: rating
 			.save()
+			.then (rsp) ->
+				if rating is -1
+					Achievement.forge
+						ach_id: ach_id
+						custom_points: '-1'
+					.save()
+				else if rating is 2 or rating is 3
+					Achievement.forge
+						ach_id: ach_id
+						custom_points: rating
+					.save()
+				next()
+
+
 
 
 		download: (req, res, next) ->

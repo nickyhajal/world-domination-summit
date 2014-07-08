@@ -10,6 +10,7 @@ _s = require('underscore.string')
 routes = (app) ->
 
 	[RaceTask, RaceTasks] = require('../../models/racetasks')
+	[RaceSubmission, RaceSubmissions] = require('../../models/race_submissions')
 
 	racetask =
 		add: (req, res, next) ->
@@ -51,6 +52,13 @@ routes = (app) ->
 			.fetch()
 			.then (tasks) ->
 				res.r.racetasks = tasks.models
+				next()
+
+		get_submissions: (req, res, next) ->
+			RaceSubmissions.forge()
+			.query('where', 'rating', '0')
+			.then (rsp) ->
+				res.r.submissions = rsp.models
 				next()
 
 module.exports = routes
