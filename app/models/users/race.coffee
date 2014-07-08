@@ -129,145 +129,145 @@ race =
       else
         tk 'Skipped Race Check for '+@get('user_name')
         dfr.resolve()
-    return dfr.promise
 
-  getChecks: ->
-    checks = [
-      # Profile 
-      (cb) ->
-        if not @achieved('profile', achs)
-          if +@get('intro') is 8
-            @markAchieved('profile')
-        cb()
-      ,
-
-      # Photo
-      (cb) ->
-        if not @achieved('pic', achs)
-          if @get('pic').length > 1
-            @markAchieved('pic')
-        cb()
-      ,
-      # Host
-      (cb) ->
-        if not @achieved('host-meetup', achs)
-          EventHosts.forge()
-          .query('where', 'user_id', @get('user_id'))
-          .fetch()
-          .then (rsp) =>
-            if rsp.models.length
-              @markAchieved('host-meetup')
-            cb()
-        else
+    getChecks: ->
+      checks = [
+        # Profile 
+        (cb) ->
+          if not @achieved('profile', achs)
+            if +@get('intro') is 8
+              @markAchieved('profile')
           cb()
-      ,
+        ,
 
-      # RSVP
-      (cb) ->
-        if not @achieved('rsvp', achs)
-          EventRsvps.forge()
-          .query('where', 'user_id', @get('user_id'))
-          .fetch()
-          .then (rsp) =>
-            if rsp.models.length
-              @markAchieved('rsvp')
-            cb()
-        else
+        # Photo
+        (cb) ->
+          if not @achieved('pic', achs)
+            if @get('pic').length > 1
+              @markAchieved('pic')
           cb()
-      ,
-
-      #Featured Tweet
-      (cb) ->
-        if not @achieved('featured-tweet', achs)
-          Contents::getFeaturedTweeters()
-          .then (user_ids) =>
-            if user_ids.indexOf(@get('user_id')) > -1
-              @markAchieved('featured-tweet')
-            cb()
-        else
-          cb()
-      ,
-
-      # Register
-      (cb) ->
-        if not @achieved('register-at-wds', achs)
-          Registrations.forge()
-          .query('where', 'user_id', @get('user_id'))
-          .fetch()
-          .then (rsp) =>
-            if rsp.models.length
-              @markAchieved('register-at-wds')
-            cb()
-        else
-          cb()
-      ,
-
-      # Ten Met
-      (cb) ->
-        if not @achieved('ten-met', achs)
-          Connections.forge()
-          .query('where', 'user_id', @get('user_id'))
-          .fetch()
-          .then (rsp) =>
-            if rsp.models.length > 9
-              @markAchieved('ten-met')
-            cb()
-        else
-          cb()
-      , 
-
-      # Countries
-      (cb) ->
-          countries = []
-          for friend in muts
-            country = friend.get('country')
-            if countries.indexOf(country) is -1
-              countries.push country
-          points = countries.length
-          if @achieved('different-countries', achs)
-            @updateAchieved('different-countries', points)
+        ,
+        # Host
+        (cb) ->
+          if not @achieved('host-meetup', achs)
+            EventHosts.forge()
+            .query('where', 'user_id', @get('user_id'))
+            .fetch()
+            .then (rsp) =>
+              if rsp.models.length
+                @markAchieved('host-meetup')
+              cb()
           else
-            @markAchieved('different-countries', points)
-          cb()
-      ,    
-      # Home Town
-      (cb) ->
-        if not @achieved('hometown', achs)
-          mytown = _s.slugify(@get('location'))
-          for friend in muts
-            if mytown is _s.slugify(friend.get('location'))
-              @markAchieved('hometown')
-              break
-        cb()
-      ,
-      # Furthest away
-      (cb) ->
-        if not @achieved('distance', achs)
-          Connection.forge
-            user_id: @get('user_id')
-            to_id: '3712' # GET ACTUAL USER ID
-          .fetch()
-          .then (connection) =>
-            if connection
-              @markAchieved('distance')
             cb()
-        else
-          cb()
-      , 
-      # Post to Community
-      (cb)->
-        if not @achieved('wds-community', achs)
-          Feeds.forge()
-          .query('where', 'channel_type', 'interest')
-          .query('where', 'user_id', @get('user_id'))
-          .fetch()
-          .then (rsp) =>
-            if rsp.models.length
-              @markAchieved('wds-community')
+        ,
+
+        # RSVP
+        (cb) ->
+          if not @achieved('rsvp', achs)
+            EventRsvps.forge()
+            .query('where', 'user_id', @get('user_id'))
+            .fetch()
+            .then (rsp) =>
+              if rsp.models.length
+                @markAchieved('rsvp')
+              cb()
+          else
             cb()
-        else
+        ,
+
+        #Featured Tweet
+        (cb) ->
+          if not @achieved('featured-tweet', achs)
+            Contents::getFeaturedTweeters()
+            .then (user_ids) =>
+              if user_ids.indexOf(@get('user_id')) > -1
+                @markAchieved('featured-tweet')
+              cb()
+          else
+            cb()
+        ,
+
+        # Register
+        (cb) ->
+          if not @achieved('register-at-wds', achs)
+            Registrations.forge()
+            .query('where', 'user_id', @get('user_id'))
+            .fetch()
+            .then (rsp) =>
+              if rsp.models.length
+                @markAchieved('register-at-wds')
+              cb()
+          else
+            cb()
+        ,
+
+        # Ten Met
+        (cb) ->
+          if not @achieved('ten-met', achs)
+            Connections.forge()
+            .query('where', 'user_id', @get('user_id'))
+            .fetch()
+            .then (rsp) =>
+              if rsp.models.length > 9
+                @markAchieved('ten-met')
+              cb()
+          else
+            cb()
+        , 
+
+        # Countries
+        (cb) ->
+            countries = []
+            for friend in muts
+              country = friend.get('country')
+              if countries.indexOf(country) is -1
+                countries.push country
+            points = countries.length
+            if @achieved('different-countries', achs)
+              @updateAchieved('different-countries', points)
+            else
+              @markAchieved('different-countries', points)
+            cb()
+        ,    
+        # Home Town
+        (cb) ->
+          if not @achieved('hometown', achs)
+            mytown = _s.slugify(@get('location'))
+            for friend in muts
+              if mytown is _s.slugify(friend.get('location'))
+                @markAchieved('hometown')
+                break
           cb()
-    ]
-    return checks
+        ,
+        # Furthest away
+        (cb) ->
+          if not @achieved('distance', achs)
+            Connection.forge
+              user_id: @get('user_id')
+              to_id: '3712' # GET ACTUAL USER ID
+            .fetch()
+            .then (connection) =>
+              if connection
+                @markAchieved('distance')
+              cb()
+          else
+            cb()
+        , 
+        # Post to Community
+        (cb)->
+          if not @achieved('wds-community', achs)
+            Feeds.forge()
+            .query('where', 'channel_type', 'interest')
+            .query('where', 'user_id', @get('user_id'))
+            .fetch()
+            .then (rsp) =>
+              if rsp.models.length
+                @markAchieved('wds-community')
+              cb()
+          else
+            cb()
+      ]
+      return checks
+    return dfr.promise
 
 module.exports = race
