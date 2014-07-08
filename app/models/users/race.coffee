@@ -108,7 +108,7 @@ race =
         user = this
         muts = []
         achs = []
-        checks = @getChecks()
+        checks = getChecks()
         start = +(new Date())
 
         user.getMutualFriends()
