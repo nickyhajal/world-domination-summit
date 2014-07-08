@@ -50,6 +50,12 @@ div.line-canvas {
 .broadcast-box h3 {
     font-size:                  18px;
 }
+.rank-points {
+    font-family:                karla;
+    float:                      right;
+    font-size:                  12pt;
+    margin-right:               9px;
+}
 h3 {
     width:                      100%;
 }
@@ -216,14 +222,16 @@ div#your-points, #your-rank {
     font-size:                  16px ! important;
 }
 div#race-user-status:after {
-    top:                        12px;
-    right:                      -30px;
+    right:                      -47px;
+    top:                        11px;
+    display:                    none;
 }
 div#race-user-status {
     margin-bottom:              -5px;
 }
 a.rank-row {
     height:                     45px;
+    margin-right:               -15px;
 }
 #rank-1 span.rank-therank, #rank-2 .rank-therank, #rank-3 .rank-therank {
     font-size:                  26px;
@@ -235,9 +243,12 @@ span.rank-therank {
     padding:                    13px 6px 0px;
     width:                      106px;
     height:                     45px;
+    margin-right:               10px;
 }
 div.rank-attendee {
-    padding-top:                12px;
+    margin-top:                 0px;
+    font-size:                  13pt;
+    padding-top:                14px;
 }
 div#race-buttons {
     margin-left:                -15px;
@@ -307,6 +318,12 @@ div.attendee-question-shell {
     font-size:                  11pt;
     width:                      98px;
     margin-top:                 -10px;
+}
+a.heading-button {
+    clear:                      both;
+    display:                    inline-block;
+    padding:                    0px 10px;
+    margin-left:                0px;
 }
 * {
     line-height:                inherit;

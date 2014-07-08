@@ -30,6 +30,7 @@ ap.checkMobile = ->
 
 	if ap.isMobile
 		$('body').addClass('is-mobile')
+		$('body').removeClass('is-desktop')
 		$video.css('height', (width*(9/16)+'px'))
 		header = $('#page-home #content_shell #header-title')
 		search = $('#nav-search')
@@ -41,6 +42,7 @@ ap.checkMobile = ->
 			$('#nav-links').prepend(search)
 	else
 		$('body').removeClass('is-mobile')
+		$('body').addClass('is-desktop')
 		header = $('#page-home #main-header #header-title')
 		search = $('#nav-search')
 		if header

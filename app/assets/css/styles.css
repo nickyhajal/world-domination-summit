@@ -700,7 +700,6 @@ a.rank-row {
     display:                    block;
     height:                     68px;
     margin-left:                -50px;
-    margin-right:               -50px;
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
     text-decoration:            none;
     margin-bottom:              2px;
@@ -779,6 +778,16 @@ a.hub-button {
     text-align:                 center;
     margin-bottom:              0px;
     padding:                    40px 0px;
+}
+a.heading-button {
+    font-size:                  10pt;
+    margin-left:                10px;
+    position:                   relative;
+    font-weight:                normal;
+    padding:                    6px 10px;
+    top:                        -4px;
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    color:                      rgb(226, 127, 28);
 }
 a {
     color:                      rgb(226, 127, 28);
@@ -2503,6 +2512,7 @@ span#race-latest-update {
     font-family:                Karlaitalic;
     top:                        -11px;
     font-size:                  10pt;
+    font-weight:                normal;
 }
 div#primary-links {
     float:                      left;
@@ -2573,6 +2583,13 @@ div.following.follow-button {
     text-overflow:              ellipsis;
     -o-text-overflow:           ellipsis;
     -ms-text-overflow:          ellipsis;
+}
+.rank-points {
+    color:                      rgb(159, 148, 131);
+    float:                      right;
+    font-family:                karla;
+    font-size:                  14pt;
+    margin-right:               20px;
 }
 * {
     box-sizing:                 border-box;
@@ -4519,6 +4536,9 @@ div#race-buttons {
     margin-left:                -50px;
     margin-right:               -50px;
     width:                      630px;
+}
+#race-buttons a:first-child {
+    border-right:               1px solid rgb(215, 200, 185);
 }
 div#race-buttons a {
     width:                      50%;

@@ -189,7 +189,6 @@ ap.initSearch = ->
 							format = ' data-format="short"'
 						html += '<div class="follow-button"'+format+' data-user_id="'+result.get('user_id')+'"></div>'
 					html += '</a>'
-				tk html
 				$('.search-results', shell).html(html).scan()
 				if ap.isMobile
 					$('#primary-links').hide()

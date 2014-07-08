@@ -667,6 +667,12 @@ div.meetup-time {
 #page_content h2 {
     text-align:                 center;
 }
+a.rank-row {
+    margin-right:               -50px;
+}
+a.if-desktop {
+    display:                    none ! important;
+}
 * {
     line-height:                inherit;
 }

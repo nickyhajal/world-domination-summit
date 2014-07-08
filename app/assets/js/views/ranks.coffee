@@ -17,7 +17,9 @@ ap.Views.ranks = XView.extend
 			html += '
 				<a href="~'+user.get('user_name')+'" id="rank-'+count+'" class="rank-row">
 					<span class="rank-therank">'+count+'</span>
-					<div class="rank-attendee">'+user.get('first_name')+' '+user.get('last_name')+'</div>
+					<div class="rank-attendee">'+user.get('first_name')+' '+user.get('last_name')+'
+						<span class="rank-points">'+rank.points+' points</span>
+					</div>
 				</a>
 			'
 			count += 1

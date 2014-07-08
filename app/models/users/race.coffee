@@ -116,9 +116,7 @@ race =
           user.getAchievements()
           .then (rsp_achs) ->
             achs = rsp_achs
-            tk achs
             async.each checks, (check, cb) ->
-              tk check
               check.call(user, cb)
             , ->
               user.processPoints()
