@@ -192,7 +192,7 @@ ap.Views.welcome = XView.extend
 						$.scrollTo(0)
 						btn.html(original_btn_val)
 					error: (rsp) ->
-						ap.Notify
+						ap.Notify.now
 							msg: rsp.msg
 							state: 'error'
 						btn.html 'Oops, small problem.'
@@ -223,8 +223,6 @@ ap.Views.welcome = XView.extend
 					.css('height', '0')
 					.css('margin', '0')
 			, 1200
-
-
 
 	finishWelcome: (e) ->
 		e.preventDefault()

@@ -37,16 +37,16 @@ ap.Views.meetups = XView.extend
 				event_button = '<a href="#"'+button_maxed+' data-event_id="'+ev.get('event_id')+'" data-start="RSVP" data-cancel="unRSVP" class="rsvp-button">RSVP</a>'
 				event_html = '
 					<div class="meetup-descr-shell'+maxed_class+'">
+						<div class="meetup-content">
+							<div class="meetup-name">'+ev.get('what')+'</div>
+							<div class="meetup-descr-who">A meetup for '+ev.get('who')+'</div>
+							<div class="meetup-descr">'+_.truncate(ev.get('descr'), 340)+'</div>
+						</div>
 						<div class="meetup-sidebar">
 							<div class="meetup-time">'+time.format('h:mm a')+'</div>
 							<div class="meetup-host">'+hosts+'</div>
 							' + event_button + '
 							<a href="/meetup/'+_.slugify(ev.get('what'))+'">More Details</a>
-						</div>
-						<div class="meetup-content">
-							<div class="meetup-name">'+ev.get('what')+'</div>
-							<div class="meetup-descr-who">A meetup for '+ev.get('who')+'</div>
-							<div class="meetup-descr">'+_.truncate(ev.get('descr'), 340)+'</div>
 						</div>
 					</div>
 					<div class="clear"></div>

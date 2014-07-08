@@ -17,10 +17,11 @@ ap.Views.admin_rate = XView.extend
 	preload: ->
 		end = @preload_on + 5
 		for i in [@preload_on..end]
-			sub = @submissions[i]
-			elm = $('<div>').html(@get_html(sub))
-			$('#preload').append(elm)
-			@preload_on = i
+			if @submissions[i]?
+				sub = @submissions[i]
+				elm = $('<div>').html(@get_html(sub))
+				$('#preload').append(elm)
+				@preload_on = i
 
 	showNext: ->
 		@on += 1
@@ -29,11 +30,16 @@ ap.Views.admin_rate = XView.extend
 		for t in ap.tasks
 			if t.slug is sub.slug
 				task = t
-		$('#rate-task').html(task.task)
-		$('#rate-content').html(@get_html(sub))
+		@active = sub
+		user = ap.Users.get(sub.user_id)
+		$('#rate-task').html(task.task+' <div id="rate-attendee"></div>')
+		$('#rate-content').html(@get_html(sub, user))
+		$('#rate-attendee').html 'Submitted by: 
+			<a href="/~'+user.get('user_name')+'" target="_blank">'+user.get('first_name')+' '+user.get('last_name')+'</a>
+		'
 
 
-	get_html: (sub) ->
+	get_html: (sub, user) ->
 		if sub.type is 'ig'
 			html = '
 			<video width="600" height="400" controls>
@@ -42,9 +48,18 @@ ap.Views.admin_rate = XView.extend
 			</video>'
 		else
 			user = ap.Users.get(sub.user_id)
-			url = user.get('user_name')+'/'+sub.slug+'/'+sub.hash+'.'+sub.ext
+			url = user.get('user_name')+'/'+sub.slug+'/w600_'+sub.hash+'.'+sub.ext
 			html = '<img src="/images/race_submissions/'+url+'">'
 
 
 	rate: (e) ->
 		e.preventDefault()
+		el = $(e.currentTarget)
+		post = 
+			rating: el.data('rating')
+			ach_id: @active.ach_id
+			submission_id: @active.submission_id
+		ap.api 'post admin/rate', post, (rsp) =>
+			@showNext()
+
+

@@ -102,69 +102,6 @@ ap.syncNav = (panel) ->
 	Re-render the page to show new content
 ###
 ap.goTo = (panel = '', options = {}, cb = false) ->
-
-	ap.toggleNav('force-closed')
-
-###
-	Show Loading
-###
-ap.loading = (fade = false) ->
-	content = $('#page_content')
-	loading = $('#loading')
-	loading
-		.css
-			left: content.offset().left+'px'
-			top: content.offset().top+'px'
-			width: content.width()+'px'
-			height: content.height()+'px'
-	if fade
-		loading.addClass('loading-faded')
-	loading.addClass('is-loading')
-
-ap.loaded = ->
-	$('#loading').attr('class', '')
-
-###
-	Check if a user is logged in
-	Obviously not very secure but real protection
-	happens server-side to be sure a logged-out user
-	can't get or save anything protected
-###
-ap.protect = ->
-	return ap.me? and ap.me
-
-
-ap.login = (me) ->
-	if me
-		$('html').addClass('is-logged-in')
-		ap.me = new ap.User(me)
-
-ap.logout = ->
-	$('html').removeClass('is-logged-in')
-	ap.api 'post user/logout'
-	localStorage.clear()
-	ap.me = false
-
-### 
-	Navigate to a new URL using push-state
-###
-ap.navigate = (panel) ->
-	ap.Router.navigate(ap.getPanelPath(panel), {trigger: true})
-
-ap.getPanelPath = (panel) ->
-	map = 
-		home: ''
-	return '/' + (map[panel] ? panel)
-
-ap.syncNav = (panel) ->
-	$('.nav-link-active').removeClass('nav-link-active')
-	$('#nav-'+panel).addClass('nav-link-active')
-	ap.toggleNav(true)
-
-###
-	Re-render the page to show new content
-###
-ap.goTo = (panel = '', options = {}, cb = false) ->
 	# Go to the panel
 	panel = if panel and panel.length then _.trim(panel, '/') else 'home'
 	$s = $('#')

@@ -68,8 +68,6 @@ shell = (app, db) ->
 											cb()
 						else
 							tk 'No new instagrams'
-	grab = ->
-		grabs = 
 			tweet: ->
 				rds.get 'feed_twitter_since', (err, since_id) ->
 

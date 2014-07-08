@@ -117,13 +117,11 @@ routes = (app) ->
 			finish = (user = false) ->
 				if user
 					user.login req
-					user.getAnswers()
+					user.getMe()
 					.then (user) ->
-						user.getInterests()
-						.then (user) ->
-							res.r.loggedin = true
-							res.r.me = user
-							next()
+						res.r.loggedin = true
+						res.r.me = user
+						next()
 				else
 					res.r.loggedin = false
 					next()

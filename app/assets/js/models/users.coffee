@@ -57,7 +57,10 @@ ap.User = window.XModel.extend
 		if event.get('type') is 'program'
 			return true
 		else
-			return ap.me.get('rsvps').indexOf(event.get('event_id')) > -1
+			if ap.me.get('rsvps')?.length
+				return ap.me.get('rsvps').indexOf(event.get('event_id')) > -1
+			else
+				return false
 
 	setRank: ->
 		user_id = @get('user_id')

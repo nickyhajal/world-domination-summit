@@ -123,10 +123,10 @@
     position:                   absolute;
     width:                      104px;
     right:                      -94px;
-    top:                        -11px;
     z-index:                    10;
     content:                    "";
     background:                 url("/images/icon-sprites_corner.png?2") no-repeat scroll 0px center / 2739px auto transparent;
+    top:                        -11px;
 }
 .corner-icon-theater:before {
     width:                      103px ! important;
@@ -695,7 +695,6 @@ a.rank-row:nth-of-type(2n+1) {
 h4#challenge-title.achieved {
     color:                      rgb(148, 156, 23);
 }
-
 a.rank-row {
     clear:                      both;
     display:                    block;
@@ -740,6 +739,46 @@ footer {
 }
 #footer-credits a {
     color:                      rgb(255, 255, 255);
+}
+a.rate-button:hover {
+    background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
+    color:                      rgb(242, 242, 234);
+}
+a.rate-button {
+    display:                    block;
+    float:                      left;
+    margin-right:               10px;
+    padding:                    10px 25px;
+    text-decoration:            none;
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    margin-top:                 20px;
+    margin-bottom:              20px;
+}
+a#hub-button-schedule {
+    background:                 none repeat scroll 0% 0% rgb(95, 198, 211);
+    color:                      rgb(255, 255, 255);
+}
+a#hub-button-meetups {
+    background:                 none repeat scroll 0% 0% rgb(227, 137, 62);
+}
+a#hub-button-race {
+    background:                 none repeat scroll 0% 0% rgb(177, 186, 30);
+}
+a#hub-button-search {
+    background:                 none repeat scroll 0% 0% rgb(23, 127, 178);
+}
+a.hub-button {
+    display:                    block;
+    background:                 none repeat scroll 0% 0% rgb(204, 204, 204);
+    text-decoration:            none;
+    font-size:                  16pt;
+    font-family:                vitesse;
+    color:                      rgb(255, 255, 255);
+    width:                      50%;
+    float:                      left;
+    text-align:                 center;
+    margin-bottom:              0px;
+    padding:                    40px 0px;
 }
 a {
     color:                      rgb(226, 127, 28);
@@ -1071,6 +1110,14 @@ span.pre-input {
     font-size:                  13pt;
     padding:                    10px;
 }
+#attendee-search input.search-input {
+    width:                      100%;
+    padding:                    20px;
+    font-size:                  17pt;
+    font-family:                vitessebook ! important;
+    color:                      rgb(33, 23, 10);
+    background:                 none repeat scroll 0px 0px rgb(227, 227, 218);
+}
 input[type="text"], input[type="password"], input[type="number"], .pre-input {
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
     border:                     0px none;
@@ -1097,7 +1144,6 @@ div#your-points, #your-rank {
     width:                      35%;
     margin-right:               24px;
 }
-
 #your-points label, #your-rank label {
     font-family:                vitesse ! important;
     color:                      rgb(255, 255, 255) ! important;
@@ -1726,8 +1772,27 @@ div#search-box {
 #nav-links a.result-link:hover:first-of-type {
     margin-top:                 5px ! important;
 }
+#attendee-search .search-results {
+    margin-top:                 -11px;
+    margin-left:                -10px;
+    margin-right:               10px;
+}
+#attendee-search a.result-link:nth-of-type(2n) {
+    background:                 none repeat scroll 0% 0% rgb(251, 251, 245) ! important;
+}
+#attendee-search a.result-link {
+    display:                    block;
+    width:                      100%;
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    font-size:                  14pt;
+    text-decoration:            none;
+    padding:                    20px;
+}
 div.search-results a:first-of-type {
     margin-top:                 5px ! important;
+}
+#attendee-search div.search-results {
+    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
 }
 div.search-results {
     margin-top:                 1px;
@@ -2088,11 +2153,12 @@ div.meetup-descr-shell {
     position:                   relative;
     z-index:                    10;
     margin-top:                 50px;
+    width:                      566px;
 }
 div.meetup-content {
-    float:                      left;
     margin-left:                0px;
     width:                      416px;
+    float:                      right;
 }
 div.meetup-actions {
     float:                      left;
@@ -2129,7 +2195,7 @@ div.meetup-descr-host-name {
 div.meetup-descr-host-shell {
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
     margin:                     2px 0px;
-    padding:                    9px 4px;
+    padding:                    5px 9px;
 }
 div.meetup-host-avatar {
     background-size:            100% auto ! important;
@@ -2450,6 +2516,44 @@ div#rate-task {
     font-size:                  21pt;
     margin-top:                 50px;
 }
+#rate-content img {
+    width:                      400px;
+    margin-top:                 0px;
+    text-align:                 center;
+}
+div#rate-content {
+    text-align:                 center;
+}
+div#rate-attendee {
+    font-size:                  11pt;
+    display:                    inline;
+    position:                   relative;
+    top:                        -4px;
+    padding-left:               10px;
+    border-left:                1px dotted;
+    margin-left:                7px;
+}
+div.rate-buttons {
+    margin:                     0px auto;
+    width:                      570px;
+}
+div#hub-buttons {
+    margin:                     -15px -50px 50px;
+}
+#attendee-search .result-link span {
+    display:                    block;
+    border-radius:              50%;
+    -moz-border-radius:         50%;
+    -webkit-border-radius:      50%;
+    float:                      left;
+    background-size:            100% auto ! important;
+    -webkit-background-size:    100% auto ! important;
+    margin-left:                -27px;
+    margin-right:               10px;
+    height:                     50px;
+    width:                      50px;
+    margin-top:                 -14px;
+}
 * {
     box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
@@ -2556,6 +2660,9 @@ p.color-blue {
 .dispatch-content-shell p {
     width:                      100% ! important;
     margin-bottom:              9px ! important;
+}
+.meetup-descr p {
+    width:                      400px ! important;
 }
 #page_content p {
     font-family:                karla;
@@ -2674,7 +2781,7 @@ a.ambassador-button {
 #nav-links a.result-link:hover {
     color:                      rgb(242, 242, 234) ! important;
 }
-a.if-mobile {
+.if-mobile {
     display:                    none ! important;
 }
 #nav-links a, #nav-search {
@@ -3465,6 +3572,12 @@ a.counter-button {
     width:                      585px;
     background-size:            115% auto ! important;
     -webkit-background-size:    115% auto ! important;
+}
+#hub-buttons div.zig-zags_blue {
+    margin-top:                 50px;
+    margin-left:                46px;
+    width:                      100%;
+    height:                     28px;
 }
 .zig-zags_blue {
     background-color:           transparent;
@@ -4387,7 +4500,6 @@ div#race-buttons {
     margin-right:               -50px;
     width:                      630px;
 }
-
 div#race-buttons a {
     width:                      50%;
     text-align:                 center;

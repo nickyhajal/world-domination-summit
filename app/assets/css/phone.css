@@ -181,13 +181,6 @@ div.dispatch-content-section {
 div#counter-shell {
     display:                    none ! important;
 }
-<<<<<<< HEAD
-span.task-detail-block {
-    font-size:                  19pt;
-    margin-right:               -15px;
-    padding:                    2px;
-    width:                      57px;
-}
 a.task-row {
     margin-left:                -15px;
     margin-right:               25px;
@@ -252,6 +245,17 @@ div#race-buttons {
 }
 div#race-buttons a {
     padding:                    14px 0px 11px;
+}
+a.hub-button {
+    width:                      100%;
+    font-size:                  13pt;
+    padding:                    20px 0px;
+}
+div.meetup-sidebar {
+    font-size:                  10pt;
+}
+div.meetup-time {
+    font-size:                  12pt;
 }
 * {
     line-height:                inherit;

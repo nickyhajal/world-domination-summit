@@ -53,15 +53,20 @@ ap.unbindResize = (id) ->
 
 ap.update = {}
 ap.initAssets = ->
-	tracker = ap.get('tracker')
 	assets = ['all_attendees','me','events', 'tpls', 'interests', 'speakers', 'ranks', 'tasks', 'achievements']
+	ap.getAssets(assets)
+ap.getAssets = (assets) ->
+	tracker = ap.get('tracker')
 	ap.api 'get assets', {tracker: tracker, assets: assets.join(',')}, (rsp) ->
 		for asset in assets
 			ready = true
 			if rsp[asset]?
-				ap[asset] = rsp[asset]
-				ap.put(asset, rsp[asset])
-				ap.track(asset)
+				if asset isnt 'me'
+					ap[asset] = rsp[asset]
+					ap.put(asset, rsp[asset])
+					ap.track(asset)
+				else
+					ap.asset_me = rsp[asset]
 			else
 				ap[asset] = ap.get(asset)
 
@@ -85,8 +90,8 @@ ap.update.all_attendees = ->
 	return false
 
 ap.update.me = ->
-	if ap.me
-		ap.login ap.me
+	if ap.asset_me
+		ap.login ap.asset_me
 	return true
 
 ap.update.tpls = ->
@@ -166,6 +171,7 @@ ap.initSearch = ->
 		$('body')
 		.on 'keyup', '.search-input', ->
 			val = $(this).val()
+			shell = $(this).closest('.search-shell')
 			if val.length > 2
 				results = ap.Users.search(val)
 				html = ''
@@ -173,13 +179,11 @@ ap.initSearch = ->
 					html += '<a class="result-link" href="/~'+result.get('user_name')+'">
 						<span style="background:url('+result.get('pic')+')"></span>
 					'+result.get('first_name')+' '+result.get('last_name')+'</a>'
-				$('#nav-search .search-results').html(html)
+				$('.search-results', shell).html(html)
 				if ap.isMobile
 					$('#primary-links').hide()
 			else if val.length is 0
-				if ap.isMobile
-					$('#primary-links').show()
-					$('#nav-search .search-results').empty()
+				x = 'empty state'
 
 ###
 	Make an api call

@@ -179,7 +179,7 @@ a.wall-content-type-speaker {
 #nav-links a:hover, .nav-link-active {
     margin-top:                 0px ! important;
 }
-a.if-mobile {
+.if-mobile {
     display:                    block ! important;
 }
 div#nav-links a {
@@ -297,6 +297,7 @@ a#back-button {
     height:                     29px;
     font-size:                  16pt;
     padding-top:                1px;
+    font-family:                arial;
 }
 #nav-search:hover {
     padding:                    0px 5px ! important;
@@ -309,6 +310,7 @@ div#nav-search {
     width:                      12px;
     height:                     21px;
     top:                        20px;
+    display:                    none;
 }
 div#search-box {
     display:                    block;
@@ -338,7 +340,7 @@ div.search-results {
     width:                      37px;
 }
 div#primary-links {
-    margin-top:                 6px;
+    margin-top:                 -30px;
 }
 div.dispatch {
     width:                      100%;
@@ -551,10 +553,11 @@ div#sidebar-shell {
     display:                    none;
 }
 div#page_content {
-    margin-top:                 -99px;
     width:                      100%;
     margin-left:                0px;
     margin-right:               0px;
+    overflow:                   hidden;
+    margin-top:                 -99px;
 }
 img#story-img-1 {
     margin:                     20px 0px 30px 30px;
@@ -623,6 +626,36 @@ div.dispatch-content-channel-shell {
 }
 div.dispatch-content-comments-shell {
     margin-top:                 -7px;
+}
+div.meetup-sidebar {
+    float:                      left;
+    width:                      100%;
+}
+div.meetup-content {
+    float:                      none;
+    width:                      100%;
+}
+.meetup-descr p {
+    width:                      100%;
+}
+div.meetup-descr-who {
+    width:                      100%;
+}
+div.meetup-descr-shell {
+    width:                      100%;
+}
+div.meetup-host {
+    display:                    block;
+    position:                   relative;
+    z-index:                    10000;
+    border-right:               2px solid rgb(255, 255, 255);
+    float:                      left;
+}
+div.meetup-time {
+    width:                      100%;
+}
+#page_content h2 {
+    text-align:                 center;
 }
 * {
     line-height:                inherit;
