@@ -74,10 +74,12 @@ ap.protect = ->
 ap.login = (me) ->
 	if me
 		$('html').addClass('is-logged-in')
+		$('#small-logo,#logo').attr('href', '/hub')
 		ap.me = new ap.User(me)
 
 ap.logout = ->
 	$('html').removeClass('is-logged-in')
+	$('#small-logo,#logo').attr('href', '/')
 	ap.api 'post user/logout'
 	localStorage.clear()
 	ap.me = false

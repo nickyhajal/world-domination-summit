@@ -172,14 +172,25 @@ ap.initSearch = ->
 		.on 'keyup', '.search-input', ->
 			val = $(this).val()
 			shell = $(this).closest('.search-shell')
+			friend = shell.data('friend')?
 			if val.length > 2
 				results = ap.Users.search(val)
 				html = ''
 				for result in results
+					name = result.get('first_name')+' '+result.get('last_name')
+					if friend and ap.isPhone
+						name = _.truncate(name, 14)
 					html += '<a class="result-link" href="/~'+result.get('user_name')+'">
 						<span style="background:url('+result.get('pic')+')"></span>
-					'+result.get('first_name')+' '+result.get('last_name')+'</a>'
-				$('.search-results', shell).html(html)
+					'+name
+					if friend
+						format = ''
+						if ap.isPhone
+							format = ' data-format="short"'
+						html += '<div class="follow-button"'+format+' data-user_id="'+result.get('user_id')+'"></div>'
+					html += '</a>'
+				tk html
+				$('.search-results', shell).html(html).scan()
 				if ap.isMobile
 					$('#primary-links').hide()
 			else if val.length is 0

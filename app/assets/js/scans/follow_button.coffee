@@ -15,15 +15,26 @@ jQuery.fn.scan
 				user = ap.Users.get(user_id)
 
 				syncButton = ->
-					str = 'Friend '
+					name = user.get('first_name')
 					if ap.me.isConnected?(user_id)
-						str = if format is 'short' then 'Friends with' else 'Friends with'
-					$t.html (str + ' ' + user.get('first_name'))
+						$t.addClass('following')
+						if format is 'short'
+							str = 'Friends'
+						else
+							str = 'Friends with '+name
+					else
+						if format is 'short'
+							str = 'Friend'
+						else
+							str = 'Friend '+name
+
+					$t.html (str)
 
 				changeFnc = (e) ->
 					ap.me.toggleConnection user_id, ->
 						syncButton()
 					e.preventDefault()
+					e.stopPropagation()
 
 				syncButton()
 

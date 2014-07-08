@@ -330,8 +330,9 @@ input.search-input {
 }
 div.search-results {
     background:                 none repeat scroll 0% 0% rgb(33, 23, 10);
-    margin-left:                -15px;
     z-index:                    10000;
+    margin-left:                -10px ! important;
+    margin-right:               10px ! important;
 }
 #nav-search .search-results a span {
     top:                        -9px;

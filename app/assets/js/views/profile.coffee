@@ -122,3 +122,16 @@ ap.Views.profile = XView.extend
 		if ap.me.get('pic')?
 			$('.current-avatar').show()
 			$('.avatar-shell').empty().append $('<img/>').attr('src', ap.me.get('pic').replace('_normal', ''))
+
+	tablet: ->
+		width = $(window).width(true) - (179)
+		$('#attendee-profile-map').css('width', _.x(width))
+		$('.attendee-avatar').css('height', '')
+
+	desktop: ->
+		$('#attendee-profile-map').css('width', '')
+		$('.attendee-avatar').css('height', '')
+
+	phone: ->
+		av = $('.attendee-avatar')
+		av.css('height', _.x(av.width()))

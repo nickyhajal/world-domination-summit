@@ -1117,6 +1117,7 @@ span.pre-input {
     font-family:                vitessebook ! important;
     color:                      rgb(33, 23, 10);
     background:                 none repeat scroll 0px 0px rgb(227, 227, 218);
+    z-index:                    3;
 }
 input[type="text"], input[type="password"], input[type="number"], .pre-input {
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
@@ -1774,8 +1775,8 @@ div#search-box {
 }
 #attendee-search .search-results {
     margin-top:                 -11px;
-    margin-left:                -10px;
-    margin-right:               10px;
+    margin-left:                0px;
+    margin-right:               0px;
 }
 #attendee-search a.result-link:nth-of-type(2n) {
     background:                 none repeat scroll 0% 0% rgb(251, 251, 245) ! important;
@@ -2553,6 +2554,25 @@ div#hub-buttons {
     height:                     50px;
     width:                      50px;
     margin-top:                 -14px;
+}
+div.following.follow-button {
+    background:                 none repeat scroll 0% 0% rgb(177, 186, 30) ! important;
+}
+#attendee-search div.follow-button {
+    float:                      right;
+    text-align:                 center;
+    cursor:                     pointer;
+    color:                      rgb(255, 255, 255);
+    background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
+    padding:                    10px 10px 8px;
+    margin-top:                 -9px;
+    margin-right:               -10px;
+    font-size:                  14pt;
+    min-width:                  220px;
+    max-width:                  300px;
+    text-overflow:              ellipsis;
+    -o-text-overflow:           ellipsis;
+    -ms-text-overflow:          ellipsis;
 }
 * {
     box-sizing:                 border-box;

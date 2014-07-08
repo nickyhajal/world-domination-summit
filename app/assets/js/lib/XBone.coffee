@@ -108,6 +108,19 @@ window.XView = Backbone.View.extend
 			when 'prepend'
 				$(@el).prepend(html).scan()
 		@rendered()
+
+		if ap.isTablet and @tablet?
+			@tablet()
+
+		if ap.isMobile and @mobile?
+			@mobile()
+
+		if ap.isPhone and @phone?
+			@phone()
+
+		if ap.isDesktop and @desktop?
+			@desktop()
+
 		if @options.onRender?
 			@options.onRender()
 	finish: ->

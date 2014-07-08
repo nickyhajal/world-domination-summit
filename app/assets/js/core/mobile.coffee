@@ -1,6 +1,7 @@
 ap.initMobile = ->
 	$('body')
 	.on('click', '#nav-link-expand', ap.toggleNav)
+	ap.checkMobile()
 	$(window).resize(ap.checkMobile)
 ap.toggleNav = (force = false) ->
 	nav = $('#nav-links')
@@ -16,6 +17,7 @@ ap.checkMobile = ->
 	width = $(window).outerWidth()
 	$wall = $('#waterfall')
 	$video = $('#video')
+	ap.isDesktop = false
 	if width < 1006 and width > 690
 		ap.isTablet = ap.isMobile = true
 		ap.isPhone = false
@@ -23,6 +25,7 @@ ap.checkMobile = ->
 		ap.isPhone = ap.isMobile = true
 		ap.isTablet = false
 	else
+		ap.isDesktop = true
 		ap.isPhone = ap.isTablet = ap.isMobile = false
 
 	if ap.isMobile
@@ -46,3 +49,17 @@ ap.checkMobile = ->
 		if search
 			search.remove()
 			$('#nav-links').append(search)
+
+	if ap.currentView?
+		view = ap.currentView
+		if ap.isTablet and view.tablet?
+			view.tablet()
+
+		if ap.isMobile and view.mobile?
+			view.mobile()
+
+		if ap.isPhone and view.phone?
+			view.phone()
+
+		if ap.isDesktop and view.desktop?
+			view.desktop()
