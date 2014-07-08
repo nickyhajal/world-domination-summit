@@ -108,7 +108,7 @@ race =
         user = this
         muts = []
         achs = []
-        checks = {}
+        checks = @getChecks()
         start = +(new Date())
 
         user.getMutualFriends()
@@ -129,7 +129,9 @@ race =
       else
         tk 'Skipped Race Check for '+@get('user_name')
         dfr.resolve()
+    return dfr.promise
 
+  getChecks: ->
     checks = [
       # Profile 
       (cb) ->
@@ -266,6 +268,6 @@ race =
         else
           cb()
     ]
-    return dfr.promise
+    return checks
 
 module.exports = race

@@ -194,7 +194,6 @@ routes = (app) ->
 								rds.expire 'interests', 10000
 				Interests.forge().fetch()
 				.then (interests) ->
-					tk 'ints'
 					dfr.resolve(interests)
 				return dfr.promise
 
