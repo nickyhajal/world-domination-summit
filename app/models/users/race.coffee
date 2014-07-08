@@ -266,11 +266,6 @@ race =
         else
           cb()
     ]
-
-    return dfr.promise
-    .fetch()
-    .then (achs) ->
-      dfr.resolve(achs.models)
     return dfr.promise
 
 module.exports = race

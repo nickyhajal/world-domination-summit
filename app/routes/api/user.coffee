@@ -478,11 +478,12 @@ routes = (app) ->
 												new_points: ach_rsp.points - req.query.cur_ponts
 												task_id: req.query.task_id
 												achievements: achievements
+											tk rsp
 
 											# Expire rank cache so next rank request
 											# is recalculated
 											rds.expire 'ranks', 0
-
+											tk 'REDIR'
 											res.redirect('/upload-race?rsp='+rsp)
 									, (err) ->
 										console.error(err)

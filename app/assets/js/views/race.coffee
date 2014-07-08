@@ -2,6 +2,11 @@ ap.Views.race = XView.extend
 	saveScrollPosition: true
 	initialize: ->
 		_.whenReady 'ranks', =>
+			me = ap.me.attributes
+			if not me.rank? and not me.rank
+				me.rank = '1921'
+			if not me.points? and not me.points
+				me.points = '0'
 			@options.out = _.template @options.out, ap.me.attributes
 			@initRender()
 		ap.bindResize('race', => @resize())

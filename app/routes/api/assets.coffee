@@ -59,8 +59,6 @@ routes = (app) ->
 					if assets[asset]? and expired
 						assets[asset](req)
 						.then (rsp) ->
-							tk '>>>'
-							tk rsp
 							res.r[asset] = rsp
 							tk 'Grabbing '+asset+ ' took: '+(+(new Date()) - assetStart)+' milliseconds'
 							cb()

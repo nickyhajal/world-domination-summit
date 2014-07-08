@@ -689,6 +689,13 @@ a.schedule-directions:before {
 a.rank-row:hover {
     background:                 none repeat scroll 0px 0px rgb(225, 218, 200);
 }
+a.rank-row:nth-of-type(2n+1) {
+    background:                 none repeat scroll 0px 0px rgb(237, 234, 222);
+}
+h4#challenge-title.achieved {
+    color:                      rgb(148, 156, 23);
+}
+
 a.rank-row {
     clear:                      both;
     display:                    block;
@@ -1082,6 +1089,15 @@ input[type="text"], input[type="password"], input[type="number"], .pre-input {
 #page-propose-a-meetup .interest-select-list label:first-of-type {
     display:                    none;
 }
+div#your-points, #your-rank {
+    display:                    inline-block;
+    text-align:                 center;
+    color:                      rgb(255, 255, 255);
+    font-size:                  28pt;
+    width:                      35%;
+    margin-right:               24px;
+}
+
 #your-points label, #your-rank label {
     font-family:                vitesse ! important;
     color:                      rgb(255, 255, 255) ! important;
@@ -4366,6 +4382,12 @@ html[dir="rtl"] .select2-search-choice-close {
     height:                     100px;
     overflow:                   scroll;
 }
+div#race-buttons {
+    margin-left:                -50px;
+    margin-right:               -50px;
+    width:                      630px;
+}
+
 div#race-buttons a {
     width:                      50%;
     text-align:                 center;
