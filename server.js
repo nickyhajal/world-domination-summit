@@ -19,6 +19,7 @@ process.dmn = process.env.DOMAIN
 require('./app/processors/third-party-feeds')(app)
 require('./app/processors/wufoo')(app)
 require('./app/processors/academies')(app)
+require('./app/processors/twitter_avs')(app)
 if (process.env.NODE_ENV === 'production') {
 	require('./app/processors/eventbrite')(app)
 }
