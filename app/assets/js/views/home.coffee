@@ -485,3 +485,4 @@ window.wall =
 		#If we made it here, we need to reset the used content and try again
 		@pruneUsed type
 		return @getContent type, opts
+

@@ -62,6 +62,17 @@ ap.User = window.XModel.extend
 			else
 				return false
 
+	getFriends: (cb) ->
+		if @get('friends')?
+			cb(@get('friends'))
+		else
+			ap.api 'get user/friends', {}, (rsp) =>
+				@set('friends', rsp.friends)
+				@set('friended_me', rsp.friended_me)
+				cb(rsp.friends)
+
+
+
 	setRank: ->
 		user_id = @get('user_id')
 		count = 1

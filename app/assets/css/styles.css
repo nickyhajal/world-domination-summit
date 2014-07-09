@@ -716,6 +716,23 @@ a.rank-row {
 a#back-button {
     display:                    none ! important;
 }
+a#attendee-search-x {
+    text-decoration:            none;
+    float:                      right;
+    position:                   relative;
+    z-index:                    1000;
+    text-align:                 center;
+    border-radius:              50%;
+    -moz-border-radius:         50%;
+    -webkit-border-radius:      50%;
+    font-size:                  18pt;
+    width:                      44px;
+    padding:                    7px 13px 5px;
+    margin-right:               58px;
+    margin-top:                 -55px;
+    background:                 none repeat scroll 0px 0px rgba(255, 255, 255, 0.46);
+    display:                    none;
+}
 a {
     color:                      rgb(226, 127, 28);
 }
@@ -964,6 +981,9 @@ h3.profile-heading {
     display:                    block;
     margin-top:                 50px;
     margin-bottom:              -40px;
+}
+#page-attendees h3 {
+    margin-top:                 45px;
 }
 h3 {
     font-size:                  24px;
@@ -2118,7 +2138,7 @@ div#meetup-address-overlay {
 div.meetup-descr {
     margin-top:                 10px;
 }
-.meetup-attendee {
+.meetup-attendee, .friend {
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
     display:                    inline-block;
     font-family:                karla;
@@ -2126,8 +2146,9 @@ div.meetup-descr {
     text-align:                 center;
     margin-right:               10px;
     margin-bottom:              10px;
+    text-decoration:            none;
 }
-div.meetup-attendee-avatar {
+div.meetup-attendee-avatar, .friend-avatar {
     border-radius:              50%;
     -moz-border-radius:         50%;
     -webkit-border-radius:      50%;
@@ -2620,6 +2641,9 @@ div.following.follow-button {
 }
 #task-more img {
     width:                      360px;
+}
+div#attendee-search-inp-shell {
+    position:                   relative;
 }
 * {
     box-sizing:                 border-box;
