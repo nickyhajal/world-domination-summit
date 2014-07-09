@@ -63,7 +63,7 @@
 		Then, all you need to do is record a video with instagram and give it 2 special hashtags. The first is <b>#wds2014</b>. The second is a custom tag unique to each video task you'll find on the task details page.
 	</p>
 	<p>
-		We have special WDS robots checking every instagram video in the #wds2014 feed and they'll make sure to process your submission! (Though they may take a few minutes - they're not the fastest robots.)
+		We have special WDS robots checking every instagram video in the #wds2014 feed and they'll make sure to process your submission! (Though they may take a few minutes - they're not the fastest robots in the world.)
 	</p>
 <a href="#" class="button tab-next">Continue</a>
 </div>
@@ -74,10 +74,10 @@
 		The Unconventional Race team will be judging every submission.
 	</p>
 	<p>
-		Creative photos can receive up to 3 bonus points and, in a tight race, as the Unconventional Race tends to be, bonus points make or break your shot at victory!
+		Creative photos can receive up to 3 bonus points. In a tight race, as the Unconventional Race tends to be, bonus points can make or break your shot at victory!
 	</p>
 	<p>
-		Photos that seem irrelevant to the task or don't meet the specified criteria will be removed but in that case, you'll be able to submit another time to try again.
+		Photos that seem irrelevant to the task or don't meet the specified criteria will be removed. If that happens, you'll be able to submit another time to try again.
 	</p>
 <a href="#" class="button tab-next">Continue</a>
 </div>
