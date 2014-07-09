@@ -23,7 +23,8 @@ window.wall =
 		$.scrollTo(0)
 		wall.$el = $('#waterfall')
 		wall.$q = $('#wall-queue')
-		$(window).on('scroll', wall.scroll)
+		wall.drawnHeight = 0
+		$(window).on('scroll', @loadMoreContentIfWeScrolledDownEnough)
 		_.whenReady 'assets', =>
 			@loadContent =>
 				@fillContent($('.wall-section'))
@@ -34,14 +35,15 @@ window.wall =
 			.on('click', '#video', wall.showVideo)
 			.on('click', '#reg-army', wall.showArmy)
 
+		wall.zoomFactor = 1
 		url_params = @urlParams()
 		if url_params['screenmode']=='1'
 			_.whenReady 'firstpanel', =>
-				@initScreenMode()
 				if url_params['delay']?
 					@autoScrollDelay = url_params['delay']
 				else
 					@autoScrollDelay = 100
+				@initScreenMode()
 
 	urlParams: ->
 		urlParams = Array()
@@ -57,24 +59,78 @@ window.wall =
 		hideMe = ['#top-nav', '#notifications', '#main-header', '#header-title', '.tpl-0', '#video-shell', 'footer']
 		for el in hideMe
 			$(el).toggle()
+		$('*').css('cursor', 'none')
+
 		@scaleForScreenMode()
+
 		$(window).resize =>
 			@scaleForScreenMode()
+			if ($("#home-screen-overlay").length)
+				$("#home-screen-overlay").css("width", $(window).width())
+							 .css('height', $(window).height())
+
 		@autoScroll()
+		@screenMessage()
+
+	# Will load more content if we scroll down low enough
+	loadMoreContentIfWeScrolledDownEnough: ->
+		_.whenReady 'firstpanel', =>
+			wall = window.wall
+			if wall.zoomFactor?
+				determineNextReload = ->
+					wall.nextReloadHappeningWhenScrollTopIsAt = document.getElementById('waterfall').getBoundingClientRect().height - 4 * $(window).height()
+
+				unless wall.nextReloadHappeningWhenScrollTopIsAt?
+					determineNextReload()
+
+				if $(window).scrollTop() > wall.nextReloadHappeningWhenScrollTopIsAt
+					wall.$el.css('height', Math.max($(window).scrollTop() + 4 * $(window).height(), wall.$el.height()) + 'px')
+					determineNextReload()
+					wall.displayPanels()
+
 
 	scaleForScreenMode: ->
-		viewportSize = $(window).width()
-		unless @originalContentainerSize?
-			@originalContentainerSize = $('main.contentainer').innerWidth()
-		$('body').css('transform', 'scale(' + (viewportSize / @originalContentainerSize)+')')
-		         .css('-moz-transform', 'scale(' + (viewportSize / @originalContentainerSize)+')')
-		         .css('-ms-transform', 'scale(' + (viewportSize / @originalContentainerSize)+')')
-		         .css('-o-transform', 'scale(' + (viewportSize / @originalContentainerSize)+')')
-		         .css('-webkit-transform', 'scale(' + (viewportSize / @originalContentainerSize)+')')
-		         .css('overflow', 'hidden')
-		$('main').css('position', 'absolute')
-		         .css('top', '0px')
-			 .css('left', (viewportSize - @originalContentainerSize) / 2 + 'px')
+		_.whenReady 'firstpanel', =>
+			viewportSize = $(window).width()
+			unless @originalContentainerSize?
+				@originalContentainerSize = $('main.contentainer').innerWidth()
+			@zoomFactor = viewportSize / @originalContentainerSize
+
+			$('#waterfall').css('transform', 'scale(' + @zoomFactor + ')')
+				       .css('-moz-transform', 'scale(' + @zoomFactor + ')')
+				       .css('-ms-transform', 'scale(' + @zoomFactor + ')')
+				       .css('-o-transform', 'scale(' + @zoomFactor + ')')
+				       .css('-webkit-transform', 'scale(' + @zoomFactor + ')')
+				       .css('top', (1200 * @zoomFactor) + 'px')
+
+			$('body').css('overflow', 'hidden')
+
+	replaceNewLineWithBr: (str) ->
+		str.replace(/(?:\r\n|\r|\n)/g, '<br />')
+
+	screenMessage: ->
+		ap.api 'get screens', {}, (rsp) ->
+			if rsp.message?
+				console.log("FFF: " + JSON.stringify($('#home-screen-overlay').length))
+				if rsp.message.activated == "yes"
+					if !$('#home-screen-overlay').length
+						wall.stopAutoScroll()
+						$('body').append('<div id="home-screen-overlay" style="display: none"><h1>' + rsp.message.title + '</h1><p>' + wall.replaceNewLineWithBr rsp.message.message + '</p></div>')
+						$("#home-screen-overlay").css("width", $(window).width())
+									 .css('height', $(window).height())
+									 .fadeIn("slow")
+					else if (wall.message.message != rsp.message.message) or (wall.message.title != rsp.message.title)
+						$("#home-screen-overlay").html('<h1>' + rsp.message.title + '</h1><p>' + wall.replaceNewLineWithBr rsp.message.message + '</p>')
+				else if (rsp.message.activated == "no") and $('#home-screen-overlay').length
+					$("#home-screen-overlay").fadeOut "slow", ->
+						$('#home-screen-overlay').remove()
+						wall.autoScroll()
+
+				wall.message = rsp.message
+
+			setTimeout =>
+				wall.screenMessage()
+			, 1000
 
 	autoScroll: ->
 		rightNow = new Date().getTime()
@@ -93,9 +149,15 @@ window.wall =
 		@autoScrollTimerStart = rightNow
 		window.scrollBy(0,pixels)
 
-		setTimeout =>
+		@autoScrollTimo = setTimeout =>
 			@autoScroll()
 		, newDelay
+
+	stopAutoScroll: ->
+		if @autoScrollTimo?
+			clearTimeout(@autoScrollTimo)
+		@autoScrollTimo = null
+		@autoScrollTimerStart = null
 
 	initSafari: ->
 		isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/)
@@ -126,14 +188,6 @@ window.wall =
 			    ov.draw = (->)
 			    ov.setMap(this)
 			_.nowReady 'googlemapsextended'
-
-	scroll: ->
-		$wall = $('#waterfall')
-
-		# Determine if we're ready to add more panels
-		if (window.scrollY / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 10 > 8
-			$wall.css('height', ($wall.height()+800)+'px')
-			wall.displayPanels()
 
 	# Get content from API
 	# Note: currently gets all the content we have but
@@ -222,8 +276,7 @@ window.wall =
 		wall.$q.append($tpl)
 
 	displayPanels: ->
-		last = $('#waterfall .wall-section').last()
-		space = $('#waterfall').height() - (last.offset().top + last.height())
+		space = $('#waterfall').height() - wall.drawnHeight
 		if space > 100
 			queue = $('.wall-section', wall.$q)
 			if queue? and queue.length
@@ -232,6 +285,7 @@ window.wall =
 				next = _next.clone()
 				_next.remove()
 				wall.$el.append next
+				wall.drawnHeight += next.height()
 				@postProcess next
 			queue = $('.wall-section', wall.$q)
 			if queue.length < 5
@@ -347,7 +401,7 @@ window.wall =
 
 	renderArmyMap: ->
 		army_map_el = document.getElementById('army-map')
-		mapOptions = 
+		mapOptions =
 			center: new google.maps.LatLng(30.4419, -60.1419)
 			zoom: 3
 			scrollwheel: false
@@ -363,15 +417,15 @@ window.wall =
 			lat = ''+user.get('lat')
 			lon = ''+user.get('lon')
 			while not uniq
-				ll = llid(lat, lon);
+				ll = llid(lat, lon)
 				if not used[ll]?
 					used[ll] = true
-					uniq = true;
+					uniq = true
 				else
-					lat = lat.substr(0, lat.length-1);
-					lon = lon.substr(0, lon.length-1);
-					lat += Math.floor(Math.random()*11);
-					lon += Math.floor(Math.random()*11);
+					lat = lat.substr(0, lat.length-1)
+					lon = lon.substr(0, lon.length-1)
+					lat += Math.floor(Math.random()*11)
+					lon += Math.floor(Math.random()*11)
 			return new google.maps.LatLng(lat, lon)
 
 		ap.Users.each (user) ->

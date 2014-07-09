@@ -1,0 +1,17 @@
+div(id="screens-shell")
+	h1 LCD screens
+	form(id="lcdscreens-form", action="#", methid="post")
+		div(class="form-section")
+			div(class="display-shell")
+		div(class="form-section")
+			div(class="form-box")
+				label Message Title
+				input(type="text", id="message-title", value="{{ title }}")
+		div(class="form-section")
+			div(class="form-box")
+				label Message
+				textarea(id="message-message")
+					{{ message }}
+		div(class="form-section")
+			a(href="#", id="message-save-later", class="button waitable", disabled) Please Wait...
+

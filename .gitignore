@@ -23,3 +23,6 @@ firefile.config.php
 dump.rdb
 wds-start.sh
 TASKS.md
+
+# vim swap files
+*.swp
