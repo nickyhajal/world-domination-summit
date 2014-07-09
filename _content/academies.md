@@ -35,7 +35,7 @@ Registration for academies is separate from WDS itself. We'll offer registration
 	<a href="https://www.eventbrite.com/e/wds-academy-nerd-fitness-with-steve-kamb-tickets-11556996287"><h4>Nerd Fitness Live</h4></a>
 	<h5>9:00 am–1:00 pm</h5>
 	Hosted by Steve Kamb
-	<a href="https://www.eventbrite.com/e/wds-academy-nerd-fitness-with-steve-kamb-tickets-11556996287" class="button">Tickets &rarr;</a>
+	<a href="https://www.eventbrite.com/e/wds-academy-nerd-fitness-with-steve-kamb-tickets-11556996287" class="button">Sold Out!</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		Nerd Fitness Live will help you develop the skills you need to become a real life superhero. We’ll start by training our minds to process a totally different approach to fitness—one that breaks the rampant boom and bust fitness trends and leads to long-term sustainable habit change. We’ll then talk about how simple, small changes in our diet can “level up” our nutrition (and allow each attendee to achieve new personal results they didn’t think were really possible). Finally, we’ll demonstrate and perform a strength training workout that you can do ANYWHERE in the world. Everything we teach and share is based around the philosophy that we are normal, everyday people wanting a fun, sustainable, and genuine way to lead better lives together.
