@@ -3,6 +3,10 @@ redis = require("redis")
 async = require("async")
 rds = redis.createClient()
 twitterAPI = require('node-twitter-api')
+fs = require('fs')
+crypto = require('crypto')
+gm = require('gm')
+mkdirp = require('mkdirp')
 
 routes = (app) ->
 
@@ -19,6 +23,7 @@ routes = (app) ->
 	[Connection, Connections] = require('../../models/connections')
 	[Registration, Registrations] = require('../../models/registrations')
 	[Notification, Notifications] = require('../../models/notifications')
+	[RaceSubmission, RaceSubmissions] = require('../../models/race_submissions')
 
 	user =
 		# Get logged in user
@@ -112,13 +117,11 @@ routes = (app) ->
 			finish = (user = false) ->
 				if user
 					user.login req
-					user.getAnswers()
+					user.getMe()
 					.then (user) ->
-						user.getInterests()
-						.then (user) ->
-							res.r.loggedin = true
-							res.r.me = user
-							next()
+						res.r.loggedin = true
+						res.r.me = user
+						next()
 				else
 					res.r.loggedin = false
 					next()
@@ -175,6 +178,7 @@ routes = (app) ->
 					.fetch()
 					.then (user) ->
 						user.set(post)
+						user.set('last_broadcast', new Date(user.get('last_broadcast')))
 						user.save()
 						.then (user) ->
 							if user.addressChanged
@@ -212,7 +216,6 @@ routes = (app) ->
 				User.forge(query)
 				.fetch()
 				.then (user) ->
-					tk req.headers
 					CredentialChange
 					.forge()
 					.create(user, req.headers['x-real-ip'])
@@ -419,5 +422,100 @@ routes = (app) ->
 				, (err) ->
 					console.error(err)
 
+		race_check: (req, res, next) ->
+			if req.me
+				req.me.raceCheck()
+				.then (points) ->
+					req.me.getAchievedTasks()
+					.then (achievements) ->
+						res.r.achievements = achievements
+						res.r.points = points
+						next()
+
+
+
+		achieved: (req, res, next) ->
+			if req.me
+				req.me.markAchieved(req.query.slug)
+				.then ->
+					next()
+
+		task: (req, res, next) ->
+			task_slug = req.query.task_slug
+			RaceSubmissions.forge()
+			.query('where', 'slug', task_slug)
+			.query('where', 'rating', '>', 1)
+			.fetch()
+			.then (examples) ->
+				res.r.examples = examples.models
+				if req.me
+					RaceSubmissions.forge()
+					.query('where', 'slug', task_slug)
+					.query('where', 'user_id', req.me.get('user_id'))
+					.fetch()
+					.then (mine) ->
+						res.r.mine = mine.models
+						next()
+				else
+					next()
+			, (err) ->
+				console.error(err)
+
+
+		race_submission: (req, res, next) ->
+			if req.me and req.query.slug?.length
+				slug = req.query.slug
+				if req.files 
+					req.me.markAchieved(slug)
+					.then (ach_rsp) ->
+						ext = req.files.pic.path.split('.')
+						ext = ext[ext.length - 1]
+						hash = crypto.createHash('md5').update((new Date().getTime())+'').digest("hex").substr(0, 5)
+						name = hash+'.'+ext
+						newPath = __dirname + '/../../../images/race_submissions/'+req.me.get('user_name')+'/'+slug
+						fullPath = newPath+'/'+name
+						smallPath = newPath+'/w600_'+name
+						mkdirp newPath, (err, path) ->
+							gm(req.files.pic.path)
+							.autoOrient()
+							.resize('1024^')
+							.write fullPath, (err) ->
+								gm(fullPath)
+								.resize('600^')
+								.write smallPath, (err) ->
+									RaceSubmission.forge
+										user_id: req.me.get('user_id')
+										ach_id: ach_rsp.ach_id
+										slug: slug
+										hash: hash
+										ext: ext
+									.save()
+									.then ->
+										req.me.getAchievedTasks()
+										.then (achievements) ->
+											short_achs = []
+											for ach in achievements.models
+												short_achs.push
+													t: ach.get('task_id')
+													c: ach.get('custom_points')
+													a: ach.get('add_points')
+
+											rsp = JSON.stringify
+												points: ach_rsp.points
+												new_points: ach_rsp.points - req.query.cur_ponts
+												task_id: req.query.task_id
+												achievements: short_achs
+											tk rsp
+
+											# Expire rank cache so next rank request
+											# is recalculated
+											rds.expire 'ranks', 0
+											tk 'REDIR'
+											res.redirect('/upload-race?rsp='+rsp)
+									, (err) ->
+										console.error(err)
+
+
+										next()
 
 module.exports = routes

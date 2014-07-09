@@ -1,6 +1,7 @@
 # SS - User Model
 
 Q = require('q')
+async = require('async')
 
 ##
 
@@ -12,24 +13,50 @@ Q = require('q')
 [FeedLike, FeedLikes] = require '../feed_likes'
 [Feed, Feeds] = require '../feeds'
 [EventRsvp, EventRsvps] = require '../event_rsvps'
+[Achievement, Achievements] = require '../achievements'
 
 getters = 
-
   getMe: ->
     dfr = Q.defer()
-    @getAllTickets()
-    .then (user) =>
-      @getAnswers()
+    @raceCheck()
+    .then =>
+      @getAllTickets()
       .then (user) =>
-        @getInterests()
+        @getAnswers()
         .then (user) =>
-          @getConnections()
+          @getInterests()
           .then (user) =>
-            @getFeedLikes()
+            @getConnections()
             .then (user) =>
-              @getRsvps()
+              @getFeedLikes()
               .then (user) =>
-                dfr.resolve(user)
+                @getRsvps()
+                .then (user) =>
+                  dfr.resolve(user)
+    return dfr.promise
+    
+  getFriends: (this_year = false) ->
+    dfr = Q.defer()
+    q = Connections.forge()
+    .query('where', 'user_id', @get('user_id'))
+    if this_year
+      q.query('where', 'created_at', '>', process.year+'-01-01 00:00:00')
+    q.fetch()
+    .then (rsp) ->
+      dfr.resolve(rsp.models)
+    , (err) ->
+      console.error(err)
+    return dfr.promise
+
+  getFriendedMe: (this_year = false) ->
+    dfr = Q.defer()
+    q = Connections.forge()
+    .query('where', 'to_id', @get('user_id'))
+    if this_year
+      q.query('where', 'created_at', '>', process.year+'-01-01 00:00:00')
+    q.fetch()
+    .then (rsp) ->
+      dfr.resolve(rsp.models)
     return dfr.promise
 
   getPic: ->
@@ -37,6 +64,19 @@ getters =
     unless pic.indexOf('http') > -1
       pic = 'http://worlddominationsummit.com'+pic
     return pic
+
+  getAchievedTasks: (with_submissions = false) ->
+    dfr = Q.defer()
+    achs = Achievements.forge()
+    .query('where', 'race_achievements.user_id', @get('user_id'))
+    .query('where', 'add_points', '<>', '-1')
+    if with_submissions
+      achs.query('join', 'race_submissions', 'race_achievements.ach_id', '=', 'race_submissions.ach_id', 'left')
+    achs.fetch
+      columns: ['task_id', 'custom_points', 'add_points']
+    .then (achs) ->
+      dfr.resolve(achs)
+    return dfr.promise
     
   getUrl: (text = false, clss = false, id = false) ->
     user_name = @get('user_name')

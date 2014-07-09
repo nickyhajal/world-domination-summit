@@ -26,7 +26,6 @@ CredentialChange = Shelf.Model.extend
 		user_id = user.get('user_id')
 		uniq = (+(new Date())) + user_id
 		hash = crypto.createHash('md5').update(uniq+'').digest('hex')
-		tk ip
 		@set
 			user_id: user_id
 			hash: hash

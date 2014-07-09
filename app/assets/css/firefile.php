@@ -107,6 +107,7 @@ class FireFileBase {
     	}
         
         // Prepare contents
+        file_put_contents('/errs', uniqid());
         $contents = (string) $this->prepareCss(stripSlashes($contents));
 
     	$result = $this->saveFile($file_abs_path, stripSlashes($contents));
@@ -350,7 +351,6 @@ class FireFileBase {
                     <div class="navbar navbar-fixed-top">
                         <div class="navbar-inner">
                             <div class="container">
-                                <a href="http://www.firefile.at" target="_blank" class="brand">FireFile <span id="firefile-version">v<?php echo $this->version; ?></span></a>
                                 
                                 <?php if($this->newVersionAvailable !== false) { ?>
                                     <ul class="nav navbar-form">
@@ -429,20 +429,15 @@ class FireFileBase {
                             <div class="span4">
                                 <h2>Get started</h2>
                                 <p>You only need to sign up and install FireFile for your browser to get started in just a minutes.</p>
-                                <p><a href="http://www.firefile.at/register/" class="btn btn-large btn-primary">Sign up now</a></p>
                             </div>
                             <div class="span4">
                                 <h2>Cross-browser</h2>
                                 <p>No need to worry about other browsers. FireFile will automatically prepare your css.</p>
-                                <p><img src="http://www.firefile.at/bundles/firefileserver/images/callouts/crossbrowser.png" title="Cross- Browser Transformations"></p>
                             </div>
                             <div class="span4">
                                 <h2>Firefox &amp; Chrome</h2>
                                 <p>FireFile currently supports Google Chrome and Firefox. Safari support will be added soon.</p>
                                 <p>
-                                    <a href="/firefile-latest.xpi"><img src="http://www.firefile.at/bundles/firefileserver/images/browser/firefox-32.png" title="Firefox"></a>
-                                    <a target="_blank" href="https://chrome.google.com/webstore/detail/firefile/cmigmoonjefggfmlholmllibgocfalgb"><img src="http://www.firefile.at/bundles/firefileserver/images/browser/chrome-32.png" title="Google Chrome"></a>
-                                    <span><img src="http://www.firefile.at/bundles/firefileserver/images/browser/safari-32-disabled.png"></span>
                                 </p>
                             </div>
                         </div>
@@ -512,7 +507,6 @@ class FireFileBase {
                 					<div class="inner_div">
                 						<div class="header_div">Test area panel title</div>
                 						<div class="content_div">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-                						<div class="footer_div">&copy; <a target="_blank" href="http://www.firefile.at">www.firefile.at</a> 2013</div>
                 					</div>
                 				</div>
                 			</div>

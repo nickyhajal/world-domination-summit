@@ -5,6 +5,7 @@ _d.ari = (a, i)->
 
 _d.btn = (el, during, done, reset = 1200) ->
 	fnc = 'html'
+	el = $(el)
 	if el.prop('tagName') is 'INPUT'
 		fnc = 'val'
 	orig = el[fnc]()

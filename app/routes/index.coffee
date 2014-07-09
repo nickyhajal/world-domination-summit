@@ -21,6 +21,15 @@ for province in all_provinces
 
 
 routes = (app) ->
+	app.all '/upload-race', (req, res) ->
+		rsp = false
+		if req.query.rsp
+			rsp = req.query.rsp
+		res.render "../views/race_upload",
+			title: "World Domination Summit - Avatar Upload"
+			layout: false
+			rsp: rsp
+			
 	app.all '/upload-avatar', (req, res) ->
 		res.render "../views/upload",
 			title: "World Domination Summit - Avatar Upload"

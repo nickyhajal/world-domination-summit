@@ -13,15 +13,18 @@ ap.scrollPos = {}
 ap.createRouter = ->
 	window.Router = Backbone.Router.extend
 		protect: [
-			'hub', 'welcome', 'settings', 'propose-a-meetup', 'communities', 'your-schedule', 'meetups', 'your-schedule'
+			'hub', 'welcome', 'settings', 'propose-a-meetup', 'communities', 
+			'your-schedule', 'meetups', 'your-schedule', 'race'
 		]
 		initialize: ->
+			$('#back-button').click(ap.back)
 			@route("*actions", 'default', ap.Routes.defaultRoute)
 			@route(/^[0-9a-z]{40}$/, 'hash', ap.Routes.hashLogin)
 			@route("logout", 'logout', ap.Routes.logout)
 			@route("reset-password/:hash", 'reset', ap.Routes.reset)
 			@route("community/:community", 'community', ap.Routes.community)
 			@route("dispatch/:feed_id", 'dispatch', ap.Routes.dispatch)
+			@route("task/:task_slug", 'task', ap.Routes.task)
 			@route("meetup/:meetup", 'meetup', ap.Routes.meetup)
 			@route("your-transfer/:transfer_id", 'reset', ap.Routes.your_transfer)
 			@route("admin/:panel", 'admin', ap.Routes.admin)
@@ -71,10 +74,12 @@ ap.protect = ->
 ap.login = (me) ->
 	if me
 		$('html').addClass('is-logged-in')
+		$('#small-logo,#logo').attr('href', '/hub')
 		ap.me = new ap.User(me)
 
 ap.logout = ->
 	$('html').removeClass('is-logged-in')
+	$('#small-logo,#logo').attr('href', '/')
 	ap.api 'post user/logout'
 	localStorage.clear()
 	ap.me = false
@@ -145,6 +150,11 @@ ap.goTo = (panel = '', options = {}, cb = false) ->
 			cb()
 	, 60
 
+	history_length = history.length
+	if history_length > 1
+		$('#back-button').show()
+	else
+		$('#back-button').hide()
 ap.back = ->
 	history.go(-1);
 	return false;

@@ -16,6 +16,9 @@ h1#header-title {
 #page-welcome h1 {
     margin-top:                 20px;
 }
+#page-race h1 {
+    font-size:                  28px;
+}
 h1 {
     width:                      100%;
     font-size:                  20px;
@@ -24,7 +27,7 @@ div#page_content {
     padding:                    12px 15px;
 }
 #page_content p {
-    width:                      100%;
+    width:                      100% ! important;
 }
 a.register-banner {
     width:                      100%;
@@ -46,6 +49,12 @@ div.line-canvas {
 }
 .broadcast-box h3 {
     font-size:                  18px;
+}
+.rank-points {
+    font-family:                karla;
+    float:                      right;
+    font-size:                  12pt;
+    margin-right:               9px;
 }
 h3 {
     width:                      100%;
@@ -177,6 +186,175 @@ div.dispatch-content-section {
 }
 div#counter-shell {
     display:                    none ! important;
+}
+a.task-row {
+    margin-left:                -15px;
+    margin-right:               25px;
+    padding:                    12px 22px 12px 12px;
+}
+span.points-label {
+    margin-left:                -15px;
+    margin-right:               16px;
+    width:                      65px;
+    padding:                    6px;
+}
+.task-points {
+    font-size:                  17pt;
+    margin-right:               12px;
+    margin-top:                 -11px;
+    padding:                    8px 12px 15px;
+    width:                      49px;
+}
+span.task-title {
+    font-size:                  15px;
+    font-family:                vitessebook;
+}
+div.zig-zags_blue {
+    margin-left:                0px;
+    width:                      720px;
+}
+div#your-points, #your-rank {
+    font-size:                  20pt;
+    width:                      50%;
+    margin-right:               -15px;
+}
+#your-points label, #your-rank label {
+    font-size:                  16px ! important;
+}
+div#race-user-status:after {
+    right:                      -47px;
+    top:                        11px;
+    display:                    none;
+}
+div#race-user-status {
+    margin-bottom:              -5px;
+}
+a.rank-row {
+    height:                     45px;
+    margin-right:               -15px;
+}
+#rank-1 span.rank-therank, #rank-2 .rank-therank, #rank-3 .rank-therank {
+    font-size:                  26px;
+    padding-top:                8px;
+    padding-right:              9px;
+}
+span.rank-therank {
+    font-size:                  20px;
+    padding:                    13px 6px 0px;
+    width:                      106px;
+    height:                     45px;
+    margin-right:               10px;
+}
+div.rank-attendee {
+    margin-top:                 0px;
+    font-size:                  13pt;
+    padding-top:                14px;
+}
+div#race-buttons {
+    margin-left:                -15px;
+    margin-right:               -15px;
+}
+div#race-buttons a {
+    padding:                    14px 0px 11px;
+}
+a.hub-button {
+    width:                      100%;
+    font-size:                  13pt;
+    padding:                    20px 0px;
+}
+div.meetup-sidebar {
+    font-size:                  10pt;
+}
+div.meetup-time {
+    font-size:                  12pt;
+}
+#attendee-search input.search-input {
+    font-size:                  14pt;
+    padding:                    14px 14px 11px;
+    left:                       0px;
+    right:                      0px;
+    display:                    block;
+    margin-top:                 -5px;
+    margin-bottom:              7px;
+    width:                      110%;
+}
+#attendee-search .search-results {
+    margin-right:               -30px ! important;
+    margin-left:                0px ! important;
+}
+#attendee-search .result-link span {
+    height:                     30px;
+    margin-right:               6px;
+    width:                      30px;
+    margin-left:                -7px;
+    margin-top:                 -7px;
+}
+#attendee-search a.result-link {
+    font-size:                  12pt;
+    padding:                    15px 12px 12px;
+}
+div#attendee-search-box {
+    width:                      100%;
+}
+div#attendee-search {
+    width:                      100%;
+    margin-left:                -15px;
+    margin-right:               -15px;
+}
+div#attendee-profile-map {
+    display:                    none;
+}
+div.attendee-avatar {
+    width:                      100%;
+}
+div.attendee-from {
+    width:                      100%;
+}
+div.attendee-question-shell {
+    width:                      100%;
+}
+#attendee-search div.follow-button {
+    min-width:                  0px;
+    font-size:                  11pt;
+    width:                      98px;
+    margin-top:                 -10px;
+}
+a.heading-button {
+    clear:                      both;
+    display:                    inline-block;
+    padding:                    0px 10px;
+    margin-left:                0px;
+}
+div.schedule-place {
+    width:                      147px;
+}
+#task-more img {
+    width:                      100%;
+}
+.form-row input {
+    width:                      100%;
+}
+div#meetup-address-overlay {
+    width:                      100%;
+    display:                    block;
+    margin-right:               -30px ! important;
+    box-sizing:                 content-box;
+    -moz-box-sizing:            content-box;
+    -webkit-box-sizing:         content-box;
+    margin-left:                -15px;
+    text-align:                 center;
+    margin-top:                 -12px;
+    padding:                    12px 16px 8px;
+}
+div#meetup-time {
+    float:                      none;
+    margin-bottom:              7px;
+}
+div#meetup-address {
+    float:                      none;
+}
+div#meetup-profile-map {
+    margin-top:                 -35px;
 }
 * {
     line-height:                inherit;

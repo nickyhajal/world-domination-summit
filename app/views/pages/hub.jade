@@ -1,5 +1,14 @@
 div(id="page_content")
 	h2 The Attendee Hub
 
+	div(class="if-mobile", id="hub-buttons")
+		a(id="hub-button-search", href="/attendees", class="hub-button") Attendee Search
+		a(id="hub-button-schedule", href="/your-schedule", class="hub-button") Your Schedule
+		a(id="hub-button-meetups", href="/meetups", class="hub-button") Meetups
+		a(id="hub-button-race", href="/race", class="hub-button") Unconventional Race
+		div(class="clear")
+		div(class="zig-zags_blue")
+
+
 	h3 Your Dispatch
 	div(class="dispatch dispatch-filters-on", data-channel_type="global")

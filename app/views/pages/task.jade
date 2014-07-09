@@ -1,0 +1,14 @@
+div(id="page_content")
+	h2 Race Task
+	br
+	span(id="task-points", class="task-detail-block") {{ points }}
+		label points
+	h4(id="challenge-title") Challenge:
+	h1 {{ task }}
+	div(class="task-explanation") {{ note }}
+
+	h4 How to Complete this Task
+	div(class="task-how-to-complete")
+		| {{ how_to }}
+
+	div(id="task-more")

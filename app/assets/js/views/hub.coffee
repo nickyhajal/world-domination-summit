@@ -70,6 +70,8 @@ ap.Views.hub = XView.extend
 
 	whenFinished: ->
 		$(window).unbind('hashchange')
-		$('#counter-shell').show()
+		tk ap.isMobile
+		if not ap.isMobile
+			$('#counter-shell').show()
 		$('.settings-link').unbind()
 		$('html').removeClass('attended-before')

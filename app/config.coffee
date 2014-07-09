@@ -6,6 +6,8 @@ config = (app, express, RedisStore, mysql) ->
 		app.set('view options', { pretty: true });
 		app.set('flickr_pub', process.env.FLCKR_PUB)
 		app.set('flickr_secret', process.env.FLCKR_SEC)
+		app.set('ig_key', process.env.IG_KEY)
+		app.set('ig_sec', process.env.IG_SECRET)
 		app.set('twitter_consumer_key', process.env.TWIT_KEY)
 		app.set('twitter_consumer_secret', process.env.TWIT_SEC)
 		app.set('twitter_token', process.env.TWIT_TOKEN)
@@ -43,7 +45,7 @@ config = (app, express, RedisStore, mysql) ->
             	password: process.env.DB_PW
             	database: process.env.DB
             	charset: 'utf8'
-            debug: false
+            debug: false 
 
 	app.configure 'production', ->
 		app.use(express.errorHandler());
@@ -55,5 +57,5 @@ config = (app, express, RedisStore, mysql) ->
             	password: process.env.DB_PW
             	database: process.env.DB
             	charset: 'utf8'
-
+            debug: false 
 module.exports = config

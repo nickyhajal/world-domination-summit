@@ -206,7 +206,6 @@ routes = (app) ->
 					cb()
 			, ->
 				feeds
-				.query('debug')
 				.fetch()
 				.then (feed) ->
 					res.r.feed_contents = feed.models

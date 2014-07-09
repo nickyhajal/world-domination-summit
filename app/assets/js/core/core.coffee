@@ -33,6 +33,18 @@ ap.init = () ->
 
 ap.allUsers = {}
 
+ap.onResizes = {}
+$(window).resize ->
+	for id,fnc of ap.onResizes
+		fnc()
+
+ap.bindResize = (id, fnc) ->
+	ap.onResizes[id] = fnc
+
+ap.unbindResize = (id) ->
+	delete ap.onResizes[id]
+
+
 ###
 
  Get assets, cache in localStorage and update when necessary
@@ -41,15 +53,20 @@ ap.allUsers = {}
 
 ap.update = {}
 ap.initAssets = ->
+	assets = ['all_attendees','me','events', 'tpls', 'interests', 'speakers', 'ranks', 'tasks', 'achievements']
+	ap.getAssets(assets)
+ap.getAssets = (assets) ->
 	tracker = ap.get('tracker')
-	assets = ['all_attendees','me','events', 'tpls', 'interests', 'speakers']
 	ap.api 'get assets', {tracker: tracker, assets: assets.join(',')}, (rsp) ->
 		for asset in assets
 			ready = true
 			if rsp[asset]?
-				ap[asset] = rsp[asset]
-				ap.put(asset, rsp[asset])
-				ap.track(asset)
+				if asset isnt 'me'
+					ap[asset] = rsp[asset]
+					ap.put(asset, rsp[asset])
+					ap.track(asset)
+				else
+					ap.asset_me = rsp[asset]
 			else
 				ap[asset] = ap.get(asset)
 
@@ -73,9 +90,20 @@ ap.update.all_attendees = ->
 	return false
 
 ap.update.me = ->
-	if ap.me
-		ap.login ap.me
+	if ap.asset_me
+		ap.login ap.asset_me
 	return true
+
+ap.update.tpls = ->
+	ap.templates = ap.tpls
+	ap.initTemplates()
+	return true
+
+ap.update.ranks = ->
+	_.whenReady 'me', =>
+		if ap.me
+			ap.me.setRank()
+			_.isReady 'ranks'
 
 ap.update.tpls = ->
 	ap.templates = ap.tpls
@@ -143,14 +171,29 @@ ap.initSearch = ->
 		$('body')
 		.on 'keyup', '.search-input', ->
 			val = $(this).val()
+			shell = $(this).closest('.search-shell')
+			friend = shell.data('friend')?
 			if val.length > 2
 				results = ap.Users.search(val)
 				html = ''
 				for result in results
+					name = result.get('first_name')+' '+result.get('last_name')
+					if friend and ap.isPhone
+						name = _.truncate(name, 14)
 					html += '<a class="result-link" href="/~'+result.get('user_name')+'">
 						<span style="background:url('+result.get('pic')+')"></span>
-					'+result.get('first_name')+' '+result.get('last_name')+'</a>'
-				$('#nav-search .search-results').html(html)
+					'+name
+					if friend
+						format = ''
+						if ap.isPhone
+							format = ' data-format="short"'
+						html += '<div class="follow-button"'+format+' data-user_id="'+result.get('user_id')+'"></div>'
+					html += '</a>'
+				$('.search-results', shell).html(html).scan()
+				if ap.isMobile
+					$('#primary-links').hide()
+			else if val.length is 0
+				x = 'empty state'
 
 ###
 	Make an api call

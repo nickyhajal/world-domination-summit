@@ -36,6 +36,13 @@ ap.User = window.XModel.extend
 				if cb
 					cb()
 
+	achieved: (task_id) ->
+		if ap.achievements?.length
+			for ach in ap.achievements
+				if ach.task_id is task_id
+					return ach
+		return false
+
 	isConnected: (user_id) ->
 		if @get('connected_ids')?.length
 			return @get('connected_ids').indexOf(user_id) > -1
@@ -50,7 +57,20 @@ ap.User = window.XModel.extend
 		if event.get('type') is 'program'
 			return true
 		else
-			return ap.me.get('rsvps').indexOf(event.get('event_id')) > -1
+			if ap.me.get('rsvps')?.length
+				return ap.me.get('rsvps').indexOf(event.get('event_id')) > -1
+			else
+				return false
+
+	setRank: ->
+		user_id = @get('user_id')
+		count = 1
+		for rank in ap.ranks
+			if rank.user_id is user_id
+				@set('rank', count)
+				@set('points', rank.points)
+				break;
+			count += 1
 
 # Create the Events collection and
 # instantiate it

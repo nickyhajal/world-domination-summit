@@ -36,6 +36,7 @@ jQuery.fn.scan
 					$('.tab-link[data-tabname="'+tabname+'"]', $el).addClass('tab-link-active')
 					onTab = tabs[tabname]
 					XHook.trigger('tab-show-'+context, onTab)
+					$.scrollTo(0)
 
 				if XHook.hooks['tab-before-show-'+context]?
 					XHook.trigger('tab-before-show-'+context, onTab, doGoTo)

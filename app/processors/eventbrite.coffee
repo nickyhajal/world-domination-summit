@@ -5,6 +5,7 @@ Eventbrite = require 'eventbrite'
 redis = require 'redis'
 rds = redis.createClient()
 moment = require 'moment'
+async = require 'async'
 
 ##
 [Ticket, Tickets] = require '../models/tickets'
@@ -22,6 +23,7 @@ shell = (app) ->
 			page: 1
 
 		tk 'Start EB...'
+
 		eb.event_list_attendees id: app.settings.eb_event, (err, data) ->
 			processAttendees = (attendees, inx = 0) ->
 				if attendees[inx]?

@@ -1,6 +1,8 @@
 div(id="page_content")
 	h2 Attendee Profile
 	div(class="attendee-avatar", style="background:url({{ pic }})")
+	div(class="if-mobile")
+		a(class="follow-button button", data-user_id="{{ user_id }}")
 	div(id="attendee-profile-map")
 	h3 {{ first_name }} {{ last_name }}
 	div(class="attendee-from")

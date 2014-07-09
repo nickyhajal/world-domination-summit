@@ -47,6 +47,10 @@ routes = (app) ->
 		app.delete '/user/twitter', user.del_twitter
 		app.post '/user/tweet', user.send_tweet
 		app.post '/user/logout', user.logout
+		app.post '/user/task', user.race_submission
+		app.post '/user/achieved', user.achieved
+		app.get '/user/racecheck', user.race_check
+		app.get '/user/task', user.task
 
 		# Speakers
 		app.put '/speaker', speaker.update
@@ -79,6 +83,7 @@ routes = (app) ->
 		app.post '/racetask', racetask.add
 		app.put '/racetask', racetask.upd
 		app.get '/racetasks', racetask.search
+		app.get '/racetask/submissions', racetask.get_submissions
 
 		# Screens
 		app.get '/screens', screens.get
@@ -99,6 +104,7 @@ routes = (app) ->
 		app.get '/admin/events', event.get
 		app.get '/admin/event_accept', event.accept
 		app.get '/admin/event_reject', event.reject
+		app.post '/admin/rate', admin.rate
 
 
 		# Finish

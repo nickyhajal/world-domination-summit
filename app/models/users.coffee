@@ -4,6 +4,7 @@ geocoder = require('geocoder')
 geolib = require('geolib')
 Twit = require('twit')
 Q = require('q')
+async = require('async')
 
 ##
 
@@ -26,6 +27,8 @@ User = Shelf.Model.extend
     'user_id', 'type', 'email', 'first_name', 'last_name', 'attending14',
     'email', 'hash', 'user_name', 'mf', 'twitter', 'facebook', 'site', 'pic', 'instagram'
     'address', 'address2', 'city', 'region', 'country', 'zip', 'lat', 'lon', 'distance',
+    'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake', 
+    'notification_interval', 'points'
     'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake', 'notification_interval'
   ]
   defaults:
@@ -87,6 +90,9 @@ User = Shelf.Model.extend
   getFeedLikes: getters.getFeedLikes
   getAllTickets: getters.getAllTickets
   getRsvps: getters.getRsvps
+  getAchievedTasks: getters.getAchievedTasks
+  getFriends: getters.getFriends
+  getFriendedMe: getters.getFriendedMe
   getLocationString: getters.getLocationString
 
   # Emails
@@ -99,8 +105,10 @@ User = Shelf.Model.extend
   # Race
   raceCheck: race.raceCheck
   achieved: race.achieved
+  markAchieved: race.markAchieved
+  updateAchieved: race.updateAchieved
   processPoints: race.processPoints
-  getAchievements: race.getAchevements
+  getAchievements: race.getAchievements
 
   # Twitter
   getTwit: twitter.getTwit
@@ -125,6 +133,7 @@ User = Shelf.Model.extend
             if test_capability is master_capability and capability in sub_capability
               return true
     return false
+
   getReadableCapabilities: ->
     dfr = Q.defer()
     @set('available_top_level_capabilities', Object.keys(User.capabilities_map))
@@ -195,13 +204,40 @@ User = Shelf.Model.extend
       @save(null, {method: 'update'})
 
 
+  getMutualFriends: (this_year = false)->
+    dfr = Q.defer()
+    mutual_ids = []
+    mutuals = []
+
+    # Get people I friended
+    @getFriends(this_year)
+    .then (my_friends) =>
+
+      # Get people who friended me
+      @getFriendedMe(this_year)
+      .then (friended_mes) =>
+        for my_friend in my_friends
+          for friended_me in friended_mes
+            if my_friend.get('to_id') isnt my_friend.get('user_id')
+              if my_friend.get('to_id') is friended_me.get('user_id')
+                mutual_ids.push(my_friend.get('to_id'))
+
+        async.each mutual_ids, (mutual_id, cb) =>
+          User.forge({user_id: mutual_id})
+          .fetch()
+          .then (mutual) ->
+            mutuals.push mutual
+            cb()
+        , ->
+          dfr.resolve(mutuals)
+    return dfr.promise
 
 User.capabilities_map =
   speakers: ["add-speaker", "speaker"]
   ambassadors: ["ambassador-review"]
   manifest: ['add-attendee', 'attendee', 'user']
   schedule: ['add-event', 'event', 'meetup', 'meetups', 'meetup-review', 'event-review']
-  race: ['add-racetask', 'racetask', 'racetasks']
+  race: ['add-racetask', 'racetask', 'racetasks', 'rate']
   downloads: ['admin_downloads']
   screens: ['screens']
 

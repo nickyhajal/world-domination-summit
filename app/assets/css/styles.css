@@ -123,10 +123,10 @@
     position:                   absolute;
     width:                      104px;
     right:                      -94px;
-    top:                        -11px;
     z-index:                    10;
     content:                    "";
     background:                 url("/images/icon-sprites_corner.png?2") no-repeat scroll 0px center / 2739px auto transparent;
+    top:                        -11px;
 }
 .corner-icon-theater:before {
     width:                      103px ! important;
@@ -424,6 +424,44 @@ img.photo-head-active {
     position:                   absolute;
     left:                       -9999px;
 }
+h2 {
+    margin-left:                -50px;
+    margin-right:               -50px;
+    margin-top:                 -50px;
+    font-size:                  12pt;
+    text-transform:             uppercase;
+    text--webkit-transform:     uppercase;
+    font-weight:                normal;
+    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    padding:                    22px 50px 18px;
+    font-family:                vitesse;
+    transition:                 all 0.2s ease 0s;
+    -moz-transition:            all 0.2s ease 0s;
+    -webkit-transition:         all 0.2s ease 0s;
+    -o-transition:              all 0.2s ease 0s;
+}
+a:hover {
+    text-decoration:            none;
+}
+a.register-banner {
+    background:                 url("/images/register-banner.png") repeat scroll 0% 0% / 100% auto transparent;
+    width:                      570px;
+    height:                     160px;
+    display:                    block;
+    margin-top:                 40px;
+}
+img.photo-head-active {
+    display:                    block ! important;
+    position:                   relative ! important;
+    left:                       0px ! important;
+}
+.photo-header img {
+    display:                    block;
+    height:                     550px;
+    width:                      815px;
+    position:                   absolute;
+    left:                       -9999px;
+}
 .place-row span {
     background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
     margin-left:                20px;
@@ -645,8 +683,127 @@ a.meetup-edit {
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
 }
 a.schedule-directions:before {
-    content:                    "Directions";
     float:                      right;
+    background:                 url("/images/map.png?1") repeat scroll 0px 0px / 100% auto transparent;
+    content:                    "";
+    width:                      24px;
+    height:                     24px;
+    margin-top:                 -6px;
+    margin-right:               -3px;
+    opacity:                    0.5;
+    -ms-filter:                 "alpha(opacity=50)";
+    filter:                     alpha(opacity=50);
+    zoom:                       1;
+}
+a.rank-row:hover {
+    background:                 none repeat scroll 0px 0px rgb(225, 218, 200);
+}
+a.rank-row:nth-of-type(2n+1) {
+    background:                 none repeat scroll 0px 0px rgb(237, 234, 222);
+}
+h4#challenge-title.achieved {
+    color:                      rgb(148, 156, 23);
+}
+a.rank-row {
+    clear:                      both;
+    display:                    block;
+    height:                     68px;
+    margin-left:                -50px;
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    text-decoration:            none;
+    margin-bottom:              2px;
+}
+a#back-button {
+    display:                    none ! important;
+}
+a {
+    color:                      rgb(226, 127, 28);
+}
+.pattern-bg b {
+    font-weight:                normal;
+    font-family:                VitesseBold;
+}
+.line-canvas {
+    width:                      568px;
+    background:                 none repeat scroll 0% 0% rgb(216, 216, 210);
+    height:                     6px;
+    clear:                      both;
+    margin:                     46px 0px;
+}
+hr {
+    border:                     0px none;
+}
+img#story-img-1 {
+    width:                      290px;
+    float:                      right;
+    margin:                     20px -80px 30px 30px;
+}
+footer {
+    background:                 none repeat scroll 0% 0% rgb(33, 23, 10);
+    padding:                    40px 0px;
+    text-align:                 center;
+    position:                   relative;
+    z-index:                    1000;
+}
+#footer-credits a {
+    color:                      rgb(255, 255, 255);
+}
+a.rate-button:hover {
+    background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
+    color:                      rgb(242, 242, 234);
+}
+a.rate-button {
+    display:                    block;
+    float:                      left;
+    margin-right:               10px;
+    padding:                    10px 25px;
+    text-decoration:            none;
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    margin-top:                 20px;
+    margin-bottom:              20px;
+}
+a#hub-button-schedule {
+    background:                 none repeat scroll 0% 0% rgb(95, 198, 211);
+    color:                      rgb(255, 255, 255);
+}
+a#hub-button-meetups {
+    background:                 none repeat scroll 0% 0% rgb(227, 137, 62);
+}
+a#hub-button-race {
+    background:                 none repeat scroll 0% 0% rgb(177, 186, 30);
+}
+a#hub-button-search {
+    background:                 none repeat scroll 0% 0% rgb(23, 127, 178);
+}
+a.hub-button {
+    display:                    block;
+    background:                 none repeat scroll 0% 0% rgb(204, 204, 204);
+    text-decoration:            none;
+    font-size:                  16pt;
+    font-family:                vitesse;
+    color:                      rgb(255, 255, 255);
+    width:                      50%;
+    float:                      left;
+    text-align:                 center;
+    margin-bottom:              0px;
+    padding:                    40px 0px;
+}
+a.heading-button {
+    font-size:                  10pt;
+    margin-left:                10px;
+    position:                   relative;
+    font-weight:                normal;
+    padding:                    6px 10px;
+    top:                        -4px;
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    color:                      rgb(226, 127, 28);
+}
+a.schedule-directions {
+    display:                    block;
+    margin-top:                 -10px;
+    height:                     30px;
+    position:                   relative;
+    width:                      100%;
 }
 a {
     color:                      rgb(226, 127, 28);
@@ -816,6 +973,7 @@ h3 {
     position:                   relative;
     width:                      580px;
     line-height:                140%;
+    clear:                      both;
 }
 .speaker-box {
     float:                      left;
@@ -972,6 +1130,21 @@ input.account-input {
 span.pre-input {
     background:                 none repeat scroll 0px 0px rgb(248, 248, 244);
 }
+.task-how-to-complete input[type="text"] {
+    background:                 none repeat scroll 0% 0% rgb(255, 255, 251);
+    margin-top:                 18px;
+    font-size:                  13pt;
+    padding:                    10px;
+}
+#attendee-search input.search-input {
+    width:                      100%;
+    padding:                    20px;
+    font-size:                  17pt;
+    font-family:                vitessebook ! important;
+    color:                      rgb(33, 23, 10);
+    background:                 none repeat scroll 0px 0px rgb(227, 227, 218);
+    z-index:                    3;
+}
 input[type="text"], input[type="password"], input[type="number"], .pre-input {
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
     border:                     0px none;
@@ -989,6 +1162,30 @@ input[type="text"], input[type="password"], input[type="number"], .pre-input {
 }
 #page-propose-a-meetup .interest-select-list label:first-of-type {
     display:                    none;
+}
+div#your-points, #your-rank {
+    display:                    inline-block;
+    text-align:                 center;
+    color:                      rgb(255, 255, 255);
+    font-size:                  28pt;
+    width:                      35%;
+    margin-right:               24px;
+}
+#your-points label, #your-rank label {
+    font-family:                vitesse ! important;
+    color:                      rgb(255, 255, 255) ! important;
+    font-size:                  21px ! important;
+    text-transform:             uppercase;
+    text--webkit-transform:     uppercase;
+}
+.task-detail-block label {
+    color:                      rgb(255, 255, 255) ! important;
+    font-family:                vitesselight ! important;
+    font-size:                  12px ! important;
+    font-weight:                normal;
+    padding:                    0px ! important;
+    text-transform:             uppercase;
+    text--webkit-transform:     uppercase;
 }
 #page_content label {
     display:                    block;
@@ -1087,6 +1284,11 @@ h1 a.button {
     -webkit-transition:         all 0.2s ease 0s;
     -o-transition:              all 0.2s ease 0s;
 }
+a#camera-button {
+    display:                    block;
+    text-align:                 center;
+    margin-top:                 30px;
+}
 input[type="submit"], .button {
     border:                     0px none;
     padding:                    8px 40px;
@@ -1104,7 +1306,7 @@ input[type="submit"], .button {
     width:                      100%;
     height:                     100%;
     position:                   absolute;
-    z-index:                    100;
+    z-index:                    100000;
     background:                 none repeat scroll 0px 0px rgba(255, 255, 255, 0.9);
     display:                    none;
 }
@@ -1114,7 +1316,6 @@ input[type="submit"], .button {
     height:                     55px;
     position:                   relative;
     margin:                     280px auto 0px;
-    left:                       75px;
 }
 .attended-never .returning {
     display:                    none;
@@ -1435,12 +1636,19 @@ span.button-description {
 .orange-box h4 {
     color:                      rgb(242, 242, 234);
 }
+h4#challenge-title {
+    margin:                     0px 0px 3px ! important;
+}
+#page-task h4 {
+    margin-bottom:              10px;
+}
 h4 {
     clear:                      both;
     text-transform:             uppercase;
     text--webkit-transform:     uppercase;
     margin-bottom:              20px;
     margin-top:                 40px;
+    font-weight:                normal;
     font-family:                vitesse;
 }
 .transfer-problem, .transfer-success {
@@ -1591,8 +1799,27 @@ div#search-box {
 #nav-links a.result-link:hover:first-of-type {
     margin-top:                 5px ! important;
 }
+#attendee-search .search-results {
+    margin-top:                 -11px;
+    margin-left:                0px;
+    margin-right:               0px;
+}
+#attendee-search a.result-link:nth-of-type(2n) {
+    background:                 none repeat scroll 0% 0% rgb(251, 251, 245) ! important;
+}
+#attendee-search a.result-link {
+    display:                    block;
+    width:                      100%;
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    font-size:                  14pt;
+    text-decoration:            none;
+    padding:                    20px;
+}
 div.search-results a:first-of-type {
     margin-top:                 5px ! important;
+}
+#attendee-search div.search-results {
+    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
 }
 div.search-results {
     margin-top:                 1px;
@@ -1743,20 +1970,20 @@ table#manifests-results-shell, .search-results-shell {
     font-size:                  11pt;
 }
 #page-admin a.button {
-    display: inline-block;
-    margin-bottom: 5px;
-    margin-right: 5px !important;
-    text-align: center;
-    width: auto;
+    display:                    inline-block;
+    margin-bottom:              5px;
+    margin-right:               5px ! important;
+    text-align:                 center;
+    width:                      auto;
 }
 #event-review-results tr td:first-of-type {
     padding-left:               10px;
     width:                      280px ! important;
 }
 #event-review-results td {
-    font-family: karla;
-    font-size: 11pt;
-    height: 44px;
+    font-family:                karla;
+    font-size:                  11pt;
+    height:                     44px;
 }
 #manifest-results tr td:first-of-type span, .search-results tr td:first-of-type span {
     display:                    table-cell;
@@ -1875,7 +2102,6 @@ div.dispatch-content-like-shell {
     float:                      left;
 }
 div#meetup-address-overlay {
-    position:                   relative;
     width:                      765px;
     background:                 none repeat scroll 0px 0px rgba(242, 242, 234, 0.81);
     font-size:                  15px;
@@ -1883,6 +2109,7 @@ div#meetup-address-overlay {
     font-family:                vitesse;
     padding:                    12px 16px 8px;
     margin-top:                 -36px;
+    position:                   relative;
 }
 #meetup-list div.meetup-descr {
     margin-top:                 5px;
@@ -1953,11 +2180,12 @@ div.meetup-descr-shell {
     position:                   relative;
     z-index:                    10;
     margin-top:                 50px;
+    width:                      566px;
 }
 div.meetup-content {
-    float:                      left;
     margin-left:                0px;
     width:                      416px;
+    float:                      right;
 }
 div.meetup-actions {
     float:                      left;
@@ -1994,7 +2222,7 @@ div.meetup-descr-host-name {
 div.meetup-descr-host-shell {
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
     margin:                     2px 0px;
-    padding:                    9px 4px;
+    padding:                    5px 9px;
 }
 div.meetup-host-avatar {
     background-size:            100% auto ! important;
@@ -2038,10 +2266,16 @@ div.schedule-time {
     margin-top:                 -10px;
 }
 .schedule-place {
-    float:                      left;
     font-family:                karla;
     margin-left:                7px;
     margin-top:                 -1px;
+    text-overflow:              ellipsis;
+    -o-text-overflow:           ellipsis;
+    -ms-text-overflow:          ellipsis;
+    overflow:                   hidden;
+    float:                      left;
+    display:                    inline;
+    white-space:                nowrap;
 }
 div.schedule-main {
     clear:                      both;
@@ -2091,6 +2325,171 @@ div.schedule-host-avatar {
     padding:                    6px 10px 5px 22px;
     background:                 none repeat scroll 0px 0px rgb(254, 241, 220);
 }
+div#race-user-status:after {
+    background-image:           url("/images/foundation/pattern_application.png");
+    background-size:            253px auto ! important;
+    -webkit-background-size:    253px auto ! important;
+    content:                    "";
+    position:                   absolute;
+    width:                      254px;
+    height:                     111px;
+    left:                       378px;
+    top:                        38px;
+}
+div#race-user-status {
+    padding:                    30px;
+    background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
+    width:                      630px;
+    margin-top:                 -35px;
+    margin-left:                -50px;
+    position:                   relative;
+}
+a.task-row:nth-of-type(2n) {
+    background:                 none repeat scroll 0px 0px rgb(237, 234, 222);
+}
+a.task-row {
+    display:                    block;
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    margin-left:                -50px;
+    padding:                    20px;
+    margin-bottom:              2px;
+}
+.task-points.achieved {
+    background:                 none repeat scroll 0px 0px rgb(177, 186, 30);
+}
+.task-points {
+    display:                    block;
+    margin-top:                 -20px;
+    margin-left:                -20px;
+    margin-right:               20px;
+    color:                      rgb(255, 255, 255);
+    font-size:                  23pt;
+    float:                      left;
+    text-align:                 right;
+    background:                 none repeat scroll 0px 0px rgb(181, 169, 150);
+    clear:                      both;
+    height:                     100%;
+    box-sizing:                 content-box;
+    -moz-box-sizing:            content-box;
+    -webkit-box-sizing:         content-box;
+    width:                      64px;
+    padding:                    14px 13px 26px;
+}
+a.task-row:hover {
+    background:                 none repeat scroll 0px 0px rgb(225, 218, 200);
+}
+a.task-row {
+    text-decoration:            none ! important;
+}
+span.task-title {
+    font-family:                vitesse;
+    font-size:                  14pt;
+}
+span.points-label {
+    display:                    block ! important;
+    margin-left:                -50px;
+    text-align:                 right;
+    background:                 none repeat scroll 0% 0% rgb(235, 234, 229);
+    width:                      90px;
+    float:                      left;
+    height:                     30px;
+    color:                      rgb(160, 148, 129);
+    padding:                    6px 14px 4px;
+}
+div.tasks-label {
+    height:                     30px;
+    background:                 none repeat scroll 0px 0px rgb(249, 248, 244);
+    width:                      580px;
+}
+span.tasks-label {
+    display:                    block;
+    margin-left:                50px;
+    color:                      rgb(160, 148, 129);
+    padding:                    7px;
+}
+div#race-task-list {
+    width:                      580px;
+}
+div.task-explanation {
+    width:                      580px;
+    font-family:                karla;
+    vertical-align:             middle;
+    margin-top:                 -3px;
+}
+span.task-detail-block.achieved {
+    background:                 none repeat scroll 0px 0px rgb(177, 186, 30);
+}
+span.task-detail-block {
+    background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
+    color:                      rgb(255, 255, 255);
+    display:                    block ! important;
+    font-family:                vitesse;
+    font-size:                  24pt;
+    text-align:                 center;
+    width:                      75px;
+    float:                      right;
+    margin-right:               135px;
+    margin-top:                 -34px;
+    padding:                    6px 0px;
+    margin-bottom:              -12px;
+}
+div.task-how-to-complete iframe {
+    border:                     0px none;
+    margin-top:                 20px;
+    background:                 none repeat scroll 0% 0% transparent;
+    overflow-x:                 hidden;
+    width:                      400px;
+    height:                     80px;
+    position:                   absolute;
+    left:                       -99999px;
+}
+.task-how-to-complete.achieved {
+    background:                 none repeat scroll 0px 0px rgb(177, 186, 30);
+    color:                      rgb(255, 255, 255);
+}
+div.task-how-to-complete {
+    padding:                    20px;
+    font-family:                karla;
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    width:                      580px;
+}
+div.task-photo-desktop #camera-button {
+    display:                    none;
+}
+div#task-completed-message.achieved {
+    margin:                     -20px -20px 20px;
+    color:                      rgb(255, 255, 255);
+    background:                 none repeat scroll 0px 0px rgb(177, 186, 30);
+    padding:                    10px 20px;
+}
+#rank-2 .rank-therank {
+    background:                 none repeat scroll 0% 0% rgb(210, 207, 188) ! important;
+}
+#rank-1 span.rank-therank, #rank-2 .rank-therank, #rank-3 .rank-therank {
+    font-size:                  39px;
+    padding-top:                13px;
+    font-family:                vitesse;
+    color:                      rgb(103, 93, 79);
+    background:                 none repeat scroll 0px 0px rgb(255, 233, 48);
+}
+#rank-3 span.rank-therank {
+    background:                 none repeat scroll 0px 0px rgb(230, 167, 75) ! important;
+}
+span.rank-therank {
+    float:                      left;
+    font-size:                  30px;
+    text-align:                 right;
+    color:                      rgb(255, 255, 255);
+    background:                 none repeat scroll 0px 0px rgb(181, 169, 150);
+    margin-right:               20px;
+    height:                     68px;
+    padding:                    18px 19px 10px;
+    width:                      118px;
+}
+div.rank-attendee {
+    font-size:                  19px;
+    padding-top:                23px;
+}
 div.dispatch-filter {
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
     color:                      rgb(226, 127, 28);
@@ -2129,6 +2528,98 @@ div.dipatch-filter-shell {
 }
 div.dispatch-control {
     margin-bottom:              8px;
+}
+span#race-latest-update span {
+    margin-right:               4px;
+}
+span#race-latest-update {
+    color:                      rgb(183, 180, 162);
+    position:                   relative;
+    display:                    block;
+    font-family:                Karlaitalic;
+    top:                        -11px;
+    font-size:                  10pt;
+    font-weight:                normal;
+}
+div#primary-links {
+    float:                      left;
+}
+.task-how-to-complete h5 {
+    font-weight:                normal;
+    font-family:                vitessebold;
+    margin-bottom:              9px;
+    font-size:                  12pt;
+}
+div#rate-task {
+    font-size:                  21pt;
+    margin-top:                 50px;
+}
+#rate-content img {
+    width:                      400px;
+    margin-top:                 0px;
+    text-align:                 center;
+}
+div#rate-content {
+    text-align:                 center;
+}
+div#rate-attendee {
+    font-size:                  11pt;
+    display:                    inline;
+    position:                   relative;
+    top:                        -4px;
+    padding-left:               10px;
+    border-left:                1px dotted;
+    margin-left:                7px;
+}
+div.rate-buttons {
+    margin:                     0px auto;
+    width:                      570px;
+}
+div#hub-buttons {
+    margin:                     -15px -50px 50px;
+}
+#attendee-search .result-link span {
+    display:                    block;
+    border-radius:              50%;
+    -moz-border-radius:         50%;
+    -webkit-border-radius:      50%;
+    float:                      left;
+    background-size:            100% auto ! important;
+    -webkit-background-size:    100% auto ! important;
+    margin-left:                -27px;
+    margin-right:               10px;
+    height:                     50px;
+    width:                      50px;
+    margin-top:                 -14px;
+}
+div.following.follow-button {
+    background:                 none repeat scroll 0% 0% rgb(177, 186, 30) ! important;
+}
+#attendee-search div.follow-button {
+    float:                      right;
+    text-align:                 center;
+    cursor:                     pointer;
+    color:                      rgb(255, 255, 255);
+    background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
+    padding:                    10px 10px 8px;
+    margin-top:                 -9px;
+    margin-right:               -10px;
+    font-size:                  14pt;
+    min-width:                  220px;
+    max-width:                  300px;
+    text-overflow:              ellipsis;
+    -o-text-overflow:           ellipsis;
+    -ms-text-overflow:          ellipsis;
+}
+.rank-points {
+    color:                      rgb(159, 148, 131);
+    float:                      right;
+    font-family:                karla;
+    font-size:                  14pt;
+    margin-right:               20px;
+}
+#task-more img {
+    width:                      360px;
 }
 * {
     box-sizing:                 border-box;
@@ -2193,6 +2684,9 @@ h1#extra-big {
 #tab-panel-all-done h1:first-of-type {
     font-size:                  26pt;
 }
+#page-race h1 {
+    font-size:                  32px;
+}
 #page_content h1 {
     margin-bottom:              19px;
 }
@@ -2233,6 +2727,9 @@ p.color-blue {
 .dispatch-content-shell p {
     width:                      100% ! important;
     margin-bottom:              9px ! important;
+}
+.meetup-descr p {
+    width:                      400px ! important;
 }
 #page_content p {
     font-family:                karla;
@@ -2350,6 +2847,9 @@ a.ambassador-button {
 }
 #nav-links a.result-link:hover {
     color:                      rgb(242, 242, 234) ! important;
+}
+.if-mobile {
+    display:                    none ! important;
 }
 #nav-links a, #nav-search {
     color:                      rgb(226, 127, 28);
@@ -3139,6 +3639,12 @@ a.counter-button {
     width:                      585px;
     background-size:            115% auto ! important;
     -webkit-background-size:    115% auto ! important;
+}
+#hub-buttons div.zig-zags_blue {
+    margin-top:                 50px;
+    margin-left:                46px;
+    width:                      100%;
+    height:                     28px;
 }
 .zig-zags_blue {
     background-color:           transparent;
@@ -4055,6 +4561,26 @@ html[dir="rtl"] .select2-search-choice-close {
     width:                      100px;
     height:                     100px;
     overflow:                   scroll;
+}
+div#race-buttons {
+    margin-left:                -50px;
+    margin-right:               -50px;
+    width:                      630px;
+}
+#race-buttons a:first-child {
+    border-right:               1px solid rgb(215, 200, 185);
+}
+div#race-buttons a {
+    width:                      50%;
+    text-align:                 center;
+    display:                    block;
+    float:                      left;
+    color:                      rgb(226, 127, 28);
+    font-family:                karla;
+    text-decoration:            none;
+    margin-bottom:              45px;
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    padding:                    12px 0px 11px;
 }
 @media not all, only screen and (min-resolution: 2dppx) {
     .select2-search input, .select2-search-choice-close, .select2-container .select2-choice abbr, .select2-container .select2-choice .select2-arrow b {
