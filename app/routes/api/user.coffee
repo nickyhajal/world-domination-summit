@@ -440,6 +440,28 @@ routes = (app) ->
 				.then ->
 					next()
 
+		task: (req, res, next) ->
+			task_slug = req.query.task_slug
+			RaceSubmissions.forge()
+			.query('where', 'slug', task_slug)
+			.query('where', 'rating', '>', 1)
+			.fetch()
+			.then (examples) ->
+				res.r.examples = examples.models
+				if req.me
+					RaceSubmissions.forge()
+					.query('where', 'slug', task_slug)
+					.query('where', 'user_id', req.me.get('user_id'))
+					.fetch()
+					.then (mine) ->
+						res.r.mine = mine.models
+						next()
+				else
+					next()
+			, (err) ->
+				console.error(err)
+
+
 		race_submission: (req, res, next) ->
 			if req.me and req.query.slug?.length
 				slug = req.query.slug

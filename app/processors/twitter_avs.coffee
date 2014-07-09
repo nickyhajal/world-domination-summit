@@ -44,8 +44,4 @@ shell = (app, db) ->
 						atncb()
 				cb()
 
-
-	#twit.get 'search/tweets', {q: '#wds2014', since_id: since_id, result_type:'recent', count:'100'}, (err, twts) ->
-	#grab()
-
 module.exports = shell

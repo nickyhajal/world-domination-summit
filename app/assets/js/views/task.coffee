@@ -53,6 +53,7 @@ ap.Views.task = XView.extend
 		if not @options.task.note.length
 			$('.task-explanation').remove()
 		@checkCompleted()
+		@getMedia()
 
 	submitInstagram: (e)->
 		e.preventDefault()
@@ -82,7 +83,33 @@ ap.Views.task = XView.extend
 			$('#challenge-title').html('Challenge Completed!').addClass('achieved')
 			$('.task-detail-block').addClass('achieved')
 			$('.task-how-to-complete').html(msg).addClass('achieved')
-			#$('#task-completed-message').html(msg).addClass('achieved')
+			@getMedia()
+
+	getMedia: ->
+		ap.api 'get user/task', {task_slug: @options.task.slug}, (rsp) =>
+			html = ''
+			if rsp.mine
+				html += '<h4>Submitted By You</h4>'
+				for sub in rsp.mine
+					html += @getSubHtml(sub)
+			if rsp.examples
+				html += '<h4>Top Submissions By Other WDSers</h4>'
+				for sub in rsp.examples
+					html += @getSubHtml(sub)
+			$('#task-more').html(html)
+
+	getSubHtml: (sub) ->
+		if sub.type is 'ig'
+			html = '
+			<video width="600" height="400" controls>
+			  <source src="'+sub.ext+'" type="video/mp4">
+			Your browser does not support the video tag.
+			</video>'
+		else
+			user = ap.Users.get(sub.user_id)
+			url = user.get('user_name')+'/'+sub.slug+'/w600_'+sub.hash+'.'+sub.ext
+			html = '<img src="/images/race_submissions/'+url+'">'
+
 
 	submitPhoto: (e) ->
 		e.stopPropagation()

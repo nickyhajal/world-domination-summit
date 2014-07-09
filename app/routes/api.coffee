@@ -49,6 +49,7 @@ routes = (app) ->
 		app.post '/user/task', user.race_submission
 		app.post '/user/achieved', user.achieved
 		app.get '/user/racecheck', user.race_check
+		app.get '/user/task', user.task
 
 		# Speakers
 		app.put '/speaker', speaker.update

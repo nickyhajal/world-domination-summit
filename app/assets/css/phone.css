@@ -328,6 +328,9 @@ a.heading-button {
 div.schedule-place {
     width:                      147px;
 }
+#task-more img {
+    width:                      100%;
+}
 * {
     line-height:                inherit;
 }
