@@ -21,7 +21,7 @@ ap.Views.meetups = XView.extend
 					maxed = true
 				maxed_class = if maxed then ' meetup-maxed' else ''
 				time = moment.utc(ev.get('start'))
-				day = time.format('MMMM Do')
+				day = time.format('dddd[,] MMMM Do')
 				if day isnt lastDay
 					lastDay = day
 					daylink = _.slugify(day)
@@ -57,7 +57,9 @@ ap.Views.meetups = XView.extend
 					html += event_html
 		html += maxed_html
 		$('#meetup-list').html(html).scan()
-		$('#meetup-sidebar').html(sidebar_html)
+		setTimeout ->
+			$('#meetup-sidebar').html(sidebar_html)
+		, 50
 
 	renderEvent: (ev) ->
 
