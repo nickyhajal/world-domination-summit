@@ -239,6 +239,7 @@ User.capabilities_map =
   schedule: ['add-event', 'event', 'meetup', 'meetups', 'meetup-review', 'event-review']
   race: ['add-racetask', 'racetask', 'racetasks', 'rate']
   downloads: ['admin_downloads']
+  screens: ['screens']
 
 Users = Shelf.Collection.extend
   model: User

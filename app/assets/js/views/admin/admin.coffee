@@ -3,7 +3,6 @@ ap.Views.admin = XView.extend
                 ap.api 'get me', {}, (rsp) =>
                         ap.api 'get user', {user_name: rsp.me.user_name}, (rsp2) =>
                                 @user = new ap.User(rsp2.user)
-                                @options.out = _.template @options.out, @user.attributes
                                 @initRender()
 
                 @pageMap =
@@ -49,6 +48,12 @@ ap.Views.admin = XView.extend
                                         [
                                                 {page: 'manifest', title: 'Attendee Manifest'}
                                                 {page: 'add-attendee', title: 'Add an Attendee'}
+                                        ]
+                        screens:
+                                title: "Live LCD Screens"
+                                pages:
+                                        [
+                                                {page: 'screens', title: 'LCD Screen Messages'}
                                         ]
 
         rendered: ->

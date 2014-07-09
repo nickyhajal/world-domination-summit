@@ -4624,3 +4624,26 @@ div#race-buttons a {
 .ambassador-button {
     border-bottom:              0px none ! important;
 }
+#home-screen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1400px;
+    height: 400px;
+    z-index: 1000;
+    text-align: center;
+    background-color: rgb(100, 100, 100);
+    opacity: 0.9;
+}
+#home-screen-overlay h1 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    font-size: 3em;
+    color: #fff;
+}
+#home-screen-overlay p {
+    color: #ddd;
+    font-size: 2em;
+}
