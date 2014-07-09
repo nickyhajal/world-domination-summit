@@ -48,6 +48,8 @@
 	<p>
 		The upload may take a moment to complete, especially if your internet connection isn't great. Please be patient while on the loading screen to be sure your submission is sent successfully.
 	</p>
+	<p><strong>P.S.</strong>We want to see you take <i>really</i> creative photos. Spend some time setting up your shots. Make sure your smiling face is in it -- plain pictures of things are boring -- and try create something memorable. If you do, we'll share it with the whole community.
+	</p>
 <a href="#" class="button tab-next">Continue</a>
 </div>
 <div id="tab-panel-video" class="tab-panel">
