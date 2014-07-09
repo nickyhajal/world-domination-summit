@@ -10,3 +10,8 @@
 * {
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+input {
+    -webkit-appearance: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+}

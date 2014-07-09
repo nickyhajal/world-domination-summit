@@ -27,7 +27,6 @@ checks = {}
 race = 
 
   achieved: (task_id, achs) ->
-    count = 0
     if achs[task_id]
       return achs[task_id]
     else
@@ -139,7 +138,7 @@ race =
                 tk ('Race check took: '+((new Date()) - start )+' milliseconds')
                 dfr.resolve(points)
                 rds.set user_key, 'true', ->
-                  rds.expire user_key, 0
+                  rds.expire user_key, 300
       else
         tk 'Skipped Race Check for '+@get('user_name')
         dfr.resolve()
@@ -156,7 +155,6 @@ race =
 
         # Photo
         (cb) ->
-          tk 'photo'
           if not @achieved('pic', achs)
             if @get('pic').length > 1
               @markAchieved('pic')
@@ -164,7 +162,6 @@ race =
         ,
         # Host
         (cb) ->
-          tk 'host'
           if not @achieved('host-meetup', achs)
             EventHosts.forge()
             .query('where', 'user_id', @get('user_id'))
