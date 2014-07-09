@@ -331,6 +331,9 @@ div.schedule-place {
 #task-more img {
     width:                      100%;
 }
+#page-profile #page_content a.follow-button {
+    width:                      100% ! important;
+}
 * {
     line-height:                inherit;
 }

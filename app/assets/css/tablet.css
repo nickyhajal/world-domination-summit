@@ -673,6 +673,10 @@ a.rank-row {
 a.if-desktop {
     display:                    none ! important;
 }
+#page-profile #page_content a.follow-button {
+    padding:                    8px 0px;
+    width:                      200px ! important;
+}
 * {
     line-height:                inherit;
 }
