@@ -17,40 +17,57 @@ shell = (app, db) ->
 
   meetupText = (meetup) ->
     #Formated Meetup Text
-    return meetup.get('what')
+    text = '<div class="meetup-descr-shell">
+      <div class="meetup-content">
+        <div class="meetup-name">'+meetup.get('what')+'</div>
+        <div class="meetup-descr-who">A meetup for '+meetup.get('who')+'</div>
+        <div class="meetup-descr">'+meetup.get('descr')+'</div>
+      </div>
+    </div>'
+    return text
 
   meetupHtml = (meetups) ->
     html = '
     <style type="text/css">
-      .meetup-av {
-        width:40px;
-        height: 40px;
-      }
       .meetup-table {
         width: 530px;
       }
-      .meetup-table a {
-        display:block;
-        color: #E27F1C;
-        font-weight:bold;
+      div.meetup-descr-shell {
+          clear:                      both;
+          position:                   relative;
+          z-index:                    10;
+          margin-top:                 20px;
+          margin-bottom:              50px;
+          width:                      500px;
       }
-      .meetup-table td {
-        padding:2px 5px 2px 15px;
+      div.meetup-content {
+          margin-left:                0px;
+          width:                      416px;
+          float:                      right;
       }
-      .meetup-table tr {
-        background:#F2F2EA;
-        border-bottom:1px solid #fff;
+      div.meetup-actions {
+          float:                      left;
       }
-      .meetup-table tr td:first-of-type {
-        padding:5px 5px 2px 5px;
-        width: 30px;
+      div.meetup-name {
+          font-size:                  24px;
+          font-family:                VitesseBook;
+      }
+      div.meetup-descr {
+          width:                      340px;
+          font-family:                karla;
+      }
+      div.meetup-descr-who {
+          font-family:                karlabold;
+          margin-top:                 10px;
+          margin-bottom:              10px;
+          font-weight:                bold;
       }
       .freqmsg {
-        font-size: 8pt;
-        margin-top: 24px;
-        padding: 15px;
-        line-height: 142%;
-        background:#F2F2EA;
+          font-size: 8pt;
+          margin-top: 24px;
+          padding: 15px;
+          line-height: 142%;
+          background:#F2F2EA;
       }
     </style>
     <table class="meetup-table">'
