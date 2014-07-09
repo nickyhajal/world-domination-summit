@@ -325,6 +325,9 @@ a.heading-button {
     padding:                    0px 10px;
     margin-left:                0px;
 }
+div.schedule-place {
+    width:                      147px;
+}
 * {
     line-height:                inherit;
 }
