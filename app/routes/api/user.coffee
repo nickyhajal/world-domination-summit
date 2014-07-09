@@ -471,11 +471,18 @@ routes = (app) ->
 									.then ->
 										req.me.getAchievedTasks()
 										.then (achievements) ->
+											short_achs = []
+											for ach in achievements.models
+												short_achs.push
+													t: ach.get('task_id')
+													c: ach.get('custom_points')
+													a: ach.get('add_points')
+
 											rsp = JSON.stringify
 												points: ach_rsp.points
 												new_points: ach_rsp.points - req.query.cur_ponts
 												task_id: req.query.task_id
-												achievements: achievements
+												achievements: short_achs
 											tk rsp
 
 											# Expire rank cache so next rank request

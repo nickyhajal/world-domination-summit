@@ -65,6 +65,7 @@ getters =
     dfr = Q.defer()
     achs = Achievements.forge()
     .query('where', 'race_achievements.user_id', @get('user_id'))
+    .query('where', 'add_points', '<>', '-1')
     if with_submissions
       achs.query('join', 'race_submissions', 'race_achievements.ach_id', '=', 'race_submissions.ach_id', 'left')
     achs.fetch

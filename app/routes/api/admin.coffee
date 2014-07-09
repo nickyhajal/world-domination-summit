@@ -37,12 +37,12 @@ routes = (app) ->
 				if rating is -1
 					Achievement.forge
 						ach_id: ach_id
-						custom_points: '-1'
+						add_points: '-1'
 					.save()
 				else if rating is 2 or rating is 3
 					Achievement.forge
 						ach_id: ach_id
-						custom_points: rating
+						add_points: rating
 					.save()
 				next()
 

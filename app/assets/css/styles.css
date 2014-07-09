@@ -2420,6 +2420,10 @@ div.task-how-to-complete iframe {
     position:                   absolute;
     left:                       -99999px;
 }
+.task-how-to-complete.achieved {
+    background:                 none repeat scroll 0px 0px rgb(177, 186, 30);
+    color:                      rgb(255, 255, 255);
+}
 div.task-how-to-complete {
     padding:                    20px;
     font-family:                karla;

@@ -81,7 +81,8 @@ ap.Views.task = XView.extend
 			msg = 'You completed this challenge and earned '+points+'!'
 			$('#challenge-title').html('Challenge Completed!').addClass('achieved')
 			$('.task-detail-block').addClass('achieved')
-			$('#task-completed-message').html(msg).addClass('achieved')
+			$('.task-how-to-complete').html(msg).addClass('achieved')
+			#$('#task-completed-message').html(msg).addClass('achieved')
 
 	submitPhoto: (e) ->
 		e.stopPropagation()
@@ -104,6 +105,12 @@ ap.Views.task = XView.extend
 		$('#file-upload-button', frame).click()
 
 ap.race_submission_success = (rsp) ->
-	ap.achievements = rsp.achievements
+	achs = []
+	for ach in rsp.achievements
+		achs.push
+			task_id: ach.t
+			custom_points: ach.c
+			add_points: ach.a
+	ap.achievements = achs
 	$('#loading').hide()
 	ap.currentView.checkCompleted()

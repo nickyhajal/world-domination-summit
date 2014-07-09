@@ -43,44 +43,58 @@ race =
 
   getAchievements: ->
     dfr = Q.defer()
-    Achievements.forge()
-    .query('where', 'user_id', @get('user_id'))
-    .query('join', 'racetasks', 'race_achievements.task_id', '=', 'racetasks.racetask_id', 'left')
-    .fetch
-      columns: ['task_id', 'slug', 'points']
-    .then (achs) ->
-      out = {}
-      for ach in achs.models
-        out[ach.get('slug')] = true
-      dfr.resolve(out)
+    if @get('achs')?
+      dfr.resolve(@get('achs'))
+    else
+      Achievements.forge()
+      .query('where', 'user_id', @get('user_id'))
+      .query('where', 'add_points', '<>', '-1')
+      .query('join', 'racetasks', 'race_achievements.task_id', '=', 'racetasks.racetask_id', 'left')
+      .fetch
+        columns: ['task_id', 'slug', 'points']
+      .then (achs) ->
+        out = {}
+        for ach in achs.models
+          if not out[ach.get('slug')]?
+            out[ach.get('slug')] = 1
+          else
+            out[ach.get('slug')] += 1
+        dfr.resolve(out)
     return dfr.promise
 
   markAchieved: (task_slug, custom_points = 0) ->
+
     # More advanced racetask checking
     dfr = Q.defer()
-    RaceTask.forge({slug: task_slug})
-    .fetch()
-    .then (task) =>
-      task_id = task.get('racetask_id')
-      Achievement.forge()
-      .set
-        user_id: @get('user_id')
-        task_id: task_id
-        custom_points: custom_points
-      .save()
-      .then (ach) =>
-        rsp = 
-          ach_id: ach.get('ach_id')
-        @processPoints()
-        .then (points) =>
-          @set('points', points)
+    @getAchievements()
+    .then (achs) =>
+      RaceTask.forge({slug: task_slug})
+      .fetch()
+      .then (task) =>
+        task_id = task.get('racetask_id')
+        times = achs[task.get('slug')] ? 0
+        if +times < +task.get('attendee_max')
+          Achievement.forge()
+          .set
+            user_id: @get('user_id')
+            task_id: task_id
+            custom_points: custom_points
           .save()
-          .then ->
-            rsp.points = points
-            dfr.resolve(rsp)
-      , (err) ->
-        console.error(err)
-    return dfr.promise
+          .then (ach) =>
+            rsp = 
+              ach_id: ach.get('ach_id')
+            @processPoints()
+            .then (points) =>
+              @set('points', points)
+              .save()
+              .then ->
+                rsp.points = points
+                dfr.resolve(rsp)
+          , (err) ->
+            console.error(err)
+        else
+          dfr.resolve(false)
+      return dfr.promise
 
   updateAchieved: (task_slug, custom_points = 0) ->
     dfr = Q.defer()
@@ -116,6 +130,7 @@ race =
           user.getAchievements()
           .then (rsp_achs) ->
             achs = rsp_achs
+            user.set('achs', achs)
             async.each checks, (check, cb) ->
               check.call(user, cb)
             , ->
@@ -133,8 +148,6 @@ race =
       checks = [
         # Profile 
         (cb) ->
-          tk 'profile'
-          tk achs
           if not @achieved('profile', achs)
             if +@get('intro') is 8
               @markAchieved('profile')
