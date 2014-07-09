@@ -673,9 +673,31 @@ a.rank-row {
 a.if-desktop {
     display:                    none ! important;
 }
-#page-profile #page_content a.follow-button {
-    padding:                    8px 0px;
-    width:                      200px ! important;
+div.login-error {
+    width:                      100%;
+    padding:                    15px;
+}
+div#meetup-profile-map {
+    width:                      100%;
+    right:                      0px;
+    margin-top:                 -13px;
+}
+div#meetup-address-overlay {
+    box-sizing:                 content-box;
+    -moz-box-sizing:            content-box;
+    -webkit-box-sizing:         content-box;
+    position:                   relative;
+    width:                      100%;
+    display:                    block;
+    margin-top:                 -51px;
+    margin-left:                -50px;
+    padding:                    12px 50px 8px;
+}
+div#meetup-attendees-shell {
+    width:                      100%;
+}
+.meetup-who {
+    width:                      100%;
 }
 * {
     line-height:                inherit;
