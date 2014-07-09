@@ -973,6 +973,7 @@ h3 {
     position:                   relative;
     width:                      580px;
     line-height:                140%;
+    clear:                      both;
 }
 .speaker-box {
     float:                      left;
