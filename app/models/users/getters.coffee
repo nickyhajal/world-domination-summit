@@ -35,22 +35,26 @@ getters =
                   dfr.resolve(user)
     return dfr.promise
     
-  getFriends: ->
+  getFriends: (this_year = false) ->
     dfr = Q.defer()
-    Connections.forge()
+    q = Connections.forge()
     .query('where', 'user_id', @get('user_id'))
-    .fetch()
+    if this_year
+      q.query('where', 'created_at', '>', process.year+'-01-01 00:00:00')
+    q.fetch()
     .then (rsp) ->
       dfr.resolve(rsp.models)
     , (err) ->
       console.error(err)
     return dfr.promise
 
-  getFriendedMe: ->
+  getFriendedMe: (this_year = false) ->
     dfr = Q.defer()
-    Connections.forge()
+    q = Connections.forge()
     .query('where', 'to_id', @get('user_id'))
-    .fetch()
+    if this_year
+      q.query('where', 'created_at', '>', process.year+'-01-01 00:00:00')
+    q.fetch()
     .then (rsp) ->
       dfr.resolve(rsp.models)
     return dfr.promise

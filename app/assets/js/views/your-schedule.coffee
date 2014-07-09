@@ -14,7 +14,7 @@ ap.Views.your_schedule = XView.extend
 		ap.Events.each (ev) =>
 			if ap.me and ap.me.isAttendingEvent(ev)
 				time = moment.utc(ev.get('start'))
-				day = time.format('MMMM Do')
+				day = time.format('dddd[,] MMMM Do')
 				if day isnt lastDay
 					lastDay = day
 					html += '<h3>'+day+'</h3>'

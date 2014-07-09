@@ -34,7 +34,7 @@ shell = (app, db) ->
 						since_id = '0'
 					opts =
 						min_tag_id: since_id
-					ig.tag_media_recent 'wdstest', opts, (err, medias, pg, lim) ->
+					ig.tag_media_recent 'wds2014', opts, (err, medias, pg, lim) ->
 						if pg.next_min_id?
 							rds.set 'feed_ig_since', pg.next_min_id, ->
 								rds.expire 'feed_ig_since', 30000

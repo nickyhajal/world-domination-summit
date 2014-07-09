@@ -204,17 +204,17 @@ User = Shelf.Model.extend
       @save(null, {method: 'update'})
 
 
-  getMutualFriends: ->
+  getMutualFriends: (this_year = false)->
     dfr = Q.defer()
     mutual_ids = []
     mutuals = []
 
     # Get people I friended
-    @getFriends()
+    @getFriends(this_year)
     .then (my_friends) =>
 
       # Get people who friended me
-      @getFriendedMe()
+      @getFriendedMe(this_year)
       .then (friended_mes) =>
         for my_friend in my_friends
           for friended_me in friended_mes

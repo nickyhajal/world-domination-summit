@@ -124,7 +124,7 @@ race =
       if not check_done?
         checks = getChecks()
         start = +(new Date())
-        user.getMutualFriends()
+        user.getMutualFriends(true)
         .then (rsp_muts) ->
           muts = rsp_muts
           user.getAchievements()
@@ -260,7 +260,7 @@ race =
           if not @achieved('distance', achs)
             Connection.forge
               user_id: @get('user_id')
-              to_id: '3712' # GET ACTUAL USER ID
+              to_id: '2982'
             .fetch()
             .then (connection) =>
               if connection
