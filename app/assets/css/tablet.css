@@ -699,6 +699,10 @@ div#meetup-attendees-shell {
 .meetup-who {
     width:                      100%;
 }
+#page-profile #page_content a.follow-button {
+    display:                    block;
+    width:                      200px;
+}
 * {
     line-height:                inherit;
 }

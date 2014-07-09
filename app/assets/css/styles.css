@@ -822,6 +822,10 @@ a.schedule-directions {
     position:                   relative;
     width:                      100%;
 }
+#page-profile #page_content a.follow-button {
+    text-align:                 center;
+    display:                    none;
+}
 a {
     color:                      rgb(226, 127, 28);
 }

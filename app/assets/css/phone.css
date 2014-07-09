@@ -379,6 +379,9 @@ a#attendee-search-x {
     padding:                    7px 10px 4px;
     margin-top:                 -49px;
 }
+#page-profile #page_content a.follow-button {
+    width:                      100%;
+}
 * {
     line-height:                inherit;
 }

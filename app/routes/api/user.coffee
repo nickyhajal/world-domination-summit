@@ -16,6 +16,7 @@ routes = (app) ->
 		callback: process.dmn + '/api/user/twitter/callback'
 
 	[User, Users] = require('../../models/users')
+	[UserNote, UserNotes] = require('../../models/user_notes')
 	[TwitterLogin, TwitterLogins] = require('../../models/twitter_logins')
 	[Answer, Answers] = require('../../models/answers')
 	[UserInterest, UserInterests] = require('../../models/user_interests')
@@ -64,7 +65,6 @@ routes = (app) ->
 							res.r.user = user
 							next()
 			, (err) ->
-				console.error(err)
 				res.status(400)
 				errors.push(err.message)
 				next()
@@ -432,6 +432,30 @@ routes = (app) ->
 						res.r.points = points
 						next()
 
+		add_unote: (req, res, next) ->
+			if req.me
+				post = _.pick req.query, UserNote::permittedAttributes
+				post.user_id = req.me.get('user_id')
+				UserNote.forge(post)
+				.save()
+				.then ->
+					next()
+			else
+				res.status(401)
+				next()
+
+		get_unotes: (req, res, next) ->
+			if req.me
+				select = UserNotes.forge()
+				if req.query.about_id?
+					select.query('where', 'about_id', req.query.select_id)
+				select.query('where', 'user_id', req.me.get('user_id'))
+				select.fetch()
+				.then (rsp) ->
+					res.r.notes = rsp.models
+			else
+				res.status(401)
+				next()
 
 
 		achieved: (req, res, next) ->
