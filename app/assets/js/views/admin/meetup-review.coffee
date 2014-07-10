@@ -7,14 +7,18 @@ ap.Views.admin_meetup_review = XView.extend
     @initRender()
 
   rendered: ->
-    @listing()
+    _.whenReady 'user', =>
+      @listing()
 
   listing: ->
     ap.api 'get admin/events', {active: 0, type: 'meetup'}, (rsp) ->
       html = '<tr class="tbl-head"><th>Meetup</th><th>Venue</th><th>Actions</th></tr>'
       for atn in rsp.events
       #   atn = new ap.Event(atn)
-        host = ap.Users.get(atn.hosts[0])
+        host = ''
+        if ap.Users.get(atn.hosts[0])?
+          host = ap.Users.get(atn.hosts[0])
+          host = host.get('first_name')+' '+host.get('last_name')
         place = if atn.place.length then atn.place else 'No Venue'
         html += '<tr data-event_id="'+atn.event_id+'">
           <td>
@@ -29,7 +33,7 @@ ap.Views.admin_meetup_review = XView.extend
           <td colspan="3">
             <a href="/admin/meetup/'+atn.event_id+'" class="meetup-edit">Edit Meetup</a>
             <b>Host</b>
-            <div>'+host.get('first_name')+' '+host.get('last_name')+'</div>
+            <div>'+host+'</div>
             <br/>
             <b>Description</b>
             <div>'+atn.descr+'</div>
