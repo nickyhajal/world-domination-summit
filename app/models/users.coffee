@@ -254,6 +254,31 @@ User = Shelf.Model.extend
           dfr.resolve(mutuals)
     return dfr.promise
 
+  similar_attendees: ->
+    dfr = Q.defer()
+    @getInterests()
+    .then (user) ->
+      Users.forge()
+      .query('join', 'user_interests', 'user_interests.user_id', '=', 'users.user_id', 'inner')
+      .query('where', 'user_interests.interest_id', 'in', [JSON.parse(user.get('interests'))])
+      .fetch
+        columns: ["users.user_id"]
+      .then (users) ->
+        users = users.models
+        #Shuffle the users and return the top 5
+        for i in [users.length-1..1]
+          j = Math.floor Math.random() * (i + 1)
+          [users[i], users[j]] = [users[j], users[i]]
+
+        retval = Array()
+        for user in users[0...5]
+          retval.push user.get('user_id')
+        dfr.resolve retval
+      , (err) ->
+        console.error err
+    dfr.promise
+
+
 User.capabilities_map =
   speakers: ["add-speaker", "speaker"]
   ambassadors: ["ambassador-review"]
