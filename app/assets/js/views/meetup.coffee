@@ -70,11 +70,17 @@ ap.Views.meetup = XView.extend
 				for atn in rsp.attendees
 					atn = ap.Users.get(atn)
 					if atn? and atn.get('pic') isnt '/images/default-avatar.png'
-						html += @renderAttendee(atn)
+						html += '<div class="meetup-attendee">
+							<div class="meetup-attendee-avatar" style="background:url('+atn.get('pic')+')"></div>
+							<div class="meetup-attendee-name">'+atn.get('first_name')+'<br>'+atn.get('last_name')+'</div>
+						</div>'
 					else if atn?
 					 	noPic.push atn
 				for atn in noPic
-					html += @renderAttendee(atn)
+					html += '<div class="meetup-attendee">
+						<div class="meetup-attendee-avatar" style="background:url('+atn.get('pic')+')"></div>
+						<div class="meetup-attendee-name">'+atn.get('first_name')+'<br>'+atn.get('last_name')+'</div>
+					</div>'
 				html += '</div>'
 
 				toggle_class = 'meetup-attendees-closed'
@@ -91,13 +97,6 @@ ap.Views.meetup = XView.extend
 		@atnTimo = setTimeout =>
 			@renderAttendees()
 		, 30000
-
-
-	renderAttendee: (atn) ->
-		return '<div class="meetup-attendee">
-			<div class="meetup-attendee-avatar" style="background:url('+atn.get('pic')+')"></div>
-			<div class="meetup-attendee-name">'+atn.get('first_name')+'<br>'+atn.get('last_name')+'</div>
-		</div>'
 
 	toggle_attendees: (e) ->
 		e.preventDefault()
