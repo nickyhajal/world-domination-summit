@@ -1,3 +1,6 @@
+redis = require("redis")
+rds = redis.createClient()
+
 routes = (app) ->
 
   [Checkin, Checkins] = require('../../models/checkins')
@@ -13,16 +16,28 @@ routes = (app) ->
       next()
 
   get_recent: (req, res, next) ->
-    time_spread = 45 # A check-in expires after X minutes
-    from = (new Date(new Date().getTime() - (time_spread * 60 * 1000)))
-    Checkins.forge()
-    .query("where", "created_at", ">", from)
-    .fetch()
-    .then (checkins) ->
-      res.r.checkins = checkins.models
-      next()
-    , (err) ->
-      tk err
-      next()
+
+    rds.get 'recent_checkins', (err, checkins) ->
+      if checkins? and checkins and typeof JSON.parse(checkins) is 'object'
+        res.r.checkins = JSON.parse(checkins)
+        next()
+      else
+        time_spread = 45 # A check-in expires after X minutes
+        from = (new Date(new Date().getTime() - (time_spread * 60 * 1000)))
+        Checkins.forge()
+        .query (qb) ->
+          qb.where('created_at', '>', from)
+          qb.groupBy(qb.knex.raw('location_type, location_id'))
+          qb.orderBy('num_checkins', 'DESC')
+          qb.column(qb.knex.raw('COUNT(*) as num_checkins'))
+        .fetch()
+        .then (checkins) ->
+          res.r.checkins = checkins.models
+          next()
+          rds.set 'recent_checkins', JSON.stringify(checkins.models), ->
+            rds.expire 'recent_checkins', 4
+        , (err) ->
+          tk err
+          next()
 
 module.exports = routes
