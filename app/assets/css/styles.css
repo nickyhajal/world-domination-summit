@@ -826,6 +826,23 @@ a.schedule-directions {
     text-align:                 center;
     display:                    none;
 }
+a.checkin-place-nearby {
+    display:                    block ! important;
+}
+a.checkin-place {
+    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    margin-bottom:              5px;
+    text-decoration:            none;
+    display:                    none;
+    padding:                    14px;
+    font-size:                  13pt;
+}
+a#checkin-show-all-places {
+    clear:                      both;
+    display:                    block;
+    text-align:                 center;
+    margin-top:                 6px;
+}
 a {
     color:                      rgb(226, 127, 28);
 }
@@ -1317,6 +1334,11 @@ a#camera-button {
     display:                    block;
     text-align:                 center;
     margin-top:                 30px;
+}
+a#checkin-toggle-all-places {
+    display:                    block;
+    text-align:                 center;
+    margin-top:                 5px;
 }
 input[type="submit"], .button {
     border:                     0px none;

@@ -748,6 +748,33 @@ div#check-in-locating {
     text-align:                 center;
     margin-top:                 110px;
 }
+span.checkin-place-name {
+    display:                    block;
+}
+span.checkin-place-addr {
+    font-family:                karla;
+    font-size:                  11pt;
+}
+span.checkin-place-distance {
+    font-family:                karlaitalic;
+    color:                      rgb(154, 151, 141);
+}
+#check-in-places h4 {
+    text-transform:             none;
+    text--webkit-transform:     none;
+    margin-bottom:              5px;
+    color:                      rgb(0, 115, 173);
+    font-family:                vitessebook;
+    font-size:                  16pt;
+    text-align:                 center;
+    margin-top:                 4px;
+}
+span.checkin-status {
+    display:                    block;
+    font-size:                  17pt;
+    padding:                    5px 0px;
+    font-family:                karlaitalic;
+}
 * {
     line-height:                inherit;
 }

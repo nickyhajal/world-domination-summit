@@ -10,6 +10,8 @@ ap.Views.hub = XView.extend
 		'click .broadcast-box-close': 'closeBroadcasts'
 		'click .broadcast-area a': 'saveLastBroadcast'
 		'click #checkin-button': 'showPlaceSelect'
+		'click #checkin-toggle-all-places': 'toggleAllPlaces'
+		'click .checkin-place': 'addCheckin'
 	
 	initialize: ->
 		@options.sidebar_filler = ap.me.attributes
@@ -84,6 +86,7 @@ ap.Views.hub = XView.extend
 	showPlaceSelect: (e) ->
 		e.preventDefault()
 		$('#check-in-modal').show()
+		$('#check-in-places').hide()
 		if ap.location
 			places = @placesByDistance(ap.location.coords)
 			@renderPlacesByDistance(places)
@@ -91,12 +94,37 @@ ap.Views.hub = XView.extend
 			@getLocation =>
 				@showPlaceSelect(e)
 
+	toggleAllPlaces: (e) ->
+		el = $(e.currentTarget)
+		if el.hasClass("showing-all")
+			el.removeClass("showing-all").html('Show All Places')
+			$('.checkin-place-far').css('display', 'none')
+			$('footer').show()
+		else
+			el.addClass("showing-all").html('Hide Far Places')
+			$('.checkin-place-far').css('display', 'block')
+			$('footer').hide()
+
 	renderPlacesByDistance: (places) ->
-		html = ''
+		html = '<h4>Where are you?</h4>'
+		count = 0
 		for place in places
-			if place.distance < 320
-				nearby_class = 'checkin-place-focused'
-			html += '<a href="#" class="checkin-place checkin-place-focused>'+
+			count += 1
+			nearby_class = ' checkin-place-far'
+			if place.distance < 320 || count < 5
+				nearby_class = ' checkin-place-nearby'
+			location_id = place.place_id
+			location_type = "place"
+			tk place.place_id
+			html += '<a href="#" class="checkin-place'+nearby_class+'" data-location_type="'+location_type+'" data-location_id="'+location_id+'">
+				<span class="checkin-place-name">'+place.name+'</span>
+				<span class="checkin-place-addr">'+place.address.replace(', Portland, OR', '')+'
+				<span class="checkin-place-distance">'+Math.ceil(place.distance)+' meters</span>
+				</span>
+			</a>'
+		html += '<a href="#" id="checkin-toggle-all-places" class="button">Show All Places</a>'
+		$('#check-in-places').html(html).show()
+		$('#check-in-locating').hide()
 
 	placesByDistance: (pos) ->
 		sort = false
@@ -116,6 +144,18 @@ ap.Views.hub = XView.extend
 			p[1].distance = p[0]
 			placesByDist.push p[1]
 		return placesByDist
+
+	addCheckin: (e) ->
+		e.preventDefault()
+		el = $(e.currentTarget)
+		location_type = el.data('location_type')
+		location_id = el.data('location_id')
+		el.html('<span class="checkin-status">Checking in...</span>')
+		ap.api 'post user/checkin', {location_type: location_type, location_id:location_id}, (rsp) ->
+		 	el.html('<span class="checkin-status">Checked in!</span>')
+		 	setTimeout =>
+		 		$('#check-in-modal').hide()
+		 	, 750
 
 
 	whenFinished: ->
