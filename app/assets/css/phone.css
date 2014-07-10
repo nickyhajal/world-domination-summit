@@ -356,6 +356,32 @@ div#meetup-address {
 div#meetup-profile-map {
     margin-top:                 -35px;
 }
+div#friends-shell {
+    padding:                    20px;
+    margin-top:                 -45px;
+}
+a.friend {
+    display:                    block;
+    width:                      100%;
+    margin-bottom:              2px;
+    text-align:                 left;
+}
+div.friend-avatar {
+    float:                      left;
+    margin-top:                 -7px;
+    margin-left:                -22px;
+    margin-right:               11px;
+}
+a#attendee-search-x {
+    margin-right:               -16px;
+    font-size:                  14pt;
+    width:                      35px;
+    padding:                    7px 10px 4px;
+    margin-top:                 -49px;
+}
+#page-profile #page_content a.follow-button {
+    width:                      100%;
+}
 * {
     line-height:                inherit;
 }
