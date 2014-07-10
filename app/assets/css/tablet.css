@@ -762,12 +762,51 @@ span.checkin-place-distance {
 #check-in-places h4 {
     text-transform:             none;
     text--webkit-transform:     none;
-    margin-bottom:              5px;
     color:                      rgb(0, 115, 173);
     font-family:                vitessebook;
-    font-size:                  16pt;
-    text-align:                 center;
-    margin-top:                 4px;
+    text-align:                 left;
+    font-size:                  18pt;
+    margin-top:                 9px;
+    margin-bottom:              6px;
+}
+span.checkin-status {
+    display:                    block;
+    font-size:                  17pt;
+    padding:                    5px 0px;
+    font-family:                karlaitalic;
+}
+div.checkin-result-row:nth-of-type(2n) {
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 230);
+}
+div.checkin-result-row {
+    clear:                      both;
+    padding:                    12px;
+    background:                 none repeat scroll 0px 0px rgb(237, 237, 222);
+}
+span.checkin-result-checkins {
+    font-family:                vitesse;
+    float:                      right;
+    font-size:                  15pt;
+}
+div#happening-list {
+    margin-right:               -15px;
+    margin-left:                -15px;
+    margin-top:                 10px;
+}
+span.checkin-result-address {
+    display:                    block;
+    font-family:                karlaitalic;
+    font-size:                  11pt;
+    color:                      rgb(153, 149, 128);
+}
+span.checkin-is-event {
+    font-family:                karla;
+    font-size:                  10pt;
+    background:                 none repeat scroll 0% 0% rgb(210, 210, 184);
+    padding:                    1px 5px;
+    position:                   relative;
+    top:                        -1px;
+    left:                       4px;
 }
 * {
     line-height:                inherit;
