@@ -14,13 +14,14 @@ ap.Views.meetups = XView.extend
 		html = ''
 		maxed_html = ''
 		sidebar_html = ''
+		now = +(new Date()) / 1000
 		ap.Events.each (ev) =>
-			if ev.get('type') is 'meetup'
+			time = moment.utc(ev.get('start'))
+			if ev.get('type') is 'meetup' and time.format('X') < now
 				maxed = false
 				if ev.get('num_rsvps')? and ev.get('num_rsvps') > ev.get('max')
 					maxed = true
 				maxed_class = if maxed then ' meetup-maxed' else ''
-				time = moment.utc(ev.get('start'))
 				day = time.format('dddd[,] MMMM Do')
 				if day isnt lastDay
 					lastDay = day

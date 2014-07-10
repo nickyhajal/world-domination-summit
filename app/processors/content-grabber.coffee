@@ -21,7 +21,7 @@ shell = (app, db) ->
 			featured_tweet: ->
 				tk 'Start twitter...'
 				twit.get 'favorites/list', {}, (err, twts) ->
-					if twts
+					if twts? and twts
 						for twt in twts
 							data =
 								tweet: twt.text
