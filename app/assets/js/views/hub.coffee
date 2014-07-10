@@ -5,6 +5,7 @@
 ###
 
 ap.Views.hub = XView.extend
+	location: false
 	events: 
 		'click .broadcast-box-close': 'closeBroadcasts'
 		'click .broadcast-area a': 'saveLastBroadcast'
@@ -19,6 +20,7 @@ ap.Views.hub = XView.extend
 				@initBroadcasts()
 			, 750
 	rendered: ->
+		@getLocation()
 		if not ap.isDesktop
 			$('#dispatch-shell').hide()
 		setTimeout ->
@@ -74,19 +76,28 @@ ap.Views.hub = XView.extend
 		if ap.me.changedSinceSave.last_broadcast?
 			ap.me.save ap.me.changedSinceSave, {patch:true}
 
+	getLocation: (cb = false) ->
+		navigator.geolocation.getCurrentPosition (pos) =>
+			ap.location = pos
+			if cb
+				cb()
 	showPlaceSelect: (e) ->
 		e.preventDefault()
-		navigator.geolocation.getCurrentPosition (pos) =>
-			tk @placesByDistance(pos)
-			tk pos
+		if ap.location
+			@placesByDistance(ap.location.coords)
+		else
+			@getLocation =>
+				@showPlaceSelect(e)
+
+	renderPlacesByDistance: (places) ->
 
 	placesByDistance: (pos) ->
 		sort = false
 		placesByDist = []
+		tmp = []
 		for place in ap.places
-			tmp = []
 			if pos
-					dist = _.getDistance pos[0], pos[1], place.lat, place.lon
+					dist = _.getDistance pos.latitude, pos.longitude, place.lat, place.lon
 					tmp.push [dist, place]
 					sort = true
 			else
@@ -95,6 +106,7 @@ ap.Views.hub = XView.extend
 			tmp.sort (a, b)->
 				return a[0] - b[0]
 		for p in tmp
+			p[1].distance = p[0]
 			placesByDist.push p[1]
 		return placesByDist
 
