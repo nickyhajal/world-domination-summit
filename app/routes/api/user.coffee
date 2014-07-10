@@ -471,15 +471,21 @@ routes = (app) ->
 				.then (friend_rsp) ->
 					req.me.getFriendedMe()
 					.then (friended_me_rsp) ->
-						friended_me = []
-						friends = []
-						for fr_me in friended_me_rsp
-							friended_me.push fr_me.get('user_id')
-						for friend in friend_rsp
-							friends.push friend.get('to_id')
-						res.r.friends = friends
-						res.r.friended_me = friended_me
-						next()
+						req.me.similar_attendees()
+						.then (similar_rsp) ->
+							friended_me = []
+							friends = []
+							similar = []
+							for fr_me in friended_me_rsp
+								friended_me.push fr_me.get('user_id')
+							for friend in friend_rsp
+								friends.push friend.get('to_id')
+							for attendee in similar_rsp
+						  	similar.push attendee
+							res.r.friends = friends
+							res.r.friended_me = friended_me
+							res.r.similar = similar
+							next()
 			else
 				next()
 
