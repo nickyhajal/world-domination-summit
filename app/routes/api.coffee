@@ -16,6 +16,7 @@ routes = (app) ->
 	speaker = require('./api/speaker')(app)
 	transfer = require('./api/transfer')(app)
 	user = require('./api/user')(app)
+	checkins = require('./api/checkins')(app)
 
 	app.namespace '/api', (req, res, next)->
 
@@ -92,6 +93,10 @@ routes = (app) ->
 		# Screens
 		app.get '/screens', screens.get
 		app.put '/screens', screens.update
+
+		# Checkin
+		app.get '/checkins', checkins.get
+		#app.get '/checkins/recent', checkins.get_recent
 
 		# Admin
 		# Anything in the /admin path will pull the users capabilities
