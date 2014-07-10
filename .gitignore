@@ -24,6 +24,7 @@ dump.rdb
 wds-start.sh
 TASKS.md
 .DS_Store
+builtAssets
 
 # vim swap files
 *.swp

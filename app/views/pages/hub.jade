@@ -6,9 +6,10 @@ div(id="page_content")
 		a(id="hub-button-schedule", href="/your-schedule", class="hub-button") Your Schedule
 		a(id="hub-button-meetups", href="/meetups", class="hub-button") Meetups
 		a(id="hub-button-race", href="/race", class="hub-button") Unconventional Race
+		a(id="hub-button-dispatch", href="/the-dispatch", class="hub-button") The Dispatch
 		div(class="clear")
-		div(class="zig-zags_blue")
 
 
-	h3 Your Dispatch
-	div(class="dispatch dispatch-filters-on", data-channel_type="global")
+	div(id="dispatch-shell")
+		h3 Your Dispatch
+		div(class="dispatch dispatch-filters-on", data-channel_type="global", data-desktop_only="true")
