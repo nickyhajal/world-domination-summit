@@ -96,7 +96,7 @@ routes = (app) ->
 
 		# Checkin
 		app.get '/checkins', checkins.get
-		#app.get '/checkins/recent', checkins.get_recent
+		app.get '/checkins/recent', checkins.get_recent
 
 		# Admin
 		# Anything in the /admin path will pull the users capabilities
