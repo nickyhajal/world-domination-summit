@@ -13,11 +13,14 @@ ap.Views.admin_meetups = XView.extend
       _.whenReady 'users', =>
         html = '<tr class="tbl-head"><th>Host</th><th>Meetup</th><th>Venue</th></tr>'
         for atn in rsp.events
-          host = ap.Users.get(atn.hosts[0])
+          host = ''
+          if ap.Users.get(atn.hosts[0])
+            host = ap.Users.get(atn.hosts[0])
+            host = host.get('first_name')+' '+host.get('last_name')
           place = if atn.place.length then atn.place else 'No Venue'
           html += '
           <tr data-event_id="'+atn.event_id+'">
-            <td>'+host.get('first_name')+' '+host.get('last_name')+'</td>
+            <td>'+host+'</td>
             <td>
               <span>'+atn.what+'</span>
             </td>

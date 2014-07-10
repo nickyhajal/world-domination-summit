@@ -385,6 +385,9 @@ a#attendee-search-x {
 #page-hub h2 {
     display:                    none;
 }
+div#check-in-modal {
+    padding:                    10px;
+}
 * {
     line-height:                inherit;
 }

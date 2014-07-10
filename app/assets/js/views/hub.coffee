@@ -83,13 +83,20 @@ ap.Views.hub = XView.extend
 				cb()
 	showPlaceSelect: (e) ->
 		e.preventDefault()
+		$('#check-in-modal').show()
 		if ap.location
-			@placesByDistance(ap.location.coords)
+			places = @placesByDistance(ap.location.coords)
+			@renderPlacesByDistance(places)
 		else
 			@getLocation =>
 				@showPlaceSelect(e)
 
 	renderPlacesByDistance: (places) ->
+		html = ''
+		for place in places
+			if place.distance < 320
+				nearby_class = 'checkin-place-focused'
+			html += '<a href="#" class="checkin-place checkin-place-focused>'+
 
 	placesByDistance: (pos) ->
 		sort = false
