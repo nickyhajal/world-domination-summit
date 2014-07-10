@@ -382,6 +382,12 @@ a#attendee-search-x {
 #page-profile #page_content a.follow-button {
     width:                      100%;
 }
+#page-hub h2 {
+    display:                    none;
+}
+div#check-in-modal {
+    padding:                    10px;
+}
 * {
     line-height:                inherit;
 }

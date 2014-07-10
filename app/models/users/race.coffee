@@ -131,6 +131,7 @@ race =
             achs = rsp_achs
             user.set('achs', achs)
             async.each checks, (check, cb) ->
+              tk check
               check.call(user, cb)
             , ->
               user.processPoints()

@@ -703,6 +703,78 @@ div#meetup-attendees-shell {
     display:                    block;
     width:                      200px;
 }
+a#checkin-button {
+    background:                 url("/images/check-in.png") repeat scroll 0% 0% / 100% auto transparent;
+    display:                    block;
+    float:                      right;
+    position:                   absolute;
+    top:                        -22px;
+    width:                      90px;
+    height:                     85px;
+    font-size:                  10pt;
+    right:                      -15px;
+    z-index:                    10;
+}
+div#happening-shell {
+    position:                   relative;
+    min-height:                 189px;
+    margin-top:                 -28px;
+}
+#checkin-button span {
+    color:                      rgb(255, 255, 255);
+    position:                   relative;
+    text-transform:             uppercase;
+    text--webkit-transform:     uppercase;
+    font-family:                vitesse;
+    top:                        16px;
+    margin-left:                9pt;
+}
+div#happening-msg {
+    font-family:                karlaitalic;
+}
+div#check-in-modal {
+    position:                   fixed;
+    top:                        0px;
+    left:                       0px;
+    z-index:                    100;
+    height:                     100%;
+    width:                      100%;
+    padding:                    50px;
+    background:                 none repeat scroll 0% 0% rgba(242, 242, 234, 0.97);
+    display:                    none;
+}
+div#check-in-locating {
+    font-size:                  20pt;
+    text-align:                 center;
+    margin-top:                 110px;
+}
+span.checkin-place-name {
+    display:                    block;
+}
+span.checkin-place-addr {
+    font-family:                karla;
+    font-size:                  11pt;
+}
+span.checkin-place-distance {
+    font-family:                karlaitalic;
+    color:                      rgb(154, 151, 141);
+}
+#check-in-places h4 {
+    text-transform:             none;
+    text--webkit-transform:     none;
+    color:                      rgb(0, 115, 173);
+    font-family:                vitessebook;
+    text-align:                 left;
+    font-size:                  18pt;
+    margin-top:                 9px;
+    margin-bottom:              6px;
+}
+span.checkin-status {
+    display:                    block;
+    font-size:                  17pt;
+    padding:                    5px 0px;
+    font-family:                karlaitalic;
+}
 * {
     line-height:                inherit;
 }

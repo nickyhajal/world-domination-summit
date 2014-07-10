@@ -13,3 +13,17 @@ div(id="page_content")
 	div(id="dispatch-shell")
 		h3 Your Dispatch
 		div(class="dispatch dispatch-filters-on", data-channel_type="global", data-desktop_only="true")
+
+	div(id="happening-shell")
+		a(href="#", id="checkin-button")
+			span Check-In!
+		h3(id="happening-now-heading") Happening
+			br
+			| Now
+		div(id="happening-msg") Looking for the action? Here's where WDSers are right now.
+		div(id="happening-list")
+
+	div(id="check-in-modal")
+		div(id="check-in-locating")
+			| Checking Your Location...
+		div(id="check-in-places")

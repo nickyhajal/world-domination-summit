@@ -25,7 +25,7 @@ routes = (app) ->
 	[Registration, Registrations] = require('../../models/registrations')
 	[Notification, Notifications] = require('../../models/notifications')
 	[RaceSubmission, RaceSubmissions] = require('../../models/race_submissions')
-	[Checkin, Checkins] = require('../../models/checkin')
+	[Checkin, Checkins] = require('../../models/checkins')
 
 	user =
 		# Get logged in user
