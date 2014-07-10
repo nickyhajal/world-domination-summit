@@ -7,7 +7,7 @@ ap.Views.admin_meetup_review = XView.extend
     @initRender()
 
   rendered: ->
-    _.whenReady 'user', =>
+    _.whenReady 'users', =>
       @listing()
 
   listing: ->
