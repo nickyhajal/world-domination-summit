@@ -69,6 +69,7 @@ ap.User = window.XModel.extend
 			ap.api 'get user/friends', {}, (rsp) =>
 				@set('friends', rsp.friends)
 				@set('friended_me', rsp.friended_me)
+				@set('similar', rsp.similar)
 				cb(rsp.friends)
 
 
@@ -88,7 +89,7 @@ ap.User = window.XModel.extend
 Users = Backbone.Collection.Lunr.extend
 	model: ap.User
 	url: '/api/users/'
-	lunroptions: 
+	lunroptions:
     fields: [
         { name: "first_name", boost: 10 }
         { name: "last_name", boost: 5 }

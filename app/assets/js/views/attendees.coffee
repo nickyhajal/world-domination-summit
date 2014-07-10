@@ -1,5 +1,5 @@
 ap.Views.attendees = XView.extend
-	events: 
+	events:
 		'keyup .search-input': 'keyChange'
 		'click #attendee-search-x': 'clearSearch'
 	initialize: ->
@@ -22,6 +22,11 @@ ap.Views.attendees = XView.extend
 			html += '<h3>Friended You</h3>'
 		for friend in ap.me.get('friended_me')
 			html += @renderFriend(friend)
+
+		if ap.me.get('similar')?.length
+			html += '<h3>Similar To You</h3>'
+		for attendee in ap.me.get('similar')
+			html += @renderFriend(attendee)
 		html += '</div>'
 		shell.html(html)
 
@@ -43,10 +48,9 @@ ap.Views.attendees = XView.extend
 	keyChange: (e) ->
 		el = $(e.currentTarget)
 		val = el.val()
-		if val.length 
+		if val.length
 			ap.lastAttendeeSearch = el.val()
 			$('#attendee-search-x').show()
 		else
 			@renderFriends()
 			$('#attendee-search-x').hide()
-
