@@ -8,7 +8,7 @@ rds = redis.createClient()
 [Answer, Answers] = require('../../models/answers')
 [User, Users] = require('../../models/users')
 
-content = 
+content =
 	parse: (req, res, next) ->
 			_Contents = Contents.forge()
 			_Contents
@@ -45,8 +45,10 @@ content =
 				_Contents = Contents.forge()
 				_Answers = Answers.forge()
 				_Contents
-				.query('where', 'content_id', '>', '0')
-				.query('orderBy', 'content_id', 'desc')
+				.query (qb) =>
+					qb.column(qb.knex.raw('(TIMESTAMPDIFF(MINUTE, NOW(), CREATED_AT) * RAND()) weight'))
+					qb.where('content_id', '>', '0')
+					qb.orderBy('weight', 'desc')
 				.fetch(
 					columns: ['content_id', 'type', 'data']
 				)
