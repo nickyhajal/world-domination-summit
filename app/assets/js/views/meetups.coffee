@@ -17,6 +17,9 @@ ap.Views.meetups = XView.extend
 		now = +(new Date()) / 1000
 		ap.Events.each (ev) =>
 			time = moment.utc(ev.get('start'))
+			tk time.format('X')
+			tk now
+			tk ev.get('type') is 'meetup' and +time.format('X') < (now+3600)
 			if ev.get('type') is 'meetup' and +time.format('X') < (now+3600)
 				maxed = false
 				if ev.get('num_rsvps')? and ev.get('num_rsvps') > ev.get('max')
