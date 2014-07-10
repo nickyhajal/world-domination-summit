@@ -28,7 +28,7 @@ ap.Views.attendees = XView.extend
 	renderFriend: (friend) ->
 		html = ''
 		atn = ap.Users.get(friend)
-		if atn.get('user_id') isnt ap.me.get('user_id')
+		if atn? and atn.get('user_id') isnt ap.me.get('user_id')
 			html += '
 			<a href="~'+atn.get('user_name')+'" class="friend">
 				<div class="friend-avatar" style="background:url('+atn.get('pic')+')"></div>

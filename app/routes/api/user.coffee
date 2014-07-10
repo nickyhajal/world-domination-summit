@@ -25,6 +25,7 @@ routes = (app) ->
 	[Registration, Registrations] = require('../../models/registrations')
 	[Notification, Notifications] = require('../../models/notifications')
 	[RaceSubmission, RaceSubmissions] = require('../../models/race_submissions')
+	[Checkin, Checkins] = require('../../models/checkin')
 
 	user =
 		# Get logged in user
@@ -101,7 +102,7 @@ routes = (app) ->
 				sortable = []
 				for id,user of all
 					sortable.push user
-				sortable.sort (a, b) -> 
+				sortable.sort (a, b) ->
 					return a.score - b.score
 				sortable.reverse()
 				res.r.users = sortable
@@ -145,7 +146,7 @@ routes = (app) ->
 								finish(user)
 							else
 								finish()
-					else 
+					else
 						finish()
 
 		create: (req, res, next) ->
@@ -508,7 +509,7 @@ routes = (app) ->
 		race_submission: (req, res, next) ->
 			if req.me and req.query.slug?.length
 				slug = req.query.slug
-				if req.files 
+				if req.files
 					req.me.markAchieved(slug)
 					.then (ach_rsp) ->
 						ext = req.files.pic.path.split('.')
@@ -560,5 +561,19 @@ routes = (app) ->
 
 
 										next()
+
+		add_checkin: (req, res, next) ->
+			if req.me and req.query.location_id and req.query.location_type
+				Checkin.forge
+					user_id: req.me.get('user_id')
+					location_id: req.query.location_id
+					location_type: req.query.location_type
+				.save()
+				.then ->
+					next()
+				, (err) ->
+				 	console.error(err)
+			else
+				next()
 
 module.exports = routes

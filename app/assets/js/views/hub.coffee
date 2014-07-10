@@ -17,6 +17,9 @@ ap.Views.hub = XView.extend
 			setTimeout =>
 				@initBroadcasts()
 			, 750
+	rendered: ->
+		if not ap.isDesktop
+			$('#dispatch-shell').hide()
 		
 	initBroadcasts: ->
 		@broadcast_list = []

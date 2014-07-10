@@ -9,6 +9,7 @@ async = require('async')
 ##
 
 [Capability, Capabilities] = require './capabilities'
+[Event, Events] = require './events'
 
 ##
 
@@ -27,7 +28,7 @@ User = Shelf.Model.extend
     'user_id', 'type', 'email', 'first_name', 'last_name', 'attending14',
     'email', 'hash', 'user_name', 'mf', 'twitter', 'facebook', 'site', 'pic', 'instagram'
     'address', 'address2', 'city', 'region', 'country', 'zip', 'lat', 'lon', 'distance',
-    'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake', 
+    'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake',
     'notification_interval', 'points'
     'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake', 'notification_interval'
   ]
@@ -159,7 +160,7 @@ User = Shelf.Model.extend
     .fetch()
     .then (rsp) =>
       db_capabilities = Array()
-      
+
       if rsp.models.length
         db_capabilities = rsp.models
 
@@ -202,6 +203,27 @@ User = Shelf.Model.extend
         lon: location.lng
         distance: ( (distance / 1000) * 0.6214 )
       @save(null, {method: 'update'})
+
+  similar_meetups: ->
+    dfr = Q.defer()
+    Events.forge()
+    .query('join', 'event_interests', 'events.event_id', '=', 'event_interests.event_id', 'inner')
+    .query('join', 'user_interests', 'user_interests.interest_id', '=', 'event_interests.interest_id', 'inner')
+    .query('where', 'user_id', @get('user_id'))
+    .query('where', 'type', 'meetup')
+    .query('where', 'active', '1')
+    .fetch()
+    .then (events) ->
+      meetups = events.models
+      #Shuffle the meetups and return the top 5
+      for i in [meetups.length-1..1]
+        j = Math.floor Math.random() * (i + 1)
+        [meetups[i], meetups[j]] = [meetups[j], meetups[i]]
+      dfr.resolve meetups[0...5]
+    , (err) ->
+      tk err
+      console.error err
+    return dfr.promise
 
 
   getMutualFriends: (this_year = false)->

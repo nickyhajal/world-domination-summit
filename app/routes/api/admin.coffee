@@ -34,15 +34,24 @@ routes = (app) ->
 				rating: rating
 			.save()
 			.then (rsp) ->
+				RaceSubmission.forge
+					submission_id: submission_id
+				.fetch()
+				.then (sub) ->
+					tk sub.sendRatingEmail
+					sub.sendRatingEmail(rating)
 				if rating is -1
 					Achievement.forge
 						ach_id: ach_id
 						add_points: '-1'
 					.save()
 				else if rating is 2 or rating is 3
+					bonus = rating
+					if bonus is 2
+						bonus = 1
 					Achievement.forge
 						ach_id: ach_id
-						add_points: rating
+						add_points: bonus
 					.save()
 				next()
 
