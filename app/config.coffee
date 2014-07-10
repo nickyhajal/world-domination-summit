@@ -27,16 +27,16 @@ config = (app, express, RedisStore, mysql) ->
 			cookie:{maxAge:10000000000}
 		app.use(express.bodyParser({uploadDir:'/tmp_uploads', keepExtensions: true}))
 		app.use(express.methodOverride())
+		app.use require('connect-assets')(
+			src: 'app/assets'
+			build: false
+		)
 		app.use(app.router)
 		app.use(express.static(__dirname + '/public'))
 		app.set('port', process.env.PORT)
 
 	app.configure 'development', ->
 		app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-		app.use require('connect-assets')(
-			src: 'app/assets'
-			build: false
-		)
 		app.set 'db',
             client: 'mysql'
             connection:
@@ -49,10 +49,6 @@ config = (app, express, RedisStore, mysql) ->
 
 	app.configure 'production', ->
 		app.use(express.errorHandler());
-		app.use require('connect-assets')(
-			src: 'app/assets'
-			build: true
-		)
 		app.set 'db',
             client: 'mysql'
             connection:
