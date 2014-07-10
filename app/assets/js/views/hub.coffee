@@ -28,6 +28,7 @@ ap.Views.hub = XView.extend
 		setTimeout ->
 			window.scrollTo(0, 1)
 		, 1
+		$('#small-logo').on('click', @closePlaceSelect)
 		
 	initBroadcasts: ->
 		@broadcast_list = []
@@ -83,6 +84,13 @@ ap.Views.hub = XView.extend
 			ap.location = pos
 			if cb
 				cb()
+	closePlaceSelect: (e) ->
+		modal = $('#check-in-modal')
+		if modal.is(':visible')
+			e.preventDefault()
+			e.stopPropagation()
+			modal.hide()
+			$('#checkin-x').off('click', @closePlaceSelect)
 	showPlaceSelect: (e) ->
 		e.preventDefault()
 		$('#check-in-modal').show()
@@ -107,7 +115,7 @@ ap.Views.hub = XView.extend
 			$('footer').hide()
 
 	renderPlacesByDistance: (places) ->
-		html = '<h4>Where are you?</h4>'
+		html = '<a href="#" id="checkin-x">X</a><h4>Where are you?</h4>'
 		count = 0
 		for place in places
 			count += 1
@@ -115,8 +123,7 @@ ap.Views.hub = XView.extend
 			if (place.distance < 320 || count < 5)  && count < 5
 				nearby_class = ' checkin-place-nearby'
 			location_id = place.place_id
-			location_type = "place"
-			tk place.place_id
+			location_type = if place.type? then place.type else 'place'
 			html += '<a href="#" class="checkin-place'+nearby_class+'" data-location_type="'+location_type+'" data-location_id="'+location_id+'">
 				<span class="checkin-place-name">'+place.name+'</span>
 				<span class="checkin-place-addr">'+place.address.replace(', Portland, OR', '')+'
@@ -125,6 +132,7 @@ ap.Views.hub = XView.extend
 			</a>'
 		html += '<a href="#" id="checkin-toggle-all-places" class="button">Show All Places</a>'
 		$('#check-in-places').html(html).show()
+		$('#checkin-x').on('click', @closePlaceSelect)
 		$('#check-in-locating').hide()
 
 	placesByDistance: (pos) ->
@@ -149,7 +157,27 @@ ap.Views.hub = XView.extend
 
 	getPlaces: ->
 		places = ap.places
-		ap.Events.each ->
+		ap.Events.each (ev) ->
+			time = moment.utc(ev.get('start'))
+			day = time.format('dddd')
+			time = +time.format('X')
+			now = +(new Date()) / 1000
+
+			if ap.env is 'development'
+				tz_shift = 0
+			else
+				tz_shift = 7 * 3600
+			begin = now - tz_shift - 1800
+			end = now - tz_shift + 3600
+			if time > begin and time < end
+				if (ev.get('type') isnt 'program') or day is 'Thursday' or day is 'Friday'
+					ev = ev.attributes
+					ev.name = ev.what
+					ev.place_id = ev.event_id
+					ev.type = 'event'
+					places.push ev
+		return places
+
 
 	addCheckin: (e) ->
 		e.preventDefault()
@@ -166,7 +194,8 @@ ap.Views.hub = XView.extend
 
 	whenFinished: ->
 		$(window).unbind('hashchange')
-		tk ap.isMobile
+		$('#small-logo').off('click', @closePlaceSelect)
+		$('#checkin-x').off('click', @closePlaceSelect)
 		if not ap.isMobile
 			$('#counter-shell').show()
 		$('.settings-link').unbind()

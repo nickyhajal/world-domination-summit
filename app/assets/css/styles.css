@@ -843,6 +843,21 @@ a#checkin-show-all-places {
     text-align:                 center;
     margin-top:                 6px;
 }
+a#checkin-x {
+    float:                      right;
+    position:                   relative;
+    right:                      9px;
+    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    border-radius:              50%;
+    -moz-border-radius:         50%;
+    -webkit-border-radius:      50%;
+    text-align:                 center;
+    text-decoration:            none;
+    margin-bottom:              -26px;
+    width:                      31px;
+    top:                        0px;
+    padding:                    7px 0px 4px 1px;
+}
 a {
     color:                      rgb(226, 127, 28);
 }

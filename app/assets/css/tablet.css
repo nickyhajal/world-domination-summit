@@ -762,12 +762,12 @@ span.checkin-place-distance {
 #check-in-places h4 {
     text-transform:             none;
     text--webkit-transform:     none;
-    margin-bottom:              5px;
     color:                      rgb(0, 115, 173);
     font-family:                vitessebook;
-    font-size:                  16pt;
-    text-align:                 center;
-    margin-top:                 4px;
+    text-align:                 left;
+    font-size:                  18pt;
+    margin-top:                 9px;
+    margin-bottom:              6px;
 }
 span.checkin-status {
     display:                    block;

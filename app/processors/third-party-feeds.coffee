@@ -35,11 +35,11 @@ shell = (app, db) ->
 					opts =
 						min_tag_id: since_id
 					ig.tag_media_recent 'wds2014', opts, (err, medias, pg, lim) ->
-						if pg.next_min_id?
+						if pg?.next_min_id?
 							rds.set 'feed_ig_since', pg.next_min_id, ->
 								rds.expire 'feed_ig_since', 30000
 
-						if medias.length
+						if medias?.length
 							RaceTasks::getById('instagram')
 							.then (tasksById) ->
 								async.each medias, (media, cb) ->
