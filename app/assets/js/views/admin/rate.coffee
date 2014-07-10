@@ -55,11 +55,15 @@ ap.Views.admin_rate = XView.extend
 	rate: (e) ->
 		e.preventDefault()
 		el = $(e.currentTarget)
-		post = 
-			rating: el.data('rating')
-			ach_id: @active.ach_id
-			submission_id: @active.submission_id
-		ap.api 'post admin/rate', post, (rsp) =>
+		rating = el.data('rating')
+		if rating isnt 0
+			post = 
+				rating: el.data('rating')
+				ach_id: @active.ach_id
+				submission_id: @active.submission_id
+			ap.api 'post admin/rate', post, (rsp) =>
+				@showNext()
+		else
 			@showNext()
 
 
