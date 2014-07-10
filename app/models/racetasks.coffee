@@ -17,6 +17,8 @@ RaceTasks = Shelf.Collection.extend
 		dfr = Q.defer()
 		if type is 'instagram'
 			key = 'tasksByIgId'
+		if type is 'slug'
+			key = 'tasksBySlug'
 		else
 			key = 'tasksById'
 		rds.get key, (err, tasksById) ->
@@ -28,7 +30,9 @@ RaceTasks = Shelf.Collection.extend
 				.then (tasks) ->
 					tasksById = {}
 					for task in tasks.models
-						if type is 'instagram'
+						if type is 'slug'
+							id = task.get('slug')
+						else if type is 'instagram'
 							id = task.get('slug').replace('-', '')
 						else
 							id = task.get('racetask_id')
