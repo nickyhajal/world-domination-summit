@@ -1,6 +1,8 @@
 geocoder = require('geocoder')
+Q = require('q')
 
 Shelf = require('./shelf')
+
 
 Event = Shelf.Model.extend
   tableName: 'events'
@@ -44,6 +46,21 @@ Event = Shelf.Model.extend
             lat: location.lat
             lon: location.lng
           event.save()
+
+  hosts: ->
+    [User, Users] = require './users'
+    dfr = Q.defer()
+    Users.forge()
+    .query('join', 'event_hosts', 'event_hosts.user_id', '=', 'users.user_id', 'inner')
+    .query('join', 'events', 'events.event_id', '=', 'event_hosts.event_id', 'inner')
+    .query("where", "events.event_id", @get('event_id'))
+    .fetch()
+    .then (rsp) ->
+      hosts = rsp.models
+      dfr.resolve(hosts)
+    , (err) ->
+      tk err
+    return dfr.promise
 
 Events = Shelf.Collection.extend
   model: Event

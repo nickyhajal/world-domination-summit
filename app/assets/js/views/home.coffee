@@ -29,6 +29,9 @@ window.wall =
 			@loadContent =>
 				@fillContent($('.wall-section'))
 				@generateWallPanels()
+				setTimeout =>
+					@reloadEveryFiveMinutes()
+				, 1000 * 60 * 1
 			@loadTpls()
 		$('body')
 			.on('click', '.wall-content-type-flickr_stream', wall.showBiggerPhoto)
@@ -55,6 +58,12 @@ window.wall =
 			urlParams[param[0]] = param[1]
 		urlParams
 
+	reloadEveryFiveMinutes: ->
+		@loadContent =>
+			setTimeout =>
+				@reloadEveryFiveMinutes()
+			, 1000 * 60 * 1
+
 	initScreenMode: ->
 		hideMe = ['#top-nav', '#notifications', '#main-header', '#header-title', '.tpl-0', '#video-shell', 'footer']
 		for el in hideMe
@@ -77,15 +86,8 @@ window.wall =
 		_.whenReady 'firstpanel', =>
 			wall = window.wall
 			if wall.zoomFactor?
-				determineNextReload = ->
-					wall.nextReloadHappeningWhenScrollTopIsAt = document.getElementById('waterfall').getBoundingClientRect().height - 4 * $(window).height()
-
-				unless wall.nextReloadHappeningWhenScrollTopIsAt?
-					determineNextReload()
-
-				if $(window).scrollTop() > wall.nextReloadHappeningWhenScrollTopIsAt
+				if $(window).scrollTop() > ($(document).height() - (4 * $(window).height()))
 					wall.$el.css('height', Math.max($(window).scrollTop() + 4 * $(window).height(), wall.$el.height()) + 'px')
-					determineNextReload()
 					wall.displayPanels()
 
 
@@ -93,7 +95,7 @@ window.wall =
 		_.whenReady 'firstpanel', =>
 			viewportSize = $(window).width()
 			unless @originalContentainerSize?
-				@originalContentainerSize = $('main.contentainer').innerWidth()
+				@originalContentainerSize = $('main.contentainer').width()
 			@zoomFactor = viewportSize / @originalContentainerSize
 
 			$('#waterfall').css('transform', 'scale(' + @zoomFactor + ')')
@@ -111,7 +113,6 @@ window.wall =
 	screenMessage: ->
 		ap.api 'get screens', {}, (rsp) ->
 			if rsp.message?
-				console.log("FFF: " + JSON.stringify($('#home-screen-overlay').length))
 				if rsp.message.activated == "yes"
 					if !$('#home-screen-overlay').length
 						wall.stopAutoScroll()
@@ -196,7 +197,7 @@ window.wall =
 		if not wall.content
 			_.whenReady 'assets', =>
 				ap.api 'get content', {}, (rsp) =>
-					wall.content = _.shuffle rsp.content
+					wall.content = rsp.content
 					for content in wall.content
 						if not wall.contByType[content.type]?
 							wall.contByType[content.type] = []
@@ -236,7 +237,6 @@ window.wall =
 								speaker.content_id = speaker.speaker_id+inx
 								inx += 1
 								wall.contByType['speaker_quote'].push speaker
-					wall.contByType['speaker_quote'] = _.shuffle(wall.contByType['speaker_quote'])
 
 					cb()
 		else
@@ -307,7 +307,7 @@ window.wall =
 			$t.attr('id', id)
 			count += 1
 			type = $t.data('type')
-			opts = 
+			opts =
 				maxchars: $t.data('maxchars')
 				max: $t.data('max')
 				question: $t.data('question')
@@ -323,7 +323,7 @@ window.wall =
 			content = self.getContent(type, opts)
 			blocks = _.shuffle(wall.block_tpls[type])
 			block_html = _.template(blocks[0].html, content)
-			if type 
+			if type
 				$t.addClass('wall-content-type-'+type)
 			$t.addClass('block-'+count)
 			$t.addClass('block')
@@ -472,7 +472,7 @@ window.wall =
 			cont.css('height', (img.height()+20)+'px')
 	getContent: (type, opts) ->
 		if type is 'icon'
-			icon =  
+			icon =
 				icon: ''
 			return icon
 
@@ -511,7 +511,7 @@ window.wall =
 							atn.post_name = "'s super-power is..."
 						return atn
 
-		fetchFrom = wall.contByType[type]
+		fetchFrom = wall.contByType[type] # Types left after this point = flickr_stream, featured_tweets, speaker_quotes
 		for content in fetchFrom
 			unless wall.used_content[type]
 				wall.used_content[type] = []
