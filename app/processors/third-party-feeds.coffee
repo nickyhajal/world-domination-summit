@@ -79,7 +79,7 @@ shell = (app, db) ->
 						since_id = '0'
 					tk 'Check Twitter'
 					twit.get 'search/tweets', {q: '#wds2014', since_id: since_id, result_type:'recent', count:'100'}, (err, twts) ->
-						if twts.statuses?.length
+						if twts?.statuses?.length
 							last_id = false
 							async.each twts.statuses, (twt, cb) ->
 								data =

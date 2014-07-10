@@ -87,6 +87,7 @@ ap.Views.hub = XView.extend
 		e.preventDefault()
 		$('#check-in-modal').show()
 		$('#check-in-places').hide()
+		$.scrollTo(0)
 		if ap.location
 			places = @placesByDistance(ap.location.coords)
 			@renderPlacesByDistance(places)
@@ -111,7 +112,7 @@ ap.Views.hub = XView.extend
 		for place in places
 			count += 1
 			nearby_class = ' checkin-place-far'
-			if place.distance < 320 || count < 5
+			if (place.distance < 320 || count < 5)  && count < 5
 				nearby_class = ' checkin-place-nearby'
 			location_id = place.place_id
 			location_type = "place"
@@ -130,7 +131,8 @@ ap.Views.hub = XView.extend
 		sort = false
 		placesByDist = []
 		tmp = []
-		for place in ap.places
+		places = @getPlaces()
+		for place in places
 			if pos
 					dist = _.getDistance pos.latitude, pos.longitude, place.lat, place.lon
 					tmp.push [dist, place]
@@ -144,6 +146,10 @@ ap.Views.hub = XView.extend
 			p[1].distance = p[0]
 			placesByDist.push p[1]
 		return placesByDist
+
+	getPlaces: ->
+		places = ap.places
+		ap.Events.each ->
 
 	addCheckin: (e) ->
 		e.preventDefault()
