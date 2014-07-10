@@ -1,6 +1,6 @@
 routes = (app) ->
 
-  [Checkin, Checkins] = require('../../models/checkin')
+  [Checkin, Checkins] = require('../../models/checkins')
 
   get: (req, res, next) ->
     Checkins.forge()

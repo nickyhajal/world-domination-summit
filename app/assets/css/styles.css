@@ -989,6 +989,11 @@ h3.profile-heading {
 #page-attendees h3 {
     margin-top:                 45px;
 }
+h3#happening-now-heading {
+    font-family:                vitesselight;
+    line-height:                125%;
+    font-size:                  19pt;
+}
 h3 {
     font-size:                  24px;
     font-family:                vitesselight;

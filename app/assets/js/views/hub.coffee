@@ -8,6 +8,7 @@ ap.Views.hub = XView.extend
 	events: 
 		'click .broadcast-box-close': 'closeBroadcasts'
 		'click .broadcast-area a': 'saveLastBroadcast'
+		'click #checkin-button': 'showPlaceSelect'
 	
 	initialize: ->
 		@options.sidebar_filler = ap.me.attributes
@@ -20,6 +21,9 @@ ap.Views.hub = XView.extend
 	rendered: ->
 		if not ap.isDesktop
 			$('#dispatch-shell').hide()
+		setTimeout ->
+			window.scrollTo(0, 1)
+		, 1
 		
 	initBroadcasts: ->
 		@broadcast_list = []
@@ -69,6 +73,30 @@ ap.Views.hub = XView.extend
 		ap.me.set('last_broadcast', date)
 		if ap.me.changedSinceSave.last_broadcast?
 			ap.me.save ap.me.changedSinceSave, {patch:true}
+
+	showPlaceSelect: (e) ->
+		e.preventDefault()
+		navigator.geolocation.getCurrentPosition (pos) =>
+			tk @placesByDistance(pos)
+			tk pos
+
+	placesByDistance: (pos) ->
+		sort = false
+		placesByDist = []
+		for place in ap.places
+			tmp = []
+			if pos
+					dist = _.getDistance pos[0], pos[1], place.lat, place.lon
+					tmp.push [dist, place]
+					sort = true
+			else
+				tmp.push [0, place]
+		if sort
+			tmp.sort (a, b)->
+				return a[0] - b[0]
+		for p in tmp
+			placesByDist.push p[1]
+		return placesByDist
 
 
 	whenFinished: ->

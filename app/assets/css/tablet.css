@@ -703,6 +703,35 @@ div#meetup-attendees-shell {
     display:                    block;
     width:                      200px;
 }
+a#checkin-button {
+    background:                 url("/images/check-in.png") repeat scroll 0% 0% / 100% auto transparent;
+    display:                    block;
+    float:                      right;
+    position:                   absolute;
+    top:                        -22px;
+    width:                      90px;
+    height:                     85px;
+    font-size:                  10pt;
+    right:                      -15px;
+    z-index:                    10;
+}
+div#happening-shell {
+    position:                   relative;
+    min-height:                 189px;
+    margin-top:                 -28px;
+}
+#checkin-button span {
+    color:                      rgb(255, 255, 255);
+    position:                   relative;
+    text-transform:             uppercase;
+    text--webkit-transform:     uppercase;
+    font-family:                vitesse;
+    top:                        16px;
+    margin-left:                9pt;
+}
+div#happening-msg {
+    font-family:                karlaitalic;
+}
 * {
     line-height:                inherit;
 }

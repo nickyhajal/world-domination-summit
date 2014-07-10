@@ -29,6 +29,7 @@ routes = (app) ->
 	[Interest, Interests] = require('../../models/interests')
 	[RaceTask, RaceTasks] = require('../../models/racetasks')
 	[Achievement, Achievements] = require('../../models/achievements')
+	[Place, Places] = require('../../models/places')
 
 	assets =
 
@@ -42,6 +43,7 @@ routes = (app) ->
 				events: 5
 				ranks: 1
 				tasks: 5
+				places: 300
 				achievements: 0
 				admin_templates: 0
 
@@ -170,6 +172,21 @@ routes = (app) ->
 							dfr.resolve(speakers)
 							rds.set 'speakers', JSON.stringify(speakers), (err, rsp) ->
 								rds.expire 'speakers', 10000
+				return dfr.promise
+
+			places: (req) ->
+				dfr = Q.defer()
+				rds.get 'places', (err, places) ->
+					if places? and places and typeof JSON.parse(places) is 'object'
+						dfr.resolve(JSON.parse(places))
+					else
+						Places.forge()
+						.fetch()
+						.then (rsp) ->
+							places = rsp.models
+							dfr.resolve(places)
+							rds.set 'places', JSON.stringify(places), (err, rsp) ->
+								rds.expire 'places', 10000
 				return dfr.promise
 
 			achievements: (req) ->
