@@ -17,7 +17,7 @@ RaceTasks = Shelf.Collection.extend
 		dfr = Q.defer()
 		if type is 'instagram'
 			key = 'tasksByIgId'
-		if type is 'slug'
+		else if type is 'slug'
 			key = 'tasksBySlug'
 		else
 			key = 'tasksById'
