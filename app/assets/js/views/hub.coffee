@@ -200,26 +200,33 @@ ap.Views.hub = XView.extend
 	getCheckins: ->
 		ap.api 'get checkins/recent', {}, (rsp) ->
 			html = ''
-			for place in rsp.checkins
-				num_checkins = place.num_checkins
-				type = place.location_type
-				id = place.location_id
-				if type is 'event'
-					the_place = ap.Events.get(id).attributes
-					name = the_place.what+'<span class="checkin-is-event">event</span>'
-				else if type is 'place'
-					for p in ap.places
-						if +p.place_id is +id
-							the_place = p
-							name = the_place.name
-							break
-				address = the_place.address.replace(', Portland, OR', '')
-				html += '<div class="checkin-result-row">
-					<span class="checkin-result-name">'+name+'</span>
-					<span class="checkin-result-checkins">'+num_checkins+'</span>
-					<span class="checkin-result-address">'+address+'</span>
+			if rsp.checkins.length
+				for place in rsp.checkins
+					num_checkins = place.num_checkins
+					type = place.location_type
+					id = place.location_id
+					if type is 'event'
+						the_place = ap.Events.get(id).attributes
+						name = the_place.what+'<span class="checkin-is-event">event</span>'
+					else if type is 'place'
+						for p in ap.places
+							if +p.place_id is +id
+								the_place = p
+								name = the_place.name
+								break
+					address = the_place.address.replace(', Portland, OR', '')
+					html += '<div class="checkin-result-row">
+						<span class="checkin-result-name">'+name+'</span>
+						<span class="checkin-result-checkins">'+num_checkins+'</span>
+						<span class="checkin-result-address">'+address+'</span>
+						</div>
+						'
+			else
+				html = '<div id="checkin-empty" class="checkin-result-row">
+						Check-in to your location above and get the party started!
 					</div>
 					'
+
 			$('#happening-list').html(html)
 		@checkinTimo = setTimeout =>
 			@getCheckins()

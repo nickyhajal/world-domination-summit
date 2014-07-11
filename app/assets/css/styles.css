@@ -792,30 +792,35 @@ a#hub-button-race {
 a#hub-button-search {
     background:                 none repeat scroll 0% 0% rgb(23, 127, 178);
 }
+a#hub-button-notifications {
+    background:                 none repeat scroll 0px 0px rgb(227, 47, 28);
+}
 a.hub-button {
     text-decoration:            none;
     font-size:                  16pt;
     font-family:                vitesse;
     color:                      rgb(255, 255, 255);
-    width:                      50%;
     text-align:                 center;
     margin-bottom:              0px;
     padding:                    40px 0px;
     background:                 none repeat scroll 0px 0px rgb(33, 23, 10);
     display:                    block;
     float:                      left;
+    width:                      50%;
 }
 .hub-notification-count {
     border-radius:              16pt;
     -moz-border-radius:         16pt;
     -webkit-border-radius:      16pt;
     color:                      rgb(255, 255, 255);
-    background:                 none repeat scroll 0% 0% rgb(255, 0, 0);
     width:                      auto;
-    display:                    inline-block;
-    margin-left:                5px;
-    padding-left:               4pt;
-    padding-right:              4pt;
+    margin-left:                7px;
+    display:                    inline;
+    margin-bottom:              0px;
+    background:                 none repeat scroll 0px 0px rgb(137, 46, 36);
+    padding:                    4px 7pt 2px;
+    position:                   relative;
+    top:                        0px;
 }
 a.heading-button {
     font-size:                  10pt;
@@ -1367,6 +1372,18 @@ a#checkin-toggle-all-places {
     text-align:                 center;
     margin-top:                 5px;
 }
+a.note-button {
+    text-align:                 center;
+    margin-top:                 3px;
+    float:                      right;
+    margin-right:               -47px;
+    padding:                    9px 5px;
+    font-size:                  12pt;
+}
+#note-form input.button {
+    display:                    block;
+    width:                      100%;
+}
 input[type="submit"], .button {
     border:                     0px none;
     padding:                    8px 40px;
@@ -1455,6 +1472,10 @@ textarea.dispatch-content-comment-inp {
 }
 textarea.meetup-descr-inp {
     width:                      410px;
+}
+textarea#note-input {
+    width:                      100%;
+    margin-bottom:              -2px;
 }
 textarea {
     background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
@@ -2726,6 +2747,39 @@ div#big-content {
     padding:                    14px 0px 13px;
     margin-top:                 29px;
     margin-bottom:              19px;
+}
+form#note-form {
+    width:                      580px;
+    margin-bottom:              60px;
+}
+div.note-privacy {
+    margin-top:                 5px;
+    font-size:                  13pt;
+    font-family:                karlaitalic;
+    float:                      right;
+    color:                      rgb(143, 139, 130);
+}
+div.note-empty {
+    font-family:                karla;
+    width:                      580px;
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    padding:                    20px;
+}
+div.note-shell {
+    font-family:                karla;
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    padding:                    20px 20px 30px;
+    position:                   relative;
+    margin-bottom:              10px;
+    width:                      580px;
+}
+div.note-time {
+    font-size:                  10pt;
+    font-family:                karlaitalic;
+    color:                      rgb(147, 145, 136);
+    position:                   absolute;
+    bottom:                     8px;
+    right:                      9px;
 }
 * {
     box-sizing:                 border-box;

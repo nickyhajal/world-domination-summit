@@ -1,9 +1,10 @@
 div(id="page_content")
 	h2 Attendee Profile
 	div(class="attendee-avatar", style="background:url({{ pic }})")
-	div(class="if-mobile")
-		a(class="follow-button button", data-user_id="{{ user_id }}")
 	div(id="attendee-profile-map")
+	div(class="if-mobile", id="profile-controls")
+		a(class="note-button button", href="/notes/{{ user_id }}") Your Notes on {{ first_name }}
+		a(class="follow-button button", data-user_id="{{ user_id }}")
 	h3 {{ first_name }} {{ last_name }}
 	div(class="attendee-from")
 		| is making a <span class="ceil">{{ distance }}</span> mile expedition to WDS

@@ -700,8 +700,13 @@ div#meetup-attendees-shell {
     width:                      100%;
 }
 #page-profile #page_content a.follow-button {
-    display:                    block;
-    width:                      200px;
+    float:                      right;
+    display:                    inline;
+    margin-top:                 3px;
+    margin-right:               3px;
+    font-size:                  12pt;
+    padding:                    9px 5px;
+    min-height:                 38px;
 }
 a#checkin-button {
     background:                 url("/images/check-in.png") repeat scroll 0% 0% / 100% auto transparent;
@@ -714,6 +719,10 @@ a#checkin-button {
     font-size:                  10pt;
     right:                      -15px;
     z-index:                    10;
+}
+div#happening-shell {
+    margin-left:                -35px;
+    margin-right:               -35px;
 }
 div#happening-shell {
     position:                   relative;
@@ -779,6 +788,12 @@ span.checkin-status {
 div.checkin-result-row:nth-of-type(2n) {
     background:                 none repeat scroll 0px 0px rgb(242, 242, 230);
 }
+div#checkin-empty {
+    text-align:                 center;
+    font-size:                  13pt;
+    color:                      rgba(75, 74, 69, 0.54);
+    padding:                    34px 12px 31px;
+}
 div.checkin-result-row {
     clear:                      both;
     padding:                    12px;
@@ -808,6 +823,13 @@ span.checkin-is-event {
     position:                   relative;
     top:                        -1px;
     left:                       4px;
+}
+div.note-privacy {
+    font-family:                karlaitalic;
+    font-size:                  13pt;
+    float:                      right;
+    margin-top:                 5px;
+    color:                      rgb(143, 139, 130);
 }
 * {
     line-height:                inherit;

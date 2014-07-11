@@ -127,6 +127,7 @@ ap.Views.profile = XView.extend
 		width = $(window).width(true) - (179)
 		$('#attendee-profile-map').css('width', _.x(width))
 		$('.attendee-avatar').css('height', '')
+		$('.button', '#profile-controls').css('width', _.x((width-90)/2))
 
 	desktop: ->
 		$('#attendee-profile-map').css('width', '')
@@ -135,3 +136,4 @@ ap.Views.profile = XView.extend
 	phone: ->
 		av = $('.attendee-avatar')
 		av.css('height', _.x(av.width()))
+		$('.button', '#profile-controls').css('width', '')

@@ -1,0 +1,16 @@
+div(id="page_content")
+	h2 Attendee Notes
+	h3 Notes on {{ first_name }} {{ last_name }}
+	p Use attendee notes to remember information about the amazing WDSers you meet!
+
+	h4 Add a Note
+	form(id="note-form", method="post")
+		textarea(name="note-content", id="note-input")
+		input(type="submit", class="button", value="Save Note")
+		div(class="note-privacy") Attendee notes are private to you
+
+	h4 Your Notes
+	div(id="notes-shell")
+
+
+

@@ -437,10 +437,13 @@ routes = (app) ->
 			if req.me
 				post = _.pick req.query, UserNote::permittedAttributes
 				post.user_id = req.me.get('user_id')
+				post.year = process.year
 				UserNote.forge(post)
 				.save()
 				.then ->
 					next()
+				, (err) ->
+					console.error(err)
 			else
 				res.status(401)
 				next()
@@ -449,11 +452,13 @@ routes = (app) ->
 			if req.me
 				select = UserNotes.forge()
 				if req.query.about_id?
-					select.query('where', 'about_id', req.query.select_id)
+					select.query('where', 'about_id', req.query.about_id)
 				select.query('where', 'user_id', req.me.get('user_id'))
+				select.query('orderBy', 'unote_id', 'DESC')
 				select.fetch()
 				.then (rsp) ->
 					res.r.notes = rsp.models
+					next()
 			else
 				res.status(401)
 				next()

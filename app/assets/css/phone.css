@@ -260,7 +260,7 @@ div#race-buttons a {
 a.hub-button {
     width:                      100%;
     font-size:                  13pt;
-    padding:                    20px 0px;
+    padding:                    20px 0px 19px;
 }
 div.meetup-sidebar {
     font-size:                  10pt;
@@ -381,12 +381,35 @@ a#attendee-search-x {
 }
 #page-profile #page_content a.follow-button {
     width:                      100%;
+    margin-top:                 3px;
+    float:                      none;
+    display:                    block;
 }
 #page-hub h2 {
     display:                    none;
 }
 div#check-in-modal {
     padding:                    10px;
+}
+div#happening-shell {
+    margin-left:                0px;
+    margin-right:               0px;
+}
+a.note-button {
+    display:                    block;
+    margin-top:                 3px;
+    text-align:                 center;
+    float:                      none;
+    margin-right:               0px;
+}
+div.note-empty {
+    width:                      100%;
+}
+form#note-form {
+    width:                      100%;
+}
+div.note-shell {
+    width:                      100%;
 }
 * {
     line-height:                inherit;
