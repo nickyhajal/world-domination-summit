@@ -93,6 +93,8 @@ routes = (app) ->
 		# Screens
 		app.get '/screens', screens.get
 		app.put '/screens', screens.update
+		app.post '/screens/reset', screens.reset
+		app.get '/screens/reset', screens.get_reset_time
 
 		# Checkin
 		app.get '/checkins', checkins.get

@@ -1,10 +1,13 @@
 ap.Views.admin_screens = XView.extend
 	messageTimo: 0
+	screenResetTimo: 0
 
 	events:
 		'click .toggle-message': 'messageToggle_click'
 		'click .do-toggle-message': 'doMessageToggle_click'
 		'click #message-save-later': 'doMessageToggle_click'
+		'click .toggle-screenreset': 'screenResetToggle_click'
+		'click .do-toggle-screenreset': 'doScreenResetToggle_click'
 
 	initialize: ->
 		ap.api 'get screens', {}, (rsp) =>
@@ -14,9 +17,9 @@ ap.Views.admin_screens = XView.extend
 
 	rendered: ->
 		@initMessageActivation()
+		@initScreenReset()
 
 	initMessageActivation: ->
-		console.log JSON.stringify(@message)
 		if @message.activated == "yes"
 			text = 'Message Active'
 			clss = 'deactivate-message'
@@ -36,6 +39,14 @@ ap.Views.admin_screens = XView.extend
 		')
 		$('.waitable').prop('disabled', false)
 
+	initScreenReset: ->
+		$('.screenreset-shell').html('
+			<div class="screen-reset">
+				<h4>Running into trouble?</h4>
+				<a href="#" class="toggle-screenreset button">Reset the LCD screens</a>
+			</div>
+		')
+
 	messageToggle_click: (e) ->
 		e.preventDefault()
 		el = $(e.currentTarget)
@@ -46,7 +57,7 @@ ap.Views.admin_screens = XView.extend
 		else
 			action = 'Activate'
 		$(el).html('Click Again to '+action)
-		@ticketTimo =  setTimeout ->
+		@messageTimo = setTimeout ->
 			el.html(action+' Message')
 			el.addClass('toggle-message')
 			el.removeClass('do-toggle-message')
@@ -67,4 +78,30 @@ ap.Views.admin_screens = XView.extend
 		view = this
 		ap.api 'put screens', @message, (rsp) =>
 			view.initMessageActivation()
+
+	screenResetToggle_click: (e) ->
+		e.preventDefault()
+		el = $(e.currentTarget)
+		el.removeClass('toggle-screenreset')
+		el.addClass('do-toggle-screenreset')
+		$(el).html('Click Again to Reset LCDs')
+		@screenResetTimo = setTimeout ->
+			el.html('Reset the LCD screens')
+			el.removeClass('do-toggle-screenreset')
+			el.addClass('toggle-screenreset')
+		, 1200
+
+	doScreenResetToggle_click: (e) ->
+		e.preventDefault()
+		el = $(e.currentTarget)
+		view = this
+		if el.hasClass 'do-toggle-screenreset'
+			clearTimeout(@screenResetTimo)
+			$(el).html('Resetting...').prop('disabled', true)
+			now = new Date()
+			ap.api 'post screens/reset', {lastResetUTC: new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),  now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds())).getTime()}, =>
+				$(el).html('LCD screens reset!')
+				setTimeout ->
+					view.initScreenReset()
+				, 1200
 

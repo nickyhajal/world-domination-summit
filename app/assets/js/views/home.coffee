@@ -41,12 +41,24 @@ window.wall =
 		wall.zoomFactor = 1
 		url_params = @urlParams()
 		if url_params['screenmode']=='1'
+			now = new Date()
+			@startedAtUTC = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),  now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds())).getTime()
+			@checkForReset()
 			_.whenReady 'firstpanel', =>
 				if url_params['delay']?
 					@autoScrollDelay = url_params['delay']
 				else
 					@autoScrollDelay = 100
 				@initScreenMode()
+	checkForReset: ->
+		ap.api 'get screens/reset', {}, (rsp) ->
+			if rsp.lastResetUTC?
+				if rsp.lastResetUTC.lastResetUTC > wall.startedAtUTC
+					location.reload(true)
+		setTimeout =>
+			wall.checkForReset()
+		, 5000
+
 
 	urlParams: ->
 		urlParams = Array()
@@ -525,9 +537,9 @@ window.wall =
 					unless data[bits[0]].length < +bits[1]
 						pass = false
 
-				if opts.orientation?
-					unless data.orientation is opts.orientation
-						pass = false
+				#if opts.orientation?
+				#	unless data.orientation is opts.orientation
+				#		pass = false
 
 				if type is 'flickr_stream' and not data.the_img_med?
 					pass = false
