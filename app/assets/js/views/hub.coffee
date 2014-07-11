@@ -23,7 +23,6 @@ ap.Views.hub = XView.extend
 				@initBroadcasts()
 			, 750
 	rendered: ->
-		@getLocation()
 		if not ap.isDesktop
 			$('#dispatch-shell').hide()
 		setTimeout ->
@@ -159,7 +158,7 @@ ap.Views.hub = XView.extend
 		return placesByDist
 
 	getPlaces: ->
-		places = ap.places
+		places = JSON.parse(JSON.stringify(ap.places))
 		added = []
 		ap.Events.each (ev) ->
 			time = moment.utc(ev.get('start'))
