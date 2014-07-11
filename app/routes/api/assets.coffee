@@ -56,7 +56,6 @@ routes = (app) ->
 					now = Math.floor(+(new Date()) / 1000)
 					if process.env.NODE_ENV is 'production'
 						expires = (+last + +(assets.expires[asset] * 60))
-					expires = 0
 					expired = expires < now
 					if assets[asset]? and expired
 						assets[asset](req)

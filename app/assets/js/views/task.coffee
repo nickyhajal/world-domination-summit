@@ -17,7 +17,7 @@ ap.Views.task = XView.extend
 					<b>#wds2014</b> and <b>#'+task.slug.replace('-', '')+'</b>
 					<br><br>
 				'
-				if ap.me.get('instagram')?.length
+				if ap.me?.get('instagram')?.length
 					@options.task.how_to += '
 						Make sure to post from your instagram account: <b>'+ap.me.get('instagram')+'</b>
 					'
