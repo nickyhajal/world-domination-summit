@@ -23,7 +23,7 @@ ap.init = () ->
 	if ap.me
 		$('html').addClass('is-logged-in')
 	ap.testLocalStorage =>
-		ap.initAssets
+		ap.initAssets()
 	ap.initMobile()
 	ap.Counter.init()
 	ap.initTemplates()
