@@ -9,8 +9,8 @@ ap.Views.task = XView.extend
 				if task.slug is @options.task_slug
 					@options.task = task
 			task = @options.task
-			@options.task.how_to = ''
-			if ap.me?
+			@options.task.how_to = 'Login to Complete this Task'
+			if ap.me? and ap.me
 				if task.type is 'auto'
 					@options.task.how_to = 'Our system will automatically issue your points when this task is completed.'
 				else if task.type is 'video'
