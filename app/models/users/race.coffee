@@ -141,7 +141,7 @@ race =
                 .save()
                 dfr.resolve(points)
                 rds.set user_key, 'true', ->
-                  rds.expire user_key, 300
+                  rds.expire user_key, 10
       else
         tk 'Skipped Race Check for '+@get('user_name')
         dfr.resolve()
