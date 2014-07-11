@@ -22,7 +22,7 @@ routes = (app) ->
         res.r.checkins = JSON.parse(checkins)
         next()
       else
-        time_spread = 45 # A check-in expires after X minutes
+        time_spread = 160 # A check-in expires after X minutes
         from = (new Date(new Date().getTime() - (time_spread * 60 * 1000)))
         Checkins.forge()
         .query (qb) ->
