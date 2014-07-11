@@ -62,12 +62,12 @@ routes = (app) ->
 						assets[asset](req)
 						.then (rsp) ->
 							res.r[asset] = rsp
-							tk 'Grabbing '+asset+ ' took: '+(+(new Date()) - assetStart)+' milliseconds'
+							#tk 'Grabbing '+asset+ ' took: '+(+(new Date()) - assetStart)+' milliseconds'
 							cb()
 					else
 						cb()
 				, ->
-					tk 'Asset grab took: '+(+(new Date()) - start)+' milliseconds'
+					#tk 'Asset grab took: '+(+(new Date()) - start)+' milliseconds'
 					next()
 
 			redisValue: (value) ->

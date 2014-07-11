@@ -137,6 +137,8 @@ race =
               user.processPoints()
               .then (points) ->
                 tk ('Race check took: '+((new Date()) - start )+' milliseconds')
+                user.set('points', points)
+                .save()
                 dfr.resolve(points)
                 rds.set user_key, 'true', ->
                   rds.expire user_key, 300
