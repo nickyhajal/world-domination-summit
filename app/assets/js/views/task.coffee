@@ -91,11 +91,11 @@ ap.Views.task = XView.extend
 	getMedia: ->
 		ap.api 'get user/task', {task_slug: @options.task.slug}, (rsp) =>
 			html = ''
-			if rsp.mine.length
+			if rsp.mine?.length
 				html += '<h4>Submitted By You</h4>'
 				for sub in rsp.mine
 					html += @getSubHtml(sub)
-			if rsp.examples.length
+			if rsp.examples?.length
 				html += '<h4>Top Submissions By Other WDSers</h4>'
 				for sub in rsp.examples
 					html += @getSubHtml(sub)
