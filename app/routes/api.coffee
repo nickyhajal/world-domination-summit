@@ -56,6 +56,7 @@ routes = (app) ->
 		app.post '/user/note', user.add_unote
 		app.get '/user/notes', user.get_unotes
 		app.post '/user/checkin', user.add_checkin
+		app.get '/user/notifications', user.get_notifications
 
 		# Speakers
 		app.put '/speaker', speaker.update
