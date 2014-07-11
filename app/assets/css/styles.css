@@ -2010,6 +2010,12 @@ td.search-actions .button {
 td.search-actions {
     text-align:                 right;
 }
+#happening-shell {
+    display:none;
+}
+#check-in-modal {
+    display:none;
+}
 #schedule-shell td, #racetask-shell td {
     padding:                    10px;
     font-family:                karla;

@@ -18,7 +18,6 @@ async = require('async')
 getters = 
   getMe: ->
     dfr = Q.defer()
-    tk 'me'
     @raceCheck()
     .then =>
       @getAllTickets()
