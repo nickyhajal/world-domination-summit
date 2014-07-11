@@ -68,24 +68,25 @@ ap.Views.task = XView.extend
 				'
 
 	checkCompleted: ->
-		task = @options.task
-		task_id = @options.task.racetask_id
-		achieved = ap.me.achieved(task_id)
-		if achieved
-			points = task.points
-			if achieved.custom_points > 0
-				points = +achieved.custom_points
-			if achieved.add_points
-				points += +achieved.add_points
-			if points > 1
-				points = points+' points'
-			else
-				points = points+' point'
-			msg = 'You completed this challenge and earned '+points+'!'
-			$('#challenge-title').html('Challenge Completed!').addClass('achieved')
-			$('.task-detail-block').addClass('achieved')
-			$('.task-how-to-complete').html(msg).addClass('achieved')
-			@getMedia()
+		if ap.me? and ap.me
+			task = @options.task
+			task_id = @options.task.racetask_id
+			achieved = ap.me.achieved(task_id)
+			if achieved
+				points = task.points
+				if achieved.custom_points > 0
+					points = +achieved.custom_points
+				if achieved.add_points
+					points += +achieved.add_points
+				if points > 1
+					points = points+' points'
+				else
+					points = points+' point'
+				msg = 'You completed this challenge and earned '+points+'!'
+				$('#challenge-title').html('Challenge Completed!').addClass('achieved')
+				$('.task-detail-block').addClass('achieved')
+				$('.task-how-to-complete').html(msg).addClass('achieved')
+				@getMedia()
 
 	getMedia: ->
 		ap.api 'get user/task', {task_slug: @options.task.slug}, (rsp) =>
