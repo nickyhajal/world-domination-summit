@@ -41,6 +41,7 @@ window.wall =
 		wall.zoomFactor = 1
 		url_params = @urlParams()
 		if url_params['screenmode']=='1'
+			@screenMode = 1
 			now = new Date()
 			@startedAtUTC = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),  now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds())).getTime()
 			@checkForReset()
@@ -50,6 +51,9 @@ window.wall =
 				else
 					@autoScrollDelay = 100
 				@initScreenMode()
+		else
+			@screenMode = 0
+
 	checkForReset: ->
 		ap.api 'get screens/reset', {}, (rsp) ->
 			if rsp.lastResetUTC?
@@ -93,6 +97,16 @@ window.wall =
 		@autoScroll()
 		@screenMessage()
 
+	emptyDivsNoLongerVisible: ->
+		$('#waterfall').find('.wall-section.slated-for-empty').removeClass('slated-for-empty').addClass('emptied').each ->
+			$el = $(this)
+			setTimeout =>
+				$el.empty()
+			, 0
+		$('#waterfall').find('.wall-section.will-be-slated-next-round').removeClass('will-be-slated-next-round').addClass('slated-for-empty')
+		$('#waterfall').find('.wall-section:not(.will-be-slated-next-round):not(.slated-for-empty):not(.emptied)').addClass('will-be-slated-next-round')
+
+
 	# Will load more content if we scroll down low enough
 	loadMoreContentIfWeScrolledDownEnough: ->
 		_.whenReady 'firstpanel', =>
@@ -101,6 +115,8 @@ window.wall =
 				if $(window).scrollTop() > ($(document).height() - (4 * $(window).height()))
 					wall.$el.css('height', Math.max($(window).scrollTop() + 4 * $(window).height(), wall.$el.height()) + 'px')
 					wall.displayPanels()
+					if wall.screenMode == 1
+						wall.emptyDivsNoLongerVisible()
 
 
 	scaleForScreenMode: ->
@@ -377,6 +393,7 @@ window.wall =
 	# Handle anything that needs to happen to a block
 	# after it's loaded into the DOM
 	postProcess: ($tpl) ->
+		$tpl.find().css("cursor", "none")
 		_.whenReady 'googlemaps', =>
 			_.whenReady 'googlemapsextended', =>
 				$('.attendee_map', $tpl).each ->
