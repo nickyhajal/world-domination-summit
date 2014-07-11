@@ -101,7 +101,7 @@ ap.update.tpls = ->
 
 ap.update.ranks = ->
 	_.whenReady 'me', =>
-		if ap.me
+		if ap.me and ap.me.setRank?
 			ap.me.setRank()
 			_.isReady 'ranks'
 
