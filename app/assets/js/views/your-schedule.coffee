@@ -20,7 +20,7 @@ ap.Views.your_schedule = XView.extend
 				day = time.format('dddd[,] MMMM Do')
 				day_slug = _.slugify(day)
 				event_class = ''
-				if +time.format('X') < (now+150000)
+				if +time.format('X') < (now-32000)
 					event_class = 'event-past'
 					if not days[day_slug]
 						days[day_slug] = 0
