@@ -4716,3 +4716,15 @@ div#race-buttons a {
     background-size:            cover ! important;
     -webkit-background-size:    cover ! important;
 }
+#local-storage-warning {
+    color: red;
+    background-color: white;
+    font-size: 2em;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 41px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: 1em;
+    padding-left: 1em;
+}
