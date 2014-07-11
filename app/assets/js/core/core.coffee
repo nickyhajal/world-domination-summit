@@ -13,16 +13,17 @@ window.tk = (data)->
 $ = jQuery
 $('html').addClass('jsOn')
 $ ->
-	ap.init();
+	ap.init()
 
-user = {};
+user = {}
 ap.Views = {}
 ap.Routes = {}
 
 ap.init = () ->
 	if ap.me
 		$('html').addClass('is-logged-in')
-	ap.initAssets()
+	ap.testLocalStorage =>
+		ap.initAssets
 	ap.initMobile()
 	ap.Counter.init()
 	ap.initTemplates()
@@ -52,6 +53,21 @@ ap.unbindResize = (id) ->
 ###
 
 ap.update = {}
+
+ap.addLocalStorageWarningDiv = ->
+	jQuery(document).ready ->
+		$('#top-nav').after('<div id="local-storage-warning">Uh-oh, it looks like you may be using private browsing, or an incompatible web browser. The site won\'t work well under these conditions. Please try deactivating the private browsing mode, or use another web browser (Google Chrome usually works best). Sorry about that!</div>')
+
+ap.testLocalStorage = (cbIfWorking) ->
+	try
+		ap.put('testLocalStorage', 'working')
+		if (ap.get('testLocalStorage') == 'working')
+			cbIfWorking()
+		else
+			ap.addLocalStorageWarningDiv()
+	catch e
+		ap.addLocalStorageWarningDiv()
+
 ap.initAssets = ->
 	assets = ['all_attendees','me','events', 'tpls', 'interests', 'speakers', 'ranks', 'tasks', 'achievements', 'places']
 	ap.getAssets(assets)
