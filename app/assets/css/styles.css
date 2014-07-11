@@ -2702,9 +2702,15 @@ div#big-content {
     text--webkit-transform:     uppercase;
     font-family:                vitesse;
     text-align:                 center;
-    margin-top:                 20px;
-    margin-bottom:              53px;
-    font-size:                  22pt;
+    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    border-radius:              17px;
+    -moz-border-radius:         17px;
+    -webkit-border-radius:      17px;
+    color:                      rgb(33, 23, 10);
+    font-size:                  21pt;
+    padding:                    14px 0px 13px;
+    margin-top:                 29px;
+    margin-bottom:              19px;
 }
 * {
     box-sizing:                 border-box;
