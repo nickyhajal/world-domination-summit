@@ -805,6 +805,16 @@ a.hub-button {
     display:                    block;
     float:                      left;
 }
+.hub-notification-count {
+    border-radius:16pt;
+    color:#fff;
+    background:#FF0000;
+    width: auto;
+    display: inline-block;
+    margin-left: 5px;
+    padding-left: 4pt;
+    padding-right: 4pt;
+}
 a.heading-button {
     font-size:                  10pt;
     margin-left:                10px;

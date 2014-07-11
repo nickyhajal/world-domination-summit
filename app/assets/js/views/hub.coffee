@@ -25,6 +25,7 @@ ap.Views.hub = XView.extend
 	rendered: ->
 		if not ap.isDesktop
 			$('#dispatch-shell').hide()
+			@updateNotnCount()
 		setTimeout ->
 			window.scrollTo(0, 1)
 		, 1
@@ -236,3 +237,8 @@ ap.Views.hub = XView.extend
 			$('#counter-shell').show()
 		$('.settings-link').unbind()
 		$('html').removeClass('attended-before')
+
+	updateNotnCount: ->
+		ap.api 'get user/notifications/unread', {}, (rsp) =>
+			if rsp.notifications.length > 0
+				$('.hub-notification-count').text(rsp.notifications.length)

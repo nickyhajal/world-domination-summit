@@ -6,6 +6,7 @@ ap.Views.notifications = XView.extend
   rendered: ->
     _.whenReady 'users', =>
       @renderNotifications()
+      @readNotifications()
 
   renderNotifications: ->
     shell = $('#notification-shell')
@@ -52,5 +53,8 @@ ap.Views.notifications = XView.extend
         text += '</a>'
         text += '</div>'
         text += '</div>'
+
+  readNotifications: ->
+    ap.api 'get user/notifications/read', {}, (rsp) =>
 
     return text
