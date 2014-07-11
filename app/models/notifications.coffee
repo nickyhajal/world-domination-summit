@@ -68,7 +68,10 @@ Notifications = Shelf.Collection.extend
 		[User, Users] = require './users'
 		dfr = Q.defer()
 		data = JSON.parse(notn.get('content'))
-		link = '<a href="http://worlddominationsummit.com'+notn.get('link')+'">'
+		link = notn.get('link')
+		if link.indexOf('/') is 0
+			link.substr(1)
+		link = '<a href="http://worlddominationsummit.com/'+link+'">'
 		text = ''
 
 		switch notn.get('type')

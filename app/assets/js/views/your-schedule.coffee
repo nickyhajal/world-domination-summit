@@ -11,13 +11,24 @@ ap.Views.your_schedule = XView.extend
 	renderEvents: ->
 		lastDay = ''
 		html = ''
+		now = +(new Date()) / 1000
+		days = {}
 		ap.Events.each (ev) =>
+			time = moment.utc(ev.get('start'))
 			if ap.me and ap.me.isAttendingEvent(ev)
 				time = moment.utc(ev.get('start'))
 				day = time.format('dddd[,] MMMM Do')
+				day_slug = _.slugify(day)
+				event_class = ''
+				if +time.format('X') < (now+150000)
+					event_class = 'event-past'
+					if not days[day_slug]
+						days[day_slug] = 0
+				else
+					days[day_slug] = if day[day_slug] then day[day_slug] + 1 else 1
 				if day isnt lastDay
 					lastDay = day
-					html += '<h3>'+day+'</h3>'
+					html += '<h3 id="dayhead-'+day_slug+'">'+day+'</h3>'
 				hosts = @renderHosts(ev)
 				note = @renderNote(ev)
 				event = 
@@ -28,11 +39,15 @@ ap.Views.your_schedule = XView.extend
 					what: ev.get('what')
 					note: note
 					place: ev.get('place')
+					event_class: event_class
 					directions_link: 'http://maps.google.com?q='+encodeURI(ev.get('address'))
 
 				html += _.t 'parts_schedule-row', event
 
 		$('#attendee-schedule').html(html).scan()
+		for slug,count of days
+			if not +count
+				$('#dayhead-'+slug).hide()
 
 	renderNote: (ev) ->
 		html = ''

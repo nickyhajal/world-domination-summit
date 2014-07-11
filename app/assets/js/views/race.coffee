@@ -17,15 +17,29 @@ ap.Views.race = XView.extend
 	renderTasks: ->
 		html = ''
 		_.whenReady 'achievements', =>
-			for task in ap.tasks
-				task_class= ''
-				if task.section is 'before-arriving'
-					if ap.me.achieved(task.racetask_id)
-						task_class = ' achieved'
-					html += '<a href="/task/'+task.slug+'" class="task-row">
-						<div class="task-points'+task_class+'">'+task.points+'</div>
-						<span class="task-title">'+task.task+'</span>
-					</a>'
+			sections = ['before-arriving', 'community', 'adventure', 'service']
+			sectionNames =
+				"before-arriving": "Before Arriving"
+				"community": "Community"
+				"adventure": "Adventure"
+				"service": "Service"
+			for section in sections
+				html += '<h3>'+sectionNames[section]+'</h3>
+					<div class="tasks-label">
+						<span class="points-label">Points</span>
+						<span class="tasks-label">Task</span>
+					</div>
+				'
+
+				for task in ap.tasks
+					task_class= ''
+					if task.section is section
+						if ap.me.achieved(task.racetask_id)
+							task_class = ' achieved'
+						html += '<a href="/task/'+task.slug+'" class="task-row">
+							<div class="task-points'+task_class+'">'+task.points+'</div>
+							<span class="task-title">'+task.task+'</span>
+						</a>'
 			$('#race-task-list').html(html)
 			@setRowHeights()
 	setRowHeights: ->

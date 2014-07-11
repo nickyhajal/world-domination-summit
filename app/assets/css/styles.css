@@ -806,14 +806,16 @@ a.hub-button {
     float:                      left;
 }
 .hub-notification-count {
-    border-radius:16pt;
-    color:#fff;
-    background:#FF0000;
-    width: auto;
-    display: inline-block;
-    margin-left: 5px;
-    padding-left: 4pt;
-    padding-right: 4pt;
+    border-radius:              16pt;
+    -moz-border-radius:         16pt;
+    -webkit-border-radius:      16pt;
+    color:                      rgb(255, 255, 255);
+    background:                 none repeat scroll 0% 0% rgb(255, 0, 0);
+    width:                      auto;
+    display:                    inline-block;
+    margin-left:                5px;
+    padding-left:               4pt;
+    padding-right:              4pt;
 }
 a.heading-button {
     font-size:                  10pt;
@@ -2334,6 +2336,9 @@ div.meetup-hosted-by {
 }
 #manifest-results tr {
     cursor:                     pointer;
+}
+div.event-past {
+    display:                    none;
 }
 div.schedule-row {
     width:                      550px;
