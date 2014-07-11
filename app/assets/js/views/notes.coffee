@@ -4,6 +4,8 @@ ap.Views.notes = XView.extend
 	initialize: ->
 		_.whenReady 'users', =>
 			@options.user = ap.Users.get(@options.user_id)
+			@options.sidebar = 'notes'
+			@options.sidebar_filler = @options.user
 			@options.out = _.template @options.out, @options.user.attributes
 			@initRender()
 
