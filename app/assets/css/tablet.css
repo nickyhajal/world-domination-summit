@@ -719,6 +719,7 @@ div#happening-shell {
     position:                   relative;
     min-height:                 189px;
     margin-top:                 -28px;
+    display:                    block;
 }
 #checkin-button span {
     color:                      rgb(255, 255, 255);
