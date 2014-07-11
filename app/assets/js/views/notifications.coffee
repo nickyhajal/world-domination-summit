@@ -56,5 +56,4 @@ ap.Views.notifications = XView.extend
 
   readNotifications: ->
     ap.api 'get user/notifications/read', {}, (rsp) =>
-
-    return text
+      return rsp 
