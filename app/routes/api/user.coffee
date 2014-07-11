@@ -432,6 +432,19 @@ routes = (app) ->
 						res.r.achievements = achievements
 						res.r.points = points
 						next()
+			else if req.query.user_id
+				User.forge
+					user_id: req.query.user_id
+				.fetch()
+				.then (user) ->
+					user.raceCheck()
+					.then (points) ->
+						user.getAchievedTasks()
+						.then (achievements) ->
+							res.r.achievements = achievements
+							res.r.points = points
+							next()
+
 
 		add_unote: (req, res, next) ->
 			if req.me
