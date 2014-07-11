@@ -5,7 +5,7 @@ ap.Views.notes = XView.extend
 		_.whenReady 'users', =>
 			@options.user = ap.Users.get(@options.user_id)
 			@options.sidebar = 'notes'
-			@options.sidebar_filler = @options.user
+			@options.sidebar_filler = @options.user.attributes
 			@options.out = _.template @options.out, @options.user.attributes
 			@initRender()
 
