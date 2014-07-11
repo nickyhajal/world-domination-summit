@@ -9,42 +9,44 @@ ap.Views.task = XView.extend
 				if task.slug is @options.task_slug
 					@options.task = task
 			task = @options.task
-			if task.type is 'auto'
-				@options.task.how_to = 'Our system will automatically issue your points when this task is completed.'
-			else if task.type is 'video'
-				@options.task.how_to = '
-					Post a video on instagram and include the hashtags 
-					<b>#wds2014</b> and <b>#'+task.slug.replace('-', '')+'</b>
-					<br><br>
-				'
-				if ap.me?.get('instagram')?.length
-					@options.task.how_to += '
-						Make sure to post from your instagram account: <b>'+ap.me.get('instagram')+'</b>
+			@options.task.how_to = ''
+			if ap.me?
+				if task.type is 'auto'
+					@options.task.how_to = 'Our system will automatically issue your points when this task is completed.'
+				else if task.type is 'video'
+					@options.task.how_to = '
+						Post a video on instagram and include the hashtags 
+						<b>#wds2014</b> and <b>#'+task.slug.replace('-', '')+'</b>
+						<br><br>
 					'
-				else
-					@options.task.how_to += '
-						<div id="ig-form-shell"><h5>WAIT: You haven\'t connected your Instagram account!</h5>
-						Add it below <b>before</b> you submit your video.
-						<form id="instagram-form" action="post">
-							<input type="text" name="instagram" class="model-me" placeholder="Instagram Username">
-							<input type="submit" value="Save">
-						</form></div>
-					'
+					if ap.me?.get('instagram')?.length
+						@options.task.how_to += '
+							Make sure to post from your instagram account: <b>'+ap.me.get('instagram')+'</b>
+						'
+					else
+						@options.task.how_to += '
+							<div id="ig-form-shell"><h5>WAIT: You haven\'t connected your Instagram account!</h5>
+							Add it below <b>before</b> you submit your video.
+							<form id="instagram-form" action="post">
+								<input type="text" name="instagram" class="model-me" placeholder="Instagram Username">
+								<input type="submit" value="Save">
+							</form></div>
+						'
 
-			else if task.type is 'photo'
-				if window.orientation?
-					@options.task.how_to = '<div class="task-photo-device">
-						Take a photo of yourself completing the challenge below!
+				else if task.type is 'photo'
+					if window.orientation?
+						@options.task.how_to = '<div class="task-photo-device">
+							Take a photo of yourself completing the challenge below!
+						'
+					else 
+						@options.task.how_to = '<div class="task-photo-device">
+							Submit a photo of yourself completing the challenge below!
+						'
+					@options.task.how_to += '
+						<a href="#" class="button" id="camera-button">Take Photo Now</a>
+						<iframe id="race_upload_frame" src="/upload-race"></iframe>
+					</div>
 					'
-				else 
-					@options.task.how_to = '<div class="task-photo-device">
-						Submit a photo of yourself completing the challenge below!
-					'
-				@options.task.how_to += '
-					<a href="#" class="button" id="camera-button">Take Photo Now</a>
-					<iframe id="race_upload_frame" src="/upload-race"></iframe>
-				</div>
-				'
 
 			@options.out = _.template @options.out, @options.task
 			@initRender()
