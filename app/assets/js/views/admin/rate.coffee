@@ -11,8 +11,11 @@ ap.Views.admin_rate = XView.extend
 	rendered: ->	
 		ap.api 'get racetask/submissions', {}, (rsp) =>
 			@submissions = rsp.submissions
-			@preload()
-			@showNext()
+			if @submissions.length
+				@preload()
+				@showNext()
+			else
+				$('#rate-task').html('Woah, there\'s nothing left to rate!')
 
 	preload: ->
 		end = @preload_on + 5
