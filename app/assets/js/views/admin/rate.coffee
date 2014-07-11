@@ -32,7 +32,6 @@ ap.Views.admin_rate = XView.extend
 				task = t
 		@active = sub
 		user = ap.Users.get(sub.user_id)
-		tk user
 		if user?
 			$('#rate-task').html(task.task+' <div id="rate-attendee"></div>')
 			$('#rate-content').html(@get_html(sub, user))
@@ -53,8 +52,9 @@ ap.Views.admin_rate = XView.extend
 			</video>'
 		else
 			user = ap.Users.get(sub.user_id)
-			url = user.get('user_name')+'/'+sub.slug+'/w600_'+sub.hash+'.'+sub.ext
-			html = '<img src="/images/race_submissions/'+url+'">'
+			if user?
+				url = user.get('user_name')+'/'+sub.slug+'/w600_'+sub.hash+'.'+sub.ext
+				html = '<img src="/images/race_submissions/'+url+'">'
 
 
 	rate: (e) ->
