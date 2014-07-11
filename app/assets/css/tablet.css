@@ -831,6 +831,10 @@ div.note-privacy {
     margin-top:                 5px;
     color:                      rgb(143, 139, 130);
 }
+a#hub-button-phone-notifications {
+    height:                     0px;
+    padding:                    0px;
+}
 * {
     line-height:                inherit;
 }

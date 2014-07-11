@@ -249,3 +249,9 @@ ap.Views.hub = XView.extend
 		ap.api 'get user/notifications/unread', {}, (rsp) =>
 			if rsp.notifications.length > 0
 				$('.hub-notification-count').text(rsp.notifications.length)
+				if ap.isPhone
+					$('#hub-button-phone-notifications').css('padding', '20px 0').css('height', 'auto')
+				if ap.isTablet
+					shell = $('#hub-button-tablet-notifications').addClass('has_notifications')
+					$('span', shell).html('Notifications')
+					$('.hub-notification-count').css('display', 'inline')

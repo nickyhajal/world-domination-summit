@@ -792,8 +792,30 @@ a#hub-button-race {
 a#hub-button-search {
     background:                 none repeat scroll 0% 0% rgb(23, 127, 178);
 }
-a#hub-button-notifications {
+a#hub-button-tablet-notifications.has_notifications a#hub-button-phone-notifications {
     background:                 none repeat scroll 0px 0px rgb(227, 47, 28);
+}
+a#hub-button-phone-notifications {
+    background:                 none repeat scroll 0px 0px rgb(227, 47, 28);
+    padding:                    0px;
+    height:                     0px;
+    overflow:                   hidden;
+    transition:                 all 0.2s ease 0s;
+    -moz-transition:            all 0.2s ease 0s;
+    -webkit-transition:         all 0.2s ease 0s;
+    -o-transition:              all 0.2s ease 0s;
+}
+a#hub-button-tablet-notifications.has_notifications {
+    background:                 none repeat scroll 0px 0px rgb(227, 47, 28);
+    color:                      rgb(255, 255, 255);
+    transition:                 all 0.2s ease 0s;
+    -moz-transition:            all 0.2s ease 0s;
+    -webkit-transition:         all 0.2s ease 0s;
+    -o-transition:              all 0.2s ease 0s;
+}
+a#hub-button-tablet-notifications {
+    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    color:                      rgb(187, 187, 182);
 }
 a.hub-button {
     text-decoration:            none;
@@ -807,6 +829,9 @@ a.hub-button {
     display:                    block;
     float:                      left;
     width:                      50%;
+}
+#hub-button-tablet-notifications div.hub-notification-count {
+    display:                    none;
 }
 .hub-notification-count {
     border-radius:              16pt;

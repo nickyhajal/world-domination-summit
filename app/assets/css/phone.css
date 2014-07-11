@@ -257,6 +257,9 @@ div#race-buttons {
 div#race-buttons a {
     padding:                    14px 0px 11px;
 }
+a#hub-button-tablet-notifications {
+    display:                    none;
+}
 a.hub-button {
     width:                      100%;
     font-size:                  13pt;
