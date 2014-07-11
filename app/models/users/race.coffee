@@ -129,17 +129,18 @@ race =
           user.getAchievements()
           .then (rsp_achs) ->
             achs = rsp_achs
-            user.set('achs', achs)
+            user.achs = achs
             async.each checks, (check, cb) ->
-              tk check
               check.call(user, cb)
             , ->
               user.processPoints()
               .then (points) ->
                 tk ('Race check took: '+((new Date()) - start )+' milliseconds')
+                user.set('points', points)
+                .save()
                 dfr.resolve(points)
                 rds.set user_key, 'true', ->
-                  rds.expire user_key, 300
+                  rds.expire user_key, 10
       else
         tk 'Skipped Race Check for '+@get('user_name')
         dfr.resolve()

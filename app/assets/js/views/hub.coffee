@@ -23,7 +23,6 @@ ap.Views.hub = XView.extend
 				@initBroadcasts()
 			, 750
 	rendered: ->
-		@getLocation()
 		if not ap.isDesktop
 			$('#dispatch-shell').hide()
 		setTimeout ->
@@ -159,7 +158,8 @@ ap.Views.hub = XView.extend
 		return placesByDist
 
 	getPlaces: ->
-		places = ap.places
+		places = JSON.parse(JSON.stringify(ap.places))
+		added = []
 		ap.Events.each (ev) ->
 			time = moment.utc(ev.get('start'))
 			day = time.format('dddd')
@@ -170,15 +170,17 @@ ap.Views.hub = XView.extend
 				tz_shift = 0
 			else
 				tz_shift = 7 * 3600
-			begin = now - tz_shift - 1800
+			begin = now - tz_shift - 14400
 			end = now - tz_shift + 3600
 			if time > begin and time < end
 				if (ev.get('type') isnt 'program') or day is 'Thursday' or day is 'Friday'
-					ev = ev.attributes
-					ev.name = ev.what
-					ev.place_id = ev.event_id
-					ev.type = 'event'
-					places.push ev
+					if added.indexOf ev.event_id is -1
+						ev = ev.attributes
+						ev.name = ev.what
+						ev.place_id = ev.event_id
+						ev.type = 'event'
+						places.push ev
+						added.push ev.event_id
 		return places
 
 

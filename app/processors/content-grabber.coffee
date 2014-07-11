@@ -36,7 +36,7 @@ shell = (app, db) ->
 						tk 'No new tweets.'
 			flickr_stream: ->
 				tk 'Start flickr...'
-				http.request(
+				https.request(
 					host: 'api.flickr.com'
 					path: '/services/rest/?method=flickr.photos.search&api_key='+flickr_pub+'&per_page=500&format=json&user_id=26292851@N04&tags=fave&extras=url_o,url_c,url_l'
 				, (rsp) ->
@@ -47,7 +47,7 @@ shell = (app, db) ->
 						if str.length
 							str = str.substr(str.indexOf('(')+1)
 							str = str.substr(0, str.length-1)
-							photos = JSON.parse(str).photos.photo
+							photos = JSON.parse(str)?.photos.photo
 							for photo in photos
 								orientation = 'portrait'
 								if +photo.width_l > +photo.height_l

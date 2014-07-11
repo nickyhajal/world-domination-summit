@@ -2010,6 +2010,12 @@ td.search-actions .button {
 td.search-actions {
     text-align:                 right;
 }
+#happening-shell {
+    display:                    none;
+}
+#check-in-modal {
+    display:                    none;
+}
 #schedule-shell td, #racetask-shell td {
     padding:                    10px;
     font-family:                karla;
@@ -2690,6 +2696,21 @@ div.following.follow-button {
 }
 div#attendee-search-inp-shell {
     position:                   relative;
+}
+div#big-content {
+    text-transform:             uppercase;
+    text--webkit-transform:     uppercase;
+    font-family:                vitesse;
+    text-align:                 center;
+    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    border-radius:              17px;
+    -moz-border-radius:         17px;
+    -webkit-border-radius:      17px;
+    color:                      rgb(33, 23, 10);
+    font-size:                  21pt;
+    padding:                    14px 0px 13px;
+    margin-top:                 29px;
+    margin-bottom:              19px;
 }
 * {
     box-sizing:                 border-box;
@@ -4689,15 +4710,33 @@ div#race-buttons a {
     color:                      rgb(221, 221, 221);
     font-size:                  2em;
 }
+.notification-content-shell {
+    clear:                      both;
+    margin-top:                 20px;
+    border-bottom:              1px solid rgb(242, 242, 234);
+    padding-bottom:             23px;
+}
+.notification-content-section {
+    padding-top:                5px;
+    margin-left:                98px;
+}
+.notification-content-userpic {
+    width:                      80px;
+    height:                     80px;
+    border-radius:              50%;
+    -moz-border-radius:         50%;
+    -webkit-border-radius:      50%;
+    float:                      left;
+    margin-right:               18px;
+    background-size:            cover ! important;
+    -webkit-background-size:    cover ! important;
+}
 #local-storage-warning {
-    color: red;
-    background-color: white;
-    font-size: 2em;
-    text-align: center;
-    vertical-align: middle;
-    margin-top: 41px;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    padding-right: 1em;
-    padding-left: 1em;
+    color:                      red;
+    background-color:           white;
+    font-size:                  2em;
+    text-align:                 center;
+    vertical-align:             middle;
+    margin-top:                 41px;
+    padding:                    1em;
 }
