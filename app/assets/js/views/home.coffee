@@ -84,7 +84,7 @@ window.wall =
 		hideMe = ['#top-nav', '#notifications', '#main-header', '#header-title', '.tpl-0', '#video-shell', 'footer']
 		for el in hideMe
 			$(el).toggle()
-		$('*').css('cursor', 'none')
+		#$('*').css('cursor', 'none')
 
 		@scaleForScreenMode()
 

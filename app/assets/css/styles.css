@@ -4781,6 +4781,17 @@ div#race-buttons a {
 .ambassador-button {
     border-bottom:              0px none ! important;
 }
+div#home-screen-overlay:after {
+    position:                   absolute;
+    content:                    "";
+    background:                 url("/images/icon-sprites_corner.png") repeat scroll -1050px center / 5477px auto transparent;
+    z-index:                    100;
+    display:                    block;
+    height:                     193px;
+    width:                      204px;
+    right:                      0px;
+    bottom:                     0px;
+}
 #home-screen-overlay {
     position:                   fixed;
     top:                        0px;
@@ -4788,21 +4799,35 @@ div#race-buttons a {
     width:                      1400px;
     height:                     400px;
     z-index:                    1000;
-    text-align:                 center;
-    background-color:           rgb(100, 100, 100);
-    opacity:                    0.9;
-    -ms-filter:                 "alpha(opacity=90)";
-    filter:                     alpha(opacity=90);
+    opacity:                    1;
+    -ms-filter:                 "alpha(opacity=100)";
+    filter:                     alpha(opacity=100);
     zoom:                       1;
+    padding:                    120px 250px;
+    background-color:           rgba(255, 255, 255, 0.97);
+}
+#home-screen-overlay h1:after {
+    position:                   absolute;
+    left:                       0px;
+    content:                    "";
+    width:                      100%;
+    background:                 url("/images/separators/zig-zags_blue.png") repeat scroll 0px 0px / 1258px auto transparent;
+    top:                        140px;
+    height:                     36px;
 }
 #home-screen-overlay h1 {
-    margin:                     1em auto 2em;
-    font-size:                  3em;
-    color:                      rgb(255, 255, 255);
+    font-family:                populaire;
+    text-align:                 left;
+    color:                      rgb(226, 127, 28);
+    font-size:                  7em;
+    position:                   relative;
+    width:                      1007px;
+    margin-bottom:              80px;
 }
 #home-screen-overlay p {
-    color:                      rgb(221, 221, 221);
-    font-size:                  2em;
+    color:                      rgb(33, 23, 10);
+    font-size:                  3em;
+    text-align:                 left;
 }
 .notification-content-shell {
     clear:                      both;

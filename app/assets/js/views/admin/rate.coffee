@@ -32,6 +32,7 @@ ap.Views.admin_rate = XView.extend
 				task = t
 		@active = sub
 		user = ap.Users.get(sub.user_id)
+		tk user
 		if user?
 			$('#rate-task').html(task.task+' <div id="rate-attendee"></div>')
 			$('#rate-content').html(@get_html(sub, user))

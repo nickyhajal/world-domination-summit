@@ -581,6 +581,7 @@ routes = (app) ->
 					location_type: req.query.location_type
 				.save()
 				.then ->
+					req.me.markAchieved('check-in')
 					next()
 				, (err) ->
 				 	console.error(err)
