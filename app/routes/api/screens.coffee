@@ -57,4 +57,36 @@ routes = (app) ->
 					res.status(403)
 					next()
 
+		reset: (req, res, next) ->
+			req.me.getCapabilities().then ->
+				if req.me.hasCapability('screens')
+					now = new Date()
+					nowUTC = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),  now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds())).getTime()
+					rds.set 'screen_reload', JSON.stringify({lastResetUTC: nowUTC}), (err, rsp) ->
+						if err?
+							res.status(500)
+						else
+							res.r.lastResetUTC = {lastResetUTC: nowUTC}
+						next()
+				else
+					res.r.msg = 'You don\'t have permission to do that!'
+					res.status(403)
+					next()
+
+		get_reset_time: (req, res, next) ->
+			dfr = Q.defer()
+			rds.get 'screen_reload', (err, lastResetUTC) ->
+				try
+					if (lastResetUTC? and lastResetUTC and typeof JSON.parse(lastResetUTC) is 'object')
+						dfr.resolve(JSON.parse(lastResetUTC))
+					else
+						dfr.resolve({lastResetUTC: 0})
+				catch e
+					console.log "Exception on retrieving last screen reset time from redis: " + JSON.stringify(e)
+					dfr.resolve({lastResetUTC: 0})
+
+			dfr.promise.then (lastResetUTC) ->
+				res.r.lastResetUTC = lastResetUTC
+				next()
+
 module.exports = routes
