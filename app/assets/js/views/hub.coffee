@@ -171,7 +171,7 @@ ap.Views.hub = XView.extend
 				tz_shift = 0
 			else
 				tz_shift = 7 * 3600
-			begin = now - tz_shift - 1800
+			begin = now - tz_shift - 14400
 			end = now - tz_shift + 3600
 			if time > begin and time < end
 				if (ev.get('type') isnt 'program') or day is 'Thursday' or day is 'Friday'
