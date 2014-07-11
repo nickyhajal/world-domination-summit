@@ -595,4 +595,34 @@ routes = (app) ->
 			else
 				next()
 
+		get_unread_notifications: (req, res, next) ->
+			if req.me
+				Notifications.forge()
+				.query("where", "user_id", "=", req.me.get('user_id'))
+				.query("where", "read", "=", 0)
+				.fetch()
+				.then (notifications) ->
+					res.r.notifications = notifications.models
+					next()
+				, (err) ->
+					tk err
+			else
+				next()
+
+		read_notifications: (req, res, next) ->
+			if req.me
+				Notifications.forge()
+				.query("where", "user_id", "=", req.me.get('user_id'))
+				.query("where", "read", "=", 0)
+				.fetch()
+				.then (notifications) ->
+					for notification in notifications.models
+						notification.set("read", 1).save()
+					tk "MARK READ NOTFICATIONS"
+					next()
+				, (err) ->
+					tk err
+			else
+				next()
+
 module.exports = routes
