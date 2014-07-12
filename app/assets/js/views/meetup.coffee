@@ -1,6 +1,6 @@
 ap.Views.meetup = XView.extend
 	atnTimo: 0
-	events: 
+	events:
 		'click .meetup-attendees-toggle': 'toggle_attendees'
 
 	initialize: ->
@@ -32,7 +32,7 @@ ap.Views.meetup = XView.extend
 			attendee = @options.meetup.attributes
 			profile_map_el = document.getElementById('meetup-profile-map')
 			latlon = new google.maps.LatLng(attendee.lat, attendee.lon)
-			mapOptions = 
+			mapOptions =
 				center: latlon
 				zoom: 16
 				scrollwheel: false
@@ -70,16 +70,22 @@ ap.Views.meetup = XView.extend
 				for atn in rsp.attendees
 					atn = ap.Users.get(atn)
 					if atn? and atn.get('pic') isnt '/images/default-avatar.png'
-						html += '<div class="meetup-attendee">
+						html += '
+						<div class="meetup-attendee">
+						<a href="/~'+atn.get('user_name')+'">
 							<div class="meetup-attendee-avatar" style="background:url('+atn.get('pic')+')"></div>
 							<div class="meetup-attendee-name">'+atn.get('first_name')+'<br>'+atn.get('last_name')+'</div>
+						</a>
 						</div>'
 					else if atn?
 					 	noPic.push atn
 				for atn in noPic
-					html += '<div class="meetup-attendee">
+					html += '
+					<div class="meetup-attendee">
+					<a href="/~'+atn.get('user_name')+'">
 						<div class="meetup-attendee-avatar" style="background:url('+atn.get('pic')+')"></div>
 						<div class="meetup-attendee-name">'+atn.get('first_name')+'<br>'+atn.get('last_name')+'</div>
+					</a>
 					</div>'
 				html += '</div>'
 
