@@ -2808,13 +2808,15 @@ div.note-time {
 }
 div.race-title {
     font-family:                populaire;
-    font-size:                  23pt;
     margin-top:                 -18px;
+    color:                      rgb(226, 127, 28);
+    font-size:                  22pt;
 }
 .rank-row span {
     font-family:                Vitesse ! important;
     font-size:                  14pt ! important;
     margin-bottom:              9px;
+    color:                      rgb(32, 19, 10) ! important;
 }
 div.rank-avatar {
     display:                    block;
@@ -2832,6 +2834,9 @@ div.rank-avatar {
 #page-home div.rank-row {
     clear:                      both;
     margin-top:                 26px;
+}
+div.ranks {
+    width:                      297px;
 }
 * {
     box-sizing:                 border-box;
