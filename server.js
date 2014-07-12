@@ -15,14 +15,16 @@ process.yr = '14'
 process.lastYear = '2013'
 process.dmn = process.env.DOMAIN
 
+if (process.env.NODE_ENV === 'production') {
 require('./app/processors/content-grabber')(app)
 require('./app/processors/third-party-feeds')(app)
+}
 //require('./app/processors/wufoo')(app)
 //require('./app/processors/meetup_suggestions')(app)
-require('./app/processors/academies')(app)
-if (process.env.NODE_ENV === 'production') {
-	require('./app/processors/eventbrite')(app)
-}
+//require('./app/processors/academies')(app)
+//if (process.env.NODE_ENV === 'production') {
+//	require('./app/processors/eventbrite')(app)
+//}
 
 // Uncomment to update twitter avatars
 //require('./app/processors/twitter_avs')(app)
@@ -49,7 +51,7 @@ require('./app/routes/git-hook')(app);
 app.listen(app.settings.port, function(){
   console.log("Express server listening on port %d in %s mode", app.settings.port, app.settings.env);
 });
-setTimeout(function(){
-	Notifications = require('./app/models/notifications')[1]
-	Notifications.prototype.process()
-}, 500)
+//setTimeout(function(){
+//	Notifications = require('./app/models/notifications')[1]
+//	Notifications.prototype.process()
+//}, 500)

@@ -112,6 +112,12 @@ section(id="body-content")
 			div(class="speaker-name") {{ display_name }}
 			div(class="speaker-year") WDS {{ year }}
 
+		//- div(class="tpl", data-type="attendee_answer")
+			div(class="block-content")
+				div(class="answer-avatar", style="background:url({{ pic }})")
+				span {{ pre_name }}{{ first_name }} {{ last_name }}{{ post_name }}
+				div(class="answer") {{ answer }}
+				
 		div(class="tpl", data-type="attendee_answer")
 			div(class="block-content")
 				div(class="answer-avatar", style="background:url({{ pic }})")
