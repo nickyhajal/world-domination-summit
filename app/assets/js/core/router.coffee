@@ -110,52 +110,62 @@ ap.goTo = (panel = '', options = {}, cb = false) ->
 	$s = $('#')
 	ap.onPanel = panel
 	view = ap.Views[panel.replace(/\-/g, '_')] ? ap.Views.default
+	render = []
+	getTpl = ->
+		# Unbind current view
+		if ap.currentView?
+			$('.dispatch-feed')?.data('feed')?.stop()
+			ap.currentView.unbind()
+			ap.currentView.undelegateEvents()
 
-	# Unbind current view
-	if ap.currentView?
-		$('.dispatch-feed')?.data('feed')?.stop()
-		ap.currentView.unbind()
-		ap.currentView.undelegateEvents()
+		# Reset Shell
+		$('#content_shell').attr('class', '')
+		options.el = $('#content_shell')
 
-	# Reset Shell
-	$('#content_shell').attr('class', '')
-	options.el = $('#content_shell')
-
-	# Get the template
-	if ap.templates['pages_'+panel]?
+		# Get the template
 		tpl = 'pages_'+panel
-	else
-		tpl = 'pages_404'
-
-	# Setup the template
-	options.out = ap.templates[tpl] + '<div class="clear"></div>'
-	options.render = 'replace'
-	options.view = panel
-	setTimeout ->
-		if panel is 'home'
-			$('#logo-waves').hide()
+		if ap.templates['pages_'+panel]?
+			tpl = 'pages_'+panel
+			render(tpl)
 		else
-			$('#logo-waves').show()
-		$('body').attr('id', 'page-'+panel)
-		if ap.currentView? and ap.currentView
-			ap.currentView.finish()
-		ap.currentView = new view options
-		if ap.scrollPos?[panel]?
-			scrollTo = ap.scrollPos[panel]
-		else
-			scrollTo = 0
-		$.scrollTo scrollTo
-		ap.syncNav(panel)
-		ap.checkMobile()
-		if cb 
-			cb()
-	, 60
+			ap.api 'get tpl', {tpl: panel}, (rsp) ->
+				if rsp.tpl?
+					ap.templates[tpl] = rsp.tpl
+					render(tpl)
+				else
+					render('pages_404')
 
-	history_length = history.length
-	if history_length > 1
-		$('#back-button').show()
-	else
-		$('#back-button').hide()
+	render = (tpl)->
+		# Setup the template
+		options.out = ap.templates[tpl] + '<div class="clear"></div>'
+		options.render = 'replace'
+		options.view = panel
+		setTimeout ->
+			if panel is 'home'
+				$('#logo-waves').hide()
+			else
+				$('#logo-waves').show()
+			$('body').attr('id', 'page-'+panel)
+			if ap.currentView? and ap.currentView
+				ap.currentView.finish()
+			ap.currentView = new view options
+			if ap.scrollPos?[panel]?
+				scrollTo = ap.scrollPos[panel]
+			else
+				scrollTo = 0
+			$.scrollTo scrollTo
+			ap.syncNav(panel)
+			ap.checkMobile()
+			if cb 
+				cb()
+		, 60
+		history_length = history.length
+		if history_length > 1
+			$('#back-button').show()
+		else
+			$('#back-button').hide()
+	getTpl()
+
 ap.back = ->
 	history.go(-1);
 	return false;

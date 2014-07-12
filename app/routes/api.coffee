@@ -120,6 +120,12 @@ routes = (app) ->
 		app.get '/admin/event_reject', event.reject
 		app.post '/admin/rate', admin.rate
 
+		app.get 'tpl', (req, res, next) ->
+			get_templates = require('../processors/templater')
+			get_templates {}, 'pages', (tpls) ->
+				get_templates tpls, '_content', (tpls) ->
+					res.r.tpl = tpls['pages_'+req.query.tpl]
+					next()
 
 		# Finish
 		app.all '/*', handler.finish
