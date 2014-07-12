@@ -2806,6 +2806,32 @@ div.note-time {
     bottom:                     8px;
     right:                      9px;
 }
+div.race-title {
+    font-family:                populaire;
+    font-size:                  23pt;
+}
+.rank-row span {
+    font-family:                Vitesse ! important;
+    font-size:                  14pt ! important;
+    margin-bottom:              9px;
+}
+div.rank-avatar {
+    display:                    block;
+    background-size:            100% auto ! important;
+    -webkit-background-size:    100% auto ! important;
+    float:                      left;
+    height:                     38px;
+    width:                      38px;
+    margin-right:               10px;
+    border-radius:              50%;
+    -moz-border-radius:         50%;
+    -webkit-border-radius:      50%;
+    margin-top:                 -10px;
+}
+#page-home div.rank-row {
+    clear:                      both;
+    margin-top:                 26px;
+}
 * {
     box-sizing:                 border-box;
     -moz-box-sizing:            border-box;

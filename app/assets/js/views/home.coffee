@@ -365,6 +365,8 @@ window.wall =
 				$t.attr('href', '/~'+content.user_name).attr('target', '_blank')
 			if type is 'attendee_answer'
 				$t.attr('href', '/~'+content.user_name).attr('target', '_blank')
+			if type is 'race'
+				$t.attr('href', '/race').attr('target', '_blank')
 			if type is 'speaker'
 				$t.attr('href', '/speakers/'+_.slugify(content.display_name)).attr('target', '_blank')
 			if type is 'speaker_quote'
@@ -522,6 +524,23 @@ window.wall =
 						pass = false
 				if atn.distance > 300 and pass
 					return atn
+
+		if type is 'race'
+			content = {}
+			html = ''
+			if ap.ranks?
+				for rank in [0..2]
+					tk ap.ranks[rank].user_id
+					user = ap.Users.get(ap.ranks[rank].user_id)
+					html += '
+						<div class="rank-row">
+							<div class="rank-avatar" style="background:url('+user.get('pic')+')"></div>
+							<span>'+user.get('first_name')+' '+user.get('last_name')+'</span>
+						</div>'
+			else
+				html = 'Ranks are loading, hang tight!'
+			content.html = html
+			return content
 
 		if type is 'attendee_answer'
 			answers = _.shuffle(wall.ansByQ[opts.question])
