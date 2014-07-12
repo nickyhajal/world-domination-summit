@@ -92,6 +92,7 @@ routes = (app) ->
 		app.put '/racetask', racetask.upd
 		app.get '/racetasks', racetask.search
 		app.get '/racetask/submissions', racetask.get_submissions
+		app.get '/racetask/all_submissions', racetask.get_all_submissions
 
 		# Screens
 		app.get '/screens', screens.get

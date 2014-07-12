@@ -62,4 +62,12 @@ routes = (app) ->
 				res.r.submissions = rsp.models
 				next()
 
+		get_all_submissions: (req, res, next) ->
+			RaceSubmissions.forge()
+			.query('orderBy', 'rating', 'DESC')
+			.fetch()
+			.then (rsp) ->
+				res.r.submissions = rsp.models
+				next()
+
 module.exports = routes

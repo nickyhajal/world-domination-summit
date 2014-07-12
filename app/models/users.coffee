@@ -284,7 +284,7 @@ User.capabilities_map =
   ambassadors: ["ambassador-review"]
   manifest: ['add-attendee', 'attendee', 'user']
   schedule: ['add-event', 'event', 'meetup', 'meetups', 'meetup-review', 'event-review']
-  race: ['add-racetask', 'racetask', 'racetasks', 'rate']
+  race: ['add-racetask', 'racetask', 'racetasks', 'rate', 'race-review']
   downloads: ['admin_downloads']
   screens: ['screens']
 
