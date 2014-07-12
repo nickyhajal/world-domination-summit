@@ -554,9 +554,9 @@ window.wall =
 					unless data[bits[0]].length < +bits[1]
 						pass = false
 
-				#if opts.orientation?
-				#	unless data.orientation is opts.orientation
-				#		pass = false
+				if opts.orientation?
+					unless data.orientation is opts.orientation
+						pass = false
 
 				if type is 'flickr_stream' and not data.the_img_med?
 					pass = false
