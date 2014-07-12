@@ -2809,6 +2809,7 @@ div.note-time {
 div.race-title {
     font-family:                populaire;
     font-size:                  23pt;
+    margin-top:                 -18px;
 }
 .rank-row span {
     font-family:                Vitesse ! important;
@@ -3830,13 +3831,13 @@ a.counter-button {
     background:                 url("/images/pattern_dots.png") repeat scroll 0% 0% transparent;
 }
 .tpl-2 .block-7 {
-    background:                 none repeat scroll 0px 0px rgb(216, 216, 210);
     height:                     220px;
     left:                       625px;
     top:                        307px;
     width:                      351px;
     z-index:                    0;
     padding:                    40px;
+    background:                 none repeat scroll 0px 0px rgb(249, 248, 244);
 }
 .tpl-2 .block-11 {
     z-index:                    -1;

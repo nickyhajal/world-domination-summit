@@ -530,7 +530,6 @@ window.wall =
 			html = ''
 			if ap.ranks?
 				for rank in [0..2]
-					tk ap.ranks[rank].user_id
 					user = ap.Users.get(ap.ranks[rank].user_id)
 					html += '
 						<div class="rank-row">
