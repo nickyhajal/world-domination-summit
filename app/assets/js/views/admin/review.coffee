@@ -12,7 +12,6 @@ ap.Views.admin_race_review = XView.extend
 		html = ''
 		ap.api 'get racetask/all_submissions', {}, (rsp) =>
 			for sub in rsp.submissions
-				tk sub
 				html += @get_html(sub)
 			$('#review-shell').html(html)
 
