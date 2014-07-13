@@ -64,7 +64,6 @@ routes = (app) ->
 
 		get_all_submissions: (req, res, next) ->
 			RaceSubmissions.forge()
-			.query('where', 'slug', 'take-a-picture-of-your-pet-as-a-wds-mascot')
 			.query('orderBy', 'rating', 'DESC')
 			.fetch()
 			.then (rsp) ->
