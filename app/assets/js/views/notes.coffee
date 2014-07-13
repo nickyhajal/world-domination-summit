@@ -4,7 +4,6 @@ ap.Views.notes = XView.extend
 	initialize: ->
 		_.whenReady 'users', =>
 			@options.user = ap.Users.get(@options.user_id)
-			tk @options.user
 			@options.sidebar = 'notes'
 			@options.sidebar_filler = @options.user.attributes
 			@options.out = _.template @options.out, @options.user.attributes
@@ -29,7 +28,6 @@ ap.Views.notes = XView.extend
 			$('#notes-shell').html(html)
 
 	submitNote: (e) ->
-		tk 'woieanrt'
 		e.preventDefault()
 		note = $('#note-input').val()
 		btn = _.btn($('.button', '#note-form'), 'Saving...', 'Saved!')

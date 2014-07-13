@@ -129,6 +129,7 @@ ap.goTo = (panel = '', options = {}, cb = false) ->
 			render(tpl)
 		else
 			ap.api 'get tpl', {tpl: panel}, (rsp) ->
+				tk ap.templates
 				if rsp.tpl?
 					ap.templates[tpl] = rsp.tpl
 					render(tpl)
