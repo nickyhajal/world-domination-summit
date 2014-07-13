@@ -84,11 +84,11 @@ race =
               ach_id: ach.get('ach_id')
             @processPoints()
             .then (points) =>
-              @set('points', points)
-              .save()
-              .then ->
-                rsp.points = points
-                dfr.resolve(rsp)
+              # @set('points', points)
+              # .save()
+              # .then ->
+              rsp.points = points
+              dfr.resolve(rsp)
           , (err) ->
             console.error(err)
         else
@@ -136,8 +136,8 @@ race =
               user.processPoints()
               .then (points) ->
                 tk ('Race check took: '+((new Date()) - start )+' milliseconds')
-                user.set('points', points)
-                .save()
+                #user.set('points', points)
+                #.save()
                 dfr.resolve(points)
                 rds.set user_key, 'true', ->
                   rds.expire user_key, 90
