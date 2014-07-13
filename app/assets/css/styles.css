@@ -1206,6 +1206,9 @@ div.lifted-content h2 {
 #page_content h1 strong, #page_content h1 b, #page_content h2 strong, #page_content h2 b {
     font-family:                vitessebold;
 }
+h3 b {
+    font-family:                vitessebold ! important;
+}
 #page_content strong, #page_content b {
     font-family:                karlabold;
     font-weight:                normal;
