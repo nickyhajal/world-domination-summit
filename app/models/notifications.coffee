@@ -69,9 +69,6 @@ Notifications = Shelf.Collection.extend
 		dfr = Q.defer()
 		data = JSON.parse(notn.get('content'))
 		link = notn.get('link')
-		if link.indexOf('/') is 0
-			link.substr(1)
-		link = '<a href="http://worlddominationsummit.com/'+link+'">'
 		text = ''
 
 		switch notn.get('type')
@@ -79,6 +76,7 @@ Notifications = Shelf.Collection.extend
 				User.forge({user_id: data.liker_id})
 				.fetch()
 				.then (user) ->
+					link = '<a href="http://worlddominationsummit.com'+link+'">'
 					text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
 					text += link+user.get('first_name')+' '+user.get('last_name')+' liked your post!</a>'
 					text += '</a>'
@@ -88,6 +86,7 @@ Notifications = Shelf.Collection.extend
 				User.forge({user_id: data.commenter_id})
 				.fetch()
 				.then (user) ->
+					link = '<a href="http://worlddominationsummit.com'+link+'">'
 					text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
 					text += link+user.get('first_name')+' '+user.get('last_name')+' commented your post!</a>'
 					text += '</a>'
@@ -97,6 +96,7 @@ Notifications = Shelf.Collection.extend
 				User.forge({user_id: data.from_id})
 				.fetch()
 				.then (user) ->
+					link = '<a href="http://worlddominationsummit.com/'+link+'">'
 					text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
 					text += link+user.get('first_name')+' '+user.get('last_name')+' friended you!</a>'
 					text += '</a>'

@@ -17,6 +17,7 @@ async = require('async')
 
 getters = 
   getMe: ->
+    tk 'me'
     dfr = Q.defer()
     @raceCheck()
     .then =>

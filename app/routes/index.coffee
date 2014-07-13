@@ -30,6 +30,10 @@ routes = (app) ->
 			layout: false
 			rsp: rsp
 			
+	app.all '/text', (req, res) ->
+		res.render "../views/text",
+			title: "World Domination Summit - Text Maker"
+			layout: false
 	app.all '/upload-avatar', (req, res) ->
 		res.render "../views/upload",
 			title: "World Domination Summit - Avatar Upload"

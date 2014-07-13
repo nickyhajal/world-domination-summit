@@ -120,7 +120,7 @@ race =
     muts = []
     achs = []
     rds.get user_key, (err, check_done) =>
-      if not check_done?
+      if not check_done? or 1
         checks = getChecks()
         start = +(new Date())
         user.getMutualFriends(true)
@@ -140,7 +140,7 @@ race =
                 .save()
                 dfr.resolve(points)
                 rds.set user_key, 'true', ->
-                  rds.expire user_key, 5000
+                  rds.expire user_key, 5
       else
         tk 'Skipped Race Check for '+@get('user_name')
         dfr.resolve()
@@ -190,13 +190,27 @@ race =
             cb()
         ,
 
+        # Completed all drink tasks
+        (cb) ->
+          drink_tasks = ['drink-a-local-beer','drink-a-local-coffee','drink-a-local-spirit','drink-a-local-wine', 'drink-a-local-tea']
+          if not @achieved('bonus-point-for-completing-all-5-drinking-challenges', achs)
+            acheived = true
+            for task in drink_tasks
+              if not @achieved(task, achs)
+                acheived = false
+            if acheived
+              @markAchieved('bonus-point-for-completing-all-5-drinking-challenges')
+            cb()
+          else
+            cb()
+
         #Featured Tweet
         (cb) ->
-          if not @achieved('featured-tweet', achs)
+          if not @achieved('get-one-of-your-tweets-featured-by-the-wds-team', achs)
             Contents::getFeaturedTweeters()
             .then (user_ids) =>
               if user_ids.indexOf(@get('user_id')) > -1
-                @markAchieved('featured-tweet')
+                @markAchieved('get-one-of-your-tweets-featured-by-the-wds-team')
               cb()
           else
             cb()
@@ -218,17 +232,27 @@ race =
 
         # Ten Met
         (cb) ->
-          if not @achieved('ten-met', achs)
+          if not @achieved('friend-10-attendees-on-wdsfm', achs)
             Connections.forge()
             .query('where', 'user_id', @get('user_id'))
             .fetch()
             .then (rsp) =>
+              tk rsp.models.length
               if rsp.models.length > 9
                 @markAchieved('ten-met')
               cb()
           else
             cb()
         , 
+        # Five
+        (cb) ->
+            points = Math.floor(muts.length % 5)
+            if @achieved('1-point-for-every-5-mutually-friended-attendees-on-wdsfm', achs)
+              @updateAchieved('1-point-for-every-5-mutually-friended-attendees-on-wdsfm', points)
+            else
+              @markAchieved('1-point-for-every-5-mutually-friended-attendees-on-wdsfm', points)
+            cb()
+        ,    
 
         # Countries
         (cb) ->
@@ -238,10 +262,10 @@ race =
               if countries.indexOf(country) is -1
                 countries.push country
             points = countries.length
-            if @achieved('different-countries', achs)
-              @updateAchieved('different-countries', points)
+            if @achieved('earn-1-point-for-each-attendee-you-mark-as-a-friend-from-a-different-country', achs)
+              @updateAchieved('earn-1-point-for-each-attendee-you-mark-as-a-friend-from-a-different-country', points)
             else
-              @markAchieved('different-countries', points)
+              @markAchieved('earn-1-point-for-each-attendee-you-mark-as-a-friend-from-a-different-country', points)
             cb()
         ,    
         # Home Town
@@ -270,6 +294,7 @@ race =
         , 
         # Post to Community
         (cb)->
+          tk 'commm'
           if not @achieved('wds-community', achs)
             Feeds.forge()
             .query('where', 'channel_type', 'interest')
