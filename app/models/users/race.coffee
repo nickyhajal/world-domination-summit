@@ -237,7 +237,6 @@ race =
             .query('where', 'user_id', @get('user_id'))
             .fetch()
             .then (rsp) =>
-              tk rsp.models.length
               if rsp.models.length > 9
                 @markAchieved('ten-met')
               cb()
@@ -294,7 +293,6 @@ race =
         , 
         # Post to Community
         (cb)->
-          tk 'commm'
           if not @achieved('wds-community', achs)
             Feeds.forge()
             .query('where', 'channel_type', 'interest')
