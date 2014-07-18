@@ -17,23 +17,22 @@ async = require('async')
 
 getters = 
   getMe: ->
-    tk 'me'
     dfr = Q.defer()
-    @raceCheck()
-    .then =>
-      @getAllTickets()
+#    @raceCheck()
+#    .then =>
+    @getAllTickets()
+    .then (user) =>
+      @getAnswers()
       .then (user) =>
-        @getAnswers()
+        @getInterests()
         .then (user) =>
-          @getInterests()
+          @getConnections()
           .then (user) =>
-            @getConnections()
+            @getFeedLikes()
             .then (user) =>
-              @getFeedLikes()
+              @getRsvps()
               .then (user) =>
-                @getRsvps()
-                .then (user) =>
-                  dfr.resolve(user)
+                dfr.resolve(user)
     return dfr.promise
     
   getFriends: (this_year = false) ->

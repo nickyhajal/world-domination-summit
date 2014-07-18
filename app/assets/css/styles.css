@@ -2845,6 +2845,14 @@ div.ranks {
     width:                      200px;
     margin-right:               10px;
 }
+img.grantee-pic {
+    float:                      left;
+    width:                      200px;
+    margin-bottom:              30px;
+    margin-right:               38px;
+    position:                   relative;
+    top:                        6px;
+}
 * {
     box-sizing:                 border-box;
     -moz-box-sizing:            border-box;

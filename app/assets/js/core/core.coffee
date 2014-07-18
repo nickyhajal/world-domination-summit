@@ -119,6 +119,8 @@ ap.initTemplates = ->
 		if html.indexOf('----tpl_opts----') > -1
 			bits = html.split('----tpl_opts----')
 			if bits.length > 1
+				tk name
+				tk bits[0]
 				ap.template_options[name] = bits[0].replace(/(<([^>]+)>)/ig,"")
 				content = bits[1].replace(/\`script/g, '<script')
 				content = content.replace(/`\/script/g, '</script')
