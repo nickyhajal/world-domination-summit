@@ -41,6 +41,7 @@ ap.User = window.XModel.extend
 			for ach in ap.achievements
 				if ach.task_id is task_id
 					return ach
+				this.ach = 'andrea'
 		return false
 
 	isConnected: (user_id) ->
