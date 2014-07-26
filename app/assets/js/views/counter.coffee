@@ -25,7 +25,7 @@ ap.Counter =
 			cnt.css('left', '15px')
 	countdown: ->
 		now = new Date().getTime()
-		end = new Date(2014,6,11).getTime()
+		end = new Date(2015,7,9).getTime()
 		diff = (end - now) / 1000
 		days = Math.floor(diff / 86400)
 		hours = Math.floor((diff % 86400) / 3600)
