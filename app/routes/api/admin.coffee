@@ -79,7 +79,7 @@ routes = (app) ->
 				.query('where', 'attending14', '1')
 				.fetch().then (model) ->
 					for attendee in model.models
-						response = response + attendee.get('first_name')+";"+attendee.get('last_name')+";"+attendee.get('email')+";"+attendee.get('twitter')+";"+attendee.get('type')+';"'+attendee.get('location')+'";"'+attendee.get('address')+'";'+attendee.get('city')+';'+attendee.get('region')+';'+attendee.get('country')+';'+attendee.get('zip')+"\n"
+						response = response + attendee.get('first_name')+";"+attendee.get('last_name')+";"+attendee.get('email')+";"+attendee.get('twitter')+";"+attendee.get('type')+';"'+attendee.get('location')+'";"'+attendee.get('address')+'";"'+attendee.get('city')+'";"'+attendee.get('region')+'";"'+attendee.get('country')+'";"'+attendee.get('zip')+'"'+"\n"
 					res.send response
 					res.r.msg = 'Success'
 			else
