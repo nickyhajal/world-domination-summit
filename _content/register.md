@@ -2,7 +2,7 @@ icon: globe
 
 # Ticket sales for WDS 2015 will open in September. Sign up for advance notice!
 
-Thanks for your interest in taking over the world. WDS tickets go very quickly, and the event has been completely sold out four years in a row.
+Thanks for your interest in taking over the world. WDS tickets go very quickly, and the event has been completely sold out four years in a row. WDS 2015 is coming July 9–13.
 
 If you'd <strong>definitely like to attend next year</strong> and want to plan to purchase a ticket once they're available, use the form below to put your name on the waiting list. When the sale is announced, all tickets will be offered on a first-come, first-served basis.
 
