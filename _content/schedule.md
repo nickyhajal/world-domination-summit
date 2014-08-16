@@ -1,16 +1,16 @@
 sidebar: schedule
 icon: parachute
 
-# On [July 11-13, 2014](/register) we're taking over Portland, Oregon. Our plan of action? Have fun and create meaningful adventure.
+# On [July 9-13, 2015](/register) the fifth annual World Domination Summit will take over Portland, Oregon yet again. Our plan of action? Have fun and create meaningful adventure.
 <div class="main-schedule-box">
-	<h3>Main Schedule</h3>
+	<h3>2014 Schedule</h3>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Friday</div>
 		<div class="main-schedule-time">8:30am–11:30am</div>
 		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="/2014-world-record">World Record Attempt</a></div>
 		<div class="main-schedule-time">2:00pm–7:00pm</div>
 		<div class="main-schedule-descr">Registration</div>
-		<div class="main-schedule-time">7:00pm–10:00pm</div>
+		<div class="main-schedule-time">6:00pm–10:00pm</div>
 		<div class="main-schedule-descr">"Can't Wait" Welcoming Party</div>
 	</div>
 	<div class="main-schedule-item">
@@ -25,14 +25,14 @@ icon: parachute
 		<div class="main-schedule-time">7:00pm–???</div>
 		<div class="main-schedule-descr">Closing Party</div>
 	</div>
-	<div class="main-schedule-descr"><em>Looking for a detailed schedule? Make sure you're signed into the Hub, then view <a style="color: rgb(35,31,32) !important" href="/your-schedule">Your Schedule</a>.</em></div>
+	<div class="main-schedule-descr"><em>Looking for the 2015 schedule? We'll be posting details here toward the beginning of 2015.</em></div>
 </div>
 
 <p class="intro">We'll all arrive in the city for registration on Friday afternoon and an opening party on Friday evening. The main event kicks off in the beautiful Arlene Schnitzer Concert Hall on Saturday morning.</p>
 
 Throughout both weekend days, we'll alternate between the main stage for speaker talks, a park area for a mini-festival, and several smaller spaces for attendee-led meetups. The evenings will find us set loose on the town, attending your choice of group events or just out on your own.
 
-We'll conclude on Sunday evening with a Farewell party that goes as long as people are around. If you never need to sleep, afterparties and early-morning parties are scheduled for each day. For the first time this year, additional "Academies" will be held on the days before and after the weekend.
+We'll conclude on Sunday evening with a Farewell party that goes as long as people are around. If you never need to sleep, afterparties and early-morning parties are scheduled for each day. And if you'd like to extend your WDS experience, additional [Academies](/academies) will be held on the days before and after the weekend.
 
 <div class="line-canvas"></div>
 
@@ -40,7 +40,7 @@ We'll conclude on Sunday evening with a Farewell party that goes as long as peop
 
 ### Your WDS 2014 Speakers
 
-Get ready for an unforgettable WDS where you'll hear from these incredible speakers.
+These were the amazing speakers that joined us in 2014. You can expect a comparable line-up for WDS 2015.
 
 <div class="speaker_list" data-speaker-type="upcoming"></div>
 
@@ -75,9 +75,9 @@ In previous years, we heard from these speakers. They won’t be in town this ti
 
 <img src="/images/schedule/schedule-circle-1.png" id="schedule-circle-1"/>
 
-We'll begin each morning in the Schnitzer Theatre, a beautiful auditorium where no seat is further than 60 feet from the stage. Speakers will share a short message that combines personal stories with practical ideas.
+We'll begin each morning in the Schnitzer Theatre, a beautiful auditorium where no seat is further than 100 feet from the stage. Speakers will share a short message that combines personal stories with practical ideas.
 
-During breaks, you can visit the Hang-Out Hammock Lounge for a quick snooze—or just catch up with a new friend over a cup of coffee.
+During breaks, you can visit the Highly Sensitive Person Lounge for a quick snooze—or just catch up with a new friend over a cup of coffee.
 
 Most speakers will attend the entire weekend and be available for informal conversation.
 
@@ -91,9 +91,7 @@ Most speakers will attend the entire weekend and be available for informal conve
 
 <a name="portland-experience"></a>
 
-Over the years we've learned that two big reasons people come to WDS is to meet people with shared interests and experience some of what the great city of Portland has to offer. So this year we racked our brains to figure out how we could do a better job of providing both of those things.
-
-The result? **The Portland Experience.**
+Over the years we've learned that two big reasons people come to WDS is to meet people with shared interests and experience some of what the great city of Portland has to offer. Since the WDS weekend is already a jam-packed affair, we've created **The Portland Experience**, a festival celebrating what makes Portland so great.
 
 We're commandeering a 3-block section of the downtown Park Blocks and taking the best of Portland and bringing it directly to you. Food? Check. Drink? Check? Music, crafts, exercise? Check, check, and check.
 
@@ -101,7 +99,7 @@ Just steps from the Schnitzer you'll be able to connect with friends based on sh
 
 The path to world domination starts in Portland, so it's about time you got to know the city!
 
-<p class="color-green">**Note:** Need a break? Our Highly-Sensitive Person zone will be open all afternoon. You can also attend your choice of 100+ attendee-led gatherings.</p>
+<p class="color-green">**Note:** Need a break? Our Highly Sensitive Person zone will be open all afternoon. You can also attend your choice of 100+ attendee-led gatherings.</p>
 
 <div class="line-canvas"></div>
 
@@ -109,7 +107,7 @@ The path to world domination starts in Portland, so it's about time you got to k
 
 When main stage sessions end for the afternoon, the good times roll on. Join your fellow attendees at your choice of extracurricular activities around town—from film screenings and river cruises, to world record attempts and more!
 
-2014 activities have been announced! [Learn more &rarr;](/activities)
+Here's a sampling of the activities we had in 2014. [Learn more &rarr;](/activities)
 
 <p class="color-blue">Note: all activities are first-come, first-served, and some require registration in advance.</p>
 
