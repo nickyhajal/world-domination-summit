@@ -2,23 +2,17 @@ sidebar: academies
 icon: theater
 photo_head: https://farm8.staticflickr.com/7457/9226356063_2f05f24588_c.jpg,https://farm4.staticflickr.com/3680/9226354561_60e1c77986_c.jpg,https://farm8.staticflickr.com/7422/9226351955_26fafe47fe_c.jpg,https://farm3.staticflickr.com/2868/9229137606_aa502275bb_c.jpg,https://farm3.staticflickr.com/2317/5800027355_42530f678d_b.jpg,https://farm3.staticflickr.com/2031/5800591550_94fa52c7b4_b.jpg
 
-# As the WDS community strengthens and grows, more and more people are arriving early and staying late. This year marks the launch of WDS Academies: a series of mini-events focused on specific topics that take place on the days surrounding WDS weekend. 
+# As the WDS community strengthens and grows, more and more people are arriving early and staying late. 2014 marked the launch of WDS Academies: a series of mini-events focused on specific topics that take place on the days surrounding WDS weekend. 
 
-Registration for academies is separate from WDS itself. We'll offer registration both to WDS attendees as well as to the general public (for a slightly higher registration fee). We hope to see you there!
-
-(Be sure to check out other extracurricular [activities](/activities) as well to maximize your adventure during WDS.)
+Registration for academies is separate from WDS itself, and we offer registration both to WDS attendees as well as to the general public (for a slightly higher registration fee). Below you'll find the academies we offered in 2014.
 
 <div class="zig-zags_blue"></div>
 
 <a name="problogger"></a>
 
-### Thursday, July 10
-
 <div class="collapsable-box collapsable-box-open">
-	<a href="https://www.eventbrite.com/e/wds-academy-problogger-academy-building-profitable-blogs-tickets-11339594031"><h4>ProBlogger Academy: Building Profitable Blogs</h4></a>
-	<h5>9:00 am–4:00 pm</h5>
+	<h4>ProBlogger Academy: Building Profitable Blogs</h4>
 	Hosted by Darren Rowse and Chris Garrett
-	<a href="https://www.eventbrite.com/e/wds-academy-problogger-academy-building-profitable-blogs-tickets-11339594031" class="button">Sold Out!</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		Spend the day with Darren Rowse and Chris Garrett—authors of *ProBlogger* the book—exploring how to build profitable blogs. Over the day you'll get insight from Darren and Chris on the four 'pillars' of Problogging—Creating Killer Content, Finding Readers, Building Community, and Monetization. Chris and Darren will be joined by some of their favorite people who will also share their blogging stories: Pat Flynn, Tsh Oxenreider, Jeff Goins, Chris Ducker, and Pam Slim. Plus a special surprise guest!
@@ -32,10 +26,8 @@ Registration for academies is separate from WDS itself. We'll offer registration
 <div class="line-canvas"></div>
 
 <div class="collapsable-box collapsable-box-open">
-	<a href="https://www.eventbrite.com/e/wds-academy-nerd-fitness-with-steve-kamb-tickets-11556996287"><h4>Nerd Fitness Live</h4></a>
-	<h5>9:00 am–1:00 pm</h5>
+	<h4>Nerd Fitness Live</h4>
 	Hosted by Steve Kamb
-	<a href="https://www.eventbrite.com/e/wds-academy-nerd-fitness-with-steve-kamb-tickets-11556996287" class="button">Sold Out!</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		Nerd Fitness Live will help you develop the skills you need to become a real life superhero. We’ll start by training our minds to process a totally different approach to fitness—one that breaks the rampant boom and bust fitness trends and leads to long-term sustainable habit change. We’ll then talk about how simple, small changes in our diet can “level up” our nutrition (and allow each attendee to achieve new personal results they didn’t think were really possible). Finally, we’ll demonstrate and perform a strength training workout that you can do ANYWHERE in the world. Everything we teach and share is based around the philosophy that we are normal, everyday people wanting a fun, sustainable, and genuine way to lead better lives together.
@@ -49,10 +41,8 @@ Registration for academies is separate from WDS itself. We'll offer registration
 <div class="line-canvas"></div>
 
 <div class="collapsable-box collapsable-box-open">
-	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029"><h4>Language Lab: Learn How to Hack Any Language and Speak it Today</h4></a>
-	<h5>9:00 am–12:00 pm</h5>
+	<h4>Language Lab: Learn How to Hack Any Language and Speak it Today</h4>
 	Hosted by Benny Lewis
-	<a href="https://www.eventbrite.com/e/wds-academy-language-lab-with-benny-lewis-tickets-11583991029" class="button">Sold Out!</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		"Someday" you'll learn a new language? Make "someday" TODAY. We will be tackling your doubts, and then giving you the hacks you need to have a basic conversation in any language you may want to learn, by the end of the lab. Then you will open up a whole new world, unreachable by English alone, and have the tools to skyrocket towards fluency after WDS. Anyone at any age can learn any language in the world. Talent is irrelevant.
@@ -69,10 +59,8 @@ By the end of this Academy all language doubts will be squashed. Find out why ad
 <div class="line-canvas"></div>
 
 <div class="collapsable-box collapsable-box-open">
-	<a href="https://www.eventbrite.com/e/wds-academy-travel-hacking-tickets-11392203387"><h4>Travel Hacking Academy</h4></a>
-	<h5>1:00 pm–5:00 pm</h5>
+	<h4>Travel Hacking Academy</h4>
 	Hosted by Stephanie Zito
-	<a href="https://www.eventbrite.com/e/wds-academy-travel-hacking-tickets-11392203387" class="button">Sold Out!</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		Master the art of travel hacking. You will learn how to build a strategy to earn big balances of airline miles and hotel points that you can redeem for travel to your dream destinations. If you want to go places for free or nearly free, this is the workshop for you.
@@ -82,21 +70,13 @@ By the end of this Academy all language doubts will be squashed. Find out why ad
 	</div>
 </div>
 
-
-<div class="zig-zags_blue"></div>
-
-
 <a name="revolutionu"></a>
-
-### Friday, July 11
 
 <div class="line-canvas"></div>
 
 <div class="collapsable-box collapsable-box-open">
-	<a href="https://www.eventbrite.com/e/wds-academy-revolutionu-with-jonathan-fields-tickets-11557391469"><h4>RevolutionU: How to Tap Revolution-Dynamics to Fuel Rapid Business Growth, Build an Army of Evangelists and Change the Damn World</h4></a>
-	<h5>3:00 pm–6:00 pm</h5>
+	<h4>RevolutionU: How to Tap Revolution-Dynamics to Fuel Rapid Business Growth, Build an Army of Evangelists and Change the Damn World</h4>
 	Hosted by Jonathan Fields
-	<a href="https://www.eventbrite.com/e/wds-academy-revolutionu-with-jonathan-fields-tickets-11557391469" class="button">Sold Out!</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		In this WDS Academy, Fields will reveal the entire 18-step RevolutionU Framework, a highly-detailed, immediately-actionable roadmap to engineer your own business revolution, whether you’re just starting up or you need to breathe new life into your organization, venture or brand. Imagine how it will feel to fuel your business with the power of revolution.
@@ -108,18 +88,11 @@ For years, Jonathan had been working in secret to deconstruct the key elements o
 	</div>
 </div>
 
-
-<div class="zig-zags_blue"></div>
-
 <a name="making-art"></a>
-### Monday, July 14
 
 <div class="collapsable-box collapsable-box-open">
-	<a href="https://www.eventbrite.com/e/wds-academy-making-art-and-giving-it-away-tickets-11351507665"><h4>Making Art and Giving It Away</h4></a>
-	<h5>9:00 am–12:00 pm</h5>
+	<h4>Making Art and Giving It Away</h4>
 	Hosted by Gary Hirsch
-	<a href="https://www.eventbrite.com/e/wds-academy-making-art-and-giving-it-away-tickets-11351507665" class="button">Sold Out!</a>
-	
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		This is a big, fun exploration of collaboration: how to do more of it, how to invite others into your work, what not to do. It will also be the launch of a co-creative art/story project by Gary Hirsch where participants take (literally) original artwork from the artist and use it as a launch pad for their own art, work, and stories.
@@ -135,10 +108,8 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 <div class="line-canvas"></div>
 
 <div class="collapsable-box collapsable-box-open">
-	<a href="https://www.eventbrite.com/e/wds-academy-the-art-of-simple-a-field-guide-to-redesigning-a-simple-life-tickets-11350996135"><h4>The Art of Simple: A Field Guide to Redesigning Your Simple Life</h4></a>
-	<h5>1:00 pm–5:00 pm</h5>
+	<h4>The Art of Simple: A Field Guide to Redesigning Your Simple Life</h4>
 	Hosted by Tsh Oxenreider
-	<a href="https://www.eventbrite.com/e/wds-academy-the-art-of-simple-a-field-guide-to-redesigning-a-simple-life-tickets-11350996135" class="button">Tickets &rarr;</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		Just what is “simple living,” anyway? And why does it seem to hard to… well, do? Conventional culture often defines living simply with a bunch of rules: shun the TV, ride only your bike, grow your own food, shower only when others complain. But the real definition is delightfully freeing, and it can be fleshed out in any lifestyle, at any age, at any place in the world. In this workshop, we’ll explore what living simply might look like for you. First, we’ll relish in the real definition of simple living. Then, you’ll find time and space to deconstruct parts of your life, followed by freedom to reassemble them using a new-to-you blueprint. Roll up your sleeves and treat yourself to an afternoon of personal reflection, brainstorming, and if you want, a chance to bounce around some fresh ideas on the nuts and bolts of making it all work. (Introverts who thrive on solo reflection are just as welcome as extroverts who need to chat it all out.) Bring your journal and a pencil for this one.
@@ -152,10 +123,8 @@ In the session you'll play, collaborate, tell stories, get some free cool stuff,
 <div class="line-canvas"></div>
 
 <div class="collapsable-box collapsable-box-open">
-	<a href="https://www.eventbrite.com/e/wds-academy-finding-and-refining-a-great-business-idea-with-fizzle-tickets-11584159533"><h4>Finding and Refining a Great Business Idea</h4></a>
-	<h5>1:00 pm–5:00 pm</h5>
+	<h4>Finding and Refining a Great Business Idea</h4></a>
 	Hosted by Fizzle
-	<a href="https://www.eventbrite.com/e/wds-academy-finding-and-refining-a-great-business-idea-with-fizzle-tickets-11584159533" class="button">Sold Out!</a>
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		If you're searching for a great business idea or looking for ways to make your current idea much more compelling, this WDS Academy from the guys behind Fizzle is for you. You'll learn how to spot great business opportunities and how to turn a potentially common idea into a unique and powerful solution for a group of customers you care deeply about.
