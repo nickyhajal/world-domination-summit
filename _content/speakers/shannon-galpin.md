@@ -1,6 +1,3 @@
-icon: bulb
-
-
 ## 2014 Speaker
 
 # ![Shannon Galpin](http://imgs.wds.fm/shannon-galpin-round.png) Shannon Galpin
