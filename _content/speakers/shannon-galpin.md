@@ -1,5 +1,5 @@
 icon: bulb
-photo_head:https://farm8.staticflickr.com/7369/9234155048_32e5bfbd30_c.jpg
+photo_head: https://farm8.staticflickr.com/7369/9234155048_32e5bfbd30_c.jpg
 
 ## 2014 Speaker
 
