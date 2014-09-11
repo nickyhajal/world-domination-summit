@@ -3,7 +3,7 @@ ap.Modals = {}
 ap.Modals.init = ->
 	$('body')
 	.on('keyup', ap.Modals.key)
-	.on('click', '.modal-close', ap.Modals.click)
+	.on('click', '.modal-close', ap.Modals.close)
 
 ap.Modals.open = (modal) ->
 	if not ap.isMobile
