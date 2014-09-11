@@ -488,8 +488,8 @@ window.wall =
 	showArmy: (e) ->
 		e.preventDefault()
 		ap.Modals.open('army')
-		# unless wall.armyRendered?
-		# 	wall.renderArmyMap()
+		unless wall.armyRendered?
+			wall.renderArmyMap()
 
 	showBiggerPhoto: (e) ->
 		e.preventDefault()
