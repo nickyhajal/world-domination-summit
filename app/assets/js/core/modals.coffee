@@ -11,13 +11,14 @@ ap.Modals.open = (modal) ->
 		$('#modal-'+modal).show()
 
 ap.Modals.close = (modal = false) ->
-	if modal
+	if modal and typeof modal is 'string'
 		$('.modal-remove', '#modal-'+modal).remove()
 		$('#modal-'+modal).hide()
 		$('#modal-'+modal).hide()
 	else 
 		$('.modal-remove').remove()
 		$('.modal').hide()
+	return false
 
 ap.Modals.key = (e) ->
 	e.preventDefault()

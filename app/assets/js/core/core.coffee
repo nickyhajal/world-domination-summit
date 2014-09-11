@@ -156,7 +156,7 @@ ap.initRouter = ->
 		link = $(e.currentTarget)
 		href = link.attr('href')
 
-		if href.indexOf('#') > -1
+		if href.indexOf('#') > -1 and href isnt '#'
 			anchor = $('a[name="'+href.replace('#', '')+'"]')
 			if anchor.length
 				top = anchor.offset().top - 100
@@ -167,7 +167,7 @@ ap.initRouter = ->
 
 		# Catch clicks on links to use our navigate function instead
 		# Skip if a super-key is being pushed
-		else if link.attr('target') isnt '_blank' and !e.altKey and !e.ctrlKey and !e.metaKey and !e.shiftKey and href.indexOf('http') != 0 and href.indexOf('/api/') < 0
+		else if href isnt '#' and link.attr('target') isnt '_blank' and !e.altKey and !e.ctrlKey and !e.metaKey and !e.shiftKey and href.indexOf('http') != 0 and href.indexOf('/api/') < 0
 		    e.preventDefault()
 		    url = href.replace(/^\//, '')
 		    ap.Router.navigate url, {trigger: true}
