@@ -23,6 +23,7 @@
     "imagemagick": "~0.1.2",
     "instagram-node": "^0.4.2",
     "jade": "<1.0.0",
+    "juice": "^0.4.0",
     "knex": "~0.4.13",
     "less": "~1.5.0",
     "madmimi-node": "~0.1.7",

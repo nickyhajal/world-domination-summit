@@ -114,30 +114,34 @@ ap.update.tpls = ->
 	Process templates for template optiosn
 ###
 ap.initTemplates = ->
-	ap.template_options = {}
 	for name,html of ap.templates
-		if html.indexOf('----tpl_opts----') > -1
-			bits = html.split('----tpl_opts----')
-			if bits.length > 1
-				tk name
-				tk bits[0]
-				ap.template_options[name] = bits[0].replace(/(<([^>]+)>)/ig,"")
-				content = bits[1].replace(/\`script/g, '<script')
-				content = content.replace(/`\/script/g, '</script')
-				ap.templates[name] = content
-			else
-				ap.template_options[name] = {}
-				ap.templates[name] = html
-	for opt_name,opts of ap.template_options
+		ap.processTemplate(name, html)
+
+ap.processTemplate = (name, html) ->
+	unless ap.template_options?
+		ap.template_options = {}
+
+	if html.indexOf('----tpl_opts----') > -1
+		bits = html.split('----tpl_opts----')
+		if bits.length > 1
+			ap.template_options[name] = bits[0].replace(/(<([^>]+)>)/ig,"")
+			content = bits[1].replace(/\`script/g, '<script')
+			content = content.replace(/`\/script/g, '</script')
+			ap.templates[name] = content
+		else
+			ap.template_options[name] = {}
+			ap.templates[name] = html
+
+		opts = ap.template_options[name].split('\n')
 		o = {}
-		opts = opts.split('\n')
 		for opt in opts
 			if opt.length
 				bits = opt.split(':')
-				name = bits[0]
+				part = bits[0]
 				val = bits.splice(1).join(':')
-				o[_.trim(name)] = _.trim(val)
-		ap.template_options[opt_name] = o
+				o[_.trim(part)] = _.trim(val)
+		ap.template_options[name] = o
+
 
 ###
 	Start up Backbone's router

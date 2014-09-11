@@ -130,7 +130,8 @@ ap.goTo = (panel = '', options = {}, cb = false) ->
 		else
 			ap.api 'get tpl', {tpl: panel}, (rsp) ->
 				if rsp.tpl?
-					ap.templates[tpl] = rsp.tpl
+					tk rsp.tpl
+					ap.processTemplate(tpl, rsp.tpl)
 					render(tpl)
 				else
 					render('pages_404')
