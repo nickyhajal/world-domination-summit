@@ -4,7 +4,7 @@ sidebar: namaste
 
 ## 2014 World Record
 
-# You'd better believe we're coming back this year with another world record attempt. This year, we're tackling the world's longest yoga chain.
+# You'd better believe we came back this year with another world record attempt. We tackled the world's longest yoga chain, and we officially beat the record!
 
 <a name="namaste"></a>
 
