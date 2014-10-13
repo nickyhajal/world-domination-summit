@@ -3,7 +3,7 @@ photo_head: https://farm6.staticflickr.com/5562/14638069811_1a5acbcd9a_b.jpg,htt
 
 ## 2014 Speaker
 
-# A.J. Jacobs
+# A.J. Jacobs wants us to be bold, be experimental, and do it strategically. He taught us that we're all related, and that faking it until you make it is perfectly okay.
 
 <div class="zig-zags_blue"></div>
 
