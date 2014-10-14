@@ -1,5 +1,5 @@
 icon: handshake
-photo_head: https://farm8.staticflickr.com/7354/9226384009_af4939368e_c.jpg
+photo_head: https://farm6.staticflickr.com/5583/14454898417_d73571029e_b.jpg,https://farm6.staticflickr.com/5033/14454698868_ef63f2dc3d_b.jpg,https://farm4.staticflickr.com/3868/14618318286_2cce1b5cb7_b.jpg,https://farm4.staticflickr.com/3898/14640874552_81a5fc3f97_b.jpg
 
 ## 2014 Speaker
 
