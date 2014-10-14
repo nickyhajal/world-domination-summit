@@ -3,7 +3,7 @@ photo_head: https://farm6.staticflickr.com/5562/14638069811_1a5acbcd9a_b.jpg,htt
 
 ## 2014 Speaker
 
-# "I've been to Disneyworld, and that's supposed to be the happiest place on Earth. That is not. Bu I actually think that Portland, during WDS, might be the happiest place on Earth."
+# "I've been to Disneyworld, and that's supposed to be the happiest place on Earth. That is not. I actually think that Portland, during WDS, might be the happiest place on Earth."
 
 <div class="zig-zags_blue"></div>
 
