@@ -3,7 +3,7 @@ photo_head: https://farm6.staticflickr.com/5562/14638069811_1a5acbcd9a_b.jpg,htt
 
 ## 2014 Speaker
 
-# "I've been to Disneyworld, and that's supposed to be the happiest place on Earth. That is not. I actually think that Portland, during WDS, might be the happiest place on Earth."
+# "I've been to Disneyworld, and that's supposed to be the happiest place on Earth. It's not. I actually think that Portland, during WDS, might be the happiest place on Earth."
 
 <div class="zig-zags_blue"></div>
 
@@ -15,4 +15,6 @@ photo_head: https://farm6.staticflickr.com/5562/14638069811_1a5acbcd9a_b.jpg,htt
 
 He has also outsourced his life, lived by the rules of George Washington, and read the *Encyclopedia Britannica* from A to Z. He is the Editor at Large at *Esquire* magazine and a regular contributor to NPR.
 
-His next project is to hold the Largest Family Reunion in history. You are invited. Because the truth is, we are all cousins.
+His next project is to hold the <a href="http://globalfamilyreunion.com" target="_blank">Largest Family Reunion</a> in history. You are invited. Because the truth is, we are all cousins.
+
+Learn more about A.J. on <href="http://ajjacobs.com" target="_blank">his website</a>.
