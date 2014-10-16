@@ -17,4 +17,4 @@ He has also outsourced his life, lived by the rules of George Washington, and re
 
 His next project is to hold the <a href="http://globalfamilyreunion.com" target="_blank">Largest Family Reunion</a> in history. You are invited. Because the truth is, we are all cousins.
 
-Learn more about A.J. on <href="http://ajjacobs.com" target="_blank">his website</a>.
+Learn more about A.J. on <a href="http://ajjacobs.com" target="_blank">his website</a>.
