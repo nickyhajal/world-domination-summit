@@ -3,7 +3,7 @@ photo_head: https://farm4.staticflickr.com/3867/14656885345_d7c40a316a_b.jpg,htt
 
 ## Saki Mafundikwa | 2014 Speaker
 
-# ""
+# "There’s still a lot of work to be done. And a lot of fun to be had as well. But we wouldn’t have it any other way."
 
 <div class="zig-zags_blue"></div>
 
