@@ -13,4 +13,4 @@ photo_head: https://farm6.staticflickr.com/5528/14454685029_8b3656bec1_b.jpg,htt
 
 **Gavin Aung Than** is a cartoonist based in Melbourne, Australia. After working in the corporate graphic design industry for eight years he quit his unfulfilling job to focus on his true passion: drawing cartoons.
 
-Gavin launched [Zen Pencils](http://zenpencils.com) at the start of 2012, a cartoon blog which adapts inspirational quotes into comic stories, and hasn’t looked back since. Zen Pencils has been featured by *The Washington Post*, *The Huffington Post*, *Slate*, Buzzfeed, Gawker, Brain Pickings, Upworthy, Mashable and was named one of the top 100 websites of 2013 by *PC Mag*.
+Gavin launched <a href="http://zenpencils.com" target="_blank">Zen Pencils</a> at the start of 2012, a cartoon blog which adapts inspirational quotes into comic stories, and hasn’t looked back since. Zen Pencils has been featured by *The Washington Post*, *The Huffington Post*, *Slate*, Buzzfeed, Gawker, Brain Pickings, Upworthy, Mashable and was named one of the top 100 websites of 2013 by *PC Mag*.
