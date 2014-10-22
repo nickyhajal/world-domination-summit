@@ -53,12 +53,14 @@ Among other surprises, our 2013 lineup included a guest appearance from Superman
 
 <div class="line-canvas"></div>
 
-### Returning Speakers
+<!-- ### Returning Speakers
 These featured speakers from previous years will make a return visit.
 
 <div class="speaker_list" data-speaker-type="returning"></div>
 
+
 <div class="line-canvas"></div>
+-->
 
 ### Alumni Speakers
 In previous years, we heard from these speakers. They won’t be in town this time but are part of our extended family.
