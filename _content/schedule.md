@@ -38,16 +38,15 @@ We'll conclude on Sunday evening with a Farewell party that goes as long as peop
 
 <a name="speakers"></a>
 
-### Your WDS 2014 Speakers
+### Your WDS 2015 Speakers
 
-These were the amazing speakers that joined us in 2014. You can expect a comparable line-up for WDS 2015.
+Upcoming speakers will be added here as they're confirmed.
 
 <div class="speaker_list" data-speaker-type="upcoming"></div>
 
 <div class="line-canvas"></div>
 
-### Featured Speakers (2013)
-Among other surprises, our 2013 lineup included a guest appearance from Superman.
+### Featured Speakers (2014)
 
 <div class="speaker_list" data-speaker-type="featured"></div>
 
@@ -63,7 +62,7 @@ These featured speakers from previous years will make a return visit.
 -->
 
 ### Alumni Speakers
-In previous years, we heard from these speakers. They won’t be in town this time but are part of our extended family.
+In previous years, we heard from these speakers, who are now part of our extended family.
 
 <div class="speaker_list" data-speaker-type="alumni"></div>
 
