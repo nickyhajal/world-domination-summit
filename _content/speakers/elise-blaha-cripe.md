@@ -1,4 +1,4 @@
-icon: hammer
+icon: bulb
 photo_head: https://farm4.staticflickr.com/3836/14470997737_75f2b057aa_b.jpg,https://farm4.staticflickr.com/3921/14470801909_e66d2ee3a5_b.jpg,https://farm4.staticflickr.com/3903/14634459036_fa1b776823_b.jpg,https://farm6.staticflickr.com/5519/14470818358_97fe668924_b.jpg
 
 ## Elise Blaha Cripe | 2014 Speaker
