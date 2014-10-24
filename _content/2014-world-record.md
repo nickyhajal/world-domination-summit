@@ -1,5 +1,5 @@
 icon: namaste
-photo_head: https://farm9.staticflickr.com/8015/7523490756_2093fc5762_b.jpg,https://farm4.staticflickr.com/3709/9229134668_541866be9a_b.jpg
+photo_head: https://farm6.staticflickr.com/5586/14614138506_037b8418f8_b.jpg,https://farm3.staticflickr.com/2895/14454554878_3bf0c19bac_b.jpg,https://farm6.staticflickr.com/5529/14454403739_e08aa4849b_b.jpg,https://farm6.staticflickr.com/5510/14454306040_1f7fa81642_b.jpg
 sidebar: namaste
 
 ## 2014 World Record
@@ -9,6 +9,10 @@ sidebar: namaste
 <a name="namaste"></a>
 
 <div class="zig-zags_blue"></div>
+
+<iframe src="//player.vimeo.com/video/100831223?byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+<div class="line-canvas"></div>
 
 ### The Great Namaste
 
