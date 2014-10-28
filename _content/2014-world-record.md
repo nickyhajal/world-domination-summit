@@ -22,4 +22,4 @@ On July 11, 2014, 808 WDSers and local Portlanders braved the heat and the crowd
 
 After months of planning, Pioneer Courthouse Square in Downtown Portland filled with yoga and world record enthusiasts for an hour long series of yoga chains, officially snagging the title away from India.
 
-The event was a fun, meaningful display of what's possible when a community of people come together for a common purpose. If you joined us at The Great Namaste, thanks for being there. If you didn't, watch this space for details about next year's event!
+The event was a fun, meaningful display of what's possible when a community comes together for a common purpose. If you joined us at The Great Namaste, thanks for being there. If you didn't, watch this space for details about how to participate in next year's event!
