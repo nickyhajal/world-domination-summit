@@ -1,5 +1,5 @@
 icon: handshake
-photo_head: https://farm3.staticflickr.com/2805/9234107256_9b7af6280f_b.jpg,https://farm9.staticflickr.com/8293/7537750656_2a8da86427_b.jpg,https://farm3.staticflickr.com/2853/9231335591_8811df6275_b.jpg,https://farm9.staticflickr.com/8024/7537738118_8f3a08a2ba_b.jpg
+photo_head: https://farm4.staticflickr.com/3890/14618311166_bef298359c_b.jpg,https://farm6.staticflickr.com/5484/14639122234_ac64306e1e_b.jpg,https://farm6.staticflickr.com/5491/14633920996_c3b91bf66a_b.jpg,https://farm4.staticflickr.com/3882/14470461207_33b1b470f7_b.jpg
 
 ## Attendee Stories
 
