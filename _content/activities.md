@@ -1,4 +1,4 @@
-sidebar: activities
+sidebar: photos-videos
 icon: mountain
 photo_head: https://farm6.staticflickr.com/5571/14641195685_9a359f8232_b.jpg,https://farm4.staticflickr.com/3903/14637946971_abc1b66c72_b.jpg,https://farm4.staticflickr.com/3923/14640715582_85502e23ab_b.jpg,https://farm4.staticflickr.com/3907/14633991916_bb69de6961_b.jpg
 
