@@ -16,8 +16,6 @@ photo_head: https://farm3.staticflickr.com/2805/9234107256_9b7af6280f_b.jpg,http
 
 Here are some of the Attendee Stories from WDS 2014:
 
-<div class="line-canvas"></div>
-
 <iframe src="//player.vimeo.com/video/102690045?title=0&amp;byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 Hosted by WDS Action Team member, Jolie Guillebeau. 
