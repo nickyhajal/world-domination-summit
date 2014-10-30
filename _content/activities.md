@@ -4,12 +4,12 @@ photo_head: https://farm4.staticflickr.com/3677/9221940328_d44b208f38_b.jpg,http
 
 # When main stage sessions end for the afternoon, the good times roll on. Join your fellow attendees at your choice of extracurricular activities around town—from film screenings and river cruises to world record attempts and more!
 
-If these aren't your cup of tea (or if you just can't get enough), be sure to check out the [WDS academies](/academies). And don't forget all the attendee meetups that will be organized through our attendee hub.
+There will also be [WDS academies](/academies) on the days just before and after the main conference. And don't forget all the attendee meetups that will be organized through our attendee hub. Certainly no shortage of things to do.
 
 <div class="zig-zags_blue"></div>
 
 
-<a name="5k-run"></a>
+<!-- <a name="5k-run"></a>
 ### Friday, July 11
 
 
@@ -83,3 +83,4 @@ That is, of course, a lie. But if it were true, it would cleverly underscore jus
 		Calling all soccer fans! Join your fellow footballers and watch the final World Cup match as it's broadcast live right in Portland's Living Room—Pioneer Courthouse Square. Grab your lunch after the morning session and root for your favorite team in the middle of downtown. Bonus points if we can hear you yelling from the main stage.
 	</div>
 </div>
+-->
