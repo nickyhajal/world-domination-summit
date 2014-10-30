@@ -3,32 +3,31 @@ icon: parachute
 
 # On [July 9-13, 2015](/register) the fifth annual World Domination Summit will take over Portland, Oregon yet again. Our plan of action? Have fun and create meaningful adventure.
 <div class="main-schedule-box">
-	<h3>2014 Schedule</h3>
+	<h3>The Schedule</h3>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Friday</div>
-		<div class="main-schedule-time">8:30am–11:30am</div>
+		<div class="main-schedule-time">Morning</div>
 		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="/2014-world-record">World Record Attempt</a></div>
-		<div class="main-schedule-time">2:00pm–7:00pm</div>
+		<div class="main-schedule-time">Afternoon</div>
 		<div class="main-schedule-descr">Registration</div>
-		<div class="main-schedule-time">6:00pm–10:00pm</div>
+		<div class="main-schedule-time">Evening</div>
 		<div class="main-schedule-descr">"Can't Wait" Welcoming Party</div>
 	</div>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Saturday</div>
 		<div class="main-schedule-time">9:00am–6:30pm</div>
-		<div class="main-schedule-descr">Main Stage Sessions <br>Portland Experience <br><a style="color: rgb(35,31,32) !important" href="/activities">Activities</a></div>
+		<div class="main-schedule-descr">Main Stage Sessions <br><a style="color: rgb(35,31,32) !important" href="/activities">Activities</a></div>
 	</div>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Sunday</div>
 		<div class="main-schedule-time">9:00am–6:30pm</div>
 		<div class="main-schedule-descr">Main Stage Sessions <br><a style="color: rgb(35,31,32) !important" href="/activities">Activities</a></div>
 		<div class="main-schedule-time">7:00pm–???</div>
-		<div class="main-schedule-descr">Closing Party</div>
+		<div class="main-schedule-descr">Farewell Party</div>
 	</div>
-	<div class="main-schedule-descr"><em>Looking for the 2015 schedule? We'll be posting details here toward the beginning of 2015.</em></div>
 </div>
 
-<p class="intro">We'll all arrive in the city for registration on Friday afternoon and an opening party on Friday evening. The main event kicks off in the beautiful Arlene Schnitzer Concert Hall on Saturday morning.</p>
+<p class="intro">We'll all arrive in the city for a registration on Friday afternoon and an opening party on Friday evening. The main event kicks off in the beautiful Arlene Schnitzer Concert Hall on Saturday morning, but so much is going on before and after. We'll also have another world record attempt on Friday morning.</p>
 
 Throughout both weekend days, we'll alternate between the main stage for speaker talks, a park area for a mini-festival, and several smaller spaces for attendee-led meetups. The evenings will find us set loose on the town, attending your choice of group events or just out on your own.
 
