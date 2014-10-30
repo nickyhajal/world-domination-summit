@@ -1,6 +1,6 @@
 sidebar: activities
 icon: mountain
-photo_head: https://farm4.staticflickr.com/3677/9221940328_d44b208f38_b.jpg,https://farm3.staticflickr.com/2769/5800562319_93efdd5c8d_b.jpg,https://farm9.staticflickr.com/8284/7522079880_35ca5e448d_b.jpg,https://farm8.staticflickr.com/7439/9219169223_c35d024c43_b.jpg,https://farm9.staticflickr.com/8149/7644901414_b65439b33a_b.jpg
+photo_head: https://farm6.staticflickr.com/5571/14641195685_9a359f8232_b.jpg,https://farm4.staticflickr.com/3903/14637946971_abc1b66c72_b.jpg,https://farm4.staticflickr.com/3923/14640715582_85502e23ab_b.jpg,https://farm4.staticflickr.com/3907/14633991916_bb69de6961_b.jpg
 
 # When main stage sessions ended for the afternoon, the good times rolled on. Attendees gathered at their choice of extracurricular activities around town—from film screenings and river cruises to world record attempts and more!
 
