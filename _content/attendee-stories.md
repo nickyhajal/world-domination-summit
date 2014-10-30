@@ -29,3 +29,5 @@ Featuring [Oliver Asis](/~oliverasis), [Andrew Newman](/~andrewnewman), [Jon Gig
 Hosted by WDS Magician, Michelle Jones. 
 
 Featuring one-minute stories from the Hurricane Round by [Jennifer Idol](/~uwDesigner), [Jonathan Ronzio](/~ronzio), [Harmony Eichsteadt](/~harmony), [Ryan Haack](/~LivingOneHanded), and [Alicia Ostarello](/~aliciao).
+
+Itching for more? Check out the [2013 Attendee Stories](/2013-attendee-stories).
