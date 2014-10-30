@@ -3,38 +3,31 @@ photo_head: https://farm3.staticflickr.com/2805/9234107256_9b7af6280f_b.jpg,http
 
 ## Attendee Stories
 
-# In addition to the great speakers we have lined up for main stage sessions, we're handing the mic over to attendees more than ever this year. 
+# As we have done for the past several years, we will feature stories from the WDS community that can be told in impactful bite-size tales that are 2 minutes or less. 
 
 <div class="zig-zags_blue"></div>
 
-As we have done for the past several years, we will feature stories from the WDS community that can be told in impactful bite-size tales that are 2 minutes or less. If you have a story you would like to share with the WDS community in 2 minutes or less, please let us know by submitting a proposal here.
+<!-- If you have a story you would like to share with the WDS community in 2 minutes or less, please let us know by submitting a proposal here.
 
 <a href="/submit-your-story" class="button">Suggest a Story &rarr;</a>
 
 <div class="line-canvas"></div>
+-->
 
-Here are some of the Attendee Stories from WDS 2013:
+Here are some of the Attendee Stories from WDS 2014:
 
 <div class="line-canvas"></div>
 
-<iframe src="//player.vimeo.com/video/70277491?title=0&amp;byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="//player.vimeo.com/video/102690045?title=0&amp;byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 Hosted by WDS Action Team member, Jolie Guillebeau. 
 
-Featuring Mel Findlater ('lady in a box'), Apneet Jolly (ajollylife.com), Greg Berg (Radio Enso), Sasha Martin (@GlobalTble), and Bo Cordle (sailingbo.com)
+Featuring [Oliver Asis](/~oliverasis), [Andrew Newman](/~andrewnewman), [Jon Giganti](/~JonGiganti), Sara Harmeier, Chris Plough, [Marsha Shandur](/~yesyesmarsha), [Sandi Wheaton](/~sandi), [Dustin Main](/~dustin), [Esme Wang](/~esmewwang), [Josh LaMar](/~joshlamar), [Akshay Nanavati](/~Existing2Living), and [Taylor Cocalis](/~tayloratgoodfoodjobs)
 
 <div class="line-canvas"></div>
 
-<iframe src="//player.vimeo.com/video/70277492?title=0&amp;byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="//player.vimeo.com/video/102690046?title=0&amp;byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-Hosted by WDS Action Team member, Isaac Watson. 
+Hosted by WDS Magician, Michelle Jones. 
 
-Featuring stories from the 2012 WDS $100 Investment: Jean MacDonald (AppCamp for Girls), Amy Clover (StrongInsideOut.com), Rob Young (The $100 Club), and Rami Nuseir (gutstogeek.com)
-
-<div class="line-canvas"></div>
-
-<iframe src="//player.vimeo.com/video/70277493?title=0&amp;byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-Hosted by WDS Action Team member, Michelle Jones. 
-
-Featuring 1 minute stories from Marian Schembari, Kevin Lee, Terry Jordan, Caroline Merner, and Mike Watts.
+Featuring one-minute stories from the Hurricane Round by [Jennifer Idol](/~uwDesigner), [Jonathan Ronzio](/~ronzio), [Harmony Eichsteadt](/~harmony), [Ryan Haack](/~LivingOneHanded), and [Alicia Ostarello](/~aliciao).
