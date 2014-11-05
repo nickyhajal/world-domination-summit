@@ -14,7 +14,7 @@ This time, we're prepared — and World Domination can no longer be contained to
 
 Revisit WDS 2014 with through this short film highlighting one particular attendee who had an experience she'll never forget:
 
-<iframe src="//player.vimeo.com/video/109903000?byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="//player.vimeo.com/video/109903000?title=0&amp;byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 <div class="line-canvas"></div>
 
