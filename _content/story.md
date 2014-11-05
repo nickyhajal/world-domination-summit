@@ -12,6 +12,12 @@ One year later, we're scaling up... carefully. WDS 2014 sold out months in advan
 
 This time, we're prepared — and World Domination can no longer be contained to a single theater. Instead, we're taking over the whole city.
 
+Revisit WDS 2014 with through the lens of one attendee who had an experience she'll never forget:
+
+<iframe src="//player.vimeo.com/video/109903000?byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+<div class="line-canvas"></div>
+
 **The Plan for 2015**
 
 Our main stage events will be held in the Arlene Schnitzer Concert Hall, a 2900-seat venue that includes a key feature: thanks to two tiers of seating, no seat is more than 100 feet from the stage. Even with a large group of awesome people, it will still be intimate.
