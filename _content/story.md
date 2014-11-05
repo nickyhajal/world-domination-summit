@@ -12,7 +12,7 @@ One year later, we're scaling up... carefully. WDS 2014 sold out months in advan
 
 This time, we're prepared — and World Domination can no longer be contained to a single theater. Instead, we're taking over the whole city.
 
-Revisit WDS 2014 with through the lens of one attendee who had an experience she'll never forget:
+Revisit WDS 2014 with through this short film highlighting one particular attendee who had an experience she'll never forget:
 
 <iframe src="//player.vimeo.com/video/109903000?byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
