@@ -1,3 +1,5 @@
+VIMEO_ID = '109484290'
+
 ap.Views.home = XView.extend
 	initialize: ->
 		@initRender()
@@ -479,11 +481,11 @@ window.wall =
 		if not ap.isMobile
 			e.preventDefault()
 			setTimeout ->
-				$('#the-video').append('<iframe class="modal-remove" src="//player.vimeo.com/video/109484290?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="780" height="496" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>')
+				$('#the-video').append('<iframe class="modal-remove" src="//player.vimeo.com/video/'+VIMEO_ID+'?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="780" height="496" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>')
 			, 2
 			ap.Modals.open('video')
 		else
-			location.href = 'http://player.vimeo.com/video/109484290?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1'
+			location.href = 'http://player.vimeo.com/video/'+VIMEO_ID+'?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1'
 
 	showArmy: (e) ->
 		e.preventDefault()
