@@ -7,7 +7,7 @@ photo_head: https://farm8.staticflickr.com/7438/9242331680_8926700e54_b.jpg
 
 <div class="zig-zags_blue"></div>
 
-New York Times bestselling author of *Mind Over Medicine* and *The Fear Cure*, is a physician, speaker, founder of the Whole Health Medicine Institute, and spiritual seeker. Passionate about what makes people optimally healthy and what predisposes them to illness, she is on a mission to merge science and spirituality in a way that not only facilitates the health of the individual; it also heals the collective.
+New York Times bestselling author of *Mind Over Medicine* and *The Fear Cure*, Lissa Rankin is a physician, speaker, founder of the Whole Health Medicine Institute, and spiritual seeker. Passionate about what makes people optimally healthy and what predisposes them to illness, she's on a mission to merge science and spirituality in a way that not only facilitates the health of the individual, it also heals the collective.
 
 As she became aware of how fear dominates modern culture and how such fear predisposes us not only to unhappiness but to disease, she began researching ways to befriend fear so we can let it heal and liberate us, opening us up to greater compassion, not just for others, but for ourselves.
 
