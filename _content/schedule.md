@@ -27,7 +27,7 @@ icon: parachute
 	</div>
 </div>
 
-<p class="intro">We'll all arrive in the city for a registration on Friday afternoon and an opening party on Friday evening. The main event kicks off in the beautiful Arlene Schnitzer Concert Hall on Saturday morning, but so much is going on before and after. We'll also have another world record attempt on Friday morning.</p>
+<p class="intro">We'll all arrive in the city for a registration on Friday afternoon and an opening party on Friday evening. The main event will be held in the beautiful Arlene Schnitzer Concert Hall, but WDS now open earlier than ever with numerous unofficial gatherings taking place well in advance. We'll also have another world record attempt on Friday morning.</p>
 
 Throughout both weekend days, we'll alternate between the main stage for speaker talks, a park area for a mini-festival, and several smaller spaces for attendee-led meetups. The evenings will find us set loose on the town, attending your choice of group events or just out on your own.
 
