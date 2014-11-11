@@ -48,7 +48,7 @@ ap.Views.welcome = XView.extend
 			@syncAvatar()
 			@initSelect2()
 			@syncLastPosition()
-			if ap.me?.has_pw? and ap.me.has_pw
+			if ap.me?.get('has_pw')? and ap.me.get('has_pw')
 				$('#tab-panel-the-basics .form-section').eq(1).hide()
 		, 5
 
@@ -178,7 +178,7 @@ ap.Views.welcome = XView.extend
 		original_btn_val = btn.html()
 		btn.html('Saving...')
 		$('.tab-link').eq(tab.num+1).removeClass('tab-disabled')
-		if $('input[name="new_password"]').is(':visible') and $('input[name="new_password"]').val().length < 5
+		if !(ap.me?.get('has_pw')? and ap.me.get('has_pw')) && $('input[name="new_password"]').is(':visible') and $('input[name="new_password"]').val().length < 5
 			btn.html('Your password should be at least 6 characters.').addClass('btn-error')
 			setTimeout ->
 				btn.html(original_btn_val).removeClass('btn-error')

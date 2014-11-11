@@ -28,6 +28,9 @@ ap.Views.profile = XView.extend
 			@renderMap()
 		, 5
 		@hideEmptySections()
+		if ap.me?.get('has_pw')? and ap.me.get('has_pw')
+			$('#tab-panel-the-basics .form-section').eq(1).hide()
+
 
 	renderQuestions: ->
 		questions = [
