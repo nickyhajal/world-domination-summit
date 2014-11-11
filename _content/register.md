@@ -1,10 +1,14 @@
 icon: globe
 
-# Ticket sales for WDS 2015 will open in November. Sign up for advance notice!
+# Ticket sales for WDS 2015 are now open for a limited time. Register now!!
 
 Thanks for your interest in taking over the world. WDS tickets go very quickly, and the event has been completely sold out four years in a row. WDS 2015 is coming on **July 9–13**.
 
-If you'd <strong>definitely like to attend next year</strong> and want to purchase a ticket once they're available, use the form below to put your name on the waiting list. When the sale is announced, all tickets will be offered on a first-come, first-served basis.
+WDS is an adventure like no other, and next year will be *extra* special because it's our five-year anniversary. We'd love for you to join us… and now you can!
+
+Until this round of tickets is sold out, you can <a href="http://wds2015.eventbrite.com" target="_blank">register over here →</a>
+
+<!-- If you'd <strong>definitely like to attend next year</strong> and want to purchase a ticket once they're available, use the form below to put your name on the waiting list. When the sale is announced, all tickets will be offered on a first-come, first-served basis.
 
 
 <form method="post" class="af-form-wrapper" action="http://www.aweber.com/scripts/addlead.pl"  >
@@ -33,3 +37,5 @@ If you'd <strong>definitely like to attend next year</strong> and want to purcha
 
                <div style="display: none;"><img src="http://forms.aweber.com/form/displays.htm?id=jIyszJyMDOys7A==" alt="" /></div>
      </form>
+     
+     -->
