@@ -59,7 +59,7 @@ shell = (app) ->
 										region: attendee.home_region
 										zip: attendee.home_postal_code
 										country: attendee.home_country_code
-										attending14: 1
+									user['attending'+process.yr] = 1
 									.save()
 									.then (new_user, err) ->
 										new_user.registerTicket(attendee.barcode)

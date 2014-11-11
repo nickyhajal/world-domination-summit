@@ -69,14 +69,14 @@ routes = (app) ->
 		export: (req, res, next) ->
 			if req.me.hasCapability('manifest')
 				res.status(200)
-				res.attachment 'attendees2014.csv'
+				res.attachment 'attendees2015.csv'
 
 				# Headers
 				response = "First Name;Last Name;Email;Twitter;Type;Location;Address;City;State/Region;Country;Zip\n"
 
-				# Attendee list for 2014
+				# Attendee list for 2015
 				Users.forge()
-				.query('where', 'attending14', '1')
+				.query('where', 'attending15', '1')
 				.fetch().then (model) ->
 					for attendee in model.models
 						response = response + attendee.get('first_name')+";"+attendee.get('last_name')+";"+attendee.get('email')+";"+attendee.get('twitter')+";"+attendee.get('type')+';"'+attendee.get('location')+'";"'+attendee.get('address')+'";"'+attendee.get('city')+'";"'+attendee.get('region')+'";"'+attendee.get('country')+'";"'+attendee.get('zip')+'"'+"\n"

@@ -10,8 +10,8 @@ require('./app/config')(app, express, RedisStore);
 require('express-namespace');
 db = process.db = app.settings.db
 process.mail = app.settings.mail
-process.year = '2014'
-process.yr = '14'
+process.year = '2015'
+process.yr = '15'
 process.lastYear = '2013'
 process.dmn = process.env.DOMAIN
 

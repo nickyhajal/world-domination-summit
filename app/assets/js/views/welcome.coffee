@@ -131,7 +131,7 @@ ap.Views.welcome = XView.extend
 			$('.twitter-not-connected').hide()
 			if ap.me.get('user_name')? and ap.me.get('user_name').length isnt 40
 				user_name = ap.me.get('user_name')
-				$('.tweet-box textarea').val('Just setup my attendee profile for WDS! Check it out: http://wds.fm/~'+user_name+' #wds2014')
+				$('.tweet-box textarea').val('Just setup my attendee profile for WDS! Check it out: http://wds.fm/~'+user_name+' #wds2015')
 				$('.tweet-box').show()
 		else
 			$('.twitter-connected').hide()

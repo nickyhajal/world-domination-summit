@@ -62,10 +62,10 @@
 		First, make sure you've added your instagram username to your WDS account in your account settings page.
 	</p><p>
 
-		Then, all you need to do is record a video with instagram and give it 2 special hashtags. The first is <b>#wds2014</b>. The second is a custom tag unique to each video task you'll find on the task details page.
+		Then, all you need to do is record a video with instagram and give it 2 special hashtags. The first is <b>#wds2015</b>. The second is a custom tag unique to each video task you'll find on the task details page.
 	</p>
 	<p>
-		We have special WDS robots checking every instagram video in the #wds2014 feed and they'll make sure to process your submission! (Though they may take a few minutes - they're not the fastest robots in the world.)
+		We have special WDS robots checking every instagram video in the #wds2015 feed and they'll make sure to process your submission! (Though they may take a few minutes - they're not the fastest robots in the world.)
 	</p>
 <a href="#" class="button tab-next">Continue</a>
 </div>

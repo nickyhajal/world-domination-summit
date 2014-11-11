@@ -16,7 +16,7 @@ ap.Views.task = XView.extend
 				else if task.type is 'video'
 					@options.task.how_to = '
 						Post a video on instagram and include the hashtags 
-						<b>#wds2014</b> and <b>#'+task.slug.replace('-', '')+'</b>
+						<b>#wds2015</b> and <b>#'+task.slug.replace('-', '')+'</b>
 						<br><br>
 					'
 					if ap.me?.get('instagram')?.length

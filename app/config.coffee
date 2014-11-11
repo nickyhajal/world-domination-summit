@@ -19,7 +19,6 @@ config = (app, express, RedisStore, mysql) ->
 		app.set('wufoo_key', process.env.WUFOO_KEY)
 		app.set('wufoo_amb_form', process.env.WUFOO_AMB_FORM)
 		app.set('uploadDir', '/tmp')
-
 		app.use(express.cookieParser())
 		app.use express.session
 			secret: process.env.SESS_SEC
@@ -33,7 +32,6 @@ config = (app, express, RedisStore, mysql) ->
 		app.use(app.router)
 		app.use(express.static(__dirname + '/public'))
 		app.set('port', process.env.PORT)
-
 	app.configure 'development', ->
 		app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 		app.set 'db',

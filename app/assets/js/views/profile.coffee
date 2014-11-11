@@ -34,7 +34,7 @@ ap.Views.profile = XView.extend
 			'Why did you travel <span class="ceil">{{ distance }}</span> miles to the World Domination Summit'
 			'What are you excited about these days?'
 			'What\'s your super-power?'
-			'What is your goal for WDS 2014?'
+			'What is your goal for WDS 2015?'
 		]
 		count = 0
 		html = ''

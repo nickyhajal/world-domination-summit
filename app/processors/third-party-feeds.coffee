@@ -34,7 +34,7 @@ shell = (app, db) ->
 						since_id = '0'
 					opts =
 						min_tag_id: since_id
-					ig.tag_media_recent 'wds2014', opts, (err, medias, pg, lim) ->
+					ig.tag_media_recent 'wds2015', opts, (err, medias, pg, lim) ->
 						if pg?.next_min_id?
 							rds.set 'feed_ig_since', pg.next_min_id, ->
 								rds.expire 'feed_ig_since', 30000
@@ -78,7 +78,7 @@ shell = (app, db) ->
 					if not since_id
 						since_id = '0'
 					tk 'Check Twitter'
-					twit.get 'search/tweets', {q: '#wds2014', since_id: since_id, result_type:'recent', count:'100'}, (err, twts) ->
+					twit.get 'search/tweets', {q: '#wds2014 OR #wds2015', since_id: since_id, result_type:'recent', count:'100'}, (err, twts) ->
 						if twts?.statuses?.length
 							last_id = false
 							async.each twts.statuses, (twt, cb) ->

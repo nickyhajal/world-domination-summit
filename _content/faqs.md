@@ -29,7 +29,7 @@ Please note: once tickets are gone, they're gone. We do not hold any tickets bac
 
 ### What is the refund/exchange policy on WDS tickets?
 
-All WDS tickets are non-refundable. Transfers and name changes on tickets are available for a $100 fee up to 60 days prior to the event. After **May 11, 2014** no further transfers or name changes will be possible.
+All WDS tickets are non-refundable. Transfers and name changes on tickets are available for a $100 fee up to 60 days prior to the event. After **May 11, 2015** no further transfers or name changes will be possible.
 
 <div class="line-canvas"></div>
 
