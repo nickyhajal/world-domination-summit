@@ -324,6 +324,8 @@ Users = Shelf.Collection.extend
       if rsp.models?[0]?
         results = rsp.models[0]
         if remove_sensitive
+          if results.password? and results.password.length
+            results.has_pw = true
           results.password = null
           results.hash = null
       dfr.resolve(results)

@@ -48,6 +48,8 @@ ap.Views.welcome = XView.extend
 			@syncAvatar()
 			@initSelect2()
 			@syncLastPosition()
+			if ap.me?.has_pw? and ap.me.has_pw
+				$('#tab-panel-the-basics .form-section').eq(1).hide()
 		, 5
 
 		ap.me.on('change:user_name', @usernameChanged, @)
