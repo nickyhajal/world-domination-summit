@@ -26,7 +26,7 @@ shell = (app) ->
 
 		eb.event_list_attendees id: app.settings.eb_event, (err, data) ->
 			processAttendees = (attendees, inx = 0) ->
-				if attendees[inx]?
+				if attendees[inx]? || inx > 1
 					attendee = attendees[inx].attendee
 					inx += 1 # For the next attendee
 					eventbrite_id = attendee.barcode
