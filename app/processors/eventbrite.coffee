@@ -66,10 +66,10 @@ shell = (app) ->
 										processAttendees attendees, inx
 									, (err) ->
 										console.error(err)
-				else
-					setTimeout ->
-				##		do_eb()
-					, 120000
+				#else
+				# 	setTimeout ->
+				# ##		do_eb()
+				# 	, 120000
 			processAttendees(data.attendees)
 	do_eb()
 
