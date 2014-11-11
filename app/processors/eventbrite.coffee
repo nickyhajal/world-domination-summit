@@ -26,7 +26,7 @@ shell = (app) ->
 
 		eb.event_list_attendees id: app.settings.eb_event, (err, data) ->
 			processAttendees = (attendees, inx = 0) ->
-				if attendees[inx]? || inx < 30
+				if attendees[inx]?
 					attendee = attendees[inx].attendee
 					tk attendee
 					inx += 1 # For the next attendee
@@ -68,10 +68,10 @@ shell = (app) ->
 										processAttendees attendees, inx
 									, (err) ->
 										console.error(err)
-				#else
-				# 	setTimeout ->
-				# ##		do_eb()
-				# 	, 120000
+				else
+					setTimeout ->
+						do_eb()
+					, 120000
 			processAttendees(data.attendees)
 	do_eb()
 
