@@ -118,10 +118,8 @@ routes = (app) ->
 				if req.me
 					Users.forge().getUser(req.me.get('user_id'), true)
 					.then (user) ->
-						tk user
 						user.getMe()
 						.then (user) ->
-							tk user
 							user = user.toJSON()
 							delete user.password
 							delete user.hash

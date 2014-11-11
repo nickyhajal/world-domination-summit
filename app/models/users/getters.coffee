@@ -32,6 +32,8 @@ getters =
             .then (user) =>
               @getRsvps()
               .then (user) =>
+                if user.get('password')?.length
+                  user.set('has_pw', true)
                 dfr.resolve(user)
     return dfr.promise
     
