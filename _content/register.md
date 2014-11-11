@@ -8,7 +8,7 @@ WDS is an adventure like no other, and next year will be *extra* special because
 
 Until this round of tickets is sold out, you can register through the link below:
 
-<a href="http://wds2015.eventbrite.com" class="button">Register &rarr;</a>
+<a href="http://wds2015.eventbrite.com" target ="_blank" class="button">Register &rarr;</a>
 
 After this sale, we won't offer any additional tickets until sometime in 2015. We hope you'll join us if you haven't already planned to, and we hope you'll tell your friends and family to sign up too. The best is yet to come!
 
