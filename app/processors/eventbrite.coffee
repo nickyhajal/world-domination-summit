@@ -26,7 +26,7 @@ shell = (app) ->
 
 		eb.event_list_attendees id: app.settings.eb_event, (err, data) ->
 			processAttendees = (attendees, inx = 0) ->
-				if attendees[inx]? || inx > 1
+				if attendees[inx]? || inx < 3
 					attendee = attendees[inx].attendee
 					inx += 1 # For the next attendee
 					eventbrite_id = attendee.barcode
@@ -68,7 +68,7 @@ shell = (app) ->
 										console.error(err)
 				else
 					setTimeout ->
-						do_eb()
+				##		do_eb()
 					, 120000
 			processAttendees(data.attendees)
 	do_eb()

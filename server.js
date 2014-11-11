@@ -22,9 +22,9 @@ require('./app/processors/third-party-feeds')(app)
 //require('./app/processors/wufoo')(app)
 //require('./app/processors/meetup_suggestions')(app)
 //require('./app/processors/academies')(app)
-//if (process.env.NODE_ENV === 'production') {
-//	require('./app/processors/eventbrite')(app)
-//}
+if (process.env.NODE_ENV === 'production') {
+	require('./app/processors/eventbrite')(app)
+}
 
 // Uncomment to update twitter avatars
 //require('./app/processors/twitter_avs')(app)
