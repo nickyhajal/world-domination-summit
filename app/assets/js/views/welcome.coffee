@@ -40,7 +40,7 @@ ap.Views.welcome = XView.extend
 		setTimeout =>
 
 			# Start animation
-			setTiemout => 
+			setTimeout => 
 				$('#content_shell').removeClass('start')
 			, 50
 			$('html').addClass('hide-counter')
