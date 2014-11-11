@@ -25,6 +25,7 @@ shell = (app) ->
 		tk 'Start EB...'
 
 		eb.event_list_attendees id: app.settings.eb_event, (err, data) ->
+			tk data
 			processAttendees = (attendees, inx = 0) ->
 				if attendees[inx]? || inx < 3
 					attendee = attendees[inx].attendee
