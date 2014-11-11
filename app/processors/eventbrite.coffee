@@ -28,7 +28,6 @@ shell = (app) ->
 			processAttendees = (attendees, inx = 0) ->
 				if attendees[inx]?
 					attendee = attendees[inx].attendee
-					tk attendee
 					inx += 1 # For the next attendee
 					eventbrite_id = attendee.barcode
 					ticket = Ticket.forge({eventbrite_id: eventbrite_id}).fetch()
