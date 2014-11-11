@@ -15,15 +15,13 @@ process.yr = '15'
 process.lastYear = '2013'
 process.dmn = process.env.DOMAIN
 
-if (process.env.NODE_ENV === 'production') {
-//require('./app/processors/content-grabber')(app)
-require('./app/processors/third-party-feeds')(app)
-}
 //require('./app/processors/wufoo')(app)
 //require('./app/processors/meetup_suggestions')(app)
 //require('./app/processors/academies')(app)
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production' && process.env.PORT == '7676') {
 	require('./app/processors/eventbrite')(app)
+	require('./app/processors/third-party-feeds')(app)
+	//require('./app/processors/content-grabber')(app)
 }
 
 // Uncomment to update twitter avatars
