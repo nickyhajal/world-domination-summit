@@ -626,9 +626,9 @@ a#small-logo {
     width:                      148.5px;
     display:                    block;
     margin-top:                 -4px;
-    margin-bottom:              -28px;
+    margin-bottom:              -32px;
     position:                   relative;
-    top:                        9px;
+    top:                        3px;
     opacity:                    0;
     -ms-filter:                 "alpha(opacity=0)";
     filter:                     alpha(opacity=0);
@@ -638,7 +638,7 @@ a#small-logo {
     -webkit-transition:         opacity 0.2s ease 0s;
     -o-transition:              opacity 0.2s ease 0s;
     left:                       60px;
-    height:                     31px;
+    height:                     35px;
     background:                 url("/images/logo-small.png") no-repeat scroll 0px 0px / 100% auto transparent;
 }
 .orange-box a.button {
