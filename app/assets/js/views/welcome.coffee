@@ -40,7 +40,9 @@ ap.Views.welcome = XView.extend
 		setTimeout =>
 
 			# Start animation
-			$('#content_shell').removeClass('start')
+			setTiemout => 
+				$('#content_shell').removeClass('start')
+			, 50
 			$('html').addClass('hide-counter')
 			@sidebarNumbers()
 			@usernameChanged(ap.me.get('user_name'))
