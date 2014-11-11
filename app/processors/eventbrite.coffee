@@ -26,7 +26,7 @@ shell = (app) ->
 
 		eb.event_list_attendees id: app.settings.eb_event, (err, data) ->
 			processAttendees = (attendees, inx = 0) ->
-				if attendees[inx]? || inx < 3
+				if attendees[inx]? || inx < 30
 					attendee = attendees[inx].attendee
 					tk attendee
 					inx += 1 # For the next attendee
