@@ -25,10 +25,10 @@ shell = (app) ->
 		tk 'Start EB...'
 
 		eb.event_list_attendees id: app.settings.eb_event, (err, data) ->
-			tk data
 			processAttendees = (attendees, inx = 0) ->
 				if attendees[inx]? || inx < 3
 					attendee = attendees[inx].attendee
+					tk attendee
 					inx += 1 # For the next attendee
 					eventbrite_id = attendee.barcode
 					ticket = Ticket.forge({eventbrite_id: eventbrite_id}).fetch()
