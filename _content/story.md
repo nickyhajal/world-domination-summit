@@ -28,4 +28,4 @@ As WDS 2015 approaches, we'll be booking out every room possible in our partner 
 
 In short WDS 2015 will be an experience like no other. We hope to see you there!
 
-<a href="/register" class="register-banner"></a>
+<a href="/register" class="register-banner"><span class="reg-heading">Registration Open!</span><span class="reg-subhead">Join the Adventure While You Still Can</span></a>

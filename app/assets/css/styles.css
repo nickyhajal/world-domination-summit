@@ -302,7 +302,7 @@ a.subtle-link {
     margin-top:                 21px;
 }
 .sidebar-fixed #sidebar {
-    margin-top:                 234px;
+    margin-top:                 212px;
 }
 .tpl-3 .block-6 .tweet-avatar {
     width:                      50px;
@@ -449,6 +449,7 @@ a.register-banner {
     height:                     160px;
     display:                    block;
     margin-top:                 40px;
+    padding-top:                87px;
 }
 img.photo-head-active {
     display:                    block ! important;
@@ -1067,6 +1068,20 @@ h3#happening-now-heading {
     font-family:                vitesselight;
     line-height:                125%;
     font-size:                  19pt;
+}
+span.reg-heading {
+    text-align:                 center;
+    width:                      100%;
+    display:                    block;
+}
+#reg-open h3, .reg-heading {
+    color:                      rgb(34, 24, 16);
+    font-family:                VitesseBold;
+    font-size:                  19pt;
+    font-weight:                bold;
+    text-align:                 center;
+    text-decoration:            underline;
+    width:                      100%;
 }
 h3 {
     font-size:                  24px;
@@ -1768,6 +1783,18 @@ h4#challenge-title {
 }
 #page-task h4 {
     margin-bottom:              10px;
+}
+span.reg-subhead {
+    display:                    block;
+    width:                      100%;
+}
+#reg-open h4, .reg-subhead {
+    color:                      rgb(242, 243, 234);
+    font-family:                vitesselight;
+    font-size:                  11pt;
+    margin:                     0px auto;
+    text-align:                 center;
+    width:                      250px;
 }
 h4 {
     clear:                      both;
@@ -3313,6 +3340,7 @@ a.link-block:hover {
     width:                      435px;
     top:                        140px;
     height:                     278px;
+    padding-top:                100px;
 }
 #reg-schedule {
     background:                 url("/images/block_schedule.png") repeat scroll 0% 0% transparent;
@@ -4573,7 +4601,7 @@ span.answer_start {
     padding-left:               120px;
 }
 .select2-results li {
-    list-style:                 none outside none;
+    list-style:                 outside none none;
     display:                    list-item;
     background-image:           none;
 }
@@ -4667,7 +4695,7 @@ span.answer_start {
 }
 .select2-container-multi .select2-choices li {
     float:                      left;
-    list-style:                 none outside none;
+    list-style:                 outside none none;
 }
 html[dir="rtl"] .select2-container-multi .select2-choices li {
     float:                      right;
