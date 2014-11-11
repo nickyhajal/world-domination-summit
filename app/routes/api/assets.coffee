@@ -116,7 +116,7 @@ routes = (app) ->
 			me: (req) ->
 				dfr = Q.defer()
 				if req.me
-					Users.forge().getUser(req.me.get('user_id'))
+					Users.forge().getUser(req.me.get('user_id'), true)
 					.then (user) ->
 						user.getMe()
 						.then (user) ->
