@@ -4,9 +4,9 @@ icon: globe
 
 Thanks for your interest in taking over the world. WDS tickets go very quickly, and the event has been completely sold out four years in a row. WDS 2015 is coming on **July 9–13**.
 
-WDS is an adventure like no other, and 2015 will be *extra* special because it's our five-year anniversary. We'd love for you to join us… and now you can!
+<!-- WDS is an adventure like no other, and 2015 will be *extra* special because it's our five-year anniversary. We'd love for you to join us… and now you can!
 
-<!-- Until this round of tickets is sold out, you can register through the link below:
+Until this round of tickets is sold out, you can register through the link below:
 
 <a href="http://wds2015.eventbrite.com" target ="_blank" class="button">Register &rarr;</a>
 
