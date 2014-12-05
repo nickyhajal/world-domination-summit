@@ -61,6 +61,6 @@ WDS is a sponsor-free, non-commercial gathering. We do not accept advertising or
 
 ### Can I be a volunteer?
 
-Every year we recruit a number of volunteer "ambassadors" to serve our attendees during WDS. To apply for this role, you must live in Portland at least most of the year, and you must be available during the entire weekend of the event. Applications will open after ticket sales end. When applications become available, Chris will make an announcement on his blog and through Twitter.
+Every year we recruit a number of volunteer "ambassadors" to serve our attendees during WDS. To apply for this role, you must live in Portland at least most of the year, and you must be available during the entire weekend of the event. Applications will open after ticket sales end. When applications become available, Chris will make an announcement on his <a href="http://chrisguillebeau.com/">blog</a> and through <a href="https://twitter.com/chrisguillebeau">Twitter.</a>
 
 <div class="line-canvas"></div>
