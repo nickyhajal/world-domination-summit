@@ -19,7 +19,7 @@ WDS was founded by <a href="http://chrisguillebeau.com" target="blank"> Chris Gu
 
 ### How can I get a ticket?
 
-Tickets for WDS are only offered two or three times a year, and they go quickly. There is no fast-track or secret process to get a ticket; they are all offered on a first-come, first-served basis. The best way to be informed of opportunities to register for next year is to join the 2014 waiting list.
+Tickets for WDS are only offered two or three times a year, and they go quickly. There is no fast-track or secret process to get a ticket; they are all offered on a first-come, first-served basis. The best way to be informed of opportunities to register for next year is to join the 2015 <a href="http://worlddominationsummit.com/register">waiting list.</a>
 
 Please note: once tickets are gone, they're gone. We do not hold any tickets back for higher-priced sales later, nor do we sell tickets at the door.
 
