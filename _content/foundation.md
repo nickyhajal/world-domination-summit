@@ -65,7 +65,7 @@ We know the WDS community has a lot to offer, which a wide-range of knowledge an
 If you would like to contribute your knowledge and expertise to our Voyagers, whether that be for an hour or a full-year, we’d sincerely appreciate your help. Simply fill out the form below and we’ll be in contact when we have a need for your skills!
 
 <div id="wufoo-w12waw4d1nmlnum">
-<a href="https://worlddominationsummit.wufoo.com/forms/w12waw4d1nmlnum">Sign-up to share your expertise here!</a>.
+<a href="https://worlddominationsummit.wufoo.com/forms/w12waw4d1nmlnum">Sign-up to share your expertise here!</a>
 </div>
 <script type="text/javascript">var w12waw4d1nmlnum;(function(d, t) {
 var s = d.createElement(t), options = {
