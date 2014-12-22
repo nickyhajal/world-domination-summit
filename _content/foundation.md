@@ -64,6 +64,9 @@ We know the WDS community has a lot to offer, which a wide-range of knowledge an
 
 If you would like to contribute your knowledge and expertise to our Voyagers, whether that be for an hour or a full-year, we’d sincerely appreciate your help. Simply fill out the form below and we’ll be in contact when we have a need for your skills!
 
+<div id="wufoo-w12waw4d1nmlnum">
+<a href="https://worlddominationsummit.wufoo.com/forms/w12waw4d1nmlnum">Sign-up to share your expertise here!</a>
+</div>
 
 
 <a name="how-to-apply"></a>
@@ -77,3 +80,19 @@ If you would like to contribute your knowledge and expertise to our Voyagers, wh
 	<p>Thank you everyone who submitted! Stay tuned for updates on our first class of Voyagers!</p>
 </div>
 
+<script type="text/javascript">var zts2y6k0pg4k7g;(function(d, t) {
+var s = d.createElement(t), options = {
+'userName':'worlddominationsummit',
+'formHash':'zts2y6k0pg4k7g',
+'autoResize':true,
+'height':'1964',
+'async':true,
+'host':'wufoo.com',
+'header':'show',
+'ssl':true};
+s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+s.onload = s.onreadystatechange = function() {
+var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+try { zts2y6k0pg4k7g = new WufooForm();zts2y6k0pg4k7g.initialize(options);zts2y6k0pg4k7g.display(); } catch (e) {}};
+var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, 'script');</script>
