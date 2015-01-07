@@ -66,7 +66,26 @@ If you would like to contribute your knowledge and expertise to our Voyagers, wh
 <div id="wufoo-w12waw4d1nmlnum">
 Fill out my <a href="https://worlddominationsummit.wufoo.com/forms/w12waw4d1nmlnum">online form</a>.
 </div>
-<script type="text/javascript"></script>
+
+<script type="text/javascript">
+
+var w12waw4d1nmlnum;
+(function(d, t) {
+var s = d.createElement(t), options = {
+'userName':'worlddominationsummit',
+'formHash':'w12waw4d1nmlnum',
+'autoResize':true,
+'height':'865',
+'async':true,
+'host':'wufoo.com',
+'header':'show',
+'ssl':true};
+s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
+
+var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+})(document, 'script');
+
+</script>
 
 
 
