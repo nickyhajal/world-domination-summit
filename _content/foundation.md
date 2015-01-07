@@ -81,7 +81,7 @@ s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/
 s.onload = s.onreadystatechange = function() {
 var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
 setTimeout(function(){
-	try { q8ejno60uybw98 = new WufooForm();q8ejno60uybw98.initialize(options);q8ejno60uybw98.display(); } catch (e) {}), 750);
+	try { q8ejno60uybw98 = new WufooForm();q8ejno60uybw98.initialize(options);q8ejno60uybw98.display(); } catch (e) {}}, 750);
 	
 	
 };
