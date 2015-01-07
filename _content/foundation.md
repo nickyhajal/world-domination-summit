@@ -63,32 +63,25 @@ As part of the WDS Foundation “Scholarships For Real Life” program, each of 
 We know the WDS community has a lot to offer, which a wide-range of knowledge and skills from which our Voyagers from could benefit. As we gear up for our 2015 applications, we’d like to give our community members a chance to share their expertise by signing up as a mentor in advance.
 
 If you would like to contribute your knowledge and expertise to our Voyagers, whether that be for an hour or a full-year, we’d sincerely appreciate your help. Simply fill out the form below and we’ll be in contact when we have a need for your skills!
-<div id="wufoo-w12waw4d1nmlnum">
-Fill out my <a href="https://worlddominationsummit.wufoo.com/forms/w12waw4d1nmlnum">online form</a>.
+<div id="wufoo-mfc5ns40aeiur6">
+Fill out my <a href="https://worlddominationsummit.wufoo.com/forms/mfc5ns40aeiur6">online form</a>.
 </div>
-
-<script type="text/javascript">
-
-var w12waw4d1nmlnum;
-(function(d, t) {
+<script type="text/javascript">var mfc5ns40aeiur6;(function(d, t) {
 var s = d.createElement(t), options = {
 'userName':'worlddominationsummit',
-'formHash':'w12waw4d1nmlnum',
+'formHash':'mfc5ns40aeiur6',
 'autoResize':true,
-'height':'865',
+'height':'497',
 'async':true,
 'host':'wufoo.com',
 'header':'show',
 'ssl':true};
-s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
+s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
 s.onload = s.onreadystatechange = function() {
 var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-};
+try { mfc5ns40aeiur6 = new WufooForm();mfc5ns40aeiur6.initialize(options);mfc5ns40aeiur6.display(); } catch (e) {}};
 var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-})(document, 'script');
-
-</script>
-
+})(document, 'script');</script>
 
 
 <a name="how-to-apply"></a>
