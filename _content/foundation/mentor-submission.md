@@ -1,3 +1,5 @@
+icon: handshake
+
 <div id="wufoo-w12waw4d1nmlnum">
 Fill out my <a href="https://worlddominationsummit.wufoo.com/forms/w12waw4d1nmlnum">online form</a>.
 </div>
