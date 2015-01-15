@@ -37,7 +37,9 @@ All WDS tickets are non-refundable. Transfers and name changes on tickets are av
 
 ### How can I transfer a ticket?
 
-(Please Note: The ability to transfer a ticket is currently not available but will be soon.) If you are a registered attendee, look for the "Transfer Ticket" link that appears on the bottom of the website when you are logged in. You'll need the name, email address, and mailing address for the new ticket holder. Click the link, complete the necessary information, and pay the transfer fee to complete the process.
+(Please note: The ability to transfer a ticket is currently not available but will be soon.) 
+
+If you are a registered attendee, look for the "Transfer Ticket" link that appears on the bottom of the website when you are logged in. You'll need the name, email address, and mailing address for the new ticket holder. Click the link, complete the necessary information, and pay the transfer fee to complete the process.
 
 <div class="line-canvas"></div>
 
