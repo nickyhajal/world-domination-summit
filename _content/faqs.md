@@ -19,7 +19,7 @@ WDS was founded by <a href="http://chrisguillebeau.com" target="blank"> Chris Gu
 
 ### How can I get a ticket?
 
-Tickets for WDS are only offered two or three times a year, and they go quickly. There is no fast-track or secret process to get a ticket; they are all offered on a first-come, first-served basis. The best way to be informed of opportunities to register for next year is to join the 2014 waiting list.
+Tickets for WDS are only offered two or three times a year, and they go quickly. There is no fast-track or secret process to get a ticket; they are all offered on a first-come, first-served basis. The best way to be informed of opportunities to register for next year is to join the 2015 <a href="http://worlddominationsummit.com/register">waiting list.</a>
 
 Please note: once tickets are gone, they're gone. We do not hold any tickets back for higher-priced sales later, nor do we sell tickets at the door.
 
@@ -36,6 +36,8 @@ All WDS tickets are non-refundable. Transfers and name changes on tickets are av
 <a name="ticket-transfers"></a>
 
 ### How can I transfer a ticket?
+
+(Please note: The ability to transfer a ticket is currently not available but will be soon.) 
 
 If you are a registered attendee, look for the "Transfer Ticket" link that appears on the bottom of the website when you are logged in. You'll need the name, email address, and mailing address for the new ticket holder. Click the link, complete the necessary information, and pay the transfer fee to complete the process.
 
@@ -61,6 +63,6 @@ WDS is a sponsor-free, non-commercial gathering. We do not accept advertising or
 
 ### Can I be a volunteer?
 
-Every year we recruit a number of volunteer "ambassadors" to serve our attendees during WDS. To apply for this role, you must live in Portland at least most of the year, and you must be available during the entire weekend of the event. Applications will open after ticket sales end. When applications become available, Chris will make an announcement on his blog and through Twitter.
+Every year we recruit a number of volunteer "ambassadors" to serve our attendees during WDS. To apply for this role, you must live in Portland at least most of the year, and you must be available during the entire weekend of the event. Applications will open after ticket sales end. When applications become available, Chris will make an announcement on his <a href="http://chrisguillebeau.com/">blog</a> and through <a href="https://twitter.com/chrisguillebeau">Twitter.</a>
 
 <div class="line-canvas"></div>

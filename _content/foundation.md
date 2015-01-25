@@ -52,6 +52,20 @@ Our selection committee will be looking at a number of factors to determine whic
 * How will the project involve and inspire others?
 * Without a scholarship, how does the applicant intend to move forward on the proposed solution?
 
+<div class="line-canvas"></div>
+
+### Register To Be A Mentor
+
+One of the cornerstones of the World Domination Summit is adventure, and WDS attendees certainly know how to celebrate living unconventionally. Many of us are driven by the journey, and enjoy striking out on our own in search of new opportunities and experiences. Yet, we also know and appreciate the value of community—having someone to share the ups and downs of our journey and to help us reflect on what we’ve learned. It is this combination of adventure and community that brings us back each July for the World Domination Summit, and also the motivation for this blog post.
+
+As part of the WDS Foundation “Scholarships For Real Life” program, each of our Voyagers receive mentoring to help guide them through their projects. Sometimes the mentoring is for specific tasks or goals, while at other times the mentoring is meant to be more long-term and includes big-picture guidance. 
+
+We know the WDS community has a lot to offer, which a wide-range of knowledge and skills from which our Voyagers from could benefit. As we gear up for our 2015 applications, we’d like to give our community members a chance to share their expertise by signing up as a mentor in advance.
+
+If you would like to contribute your knowledge and expertise to our Voyagers, whether that be for an hour or a full-year, we’d sincerely appreciate your help. Simply fill out the form below and we’ll be in contact when we have a need for your skills!
+
+<a href="/foundation/mentor-submission">Click here to share your expertise!</a>
+
 
 <a name="how-to-apply"></a>
 
@@ -63,19 +77,3 @@ Our selection committee will be looking at a number of factors to determine whic
 	<p>If you would like to be notified when applications open for 2015, please email <a href="mailto:foundation@wds.fm">foundation@wds.fm</a> with your contact information.</p>
 	<p>Thank you everyone who submitted! Stay tuned for updates on our first class of Voyagers!</p>
 </div>
-<script type="text/javascript">var zts2y6k0pg4k7g;(function(d, t) {
-var s = d.createElement(t), options = {
-'userName':'worlddominationsummit',
-'formHash':'zts2y6k0pg4k7g',
-'autoResize':true,
-'height':'1964',
-'async':true,
-'host':'wufoo.com',
-'header':'show',
-'ssl':true};
-s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
-s.onload = s.onreadystatechange = function() {
-var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-try { zts2y6k0pg4k7g = new WufooForm();zts2y6k0pg4k7g.initialize(options);zts2y6k0pg4k7g.display(); } catch (e) {}};
-var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-})(document, 'script');</script>
