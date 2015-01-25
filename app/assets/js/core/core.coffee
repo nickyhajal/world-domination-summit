@@ -128,19 +128,19 @@ ap.processTemplate = (name, html) ->
 			content = bits[1].replace(/\`script/g, '<script')
 			content = content.replace(/`\/script/g, '</script')
 			ap.templates[name] = content
-		else
-			ap.template_options[name] = {}
-			ap.templates[name] = html
+			opts = ap.template_options[name].split('\n')
+			o = {}
+			for opt in opts
+				if opt.length
+					bits = opt.split(':')
+					part = bits[0]
+					val = bits.splice(1).join(':')
+					o[_.trim(part)] = _.trim(val)
+			ap.template_options[name] = o
+	else
+		ap.template_options[name] = {}
+		ap.templates[name] = html
 
-		opts = ap.template_options[name].split('\n')
-		o = {}
-		for opt in opts
-			if opt.length
-				bits = opt.split(':')
-				part = bits[0]
-				val = bits.splice(1).join(':')
-				o[_.trim(part)] = _.trim(val)
-		ap.template_options[name] = o
 
 
 ###
