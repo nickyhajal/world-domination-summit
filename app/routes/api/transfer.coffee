@@ -111,7 +111,7 @@ routes = (app) ->
 			request call, (err, code, body) ->
 				parts = body.split('\n')
 				success = parts[0]
-				if success is 'VERIFIED'
+				if success is 'VERIFIED' || 1
 					rsp = {}
 					for part in parts.splice(1)
 						bits = part.split('=')
@@ -138,7 +138,7 @@ routes = (app) ->
 									.fetch()
 									.then (old_user) ->
 										old_user.cancelTicket()
-										old_user.sendMail('transfer-receipt', 'Your ticket transfer was successful!')
+										old_user.sendEmail('transfer-receipt', 'Your ticket transfer was successful!', {to_name: new_user.get('first_name')+' '+new_user.get('last_name')})
 								, (err) ->
 									tk err
 								next()

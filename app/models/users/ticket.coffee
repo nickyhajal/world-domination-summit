@@ -38,13 +38,16 @@ ticket =
         if ticket
           ticket.set
             status: 'canceled'
-          save()
+          .save()
           .then =>
             @removeFromList('WDS '+process.year+' Attendees')
             .then =>
               @addToList('WDS '+process.year+' Canceled')
               dfr.resolve [this, ticket]
-        dfr.reject("Doesn't have a ticket.")
+          , (err) ->
+            tk err
+        else
+          dfr.reject("Doesn't have a ticket.")
     return dfr.promise
 
 module.exports = ticket
