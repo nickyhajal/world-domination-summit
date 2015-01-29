@@ -74,15 +74,19 @@ routes = (app) ->
 			_Users = Users.forge()
 			all = {}
 			async.each req.query.search.split(' '), (term, cb) ->
-				_Users.query('orWhere', 'first_name', 'LIKE', term+'%')
+				_Users
+				.query('orWhere', 'first_name', 'LIKE', term+'%')
+				.query('where', 'attending15', '=', '1')
 				_Users.fetch()
 				.then (byF) ->
 					_Users = Users.forge()
 					_Users.query('orWhere', 'last_name', 'LIKE', term+'%')
+					.query('where', 'attending15', '=', '1')
 					.fetch()
 					.then (byL) ->
 						_Users = Users.forge()
 						_Users.query('orWhere', 'email', 'LIKE', '%'+term+'%')
+						.query('where', 'attending15', '=', '1')
 						_Users.fetch()
 						.then (byE) ->
 							for f in byF.models
