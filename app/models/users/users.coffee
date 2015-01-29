@@ -295,7 +295,7 @@ user =
     @addToList 'WDS '+process.year+' Attendees'
 
   syncEmailWithTicket: ->
-    if @get('attending14') is '1'
+    if @get('attending'+process.yr) is '1'
       @addToList 'WDS '+process.year+' Attendees'
       @removeFromList 'WDS '+process.year+' Canceled'
     else

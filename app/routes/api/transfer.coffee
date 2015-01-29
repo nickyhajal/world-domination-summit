@@ -131,7 +131,8 @@ routes = (app) ->
 								User.forge(new_attendee)
 								.save()
 								.then (new_user) ->
-									new_user.registerTicket('TRANSFER_FROM_'+xfer.get('user_id'), null, xfer.get('user_id'))
+									hash = crypto.createHash('md5').update(+(new Date())).digest('hex').substr(0,5)
+									new_user.registerTicket('TRANSFER_FROM_'+xfer.get('user_id')+'_'+hash, null, xfer.get('user_id'))
 									User.forge({user_id: xfer.get('user_id')})
 									.fetch()
 									.then (old_user) ->
