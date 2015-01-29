@@ -57,7 +57,7 @@ routes = (app) ->
 						current_code: 'USD'
 						upload: '1'
 						return: 'http://' + process.dmn + '/api/transfer/return'
-						business: 'billing@pippity.com'
+						business: 'chris.guillebeau@gmail.com'
 						notify_url: 'http://' + process.dmn + '/api/transfer/ipn'
 						custom: transfer.get('transfer_id')
 					data = ''
