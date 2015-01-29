@@ -5,7 +5,6 @@ YAML = require('yamljs')
 
 mailer =
 	send: (promo, subject, to, params = {}) ->
-		tk promo
 		dfr = Q.defer()
 		use_to = 'nhajal@gmail.com'
 		if process.env.NODE_ENV is 'production'

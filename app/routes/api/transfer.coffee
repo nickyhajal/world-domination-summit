@@ -111,7 +111,7 @@ routes = (app) ->
 			request call, (err, code, body) ->
 				parts = body.split('\n')
 				success = parts[0]
-				if success is 'VERIFIED' || 1
+				if success is 'VERIFIED'
 					rsp = {}
 					for part in parts.splice(1)
 						bits = part.split('=')

@@ -6,7 +6,6 @@ ap.Views.home = XView.extend
 	rendered: ->
 		wall.init()
 	whenFinished: ->
-		tk 'unbind'
 		$(window).off('scroll', wall.scroll)
 
 window.wall =
