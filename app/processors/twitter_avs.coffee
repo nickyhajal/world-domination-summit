@@ -20,7 +20,7 @@ shell = (app, db) ->
 	Users.forge()
 	.query('where', 'twitter', '<>', '')
 	.query('where', 'pic', 'LIKE', '%.twimg.com%')
-	.query('where', 'attending14', '1')
+	.query('where', 'attending'+process.yr, '1')
 	.fetch()
 	.then (rsp) ->
 		reqs = []

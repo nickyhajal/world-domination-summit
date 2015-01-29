@@ -57,7 +57,7 @@ routes = (app) ->
 						current_code: 'USD'
 						upload: '1'
 						return: 'http://' + process.dmn + '/api/transfer/return'
-						business: 'chris.guillebeau@gmail.com'
+						business: 'billing@pippity.com'
 						notify_url: 'http://' + process.dmn + '/api/transfer/ipn'
 						custom: transfer.get('transfer_id')
 					data = ''
@@ -131,13 +131,16 @@ routes = (app) ->
 								User.forge(new_attendee)
 								.save()
 								.then (new_user) ->
-									hash = crypto.createHash('md5').update(+(new Date())).digest('hex').substr(0,5)
+									uniqid = +(new Date()) + ''
+									hash = crypto.createHash('md5').update(uniqid).digest('hex').substr(0,5)
 									new_user.registerTicket('TRANSFER_FROM_'+xfer.get('user_id')+'_'+hash, null, xfer.get('user_id'))
 									User.forge({user_id: xfer.get('user_id')})
 									.fetch()
 									.then (old_user) ->
 										old_user.cancelTicket()
 										old_user.sendMail('transfer-receipt', 'Your ticket transfer was successful!')
+								, (err) ->
+									tk err
 								next()
 				else
 					next()

@@ -68,10 +68,10 @@ User = Shelf.Model.extend
     ]
     @addressChanged = addressChanged
 
-    if @lastDidChange ['email'] and @get('type') is 'attendee' and @get('attending14') is '1'
+    if @lastDidChange ['email'] and @get('type') is 'attendee' and @get('attending'+process.yr) is '1'
       @syncEmail()
 
-    if @lastDidChange ['attending14']
+    if @lastDidChange ['attending'+process.yr]
       @syncEmailWithTicket()
 
   # Auth

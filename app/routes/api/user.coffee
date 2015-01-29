@@ -167,7 +167,7 @@ routes = (app) ->
 					if (user)
 						hash = require('crypto').createHash('md5').update(''+(+(new Date()))).digest("hex").substr(0,5)
 						user.registerTicket('ADDED_BY_176_'+hash)
-						user.set('attending14', '1').save()
+						user.set('attending'+process.yr, '1').save()
 						res.r.msg = 'Registered'
 					next()
 

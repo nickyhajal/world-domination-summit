@@ -99,7 +99,7 @@ routes = (app) ->
 						dfr.resolve(JSON.parse(atns))
 					else
 						Users.forge()
-						.query('where', 'attending14', '1')
+						.query('where', 'attending'+process.yr, '1')
 						.fetch
 							columns: ['user_id', 'first_name', 'last_name', 'user_name', 'distance', 'lat', 'lon', 'pic', 'location']
 						.then (attendees) ->
@@ -150,7 +150,7 @@ routes = (app) ->
 						dfr.resolve(JSON.parse(ranks))
 					else
 						Users.forge()
-						.query('where', 'attending14', '1')
+						.query('where', 'attending'+process.yr, '1')
 						.query('where', 'points', '>', '0')
 						.query('orderBy', 'points', 'desc')
 						.fetch({columns: ['user_id', 'points']})
