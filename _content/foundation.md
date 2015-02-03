@@ -25,7 +25,7 @@ For our first year of the “Scholarships for Real Life” program, we’re open
 
 ### Selection Criteria
 
-Our selection committee will be looking at a number of factors to determine which projects best fit with our current goals. Here are the main questions applicants will need to address:
+Our selection committee will be looking at a number of factors to determine which projects best fit with our current goals.
 
 <div class="foundation-criteria-fit foundation-criteria"></div>
 
