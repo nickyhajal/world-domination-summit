@@ -32,10 +32,8 @@ Our selection committee will be looking at a number of factors to determine whic
 <p class="color-blue">Fit with Scholarships for Real Life Program</p>
 
 
-* Does the project focus on one or more of WDS’s core themes (Community, Adventure, Service)?
+* Does the project serve others and create community?
 * What is the applicant’s experience with the identified problem and community involved?
-* Is the applicant making the most of existing resources and engaging key stakeholders affected by the problem?
-* How does the project impact the larger community?
 
 <div class="foundation-criteria-implementation foundation-criteria"></div>
 
@@ -43,7 +41,7 @@ Our selection committee will be looking at a number of factors to determine whic
 
 * Can the proposal be realistically completed in a year?
 * If part of a larger, long-term project, how does the proposal further the overall effort?
-* Does the applicant have the capacity to execute the proposed solution?
+* Does the applicant have the capacity to execute the proposed solution? If not, how will he/she prepare?
 
 <div class="foundation-criteria-sustainability foundation-criteria"></div>
 
