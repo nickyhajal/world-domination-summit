@@ -53,7 +53,6 @@ content =
 					columns: ['content_id', 'type', 'data']
 				)
 				.then (contents) ->
-					tk process.yr
 					_Users
 					.query('where', 'pub_loc', '=', '1')
 					.query('where', 'attending15', '=', '1')
