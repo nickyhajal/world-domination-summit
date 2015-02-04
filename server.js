@@ -21,7 +21,7 @@ process.dmn = process.env.DOMAIN
 if (process.env.NODE_ENV === 'production' && process.env.PORT == '7676') {
 	require('./app/processors/eventbrite')(app)
 	require('./app/processors/third-party-feeds')(app)
-	//require('./app/processors/content-grabber')(app)
+	require('./app/processors/content-grabber')(app)
 }
 
 // Uncomment to update twitter avatars

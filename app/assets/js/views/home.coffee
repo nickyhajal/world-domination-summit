@@ -28,7 +28,6 @@ window.wall =
 		$(window).on('scroll', @loadMoreContentIfWeScrolledDownEnough)
 		_.whenReady 'assets', =>
 			@loadContent =>
-				tk 'loaded'
 				@fillContent($('.wall-section'))
 				@generateWallPanels()
 				setTimeout =>
@@ -227,13 +226,11 @@ window.wall =
 		if not wall.content
 			_.whenReady 'assets', =>
 				ap.api 'get content', {}, (rsp) =>
-					tk rsp
 					wall.content = rsp.content
 					for content in wall.content
 						if not wall.contByType[content.type]?
 							wall.contByType[content.type] = []
 						wall.contByType[content.type].push content
-					tk wall.contByType
 
 					answers = {}
 					wall.ansByQ = {}
@@ -244,14 +241,12 @@ window.wall =
 							wall.ansByQ[answer.question_id] = []
 							answers[answer.user_id] = {}
 						wall.ansByQ[answer.question_id].push answer
-					tk wall.contByType
 
 					wall.attendees = rsp.attendees
 					wall.atnById = {}
 					for atn in rsp.attendees
 						atn.distance = Math.ceil(atn.distance)
 						wall.atnById[atn.user_id] = atn
-					tk wall.contByType
 
 					wall.contByType['speaker'] = []
 					for type,list of ap.speakers
@@ -260,7 +255,6 @@ window.wall =
 							speaker.content_id = speaker.speaker_id
 							wall.contByType['speaker'].push speaker
 					wall.contByType['speaker'] = _.shuffle(wall.contByType['speaker'])
-					tk wall.contByType
 
 					wall.contByType['speaker_quote'] = []
 					for type,list of ap.speakers
@@ -272,7 +266,6 @@ window.wall =
 								speaker.content_id = speaker.speaker_id+inx
 								inx += 1
 								wall.contByType['speaker_quote'].push speaker
-					tk wall.contByType
 
 					cb()
 		else
@@ -566,9 +559,7 @@ window.wall =
 							atn.post_name = "'s super-power is..."
 						return atn
 
-		tk type
 		fetchFrom = wall.contByType[type] # Types left after this point = flickr_stream, featured_tweets, speaker_quotes
-		tk fetchFrom
 		for content in fetchFrom
 			unless wall.used_content[type]
 				wall.used_content[type] = []
