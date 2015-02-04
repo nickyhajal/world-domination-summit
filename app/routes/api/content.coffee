@@ -76,7 +76,7 @@ content =
 							res.r.content = contents
 							res.r.attendees = attendees
 							rds.set 'featured_content', JSON.stringify(res.r), ->
-								rds.expire 'featured_content', 3600
+								rds.expire 'featured_content', 0
 							next()
 						, (err) ->
 							console.error(err)
