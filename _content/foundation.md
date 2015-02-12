@@ -71,7 +71,12 @@ If you would like to contribute your knowledge and expertise to our Voyagers, wh
 
 <div id="foundation-app-box" class="orange-box">
 	<h3>I'm in! How do I apply?</h3>
-	<p><strong>So sorry we missed you!</strong> Applications for the Scholarship for Real Life program are currently closed.</p>
-	<p>If you would like to be notified when applications open for 2015, please email <a href="mailto:foundation@wds.fm">foundation@wds.fm</a> with your contact information.</p>
-	<p>Thank you everyone who submitted! Stay tuned for updates on our first class of Voyagers!</p>
+	<p>To apply, please download the application questions, available as a <a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.docx">Word doc</a> or <a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.pdf">PDF</a>. Complete the questions and email to <a href="mailto:foundation@wds.fm">foundation@wds.fm</a> <strong>no later than 8:00pm PT on Friday, April 3, 2015</strong>. Many applicants have found the questions to take between 2-4 hours to complete.</p>
+<p><a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.docx">Download the Word doc</a></p>
+<p><a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.docx">Download the PDF</a></p>
+
+<p>We understand some stories are better told through other mediums, so if you would like to respond to the questions in another format, please email <a href="mailto:foundation@wds.fm">foundation@wds.fm</a>. You can also contact that email if you have any other questions.</p>
+
+
+
 </div>
