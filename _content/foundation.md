@@ -34,6 +34,7 @@ Our selection committee will be looking at a number of factors to determine whic
 
 * Does the project serve others and create community?
 * What is the applicant’s experience with the identified problem and community involved?
+* Has the applicant identified a list of goals to complete the project?
 
 <div class="foundation-criteria-implementation foundation-criteria"></div>
 
@@ -50,6 +51,18 @@ Our selection committee will be looking at a number of factors to determine whic
 * How will the project involve and inspire others?
 * Without a scholarship, how does the applicant intend to move forward on the proposed solution?
 
+<a name="how-to-apply"></a>
+
+<div class="line-canvas"></div>
+
+<div id="foundation-app-box" class="orange-box">
+	<h3>I'm in! How do I apply?</h3>
+	<p>To apply, please download the application questions, available as a <a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.docx">Word doc</a> or <a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.pdf">PDF</a>. Complete the questions and email to <a href="mailto:foundation@wds.fm">foundation@wds.fm</a> <strong>no later than 8:00pm PT on Friday, April 3, 2015</strong>. Many applicants have found the questions to take between 2-4 hours to complete.</p>
+<p><a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.docx">Download the Word doc</a></p>
+<p><a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.pdf">Download the PDF</a></p>
+
+<p>We understand some stories are better told through other mediums, so if you would like to respond to the questions in another format, please email <a href="mailto:foundation@wds.fm">foundation@wds.fm</a>. You can also contact that email if you have any other questions.</p>
+
 <div class="line-canvas"></div>
 
 ### Register To Be A Mentor
@@ -63,20 +76,6 @@ We know the WDS community has a lot to offer, which a wide-range of knowledge an
 If you would like to contribute your knowledge and expertise to our Voyagers, whether that be for an hour or a full-year, we’d sincerely appreciate your help. Simply fill out the form below and we’ll be in contact when we have a need for your skills!
 
 <a href="/foundation/mentor-submission">Click here to share your expertise!</a>
-
-
-<a name="how-to-apply"></a>
-
-<div class="line-canvas"></div>
-
-<div id="foundation-app-box" class="orange-box">
-	<h3>I'm in! How do I apply?</h3>
-	<p>To apply, please download the application questions, available as a <a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.docx">Word doc</a> or <a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.pdf">PDF</a>. Complete the questions and email to <a href="mailto:foundation@wds.fm">foundation@wds.fm</a> <strong>no later than 8:00pm PT on Friday, April 3, 2015</strong>. Many applicants have found the questions to take between 2-4 hours to complete.</p>
-<p><a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.docx">Download the Word doc</a></p>
-<p><a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.pdf">Download the PDF</a></p>
-
-<p>We understand some stories are better told through other mediums, so if you would like to respond to the questions in another format, please email <a href="mailto:foundation@wds.fm">foundation@wds.fm</a>. You can also contact that email if you have any other questions.</p>
-
 
 
 </div>
