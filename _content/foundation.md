@@ -36,7 +36,6 @@ Our selection committee will be looking at a number of factors to determine whic
 * Has the applicant identified a list of goals to complete the project?
 
 <div class="foundation-criteria-implementation foundation-criteria"></div>
-<p></p>
 
 <p class="color-orange">Implemention</p>
 
