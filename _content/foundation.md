@@ -62,6 +62,7 @@ Our selection committee will be looking at a number of factors to determine whic
 <p><a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.pdf">Download the PDF</a></p>
 
 <p>We understand some stories are better told through other mediums, so if you would like to respond to the questions in another format, please email <a href="mailto:foundation@wds.fm">foundation@wds.fm</a>. You can also contact that email if you have any other questions.</p>
+</div>
 
 <div class="line-canvas"></div>
 
