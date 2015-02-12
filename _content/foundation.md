@@ -31,10 +31,16 @@ Our selection committee will be looking at a number of factors to determine whic
 
 <p class="color-blue">Fit with Scholarships for Real Life Program</p>
 
-
 * Does the project serve others and create community?
 * What is the applicant’s experience with the identified problem and community involved?
 * Has the applicant identified a list of goals to complete the project?
+
+<div class="foundation-criteria-sustainability foundation-criteria"></div>
+
+<p class="color-green">Sustainability</p>
+
+* How will the project involve and inspire others?
+* Without a scholarship, how does the applicant intend to move forward on the proposed solution?
 
 <div class="foundation-criteria-implementation foundation-criteria"></div>
 
@@ -43,13 +49,6 @@ Our selection committee will be looking at a number of factors to determine whic
 * Can the proposal be realistically completed in a year?
 * If part of a larger, long-term project, how does the proposal further the overall effort?
 * Does the applicant have the capacity to execute the proposed solution? If not, how will he/she prepare?
-
-<div class="foundation-criteria-sustainability foundation-criteria"></div>
-
-<p class="color-green">Sustainability</p>
-
-* How will the project involve and inspire others?
-* Without a scholarship, how does the applicant intend to move forward on the proposed solution?
 
 <a name="how-to-apply"></a>
 
