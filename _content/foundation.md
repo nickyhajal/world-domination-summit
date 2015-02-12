@@ -3,7 +3,7 @@ photo_head: /images/foundation/foundation.jpg
 
 <a name="story"></a>
 
-# 2015 Applications are open!
+# 2015 applications are open!
 The WDS Foundation seeks to put the right resources in the hands of amazing people who are acting on the three core values of WDS—community, adventure, service. 
 
 We do this by providing what we call “Scholarships For Real Life.” The goal of these scholarships is to empower individuals to pursue their dreams and impact their community. 
