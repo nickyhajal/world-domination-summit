@@ -18,44 +18,39 @@ sidebar: headquarters
 <a name="lodging"></a>
 
 <h3 class="side-icon-moon">Lodging</h3>
-<p>Portland is an affordable destination, with the lowest hotel rates of any major west coast city. Every year we arrange a number of discounts from partner hotels. Other attendees rent through AirBnB or stay at a local hostel. We are currently working on an updated list but a few options from last year are listed below.</p>
+<p>Portland is an affordable destination, with the lowest hotel rates of any major west coast city. Every year we arrange a number of discounts from partner hotels. Other attendees rent through AirBnB or stay at a local hostel. We're working on a complete list so keep checking back for the latest information. For now, we've secured rooms at these two great properties:.</p>
 
 <div class="place-row">
-	<a href="http://www.thenines.com">The Nines Hotel</a>
+	<a href="https://www.starwoodmeeting.com/StarGroupsWeb/res?id=1502128445&key=1E3271B6">The Nines Hotel</a>
 	<span>
-		<a href="https://goo.gl/maps/A50cZ">0.3 Mi</a>
+		<a href="http://goo.gl/2wmuIP">0.3 Mi</a>
 		From Base
 	</span>
 </div>
 
 <div class="place-row">
-	<a href="http://hotelmodera.com">Hotel Modera</a>
+	<a href="https://be.cohores.net/10180?NextPage=index&Nights=1&NumberOfRooms=1&NumberOfAdults=1&Currency=USD&SubSource=361&GroupCode=WDS2015">Paramount Hotel (use the group code "WDS2015")</a>
 	<span>
-		<a href="https://goo.gl/maps/QuHxk">0.3 Mi</a>
+		<a href="http://goo.gl/WexjC9">0.2 Mi</a>
+		From Base
+	</span>
+</div>
+
+<h3 class="side-icon-moon">Alternative Lodging Options</h3>
+<p>If you can't get a room at one of these hotels or just want to do something else, there are numerous other options.</p>
+
+<div class="place-row">
+	<a href="http://nwportlandhostel.com/">Hostel in NW Portland</a>
+	<span>
+		<a href="http://goo.gl/KYEXgc">1.0 Mi</a>
 		From Base
 	</span>
 </div>
 
 <div class="place-row">
-	<a href="http://www.portlandparamount.com">Paramount Hotel</a>
+	<a href="http://goo.gl/WKh6oU">Airbnb listings close to base</a>
 	<span>
-		<a href="https://goo.gl/maps/5dQVo">0.2 Mi</a>
-		From Base
-	</span>
-</div>
-
-<div class="place-row">
-	<a href="http://www.westinportland.com">The Westin</a>
-	<span>
-		<a href="https://www.google.com/maps/place/Westin+Hotel/@45.520164,-122.680092,17z/data=!3m1!4b1!4m2!3m1!1s0x54950a048b6d5263:0xa6bb040d19c42d2f">0.3 Mi</a>
-		From Base
-	</span>
-</div>
-
-<div class="place-row">
-	<a href="http://www.markspencer.com">Mark Spencer Hotel</a>
-	<span>
-		<a href="https://www.google.com/maps/place/Mark+Spencer+Hotel/@45.522163,-122.682373,17z/data=!3m2!4b1!5s0x54950a030a3e934b:0x76d4833ac4e72712!4m2!3m1!1s0x54950a030a420acf:0x5309db9e6531d701">0.5 Mi</a>
+		<a href="http://goo.gl/WKh6oU">less than .5 Mi</a>
 		From Base
 	</span>
 </div>
