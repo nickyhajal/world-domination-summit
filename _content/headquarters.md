@@ -36,7 +36,6 @@ sidebar: headquarters
 	</span>
 </div>
 
-<h3 class="side-icon-moon">Alternative Lodging Options</h3>
 <p>If you can't get a room at one of these hotels or just want to do something else, there are numerous other options.</p>
 
 <div class="place-row">
