@@ -50,7 +50,7 @@ sidebar: headquarters
 <div class="place-row">
 	<a href="http://goo.gl/WKh6oU">Airbnb listings close to base</a>
 	<span>
-		<a href="http://goo.gl/WKh6oU">less than .5 Mi</a>
+		<a href="http://goo.gl/WKh6oU">< than .5 Mi</a>
 		From Base
 	</span>
 </div>
