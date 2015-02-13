@@ -18,7 +18,7 @@ sidebar: headquarters
 <a name="lodging"></a>
 
 <h3 class="side-icon-moon">Lodging</h3>
-<p>Portland is an affordable destination, with the lowest hotel rates of any major west coast city. Every year we arrange a number of discounts from partner hotels. Other attendees rent through AirBnB or stay at a local hostel. We're working on a complete list so keep checking back for the latest information. For now, we've secured rooms at these two great properties:.</p>
+<p>Portland is an affordable destination, with the lowest hotel rates of any major west coast city. Every year we arrange a number of discounts from partner hotels. Other attendees rent through AirBnB or stay at a local hostel. We're working on a complete list so keep checking back for the latest information. For now, we've secured rooms at these two great properties:</p>
 
 <div class="place-row">
 	<a href="https://www.starwoodmeeting.com/StarGroupsWeb/res?id=1502128445&key=1E3271B6">The Nines Hotel</a>
@@ -36,7 +36,7 @@ sidebar: headquarters
 	</span>
 </div>
 
-<p>If you can't get a room at one of these hotels or just want to do something else, there are numerous other options.</p>
+<p>If you can't get a room at one of these hotels or just want to do something else, there are numerous other options. Here are a couple of WDS attendee favorites:</p>
 
 <div class="place-row">
 	<a href="http://nwportlandhostel.com/">Hostel in NW Portland</a>
