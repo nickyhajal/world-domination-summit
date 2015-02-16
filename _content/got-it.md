@@ -10,4 +10,6 @@ You can also check out a 10-minute video of an attendee's experience at WDS:
 
 <iframe src="//player.vimeo.com/video/109903000?title=0&amp;byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
  
-*We hope to see you in July!*
+
+
+### We hope to see you in July!
