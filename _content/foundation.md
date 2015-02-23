@@ -3,7 +3,8 @@ photo_head: /images/foundation/foundation.jpg
 
 <a name="story"></a>
 
-# The WDS Foundation seeks to put the right resources in the hands of amazing people who are acting on the three core values of WDS—community, adventure, service. 
+# 2015 applications are open!
+The WDS Foundation seeks to put the right resources in the hands of amazing people who are acting on the three core values of WDS—community, adventure, service. 
 
 We do this by providing what we call “Scholarships For Real Life.” The goal of these scholarships is to empower individuals to pursue their dreams and impact their community. 
 
@@ -16,7 +17,7 @@ Have a crazy project you want to bring to life? Want to take a trip around the e
 
 ### Eligibility
 
-For our first year of the “Scholarships for Real Life” program, we’re opening the application only to those who have attended or will be attending a World Domination Summit. As the program progresses, we intend to open this up to a wider audience—so check back next year if you’re not currently eligible.
+Currently the “Scholarships for Real Life: program is open only to those who have attended or will be attending a World Domination Summit. As the program progresses, we intend to open this up to a wider audience—so check back next year if you’re not currently eligible.
 
 <a name="selection"></a>
 
@@ -31,9 +32,9 @@ Our selection committee will be looking at a number of factors to determine whic
 
 <p class="color-blue">Fit with Scholarships for Real Life Program</p>
 
-
 * Does the project serve others and create community?
 * What is the applicant’s experience with the identified problem and community involved?
+* Has the applicant identified a list of goals to complete the project?
 
 <div class="foundation-criteria-implementation foundation-criteria"></div>
 
@@ -50,6 +51,19 @@ Our selection committee will be looking at a number of factors to determine whic
 * How will the project involve and inspire others?
 * Without a scholarship, how does the applicant intend to move forward on the proposed solution?
 
+<a name="how-to-apply"></a>
+
+<div class="line-canvas"></div>
+
+<div id="foundation-app-box" class="orange-box">
+	<h3>I'm in! How do I apply?</h3>
+	<p>To apply, please download the application questions, available as a <a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.docx">Word doc</a> or <a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.pdf">PDF</a>. Complete the questions and email to <a href="mailto:foundation@wds.fm">foundation@wds.fm</a> <strong>no later than 8:00pm PT on Friday, April 3, 2015</strong>. Many applicants have found the questions to take between 2-4 hours to complete.</p>
+<p><a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.docx">Download the Word doc</a></p>
+<p><a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.pdf">Download the PDF</a></p>
+
+<p>We understand some stories are better told through other mediums, so if you would like to respond to the questions in another format, please email <a href="mailto:foundation@wds.fm">foundation@wds.fm</a>. You can also contact that email if you have any other questions.</p>
+</div>
+
 <div class="line-canvas"></div>
 
 ### Register To Be A Mentor
@@ -64,14 +78,4 @@ If you would like to contribute your knowledge and expertise to our Voyagers, wh
 
 <a href="/foundation/mentor-submission">Click here to share your expertise!</a>
 
-
-<a name="how-to-apply"></a>
-
-<div class="line-canvas"></div>
-
-<div id="foundation-app-box" class="orange-box">
-	<h3>I'm in! How do I apply?</h3>
-	<p><strong>So sorry we missed you!</strong> Applications for the Scholarship for Real Life program are currently closed.</p>
-	<p>If you would like to be notified when applications open for 2015, please email <a href="mailto:foundation@wds.fm">foundation@wds.fm</a> with your contact information.</p>
-	<p>Thank you everyone who submitted! Stay tuned for updates on our first class of Voyagers!</p>
 </div>
