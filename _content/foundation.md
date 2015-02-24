@@ -57,7 +57,7 @@ Our selection committee will be looking at a number of factors to determine whic
 
 <div id="foundation-app-box" class="orange-box">
 	<h3>I'm in! How do I apply?</h3>
-	<p>To apply, please download the application questions, available as a <a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.docx">Word doc</a> or <a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.pdf">PDF</a>. Complete the questions and email to <a href="mailto:foundation@wds.fm">foundation@wds.fm</a> <strong>no later than 8:00pm PT on Friday, April 3, 2015</strong>. Many applicants have found the questions to take between 2-4 hours to complete.</p>
+	<p>To apply, please download the application questions, available as a <a href="http://imgs.wds.fm/WDS-Foundation-Application-2015.pdf">PDF</a>. Complete the questions and email to <a href="mailto:foundation@wds.fm">foundation@wds.fm</a> <strong>no later than 8:00pm PT on Friday, April 3, 2015</strong>. Many applicants have found the questions to take between 2-4 hours to complete.</p>
 <p><a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.docx">Download the Word doc</a></p>
 <p><a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.pdf">Download the PDF</a></p>
 
