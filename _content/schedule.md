@@ -29,10 +29,6 @@ icon: parachute
 		<div class="main-schedule-time">7:00pm–midnight</div>
 		<div class="main-schedule-descr">Farewell Party</div>
 	</div>
-		<div class="main-schedule-item">
-		<div class="main-schedule-day">Monday</div>
-		<div class="main-schedule-time">Morning and Afternoon</div>
-		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="/academies">Academies</a></div>
 </div>
 
 <p class="intro">We'll all arrive in the city for a registration on Friday afternoon and an opening party on Friday evening. The main event will be held in the beautiful Arlene Schnitzer Concert Hall, but WDS now open earlier than ever with numerous unofficial gatherings taking place well in advance. We'll also have another world record attempt on Friday morning.</p>
