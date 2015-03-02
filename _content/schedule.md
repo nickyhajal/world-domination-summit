@@ -8,7 +8,8 @@ icon: parachute
 		<div class="main-schedule-day">Thursday</div>
 		<div class="main-schedule-time">Morning and Afternoon</div>
 		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="/academies">Academies</a></div>
-	</div>	<div class="main-schedule-item">
+	</div>	
+	<div class="main-schedule-item">
 		<div class="main-schedule-day">Friday</div>
 		<div class="main-schedule-time">Morning</div>
 		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="/2014-world-record">World Record Attempt</a></div>
@@ -28,6 +29,11 @@ icon: parachute
 		<div class="main-schedule-descr">Main Stage Sessions <br><a style="color: rgb(35,31,32) !important" href="/activities">Activities</a></div>
 		<div class="main-schedule-time">7:00pm–midnight</div>
 		<div class="main-schedule-descr">Farewell Party</div>
+	</div>
+	<div class="main-schedule-item">
+		<div class="main-schedule-day">Monday</div>
+		<div class="main-schedule-time">Morning and Afternoon</div>
+		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="/academies">Academies</a></div>
 	</div>
 </div>
 
