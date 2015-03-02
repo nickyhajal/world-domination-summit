@@ -1,4 +1,4 @@
-icon: handshake
+icon: trail
 photo_head: https://farm4.staticflickr.com/3743/9231403243_9fe13f2384_c.jpg
 
 ## 2015 Speaker
