@@ -3,7 +3,9 @@ photo_head: https://farm4.staticflickr.com/3743/9231403243_9fe13f2384_c.jpg
 
 ## 2015 Speaker
 
-# ![Kid President](http://imgs.wds.fm/kid-president-round.png) Bobby Montague & Robby Novak
+# ![Kid President](http://imgs.wds.fm/kid-president-round.png) Kid President
+
+## Bobby Montague & Robby Novak
 
 <div class="zig-zags_blue"></div>
 
