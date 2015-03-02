@@ -5,6 +5,10 @@ icon: parachute
 <div class="main-schedule-box">
 	<h3>The Schedule</h3>
 	<div class="main-schedule-item">
+		<div class="main-schedule-day">Thursday</div>
+		<div class="main-schedule-time">Morning and Afternoon</div>
+		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="/academies">Academies</a></div>
+	</div>	<div class="main-schedule-item">
 		<div class="main-schedule-day">Friday</div>
 		<div class="main-schedule-time">Morning</div>
 		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="/2014-world-record">World Record Attempt</a></div>
