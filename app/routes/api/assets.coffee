@@ -221,7 +221,7 @@ routes = (app) ->
 				rds.get 'events', (err, events) ->
 
 					if events? and events and typeof JSON.parse(events) is 'object'
-						dfr.resolve('poop')
+						dfr.resolve(JSON.parse(events))
 					else
 						Events.forge()
 						.query('where', 'active', '1')
