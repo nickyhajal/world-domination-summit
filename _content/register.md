@@ -20,7 +20,7 @@ If you'd <strong>definitely like to attend </strong> and want to purchase a tick
                <input type="hidden" name="meta_web_form_id" value="1153910757" />
                <input type="hidden" name="meta_split_id" value="" />
                <input type="hidden" name="listname" value="wds-waiting" />
-               <input type="hidden" name="redirect" value="http://www.worlddominationsummit.com" />
+               <input type="hidden" name="redirect" value="http://www.worlddominationsummit.com/got-it" />
 
                <input type="hidden" name="meta_adtracking" value="My_Web_Form" />
                <input type="hidden" name="meta_message" value="1" />
