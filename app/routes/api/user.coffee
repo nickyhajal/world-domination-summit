@@ -126,7 +126,13 @@ routes = (app) ->
 					.then (user) ->
 						res.r.loggedin = true
 						res.r.me = user
-						next()
+						if req.query.request_user_token? and req.query.request_user_token
+							user.requestUserToken(req.headers['x-real-ip'])
+							.then (token) ->
+								res.r.user_token = token
+								next()
+						else
+							next()
 				else
 					res.r.loggedin = false
 					next()

@@ -78,6 +78,7 @@ User = Shelf.Model.extend
   authenticate: auth.authenticate
   login: auth.login
   updatePassword: auth.updatePassword
+  requestUserToken: auth.requestUserToken
 
   # Getters
   getPic: getters.getPic

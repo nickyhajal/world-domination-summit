@@ -1,4 +1,6 @@
 [User, Users] = require('../../models/users')
+RedisSessions = require("redis-sessions");
+rs = new RedisSessions();
 _ = require('underscore')
 handler = 
 	start: (req, res, next)->
@@ -6,19 +8,31 @@ handler =
 		req.query = _.defaults(req.body, req.query)
 		res.r = {}
 		res.errors = []
-
-		# Get logged in user
-		Users.forge().getMe(req) 
-		.then (me) ->
-			if me
-				req.me = me
-			if req.query.admin?
-				req.me.getCapabilities()
-				.then (capable_me) ->
-					req.me = capable_me
+		getMe = ->
+			# Get logged in user
+			Users.forge().getMe(req) 
+			.then (me) ->
+				if me
+					req.me = me
+				if req.query.admin?
+					req.me.getCapabilities()
+					.then (capable_me) ->
+						req.me = capable_me
+						next()
+				else
 					next()
-			else
-				next()
+		if req.query.user_token?
+			rs.get
+				app: process.rsapp
+				token: req.query.user_token
+				ttl: 31536000
+			, (err, rsp) ->
+				req.session.ident = JSON.stringify({id: rsp.id})
+				getMe()
+		else
+			getMe()
+
+
 	finish: (req, res) ->
 		res.setHeader('Content-Type', 'application/json')
 		if not req.query.clean?

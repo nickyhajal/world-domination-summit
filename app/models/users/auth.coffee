@@ -1,6 +1,9 @@
 Q = require('q')
 bcrypt = require('bcrypt')
-
+redis = require("redis")
+rds = redis.createClient()
+RedisSessions = require("redis-sessions");
+rs = new RedisSessions();
 ##
 
 auth =
@@ -20,6 +23,19 @@ auth =
   login: (req) ->
     req.session.ident = JSON.stringify(this)
     req.session.save()
+
+  requestUserToken: (ip) ->
+    dfr = Q.defer()
+    rs.create
+      app: process.rsapp
+      id: @get('user_id')
+      ip: ip
+      ttl: 31536000
+    , (err, rsp) ->
+      dfr.resolve(rsp.token)
+    return dfr.promise
+
+
 
   updatePassword: (pw) ->
     dfr = Q.defer()

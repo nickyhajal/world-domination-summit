@@ -14,10 +14,12 @@ process.year = '2015'
 process.yr = '15'
 process.lastYear = '2013'
 process.dmn = process.env.DOMAIN
+process.rsapp = 'mobile_logins'
 
 //require('./app/processors/wufoo')(app)
 //require('./app/processors/meetup_suggestions')(app)
 //require('./app/processors/academies')(app)
+require('./app/processors/clean-sessions')(app)
 if (process.env.NODE_ENV === 'production' && process.env.PORT == '7676') {
 	require('./app/processors/eventbrite')(app)
 	require('./app/processors/third-party-feeds')(app)
