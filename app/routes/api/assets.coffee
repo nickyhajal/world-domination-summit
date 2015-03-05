@@ -5,6 +5,7 @@ twitterAPI = require('node-twitter-api')
 Q = require('q')
 async = require('async')
 get_templates = require('../../processors/templater')
+moment = require('moment')
 
 # We clear some items in our redis cache upon start-up
 clearCache = ->
@@ -218,15 +219,20 @@ routes = (app) ->
 			events: (req) ->
 				dfr = Q.defer()
 				rds.get 'events', (err, events) ->
+
 					if events? and events and typeof JSON.parse(events) is 'object'
-						dfr.resolve(JSON.parse(events))
+						dfr.resolve('poop')
 					else
 						Events.forge()
 						.query('where', 'active', '1')
+						.query('orderBy', 'start')
 						.fetch()
 						.then (rsp) ->
 							evs = []
 							async.each rsp.models, (ev, cb) ->
+								ev.set('startStr', moment(ev.get('start')).format('h:mm a'))
+								ev.set('dayStr', moment(ev.get('start')).format('dddd[,] MMMM Do'))
+								ev.set('startDay', moment(ev.get('start')).format('YYYY-MM-DD'))
 								EventHosts.forge()
 								.query('where', 'event_id', ev.get('event_id'))
 								.fetch()
@@ -235,34 +241,12 @@ routes = (app) ->
 									for host in rsp.models
 										hosts.push host.get('user_id')
 									ev.set('hosts', hosts)
-									evs.push ev
+									evs.push ev.attributes
 									cb()
 							, ->
 								dfr.resolve(evs)
 								rds.set 'events', JSON.stringify(evs), (err, rsp) ->
-									rds.expire 'events', 240
-				Events.forge()
-				.query('where', 'active', '1')
-				.fetch()
-				.then (rsp) ->
-					evs = []
-					async.each rsp.models, (ev, cb) ->
-						EventHosts.forge()
-						.query('where', 'event_id', ev.get('event_id'))
-						.fetch()
-						.then (rsp) ->
-							hosts = []
-							for host in rsp.models
-								hosts.push host.get('user_id')
-							ev.set('hosts', hosts)
-							evs.push ev
-							cb()
-						, (err) ->
-							console.err(err)
-					, ->
-						dfr.resolve(evs)
-				, (err) ->
-					console.log(err)
+									rds.expire 'events', 0
 				return dfr.promise
 			tpls: ->
 				get_templates = require('../../processors/templater')
