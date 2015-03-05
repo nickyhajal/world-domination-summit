@@ -246,7 +246,7 @@ routes = (app) ->
 							, ->
 								dfr.resolve(evs)
 								rds.set 'events', JSON.stringify(evs), (err, rsp) ->
-									rds.expire 'events', 0
+									rds.expire 'events', 240
 				return dfr.promise
 			tpls: ->
 				get_templates = require('../../processors/templater')
