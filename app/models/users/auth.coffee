@@ -26,12 +26,16 @@ auth =
 
   requestUserToken: (ip) ->
     dfr = Q.defer()
+    tk rs
+    tk process.rsapp
+    tk ip
     rs.create
       app: process.rsapp
       id: @get('user_id')
       ip: ip
       ttl: 31536000
     , (err, rsp) ->
+      tk err
       dfr.resolve(rsp.token)
     return dfr.promise
 
