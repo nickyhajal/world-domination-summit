@@ -26,6 +26,7 @@ routes = (app) ->
 	[EventRsvp, EventRsvps] = require('../../models/event_rsvps')
 	[Registration, Registrations] = require('../../models/registrations')
 	[EventHost, EventHosts] = require('../../models/event_hosts')
+	[EventInterest, EventInterests] = require('../../models/event_interests')
 	[Speaker, Speakers] = require('../../models/speakers')
 	[Interest, Interests] = require('../../models/interests')
 	[RaceTask, RaceTasks] = require('../../models/racetasks')
@@ -233,16 +234,24 @@ routes = (app) ->
 								ev.set('startStr', moment(ev.get('start')).format('h:mm a'))
 								ev.set('dayStr', moment(ev.get('start')).format('dddd[,] MMMM Do'))
 								ev.set('startDay', moment(ev.get('start')).format('YYYY-MM-DD'))
-								EventHosts.forge()
+								EventInterests.forge()
 								.query('where', 'event_id', ev.get('event_id'))
 								.fetch()
 								.then (rsp) ->
-									hosts = []
-									for host in rsp.models
-										hosts.push host.get('user_id')
-									ev.set('hosts', hosts)
-									evs.push ev.attributes
-									cb()
+									interests = []
+									for interest in rsp.models
+										interests.push interest.get('interest_id')
+									ev.set('ints', interests)
+									EventHosts.forge()
+									.query('where', 'event_id', ev.get('event_id'))
+									.fetch()
+									.then (rsp) ->
+										hosts = []
+										for host in rsp.models
+											hosts.push host.get('user_id')
+										ev.set('hosts', hosts)
+										evs.push ev.attributes
+										cb()
 							, ->
 								dfr.resolve(evs)
 								rds.set 'events', JSON.stringify(evs), (err, rsp) ->

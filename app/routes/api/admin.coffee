@@ -14,7 +14,7 @@ routes = (app) ->
 				next()
 		process_locations: (req, res, next) ->
 			Users.forge()
-			.query('where', 'attending14', '=', '1')
+			.query('where', 'attending'+process.yr, '=', '1')
 			.query('where', 'location', '=', '')
 			.fetch()
 			.then (rsp) ->
@@ -115,7 +115,7 @@ routes = (app) ->
 				.fetch()
 				.then (model) ->
 					model.set('type', 'ambassador')
-					model.set('attending14', 1)
+					model.set('attending'+process.yr, 1)
 					model.save()
 					res.redirect('/admin/ambassadors')
 			else

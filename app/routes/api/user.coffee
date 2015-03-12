@@ -76,17 +76,17 @@ routes = (app) ->
 			async.each req.query.search.split(' '), (term, cb) ->
 				_Users
 				.query('orWhere', 'first_name', 'LIKE', term+'%')
-				.query('where', 'attending15', '=', '1')
+#				.query('where', 'attending15', '=', '1')
 				_Users.fetch()
 				.then (byF) ->
 					_Users = Users.forge()
 					_Users.query('orWhere', 'last_name', 'LIKE', term+'%')
-					.query('where', 'attending15', '=', '1')
+#					.query('where', 'attending15', '=', '1')
 					.fetch()
 					.then (byL) ->
 						_Users = Users.forge()
 						_Users.query('orWhere', 'email', 'LIKE', '%'+term+'%')
-						.query('where', 'attending15', '=', '1')
+#						.query('where', 'attending15', '=', '1')
 						_Users.fetch()
 						.then (byE) ->
 							for f in byF.models
@@ -161,6 +161,7 @@ routes = (app) ->
 
 		create: (req, res, next) ->
 			post = _.pick(req.query, User.prototype.permittedAttributes)
+			tk post
 			user = User.forge(post)
 			.save()
 			.then (new_user, err) ->
