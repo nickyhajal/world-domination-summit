@@ -1,6 +1,6 @@
 icon: globe
 
-# The first wave of WDS 2015 ticket sales is now complete. But it's not too late!
+# The final wave of WDS 2015 ticket sales is right around the corner!
 
 Thanks for your interest in taking over the world. WDS tickets go very quickly, and the event has been completely sold out four years in a row. WDS 2015 is coming on **July 9–13**.
 
