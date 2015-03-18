@@ -29,7 +29,7 @@ sidebar: headquarters
 </div>
 
 <div class="place-row">
-	<a href="https://be.cohores.net/10180?NextPage=index&Nights=1&NumberOfRooms=1&NumberOfAdults=1&Currency=USD&SubSource=361&GroupCode=WDS2015">*FULL* Paramount Hotel (use the group code "WDS2015")</a>
+	*FULL*<a href="https://be.cohores.net/10180?NextPage=index&Nights=1&NumberOfRooms=1&NumberOfAdults=1&Currency=USD&SubSource=361&GroupCode=WDS2015">Paramount Hotel (use the group code "WDS2015")</a>
 	<span>
 		<a href="http://goo.gl/WexjC9">0.2 Mi</a>
 		From Base
