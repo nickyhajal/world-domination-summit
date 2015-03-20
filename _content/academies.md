@@ -6,7 +6,11 @@ photo_head: https://farm8.staticflickr.com/7457/9226356063_2f05f24588_c.jpg,http
 
 Registration for academies is separate from WDS itself, and we offer registration both to WDS attendees as well as to the general public (for a slightly higher registration fee). Below you'll find the academies we offered in 2014. Academies that will accompany our fifth year of WDS will be announced once the final wave of [main stage ticket sales](/register) has closed.
 
+In the meantime, watch this video about the Academies we offered at WDS 2014:
+
 <iframe src="https://player.vimeo.com/video/121164251?title=0&byline=0&portrait=0" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+&nbsp;
 
 <div class="zig-zags_blue"></div>
 
