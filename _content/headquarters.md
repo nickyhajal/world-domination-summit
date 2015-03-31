@@ -21,7 +21,7 @@ sidebar: headquarters
 <p>Portland is an affordable destination, with the lowest hotel rates of any major west coast city. Every year we arrange a number of discounts from partner hotels. Other attendees rent through AirBnB or stay at a local hostel. We're working on a complete list so keep checking back for the latest information. For now, we've secured rooms at these two great properties:</p>
 
 <div class="place-row">
-	<a href="https://www.starwoodmeeting.com/StarGroupsWeb/res?id=1502128445&key=1E3271B6">The Nines Hotel</a>
+	<a href="https://www.starwoodmeeting.com/StarGroupsWeb/res?id=1502128445&key=1E3271B6">The Nines Hotel</a> (FULL) 
 	<span>
 		<a href="http://goo.gl/2wmuIP">0.3 Mi</a>
 		From Base
