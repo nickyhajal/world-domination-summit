@@ -65,6 +65,7 @@ routes = (app) ->
 		app.post '/speaker', speaker.create
 
 		# Events
+		app.get '/event', event.get
 		app.post '/event', event.add
 		app.put '/event', event.upd
 		app.get '/event/attendees', event.get_attendees
@@ -116,7 +117,7 @@ routes = (app) ->
 		app.get '/admin/ambassador_reject', admin.ambassador_reject
 		app.get '/admin/user_export', admin.export
 		app.get '/admin/locations', admin.process_locations
-		app.get '/admin/events', event.get
+		app.get '/admin/events', event.get_admin
 		app.get '/admin/event_accept', event.accept
 		app.get '/admin/event_reject', event.reject
 		app.post '/admin/rate', admin.rate

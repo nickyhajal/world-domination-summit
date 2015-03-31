@@ -5,7 +5,6 @@ twitterAPI = require('node-twitter-api')
 moment = require('moment')
 crypto = require('crypto')
 async = require('async')
-
 routes = (app) ->
 
 	[Event, Events] = require('../../models/events')
@@ -109,45 +108,69 @@ routes = (app) ->
 				res.status(401)
 				next()
 
+		get_admin: (req, res, next) ->
+			events = Events.forge()
+			limit = req.query.per_page ? 500
+			page = req.query.page ? 1
+			if req.query.active?
+				active = req.query.active
+				events.query('where', 'active', active)
+			if req.query.type?
+				events.query('where', 'type', req.query.type)
+			if req.query.event_id
+				events.query('where', 'event_id', req.query.event_id)
+			events.query('orderBy', 'event_id',  'DESC')
+			events.query('limit', limit)
+			events.query('where', 'ignored', 0)
+			events
+			.fetch()
+			.then (events) ->
+				evs = []
+				async.each events.models, (ev, cb) ->
+					tmp = ev.attributes
+					tmp.hosts = []
+					start = (tmp.start+'').split(' GMT')
+					start = moment(start[0])
+					tmp.start = start.format('YYYY-MM-DD HH:mm:ss')
+					EventHosts.forge()
+					.query('where', 'event_id', '=', tmp.event_id)
+					.fetch()
+					.then (rsp) ->
+						for host in rsp.models
+							tmp.hosts.push(host.get('user_id'))
+						evs.push(tmp)
+						cb()
+				, ->
+					res.r.events = evs
+					next()
+
 		get: (req, res, next) ->
-			if req.me.hasCapability('schedule')
-				events = Events.forge()
-				limit = req.query.per_page ? 500
-				page = req.query.page ? 1
-				if req.query.active?
-					active = req.query.active
-					events.query('where', 'active', active)
-				if req.query.type?
-					events.query('where', 'type', req.query.type)
-				if req.query.event_id
-					events.query('where', 'event_id', req.query.event_id)
-				events.query('orderBy', 'event_id',  'DESC')
-				events.query('limit', limit)
-				events.query('where', 'ignored', 0)
-				events
-				.fetch()
-				.then (events) ->
-					evs = []
-					async.each events.models, (ev, cb) ->
-						tmp = ev.attributes
-						tmp.hosts = []
-						start = (tmp.start+'').split(' GMT')
-						start = moment(start[0])
-						tmp.start = start.format('YYYY-MM-DD HH:mm:ss')
-						EventHosts.forge()
-						.query('where', 'event_id', '=', tmp.event_id)
-						.fetch()
-						.then (rsp) ->
-							for host in rsp.models
-								tmp.hosts.push(host.get('user_id'))
-							evs.push(tmp)
-							cb()
-					, ->
-						res.r.events = evs
-						next()
-			else
-				res.status(401)
-				next()
+			tk 'hey'
+			events = Events.forge()
+			if req.query.event_id
+				events.query('where', 'event_id', req.query.event_id)
+			events
+			.fetch()
+			.then (events) ->
+				out = false
+
+				async.each events.models, (ev, cb) ->
+					tmp = ev.attributes
+					tmp.hosts = []
+					start = (tmp.start+'').split(' GMT')
+					start = moment(start[0])
+					tmp.start = start.format('YYYY-MM-DD HH:mm:ss')
+					EventHosts.forge()
+					.query('where', 'event_id', '=', tmp.event_id)
+					.fetch()
+					.then (rsp) ->
+						for host in rsp.models
+							tmp.hosts.push(host.get('user_id'))
+						out = tmp
+						cb()
+				, ->
+					res.r.event = out
+					next()
 
 		accept: (req, res, next) ->
 			if req.me.hasCapability('schedule')
