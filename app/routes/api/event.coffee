@@ -145,7 +145,6 @@ routes = (app) ->
 					next()
 
 		get: (req, res, next) ->
-			tk 'hey'
 			events = Events.forge()
 			if req.query.event_id
 				events.query('where', 'event_id', req.query.event_id)
@@ -160,6 +159,9 @@ routes = (app) ->
 					start = (tmp.start+'').split(' GMT')
 					start = moment(start[0])
 					tmp.start = start.format('YYYY-MM-DD HH:mm:ss')
+					tmp.startStr = moment(tmp.start).format('h:mm a')
+					tmp.dayStr = moment(tmp.start).format('dddd[,] MMMM Do')
+					tmp.startDay = moment(tmp.start).format('YYYY-MM-DD')
 					EventHosts.forge()
 					.query('where', 'event_id', '=', tmp.event_id)
 					.fetch()
