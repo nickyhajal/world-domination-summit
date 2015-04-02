@@ -28,4 +28,4 @@ As WDS 2015 approaches, we'll be booking out every room possible in our partner 
 
 In short WDS 2015 will be an experience like no other. We hope to see you there!
 
-<a href="/register" class="register-banner"><span class="reg-heading">Registration is Open!</span><span class="reg-subhead">The final wave of ticket sales is happening now. Don't miss out! &rarr;</span></a>
+<a href="/register" class="register-banner"><span class="reg-heading">Registration is Now Closed!</span><span class="reg-subhead">The final wave of ticket sales is now complete. Sorry you missed it! If you'd like to sign up for 2016 ticket notifications, you can do so here &rarr; </span></a>
