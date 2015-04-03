@@ -156,6 +156,7 @@ routes = (app) ->
 				async.each events.models, (ev, cb) ->
 					tmp = ev.attributes
 					tmp.hosts = []
+					tmp.atns = []
 					start = (tmp.start+'').split(' GMT')
 					start = moment(start[0])
 					tmp.start = start.format('YYYY-MM-DD HH:mm:ss')
@@ -163,13 +164,26 @@ routes = (app) ->
 					tmp.dayStr = moment(tmp.start).format('dddd[,] MMMM Do')
 					tmp.startDay = moment(tmp.start).format('YYYY-MM-DD')
 					EventHosts.forge()
+					.query('join', 'users', 'users.user_id', '=', 'event_hosts.user_id', 'inner')
 					.query('where', 'event_id', '=', tmp.event_id)
-					.fetch()
+					.fetch
+						columns: ['users.*']
 					.then (rsp) ->
 						for host in rsp.models
-							tmp.hosts.push(host.get('user_id'))
-						out = tmp
-						cb()
+							h = _.pick host.attributes, User::limitedAttributes
+							tmp.hosts.push(h)
+						EventRsvps.forge()
+						.query('join', 'users', 'event_rsvps.user_id', '=', 'users.user_id', 'inner')
+						.query('where', 'event_id', '=', tmp.event_id)
+						.fetch
+							columns: ['users.*']
+						.then (rsp) ->
+							tk 'RSVP DN'
+							for atn in rsp.models
+								atn = _.pick atn.attributes, User::limitedAttributes
+								tmp.atns.push(atn)
+							out = tmp
+							cb()
 				, ->
 					res.r.event = out
 					next()
