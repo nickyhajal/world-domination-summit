@@ -243,12 +243,15 @@ routes = (app) ->
 										interests.push interest.get('interest_id')
 									ev.set('ints', interests)
 									EventHosts.forge()
-									.query('where', 'event_id', ev.get('event_id'))
-									.fetch()
+									.query('join', 'users', 'users.user_id', '=', 'event_hosts.user_id', 'inner')
+									.query('where', 'event_id', '=', ev.get('event_id'))
+									.fetch
+										columns: ['users.*']
 									.then (rsp) ->
 										hosts = []
 										for host in rsp.models
-											hosts.push host.get('user_id')
+											h = _.pick host.attributes, User::limitedAttributes
+											hosts.push h
 										ev.set('hosts', hosts)
 										evs.push ev.attributes
 										cb()
