@@ -3,7 +3,6 @@ photo_head: /images/foundation/foundation.jpg
 
 <a name="story"></a>
 
-# 2015 applications are open!
 The WDS Foundation seeks to put the right resources in the hands of amazing people who are acting on the three core values of WDS—community, adventure, service. 
 
 We do this by providing what we call “Scholarships For Real Life.” The goal of these scholarships is to empower individuals to pursue their dreams and impact their community. 
@@ -57,11 +56,9 @@ Our selection committee will be looking at a number of factors to determine whic
 
 <div id="foundation-app-box" class="orange-box">
 	<h3>I'm in! How do I apply?</h3>
-	<p>To apply, please download the application questions, available as a <a href="http://imgs.wds.fm/WDS-Foundation-Application-2015.pdf">PDF</a>. Complete the questions and email to <a href="mailto:foundation@wds.fm">foundation@wds.fm</a> <strong>no later than 8:00pm PT on Friday, April 3, 2015</strong>. Many applicants have found the questions to take between 2-4 hours to complete.</p>
-<p><a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.docx">Download the Word doc</a></p>
-<p><a href="http://www.katiehurst.com/wp-content/uploads/2015ApplicationDownload-1.pdf">Download the PDF</a></p>
+<p>So sorry we missed you! Applications for the 2015 Scholarship for Real Life program are currently closed.
+If you would like to be notified when applications open for 2016, please email <a href="mailto:foundation@wds.fm">foundation@wds.fm</a> with your contact information.</p>
 
-<p>We understand some stories are better told through other mediums, so if you would like to respond to the questions in another format, please email <a href="mailto:foundation@wds.fm">foundation@wds.fm</a>. You can also contact that email if you have any other questions.</p>
 </div>
 
 <div class="line-canvas"></div>
