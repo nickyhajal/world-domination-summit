@@ -2,6 +2,7 @@
 
 Q = require('q')
 async = require('async')
+countries = require('country-data').countries
 
 ##
 

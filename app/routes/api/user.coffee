@@ -584,7 +584,6 @@ routes = (app) ->
 												new_points: ach_rsp.points - req.query.cur_ponts
 												task_id: req.query.task_id
 												achievements: short_achs
-											tk rsp
 
 											# Expire rank cache so next rank request
 											# is recalculated
