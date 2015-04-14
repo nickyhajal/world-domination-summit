@@ -18,22 +18,22 @@ To be considered for a spot, please fill out the application below.
 So, you want to apply to be a WDS 2014 Ambassador? Awesome! Just fill out this brief form and tell us a little about yourself. 
 
 
-<div id="wufoo-q8ejno60uybw98">
-Fill out my <a href="https://worlddominationsummit.wufoo.com/forms/q8ejno60uybw98">online form</a>.
+<div id="wufoo-k1qb9rtw1jhaxfo">
+Fill out my <a href="https://worlddominationsummit.wufoo.com/forms/k1qb9rtw1jhaxfo">online form</a>.
 </div>
-<script type="text/javascript">var q8ejno60uybw98;(function(d, t) {
+<script type="text/javascript">var k1qb9rtw1jhaxfo;(function(d, t) {
 var s = d.createElement(t), options = {
 'userName':'worlddominationsummit',
-'formHash':'q8ejno60uybw98',
+'formHash':'k1qb9rtw1jhaxfo',
 'autoResize':true,
-'height':'2241',
+'height':'2434',
 'async':true,
 'host':'wufoo.com',
 'header':'show',
 'ssl':true};
-s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
 s.onload = s.onreadystatechange = function() {
 var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-try { q8ejno60uybw98 = new WufooForm();q8ejno60uybw98.initialize(options);q8ejno60uybw98.display(); } catch (e) {}};
+try { k1qb9rtw1jhaxfo = new WufooForm();k1qb9rtw1jhaxfo.initialize(options);k1qb9rtw1jhaxfo.display(); } catch (e) {}};
 var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, 'script');</script>
