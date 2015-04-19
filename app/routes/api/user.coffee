@@ -49,8 +49,12 @@ routes = (app) ->
 
 		# Get a user
 		get: (req, res, next) ->
-			User.forge
-				user_name: req.query.user_name
+			where = {}
+			if req.query.user_name?
+				where.user_name = req.query.user_name
+			else if req.query.user_id?
+				where.user_id = req.query.user_id
+			User.forge(where)
 			.fetch()
 			.then (user) ->
 				user.getReadableCapabilities()

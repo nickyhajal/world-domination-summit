@@ -11,7 +11,6 @@ ap.Views.Dispatch = XView.extend
 			channel_type: 'global'
 		@options = _.defaults @options, defaults
 		render = true
-		tk ap.isDesktop
 		if $(@el).data('desktop_only')? and not ap.isDesktop
 			render = false
 		_.whenReady 'me', =>
