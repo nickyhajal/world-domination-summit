@@ -150,6 +150,7 @@ routes = (app) ->
 			limit = req.query.per_page ? 50
 			page = req.query.page ? 1
 			channel_type = req.query.channel_type
+			columns = null
 
 			# Get a users feed
 			if channel_type is 'user'
@@ -174,6 +175,9 @@ routes = (app) ->
 				feeds.query('where', 'feed_id', '>', req.query.since)
 			if req.query.user_id
 				feeds.query('where', 'user_id', '=', req.query.user_id)
+			if req.query.include_author?
+				feeds.query('join', 'users', 'users.user_id', '=', 'feed.user_id', 'left')
+				columns = {columns: ['feed.*', 'first_name', 'last_name', 'user_name', 'pic', 'email']}
 
 			raw_filters = req.query.filters ? {}
 			filters = []
@@ -206,7 +210,7 @@ routes = (app) ->
 					cb()
 			, ->
 				feeds
-				.fetch()
+				.fetch(columns)
 				.then (feed) ->
 					res.r.feed_contents = feed.models
 					next()
