@@ -28,7 +28,7 @@ from Broke to a Book Deal</h4>
 
 If you're a blogger, author, artist, health enthusiast, a parent, or creative entrepreneur looking to share your message with the world, you'll want to join this rawkstar party!
 
-<a href="https://www.eventbrite.com/e/wds-academy-fuel-your-passion-tickets-16185910494">Register for Fuel Your Passion here.</a>
+<h3><a href="https://www.eventbrite.com/e/wds-academy-fuel-your-passion-tickets-16185910494">Register for Fuel Your Passion here.</a></h3>
 
 		
 		<!-- <h4>About the Hosts</h4>
