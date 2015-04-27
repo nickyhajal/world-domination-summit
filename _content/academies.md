@@ -28,7 +28,7 @@ from Broke to a Book Deal</h4>
 
 If you're a blogger, author, artist, health enthusiast, a parent, or creative entrepreneur looking to share your message with the world, you'll want to join this rawkstar party!
 
-<h5><a href="https://www.eventbrite.com/e/wds-academy-fuel-your-passion-tickets-16185910494">Register for Fuel Your Passion here.</a></h5>
+<h4><a href="https://www.eventbrite.com/e/wds-academy-fuel-your-passion-tickets-16185910494">Register for Fuel Your Passion here.</a></h4>
 
 		
 		<!-- <h4>About the Hosts</h4>
@@ -45,7 +45,7 @@ If you're a blogger, author, artist, health enthusiast, a parent, or creative en
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		Join Theresa Reed, The Tarot Lady — a 25-year Tarot industry veteran, pro blogger and business mentor — for a fun, fresh, fast-paced crash course on reading Tarot. You will learn how Tarot decks work, what the major cards represent, and how to do a couple of simple spreads for quick decision making + crystal clear guidance. Theresa specializes in a "jargon-free" and hands-on approach to Tarot. No metaphysical fluff. Just plain English and easy to learn techniques that you can start using immediately. Walk in a Tarot virgin. Walk out reading Tarot like a BO$$. No experience, deck, potions or patchouli incense required. Just show up with an open mind... and get ready to gain a priceless new business + life superpower!
-		<h5><a href="https://www.eventbrite.com/e/wds-academy-hack-your-world-with-tarot-tickets-16193227379">Register for Hack Your World with Tarot here.</a></h5>
+		<h4><a href="https://www.eventbrite.com/e/wds-academy-hack-your-world-with-tarot-tickets-16193227379">Register for Hack Your World with Tarot here.</a></h4>
 
 		<!-- <h4>About Theresa Reed</h4>
 		Theresa Reed (alias: The Tarot Lady) is an intuitive Tarot reader, astrologer, teacher, mentor & yogi with over twenty five years of professional experience. She’s devoted to helping people make better decisions & lead happier lives — using Tarot as an instigational tool for confident, bold & emotionally-intelligent action — in life, in love & in business. -->
@@ -62,7 +62,7 @@ If you're a blogger, author, artist, health enthusiast, a parent, or creative en
 		<h4>Summary</h4>
 		The Location Rebel Academy was designed specifically for people who are looking to start a business that lets them leave their job and either travel or work from home - as quickly as possible. It skips the fluff and the typical "follow your passion" mantra for a practical, repeatable strategy to help you build income, confidence, and the foundation for a mobile business.
 Attendees of this Academy will: Uncover the essentials of which skills you need to build a business that you can run from anywhere. Learn why "following your passion" is bad advice for people wanting to build this type of business. Practice the easiest way to start making money from anywhere, that you can apply today. Discuss how to scale your business up over the long term to achieve the ever-elusive "passive income". Discover strategies for how to actually be productive and manage your time when you're on the road
-<h5><a href="https://www.eventbrite.com/e/wds-academy-how-to-become-a-location-rebel-tickets-16259605919">Register for Location Rebel here.</a></h5>
+<h4><a href="https://www.eventbrite.com/e/wds-academy-how-to-become-a-location-rebel-tickets-16259605919">Register for Location Rebel here.</a></h4>
 		
 		<!-- <h4>About Sean Ogle</h4>
 		Through his sites Location 180 and Location Rebel, Sean Ogle helps people quit their jobs and build businesses that can be run from anywhere in the world. When he's not working from the beaches of Bali or the coffee shops of Portland, he can probably be found on the golf course, or sneaking into some other high class establishment where he most certainly doesn't belong. -->
@@ -81,7 +81,7 @@ Attendees of this Academy will: Uncover the essentials of which skills you need 
 		"Some day" you'll learn a new language? Make "some day" TODAY. We will be tackling your doubts, and then giving you the hacks you need to have a basic conversation in any language you may want to learn, by the end of this Academy. Then you will open up a whole new world, unreachable by English alone, and have the tools to skyrocket towards fluency. Anyone at any age can learn any language in the world. Talent is irrelevant.
 
 By the end of this Academy all language doubts will be squashed. Find out why adults are BETTER language learners than children, how to learn your language even if you are busy, and especially how to do it even if you can't travel abroad.
-<h5><a href="https://www.eventbrite.com/e/wds-academy-language-lab-tickets-16189146172">Register for Language Lab here.</a></h5>
+<h4><a href="https://www.eventbrite.com/e/wds-academy-language-lab-tickets-16189146172">Register for Language Lab here.</a></h4>
 
 		<!-- <h4>About Benny Lewis</h4>
 		Benny Lewis failed in language learning when growing up - getting a C in German, and spending six entire months living in Spain without being able to ask the most basic questions in Spanish. But then everything changed! He now speaks 12 languages and runs the world's largest blog about language learning, "Fluent in 3 Months," and has this year released a book of the same title that became an instant international best seller. His travels through language learning have also earned him the title of National Geographic's Traveler of the Year. -->
@@ -103,7 +103,7 @@ Becoming “known” can open a lot of doors. But, beyond ego-gratification, it'
 
 This academy is about doing it right, and creating something that matters--to you and to those you seek to serve--along the way.
 Attendees of this Academy will leave with: A dynamic, highly-effective roadmap to grow your notoriety in a way that opens the most doors, cultivates the most meaning and let's you feel amazing about how you're doing it. A deep understanding of the different paths to building a business, practice, career or body-of-work around your growing notoriety. A simple process to choose the best tools, platforms and medium for your social orientation and communication DNA. A checklist of critical mistakes to avoid and shiny objects to stop chasing. A better ability to handle the real challenges, responsibilities and opportunities that inevitably come your way as you become better known.
-<h5><a href="https://www.eventbrite.com/e/wds-academy-the-art-of-becoming-known-tickets-16259627985">Register for the Art of Becoming Known here.</a></h5>
+<h4><a href="https://www.eventbrite.com/e/wds-academy-the-art-of-becoming-known-tickets-16259627985">Register for the Art of Becoming Known here.</a></h4>
 
 		<!-- <h4>About Jonathan Fields</h4>
 		Jonathan Fields is a New York City dad, husband, award-winning author, serial-entrepreneur, maker and founder of media and education venture, Good Life Project. He's been featured everywhere from The New York Times, Wall Street Journal, Inc., FastCompany, Forbes and Entrepreneur to People, USA Today, Self, O, Elle, Fitness, Vogue, Outside, Allure and thousands of websites and media outlets that sound fancy, but don't impress his daughter in the least. -->
@@ -118,7 +118,7 @@ Attendees of this Academy will leave with: A dynamic, highly-effective roadmap t
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		This intensive and information-filled workshop will teach you all the best practices of how to get your book published, starting with how to evaluate the best publishing path for you. You'll get practical advice and tools to help you deliver strong pitch letters and proposal materials for both fiction and nonfiction, and find out what it takes to capture the attention of a New York publisher. You'll also learn when and how to pursue the increasingly viable self-publishing and digital publishing options, and get an overview of the most important services and distributors that successful authors use. And regardless of your path to publication, you'll gain insight into how to successfully market and promote your work before, during, and after launch. Don't embark on the publishing process without being fully educated about how the industry works, from the view of longtime industry professionals. You'll better focus your time and energy, and increase your chances of success.
-		<h5><a href="https://www.eventbrite.com/e/wds-academy-how-to-get-your-book-published-tickets-16192588468">Register for How to Get Your Book Published here.</a></h5>
+		<h4><a href="https://www.eventbrite.com/e/wds-academy-how-to-get-your-book-published-tickets-16192588468">Register for How to Get Your Book Published here.</a></h4>
 
 		<!--<h4>David Fugate and Jane Friedman</h4>
 		David Fugate is the President & Founder of LaunchBooks Literary Agency. He has spent more than 23 years representing authors' interests, and has represented hundreds of books that have generated in excess of $20 Million dollars for New York Times bestselling authors like Chris Guillebeau, Andy Weir, and Kevin Mitnick, as well as WDS veterans like Steve Kamb, Benny Lewis, Dee Williams, Scott Berkun, Kate Northrup and Jia Jiang, to name just a few. You can learn more at his site, www.launchbooks.com. 
@@ -153,7 +153,7 @@ Jane Friedman has more than 15 years of experience in the publishing industry, a
 		If you have ever come to WDS before, you know that by Sunday evening, your head is full of 100 exciting ideas. Once you get home, and during the year that follows, how many of these ideas do you ship? In this working laboratory, Pam and Rob will help you organize and prioritize ideas, create simple yet effective plans, identify and conspire with peers who will help you get your work done, and send you home with clarity and purpose.
 
 You will come away from this academy with: A clear definition of your values and priorities. A short list of your most exciting and valuable ideas from WDS. A project plan for at least one project you want to ship this year. Best practices from serial shippers. A list of fellow WDS'ers who are willing to help you build and ship your project. Hilarity, good will, energy, enthusiasm and confidence.
-<h5><a href="https://www.eventbrite.com/e/wds-academy-how-to-take-action-after-wds-tickets-16503325892">Register for How to Take Action After WDS here.</a></h5>
+<h4><a href="https://www.eventbrite.com/e/wds-academy-how-to-take-action-after-wds-tickets-16503325892">Register for How to Take Action After WDS here.</a></h4>
 
 		<!-- <h4>About Pamela Slim and Rob Young</h4>
 		Pamela Slim is an author, speaker and business coach, who lives to help people build indispensable careers and teams. She has helped launch hundreds of businesses, and has served thousands of entrepreneurs through her online courses and coaching programs. Pam wrote Escape from Cubicle Nation and Body of Work, and is currently working on her third book, Indispensable. Pam lives in Mesa, Arizona, with her husband and two children.
@@ -172,7 +172,7 @@ Rob Young worked for one of the world's biggest consulting companies for 10 year
 		How do you build powerful professional relationships? In this workshop, Vanessa will go over all of the communication skills you need for interacting with people in business. She will give you the skills you need to master your presence, make authentic connections and speed read potential clients and customers. Vanessa will dive into networking, pitching, and negotiating using science based strategies and actionable techniques you can use immediately. This entertaining workshop will be highly interactive, informative and inspiring.
 
 Attendees of this Academy will learn: How to master your presence. Pimp your elevator pitch. The psychology of authentic relationship building. The art of networking. Connecting and building rapport with VIPs. Cold-calling and pitching. The science of personality.
-<h5><a href="https://www.eventbrite.com/e/wds-academy-people-skills-for-business-tickets-16607078218">Register for People Skills for Business here.</a></h5>
+<h4><a href="https://www.eventbrite.com/e/wds-academy-people-skills-for-business-tickets-16607078218">Register for People Skills for Business here.</a></h4>
 
 		<!-- <h4>About Vanessa Van Edwards</h4>
 		Vanessa Van Edwards is the lead investigator at Science of People, a human behavior research lab. She is a Huffington Post columnist and published author. Her innovative work has been featured on NPR, Business Week and USA Today. She regularly gives keynotes and appears in the media to talk about her research. She has written for CNN, Fast Company and Forbes. -->
@@ -204,7 +204,7 @@ Attendees of this Academy will learn: How to master your presence. Pimp your ele
 		<h4>Summary</h4>
 		Lots of people dream of down-sizing to reduce their debt, to focus on what's important, or to facilitate the creation of a new community (think my brother want's to move in with me and my husband, or I'd love to invite my aging Mom to live with us). So what are the possibilities, challenges, and realities of taking the plunge toward tiny?
 If you've considered tiny living, then this is a chance to learn from the experts who have put their passion and knowledge into establishing tiny house communities. Come learn what's possible in a micro-house, within the city boundaries, and within our collective understanding of "getting along in tight quarters." 
-<h5><a href="https://www.eventbrite.com/e/wds-academy-microhousing-101-tickets-16193369805">Register for Microhousing here.</a></h5>
+<h4><a href="https://www.eventbrite.com/e/wds-academy-microhousing-101-tickets-16193369805">Register for Microhousing here.</a></h4>
 
 		<!-- <h4>About Dee Williams
 		Dee Williams of Portland Alternative Dwellings is a builder, teacher, author. She’s co-owner of Portland Alternative Dwellings (www.padtinyhouses.com), a company founded on the principle that everyone can build the life they dream. Dee's memoir, The Big Tiny (2014 Penguin/Random House), chronicles her journey toward voluntary simplicity, life in a micro-house, and the realization that there’s nothing better than a chance to say “Thank You” and “I Love You.” Really. Seriously. Dee lives in Olympia, Washington in an 84-sq.ft house, which is the epi-center of something more massive than the ever-expanding universe... and that place is called “HOME.”
