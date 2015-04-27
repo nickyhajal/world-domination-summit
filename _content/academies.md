@@ -57,12 +57,7 @@ If you're a blogger, author, artist, health enthusiast, a parent, or creative en
 	<div class="collapsable-content">
 		<h4>Summary</h4>
 		The Location Rebel Academy was designed specifically for people who are looking to start a business that lets them leave their job and either travel or work from home - as quickly as possible. It skips the fluff and the typical "follow your passion" mantra for a practical, repeatable strategy to help you build income, confidence, and the foundation for a mobile business.
-Attendees of this Academy will:
-- Uncover the essentials of which skills you need to build a business that you can run from anywhere.
-- Learn why "following your passion" is bad advice for people wanting to build this type of business
-- Practice the easiest way to start making money from anywhere, that you can apply today
-- Discuss how to scale your business up over the long term to achieve the ever-elusive "passive income"
-- Discover strategies for how to actually be productive and manage your time when you're on the road
+Attendees of this Academy will: Uncover the essentials of which skills you need to build a business that you can run from anywhere. Learn why "following your passion" is bad advice for people wanting to build this type of business. Practice the easiest way to start making money from anywhere, that you can apply today. Discuss how to scale your business up over the long term to achieve the ever-elusive "passive income". Discover strategies for how to actually be productive and manage your time when you're on the road
 		
 		<!-- <h4>About Sean Ogle</h4>
 		Through his sites Location 180 and Location Rebel, Sean Ogle helps people quit their jobs and build businesses that can be run from anywhere in the world. When he's not working from the beaches of Bali or the coffee shops of Portland, he can probably be found on the golf course, or sneaking into some other high class establishment where he most certainly doesn't belong. -->
@@ -101,12 +96,7 @@ By the end of this Academy all language doubts will be squashed. Find out why ad
 Becoming “known” can open a lot of doors. But, beyond ego-gratification, it's worthless UNLESS you know how to do it in a way that aligns deeply with both who you are AND what you seek to build. Do it right, the doors to purpose, possibility and connection swing open. Do it wrong, pretty much everything crashes and burns. 
 
 This academy is about doing it right, and creating something that matters--to you and to those you seek to serve--along the way.
-Attendees of this Academy will leave with:
-- A dynamic, highly-effective roadmap to grow your notoriety in a way that opens the most doors, cultivates the most meaning and let's you feel amazing about how you're doing it.
-- A deep understanding of the different paths to building a business, practice, career or body-of-work around your growing notoriety.
-- A simple process to choose the best tools, platforms and medium for your social orientation and communication DNA.
-- A checklist of critical mistakes to avoid and shiny objects to stop chasing.
-- A better ability to handle the real challenges, responsibilities and opportunities that inevitably come your way as you become better known.
+Attendees of this Academy will leave with: A dynamic, highly-effective roadmap to grow your notoriety in a way that opens the most doors, cultivates the most meaning and let's you feel amazing about how you're doing it. A deep understanding of the different paths to building a business, practice, career or body-of-work around your growing notoriety. A simple process to choose the best tools, platforms and medium for your social orientation and communication DNA. A checklist of critical mistakes to avoid and shiny objects to stop chasing. A better ability to handle the real challenges, responsibilities and opportunities that inevitably come your way as you become better known.
 
 		<!-- <h4>About Jonathan Fields</h4>
 		Jonathan Fields is a New York City dad, husband, award-winning author, serial-entrepreneur, maker and founder of media and education venture, Good Life Project. He's been featured everywhere from The New York Times, Wall Street Journal, Inc., FastCompany, Forbes and Entrepreneur to People, USA Today, Self, O, Elle, Fitness, Vogue, Outside, Allure and thousands of websites and media outlets that sound fancy, but don't impress his daughter in the least. -->
@@ -154,13 +144,7 @@ Jane Friedman has more than 15 years of experience in the publishing industry, a
 		<h4>Summary</h4>
 		If you have ever come to WDS before, you know that by Sunday evening, your head is full of 100 exciting ideas. Once you get home, and during the year that follows, how many of these ideas do you ship? In this working laboratory, Pam and Rob will help you organize and prioritize ideas, create simple yet effective plans, identify and conspire with peers who will help you get your work done, and send you home with clarity and purpose.
 
-You will come away from this academy with:
-- A clear definition of your values and priorities
-- A short list of your most exciting and valuable ideas from WDS
-- A project plan for at least one project you want to ship this year
-- Best practices from serial shippers
-- A list of fellow WDS'ers who are willing to help you build and ship your project
-- Hilarity, good will, energy, enthusiasm and confidence
+You will come away from this academy with: A clear definition of your values and priorities. A short list of your most exciting and valuable ideas from WDS. A project plan for at least one project you want to ship this year. Best practices from serial shippers. A list of fellow WDS'ers who are willing to help you build and ship your project. Hilarity, good will, energy, enthusiasm and confidence
 
 		<!-- <h4>About Pamela Slim and Rob Young</h4>
 		Pamela Slim is an author, speaker and business coach, who lives to help people build indispensable careers and teams. She has helped launch hundreds of businesses, and has served thousands of entrepreneurs through her online courses and coaching programs. Pam wrote Escape from Cubicle Nation and Body of Work, and is currently working on her third book, Indispensable. Pam lives in Mesa, Arizona, with her husband and two children.
@@ -178,14 +162,7 @@ Rob Young worked for one of the world's biggest consulting companies for 10 year
 		<h4>Summary</h4>
 		How do you build powerful professional relationships? In this workshop, Vanessa will go over all of the communication skills you need for interacting with people in business. She will give you the skills you need to master your presence, make authentic connections and speed read potential clients and customers. Vanessa will dive into networking, pitching, and negotiating using science based strategies and actionable techniques you can use immediately. This entertaining workshop will be highly interactive, informative and inspiring.
 
-Attendees of this Academy will learn:
-- How to master your presence
-- Pimp your elevator pitch
-- The psychology of authentic relationship building
-- The art of networking
-- Connecting and building rapport with VIPs
-- Cold-calling and pitching
-- The science of personality
+Attendees of this Academy will learn: How to master your presence. Pimp your elevator pitch. The psychology of authentic relationship building. The art of networking. Connecting and building rapport with VIPs. Cold-calling and pitching. The science of personality
 
 		<!-- <h4>About Vanessa Van Edwards</h4>
 		Vanessa Van Edwards is the lead investigator at Science of People, a human behavior research lab. She is a Huffington Post columnist and published author. Her innovative work has been featured on NPR, Business Week and USA Today. She regularly gives keynotes and appears in the media to talk about her research. She has written for CNN, Fast Company and Forbes. -->
@@ -217,8 +194,6 @@ Attendees of this Academy will learn:
 		<h4>Summary</h4>
 		Lots of people dream of down-sizing to reduce their debt, to focus on what's important, or to facilitate the creation of a new community (think my brother want's to move in with me and my husband, or I'd love to invite my aging Mom to live with us). So what are the possibilities, challenges, and realities of taking the plunge toward tiny?
 If you've considered tiny living, then this is a chance to learn from the experts who have put their passion and knowledge into establishing tiny house communities. Come learn what's possible in a micro-house, within the city boundaries, and within our collective understanding of "getting along in tight quarters." 
-
-As seen on Portlandia! The quintessential Portland lampoon which was filmed at Caravan: http://ecowatch.com/2015/02/26/portlandia-life-inside-a-tiny-house/
 
 		<!-- <h4>About Dee Williams
 		Dee Williams of Portland Alternative Dwellings is a builder, teacher, author. She’s co-owner of Portland Alternative Dwellings (www.padtinyhouses.com), a company founded on the principle that everyone can build the life they dream. Dee's memoir, The Big Tiny (2014 Penguin/Random House), chronicles her journey toward voluntary simplicity, life in a micro-house, and the realization that there’s nothing better than a chance to say “Thank You” and “I Love You.” Really. Seriously. Dee lives in Olympia, Washington in an 84-sq.ft house, which is the epi-center of something more massive than the ever-expanding universe... and that place is called “HOME.”
