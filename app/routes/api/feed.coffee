@@ -146,6 +146,7 @@ routes = (app) ->
 				next()
 
 		get: (req, res, next) ->
+			tk req.query.filters
 			feeds = Feeds.forge()
 			limit = req.query.per_page ? 50
 			page = req.query.page ? 1
@@ -185,6 +186,7 @@ routes = (app) ->
 				filters.push({name: key, val: val})
 			async.each filters, (filter, cb) ->
 				if +filter.val
+					tk filter
 					if filter.name is 'twitter'
 						feeds.query('where', 'channel_type', '!=', 'twitter')
 						cb()
@@ -194,18 +196,21 @@ routes = (app) ->
 							ids = rsp.get('connected_ids')
 							if not ids.length
 								ids = [0]
-							feeds.query('whereIn', 'user_id', ids)
+							feeds.query('whereIn', 'feed.user_id', ids)
 							cb()
 					if filter.name is 'communities'
 						req.me.getInterests()
 						.then (rsp) ->
 							interests = JSON.parse(rsp.get('interests')).join(',')
-							req.me.getRsvps()
-							.then (rsp) ->
-								meetups = rsp.get('rsvps').join(',')
-								feeds.query 'whereRaw', "(`channel_type` != 'meetup' OR (`channel_type` = 'meetup' AND `channel_id` IN ("+meetups+")))"
-								feeds.query 'whereRaw', "(`channel_type` != 'interest' OR (`channel_type` = 'interest' AND `channel_id` IN ("+interests+")))"
-								cb()
+							meetups = rsp.get('rsvps').join(',')
+							feeds.query 'whereRaw', "(`channel_type` != 'interest' OR (`channel_type` = 'interest' AND `channel_id` IN ("+interests+")))"
+							cb()
+					if filter.name is 'meetups'
+						req.me.getRsvps()
+						.then (rsp) ->
+							meetups = rsp.get('rsvps').join(',')
+							feeds.query 'whereRaw', "(`channel_type` != 'meetup' OR (`channel_type` = 'meetup' AND `channel_id` IN ("+meetups+")))"
+							cb()
 				else
 					cb()
 			, ->
