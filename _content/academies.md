@@ -8,7 +8,7 @@ photo_head: https://farm8.staticflickr.com/7457/9226356063_2f05f24588_c.jpg,http
 
 We are excited to announce that Academies are back for 2015 focusing on a wide range of awesome topics and featuring many WDS favorites. 
 
-Registration for academies is separate from WDS itself, and we offer registration both to WDS attendees as well as to the general public (for a slightly higher registration fee). Please note that there is a separate registration for each Academy you would like to attend. Tickets are non-refundable, non-transferrable, or exchangeable. There is no limit on how many Academies you can register for. Academy tickets are offered on a first-come first-served basis. Once an Academy session sells out, we will not be issuing extra tickets.  Below you'll find the Academies schedule for WDS 2015.
+Registration for academies is separate from WDS itself, and we offer registration both to WDS attendees as well as to the general public (for a slightly higher registration fee). Because they are hosted at different venues around Portland please note that there is a separate registration for each Academy you would like to attend. Tickets are non-refundable, non-transferrable, or exchangeable for a different Academy. There is no limit on how many Academies you can register for. Academy tickets are offered on a first-come first-served basis. Once an Academy session sells out, we will not be issuing extra tickets.  Below you'll find the Academies schedule for WDS 2015.
 
 &nbsp;
 
