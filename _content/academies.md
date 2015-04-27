@@ -2,142 +2,227 @@ sidebar: academies
 icon: theater
 photo_head: https://farm8.staticflickr.com/7457/9226356063_2f05f24588_c.jpg,https://farm4.staticflickr.com/3680/9226354561_60e1c77986_c.jpg,https://farm8.staticflickr.com/7422/9226351955_26fafe47fe_c.jpg,https://farm3.staticflickr.com/2868/9229137606_aa502275bb_c.jpg,https://farm3.staticflickr.com/2317/5800027355_42530f678d_b.jpg,https://farm3.staticflickr.com/2031/5800591550_94fa52c7b4_b.jpg
 
-# As the WDS community strengthens and grows, more and more people are arriving early and staying late. 2014 marked the launch of WDS Academies: a series of mini-events focused on specific topics that take place on the days surrounding WDS weekend. 
-
-Registration for academies is separate from WDS itself, and we offer registration both to WDS attendees as well as to the general public (for a slightly higher registration fee). Below you'll find the academies we offered in 2014. Academies that will accompany our fifth year of WDS will be announced once the final wave of [main stage ticket sales](/register) has closed.
-
-In the meantime, watch this video about the Academies we offered at WDS 2014:
+# As the WDS community strengthens and grows, more and more people are arriving early and staying late. 2014 marked the launch of WDS Academies: a series of mini-events focused on specific topics that take place on the days surrounding WDS weekend.To learn more about the Academies we offered at WDS 2014 checkout this video: 
 
 <iframe src="https://player.vimeo.com/video/121164251?title=0&byline=0&portrait=0" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+We are excited to announce that Academies are back for 2015 focusing on a wide range of awesome topics and featuring many WDS favorites. 
+
+Registration for academies is separate from WDS itself, and we offer registration both to WDS attendees as well as to the general public (for a slightly higher registration fee). Please note that there is a separate registration for each Academy you would like to attend. Tickets are non-refundable, non-transferrable, or exchangeable. There is no limit on how many Academies you can register for. Academy tickets are offered on a first-come first-served basis. Once an Academy session sells out, we will not be issuing extra tickets.  Below you'll find the Academies schedule for WDS 2015.
 
 &nbsp;
 
 <div class="zig-zags_blue"></div>
 
-# 2014 Academies Archive
+# 2015 Academies Schedule
 
-<a name="problogger"></a>
+<a name="fuel-your-passion"></a>
 
 <div class="collapsable-box collapsable-box-open">
-	<h4>ProBlogger Academy: Building Profitable Blogs</h4>
-	Hosted by Darren Rowse and Chris Garrett
+	<h4>Fuel Your Passion: How the Founders of Simple Green Smoothies Went
+from Broke to a Book Deal</h4>
+	Hosted by Jadah Sellner and Jen Hansard
 	<div class="collapsable-content">
 		<h4>Summary</h4>
-		Spend the day with Darren Rowse and Chris Garrett—authors of *ProBlogger* the book—exploring how to build profitable blogs. Over the day you'll get insight from Darren and Chris on the four 'pillars' of Problogging—Creating Killer Content, Finding Readers, Building Community, and Monetization. Chris and Darren will be joined by some of their favorite people who will also share their blogging stories: Pat Flynn, Tsh Oxenreider, Jeff Goins, Chris Ducker, and Pam Slim. Plus a special surprise guest!
+		Spend the morning with Jadah Sellner and Jen Hansard, founders of Simple Green Smoothies, and go behind the scenes of how they fuel their passions and went from broke to book deal. You'll go through a step-by-step action plan to fuel your own passion, learn tips and tricks to blend the perfect green smoothie, and leave sippin' on their signature green smoothie recipe ready to change the world. 
+
+If you're a blogger, author, artist, health enthusiast, a parent, or creative entrepreneur looking to share your message with the world, you'll want to join this rawkstar party!
 		
 		<!-- <h4>About the Hosts</h4>
-		**Darren Rowse** is the founder of ProBlogger, Digital Photography School, and various other blogs. He’s been blogging since 2002 and has been involved in a variety of other projects including co-authoring *ProBlogger* the Book. Darren is passionate about helping bloggers find their voice and build sustainable blogs. He speaks around the world on the topic of building profitable blogs. **Chris Garrett** is an online business consultant, teacher, coach, new media industry commentator, writer, speaker, and all-round web geek. He has been involved in several startups and has written for some of the web’s best-loved blogs. Chris also works as part of the team at Copyblogger as Chief Digital Officer. -->
+		**Jadah Sellner** and **Jen Hansard** are world-changing moms and founders of Simple Green Smoothies, the #1 online resource for green smoothies--with over 350k Instagram followers, 260k Facebook fans, 25 million website page views, and 300,000+ email subscribers. They are hosts of the wildly popular 30-Day Green Smoothie Challenge and have changed the lives of over one million people. They are on a mission to help passionate people establish healthy habits that are easy to stick with. -->
 	</div>
 </div>
 
-<a name="nerd-fitness"></a>
+<a name="hack-your-world-with-tarot"></a>
 <div class="line-canvas"></div>
 
 <div class="collapsable-box collapsable-box-open">
-	<h4>Nerd Fitness Live</h4>
-	Hosted by Steve Kamb
+	<h4>Hack Your World with Tarot</h4>
+	Hosted by Theresa Reed
 	<div class="collapsable-content">
 		<h4>Summary</h4>
-		Nerd Fitness Live will help you develop the skills you need to become a real life superhero. We’ll start by training our minds to process a totally different approach to fitness—one that breaks the rampant boom and bust fitness trends and leads to long-term sustainable habit change. We’ll then talk about how simple, small changes in our diet can “level up” our nutrition (and allow each attendee to achieve new personal results they didn’t think were really possible). Finally, we’ll demonstrate and perform a strength training workout that you can do ANYWHERE in the world. Everything we teach and share is based around the philosophy that we are normal, everyday people wanting a fun, sustainable, and genuine way to lead better lives together.
+		Join Theresa Reed, The Tarot Lady — a 25-year Tarot industry veteran, pro blogger and business mentor — for a fun, fresh, fast-paced crash course on reading Tarot. You will learn how Tarot decks work, what the major cards represent, and how to do a couple of simple spreads for quick decision making + crystal clear guidance. Theresa specializes in a "jargon-free" and hands-on approach to Tarot. No metaphysical fluff. Just plain English and easy to learn techniques that you can start using immediately. Walk in a Tarot virgin. Walk out reading Tarot like a BO$$. No experience, deck, potions or patchouli incense required. Just show up with an open mind... and get ready to gain a priceless new business + life superpower!
 
-		<!-- <h4>About Steve Kamb</h4>
-		Steve Kamb is the creator and leader of NerdFitness.com, a fitness community dedicated to helping average Joes and desk jockeys live healthier lives. Over the past five years, he's taken Nerd Fitness from a simple one-man blog and developed it into a passionate “rebellion” of over 190,000 email subscribers, with hundreds joining the cause every day. While teaching others to get healthy, he's also managed to complete some pretty cool quests: exploring the ruins of Machu Picchu in Peru and Angkor Wat in Cambodia, diving with sharks on the Great Barrier Reef, flying a stunt plane in New Zealand, and living like James Bond in Monte Carlo. -->
+		<!-- <h4>About Theresa Reed</h4>
+		Theresa Reed (alias: The Tarot Lady) is an intuitive Tarot reader, astrologer, teacher, mentor & yogi with over twenty five years of professional experience. She’s devoted to helping people make better decisions & lead happier lives — using Tarot as an instigational tool for confident, bold & emotionally-intelligent action — in life, in love & in business. -->
 	</div>
 </div>
+
+<a name="location-rebel"></a>
+<div class="line-canvas"></div>
+
+<div class="collapsable-box collapsable-box-open">
+	<h4>How to Become a Location Rebel: The Three Step Process for Building a Business You Can Run from Anywhere</h4>
+	Hosted by Sean Ogle
+	<div class="collapsable-content">
+		<h4>Summary</h4>
+		The Location Rebel Academy was designed specifically for people who are looking to start a business that lets them leave their job and either travel or work from home - as quickly as possible. It skips the fluff and the typical "follow your passion" mantra for a practical, repeatable strategy to help you build income, confidence, and the foundation for a mobile business.
+Attendees of this Academy will:
+- Uncover the essentials of which skills you need to build a business that you can run from anywhere.
+- Learn why "following your passion" is bad advice for people wanting to build this type of business
+- Practice the easiest way to start making money from anywhere, that you can apply today
+- Discuss how to scale your business up over the long term to achieve the ever-elusive "passive income"
+- Discover strategies for how to actually be productive and manage your time when you're on the road
+		
+		<!-- <h4>About Sean Ogle</h4>
+		Through his sites Location 180 and Location Rebel, Sean Ogle helps people quit their jobs and build businesses that can be run from anywhere in the world. When he's not working from the beaches of Bali or the coffee shops of Portland, he can probably be found on the golf course, or sneaking into some other high class establishment where he most certainly doesn't belong. -->
+	</div>
+</div>
+
 
 <a name="language-lab"></a>
 <div class="line-canvas"></div>
 
 <div class="collapsable-box collapsable-box-open">
-	<h4>Language Lab: Learn How to Hack Any Language and Speak it Today</h4>
+	<h4>Language Lab</h4>
 	Hosted by Benny Lewis
 	<div class="collapsable-content">
 		<h4>Summary</h4>
-		"Someday" you'll learn a new language? Make "someday" TODAY. We will be tackling your doubts, and then giving you the hacks you need to have a basic conversation in any language you may want to learn, by the end of the lab. Then you will open up a whole new world, unreachable by English alone, and have the tools to skyrocket towards fluency after WDS. Anyone at any age can learn any language in the world. Talent is irrelevant.
+		"Some day" you'll learn a new language? Make "some day" TODAY. We will be tackling your doubts, and then giving you the hacks you need to have a basic conversation in any language you may want to learn, by the end of this Academy. Then you will open up a whole new world, unreachable by English alone, and have the tools to skyrocket towards fluency. Anyone at any age can learn any language in the world. Talent is irrelevant.
 
 By the end of this Academy all language doubts will be squashed. Find out why adults are BETTER language learners than children, how to learn your language even if you are busy, and especially how to do it even if you can't travel abroad.
-		
+
 		<!-- <h4>About Benny Lewis</h4>
-		Benny Lewis failed in language learning when growing up—getting a C in German, and spending six entire months living in Spain without able to ask the most basic questions in Spanish. But then everything changed! He now speaks 12 languages and runs the world's largest blog about language learning, "Fluent in 3 Months" and has this year released a book of the same title that became an instant international best seller. His travels through language learning have also earned him the title of National Geographic's Traveler of the Year. -->
+		Benny Lewis failed in language learning when growing up - getting a C in German, and spending six entire months living in Spain without being able to ask the most basic questions in Spanish. But then everything changed! He now speaks 12 languages and runs the world's largest blog about language learning, "Fluent in 3 Months," and has this year released a book of the same title that became an instant international best seller. His travels through language learning have also earned him the title of National Geographic's Traveler of the Year. -->
 	</div>
 </div>
 
-
-<a name="travel-hacking"></a>
-<div class="line-canvas"></div>
-
-<div class="collapsable-box collapsable-box-open">
-	<h4>Travel Hacking Academy</h4>
-	Hosted by Stephanie Zito
-	<div class="collapsable-content">
-		<h4>Summary</h4>
-		Master the art of travel hacking. You will learn how to build a strategy to earn big balances of airline miles and hotel points that you can redeem for travel to your dream destinations. If you want to go places for free or nearly free, this is the workshop for you.
-
-		<!-- <h4>About Stephanie Zito</h4>
-		Stephanie Zito is a life long traveler and master of mileage. She redeemed her first international frequent flyer ticket in 1994 and has been hooked on free flights ever since. Stephanie has traveled to more than 117 countries and her current airport base is PDX. -->
-	</div>
-</div>
-
-<a name="revolutionu"></a>
+<a name="the-art-of-becoming-known"></a>
 
 <div class="line-canvas"></div>
 
 <div class="collapsable-box collapsable-box-open">
-	<h4>RevolutionU: How to Tap Revolution-Dynamics to Fuel Rapid Business Growth, Build an Army of Evangelists and Change the Damn World</h4>
+	<h4>The Art of Becoming Known</h4>
 	Hosted by Jonathan Fields
 	<div class="collapsable-content">
 		<h4>Summary</h4>
-		In this WDS Academy, Fields will reveal the entire 18-step RevolutionU Framework, a highly-detailed, immediately-actionable roadmap to engineer your own business revolution, whether you’re just starting up or you need to breathe new life into your organization, venture or brand. Imagine how it will feel to fuel your business with the power of revolution.
+		Platform-building, thought-leadership, expertise and authority. #YAWN. 
+
+Becoming “known” can open a lot of doors. But, beyond ego-gratification, it's worthless UNLESS you know how to do it in a way that aligns deeply with both who you are AND what you seek to build. Do it right, the doors to purpose, possibility and connection swing open. Do it wrong, pretty much everything crashes and burns. 
+
+This academy is about doing it right, and creating something that matters--to you and to those you seek to serve--along the way.
+Attendees of this Academy will leave with:
+- A dynamic, highly-effective roadmap to grow your notoriety in a way that opens the most doors, cultivates the most meaning and let's you feel amazing about how you're doing it.
+- A deep understanding of the different paths to building a business, practice, career or body-of-work around your growing notoriety.
+- A simple process to choose the best tools, platforms and medium for your social orientation and communication DNA.
+- A checklist of critical mistakes to avoid and shiny objects to stop chasing.
+- A better ability to handle the real challenges, responsibilities and opportunities that inevitably come your way as you become better known.
 
 		<!-- <h4>About Jonathan Fields</h4>
-		Nobody had any idea award-winning author, serial entrepreneur and Good Life Project founder, Jonathan Fields, was working on this. Not even his closest friends. Until he revealed it for the first time at an invite-only event just last year. When he did, jaws dropped.
-
-For years, Jonathan had been working in secret to deconstruct the key elements of nonviolent revolution and figure out how to apply them to entrepreneurship. Adding evangelist growth mechanics, social technology, response marketing, social dynamics and entrepreneurship to the mix, pieces of the puzzle began to fall into place. And by mid-2013, he'd developed an integrated, robust "business revolution" framework capable of fueling entrepreneurial movements that hold the potential for exponential growth and impact. -->
+		Jonathan Fields is a New York City dad, husband, award-winning author, serial-entrepreneur, maker and founder of media and education venture, Good Life Project. He's been featured everywhere from The New York Times, Wall Street Journal, Inc., FastCompany, Forbes and Entrepreneur to People, USA Today, Self, O, Elle, Fitness, Vogue, Outside, Allure and thousands of websites and media outlets that sound fancy, but don't impress his daughter in the least. -->
 	</div>
 </div>
 
-<a name="making-art"></a>
+<a name="how-to-get-your-book-published"></a>
 
 <div class="collapsable-box collapsable-box-open">
-	<h4>Making Art and Giving It Away</h4>
-	Hosted by Gary Hirsch
+	<h4>How to Get Your Book Published: The Traditional and DIY Paths</h4>
+	Hosted by David Fugate and Jane Friedman
 	<div class="collapsable-content">
 		<h4>Summary</h4>
-		This is a big, fun exploration of collaboration: how to do more of it, how to invite others into your work, what not to do. It will also be the launch of a co-creative art/story project by Gary Hirsch where participants take (literally) original artwork from the artist and use it as a launch pad for their own art, work, and stories.
+		This intensive and information-filled workshop will teach you all the best practices of how to get your book published, starting with how to evaluate the best publishing path for you. You'll get practical advice and tools to help you deliver strong pitch letters and proposal materials for both fiction and nonfiction, and find out what it takes to capture the attention of a New York publisher. You'll also learn when and how to pursue the increasingly viable self-publishing and digital publishing options, and get an overview of the most important services and distributors that successful authors use. And regardless of your path to publication, you'll gain insight into how to successfully market and promote your work before, during, and after launch. Don't embark on the publishing process without being fully educated about how the industry works, from the view of longtime industry professionals. You'll better focus your time and energy, and increase your chances of success.
 
-In the session you'll play, collaborate, tell stories, get some free cool stuff, work with strangers, and let go a bit, which is always a good thing. This is a great session to get help with something that you are currently working on, and have a ridiculously good time!
+		<!--<h4>David Fugate and Jane Friedman</h4>
+		David Fugate is the President & Founder of LaunchBooks Literary Agency. He has spent more than 23 years representing authors' interests, and has represented hundreds of books that have generated in excess of $20 Million dollars for New York Times bestselling authors like Chris Guillebeau, Andy Weir, and Kevin Mitnick, as well as WDS veterans like Steve Kamb, Benny Lewis, Dee Williams, Scott Berkun, Kate Northrup and Jia Jiang, to name just a few. You can learn more at his site, www.launchbooks.com. 
 
-		<!--<h4>About Gary Hirsch</h4>
-		Gary Hirsch is a collaboration junkie and the co-founder of On Your Feet, a consultancy that uses improvisation and other interactive methods to help organizations generate new ideas, collaborate, engage audiences and walk their talk. After improv, Gary’s second love is art making, which is rooted in collaboration as well. Currently he is obsessed with making and launching thousands of small hand-painted domino robots into the world to see what will happen. Storytelling, improvisation, and doodling are all inter-related for Gary. When he’s doing any of them, there are never enough hours in the day. -->
+Jane Friedman has more than 15 years of experience in the publishing industry, and is the former publisher of Writer's Digest. Jane specializes in educating writers about the publishing industry (without drama or hype) to help them make the best long-term decisions for their careers. Since 2001, she has spoken at hundreds of writing conferences around the world, and is known for thought-provoking talks on the future of authorship. She recently delivered keynotes at The Muse & The Marketplace, the University of Wisconsin Writers’ Institute, and PubSmart. She teaches digital media and publishing at the University of Virginia and runs an award-winning blog for writers at JaneFriedman.com. -->
 	</div>
 </div>
 
-<a name="art-of-simple"></a>
+<a name="overcoming-the-fear-of-rejection"></a>
 <div class="line-canvas"></div>
 
 <div class="collapsable-box collapsable-box-open">
-	<h4>The Art of Simple: A Field Guide to Redesigning Your Simple Life</h4>
-	Hosted by Tsh Oxenreider
+	<h4>Overcoming the Fear of Rejection</h4>
+	Hosted by Jia Jiang
 	<div class="collapsable-content">
 		<h4>Summary</h4>
-		Just what is “simple living,” anyway? And why does it seem to hard to… well, do? Conventional culture often defines living simply with a bunch of rules: shun the TV, ride only your bike, grow your own food, shower only when others complain. But the real definition is delightfully freeing, and it can be fleshed out in any lifestyle, at any age, at any place in the world. In this workshop, we’ll explore what living simply might look like for you. First, we’ll relish in the real definition of simple living. Then, you’ll find time and space to deconstruct parts of your life, followed by freedom to reassemble them using a new-to-you blueprint. Roll up your sleeves and treat yourself to an afternoon of personal reflection, brainstorming, and if you want, a chance to bounce around some fresh ideas on the nuts and bolts of making it all work. (Introverts who thrive on solo reflection are just as welcome as extroverts who need to chat it all out.) Bring your journal and a pencil for this one.
+		More details to come soon. 
 
-		<!-- <h4>About Tsh Oxenreider</h4>
-		Tsh Oxenreider is passionate about people living simply so that others can simply live, and also firmly believes that a passport is one of life's greatest textbooks. She's the author of three books, including the new *Notes From a Blue Bike: The Art of Living Intentionally in a Chaotic World*, and is the founder of TheArtofSimple.net, a community blog about simple living. Tsh and her family travel frequently, but right now they live in beautiful Bend, Oregon. -->
+		<!-- <h4>About Jia Jiang</h4>
+		More details to come soon. -->
 	</div>
 </div>
 
-<a name="business-idea"></a>
+<a name="take-action-after-wds"></a>
 <div class="line-canvas"></div>
 
 <div class="collapsable-box collapsable-box-open">
-	<h4>Finding and Refining a Great Business Idea</h4></a>
-	Hosted by Fizzle
+	<h4>How to take action after WDS: The Sort it/Plan it/Ship it Laboratory</h4></a>
+	Hosted by Pamela Slim and Rob Young
 	<div class="collapsable-content">
 		<h4>Summary</h4>
-		If you're searching for a great business idea or looking for ways to make your current idea much more compelling, this WDS Academy from the guys behind Fizzle is for you. You'll learn how to spot great business opportunities and how to turn a potentially common idea into a unique and powerful solution for a group of customers you care deeply about.
+		If you have ever come to WDS before, you know that by Sunday evening, your head is full of 100 exciting ideas. Once you get home, and during the year that follows, how many of these ideas do you ship? In this working laboratory, Pam and Rob will help you organize and prioritize ideas, create simple yet effective plans, identify and conspire with peers who will help you get your work done, and send you home with clarity and purpose.
 
-		<!-- <h4>About the Fizzle Team</h4>
-		Fizzle is training and community for independent creatives and entrepreneurs building their thing online. The entire Fizzle team will be leading this session, including Corbett Barr, Chase Reeves, Caleb Wojcik and Barrett Brooks. We've built successful businesses and grappled with failures. Through our work with thousands of entrepreneurs we've identified a unique approach to finding and refining business ideas that will give any entrepreneur a better shot at earning a living doing something you love. -->
+You will come away from this academy with:
+- A clear definition of your values and priorities
+- A short list of your most exciting and valuable ideas from WDS
+- A project plan for at least one project you want to ship this year
+- Best practices from serial shippers
+- A list of fellow WDS'ers who are willing to help you build and ship your project
+- Hilarity, good will, energy, enthusiasm and confidence
+
+		<!-- <h4>About Pamela Slim and Rob Young</h4>
+		Pamela Slim is an author, speaker and business coach, who lives to help people build indispensable careers and teams. She has helped launch hundreds of businesses, and has served thousands of entrepreneurs through her online courses and coaching programs. Pam wrote Escape from Cubicle Nation and Body of Work, and is currently working on her third book, Indispensable. Pam lives in Mesa, Arizona, with her husband and two children.
+Rob Young worked for one of the world's biggest consulting companies for 10 years, before quitting to do his own thing. He started an eCommerce business, his own consulting firm, and after WDS in 2012, founded The Hundred Dollar Club, an international community of small business owners. Rob is an expert on plans and projects, and gets inordinate satisfaction watching people run businesses that feed their passion and support their desired lifestyle. Rob lives in the U.K. with his wife and two children. -->
+	</div>
+</div>
+
+<a name="people-skills"></a>
+<div class="line-canvas"></div>
+
+<div class="collapsable-box collapsable-box-open">
+	<h4>People Skills for Business</h4></a>
+	Hosted by Vanessa Van Edwards
+	<div class="collapsable-content">
+		<h4>Summary</h4>
+		How do you build powerful professional relationships? In this workshop, Vanessa will go over all of the communication skills you need for interacting with people in business. She will give you the skills you need to master your presence, make authentic connections and speed read potential clients and customers. Vanessa will dive into networking, pitching, and negotiating using science based strategies and actionable techniques you can use immediately. This entertaining workshop will be highly interactive, informative and inspiring.
+
+Attendees of this Academy will learn:
+- How to master your presence
+- Pimp your elevator pitch
+- The psychology of authentic relationship building
+- The art of networking
+- Connecting and building rapport with VIPs
+- Cold-calling and pitching
+- The science of personality
+
+		<!-- <h4>About Vanessa Van Edwards</h4>
+		Vanessa Van Edwards is the lead investigator at Science of People, a human behavior research lab. She is a Huffington Post columnist and published author. Her innovative work has been featured on NPR, Business Week and USA Today. She regularly gives keynotes and appears in the media to talk about her research. She has written for CNN, Fast Company and Forbes. -->
+	</div>
+</div>
+
+<a name="crafty-in-community"></a>
+<div class="line-canvas"></div>
+
+<div class="collapsable-box collapsable-box-open">
+	<h4>Be Crafty in Community</h4></a>
+	Hosted by Kari Chapin
+	<div class="collapsable-content">
+		<h4>Summary</h4>
+		More details to come soon.
+
+		<!-- <h4>About Kari Chapin
+		More details to come soon. -->
+	</div>
+</div>
+
+<a name="microhousing-101"></a>
+<div class="line-canvas"></div>
+
+<div class="collapsable-box collapsable-box-open">
+	<h4>Dream Big, Build Small: Micro Housing 101</h4></a>
+	Hosted by Dee Williams
+	<div class="collapsable-content">
+		<h4>Summary</h4>
+		Lots of people dream of down-sizing to reduce their debt, to focus on what's important, or to facilitate the creation of a new community (think my brother want's to move in with me and my husband, or I'd love to invite my aging Mom to live with us). So what are the possibilities, challenges, and realities of taking the plunge toward tiny?
+If you've considered tiny living, then this is a chance to learn from the experts who have put their passion and knowledge into establishing tiny house communities. Come learn what's possible in a micro-house, within the city boundaries, and within our collective understanding of "getting along in tight quarters." 
+
+As seen on Portlandia! The quintessential Portland lampoon which was filmed at Caravan: http://ecowatch.com/2015/02/26/portlandia-life-inside-a-tiny-house/
+
+		<!-- <h4>About Dee Williams
+		Dee Williams of Portland Alternative Dwellings is a builder, teacher, author. She’s co-owner of Portland Alternative Dwellings (www.padtinyhouses.com), a company founded on the principle that everyone can build the life they dream. Dee's memoir, The Big Tiny (2014 Penguin/Random House), chronicles her journey toward voluntary simplicity, life in a micro-house, and the realization that there’s nothing better than a chance to say “Thank You” and “I Love You.” Really. Seriously. Dee lives in Olympia, Washington in an 84-sq.ft house, which is the epi-center of something more massive than the ever-expanding universe... and that place is called “HOME.”
+
+Caravan, The Tiny House Hotel is located in the heart of the Alberta district of NE Portland, OR. It is the first tiny house (on wheels) hotel in America and owners, Deb Delman and Kol Peterson, are avid tiny house (wheels or built on the ground) enthusiasts. Dee, Deb and Kol and their combined experience with building, engaging city code enforcement, and tiny house living make this an awesome opportunity to explore tiny. -->
 	</div>
 </div>
