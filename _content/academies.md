@@ -38,7 +38,6 @@ If you're a blogger, author, artist, health enthusiast, a parent, or creative en
 </div>
 
 <a name="hack-with-tarot"></a>
-<div class="line-canvas"></div>
 
 <div class="collapsable-box collapsable-box-open">
 	<h4>Hack Your World with Tarot</h4>
