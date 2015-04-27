@@ -27,8 +27,9 @@ from Broke to a Book Deal</h4>
 		Spend the morning with Jadah Sellner and Jen Hansard, founders of Simple Green Smoothies, and go behind the scenes of how they fuel their passions and went from broke to book deal. You'll go through a step-by-step action plan to fuel your own passion, learn tips and tricks to blend the perfect green smoothie, and leave sippin' on their signature green smoothie recipe ready to change the world. 
 
 If you're a blogger, author, artist, health enthusiast, a parent, or creative entrepreneur looking to share your message with the world, you'll want to join this rawkstar party!
-&nbsp;
+<div class="place-row">
 <a href="https://www.eventbrite.com/e/wds-academy-fuel-your-passion-tickets-16185910494">Register for Fuel Your Passion here.</a>
+</div>
 		
 		<!-- <h4>About the Hosts</h4>
 		**Jadah Sellner** and **Jen Hansard** are world-changing moms and founders of Simple Green Smoothies, the #1 online resource for green smoothies--with over 350k Instagram followers, 260k Facebook fans, 25 million website page views, and 300,000+ email subscribers. They are hosts of the wildly popular 30-Day Green Smoothie Challenge and have changed the lives of over one million people. They are on a mission to help passionate people establish healthy habits that are easy to stick with. -->
