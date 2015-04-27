@@ -23,12 +23,13 @@ Registration for academies is separate from WDS itself, and we offer registratio
 from Broke to a Book Deal</h4>
 	Hosted by Jadah Sellner and Jen Hansard
 	<div class="collapsable-content">
+	Thursday, July 9th | 9:00 AM to 12:00 PM | Gerding Theater at the Armory
 		<h4>Summary</h4>
 		Spend the morning with Jadah Sellner and Jen Hansard, founders of Simple Green Smoothies, and go behind the scenes of how they fuel their passions and went from broke to book deal. You'll go through a step-by-step action plan to fuel your own passion, learn tips and tricks to blend the perfect green smoothie, and leave sippin' on their signature green smoothie recipe ready to change the world. 
 
 If you're a blogger, author, artist, health enthusiast, a parent, or creative entrepreneur looking to share your message with the world, you'll want to join this rawkstar party!
 
-<h4><a href="https://www.eventbrite.com/e/wds-academy-fuel-your-passion-tickets-16185910494">Register for Fuel Your Passion here.</a></h4>
+<h4><a href="https://www.eventbrite.com/e/wds-academy-fuel-your-passion-tickets-16185910494">Register for Fuel Your Passion</a></h4>
 
 		
 		<!-- <h4>About the Hosts</h4>
