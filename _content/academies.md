@@ -134,6 +134,8 @@ Jane Friedman has more than 15 years of experience in the publishing industry, a
 	</div>
 </div>
 
+&nbsp;
+
 <div class="zig-zags_blue"></div>
 
 # Monday, July 13th Academies
@@ -228,5 +230,7 @@ If you've considered tiny living, then this is a chance to learn from the expert
 Caravan, The Tiny House Hotel is located in the heart of the Alberta district of NE Portland, OR. It is the first tiny house (on wheels) hotel in America and owners, Deb Delman and Kol Peterson, are avid tiny house (wheels or built on the ground) enthusiasts. Dee, Deb and Kol and their combined experience with building, engaging city code enforcement, and tiny house living make this an awesome opportunity to explore tiny. -->
 	</div>
 </div>
+
+&nbsp;
 
 <div class="zig-zags_blue"></div>
