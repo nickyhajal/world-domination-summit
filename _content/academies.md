@@ -116,6 +116,8 @@ Attendees of this Academy will leave with: A dynamic, highly-effective roadmap t
 </div>
 
 <a name="how-to-get-your-book-published"></a>
+<div class="line-canvas"></div>
+
 <div class="collapsable-box collapsable-box-open">
 	<h4>How to Get Your Book Published: The Traditional and DIY Paths</h4>
 	Hosted by David Fugate and Jane Friedman
@@ -226,3 +228,5 @@ If you've considered tiny living, then this is a chance to learn from the expert
 Caravan, The Tiny House Hotel is located in the heart of the Alberta district of NE Portland, OR. It is the first tiny house (on wheels) hotel in America and owners, Deb Delman and Kol Peterson, are avid tiny house (wheels or built on the ground) enthusiasts. Dee, Deb and Kol and their combined experience with building, engaging city code enforcement, and tiny house living make this an awesome opportunity to explore tiny. -->
 	</div>
 </div>
+
+<div class="zig-zags_blue"></div>
