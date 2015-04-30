@@ -134,6 +134,8 @@ Jane Friedman has more than 15 years of experience in the publishing industry, a
 	</div>
 </div>
 
+
+<div class="zig-zags_blue"></div>
 # Monday, July 13th Academies
 
 <a name="overcoming-the-fear-of-rejection"></a>
