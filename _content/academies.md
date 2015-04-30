@@ -19,6 +19,7 @@ Registration for Academies is separate from WDS itself, and we offer registratio
 # Thursday, July 9th Academies
 
 <a name="fuel-your-passion"></a>
+<div class="line-canvas"></div>
 
 <div class="collapsable-box collapsable-box-open">
 	<h4>Fuel Your Passion: How the Founders of Simple Green Smoothies Went
@@ -40,6 +41,7 @@ If you're a blogger, author, artist, health enthusiast, a parent, or creative en
 </div>
 
 <a name="hack-with-tarot"></a>
+<div class="line-canvas"></div>
 
 <div class="collapsable-box collapsable-box-open">
 	<h4>Hack Your World with Tarot</h4>
