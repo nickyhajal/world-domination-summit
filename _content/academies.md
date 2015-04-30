@@ -149,7 +149,7 @@ Jane Friedman has more than 15 years of experience in the publishing industry, a
 	<h4>Overcoming the Fear of Rejection</h4>
 	Hosted by Jia Jiang
 	<div class="collapsable-content">
-	Monday, July 13, 2015 from 9:00am to 12:00pm
+	Monday, July 13, 2015 from 9:00 AM to 12:00 PM
 		<h4>Summary</h4>
 		More details to come soon. 
 
