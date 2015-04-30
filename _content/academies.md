@@ -94,7 +94,6 @@ By the end of this Academy all language doubts will be squashed. Find out why ad
 </div>
 
 <a name="the-art-of-becoming-known"></a>
-
 <div class="line-canvas"></div>
 
 <div class="collapsable-box collapsable-box-open">
@@ -117,7 +116,6 @@ Attendees of this Academy will leave with: A dynamic, highly-effective roadmap t
 </div>
 
 <a name="how-to-get-your-book-published"></a>
-
 <div class="collapsable-box collapsable-box-open">
 	<h4>How to Get Your Book Published: The Traditional and DIY Paths</h4>
 	Hosted by David Fugate and Jane Friedman
@@ -134,8 +132,8 @@ Jane Friedman has more than 15 years of experience in the publishing industry, a
 	</div>
 </div>
 
-
 <div class="zig-zags_blue"></div>
+
 # Monday, July 13th Academies
 
 <a name="overcoming-the-fear-of-rejection"></a>
