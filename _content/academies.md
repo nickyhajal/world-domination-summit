@@ -2,19 +2,21 @@ sidebar: academies
 icon: theater
 photo_head: https://farm8.staticflickr.com/7457/9226356063_2f05f24588_c.jpg,https://farm4.staticflickr.com/3680/9226354561_60e1c77986_c.jpg,https://farm8.staticflickr.com/7422/9226351955_26fafe47fe_c.jpg,https://farm3.staticflickr.com/2868/9229137606_aa502275bb_c.jpg,https://farm3.staticflickr.com/2317/5800027355_42530f678d_b.jpg,https://farm3.staticflickr.com/2031/5800591550_94fa52c7b4_b.jpg
 
-# As the WDS community strengthens and grows, more and more people are arriving early and staying late. 2014 marked the launch of WDS Academies: a series of mini-events focused on specific topics that take place on the days surrounding WDS weekend. 
+# As the WDS community strengthens and grows, more and more people are arriving early and staying late. 2014 marked the launch of WDS Academies: a series of mini-events focused on specific topics that take place on the days surrounding WDS weekend. Take a look at a recap video of last year's Academies. 
 
 <iframe src="https://player.vimeo.com/video/121164251?title=0&byline=0&portrait=0" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 We are excited to announce that Academies are back for 2015 focusing on a wide range of awesome topics and featuring many WDS favorites. 
 
-Registration for academies is separate from WDS itself, and we offer registration both to WDS attendees as well as to the general public (for a slightly higher registration fee). Because they are hosted at different venues around Portland please note that there is a separate registration for each Academy you would like to attend. Tickets are non-refundable, non-transferrable, or exchangeable for a different Academy. There is no limit on how many Academies you can register for. Academy tickets are offered on a first-come first-served basis. Once an Academy session sells out, we will not be issuing extra tickets. Below you'll find the Academies schedule for WDS 2015. <b>(PLEASE NOTE: Registration for 2015 Academies will go live Tuesday, May 5th)</b>
+Registration for Academies is separate from WDS itself, and we offer registration both to WDS attendees as well as to the general public (for a slightly higher registration fee). Because they are hosted at different venues around Portland please note that there is a separate registration for each Academy you would like to attend. Tickets are non-refundable, non-transferrable, or exchangeable for a different Academy. There is no limit on how many Academies you can register for. Academy tickets are offered on a first-come first-served basis. Once an Academy session sells out, we will not be issuing extra tickets. Below you'll find the Academies schedule for WDS 2015. <b>(PLEASE NOTE: Registration for 2015 Academies will go live Wednesday, May 6th)</b>
 
 &nbsp;
 
 <div class="zig-zags_blue"></div>
 
 # 2015 Academies Schedule
+
+# Thursday, July 9th Academies
 
 <a name="fuel-your-passion"></a>
 
@@ -99,8 +101,8 @@ By the end of this Academy all language doubts will be squashed. Find out why ad
 	<h4>The Art of Becoming Known</h4>
 	Hosted by Jonathan Fields
 	<div class="collapsable-content">
+	Thursday, July 9, 2015 from 1:00 PM to 4:00 PM
 		<h4>Summary</h4>
-		Thursday, July 9, 2015 from 1:00 PM to 4:00 PM
 		Platform-building, thought-leadership, expertise and authority. #YAWN. 
 
 Becoming “known” can open a lot of doors. But, beyond ego-gratification, it's worthless UNLESS you know how to do it in a way that aligns deeply with both who you are AND what you seek to build. Do it right, the doors to purpose, possibility and connection swing open. Do it wrong, pretty much everything crashes and burns. 
@@ -132,6 +134,8 @@ Jane Friedman has more than 15 years of experience in the publishing industry, a
 	</div>
 </div>
 
+# Monday, July 13th Academies
+
 <a name="overcoming-the-fear-of-rejection"></a>
 <div class="line-canvas"></div>
 
@@ -139,6 +143,7 @@ Jane Friedman has more than 15 years of experience in the publishing industry, a
 	<h4>Overcoming the Fear of Rejection</h4>
 	Hosted by Jia Jiang
 	<div class="collapsable-content">
+	Monday, July 13, 2015 from 9:00am to 12:00pm
 		<h4>Summary</h4>
 		More details to come soon. 
 
@@ -193,6 +198,7 @@ Attendees of this Academy will learn: How to master your presence. Pimp your ele
 	<h4>Be Crafty in Community</h4></a>
 	Hosted by Kari Chapin
 	<div class="collapsable-content">
+	Monday, July 13, 2015 from 1:00 PM to 4:00 PM
 		<h4>Summary</h4>
 		More details to come soon.
 
