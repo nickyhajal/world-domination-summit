@@ -53,6 +53,7 @@ routes = (app) ->
 		app.get '/user/racecheck', user.race_check
 		app.get '/user/task', user.task
 		app.get '/user/friends', user.get_friends
+		app.get '/user/friends_by_type', user.get_friends_special
 		app.post '/user/note', user.add_unote
 		app.get '/user/notes', user.get_unotes
 		app.post '/user/checkin', user.add_checkin

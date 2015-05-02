@@ -38,26 +38,34 @@ getters =
                 dfr.resolve(user)
     return dfr.promise
 
-  getFriends: (this_year = false) ->
+  getFriends: (this_year = false, include_user = false) ->
     dfr = Q.defer()
+    columns = null
     q = Connections.forge()
-    .query('where', 'user_id', @get('user_id'))
+    .query('where', 'connections.user_id', @get('user_id'))
     if this_year
       q.query('where', 'created_at', '>', process.year+'-01-01 00:00:00')
-    q.fetch()
+    if include_user
+      columns = {columns: ['users.user_id', 'first_name', 'last_name', 'user_name', 'pic']}
+      q.query('join', 'users', 'connections.to_id', '=', 'users.user_id', 'inner')
+    q.fetch(columns)
     .then (rsp) ->
       dfr.resolve(rsp.models)
     , (err) ->
       console.error(err)
     return dfr.promise
 
-  getFriendedMe: (this_year = false) ->
+  getFriendedMe: (this_year = false, include_user = false) ->
     dfr = Q.defer()
+    columns = null
     q = Connections.forge()
     .query('where', 'to_id', @get('user_id'))
     if this_year
       q.query('where', 'created_at', '>', process.year+'-01-01 00:00:00')
-    q.fetch()
+    if include_user
+      columns = {columns: ['users.user_id', 'first_name', 'last_name', 'user_name', 'pic']}
+      q.query('join', 'users', 'connections.user_id', '=', 'users.user_id', 'inner')
+    q.fetch(columns)
     .then (rsp) ->
       dfr.resolve(rsp.models)
     return dfr.promise

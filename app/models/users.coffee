@@ -3,6 +3,7 @@ crypto = require('crypto')
 geocoder = require('geocoder')
 geolib = require('geolib')
 Twit = require('twit')
+_ = require('underscore')
 Q = require('q')
 async = require('async')
 
@@ -222,6 +223,7 @@ User = Shelf.Model.extend
     .then (events) ->
       meetups = events.models
       #Shuffle the meetups and return the top 5
+
       for i in [meetups.length-1..1]
         j = Math.floor Math.random() * (i + 1)
         [meetups[i], meetups[j]] = [meetups[j], meetups[i]]
@@ -260,25 +262,26 @@ User = Shelf.Model.extend
           dfr.resolve(mutuals)
     return dfr.promise
 
-  similar_attendees: ->
+  similar_attendees: (include_user = false, quantity = 5) ->
     dfr = Q.defer()
     @getInterests()
     .then (user) ->
+      columns = {columns: ['users.user_id']}
+      if include_user
+        columns = {columns: ['users.user_id', 'first_name', 'last_name', 'user_name', 'pic']}
       Users.forge()
       .query('join', 'user_interests', 'user_interests.user_id', '=', 'users.user_id', 'inner')
       .query('where', 'user_interests.interest_id', 'in', [user.get('interests')])
-      .fetch
-        columns: ["users.user_id"]
+      #.query('where', 'users.attending'+process.yr, '1')
+      .fetch(columns)
       .then (users) ->
-        users = users.models
-        #Shuffle the users and return the top 5
-        for i in [users.length-1..1]
-          j = Math.floor Math.random() * (i + 1)
-          [users[i], users[j]] = [users[j], users[i]]
-
-        retval = Array()
-        for user in users[0...5]
-          retval.push user.get('user_id')
+        users = _.shuffle users.models
+        retval = []
+        for user in users[0...quantity]
+          if include_user
+            retval.push user
+          else
+            retval.push user.get('user_id')
         dfr.resolve retval
       , (err) ->
         console.error err

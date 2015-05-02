@@ -522,6 +522,29 @@ routes = (app) ->
 			else
 				next()
 
+		get_friends_special: (req, res, next) ->
+			if req.query.type? && req.me
+				inc_user = req.query.include_user?
+				if req.query.type == 'friends'
+					req.me.getFriends(false, inc_user)
+					.then (rsp) ->
+						res.r.user = rsp
+						next()
+				else if req.query.type == 'friended me'
+					req.me.getFriendedMe(false, inc_user)
+					.then (rsp) ->
+						res.r.user = rsp
+						next()
+				else if req.query.type == 'match me'
+					req.me.similar_attendees(inc_user, 20)
+					.then (rsp) ->
+						res.r.user = rsp
+						next()
+				else
+					next()
+			else
+				next()
+
 
 		task: (req, res, next) ->
 			task_slug = req.query.task_slug

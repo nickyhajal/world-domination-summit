@@ -177,7 +177,7 @@ routes = (app) ->
 				feeds.query('where', 'user_id', '=', req.query.user_id)
 			if req.query.include_author?
 				feeds.query('join', 'users', 'users.user_id', '=', 'feed.user_id', 'left')
-				columns = {columns: ['feed.*', 'first_name', 'last_name', 'user_name', 'pic', 'email']}
+				columns = {columns: ['feed.*', 'first_name', 'last_name', 'user_name', 'pic']}
 
 			raw_filters = req.query.filters ? {}
 			filters = []
@@ -227,7 +227,7 @@ routes = (app) ->
 			comments.query('where', 'feed_id', '=', req.query.feed_id)
 			if req.query.include_author?
 				comments.query('join', 'users', 'users.user_id', '=', 'feed_comments.user_id', 'left')
-				columns = {columns: ['feed_comments.*', 'first_name', 'last_name', 'user_name', 'pic', 'email']}
+				columns = {columns: ['feed_comments.*', 'first_name', 'last_name', 'user_name', 'pic']}
 			if req.query.since?
 				comments.query('where', 'feed_comment_id', '>', req.query.since)
 			comments
