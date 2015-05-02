@@ -93,7 +93,7 @@ ap.Views.profile = XView.extend
 	renderInterests: ->
 		html = ''
 		_.whenReady 'assets', =>
-			for interest in JSON.parse(@options.attendee.get('interests'))
+			for interest in @options.attendee.get('interests')
 				interest = ap.Interests.get(interest)
 				html += '<a href="/group/'+_.slugify(interest.get('interest'))+'" class="interest-button">'+interest.get('interest')+'</a>'
 			html += '<div class="clear"></div>'
@@ -104,7 +104,7 @@ ap.Views.profile = XView.extend
 		_.whenReady 'googlemaps', =>
 			attendee = @options.attendee.attributes
 			profile_map_el = document.getElementById('attendee-profile-map')
-			mapOptions = 
+			mapOptions =
 				center: new google.maps.LatLng(attendee.lat, attendee.lon)
 				zoom: 8
 				scrollwheel: false
@@ -120,7 +120,7 @@ ap.Views.profile = XView.extend
 			if not $('.dispatch-content-section', $(@el)).length
 				$('#profile-dispatch-shell').hide()
 		, 1000
-		
+
 	syncAvatar: ->
 		if ap.me.get('pic')?
 			$('.current-avatar').show()

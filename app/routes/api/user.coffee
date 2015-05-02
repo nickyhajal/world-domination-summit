@@ -356,7 +356,7 @@ routes = (app) ->
 				.then (connection) ->
 					req.me.getConnections()
 					.then (user) ->
-						res.r.connections = user.get('connections')
+						#res.r.connections = user.get('connections')
 						res.r.connected_ids = user.get('connected_ids')
 						if req.me.get('user_id') isnt to_id
 							Notification.forge
@@ -386,7 +386,7 @@ routes = (app) ->
 					.then ->
 						req.me.getConnections()
 						.then (user) ->
-							res.r.connections = user.get('connections')
+						#	res.r.connections = user.get('connections')
 							res.r.connected_ids = user.get('connected_ids')
 							next()
 			else

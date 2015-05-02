@@ -266,7 +266,7 @@ User = Shelf.Model.extend
     .then (user) ->
       Users.forge()
       .query('join', 'user_interests', 'user_interests.user_id', '=', 'users.user_id', 'inner')
-      .query('where', 'user_interests.interest_id', 'in', [JSON.parse(user.get('interests'))])
+      .query('where', 'user_interests.interest_id', 'in', [user.get('interests')])
       .fetch
         columns: ["users.user_id"]
       .then (users) ->

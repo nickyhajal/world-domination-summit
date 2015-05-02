@@ -29,7 +29,7 @@ routes = (app) ->
 			title: "World Domination Summit - Avatar Upload"
 			layout: false
 			rsp: rsp
-			
+
 	app.all '/text', (req, res) ->
 		res.render "../views/text",
 			title: "World Domination Summit - Text Maker"

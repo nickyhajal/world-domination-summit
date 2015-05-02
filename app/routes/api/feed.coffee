@@ -89,7 +89,7 @@ routes = (app) ->
 					hash: post.hash
 				.fetch()
 				.then (existing) ->
-					if not existing
+					if not existing and post.comment
 						comment = FeedComment.forge post
 						comment
 						.save()
@@ -146,7 +146,6 @@ routes = (app) ->
 				next()
 
 		get: (req, res, next) ->
-			tk req.query.filters
 			feeds = Feeds.forge()
 			limit = req.query.per_page ? 50
 			page = req.query.page ? 1
@@ -186,7 +185,6 @@ routes = (app) ->
 				filters.push({name: key, val: val})
 			async.each filters, (filter, cb) ->
 				if +filter.val
-					tk filter
 					if filter.name is 'twitter'
 						feeds.query('where', 'channel_type', '!=', 'twitter')
 						cb()
@@ -201,7 +199,7 @@ routes = (app) ->
 					if filter.name is 'communities'
 						req.me.getInterests()
 						.then (rsp) ->
-							interests = JSON.parse(rsp.get('interests')).join(',')
+							interests = rsp.get('interests').join(',')
 							meetups = rsp.get('rsvps').join(',')
 							feeds.query 'whereRaw', "(`channel_type` != 'interest' OR (`channel_type` = 'interest' AND `channel_id` IN ("+interests+")))"
 							cb()
@@ -223,13 +221,17 @@ routes = (app) ->
 					console.error(err)
 
 		get_comments: (req, res, next) ->
+			columns = null
 			comments = FeedComments.forge()
 			comments.query('orderBy', 'feed_comment_id')
 			comments.query('where', 'feed_id', '=', req.query.feed_id)
+			if req.query.include_author?
+				comments.query('join', 'users', 'users.user_id', '=', 'feed_comments.user_id', 'left')
+				columns = {columns: ['feed_comments.*', 'first_name', 'last_name', 'user_name', 'pic', 'email']}
 			if req.query.since?
 				comments.query('where', 'feed_comment_id', '>', req.query.since)
 			comments
-			.fetch()
+			.fetch(columns)
 			.then (result) ->
 				res.r.comments = result.models
 				res.r.num_comments = result.models.length

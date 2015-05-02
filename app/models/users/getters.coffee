@@ -16,7 +16,7 @@ countries = require('country-data').countries
 [EventRsvp, EventRsvps] = require '../event_rsvps'
 [Achievement, Achievements] = require '../achievements'
 
-getters = 
+getters =
   getMe: ->
     dfr = Q.defer()
 #    @raceCheck()
@@ -37,7 +37,7 @@ getters =
                   user.set('has_pw', true)
                 dfr.resolve(user)
     return dfr.promise
-    
+
   getFriends: (this_year = false) ->
     dfr = Q.defer()
     q = Connections.forge()
@@ -80,7 +80,7 @@ getters =
     .then (achs) ->
       dfr.resolve(achs)
     return dfr.promise
-    
+
   getUrl: (text = false, clss = false, id = false) ->
     user_name = @get('user_name')
     clss = if clss then ' class="'+clss+'"' else ''
@@ -136,7 +136,7 @@ getters =
       interests = []
       for interest in rsp.models
         interests.push interest.get('interest_id')
-      @set('interests', JSON.stringify(interests))
+      @set('interests', interests)
       dfr.resolve this
     , (err) ->
       console.error(err)
@@ -152,7 +152,7 @@ getters =
       for connection in connections.models
         connected_ids.push connection.get('to_id')
       @set
-        connections: connections
+    #    connections: connections
         connected_ids: connected_ids
       dfr.resolve(this)
     , (err) ->

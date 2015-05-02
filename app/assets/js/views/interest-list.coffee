@@ -1,5 +1,5 @@
 ap.Views.InterestList = XView.extend
-	events: 
+	events:
 		'click .interest-button': 'addInterest'
 		'click .interest-remove-button': 'removeInterest'
 	initialize: ->
@@ -17,16 +17,16 @@ ap.Views.InterestList = XView.extend
 			if @context is 'generic'
 				@input = $('<input/>').attr('name', 'interests').attr('type', 'hidden')
 				$(@el).before(@input)
-		
+
 	selectedInterests: ->
 		if @context is 'user'
-			return JSON.parse(ap.me.get('interests'))
+			return ap.me.get('interests')
 		else
 			return @selected
 
 	setInterests: (interests) ->
 		if @context is 'user'
-			ap.me.set('interests', JSON.stringify(interests))
+			ap.me.set('interests', interests)
 		else if @context is 'generic'
 			val = interests.join(',')
 			@selected = interests
@@ -69,7 +69,7 @@ ap.Views.InterestList = XView.extend
 			ap.api 'post user/interest', {interest_id: interest_id}
 		@render()
 
-	removeInterest: (e) ->	
+	removeInterest: (e) ->
 		$t = $(this)
 		e.preventDefault()
 		interest_id = $(e.currentTarget).data('interest_id')
