@@ -12,7 +12,7 @@ Registration for Academies is separate from WDS itself, and we offer registratio
 
 There is no limit on how many Academies you can register for. Academy tickets are capacity controlled and offered on a first-come first-served basis. Once an Academy session sells out, we will not be issuing extra tickets, and all tickets are non-refundable and non-transferrable. 
 
-<b>PLEASE NOTE: Registration for 2015 Academies will go live Tuesday, May 5th.</b>
+<b>PLEASE NOTE: Registration for 2015 Academies will go live Wednesday, May 6th.</b>
 
 &nbsp;
 
@@ -198,22 +198,6 @@ Attendees of this Academy will learn: How to master your presence. Pimp your ele
 
 		<!-- <h4>About Vanessa Van Edwards</h4>
 		Vanessa Van Edwards is the lead investigator at Science of People, a human behavior research lab. She is a Huffington Post columnist and published author. Her innovative work has been featured on NPR, Business Week and USA Today. She regularly gives keynotes and appears in the media to talk about her research. She has written for CNN, Fast Company and Forbes. -->
-	</div>
-</div>
-
-<a name="crafty-in-community"></a>
-<div class="line-canvas"></div>
-
-<div class="collapsable-box collapsable-box-open">
-	<h4>Be Crafty in Community</h4></a>
-	Hosted by Kari Chapin
-	<div class="collapsable-content">
-	Monday, July 13, 2015 from 1:00 PM to 4:00 PM
-		<h4>Summary</h4>
-		More details to come soon.
-
-		<!-- <h4>About Kari Chapin
-		More details to come soon. -->
 	</div>
 </div>
 
