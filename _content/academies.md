@@ -4,7 +4,7 @@ photo_head: https://farm8.staticflickr.com/7457/9226356063_2f05f24588_c.jpg,http
 
 # As the WDS community strengthens and grows, more and more people are arriving early and staying late. 2014 marked the launch of WDS Academies: a series of mini-events focused on specific topics that take place on the days surrounding WDS weekend. Take a look at a recap video of last year's Academies. 
 
-<iframe src="https://player.vimeo.com/video/121164251?title=0&byline=0&portrait=0" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>&nbsp;
+<iframe src="https://player.vimeo.com/video/121164251?title=0&byline=0&portrait=0" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>&nbsp; <br>
 
 We're excited to announce that Academies are back for 2015! This year's Academies includes a wide range of awesome topics and features several favorite WDS speakers from over the years. 
 
@@ -226,7 +226,7 @@ Attendees of this Academy will learn: How to master your presence. Pimp your ele
 	<div class="collapsable-content">
 	Monday, July 13, 2015 from 3:00 PM to 5:00 PM
 		<h4>Summary</h4>
-		Lots of people dream of down-sizing to reduce their debt, to focus on what's important, or to facilitate the creation of a new community (think my brother want's to move in with me and my husband, or I'd love to invite my aging Mom to live with us). So what are the possibilities, challenges, and realities of taking the plunge toward tiny?
+		Lots of people dream of down-sizing to reduce their debt, to focus on what's important, or to facilitate the creation of a new community (think my brother wants to move in with me and my husband, or I'd love to invite my aging Mom to live with us). So what are the possibilities, challenges, and realities of taking the plunge toward tiny?
 If you've considered tiny living, then this is a chance to learn from the experts who have put their passion and knowledge into establishing tiny house communities. Come learn what's possible in a micro-house, within the city boundaries, and within our collective understanding of "getting along in tight quarters." 
 <h4><a href="https://www.eventbrite.com/e/wds-academy-microhousing-101-tickets-16193369805">Register for Microhousing</a></h4>
 
