@@ -226,7 +226,7 @@ Attendees of this Academy will learn: How to master your presence. Pimp your ele
 	<div class="collapsable-content">
 	Monday, July 13, 2015 from 3:00 PM to 5:00 PM
 		<h4>Summary</h4>
-		Lots of people dream of down-sizing to reduce their debt, to focus on what's important, or to facilitate the creation of a new community (think my brother wants to move in with me and my husband, or I'd love to invite my aging Mom to live with us). So what are the possibilities, challenges, and realities of taking the plunge toward tiny?
+		Lots of people dream of down-sizing to reduce their debt, to focus on what's important, or to facilitate the creation of a new community. So what are the possibilities, challenges, and realities of taking the plunge toward tiny?
 If you've considered tiny living, then this is a chance to learn from the experts who have put their passion and knowledge into establishing tiny house communities. Come learn what's possible in a micro-house, within the city boundaries, and within our collective understanding of "getting along in tight quarters." 
 <h4><a href="https://www.eventbrite.com/e/wds-academy-microhousing-101-tickets-16193369805">Register for Microhousing</a></h4>
 
