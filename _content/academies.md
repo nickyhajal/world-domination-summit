@@ -6,13 +6,14 @@ photo_head: https://farm8.staticflickr.com/7457/9226356063_2f05f24588_c.jpg,http
 
 <iframe src="https://player.vimeo.com/video/121164251?title=0&byline=0&portrait=0" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
+
 We're excited to announce that Academies are back for 2015! This year's Academies includes a wide range of awesome topics and features several favorite WDS speakers from over the years. 
 
-Registration for Academies is separate from WDS itself, and we offer registration both to WDS attendees as well as to the general public (for a slightly higher registration fee). Because they are hosted at different venues around Portland, please note that there is a separate registration for each Academy you would like to attend. Tickets are non-refundable, and non-transferrable. 
+Registration for Academies is separate from WDS itself, and we offer registration both to WDS attendees as well as to the general public (for a slightly higher registration fee). Because they are hosted at different venues around Portland, please note that there is a separate registration process for each Academy you would like to attend. 
 
-There is no limit on how many Academies you can register for. Academy tickets are capacity controlled and offered on a first-come first-served basis. Once an Academy session sells out, we will not be issuing extra tickets. Below you'll find the Academies schedule for WDS 2015. 
+There is no limit on how many Academies you can register for. Academy tickets are capacity controlled and offered on a first-come first-served basis. Once an Academy session sells out, we will not be issuing extra tickets, and all tickets are non-refundable and non-transferrable. 
 
-<b>(PLEASE NOTE: Registration for 2015 Academies will go live Tuesday, May 5th)</b>
+<b>PLEASE NOTE: Registration for 2015 Academies will go live Tuesday, May 5th.</b>
 
 &nbsp;
 
