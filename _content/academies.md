@@ -4,8 +4,7 @@ photo_head: https://farm8.staticflickr.com/7457/9226356063_2f05f24588_c.jpg,http
 
 # As the WDS community strengthens and grows, more and more people are arriving early and staying late. 2014 marked the launch of WDS Academies: a series of mini-events focused on specific topics that take place on the days surrounding WDS weekend. Take a look at a recap video of last year's Academies. 
 
-<iframe src="https://player.vimeo.com/video/121164251?title=0&byline=0&portrait=0" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
+<iframe src="https://player.vimeo.com/video/121164251?title=0&byline=0&portrait=0" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>&nbsp;
 
 We're excited to announce that Academies are back for 2015! This year's Academies includes a wide range of awesome topics and features several favorite WDS speakers from over the years. 
 
@@ -21,7 +20,7 @@ There is no limit on how many Academies you can register for. Academy tickets ar
 
 # 2015 Academies Schedule
 
-# Thursday, July 9th Academies
+# Thursday, July 9th 
 
 <a name="fuel-your-passion"></a>
 <div class="line-canvas"></div>
@@ -145,7 +144,7 @@ Jane Friedman has more than 15 years of experience in the publishing industry, a
 
 <div class="zig-zags_blue"></div>
 
-# Monday, July 13th Academies
+# Monday, July 13th 
 
 <a name="overcoming-the-fear-of-rejection"></a>
 <div class="line-canvas"></div>
