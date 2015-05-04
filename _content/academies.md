@@ -157,13 +157,14 @@ Jane Friedman has more than 15 years of experience in the publishing industry, a
 <div class="line-canvas"></div>
 
 <div class="collapsable-box collapsable-box-open">
-	<h4>Overcoming the Fear of Rejection</h4>
+	<h4>Rejection Academy: Turn rejection into opportunities</h4>
 	Hosted by Jia Jiang
 	<div class="collapsable-content">
 	Monday, July 13, 2015 from 9:00 AM to 12:00 PM
 		<h4>Summary</h4>
-		More details to come soon. 
-
+		In the Rejection Academy Jia will share his story of how he overcame the fear of rejection. Also, Jia will give practical lessons on how conquering your fear of rejection can lead to a more fearless and meaningful life. He'll guide you through your own rejection attempts and give real time feedback for attendees so you can learn how to position yourself for more yeses, become a better negotiator and not be afraid of asking for what you want in life.
+<h4><a href="https://www.eventbrite.com/e/wds-academy-rejection-academy-tickets-16845247589" 
+target="_blank">Register for Rejection Academy</a></h4>
 		<!-- <h4>About Jia Jiang</h4>
 		More details to come soon. -->
 	</div>
