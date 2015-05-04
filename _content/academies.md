@@ -4,7 +4,7 @@ photo_head: https://farm8.staticflickr.com/7457/9226356063_2f05f24588_c.jpg,http
 
 # As the WDS community grows, more people are arriving early and staying late. 2014 marked the launch of WDS Academies: a series of mini-events focused on specific topics that take place on the days surrounding WDS weekend. 
 
-This video explains more:
+This short video shows more of what it's all about:
 
 <iframe src="https://player.vimeo.com/video/121164251?title=0&byline=0&portrait=0" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>&nbsp; <br>
 
@@ -193,7 +193,7 @@ Rob Young worked for one of the world's biggest consulting companies for 10 year
 	<div class="collapsable-content">
 	Monday, July 13, 2015 from 1:00 PM to 4:00 PM
 		<h4>Summary</h4>
-		How do you build powerful professional relationships? In this workshop, Vanessa will go over all of the communication skills you need for interacting with people in business. She will give you the skills you need to master your presence, make authentic connections and speed read potential clients and customers. Vanessa will dive into networking, pitching, and negotiating using science based strategies and actionable techniques you can use immediately. This entertaining workshop will be highly interactive, informative and inspiring.
+		How do you build powerful professional relationships? In this workshop, Vanessa will go over all of the communication skills you need for interacting with people in business. She will give you the skills you need to master your presence, make authentic connections and speed read potential clients and customers. Vanessa will dive into networking, pitching, and negotiating using science based strategies and actionable techniques you can use immediately. This entertaining workshop will be highly interactive, informative and inspiring.<p></p>
 
 Attendees of this Academy will learn: How to master your presence. Pimp your elevator pitch. The psychology of authentic relationship building. The art of networking. Connecting and building rapport with VIPs. Cold-calling and pitching. The science of personality.
 <h4><a href="https://www.eventbrite.com/e/wds-academy-people-skills-for-business-tickets-16607078218" target="_blank">Register for People Skills for Business</a></h4>
@@ -212,7 +212,8 @@ Attendees of this Academy will learn: How to master your presence. Pimp your ele
 	<div class="collapsable-content">
 	Monday, July 13, 2015 from 3:00 PM to 5:00 PM
 		<h4>Summary</h4>
-		Lots of people dream of down-sizing to reduce their debt, to focus on what's important, or to facilitate the creation of a new community. So what are the possibilities, challenges, and realities of taking the plunge toward tiny?
+		Lots of people dream of down-sizing to reduce their debt, to focus on what's important, or to facilitate the creation of a new community. What are the possibilities, challenges, and realities of taking the plunge toward tiny?<p></p>
+		
 If you've considered tiny living, then this is a chance to learn from the experts who have put their passion and knowledge into establishing tiny house communities. Come learn what's possible in a micro-house, within the city boundaries, and within our collective understanding of "getting along in tight quarters." 
 <h4><a href="https://www.eventbrite.com/e/wds-academy-microhousing-101-tickets-16193369805" target="_blank">Register for Microhousing</a></h4>
 
