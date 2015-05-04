@@ -34,7 +34,7 @@ from Broke to a Book Deal</h4>
 	<div class="collapsable-content">
 	Thursday, July 9th from 9:00 AM to 12:00 PM
 		<h4>Summary</h4>
-		Spend the morning with Jadah Sellner and Jen Hansard, founders of Simple Green Smoothies, and go behind the scenes of how they fuel their passions and went from broke to book deal. You'll go through a step-by-step action plan to fuel your own passion, learn tips and tricks to blend the perfect green smoothie, and leave sippin' on their signature green smoothie recipe ready to change the world. 
+		Spend the morning with Jadah Sellner and Jen Hansard, founders of Simple Green Smoothies, and go behind the scenes of how they fuel their passions and went from broke to book deal. You'll go through a step-by-step action plan to fuel your own passion, learn tips and tricks to blend the perfect green smoothie, and leave sippin' on their signature green smoothie recipe ready to change the world. <p></p>
 
 If you're a blogger, author, artist, health enthusiast, a parent, or creative entrepreneur looking to share your message with the world, you'll want to join this rawkstar party!
 
@@ -72,8 +72,8 @@ If you're a blogger, author, artist, health enthusiast, a parent, or creative en
 	<div class="collapsable-content">
 	Thursday, July 9, 2015 from 9:00 AM to 12:00 PM
 		<h4>Summary</h4>
-		The Location Rebel Academy was designed specifically for people who are looking to start a business that lets them leave their job and either travel or work from home - as quickly as possible. It skips the fluff and the typical "follow your passion" mantra for a practical, repeatable strategy to help you build income, confidence, and the foundation for a mobile business.
-Attendees of this Academy will: Uncover the essentials of which skills you need to build a business that you can run from anywhere. Learn why "following your passion" is bad advice for people wanting to build this type of business. Practice the easiest way to start making money from anywhere, that you can apply today. Discuss how to scale your business up over the long term to achieve the ever-elusive "passive income". Discover strategies for how to actually be productive and manage your time when you're on the road
+		The Location Rebel Academy was designed specifically for people who are looking to start a business that lets them leave their job and either travel or work from home - as quickly as possible. It skips the fluff and the typical "follow your passion" mantra for a practical, repeatable strategy to help you build income, confidence, and the foundation for a mobile business.<p></p>
+Attendees of this Academy will: Uncover the essentials of which skills you need to build a business that you can run from anywhere. Learn why "following your passion" is bad advice for people wanting to build this type of business. Practice the easiest way to start making money from anywhere, that you can apply today. Discuss how to scale your business up over the long term to achieve the ever-elusive "passive income". Discover strategies for how to actually be productive and manage your time when you're on the road.
 <h4><a href="https://www.eventbrite.com/e/wds-academy-how-to-become-a-location-rebel-tickets-16259605919" target="_blank">Register for Location Rebel</a></h4>
 		
 		<!-- <h4>About Sean Ogle</h4>
@@ -91,7 +91,7 @@ Attendees of this Academy will: Uncover the essentials of which skills you need 
 	<div class="collapsable-content">
 	Thursday, July 9, 2015 from 1:00 PM to 4:00 PM
 		<h4>Summary</h4>
-		"Some day" you'll learn a new language? Make "some day" TODAY. We will be tackling your doubts, and then giving you the hacks you need to have a basic conversation in any language you may want to learn, by the end of this Academy. Then you will open up a whole new world, unreachable by English alone, and have the tools to skyrocket towards fluency. Anyone at any age can learn any language in the world. Talent is irrelevant.
+		"Some day" you'll learn a new language? Make "some day" TODAY. We will be tackling your doubts, and then giving you the hacks you need to have a basic conversation in any language you may want to learn, by the end of this Academy. Then you will open up a whole new world, unreachable by English alone, and have the tools to skyrocket towards fluency. Anyone at any age can learn any language in the world. Talent is irrelevant.<p></p>
 
 By the end of this Academy all language doubts will be squashed. Find out why adults are BETTER language learners than children, how to learn your language even if you are busy, and especially how to do it even if you can't travel abroad.
 <h4><a href="https://www.eventbrite.com/e/wds-academy-language-lab-tickets-16189146172" target="_blank">Register for Language Lab</a></h4>
@@ -112,9 +112,10 @@ By the end of this Academy all language doubts will be squashed. Find out why ad
 		<h4>Summary</h4>
 		Platform-building, thought-leadership, expertise and authority. #YAWN. 
 
-Becoming “known” can open a lot of doors. But, beyond ego-gratification, it's worthless UNLESS you know how to do it in a way that aligns deeply with both who you are AND what you seek to build. Do it right, the doors to purpose, possibility and connection swing open. Do it wrong, pretty much everything crashes and burns. 
+Becoming “known” can open a lot of doors. But, beyond ego-gratification, it's worthless UNLESS you know how to do it in a way that aligns deeply with both who you are AND what you seek to build. Do it right, the doors to purpose, possibility and connection swing open. Do it wrong, pretty much everything crashes and burns. <p></p>
 
-This academy is about doing it right, and creating something that matters--to you and to those you seek to serve--along the way.
+This academy is about doing it right, and creating something that matters--to you and to those you seek to serve--along the way.<p></p>
+
 Attendees of this Academy will leave with: A dynamic, highly-effective roadmap to grow your notoriety in a way that opens the most doors, cultivates the most meaning and let's you feel amazing about how you're doing it. A deep understanding of the different paths to building a business, practice, career or body-of-work around your growing notoriety. A simple process to choose the best tools, platforms and medium for your social orientation and communication DNA. A checklist of critical mistakes to avoid and shiny objects to stop chasing. A better ability to handle the real challenges, responsibilities and opportunities that inevitably come your way as you become better known.
 <h4><a href="https://www.eventbrite.com/e/wds-academy-the-art-of-becoming-known-tickets-16259627985" target="_blank">Register for the Art of Becoming Known</a></h4>
 
@@ -132,7 +133,9 @@ Attendees of this Academy will leave with: A dynamic, highly-effective roadmap t
 	<div class="collapsable-content">
 	Thursday, July 9, 2015 from 1:00 PM to 4:00 PM
 		<h4>Summary</h4>
-		This intensive and information-filled workshop will teach you all the best practices of how to get your book published, starting with how to evaluate the best publishing path for you. You'll get practical advice and tools to help you deliver strong pitch letters and proposal materials for both fiction and nonfiction, and find out what it takes to capture the attention of a New York publisher. You'll also learn when and how to pursue the increasingly viable self-publishing and digital publishing options, and get an overview of the most important services and distributors that successful authors use. And regardless of your path to publication, you'll gain insight into how to successfully market and promote your work before, during, and after launch. Don't embark on the publishing process without being fully educated about how the industry works, from the view of longtime industry professionals. You'll better focus your time and energy, and increase your chances of success.
+		This intensive and information-filled workshop will teach you all the best practices of how to get your book published, starting with how to evaluate the best publishing path for you. You'll get practical advice and tools to help you deliver strong pitch letters and proposal materials for both fiction and nonfiction, and find out what it takes to capture the attention of a New York publisher. You'll also learn when and how to pursue the increasingly viable self-publishing and digital publishing options, and get an overview of the most important services and distributors that successful authors use. And regardless of your path to publication, you'll gain insight into how to successfully market and promote your work before, during, and after launch. <p></p>
+		
+		Don't embark on the publishing process without being fully educated about how the industry works, from the view of longtime industry professionals. You'll better focus your time and energy, and increase your chances of success.
 		<h4><a href="https://www.eventbrite.com/e/wds-academy-how-to-get-your-book-published-tickets-16192588468" target="_blank">Register for How to Get Your Book Published</a></h4>
 
 		<!--<h4>David Fugate and Jane Friedman</h4>
@@ -173,7 +176,7 @@ Jane Friedman has more than 15 years of experience in the publishing industry, a
 	<div class="collapsable-content">
 	Monday, July 13, 2015 from 9:00 AM to 12:00 PM
 		<h4>Summary</h4>
-		If you have ever come to WDS before, you know that by Sunday evening, your head is full of 100 exciting ideas. Once you get home, and during the year that follows, how many of these ideas do you ship? In this working laboratory, Pam and Rob will help you organize and prioritize ideas, create simple yet effective plans, identify and conspire with peers who will help you get your work done, and send you home with clarity and purpose.
+		If you have ever come to WDS before, you know that by Sunday evening, your head is full of 100 exciting ideas. Once you get home, and during the year that follows, how many of these ideas do you ship? In this working laboratory, Pam and Rob will help you organize and prioritize ideas, create simple yet effective plans, identify and conspire with peers who will help you get your work done, and send you home with clarity and purpose.<p></p>
 
 You will come away from this academy with: A clear definition of your values and priorities. A short list of your most exciting and valuable ideas from WDS. A project plan for at least one project you want to ship this year. Best practices from serial shippers. A list of fellow WDS'ers who are willing to help you build and ship your project. Hilarity, good will, energy, enthusiasm and confidence.
 <h4><a href="https://www.eventbrite.com/e/wds-academy-how-to-take-action-after-wds-tickets-16503325892" target="_blank">Register for How to Take Action After WDS</a></h4>
