@@ -55,7 +55,9 @@ If you're a blogger, author, artist, health enthusiast, a parent, or creative en
 	<div class="collapsable-content">
 	Thursday, July 9th from 9:00 AM to 12:00 PM
 		<h4>Summary</h4>
-		Join Theresa Reed, The Tarot Lady — a 25-year Tarot industry veteran, pro blogger and business mentor — for a fun, fresh, fast-paced crash course on reading Tarot. You will learn how Tarot decks work, what the major cards represent, and how to do a couple of simple spreads for quick decision making + crystal clear guidance. Theresa specializes in a "jargon-free" and hands-on approach to Tarot. No metaphysical fluff. Just plain English and easy to learn techniques that you can start using immediately. Walk in a Tarot virgin. Walk out reading Tarot like a BO$$. No experience, deck, potions or patchouli incense required. Just show up with an open mind... and get ready to gain a priceless new business + life superpower!
+		Join Theresa Reed, The Tarot Lady — a 25-year Tarot industry veteran, pro blogger and business mentor — for a fun, fresh, fast-paced crash course on reading Tarot. You'll learn how Tarot decks work, what the major cards represent, and how to do a couple of simple spreads for quick decision making + crystal clear guidance. 
+		
+		<p></p>Theresa specializes in a "jargon-free" and hands-on approach to Tarot. No metaphysical fluff, just plain English and easy-to-learn techniques that you can start using immediately. Walk in a Tarot virgin. Walk out reading Tarot like a BO$$. No experience, deck, potions or patchouli incense required. Just show up with an open mind... and get ready to gain a priceless new business + life superpower!
 		<h4><a href="https://www.eventbrite.com/e/wds-academy-hack-your-world-with-tarot-tickets-16193227379" target="_blank">Register for Hack Your World with Tarot</a></h4>
 
 		<!-- <h4>About Theresa Reed</h4>
