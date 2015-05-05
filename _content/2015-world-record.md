@@ -1,5 +1,5 @@
 icon: fork
-photo_head: https://farm6.staticflickr.com/5586/14614138506_037b8418f8_b.jpg,https://farm3.staticflickr.com/2895/14454554878_3bf0c19bac_b.jpg,https://farm6.staticflickr.com/5529/14454403739_e08aa4849b_b.jpg,https://farm6.staticflickr.com/5510/14454306040_1f7fa81642_b.jpg
+photo_head: https://farm6.staticflickr.com/5586/14614138506_037b8418f8_b.jpg,https://farm3.staticflickr.com/2824/9219164399_e166f8f41f_c.jpg,https://farm3.staticflickr.com/2895/14454554878_3bf0c19bac_b.jpg,https://farm6.staticflickr.com/5330/9221941022_903454b77d_c.jpg,https://farm6.staticflickr.com/5529/14454403739_e08aa4849b_b.jpg,https://farm4.staticflickr.com/3677/9221940328_d44b208f38_c.jpg,https://farm6.staticflickr.com/5510/14454306040_1f7fa81642_b.jpg,https://farm8.staticflickr.com/7384/9221939944_5361f7c9cc_c.jpg
 sidebar: namaste
 
 ## Worldwide Waffles: Make Breakfast In Bed History!
