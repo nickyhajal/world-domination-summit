@@ -24,5 +24,5 @@ All that's missing is you. Welcome to *Worldwide Waffles*.
 
 -->REGISTER NOW
 
-![alt text](https://cdn.evbuc.com/eventlogos/65656417/14454309490fd3e5e094fk.jpg "800+ fun people breaking a record with us in Pioneer Courthouse Square last year.")
+![alt text](https://cdn.evbuc.com/eventlogos/65656417/14454309490fd3e5e094fk.jpg =600 "800+ fun people breaking a record with us in Pioneer Courthouse Square last year.")
 
