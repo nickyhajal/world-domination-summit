@@ -25,4 +25,27 @@ All that's missing is you. Welcome to *Worldwide Waffles*.
 -->REGISTER NOW
 
 <img src="https://cdn.evbuc.com/eventlogos/65656417/14454309490fd3e5e094fk.jpg" width="600" />
+*800+ fun people breaking a record with us in Pioneer Courthouse Square last year.*
 
+# What It's All About
+
+**Q:** What do Shangahi, China and Portland, Oregon have in common?
+**A:** Not much! That is, until we hold the world's biggest breakfast in bed party, overtaking Shanghai's current record.
+
+On **Friday, July 10**, 600 Portlanders and travelers from around the world will come together to celebrate community, adventure, and service by gathering in Pioneer Courthouse Square to share a light, catered breakfast... in bed.
+
+* It's a **community event** because it brings fun, likeminded people together who otherwise wouldn't meet each other without a crazy goal to achieve.
+* It's an **adventure** because... well... when was the last time you ate breakfast in bed with 600 other people?
+* And it's a **service event** because our combined efforts will make life better for some of the most at risk people in our community.
+ 
+**Lets get real for a moment.**
+
+What are two resources far too many people in our community lack? Food and shelter. Every day, hundreds of people all around you—right here in Portland, don't have adequate shelter. And many more who have a place to live don't have the resources to feel comfortable in their own homes.
+
+It just so happens that, to make a world record like this come together, you have to have a lot of beds. Like, a lot a lot.
+As part of a strategic partnership, we'll be donating all the beds from the event to [The Community Warehouse](https://www.communitywarehouse.org/), a fantastic local organization that helps families get back on their feet.
+
+Your participation in *Worldwide Waffles* will directly benefit those in need in your community.
+
+<img src="https://cdn.evbuc.com/eventlogos/65656417/14638837834390f06bdeek.jpg" width="600" />
+*Last year, we donated yoga mats. This year we'll be putting 150 beds in homes that need them around Portland.*
