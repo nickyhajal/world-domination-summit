@@ -209,18 +209,18 @@ Attendees of this Academy will learn: How to master your presence. Pimp your ele
 	</div>
 </div>
 
-<a name="crafty-in-community"></a>
+<a name="journaling-for-life"></a>
 <div class="line-canvas"></div>
 
 <div class="collapsable-box collapsable-box-open">
-	<h4>Be Crafty in Community</h4></a>
+	<h4>Journaling for an Enhanced Life</h4></a>
 	Hosted by Kari Chapin
 	<div class="collapsable-content">
 	Monday, July 13, 2015 from 1:00 PM to 4:00 PM
 		<h4>Summary</h4>
 		Come and join Kari Chapin to learn how to use journaling to improve your business and personal life. So many entrepreneurs decide to work for themselves because they want to create more freedom and enjoy their life more. It’s easy to get caught up spending all of your time hustling and working, that if often running your own show feels like less freedom and like more work than ever! Discover how to use a simple notebook and art supplies to get yourself and your dream back on track. Journaling is a great resource when you feel stuck or your big vision becomes cloudy.  You’ll learn easy techniques to keep yourself headed in the right direction, design your ideal day and make sure that you work to live rather than living to work.
 		
-<h4><a href="https://www.eventbrite.com/e/wds-academy-journaling-for-an-enhanced-life-tickets-16869900326" target="_blank">Register for Crafty in Community</a></h4>
+<h4><a href="https://www.eventbrite.com/e/wds-academy-journaling-for-an-enhanced-life-tickets-16869900326" target="_blank">Journaling for an Enhanced Life</a></h4>
 
 		<!-- <h4>Kari Chapin is a best-selling author and product designer from Portland, Oregon. Her books, The Handmade Marketplace and Grow Your Handmade Business have been helping people make their business dreams come true for years. Her line of products for creative entrepreneurs include project management file folders, new ways to get your brilliant ideas out of your head and into the world and a planner that shows you how to view your time and your possibilities in new ways. You are invited to get to know her better by connecting with her via Instagram @KariChapin or visiting her website at wwww.karichapin.com. -->
 	</div>
