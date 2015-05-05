@@ -28,7 +28,7 @@ All that's missing is you. Welcome to *Worldwide Waffles*.
 *800+ fun people breaking a record with us in Pioneer Courthouse Square last year.*
 
 <a name="about"></a>
-# What It's All About
+### What It's All About
 
 **Q:** What do Shangahi, China and Portland, Oregon have in common?
 
