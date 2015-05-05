@@ -30,6 +30,7 @@ All that's missing is you. Welcome to *Worldwide Waffles*.
 # What It's All About
 
 **Q:** What do Shangahi, China and Portland, Oregon have in common?
+
 **A:** Not much! That is, until we hold the world's biggest breakfast in bed party, overtaking Shanghai's current record.
 
 On **Friday, July 10**, 600 Portlanders and travelers from around the world will come together to celebrate community, adventure, and service by gathering in Pioneer Courthouse Square to share a light, catered breakfast... in bed.
