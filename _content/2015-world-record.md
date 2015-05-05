@@ -22,7 +22,7 @@ After successfully setting [two](http://worlddominationsummit.com/2013-world-rec
 
 All that's missing is you. Welcome to *Worldwide Waffles*.
 
-<a href="https://www.eventbrite.com/e/worldwide-waffles-make-breakfast-in-bed-history-tickets-16759507137" style ="background:rgb(226, 127, 28); text-decoration:none; color: rgb(242, 242, 233); padding: 11px; font-size: 24px;">Register Now</a>
+<a href="https://www.eventbrite.com/e/worldwide-waffles-make-breakfast-in-bed-history-tickets-16759507137" style ="background:rgb(226, 127, 28); text-decoration:none; color: rgb(242, 242, 233); padding: 11px; font-size: 24px;">Register Now &#8594;</a>
 
 <img src="https://cdn.evbuc.com/eventlogos/65656417/14454309490fd3e5e094fk.jpg" width="600" />
 *800+ fun people breaking a record with us in Pioneer Courthouse Square last year.*
