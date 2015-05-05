@@ -4,13 +4,13 @@ sidebar: namaste
 
 ## 2015 World Record
 
-# When was the last time you broke a world record by eating breakfast? Never, that's when.
+# Worldwide Waffles: Make Breakfast In Bed History!
 
 <a name="worldwide-waffles"></a>
 
 <div class="zig-zags_blue"></div>
 
-### Worldwide Waffles: Make Breakfast In Bed History!
+### When was the last time you broke a world record by eating breakfast? Never, that's when.
 
 We came, we saw, we set a freakin' world record (for the second time)!
 
