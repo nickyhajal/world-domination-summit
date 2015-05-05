@@ -10,11 +10,15 @@ sidebar: namaste
 
 <div class="zig-zags_blue"></div>
 
-We came, we saw, we set a freakin' world record (for the second time)!
+That's about to change... 
 
-On July 11, 2014, 808 WDSers and local Portlanders braved the heat and the crowds to officially break the Guinness World Record for "World's Longest Yoga Chain" while hundreds of others cheered us on.
+It's not often you get the opportunity to create something truly extraordinary by doing something that happens every day. That's why today is your lucky day.
 
-After months of planning, Pioneer Courthouse Square in Downtown Portland filled with yoga and world record enthusiasts for an hour long series of yoga chains, officially snagging the title away from India.
+This July, thousands of people will descend on Portland for the 5th annual World Domination Summit. With so many amazing folks coming to town, we wanted to find a way to bring our attendees together with Portlanders to accomplish something both meaningful and memorable.
 
-The event was a fun, meaningful display of what's possible when a community comes together for a common purpose. If you joined us at The Great Namaste, thanks for being there. If you didn't, watch this space for details about how to participate in next year's event!
+That's when it came to us in a dream: What about the world's biggest breakfast in bed party? Then, we woke up craving waffles.
+
+After successfully setting [two](http://worlddominationsummit.com/2013-world-record) [other](http://worlddominationsummit.com/2014-world-record) world records, we're back for our third attempt.
+
+All that's missing is you. Welcome to Worldwide Waffles.
 
