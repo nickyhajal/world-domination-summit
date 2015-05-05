@@ -2,15 +2,13 @@ icon: fork
 photo_head: https://farm6.staticflickr.com/5586/14614138506_037b8418f8_b.jpg,https://farm3.staticflickr.com/2895/14454554878_3bf0c19bac_b.jpg,https://farm6.staticflickr.com/5529/14454403739_e08aa4849b_b.jpg,https://farm6.staticflickr.com/5510/14454306040_1f7fa81642_b.jpg
 sidebar: namaste
 
-## 2015 World Record
+## Worldwide Waffles: Make Breakfast In Bed History!
 
-# Worldwide Waffles: Make Breakfast In Bed History!
+# When was the last time you broke a world record by eating breakfast? Never, that's when.
 
 <a name="worldwide-waffles"></a>
 
 <div class="zig-zags_blue"></div>
-
-### When was the last time you broke a world record by eating breakfast? Never, that's when.
 
 We came, we saw, we set a freakin' world record (for the second time)!
 
