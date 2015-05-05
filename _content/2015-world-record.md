@@ -55,7 +55,7 @@ Your participation in *Worldwide Waffles* will directly benefit those in need in
 <a href="https://www.eventbrite.com/e/worldwide-waffles-make-breakfast-in-bed-history-tickets-16759507137" style ="background:rgb(226, 127, 28); text-decoration:none; color: rgb(242, 242, 233); padding: 11px; font-size: 20px;">Register Now &#8594;</a>
 
 <a name="participate"></a>
-# How To Participate
+### How To Participate
 
 There are two important qualifications you'll need to meet in order to participate in this record-breaking event:
 
@@ -70,7 +70,7 @@ We don't believe these to be difficult barriers to entry and will attempt to mak
 *Hell... yes... waffles.*
 
 <a name="bring"></a>
-# What To Bring
+### What To Bring
 
 You don't need to bring much, but here are a few things you definitely need and a few things you might want:
 
@@ -83,7 +83,7 @@ You don't need to bring much, but here are a few things you definitely need and 
 *This is a good example of what a fun-loving attitude looksl like.*
 
 <a name="waiver"></a>
-# Waiver And Disclaimer (The Lawyers Said We Had To…)
+### Waiver And Disclaimer (The Lawyers Said We Had To…)
 
 There aren’t a lot of risks involved in an event like this, but the lawyers tell us we’re supposed to make it very clear that your participation is strictly “at your own risk.”
 
@@ -97,7 +97,7 @@ Lastly, we're going to do everything we can to break the record, but we can't 10
 <a href="https://www.eventbrite.com/e/worldwide-waffles-make-breakfast-in-bed-history-tickets-16759507137" style ="background:rgb(226, 127, 28); text-decoration:none; color: rgb(242, 242, 233); padding: 11px; font-size: 20px;">Register Now &#8594;</a>
 
 <a name="qa"></a>
-# Questions & Attempted Answers
+### Questions & Attempted Answers
 
 **Will I get my own bed?**
 
