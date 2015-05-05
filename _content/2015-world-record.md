@@ -69,7 +69,7 @@ We don't believe these to be difficult barriers to entry and will attempt to mak
 
 # What To Bring
 
-You don't need to bring much, but here are a few things you definitely need a few things you might want:
+You don't need to bring much, but here are a few things you definitely need and a few things you might want:
 
 1. Either your Eventbrite ticket (paper or digital) or photo id for entrance.
 2. Sunscreen and a water bottle. It'll likely be sunny and hot. Come prepared for that.
