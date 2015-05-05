@@ -16,9 +16,9 @@ It's not often you get the opportunity to create something truly extraordinary b
 
 This July, thousands of people will descend on Portland for the 5th annual World Domination Summit. With so many amazing folks coming to town, we wanted to find a way to bring our attendees together with Portlanders to accomplish something both meaningful and memorable.
 
-That's when it came to us in a dream: What about the world's biggest breakfast in bed party? Then, we woke up craving waffles.
+That's when it came to us in a dream: *What about the world's biggest breakfast in bed party? Then, we woke up craving waffles.*
 
 After successfully setting [two](http://worlddominationsummit.com/2013-world-record) [other](http://worlddominationsummit.com/2014-world-record) world records, we're back for our third attempt.
 
-All that's missing is you. Welcome to Worldwide Waffles.
+All that's missing is you. Welcome to *Worldwide Waffles*.
 
