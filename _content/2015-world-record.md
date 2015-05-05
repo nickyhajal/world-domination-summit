@@ -49,3 +49,17 @@ Your participation in *Worldwide Waffles* will directly benefit those in need in
 
 <img src="https://cdn.evbuc.com/eventlogos/65656417/14638837834390f06bdeek.jpg" width="600" />
 *Last year, we donated yoga mats. This year we'll be putting 150 beds in homes that need them around Portland.*
+
+# How To Participate
+
+There are two important qualifications you'll need to meet in order to participate in this record-breaking event:
+
+1. **Experience sitting in a bed.** You should be comfortable with all tasks required to sit and/or lay in bed. TV in bed skills appreciated, but not required.
+2. **Proficiency in eating breakfast.** You should be very experienced with all breakfast eating technology, including how to use utensils and chew food.
+
+We don't believe these to be difficult barriers to entry and will attempt to make accomodations for those who need it.
+
+**A note on food allergies:** We will attempt to make all accomodations necessary for major food allergies but, because our menu will not be confirmed until just before the event, we cannot guarantee the availability of food that is 100% free of every possible allergen.
+
+<img src="https://cdn.evbuc.com/eventlogos/65656417/waffleedit1.jpg" width="600" />
+*Hell... yes... waffles.*
