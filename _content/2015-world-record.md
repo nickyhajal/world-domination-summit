@@ -22,7 +22,7 @@ After successfully setting [two](http://worlddominationsummit.com/2013-world-rec
 
 All that's missing is you. Welcome to *Worldwide Waffles*.
 
-<a href="https://www.eventbrite.com/e/worldwide-waffles-make-breakfast-in-bed-history-tickets-16759507137" style ="background:rgb(226, 127, 28); text-decoration:none; color: rgb(242, 242, 233); padding: 11px; font-size: 24px;">Register Now &#8594;</a>
+<a href="https://www.eventbrite.com/e/worldwide-waffles-make-breakfast-in-bed-history-tickets-16759507137" style ="background:rgb(226, 127, 28); text-decoration:none; color: rgb(242, 242, 233); padding: 11px; font-size: 20px;">Register Now &#8594;</a>
 
 <img src="https://cdn.evbuc.com/eventlogos/65656417/14454309490fd3e5e094fk.jpg" width="600" />
 *800+ fun people breaking a record with us in Pioneer Courthouse Square last year.*
@@ -51,7 +51,7 @@ Your participation in *Worldwide Waffles* will directly benefit those in need in
 <img src="https://cdn.evbuc.com/eventlogos/65656417/14638837834390f06bdeek.jpg" width="600" />
 *Last year, we donated yoga mats. This year we'll be putting 150 beds in homes that need them around Portland.*
 
--->REGISTER NOW
+<a href="https://www.eventbrite.com/e/worldwide-waffles-make-breakfast-in-bed-history-tickets-16759507137" style ="background:rgb(226, 127, 28); text-decoration:none; color: rgb(242, 242, 233); padding: 11px; font-size: 20px;">Register Now &#8594;</a>
 
 # How To Participate
 
@@ -90,7 +90,7 @@ Lastly, we're going to do everything we can to break the record, but we can't 10
 <img src="https://cdn.evbuc.com/eventlogos/65656417/waffleedit2.jpg" width="600" />
 *Stacks on stacks on stacks.*
 
--->REGISTER NOW
+<a href="https://www.eventbrite.com/e/worldwide-waffles-make-breakfast-in-bed-history-tickets-16759507137" style ="background:rgb(226, 127, 28); text-decoration:none; color: rgb(242, 242, 233); padding: 11px; font-size: 20px;">Register Now &#8594;</a>
 
 # Questions & Attempted Answers
 
@@ -140,4 +140,4 @@ Under your bed, where the monsters live!
 
 Due to the nature of world records, all ticket sales are final and cannot be refunded or transferred. If you buy a ticket and are not able to come, though, please let us know so we can plan accordingly and ensure we still break the record.
 
--->REGISTER NOW
+<a href="https://www.eventbrite.com/e/worldwide-waffles-make-breakfast-in-bed-history-tickets-16759507137" style ="background:rgb(226, 127, 28); text-decoration:none; color: rgb(242, 242, 233); padding: 11px; font-size: 20px;">Register Now &#8594;</a>
