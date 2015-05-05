@@ -104,7 +104,8 @@ We're working with a number of local vendors to assemble a top notch à la carte
 
 **Can I bring a friend?**
 
-You're darn right you can! We highly encourage you to bring your friends to this event. The best way to do this is to reserve a bed for 4 people and include their names and email addresses (super important so everyone receives updates about the event). If you come with fewer than 3 friends, you'll each need to register separately and make sure that you're together when you arrive. 
+You're darn right you can! We highly encourage you to bring your friends to this event. The best way to do this is to reserve a bed for 4 people and include their names and email addresses (super important so everyone receives updates about the event). If you come with fewer than 3 friends, you'll each need to register separately and make sure that you're together when you arrive.
+
 We'll do our best to place you together but, because of the complex logistics, we cannot guarantee you'll be seated on the same bed unless you register as a group of 4.
 
 **What if I have a food allergy?**
