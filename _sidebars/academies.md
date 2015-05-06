@@ -8,4 +8,5 @@
 [After WDS](/academies#take-action-after-wds)
 [People Skills](/academies#people-skills)
 [Crafty in Community](/academies#crafty-in-community)
+[Journaling for Life](/journaling-for-life)
 [Microhousing 101](/academies#microhousing-101)
