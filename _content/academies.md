@@ -218,7 +218,9 @@ Attendees of this Academy will learn: How to master your presence. Pimp your ele
 	<div class="collapsable-content">
 	Monday, July 13, 2015 from 1:00 PM to 4:00 PM
 		<h4>Summary</h4>
-		Come and join Kari Chapin to learn how to use journaling to improve your business and personal life. So many entrepreneurs decide to work for themselves because they want to create more freedom and enjoy their life more. It’s easy to get caught up spending all of your time hustling and working, that if often running your own show feels like less freedom and like more work than ever! Discover how to use a simple notebook and art supplies to get yourself and your dream back on track. Journaling is a great resource when you feel stuck or your big vision becomes cloudy.  You’ll learn easy techniques to keep yourself headed in the right direction, design your ideal day and make sure that you work to live rather than living to work.
+		Come and join Kari Chapin to learn how to use journaling to improve your business and personal life. So many entrepreneurs decide to work for themselves because they want to create more freedom and enjoy their life more. It’s easy to get caught up spending all of your time hustling and working, that if often running your own show feels like less freedom and like more work than ever! 
+		
+Discover how to use a simple notebook and art supplies to get yourself and your dream back on track. Journaling is a great resource when you feel stuck or your big vision becomes cloudy.  You’ll learn easy techniques to keep yourself headed in the right direction, design your ideal day and make sure that you work to live rather than living to work.
 		
 <h4><a href="https://www.eventbrite.com/e/wds-academy-journaling-for-an-enhanced-life-tickets-16869900326" target="_blank">Journaling for an Enhanced Life</a></h4>
 
