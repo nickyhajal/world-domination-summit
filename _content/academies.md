@@ -14,7 +14,7 @@ Registration for Academies is separate from WDS itself, and we offer registratio
 
 There is no limit on how many Academies you can register for. Academy tickets are capacity controlled and offered on a first-come first-served basis. Once an Academy session sells out, we will not be issuing extra tickets, and all tickets are non-refundable and non-transferrable. 
 
-<b>PLEASE NOTE: Registration for 2015 Academies will go live Wednesday, May 6th.</b>
+<b>PLEASE NOTE: Registration for 2015 Academies are live.</b>
 
 &nbsp;
 
