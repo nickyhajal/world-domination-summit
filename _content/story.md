@@ -28,4 +28,4 @@ As WDS 2015 approaches, we'll be booking out every room possible in our partner 
 
 In short WDS 2015 will be an experience like no other. We hope to see you there!
 
-<a href="/academies" class="register-banner"><span class="reg-heading">Registration is Now Closed!</span><span class="reg-subhead">The final wave of ticket sales is now complete, but you can still attend WDS Academies.</span></a>
+<a href="/academies" class="register-banner"><span class="reg-heading">Register now for Academies!</span><span class="reg-subhead">The main stage show is sold out, but you can still attend WDS Academies.</span></a>
