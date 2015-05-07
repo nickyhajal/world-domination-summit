@@ -50,6 +50,10 @@ config = (app, express, RedisStore, mysql) ->
 
 	app.configure 'production', ->
 		app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+    app.set 'apn',
+      cert: process.env.APN_CERT
+      key: process.env.APN_KEY
+      ca: process.env.APN_CA
 		app.set 'db',
             client: 'mysql'
             connection:
