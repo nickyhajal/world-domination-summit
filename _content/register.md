@@ -1,8 +1,10 @@
 icon: globe
 
-# Sorry, the final wave of WDS 2015 ticket sales is now complete!
+# Sorry, the final wave of WDS 2015 ticket sales is now complete. But it's not too late to join us!
 
 Thanks for your interest in taking over the world. WDS is an adventure like no other, and 2015 will be *extra* special because it's our five-year anniversary. Tickets go very quickly, and the event has been completely sold out five years in a row.
+
+WDS Academies—half-day workshops led by our alumni speakers and special guests—are now open for registration for WDS 2015 attendees and the general public. Learn more about them and register [here](/academies).
 
 <!-- We'd love for you to join us… and now you can!
 
