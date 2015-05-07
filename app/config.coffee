@@ -48,13 +48,13 @@ config = (app, express, RedisStore, mysql) ->
             	charset: 'utf8'
             debug: false
 
-	app.configure 'production', ->
-		app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+  app.configure 'production', ->
+    app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
     app.set 'apn',
       cert: process.env.APN_CERT
       key: process.env.APN_KEY
       ca: process.env.APN_CA
-		app.set 'db',
+    app.set 'db',
             client: 'mysql'
             connection:
             	host: process.env.DB_HOST
