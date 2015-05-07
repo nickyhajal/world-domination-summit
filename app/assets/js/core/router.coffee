@@ -13,8 +13,8 @@ ap.scrollPos = {}
 ap.createRouter = ->
 	window.Router = Backbone.Router.extend
 		protect: [
-			'hub', 'welcome', 'settings', 'propose-a-meetup', 'communities', 
-			'your-schedule', 'meetups', 'your-schedule', 'race'
+			'hub', 'welcome', 'settings', 'propose-a-meetup', 'communities',
+			'your-schedule', 'meetups', 'your-schedule', 'race', 'transfer'
 		]
 		initialize: ->
 			$('#back-button').click(ap.back)
@@ -85,14 +85,14 @@ ap.logout = ->
 	localStorage.clear()
 	ap.me = false
 
-### 
+###
 	Navigate to a new URL using push-state
 ###
 ap.navigate = (panel) ->
 	ap.Router.navigate(ap.getPanelPath(panel), {trigger: true})
 
 ap.getPanelPath = (panel) ->
-	map = 
+	map =
 		home: ''
 	return '/' + (map[panel] ? panel)
 
@@ -156,7 +156,7 @@ ap.goTo = (panel = '', options = {}, cb = false) ->
 			$.scrollTo scrollTo
 			ap.syncNav(panel)
 			ap.checkMobile()
-			if cb 
+			if cb
 				cb()
 		, 60
 		history_length = history.length

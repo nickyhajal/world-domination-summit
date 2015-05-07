@@ -70,7 +70,7 @@ routes = (app) ->
 
 		pdt: (req, res, next) ->
 			req.session.paypal_tx = req.query.tx
-			call = 
+			call =
 				url: 'https://www.paypal.com'
 				method: 'post'
 				form:
@@ -104,7 +104,7 @@ routes = (app) ->
 			for key,val of req.query
 				form[key] = val
 			form.cmd  = '_notify-validate'
-			call = 
+			call =
 				url: 'https://www.paypal.com'
 				method: 'post'
 				form: form

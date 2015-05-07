@@ -103,7 +103,7 @@ routes = (app) ->
 						Users.forge()
 						.query('where', 'attending'+process.yr, '1')
 						.fetch
-							columns: ['user_id', 'first_name', 'last_name', 'user_name', 'distance', 'lat', 'lon', 'pic', 'location']
+							columns: ['user_id', 'first_name', 'last_name', 'user_name', 'distance', 'lat', 'lon', 'location']
 						.then (attendees) ->
 							atns = []
 							for atn in attendees.models
