@@ -6,6 +6,8 @@ Thanks for your interest in taking over the world. WDS is an adventure like no o
 
 WDS Academies—half-day workshops led by our alumni speakers and special guests—are now open for registration for WDS 2015 attendees and the general public. Learn more about them and [register](/academies) before they sell out!
 
+<div class="line-canvas"></div>
+
 <!-- We'd love for you to join us… and now you can!
 
 Until this round of tickets is sold out, you can register through the link below:
