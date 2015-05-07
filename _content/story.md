@@ -1,7 +1,7 @@
 sidebar: photos-videos
 icon: globe
 
-# This year, nearly 3,000 people descended on Portland, Oregon for the fourth annual World Domination Summit. It was an adventure like no other, complete with [Bollywood dancing](/speakers/dj-prashant), hammock races, non-stop meetups, and our very own [world record](/2014-world-record) for the largest yoga chain.
+In 2014, nearly 3,000 people descended on Portland, Oregon for the fourth annual World Domination Summit. It was an adventure like no other, complete with [Bollywood dancing](/speakers/dj-prashant), hammock races, non-stop meetups, and our very own [world record](/2014-world-record) for the largest yoga chain.
 <div class="zig-zags_blue"></div>
 
 <img id="story-img-1" src="/images/story/circle-1.jpg"/>
@@ -28,4 +28,4 @@ As WDS 2015 approaches, we'll be booking out every room possible in our partner 
 
 In short WDS 2015 will be an experience like no other. We hope to see you there!
 
-<a href="/register" class="register-banner"><span class="reg-heading">Registration is Now Closed!</span><span class="reg-subhead">The final wave of ticket sales is now complete. We hope to see you there!</span></a>
+<a href="/academies" class="register-banner"><span class="reg-heading">Registration is Now Closed!</span><span class="reg-subhead">The final wave of ticket sales is now complete, but you can still attend WDS Academies.</span></a>
