@@ -57,10 +57,10 @@ config = (app, express, RedisStore, mysql) ->
     app.set 'db',
             client: 'mysql'
             connection:
-            	host: process.env.DB_HOST
-            	user: process.env.DB_USER
-            	password: process.env.DB_PW
-            	database: process.env.DB
-            	charset: 'utf8'
+              host: process.env.DB_HOST
+              user: process.env.DB_USER
+              password: process.env.DB_PW
+              database: process.env.DB
+              charset: 'utf8'
             debug: false
 module.exports = config
