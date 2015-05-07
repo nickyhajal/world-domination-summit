@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "apn": "^1.7.3",
     "async": "~0.7.0",
     "bcrypt": "~0.7.7",
     "bookshelf": "~0.5.7",

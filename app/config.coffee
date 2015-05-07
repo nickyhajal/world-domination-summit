@@ -33,8 +33,12 @@ config = (app, express, RedisStore, mysql) ->
 		app.use(express.static(__dirname + '/public'))
 		app.set('port', process.env.PORT)
 	app.configure 'development', ->
-		app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
-		app.set 'db',
+    app.use(express.errorHandler({ dumpExceptions: true, showStack: true }))
+    app.set 'apn',
+      cert: process.env.APN_CERT
+      key: process.env.APN_KEY
+      ca: process.env.APN_CA
+    app.set 'db',
             client: 'mysql'
             connection:
             	host: process.env.DB_HOST

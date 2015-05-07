@@ -2,15 +2,38 @@ Shelf = require('./shelf')
 async = require('async')
 Q = require('q')
 juice = require('juice')
+_s = require('underscore.string')
+apn = require('apn')
 
+[Device, Devices] = require './devices'
 
 Notification = Shelf.Model.extend
-  tableName: 'notifications'
-  idAttribute: 'notification_id'
-  hasTimestamps: true
-  permittedAttributes: [
-  	'notification_id', 'user_id', 'notification', 'read', 'emailed'
-  ]
+	tableName: 'notifications'
+	idAttribute: 'notification_id'
+	hasTimestamps: true
+	permittedAttributes: [
+		'notification_id', 'user_id', 'notification', 'read', 'emailed'
+	]
+	initialize: ->
+		this.on 'created', this.created, this
+	created: ->
+		user_id = @get('user_id')
+		Devices.forge()
+		.query('where', 'user_id', user_id)
+		.query('where', 'type', 'ios')
+		.fetch()
+		.then (rsp) =>
+			devices = rsp.models
+			tokens = []
+			for device in devices
+				tokens.push device.get('token')
+			if tokens.length
+				Notifications::notificationText(this, false)
+				.then (str) =>
+					note = new apn.Notification()
+					note.alert = str
+					note.payload = {content: @get('content'), type: @get('type'), link: @get('link')}
+					process.APN.pushNotification(note, tokens)
 
 Notifications = Shelf.Collection.extend
 	model: Notification
@@ -64,7 +87,7 @@ Notifications = Shelf.Collection.extend
 				setTimeout ->
 					Notifications::process()
 				, 1800000
-	notificationText: (notn) ->
+	notificationText: (notn, html = true) ->
 		[User, Users] = require './users'
 		dfr = Q.defer()
 		data = JSON.parse(notn.get('content'))
@@ -76,30 +99,39 @@ Notifications = Shelf.Collection.extend
 				User.forge({user_id: data.liker_id})
 				.fetch()
 				.then (user) ->
-					link = '<a href="http://worlddominationsummit.com'+link+'">'
-					text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
-					text += link+user.get('first_name')+' '+user.get('last_name')+' liked your post!</a>'
-					text += '</a>'
+					if html
+						link = '<a href="http://worlddominationsummit.com'+link+'">'
+						text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
+						text += link+user.get('first_name')+' '+user.get('last_name')+' liked your post!</a>'
+						text += '</a>'
+					else
+						text += user.get('first_name')+' '+user.get('last_name')+' liked your post!'
 					dfr.resolve(text)
 
 			when 'feed_comment'
 				User.forge({user_id: data.commenter_id})
 				.fetch()
 				.then (user) ->
-					link = '<a href="http://worlddominationsummit.com'+link+'">'
-					text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
-					text += link+user.get('first_name')+' '+user.get('last_name')+' commented your post!</a>'
-					text += '</a>'
+					if html
+						link = '<a href="http://worlddominationsummit.com'+link+'">'
+						text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
+						text += link+user.get('first_name')+' '+user.get('last_name')+' commented your post!</a>'
+						text += '</a>'
+					else
+						text += user.get('first_name')+' '+user.get('last_name')+' commented your post!'
 					dfr.resolve(text)
 
 			when 'connected'
 				User.forge({user_id: data.from_id})
 				.fetch()
 				.then (user) ->
-					link = '<a href="http://worlddominationsummit.com/'+link+'">'
-					text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
-					text += link+user.get('first_name')+' '+user.get('last_name')+' friended you!</a>'
-					text += '</a>'
+					if html
+						link = '<a href="http://worlddominationsummit.com/'+link+'">'
+						text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
+						text += link+user.get('first_name')+' '+user.get('last_name')+' friended you!</a>'
+						text += '</a>'
+					else
+						text += user.get('first_name')+' '+user.get('last_name')+' friended you!'
 					dfr.resolve(text)
 
 		return dfr.promise
@@ -147,13 +179,13 @@ Notifications = Shelf.Collection.extend
 				cb()
 		, ->
 			html += '</table><div class="freqmsg">
-				You can change the frequency or turn off these 
+				You can change the frequency or turn off these
 				notifications at
 				<a href="http://worlddominationsummit.com/settings">http://worlddominationsummit.com/settings</a>
 				</div>
 			'
 
-			juice.juiceContent html, 
+			juice.juiceContent html,
 				url: 'http://worlddominationsummit.com'
 			, (err, html) ->
 				dfr.resolve(html)

@@ -15,6 +15,7 @@ routes = (app) ->
 	screens = require('./api/screens')(app)
 	speaker = require('./api/speaker')(app)
 	transfer = require('./api/transfer')(app)
+	device = require('./api/device')(app)
 	user = require('./api/user')(app)
 	checkins = require('./api/checkins')(app)
 
@@ -33,6 +34,7 @@ routes = (app) ->
 		app.get '/users', user.search
 		app.patch '/user', user.update
 		app.put '/user', user.update
+		app.get '/user/validate', user.validate
 		app.get '/user', user.get
 		app.get '/user/ticket', user.ticket
 		app.post '/user', user.create
@@ -61,6 +63,9 @@ routes = (app) ->
 		app.get '/user/notifications/unread', user.get_unread_notifications
 		app.get '/user/notifications/read', user.read_notifications
 
+		# Devices
+		app.post '/device', device.add
+
 		# Speakers
 		app.put '/speaker', speaker.update
 		app.post '/speaker', speaker.create
@@ -78,10 +83,13 @@ routes = (app) ->
 		app.put '/feed', feed.upd
 		app.delete '/feed', feed.del
 		app.get '/feed', feed.get
+		app.get '/feed/updates', feed.get_updates
+		app.get '/feed/count', feed.count
 		app.get '/feed/item', feed.get_item
 		app.post '/feed/comment', feed.add_comment
 		app.get '/feed/comments', feed.get_comments
 		app.post '/feed/like', feed.add_like
+		app.delete '/feed/like', feed.del_like
 
 		# Ticket Transfers
 		app.post '/transfer', transfer.add

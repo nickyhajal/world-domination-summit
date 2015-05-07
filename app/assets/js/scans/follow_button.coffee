@@ -4,8 +4,8 @@
 
 ###
 
-jQuery.fn.scan 
-	add: 
+jQuery.fn.scan
+	add:
 		id: 'follow-button'
 		fnc: ->
 			$t = $(this)

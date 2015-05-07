@@ -6,6 +6,7 @@ var Knex = require('knex');
 var express = require('express');
 var RedisStore = require('connect-redis')(express);
 var app = module.exports = express.createServer();
+var apn = require('apn');
 require('./app/config')(app, express, RedisStore);
 require('express-namespace');
 db = process.db = app.settings.db
@@ -15,6 +16,8 @@ process.yr = '15'
 process.lastYear = '2013'
 process.dmn = process.env.DOMAIN
 process.rsapp = 'mobile_logins'
+
+process.APN = new apn.Connection(app.settings.apn);
 
 //require('./app/processors/wufoo')(app)
 //require('./app/processors/meetup_suggestions')(app)

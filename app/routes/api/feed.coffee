@@ -14,7 +14,7 @@ routes = (app) ->
 	[FeedLike, FeedLikes] = require('../../models/feed_likes')
 	[Notification, Notifications] = require('../../models/notifications')
 
-	feed =
+	feed_routes =
 		add: (req, res, next) ->
 			if req.me
 				post = _.pick req.query, Feed.prototype.permittedAttributes
@@ -77,6 +77,50 @@ routes = (app) ->
 				res.status(403)
 				next()
 
+		del_like: (req, res, next) ->
+			if req.me
+				post = _.pick req.query, FeedLike::permittedAttributes
+				post.user_id = req.me.get('user_id')
+				FeedLike.forge(post)
+				.fetch()
+				.then (like) ->
+					if like?
+						like.destroy()
+						Feed.forge({feed_id: req.query.feed_id})
+						.fetch()
+						.then (feed) ->
+							num_likes = feed.get('num_likes') - 1
+							feed.set({num_likes: num_likes})
+							.save()
+							.then ->
+									res.r.num_likes = num_likes
+									next()
+							, (err) ->
+								console.error(err)
+					else
+						next()
+			else
+				res.r.msg = 'You\'re not logged in!'
+				res.status(403)
+				next()
+
+		get_updates: (req, res, next) ->
+			feed_routes.post_count req, res, ->
+				if req.query.feed_ids?
+					feeds = Feeds.forge()
+					feeds.query('whereIn', 'feed.feed_id', req.query.feed_ids)
+					feeds.fetch({
+						columns: ['feed_id', 'num_comments', 'num_likes']
+					})
+					.then (rsp) ->
+						updates = {}
+						for row in rsp.models
+							updates['feed_'+row.get('feed_id')] = {num_comments: row.get('num_comments'), num_likes: row.get('num_likes')}
+						res.r.updates = updates
+						next()
+				else
+					next()
+
 		add_comment: (req, res, next) ->
 			if req.me
 				post = _.pick req.query, FeedComment.prototype.permittedAttributes
@@ -124,7 +168,7 @@ routes = (app) ->
 				next()
 
 		upd: (req, res, next) ->
-			feed.add(req,res,next)
+			feed_routes.add(req,res,next)
 
 		del: (req, res, next) ->
 			if req.me
@@ -145,6 +189,35 @@ routes = (app) ->
 				res.status(403)
 				next()
 
+		post_count: (req, res, next) ->
+			id = 'feedquery_'
+			cache = true
+			if req.query.since?
+				if req.query.channel_type?
+					id += req.query.channel_type
+				else
+					id += 'global'
+				if req.query.channel_id?
+					id += req.query.channel_id
+				if req.query.filters?
+					id += 'filters_'+JSON.stringify(req.query.filters)
+					if req.query.filters['attendees'] == '1' || req.query.filters['meetups'] == '1' || req.query.filters['communities'] == '1'
+						cache = false
+				id += req.query.since
+				rds.get id, (err, feeds) =>
+					if feeds? and feeds and typeof JSON.parse(feeds) is 'object'
+						dfr.resolve(JSON.parse(feeds))
+					else
+						feed_routes.get req, res, ->
+							count = res.r.feed_contents.length
+							res.r.count = count
+							delete res.r.feed_contents
+							next()
+							if cache
+								rds.set id, JSON.stringify(count), (err, rsp) ->
+									rds.expire id, 5, (err, rsp) ->
+			else
+				next()
 		get: (req, res, next) ->
 			feeds = Feeds.forge()
 			limit = req.query.per_page ? 50

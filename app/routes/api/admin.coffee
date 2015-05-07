@@ -24,7 +24,7 @@ routes = (app) ->
 						cb()
 				, ->
 					next()
-					
+
 		rate: (req, res, next) ->
 			submission_id = req.query.submission_id
 			rating = +req.query.rating

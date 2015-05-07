@@ -13,7 +13,7 @@ routes = (app) ->
 	twitter = new twitterAPI
 		consumerKey: app.settings.twitter_consumer_key
 		consumerSecret: app.settings.twitter_consumer_secret
-		callback: process.dmn + '/api/user/twitter/callback'
+		callback: 'http://'+process.dmn+'/api/user/twitter/callback'
 
 	[User, Users] = require('../../models/users')
 	[UserNote, UserNotes] = require('../../models/user_notes')
@@ -29,6 +29,11 @@ routes = (app) ->
 
 	user =
 		# Get logged in user
+		validate: (req, res, next) ->
+			if req.me
+				res.r.valid = 1
+			next()
+
 		me: (req, res, next) ->
 			if req.me
 				Users.forge().getUser(req.me.get('user_id'))
