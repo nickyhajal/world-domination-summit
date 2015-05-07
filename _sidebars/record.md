@@ -1,0 +1,7 @@
+[Worldwide Waffles](/2015-world-record#worldwide-waffles)
+[What It's All About](/2015-world-record#about)
+[How to Participate](/2015-world-record#participate)
+[What to Bring](/2015-world-record#bring)
+[Waiver + Disclaimer](/2015-world-record#waiver)
+[FAQ](/2015-world-record#qa)
+[Register &rarr;](https://www.eventbrite.com/e/worldwide-waffles-make-breakfast-in-bed-history-tickets-16759507137)
