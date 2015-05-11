@@ -6,7 +6,7 @@ icon: parchute
 
 <div class="zig-zags_blue"></div>
 
-Some text
+Some text describing the surevy
 
 <div class="line-canvas"></div>
 
