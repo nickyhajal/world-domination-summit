@@ -21,7 +21,7 @@ routes = (app) ->
 			.then (rsp) ->
 				tk rsp.models.length
 				count = 0
-				asyncSeries.each rsp.models, (user, cb) ->
+				async.eachSeries rsp.models, (user, cb) ->
 					tk user.get('first_name')+' '+user.get('last_name')
 					user.processAddress()
 					count += 1
