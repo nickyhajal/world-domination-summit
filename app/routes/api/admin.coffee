@@ -23,10 +23,11 @@ routes = (app) ->
 				count = 0
 				async.each rsp.models, (user, cb) ->
 					tk user.get('first_name')+' '+user.get('last_name')
-					user.processAddress()
+					#user.processAddress()
 					count += 1
 					setTimeout ->
-						if count > 5
+						tk 'COUNT: '+count
+						if count > 0
 							cb()
 						else
 							tk 'FINISH FROM COUNT'
