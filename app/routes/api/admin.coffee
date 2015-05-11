@@ -29,9 +29,11 @@ routes = (app) ->
 						if count > 5
 							cb()
 						else
+							tk 'FINISH FROM COUNT'
 							next()
 					, 2500
 				, ->
+					tk 'FINISH'
 					next()
 
 		rate: (req, res, next) ->
