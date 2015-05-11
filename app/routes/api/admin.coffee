@@ -25,14 +25,14 @@ routes = (app) ->
 					tk user.get('first_name')+' '+user.get('last_name')
 					#user.processAddress()
 					count += 1
-					setTimeout ->
-						tk 'COUNT: '+count
-						if count > 0
-							cb()
-						else
-							tk 'FINISH FROM COUNT'
-							next()
-					, 2500
+					# setTimeout ->
+					# 	tk 'COUNT: '+count
+					# 	if count > 0
+					# 		cb()
+					# 	else
+					# 		tk 'FINISH FROM COUNT'
+					# 		next()
+					# , 2500
 				, ->
 					tk 'FINISH'
 					next()
