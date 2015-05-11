@@ -2,6 +2,7 @@
 
 Q = require('q')
 async = require('async')
+_s = require('underscore.string')
 countries = require('country-data').countries
 
 ##
@@ -211,13 +212,12 @@ getters =
     return dfr.promise
 
   getLocationString: ->
-    address = @get('city')+', '
+    address = _s.titleize(@get('city'))+', '
     if (@get('country') is 'US' or @get('country') is 'GB') and @get('region')?
       address += @get('region')
     unless (@get('country') is 'US' or @get('country') is 'GB')
       if countries[@get('country')]?
         address += countries[@get('country')].name
-    tk address
     return address
 
 module.exports = getters

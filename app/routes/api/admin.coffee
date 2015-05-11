@@ -1,4 +1,5 @@
 async = require 'async'
+_s = require('underscore.string')
 routes = (app) ->
 
 	[User, Users] = require('../../models/users')
@@ -12,6 +13,28 @@ routes = (app) ->
 			.then (capable_me) ->
 				req.me = capable_me
 				next()
+		process_attendees: (req, res, next) ->
+			Users.forge()
+			.query('where', 'attending'+process.yr, '=', '1')
+			.fetch()
+			.then (rsp) ->
+				async.each rsp.models, (user, cb) ->
+					first_name = _s.titleize(user.get('first_name'))
+					last_name = _s.titleize(user.get('last_name'))
+					location = user.getLocationString()
+					type = user.get('type')+''
+					if type.length < 1 || type == 'null' || type == null
+						type = 'attendee'
+					user.set
+						first_name: first_name
+						last_name: last_name
+						location: location
+						type: type
+					user.save()
+					cb()
+				, ->
+					next()
+
 		process_locations: (req, res, next) ->
 			Users.forge()
 			.query('where', 'attending'+process.yr, '=', '1')
