@@ -27,7 +27,7 @@ routes = (app) ->
 					count += 1
 					setTimeout ->
 						tk count
-						if count > 5
+						if count < 5
 							cb()
 						else
 							tk 'FINISH FROM COUNT'
