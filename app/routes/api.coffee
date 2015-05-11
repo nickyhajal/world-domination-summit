@@ -43,11 +43,18 @@ routes = (app) ->
 		app.post '/user/registrations', user.registrations
 		app.post '/user/interest', user.add_interest
 		app.post '/user/connection', user.add_connection
+
+		#
+		app.delete '/user/twitter', user.del_twitter
 		app.delete '/user/connection', user.del_connection
 		app.delete '/user/interest', user.del_interest
+		app.post '/user/connection/delete', user.del_connection
+		app.post '/user/interest/delete', user.del_interest
+		app.post '/user/twitter/delete', user.del_twitter
+		#
+
 		app.get '/user/twitter/connect', user.twitter_connect
 		app.get '/user/twitter/callback', user.twitter_callback
-		app.delete '/user/twitter', user.del_twitter
 		app.post '/user/tweet', user.send_tweet
 		app.post '/user/logout', user.logout
 		app.post '/user/task', user.race_submission
@@ -82,6 +89,7 @@ routes = (app) ->
 		app.post '/feed', feed.add
 		app.put '/feed', feed.upd
 		app.delete '/feed', feed.del
+		app.post '/feed/delete', feed.del
 		app.get '/feed', feed.get
 		app.get '/feed/updates', feed.get_updates
 		app.get '/feed/count', feed.count
@@ -90,6 +98,7 @@ routes = (app) ->
 		app.get '/feed/comments', feed.get_comments
 		app.post '/feed/like', feed.add_like
 		app.delete '/feed/like', feed.del_like
+		app.post '/feed/like/delete', feed.del_like
 
 		# Ticket Transfers
 		app.post '/transfer', transfer.add

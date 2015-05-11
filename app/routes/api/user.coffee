@@ -55,28 +55,33 @@ routes = (app) ->
 		# Get a user
 		get: (req, res, next) ->
 			where = {}
-			if req.query.user_name?
-				where.user_name = req.query.user_name
-			else if req.query.user_id?
-				where.user_id = req.query.user_id
-			User.forge(where)
-			.fetch()
-			.then (user) ->
-				user.getReadableCapabilities()
+			if req.query.user_name? || req.query.user_id?
+				if req.query.user_name?
+					where.user_name = req.query.user_name
+				else if req.query.user_id?
+					where.user_id = req.query.user_id
+				User.forge(where)
+				.fetch()
 				.then (user) ->
-					user.getAnswers()
+					user.getReadableCapabilities()
 					.then (user) ->
-						user.getInterests()
+						user.getAnswers()
 						.then (user) ->
-							user.getAllTickets()
+							user.getInterests()
 							.then (user) ->
-								res.r.user = user
-								next()
-							res.r.user = user
-							next()
-			, (err) ->
+								user.getAllTickets()
+								.then (user) ->
+									user.set('password', null)
+									user.set('hash', null)
+									res.r.user = user
+									next()
+				, (err) ->
+					res.status(400)
+					errors.push(err.message)
+					next()
+			else
 				res.status(400)
-				errors.push(err.message)
+				res.r.msg = 'No user'
 				next()
 
 		search: (req, res, next) ->

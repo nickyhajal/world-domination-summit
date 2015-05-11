@@ -35,7 +35,7 @@ User = Shelf.Model.extend
   ]
   limitedAttributes: [
     'user_id', 'type', 'email', 'first_name', 'last_name', 'attending14', 'attending15',
-    'email', 'hash', 'user_name', 'mf', 'twitter', 'facebook', 'site', 'pic', 'instagram'
+    'email', 'user_name', 'mf', 'twitter', 'facebook', 'site', 'pic', 'instagram'
     'lat', 'lon', 'distance', 'pub_loc', 'location'
   ]
   defaults:

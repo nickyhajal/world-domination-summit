@@ -1,6 +1,6 @@
 ap.Views.admin_user = XView.extend
 	ticketTimo: 0
-	events: 
+	events:
 		'keyup .manifest-search': 'search'
 		'click #manifest-results tr': 'row_click'
 		'submit #admin-user-update': 'userInfo_submit'
@@ -14,6 +14,7 @@ ap.Views.admin_user = XView.extend
 	rendered: ->
 		@initSelect2()
 		@initTickets()
+		$('input[name="type"]').val(@user.get('type'))
 	initSelect2: ->
 		country_select = $('#country-select')
 		countries = []
@@ -43,7 +44,7 @@ ap.Views.admin_user = XView.extend
 		shell.empty()
 		if ap.provinces[country]?
 			provinces = ap.provinces[country]
-			map = 
+			map =
 				US: ['State', 'short', 'name']
 				GB: ['Region','name', 'region']
 				CA: ['Province','short', 'name']
@@ -73,7 +74,7 @@ ap.Views.admin_user = XView.extend
 
 			shell.scan()
 		else
-			ap.me.set('region', '')	
+			ap.me.set('region', '')
 
 	initTickets: ->
 		if @user.get('attending'+ap.yr) is '1'
@@ -110,7 +111,7 @@ ap.Views.admin_user = XView.extend
 	        cb selection
 	      width: '300px'
 
-                        
+
 	userInfo_submit: (e) ->
 		e.preventDefault()
 		el = $(e.currentTarget)

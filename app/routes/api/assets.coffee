@@ -250,7 +250,7 @@ routes = (app) ->
 									.then (rsp) ->
 										hosts = []
 										for host in rsp.models
-											h = _.pick host.attributes, User::limitedAttributes
+											h = _.pick host.attributes, ['first_name', 'last_name', 'pic', 'user_id']
 											hosts.push h
 										ev.set('hosts', hosts)
 										evs.push ev.attributes

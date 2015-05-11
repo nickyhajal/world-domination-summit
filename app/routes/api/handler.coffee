@@ -2,7 +2,7 @@
 RedisSessions = require("redis-sessions");
 rs = new RedisSessions();
 _ = require('underscore')
-handler = 
+handler =
 	start: (req, res, next)->
 		res.contentType 'json'
 		req.query = _.defaults(req.body, req.query)
@@ -10,7 +10,7 @@ handler =
 		res.errors = []
 		getMe = ->
 			# Get logged in user
-			Users.forge().getMe(req) 
+			Users.forge().getMe(req)
 			.then (me) ->
 				if me
 					req.me = me
@@ -42,7 +42,10 @@ handler =
 			else
 				res.r.suc = 1
 
-		render = 
+		# if req.query.via? and req.query.via == 'android'
+		# 	res.r = JSON.stringify(res.r)
+
+		render =
 			layout: false
 			rsp: res.r
 			cb: (req.query.callback ? '')

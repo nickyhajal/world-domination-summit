@@ -25,8 +25,8 @@ process.APN = new apn.Connection(app.settings.apn);
 require('./app/processors/clean-sessions')(app)
 if (process.env.NODE_ENV === 'production' && process.env.PORT == '7676') {
 	require('./app/processors/eventbrite')(app)
-	require('./app/processors/third-party-feeds')(app)
 	require('./app/processors/content-grabber')(app)
+	require('./app/processors/third-party-feeds')(app)
 }
 
 // Uncomment to update twitter avatars

@@ -15,13 +15,14 @@ routes = (app) ->
 		process_locations: (req, res, next) ->
 			Users.forge()
 			.query('where', 'attending'+process.yr, '=', '1')
-			.query('where', 'location', '=', '')
+			.query('where', 'distance', '=', '0')
 			.fetch()
 			.then (rsp) ->
 				async.each rsp.models, (user, cb) ->
-					loc = user.getLocationString()
-					user.set({location: loc}).save().then ->
+					user.processAddress()
+					setTimeout ->
 						cb()
+					, 250
 				, ->
 					next()
 
