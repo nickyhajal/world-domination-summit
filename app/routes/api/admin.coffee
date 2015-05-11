@@ -13,12 +13,15 @@ routes = (app) ->
 				req.me = capable_me
 				next()
 		process_locations: (req, res, next) ->
+			tk req.query
 			Users.forge()
 			.query('where', 'attending'+process.yr, '=', '1')
 			.query('where', 'distance', '=', '0')
 			.fetch()
 			.then (rsp) ->
+				tk rsp.models.length
 				async.each rsp.models, (user, cb) ->
+					tk user
 					user.processAddress()
 					setTimeout ->
 						cb()
