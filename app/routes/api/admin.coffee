@@ -21,7 +21,7 @@ routes = (app) ->
 			.then (rsp) ->
 				tk rsp.models.length
 				async.each rsp.models, (user, cb) ->
-					tk user
+					tk user.get('first_name')+' '+user.get('last_name')
 					user.processAddress()
 					setTimeout ->
 						cb()
