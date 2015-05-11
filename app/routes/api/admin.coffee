@@ -26,11 +26,12 @@ routes = (app) ->
 					user.processAddress()
 					count += 1
 					setTimeout ->
+						tk count
 						if count > 5
 							cb()
 						else
 							tk 'FINISH FROM COUNT'
-							next()
+							cb('Stop')
 					, 250
 				, ->
 					tk 'FINISH'
