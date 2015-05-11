@@ -20,12 +20,17 @@ routes = (app) ->
 			.fetch()
 			.then (rsp) ->
 				tk rsp.models.length
+				count = 0
 				async.each rsp.models, (user, cb) ->
 					tk user.get('first_name')+' '+user.get('last_name')
 					user.processAddress()
+					count += 1
 					setTimeout ->
-						cb()
-					, 250
+						if count > 5
+							cb()
+						else
+							next()
+					, 2500
 				, ->
 					next()
 

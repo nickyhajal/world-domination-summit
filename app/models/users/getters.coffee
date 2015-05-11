@@ -217,6 +217,7 @@ getters =
     unless (@get('country') is 'US' or @get('country') is 'GB')
       if countries[@get('country')]?
         address += countries[@get('country')].name
+    puts address
     return address
 
 module.exports = getters
