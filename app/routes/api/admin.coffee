@@ -13,13 +13,11 @@ routes = (app) ->
 				req.me = capable_me
 				next()
 		process_locations: (req, res, next) ->
-			tk req.query
 			Users.forge()
 			.query('where', 'attending'+process.yr, '=', '1')
 			.query('where', 'distance', '=', '0')
 			.fetch()
 			.then (rsp) ->
-				tk rsp.models.length
 				count = 0
 				async.eachSeries rsp.models, (user, cb) ->
 					tk user.get('first_name')+' '+user.get('last_name')
@@ -27,7 +25,7 @@ routes = (app) ->
 					count += 1
 					setTimeout ->
 						tk count
-						if count < 5
+						if count < 100
 							cb()
 						else
 							tk 'FINISH FROM COUNT'
