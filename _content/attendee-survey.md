@@ -1,3 +1,15 @@
+icon: parchute
+
+## Attendee Survey
+
+# Help us craft the perfect attendee experience.
+
+<div class="zig-zags_blue"></div>
+
+Some text describing the surevy
+
+<div class="line-canvas"></div>
+
 <div id="wufoo-x1ugzdx130b82q">
 Fill out my <a href="https://worlddominationsummit.wufoo.com/forms/x1ugzdx130b82q">online form</a>.
 </div>
