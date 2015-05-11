@@ -21,18 +21,17 @@ routes = (app) ->
 			.then (rsp) ->
 				tk rsp.models.length
 				count = 0
-				async.each rsp.models, (user, cb) ->
+				asyncSeries.each rsp.models, (user, cb) ->
 					tk user.get('first_name')+' '+user.get('last_name')
-					#user.processAddress()
+					user.processAddress()
 					count += 1
-					# setTimeout ->
-					# 	tk 'COUNT: '+count
-					# 	if count > 0
-					# 		cb()
-					# 	else
-					# 		tk 'FINISH FROM COUNT'
-					# 		next()
-					# , 2500
+					setTimeout ->
+						if count > 5
+							cb()
+						else
+							tk 'FINISH FROM COUNT'
+							next()
+					, 250
 				, ->
 					tk 'FINISH'
 					next()
