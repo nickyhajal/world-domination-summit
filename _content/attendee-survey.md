@@ -1,5 +1,5 @@
 icon: parchute
-photo_head: https://farm4.staticflickr.com/3845/14454713628_1d5f03221a_z_d.jpg,https://www.flickr.com/photos/chrisguillebeau/14454713628_b.jpg,https://farm8.staticflickr.com/7381/9226363615_e3d570a7f6_b.jpg,https://farm8.staticflickr.com/7335/9231341679_62b3c23de3_b.jpg,https://farm8.staticflickr.com/7278/7537728158_a5376f4470_b.jpg
+photo_head: https://farm4.staticflickr.com/3845/14454713628_1d5f03221a_z_d.jpg,https://farm4.staticflickr.com/3876/14454618029_5199fc62c1_z_d.jpg,https://farm6.staticflickr.com/5553/14662905945_1ffc38f7ab_z_d.jpg,https://farm3.staticflickr.com/2935/14470993957_252c11d237_z_d.jpg,https://farm4.staticflickr.com/3903/14634459036_fa1b776823_z_d.jpg
 
 ## Attendee Survey
 
