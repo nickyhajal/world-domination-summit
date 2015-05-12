@@ -31,10 +31,12 @@ REQUIREMENTS
 
 TIMELINE
 
-Submit online application by May 29
-Scholarship winners announced first week of June
-WDS Registration Friday afternoon, July 20
-Submit Action Plan by August 1.
+<ul>
+<li>Submit online application by May 29</li>
+<li>Scholarship winners announced first week of June</li>
+<li>WDS Registration Friday afternoon, July 20</li>
+<li>Submit Action Plan by August 1.</li>
+</ul>
 
 <div class="line-canvas"></div>
 
