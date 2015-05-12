@@ -6,8 +6,7 @@ photo_head: https://farm4.staticflickr.com/3845/14454713628_1d5f03221a_z_d.jpg,h
 # Help us craft the perfect attendee experience.
 
 <div class="zig-zags_blue"></div>
-
-We are so excited you are joining us for our 5th anniversary event!<p></p> 
+<p></p> We are so excited you are joining us for our 5th anniversary event!<p></p> 
 We would like to know a little more about you and your plans for while you are in Portland for WDS, so we put together a brief survey that should only take a few minutes to complete. This information will helps us craft the best personalize attendee experience.<p></p>
 Thank you for being part of our community and see you in soon!
 
