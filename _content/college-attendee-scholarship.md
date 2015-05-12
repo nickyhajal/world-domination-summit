@@ -1,7 +1,7 @@
 icon: theater
 photo_head: https://farm4.staticflickr.com/3710/9219161699_fc775a7026_b.jpg,https://farm6.staticflickr.com/5513/9219161307_9e5cd109eb_b.jpg,https://farm8.staticflickr.com/7381/9226363615_e3d570a7f6_b.jpg,https://farm8.staticflickr.com/7335/9231341679_62b3c23de3_b.jpg,https://farm8.staticflickr.com/7278/7537728158_a5376f4470_b.jpg
 
-## College Attendee Scholarship Application
+## World Dominations College Fund: Application
 
 # WHAT IS WDS?
 
@@ -21,11 +21,13 @@ Note: Academy sessions before and after WDS are not included with this ticket. H
 
 REQUIREMENTS
 
-·      Applicants must be full-time students in the 2014-15 school year at one of the qualifying college programs: UP, PSU, Concordia, ActSix, PCC
-·      Applicants must be between the ages of 18 and 25 on July 10, 2015
-·      Applicants must arrange their own housing in Portland and transportation to and from the event each day.
-·      Applicants must be available to attend registration and all sessions between Friday afternoon, July 20 and Sunday afternoon, July 13. (see http://worlddominationsummit.com/schedule)
-·      Applicants agree to full participation in two group meet-ups and submitting a written Action Plan after the event.
+<ul>
+  <li>Applicants must be full-time students in the 2014-15 school year at one of the qualifying college programs: UP, PSU, Concordia, ActSix, PCC</li>
+<li>Applicants must be between the ages of 18 and 25 on July 10, 2015</li>
+<li>Applicants must arrange their own housing in Portland and transportation to and from the event each day.</li>
+<li>Applicants must be available to attend registration and all sessions between Friday afternoon, July 20 and Sunday afternoon, July 13. (see http://worlddominationsummit.com/schedule)</li>
+<li>Applicants agree to full participation in two group meet-ups and submitting a written Action Plan after the event.</li>
+</ul>
 
 TIMELINE
 
