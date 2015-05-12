@@ -1,5 +1,5 @@
 icon: parchute
-photo_head: https://farm4.staticflickr.com/3845/14454713628_1d5f03221a_z_d.jpg,https://farm4.staticflickr.com/3915/14657005702_79b6c5cde3_z_d.jpg,https://farm6.staticflickr.com/5473/14661159163_6d6a138b30_z_d.jpg,https://farm4.staticflickr.com/3903/14634459036_fa1b776823_z_d.jpg
+photo_head: https://farm4.staticflickr.com/3845/14454713628_1d5f03221a_z_d.jpg,https://farm4.staticflickr.com/3915/14657005702_79b6c5cde3_z_d.jpg,https://farm6.staticflickr.com/5473/14661159163_6d6a138b30_z_d.jpg,https://farm6.staticflickr.com/5569/14639124974_19d6ee8f52_z_d.jpg,https://farm4.staticflickr.com/3903/14634459036_fa1b776823_z_d.jpg
 
 ## WDS Attendee Survey 2015
 
