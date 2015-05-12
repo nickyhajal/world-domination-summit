@@ -3,7 +3,7 @@ photo_head: https://farm4.staticflickr.com/3710/9219161699_fc775a7026_b.jpg,http
 
 ## World Dominations College Fund: Application
 
-# WHAT IS WDS?
+# What is WDS?
 
 The World Domination Summit (WDS) is a gathering of creative, interesting people from all over the world who value Community, Adventure, and Service. WDS brings together entrepreneurs, artists, bloggers, travelers, and others seeking to "live a remarkable life in a conventional world.” WDS takes place annually in Portland, Oregon. This year will be the fifth annual gathering, taking place on July 9 -13, 2015.
 
@@ -13,13 +13,13 @@ WDS was founded by Chris Guillebeau, explorer of the world and New York Times be
  
 <div class="zig-zags_blue"></div>
 
-COLLEGE SCHOLARSHIP PILOT PROGRAM
+# College Scholarhsip Pilot Program
 
 For 2015, WDS is opening up 15 free seats for local college students with big potential who otherwise couldn’t afford to attend. In exchange for the free ticket (valued at $497), accepted applicants will participate in two group meet-ups with other scholarship participants during the weekend and submit an Action Plan for how they will apply what they’ve experienced at WDS.
  
 Note: Academy sessions before and after WDS are not included with this ticket. Housing, transportation, and meals during the weekend are the responsibility of the attendee.
 
-REQUIREMENTS
+# Requirements
 
 <ul>
   <li>Applicants must be full-time students in the 2014-15 school year at one of the qualifying college programs: UP, PSU, Concordia, ActSix, PCC</li>
@@ -29,7 +29,7 @@ REQUIREMENTS
 <li>Applicants agree to full participation in two group meet-ups and submitting a written Action Plan after the event.</li>
 </ul>
 
-TIMELINE
+# Timeline
 
 <ul>
 <li>Submit online application by May 29</li>
