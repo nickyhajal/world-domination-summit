@@ -36,10 +36,10 @@ Note: Academy sessions before and after WDS are not included with this ticket. H
 # Timeline
 
 <ul>
-<li>Submit online application by May 29</li>
+<li>Submit online application (below) by May 29</li>
 <li>Scholarship winners announced first week of June</li>
-<li>WDS Registration Friday afternoon, July 20</li>
-<li>Submit Action Plan by August 1.</li>
+<li>WDS Registration Friday afternoon, July 20th</li>
+<li>Submit Action Plan by August 1st.</li>
 </ul>
 
 <div class="line-canvas"></div>
