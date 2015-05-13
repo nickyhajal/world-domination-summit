@@ -9,7 +9,11 @@ The World Domination Summit (WDS) is a gathering of creative, interesting people
 
 The weekend consists of main-stage events with keynote speakers at the Arlene Schnitzer Concert Hall and lots of meetups, side events, and informal engagement. Despite the large number of people who attend, WDS is an introvert-friendly zone, and everyone who participates is a big part of the event.
 
-WDS was founded by Chris Guillebeau, explorer of the world and New York Times bestselling author of The $100 Startup.
+You can check out WDS 2014 with this short film highlighting one particular attendee who had an experience she'll never forget:
+
+<iframe src="//player.vimeo.com/video/109903000?title=0&amp;byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+WDS was founded by <a href="http://chrisguillebeau.com/about/" target="_blank">Chris Guillebeau</a>, explorer of the world and New York Times bestselling author of The $100 Startup.
  
 <div class="zig-zags_blue"></div>
 
