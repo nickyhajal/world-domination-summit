@@ -45,7 +45,8 @@ On **Friday, July 10**, 600 Portlanders and travelers from around the world will
 What are two resources far too many people in our community lack? Food and shelter. Every day, hundreds of people all around you—right here in Portland, don't have adequate shelter. And many more who have a place to live don't have the resources to feel comfortable in their own homes.
 
 It just so happens that, to make a world record like this come together, you have to have a lot of beds. Like, a lot a lot.
-As part of a strategic partnership, we'll be donating all the beds from the event to [The Community Warehouse](https://www.communitywarehouse.org/), a fantastic local organization that helps families get back on their feet.
+
+As part of a strategic partnership, we'll be donating all the beds from the event to several local organizations that help families get back on their feet.
 
 Your participation in *Worldwide Waffles* will directly benefit those in need in your community.
 
