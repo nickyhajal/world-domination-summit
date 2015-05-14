@@ -12,7 +12,7 @@ icon: parachute
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Friday</div>
 		<div class="main-schedule-time">Morning</div>
-		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="/2014-world-record">World Record Attempt</a></div>
+		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="/2015-world-record">World Record Attempt</a></div>
 		<div class="main-schedule-time">Afternoon</div>
 		<div class="main-schedule-descr">Registration</div>
 		<div class="main-schedule-time">Evening</div>
