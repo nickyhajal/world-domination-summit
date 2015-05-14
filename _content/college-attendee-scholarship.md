@@ -29,7 +29,7 @@ Note: Academy sessions before and after WDS are not included with this ticket. H
   <li>Applicants must be full-time students in the 2014-15 school year at one of the qualifying college programs: UP, PSU, Concordia, ActSix, PCC</li>
 <li>Applicants must be between the ages of 18 and 25 on July 10, 2015</li>
 <li>Applicants must arrange their own housing in Portland and transportation to and from the event each day.</li>
-<li>Applicants must be available to attend registration and all sessions between Friday afternoon, July 20 and Sunday afternoon, July 13. <a href="http://worlddominationsummit.com/schedule" target="_blank">View WDS Schedule</a></li>
+<li>Applicants must be available to attend registration and all sessions between the afternoon of Friday, July 10th to Sunday evening, July 12th. <a href="http://worlddominationsummit.com/schedule" target="_blank">View WDS Schedule</a></li>
 <li>Applicants agree to full participation in two group meet-ups and submitting a written Action Plan after the event.</li>
 </ul>
 
