@@ -3,9 +3,19 @@ icon: globe
 
 ## WDS Communication Page
 
-<a name="what-is-wds"></a>
+Text goes here..
 
-### In case you missed anything...
+<a name="email-annoucnements"></a>
+
+### In Case You Missed Anything...
+
+Text goes here...
+
+<div class="line-canvas"></div>
+
+<a name="important-forms"></a>
+
+### Important Forms
 
 Text goes here...
 
