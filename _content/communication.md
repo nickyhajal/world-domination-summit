@@ -3,13 +3,12 @@ icon: globe
 
 ## WDS Communication Page
 
-Text goes here..
+In case you missed anything...
 
 <a name="email-annoucnements"></a>
 
-### In Case You Missed Anything...
+### Email Announcements
 
-Text goes here...
 
 <a href="https://madmimi.com/p/b9b536" target="_blank">World Record Attempt Announcement & Registration</a>
 
@@ -22,7 +21,5 @@ Text goes here...
 <a name="important-forms"></a>
 
 ### Important Forms
-
-Text goes here...
 
 <div class="line-canvas"></div>
