@@ -6,9 +6,9 @@ photo_head: https://farm4.staticflickr.com/3845/14454713628_1d5f03221a_z_d.jpg,h
 # Help us craft the perfect attendee experience.
 
 <div class="zig-zags_blue"></div>
-<p></p>We are so excited you are joining us for our 5th anniversary event!<p></p>
-As we work to craft the best attendee experience, we would like to know a little more about you and your plans for your time in Portland for WDS. So we put together a brief survey that should only take a few minutes to complete. <p></p>
-Thank you for being part of our community and we look forward to welcoming you to Portland soon!
+<p></p>We're so excited that you're coming to town for our 5th anniversary event!<p></p>
+As we work to craft the best attendee experience, we'd like to know a little more about you and your plans for your time in Portland during WDS. We've put together a brief survey that should only take a few minutes to complete. <p></p>
+Thanks for being part of our community—we look forward to welcoming you to Portland soon!
 
 <div class="line-canvas"></div>
 
