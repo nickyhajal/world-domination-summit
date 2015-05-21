@@ -1,4 +1,4 @@
-sidebar: faqs
+sidebar: communication
 icon: globe
 
 ## WDS Communication Page
