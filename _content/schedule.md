@@ -22,6 +22,8 @@ icon: parachute
 		<div class="main-schedule-day">Saturday</div>
 		<div class="main-schedule-time">9:00am–6:30pm</div>
 		<div class="main-schedule-descr">Main Stage Sessions <br><a style="color: rgb(35,31,32) !important" href="/activities">Activities</a></div>
+		<div class="main-schedule-descr">Portland Spirit Cruise</div>
+		<div class="main-schedule-descr">Twilight Yoga</div>
 	</div>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Sunday</div>
