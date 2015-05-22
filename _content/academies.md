@@ -39,10 +39,14 @@ from Broke to a Book Deal</h4>
 Spend the morning with Jadah Sellner and Jen Hansard, founders of Simple Green Smoothies, and hear their honest entrepreneurial story of how they went from Broke to a Book Deal in just two years. You'll also have the chance to hear from special guests during their Q&A panel including Vani Hari, the revolutionary food activist and creator of FoodBabe.com. PLUS you’ll leave sippin' on a tasty green smoothie ready to change the world!<p></p>
 
 In this academy you’ll learn: 
+&nbsp;
 <ul>
   <li>COMMUNITY GROWTH: how to grow your social media following and build your email list with authentic engagement strategies. </li>
+  &nbsp;
   <li>BRANDING STRATEGY: how to define your core brand message, communicate it visually across platforms, and make your business stand out </li>
+  &nbsp;
   <li>REVENUE STREAMS: walk away with the #1 question you need to ask your community, so you can turn your passion into profit (without selling out)</li>
+  &nbsp;
   <li>TOOLS & TEAM: the simple tools you need to start with, tips for growing your team and scaling your business while still keeping your community and customers happy </li>
 </ul>
 
