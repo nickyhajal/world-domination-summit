@@ -34,9 +34,19 @@ from Broke to a Book Deal</h4>
 	<div class="collapsable-content">
 	Thursday, July 9th from 9:00 AM to 12:00 PM
 		<h4>Summary</h4>
-		Spend the morning with Jadah Sellner and Jen Hansard, founders of Simple Green Smoothies, and go behind the scenes of how they fuel their passions and went from broke to book deal. You'll go through a step-by-step action plan to fuel your own passion, learn tips and tricks to blend the perfect green smoothie, and leave sippin' on their signature green smoothie recipe ready to change the world. <p></p>
+		Are YOU ready to... Share your passion with the world? Change lives for the better? Make money while doing it? If you're ready to build a community-driven business with a loyal fan base, you'll need a step-by-step action plan to fuel your own passion. We're here to share that action plan, along with the "behind the scenes” essentials of building an authentic online presence to stand out (even in a crowded marketplace).<p></p>
 
-If you're a blogger, author, artist, health enthusiast, a parent, or creative entrepreneur looking to share your message with the world, you'll want to join this rawkstar party!
+Spend the morning with Jadah Sellner and Jen Hansard, founders of Simple Green Smoothies, and hear their honest entrepreneurial story of how they went from Broke to a Book Deal in just two years. You'll also have the chance to hear from special guests during their Q&A panel including Vani Hari, the revolutionary food activist and creator of FoodBabe.com. PLUS you’ll leave sippin' on a tasty green smoothie ready to change the world!<p></p>
+
+In this academy you’ll learn: 
+<ul>
+  <li>COMMUNITY GROWTH: how to grow your social media following and build your email list with authentic engagement strategies. </li>
+  <li>BRANDING STRATEGY: how to define your core brand message, communicate it visually across platforms, and make your business stand out </li>
+  <li>REVENUE STREAMS: walk away with the #1 question you need to ask your community, so you can turn your passion into profit (without selling out)</li>
+  <li>TOOLS & TEAM: the simple tools you need to start with, tips for growing your team and scaling your business while still keeping your community and customers happy </li>
+</ul>
+
+
 
 <h4><a href="https://www.eventbrite.com/e/wds-academy-fuel-your-passion-tickets-16185910494" target="_blank">Register for Fuel Your Passion</a></h4>
 
