@@ -34,9 +34,7 @@ from Broke to a Book Deal</h4>
 	<div class="collapsable-content">
 	Thursday, July 9th from 9:00 AM to 12:00 PM
 		<h4>Summary</h4>
-		Are YOU ready to... Share your passion with the world? Change lives for the better? Make money while doing it? If you're ready to build a community-driven business with a loyal fan base, you'll need a step-by-step action plan to fuel your own passion. We're here to share that action plan, along with the "behind the scenes” essentials of building an authentic online presence to stand out (even in a crowded marketplace).<p></p>
-
-Spend the morning with Jadah Sellner and Jen Hansard, founders of Simple Green Smoothies, and hear their honest entrepreneurial story of how they went from Broke to a Book Deal in just two years. You'll also have the chance to hear from special guests during their Q&A panel including Vani Hari, the revolutionary food activist and creator of FoodBabe.com. PLUS you’ll leave sippin' on a tasty green smoothie ready to change the world!<p></p>
+		Are YOU ready to... Share your passion with the world? Change lives for the better? Make money while doing it? If you're ready to build a community-driven business with a loyal fan base, you'll need a step-by-step action plan to fuel your own passion. We're here to share that action plan, along with the "behind the scenes” essentials of building an authentic online presence to stand out (even in a crowded marketplace). Spend the morning with Jadah Sellner and Jen Hansard, founders of Simple Green Smoothies, and hear their honest entrepreneurial story of how they went from Broke to a Book Deal in just two years.<p></p>
 
 In this academy you’ll learn: 
 &nbsp;
@@ -89,7 +87,22 @@ In this academy you’ll learn:
 	Thursday, July 9, 2015 from 9:00 AM to 12:00 PM
 		<h4>Summary</h4>
 		The Location Rebel Academy was designed specifically for people who are looking to start a business that lets them leave their job and either travel or work from home - as quickly as possible. It skips the fluff and the typical "follow your passion" mantra for a practical, repeatable strategy to help you build income, confidence, and the foundation for a mobile business.<p></p>
-Attendees of this Academy will: Uncover the essentials of which skills you need to build a business that you can run from anywhere. Learn why "following your passion" is bad advice for people wanting to build this type of business. Practice the easiest way to start making money from anywhere, that you can apply today. Discuss how to scale your business up over the long term to achieve the ever-elusive "passive income". Discover strategies for how to actually be productive and manage your time when you're on the road.
+
+Attendees of this Academy will:
+<ul>
+  <li>Uncover the essentials of which skills you need to build a business that you can run from anywhere. </li>
+  &nbsp;
+  <li>Learn why "following your passion" is bad advice for people wanting to build this type of business.</li>
+  &nbsp;
+  <li>Practice the easiest way to start making money from anywhere, that you can apply today.</li>
+  &nbsp;
+  <li>Discuss how to scale your business up over the long term to achieve the ever-elusive "passive income".</li>
+    &nbsp;
+  <li>Discover strategies for how to actually be productive and manage your time when you're on the road.</li>
+</ul>
+
+
+
 <h4><a href="https://www.eventbrite.com/e/wds-academy-how-to-become-a-location-rebel-tickets-16259605919" target="_blank">Register for Location Rebel</a></h4>
 		
 		<!-- <h4>About Sean Ogle</h4>
