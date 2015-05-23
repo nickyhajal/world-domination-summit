@@ -36,16 +36,16 @@ from Broke to a Book Deal</h4>
 		<h4>Summary</h4>
 		Are YOU ready to... Share your passion with the world? Change lives for the better? Make money while doing it? If you're ready to build a community-driven business with a loyal fan base, you'll need a step-by-step action plan to fuel your own passion. We're here to share that action plan, along with the "behind the scenes” essentials of building an authentic online presence to stand out (even in a crowded marketplace). Spend the morning with Jadah Sellner and Jen Hansard, founders of Simple Green Smoothies, and hear their honest entrepreneurial story of how they went from Broke to a Book Deal in just two years.<p></p>
 
-In this academy you’ll learn: 
+In this Academy you’ll learn: 
 &nbsp;
 <ul>
-  <li>COMMUNITY GROWTH: how to grow your social media following and build your email list with authentic engagement strategies. </li>
+  <li>Community Growth: how to grow your social media following and build your email list with authentic engagement strategies. </li>
   &nbsp;
-  <li>BRANDING STRATEGY: how to define your core brand message, communicate it visually across platforms, and make your business stand out </li>
+  <li>Branding Strategy: how to define your core brand message, communicate it visually across platforms, and make your business stand out </li>
   &nbsp;
-  <li>REVENUE STREAMS: walk away with the #1 question you need to ask your community, so you can turn your passion into profit (without selling out)</li>
+  <li>Revenue Streams: walk away with the #1 question you need to ask your community, so you can turn your passion into profit (without selling out)</li>
   &nbsp;
-  <li>TOOLS & TEAM: the simple tools you need to start with, tips for growing your team and scaling your business while still keeping your community and customers happy </li>
+  <li>Tools & Team: the simple tools you need to start with, tips for growing your team and scaling your business while still keeping your community and customers happy </li>
 </ul>
 
 
@@ -145,7 +145,21 @@ Becoming “known” can open a lot of doors. But, beyond ego-gratification, it'
 
 This academy is about doing it right, and creating something that matters--to you and to those you seek to serve--along the way.<p></p>
 
-Attendees of this Academy will leave with: A dynamic, highly-effective roadmap to grow your notoriety in a way that opens the most doors, cultivates the most meaning and let's you feel amazing about how you're doing it. A deep understanding of the different paths to building a business, practice, career or body-of-work around your growing notoriety. A simple process to choose the best tools, platforms and medium for your social orientation and communication DNA. A checklist of critical mistakes to avoid and shiny objects to stop chasing. A better ability to handle the real challenges, responsibilities and opportunities that inevitably come your way as you become better known.
+Attendees of this Academy will leave with:
+<ul>
+  <li>A dynamic, highly-effective roadmap to grow your notoriety in a way that opens the most doors, cultivates the most meaning and let's you feel amazing about how you're doing it.</li>
+  &nbsp;
+  <li>A deep understanding of the different paths to building a business, practice, career or body-of-work around your growing notoriety.</li>
+  &nbsp;
+  <li>A simple process to choose the best tools, platforms and medium for your social orientation and communication DNA.</li>
+  &nbsp;
+  <li> A checklist of critical mistakes to avoid and shiny objects to stop chasing.</li>
+    &nbsp;
+  <li>A better ability to handle the real challenges, responsibilities and opportunities that inevitably come your way as you become better known.</li>
+</ul>
+
+    
+    
 <h4><a href="https://www.eventbrite.com/e/wds-academy-the-art-of-becoming-known-tickets-16259627985" target="_blank">Register for the Art of Becoming Known</a></h4>
 
 		<!-- <h4>About Jonathan Fields</h4>
@@ -208,7 +222,24 @@ target="_blank">Register for Rejection Academy</a></h4>
 		<h4>Summary</h4>
 		If you have ever come to WDS before, you know that by Sunday evening, your head is full of 100 exciting ideas. Once you get home, and during the year that follows, how many of these ideas do you ship? In this working laboratory, Pam and Rob will help you organize and prioritize ideas, create simple yet effective plans, identify and conspire with peers who will help you get your work done, and send you home with clarity and purpose.<p></p>
 
-You will come away from this academy with: A clear definition of your values and priorities. A short list of your most exciting and valuable ideas from WDS. A project plan for at least one project you want to ship this year. Best practices from serial shippers. A list of fellow WDS'ers who are willing to help you build and ship your project. Hilarity, good will, energy, enthusiasm and confidence.
+
+You will come away from this Academy with::
+<ul>
+  <li> A clear definition of your values and priorities.</li>
+  &nbsp;
+  <li>A short list of your most exciting and valuable ideas from WDS.</li>
+  &nbsp;
+  <li>A project plan for at least one project you want to ship this year.</li>
+  &nbsp;
+  <li>Best practices from serial shippers.</li>
+    &nbsp;
+  <li>A list of fellow WDS'ers who are willing to help you build and ship your project.</li>
+   &nbsp;
+  <li>Hilarity, good will, energy, enthusiasm and confidence.</li>
+</ul>
+
+   
+   
 <h4><a href="https://www.eventbrite.com/e/wds-academy-how-to-take-action-after-wds-tickets-16503325892" target="_blank">Register for How to Take Action After WDS</a></h4>
 
 		<!-- <h4>About Pamela Slim and Rob Young</h4>
@@ -228,7 +259,25 @@ Rob Young worked for one of the world's biggest consulting companies for 10 year
 		<h4>Summary</h4>
 		How do you build powerful professional relationships? In this workshop, Vanessa will go over all of the communication skills you need for interacting with people in business. She will give you the skills you need to master your presence, make authentic connections and speed read potential clients and customers. Vanessa will dive into networking, pitching, and negotiating using science based strategies and actionable techniques you can use immediately. This entertaining workshop will be highly interactive, informative and inspiring.<p></p>
 
-Attendees of this Academy will learn: How to master your presence. Pimp your elevator pitch. The psychology of authentic relationship building. The art of networking. Connecting and building rapport with VIPs. Cold-calling and pitching. The science of personality.
+Attendees of this Academy will learn:
+<ul>
+  <li> How to master your presence.</li>
+  &nbsp;
+  <li>Pimp your elevator pitch.</li>
+  &nbsp;
+  <li>The psychology of authentic relationship building.</li>
+  &nbsp;
+  <li>The art of networking</li>
+    &nbsp;
+  <li>Connecting and building rapport with VIPs.</li>
+   &nbsp;
+  <li>Cold-calling and pitching.</li>
+   &nbsp;
+ <li>The science of personality.</li>
+</ul>
+
+     
+     
 <h4><a href="https://www.eventbrite.com/e/wds-academy-people-skills-for-business-tickets-16607078218" target="_blank">Register for People Skills for Business</a></h4>
 
 		<!-- <h4>About Vanessa Van Edwards</h4>
