@@ -28,8 +28,7 @@ There is no limit on how many Academies you can register for. Academy tickets ar
 <div class="line-canvas"></div>
 
 <div class="collapsable-box collapsable-box-open">
-	<h4>Fuel Your Passion: How the Founders of Simple Green Smoothies Went
-from Broke to a Book Deal</h4>
+	<h4>Fuel Your Passion: How to Turn Your Dreams into a World-Changing Business</h4>
 	Hosted by Jadah Sellner and Jen Hansard
 	<div class="collapsable-content">
 	Thursday, July 9th from 9:00 AM to 12:00 PM
