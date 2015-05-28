@@ -1,5 +1,5 @@
 icon: handshake
-photo_head: https://farm6.staticflickr.com/5484/14639122234_ac64306e1e_z_d.jpg,https://farm6.staticflickr.com/5484/14639122234_ac64306e1e_b.jpg,https://farm6.staticflickr.com/5491/14633920996_c3b91bf66a_b.jpg,https://farm4.staticflickr.com/3882/14470461207_33b1b470f7_b.jpg
+photo_head: https://farm4.staticflickr.com/3902/14640865692_cfb9058895_z_d.jpg,https://farm6.staticflickr.com/5484/14639122234_ac64306e1e_b.jpg,https://farm6.staticflickr.com/5491/14633920996_c3b91bf66a_b.jpg,https://farm4.staticflickr.com/3882/14470461207_33b1b470f7_b.jpg
 
 ## Submit Your Story
 
