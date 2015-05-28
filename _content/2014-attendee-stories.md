@@ -23,3 +23,4 @@ Hosted by WDS Magician, Michelle Jones.
 
 Featuring one-minute stories from the Hurricane Round by [Jennifer Idol](/~uwDesigner), [Jonathan Ronzio](/~ronzio), [Harmony Eichsteadt](/~harmony), [Ryan Haack](/~LivingOneHanded), and [Alicia Ostarello](/~aliciao).
 
+Itching for more? Here are attendee stories from <a href="http://worlddominationsummit.com/2013-attendee-stories" target="_blank">WDS 2013.</a>
