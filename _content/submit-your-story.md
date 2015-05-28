@@ -5,7 +5,7 @@ photo_head: https://farm6.staticflickr.com/5484/14639122234_ac64306e1e_z_d.jpg,h
 
 # The best part about WDS is you. You make WDS. 
 
-An important role you play is sharing your story with others. As we have done for the past several years, we will feature stories from the WDS community that can be told in impactful bite-size tales that are 2 minutes or less. These stories will be used in a variety of ways over the WDS weekend. 
+An important role you play at WDS is sharing your story with others. As we have done for the past several years, we will feature stories from the WDS community that can be told in impactful bite-size tales that are 2 minutes or less. These stories will be used in a variety of ways over the WDS weekend. 
 
 What are we walking about...
 
@@ -31,9 +31,11 @@ Featuring one-minute stories from the Hurricane Round by [Jennifer Idol](/~uwDes
 
 #Submit a Story
 
-We're looking for stories about how WDS has impacted your life or others. Stories about love and romance, about overcoming challenges, about quests and adventure. Do you have a skill you could teach the WDS community in 2 minutes and in a fun, engaging way? Is there someone in the WDS community who you wish to thank?  Has WDS help you make some awesome connections that have impacted your life in a significant way? 
+We're looking for stories about how WDS has impacted your life or others. 
+&nbsp;
+Stories about love and romance, about overcoming challenges, about quests and adventure. Do you have a skill you could teach the WDS community in 2 minutes and in a fun, engaging way? Is there someone in the WDS community who you wish to thank?  Has WDS help you make some awesome connections that have impacted your life in a significant way? 
 
-Do you just have an awesome story that you think the WDS Community should hear about?  Tell us below:
+Do you have(or know of another attendee that has) an awesome story that you think the WDS Community should hear about? Tell us below:
 
 <div id="wufoo-s1wmwbs81n6u528">
 Fill out my <a href="https://worlddominationsummit.wufoo.com/forms/s1wmwbs81n6u528">online form</a>.
