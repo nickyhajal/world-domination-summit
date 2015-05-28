@@ -33,7 +33,7 @@ Featuring one-minute stories from the Hurricane Round by [Jennifer Idol](/~uwDes
 
 We're looking for stories about how WDS has impacted your life or others. 
 &nbsp;
-Stories about love and romance, about overcoming challenges, about quests and adventure. Do you have a skill you could teach the WDS community in less than 2 minutes and in a fun, engaging way? Is there someone in the WDS community who you wish to thank?  Has WDS help you make some awesome connections that have impacted your life in a significant way? 
+Stories about love and romance, about overcoming challenges, about quests and adventure. Do you have a skill you could teach the WDS community in less than 2 minutes and in a fun, engaging way? Is there someone in the WDS community who you wish to thank?  Has WDS helped you make some awesome connections that have impacted your life in a significant way? 
 
 Do you have (or know of another attendee that has) an awesome story that you think the WDS Community should hear about? Tell us below:
 
