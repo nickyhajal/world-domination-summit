@@ -3,7 +3,9 @@ photo_head: https://farm6.staticflickr.com/5484/14639122234_ac64306e1e_z_d.jpg,h
 
 ## Submit Your Story
 
-# The best part about WDS is you. You make WDS. An important role you play is sharing your story with others. As we have done for the past several years, we will feature stories from the WDS community that can be told in impactful bite-size tales that are 2 minutes or less. These stories will be used in a variety of ways over the WDS weekend. 
+# The best part about WDS is you. You make WDS. 
+
+An important role you play is sharing your story with others. As we have done for the past several years, we will feature stories from the WDS community that can be told in impactful bite-size tales that are 2 minutes or less. These stories will be used in a variety of ways over the WDS weekend. 
 
 What are we walking about...
 
