@@ -23,10 +23,3 @@ Hosted by WDS Magician, Michelle Jones.
 
 Featuring one-minute stories from the Hurricane Round by [Jennifer Idol](/~uwDesigner), [Jonathan Ronzio](/~ronzio), [Harmony Eichsteadt](/~harmony), [Ryan Haack](/~LivingOneHanded), and [Alicia Ostarello](/~aliciao).
 
-<div class="zig-zags_blue"></div>
-
-<If you have a story you would like to share with the WDS community in 2 minutes or less, please let us know by submitting a proposal here.
-
-<a href="/submit-your-story" class="button">Suggest a Story &rarr;</a>
-
-<div class="line-canvas"></div>
