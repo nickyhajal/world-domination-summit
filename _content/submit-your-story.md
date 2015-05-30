@@ -33,11 +33,11 @@ Featuring one-minute stories from the Hurricane Round by [Jennifer Idol](/~uwDes
 
 This year, we're looking for a few specific kinds of stories:
 
-1. Stories about love (of all kinds), overcoming challenges, and quests or adventures (of all kinds).
+1. Stories about love (of all kinds), overcoming challenges, and quests or adventures (of all kinds)
 
-2. Stories that involve a skill you can teach the WDS community in less than two minutes -- in a fun, engaging way, of course.
+2. Stories that involve a skill you can teach the WDS community in less than two minutes -- in a fun, engaging way, of course
 
-3. Stories about how WDS has impacted your life or others.
+3. Stories about how WDS has impacted your life or others
 
 Do you have (or know of another attendee that has) an awesome story that you think the WDS Community should hear about? Tell us below:
 
