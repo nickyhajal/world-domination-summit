@@ -5,9 +5,9 @@ photo_head: https://farm4.staticflickr.com/3902/14640865692_cfb9058895_z_d.jpg,h
 
 # The best part about WDS is you and your stories.
 
-An important role you play at WDS is sharing your story with others. As we have done for the past several years, we will feature stories from the WDS community that can be told in impactful bite-size tales that are 2 minutes or less. These stories will be used in a variety of ways over the WDS weekend. 
+As we've done for the past several years, this year we'll feature stories from the WDS community that can be told in impactful, bite-size tales that are 2 minutes or less. These stories will be used in a variety of ways over the WDS weekend. 
 
-What are we talking about...
+Keep reading to learn more or nominate a story... 
 
 <div class="zig-zags_blue"></div>
 
@@ -33,7 +33,7 @@ Featuring one-minute stories from the Hurricane Round by [Jennifer Idol](/~uwDes
 
 We're looking for stories about how WDS has impacted your life or others. 
 &nbsp;
-Stories about love and romance, about overcoming challenges, about quests and adventure. Do you have a skill you could teach the WDS community in less than 2 minutes and in a fun, engaging way? Is there someone in the WDS community who you wish to thank?  Has WDS helped you make some awesome connections that have impacted your life in a significant way? 
+Stories about love (of all kinds),overcoming challenges, and quests or adventure (of all kinds). Do you have a skill you could teach the WDS community in less than 2 minutes and in a fun, engaging way? Is there someone in the WDS community who you wish to thank?  Has WDS helped you make some awesome connections that have impacted your life in a significant way? 
 
 Do you have (or know of another attendee that has) an awesome story that you think the WDS Community should hear about? Tell us below:
 
@@ -60,5 +60,5 @@ var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s
 
 <!-- ### Whoa - that was a lot of stories!
 
-Attendee story submissions for 2014 are now closed, but keep doing awesome stuff and get ready to share with the WDS community in 2015!
+Attendee story submissions for 2015 are now closed, but keep doing awesome stuff and get ready to share with the WDS community in 2015!
 -->
