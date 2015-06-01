@@ -3,7 +3,7 @@ photo_head: https://farm4.staticflickr.com/3710/9219161699_fc775a7026_b.jpg,http
 
 ## Ambassadors
 
-###Applications for 2015 WDS Ambassador postions are now closed but thanks for your interest. Keep doing amazing things and please apply next year for WDS 2016!
+###Applications for 2015 WDS Ambassador positions are now closed but thanks for your interest. Keep doing amazing things and please apply next year when applications become available for WDS 2016!
 
 <!-- # Nearly 3,000 attendees from dozens of countries are coming to Portland for the fifth annual World Domination Summit in July. Want to help?
 
