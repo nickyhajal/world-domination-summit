@@ -3,7 +3,9 @@ photo_head: https://farm4.staticflickr.com/3710/9219161699_fc775a7026_b.jpg,http
 
 ## Ambassadors
 
-# Nearly 3,000 attendees from dozens of countries are coming to Portland for the fifth annual World Domination Summit in July. Want to help?
+###Dagnabbit. Applications for the 2015 WDS Ambassador postions are now closed but thanks for your interest. Keep doing amazing things and please apply next year for WDS 2016!
+
+<!-- # Nearly 3,000 attendees from dozens of countries are coming to Portland for the fifth annual World Domination Summit in July. Want to help?
 
 <div class="zig-zags_blue"></div>
 
@@ -37,3 +39,4 @@ var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') retu
 try { k1qb9rtw1jhaxfo = new WufooForm();k1qb9rtw1jhaxfo.initialize(options);k1qb9rtw1jhaxfo.display(); } catch (e) {}};
 var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, 'script');</script>
+-->
