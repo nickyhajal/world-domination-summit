@@ -28,7 +28,7 @@ icon: parachute
 		<div class="main-schedule-descr">Portland Experience and Attendee Meetups <br></div>
 		<div class="main-schedule-time">4:00pm–6:00pm</div>
 		<div class="main-schedule-descr">Main Stage Session</div>
-		<div class="main-schedule-time">Evening <a style="color: rgb(35,31,32) !important" href="/activites">Activities</a></div>
+		<div class="main-schedule-time">Evening Activities</div>
 		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="http://www.eventbrite.com/e/river-cruise-on-the-portland-spirit-tickets-17177630756">Portland Spirit Cruise</a></div>
 		<div class="main-schedule-descr">Sunset Yoga</div>
 	</div>
