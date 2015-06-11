@@ -38,7 +38,7 @@ icon: parachute
 		<div class="main-schedule-descr">Main Stage Sessions</div>
 		<div class="main-schedule-time">12:30pm–4:00pm</div>
 		<div class="main-schedule-descr">Attendee Meetups and Activities</div>
-		div class="main-schedule-time">4:00pm–6:30pm</div>
+		<div class="main-schedule-time">4:00pm–6:30pm</div>
 		<div class="main-schedule-descr">Main Stage Session</div>
 		<div class="main-schedule-time">8:00pm–midnight</div>
 		<div class="main-schedule-descr">Farewell Party</div>
