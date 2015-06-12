@@ -115,7 +115,7 @@ Attendees of this Academy will:
 
 <div class="collapsable-box collapsable-box-open">
 	<h4>Language Lab</h4>
-	Hosted by Benny Lewis
+	Hosted by Benny Lewis and Scott Young
 	<div class="collapsable-content">
 	Thursday, July 9, 2015 from 1:00 PM to 4:00 PM
 		<h4>Summary</h4>
