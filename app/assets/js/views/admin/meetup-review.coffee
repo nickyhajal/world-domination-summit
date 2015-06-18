@@ -21,7 +21,7 @@ ap.Views.admin_meetup_review = XView.extend
           tk host
           host_str = host.first_name+' '+host.last_name
           if host.attending15 != '1'
-            host += ' (Not attending WDS 2015)'
+            host_str += ' (Not attending WDS 2015)'
         place = if atn.place.length then atn.place else 'No Venue'
         html += '<tr data-event_id="'+atn.event_id+'">
           <td>
