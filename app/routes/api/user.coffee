@@ -276,12 +276,16 @@ routes = (app) ->
 				next()
 
 		del_interest: (req, res, next) ->
+			tk 'HEY'
 			if req.me
+				tk '>>>>'
 				UserInterest.forge
 					interest_id: req.query.interest_id
 					user_id: req.me.get('user_id')
 				.fetch()
 				.then (row) ->
+					tk row
+					tk "HEY"
 					if row
 						row.destroy()
 						res.r.msg = 'Interest deleted.'
