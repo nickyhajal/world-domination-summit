@@ -121,7 +121,7 @@ routes = (app) ->
 		schedule: (req, res, next) ->
 			Events.forge()
 			.query('where', 'type', 'program')
-			.query('where', 'year', '14')
+			.query('where', 'year', process.yr)
 			.query('orderBy', 'start')
 			.fetch()
 			.then (events) ->
