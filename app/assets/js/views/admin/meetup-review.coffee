@@ -16,9 +16,12 @@ ap.Views.admin_meetup_review = XView.extend
       for atn in rsp.events
       #   atn = new ap.Event(atn)
         host = ''
-        if ap.Users.get(atn.hosts[0])?
-          host = ap.Users.get(atn.hosts[0])
-          host = host.get('first_name')+' '+host.get('last_name')
+        if 1 #ap.Users.get(atn.hosts[0])?
+          host = atn.hosts[0]#ap.Users.get(atn.hosts[0])
+          tk host
+          host_str = host.first_name+' '+host.last_name
+          if host.attending15 != '1'
+            host += ' (Not attending WDS 2015)'
         place = if atn.place.length then atn.place else 'No Venue'
         html += '<tr data-event_id="'+atn.event_id+'">
           <td>
@@ -33,7 +36,7 @@ ap.Views.admin_meetup_review = XView.extend
           <td colspan="3">
             <a href="/admin/meetup/'+atn.event_id+'" class="meetup-edit">Edit Meetup</a>
             <b>Host</b>
-            <div>'+host+'</div>
+            <div>'+host_str+'</div>
             <br/>
             <b>Description</b>
             <div>'+atn.descr+'</div>

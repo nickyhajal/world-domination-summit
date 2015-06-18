@@ -133,14 +133,18 @@ routes = (app) ->
 					start = (tmp.start+'').split(' GMT')
 					start = moment(start[0])
 					tmp.start = start.format('YYYY-MM-DD HH:mm:ss')
+					columns = {columns: ['users.user_id', 'first_name', 'last_name', 'attending15']}
 					EventHosts.forge()
 					.query('where', 'event_id', '=', tmp.event_id)
-					.fetch()
+					.query('join', 'users', 'event_hosts.user_id', '=', 'users.user_id', 'inner')
+					.fetch(columns)
 					.then (rsp) ->
 						for host in rsp.models
-							tmp.hosts.push(host.get('user_id'))
+							tmp.hosts.push(host)
 						evs.push(tmp)
 						cb()
+					, (err) ->
+						tk err
 				, ->
 					res.r.events = evs
 					next()
