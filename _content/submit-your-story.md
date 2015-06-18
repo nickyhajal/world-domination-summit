@@ -65,5 +65,5 @@ var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s
 
 ### Whoa - that was a lot of stories!
 
-Attendee story submissions for 2015 are now closed, but keep doing awesome stuff and get ready to share with the WDS community in 2015!
+Attendee story submissions for 2015 are now closed, but keep doing awesome stuff and get ready to share with the WDS community in person! 
 
