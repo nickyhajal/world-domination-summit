@@ -3,7 +3,7 @@ photo_head: https://farm4.staticflickr.com/3902/14640865692_cfb9058895_z_d.jpg,h
 
 ## Submit Your Story
 
-# The best part about WDS is you and your stories.
+<!-- # The best part about WDS is you and your stories.
 
 As we've done for the past several years, this year we'll feature stories from the WDS community that can be told in impactful, bite-size tales that are 2 minutes or less. These stories will be used in a variety of ways over the WDS weekend. 
 
@@ -61,8 +61,9 @@ try { s1wmwbs81n6u528 = new WufooForm();s1wmwbs81n6u528.initialize(options);s1wm
 var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, 'script');</script>
 
+-->
 
-<!-- ### Whoa - that was a lot of stories!
+### Whoa - that was a lot of stories!
 
 Attendee story submissions for 2015 are now closed, but keep doing awesome stuff and get ready to share with the WDS community in 2015!
--->
+
