@@ -7,13 +7,6 @@ photo_head: https://farm4.staticflickr.com/3890/14618311166_bef298359c_b.jpg,htt
 
 <div class="zig-zags_blue"></div>
 
-<!-- If you have a story you would like to share with the WDS community in 2 minutes or less, please let us know by submitting a proposal here.
-
-<a href="/submit-your-story" class="button">Suggest a Story &rarr;</a>
-
-<div class="line-canvas"></div>
--->
-
 Here are some of the Attendee Stories from WDS 2014:
 
 <iframe src="//player.vimeo.com/video/102690045?title=0&amp;byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -30,4 +23,4 @@ Hosted by WDS Magician, Michelle Jones.
 
 Featuring one-minute stories from the Hurricane Round by [Jennifer Idol](/~uwDesigner), [Jonathan Ronzio](/~ronzio), [Harmony Eichsteadt](/~harmony), [Ryan Haack](/~LivingOneHanded), and [Alicia Ostarello](/~aliciao).
 
-Itching for more? Check out the [2013 Attendee Stories](/2013-attendee-stories).
+Itching for more? Here are attendee stories from <a href="http://worlddominationsummit.com/2013-attendee-stories" target="_blank">WDS 2013.</a>

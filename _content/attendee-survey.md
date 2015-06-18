@@ -1,12 +1,14 @@
 icon: parchute
+photo_head: https://farm4.staticflickr.com/3845/14454713628_1d5f03221a_z_d.jpg,https://farm4.staticflickr.com/3915/14657005702_79b6c5cde3_z_d.jpg,https://farm6.staticflickr.com/5473/14661159163_6d6a138b30_z_d.jpg,https://farm6.staticflickr.com/5569/14639124974_19d6ee8f52_z_d.jpg,https://farm4.staticflickr.com/3903/14634459036_fa1b776823_z_d.jpg
 
-## Attendee Survey
+## WDS Attendee Survey 2015
 
 # Help us craft the perfect attendee experience.
 
 <div class="zig-zags_blue"></div>
-
-Some text describing the surevy
+<p></p>We're so excited that you're coming to town for our 5th anniversary event!<p></p>
+As we work to craft the best attendee experience, we'd like to know a little more about you and your plans for your time in Portland during WDS. We've put together a brief survey that should only take a few minutes to complete. <p></p>
+Thanks for being part of our community—we look forward to welcoming you to Portland soon!
 
 <div class="line-canvas"></div>
 

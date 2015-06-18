@@ -19,9 +19,11 @@ WDS was founded by <a href="http://chrisguillebeau.com" target="blank"> Chris Gu
 
 ### How can I get a ticket?
 
-Tickets for WDS are only offered two or three times a year, and they go quickly. The next wave of tickets will be available mid-March. There is no fast-track or secret process to get a ticket; they are all offered on a first-come, first-served basis. The best way to be informed of opportunities to register for next year is to join the 2015 <a href="http://worlddominationsummit.com/register">waiting list.</a> 
+<b>Tickets for WDS 2015 have completely sold out.</b> 
 
-Please note: once tickets are gone, they're gone. We do not hold any tickets back for higher-priced sales later, nor do we sell tickets at the door.
+Tickets for WDS are only offered two or three times a year, and they go quickly. There is no fast-track or secret process to get a ticket; they are all offered on a first-come, first-served basis. The best way to be informed of opportunities to register for next year is to join the 2016 <a href="http://worlddominationsummit.com/register">waiting list.</a> 
+
+Please note: Once tickets are gone, they're gone. We do not hold any tickets back for higher-priced sales later, nor do we sell tickets at the door.
 
 <div class="line-canvas"></div>
 
@@ -37,7 +39,7 @@ All WDS tickets are non-refundable. Transfers and name changes on tickets are av
 
 ### How can I transfer a ticket?
 
-If you are a registered attendee, look for the "Transfer Ticket" link that appears on the bottom of the WDS website when you are logged in. You'll need the name, email address, and mailing address for the new ticket holder. Click the link, complete the necessary information, and pay the transfer fee to complete the process.
+If you are a registered attendee log into your WDS account and then look for the "Transfer" link that appears on the bottom of the WDS website when you are logged in. You'll need the name, email address, and mailing address for the new ticket holder. Click the link, complete the necessary information, and pay the transfer fee to complete the process.
 
 <div class="line-canvas"></div>
 
