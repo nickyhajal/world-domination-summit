@@ -112,6 +112,7 @@ routes = (app) ->
 			events = Events.forge()
 			limit = req.query.per_page ? 500
 			page = req.query.page ? 1
+			events.query('where', 'year', process.yr)
 			if req.query.active?
 				active = req.query.active
 				events.query('where', 'active', active)
@@ -247,7 +248,7 @@ routes = (app) ->
 			event_id = req.query.event_id
 			if req.me
 				rsvp = EventRsvp.forge({user_id: req.me.get('user_id'), event_id: event_id})
-				rsvp	
+				rsvp
 				.fetch()
 				.then (existing) ->
 					if existing
