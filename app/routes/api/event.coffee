@@ -236,17 +236,32 @@ routes = (app) ->
 				next()
 
 		get_attendees: (req, res, next) ->
-			EventRsvps.forge()
-			.query('where', 'event_id', '=', req.query.event_id)
-			.fetch()
-			.then (rsp) ->
-				atns = []
-				for atn in rsp.models
-					atns.push(atn.get('user_id'))
-				res.r.attendees = atns
-				next()
-			, (err) ->
-				console.err(err)
+			event_id = req.query.event_id
+			sig = 'event_atns_'+event_id+'_'+req.query.include_users?
+			rds.get sig, (err, atns) ->
+				if atns? and atns and typeof JSON.parse(atns) is 'object'
+					res.r.attendees = JSON.parse(atns)
+					next()
+				else
+					columns = {columns: ['users.user_id', 'first_name', 'last_name', 'pic']}
+					EventRsvps.forge()
+					.query('where', 'event_id', '=', event_id)
+					.query('join', 'users', 'event_rsvps.user_id', '=', 'users.user_id', 'inner')
+					.fetch(columns)
+					.then (rsp) ->
+						atns = []
+						for atn in rsp.models
+							if req.query.include_users?
+								atns.push(atn)
+							else
+								atns.push(atn.get('user_id'))
+						res.r.attendees = atns
+						rds.set sig, JSON.stringify(atns), ->
+						rds.expire sig, 45
+						next()
+					, (err) ->
+						console.err(err)
+
 
 		rsvp: (req, res, next) ->
 			event_id = req.query.event_id
