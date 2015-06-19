@@ -106,11 +106,11 @@ routes = (app) ->
 							for f in byF.models
 								id = f.get('user_id')
 								all[id] = f.attributes unless all[id]
-								if all[id].score? then all[id].score += 2 else (all[id].score = 2)
+								if all[id].score? then all[id].score += 2 else (all[id].score = 4)
 							for l in byL.models
 								id = l.get('user_id')
 								all[id] = l.attributes unless all[id]
-								if all[id].score? then all[id].score += 5 else (all[id].score = 5)
+								if all[id].score? then all[id].score += 5 else (all[id].score = 1)
 							# for e in byE.models
 							# 	id = e.get('user_id')
 							# 	all[id] = e.attributes unless all[id]
