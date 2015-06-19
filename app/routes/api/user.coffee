@@ -110,11 +110,11 @@ routes = (app) ->
 							for l in byL.models
 								id = l.get('user_id')
 								all[id] = l.attributes unless all[id]
-								if all[id].score? then all[id].score += 3 else (all[id].score = 3)
-							for e in byE.models
-								id = e.get('user_id')
-								all[id] = e.attributes unless all[id]
-								if all[id].score? then all[id].score += 1 else (all[id].score = 1)
+								if all[id].score? then all[id].score += 5 else (all[id].score = 5)
+							# for e in byE.models
+							# 	id = e.get('user_id')
+							# 	all[id] = e.attributes unless all[id]
+							# 	if all[id].score? then all[id].score += 1 else (all[id].score = 1)
 							cb()
 			, (err) ->
 				sortable = []
