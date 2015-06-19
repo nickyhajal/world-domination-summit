@@ -226,6 +226,7 @@ routes = (app) ->
 					else
 						Events.forge()
 						.query('where', 'active', '1')
+						.query('where', 'year', process.yr)
 						.query('orderBy', 'start')
 						.fetch()
 						.then (rsp) ->
