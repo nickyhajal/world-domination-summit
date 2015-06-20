@@ -67,7 +67,7 @@ We don't believe these to be difficult barriers to entry and will attempt to mak
 
 **A note on food allergies:** We will attempt to make all accomodations necessary for major food allergies but, because our menu will not be confirmed until just before the event, we cannot guarantee the availability of food that is 100% free of every possible allergen.
 
-<img src="https://cdn.evbuc.com/eventlogos/65656417/waffleedit1.jpg" width="600" />
+<img src="https://cdn.evbuc.com/eventlogos/65656417/stroopwafel1.jpg" width="600" />
 *Hell... yes... waffles.*
 
 <a name="bring"></a>
@@ -92,8 +92,8 @@ The World Domination Summit—and any of its affiliated partners or members—wi
 
 Lastly, we're going to do everything we can to break the record, but we can't 100% guarantee it will happen. We need everyone to show up! In the unlikely event we don't break it, we'll plan to try again.
 
-<img src="https://cdn.evbuc.com/eventlogos/65656417/waffleedit2.jpg" width="600" />
-*Stacks on stacks on stacks.*
+<img src="https://cdn.evbuc.com/eventlogos/65656417/stroopwafel2.jpg" width="600" />
+*Can you handle it?*
 
 <a href="https://www.eventbrite.com/e/worldwide-waffles-make-breakfast-in-bed-history-tickets-16759507137" style ="background:rgb(226, 127, 28); text-decoration:none; color: rgb(242, 242, 233); padding: 11px; font-size: 20px;">Register Now &#8594;</a>
 
@@ -106,7 +106,7 @@ No! You'll be sharing a bed with 3 other people for a nice, cozy experience. Bre
 
 **What are you serving for breakfast?**
 
-We're working with a number of local vendors to assemble a top notch à la carte menu. It won't be finalized until just before the event. We can only assure you that it will be delicious. Waffles seem like a strong bet.
+We're working with several local vendors to assemble a delicious catered breakfast. While the menu is not yet finalized, we're planning some light breakfast appetizers, a main course, and stroopwafels for dessert. Yum.
 
 **Can I bring a friend?**
 
