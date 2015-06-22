@@ -11,6 +11,8 @@
 ap.Views.profile = XView.extend
 
 	initialize: ->
+
+		$("head").append("<META NAME='robots' id='noindexmeta' CONTENT='noindex'>")
 		@options.sidebar = 'profile'
 		@options.sidebar_filler = @options.attendee.attributes
 		@renderInterests()
@@ -140,3 +142,6 @@ ap.Views.profile = XView.extend
 		av = $('.attendee-avatar')
 		av.css('height', _.x(av.width()))
 		$('.button', '#profile-controls').css('width', '')
+
+	whenFinished: ->
+		$("#noindexmeta").remove()

@@ -5,7 +5,7 @@
 		$t.empty()
 		$el = $(this)
 		slf = this
-		defs = 
+		defs =
 			render: 'replace'
 			update: 5000
 			params:
@@ -87,6 +87,7 @@
 					channel_url = '/meetup/'+_.slugify(ap.Events.get(content.channel_id).get('what').toLowerCase())
 				else if channel_name is 'global'
 					channel_url = '/hub'
+				tk author
 				html = '
 					<div class="dispatch-content-shell dispatch-content-unprocessed" data-content_id="'+content.feed_id+'">
 						<div class="dispatch-content-userpic" style="background:url('+author.get('pic').replace('_normal', '')+')"></div>
@@ -152,7 +153,7 @@
 				$c.css('max-height', '100000px')
 
 		@getContent = (get_opts, extra = {}) ->
-			get_defs = 
+			get_defs =
 				render: opts.render
 				cb: false
 			get_opts = _.defaults get_opts, get_defs
