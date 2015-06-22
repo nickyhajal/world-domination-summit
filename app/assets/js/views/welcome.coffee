@@ -10,21 +10,24 @@
 
 ap.Views.welcome = XView.extend
 
-	events: 
+	events:
 		'click .twitter-disconnect': 'disconnectTwitter'
 		'click .finish-welcome': 'finishWelcome'
 		'click .send-tweet': 'sendTweet'
 
 	initialize: ->
-		@options.sidebar = 'welcome'
-		@options.out = _.template @options.out, ap.me.attributes
-		@initRender()
-		self = this
-		$('#content_shell').addClass('start')
-		unless ap.upload_success?
-			ap.upload_success = (url) ->
-				ap.me.set('pic', url)
-				self.syncAvatar()
+		if ap.me.get('intro') > 7
+			ap.navigate('settings')
+		else
+			@options.sidebar = 'welcome'
+			@options.out = _.template @options.out, ap.me.attributes
+			@initRender()
+			self = this
+			$('#content_shell').addClass('start')
+			unless ap.upload_success?
+				ap.upload_success = (url) ->
+					ap.me.set('pic', url)
+					self.syncAvatar()
 
 	rendered: ->
 		# Setup Animation
@@ -40,7 +43,7 @@ ap.Views.welcome = XView.extend
 		setTimeout =>
 
 			# Start animation
-			setTimeout => 
+			setTimeout =>
 				$('#content_shell').removeClass('start')
 			, 300
 			$('html').addClass('hide-counter')
@@ -85,7 +88,7 @@ ap.Views.welcome = XView.extend
 		shell.empty()
 		if ap.provinces[country]?
 			provinces = ap.provinces[country]
-			map = 
+			map =
 				US: ['State', 'short', 'name']
 				GB: ['Region','region', 'region']
 				CA: ['Province','name', 'name']
@@ -189,7 +192,7 @@ ap.Views.welcome = XView.extend
 			if ap.me.get('intro') < tab.num + 1
 				ap.me.set('intro', tab.num+1)
 			if ap.me.changedSinceSave.user_id?
-				ap.me.save ap.me.changedSinceSave, 
+				ap.me.save ap.me.changedSinceSave,
 					patch: true
 					success: ->
 						switchTab()
@@ -232,7 +235,7 @@ ap.Views.welcome = XView.extend
 		e.preventDefault()
 		ap.me.set('intro', 8)
 		if ap.me.changedSinceSave.user_id?
-			ap.me.save ap.me.changedSinceSave, 
+			ap.me.save ap.me.changedSinceSave,
 				patch: true
 		ap.navigate('hub')
 
