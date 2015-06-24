@@ -209,8 +209,6 @@ User = Shelf.Model.extend
         lat: location.lat
         lon: location.lng
         distance: ( (distance / 1000) * 0.6214 )
-      tk location
-      tk distance
       @save(null, {method: 'update'})
 
   similar_meetups: ->

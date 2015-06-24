@@ -175,7 +175,6 @@ routes = (app) ->
 
 		create: (req, res, next) ->
 			post = _.pick(req.query, User.prototype.permittedAttributes)
-			tk post
 			user = User.forge(post)
 			.save()
 			.then (new_user, err) ->
@@ -276,16 +275,12 @@ routes = (app) ->
 				next()
 
 		del_interest: (req, res, next) ->
-			tk 'HEY'
 			if req.me
-				tk '>>>>'
 				UserInterest.forge
 					interest_id: req.query.interest_id
 					user_id: req.me.get('user_id')
 				.fetch()
 				.then (row) ->
-					tk row
-					tk "HEY"
 					if row
 						row.destroy()
 						res.r.msg = 'Interest deleted.'
@@ -629,7 +624,6 @@ routes = (app) ->
 											# Expire rank cache so next rank request
 											# is recalculated
 											rds.expire 'ranks', 0
-											tk 'REDIR'
 											res.redirect('/upload-race?rsp='+rsp)
 									, (err) ->
 										console.error(err)

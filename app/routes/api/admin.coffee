@@ -43,11 +43,9 @@ routes = (app) ->
 			.then (rsp) ->
 				count = 0
 				async.eachSeries rsp.models, (user, cb) ->
-					tk user.get('first_name')+' '+user.get('last_name')
 					user.processAddress()
 					count += 1
 					setTimeout ->
-						tk count
 						if count < 100
 							cb()
 						else

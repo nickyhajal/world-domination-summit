@@ -19,7 +19,6 @@ ap.Views.meetup = XView.extend
 			maxed = true
 		if maxed
 			$('.rsvp-button', '#sidebar').attr('data-maxed', 'true')
-			tk $('.rsvp-button', '#sidebar')
 
 	rendered: ->
 		@renderMap()

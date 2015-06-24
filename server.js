@@ -7,6 +7,7 @@ var express = require('express');
 var RedisStore = require('connect-redis')(express);
 var app = module.exports = express.createServer();
 var apn = require('apn');
+var gcm = require('node-gcm');
 require('./app/config')(app, express, RedisStore);
 require('express-namespace');
 db = process.db = app.settings.db
@@ -16,14 +17,13 @@ process.yr = '15'
 process.lastYear = '2013'
 process.dmn = process.env.DOMAIN
 process.rsapp = 'mobile_logins'
-
-process.APN = new apn.Connection(app.settings.apn);
+process.gcmSender = new gcm.Sender(process.env.GCM_KEY);
 
 //require('./app/processors/wufoo')(app)
 //require('./app/processors/meetup_suggestions')(app)
 //require('./app/processors/academies')(app)
-require('./app/processors/clean-sessions')(app)
 if (process.env.NODE_ENV === 'production' && process.env.PORT == '7676') {
+	require('./app/processors/clean-sessions')(app)
 	require('./app/processors/eventbrite')(app)
 	require('./app/processors/content-grabber')(app)
 	require('./app/processors/third-party-feeds')(app)

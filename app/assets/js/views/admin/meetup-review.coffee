@@ -18,7 +18,6 @@ ap.Views.admin_meetup_review = XView.extend
         host = ''
         if 1 #ap.Users.get(atn.hosts[0])?
           host = atn.hosts[0]#ap.Users.get(atn.hosts[0])
-          tk host
           host_str = host.first_name+' '+host.last_name
           if host.attending15 != '1'
             host_str += ' (Not attending WDS 2015 - user_id: '+host.user_id+')'

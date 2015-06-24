@@ -4,6 +4,7 @@ Q = require('q')
 juice = require('juice')
 _s = require('underscore.string')
 apn = require('apn')
+gcm = require('node-gcm')
 
 [Device, Devices] = require './devices'
 
@@ -18,22 +19,49 @@ Notification = Shelf.Model.extend
 		this.on 'created', this.created, this
 	created: ->
 		user_id = @get('user_id')
-		Devices.forge()
-		.query('where', 'user_id', user_id)
-		.query('where', 'type', 'ios')
-		.fetch()
-		.then (rsp) =>
-			devices = rsp.models
-			tokens = []
-			for device in devices
-				tokens.push device.get('token')
-			if tokens.length
-				Notifications::notificationText(this, false)
-				.then (str) =>
-					note = new apn.Notification()
-					note.alert = str
-					note.payload = {content: @get('content'), type: @get('type'), link: @get('link')}
-					process.APN.pushNotification(note, tokens)
+		Notifications::notificationText(this, false)
+		.then (str) =>
+			Devices.forge()
+			.query('where', 'user_id', user_id)
+			.query('where', 'type', 'ios')
+			.fetch()
+			.then (rsp) =>
+				devices = rsp.models
+				tokens = []
+				for device in devices
+					tokens.push device.get('token')
+				if tokens.length
+						note = new apn.Notification()
+						note.alert = str
+						note.payload = {content: @get('content'), type: @get('type'), link: @get('link')}
+						process.APN.pushNotification(note, tokens)
+			Devices.forge()
+			.query('where', 'user_id', user_id)
+			.query('where', 'type', 'and')
+			.fetch()
+			.then (rsp) =>
+				devices = rsp.models
+				tokens = []
+				for device in devices
+					tokens.push device.get('token')
+				if tokens.length
+					message = new gcm.Message
+						collapseKey: "WDS Notifications"
+						data:
+							key1: "WDS App"
+							key2: str
+							content: @get('content')
+							type: @get('type')
+							link: @get('link')
+					tk "GCM SEND:"
+					tk message
+					tk tokens
+					process.gcmSender.send message, tokens, (err, result) ->
+						if err
+							tk "GCM ERR"
+							tk result
+						else
+							tk "GCM SENT"
 
 Notifications = Shelf.Collection.extend
 	model: Notification

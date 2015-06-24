@@ -256,15 +256,12 @@ routes = (app) ->
 			filters = []
 			for key,val of raw_filters
 				filters.push({name: key, val: val})
-			tk filters
 			async.each filters, (filter, cb) ->
 				if +filter.val
 					if filter.name is 'twitter'
-						tk 'TWITTER'
 						feeds.query('where', 'channel_type', '!=', 'twitter')
 						cb()
 					if filter.name is 'following'
-						tk 'FOLLOWING'
 						req.me.getConnections()
 						.then (rsp) ->
 							ids = rsp.get('connected_ids')
@@ -273,15 +270,16 @@ routes = (app) ->
 							feeds.query('whereIn', 'feed.user_id', ids)
 							cb()
 					if filter.name is 'communities'
-						tk 'COMMS'
-						req.me.getInterests()
-						.then (rsp) ->
-							interests = rsp.get('interests').join(',')
-							meetups = rsp.get('rsvps').join(',')
-							feeds.query 'whereRaw', "(`channel_type` != 'interest' OR (`channel_type` = 'interest' AND `channel_id` IN ("+interests+")))"
+						if filter.val is '2'
+							feeds.query 'where', 'channel_type', '!=', 'interest'
 							cb()
+						else
+							req.me.getInterests()
+							.then (rsp) ->
+								interests = rsp.get('interests').join(',')
+								feeds.query 'whereRaw', "(`channel_type` != 'interest' OR (`channel_type` = 'interest' AND `channel_id` IN ("+interests+")))"
+								cb()
 					if filter.name is 'meetups'
-						tk 'MEETUPZ'
 						req.me.getRsvps()
 						.then (rsp) ->
 							meetups = rsp.get('rsvps').join(',')

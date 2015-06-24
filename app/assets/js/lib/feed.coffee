@@ -87,7 +87,6 @@
 					channel_url = '/meetup/'+_.slugify(ap.Events.get(content.channel_id).get('what').toLowerCase())
 				else if channel_name is 'global'
 					channel_url = '/hub'
-				tk author
 				html = '
 					<div class="dispatch-content-shell dispatch-content-unprocessed" data-content_id="'+content.feed_id+'">
 						<div class="dispatch-content-userpic" style="background:url('+author.get('pic').replace('_normal', '')+')"></div>

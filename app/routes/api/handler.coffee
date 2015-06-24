@@ -21,7 +21,6 @@ handler =
 						next()
 				else
 					next()
-		tk req.query.user_token
 		if req.query.user_token?
 			rs.get
 				app: process.rsapp

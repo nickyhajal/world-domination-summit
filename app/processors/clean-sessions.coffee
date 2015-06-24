@@ -16,7 +16,7 @@ shell = (app) ->
     , 10000
   check = (sess) ->
     rds.get sess, (err, rsp) ->
-      if rsp.indexOf('ident') == -1 && rsp.indexOf('twitter_connect') == -1
+      if rsp? && rsp.indexOf('ident') == -1 && rsp.indexOf('twitter_connect') == -1
         rds.ttl sess, (err, rsp) ->
           diff = (10000000 - +rsp)
           if diff > 2000

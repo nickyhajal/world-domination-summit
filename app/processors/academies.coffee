@@ -64,16 +64,16 @@ shell = (app) ->
 			app_key: app.settings.eb_key
 			user_key: app.settings.eb_user
 
-		params = 
+		params =
 			id: app.settings.eb_event
 			count: 10000
 			page: 1
 
 		tk 'Academy Check'
 
-		async.each events, (ev, cb) -> 
+		async.each events, (ev, cb) ->
 			eb.event_list_attendees {id: ev.eb_id}, (err, data) ->
-				async.each data.attendees, (atn, atncb) -> 
+				async.each data.attendees, (atn, atncb) ->
 					User.forge
 						email: atn.attendee.email
 					.fetch()
@@ -91,7 +91,6 @@ shell = (app) ->
 									.save()
 								atncb()
 						else
-							tk 
 							atncb()
 				, ->
 					cb()
