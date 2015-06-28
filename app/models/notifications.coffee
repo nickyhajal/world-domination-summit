@@ -19,8 +19,10 @@ Notification = Shelf.Model.extend
 		this.on 'created', this.created, this
 	created: ->
 		user_id = @get('user_id')
-		Notifications::notificationText(this, false)
-		.then (str) =>
+		Notifications::notificationText(this, false, true)
+		.then (ntrsp) =>
+			str = ntrsp[0]
+			user = ntrsp[1]
 			Devices.forge()
 			.query('where', 'user_id', user_id)
 			.query('where', 'type', 'ios')
@@ -31,10 +33,10 @@ Notification = Shelf.Model.extend
 				for device in devices
 					tokens.push device.get('token')
 				if tokens.length
-						note = new apn.Notification()
-						note.alert = str
-						note.payload = {content: @get('content'), type: @get('type'), link: @get('link')}
-						process.APN.pushNotification(note, tokens)
+					note = new apn.Notification()
+					note.alert = str
+					note.payload = {content: @get('content'), type: @get('type'), link: @get('link')}
+					process.APN.pushNotification(note, tokens)
 			Devices.forge()
 			.query('where', 'user_id', user_id)
 			.query('where', 'type', 'and')
@@ -48,20 +50,21 @@ Notification = Shelf.Model.extend
 					message = new gcm.Message
 						collapseKey: "WDS Notifications"
 						data:
-							key1: "WDS App"
-							key2: str
+							title: "WDS App"
+							message: str
+							id: @get("notification_id")
+							user_id: user.get('user_id')
 							content: @get('content')
 							type: @get('type')
 							link: @get('link')
 					tk "GCM SEND:"
-					tk message
-					tk tokens
 					process.gcmSender.send message, tokens, (err, result) ->
 						if err
 							tk "GCM ERR"
-							tk result
+							tk err
 						else
 							tk "GCM SENT"
+							tk result
 
 Notifications = Shelf.Collection.extend
 	model: Notification
@@ -115,7 +118,7 @@ Notifications = Shelf.Collection.extend
 				setTimeout ->
 					Notifications::process()
 				, 1800000
-	notificationText: (notn, html = true) ->
+	notificationText: (notn, html = true, inc_user = false) ->
 		[User, Users] = require './users'
 		dfr = Q.defer()
 		data = JSON.parse(notn.get('content'))
@@ -134,7 +137,7 @@ Notifications = Shelf.Collection.extend
 						text += '</a>'
 					else
 						text += user.get('first_name')+' '+user.get('last_name')+' liked your post!'
-					dfr.resolve(text)
+					if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
 
 			when 'feed_comment'
 				User.forge({user_id: data.commenter_id})
@@ -147,8 +150,7 @@ Notifications = Shelf.Collection.extend
 						text += '</a>'
 					else
 						text += user.get('first_name')+' '+user.get('last_name')+' commented your post!'
-					dfr.resolve(text)
-
+					if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
 			when 'connected'
 				User.forge({user_id: data.from_id})
 				.fetch()
@@ -160,7 +162,7 @@ Notifications = Shelf.Collection.extend
 						text += '</a>'
 					else
 						text += user.get('first_name')+' '+user.get('last_name')+' friended you!'
-					dfr.resolve(text)
+					if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
 
 		return dfr.promise
 
