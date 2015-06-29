@@ -13,49 +13,61 @@ async = require 'async'
 [EventRsvp, EventRsvps] = require '../models/event_rsvps'
 
 events = [
-	name: 'The Art of Simple'
-	event_id: '123'
-	eb_id: '11350996135'
+	name: 'Fuel Your Passion'
+	event_id: '272'
+	eb_id: '16185910494'
 ,
-	name: 'Finding and Refining'
-	event_id: '124'
-	eb_id: '11584159533'
+	name: 'Hack Your World with Tarot'
+	event_id: '273'
+	eb_id: '16193227379'
 ,
-	name: 'Making and Giving'
-	event_id: '125'
-	eb_id: '11351507665'
+	name: 'How to Become a Location Rebel'
+	event_id: '274'
+	eb_id: '16259605919'
 ,
-	name: 'RevolutionU'
-	event_id: '126'
-	eb_id: '11557391469'
+	name: 'Language Lab'
+	event_id: '275'
+	eb_id: '16189146172'
 ,
-	name: 'Travel Hacking'
-	event_id: '127'
-	eb_id: '11392203387'
+	name: 'The Art of Becoming Known'
+	event_id: '276'
+	eb_id: '16259627985'
 ,
-	name: 'Nerd Fitness'
-	event_id: '128'
-	eb_id: '11556996287'
+	name: 'Rejection Academy'
+	event_id: '277'
+	eb_id: '16845247589'
 ,
-	name: 'LanguageLab'
-	event_id: '129'
-	eb_id: '11583991029'
+	name: 'How To Take Action After WDS'
+	event_id: '278'
+	eb_id: '16503325892'
 ,
-	name: 'ProBlogger'
-	event_id: '130'
-	eb_id: '11339594031'
+	name: 'People Skills for Business'
+	event_id: '279'
+	eb_id: '16607078218'
 ,
-	name: 'Portland Spirit'
-	event_id: '131'
-	eb_id: '11773158835'
+	name: 'Journaling for an Enhanced Life'
+	event_id: '280'
+	eb_id: '16869900326'
 ,
-	name: 'Yoga Rocks'
-	event_id: '132'
-	eb_id: '11967895297'
+	name: 'Microhousing 101'
+	event_id: '281'
+	eb_id: '16193369805'
 ,
-	name: 'Fun Run'
-	event_id: '133'
-	eb_id: '11776849875'
+	name: 'How to Get Your Book Published'
+	event_id: '282'
+	eb_id: '16192588468'
+,
+	name: '5K Fun Run'
+	event_id: '283'
+	eb_id: '17529885359'
+,
+	name: 'River Cruise on the Portland Spirit'
+	event_id: '284'
+	eb_id: '17177630756'
+,
+	name: 'Sunset Yoga in the Square'
+	event_id: '285'
+	eb_id: '17407134207'
 ]
 
 shell = (app) ->
@@ -71,7 +83,7 @@ shell = (app) ->
 
 		tk 'Academy Check'
 
-		async.each events, (ev, cb) ->
+		async.eachSeries events, (ev, cb) ->
 			eb.event_list_attendees {id: ev.eb_id}, (err, data) ->
 				async.each data.attendees, (atn, atncb) ->
 					User.forge
@@ -91,6 +103,28 @@ shell = (app) ->
 									.save()
 								atncb()
 						else
+							User.forge
+								first_name: atn.attendee.first_name
+								last_name: atn.attendee.last_name
+								attending15: '1'
+							.fetch()
+							.then (user) ->
+								if user
+									EventRsvp.forge
+										user_id: user.get('user_id')
+										event_id: ev.event_id
+									.fetch()
+									.then (rsvp) ->
+										if not rsvp
+											tk 'CREATE RSVP'
+											EventRsvp.forge
+												user_id: user.get('user_id')
+												event_id: ev.event_id
+											.save()
+										atncb()
+								else
+									atncb()
+
 							atncb()
 				, ->
 					cb()
