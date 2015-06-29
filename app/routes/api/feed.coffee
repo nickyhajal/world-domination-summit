@@ -282,11 +282,15 @@ routes = (app) ->
 								feeds.query 'whereRaw', "(`channel_type` != 'interest' OR (`channel_type` = 'interest' AND `channel_id` IN ("+interests+")))"
 								cb()
 					if filter.name is 'meetups'
-						req.me.getRsvps()
-						.then (rsp) ->
-							meetups = rsp.get('rsvps').join(',')
-							feeds.query 'whereRaw', "(`channel_type` != 'meetup' OR (`channel_type` = 'meetup' AND `channel_id` IN ("+meetups+")))"
+						if filter.val is '2'
+							feeds.query 'where', 'channel_type', '!=', 'meetup'
 							cb()
+						else
+							req.me.getRsvps()
+							.then (rsp) ->
+								meetups = rsp.get('rsvps').join(',')
+								feeds.query 'whereRaw', "(`channel_type` != 'meetup' OR (`channel_type` = 'meetup' AND `channel_id` IN ("+meetups+")))"
+								cb()
 				else
 					cb()
 			, ->
