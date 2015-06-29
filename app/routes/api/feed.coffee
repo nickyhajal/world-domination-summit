@@ -278,8 +278,10 @@ routes = (app) ->
 						else
 							req.me.getInterests()
 							.then (rsp) ->
-								interests = rsp.get('interests').join(',')
-								feeds.query 'whereRaw', "(`channel_type` != 'interest' OR (`channel_type` = 'interest' AND `channel_id` IN ("+interests+")))"
+								interests = rsp.get('interests')
+								if interests.length
+									interests = interests.join(',')
+									feeds.query 'whereRaw', "(`channel_type` != 'interest' OR (`channel_type` = 'interest' AND `channel_id` IN ("+interests+")))"
 								cb()
 					if filter.name is 'meetups'
 						if filter.val is '2'
@@ -288,8 +290,10 @@ routes = (app) ->
 						else
 							req.me.getRsvps()
 							.then (rsp) ->
-								meetups = rsp.get('rsvps').join(',')
-								feeds.query 'whereRaw', "(`channel_type` != 'meetup' OR (`channel_type` = 'meetup' AND `channel_id` IN ("+meetups+")))"
+								rsvps = rsp.get('rsvps')
+								if rsvps.length
+									meetups = rsp.get('rsvps').join(',')
+									feeds.query 'whereRaw', "(`channel_type` != 'meetup' OR (`channel_type` = 'meetup' AND `channel_id` IN ("+meetups+")))"
 								cb()
 				else
 					cb()
