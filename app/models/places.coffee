@@ -4,7 +4,7 @@ Place = Shelf.Model.extend
   tableName: 'places'
   idAttribute: 'place_id'
   permittedAttributes: [
-    'place_id', 'place', 'lat', 'lon', 'place_type'
+    'place_id', 'place', 'lat', 'lon', 'place_type', 'pick'
   ]
 
 Places = Shelf.Collection.extend
