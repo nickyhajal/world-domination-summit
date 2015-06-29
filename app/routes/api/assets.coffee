@@ -254,7 +254,7 @@ routes = (app) ->
 											h = _.pick host.attributes, ['first_name', 'last_name', 'pic', 'user_id']
 											hosts.push h
 										ev.set('hosts', hosts)
-										evs.push ev.attributes
+										evs.push _.omit(ev.attributes, 'year', 'ignored', 'note', 'created_at', 'updated_at', 'end', 'active')
 										cb()
 							, ->
 								dfr.resolve(evs)

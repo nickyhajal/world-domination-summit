@@ -32,10 +32,13 @@ Notification = Shelf.Model.extend
 				tokens = []
 				for device in devices
 					tokens.push device.get('token')
+				tk tokens
 				if tokens.length
 					note = new apn.Notification()
 					note.alert = str
 					note.payload = {content: @get('content'), type: @get('type'), link: @get('link')}
+					tk note
+					tk tokens
 					process.APN.pushNotification(note, tokens)
 			Devices.forge()
 			.query('where', 'user_id', user_id)
@@ -57,14 +60,14 @@ Notification = Shelf.Model.extend
 							content: @get('content')
 							type: @get('type')
 							link: @get('link')
-					tk "GCM SEND:"
+					# tk "GCM SEND:"
 					process.gcmSender.send message, tokens, (err, result) ->
-						if err
-							tk "GCM ERR"
-							tk err
-						else
-							tk "GCM SENT"
-							tk result
+						# if err
+						# 	# tk "GCM ERR"
+						# 	# tk err
+						# else
+						# 	tk "GCM SENT"
+						# 	tk result
 
 Notifications = Shelf.Collection.extend
 	model: Notification

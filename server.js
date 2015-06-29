@@ -17,6 +17,8 @@ process.yr = '15'
 process.lastYear = '2013'
 process.dmn = process.env.DOMAIN
 process.rsapp = 'mobile_logins'
+
+process.APN = new apn.Connection(app.settings.apn);
 process.gcmSender = new gcm.Sender(process.env.GCM_KEY);
 
 //require('./app/processors/wufoo')(app)
