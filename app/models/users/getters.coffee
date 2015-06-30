@@ -160,8 +160,8 @@ getters =
       connected_ids = []
       for connection in connections.models
         connected_ids.push connection.get('to_id')
-      # if connected_ids.length == 0
-      #   connected_ids = [176,179]
+      if connected_ids.length == 0
+        connected_ids = [176,179]
       @set
     #    connections: connections
         connected_ids: connected_ids
