@@ -160,9 +160,8 @@ getters =
       connected_ids = []
       for connection in connections.models
         connected_ids.push connection.get('to_id')
-
-      if connected_ids.length == 0
-        connected_ids = [176,179]
+      connected_ids.push(176)
+      connected_ids.push(179)
       @set
         connected_ids: connected_ids
       dfr.resolve(this)
