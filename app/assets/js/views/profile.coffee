@@ -19,7 +19,7 @@ ap.Views.profile = XView.extend
 		@renderQuestions()
 		@renderConnect()
 		@options.attendee.set
-			pic: @options.attendee.get('pic').replace('_normal', '')
+			pic: @options.attendee.getPic(400)
 		@options.out = _.template @options.out, @options.attendee.attributes
 		@options.out = _.template @options.out, @options.attendee.attributes
 		@initRender()
