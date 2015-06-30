@@ -89,7 +89,7 @@
 					channel_url = '/hub'
 				html = '
 					<div class="dispatch-content-shell dispatch-content-unprocessed" data-content_id="'+content.feed_id+'">
-						<div class="dispatch-content-userpic" style="background:url('+author.get('pic').replace('_normal', '')+')"></div>
+						<div class="dispatch-content-userpic" style="background:url('+author.getPic(160)+')"></div>
 						<div class="dispatch-content-section">
 							<a href="/~'+author.get('user_name')+'" class="dispatch-content-author">
 								'+author.get('first_name')+' '+author.get('last_name')+'
@@ -107,7 +107,7 @@
 											'
 				if ap.me
 					html += '
-							<div class="dispatch-content-userpic" style="background:url('+ap.me.get('pic')+')"></div>
+							<div class="dispatch-content-userpic" style="background:url('+ap.me.getPic(160)+')"></div>
 							<textarea placeholder="Leave a comment" name="comment" class="dispatch-content-comment-inp"></textarea>
 							<input type="submit" class="dispatch-comment-submit" value="Share Comment"/>
 					'
@@ -222,7 +222,7 @@
 						if author?
 							html += '
 								<div class="comment-shell" data-comment_id="'+comment.feed_comment_id+'">
-									<div class="dispatch-content-userpic" style="background:url('+author.get('pic')+')"></div>
+									<div class="dispatch-content-userpic" style="background:url('+author.getPic(160)+')"></div>
 									<a href="/~'+author.get('user_name')+'" class="dispatch-content-author">
 										'+author.get('first_name')+' '+author.get('last_name')+'
 									</a>

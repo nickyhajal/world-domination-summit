@@ -8,8 +8,8 @@
 
 ###
 
-jQuery.fn.scan 
-	add: 
+jQuery.fn.scan
+	add:
 		id: 'model-me'
 		fnc: ->
 			$t = $(this)
@@ -28,6 +28,8 @@ jQuery.fn.scan
 			changeFnc = ->
 				val = $t.val()
 				ap.me.set(name, val)
+				tk name
+				ap.me.trigger('change:'+name)
 				XHook.trigger('model-me-'+name+'-changed', val)
 				if save
 					ap.me.save()

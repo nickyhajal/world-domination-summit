@@ -10,7 +10,7 @@
 
 ap.Views.settings = XView.extend
 
-	events: 
+	events:
 		'click .twitter-disconnect': 'disconnectTwitter'
 
 	initialize: ->
@@ -30,7 +30,9 @@ ap.Views.settings = XView.extend
 			@usernameChanged()
 		, 5
 
-		ap.me.on('change:user_name', @usernameChanged, @)
+		_.whenReady 'me', =>
+			ap.me.on('change:user_name', @usernameChanged)
+
 		XHook.hook('tab-before-show-settings_tabs', @saveMe)
 
 	###
@@ -61,7 +63,7 @@ ap.Views.settings = XView.extend
 		shell.empty()
 		if ap.provinces[country]?
 			provinces = ap.provinces[country]
-			map = 
+			map =
 				US: ['State', 'short', 'name']
 				GB: ['Region','region', 'region']
 				CA: ['Province','name', 'name']
@@ -132,7 +134,7 @@ ap.Views.settings = XView.extend
 		original_btn_val = btn.val()
 		btn.val('Saving...')
 		if ap.me.changedSinceSave.user_id?
-			ap.me.save ap.me.changedSinceSave, 
+			ap.me.save ap.me.changedSinceSave,
 				patch: true
 				success: ->
 					btn.val('Saved!')
@@ -155,10 +157,23 @@ ap.Views.settings = XView.extend
 	###
 		Updates the username preview as it changes
 	###
-	usernameChanged: (user_name) ->
-		if not user_name? or not user_name.length
-			user_name = 'username'
-		$('.user_name-preview').html(user_name)
+	usernameChanged: ->
+		changed = false
+		me = ap.me unless me
+		if typeof me is "string"
+			user_name = me
+		else
+			user_name = me.get('user_name')
+
+		if user_name.indexOf(' ') > -1
+			changed = true
+			user_name = user_name.replace(/\ /g, '')
+		if changed
+			$('input[name=user_name]').val(user_name)
+		else
+			if not user_name.length
+				user_name = 'username'
+			$('.user_name-preview').html(user_name)
 
 	###
 		When this view is destroyed, this will be called
