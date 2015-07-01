@@ -14,7 +14,7 @@ db = process.db = app.settings.db
 process.mail = app.settings.mail
 process.year = '2015'
 process.yr = '15'
-process.lastYear = '2013'
+process.lastYear = '2014'
 process.dmn = process.env.DOMAIN
 process.rsapp = 'mobile_logins'
 
@@ -30,6 +30,10 @@ if (process.env.NODE_ENV === 'production' && process.env.PORT == '7676') {
 	require('./app/processors/eventbrite')(app)
 	require('./app/processors/content-grabber')(app)
 	require('./app/processors/third-party-feeds')(app)
+	setTimeout(function(){
+		Notifications = require('./app/models/notifications')[1]
+		Notifications.prototype.process()
+	}, 500)
 }
 
 // Uncomment to update twitter avatars
@@ -57,7 +61,4 @@ require('./app/routes/git-hook')(app);
 app.listen(app.settings.port, function(){
   console.log("Express server listening on port %d in %s mode", app.settings.port, app.settings.env);
 });
-//setTimeout(function(){
-//	Notifications = require('./app/models/notifications')[1]
-//	Notifications.prototype.process()
-//}, 500)
+
