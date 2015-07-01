@@ -45,7 +45,7 @@ ap.Views.meetup = XView.extend
 	renderHosts: ->
 		html = ''
 		for host in @options.meetup.attributes.hosts
-			host = ap.Users.get(host)
+			host = ap.Users.get(host.user_id)
 			if host
 				html += '
 					<div class="meetup-hosted-by">Hosted by</div>
