@@ -71,7 +71,7 @@ routes = (app) ->
 				if name.indexOf('pages_') isnt 0
 					out[name] = tpl
 
-			if path.length is 40 or path is 'welcome'
+			if path.match(/[a-z0-9]{40}/).length or path is 'welcome'
 				counter = 'hide-counter'
 			countries_out = {all: []}
 			for country in countries.all
