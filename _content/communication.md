@@ -18,8 +18,3 @@ In case you missed anything...
 
 <div class="line-canvas"></div>
 
-<a name="important-forms"></a>
-
-### Important Forms
-
-<div class="line-canvas"></div>
