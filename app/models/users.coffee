@@ -292,6 +292,7 @@ User.capabilities_map =
   speakers: ["add-speaker", "speaker"]
   ambassadors: ["ambassador-review"]
   manifest: ['add-attendee', 'attendee', 'user']
+  places: ['add-place', 'place']
   schedule: ['add-event', 'event', 'meetup', 'meetups', 'meetup-review', 'event-review']
   race: ['add-racetask', 'racetask', 'racetasks', 'rate', 'race-review']
   downloads: ['admin_downloads']

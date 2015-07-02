@@ -2092,6 +2092,7 @@ table#manifests-results-shell thead th, table#manifests-results-shell tfoot th, 
     text-align:                 left;
 }
 td.search-actions .button {
+    color: #fff;
     font-size:                  12pt;
     padding:                    4px 15px;
 }
@@ -2104,7 +2105,7 @@ td.search-actions {
 #check-in-modal {
     display:                    none;
 }
-#schedule-shell td, #racetask-shell td {
+#schedule-shell td, #racetask-shell td, .search-results td {
     padding:                    10px;
     font-family:                karla;
 }

@@ -1,9 +1,9 @@
-## 
+##
  # Extended backbone view
  ##
 window.XView = Backbone.View.extend
 	out: ''
-	defaults: 
+	defaults:
 		output: false
 	initialize: (options) ->
 		view = this.options.view
@@ -133,7 +133,7 @@ window.XView = Backbone.View.extend
 		# Child over-writes
 	sidebarRendered: ->
 		# Child over-writes
-	
+
 ###
 	Extended backbone model
 ###
@@ -153,12 +153,12 @@ window.XModel = Backbone.Model.extend
 	Extended backbone collection
 ###
 window.XCollection = Backbone.Collection.extend
-	indexByCid: (cid) -> 	 
+	indexByCid: (cid) ->
 		for index, model of @models
 			if +model.cid == +cid
 				return index
 		return false
-	indexById: (id) -> 	 
+	indexById: (id) ->
 		for index, model of @models
 			if +model.id == +id
 				return index

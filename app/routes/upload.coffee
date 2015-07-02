@@ -6,6 +6,7 @@
 fs = require('fs')
 crypto = require('crypto')
 gm = require('gm')
+request = require('request')
 
 [User, Users] = require('../models/users')
 routes = (app) ->
@@ -23,10 +24,12 @@ routes = (app) ->
 				.gravity('Center')
 				.crop(400, 400, 0, 0)
 				.write newPath, (err) ->
+					url = url.split('?')
 					me.set
-						pic: url
+						pic: url[0]
 					me.save()
 					.then ->
+						request 'http://avatar.wds.fm/flush/'+me.get('user_id'), (error, response, body) ->
 						res.render "../views/upload-success"
 							layout: false
 							url: (url + '?'+crypto.createHash('md5').update((new Date().getTime())+'').digest("hex"))

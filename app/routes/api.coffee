@@ -18,6 +18,7 @@ routes = (app) ->
 	device = require('./api/device')(app)
 	user = require('./api/user')(app)
 	checkins = require('./api/checkins')(app)
+	places = require('./api/places')(app)
 
 	app.namespace '/api', (req, res, next)->
 
@@ -112,6 +113,12 @@ routes = (app) ->
 		app.get '/racetasks', racetask.search
 		app.get '/racetask/submissions', racetask.get_submissions
 		app.get '/racetask/all_submissions', racetask.get_all_submissions
+
+		# Places
+		app.post '/place', places.add
+		app.put '/place', places.upd
+		app.get '/places', places.get
+		app.get '/place_types', places.get_types
 
 		# Screens
 		app.get '/screens', screens.get

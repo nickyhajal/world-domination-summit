@@ -323,6 +323,7 @@ routes = (app) ->
 										pic: rsp.profile_image_url_https
 									req.me.save()
 									.then ->
+										request 'http://avatar.wds.fm/flush/'+me.get('user_id'), (error, response, body) ->
 										res.redirect('/welcome')
 								, (err) ->
 									console.error(err)

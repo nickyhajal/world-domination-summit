@@ -10,6 +10,9 @@ var apn = require('apn');
 var gcm = require('node-gcm');
 require('./app/config')(app, express, RedisStore);
 require('express-namespace');
+if (process.env.DIR !== undefined) {
+	process.chdir(process.env.DIR);
+}
 db = process.db = app.settings.db
 process.mail = app.settings.mail
 process.year = '2015'
