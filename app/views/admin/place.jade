@@ -1,0 +1,26 @@
+div(id="admin-add-place-shell")
+	h1 {{ name }}
+		a(href="/admin/places", class="button") Back to Race Tasks
+	form(id="admin-place-update", method="post", action="#")
+		div(class="form-section")
+			div(class="form-box")
+				label Place Name
+				input(name="name", type="text", value="{{ name }}")
+		div(class="form-section")
+			div(class="form-box")
+				label Address
+				input(name="address", type="text", value="{{ address }}")
+		div(class="form-section")
+			div(class="form-box")
+				label Picked By (Name, Role)
+				input(name="pick", type="text", value="{{ pick }}")
+		div(class="form-section")
+				div(class="form-box")
+					label Description
+					textarea(name="descr", id="place-descr-textarea") {{ descr }}
+		div(class="form-section")
+			label Place Type
+			input(name="type", style="width:240px", id="place-type-select")
+		div(class="clear")
+		div(class="form-section")
+			input(type="submit", value="Save Place", class="button")
