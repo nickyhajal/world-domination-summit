@@ -3,7 +3,7 @@ photo_head: https://farm3.staticflickr.com/2031/5800591550_94fa52c7b4_b.jpg,
 
 ## We’re starting Community Groups all over the world!
 <p>
-	As part of the next iteration of WDS, we'll be forming monthly community groups throughout North America, Europe, Australia & New Zealand, and even Japan. Want to help? That’s great—we need hosts, venues, and logistical support.
+As part of the next iteration of WDS, we'll be forming monthly community groups throughout North America, Europe, Australia & New Zealand, and even Japan. Want to help? That’s great—we need hosts, venues, and logistical support.
 <p>
 Groups will begin meeting in Fall 2015. Using the form below, let us know where you live and what you’d like to do!
 <p>
