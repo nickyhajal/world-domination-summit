@@ -1,3 +1,7 @@
 ap.Routes.community = (community) ->
-	ap.goTo('community', {interest: community})
+  if community == 'community'
+    ap.Routes.defaultRoute('community')
+  else
+    ap.goTo('community', {interest: community})
+
 

@@ -1,6 +1,6 @@
 div(id="admin-add-place-shell")
 	h1 {{ name }}
-		a(href="/admin/places", class="button") Back to Race Tasks
+		a(href="/admin/places", class="button") Back to Places
 	form(id="admin-place-update", method="post", action="#")
 		div(class="form-section")
 			div(class="form-box")
@@ -20,7 +20,8 @@ div(id="admin-add-place-shell")
 					textarea(name="descr", id="place-descr-textarea") {{ descr }}
 		div(class="form-section")
 			label Place Type
-			input(name="type", style="width:240px", id="place-type-select")
+			input(name="place_type", style="width:240px", id="place-type-select")
 		div(class="clear")
 		div(class="form-section")
+			input(type="hidden", value="{{ place_id }}", name="place_id")
 			input(type="submit", value="Save Place", class="button")

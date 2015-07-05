@@ -1,6 +1,7 @@
 ap.Routes.defaultRoute = (actions) ->
 
 	# If no action, figure it out
+	tk actions
 	unless actions
 		actions = 'home'
 	if actions is 'meetup'

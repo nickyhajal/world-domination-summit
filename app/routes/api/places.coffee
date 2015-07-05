@@ -17,12 +17,14 @@ routes = (app) ->
 			req.me.getCapabilities()
 			.then ->
 				if req.me.hasCapability('places') || 1
-					post = _.pick req.query, Places::permittedAttributes
-					post.slug = _s.slugify(post.place)
-					post.year = process.yr
+					tk '>>>> ADD'
+					tk req.query
+					post = _.pick req.query, Place::permittedAttributes
+					tk post
 					Place.forge(post)
 					.save()
-					.then (task) ->
+					.then (place) ->
+						tk place
 						next()
 					, (err) ->
 						console.error(err)
@@ -44,6 +46,17 @@ routes = (app) ->
 					res.r.msg = 'You don\'t have permission to do that!'
 					res.status(403)
 					next()
+
+		del: (req, res, next) ->
+			req.me.getCapabilities()
+			.then ->
+				if req.me.hasCapability('places') || 1
+					Place.forge({place_id: req.query.place_id})
+					.fetch()
+					.then (place) ->
+						place.destroy()
+						next()
+
 
 		get: (req, res, next) ->
 			cols = {columns: ['place_types.*', 'places.*']}

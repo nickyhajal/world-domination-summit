@@ -12,22 +12,20 @@ ap.Views.admin_place = XView.extend
 			@initRender()
 
 	rendered: ->
-		tk 'RENDERED'
 		ap.api 'get place_types', {}, (rsp) =>
 			data = []
 			select = $('#place-type-select')
 			for type in rsp.place_types
 				data.push ({id: type.placetypeid, text: type.type_name})
-			tk data
 			select.select2
 				data: data
-			$('select[name="place_type"]').select2('val', @place.place_type)
+			select.select2('val', @place.place_type)
 
 	update: (e) ->
 		e.preventDefault()
 		el = $(e.currentTarget)
 		btn = _.btn($('.button', el), 'Saving...', 'Saved!')
 		form = el.formToJson()
-		ap.api 'put racetask', form, (rsp) ->
+		ap.api 'put place', form, (rsp) ->
 			btn.finish()
-			ap.navigate('admin/racetasks')
+			ap.navigate('admin/places')

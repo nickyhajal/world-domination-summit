@@ -116,6 +116,7 @@ routes = (app) ->
 
 		# Places
 		app.post '/place', places.add
+		app.delete '/place', places.del
 		app.put '/place', places.upd
 		app.get '/places', places.get
 		app.get '/place_types', places.get_types

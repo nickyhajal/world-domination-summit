@@ -17,8 +17,8 @@ ap.Views.admin_add_place = XView.extend
 		el = $(e.currentTarget)
 		post = el.formToJson()
 		btn = _.btn($('.button', el), 'Adding...', 'Added!')
-		ap.api 'post racetask', post, (rsp) ->
+		ap.api 'post place', post, (rsp) ->
 			btn.finish()
 			setTimeout ->
-				ap.navigate('admin/racetasks')
+				ap.navigate('admin/places')
 			, 200
