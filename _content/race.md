@@ -19,12 +19,12 @@ Our first race is a scavenger hunt for a prized piece of the globe. Follow the f
 
 Our second race is our own version of "Bigger & Better." Your challenge is to start with a piece of the globe and trade up for something bigger, better(or both). You can trade with fellow WDS attendees, or even strangers - just be sure to take pictures of your trades along the way. Wheover hasthe most epic item at the end also wins a free ticket to WDS 2016!
 
-<b>RACE OBJECTIVE:<b/>
+<b>RACE OBJECTIVE:</b>
 Make a series of trades that are bigger or better (or both) than the original globe piece you start with. The person with the best result wins.
 
 Two finalists will be chosen at 1pm Sunday, July 12th when the event ends. The WDS community will then vote on which participant they feel got the biggest and best final item from their trades. <b>The winner will receive a ticket to WDS 2016!<b/> Other successful participants may also be eligible for prizes.
 
-<b>HOW TO PLAY:<b/>
+<b>HOW TO PLAY:</b>
 1. The event officially starts on Friday night at the opening party kickoff and ends, Sunday 1pm (all submissions must be in by then). 
 2. Get your initial globe piece at the opening party Friday night or in the Hatfield Lobby area (where the bookstore is located) on Saturday.
 3. Convince someone to take a piece of the globe from you in exchange for something you mutually agree is either bigger or better (or both). 
@@ -32,7 +32,7 @@ Two finalists will be chosen at 1pm Sunday, July 12th when the event ends. The W
 5. When the event ends, a selection committee will select 2 finalists whose trade stories and final items will be shown on the WDS Main stage.
 6. The audience will then select the winner they feel got the bigger/better final item.
 
-<b>TRADING TERMS<b/>
+<b>TRADING TERMS</b>
 The following rules are not intended to be all inclusive but rather general guidelines when determining if an item qualifies for a trade:
 
 A traded item MUST be:
@@ -58,7 +58,7 @@ A traded item CANNOT be:
 • Stolen property, “pirated” or “boot legged.”
 • Illegal, prescription drugs, or anything “explicit” in nature. Ask yourself, “Would this embarrass Grandma?”
 
-<b>THE NOT SO FINE PRINT<b/>
+<b>THE NOT SO FINE PRINT</b>
 By participating in this activity you are agreeing that:
 - WDS is not responsible or liable for any of the items you trade or receive*.
 - WDS is not responsible for any injury or accident that can occur during this activity. 
