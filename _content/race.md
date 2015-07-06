@@ -1,5 +1,5 @@
 icon: globe
-photo_head: https://farm8.staticflickr.com/7269/7523481112_71e65566eb_b_d.jpg,https://farm6.staticflickr.com/5502/9229137776_a60b9e7d2f_b_d.jpg,https://farm3.staticflickr.com/2869/9226356683_97fa31b6a8_b_d.jpg
+photo_head: https://farm8.staticflickr.com/7269/7523481112_71e65566eb_b_d.jpg,https://farm6.staticflickr.com/5502/9229137776_a60b9e7d2f_b_d.jpg,https://farm3.staticflickr.com/2869/9226356683_97fa31b6a8_z_d.jpg
 
 ## Unconventional Race 2015
 
@@ -25,12 +25,18 @@ Make a series of trades that are bigger or better (or both) than the original gl
 Two finalists will be chosen at 1pm Sunday, July 12th when the event ends. The WDS community will then vote on which participant they feel got the biggest and best final item from their trades. <b>The winner will receive a ticket to WDS 2016!<b/> Other successful participants may also be eligible for prizes.
 
 <b>HOW TO PLAY:</b>
+&nbsp;
 1. The event officially starts on Friday night at the opening party kickoff and ends, Sunday 1pm (all submissions must be in by then). 
+&nbsp;
 2. Get your initial globe piece at the opening party Friday night or in the Hatfield Lobby area (where the bookstore is located) on Saturday.
+&nbsp;
 3. Convince someone to take a piece of the globe from you in exchange for something you mutually agree is either bigger or better (or both). 
+&nbsp;
 4. Make at least 3 trades and document each one using a digital camera or smartphone. All pictures must be either emailed to (This Address) OR uploaded to Twitter or Instagram tagged with the hashtags: #WDS2015 #WDSBiggerBetter by Sunday at 1pm.
-5. When the event ends, a selection committee will select 2 finalists whose trade stories and final items will be shown on the WDS Main stage.
-6. The audience will then select the winner they feel got the bigger/better final item.
+&nbsp;
+5. When the event ends, a selection committee will select finalists whose trade stories and final items will be shown on the WDS Main stage.
+&nbsp;
+6. The audience will then select the winner they feel got the bigger & better final item.
 
 <b>TRADING TERMS</b>
 The following rules are not intended to be all inclusive but rather general guidelines when determining if an item qualifies for a trade:
