@@ -330,14 +330,14 @@ routes = (app) ->
 			.fetch()
 			.then (events) ->
 				html = '<style type="text/css">
-				@font-face {font-family: "Vitesse"; src: url("http://worlddominationsummit.com/fonts/Vitesse-Medium.otf") format("opentype");}
-				@font-face {font-family: "VitesseLight"; src: url("http://worlddominationsummit.com/fonts/Vitesse-Light.otf") format("opentype");}
-				@font-face {font-family: "VitesseBold"; src: url("http://worlddominationsummit.com/fonts/Vitesse-Bold.otf") format("opentype");}
-				@font-face {font-family: "VitesseBook"; src: url("http://worlddominationsummit.com/fonts/Vitesse-Book.otf") format("opentype");}
-				@font-face {font-family: "Populaire"; src: url("http://worlddominationsummit.com/fonts/Populaire.otf") format("opentype");}
-				@font-face {font-family: "Karla"; src: url("http://worlddominationsummit.com/fonts/Karla-Regular.ttf") format("truetype");}
-				@font-face {font-family: "KarlaBold"; src: url("http://worlddominationsummit.com/fonts/Karla-Bold.ttf") format("truetype");}
-				@font-face {font-family: "KarlaItalic"; src: url("http://worlddominationsummit.com/fonts/Karla-Italic.ttf") format("truetype");}
+				@font-face {font-family: "Vitesse"; src: url("file:///var/www/world-domination-summit/fonts/Vitesse-Medium.otf") format("opentype");}
+				@font-face {font-family: "VitesseLight"; src: url("file:///var/www/world-domination-summit/fonts/Vitesse-Light.otf") format("opentype");}
+				@font-face {font-family: "VitesseBold"; src: url("file:///var/www/world-domination-summit/fonts/Vitesse-Bold.otf") format("opentype");}
+				@font-face {font-family: "VitesseBook"; src: url("file:///var/www/world-domination-summit/fonts/Vitesse-Book.otf") format("opentype");}
+				@font-face {font-family: "Populaire"; src: url("file:///var/www/world-domination-summit/fonts/Populaire.otf") format("opentype");}
+				@font-face {font-family: "Karla"; src: url("file:///var/www/world-domination-summit/fonts/Karla-Regular.ttf") format("truetype");}
+				@font-face {font-family: "KarlaBold"; src: url("file:///var/www/world-domination-summit/fonts/Karla-Bold.ttf") format("truetype");}
+				@font-face {font-family: "KarlaItalic"; src: url("file:///var/www/world-domination-summit/fonts/Karla-Italic.ttf") format("truetype");}
 					.meetup {
 						background: #FCFCFA;
 						padding: 20px;
