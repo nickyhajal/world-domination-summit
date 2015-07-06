@@ -1,5 +1,5 @@
 icon: globe
-photo_head: https://farm8.staticflickr.com/7269/7523481112_71e65566eb_b_d.jpg, https://farm6.staticflickr.com/5502/9229137776_a60b9e7d2f_b_d.jpg, https://farm3.staticflickr.com/2869/9226356683_97fa31b6a8_b_d.jpg
+photo_head: https://farm8.staticflickr.com/7269/7523481112_71e65566eb_b_d.jpg,https://farm6.staticflickr.com/5502/9229137776_a60b9e7d2f_b_d.jpg,https://farm3.staticflickr.com/2869/9226356683_97fa31b6a8_b_d.jpg
 
 ## Unconventional Race 2015
 
@@ -9,13 +9,13 @@ This year, we've incorporated our historic WDS globe in the Unconventional Race 
 
 <div class="zig-zags_blue"></div>
 
-##Scavenger Hunt
+#Scavenger Hunt
 
 Our first race is a scavenger hunt for a prized piece of the globe. Follow the first clue posted in Hatfield Hall, then keep following the clues at each of seven strategic and symbolic locations in downtown, Portland. Participants in the savenger hunt will have a shot at several prizes along the way, and the first to finish wins a free ticket to WDS 2016!
 
 <div class="zig-zags_blue"></div>
 
-##Bigger & Better
+#Bigger & Better
 
 Our second race is our own version of "Bigger & Better." Your challenge is to start with a piece of the globe and trade up for something bigger, better(or both). You can trade with fellow WDS attendees, or even strangers - just be sure to take pictures of your trades along the way. Wheover hasthe most epic item at the end also wins a free ticket to WDS 2016!
 
