@@ -80,18 +80,21 @@
 				like = @likeStr(content.feed_id, +content.num_likes)
 				channel_name = content.channel_type
 				channel_url = '#'
+				meta = _.nicetime(moment.utc(content.created_at))
 				if channel_name is 'interest'
 					channel_name = ap.Interests.get(content.channel_id).get('interest').toLowerCase()
 					channel_url = '/community/'+_.slugify(channel_name)
 				else if channel_name is 'meetup'
 					event = ap.Events.get(content.channel_id)
 					if event.get('what')?
-						event.get('what').toLowerCase()
 						channel_url = '/meetup/'+_.slugify(ap.Events.get(content.channel_id).get('what').toLowerCase())
+						meta += ' - Meetup: <a href="'+channel_url+'" class="dispatch-meta-link">'+event.get('what')+'</a>'
 					else
 						channel_url = '/hub'
 				else if channel_name is 'global'
 					channel_url = '/hub'
+
+				tk meta
 				html = '
 					<div class="dispatch-content-shell dispatch-content-unprocessed" data-content_id="'+content.feed_id+'">
 						<div class="dispatch-content-userpic" style="background:url('+author.getPic(160)+')"></div>
@@ -99,6 +102,7 @@
 							<a href="/~'+author.get('user_name')+'" class="dispatch-content-author">
 								'+author.get('first_name')+' '+author.get('last_name')+'
 							</a>
+							<div class="dispatch-content-meta">'+meta+'</div>
 							<div class="dispatch-content-message">'+Autolinker.link(_.autop(content.content))+'</div>
 							<div class="dispatch-content-channel-shell">
 								<a href="'+channel_url+'" class="dispatch-content-channel">/'+channel_name+'</a>

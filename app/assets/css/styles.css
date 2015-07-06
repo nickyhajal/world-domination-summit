@@ -542,6 +542,16 @@ a.dispatch-content-author {
     text-decoration:            none;
     font-family:                vitesse;
 }
+.dispatch-content-meta {
+    font-family: karlaitalic;
+    color: rgb(171, 171, 157);
+    font-size:14px;
+}
+.dispatch-meta-link {
+    font-family: karlaitalic;
+    color: rgb(171, 171, 157);
+    font-size:14px;
+}
 .dispatch-content-like, .dispatch-content-liked {
     margin-right:               8px;
 }
