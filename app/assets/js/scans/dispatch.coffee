@@ -1,5 +1,5 @@
-jQuery.fn.scan 
-	add: 
+jQuery.fn.scan
+	add:
 		id: 'dispatch'
 		fnc: ->
 			$el = $(this)
