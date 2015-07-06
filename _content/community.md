@@ -1,5 +1,5 @@
 icon: globe
-photo_head: https://farm3.staticflickr.com/2031/5800591550_94fa52c7b4_b.jpg,
+photo_head: https://farm3.staticflickr.com/2935/14470993957_252c11d237_z_d.jpg
 
 ## We’re starting Community Groups all over the world!
 <p>
