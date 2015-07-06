@@ -17,14 +17,10 @@ routes = (app) ->
 			req.me.getCapabilities()
 			.then ->
 				if req.me.hasCapability('places') || 1
-					tk '>>>> ADD'
-					tk req.query
 					post = _.pick req.query, Place::permittedAttributes
-					tk post
 					Place.forge(post)
 					.save()
 					.then (place) ->
-						tk place
 						next()
 					, (err) ->
 						console.error(err)

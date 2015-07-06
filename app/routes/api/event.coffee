@@ -5,6 +5,9 @@ twitterAPI = require('node-twitter-api')
 moment = require('moment')
 crypto = require('crypto')
 async = require('async')
+pdf = require('html-pdf');
+_s = require('underscore.string')
+fs = require 'fs'
 routes = (app) ->
 
 	[Event, Events] = require('../../models/events')
@@ -291,5 +294,103 @@ routes = (app) ->
 								num_rsvps: rsp.models.length
 							.save()
 						next()
+
+		get_pdf: (req, res, next) ->
+			from = process.year+"-07-"+req.query.from_date+" "
+			from_hour = req.query.from_hour
+			if req.query.from_pm == '12'
+				if req.query.from_hour != '12'
+					from_hour = parseInt(from_hour) + 12
+			else if req.query.from_hour == '12'
+				from_hour = '0'
+			if (''+from_hour).length == 1
+				from_hour = '0'+from_hour
+			from += from_hour+":"+req.query.from_minute+":00"
+			to = process.year+"-07-"+req.query.to_date+" "
+			to_hour = req.query.to_hour
+			if req.query.to_pm == '12'
+				if req.query.to_hour != '12'
+					+to_hour += 12
+			else if req.query.to_hour == '12'
+				to_hour = '0'
+			if (''+to_hour).length == 1
+				to_hour = '0'+to_hour
+			to += to_hour+":"+req.query.to_minute+":00"
+			_e = Events.forge()
+			events = Events.forge()
+			events.query('where', 'year', process.yr)
+			if req.query.include_full? && req.query.include_full == '0'
+				events.query('whereRaw', 'events.num_rsvps < events.max')
+			events.query('where', 'active', '1')
+			events.query('where', 'type', 'meetup')
+			events.query('where', 'start', '>=', from)
+			events.query('where', 'start', '<=', to)
+			events.query('orderBy', 'start')
+			events
+			.fetch()
+			.then (events) ->
+				html = '<style type="text/css">
+				@font-face {font-family: "Vitesse"; src: url("http://worlddominationsummit.com/fonts/Vitesse-Medium.otf") format("opentype");}
+				@font-face {font-family: "VitesseLight"; src: url("http://worlddominationsummit.com/fonts/Vitesse-Light.otf") format("opentype");}
+				@font-face {font-family: "VitesseBold"; src: url("http://worlddominationsummit.com/fonts/Vitesse-Bold.otf") format("opentype");}
+				@font-face {font-family: "VitesseBook"; src: url("http://worlddominationsummit.com/fonts/Vitesse-Book.otf") format("opentype");}
+				@font-face {font-family: "Populaire"; src: url("http://worlddominationsummit.com/fonts/Populaire.otf") format("opentype");}
+				@font-face {font-family: "Karla"; src: url("http://worlddominationsummit.com/fonts/Karla-Regular.ttf") format("truetype");}
+				@font-face {font-family: "KarlaBold"; src: url("http://worlddominationsummit.com/fonts/Karla-Bold.ttf") format("truetype");}
+				@font-face {font-family: "KarlaItalic"; src: url("http://worlddominationsummit.com/fonts/Karla-Italic.ttf") format("truetype");}
+					.meetup {
+						background: #FCFCFA;
+						padding: 20px;
+						font-family:"Karla";
+						margin-bottom:10px;
+						color: #21170A;
+					}
+					h1 {
+						color: #0A72B0;
+						font-family: "Vitesse";
+					}
+					h5 {
+						color: #0A72B0;
+						font-family: "Karla";
+						font-size:18pt;
+						margin:10px 0 4px;
+					}
+					h4 {
+						margin: 3px 0 6px;
+						font-weight: bold;
+						font-size:14pt;
+						color: #848477;
+					}
+					h3, .descr {
+						font-family:"Karla";
+					}
+					h2 {
+						margin: 0;
+					}
+				</style>'
+				lastDay = ''
+				lastStart = ''
+				for ev in events.models
+					startStr = moment(ev.get('start')).format('h:mm a')
+					dayStr = moment(ev.get('start')).format('dddd[,] MMMM Do')
+					if dayStr != lastDay
+						lastDay = dayStr
+						html += '<h1>'+dayStr+'</h1>'
+					if lastStart != startStr
+						lastStart = startStr
+						html += '<h5>'+startStr+'</h5>'
+					html += '<div class="meetup"><h2 style="font-family:Vitesse">'+ev.get('what')+'</h2>'
+					html += '<h4>'+ev.get('place')+' - '+ev.get('address')+'</h4>'
+					html += '<h3>A meetup for '+_s.decapitalize(ev.get('who'))+'</h3>'
+					html += '<div class="descr">'+ev.get('descr').replace(RegExp("\n","g"), "<br>")+'</div></div>'
+				options =
+					format: 'Letter'
+					border: '.4in'
+				pdf.create(html, options).toFile './meetups-printable.pdf', (err, rsp) ->
+					if err
+						tk err
+					else
+						next()
+
 
 module.exports = routes

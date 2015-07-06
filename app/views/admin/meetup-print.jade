@@ -1,0 +1,79 @@
+div(id="events-shell")
+  h2 Print WDS Meetups
+  p
+    | Need a hard-copy of current meetups? Select the appropriate options below to get a printable PDF.
+  form(id="admin-get-pdf", method="post", action="#")
+    div(class="form-section")
+      label Include Events From
+      div(class="form-box")
+        select(name="from_date", class="select2", style="width:120px")
+          option(value="09") July 9th
+          option(value="10") July 10th
+          option(value="11") July 11th
+          option(value="12") July 12th
+          option(value="13") July 13th
+          option(value="14") July 14th
+      div(class="form-box")
+        select(name="from_hour", class="select2", style="width:120px")
+          option(value="01") 01
+          option(value="02") 02
+          option(value="03") 03
+          option(value="04") 04
+          option(value="05") 05
+          option(value="06") 06
+          option(value="07") 07
+          option(value="08") 08
+          option(value="09") 09
+          option(value="10") 10
+          option(value="11") 11
+          option(value="12", selected="selected") 12
+        select(name="from_minute", class="select2", style="width:65px")
+          option(value="00") 00
+          option(value="15") 15
+          option(value="30") 30
+          option(value="45") 45
+        select(name="from_pm", class="select2", style="width:65px")
+          option(value="0") am
+          option(value="12", selected="selected") pm
+    div(class="form-section")
+      label Until
+      div(class="form-box")
+        select(name="to_date", class="select2", style="width:120px")
+          option(value="09") July 9th
+          option(value="10") July 10th
+          option(value="11") July 11th
+          option(value="12") July 12th
+          option(value="13") July 13th
+          option(value="14") July 14th
+      div(class="form-box")
+        select(name="to_hour", class="select2", style="width:120px")
+          option(value="01") 01
+          option(value="02") 02
+          option(value="03") 03
+          option(value="04") 04
+          option(value="05") 05
+          option(value="06") 06
+          option(value="07") 07
+          option(value="08") 08
+          option(value="09") 09
+          option(value="10") 10
+          option(value="11") 11
+          option(value="12", selected="selected") 12
+        select(name="to_minute", class="select2", style="width:65px")
+          option(value="00") 00
+          option(value="15") 15
+          option(value="30") 30
+          option(value="45") 45
+        select(name="to_pm", class="select2", style="width:65px")
+          option(value="0") am
+          option(value="12", selected="selected") pm
+    div(class="form-section")
+      label Include Full Meetups
+      div(class="form-box")
+        select(name="active", class="select2", style="width:120px")
+          option(value="1") Yes
+          option(value="0") No
+    div(class="clear")
+    a(href="/meetups-printable.pdf", target="_blank", id="pdf-link")
+    div(class="form-section")
+      input(type="submit", value="Get PDF", class="button")
