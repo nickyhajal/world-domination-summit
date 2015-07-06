@@ -1,7 +1,11 @@
 icon: theater
 photo_head: https://farm3.staticflickr.com/2935/14470993957_252c11d237_z_d.jpg,https://farm4.staticflickr.com/3912/14677292633_61f9bc48d7_z_d.jpg,https://farm3.staticflickr.com/2928/14660844313_286048b021_z_d.jpg,https://farm4.staticflickr.com/3864/14662534792_932bbd74da_z_d.jpg
 
-## World Domination College Fund: Application
+# The 2015 World Domination College Fund Application is Closed
+
+Thanks for your interest and see you at WDS 2016!
+
+<!-- ## World Domination College Fund: Application
 
 # What is WDS?
 
@@ -63,3 +67,5 @@ var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') retu
 try { zf7b2mc1wlbcn7 = new WufooForm();zf7b2mc1wlbcn7.initialize(options);zf7b2mc1wlbcn7.display(); } catch (e) {}};
 var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, 'script');</script>
+
+-->
