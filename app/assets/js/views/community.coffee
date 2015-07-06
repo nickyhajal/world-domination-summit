@@ -1,4 +1,4 @@
-ap.Views.community = XView.extend
+ap.Views.community_hub = XView.extend
 	initialize: ->
 		_.whenReady 'assets', =>
 			interest = ap.Interests.getBySlug(@options.interest)
