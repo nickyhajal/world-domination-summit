@@ -1,5 +1,5 @@
 icon: globe
-photo_head: https://farm8.staticflickr.com/7269/7523481112_71e65566eb_b_d.jpg,https://farm6.staticflickr.com/5502/9229137776_a60b9e7d2f_b_d.jpg,https://farm3.staticflickr.com/2869/9226356683_97fa31b6a8_z_d.jpg
+photo_head: https://farm3.staticflickr.com/2031/5800591550_94fa52c7b4_b.jpg,
 
 ## Unconventional Race 2015
 
