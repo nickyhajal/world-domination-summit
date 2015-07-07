@@ -36,6 +36,7 @@ Notification = Shelf.Model.extend
 				if tokens.length
 					note = new apn.Notification()
 					note.alert = str
+					note.contentAvailable = 1
 					note.payload = {content: @get('content'), type: @get('type'), link: @get('link')}
 					tk note
 					tk tokens
