@@ -1,0 +1,30 @@
+div(id="events-shell")
+  h2 Send a Push Notification
+  p
+    | Send a Push Notification below. Please be careful. :)
+  form(id="admin-confirm-notification", method="post", action="#")
+    div(class="form-section")
+      label Device Type
+      div(class="form-box")
+        select(name="device", class="select2", style="width:120px")
+          option(value="all") All
+          option(value="ios") iOS
+          option(value="and") Android
+    div(class="form-section")
+      label Is Registered?
+      div(class="form-box")
+        select(name="registered", class="select2", style="width:120px")
+          option(value="all") All
+          option(value="yes") Yes
+          option(value="no") No
+    div(class="form-section")
+      label Notification (Keep it short!)
+      div(class="form-box")
+        input(type="text", name="notification_text")
+    div(class="form-section")
+      label Linked Dispatch Post
+      div(class="form-box")
+        textarea(type="text", name="dispatch_text")
+    div(class="clear")
+    div(class="form-section")
+      input(type="submit", value="Continue", class="button")
