@@ -297,6 +297,7 @@ User.capabilities_map =
   race: ['add-racetask', 'racetask', 'racetasks', 'rate', 'race-review']
   downloads: ['admin_downloads']
   screens: ['screens']
+  notification: ['notification']
 
 Users = Shelf.Collection.extend
   model: User

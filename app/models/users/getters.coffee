@@ -160,7 +160,7 @@ getters =
       connected_ids = []
       for connection in connections.models
         connected_ids.push connection.get('to_id')
-      connected_ids.push(176)
+  #    connected_ids.push(176)
       connected_ids.push(179)
       @set
         connected_ids: connected_ids

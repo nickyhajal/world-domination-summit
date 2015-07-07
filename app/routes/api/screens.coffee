@@ -20,12 +20,12 @@ fetch_message = ->
 		catch e
 			console.log "Exception on retrieving screen message from redis: " + JSON.stringify(e)
 			dfr.resolve({title: "", message: "", activated: "no"})
-		
+
 	return dfr.promise
 
 routes = (app) ->
 	screens =
-	
+
 		get: (req, res, next) ->
 			fetch_message().then (message) ->
 				res.r.message = message
@@ -44,7 +44,7 @@ routes = (app) ->
 							message.activated = "no"
 							if (req.query.activated == "yes")
 								message.activated = "yes"
-						
+
 						rds.set 'screen_message', JSON.stringify(message), (err, rsp) ->
 							if err?
 								res.status(500)

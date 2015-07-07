@@ -18,6 +18,7 @@ routes = (app) ->
 	device = require('./api/device')(app)
 	user = require('./api/user')(app)
 	checkins = require('./api/checkins')(app)
+	notifications = require('./api/notifications')(app)
 	places = require('./api/places')(app)
 
 	app.namespace '/api', (req, res, next)->
@@ -132,6 +133,7 @@ routes = (app) ->
 		app.get '/checkins', checkins.get
 		app.get '/checkins/recent', checkins.get_recent
 
+
 		# Admin
 		# Anything in the /admin path will pull the users capabilities
 		# other paths require req.query.admin to be passed as true for
@@ -148,6 +150,8 @@ routes = (app) ->
 		app.get '/admin/events', event.get_admin
 		app.get '/admin/event_accept', event.accept
 		app.get '/admin/event_reject', event.reject
+		app.post '/admin/notification', notifications.send
+		app.get '/admin/notification', notifications.get_count
 		app.post '/admin/rate', admin.rate
 
 		app.get 'tpl', (req, res, next) ->

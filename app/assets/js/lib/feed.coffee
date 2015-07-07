@@ -86,7 +86,7 @@
 					channel_url = '/community/'+_.slugify(channel_name)
 				else if channel_name is 'meetup'
 					event = ap.Events.get(content.channel_id)
-					if event.get('what')?
+					if event?.get('what')?
 						channel_url = '/meetup/'+_.slugify(ap.Events.get(content.channel_id).get('what').toLowerCase())
 						meta += ' - Meetup: <a href="'+channel_url+'" class="dispatch-meta-link">'+event.get('what')+'</a>'
 					else
