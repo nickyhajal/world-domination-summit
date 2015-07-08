@@ -6,10 +6,10 @@ photo_head: https://farm3.staticflickr.com/2031/5800591550_94fa52c7b4_b.jpg
 
 #In 2012, we debuted an 8-foot diameter wooden globe on the WDS stage made by a local sculptor and fabricator. This WDS icon was retired last year when a new globe arrived in the Hatfild Hall lobby, but we couldn't just get rid of it. 
 
+This year, we've incorporated our historic WDS globe in the Unconventional Race and doubled the fun. We've divded the globe into 140 peices and created two amazing races for this year's competition: a scavenger hunt and "bigger & better". 
+
 <img src="http://gdurl.com/BluA" width="600" />
 *The historic, retired, WDS Globe.*
-
-This year, we've incorporated our historic WDS globe in the Unconventional Race and doubled the fun. We've divded the globe into 140 peices and created two amazing races for this year's competition: a scavenger hunt and "bigger & better". 
 
 <div class="zig-zags_blue"></div>
 
