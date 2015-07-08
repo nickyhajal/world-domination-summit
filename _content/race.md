@@ -42,7 +42,7 @@ Two finalists will be chosen at 1pm Sunday, July 12th when the event ends. The W
 &nbsp;
 3. Convince someone to trade you something that you believe is either bigger or better (or both) for your globe piece. 
 &nbsp;
-4. Make at least 3 trades and document each one using a digital camera or smartphone. <b>All pictures must be either emailed to (This Address) OR uploaded to Twitter or Instagram tagged with the hashtags: #WDS2015 #WDSBiggerBetter by Sunday at 1pm.</b>
+4. Make at least 3 trades and document each one using a digital camera or smartphone. <b>All pictures must be either emailed to (This Address) OR uploaded to Twitter or Instagram tagged with the hashtags: #WDS2015 #WDSrace by Sunday at 1pm.</b>
 &nbsp;
 5. When the event ends, a selection committee will determine finalists whose trade stories and final items will be shown on the WDS Main stage.
 &nbsp;
