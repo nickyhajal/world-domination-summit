@@ -56,7 +56,7 @@ A traded item MUST be:
 - Safe. Your item should not put yourself or others at risk. 
 - Documented by photo. You should have at least three photos showing the progression of your trades in order to be considered a finalist. Each photo must depict the item you are giving away and the item you are receiving in exchange. 
 
-What does ‘better’ mean? That’s up to you to decide!*
+*What does <i>‘better’</i> mean? That’s up to you to decide!
 
 A traded item <b>CAN</b> be: 
 - Bigger AND better at the same time.
