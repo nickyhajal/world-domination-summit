@@ -1,6 +1,9 @@
 
 icon: globe
-photo_head: https://farm3.staticflickr.com/2031/5800591550_94fa52c7b4_b.jpg,
+photo_head: https://farm3.staticflickr.com/2031/5800591550_94fa52c7b4_b.jpg
+
+<img src="https://cdn.evbuc.com/eventlogos/65656417/14454309490fd3e5e094fk.jpg" width="600" />
+*800+ fun people breaking a record with us in Pioneer Courthouse Square last year.*
 
 ## Unconventional Race 2015
 
