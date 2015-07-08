@@ -47,16 +47,17 @@ A traded item MUST be:
 - Safe. Your item should not put yourself or others at risk. 
 - Documented by photo. You should have at least three photos showing the progression of your trades in order to be considered a finalist. Each photo must depict the item you are giving away and the item you are receiving in exchange. 
 
-*What does ‘better’ mean? That’s up to you to decide!
+What does ‘better’ mean? That’s up to you to decide!*
 
-A traded item CAN be: 
+A traded item <b>CAN</b> be: 
 - Bigger AND better at the same time.
+- Awesome!
 - Traded for more than one item (i.e. a collection or a set).
 - “Home-made” or store bought.
 - An event represented with a tangible item (i.e.. movie or concert ticket).
 - The item CAN be traded for a service represented by a tangible item as long as that service is legally redeemable (i.e. a gift card from a major restaurant chain)
 
-A traded item CANNOT be:
+A traded item <b>CANNOT</b> be:
 - Cash, check or bitcoin.
 - Belong to someone else or have any liens by other parties who could make claim to the item after the trade, (i.e. no loans or leases regarding the item).
 - Permanently attached to any other property not offered as part of the exchange (i.e. a garage door still attached to the garage).
@@ -64,8 +65,7 @@ A traded item CANNOT be:
 - Stolen property, “pirated” or “boot legged.”
 - Illegal, prescription drugs, or anything “explicit” in nature. Ask yourself, “Would this embarrass Grandma?”
 
-<b>THE NOT SO FINE PRINT</b>
-By participating in this activity you are agreeing that:
+<b>THE NOT SO FINE PRINT</b>: By participating in this activity you are agreeing that:
 - WDS is not responsible or liable for any of the items you trade or receive*.
 - WDS is not responsible for any injury or accident that can occur during this activity. 
 - You will interact with the public in a way that represents WDS in a positive and respectful manner.
