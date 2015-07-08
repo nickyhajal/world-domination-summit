@@ -40,6 +40,7 @@ HOW TO PLAY:
 6. The audience will then select the winner they feel got the bigger & better final item.
 
 TRADING TERMS
+&nbsp;
 The following rules are not intended to be all inclusive but rather general guidelines when determining if an item qualifies for a trade:
 
 A traded item MUST be:
