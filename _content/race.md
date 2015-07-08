@@ -36,17 +36,17 @@ Two finalists will be chosen at 1pm Sunday, July 12th when the event ends. The W
 
 <b>HOW TO PLAY:</b>
 &nbsp;
-1. The event officially starts on Friday night at the opening party kickoff and ends, Sunday 1pm (all submissions must be in by then). 
+1. The event officially <b>starts on Friday night at the opening party kickoff</b> and <b>ends, Sunday 1pm</b> (all submissions must be in by then). 
 &nbsp;
 2. Get your initial globe piece at the opening party Friday night or in the Hatfield Lobby area (where the bookstore is located) on Saturday.
 &nbsp;
-3. Convince someone to take a piece of the globe from you in exchange for something you mutually agree is either bigger or better (or both). 
+3. Convince someone to trade you something that you believe is either bigger or better (or both) for your globe piece. 
 &nbsp;
-4. Make at least 3 trades and document each one using a digital camera or smartphone. All pictures must be either emailed to (This Address) OR uploaded to Twitter or Instagram tagged with the hashtags: #WDS2015 #WDSBiggerBetter by Sunday at 1pm.
+4. Make at least 3 trades and document each one using a digital camera or smartphone. <b>All pictures must be either emailed to (This Address) OR uploaded to Twitter or Instagram tagged with the hashtags: #WDS2015 #WDSBiggerBetter by Sunday at 1pm.</b>
 &nbsp;
-5. When the event ends, a selection committee will select finalists whose trade stories and final items will be shown on the WDS Main stage.
+5. When the event ends, a selection committee will determine finalists whose trade stories and final items will be shown on the WDS Main stage.
 &nbsp;
-6. The audience will then select the winner they feel got the bigger & better final item.
+6. The audience will then select the winner they feel got the biggest and/or best final item.
 
 <b>TRADING TERMS</b>: The following rules are not intended to be all inclusive but rather general guidelines when determining if an item qualifies for a trade:
 
