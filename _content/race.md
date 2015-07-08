@@ -39,9 +39,7 @@ Two finalists will be chosen at 1pm Sunday, July 12th when the event ends. The W
 &nbsp;
 6. The audience will then select the winner they feel got the bigger & better final item.
 
-<b>TRADING TERMS</b>
-&nbsp;
-The following rules are not intended to be all inclusive but rather general guidelines when determining if an item qualifies for a trade:
+<b>TRADING TERMS</b>: The following rules are not intended to be all inclusive but rather general guidelines when determining if an item qualifies for a trade:
 
 A traded item MUST be:
 - A tangible, inanimate, physical object (no humans, animals, plants, or ghosts please).
