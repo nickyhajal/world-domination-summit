@@ -79,5 +79,5 @@ A traded item <b>CANNOT</b> be:
 
 *Be very intentional about your trades knowing that you are responsible for what to do with the final item once the race is over.
 
-
+<div class="zig-zags_blue"></div>
 
