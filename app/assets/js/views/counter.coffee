@@ -30,6 +30,10 @@ ap.Counter =
 		days = Math.floor(diff / 86400)
 		hours = Math.floor((diff % 86400) / 3600)
 		minutes = Math.floor(((diff % 86400) % 3600) / 60)
+		if days < 0
+			days = 0
+			hours = 0
+			minutes = 0
 		$('#counter-days div').text(days)
 		$('#counter-hours div').text(hours)
 		$('#counter-mins div').text(minutes)
