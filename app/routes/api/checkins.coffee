@@ -46,7 +46,7 @@ routes = (app) ->
           rds.set key, JSON.stringify(checkins), ->
             rds.expire key, 4
         , (err) ->
-          tk err
+          console.error err
           next()
 
 module.exports = routes

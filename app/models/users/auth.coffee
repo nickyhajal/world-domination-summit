@@ -32,7 +32,7 @@ auth =
       ip: ip
       ttl: 31536000
     , (err, rsp) ->
-      tk err
+      console.error err
       dfr.resolve(rsp.token)
     return dfr.promise
 

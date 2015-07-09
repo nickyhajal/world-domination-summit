@@ -14,4 +14,5 @@ ap.Views.admin_notification = XView.extend
 		form = el.formToJson()
 
 		ap.api 'get admin/notification', form, (rsp) =>
+			tk rsp
 			btn.finish()

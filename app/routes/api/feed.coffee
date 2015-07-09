@@ -127,7 +127,7 @@ routes = (app) ->
 				post.user_id = req.me.get('user_id')
 
 				# Check if this is a duplicate post
-				uniq = moment().format('YYYY-MM-DD HH:mm') + post.comment + post.user_id
+				uniq = moment().format('YYYY-MM-DD HH:mm') + post.comment + post.user_id + post.feed_id
 				post.hash = crypto.createHash('md5').update(uniq).digest('hex')
 				FeedComment.forge
 					hash: post.hash

@@ -59,7 +59,7 @@ Event = Shelf.Model.extend
       hosts = rsp.models
       dfr.resolve(hosts)
     , (err) ->
-      tk err
+      console.error err
     return dfr.promise
 
 Events = Shelf.Collection.extend

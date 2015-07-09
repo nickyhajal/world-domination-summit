@@ -229,7 +229,6 @@ User = Shelf.Model.extend
         [meetups[i], meetups[j]] = [meetups[j], meetups[i]]
       dfr.resolve meetups[0...5]
     , (err) ->
-      tk err
       console.error err
     return dfr.promise
 

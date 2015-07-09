@@ -140,7 +140,7 @@ routes = (app) ->
 										old_user.cancelTicket()
 										old_user.sendEmail('transfer-receipt', 'Your ticket transfer was successful!', {to_name: new_user.get('first_name')+' '+new_user.get('last_name')})
 								, (err) ->
-									tk err
+									console.error err
 								next()
 				else
 					next()

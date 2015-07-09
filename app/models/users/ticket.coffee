@@ -22,7 +22,7 @@ ticket =
           promo = 'WelcomeBack'
         @sendEmail(promo, subject)
     , (err) ->
-      tk err
+      console.error err
     return dfr.promise
 
   cancelTicket: ->
@@ -45,7 +45,7 @@ ticket =
               @addToList('WDS '+process.year+' Canceled')
               dfr.resolve [this, ticket]
           , (err) ->
-            tk err
+            console.error err
         else
           dfr.reject("Doesn't have a ticket.")
     return dfr.promise

@@ -147,7 +147,7 @@ routes = (app) ->
 						evs.push(tmp)
 						cb()
 					, (err) ->
-						tk err
+						console.error err
 				, ->
 					res.r.events = evs
 					next()
@@ -388,7 +388,7 @@ routes = (app) ->
 					border: '.4in'
 				pdf.create(html, options).toFile './meetups-printable.pdf', (err, rsp) ->
 					if err
-						tk err
+						console.error err
 					else
 						next()
 
