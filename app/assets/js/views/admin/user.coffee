@@ -7,7 +7,7 @@ ap.Views.admin_user = XView.extend
 		'click .toggle-ticket': 'ticketToggle_click'
 		'click .do-toggle-ticket': 'doTicketToggle_click'
 	initialize: ->
-		ap.api 'get user', {user_name: @options.extra}, (rsp) =>
+		ap.api 'get user', {user_name: @options.extra, inc_hash: 1}, (rsp) =>
 			@user = new ap.User(rsp.user)
 			@options.out = _.template @options.out, @user.attributes
 			@initRender()

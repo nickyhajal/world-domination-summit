@@ -72,7 +72,8 @@ routes = (app) ->
 								user.getAllTickets()
 								.then (user) ->
 									user.set('password', null)
-									user.set('hash', null)
+									unless req.query.inc_hash?
+										user.set('hash', null)
 									res.r.user = user
 									next()
 				, (err) ->
