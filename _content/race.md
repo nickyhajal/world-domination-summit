@@ -8,7 +8,7 @@ photo_head: https://farm3.staticflickr.com/2031/5800591550_94fa52c7b4_b.jpg
 
 This WDS icon was retired last year when a new globe arrived in the Hatfild Hall lobby, but we couldn't just get rid of it. 
 
-This year, we've incorporated our historic WDS globe in the Unconventional Race and doubled the fun. We've divded the globe into 140 peices and created two amazing races for this year's competition: a scavenger hunt and "bigger & better". 
+This year, we've incorporated our historic WDS globe in the Unconventional Race and doubled the fun. We've divded the globe into 140 peices and created two amazing races for this year's competition: a scavenger hunt and "bigger better". 
 
 <img src="http://gdurl.com/BluA" width="600" />
 *The historic, retired, WDS Globe.*
@@ -38,11 +38,11 @@ Happy hunting!
 
 <div class="zig-zags_blue"></div>
 
-#Bigger & Better
+#Bigger Better
 
 <a name="bigger-better"></a>
 
-Our second race is our own version of "Bigger & Better." Your challenge is to start with a piece of the globe and trade up for something bigger, better(or both). You can trade with fellow WDS attendees, or even strangers - just be sure to take pictures of your trades along the way. Wheover hasthe most epic item at the end also wins a free ticket to WDS 2016!
+Our second race is our own version of "Bigger Better." Your challenge is to start with a piece of the globe and trade up for something bigger, better(or both). You can trade with fellow WDS attendees, or even strangers - just be sure to take pictures of your trades along the way. Wheover hasthe most epic item at the end also wins a free ticket to WDS 2016!
 
 <b>RACE OBJECTIVE</b>
 
@@ -101,7 +101,7 @@ By participating in this activity you are agreeing that:
 
 *Be very intentional about your trades knowing that you are responsible for what to do with the final item once the race is over.
 
-Go bigger and better! 
+Go bigger better! 
 
 <div class="zig-zags_blue"></div>
 
