@@ -8,7 +8,7 @@ photo_head: https://farm3.staticflickr.com/2031/5800591550_94fa52c7b4_b.jpg
 
 This WDS icon was retired last year when a new globe arrived in the Hatfild Hall lobby, but we couldn't just get rid of it. 
 
-This year, we've incorporated our historic WDS globe in the Unconventional Race and doubled the fun. We've divded the globe into 140 peices and created two amazing races for this year's competition: a scavenger hunt and "bigger & better". 
+This year, we've incorporated our historic WDS globe in the Unconventional Race and doubled the fun. We've divded the globe into 140 peices and created two amazing races for this year's competition: a scavenger hunt and "bigger better". 
 
 <img src="http://gdurl.com/BluA" width="600" />
 *The historic, retired, WDS Globe.*
@@ -19,36 +19,54 @@ This year, we've incorporated our historic WDS globe in the Unconventional Race 
 
 <a name="scavenger-hunt"></a>
 
-Our first race is a scavenger hunt for a prized piece of the globe. Follow the first clue posted in Hatfield Hall, then keep following the clues at each of seven strategic and symbolic locations in downtown, Portland. Participants in the savenger hunt will have a shot at several prizes along the way, and the first to finish wins a free ticket to WDS 2016!
+Our first race is a scavenger hunt to collect 7 photos from 7 different Portland landmarks culminating with the search for a very special piece of the WDS globe. The entire scavenger hunt will stay within the boundaries of the map provided in your WDS booklet (pg.14) - you can walk or take public transportation, but you won't need to drive, hitchhike, or catapult. A swift walker can complete the entire Scavenger Hunt in less than 90 minutes, and it will take you through some of the best local landmarks in town.
+
+<b>HOW TO PLAY</b>
+
+- To begin the scavenger hunt, take a picture of one of the poles of the WDS globe, kept in Hatfield Hall at the Newmark Theater. The other pole is hidden somewhere in downtown Portland
+- The first person to travel between these poles, posting all 7 photos of the 7 key landmarks with the hashtags #wds2015 & #wdsrace, will win a free ticket to WDS 2016! We will announce the winner Sunday afternoon at the last main stage session.
+
+<b>THE RULES</b>
+
+1.  The first clue will be made available by 8am on Saturday morning, July 11th in Hatfield Hall (bookstore and concierge desk). 
+2.  Each photo must have a piece of WDS swag somewhere in the picture (e.g. shirt, sock, etc...) Extra points for creativity!
+3.  Photos must be posted to Twitter, Instagram, or the Dispatch with the hashtag #WDSrace to be counted
+
+After taking each photo, you will need to search around a bit in order to find the clue that will lead you to the next landmark. Contact <a href="mailto:race@wds.fm" target="_top">race@wds.fm</a> if you get lost. The WDS Logo will guide your way, and you may discover some easter eggs and free prizes along your journey.
+
+Happy hunting!
 
 <div class="zig-zags_blue"></div>
 
-#Bigger & Better
+#Bigger Better
 
 <a name="bigger-better"></a>
 
-Our second race is our own version of "Bigger & Better." Your challenge is to start with a piece of the globe and trade up for something bigger, better(or both). You can trade with fellow WDS attendees, or even strangers - just be sure to take pictures of your trades along the way. Wheover hasthe most epic item at the end also wins a free ticket to WDS 2016!
+Our second race is our own version of "Bigger Better." Your challenge is to start with a piece of the globe and trade up for something bigger, better(or both). You can trade with fellow WDS attendees, or even strangers - just be sure to take pictures of your trades along the way. Whoever has the most epic item at the end also wins a free ticket to WDS 2016!
 
-<b>RACE OBJECTIVE:</b>
+<b>RACE OBJECTIVE</b>
+
 Make a series of trades that are bigger or better (or both) than the original globe piece you start with. The person with the best result wins.
 
 Two finalists will be chosen at 1pm Sunday, July 12th when the event ends. The WDS community will then vote on which participant they feel got the biggest and best final item from their trades. <b>The winner will receive a ticket to WDS 2016!</b> Other successful participants may also be eligible for prizes.
 
-<b>HOW TO PLAY:</b>
-&nbsp;
+<b>HOW TO PLAY</b>
+
 1. The event officially <b>starts on Friday night at the opening party kickoff</b> and <b>ends, Sunday 1pm</b> (all submissions must be in by then). 
 &nbsp;
 2. Get your initial globe piece at the opening party Friday night or in the Hatfield Lobby area (where the bookstore is located) on Saturday.
 &nbsp;
 3. Convince someone to trade you something that you believe is either bigger or better (or both) for your globe piece. 
 &nbsp;
-4. Make at least 3 trades and document each one using a digital camera or smartphone. <b>All pictures must be either emailed to (This Address) OR uploaded to Twitter or Instagram tagged with the hashtags: #WDS2015 #WDSrace by Sunday at 1pm.</b>
+4. Make at least 3 trades and document each one using a digital camera or smartphone. <b>All pictures must be either emailed to <a href="mailto:race@wds.fm" target="_top">race@wds.fm</a> OR uploaded to Twitter or Instagram tagged with the hashtags: #WDSrace by Sunday at 1pm.</b>
 &nbsp;
 5. When the event ends, a selection committee will determine finalists whose trade stories and final items will be shown on the WDS Main stage.
 &nbsp;
 6. The audience will then select the winner they feel got the biggest and/or best final item.
 
-<b>TRADING TERMS</b>: The following rules are not intended to be all inclusive but rather general guidelines when determining if an item qualifies for a trade:
+<b>TRADING TERMS</b> 
+
+The following rules are not intended to be all inclusive but rather general guidelines when determining if an item qualifies for a trade:
 
 A traded item MUST be:
 - A tangible, inanimate, physical object (no humans, animals, plants, or ghosts please).
@@ -74,12 +92,16 @@ A traded item <b>CANNOT</b> be:
 - Stolen property, “pirated” or “boot legged.”
 - Illegal, prescription drugs, or anything “explicit” in nature. Ask yourself, “Would this embarrass Grandma?”
 
-<b>THE NOT SO FINE PRINT</b>: By participating in this activity you are agreeing that:
+<b>THE NOT SO FINE PRINT</b>
+
+By participating in this activity you are agreeing that:
 - WDS is not responsible or liable for any of the items you trade or receive*.
 - WDS is not responsible for any injury or accident that can occur during this activity. 
 - You will interact with the public in a way that represents WDS in a positive and respectful manner.
 
 *Be very intentional about your trades knowing that you are responsible for what to do with the final item once the race is over.
+
+Go bigger better! 
 
 <div class="zig-zags_blue"></div>
 
