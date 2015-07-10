@@ -60,9 +60,7 @@ Two finalists will be chosen at 1pm Sunday, July 12th when the event ends. The W
 &nbsp;
 4. Make at least 3 trades and document each one using a digital camera or smartphone. <b>All pictures must be either emailed to <a href="mailto:race@wds.fm" target="_top">race@wds.fm</a> OR uploaded to Twitter or Instagram tagged with the hashtags: #WDSrace by Sunday at 1pm.</b>
 &nbsp;
-5. When the event ends, a selection committee will determine finalists whose trade stories and final items will be shown on the WDS Main stage.
-&nbsp;
-6. The audience will then select the winner they feel got the biggest and/or best final item.
+5. When the event ends, a selection committee will determine finalists whose trade stories will be shared at the last main stage session.
 
 <b>TRADING TERMS</b> 
 
@@ -102,6 +100,10 @@ By participating in this activity you are agreeing that:
 *Be very intentional about your trades knowing that you are responsible for what to do with the final item once the race is over.
 
 Go bigger better! 
+
+<b>QUESTIONS???</b> 
+
+Contact the Race Master, Caelan Huntress, by email at <a href="mailto:race@wds.fm" target="_top">race@wds.fm</a> OR find him during main stage breaks in Hatfield Hall (where the bookstore and concierge desk is located).
 
 <div class="zig-zags_blue"></div>
 
