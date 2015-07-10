@@ -19,7 +19,22 @@ This year, we've incorporated our historic WDS globe in the Unconventional Race 
 
 <a name="scavenger-hunt"></a>
 
-Our first race is a scavenger hunt for a prized piece of the globe. Follow the first clue posted in Hatfield Hall, then keep following the clues at each of seven strategic and symbolic locations in downtown, Portland. Participants in the savenger hunt will have a shot at several prizes along the way, and the first to finish wins a free ticket to WDS 2016!
+Our first race is a scavenger hunt to collect 7 photos from 7 different Portland landmarks culminating with the search for a very special piece of the WDS globe. The entire scavenger hunt will stay within the boundaries of the map provided in your WDS booklet (pg.14) - you can walk or take public transportation, but you won't need to drive, hitchhike, or catapult. A swift walker can complete the entire Scavenger Hunt in less than 60 minutes, and it will take you through some of the best local landmarks in town.
+
+<b>HOW TO PLAY</b>
+
+- To begin the scavenger hunt, take a picture of one of the poles of the WDS globe, kept in Hatfield Hall at the Newmark Theater. The other pole is hidden somewhere in downtown Portland
+- The first person to travel between these poles, posting all 7 photos of the 7 key landmarks with the hashtags #wds2015 & #wdsrace, will win a free ticket to WDS 2016! We will announce the winner Sunday afternoon at the last main stage session.
+
+<b>THE RULES</b>
+
+1.  The first clue will be made available at 7:30am on Saturday morning, July 11th in Hatfield Hall (bookstore and concierge desk). 
+2.  Each photo must have a piece of WDS swag somewhere in the picture (e.g. shirt, sock, etc...) Extra points for creativity!
+3.  Photos must be posted to Twitter, Instagram, or the Dispatch with the hashtag #wds2015 & #wdsrace to be counted
+
+After taking each photo, you will need to search around a bit in order to find the clue that will lead you to the next landmark. Contact race@wds.fm if you get lost. The WDS Logo will guide your way, and you may discover some easter eggs and free prizes along your journey.
+
+Happy hunting!
 
 <div class="zig-zags_blue"></div>
 
@@ -80,6 +95,8 @@ A traded item <b>CANNOT</b> be:
 - You will interact with the public in a way that represents WDS in a positive and respectful manner.
 
 *Be very intentional about your trades knowing that you are responsible for what to do with the final item once the race is over.
+
+Go bigger and better! 
 
 <div class="zig-zags_blue"></div>
 
