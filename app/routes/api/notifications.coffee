@@ -9,6 +9,7 @@ routes = (app) ->
   [Notification, Notifications] = require('../../models/notifications')
   [Device, Devices] = require('../../models/devices')
   [Registration, Registrations] = require('../../models/registrations')
+  [Feed, Feeds] = require('../../models/feeds')
   ntfn_routes =
     get_count: (req, res, next) ->
       if req.query.device? and req.query.registered?
@@ -20,14 +21,14 @@ routes = (app) ->
 
     send: (req, res, next) ->
       if req.query.device? and req.query.registered?
-        ntfn_routes.get_devices req, res, (rsp) ->
+        ntfn_routes.get_devices req, res, (devices) ->
           if +res.r.device_count > 0
             if req.query.dispatch_text?
-              uniq = moment().format('YYYY-MM-DD HH:mm') + post.content + post.user_id
               post =
                 content: req.query.dispatch_text
                 user_id: '8082'
-                hash: crypto.createHash('md5').update(uniq).digest('hex')
+              uniq = moment().format('YYYY-MM-DD HH:mm') + post.content + post.user_id
+              post.hash = crypto.createHash('md5').update(uniq).digest('hex')
               Feed.forge
                 hash: post.hash
               .fetch()
@@ -36,37 +37,41 @@ routes = (app) ->
                   feed = Feed.forge post
                   feed
                   .save()
-                  .then (feed) ->
-                    feed_id = feed.get('feed_id')
-                    if feed_id.length
+                  .then (feed_rsp) ->
+                    feed_id = feed_rsp.get('feed_id')
+                    if feed_id? and feed_id > 0
                       for device in devices
                         tokens = [device.get('token')]
                         type = device.get('type')
                         user_id = device.get('user_id')
                         link = '/dispatch/'+feed_id
-                        if type is 'ios' and user_id == '176'
+                        if type is 'ios'
                           note = new apn.Notification()
                           note.alert = req.query.notification_text
                           note.payload = {content: {}, type: 'feed_comment', link: link}
                           process.APN.pushNotification(note, tokens)
-                        else if type is 'and' and user_id == '176'
+                        else if type is 'and'# and user_id == 176
                           message = new gcm.Message
-                          collapseKey: "WDS Notifications"
-                          data:
-                            title: "WDS App"
-                            message: str
-                            id: post.hash
-                            user_id: '8082'
-                            content: req.query.notification_text
-                            type: 'feed_comment'
-                            link: link
+                            collapseKey: "WDS Notifications"
+                            data:
+                              title: "WDS App"
+                              message: req.query.notification_text
+                              id: post.hash
+                              user_id: '8082'
+                              content: {}
+                              type: 'feed_comment'
+                              link: link
                           process.gcmSender.send message, tokens, (err, result) ->
                       res.r.sent = true
                       next()
+                  , (err) ->
+                    console.error err
                 else
                   res.r.msg = 'You already posted that!'
                   res.status(409)
                   next()
+              , (err) ->
+                console.error err
       else
         res.r.msg = "Missing parameters"
         next()

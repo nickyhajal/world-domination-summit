@@ -10,11 +10,11 @@ mailer =
 		if process.env.NODE_ENV is 'production'
 			use_to = to
 
-		email_options = 
+		email_options =
 			promotion_name: 'WDS_'+promo
 			subject: '[WDS] '+subject
 			recipient: use_to
-			from: 'Chris Guillebeau <chris.guillebeau@gmail.com>'
+			from: 'Chris Guillebeau <concierge@wds.fm>'
 		@request('mailer', email_options, params)
 		.then (transaction_id) ->
 			tk 'MAILED: '+transaction_id
@@ -22,11 +22,11 @@ mailer =
 		return dfr.promise
 	request: (path, params, body = false) ->
 		dfr = Q.defer()
-		defs = 
+		defs =
 			username: process.env.MM_USER
 			api_key: process.env.MM_PW
 		params = _.defaults params, defs
-		call = 
+		call =
 			url: 'https://api.madmimi.com/'+path
 			method: 'post'
 			form: params

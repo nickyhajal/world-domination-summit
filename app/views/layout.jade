@@ -22,7 +22,7 @@ html(lang='en', class="#{hide_counter}")
 		link(rel='stylesheet', type="text/css", href='/app/assets/css/fonts.css')
 		link(rel='stylesheet', type="text/css", href='/app/assets/css/tablet.css', media='screen and (max-width:1024px)')
 		link(rel='stylesheet', type="text/css", href='/app/assets/css/phone.css', media='screen and (max-width:682px)')
-			
+
 		!= js('main')
 		script(type="text/javascript").
 			function googleMapsReady() {
@@ -93,13 +93,13 @@ html(lang='en', class="#{hide_counter}")
 						//-div(id="big-content") Is Here!
 						div(id="counter-days", class="counter-section")
 							span Days
-							div 
+							div
 						div(id="counter-hours", class="counter-section")
 							span Hours
-							div 
+							div
 						div(id="counter-mins", class="counter-section")
 							span Mins
-							div 
+							div
 					div(class="clear")
 					div(class="counter-content")
 						div(class="logged-out")
@@ -119,9 +119,9 @@ html(lang='en', class="#{hide_counter}")
 				a(href="/contact-us") Contact Us
 			//	a(href="/transfer", class="logged-in") Transfer Ticket
 			div(id="footer-credits")
-				| © World Domination Summit 2011-2015 &nbsp; | &nbsp; Design by 
+				| © World Domination Summit 2011-2015 &nbsp; | &nbsp; Design by
 				a(href="http://jolbyandfriends.com", target="_blank") Jolby & Friends
-				| &nbsp;&nbsp; | &nbsp; Programming by 
+				| &nbsp;&nbsp; | &nbsp; Programming by
 				a(href="http://nickyhajal.com", target="_blank") Nicky Hajal
 
 		div(id="modals")
@@ -137,4 +137,9 @@ html(lang='en', class="#{hide_counter}")
 				div(class="modal-content")
 					a(class="modal-close")
 					img(src="#", id="modal-bigger-photo-img")
+			div(id="modal-confirm", class="modal")
+				div(class="modal-content")
+					a(class="modal-close")
+					div(class="modal-confirm-content")
+
 

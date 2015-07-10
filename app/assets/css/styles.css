@@ -28,6 +28,32 @@
     filter:                     alpha(opacity=70);
     zoom:                       1;
 }
+#modal-confirm .modal-content {
+  padding: 50px 50px 0px;
+  height: 560px;
+}
+#modal-confirm a.button {
+  margin: 52px auto;
+  position: relative;
+  width: 290px !important;
+  display: block;
+  text-align: center;
+}
+.notification-confirm-head b {
+  font-family: KarlaBold;
+}
+.notification-confirm-head {
+  font-family: Karla;
+  font-size: 19pt;
+}
+.modal-confirm-content p {
+  font-family: Karla;
+  padding: 10px;
+  background-color: #eee;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 12pt;
+}
 .tpl-2 .block-4 .the_icon {
     margin-left:                24px;
 }
