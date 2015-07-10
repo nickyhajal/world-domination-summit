@@ -19,7 +19,7 @@ This year, we've incorporated our historic WDS globe in the Unconventional Race 
 
 <a name="scavenger-hunt"></a>
 
-Our first race is a scavenger hunt to collect 7 photos from 7 different Portland landmarks culminating with the search for a very special piece of the WDS globe. The entire scavenger hunt will stay within the boundaries of the map provided in your WDS booklet (pg.14) - you can walk or take public transportation, but you won't need to drive, hitchhike, or catapult. A swift walker can complete the entire Scavenger Hunt in less than 60 minutes, and it will take you through some of the best local landmarks in town.
+Our first race is a scavenger hunt to collect 7 photos from 7 different Portland landmarks culminating with the search for a very special piece of the WDS globe. The entire scavenger hunt will stay within the boundaries of the map provided in your WDS booklet (pg.14) - you can walk or take public transportation, but you won't need to drive, hitchhike, or catapult. A swift walker can complete the entire Scavenger Hunt in less than 90 minutes, and it will take you through some of the best local landmarks in town.
 
 <b>HOW TO PLAY</b>
 
@@ -28,9 +28,9 @@ Our first race is a scavenger hunt to collect 7 photos from 7 different Portland
 
 <b>THE RULES</b>
 
-1.  The first clue will be made available at 7:30am on Saturday morning, July 11th in Hatfield Hall (bookstore and concierge desk). 
+1.  The first clue will be made available by 8am on Saturday morning, July 11th in Hatfield Hall (bookstore and concierge desk). 
 2.  Each photo must have a piece of WDS swag somewhere in the picture (e.g. shirt, sock, etc...) Extra points for creativity!
-3.  Photos must be posted to Twitter, Instagram, or the Dispatch with the hashtag #wds2015 & #wdsrace to be counted
+3.  Photos must be posted to Twitter, Instagram, or the Dispatch with the hashtag #WDSrace to be counted
 
 After taking each photo, you will need to search around a bit in order to find the clue that will lead you to the next landmark. Contact race@wds.fm if you get lost. The WDS Logo will guide your way, and you may discover some easter eggs and free prizes along your journey.
 
@@ -58,7 +58,7 @@ Two finalists will be chosen at 1pm Sunday, July 12th when the event ends. The W
 &nbsp;
 3. Convince someone to trade you something that you believe is either bigger or better (or both) for your globe piece. 
 &nbsp;
-4. Make at least 3 trades and document each one using a digital camera or smartphone. <b>All pictures must be either emailed to (This Address) OR uploaded to Twitter or Instagram tagged with the hashtags: #WDS2015 #WDSrace by Sunday at 1pm.</b>
+4. Make at least 3 trades and document each one using a digital camera or smartphone. <b>All pictures must be either emailed to (This Address) OR uploaded to Twitter or Instagram tagged with the hashtags: #WDSrace by Sunday at 1pm.</b>
 &nbsp;
 5. When the event ends, a selection committee will determine finalists whose trade stories and final items will be shown on the WDS Main stage.
 &nbsp;
