@@ -101,5 +101,9 @@ By participating in this activity you are agreeing that:
 
 Go bigger better! 
 
+<b>QUESTIONS???</b> 
+
+Contact the Race Master, Caelan Huntress, by email at <a href="mailto:race@wds.fm" target="_top">race@wds.fm</a> OR find him during main stage breaks in Hatfield Hall (where the bookstore and concierge desk is located).
+
 <div class="zig-zags_blue"></div>
 
