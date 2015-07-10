@@ -44,13 +44,14 @@ Happy hunting!
 
 Our second race is our own version of "Bigger & Better." Your challenge is to start with a piece of the globe and trade up for something bigger, better(or both). You can trade with fellow WDS attendees, or even strangers - just be sure to take pictures of your trades along the way. Wheover hasthe most epic item at the end also wins a free ticket to WDS 2016!
 
-<b>RACE OBJECTIVE:</b>
+<b>RACE OBJECTIVE</b>
+
 Make a series of trades that are bigger or better (or both) than the original globe piece you start with. The person with the best result wins.
 
 Two finalists will be chosen at 1pm Sunday, July 12th when the event ends. The WDS community will then vote on which participant they feel got the biggest and best final item from their trades. <b>The winner will receive a ticket to WDS 2016!</b> Other successful participants may also be eligible for prizes.
 
-<b>HOW TO PLAY:</b>
-&nbsp;
+<b>HOW TO PLAY</b>
+
 1. The event officially <b>starts on Friday night at the opening party kickoff</b> and <b>ends, Sunday 1pm</b> (all submissions must be in by then). 
 &nbsp;
 2. Get your initial globe piece at the opening party Friday night or in the Hatfield Lobby area (where the bookstore is located) on Saturday.
@@ -63,7 +64,9 @@ Two finalists will be chosen at 1pm Sunday, July 12th when the event ends. The W
 &nbsp;
 6. The audience will then select the winner they feel got the biggest and/or best final item.
 
-<b>TRADING TERMS</b>: The following rules are not intended to be all inclusive but rather general guidelines when determining if an item qualifies for a trade:
+<b>TRADING TERMS</b> 
+
+The following rules are not intended to be all inclusive but rather general guidelines when determining if an item qualifies for a trade:
 
 A traded item MUST be:
 - A tangible, inanimate, physical object (no humans, animals, plants, or ghosts please).
@@ -89,7 +92,9 @@ A traded item <b>CANNOT</b> be:
 - Stolen property, “pirated” or “boot legged.”
 - Illegal, prescription drugs, or anything “explicit” in nature. Ask yourself, “Would this embarrass Grandma?”
 
-<b>THE NOT SO FINE PRINT</b>: By participating in this activity you are agreeing that:
+<b>THE NOT SO FINE PRINT</b>
+
+By participating in this activity you are agreeing that:
 - WDS is not responsible or liable for any of the items you trade or receive*.
 - WDS is not responsible for any injury or accident that can occur during this activity. 
 - You will interact with the public in a way that represents WDS in a positive and respectful manner.
