@@ -106,4 +106,5 @@ Users = Backbone.Collection.Lunr.extend
   	return false
 
 ap.Users = new Users()
-ap.login(ap.me)
+if ap.login?
+	ap.login(ap.me)

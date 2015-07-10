@@ -45,12 +45,15 @@ routes = (app) ->
                         type = device.get('type')
                         user_id = device.get('user_id')
                         link = '/dispatch/'+feed_id
-                        if type is 'ios'
+                        if type is 'ios' #and user_id == 176
                           note = new apn.Notification()
                           note.alert = req.query.notification_text
-                          note.payload = {content: {}, type: 'feed_comment', link: link}
+                          note.payload = {content: '{"user_id":"8082"}', type: 'feed_comment', link: link}
+                          tk tokens
+                          tk note
                           process.APN.pushNotification(note, tokens)
-                        else if type is 'and'# and user_id == 176
+                        else if type is 'and' # and user_id == 176
+                          tk 'STAT AND'
                           message = new gcm.Message
                             collapseKey: "WDS Notifications"
                             data:
@@ -58,9 +61,11 @@ routes = (app) ->
                               message: req.query.notification_text
                               id: post.hash
                               user_id: '8082'
-                              content: {}
+                              content: '{"user_id":"8082"}'
                               type: 'feed_comment'
                               link: link
+                          tk tokens
+                          tk message
                           process.gcmSender.send message, tokens, (err, result) ->
                       res.r.sent = true
                       next()

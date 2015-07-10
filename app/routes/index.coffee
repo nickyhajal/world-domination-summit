@@ -12,6 +12,7 @@ _s = require('underscore.string')
 #
 
 [User, Users] = require("../models/users")
+[Transfer, Transfers] = require("../models/transfers")
 
 provinces = {}
 for province in all_provinces
@@ -21,6 +22,31 @@ for province in all_provinces
 
 
 routes = (app) ->
+	app.all '/transfers', (req, res) ->
+		c = {columns: ['first_name', 'last_name', 'new_attendee']}
+		transfers = Transfers.forge()
+		transfers.query('where', 'year', '2015')
+		transfers.query('where', 'status', 'paid')
+		transfers.query('join', 'users', 'transfers.user_id', '=', 'users.user_id', 'left')
+		transfers.query('orderBy', 'last_name')
+		transfers.fetch(c)
+		.then (rsp)->
+			html = '
+			<style type="text/css">
+				* { font-family: arial; color:#444; font-weight:300;}
+				div {padding:5px; margin-bottom:3px; background:#f4f4f4;}
+				</style>'
+			if req.query.from?
+				html += '<h3>Transfers (To → From)</h3>'
+			else
+				html += '<h3>Transfers (From →	 To)</h3>'
+			for t in rsp.models
+				atn = JSON.parse(t.get('new_attendee'))
+				if req.query.from?
+					html += '<div><b>'+atn.last_name+', '+atn.first_name+' FROM '+t.get('last_name')+", "+t.get('first_name')+'</div>'
+				else
+					html += '<div><b>'+t.get('last_name')+', '+t.get('first_name')+' TO '+atn.last_name+', '+atn.first_name+'</div>'
+			res.send(html)
 	app.all '/upload-race', (req, res) ->
 		rsp = false
 		if req.query.rsp
