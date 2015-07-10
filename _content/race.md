@@ -32,7 +32,7 @@ Our first race is a scavenger hunt to collect 7 photos from 7 different Portland
 2.  Each photo must have a piece of WDS swag somewhere in the picture (e.g. shirt, sock, etc...) Extra points for creativity!
 3.  Photos must be posted to Twitter, Instagram, or the Dispatch with the hashtag #WDSrace to be counted
 
-After taking each photo, you will need to search around a bit in order to find the clue that will lead you to the next landmark. Contact race@wds.fm if you get lost. The WDS Logo will guide your way, and you may discover some easter eggs and free prizes along your journey.
+After taking each photo, you will need to search around a bit in order to find the clue that will lead you to the next landmark. Contact <a href="mailto:race@wds.fm" target="_top">race@wds.fm</a> if you get lost. The WDS Logo will guide your way, and you may discover some easter eggs and free prizes along your journey.
 
 Happy hunting!
 
@@ -42,7 +42,7 @@ Happy hunting!
 
 <a name="bigger-better"></a>
 
-Our second race is our own version of "Bigger Better." Your challenge is to start with a piece of the globe and trade up for something bigger, better(or both). You can trade with fellow WDS attendees, or even strangers - just be sure to take pictures of your trades along the way. Wheover hasthe most epic item at the end also wins a free ticket to WDS 2016!
+Our second race is our own version of "Bigger Better." Your challenge is to start with a piece of the globe and trade up for something bigger, better(or both). You can trade with fellow WDS attendees, or even strangers - just be sure to take pictures of your trades along the way. Whoever has the most epic item at the end also wins a free ticket to WDS 2016!
 
 <b>RACE OBJECTIVE</b>
 
@@ -58,7 +58,7 @@ Two finalists will be chosen at 1pm Sunday, July 12th when the event ends. The W
 &nbsp;
 3. Convince someone to trade you something that you believe is either bigger or better (or both) for your globe piece. 
 &nbsp;
-4. Make at least 3 trades and document each one using a digital camera or smartphone. <b>All pictures must be either emailed to (This Address) OR uploaded to Twitter or Instagram tagged with the hashtags: #WDSrace by Sunday at 1pm.</b>
+4. Make at least 3 trades and document each one using a digital camera or smartphone. <b>All pictures must be either emailed to <a href="mailto:race@wds.fm" target="_top">race@wds.fm</a> OR uploaded to Twitter or Instagram tagged with the hashtags: #WDSrace by Sunday at 1pm.</b>
 &nbsp;
 5. When the event ends, a selection committee will determine finalists whose trade stories and final items will be shown on the WDS Main stage.
 &nbsp;
