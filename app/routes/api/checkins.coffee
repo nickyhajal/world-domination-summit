@@ -39,7 +39,7 @@ routes = (app) ->
             tmp = {}
             for i in checkins
               tk i.get('location_id')
-              if i.get('location_id') == '15' || i.get('location_id') == '64'
+              if i.get('location_id') == '15'
                 existing = tmp['2'].get('num_checkins')
                 tmp['2'].set('num_checkins', (+i.get('num_checkins'))+(+existing))
               else
