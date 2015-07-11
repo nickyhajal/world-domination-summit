@@ -46,8 +46,7 @@ content =
 				_Answers = Answers.forge()
 				_Contents
 				.query (qb) =>
-					qb.column(qb.knex.raw('(RAND()) weight'))
-					#qb.column(qb.knex.raw('((24 + 1 + GREATEST(TIMESTAMPDIFF(HOUR, NOW(), CREATED_AT), TIMESTAMPDIFF(HOUR, NOW(), DATE_SUB(NOW(), INTERVAL 1 DAY)))) * RAND()) weight'))
+					qb.column(qb.knex.raw('((24 + 1 + GREATEST(TIMESTAMPDIFF(HOUR, NOW(), CREATED_AT), TIMESTAMPDIFF(HOUR, NOW(), DATE_SUB(NOW(), INTERVAL 1 DAY)))) * RAND()) weight'))
 					qb.where('content_id', '>', '0')
 					qb.orderBy('weight', 'desc')
 				.fetch(
