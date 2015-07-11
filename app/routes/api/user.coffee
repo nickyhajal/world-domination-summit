@@ -635,6 +635,8 @@ routes = (app) ->
 
 		add_checkin: (req, res, next) ->
 			if req.me and req.query.location_id and req.query.location_type
+				if req.query.location_id == '64' || req.query.location_id == '15'
+					req.query.location_id = '2'
 				Checkin.forge
 					user_id: req.me.get('user_id')
 					location_id: req.query.location_id
