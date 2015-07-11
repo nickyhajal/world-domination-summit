@@ -39,9 +39,8 @@ routes = (app) ->
           if req.query.by_id?
             tmp = {}
             for i in checkins
-              if i.get('location_id') == '15' || i.get('location_id') == '64'
+              if i.get('location_id') == '15'
                 existing = tmp['2'].get('num_checkins')
-                tmp['2'].set('num_checkins', (+i.get('num_checkins'))+(+existing))
                 tmp['2'].set('num_checkins', (+i.get('num_checkins'))+(+existing))
               else
                 tmp[i.get("location_id")] = i
