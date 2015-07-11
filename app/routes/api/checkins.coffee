@@ -30,8 +30,7 @@ routes = (app) ->
         .query (qb) ->
           qb.where('created_at', '>', from)
           qb.groupBy(qb.knex.raw('location_type, location_id'))
-          qb.orderBy('num_checkins', 'DESC')
-          qb.orderBy('check_in', 'DESC')
+          qb.orderBy('location_id')
           qb.column(qb.knex.raw('COUNT(*) as num_checkins'))
         .fetch({columns: ['location_id', 'location_type']})
         .then (checkins) ->
@@ -39,7 +38,7 @@ routes = (app) ->
           if req.query.by_id?
             tmp = {}
             for i in checkins
-              if i.get('location_id') == '15'
+              if i.get('location_id') == '15' || i.get('location_id') == '64'
                 existing = tmp['2'].get('num_checkins')
                 tmp['2'].set('num_checkins', (+i.get('num_checkins'))+(+existing))
               else
