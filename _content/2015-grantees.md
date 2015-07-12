@@ -8,7 +8,7 @@ sidebar: grantee
 
 ### Valerie Groth
 
-![WDS 2015 Foundation Grantee, Valerie Groth](http://imgs.wds.fm/foundation_valerie.jpg)
+<img src="http://imgs.wds.fm/foundation_valerie.jpg" alt="WDS 2015 Foundation Grantee, Valerie Groth" width="600"/>
 
 School teachers in urban districts face special challenges in promoting their students’ long-term academic success. It is no surprise that so-called “failing” schools are disproportionately situated in urban centers with high rates of poverty and crime. Valerie Groth is a mission to change that for Chicago-area students. In 2014, she founded Ryan Banks Academy, a coeducational boarding school that seeks to impact the lives of students through a rigorous college and career preparatory education, a supportive boarding program, and a focus on personal development in a positive environment.  The goal of Ryan Banks Academy is to teach students not only the value of education, but also encourage them to focus on cultivating their own unique strengths, interests, and passions so that they may lead a purpose-filled life. Curriculum focuses not only on academic pursuits, but also on developing their relationships, core values, and mindset. 
 
@@ -18,7 +18,7 @@ There are many steps in her journey to build the school, and the Scholarship for
 
 ### Denise Logan
 
-![WDS 2015 Foundation Grantee, Denise Logan](http://imgs.wds.fm/foundation_denise.jpg)
+<img src="http://imgs.wds.fm/foundation_denise.jpg" alt="WDS 2015 Foundation Grantee, Denise Logan" width="600"/>
 
 Imagine yourself right now as a seven year old child whose family has just lost everything in a flood. Or as a ten year old who has just landed in a shelter because the abuse at home got so bad that mom finally took the kids and fled for her life. What kind of dreams would fill your sleep? Who would be there reminding you “I believe in you! You can do it!” What would it mean to you to open a beautiful gift box and see inside a stuffed bear, shiny barrettes, a box of pencils, a clean t-shirt and a new toothbrush?
 
@@ -29,7 +29,7 @@ Denise will be using her Scholarship funds to systemize her process, so groups a
 
 ### Emily Wray
 
-![WDS 2015 Foundation Grantee, Emily Wray](http://imgs.wds.fm/foundation_emily.jpg)
+<img src="http://imgs.wds.fm/foundation_emily.jpg" alt="WDS 2015 Foundation Grantee, Emily Wray" width="600"/>
 
 We’ve all experienced moments when we struggling to put into words an experience or emotion. Voices of Petersburg is a three-day digital storytelling workshop for clients of Petersburg Mental Health Services in Petersburg, Alaska. Participants choose an experience they want to share and write a script for a digital story to give voice to their struggles and triumphs. The process of writing, choosing supportive media assets, and bringing the story to the screen provides a platform for healing unique to the mental health therapies. 
 
