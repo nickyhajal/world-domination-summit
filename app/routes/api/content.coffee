@@ -13,7 +13,7 @@ content =
 			_Contents = Contents.forge()
 			_Contents
 			.query('where', 'type', '=', 'flickr_stream')
-			.query('where', 'content_id', '>', '390')
+			.query('where', 'content_id', '>', '1763')
 			.fetch()
 			.then (contents) ->
 				processImg = (content) ->
@@ -47,7 +47,7 @@ content =
 				_Contents
 				.query (qb) =>
 					qb.column(qb.knex.raw('((24 + 1 + GREATEST(TIMESTAMPDIFF(HOUR, NOW(), CREATED_AT), TIMESTAMPDIFF(HOUR, NOW(), DATE_SUB(NOW(), INTERVAL 1 DAY)))) * RAND()) weight'))
-					qb.where('content_id', '>', '0')
+					qb.whereRaw("(content_id > 0 AND type != 'flickr_stream') OR (content_id > '1763' AND type = 'flickr_stream')")
 					qb.orderBy('weight', 'desc')
 				.fetch(
 					columns: ['content_id', 'type', 'data']

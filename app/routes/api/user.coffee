@@ -629,8 +629,6 @@ routes = (app) ->
 											res.redirect('/upload-race?rsp='+rsp)
 									, (err) ->
 										console.error(err)
-
-
 										next()
 
 		add_checkin: (req, res, next) ->
