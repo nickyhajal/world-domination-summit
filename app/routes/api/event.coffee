@@ -310,7 +310,7 @@ routes = (app) ->
 			to_hour = req.query.to_hour
 			if req.query.to_pm == '12'
 				if req.query.to_hour != '12'
-					+to_hour += 12
+					to_hour = parseInt(to_hour) + 12
 			else if req.query.to_hour == '12'
 				to_hour = '0'
 			if (''+to_hour).length == 1
@@ -382,7 +382,9 @@ routes = (app) ->
 					html += '<div class="meetup"><h2 style="font-family:Vitesse">'+ev.get('what')+'</h2>'
 					html += '<h4>'+ev.get('place')+' - '+ev.get('address')+'</h4>'
 					html += '<h3>A meetup for '+_s.decapitalize(ev.get('who'))+'</h3>'
-					html += '<div class="descr">'+ev.get('descr').replace(RegExp("\n","g"), "<br>")+'</div></div>'
+					if parseInt(req.query.descriptions)
+						html += '<div class="descr">'+ev.get('descr').replace(RegExp("\n","g"), "<br>")+'</div>'
+					html += '</div>'
 				options =
 					format: 'Letter'
 					border: '.4in'
