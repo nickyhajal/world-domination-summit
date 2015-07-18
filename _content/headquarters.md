@@ -4,7 +4,7 @@ sidebar: headquarters
 
 <h3>Your Base in Portland, Oregon</h3>
 <p>
-	We'll base out of the Arlene Schnitzer Concert Hall, located two blocks from a light-rail stop and directly across from South Park. On Saturday morning, one of the city's main Farmer's Markets will be open in the park, with cupcakes, fresh vegetables, and local art available for sale.
+	We'll base out of the Newmark Theatre in the Antoinette Hatfield Hall, located two blocks from a light-rail stop and directly across from the south park blocks. On Saturday morning, one of the city's main Farmer's Markets will be open in the park, with cupcakes, fresh vegetables, and local art available for sale.
 </p>
 <div class="place-row">
 	<a href="http://www.portland5.com/arlene-schnitzer-concert-hall">1037 SW Broadway, Portland, Oregon 97205</a>
@@ -18,10 +18,10 @@ sidebar: headquarters
 <a name="lodging"></a>
 
 <h3 class="side-icon-moon">Lodging</h3>
-<p>Portland is an affordable destination, with the lowest hotel rates of any major west coast city. Every year we arrange a number of discounts from partner hotels. Other attendees rent through AirBnB or stay at a local hostel. We're working on a complete list so keep checking back for the latest information. For now, we've secured rooms at these two great properties:</p>
+<p>Portland is an affordable destination, with the lowest hotel rates of any major west coast city. Every year we arrange a number of discounts from partner hotels. Other attendees rent through AirBnB or stay at a local hostel. At least a few months before the event, we'll publish registration links to attendees. The hotels listd below are partners that we've used previously:</p>
 
 <div class="place-row">
-	<a href="https://www.starwoodmeeting.com/StarGroupsWeb/res?id=1502128445&key=1E3271B6">The Nines Hotel</a> (FULL) 
+	<a href="https://www.starwoodmeeting.com/StarGroupsWeb/res?id=1502128445&key=1E3271B6">The Nines Hotel</a>  
 	<span>
 		<a href="http://goo.gl/2wmuIP">0.3 Mi</a>
 		From Base
@@ -29,7 +29,7 @@ sidebar: headquarters
 </div>
 
 <div class="place-row">
-	<a href="https://be.cohores.net/10180?NextPage=index&Nights=1&NumberOfRooms=1&NumberOfAdults=1&Currency=USD&SubSource=361&GroupCode=WDS2015">Paramount Hotel</a> (FULL) 
+	<a href="https://be.cohores.net/10180?NextPage=index&Nights=1&NumberOfRooms=1&NumberOfAdults=1&Currency=USD&SubSource=361&GroupCode=WDS2015">Paramount Hotel</a> 
 	<span>
 		<a href="http://goo.gl/WexjC9">0.2 Mi</a>
 		From Base
