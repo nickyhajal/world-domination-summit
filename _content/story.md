@@ -1,7 +1,7 @@
 sidebar: photos-videos
 icon: globe
 
-Way back in 2011 we invited 500 friends to Portland, Oregon. Our common curiosity brought us together to explore one question: *How to live a remarkable life in a conventional world?* 
+Way back in 2011 we invited 500 friends to Portland, Oregon. Our common curiosity brought us together to explore one question: *How do we live a remarkable life in a conventional world?* 
 
 <div class="zig-zags_blue"></div>
 
