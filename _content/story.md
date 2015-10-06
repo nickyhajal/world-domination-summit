@@ -1,7 +1,7 @@
 sidebar: photos-videos
 icon: globe
 
-Way back in 2011, we invited 500 friends to Portland, Oregon. Our common curiosity to explore one question brought us together: *How to live a remarkable life in a conventional world?* 
+Way back in 2011 we invited 500 friends to Portland, Oregon. Our common curiosity brought us together to explore one question: *How to live a remarkable life in a conventional world?* 
 
 <div class="zig-zags_blue"></div>
 
@@ -19,6 +19,7 @@ Everyone who comes to WDS is a big part of it and you make this community strong
 
 <iframe src="//player.vimeo.com/video/109903000?title=0&amp;byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
+<div class="zig-zags_blue"></div>
 
 **The Plan for 2016**
 
