@@ -8,7 +8,7 @@ This short video shows more of what it's all about:
 
 <iframe src="https://player.vimeo.com/video/121164251?title=0&byline=0&portrait=0" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>&nbsp; <br>
 
-We're excited to announce that Academies are back for 2016! We're extending this year's Academies to include a wide range of awesome topics and features several favorite WDS speakers from over the years. 
+We're excited to announce that Academies will be back in 2016! We're extending this year's Academies to include a wide range of awesome topics and feature several favorite WDS speakers from over the years. 
 
 Registration for Academies is separate from WDS itself, and we offer registration both to WDS attendees as well as to the general public (for a slightly higher registration fee). Because they are hosted at different venues around Portland, please note that there is a separate registration process for each Academy you would like to attend. 
 
