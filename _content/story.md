@@ -19,6 +19,8 @@ Everyone who comes to WDS is a big part of it and you make this community strong
 
 <iframe src="//player.vimeo.com/video/109903000?title=0&amp;byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
+&nbsp;
+
 <div class="zig-zags_blue"></div>
 
 **The Plan for 2016**
