@@ -7,13 +7,13 @@ icon: globe
 
 <img id="story-img-1" src="/images/story/circle-1.jpg"/>
 
-Fast forward to 2015 and we’re still exploring that question every summer, with an in-person gathering that has now included more than 10,000 people. The stakes and stories have grown each year with new adventures like [Bollywood dancing](/speakers/dj-prashant), hot air balloon rides, [Guiness World Records](/2014-world-record), and even “Scholarships for Real Life” - our foundation that offers grants to empower individuals to pursue their dreams and positively impact their community.
+Fast forward to 2015 and we’re still exploring that question every summer, with an in-person gathering that has now included more than 10,000 people. The stakes and stories have grown each year with new adventures like [Bollywood dancing](/speakers/dj-prashant), hot air balloon rides, [Guiness World Record](/2014-world-record) setting, and a foundation that offers grants to individuals to pursue their dreams and positively impact their community. We call them [“Scholarships for Real Life”](/foundation).
 
-In August 2016 we’re doing it again. This time, we’re inviting all our friends in Portland, Oregon for the sixth *World Domination Summit* (WDS) to explore that same question alongside our guiding core principles: *Community*, *Adventure*, and *Service*. Want to join us?
+In August 2016 we’re doing it again and inviting all our friends (you!) to PDX for our sixth *World Domination Summit* (WDS). Some things this year will be new, but our core principles of *Community*, *Adventure*, and *Service* will continue to guide our pursuit of *living remarkable lives in a conventional world*. Want to [join us](/register)?
 
 **What It’s Like**
  
-When you spend WDS with us in Portland, you’ll help us take over the city. With main-stage keynotes, hundreds of attendee-led meetups, a dozen half-day workshops known as “Academies,” a city-wide scavenger hunt, a Guinness World Record Attempt, big parties, and thousands of new friends high-fiving you on street corners, it’s a truly immersive and awesome experience.
+When you spend WDS with us in Portland, you’ll help us take over the city. With main-stage keynotes, hundreds of attendee-led meetups, dozens of workshops known as “Academies,” a city-wide scavenger hunt, a Guinness World Record Attempt, big parties, and thousands of new friends high-fiving you on street corners, it’s a truly immersive and awesome experience.
  
 Everyone who comes to WDS is a big part of it and you make this community strong and independent with no corporate sponsorship and nothing for sale during the event except books from our speakers. If you want to learn more about what it's like to hang out with us, check out this short documentary from the perspective of one of our previous attendees:
 
