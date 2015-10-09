@@ -25,7 +25,7 @@ Everyone who comes to WDS is a big part of it and you make this community strong
 
 **The Plan for 2016**
 
-For 2016 we’re very excited to introduce new WDS mini-events held throughout the city including art shows, performances, a 5k, and many more independent gatherings, and to extend our time together to an entire week (no-longer just the weekend). We’re also adding to our popular [Academies](/academies) to explore and incorporate many more topics.
+For 2016 we’re very excited to introduce new WDS mini-events held throughout the city including art shows, performances, a 5k, and many more independent gatherings, and to extend our time together to an entire week (no-longer just the weekend). We’re also adding to our popular [Academies](/academies) to incorporate many more attendee's interests.
 
 We’ll once again be making our main stage home at the Newmark theater (where we were in 2012) – a beautiful and intimate theater with 1,000 seats. Since there are fewer seats in this theater, there are fewer tickets this year for main-stage keynote attendance, but many other WDS events will be offered through separate ticket purchases.
 
