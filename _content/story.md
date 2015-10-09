@@ -37,6 +37,8 @@ During the pre-sale at WDS 2015 we limited ticket purchases for the main stage k
  
 But remember: Even if you don’t buy tickets for the main stage keynotes, separate tickets will be available for many of the other WDS events taking place throughout the week. Everyone is welcome!
 
+[Sign up here](/register) for our mailing list and you'll be notified about upcoming ticket sales and important dates.
+
 <!-- # 
 <a href="/academies" class="register-banner"><span class="reg-heading">Register now for Academies!</span><span class="reg-subhead">The main stage show is sold out, but you can still attend WDS Academies.</span></a>
 -->
