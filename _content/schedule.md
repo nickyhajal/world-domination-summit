@@ -52,7 +52,7 @@ icon: parachute
 	</div>
 </div>
 
-<p class="intro">We'll all arrive in the city for a registration on Friday afternoon and an opening party on Friday evening. The main event will be held in the beautiful Arlene Schnitzer Concert Hall, and WDS is now open earlier than ever with numerous unofficial gatherings taking place well in advance. We'll also have another World Record Attempt on Friday morning.</p>
+<p class="intro">WDS is now starting earlier and ending later than ever with numerous unofficial gatherings taking place throughout the week. Main registration will kick off Friday, our annual opening party will take place Friday evening, and main-stage events will be held in the Newmark Theater Saturday and Sunday.</p>
 
 Throughout both weekend days, we'll alternate between the concert hall for speaker talks, a park area for a mini-festival, and several smaller spaces for attendee-led meetups. The evenings will find us out and about on the town, attending your choice of group events or just decompressing on your own.
 
