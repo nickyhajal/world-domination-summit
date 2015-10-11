@@ -1,7 +1,7 @@
 sidebar: schedule
 icon: parachute
 
-# On [July 9-13, 2015](/register) the fifth annual World Domination Summit will take over Portland, Oregon yet again. Our plan of action? Have fun and create meaningful adventure.
+# On [August 11-15, 2016](/register) the fifth annual World Domination Summit will take over Portland, Oregon yet again. Our plan of action? Have fun and create meaningful adventure.
 <div class="main-schedule-box">
 	<h3>The Schedule</h3>
 	<div class="main-schedule-item">
@@ -14,7 +14,7 @@ icon: parachute
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Friday</div>
 		<div class="main-schedule-time">8:30am–11:30am</div>
-		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="/2015-world-record">Worldwide Waffles</a></div>
+		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="/2015-world-record">World Record Attempt</a></div>
 		<div class="main-schedule-time">2:00pm–7:00pm</div>
 		<div class="main-schedule-descr">Registration</div>
 		<div class="main-schedule-time">6:00pm–10:00pm</div>
