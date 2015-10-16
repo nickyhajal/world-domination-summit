@@ -1,6 +1,6 @@
 ###
 
-	Credential Changes allow users to reset their passwords 
+	Credential Changes allow users to reset their passwords
 	in a secure, trackable way
 
 ###
