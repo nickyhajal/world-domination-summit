@@ -7,9 +7,9 @@ sidebar: headquarters
 	We'll base out of the Newmark Theatre in the Antoinette Hatfield Hall, located two blocks from a light-rail stop and directly across from the south park blocks. On Saturday morning, one of the city's main Farmer's Markets will be open in the park, with cupcakes, fresh vegetables, and local art available for sale.
 </p>
 <div class="place-row">
-	<a href="http://www.portland5.com/arlene-schnitzer-concert-hall">1037 SW Broadway, Portland, Oregon 97205</a>
+	<a href="http://www.portland5.com/newmark-theatre">1111 SW Broadway, Portland, OR 97205</a>
 	<span>
-		<a href="https://goo.gl/maps/PdE82">12.6 Mi</a>
+		<a href="https://goo.gl/maps/4eRdFJeb3Ep">12.6 Mi</a>
 		From Airport
 	</span>
 </div>
