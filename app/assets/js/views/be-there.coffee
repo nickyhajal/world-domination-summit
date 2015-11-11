@@ -28,7 +28,7 @@ ap.Views.be_there = XView.extend
 							ap.tbyh = {} if not ap.tbyh?
 							ticket = rsp.ticket
 							ticket.meta_data = JSON.parse(ticket.meta_data)
-							ap.tbyh[rsp.ticket.hash] = ticket
+							ap.tbyh[ticket.hash] = ticket
 							ap.navigate('mission-accomplished/'+rsp.ticket.hash)
 							$('.payment-processing').hide()
 						else if rsp.charge_success?

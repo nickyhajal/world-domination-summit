@@ -7,7 +7,8 @@ ap.Views.send_ticket = XView.extend
 			@initRender()
 	getTicket: (cb) ->
 		if ap.tbyh?[@options.hash]?
-			@ticket = ap.tbyh?
+			@ticket = ap.tbyh?[@options.hash]
+			@claim_link = 'http://wds.fm/claim-ticket/'+@ticket.hash
 			cb()
 		else
 			ap.api 'get ticket', {hash: @options.hash}, (rsp) =>
