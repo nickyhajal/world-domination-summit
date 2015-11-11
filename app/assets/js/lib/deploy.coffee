@@ -46,11 +46,11 @@ _d.slugify = (str) ->
 
 _d.striptags = (input, allowed) ->
 	input = input.toString()
-	allowed = (((allowed || "") + "").toLowerCase().match(/<[a-z][a-z0-9]*>/g) || []).join('') 
+	allowed = (((allowed || "") + "").toLowerCase().match(/<[a-z][a-z0-9]*>/g) || []).join('')
 	tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi
 	commentsAndPhpTags = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi
 	return input.replace(commentsAndPhpTags, '').replace tags, ($0, $1) ->
-		return if allowed.indexOf('<' + $1.toLowerCase() + '>') > -1 then $0 else '' 
+		return if allowed.indexOf('<' + $1.toLowerCase() + '>') > -1 then $0 else ''
 
 _d.toRad = (val) ->
 	return val *  (Math.PI / 180)
@@ -99,7 +99,7 @@ _d.nicetime = (start, end = false, just=60) ->
 		if not end
 			end = +(new Date())
 		diff = (end - start) / 1000
-	
+
 		# Output pretty times
 		if(diff < just)
 			return 'just now'
@@ -118,11 +118,11 @@ _d.nicetime = (start, end = false, just=60) ->
 		return false
 
 defaultToWhiteSpace = (characters)->
-	if (characters != null) 
+	if (characters != null)
 		return '[' + _.escapeRegExp(''+characters) + ']';
 	return '\\s';
 _d.rgbToHex = (color)->
-	if color.substr(0, 1) is '#' 
+	if color.substr(0, 1) is '#'
 		return color
 	 digits = /(.*?)rgb\((\d+), (\d+), (\d+)\)/.exec(color)
 	 red = parseInt(digits[2])
@@ -130,7 +130,7 @@ _d.rgbToHex = (color)->
 	 blue = parseInt(digits[4])
 	 rgb = blue | (green << 8) | (red << 16)
 	rgb = rgb.toString(16)
-	while (rgb.length < 6) 
+	while (rgb.length < 6)
 		rgb = '0' + rgb
 	return '#' + rgb
 _d.resizeStr = (str, size, append = '...')->
@@ -165,7 +165,7 @@ _d.addSlashes = (str)->
 
 _d.stripSlashes = (str)->
 	return (str+'').replace(/\\(.?)/g, (s, n1)->
-		switch (n1) 
+		switch (n1)
 			when '\\'
 				return '\\'
 			when '0'
@@ -184,7 +184,7 @@ _d.money = (num, opts = false) ->
 	return opts.presign + (( num * 1 ) / opts.div ).toFixed(2) + opts.postsign
 
 ###
- 
+
  Readies allow you to wait for something else to complete
  before executing a function.
 
@@ -243,15 +243,15 @@ twoDigits = (d) ->
 	if -10 < d && d < 0
 		return "-0" + (-1*d).toString();
 	return d.toString();
- 
+
 ##
 # Center an element in relation to another
-# by default, it horizontally centers against <body> 
+# by default, it horizontally centers against <body>
 # also automatically recenters on resize by default
 #
 # @param object opts options as described below:
-# @opt string parent 
-# @opt bool horizontal 
+# @opt string parent
+# @opt bool horizontal
 # @opt bool vertical
 # @opt int offsetX
 # @opt int offsetY
@@ -320,7 +320,7 @@ twoDigits = (d) ->
 					rc.setEndPoint('EndToStart', re)
 					return rc.text.length
 				else return 0
-			if target.setSelectionRange? and target.setSelectionRange 
+			if target.setSelectionRange? and target.setSelectionRange
 				target.setSelectionRange(pos, pos)
 			else if target.createTextRange
 				range = target.createTextRange()

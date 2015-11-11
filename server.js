@@ -16,9 +16,9 @@ if (process.env.DIR !== undefined) {
 
 db = process.db = app.settings.db
 process.mail = app.settings.mail
-process.year = '2015'
-process.yr = '15'
-process.lastYear = '2014'
+process.year = '2016'
+process.yr = '16'
+process.lastYear = '2015'
 process.dmn = process.env.DOMAIN
 process.rsapp = 'mobile_logins'
 process.APN = new apn.Connection(app.settings.apn);

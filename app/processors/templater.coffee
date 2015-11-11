@@ -70,7 +70,7 @@ get_templates = (tpls, type, cb) ->
 										name = file.split(/_[a-z]*\//)[1].split('.')[0]
 										content = ''
 
-										# If a content page, figure out where the 
+										# If a content page, figure out where the
 										# properties stop and the content begins
 										tplStarted = false
 										if tpl_type is 'pages'
@@ -89,11 +89,11 @@ get_templates = (tpls, type, cb) ->
 										else
 											content = pre_content
 
-										# Append a separator after the options that 
+										# Append a separator after the options that
 										# we can use later
 										if tpl_opts.length
 											tpl_opts = tpl_opts + '----tpl_opts----'
-											
+
 										content = content.replace(/\<script/g, '`script')
 										content = content.replace(/\<\/script/g, '`/script')
 										renderOpts.content = content

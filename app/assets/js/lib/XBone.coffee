@@ -6,12 +6,14 @@ window.XView = Backbone.View.extend
 	defaults:
 		output: false
 	initialize: (options) ->
+		@initTemplateOptions()
+		@initRender()
+	initTemplateOptions: ->
 		view = this.options.view
 		sidebar = ap.template_options['pages_'+view]?.sidebar ? false
 		if ap.template_options['pages_'+view]?
 			for opt_name,val of ap.template_options['pages_'+view]
 				this.options[opt_name] = val
-		@initRender()
 
 	initRender: ->
 		if @options

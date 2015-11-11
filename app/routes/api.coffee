@@ -15,6 +15,8 @@ routes = (app) ->
 	screens = require('./api/screens')(app)
 	speaker = require('./api/speaker')(app)
 	transfer = require('./api/transfer')(app)
+	ticket = require('./api/ticket')(app)
+	charge = require('./api/charge')(app)
 	device = require('./api/device')(app)
 	user = require('./api/user')(app)
 	checkins = require('./api/checkins')(app)
@@ -71,6 +73,12 @@ routes = (app) ->
 		app.get '/user/notifications', user.get_notifications
 		app.get '/user/notifications/unread', user.get_unread_notifications
 		app.get '/user/notifications/read', user.read_notifications
+
+		# Ticket
+		app.get '/ticket', ticket.get
+		app.post '/ticket/charge', ticket.charge
+		app.post '/ticket/send', ticket.send
+		app.get '/ticket/availability', ticket.availability
 
 		# Devices
 		app.post '/device', device.add

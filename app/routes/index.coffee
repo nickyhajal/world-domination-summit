@@ -111,6 +111,7 @@ routes = (app) ->
 				hide_counter: counter
 				year: process.year
 				yr: process.yr
+				stripe_pk: process.env.STRIPE_PK
 				tpls: JSON.stringify(out)
 				provinces: JSON.stringify(provinces)
 				countries: JSON.stringify(countries_out)

@@ -1,0 +1,30 @@
+div(id="page_content")
+	h2(id="header-title") Send Your Ticket
+	br
+	h1 You can send this ticket to its owner in two ways.
+	h3 1. We'll send them an email.
+	p Enter their details below and we'll send them an email with instructions on how to setup their account.
+	div
+		form(action="#", method="post", id="send-ticket-form")
+			div(class="form-section")
+				div(class="form-box")
+					label Their First Name
+					input(type="text", name="first_name")
+				div(class="form-box")
+					label Their Last Name
+					input(type="text", name="last_name")
+			div(class="form-section")
+				div(class="form-box")
+					label Their E-Mail Address
+					input(type="text", name="email")
+			div(class="form-box")
+				label Your Name
+				label(class="sub-label") Just to make sure we have it right.
+				input(type="text", name="sender_name")
+			div(class="form-section")
+				input(type="submit", class="button", value="Send Ticket")
+
+	h3 2. Just pass along this link.
+	p Alternatively, you can personally send them the link below. They just have to click through to get set up.
+	input(type="text", class="ticket-claim-link")
+

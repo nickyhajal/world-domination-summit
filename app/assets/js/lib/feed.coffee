@@ -94,7 +94,6 @@
 				else if channel_name is 'global'
 					channel_url = '/hub'
 
-				tk meta
 				html = '
 					<div class="dispatch-content-shell dispatch-content-unprocessed" data-content_id="'+content.feed_id+'">
 						<div class="dispatch-content-userpic" style="background:url('+author.getPic(160)+')"></div>

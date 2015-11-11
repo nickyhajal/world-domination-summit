@@ -1,5 +1,5 @@
 .attendee_map_text {
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
     margin:                     15px;
     position:                   absolute;
     text-align:                 center;
@@ -29,30 +29,30 @@
     zoom:                       1;
 }
 #modal-confirm .modal-content {
-  padding: 50px 50px 0px;
-  height: 560px;
+    padding:                    50px 50px 0px;
+    height:                     560px;
 }
 #modal-confirm a.button {
-  margin: 52px auto;
-  position: relative;
-  width: 290px !important;
-  display: block;
-  text-align: center;
+    margin:                     52px auto;
+    position:                   relative;
+    width:                      290px ! important;
+    display:                    block;
+    text-align:                 center;
 }
 .notification-confirm-head b {
-  font-family: KarlaBold;
+    font-family:                KarlaBold;
 }
 .notification-confirm-head {
-  font-family: Karla;
-  font-size: 19pt;
+    font-family:                Karla;
+    font-size:                  19pt;
 }
 .modal-confirm-content p {
-  font-family: Karla;
-  padding: 10px;
-  background-color: #eee;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 12pt;
+    font-family:                Karla;
+    padding:                    10px;
+    background-color:           rgb(238, 238, 238);
+    margin-top:                 0px;
+    margin-bottom:              0px;
+    font-size:                  12pt;
 }
 .tpl-2 .block-4 .the_icon {
     margin-left:                24px;
@@ -133,17 +133,17 @@
     border:                     11px solid rgb(242, 242, 234);
     margin:                     0px auto 7px;
 }
-.corner-icon-globe:before {
+.corner-icon-globe::before {
     background-position:        -524px 0px ! important;
 }
 .corner-icon-suitcase {
     background-position:        0px center ! important;
 }
-.corner-icon-parachute:before {
+.corner-icon-parachute::before {
     width:                      103px ! important;
     background-position:        -130px 0px ! important;
 }
-#page_content:before {
+#page_content::before {
     display:                    block;
     height:                     100px;
     position:                   absolute;
@@ -151,66 +151,66 @@
     right:                      -94px;
     z-index:                    10;
     content:                    "";
-    background:                 url("/images/icon-sprites_corner.png?2") no-repeat scroll 0px center / 2739px auto transparent;
+    background:                 transparent url("/images/icon-sprites_corner.png?2") no-repeat scroll 0px center / 2739px auto;
     top:                        -11px;
 }
-.corner-icon-theater:before {
+.corner-icon-theater::before {
     width:                      103px ! important;
     background-position:        -262px 0px ! important;
 }
-.corner-icon-pin:before {
+.corner-icon-pin::before {
     background-position:        -392px 0px ! important;
 }
-.corner-icon-moon:before {
+.corner-icon-moon::before {
     background-position:        -656px 0px ! important;
 }
-.corner-icon-chat:before {
+.corner-icon-chat::before {
     background-position:        -788px 0px ! important;
 }
-.corner-icon-namaste:before {
+.corner-icon-namaste::before {
     background-position:        -919px 0px ! important;
 }
-.corner-icon-compass:before {
+.corner-icon-compass::before {
     background-position:        -1052px 0px ! important;
 }
-.corner-icon-fork:before {
+.corner-icon-fork::before {
     background-position:        -1180px 0px ! important;
 }
-.corner-icon-mic:before {
+.corner-icon-mic::before {
     background-position:        -1316px 0px ! important;
 }
-.corner-icon-mountain:before {
+.corner-icon-mountain::before {
     background-position:        -1448px 0px ! important;
 }
-.corner-icon-trail:before {
+.corner-icon-trail::before {
     background-position:        -1580px 0px ! important;
 }
-.corner-icon-beer:before {
+.corner-icon-beer::before {
     background-position:        -1712px 0px ! important;
 }
-.corner-icon-tree:before {
+.corner-icon-tree::before {
     background-position:        -1844px 0px ! important;
 }
-.corner-icon-bulb:before {
+.corner-icon-bulb::before {
     background-position:        -1977px 0px ! important;
 }
-.corner-icon-map:before {
+.corner-icon-map::before {
     background-position:        -2108px 0px ! important;
 }
-.corner-icon-plane:before {
+.corner-icon-plane::before {
     background-position:        -2241px 0px ! important;
 }
-.corner-icon-handshake:before {
+.corner-icon-handshake::before {
     background-position:        -2372px center ! important;
 }
-.corner-icon-camera:before {
+.corner-icon-camera::before {
     background-position:        -2504px center ! important;
 }
-.corner-icon-coins:before {
+.corner-icon-coins::before {
     background-position:        -2635px center ! important;
 }
 #page_content {
-    background:                 none repeat scroll 0px 0px rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0px 0px;
     margin-left:                -2px;
     margin-top:                 -250px;
     padding:                    50px;
@@ -251,26 +251,26 @@
     top:                        455px;
 }
 a.tab-disabled:hover {
-    background:                 none repeat scroll 0% 0% rgb(226, 127, 28) ! important;
+    background:                 rgb(226, 127, 28) none repeat scroll 0% 0% ! important;
 }
 a.tab-link-active {
-    background:                 none repeat scroll 0px 0px rgb(33, 23, 10) ! important;
+    background:                 rgb(33, 23, 10) none repeat scroll 0px 0px ! important;
 }
 #sidebar a:hover {
-    background:                 none repeat scroll 0% 0% rgb(33, 23, 10);
+    background:                 rgb(33, 23, 10) none repeat scroll 0% 0%;
 }
 #sidebar a.sidebar-button b {
     display:                    block;
     text-decoration:            underline;
 }
-a#button-speaker-videos:before {
+a#button-speaker-videos::before {
     background-position:        -101px 0px;
     width:                      102px;
 }
 a.sidebar-button:hover {
-    background:                 none repeat scroll 0% 0% rgba(255, 255, 255, 0.5) ! important;
+    background:                 rgba(255, 255, 255, 0.5) none repeat scroll 0% 0% ! important;
 }
-a.sidebar-button:before {
+a.sidebar-button::before {
     content:                    "";
     display:                    block;
     height:                     100px;
@@ -280,7 +280,7 @@ a.sidebar-button:before {
     margin:                     0px auto;
     top:                        25px;
     width:                      101px;
-    background:                 url("/images/icon-sprites_sidebar.png") no-repeat scroll 0px 0px / 204px auto transparent;
+    background:                 transparent url("/images/icon-sprites_sidebar.png") no-repeat scroll 0px 0px / 204px auto;
 }
 #sidebar a.sidebar-button {
     box-sizing:                 border-box;
@@ -290,7 +290,7 @@ a.sidebar-button:before {
     height:                     225px;
     text-align:                 center;
     width:                      244px;
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
     position:                   relative;
     font-size:                  15px;
     padding:                    145px 25px 40px;
@@ -306,10 +306,23 @@ a.tab-invisible {
 }
 a.subtle-link {
     color:                      rgb(174, 174, 160) ! important;
-    background:                 none repeat scroll 0px 0px rgb(225, 225, 213) ! important;
+    background:                 rgb(225, 225, 213) none repeat scroll 0px 0px ! important;
+}
+#sidebar a.ticket-purchase {
+    width:                      237px;
+    text-align:                 center;
+}
+#sidebar a.tickets-remaining-shell {
+    margin-top:                 3px;
+    text-align:                 center;
+    width:                      237px;
+    margin-bottom:              2px;
+}
+a.sidebar-price {
+    margin-top:                 -6px;
 }
 #sidebar a {
-    background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
+    background:                 rgb(226, 127, 28) none repeat scroll 0px 0px;
     margin-right:               0px;
     text-decoration:            none;
     margin-left:                15px;
@@ -366,7 +379,7 @@ a.subtle-link {
     font-size:                  14px;
 }
 .tpl-3 .block-1 .pattern-bg {
-    background:                 url("/images/home/sprite-box.png?1") repeat scroll 0px 0px / 1152px auto transparent;
+    background:                 transparent url("/images/home/sprite-box.png?1") repeat scroll 0px 0px / 1152px auto;
     height:                     192px;
     box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
@@ -399,7 +412,7 @@ a.subtle-link {
     width:                      88px;
     display:                    block;
     height:                     88px;
-    background:                 url("/images/home/filler_icons_home.png?10049") no-repeat scroll 0px 0px / 689px auto transparent;
+    background:                 transparent url("/images/home/filler_icons_home.png?10049") no-repeat scroll 0px 0px / 689px auto;
     margin:                     -44px auto auto;
 }
 .speaker-year {
@@ -409,7 +422,7 @@ a.subtle-link {
     font-family:                VitesseBook;
 }
 h2.broadcast-active {
-    background:                 none repeat scroll 0px 0px rgb(33, 23, 10);
+    background:                 rgb(33, 23, 10) none repeat scroll 0px 0px;
     color:                      rgb(255, 255, 255);
 }
 h2 {
@@ -420,7 +433,7 @@ h2 {
     text-transform:             uppercase;
     text--webkit-transform:     uppercase;
     font-weight:                normal;
-    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0% 0%;
     padding:                    22px 50px 18px;
     font-family:                vitesse;
     transition:                 all 0.2s ease 0s;
@@ -432,7 +445,7 @@ a:hover {
     text-decoration:            none;
 }
 a.register-banner {
-    background:                 url("/images/register-banner.png") repeat scroll 0% 0% / 100% auto transparent;
+    background:                 transparent url("/images/register-banner.png") repeat scroll 0% 0% / 100% auto;
     width:                      570px;
     height:                     160px;
     display:                    block;
@@ -458,7 +471,7 @@ h2 {
     text-transform:             uppercase;
     text--webkit-transform:     uppercase;
     font-weight:                normal;
-    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0% 0%;
     padding:                    22px 50px 18px;
     font-family:                vitesse;
     transition:                 all 0.2s ease 0s;
@@ -470,7 +483,7 @@ a:hover {
     text-decoration:            none;
 }
 a.register-banner {
-    background:                 url("/images/register-banner.png") repeat scroll 0% 0% / 100% auto transparent;
+    background:                 transparent url("/images/register-banner.png") repeat scroll 0% 0% / 100% auto;
     width:                      570px;
     height:                     160px;
     display:                    block;
@@ -490,7 +503,7 @@ img.photo-head-active {
     left:                       -9999px;
 }
 .place-row span {
-    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0% 0%;
     margin-left:                20px;
     width:                      180px;
     text-align:                 center;
@@ -521,7 +534,7 @@ a.photo-head-next {
     z-index:                    1;
 }
 a.photo-head-prev {
-    background:                 url("/images/wavering-arrows.png") repeat scroll 0% 0% / 59px auto transparent;
+    background:                 transparent url("/images/wavering-arrows.png") repeat scroll 0% 0% / 59px auto;
     display:                    block;
     height:                     34px;
     width:                      29px;
@@ -531,28 +544,28 @@ a.photo-head-prev {
     z-index:                    1;
 }
 a.box-select-option-selected {
-    background:                 none repeat scroll 0px 0px rgb(255, 230, 109) ! important;
+    background:                 rgb(255, 230, 109) none repeat scroll 0px 0px ! important;
     color:                      rgb(184, 108, 32) ! important;
 }
 a.box-select-option {
     display:                    block;
     float:                      left;
-    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0% 0%;
     color:                      rgb(35, 31, 32);
     text-decoration:            none;
     font-family:                karla;
     padding:                    9px 30px;
 }
 a.interest-button:hover {
-    background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
+    background:                 rgb(226, 127, 28) none repeat scroll 0% 0%;
     color:                      rgb(242, 242, 234);
 }
 a.interest-remove-button:hover {
     color:                      rgb(242, 242, 234);
-    background:                 none repeat scroll 0% 0% rgb(227, 47, 28);
+    background:                 rgb(227, 47, 28) none repeat scroll 0% 0%;
 }
 a.interest-button, .interest-remove-button {
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     display:                    block;
     float:                      left;
     font-family:                karla;
@@ -569,20 +582,20 @@ a.dispatch-content-author {
     font-family:                vitesse;
 }
 .dispatch-content-meta {
-    font-family: karlaitalic;
-    color: rgb(171, 171, 157);
-    font-size:14px;
+    font-family:                karlaitalic;
+    color:                      rgb(171, 171, 157);
+    font-size:                  14px;
 }
 .dispatch-meta-link {
-    font-family: karlaitalic;
-    color: rgb(171, 171, 157);
-    font-size:14px;
+    font-family:                karlaitalic;
+    color:                      rgb(171, 171, 157);
+    font-size:                  14px;
 }
 .dispatch-content-like, .dispatch-content-liked {
     margin-right:               8px;
 }
-div.dispatch-content-like-status:before {
-    background:                 none repeat scroll 0% 0% rgb(204, 204, 204);
+div.dispatch-content-like-status::before {
+    background:                 rgb(204, 204, 204) none repeat scroll 0% 0%;
     width:                      1px;
     content:                    "";
     z-index:                    100;
@@ -608,16 +621,16 @@ a.dispatch-content-comment-status, .dispatch-content-like, .dispatch-content-lik
     font-family:                karla;
     font-size:                  14px;
 }
-div.collapsable-box-closed:before {
+div.collapsable-box-closed::before {
     background-position:        -18px center ! important;
 }
-.collapsable-box:before {
+.collapsable-box::before {
     height:                     17px;
     position:                   absolute;
     content:                    "";
     z-index:                    10;
     width:                      15px;
-    background:                 url("/images/dropdown-arrows.png?") repeat scroll 0px 0px / 32px auto transparent;
+    background:                 transparent url("/images/dropdown-arrows.png?") repeat scroll 0px 0px / 32px auto;
     right:                      12px;
     top:                        25px;
 }
@@ -644,7 +657,7 @@ a.broadcast-show-all {
     margin-top:                 -44px;
 }
 a.modal-close {
-    background:                 url("/images/button-close.png") repeat scroll 0% 0% / 100% auto transparent;
+    background:                 transparent url("/images/button-close.png") repeat scroll 0% 0% / 100% auto;
     display:                    block;
     position:                   absolute;
     top:                        -12px;
@@ -676,10 +689,10 @@ a#small-logo {
     -o-transition:              opacity 0.2s ease 0s;
     left:                       60px;
     height:                     35px;
-    background:                 url("/images/logo-small.png") no-repeat scroll 0px 0px / 100% auto transparent;
+    background:                 transparent url("/images/logo-small.png") no-repeat scroll 0px 0px / 100% auto;
 }
 .orange-box a.button {
-    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0% 0%;
     color:                      rgb(226, 127, 28);
     font-size:                  11pt;
     padding:                    6px 20px;
@@ -691,7 +704,7 @@ a.meetup-edit {
     display:                    block;
     float:                      right;
     text-decoration:            none;
-    background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
+    background:                 rgb(226, 127, 28) none repeat scroll 0% 0%;
     margin-right:               -14px;
     margin-top:                 -14px;
     color:                      rgb(255, 255, 255);
@@ -705,7 +718,7 @@ a.meetup-edit {
     text-align:                 center;
     bottom:                     0px;
     font-family:                vitesse;
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
     padding:                    6px 0px 0px;
 }
 .meetup-actions a {
@@ -717,11 +730,11 @@ a.meetup-edit {
     text-align:                 center;
     margin-top:                 2px;
     padding:                    9px 8px 7px;
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
 }
-a.schedule-directions:before {
+a.schedule-directions::before {
     float:                      right;
-    background:                 url("/images/map.png?1") repeat scroll 0px 0px / 100% auto transparent;
+    background:                 transparent url("/images/map.png?1") repeat scroll 0px 0px / 100% auto;
     content:                    "";
     width:                      24px;
     height:                     24px;
@@ -733,10 +746,10 @@ a.schedule-directions:before {
     zoom:                       1;
 }
 a.rank-row:hover {
-    background:                 none repeat scroll 0px 0px rgb(225, 218, 200);
+    background:                 rgb(225, 218, 200) none repeat scroll 0px 0px;
 }
 a.rank-row:nth-of-type(2n+1) {
-    background:                 none repeat scroll 0px 0px rgb(237, 234, 222);
+    background:                 rgb(237, 234, 222) none repeat scroll 0px 0px;
 }
 h4#challenge-title.achieved {
     color:                      rgb(148, 156, 23);
@@ -746,7 +759,7 @@ a.rank-row {
     display:                    block;
     height:                     68px;
     margin-left:                -50px;
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     text-decoration:            none;
     margin-bottom:              2px;
 }
@@ -767,7 +780,7 @@ a#attendee-search-x {
     padding:                    7px 13px 5px;
     margin-right:               58px;
     margin-top:                 -55px;
-    background:                 none repeat scroll 0px 0px rgba(255, 255, 255, 0.46);
+    background:                 rgba(255, 255, 255, 0.46) none repeat scroll 0px 0px;
     display:                    none;
 }
 a {
@@ -779,7 +792,7 @@ a {
 }
 .line-canvas {
     width:                      568px;
-    background:                 none repeat scroll 0% 0% rgb(216, 216, 210);
+    background:                 rgb(216, 216, 210) none repeat scroll 0% 0%;
     height:                     6px;
     clear:                      both;
     margin:                     46px 0px;
@@ -793,7 +806,7 @@ img#story-img-1 {
     margin:                     20px -80px 30px 30px;
 }
 footer {
-    background:                 none repeat scroll 0% 0% rgb(33, 23, 10);
+    background:                 rgb(33, 23, 10) none repeat scroll 0% 0%;
     padding:                    40px 0px;
     text-align:                 center;
     position:                   relative;
@@ -803,7 +816,7 @@ footer {
     color:                      rgb(255, 255, 255);
 }
 a.rate-button:hover {
-    background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
+    background:                 rgb(226, 127, 28) none repeat scroll 0% 0%;
     color:                      rgb(242, 242, 234);
 }
 a.rate-button {
@@ -812,28 +825,28 @@ a.rate-button {
     margin-right:               10px;
     padding:                    10px 25px;
     text-decoration:            none;
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     margin-top:                 20px;
     margin-bottom:              20px;
 }
 a#hub-button-schedule {
-    background:                 none repeat scroll 0% 0% rgb(95, 198, 211);
+    background:                 rgb(95, 198, 211) none repeat scroll 0% 0%;
     color:                      rgb(255, 255, 255);
 }
 a#hub-button-meetups {
-    background:                 none repeat scroll 0% 0% rgb(227, 137, 62);
+    background:                 rgb(227, 137, 62) none repeat scroll 0% 0%;
 }
 a#hub-button-race {
-    background:                 none repeat scroll 0% 0% rgb(177, 186, 30);
+    background:                 rgb(177, 186, 30) none repeat scroll 0% 0%;
 }
 a#hub-button-search {
-    background:                 none repeat scroll 0% 0% rgb(23, 127, 178);
+    background:                 rgb(23, 127, 178) none repeat scroll 0% 0%;
 }
 a#hub-button-tablet-notifications.has_notifications a#hub-button-phone-notifications {
-    background:                 none repeat scroll 0px 0px rgb(227, 47, 28);
+    background:                 rgb(227, 47, 28) none repeat scroll 0px 0px;
 }
 a#hub-button-phone-notifications {
-    background:                 none repeat scroll 0px 0px rgb(227, 47, 28);
+    background:                 rgb(227, 47, 28) none repeat scroll 0px 0px;
     padding:                    0px;
     height:                     0px;
     overflow:                   hidden;
@@ -843,7 +856,7 @@ a#hub-button-phone-notifications {
     -o-transition:              all 0.2s ease 0s;
 }
 a#hub-button-tablet-notifications.has_notifications {
-    background:                 none repeat scroll 0px 0px rgb(227, 47, 28);
+    background:                 rgb(227, 47, 28) none repeat scroll 0px 0px;
     color:                      rgb(255, 255, 255);
     transition:                 all 0.2s ease 0s;
     -moz-transition:            all 0.2s ease 0s;
@@ -851,7 +864,7 @@ a#hub-button-tablet-notifications.has_notifications {
     -o-transition:              all 0.2s ease 0s;
 }
 a#hub-button-tablet-notifications {
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     color:                      rgb(187, 187, 182);
 }
 a.hub-button {
@@ -862,7 +875,7 @@ a.hub-button {
     text-align:                 center;
     margin-bottom:              0px;
     padding:                    40px 0px;
-    background:                 none repeat scroll 0px 0px rgb(33, 23, 10);
+    background:                 rgb(33, 23, 10) none repeat scroll 0px 0px;
     display:                    block;
     float:                      left;
     width:                      50%;
@@ -879,7 +892,7 @@ a.hub-button {
     margin-left:                7px;
     display:                    inline;
     margin-bottom:              0px;
-    background:                 none repeat scroll 0px 0px rgb(137, 46, 36);
+    background:                 rgb(137, 46, 36) none repeat scroll 0px 0px;
     padding:                    4px 7pt 2px;
     position:                   relative;
     top:                        0px;
@@ -891,7 +904,7 @@ a.heading-button {
     font-weight:                normal;
     padding:                    6px 10px;
     top:                        -4px;
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     color:                      rgb(226, 127, 28);
 }
 a.schedule-directions {
@@ -909,7 +922,7 @@ a.checkin-place-nearby {
     display:                    block ! important;
 }
 a.checkin-place {
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
     margin-bottom:              5px;
     text-decoration:            none;
     display:                    none;
@@ -926,7 +939,7 @@ a#checkin-x {
     float:                      right;
     position:                   relative;
     right:                      9px;
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
     border-radius:              50%;
     -moz-border-radius:         50%;
     -webkit-border-radius:      50%;
@@ -946,7 +959,7 @@ a {
 }
 .line-canvas {
     width:                      568px;
-    background:                 none repeat scroll 0% 0% rgb(216, 216, 210);
+    background:                 rgb(216, 216, 210) none repeat scroll 0% 0%;
     height:                     6px;
     clear:                      both;
     margin:                     46px 0px;
@@ -960,7 +973,7 @@ img#story-img-1 {
     margin:                     20px -80px 30px 30px;
 }
 footer {
-    background:                 none repeat scroll 0% 0% rgb(33, 23, 10);
+    background:                 rgb(33, 23, 10) none repeat scroll 0% 0%;
     padding:                    40px 0px;
     text-align:                 center;
     position:                   relative;
@@ -984,10 +997,10 @@ footer {
 #footer-links {
     margin-bottom:              10px;
 }
-.main-schedule-box:after {
+.main-schedule-box::after {
     content:                    "";
     display:                    block;
-    background:                 url("/images/schedule/pattern_schedule-main-description.png") repeat scroll 0px 0px / 100% auto transparent;
+    background:                 transparent url("/images/schedule/pattern_schedule-main-description.png") repeat scroll 0px 0px / 100% auto;
     height:                     116px;
     left:                       -4px;
     position:                   absolute;
@@ -996,7 +1009,7 @@ footer {
     bottom:                     -90px;
 }
 .main-schedule-box {
-    background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
+    background:                 rgb(226, 127, 28) none repeat scroll 0% 0%;
     margin-left:                -50px;
     width:                      310px;
     padding:                    40px 40px 26px;
@@ -1040,25 +1053,25 @@ footer {
 .color-green {
     color:                      rgb(177, 186, 30);
 }
-#page-headquarters h3:first-of-type:before {
+#page-headquarters h3:first-of-type::before {
     display:                    none;
 }
-h3.side-icon-bridge:before {
+h3.side-icon-bridge::before {
     background-position:        -149px center ! important;
 }
-#page-headquarters h3:before {
+#page-headquarters h3::before {
     content:                    "";
     height:                     50px;
-    background:                 url("/images/icon-sprites-grey-orange-circles.png") repeat scroll 0% 0% / 200px auto transparent;
+    background:                 transparent url("/images/icon-sprites-grey-orange-circles.png") repeat scroll 0% 0% / 200px auto;
     width:                      51px;
     top:                        -12px;
     position:                   absolute;
     left:                       -93px;
 }
-.side-icon-streetcar:before {
+.side-icon-streetcar::before {
     background-position:        -49px center ! important;
 }
-h3.side-icon-fork:before {
+h3.side-icon-fork::before {
     background-position:        -99px 0px ! important;
 }
 .broadcast-box .broadcast-area a:hover {
@@ -1118,6 +1131,12 @@ span.reg-heading {
     text-align:                 center;
     text-decoration:            underline;
     width:                      100%;
+}
+h3.sub-karla {
+    font-weight:                400;
+    font-family:                karla;
+    margin-top:                 -12px;
+    margin-bottom:              30px;
 }
 h3 {
     font-size:                  24px;
@@ -1194,15 +1213,15 @@ div.photo-header {
     margin-left:                -50px;
     margin-top:                 -50px;
 }
-.dispatch-content-seemore.open:before {
+.dispatch-content-seemore.open::before {
     display:                    none;
 }
-.dispatch-content-seemore:before {
+.dispatch-content-seemore::before {
     position:                   absolute;
     content:                    "";
     left:                       0px;
-    background:                 linear-gradient(rgba(255, 254, 252, 0.23) 0%, rgb(255, 255, 255) 100%) repeat scroll 0px 0px transparent;
-    background:                 -webkit-linear-gradient(top, rgba(255, 254, 252, 0.23) 0%, rgb(255, 255, 255) 100%) repeat scroll 0px 0px transparent;
+    background:                 transparent linear-gradient(rgba(255, 254, 252, 0.23) 0%, rgb(255, 255, 255) 100%) repeat scroll 0px 0px;
+    background:                 transparent -webkit-linear-gradient(top, rgba(255, 254, 252, 0.23) 0%, rgb(255, 255, 255) 100%) repeat scroll 0px 0px;
     height:                     22px;
     width:                      100%;
     top:                        -22px;
@@ -1219,7 +1238,7 @@ div.lifted-content h2 {
     margin-right:               -65px;
 }
 .lifted-content {
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
     display:                    block;
     z-index:                    100;
     position:                   relative;
@@ -1244,7 +1263,7 @@ div.lifted-content h2 {
     display:                    none;
 }
 #logo-waves {
-    background:                 url("/images/logo-waves.png") repeat scroll 0% 0% / 100% auto transparent;
+    background:                 transparent url("/images/logo-waves.png") repeat scroll 0% 0% / 100% auto;
     height:                     22px;
     position:                   relative;
     top:                        26px;
@@ -1285,10 +1304,10 @@ input.account-input {
     width:                      450px ! important;
 }
 span.pre-input {
-    background:                 none repeat scroll 0px 0px rgb(248, 248, 244);
+    background:                 rgb(248, 248, 244) none repeat scroll 0px 0px;
 }
 .task-how-to-complete input[type="text"] {
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 251);
+    background:                 rgb(255, 255, 251) none repeat scroll 0% 0%;
     margin-top:                 18px;
     font-size:                  13pt;
     padding:                    10px;
@@ -1299,11 +1318,11 @@ span.pre-input {
     font-size:                  17pt;
     font-family:                vitessebook ! important;
     color:                      rgb(33, 23, 10);
-    background:                 none repeat scroll 0px 0px rgb(227, 227, 218);
+    background:                 rgb(227, 227, 218) none repeat scroll 0px 0px;
     z-index:                    3;
 }
 input[type="text"], input[type="password"], input[type="number"], .pre-input {
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     border:                     0px none;
     color:                      rgb(33, 23, 10);
     font-family:                karla ! important;
@@ -1373,7 +1392,7 @@ a.send-tweet {
     margin-top:                 -3px;
 }
 a.btn-error {
-    background:                 none repeat scroll 0% 0% rgb(227, 47, 28);
+    background:                 rgb(227, 47, 28) none repeat scroll 0% 0%;
     font-size:                  14px ! important;
 }
 #page-welcome a.button, #page-settings a.button {
@@ -1424,7 +1443,7 @@ a.login-to-comment {
     font-size:                  16px;
 }
 h1 a.button:hover {
-    background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
+    background:                 rgb(226, 127, 28) none repeat scroll 0px 0px;
     color:                      rgb(255, 255, 255);
 }
 h1 a.button {
@@ -1433,7 +1452,7 @@ h1 a.button {
     position:                   relative;
     padding:                    6px 9px 5px;
     margin-left:                10px;
-    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0% 0%;
     color:                      rgba(33, 23, 10, 0.26);
     top:                        -5px;
     transition:                 all 0.2s ease 0s;
@@ -1463,11 +1482,19 @@ a.note-button {
     display:                    block;
     width:                      100%;
 }
+.ticket-purchase-area button {
+    float:                      left;
+    margin-right:               13px;
+}
+#page-mission-accomplished button.button {
+    font-size:                  18pt;
+    padding:                    16px 60px;
+}
 input[type="submit"], .button {
     border:                     0px none;
     padding:                    8px 40px;
     color:                      rgb(255, 255, 255);
-    background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
+    background:                 rgb(226, 127, 28) none repeat scroll 0px 0px;
     cursor:                     pointer;
     font-family:                karla;
     text-decoration:            none;
@@ -1481,11 +1508,11 @@ input[type="submit"], .button {
     height:                     100%;
     position:                   absolute;
     z-index:                    100000;
-    background:                 none repeat scroll 0px 0px rgba(255, 255, 255, 0.9);
+    background:                 rgba(255, 255, 255, 0.9) none repeat scroll 0px 0px;
     display:                    none;
 }
 #the-loading-icon {
-    background:                 url("/images/icon-loading.png") repeat scroll 0px 0px / 100% auto transparent;
+    background:                 transparent url("/images/icon-loading.png") repeat scroll 0px 0px / 100% auto;
     width:                      276px;
     height:                     55px;
     position:                   relative;
@@ -1557,7 +1584,7 @@ textarea#note-input {
     margin-bottom:              -2px;
 }
 textarea {
-    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0% 0%;
     border:                     0px none;
     font-family:                karla;
     height:                     90px;
@@ -1574,7 +1601,7 @@ textarea {
     height:                     38px;
 }
 .twitter-connected-details {
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     text-align:                 center;
     width:                      430px;
     padding:                    30px;
@@ -1716,12 +1743,12 @@ div.dispatch-content-message a {
     color:                      rgb(186, 185, 169);
 }
 a.dispatch-content-channel:hover {
-    background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
+    background:                 rgb(226, 127, 28) none repeat scroll 0% 0%;
     color:                      rgb(242, 242, 234);
 }
 .dispatch-content-channel {
     float:                      right;
-    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0% 0%;
     color:                      rgb(171, 171, 157);
     padding:                    3px 8px;
     text-decoration:            none;
@@ -1749,13 +1776,13 @@ form.dispatch-content-comment-form {
     clear:                      both;
     margin-bottom:              1px;
     position:                   relative;
-    background:                 none repeat scroll 0px 0px rgba(251, 247, 244, 0.54);
+    background:                 rgba(251, 247, 244, 0.54) none repeat scroll 0px 0px;
     padding:                    25px 20px;
 }
 .dispatch-content-comments {
     padding-top:                6px;
 }
-.comment-shell:last-of-type:after {
+.comment-shell:last-of-type::after {
     margin-bottom:              0px;
     padding-bottom:             10px;
     content:                    "";
@@ -1788,7 +1815,7 @@ form.dispatch-content-comment-form {
 }
 .login-error, .form-error {
     font-family:                karla;
-    background:                 none repeat scroll 0% 0% rgb(227, 47, 28);
+    background:                 rgb(227, 47, 28) none repeat scroll 0% 0%;
     color:                      rgb(255, 255, 255);
     text-align:                 center;
     width:                      580px;
@@ -1854,13 +1881,13 @@ h4 {
     font-family:                karla;
 }
 .collapsable-box {
-    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0% 0%;
     padding:                    15px;
     margin-bottom:              15px;
     position:                   relative;
 }
 .broadcast-box h2 {
-    background:                 none repeat scroll 0px 0px rgb(33, 23, 10);
+    background:                 rgb(33, 23, 10) none repeat scroll 0px 0px;
     color:                      rgb(255, 255, 255);
 }
 .broadcast-box-close {
@@ -1894,7 +1921,7 @@ h4 {
     padding:                    0px 50px ! important;
 }
 .broadcast-box {
-    background:                 none repeat scroll 0px 0px rgb(33, 23, 10);
+    background:                 rgb(33, 23, 10) none repeat scroll 0px 0px;
     margin-right:               -50px;
     margin-left:                -50px;
     margin-top:                 -14px;
@@ -1928,13 +1955,13 @@ div.modal {
     height:                     100%;
     z-index:                    10000;
     display:                    none;
-    background:                 none repeat scroll 0px 0px rgba(30, 27, 25, 0.5);
+    background:                 rgba(30, 27, 25, 0.5) none repeat scroll 0px 0px;
 }
 #modal-army div.modal-content {
     height:                     519px;
 }
 div.modal-content {
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
     bottom:                     0px;
     left:                       0px;
     margin:                     auto;
@@ -1963,7 +1990,7 @@ div#army-map {
 }
 div#search-box {
     display:                    none;
-    background:                 none repeat scroll 0% 0% rgb(33, 23, 10);
+    background:                 rgb(33, 23, 10) none repeat scroll 0% 0%;
     width:                      312px;
     top:                        35px;
     right:                      0px;
@@ -1995,12 +2022,12 @@ div#search-box {
     margin-right:               0px;
 }
 #attendee-search a.result-link:nth-of-type(2n) {
-    background:                 none repeat scroll 0% 0% rgb(251, 251, 245) ! important;
+    background:                 rgb(251, 251, 245) none repeat scroll 0% 0% ! important;
 }
 #attendee-search a.result-link {
     display:                    block;
     width:                      100%;
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     font-size:                  14pt;
     text-decoration:            none;
     padding:                    20px;
@@ -2009,7 +2036,7 @@ div.search-results a:first-of-type {
     margin-top:                 5px ! important;
 }
 #attendee-search div.search-results {
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
 }
 div.search-results {
     margin-top:                 1px;
@@ -2049,7 +2076,7 @@ div.orange-box p {
 div#foundation-app-box {
     margin-left:                -66px;
 }
-div#foundation-app-box:after {
+div#foundation-app-box::after {
     background-color:           transparent;
     background-image:           url("/images/foundation/pattern_application.png");
     background-attachment:      scroll;
@@ -2070,7 +2097,7 @@ div#foundation-app-box:after {
     height:                     199px;
 }
 div.orange-box {
-    background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
+    background:                 rgb(226, 127, 28) none repeat scroll 0px 0px;
     padding:                    10px 50px 55px;
     width:                      618px;
     position:                   relative;
@@ -2085,7 +2112,7 @@ div.tweet-box-shell {
     height:                     210px;
 }
 div.dispatch-loading {
-    background:                 url("/images/icon-loading.png") repeat scroll 0% 0% / 100% auto transparent;
+    background:                 transparent url("/images/icon-loading.png") repeat scroll 0% 0% / 100% auto;
     margin:                     110px auto 0px;
     width:                      220px;
     height:                     50px;
@@ -2118,17 +2145,17 @@ table#manifests-results-shell thead th, table#manifests-results-shell tfoot th, 
     padding:                    7px 0px;
 }
 #events-shell #event-review-results tr:nth-of-type(4n) {
-    background:                 none repeat scroll 0px 0px rgb(255, 254, 249) ! important;
+    background:                 rgb(255, 254, 249) none repeat scroll 0px 0px ! important;
 }
 #manifest-results tr:nth-of-type(2n), .search-results tr:nth-of-type(2n) {
-    background:                 none repeat scroll 0px 0px rgb(248, 246, 236);
+    background:                 rgb(248, 246, 236) none repeat scroll 0px 0px;
 }
 #schedule-shell tr td:first-of-type {
     width:                      120px ! important;
     text-align:                 left;
 }
 td.search-actions .button {
-    color: #fff;
+    color:                      rgb(255, 255, 255);
     font-size:                  12pt;
     padding:                    4px 15px;
 }
@@ -2146,7 +2173,7 @@ td.search-actions {
     font-family:                karla;
 }
 .manifest-results tr, .search-results tr {
-    background:                 none repeat scroll 0% 0% rgb(239, 238, 229);
+    background:                 rgb(239, 238, 229) none repeat scroll 0% 0%;
     cursor:                     pointer;
 }
 table#manifests-results-shell, .search-results-shell {
@@ -2216,7 +2243,7 @@ nav.admin-nav a {
     padding:                    8px 16px;
 }
 nav.admin-nav {
-    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0% 0%;
     padding:                    5px 60px 10px 2px;
     margin-top:                 -50px;
     margin-left:                -50px;
@@ -2229,7 +2256,7 @@ div.active-ticket h4 {
     text-align:                 center;
 }
 div.active-ticket {
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     width:                      300px;
     padding:                    20px;
 }
@@ -2251,7 +2278,7 @@ td.event-review-actions {
 }
 div.upload-success {
     font-size:                  17pt;
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     text-align:                 center;
     padding:                    12px;
     color:                      rgb(118, 113, 103);
@@ -2281,7 +2308,7 @@ div.connect a:hover {
     color:                      rgb(226, 127, 28);
 }
 div.connect a {
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     text-decoration:            none;
     font-family:                karla;
     margin-right:               6px;
@@ -2300,7 +2327,7 @@ div.dispatch-content-like-shell {
 }
 div#meetup-address-overlay {
     width:                      765px;
-    background:                 none repeat scroll 0px 0px rgba(242, 242, 234, 0.81);
+    background:                 rgba(242, 242, 234, 0.81) none repeat scroll 0px 0px;
     font-size:                  15px;
     text-align:                 right;
     font-family:                vitesse;
@@ -2316,7 +2343,7 @@ div.meetup-descr {
     margin-top:                 10px;
 }
 .meetup-attendee, .friend {
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     display:                    inline-block;
     font-family:                karla;
     padding:                    12px 12px 10px;
@@ -2364,7 +2391,7 @@ div.meetup-time {
     padding:                    7px;
     text-align:                 center;
     margin-right:               16px;
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     width:                      100%;
 }
 div.meetup-maxed {
@@ -2418,7 +2445,7 @@ div.meetup-descr-host-name {
     font-family:                karla;
 }
 div.meetup-descr-host-shell {
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     margin:                     2px 0px;
     padding:                    5px 9px;
 }
@@ -2460,7 +2487,7 @@ div.schedule-row {
 }
 div.schedule-time {
     float:                      left;
-    background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
+    background:                 rgb(226, 127, 28) none repeat scroll 0% 0%;
     color:                      rgb(255, 255, 255);
     padding:                    8px 8px 4px;
     margin-left:                -10px;
@@ -2480,17 +2507,17 @@ div.schedule-time {
 }
 div.schedule-main {
     clear:                      both;
-    background:                 none repeat scroll 0px 0px rgb(248, 248, 242);
+    background:                 rgb(248, 248, 242) none repeat scroll 0px 0px;
     padding:                    12px 10px 10px;
 }
 div.schedule-top {
     font-size:                  11pt;
     padding:                    10px;
     height:                     32px;
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
 }
 .schedule-host-shell {
-    background:                 none repeat scroll 0px 0px rgba(248, 248, 242, 0.59);
+    background:                 rgba(248, 248, 242, 0.59) none repeat scroll 0px 0px;
     padding:                    12px;
     height:                     36px;
     float:                      left;
@@ -2498,7 +2525,7 @@ div.schedule-top {
 div.schedule-note {
     font-family:                karlaitalic;
     font-size:                  11pt;
-    background:                 none repeat scroll 0px 0px rgba(248, 248, 242, 0.59);
+    background:                 rgba(248, 248, 242, 0.59) none repeat scroll 0px 0px;
     margin-top:                 0px;
     padding:                    5px 10px;
     color:                      rgb(166, 160, 147);
@@ -2524,9 +2551,9 @@ div.schedule-host-avatar {
     margin-top:                 -9px;
     text-decoration:            none;
     padding:                    6px 10px 5px 22px;
-    background:                 none repeat scroll 0px 0px rgb(254, 241, 220);
+    background:                 rgb(254, 241, 220) none repeat scroll 0px 0px;
 }
-div#race-user-status:after {
+div#race-user-status::after {
     background-image:           url("/images/foundation/pattern_application.png");
     background-size:            253px auto ! important;
     -webkit-background-size:    253px auto ! important;
@@ -2539,24 +2566,24 @@ div#race-user-status:after {
 }
 div#race-user-status {
     padding:                    30px;
-    background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
+    background:                 rgb(226, 127, 28) none repeat scroll 0px 0px;
     width:                      630px;
     margin-top:                 -35px;
     margin-left:                -50px;
     position:                   relative;
 }
 a.task-row:nth-of-type(2n) {
-    background:                 none repeat scroll 0px 0px rgb(237, 234, 222);
+    background:                 rgb(237, 234, 222) none repeat scroll 0px 0px;
 }
 a.task-row {
     display:                    block;
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     margin-left:                -50px;
     padding:                    20px;
     margin-bottom:              2px;
 }
 .task-points.achieved {
-    background:                 none repeat scroll 0px 0px rgb(177, 186, 30);
+    background:                 rgb(177, 186, 30) none repeat scroll 0px 0px;
 }
 .task-points {
     display:                    block;
@@ -2567,7 +2594,7 @@ a.task-row {
     font-size:                  23pt;
     float:                      left;
     text-align:                 right;
-    background:                 none repeat scroll 0px 0px rgb(181, 169, 150);
+    background:                 rgb(181, 169, 150) none repeat scroll 0px 0px;
     clear:                      both;
     height:                     100%;
     box-sizing:                 content-box;
@@ -2577,7 +2604,7 @@ a.task-row {
     padding:                    14px 13px 26px;
 }
 a.task-row:hover {
-    background:                 none repeat scroll 0px 0px rgb(225, 218, 200);
+    background:                 rgb(225, 218, 200) none repeat scroll 0px 0px;
 }
 a.task-row {
     text-decoration:            none ! important;
@@ -2590,7 +2617,7 @@ span.points-label {
     display:                    block ! important;
     margin-left:                -50px;
     text-align:                 right;
-    background:                 none repeat scroll 0% 0% rgb(235, 234, 229);
+    background:                 rgb(235, 234, 229) none repeat scroll 0% 0%;
     width:                      90px;
     float:                      left;
     height:                     30px;
@@ -2599,7 +2626,7 @@ span.points-label {
 }
 div.tasks-label {
     height:                     30px;
-    background:                 none repeat scroll 0px 0px rgb(249, 248, 244);
+    background:                 rgb(249, 248, 244) none repeat scroll 0px 0px;
     width:                      580px;
 }
 span.tasks-label {
@@ -2618,10 +2645,10 @@ div.task-explanation {
     margin-top:                 -3px;
 }
 span.task-detail-block.achieved {
-    background:                 none repeat scroll 0px 0px rgb(177, 186, 30);
+    background:                 rgb(177, 186, 30) none repeat scroll 0px 0px;
 }
 span.task-detail-block {
-    background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
+    background:                 rgb(226, 127, 28) none repeat scroll 0px 0px;
     color:                      rgb(255, 255, 255);
     display:                    block ! important;
     font-family:                vitesse;
@@ -2637,7 +2664,7 @@ span.task-detail-block {
 div.task-how-to-complete iframe {
     border:                     0px none;
     margin-top:                 20px;
-    background:                 none repeat scroll 0% 0% transparent;
+    background:                 transparent none repeat scroll 0% 0%;
     overflow-x:                 hidden;
     width:                      400px;
     height:                     80px;
@@ -2645,13 +2672,13 @@ div.task-how-to-complete iframe {
     left:                       -99999px;
 }
 .task-how-to-complete.achieved {
-    background:                 none repeat scroll 0px 0px rgb(177, 186, 30);
+    background:                 rgb(177, 186, 30) none repeat scroll 0px 0px;
     color:                      rgb(255, 255, 255);
 }
 div.task-how-to-complete {
     padding:                    20px;
     font-family:                karla;
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     width:                      580px;
 }
 div.task-photo-desktop #camera-button {
@@ -2660,28 +2687,28 @@ div.task-photo-desktop #camera-button {
 div#task-completed-message.achieved {
     margin:                     -20px -20px 20px;
     color:                      rgb(255, 255, 255);
-    background:                 none repeat scroll 0px 0px rgb(177, 186, 30);
+    background:                 rgb(177, 186, 30) none repeat scroll 0px 0px;
     padding:                    10px 20px;
 }
 #rank-2 .rank-therank {
-    background:                 none repeat scroll 0% 0% rgb(210, 207, 188) ! important;
+    background:                 rgb(210, 207, 188) none repeat scroll 0% 0% ! important;
 }
 #rank-1 span.rank-therank, #rank-2 .rank-therank, #rank-3 .rank-therank {
     font-size:                  39px;
     padding-top:                13px;
     font-family:                vitesse;
     color:                      rgb(103, 93, 79);
-    background:                 none repeat scroll 0px 0px rgb(255, 233, 48);
+    background:                 rgb(255, 233, 48) none repeat scroll 0px 0px;
 }
 #rank-3 span.rank-therank {
-    background:                 none repeat scroll 0px 0px rgb(230, 167, 75) ! important;
+    background:                 rgb(230, 167, 75) none repeat scroll 0px 0px ! important;
 }
 span.rank-therank {
     float:                      left;
     font-size:                  30px;
     text-align:                 right;
     color:                      rgb(255, 255, 255);
-    background:                 none repeat scroll 0px 0px rgb(181, 169, 150);
+    background:                 rgb(181, 169, 150) none repeat scroll 0px 0px;
     margin-right:               20px;
     height:                     68px;
     padding:                    18px 19px 10px;
@@ -2692,14 +2719,14 @@ div.rank-attendee {
     padding-top:                23px;
 }
 div.dispatch-filter {
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     color:                      rgb(226, 127, 28);
     font-family:                karla;
     padding:                    7px 25px;
     cursor:                     pointer;
 }
 div.dispatch-filter:hover {
-    background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
+    background:                 rgb(226, 127, 28) none repeat scroll 0% 0%;
     color:                      rgb(242, 242, 234);
 }
 div.dispatch-filter:hover .dispatch-filter-shell {
@@ -2720,7 +2747,7 @@ div.dipatch-filter-shell label {
 div.dipatch-filter-shell {
     position:                   absolute;
     right:                      0px;
-    background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
+    background:                 rgb(226, 127, 28) none repeat scroll 0px 0px;
     color:                      rgb(255, 255, 255);
     padding:                    20px;
     width:                      300px;
@@ -2794,14 +2821,14 @@ div#hub-buttons {
     margin-top:                 -14px;
 }
 div.following.follow-button {
-    background:                 none repeat scroll 0% 0% rgb(177, 186, 30) ! important;
+    background:                 rgb(177, 186, 30) none repeat scroll 0% 0% ! important;
 }
 #attendee-search div.follow-button {
     float:                      right;
     text-align:                 center;
     cursor:                     pointer;
     color:                      rgb(255, 255, 255);
-    background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
+    background:                 rgb(226, 127, 28) none repeat scroll 0% 0%;
     padding:                    10px 10px 8px;
     margin-top:                 -9px;
     margin-right:               -10px;
@@ -2830,7 +2857,7 @@ div#big-content {
     text--webkit-transform:     uppercase;
     font-family:                vitesse;
     text-align:                 center;
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
     border-radius:              17px;
     -moz-border-radius:         17px;
     -webkit-border-radius:      17px;
@@ -2854,12 +2881,12 @@ div.note-privacy {
 div.note-empty {
     font-family:                karla;
     width:                      580px;
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     padding:                    20px;
 }
 div.note-shell {
     font-family:                karla;
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     padding:                    20px 20px 30px;
     position:                   relative;
     margin-bottom:              10px;
@@ -2917,6 +2944,68 @@ img.grantee-pic {
     position:                   relative;
     top:                        6px;
 }
+h5.karla {
+    font-family:                karla;
+    margin-bottom:              -10px;
+    margin-top:                 16px;
+    font-size:                  22pt;
+    color:                      rgb(58, 57, 47);
+}
+div.ticket-send-success {
+    font-family:                karla;
+    font-size:                  15pt;
+    padding:                    24px;
+    background:                 rgb(241, 255, 170) none repeat scroll 0px 0px;
+    width:                      550px;
+}
+div.ticket-purchase-area {
+    padding:                    20px;
+    width:                      640px;
+    background:                 rgb(235, 235, 227) none repeat scroll 0px 0px;
+    height:                     80px;
+    margin-bottom:              20px;
+    margin-top:                 15px;
+}
+div.tickets-remaining-num {
+    font-family:                karlabold;
+}
+div.tickets-remaining-num {
+    display:                    inline;
+}
+div.tickets-remaining-shell {
+    font-size:                  14pt;
+    display:                    none;
+    font-family:                karla;
+    margin-top:                 9px;
+}
+div.payment-processing-open.payment-processing {
+    display:                    block;
+    background:                 rgba(255, 255, 255, 0.89) none repeat scroll 0px 0px;
+}
+div.payment-processing {
+    position:                   fixed;
+    top:                        0px;
+    left:                       0px;
+    height:                     100%;
+    width:                      100%;
+    z-index:                    10000;
+    text-align:                 center;
+    display:                    none;
+    transition:                 background-color 0.3s ease 0s;
+    -moz-transition:            background-color 0.3s ease 0s;
+    -webkit-transition:         background-color 0.3s ease 0s;
+    -o-transition:              background-color 0.3s ease 0s;
+    background:                 rgba(255, 255, 255, 0.89) none repeat scroll 0px 0px;
+}
+div.payment-processing-text {
+    margin:                     200px auto;
+    padding:                    40px;
+    width:                      680px;
+    font-family:                karlabold;
+    font-size:                  21pt;
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
+    border:                     5px solid rgb(211, 218, 97);
+}
 * {
     box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
@@ -2929,16 +3018,19 @@ body#page-profile .line-canvas {
 .hide-counter #counter-shell {
     display:                    none;
 }
+body#page-be-there {
+    overflow-y:                 scroll;
+}
 body {
     padding:                    0px;
     margin:                     0px;
-    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0% 0%;
     font-family:                VitesseBook;
     color:                      rgb(35, 31, 32);
     overflow-x:                 hidden;
     position:                   relative;
 }
-#page-home #header-title:after {
+#page-home #header-title::after {
     height:                     110px;
     display:                    block;
     left:                       9px;
@@ -2950,7 +3042,7 @@ body {
     zoom:                       1;
     z-index:                    10;
     content:                    "";
-    background:                 url("/images/home/separator_zigzag-home.png?1") repeat-x scroll 0px 0px / 594px auto transparent;
+    background:                 transparent url("/images/home/separator_zigzag-home.png?1") repeat-x scroll 0px 0px / 594px auto;
     top:                        128px;
 }
 #page-home #header-title {
@@ -2985,6 +3077,10 @@ h1#extra-big {
 }
 #page_content h1 {
     margin-bottom:              19px;
+}
+h1.super-big {
+    margin-top:                 38px;
+    font-size:                  27pt;
 }
 h1 {
     line-height:                140%;
@@ -3042,7 +3138,7 @@ p, li {
     margin-top:                 0px;
 }
 header#main-header {
-    background:                 none repeat scroll 0% 0% rgb(177, 186, 30);
+    background:                 rgb(177, 186, 30) none repeat scroll 0% 0%;
     margin-top:                 41px;
     transition:                 all 0.3s ease 0s;
     -moz-transition:            all 0.3s ease 0s;
@@ -3051,19 +3147,19 @@ header#main-header {
     height:                     310px;
 }
 nav#top-nav {
-    background:                 none repeat scroll 0% 0% rgb(33, 23, 10);
+    background:                 rgb(33, 23, 10) none repeat scroll 0% 0%;
     height:                     41px;
     position:                   fixed;
     width:                      100%;
     top:                        0px;
     left:                       0px;
-    z-index:                    10000;
+    z-index:                    9998;
 }
 #nav-links a:last-of-type {
     margin-right:               0px;
 }
 #nav-links a:hover, .nav-link-active {
-    background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
+    background:                 rgb(226, 127, 28) none repeat scroll 0% 0%;
     color:                      rgb(33, 23, 10) ! important;
     margin-top:                 -4px ! important;
 }
@@ -3087,9 +3183,9 @@ a#nav-register {
     box-sizing:                 content-box;
     -moz-box-sizing:            content-box;
     -webkit-box-sizing:         content-box;
-    background:                 url("/images/icon-search.png?12") repeat scroll center 4px / 21px auto rgb(226, 127, 28);
+    background:                 rgb(226, 127, 28) url("/images/icon-search.png?12") repeat scroll center 4px / 21px auto;
 }
-#nav-search:hover:before {
+#nav-search:hover::before {
     content:                    "";
     height:                     38px;
     border-radius:              50px 0px 0px;
@@ -3099,14 +3195,14 @@ a#nav-register {
     top:                        0px;
     position:                   absolute;
     left:                       -71px;
-    background:                 none repeat scroll 0px 0px rgba(3, 0, 255, 0);
+    background:                 rgba(3, 0, 255, 0) none repeat scroll 0px 0px;
 }
 #nav-search:hover {
     padding:                    10px 5px 25px ! important;
-    background:                 url("/images/icon-search.png?12") repeat scroll center 4px / 21px auto rgb(226, 127, 28);
+    background:                 rgb(226, 127, 28) url("/images/icon-search.png?12") repeat scroll center 4px / 21px auto;
 }
 a.ambassador-button:hover {
-    background:                 none repeat scroll 0% 0% rgb(181, 43, 1);
+    background:                 rgb(181, 43, 1) none repeat scroll 0% 0%;
 }
 .ambassador-review-actions a.ambassador-button:first-of-type {
     border-right:               1px solid rgb(242, 173, 120);
@@ -3182,7 +3278,7 @@ a.ambassador-button {
     left:                       -9999px;
 }
 a#logo {
-    background:                 url("/images/logo.png") repeat scroll 0% 0% / 100% auto transparent;
+    background:                 transparent url("/images/logo.png") repeat scroll 0% 0% / 100% auto;
     height:                     215px;
     display:                    block;
     width:                      192px;
@@ -3195,8 +3291,8 @@ a#logo {
     position:                   fixed ! important;
     top:                        41px ! important;
 }
-#counter-shell:before {
-    background:                 url("/images/countdown-login-icon.png") repeat scroll 0px 0px / 100% auto transparent;
+#counter-shell::before {
+    background:                 transparent url("/images/countdown-login-icon.png") repeat scroll 0px 0px / 100% auto;
     height:                     38px;
     content:                    "";
     position:                   absolute;
@@ -3205,14 +3301,14 @@ a#logo {
     width:                      38px;
 }
 #counter-shell {
-    background:                 none repeat scroll 0px 0px rgb(33, 23, 10);
+    background:                 rgb(33, 23, 10) none repeat scroll 0px 0px;
     color:                      rgb(255, 255, 255);
     top:                        255px;
     position:                   absolute;
     padding:                    17px;
     left:                       15px;
     width:                      244px;
-    z-index:                    10000;
+    z-index:                    9998;
 }
 #counter-shell h6 {
     font-weight:                normal;
@@ -3224,7 +3320,7 @@ a#logo {
     font-size:                  11pt;
 }
 .counter-section div {
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
     color:                      rgb(33, 23, 10);
     font-weight:                bold;
     padding:                    17px 0px 11px;
@@ -3258,7 +3354,7 @@ span#long-squiggly {
     -ms-filter:                 "alpha(opacity=100)";
     filter:                     alpha(opacity=100);
     zoom:                       1;
-    background:                 url("/images/squiggle_white.png?7") repeat scroll 0px 0px / 324px auto transparent;
+    background:                 transparent url("/images/squiggle_white.png?7") repeat scroll 0px 0px / 324px auto;
 }
 #page-home section#sidebar-shell {
     display:                    none;
@@ -3330,7 +3426,7 @@ section#sidebar-shell {
     left:                       9px;
     z-index:                    10000;
     height:                     312.5px;
-    background:                 url("/images/video.jpg") no-repeat scroll 0px 0px / 100% auto transparent;
+    background:                 transparent url("/images/video.jpg") no-repeat scroll 0px 0px / 100% auto;
 }
 #video-shell {
     z-index:                    990;
@@ -3342,7 +3438,7 @@ section#sidebar-shell {
     height:                     159px;
 }
 #video-underlay {
-    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0% 0%;
     height:                     168px;
     position:                   absolute;
     top:                        0px;
@@ -3380,14 +3476,14 @@ a.link-block:hover {
     padding-top:                100px;
 }
 #reg-schedule {
-    background:                 url("/images/block_schedule.png") repeat scroll 0% 0% transparent;
+    background:                 transparent url("/images/block_schedule.png") repeat scroll 0% 0%;
     width:                      349px;
     height:                     255px;
     top:                        418px;
     left:                       259px;
 }
 #reg-army {
-    background:                 url("/images/block_army.png") repeat scroll 0% 0% transparent;
+    background:                 transparent url("/images/block_army.png") repeat scroll 0% 0%;
     width:                      383px;
     top:                        292px;
     left:                       607px;
@@ -3398,31 +3494,31 @@ a.link-block:hover {
     height:                     420px;
     top:                        418px;
     left:                       15px;
-    background:                 url("/images/block_attendees.jpg?") repeat scroll 0px 0px transparent;
+    background:                 transparent url("/images/block_attendees.jpg?") repeat scroll 0px 0px;
 }
 #reg-chris {
-    background:                 url("/images/block_chris.png") repeat scroll 0% 0% transparent;
+    background:                 transparent url("/images/block_chris.png") repeat scroll 0% 0%;
     width:                      348px;
     top:                        673px;
     left:                       259px;
     height:                     269px;
 }
 #reg-story {
-    background:                 url("/images/block_story.png") repeat scroll 0% 0% transparent;
+    background:                 transparent url("/images/block_story.png") repeat scroll 0% 0%;
     width:                      367px;
     height:                     269px;
     top:                        673px;
     left:                       607px;
 }
 #reg-headquarters {
-    background:                 url("/images/block_headquarters.png") repeat scroll 0% 0% transparent;
+    background:                 transparent url("/images/block_headquarters.png") repeat scroll 0% 0%;
     width:                      366px;
     left:                       15px;
     top:                        942px;
     height:                     254px;
 }
 #block-id-0 {
-    background:                 none repeat scroll 0% 0% rgb(101, 30, 30);
+    background:                 rgb(101, 30, 30) none repeat scroll 0% 0%;
 }
 .wall-space {
     display:                    none;
@@ -3451,10 +3547,10 @@ a#counter-login, #counter-account {
 }
 a.counter-button:hover {
     color:                      rgb(33, 23, 10);
-    background:                 none repeat scroll 0px 0px rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0px 0px;
 }
 a.counter-button {
-    background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
+    background:                 rgb(226, 127, 28) none repeat scroll 0px 0px;
     color:                      rgb(255, 255, 255);
     display:                    block;
     float:                      left;
@@ -3475,7 +3571,7 @@ a.counter-button {
     z-index:                    1;
     width:                      225px;
     height:                     225px;
-    background:                 none repeat scroll 0% 0% rgb(216, 214, 212);
+    background:                 rgb(216, 214, 212) none repeat scroll 0% 0%;
     padding:                    17px;
     left:                       15px;
 }
@@ -3506,7 +3602,7 @@ a.counter-button {
     top:                        60px;
 }
 .tpl-1 .wall-content-format-square.wall-content-type-featured_tweet {
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
     height:                     232px;
     padding:                    0px 30px;
     width:                      375px;
@@ -3532,7 +3628,7 @@ a.counter-button {
     height:                     249px;
 }
 .icon-zig-zag {
-    background:                 url("/images/pattern_zig-zag.png") repeat scroll 0px 0px transparent;
+    background:                 transparent url("/images/pattern_zig-zag.png") repeat scroll 0px 0px;
 }
 .tpl-2 .wall-content-type-icon.block-3 {
     height:                     244px;
@@ -3543,14 +3639,14 @@ a.counter-button {
 }
 .wall-content-type-speaker.block-4 {
     height:                     215px;
-    background:                 none repeat scroll 0% 0% rgb(177, 186, 30);
+    background:                 rgb(177, 186, 30) none repeat scroll 0% 0%;
     top:                        -1px;
     padding:                    15px;
     width:                      158px;
     left:                       788px;
 }
 .tpl-1 .wall-content-type-attendee.block-5 {
-    background:                 none repeat scroll 0% 0% rgb(216, 214, 212);
+    background:                 rgb(216, 214, 212) none repeat scroll 0% 0%;
     height:                     120px;
     width:                      125px;
     top:                        230px;
@@ -3577,13 +3673,13 @@ a.counter-button {
     font-size:                  25pt;
     text-align:                 center;
 }
-.tpl-2 .block-8 .wall-content-type-speaker_quote .speaker-name:before {
+.tpl-2 .block-8 .wall-content-type-speaker_quote .speaker-name::before {
     content:                    "";
 }
 .tpl-2 .block-8 {
     content:                    "";
 }
-.tpl-2 .block-8 .speaker-name:before {
+.tpl-2 .block-8 .speaker-name::before {
     content:                    "" ! important;
 }
 .tpl-2 .block-1 .speaker-name {
@@ -3632,7 +3728,7 @@ a.counter-button {
     left:                       366px;
     top:                        250px;
     padding:                    30px;
-    background:                 none repeat scroll 0% 0% rgb(216, 216, 210);
+    background:                 rgb(216, 216, 210) none repeat scroll 0% 0%;
 }
 .tpl-1 .block-8 {
     height:                     225px;
@@ -3650,7 +3746,7 @@ a.counter-button {
     width:                      153px;
 }
 .tpl-1 .wall-content-type-attendee.block-10 {
-    background:                 none repeat scroll 0px 0px rgb(226, 127, 28);
+    background:                 rgb(226, 127, 28) none repeat scroll 0px 0px;
     color:                      rgb(255, 255, 255);
     height:                     89px;
     left:                       415px;
@@ -3680,7 +3776,7 @@ a.counter-button {
     left:                       300px;
     padding:                    15px;
     display:                    table;
-    background:                 none repeat scroll 0% 0% rgb(216, 214, 212);
+    background:                 rgb(216, 214, 212) none repeat scroll 0% 0%;
     height:                     370px;
     top:                        362px;
 }
@@ -3690,7 +3786,7 @@ a.counter-button {
     left:                       395px;
     padding:                    18px 25px 25px;
     top:                        279px;
-    background:                 none repeat scroll 0px 0px rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0px 0px;
 }
 .tpl-2 .block-6 .flickr-photo {
     left:                       15px;
@@ -3698,7 +3794,7 @@ a.counter-button {
     height:                     285px;
 }
 .tpl-2 .block-10 {
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
     display:                    block;
     width:                      225px;
     left:                       690px;
@@ -3713,7 +3809,7 @@ a.counter-button {
     top:                        350px;
     left:                       300px;
     height:                     292px;
-    background:                 none repeat scroll 0% 0% rgb(216, 214, 212);
+    background:                 rgb(216, 214, 212) none repeat scroll 0% 0%;
 }
 .tpl-3 .block-1 .flickr-photo {
     width:                      435px;
@@ -3748,7 +3844,7 @@ a.counter-button {
     z-index:                    4;
     width:                      350px;
     top:                        254px;
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
     height:                     256px;
     left:                       0px;
     padding:                    30px;
@@ -3840,7 +3936,7 @@ a.counter-button {
     margin-top:                 -7px;
 }
 .tpl-4 .block-4 {
-    background:                 none repeat scroll 0% 0% rgb(216, 214, 212);
+    background:                 rgb(216, 214, 212) none repeat scroll 0% 0%;
     display:                    block;
     left:                       485px;
     top:                        0px;
@@ -3865,7 +3961,7 @@ a.counter-button {
     width:                      247px;
     padding:                    40px;
     text-align:                 center;
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
     height:                     315px;
     font-size:                  11pt;
 }
@@ -3881,7 +3977,7 @@ a.counter-button {
     left:                       485px;
     top:                        315px;
     z-index:                    5;
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
     padding:                    40px;
     width:                      336px;
     height:                     220px;
@@ -3913,7 +4009,7 @@ a.counter-button {
     width:                      227px;
 }
 .icon-dots {
-    background:                 url("/images/pattern_dots.png") repeat scroll 0% 0% transparent;
+    background:                 transparent url("/images/pattern_dots.png") repeat scroll 0% 0%;
 }
 .tpl-2 .block-7 {
     height:                     220px;
@@ -3922,12 +4018,12 @@ a.counter-button {
     width:                      351px;
     z-index:                    0;
     padding:                    40px;
-    background:                 none repeat scroll 0px 0px rgb(249, 248, 244);
+    background:                 rgb(249, 248, 244) none repeat scroll 0px 0px;
 }
 .tpl-2 .block-11 {
     z-index:                    -1;
     width:                      299px;
-    background:                 url("/images/pattern_zig-zag.png") repeat scroll 0px 0px transparent;
+    background:                 transparent url("/images/pattern_zig-zag.png") repeat scroll 0px 0px;
     top:                        400px;
     left:                       675px;
     height:                     362px;
@@ -3955,11 +4051,11 @@ a.counter-button {
     display:                    block;
     background-size:            100% auto ! important;
     -webkit-background-size:    100% auto ! important;
-    height:                     20px;
     margin-left:                -15px;
     width:                      720px;
     margin-bottom:              37px;
     background-image:           url("/images/separators/zig-zags_blue.png");
+    height:                     22px;
 }
 .icon-squiggle {
     background-color:           transparent;
@@ -3974,8 +4070,8 @@ a.counter-button {
     background-size:            507px auto ! important;
     -webkit-background-size:    507px auto ! important;
 }
-.tpl-3 .block-4:before {
-    background:                 url("/images/icon_suitcase.png") repeat scroll 0px 0px / 100% auto transparent;
+.tpl-3 .block-4::before {
+    background:                 transparent url("/images/icon_suitcase.png") repeat scroll 0px 0px / 100% auto;
     content:                    "";
     height:                     75px;
     left:                       0px;
@@ -3987,7 +4083,7 @@ a.counter-button {
 }
 .tpl-3 .block-8 {
     left:                       610px;
-    background:                 none repeat scroll 0% 0% rgb(216, 216, 210);
+    background:                 rgb(216, 216, 210) none repeat scroll 0% 0%;
     padding:                    40px;
     top:                        254px;
     width:                      380px;
@@ -3997,7 +4093,7 @@ a.counter-button {
     height:                     277px;
 }
 .tpl-1 .block-3 .pattern-bg {
-    background:                 url("/images/home/sprite-envelope.png?1") repeat scroll 0px 0px / 1050px auto transparent;
+    background:                 transparent url("/images/home/sprite-envelope.png?1") repeat scroll 0px 0px / 1050px auto;
     box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
     -webkit-box-sizing:         border-box;
@@ -4020,7 +4116,7 @@ a.counter-button {
     left:                       384px;
     top:                        0px;
     width:                      226px;
-    background:                 none repeat scroll 0% 0% transparent;
+    background:                 transparent none repeat scroll 0% 0%;
     padding:                    15px 25px 27px;
 }
 .tpl-3 .block-11 {
@@ -4038,7 +4134,7 @@ a.counter-button {
     z-index:                    1;
 }
 .tpl-4 .block-11 {
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
     width:                      228px;
     left:                       649px;
     top:                        535px;
@@ -4102,7 +4198,7 @@ a.counter-button {
     top:                        1135px;
 }
 .tpl-1 .block-2 {
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
     width:                      230px;
     height:                     250px;
     left:                       154px;
@@ -4116,7 +4212,7 @@ a.counter-button {
     top:                        249px;
 }
 .tpl-1 .block-9 {
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
     width:                      254px;
     top:                        490px;
     overflow:                   hidden;
@@ -4190,7 +4286,7 @@ a.counter-button {
     width:                      230px;
     left:                       620px;
     height:                     254px;
-    background:                 none repeat scroll 0px 0px rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0px 0px;
 }
 .block {
     box-sizing:                 border-box;
@@ -4214,13 +4310,13 @@ span.answer_start {
     left:                       381px;
     display:                    table;
     height:                     254px;
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
     width:                      366px;
     padding:                    30px;
     top:                        942px;
 }
 .wall-content-type-featured_tweet {
-    background:                 none repeat scroll 0px 0px rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0px 0px;
 }
 .tpl-1 .block-11 .tweet {
     font-family:                VitesseBook;
@@ -4278,7 +4374,7 @@ span.answer_start {
 }
 .file-upload-container {
     width:                      400px;
-    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0% 0%;
 }
 .file-upload-override-button {
     overflow:                   hidden;
@@ -4342,7 +4438,7 @@ span.answer_start {
 .speaker-quote {
     margin-bottom:              15px;
 }
-.speaker-quote:before {
+.speaker-quote::before {
     z-index:                    -1;
 }
 .select2-container {
@@ -4419,7 +4515,7 @@ span.answer_start {
     font-size:                  1px;
     text-decoration:            none;
     border:                     0px none;
-    background:                 url("select2.png") no-repeat scroll right top transparent;
+    background:                 transparent url("select2.png") no-repeat scroll right top;
     cursor:                     pointer;
     outline:                    0px none;
 }
@@ -4454,7 +4550,7 @@ span.answer_start {
     position:                   absolute;
     z-index:                    9999;
     top:                        100%;
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
     color:                      rgb(0, 0, 0);
     border-width:               0px 1px 1px;
     border-style:               none solid solid;
@@ -4489,7 +4585,7 @@ span.answer_start {
     box-shadow:                 none;
     -moz-box-shadow:            none;
     -webkit-box-shadow:         none;
-    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0% 0%;
     border-radius:              0px;
     -moz-border-radius:         0px;
     -webkit-border-radius:      0px;
@@ -4520,7 +4616,7 @@ span.answer_start {
     display:                    block;
     width:                      100%;
     height:                     100%;
-    background:                 url("select2.png") no-repeat scroll 0px 1px transparent;
+    background:                 transparent url("select2.png") no-repeat scroll 0px 1px;
 }
 .select2-search {
     display:                    inline-block;
@@ -4548,15 +4644,15 @@ span.answer_start {
     box-shadow:                 none;
     -moz-box-shadow:            none;
     -webkit-box-shadow:         none;
-    background:                 none repeat scroll 0% 0% rgb(252, 252, 248);
+    background:                 rgb(252, 252, 248) none repeat scroll 0% 0%;
     border:                     1px solid rgba(170, 170, 170, 0.26);
 }
 .select2-drop.select2-drop-above .select2-search input {
     margin-top:                 4px;
 }
 .select2-search input.select2-active {
-    background:                 url("select2-spinner.gif") no-repeat scroll 100% center, linear-gradient(to bottom, rgb(255, 255, 255) 85%, rgb(238, 238, 238) 99%) repeat scroll 0px 0px transparent;
-    background:                 url("select2-spinner.gif") no-repeat scroll 100% center, -webkit-linear-gradient(top, to bottom, rgb(255, 255, 255) 85%, rgb(238, 238, 238) 99%) repeat scroll 0px 0px transparent;
+    background:                 url("select2-spinner.gif") no-repeat scroll 100% center, transparent linear-gradient(to bottom, rgb(255, 255, 255) 85%, rgb(238, 238, 238) 99%) repeat scroll 0px 0px;
+    background:                 url("select2-spinner.gif") no-repeat scroll 100% center, transparent -webkit-linear-gradient(top, to bottom, rgb(255, 255, 255) 85%, rgb(238, 238, 238) 99%) repeat scroll 0px 0px;
 }
 .select2-container-active .select2-choice, .select2-container-active .select2-choices {
     outline:                    medium none;
@@ -4565,7 +4661,7 @@ span.answer_start {
     -webkit-box-shadow:         0px 1px 4px rgba(0, 0, 0, 0.2);
 }
 .select2-dropdown-open .select2-choice {
-    background:                 none repeat scroll 0% 0% rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0% 0%;
     border:                     0px none ! important;
     box-shadow:                 none;
     -moz-box-shadow:            none;
@@ -4586,7 +4682,7 @@ span.answer_start {
     background-image:           -webkit-linear-gradient(top, to bottom, rgb(255, 255, 255) 0%, rgb(238, 238, 238) 50%);
 }
 .select2-dropdown-open .select2-choice .select2-arrow {
-    background:                 none repeat scroll 0% 0% transparent;
+    background:                 transparent none repeat scroll 0% 0%;
     border-left:                medium none;
     filter:                     none;
     -ms-filter:                 "none";
@@ -4657,34 +4753,34 @@ span.answer_start {
     left:                       0px;
 }
 .select2-results .select2-highlighted {
-    background:                 none repeat scroll 0% 0% rgb(0, 115, 173);
+    background:                 rgb(0, 115, 173) none repeat scroll 0% 0%;
     color:                      rgb(255, 255, 255);
     border:                     0px none ! important;
 }
 .select2-results li em {
-    background:                 none repeat scroll 0% 0% rgb(254, 255, 222);
+    background:                 rgb(254, 255, 222) none repeat scroll 0% 0%;
     font-style:                 normal;
 }
 .select2-results .select2-highlighted em {
-    background:                 none repeat scroll 0% 0% transparent;
+    background:                 transparent none repeat scroll 0% 0%;
 }
 .select2-results .select2-highlighted ul {
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
     color:                      rgb(0, 0, 0);
 }
 .select2-results .select2-no-results, .select2-results .select2-searching, .select2-results .select2-selection-limit {
-    background:                 none repeat scroll 0% 0% rgb(244, 244, 244);
+    background:                 rgb(244, 244, 244) none repeat scroll 0% 0%;
     display:                    list-item;
     padding-left:               5px;
 }
 .select2-results .select2-disabled.select2-highlighted {
     color:                      rgb(102, 102, 102);
-    background:                 none repeat scroll 0% 0% rgb(244, 244, 244);
+    background:                 rgb(244, 244, 244) none repeat scroll 0% 0%;
     display:                    list-item;
     cursor:                     default;
 }
 .select2-results .select2-disabled {
-    background:                 none repeat scroll 0% 0% rgb(244, 244, 244);
+    background:                 rgb(244, 244, 244) none repeat scroll 0% 0%;
     display:                    list-item;
     cursor:                     default;
 }
@@ -4692,10 +4788,10 @@ span.answer_start {
     display:                    none;
 }
 .select2-more-results.select2-active {
-    background:                 url("select2-spinner.gif") no-repeat scroll 100% center rgb(244, 244, 244);
+    background:                 rgb(244, 244, 244) url("select2-spinner.gif") no-repeat scroll 100% center;
 }
 .select2-more-results {
-    background:                 none repeat scroll 0% 0% rgb(244, 244, 244);
+    background:                 rgb(244, 244, 244) none repeat scroll 0% 0%;
     display:                    list-item;
 }
 .select2-container.select2-container-disabled .select2-choice {
@@ -4753,10 +4849,10 @@ html[dir="rtl"] .select2-container-multi .select2-choices li {
     box-shadow:                 none;
     -moz-box-shadow:            none;
     -webkit-box-shadow:         none;
-    background:                 none repeat scroll 0% 0% transparent ! important;
+    background:                 transparent none repeat scroll 0% 0% ! important;
 }
 .select2-container-multi .select2-choices .select2-search-field input.select2-active {
-    background:                 url("select2-spinner.gif") no-repeat scroll 100% center rgb(255, 255, 255) ! important;
+    background:                 rgb(255, 255, 255) url("select2-spinner.gif") no-repeat scroll 100% center ! important;
 }
 .select2-default {
     color:                      rgb(153, 153, 153) ! important;
@@ -4790,7 +4886,7 @@ html[dir="rtl"] .select2-container-multi .select2-choices .select2-search-choice
     cursor:                     default;
 }
 .select2-container-multi .select2-choices .select2-search-choice-focus {
-    background:                 none repeat scroll 0% 0% rgb(212, 212, 212);
+    background:                 rgb(212, 212, 212) none repeat scroll 0% 0%;
 }
 .select2-search-choice-close {
     display:                    block;
@@ -4801,7 +4897,7 @@ html[dir="rtl"] .select2-container-multi .select2-choices .select2-search-choice
     top:                        4px;
     font-size:                  1px;
     outline:                    medium none;
-    background:                 url("select2.png") no-repeat scroll right top transparent;
+    background:                 transparent url("select2.png") no-repeat scroll right top;
 }
 html[dir="rtl"] .select2-search-choice-close {
     right:                      auto;
@@ -4830,7 +4926,7 @@ html[dir="rtl"] .select2-search-choice-close {
 }
 .select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice .select2-search-choice-close {
     display:                    none;
-    background:                 none repeat scroll 0% 0% transparent;
+    background:                 transparent none repeat scroll 0% 0%;
 }
 .select2-result-selectable .select2-match, .select2-result-unselectable .select2-match {
     text-decoration:            underline;
@@ -4876,7 +4972,7 @@ div#race-buttons a {
     font-family:                karla;
     text-decoration:            none;
     margin-bottom:              45px;
-    background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     padding:                    12px 0px 11px;
 }
 @media not all, only screen and (min-resolution: 2dppx) {
@@ -4893,10 +4989,10 @@ div#race-buttons a {
 .ambassador-button {
     border-bottom:              0px none ! important;
 }
-div#home-screen-overlay:after {
+div#home-screen-overlay::after {
     position:                   absolute;
     content:                    "";
-    background:                 url("/images/icon-sprites_corner.png") repeat scroll -1050px center / 5477px auto transparent;
+    background:                 transparent url("/images/icon-sprites_corner.png") repeat scroll -1050px center / 5477px auto;
     z-index:                    100;
     display:                    block;
     height:                     193px;
@@ -4918,12 +5014,12 @@ div#home-screen-overlay:after {
     padding:                    120px 250px;
     background-color:           rgba(255, 255, 255, 0.97);
 }
-#home-screen-overlay h1:after {
+#home-screen-overlay h1::after {
     position:                   absolute;
     left:                       0px;
     content:                    "";
     width:                      100%;
-    background:                 url("/images/separators/zig-zags_blue.png") repeat scroll 0px 0px / 1258px auto transparent;
+    background:                 transparent url("/images/separators/zig-zags_blue.png") repeat scroll 0px 0px / 1258px auto;
     top:                        140px;
     height:                     36px;
 }

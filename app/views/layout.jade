@@ -17,6 +17,7 @@ html(lang='en', class="#{hide_counter}")
 			ap.provinces = !{provinces};
 			ap.countries = !{countries};
 			ap.env = !{env};
+			ap.stripe_pk = '!{stripe_pk}';
 		//-link(rel='stylesheet', href='/images/apple-icon.png')
 		link(rel='stylesheet', type="text/css", href='/app/assets/css/styles.css')
 		link(rel='stylesheet', type="text/css", href='/app/assets/css/fonts.css')
@@ -124,6 +125,9 @@ html(lang='en', class="#{hide_counter}")
 				| &nbsp;&nbsp; | &nbsp; Programming by
 				a(href="http://nickyhajal.com", target="_blank") Nicky Hajal
 
+		div(class="payment-processing")
+			div(class="payment-processing-text")
+				| Hang tight, we're processing your payment!
 		div(id="modals")
 			div(id="modal-army", class="modal")
 				div(class="modal-content")
