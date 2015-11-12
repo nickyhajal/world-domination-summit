@@ -17,7 +17,7 @@ shell = (app) ->
 			app_key: app.settings.eb_key
 			user_key: app.settings.eb_user
 
-		params = 
+		params =
 			id: app.settings.eb_event
 			count: 10000
 			page: 1
@@ -34,7 +34,7 @@ shell = (app) ->
 					.then (ticket) ->
 
 						# The ticket exists, skip it
-						if ticket
+						if ticket || attendee.created < "2015-11-08 00:00:00"
 							processAttendees attendees, inx
 
 						# The ticket doesn't exist, process it
