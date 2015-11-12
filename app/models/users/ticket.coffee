@@ -17,7 +17,7 @@ ticket =
       @addToList('WDS '+process.year+ ' Attendees')
       .then =>
         promo = 'Welcome'
-        subject = "You're coming to WDS! Awesome! Now... Create your profile!"
+        subject = "You're coming to WDS! Awesome!"
         if returning
           promo = 'WelcomeBack'
         @sendEmail(promo, subject)
