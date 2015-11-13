@@ -45,6 +45,8 @@ shell = (app) ->
 								# User exists, we just need to give them the ticket
 								if user
 									user.registerTicket(attendee.barcode, 'returning')
+									user.set('attending'+process.yr, '1')
+									user.save()
 									processAttendees attendees, inx
 
 								# User doesn't exist, create and give ticket
