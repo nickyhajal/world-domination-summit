@@ -88,6 +88,7 @@ routes = (app) ->
 		search: (req, res, next) ->
 			_Users = Users.forge()
 			all = {}
+
 			async.each req.query.search.split(' '), (term, cb) ->
 				_Users
 				.query('orWhere', 'first_name', 'LIKE', term+'%')
