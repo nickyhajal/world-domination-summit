@@ -53,9 +53,9 @@ icon: parachute
 	</div>
 </div>
 
-<p class="intro">WDS is now starting earlier and ending later than ever with numerous unofficial gatherings taking place throughout the week. Main registration will kick off Friday, our annual opening party will take place Friday evening, and main-stage events will be held in the Newmark Theater Saturday and Sunday.</p>
+<p class="intro">WDS is now starting earlier and ending later than ever with numerous unofficial gatherings taking place throughout the week. Main registration will kick off Friday, our annual opening party will take place Friday evening, and main-stage events will be held in the Newmark Theatre Saturday and Sunday.</p>
 
-Throughout both weekend days, we'll alternate between the concert hall for speaker talks, a park area for a mini-festival, and several smaller spaces for attendee-led meetups. The evenings will find us out and about on the town, attending your choice of group events or just decompressing on your own.
+Throughout both weekend days, we'll alternate between the theatre for speaker talks, and several smaller spaces for attendee-led meetups. The evenings will find us out and about on the town, attending your choice of group events or just decompressing on your own.
 
 We'll conclude on Sunday evening with a Farewell party that goes as long as people are around. If you never need to sleep, afterparties and early-morning parties are scheduled for each day. And if you'd like to extend your WDS experience, additional [Academies](/academies) will be held on the days before and after the weekend.
 
