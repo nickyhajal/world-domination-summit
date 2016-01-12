@@ -101,9 +101,9 @@ In previous years, we heard from these speakers, who are now part of our extende
 
 <img src="/images/schedule/schedule-circle-1.png" id="schedule-circle-1"/>
 
-We'll begin each morning in the Schnitzer Theatre, a beautiful auditorium where no seat is further than 100 feet from the stage. Speakers will share a short message that combines personal stories with practical ideas.
+We'll begin each morning in the Newmark Theatre, a beautiful auditorium where no seat is further than 65 feet from the stage. Speakers will share a short message that combines personal stories with practical ideas.
 
-During breaks, you can visit the Highly Sensitive Person Lounge for a quick snooze—or just catch up with a new friend over a cup of coffee.
+During breaks, you can visit the Highly Sensitive Person Lounge to reflect and recharge—or just catch up with a new friend over a cup of coffee.
 
 Most speakers will attend the entire weekend and be available for informal conversation.
 
