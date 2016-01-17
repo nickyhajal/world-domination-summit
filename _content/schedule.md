@@ -1,9 +1,10 @@
 sidebar: schedule
 icon: parachute
 
-# On [August 11-15, 2016](/register) the fifth annual World Domination Summit will take over Portland, Oregon yet again. Our plan of action? Have fun and create meaningful adventure.
+# On [August 11-15, 2016](/register) the sixth annual World Domination Summit will take over Portland, Oregon yet again. Our plan of action? Have fun and create meaningful adventure.
 <div class="main-schedule-box">
-	<h3>The Schedule</h3>
+	<h3>2015 Schedule</h3>
+	<div class="main-schedule-descr">The 2016 schedule will be posted soon!</a></div>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Thursday</div>
 		<div class="main-schedule-time">9:00am–12:00pm</div>
@@ -52,9 +53,9 @@ icon: parachute
 	</div>
 </div>
 
-<p class="intro">WDS is now starting earlier and ending later than ever with numerous unofficial gatherings taking place throughout the week. Main registration will kick off Friday, our annual opening party will take place Friday evening, and main-stage events will be held in the Newmark Theater Saturday and Sunday.</p>
+<p class="intro">WDS is now starting earlier and ending later than ever with numerous unofficial gatherings taking place throughout the week. Main registration will kick off Friday, our annual opening party will take place Friday evening, and main-stage events will be held in the Newmark Theatre Saturday and Sunday.</p>
 
-Throughout both weekend days, we'll alternate between the concert hall for speaker talks, a park area for a mini-festival, and several smaller spaces for attendee-led meetups. The evenings will find us out and about on the town, attending your choice of group events or just decompressing on your own.
+Throughout both weekend days, we'll alternate between the theatre for speaker talks, and several smaller spaces for attendee-led meetups. The evenings will find us out and about on the town, attending your choice of group events or just decompressing on your own.
 
 We'll conclude on Sunday evening with a Farewell party that goes as long as people are around. If you never need to sleep, afterparties and early-morning parties are scheduled for each day. And if you'd like to extend your WDS experience, additional [Academies](/academies) will be held on the days before and after the weekend.
 
@@ -100,9 +101,9 @@ In previous years, we heard from these speakers, who are now part of our extende
 
 <img src="/images/schedule/schedule-circle-1.png" id="schedule-circle-1"/>
 
-We'll begin each morning in the Schnitzer Theatre, a beautiful auditorium where no seat is further than 100 feet from the stage. Speakers will share a short message that combines personal stories with practical ideas.
+We'll begin each morning in the Newmark Theatre, a beautiful auditorium where no seat is further than 65 feet from the stage. Speakers will share a short message that combines personal stories with practical ideas.
 
-During breaks, you can visit the Highly Sensitive Person Lounge for a quick snooze—or just catch up with a new friend over a cup of coffee.
+During breaks, you can visit the Highly Sensitive Person Lounge to reflect and recharge—or just catch up with a new friend over a cup of coffee.
 
 Most speakers will attend the entire weekend and be available for informal conversation.
 
