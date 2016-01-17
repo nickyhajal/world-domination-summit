@@ -1,4 +1,4 @@
-VIMEO_ID = '109484290'
+VIMEO_ID = '151533965'
 
 ap.Views.home = XView.extend
 	initialize: ->
@@ -473,7 +473,7 @@ window.wall =
 	pruneUsed: (type)->
 		tmp = []
 
-		
+
 		wall.used_content[type] = tmp
 
 	showVideo: (e) ->
