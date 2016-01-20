@@ -14,13 +14,13 @@ if (process.env.DIR !== undefined) {
 	process.chdir(process.env.DIR);
 }
 
-db = process.db = app.settings.db
-process.mail = app.settings.mail
-process.year = '2016'
-process.yr = '16'
-process.lastYear = '2015'
-process.dmn = process.env.DOMAIN
-process.rsapp = 'mobile_logins'
+db = process.db = app.settings.db;
+process.mail = app.settings.mail;
+process.year = '2016';
+process.yr = '16';
+process.lastYear = '2015';
+process.dmn = process.env.DOMAIN;
+process.rsapp = 'mobile_logins';
 process.APN = new apn.Connection(app.settings.apn);
 process.gcmSender = new gcm.Sender(process.env.GCM_KEY);
 
@@ -28,15 +28,15 @@ process.gcmSender = new gcm.Sender(process.env.GCM_KEY);
 //require('./app/processors/meetup_suggestions')(app)
 	// require('./app/processors/eventbrite_dup_check')(app)
 if (process.env.NODE_ENV === 'production' && process.env.PORT == '7676') {
-	require('./app/processors/academies')(app)
-	require('./app/processors/clean-sessions')(app)
-	require('./app/processors/eventbrite')(app)
-	require('./app/processors/content-grabber')(app)
-	require('./app/processors/third-party-feeds')(app)
+	// require('./app/processors/academies')(app);
+	require('./app/processors/clean-sessions')(app);
+	// require('./app/processors/eventbrite')(app);
+	require('./app/processors/content-grabber')(app);
+	require('./app/processors/third-party-feeds')(app);
 	setTimeout(function(){
-		Notifications = require('./app/models/notifications')[1]
-		Notifications.prototype.process()
-	}, 500)
+		Notifications = require('./app/models/notifications')[1];
+		Notifications.prototype.process();
+	}, 500);
 }
 
 // Uncomment to update twitter avatars

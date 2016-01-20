@@ -34,7 +34,7 @@ shell = (app) ->
 					.then (ticket) ->
 
 						# The ticket exists, skip it
-						if ticket || attendee.created < "2015-11-08 00:00:00"
+						if ticket
 							processAttendees attendees, inx
 
 						# The ticket doesn't exist, process it

@@ -20,7 +20,7 @@ ticket =
         subject = "You're coming to WDS! Awesome!"
         if returning
           promo = 'WelcomeBack'
-        @sendEmail(promo, subject)
+     #   @sendEmail(promo, subject)
     , (err) ->
       console.error err
     return dfr.promise
