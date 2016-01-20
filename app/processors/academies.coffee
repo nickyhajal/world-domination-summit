@@ -106,7 +106,7 @@ shell = (app) ->
 							User.forge
 								first_name: atn.attendee.first_name
 								last_name: atn.attendee.last_name
-								attending15: '1'
+							.set('attending'+process.yr, '1')
 							.fetch()
 							.then (user) ->
 								if user

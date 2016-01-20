@@ -55,7 +55,7 @@ content =
 				.then (contents) ->
 					_Users
 					.query('where', 'pub_loc', '=', '1')
-					.query('where', 'attending15', '=', '1')
+					.query('where', 'attending'+process.yr, '=', '1')
 					.query('where', 'pic', '<>', '')
 					.query('orderBy', 'user_id', 'desc')
 					.fetch(
@@ -64,7 +64,7 @@ content =
 					.then (attendees) ->
 						_Answers
 						.query('join', 'users', 'answers.user_id', '=', 'users.user_id')
-						.query('where', 'users.attending15', '=', '1')
+						.query('where', 'users.attending'+process.yr, '=', '1')
 						.query('where', 'dsp', '=', '1')
 						.query('orderBy', 'users.user_id', 'desc')
 						.fetch(

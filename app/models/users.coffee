@@ -26,17 +26,17 @@ ticket = require('./users/ticket')
 User = Shelf.Model.extend
   tableName: 'users'
   permittedAttributes: [
-    'user_id', 'type', 'email', 'first_name', 'last_name', 'attending14', 'attending15',
-    'email', 'hash', 'user_name', 'mf', 'twitter', 'facebook', 'site', 'pic', 'instagram'
+    'user_id', 'type', 'email', 'first_name', 'last_name', 'attending14', 'attending15', 'attending16',
+    'email', 'hash', 'user_name', 'mf', 'twitter', 'facebook', 'site', 'pic', 'instagram',
     'address', 'address2', 'city', 'region', 'country', 'zip', 'lat', 'lon', 'distance',
     'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake',
-    'notification_interval', 'points'
+    'notification_interval', 'points',
     'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake', 'notification_interval'
   ]
   limitedAttributes: [
     'user_id', 'type', 'email', 'first_name', 'last_name', 'attending14', 'attending15',
-    'email', 'user_name', 'mf', 'twitter', 'facebook', 'site', 'pic', 'instagram'
-    'lat', 'lon', 'distance', 'pub_loc', 'location'
+    'attending16', 'email', 'user_name', 'mf', 'twitter', 'facebook', 'site', 'pic',
+    'instagram', 'lat', 'lon', 'distance', 'pub_loc', 'location'
   ]
   defaults:
     pic: ''

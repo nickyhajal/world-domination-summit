@@ -136,7 +136,7 @@ routes = (app) ->
 					start = (tmp.start+'').split(' GMT')
 					start = moment(start[0])
 					tmp.start = start.format('YYYY-MM-DD HH:mm:ss')
-					columns = {columns: ['users.user_id', 'first_name', 'last_name', 'attending15']}
+					columns = {columns: ['users.user_id', 'first_name', 'last_name', 'attending'+process.yr]}
 					EventHosts.forge()
 					.query('where', 'event_id', '=', tmp.event_id)
 					.query('join', 'users', 'event_hosts.user_id', '=', 'users.user_id', 'inner')

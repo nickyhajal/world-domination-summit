@@ -19,7 +19,7 @@ ap.Views.admin_meetup_review = XView.extend
         if 1 #ap.Users.get(atn.hosts[0])?
           host = atn.hosts[0]#ap.Users.get(atn.hosts[0])
           host_str = host.first_name+' '+host.last_name
-          if host.attending15 != '1'
+          if host['attending'+ap.yr] != '1'
             host_str += ' (Not attending WDS 2015 - user_id: '+host.user_id+')'
         place = if atn.place.length then atn.place else 'No Venue'
         html += '<tr data-event_id="'+atn.event_id+'">

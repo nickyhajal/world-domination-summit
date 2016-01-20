@@ -107,7 +107,7 @@ routes = (app) ->
 
 				# Attendee list for 2015
 				Users.forge()
-				.query('where', 'attending15', '1')
+				.query('where', 'attending'+process.yr, '1')
 				.fetch().then (model) ->
 					for attendee in model.models
 						response = response + attendee.get('first_name')+";"+attendee.get('last_name')+";"+attendee.get('email')+";"+attendee.get('twitter')+";"+attendee.get('type')+';"'+attendee.get('location')+'";"'+attendee.get('address')+'";"'+attendee.get('city')+'";"'+attendee.get('region')+'";"'+attendee.get('country')+'";"'+attendee.get('zip')+'"'+"\n"
