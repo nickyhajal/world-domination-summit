@@ -1,5 +1,5 @@
 ap.Views.task = XView.extend
-	events: 
+	events:
 		'click #camera-button': 'submitPhoto'
 		'submit #instagram-form': 'submitInstagram'
 	initialize: ->
@@ -15,8 +15,8 @@ ap.Views.task = XView.extend
 					@options.task.how_to = 'Our system will automatically issue your points when this task is completed.'
 				else if task.type is 'video'
 					@options.task.how_to = '
-						Post a video on instagram and include the hashtags 
-						<b>#wds2015</b> and <b>#'+task.slug.replace('-', '')+'</b>
+						Post a video on instagram and include the hashtags
+						<b>#wds2016</b> and <b>#'+task.slug.replace('-', '')+'</b>
 						<br><br>
 					'
 					if ap.me?.get('instagram')?.length
@@ -38,7 +38,7 @@ ap.Views.task = XView.extend
 						@options.task.how_to = '<div class="task-photo-device">
 							Take a photo of yourself completing the challenge below!
 						'
-					else 
+					else
 						@options.task.how_to = '<div class="task-photo-device">
 							Submit a photo of yourself completing the challenge below!
 						'

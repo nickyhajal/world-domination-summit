@@ -145,8 +145,12 @@ ap.Views.admin_user = XView.extend
 			val = '-1'
 		else
 			val = '1'
+		post =
+			admin: 1
+			user_id: @user.get('user_id')
+		post['attending'+ap.yr] = val
 		@user
-		.set('attending15', val)
-		.save({attending15: val, admin: 1, user_id: @user.get('user_id')}, {patch: true})
+		.set('attending'+ap.yr, val)
+		.save(post, {patch: true})
 		@initTickets()
 
