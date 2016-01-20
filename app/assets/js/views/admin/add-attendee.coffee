@@ -1,5 +1,5 @@
 ap.Views.admin_add_attendee = XView.extend
-	events: 
+	events:
 		'submit #admin-add-user': 'addUser_submit'
 	initialize: ->
 		@initRender()
@@ -9,6 +9,7 @@ ap.Views.admin_add_attendee = XView.extend
 		e.preventDefault()
 		el = $(e.currentTarget)
 		post = el.formToJson()
+		post['attending'+ap.yr] = '1'
 		btn = _.btn($('.button', el), 'Adding...', 'Added!')
 		ap.api 'post user', post, (rsp) ->
 			btn.finish()
@@ -44,7 +45,7 @@ ap.Views.admin_add_attendee = XView.extend
 		shell.empty()
 		if ap.provinces[country]?
 			provinces = ap.provinces[country]
-			map = 
+			map =
 				US: ['State', 'short', 'name']
 				GB: ['Region','name', 'region']
 				CA: ['Province','short', 'name']
@@ -74,4 +75,4 @@ ap.Views.admin_add_attendee = XView.extend
 
 			shell.scan()
 		else
-			ap.me.set('region', '')	
+			ap.me.set('region', '')
