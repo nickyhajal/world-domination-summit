@@ -105,7 +105,7 @@ routes = (app) ->
 				# Headers
 				response = "First Name;Last Name;Email;Twitter;Type;Location;Address;City;State/Region;Country;Zip\n"
 
-				# Attendee list for 2015
+				# Attendee list for current year
 				Users.forge()
 				.query('where', 'attending'+process.yr, '1')
 				.fetch().then (model) ->
