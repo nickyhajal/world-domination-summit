@@ -100,7 +100,7 @@ routes = (app) ->
 		export: (req, res, next) ->
 			if req.me.hasCapability('manifest')
 				res.status(200)
-				res.attachment 'attendees2015.csv'
+				res.attachment 'attendees'+process.year+'.csv'
 
 				# Headers
 				response = "First Name;Last Name;Email;Twitter;Type;Location;Address;City;State/Region;Country;Zip\n"
