@@ -18,8 +18,8 @@ icon: parachute
 		<div class="main-schedule-time">1:00pm–4:00pm</div>
 		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="/academies">Afternoon Academies</a></div>
 	</div>	
+	<h5>WDS 360</h5>
 	<div class="main-schedule-item">
-		<div class="main-schedule-descr">WDS 360</a></div>
 		<div class="main-schedule-day">Friday</div>
 		<div class="main-schedule-time">8:30am–9:30am</div>
 		<div class="main-schedule-descr">5K Fun Run</div>
