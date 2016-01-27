@@ -32,7 +32,7 @@ icon: parachute
 		<div class="main-schedule-time">9:00am–12:30pm</div>
 		<div class="main-schedule-descr">Main Stage Sessions</div>
 		<div class="main-schedule-time">12:30pm–4:00pm</div>
-		<div class="main-schedule-descr">Portland Experience and WDS Connect <br></div>
+		<div class="main-schedule-descr">WDS Connect <br></div>
 		<div class="main-schedule-time">4:30pm–6:00pm</div>
 		<div class="main-schedule-descr">Main Stage Session</div>
 		<div class="main-schedule-time">7:00pm–10:00pm</div>
@@ -118,17 +118,25 @@ Most speakers will attend the entire weekend and be available for informal conve
 
 <img src="/images/schedule/schedule-circle-2.png" id="schedule-circle-2"/>
 
-<h3 class="color-green">Portland Experience</h3>
+<h3 class="color-green">WDS Connect</h3>
 
-<a name="portland-experience"></a>
+<a name="wds-connect"></a>
 
-Over the years we've learned that two big reasons people come to WDS is to meet people with shared interests and experience some of what the great city of Portland has to offer. Since the WDS weekend is already a jam-packed affair, we've created **The Portland Experience**, a festival celebrating what makes Portland so great.
+Over the years we've learned that two big reasons people come to WDS are to meet people with shared interests and experience some of what the great city of Portland has to offer. Since we can only hold 1,000 people in the main theatre during the big weekend, we've come up with something new: WDS Connect. 
+
+Starting on Tuesday afternoon, everyone is invited to participate in a series of formal and informal meetups and events. From morning yoga to entrepreneurship workshops, we're hosting groups all over the city. 
+
+You can participate in WDS Connect even if you're not attending WDS 360 (the main-stage event held in the theatre). When you sign up, you'll receive access to a special app that includes info on the hundreds of meetups that take place throughout WDS week. 
+
+Tickets for WDS Connect will be available starting in April. All tickets are offered on a first-come, first-served basis. 
+
+<--! Over the years we've learned that two big reasons people come to WDS is to meet people with shared interests and experience some of what the great city of Portland has to offer. Since the WDS weekend is already a jam-packed affair, we've created **The Portland Experience**, a festival celebrating what makes Portland so great.
 
 We're commandeering a 3-block section of the downtown Park Blocks and taking the best of Portland and bringing it directly to you. Food? Check. Drink? Check? Music, crafts, exercise? Check, check, and check.
 
 Just steps from the Schnitzer you'll be able to connect with friends based on shared interests, and experience a side of the city you might not have seen otherwise.
 
-The path to world domination starts in Portland, so it's about time you got to know the city!
+The path to world domination starts in Portland, so it's about time you got to know the city! -->
 
 <p class="color-green">**Note:** Need a break? Our Highly Sensitive Person zone will be open all afternoon. You can also attend your choice of 100+ attendee-led gatherings.</p>
 
