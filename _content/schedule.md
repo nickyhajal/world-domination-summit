@@ -4,7 +4,9 @@ icon: parachute
 # On [August 11-15, 2016](/register) the sixth annual World Domination Summit will take over Portland, Oregon yet again. Our plan of action? Have fun and create meaningful adventure.
 <div class="main-schedule-box">
 	<h3>2016 Schedule</h3>
-	<div class="main-schedule-descr">WDS CONNECT</a></div>
+	<div class="main-schedule-item">
+		<div class="main-schedule-day">WDS CONNECT</a></div>
+	</div>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Tuesday–Wednesday</div>
 		<div class="main-schedule-time">1:00pm–4:00pm</div>
