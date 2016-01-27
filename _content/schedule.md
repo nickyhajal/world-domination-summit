@@ -3,9 +3,15 @@ icon: parachute
 
 # On [August 11-15, 2016](/register) the sixth annual World Domination Summit will take over Portland, Oregon yet again. Our plan of action? Have fun and create meaningful adventure.
 <div class="main-schedule-box">
-	<h3>2015 Schedule</h3>
-	<div class="main-schedule-descr">The 2016 schedule will be posted soon!</a></div>
+	<h3>2016 Schedule</h3>
+	<div class="main-schedule-descr">WDS CONNECT</a></div>
 	<div class="main-schedule-item">
+		<div class="main-schedule-day">Tuesday–Wednesday</div>
+		<div class="main-schedule-time">1:00pm–4:00pm</div>
+		<div class="main-schedule-descr">Afternoon Jam Sessions</div>
+		<div class="main-schedule-time">6:00pm–10:00pm</div>
+		<div class="main-schedule-descr">Evening Arts Focus</a></div>
+	</div>	<div class="main-schedule-item">
 		<div class="main-schedule-day">Thursday</div>
 		<div class="main-schedule-time">9:00am–12:00pm</div>
 		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="/academies">Morning Academies</a></div>
@@ -13,11 +19,11 @@ icon: parachute
 		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="/academies">Afternoon Academies</a></div>
 	</div>	
 	<div class="main-schedule-item">
+		<div class="main-schedule-descr">WDS 360</a></div>
 		<div class="main-schedule-day">Friday</div>
-		<div class="main-schedule-time">8:30am–11:30am</div>
-		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="/2015-world-record">World Record Attempt</a></div>
-		<div class="main-schedule-time">2:00pm–7:00pm</div>
-		<div class="main-schedule-descr">Registration</div>
+		<div class="main-schedule-time">8:30am–9:30am</div>
+		<div class="main-schedule-descr">5K Fun Run</div>
+		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="/academies">Afternoon Academies</a></div>
 		<div class="main-schedule-time">6:00pm–10:00pm</div>
 		<div class="main-schedule-descr">"Can't Wait" Welcoming Party</div>
 	</div>
@@ -26,19 +32,18 @@ icon: parachute
 		<div class="main-schedule-time">9:00am–12:30pm</div>
 		<div class="main-schedule-descr">Main Stage Sessions</div>
 		<div class="main-schedule-time">12:30pm–4:00pm</div>
-		<div class="main-schedule-descr">Portland Experience and Attendee Meetups <br></div>
+		<div class="main-schedule-descr">Portland Experience and WDS Connect <br></div>
 		<div class="main-schedule-time">4:30pm–6:00pm</div>
 		<div class="main-schedule-descr">Main Stage Session</div>
-		<div class="main-schedule-time">Evening Activities</div>
-		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="http://www.eventbrite.com/e/river-cruise-on-the-portland-spirit-tickets-17177630756">Portland Spirit Cruise</a></div>
-		<div class="main-schedule-descr">Sunset Yoga</div>
+		<div class="main-schedule-time">7:00pm–10:00pm</div>
+		<div class="main-schedule-descr">Evening Activities</div>
 	</div>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Sunday</div>
 		<div class="main-schedule-time">9:00am–12:30pm</div>
 		<div class="main-schedule-descr">Main Stage Sessions</div>
 		<div class="main-schedule-time">12:30pm–4:00pm</div>
-		<div class="main-schedule-descr">Attendee Meetups and Activities</div>
+		<div class="main-schedule-descr">WDS Connect</div>
 		<div class="main-schedule-time">4:30pm–6:30pm</div>
 		<div class="main-schedule-descr">Main Stage Session</div>
 		<div class="main-schedule-time">8:00pm–midnight</div>
