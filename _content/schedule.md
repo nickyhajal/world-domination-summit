@@ -130,7 +130,7 @@ You can participate in WDS Connect even if you're not attending WDS 360 (the mai
 
 Tickets for WDS Connect will be available starting in April. All tickets are offered on a first-come, first-served basis. 
 
-<--! Over the years we've learned that two big reasons people come to WDS is to meet people with shared interests and experience some of what the great city of Portland has to offer. Since the WDS weekend is already a jam-packed affair, we've created **The Portland Experience**, a festival celebrating what makes Portland so great.
+<!-- Over the years we've learned that two big reasons people come to WDS is to meet people with shared interests and experience some of what the great city of Portland has to offer. Since the WDS weekend is already a jam-packed affair, we've created **The Portland Experience**, a festival celebrating what makes Portland so great.
 
 We're commandeering a 3-block section of the downtown Park Blocks and taking the best of Portland and bringing it directly to you. Food? Check. Drink? Check? Music, crafts, exercise? Check, check, and check.
 
