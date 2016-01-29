@@ -8,7 +8,7 @@ There will also be [WDS academies](/academies) on the days just before and after
 
 <div class="zig-zags_blue"></div>
 
-Official activities for WDS 2015 will be announced after the last round of ticket sales has closed.
+Official activities for WDS 2016 will be announced after the last round of ticket sales has closed.
 
 <!-- <a name="5k-run"></a>
 ### Friday, July 11

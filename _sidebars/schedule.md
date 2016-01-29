@@ -1,4 +1,4 @@
 [Speakers](#speakers)
 [Main Stage](#main-stage)
-[Portland Experience](#portland-experience)
+[WDS Connect](#wds-connect)
 [Everything Else](#everything-else)
