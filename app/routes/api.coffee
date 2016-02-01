@@ -17,6 +17,7 @@ routes = (app) ->
 	transfer = require('./api/transfer')(app)
 	ticket = require('./api/ticket')(app)
 	charge = require('./api/charge')(app)
+	product = require('./api/product')(app)
 	device = require('./api/device')(app)
 	user = require('./api/user')(app)
 	checkins = require('./api/checkins')(app)
@@ -79,6 +80,11 @@ routes = (app) ->
 		app.post '/ticket/charge', ticket.charge
 		app.post '/ticket/send', ticket.send
 		app.get '/ticket/availability', ticket.availability
+
+		# Product
+		app.get '/product', product.get
+		app.get '/product/availability', product.availability
+		app.post '/product/charge', product.charge
 
 		# Devices
 		app.post '/device', device.add

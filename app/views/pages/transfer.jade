@@ -1,5 +1,5 @@
 div(id="page_content")
-	h2(id="header-title") 
+	h2(id="header-title")
 		| Ticket Transfer
 	h3 So sorry you can't make it for the adventure!
 	div(class="transfer-error form-error")
@@ -10,7 +10,7 @@ div(id="page_content")
 	p Hope to see you next year!
 
 	h3 Ticket Transfer Form
-	form(action="/api/transfer", method="post", id="login-form")
+	form(action="/api/transfer", method="post", id="login-form", class="purchase-data")
 		h4 New Attendee Contact Info
 		div(class="form-section")
 			div(class="form-box")
@@ -47,5 +47,4 @@ div(id="page_content")
 				input(type="text", name="zip")
 		div(class="clear")
 		div(class="form-section")
-			input(type="submit", value="Process Transfer")
-			span(class='button-description') You'll be forwarded to PayPal to process your $100 transfer payment
+			div(class="purchase-button", data-code="xfer", data-purch_cta="Continue", data-billing_addr="0") Process Transfer

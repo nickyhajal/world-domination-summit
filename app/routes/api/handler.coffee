@@ -4,6 +4,46 @@ rs = new RedisSessions();
 _ = require('underscore')
 handler =
 	start: (req, res, next)->
+		req.hasParams = (params, req, res, next) ->
+			allow = true
+			for p in params
+				unless req.query[p]?
+					allow = false
+			if allow
+				return true
+			else
+				res.r.msg = 'Missing required values!'
+				res.status(400)
+				next()
+				return false
+
+		req.hasSomeParams = (params, req, res, next, cb) ->
+			allow = false
+			for p in params
+				if req.query[p]?
+					allow = true
+			if allow
+				return true
+			else
+				res.r.msg = 'Missing required values!'
+				res.status(400)
+				next()
+				return false
+
+		req.isAuthd = (req, res, next) ->
+			if req.me
+				return true
+			else
+				res.r.msg = 'You\'re not logged in!'
+				res.status(403)
+				next()
+				return false
+
+		res.notAuthd = (next) ->
+			res.r.msg = 'You don\'t have permission to do that.'
+			res.status(403)
+			next()
+
 		res.contentType 'json'
 		req.query = _.defaults(req.body, req.query)
 		res.r = {}

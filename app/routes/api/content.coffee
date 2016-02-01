@@ -47,7 +47,7 @@ content =
 				_Contents
 				.query (qb) =>
 					qb.column(qb.knex.raw('((24 + 1 + GREATEST(TIMESTAMPDIFF(HOUR, NOW(), CREATED_AT), TIMESTAMPDIFF(HOUR, NOW(), DATE_SUB(NOW(), INTERVAL 1 DAY)))) * RAND()) weight'))
-					qb.whereRaw("(content_id > 0 AND type != 'flickr_stream') OR (content_id > '1763' AND type = 'flickr_stream')")
+					qb.whereRaw("(content_id > 0 AND type != 'flickr_stream') OR (content_id > '0' AND type = 'flickr_stream')") # Change content ID to restrict to this years photos as they come in
 					qb.orderBy('weight', 'desc')
 				.fetch(
 					columns: ['content_id', 'type', 'data']
