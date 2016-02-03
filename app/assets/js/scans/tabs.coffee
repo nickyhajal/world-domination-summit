@@ -1,5 +1,5 @@
-jQuery.fn.scan 
-	add: 
+jQuery.fn.scan
+	add:
 		id: 'tab-links'
 		fnc: ->
 			tablist = []
@@ -12,13 +12,13 @@ jQuery.fn.scan
 			count = 0
 			for link in links
 				tabname = $(link).data('tabname')
-				tab = 
+				tab =
 					tabname: tabname
 					num: count
 
 				if prev
 					prev.next = tab.tabname
-					tab.prev = prev.tabname	
+					tab.prev = prev.tabname
 				prev = tab
 
 				count += 1
@@ -40,23 +40,23 @@ jQuery.fn.scan
 
 				if XHook.hooks['tab-before-show-'+context]?
 					XHook.trigger('tab-before-show-'+context, onTab, doGoTo)
-				else	
+				else
 					doGoTo()
 
 			showTab_click = (e) ->
-				e.preventDefault()	
+				e.preventDefault()
 				$t = $(this)
 				unless $t.hasClass('tab-disabled')
 					tabname = $t.data('tabname')
 					goToTab(tabname)
 
 			showTab_next = (e) ->
-				e.preventDefault()	
+				e.preventDefault()
 				if onTab.next
 					goToTab onTab.next
 
 			showTab_prev = (e) ->
-				e.preventDefault()	
+				e.preventDefault()
 				if onTab.prev
 					goToTab onTab.prev
 

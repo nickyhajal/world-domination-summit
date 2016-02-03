@@ -1,7 +1,8 @@
 div(id="page_content")
 	div(id="tab-shell-welcome_tabs")
-
-		div(id="tab-panel-welcome", class="tab-panel tab-panel-active")
+		div(class="tab-prev-btn")
+		div(class="tab-next-btn")
+		div(id="tab-panel-welcome", class="tab-panel")
 			h1(id="extra-big")
 				span(class="first-time") Welcome!
 				span(class="returning") Welcome back!
@@ -14,9 +15,9 @@ div(id="page_content")
 				p We're so excited that you'll be joining us again for the World Domination Summit 2015!
 				p This year we'll be using this site even more as a way to help WDSers connect.
 				p When you're ready, hit continue to verify that your info from last year is still correct.
-			a(href="#", class="tab-next button") Let's Go!
+			a(href="#", class="tab-save-next button") Let's Go!
 
-		div(id="tab-panel-the-basics", class="tab-panel tab-panel-next")
+		div(id="tab-panel-the-basics", class="tab-panel")
 			h2(id="extra-big") A Bit of Basic Info
 			h3 Even an Explorer Needs a Home(page)
 			p Every WDS attendee gets their very own home page to
@@ -33,9 +34,9 @@ div(id="page_content")
 				label Set a Password for your WDS Account
 				span(class="sub-label")
 				input(type="password", class="model-me", name="new_password")
-			a(href="#", class="tab-next button") Save & Continue
+			a(href="#", class="tab-save-next button") Save & Continue
 
-		div(id="tab-panel-location", class="tab-panel tab-panel-next")
+		div(id="tab-panel-location", class="tab-panel")
 			h2(id="extra-big") Your Location
 			h3 Sometimes we like to send things!
 			p Make sure the address we have for you is accurate
@@ -70,9 +71,12 @@ div(id="page_content")
 				select(class="box-select model-me", name="pub_loc")
 					option(value="1") Yep, sounds awesome!
 					option(value="0") No, thanks.
-			a(href="#", class="tab-next button") Save & Continue
+			a(href="#", class="tab-save-next button") Save & Continue
+			br
+			br
+			div(class="clear")
 
-		div(id="tab-panel-more-about-you tab-panel-next", class="tab-panel")
+		div(id="tab-panel-more-about-you", class="tab-panel")
 			h2 More about you
 			h3 Tell Us A Bit More About You
 			div(class="form-section")
@@ -87,17 +91,17 @@ div(id="page_content")
 			div(class="form-section")
 				label What is your goal for WDS 2015?
 				textarea(class="attendee-answer", data-question_id="4")
-			a(href="#", class="tab-next button") Save & Continue
+			a(href="#", class="tab-save-next button") Save & Continue
 
-		div(id="tab-panel-interests tab-panel-next", class="tab-panel")
+		div(id="tab-panel-interests", class="tab-panel")
 			h2 The Things You Love
 			h3 What sorts of things are you interested in?
 			p Select some interests below so we can help connect you with other WDSers!
 			div(class="form-section")
 				div(class="interest-select-list")
-			a(href="#", class="tab-next button") Save & Continue
+			a(href="#", class="tab-save-next button") Save & Continue
 
-		div(id="tab-panel-around-the-web tab-panel-next", class="tab-panel")
+		div(id="tab-panel-around-the-web", class="tab-panel")
 			h2 Connect
 			h3 Where Can We Find You on the Web?
 			div(class="form-section")
@@ -125,9 +129,9 @@ div(id="page_content")
 				span(class="sub-label") Just one site that represents your web presence best, please
 				span(class="pre-input") http://
 				input(type="text", name="site", class="model-me")
-			a(href="#", class="tab-next button") Save & Continue
+			a(href="#", class="tab-save-next button") Save & Continue
 
-		div(id="tab-panel-your-smile tab-panel-next", class="tab-panel")
+		div(id="tab-panel-your-smile", class="tab-panel")
 			h2 Your Avatar
 			h3 A Smile is Worth a Thousand Words
 			div(class="form-section")
@@ -138,9 +142,9 @@ div(id="page_content")
 					label Upload an Avatar
 					iframe(src="/upload-avatar", class="upload-avatar-frame")
 
-			a(href="#", class="tab-next button") Save & Continue
+			a(href="#", class="tab-save-next button") Save & Continue
 
-		div(id="tab-panel-all-done tab-panel-next", class="tab-panel")
+		div(id="tab-panel-all-done", class="tab-panel")
 			h1 Woah, nice work, you're all done!
 			div(class="zig-zags_blue")
 			div(class="form-section tweet-box-shell")

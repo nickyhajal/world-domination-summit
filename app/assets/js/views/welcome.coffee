@@ -14,16 +14,19 @@ ap.Views.welcome = XView.extend
 		'click .twitter-disconnect': 'disconnectTwitter'
 		'click .finish-welcome': 'finishWelcome'
 		'click .send-tweet': 'sendTweet'
+		'click .tab-next-btn': 'next'
+		'click .tab-prev-btn': 'prev'
+		'click .tab-save-next': 'next'
 
 	initialize: ->
 		if ap.me.get('intro') > 7
 			ap.navigate('settings')
 		else
-			@options.sidebar = 'welcome'
+			# @options.sidebar = 'welcome'
 			@options.out = _.template @options.out, ap.me.attributes
 			@initRender()
 			self = this
-			$('#content_shell').addClass('start')
+			# $('#content_shell').addClass('start')
 			unless ap.upload_success?
 				ap.upload_success = (url) ->
 					ap.me.set('pic', url)
@@ -31,7 +34,7 @@ ap.Views.welcome = XView.extend
 
 	rendered: ->
 		# Setup Animation
-		$('#sidebar-shell').addClass('faded-out')
+		# $('#sidebar-shell').addClass('faded-out')
 
 
 		# Show correct content for if attended
@@ -43,16 +46,19 @@ ap.Views.welcome = XView.extend
 		setTimeout =>
 
 			# Start animation
-			setTimeout =>
-				$('#content_shell').removeClass('start')
-			, 300
+			# setTimeout =>
+			# 	$('#content_shell').removeClass('start')
+			# , 300
 			$('html').addClass('hide-counter')
-			@sidebarNumbers()
+			# @sidebarNumbers()
+			@syncLastPosition()
 			@usernameChanged(ap.me.get('user_name'))
 			@syncTwitterBox()
 			@syncAvatar()
 			@initSelect2()
-			@syncLastPosition()
+			setTimeout ->
+				$('#page_content').css('opacity', '1')
+			, 1000
 			if ap.me?.get('has_pw')? and ap.me.get('has_pw')
 				$('#tab-panel-the-basics .form-section').eq(1).hide()
 		, 5
@@ -154,25 +160,93 @@ ap.Views.welcome = XView.extend
 		ap.api 'delete user/twitter'
 		e.preventDefault()
 
-	###
-		We'll add numbers to the sidebar tabs to give a sense of progression
-	###
-	sidebarNumbers: ->
-		count = 0
-		$('.tab-link').each ->
-			count += 1
-			$(this).prepend $('<span/>').html(count+'.').attr('class', 'sidebar-num')
-		setTimeout ->
-			$('#sidebar-shell').removeClass('faded-out')
-		, 10
 
 	###
 		Goes to the last tracked tab the user was on
 	###
 	syncLastPosition: ->
-		for i in [0..(ap.me.get('intro')+1)]
-			$('.tab-link').eq(i).removeClass('tab-disabled')
-		$('.tab-link').eq(ap.me.get('intro')).click()
+		@goto parseInt(ap.me.get('intro'))
+
+	next: (e) ->
+		e?.stopPropagation?()
+		w = $('#tab-shell-welcome_tabs')
+		$('.tab-panel', w).css {height: '460px'}
+		$('.tab-panel-prev', w).attr 'class', 'tab-panel tab-panel-prev-hidden'
+		$('.tab-panel-active', w).attr 'class', 'tab-panel tab-panel-prev'
+		$('.tab-panel-next', w).attr 'class', 'tab-panel tab-panel-active'
+		$('.tab-panel-next-hidden', w).eq(0).attr 'class', 'tab-panel tab-panel-next'
+		@updPosition()
+
+	prev: ->
+		e?.stopPropagation?()
+		w = $('#tab-shell-welcome_tabs')
+		$('.tab-panel', w).css {height: '460px'}
+		$('.tab-panel', w).css {height: '460px'}
+		$('.tab-panel-next', w).attr 'class', 'tab-panel tab-panel-next-hidden'
+		$('.tab-panel-active', w).attr 'class', 'tab-panel tab-panel-next'
+		$('.tab-panel-prev', w).attr 'class', 'tab-panel tab-panel-active'
+		$('.tab-panel-prev-hidden', w).last().attr 'class', 'tab-panel tab-panel-prev'
+		@updPosition()
+
+	goto: (inx) ->
+		i = 0
+		activeFound = false
+		nextFound = false
+		$('.tab-panel').each ->
+			$t = $(this)
+			$t.data('height', $t.outerHeight()+'px')
+			if inx > i
+				$('.tab-panel-last').removeClass('tab-panel-last')
+				$t.attr 'class', 'tab-panel tab-panel-prev-hidden tab-panel-last'
+			else if inx < i
+				if activeFound and not nextFound
+					$t.attr 'class', 'tab-panel tab-panel-next'
+					nextFound = true
+				else
+					$t.attr 'class', 'tab-panel tab-panel-next-hidden'
+			else
+				activeFound = true
+				$t.addClass('tab-panel-active')
+				$t.css {'height': $t.data('height')}
+				$('.tab-panel-last').attr 'class', 'tab-panel tab-panel-prev'
+			i += 1
+		@updPosition()
+
+	updPosition: ->
+		sW = $('#page_content').outerWidth()
+		sW2 = sW / 2
+		pW = 680
+		pW2 = pW / 2
+		pL = sW2 - pW2
+		tk sW-pW
+		sideW = 600
+		nextL = 20 + sideW + pW + 20
+		prL = -135
+		$('.tab-panel-active').css {'height': $('.tab-panel-active').data('height')}
+		$('#welcome_styles').remove()
+		style = $('<style/>')
+		.attr('id', 'welcome_styles')
+		.attr('type', 'text/css')
+		.text '
+			.tab-panel-active {
+				left:' + _.x(pL) + '
+			}
+			div.tab-panel-prev-hidden {
+				left: '+ _.x(0)+'
+			}
+			.tab-panel-prev, .tab-panel-prev-hidden, .tab-prev-btn {
+				left: '+ _.x(prL)+';
+				width: '+ _.x(sideW)+';
+			}
+			div.tab-panel-next-hidden {
+				left: '+ _.x(sW-sideW+120)+';
+			}
+			.tab-panel-next, .tab-panel-next-hidden, .tab-next-btn {
+				left: '+ _.x(sW-sideW+120)+';
+				width: '+ _.x(sideW)+';
+			}
+		'
+		$('body').append style
 
 	###
 		Saves the latest changes to ap.me

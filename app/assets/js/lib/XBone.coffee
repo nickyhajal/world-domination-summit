@@ -94,7 +94,6 @@ window.XView = Backbone.View.extend
 		html = @out
 		if not html and @options.out?
 			html = @options.out
-		tk html
 		html = @post(html)
 		switch output_type
 			when 'html'

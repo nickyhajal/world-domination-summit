@@ -1,10 +1,10 @@
 <?php
 class FireFileBase {
-
+    
     public $version = "0.9.4";
     public $OS = "UNIX";
     public $SL = "/";
-
+    
     public $userSet = false;
     public $passSet = false;
     public $success = array();
@@ -16,15 +16,15 @@ class FireFileBase {
         "pass" => ""
     );
     public $newVersionAvailable = false;
-
+    
     public function __construct() {
-
+        
         // GET OS SETTINGS
         if(isset($_SERVER["OS"]) && substr($_SERVER["OS"], 0, 3) == "win") {
         	$this->OS = "WIN";
             $this->SL = '\\\\';
         }
-
+        
         // Check version
 
         // Check write permissions
@@ -42,15 +42,15 @@ class FireFileBase {
     		$this->userSet = false;
     		$this->passSet = false;
     	}
-
+        
         // Read config file
         $this->readConfigValues();
-
+        
         // Check for save request
         $token = $this->get("token");
         if($token) {
             $result = $this->authorizeSaveAction();
-            $response = array();
+            $response = array();            
             if($result === true) {
                 $saveResult = $this->saveChanges();
                 if($saveResult === true) {
@@ -71,10 +71,10 @@ class FireFileBase {
         }else{
             // Auth handler
             $this->handleAuth();
-
+        
             // Check for config update post actions
             if($this->loggedIn) {
-
+            
                 $this->handlePostActions();
 
                 if($this->isUserSet() && $this->isPassSet()) {
@@ -92,7 +92,7 @@ class FireFileBase {
         exit(0);
 
     }
-
+    
     private function saveChanges() {
 
     	// Get request data
@@ -105,7 +105,7 @@ class FireFileBase {
     	}else if($this->OS == "WIN") {
     		$file_abs_path = str_replace(str_replace("/", "\\\\", $_SERVER["PHP_SELF"]), "", $_SERVER["PATH_TRANSLATED"]).str_replace("/", "\\\\", str_replace("http://".$_SERVER["HTTP_HOST"], "", $file));
     	}
-
+        
         // Prepare contents
         file_put_contents('/errs', uniqid());
         $contents = (string) $this->prepareCss(stripSlashes($contents));
@@ -117,7 +117,7 @@ class FireFileBase {
 
     	return true;
     }
-
+    
     private function prepareCss($css) {
 
         $filters = array(
@@ -139,14 +139,13 @@ class FireFileBase {
             foreach($bits as $bit) {
                 if (strlen($bit)) {
                     $pre = '';
-                    if (strpos($bit, '-moz-linear-gradient') !== false) {
+                    if (strpos($bit, 'linear-gradient') !== false) {
                         if (strpos($bit, '{') !== false) {
                             $bs = explode('{', $bit);
                             $bit = $bs[1];
                             $pre = $bs[0] . '{';
                         }
-                        $bit .= ";\n" . str_replace('-moz-linear-gradient(', '-webkit-linear-gradient(top, ', $bit);
-                        $bit .= ";\n" . str_replace('-moz-linear-gradient(', 'linear-gradient(top, ', $bit);
+                        $bit .= ";\n" . str_replace('linear-gradient(', '-webkit-linear-gradient(top, ', $bit);
                     }
                     if (strpos($bit, 'transform') !== false) {
                         if (strpos($bit, '{') !== false) {
@@ -156,14 +155,6 @@ class FireFileBase {
                         }
                         $bit .= ";\n" . str_replace('transform', '-webkit-transform', $bit);
                     }
-                    if (strpos($bit, 'filter') !== false) {
-                        if (strpos($bit, '{') !== false) {
-                            $bs = explode('{', $bit);
-                            $bit = $bs[1];
-                            $pre = $bs[0] . '{';
-                        }
-                        $bit .= ";\n" . str_replace('filter', '-webkit-filter', $bit);
-                    }
                     $new_css .= $pre . $bit . ";\n";
                 }
             }
@@ -171,14 +162,14 @@ class FireFileBase {
         }
         $tokens = CssMin::parse($new_css);
         return new CssOtbsFormatter($tokens, "    ", 32);
-
+        
     }
 
-
+    
     private function generateCode() {
         return md5($this->config["user"]."/".$this->config["pass"]);
     }
-
+    
     private function authorizeSaveAction() {
 
     	// Check filename
@@ -197,14 +188,14 @@ class FireFileBase {
 
     	return true;
     }
-
+    
     private function handleAuth() {
-
+        
         if(!$this->isUserSet() || !$this->isPassSet()) {
             $this->loggedIn = true;
             return true;
         }
-
+        
     	if($this->get("user") == $this->config["user"] && $this->get("pass") == $this->config["pass"]) {
             $this->loggedIn = true;
             return true;
@@ -214,9 +205,9 @@ class FireFileBase {
     	}
 
     }
-
+    
     private function handlePostActions() {
-
+        
         // Handle username update
         $userNew = $this->get("user_new");
     	if($userNew) {
@@ -246,7 +237,7 @@ class FireFileBase {
 
     	return true;
     }
-
+    
     private function createDemoContent() {
         if(!file_exists("firefile.demo.css")) {
         	$cssContents = '';
@@ -254,7 +245,7 @@ class FireFileBase {
         }
         return true;
     }
-
+    
     private function saveFile($file, $contents, $force=false) {
     	if(file_exists($file) || $force) {
     		$handle = @fopen($file, 'w');
@@ -268,7 +259,7 @@ class FireFileBase {
     		return false;
     	}
     }
-
+    
     private function readConfigValues() {
     	// CHECK IF FILE EXISTS
     	if(!file_exists("firefile.config.php")) {
@@ -277,25 +268,25 @@ class FireFileBase {
         include("firefile.config.php");
         $this->config = unserialize($configString);
     }
-
+    
     private function saveConfigFile() {
         $configString = serialize($this->config);
         return $this->saveFile("firefile.config.php", "<?php \$configString = '$configString'; ?>", true);
     }
-
+    
     public function isUserSet() {
         return ($this->config["user"] != "");
     }
-
+    
     public function isPassSet() {
         return ($this->config["pass"] != "");
     }
-
+    
     public function get($var) {
     	if(isset($_POST[$var])) { return $_POST[$var]; }
         return false;
     }
-
+    
     private function addError($msg) {
         $this->error[] = $msg;
     }
@@ -303,7 +294,7 @@ class FireFileBase {
     private function addSuccess($msg) {
         $this->success[] = $msg;
     }
-
+    
     private function hasErrors() {
         return (count($this->error) > 0);
     }
@@ -316,7 +307,7 @@ class FireFileBase {
                 <meta charset="UTF-8">
                 <meta content="width=device-width, initial-scale=1.0" name="viewport">
         		<title>FireFile Configuration</title>
-
+		
         		<style>
         			body {
         				padding-top: 40px;
@@ -351,16 +342,16 @@ class FireFileBase {
         		<?php if(file_exists("firefile.demo.css")) { ?>
         			<link rel="stylesheet" href="firefile.demo.css" type="text/css" />
         		<?php } ?>
-
+        
         	</head>
         	<body onload="window.setInterval(detectFirebug, 500);detectFirebug();">
-
+        
                 <form method="POST">
-
+        
                     <div class="navbar navbar-fixed-top">
                         <div class="navbar-inner">
                             <div class="container">
-
+                                
                                 <?php if($this->newVersionAvailable !== false) { ?>
                                     <ul class="nav navbar-form">
                                         <li>
@@ -371,7 +362,7 @@ class FireFileBase {
                                         </li>
                                     </ul>
                                 <?php } ?>
-
+                                
                                 <?php if($this->isUserSet() || $this->isPassSet()){ ?>
                                     <ul class="nav pull-right navbar-form">
                                         <li class="input-prepend">
@@ -392,7 +383,7 @@ class FireFileBase {
                             </div>
                         </div>
                     </div>
-
+        
                     <header id="overview">
                         <div class="inner">
                             <div class="container">
@@ -417,9 +408,9 @@ class FireFileBase {
                             </div>
                         </div>
                     </header>
-
+        
                     <div class="container">
-
+                        
                     	<?php foreach($this->success as $msg) { ?>
                     		<div class="alert alert-success">
                                 <h4>Success</h4>
@@ -461,7 +452,7 @@ class FireFileBase {
                             <?php }else{ ?>
                                 <h2>Create account</h2>
                             <?php } ?>
-
+                                        
                             <div class="row form-horizontal">
                                 <div class="span6">
                                     <div class="control-group<?php if(!$this->isUserSet()) { ?> info<?php } ?>">
@@ -474,14 +465,14 @@ class FireFileBase {
                                         </div>
                                     </div>
 
-
+                    
                                     <div class="control-group<?php if(!$this->isPassSet()) { ?> info<?php } ?>">
                                         <label class="control-label" for="password_new">New password:</label>
                                         <div class="controls">
                                             <input type="password" autocomplete="off" value="" id="password_new" name="pass_new" placeholder="Enter new password" <?php if(!$this->isPassSet()) { ?>class='highlight'<?php } ?> />
                                         </div>
                                     </div>
-
+                    
                                     <div class="control-group<?php if(!$this->isPassSet()) { ?> info<?php } ?>">
                                         <label class="control-label" for="password_new_retype">Repeat:</label>
                                         <div class="controls">
@@ -498,9 +489,9 @@ class FireFileBase {
                                         <p>If you change your username or password, please remove this site from the list of registered sites and register this site again</p>
                                     </div>
                                 </div>
-
+                        
                             </div>
-
+                    
             				<?php if($this->isUserSet() && $this->isPassSet()) { ?>
             					<div id="key-pane" class="config-pane">
             						<label for="username">FIREFILE KEY:</label>
@@ -547,7 +538,7 @@ class FireFileBase {
         </html>
         <?php
     }
-
+    
 }
 
 $firefile = new FireFileBase();
