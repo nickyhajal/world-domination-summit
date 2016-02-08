@@ -74,16 +74,8 @@ textarea.textarea {
 
 .wufoo .info h2
 {
-	font-size:120%;
-	font-family:inherit;
-	color:#000;
-}
-
-.wufoo .section h2
-{
 	font-size:175%;
 	font-family:inherit;
-	background:#FFF;
 	color:#000;
 }
 
