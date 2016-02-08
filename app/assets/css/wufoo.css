@@ -132,7 +132,7 @@ form li.error {
 
 .wufoo .info div,.wufoo label.desc,.wufoo legend.desc, .wufoo li.focused label.desc
 {
-	font-size:13pt;
+	font-size:10pt;
 	font-family:inherit;
 	width:520px !important;
 	font-weight: normal;
