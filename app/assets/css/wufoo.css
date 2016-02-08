@@ -13,7 +13,7 @@
 }
 * html #logo a
 {
-    background-image: url('http://gdurl.com/78Gg');
+    background-image:url(http://gdurl.com/78Gg);
     min-height: 0;
     height: 150px;
 }
