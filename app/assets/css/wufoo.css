@@ -79,6 +79,14 @@ textarea.textarea {
 	color:#000;
 }
 
+.wufoo .section h2
+{
+	font-size:175%;
+	font-family:inherit;
+	background:#FFF;
+	color:#000;
+}
+
 .wufoo .section h3
 {
 	font-size:150%;
@@ -103,7 +111,7 @@ form li.error {
 	width: 520px !important;
 }
 
-.wufoo input.text, .wufoo textarea.textarea, .wufoo select.select, .wufoo label.choice {
+.wufoo input.text, .wufoo textarea.textarea, .wufoo select.select {
     background:                 none repeat scroll 0px 0px rgb(242, 242, 234);
     border:                     0px none;
     width:                      300px;
@@ -111,6 +119,16 @@ form li.error {
     color:                      rgb(33, 23, 10);
     font-family:                karla ! important;
     font-size:                  14pt;
+}
+
+.wufoo label.choice {
+    background: none repeat scroll 0px 0px rgb(242, 242, 234);
+    border: 0px none;
+    width: 300px;
+    padding: 9px;
+    color: rgb(33, 23, 10);
+    font-family: karla ! important;
+    font-size: 11pt;
 }
 .wufoo .btTxt {
 	 border:                     0px none;
@@ -132,7 +150,7 @@ form li.error {
 
 .wufoo .info div,.wufoo label.desc,.wufoo legend.desc, .wufoo li.focused label.desc
 {
-	font-size:10pt;
+	font-size:11pt;
 	font-family:inherit;
 	width:520px !important;
 	font-weight: normal;
