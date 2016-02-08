@@ -13,8 +13,9 @@
 }
 * html #logo a
 {
-	background-image:none;
-	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://wufoo.com/images/themes/logos/shark.png",sizingMethod="crop");
+    background-image: url('http://gdurl.com/78Gg');
+    min-height: 0;
+    height: 150px;
 }
 
 #container, html.embed
