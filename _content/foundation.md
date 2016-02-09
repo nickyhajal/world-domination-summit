@@ -37,7 +37,7 @@ Our selection committee will be looking at a number of factors to determine whic
 
 <div class="foundation-criteria-implementation foundation-criteria"></div>
 
-<p class="color-orange">Implemention</p>
+<p class="color-orange">Implementation</p>
 
 * Can the proposal be realistically completed in a year?
 * If part of a larger, long-term project, how does the proposal further the overall effort?
