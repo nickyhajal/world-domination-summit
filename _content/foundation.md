@@ -16,7 +16,7 @@ Have a crazy project you want to bring to life? Want to take a trip around the e
 
 ### Eligibility
 
-Currently the “Scholarships for Real Life: program is open only to those who have attended or will be attending a World Domination Summit. As the program progresses, we intend to open this up to a wider audience—so check back next year if you’re not currently eligible.
+Currently the “Scholarships for Real Life" program is open only to those who have attended one of our past five WDS events. If this is your first year attending the World Domination Summit, you will be eligible to apply in 2017.
 
 <a name="selection"></a>
 
