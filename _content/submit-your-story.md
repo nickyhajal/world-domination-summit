@@ -67,6 +67,8 @@ var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s
 
 Attendee story submissions for 2015 are now closed, but keep doing awesome stuff and get ready to share with the WDS community in person!
 
+<div class="line-canvas"></div>
+
 <div id="foundation-app-box" class=“green-box">
 	<h3>How to Apply</h3>
 
@@ -83,4 +85,4 @@ Along with the questions outlined below, please include a short video (no longer
 
 <a href="https://worlddominationsummit.wufoo.com/forms/zq9n4iq0s4da50/" target ="_blank" class="button">Apply for the Scholarship for Real Life &rarr;</a>
 
-
+</div>
