@@ -65,5 +65,22 @@ var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s
 
 ### Whoa - that was a lot of stories!
 
-Attendee story submissions for 2015 are now closed, but keep doing awesome stuff and get ready to share with the WDS community in person! 
+Attendee story submissions for 2015 are now closed, but keep doing awesome stuff and get ready to share with the WDS community in person!
+
+<div id="foundation-app-box" class=“green-box">
+	<h3>How to Apply</h3>
+
+The Scholarships for Real Life Grant was created to connect smart and passionate people with the resources they need to bring big plans to life. To know if we can help you with your ambitions, we need to know a few things about your project. 
+
+Please complete your application by 9:00pm on Friday, April 15, 2016.
+
+Late applications will not be considered. Many applicants have found the questions to take between 2-4 hours to complete.
+
+Along with the questions outlined below, please include a short video (no longer than three minutes) where you give us your “elevator pitch.” How would you describe your project to an old friend who asked you what you are working on? We want to hear it from you! 
+
+* Videos longer than 3 minutes will not be viewed and will impact your overall score. 
+* Please insert a link to where the video can be viewed. File attachments will not be accepted.
+
+<a href="https://worlddominationsummit.wufoo.com/forms/zq9n4iq0s4da50/" target ="_blank" class="button">Apply for the Scholarship for Real Life &rarr;</a>
+
 
