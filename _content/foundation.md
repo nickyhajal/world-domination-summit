@@ -90,6 +90,6 @@ We know the WDS community has a lot to offer, which a wide-range of knowledge an
 
 If you would like to contribute your knowledge and expertise to our Voyagers, whether that be for an hour or a full-year, we’d sincerely appreciate your help. Simply fill out the form below and we’ll be in contact when we have a need for your skills!
 
-<a href="/foundation/mentor-submission">Click here to share your expertise!</a>
+<a href="/foundation/mentor-submission" target ="_blank" class="button">Click here to share your expertise! &rarr;</a>
 
 </div>
