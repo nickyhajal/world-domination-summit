@@ -54,7 +54,7 @@ Our selection committee will be looking at a number of factors to determine whic
 
 <div class="line-canvas"></div>
 
-<!-- ### How to Apply
+### How to Apply
 
 The Scholarships for Real Life Grant was created to connect smart and passionate people with the resources they need to bring big plans to life. To know if we can help you with your ambitions, we need to know a few things about your project. 
 
@@ -69,14 +69,14 @@ Along with the questions outlined below, please include a short video (no longer
 
 <a href="https://worlddominationsummit.wufoo.com/forms/zq9n4iq0s4da50/" target ="_blank" class="button">Apply for the Scholarship for Real Life &rarr;</a>
 
--->
-
+<!-- 
 <div id="foundation-app-box" class="orange-box">
 	<h3>I'm in! How do I apply?</h3>
 <p>So sorry we missed you! Applications for the 2015 Scholarship for Real Life program are currently closed.
 If you would like to be notified when applications open for 2016, please email <a href="mailto:foundation@wds.fm">foundation@wds.fm</a> with your contact information.</p>
 
 </div>
+-->
 
 <div class="line-canvas"></div>
 
