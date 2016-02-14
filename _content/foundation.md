@@ -3,7 +3,7 @@ photo_head: /images/foundation/foundation.jpg
 
 <a name="story"></a>
 
-The WDS Foundation seeks to put the right resources in the hands of amazing people who are acting on the three core values of WDS—community, adventure, service. 
+The WDS Foundation seeks to put the right resources in the hands of amazing people who are acting on the three core values of WDS—<i>community</i>, <i>adventure</i>, <i>service</i>. 
 
 We do this by providing what we call “Scholarships For Real Life.” The goal of these scholarships is to empower individuals to pursue their dreams and impact their community. 
 
@@ -90,6 +90,6 @@ We know the WDS community has a lot to offer, which a wide-range of knowledge an
 
 If you would like to contribute your knowledge and expertise to our Voyagers, whether that be for an hour or a full-year, we’d sincerely appreciate your help. Simply fill out the form below and we’ll be in contact when we have a need for your skills!
 
-<a href="/foundation/mentor-submission" target ="_blank" class="button">Click here to share your expertise! &rarr;</a>
+<a href="/foundation/mentor-submission" target ="_blank" class="button">Share Your Expertise! &rarr;</a>
 
 </div>
