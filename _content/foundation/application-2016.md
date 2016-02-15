@@ -1,6 +1,6 @@
 icon: globe
 
-<img src="http://gdurl.com/uEcf">
+<img src="http://gdurl.com/uEcf" width="547" height="182">
 
 <div id="wufoo-zq9n4iq0s4da50">
 Fill out my <a href="https://worlddominationsummit.wufoo.com/forms/zq9n4iq0s4da50">online form</a>.
