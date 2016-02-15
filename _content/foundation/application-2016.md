@@ -1,5 +1,7 @@
 icon: globe
 
+<img src="http://gdurl.com/uEcf">
+
 <div id="wufoo-zq9n4iq0s4da50">
 Fill out my <a href="https://worlddominationsummit.wufoo.com/forms/zq9n4iq0s4da50">online form</a>.
 </div>
