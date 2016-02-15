@@ -67,7 +67,7 @@ Along with the questions outlined below, please include a short video (no longer
 * Videos longer than 3 minutes will not be viewed and will impact your overall score. 
 * Please insert a link to where the video can be viewed. File attachments will not be accepted.
 
-<a href="https://worlddominationsummit.wufoo.com/forms/zq9n4iq0s4da50/" target ="_blank" class="button">Apply for the Scholarship for Real Life &rarr;</a>
+<a href="http://worlddominationsummit.com/foundation/application-2016" target ="_blank" class="button">Apply for the Scholarship for Real Life &rarr;</a>
 
 <!-- 
 <div id="foundation-app-box" class="orange-box">
