@@ -78,7 +78,7 @@ Along with the questions outlined below, please include a short video (no longer
 
 One of the cornerstones of the World Domination Summit is adventure, and WDS attendees certainly know how to celebrate living unconventionally. Many of us are driven by the journey, and enjoy striking out on our own in search of new opportunities and experiences. Yet, we also know and appreciate the value of community—having someone to share the ups and downs of our journey and to help us reflect on what we’ve learned. It is this combination of adventure and community that brings us back each July for the World Domination Summit, and also the motivation for this blog post.
 
-As part of the WDS Foundation “Scholarships For Real Life” program, each of our Voyagers receive mentoring to help guide them through their projects. Sometimes the mentoring is for specific tasks or goals, while at other times the mentoring is meant to be more long-term and includes big-picture guidance. 
+As part of the WDS Foundation "Scholarships For Real Life" program, each of our Voyagers receive mentoring to help guide them through their projects. Sometimes the mentoring is for specific tasks or goals, while at other times the mentoring is meant to be more long-term and includes big-picture guidance. 
 
 We know the WDS community has a lot to offer, which a wide-range of knowledge and skills from which our Voyagers from could benefit. As we gear up for our 2016 applications, we’d like to give our community members a chance to share their expertise by signing up as a mentor in advance.
 
