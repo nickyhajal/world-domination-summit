@@ -64,7 +64,7 @@ Please complete your application by <b>9:00pm on Friday, April 15, 2016</b>.
 
 Along with the questions outlined below, please include a short video (no longer than three minutes) where you give us your "elevator pitch." How would you describe your project to an old friend who asked you what you are working on? We want to hear it from you! 
 
-* Videos longer than 3 minutes will not be viewed and will impact your overall score. 
+* Videos longer than 3 minutes will not be viewed and will impact your overall score.
 * Please insert a link to where the video can be viewed. File attachments will not be accepted.
 
 
