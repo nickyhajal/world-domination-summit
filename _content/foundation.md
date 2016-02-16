@@ -62,30 +62,6 @@ Please complete your application by <b>9:00pm on Friday, April 15, 2016</b>.
 
 <b>Late applications will not be considered.</b> Many applicants have found the questions to take between 2-4 hours to complete.</b>
 
-Along with the questions outlined below, please include a short video (no longer than three minutes) where you give us your "elevator pitch." How would you describe your project to an old friend who asked you what you are working on? We want to hear it from you! 
-
-* Videos longer than 3 minutes will not be viewed and will impact your overall score. 
-* Please insert a link to where the video can be viewed. File attachments will not be accepted.
-
-<a href="http://worlddominationsummit.com/foundation/application-2016" target ="_blank" class="button">Apply for the Scholarship for Real Life</a>
-
-<div class="line-canvas"></div>
-
-
-### Register To Be A Mentor
-
-One of the cornerstones of the World Domination Summit is adventure, and WDS attendees certainly know how to celebrate living unconventionally. Many of us are driven by the journey, and enjoy striking out on our own in search of new opportunities and experiences. Yet, we also know and appreciate the value of community—having someone to share the ups and downs of our journey and to help us reflect on what we’ve learned. It is this combination of adventure and community that brings us back each July for the World Domination Summit, and also the motivation for this blog post.
-
-As part of the WDS Foundation "Scholarships For Real Life" program, each of our Voyagers receive mentoring to help guide them through their projects. Sometimes the mentoring is for specific tasks or goals, while at other times the mentoring is meant to be more long-term and includes big-picture guidance. 
-
-We know the WDS community has a lot to offer, which a wide-range of knowledge and skills from which our Voyagers from could benefit. As we gear up for our 2016 applications, we’d like to give our community members a chance to share their expertise by signing up as a mentor in advance.
-
-If you would like to contribute your knowledge and expertise to our Voyagers, whether that be for an hour or a full-year, we’d sincerely appreciate your help. Simply fill out the form below and we’ll be in contact when we have a need for your skills!
-
-<a href="/foundation/mentor-submission" target ="_blank" class="button">Share Your Expertise!</a>
-
-</div>
-
 
 
 
