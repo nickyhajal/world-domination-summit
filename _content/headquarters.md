@@ -9,7 +9,7 @@ sidebar: headquarters
 <div class="place-row">
 	<a href="http://www.portland5.com/newmark-theatre">1111 SW Broadway, Portland, OR 97205</a>
 	<span>
-		<a href="https://goo.gl/maps/4eRdFJeb3Ep">12.6 Mi</a>
+		<a href="https://goo.gl/maps/4eRdFJeb3Ep" target ="_blank">12.6 Mi</a>
 		From Airport
 	</span>
 </div>
@@ -23,7 +23,7 @@ sidebar: headquarters
 <div class="place-row">
 	<a href="https://www.starwoodmeeting.com/StarGroupsWeb/res?id=1502128445&key=1E3271B6">The Nines Hotel</a>  
 	<span>
-		<a href="http://goo.gl/2wmuIP">0.3 Mi</a>
+		<a href="http://goo.gl/2wmuIP" target ="_blank">0.3 Mi</a>
 		From Base
 	</span>
 </div>
@@ -31,18 +31,19 @@ sidebar: headquarters
 <div class="place-row">
 	<a href="https://be.cohores.net/10180?NextPage=index&Nights=1&NumberOfRooms=1&NumberOfAdults=1&Currency=USD&SubSource=361&GroupCode=WDS2015">Paramount Hotel</a> 
 	<span>
-		<a href="http://goo.gl/WexjC9">0.2 Mi</a>
+		<a href="http://goo.gl/WexjC9" target ="_blank">0.2 Mi</a>
 		From Base
 	</span>
 </div>
 
+## Alternative Lodging Options
 
 <p>If you can't get a room at one of these hotels or just want to do something else, there are numerous other options. Here are a couple of WDS attendee favorites:</p>
 
 <div class="place-row">
 	<a href="http://nwportlandhostel.com/">Hostel in NW Portland</a>
 	<span>
-		<a href="http://goo.gl/KYEXgc">1.0 Mi</a>
+		<a href="http://goo.gl/KYEXgc" target ="_blank">1.0 Mi</a>
 		From Base
 	</span>
 </div>
@@ -50,7 +51,7 @@ sidebar: headquarters
 <div class="place-row">
 	<a href="http://goo.gl/WKh6oU">Airbnb listings close to base</a>
 	<span>
-		<a href="http://goo.gl/WKh6oU">< than .5 Mi</a>
+		<a href="http://goo.gl/WKh6oU" target ="_blank">< than .5 Mi</a>
 		From Base
 	</span>
 </div>
