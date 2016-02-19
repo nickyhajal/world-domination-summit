@@ -18,7 +18,7 @@ sidebar: headquarters
 <a name="lodging"></a>
 
 <h3 class="side-icon-moon">Lodging</h3>
-<p>Portland is an affordable destination, with the lowest hotel rates of any major west coast city. Every year we arrange a number of discounts from partner hotels. Other attendees rent through AirBnB or stay at a local hostel. At least a few months before the event, we'll publish registration links to attendees. The hotels listd below are partners that we've used previously:</p>
+<p>Portland is an affordable destination, with the lowest hotel rates of any major west coast city. Every year we arrange a number of discounts from partner hotels. Other attendees rent through AirBnB or stay at a local hostel. At least a few months before the event, we'll publish registration links to attendees. The hotels listed below are partners that we've used previously:</p>
 
 <div class="place-row">
 	<a href="https://www.starwoodmeeting.com/StarGroupsWeb/res?id=1502128445&key=1E3271B6">The Nines Hotel</a>  
