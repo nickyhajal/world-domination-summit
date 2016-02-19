@@ -66,13 +66,6 @@ sidebar: headquarters
 	</span>
 </div>
 
-<div class="place-row">
-	<a href="http://trimet.org">Trimet</a>
-	<span>
-		<a href="http://ride.trimet.org/?tool=routes#/" target ="_blank>Interactive Map</a>
-	</span>
-</div>
-
 <div class="line-canvas"></div>
 
 <a name="food-dining"></a>
@@ -81,9 +74,9 @@ sidebar: headquarters
 
 Portland is known for its 400+ **food carts**, located in 25 “pods” throughout the city. One popular pod is located at SW 10th and Alder. If you’re on the east side of town across the bridge, head to Cartopia at SE 12th and Hawthorne. Check out foodcartsportland.com for more information.
 	
-A number of **great restaurants** are within easy walking distance or streetcar ride to the Pearl District. Some good restaurants in the area include Clyde Common (Ace Hotel), Metrovino, Grüner, Via Tri- bunali, Andina, Luc Lac, Little Bird, and Tasty and Alder. Sandwiches are available at Lardo and Addie’s. More options at pdx.eater.com/places.
+A number of **great restaurants** are within easy walking distance or streetcar ride to the Pearl District. Some good restaurants in the area include Clyde Common (Ace Hotel), Metrovino, Grüner, Via Tri- bunali, Andina, Luc Lac, Little Bird, and Tasty and Alder. Sandwiches are available at Lardo and Addie’s. More options at <a href="http://pdx.eater.com/maps/best-portland-restaurants-38" target ="_blank">PDX Eater's 38 Essential Portland restaurants guide</a>.
 
-Portland’s world class **farmers market** is just down the street on the PSU campus. Check it out on Saturday from 8:30am to 2pm for tons of locally sourced prepared food and produce vendors. Just follow the park blocks all the way south until you hit the Portland State University campus.
+Portland’s world class **farmers market** is just down the street on the PSU campus. Check it out on Saturday from 8:30am to 2pm for tons of locally sourced prepared food and produce vendors. Just follow the park blocks all the way south until you hit the Portland State University campus. More information at <a href="http://www.portlandfarmersmarket.org/our-markets/psu/" target ="_blank">Portland Farmers Market</a>.
 
 Rumor has it that the creative class was recruited to Portland on the basis of its **coffee shops**. To decide for yourself, check out Crema, Albina Press, Rocking Frog, Fresh Pot, Barista, Daily Cafe, or any number of Stumptown spots.
 
