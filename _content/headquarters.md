@@ -36,7 +36,7 @@ sidebar: headquarters
 	</span>
 </div>
 
-### Alternative Lodging Options
+<a name="Alternative Lodging Options"></a>
 
 <p>If you can't get a room at one of these hotels or just want to do something else, there are numerous other options. Here are a couple of WDS attendee favorites:</p>
 
