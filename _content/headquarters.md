@@ -18,38 +18,75 @@ sidebar: headquarters
 <a name="lodging"></a>
 
 <h3 class="side-icon-moon">Lodging</h3>
-<p>Portland is an affordable destination, with the lowest hotel rates of any major west coast city. Every year we arrange a number of discounts from partner hotels. Other attendees rent through AirBnB or stay at a local hostel. At least a few months before the event, we'll publish registration links to attendees. The hotels listed below are partners that we've used previously:</p>
+<p>Portland is an affordable destination, with the lowest hotel rates of any major west coast city. Every year we arrange a number of discounts from partner hotels. Other attendees rent through AirBnB or stay at a local hostel.
+<p>
+With Portland being a very popular destination in the summertime, it's important to book your rooms ASAP. This year we've secured rooms at these five iconic Portland properties, all within walking distance to WDS events and activities:</p>
 
 <div class="place-row">
-	<a href="https://www.starwoodmeeting.com/StarGroupsWeb/res?id=1502128445&key=1E3271B6">The Nines Hotel</a>  
+	<a href="http://uspor.webhotel.microsdc.us/bp/search_rooms.jsp">Paramount Hotel</a> (group code: WDS2016) 
 	<span>
-		<a href="http://goo.gl/2wmuIP">0.3 Mi</a>
+		<a href="http://goo.gl/WexjC9" target ="_blank">0.2 Mi</a>
 		From Base
 	</span>
 </div>
+
 <div class="place-row">
-	<a href="https://be.cohores.net/10180?NextPage=index&Nights=1&NumberOfRooms=1&NumberOfAdults=1&Currency=USD&SubSource=361&GroupCode=WDS2015">Paramount Hotel</a> 
+	<a href="https://bookings.ihotelier.com/Hotel-Lucia/bookings.jsp?hotelID=6833&groupID=1571255">Hotel Lucia</a>  
 	<span>
-		<a href="http://goo.gl/WexjC9">0.2 Mi</a>
+		<a href="https://goo.gl/maps/aRBcQETC6iq" target ="_blank">0.3 Mi</a>
 		From Base
 	</span>
 </div>
+
+<div class="place-row">
+	<a href="https://gc.synxis.com/rez.aspx?chain=5173&hotel=53439&arrive=08/11/2016&depart=08/15/2016">Hotel Modera</a> (group code: WDS2016)  
+	<span>
+		<a href="https://goo.gl/maps/T3BnDWTY9oq" target ="_blank">0.3 Mi</a>
+		From Base
+	</span>
+</div>
+
+<div class="place-row">
+	<a href="https://bookings.ihotelier.com/Sentinel/bookings.jsp?hotelID=17435&groupID=1571225">Hotel Sentinel</a>  
+	<span>
+		<a href="https://goo.gl/maps/Z1o9iXoS98N2" target ="_blank">0.4 Mi</a>
+		From Base
+	</span>
+</div>
+
+<div class="place-row">
+	<a href="https://bookings.ihotelier.com/Hotel-Deluxe/bookings.jsp?hotelID=6835&groupID=1574087">Hotel deLuxe</a>  
+	<span>
+		<a href="https://goo.gl/maps/kncUcATiUPT2" target ="_blank">0.6 Mi</a>
+		From Base
+	</span>
+</div>
+
 <p></p>
 <b>Alternative Lodging Options</b>
 
 <p>If you can't get a room at one of these hotels or just want to do something else, there are numerous other options. Here are a couple of WDS attendee favorites:</p>
 
 <div class="place-row">
-	<a href="http://nwportlandhostel.com/">Hostel in NW Portland</a>
+	<a href="http://www.mcmenamins.com/CrystalHotel">Crystal Hotel</a>
 	<span>
-		<a href="http://goo.gl/KYEXgc">1.0 Mi</a>
+		<a href="https://goo.gl/maps/VPoXwsew1Pn" target ="_blank">0.6 Mi</a>
 		From Base
 	</span>
 </div>
+
 <div class="place-row">
-	<a href="http://goo.gl/WKh6oU">Airbnb listings close to base</a>
+	<a href="http://nwportlandhostel.com/">Hostel in NW Portland</a>
 	<span>
-		<a href="http://goo.gl/WKh6oU">< than .5 Mi</a>
+		<a href="http://goo.gl/KYEXgc" target ="_blank">1.0 Mi</a>
+		From Base
+	</span>
+</div>
+
+<div class="place-row">
+	<a href="https://goo.gl/zMpByG">Airbnb listings close to base</a>
+	<span>
+		<a href="http://goo.gl/WKh6oU" target ="_blank">< than .5 Mi</a>
 		From Base
 	</span>
 </div>
@@ -79,7 +116,7 @@ sidebar: headquarters
 
 <h3 class="side-icon-fork">Food &amp; Dining</h3>
 
-Portland is known for its 400+ **food carts**, located in 25 “pods” throughout the city. One popular pod is located at SW 10th and Alder. If you’re on the east side of town across the bridge, head to Cartopia at SE 12th and Hawthorne. Check out foodcartsportland.com for more information.
+Portland is known for its 400+ **food carts**, located in 25 “pods” throughout the city. One popular pod is located at SW 10th and Alder. If you’re on the east side of town across the bridge, head to Cartopia at SE 12th and Hawthorne. For more information, check out <a href="foodcartsportland.com" target ="_blank">Food Carts Portland</a>. 
 	
 A number of **great restaurants** are within easy walking distance or streetcar ride to the Pearl District. Some good restaurants in the area include Clyde Common (Ace Hotel), Metrovino, Grüner, Via Tri- bunali, Andina, Luc Lac, Little Bird, and Tasty and Alder. Sandwiches are available at Lardo and Addie’s. More options at <a href="http://pdx.eater.com/maps/best-portland-restaurants-38" target ="_blank">PDX Eater's 38 Essential Portland restaurants guide</a>.
 
