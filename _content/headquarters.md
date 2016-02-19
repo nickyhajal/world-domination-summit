@@ -23,7 +23,7 @@ sidebar: headquarters
 With Portland being a very popular destination in the summertime, it's important to book your rooms ASAP. This year we've secured rooms at these five iconic Portland properties, all within walking distance to WDS events and activities:</p>
 
 <div class="place-row">
-	<a href="http://uspor.webhotel.microsdc.us/bp/search_rooms.jsp">Paramount Hotel</a> (group code: WDS2016) 
+	<a href="http://uspor.webhotel.microsdc.us/bp/search_rooms.jsp">Paramount Hotel*</a> 
 	<span>
 		<a href="http://goo.gl/WexjC9" target ="_blank">0.2 Mi</a>
 		From Base
@@ -39,7 +39,7 @@ With Portland being a very popular destination in the summertime, it's important
 </div>
 
 <div class="place-row">
-	<a href="https://gc.synxis.com/rez.aspx?chain=5173&hotel=53439&arrive=08/11/2016&depart=08/15/2016">Hotel Modera</a> (group code: WDS2016)  
+	<a href="https://gc.synxis.com/rez.aspx?chain=5173&hotel=53439&arrive=08/11/2016&depart=08/15/2016">Hotel Modera*</a>
 	<span>
 		<a href="https://goo.gl/maps/T3BnDWTY9oq" target ="_blank">0.3 Mi</a>
 		From Base
@@ -61,6 +61,8 @@ With Portland being a very popular destination in the summertime, it's important
 		From Base
 	</span>
 </div>
+
+<i>*use the group code: WDS2016 when booking the Paramount Hotel and the Hotel Modera</i>
 
 <p></p>
 <b>Alternative Lodging Options</b>
