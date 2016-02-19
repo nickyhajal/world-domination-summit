@@ -65,12 +65,14 @@ sidebar: headquarters
 		<a href="http://www.portlandstreetcar.org/node/4" target ="_blank>Map</a>
 	</span>
 </div>
+
 <div class="place-row">
 	<a href="http://trimet.org">Trimet</a>
 	<span>
 		<a href="http://ride.trimet.org/?tool=routes#/" target ="_blank>Interactive Map</a>
 	</span>
 </div>
+
 <div class="line-canvas"></div>
 
 <a name="food-dining"></a>
