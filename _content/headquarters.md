@@ -27,7 +27,6 @@ sidebar: headquarters
 		From Base
 	</span>
 </div>
-
 <div class="place-row">
 	<a href="https://be.cohores.net/10180?NextPage=index&Nights=1&NumberOfRooms=1&NumberOfAdults=1&Currency=USD&SubSource=361&GroupCode=WDS2015">Paramount Hotel</a> 
 	<span>
@@ -47,7 +46,6 @@ sidebar: headquarters
 		From Base
 	</span>
 </div>
-
 <div class="place-row">
 	<a href="http://goo.gl/WKh6oU">Airbnb listings close to base</a>
 	<span>
@@ -55,7 +53,6 @@ sidebar: headquarters
 		From Base
 	</span>
 </div>
-
 <div class="line-canvas"></div>
 
 <a name="transportation"></a>
@@ -65,13 +62,13 @@ sidebar: headquarters
 <div class="place-row">
 	<a href="http://www.portlandstreetcar.org">Portland Streetcar</a>
 	<span>
-		<a href="http://www.portlandstreetcar.org/node/4">Map</a>
+		<a href="http://www.portlandstreetcar.org/node/4" target ="_blank>Map</a>
 	</span>
 </div>
 <div class="place-row">
 	<a href="http://trimet.org">Trimet</a>
 	<span>
-		<a href="http://ride.trimet.org/?tool=routes#/">Interactive Map</a>
+		<a href="http://ride.trimet.org/?tool=routes#/" target ="_blank>Interactive Map</a>
 	</span>
 </div>
 <div class="line-canvas"></div>
