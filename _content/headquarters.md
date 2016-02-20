@@ -31,8 +31,7 @@ With Portland being a very popular destination in the summertime, it's important
 </div>
 
 <div class="place-row">
-	<a href="https://bookings.ihotelier.com/Hotel-Lucia/bookings.jsp?hotelID=6833&groupID=1571255">Hotel Lucia</a>  
-	<span>
+	<a href="https://bookings.ihotelier.com/Hotel-Lucia/bookings.jsp?hotelID=6833&groupID=1571255">Hotel Lucia</a><span>
 		<a href="https://goo.gl/maps/aRBcQETC6iq" target ="_blank">0.3 Mi</a>
 		From Base
 	</span>
