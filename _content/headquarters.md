@@ -61,7 +61,7 @@ With Portland being a very popular destination in the summertime, it's important
 	</span>
 </div>
 
-<i>*use the group code: <b>WDS16</b> when booking the Paramount Hotel and the the group code: <b>WDS2016</b> Hotel Modera</i>
+<i>*use the group code: <b>WDS16</b> when booking the Paramount Hotel and the the group code: <b>WDS2016</b> when booking the Hotel Modera</i>
 
 <p></p>
 <b>Alternative Lodging Options</b>
