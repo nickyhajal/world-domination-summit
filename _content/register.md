@@ -1,13 +1,9 @@
 icon: globe
-# Final Main Stage tickets are now available!
+# Sorry, main stage tickets for WDS 2016 have sold out. But it's not too late to join us!
 
-<!-- # Sorry, the final wave of WDS 2015 ticket sales is now complete. But it's not too late to join us!
+This year we're extending the WDS activities into the days before and after the main stage event. Information about "WDS Connect" tickets will be announced soon.
 
-Thanks for your interest in taking over the world. WDS is an adventure like no other, and 2015 will be *extra* special because it's our five-year anniversary. Tickets go very quickly, and the event has been completely sold out five years in a row.
-
-WDS Academies—half-day workshops led by our alumni speakers and special guests—are now open for registration for WDS 2015 attendees and the general public. Learn more about them and [register](/academies) before they sell out! -->
-
-<div class="line-canvas"></div>
+<!--<div class="line-canvas"></div>
 
 Our last round of main stage tickets for the greatest adventure of all time is now open. All tickets will be sold on a first-come, first-served basis—we hope to see you this summer!
 
@@ -15,9 +11,9 @@ Until this round of tickets is sold out, you can register through the link below
 
 <a href="http://wds2016.eventbrite.com" target ="_blank" class="button">Register &rarr;</a>
 
-After this sale, we won’t offer any additional main stage tickets. We hope you'll join us if you haven't already planned to, and we hope you'll tell your friends and family to sign up too.
+After this sale, we won’t offer any additional main stage tickets. We hope you'll join us if you haven't already planned to, and we hope you'll tell your friends and family to sign up too. -->
 
-<!-- If you'd definitely like to attend our 2016 event and want to purchase a ticket during the final round of sales, use the form below to put your name on the waiting list. When the final round is announced, all tickets will be offered on a first-come, first-served basis.
+If you'd definitely like to attend our 2016 event and want to purchase a WDS Connect ticket when they're available, use the form below to put your name on the waiting list.
 
 
 <form method="post" class="af-form-wrapper" action="http://www.aweber.com/scripts/addlead.pl"  >
@@ -46,4 +42,3 @@ After this sale, we won’t offer any additional main stage tickets. We hope you
 
                <div style="display: none;"><img src="http://forms.aweber.com/form/displays.htm?id=jIyszJyMDOys7A==" alt="" /></div>
      </form>
--->
