@@ -1,7 +1,7 @@
 icon: globe
 # Sorry, main stage tickets for WDS 2016 have sold out. But it's not too late to join us!
 
-This year we're extending the WDS activities into the days before and after the main stage event. Information about "WDS Connect" tickets will be announced soon.
+This year we're extending the WDS activities into the days before and after the main stage event and inviting even more people to participate in the WDS experience. Information about these activities, super-meetups, and a special "WDS Connect" ticket will be announced soon.
 
 <!--<div class="line-canvas"></div>
 
