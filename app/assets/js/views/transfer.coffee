@@ -4,6 +4,8 @@ ap.Views.transfer = XView.extend
 		@initRender()
 
 	rendered: ->
+		$('html').removeClass('hide-counter')
+		$('#sidebar-shell').show()
 		@initSelect2()
 
 	###

@@ -22,6 +22,7 @@ ap.createRouter = ->
 			@route(/^[0-9a-z]{40}$/, 'hash', ap.Routes.hashLogin)
 			@route("logout", 'logout', ap.Routes.logout)
 			@route("reset-password/:hash", 'reset', ap.Routes.reset)
+			@route("transfer/:hash", 'transfer', ap.Routes.hashLogin)
 			@route("community/:community", 'community', ap.Routes.community)
 			@route("dispatch/:feed_id", 'dispatch', ap.Routes.dispatch)
 			@route("task/:task_slug", 'task', ap.Routes.task)
