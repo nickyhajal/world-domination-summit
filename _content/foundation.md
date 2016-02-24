@@ -3,11 +3,12 @@ photo_head: /images/foundation/foundation.jpg
 
 <a name="story"></a>
 
-The WDS Foundation seeks to put the right resources in the hands of amazing people who are acting on the three core values of WDS—community, adventure, service. 
+The WDS Foundation seeks to put the right resources in the hands of amazing people who are acting on the three core values of WDS—<i>community</i>, <i>adventure</i>, and <i>service</i>. 
 
-We do this by providing what we call “Scholarships For Real Life.” The goal of these scholarships is to empower individuals to pursue their dreams and impact their community. 
+We do this by providing what we call "Scholarships For Real Life." The goal of these scholarships is to empower individuals to pursue their dreams and impact their community. 
 
 Have a crazy project you want to bring to life? Want to take a trip around the earth and share what you learned with the world? Trying to build something that’s a bit out of your reach? Whatever it is, the WDS Foundation can help fund it. We look for inspiring projects that will improve your life *and* make the world a better place.
+
 
 <a name="eligibility"></a>
 
@@ -16,10 +17,9 @@ Have a crazy project you want to bring to life? Want to take a trip around the e
 
 ### Eligibility
 
-Currently the “Scholarships for Real Life: program is open only to those who have attended or will be attending a World Domination Summit. As the program progresses, we intend to open this up to a wider audience—so check back next year if you’re not currently eligible.
+Currently the "Scholarships for Real Life" program is open only to those who have attended one of our past five WDS events. If this is your first year attending the World Domination Summit, you will be eligible to apply in 2017.
 
 <a name="selection"></a>
-
 
 <div class="line-canvas"></div>
 
@@ -37,7 +37,7 @@ Our selection committee will be looking at a number of factors to determine whic
 
 <div class="foundation-criteria-implementation foundation-criteria"></div>
 
-<p class="color-orange">Implemention</p>
+<p class="color-orange">Implementation</p>
 
 * Can the proposal be realistically completed in a year?
 * If part of a larger, long-term project, how does the proposal further the overall effort?
@@ -54,12 +54,20 @@ Our selection committee will be looking at a number of factors to determine whic
 
 <div class="line-canvas"></div>
 
-<div id="foundation-app-box" class="orange-box">
-	<h3>I'm in! How do I apply?</h3>
-<p>So sorry we missed you! Applications for the 2015 Scholarship for Real Life program are currently closed.
-If you would like to be notified when applications open for 2016, please email <a href="mailto:foundation@wds.fm">foundation@wds.fm</a> with your contact information.</p>
+### How to Apply
 
-</div>
+The Scholarships for Real Life Grant was created to connect smart and passionate people with the resources they need to bring big plans to life. To know if we can help you with your ambitions, we need to know a few things about your project. 
+
+Please complete your application by <b>9:00pm on Friday, April 15, 2016</b>.
+
+<b>Late applications will not be considered.</b> Many applicants have found the questions to take between 2-4 hours to complete.</b>
+
+Along with the questions outlined below, please include a short video (no longer than three minutes) where you give us your "elevator pitch." How would you describe your project to an old friend who asked you what you are working on? We want to hear it from you! 
+
+* Videos longer than 3 minutes will not be viewed and will impact your overall score.
+* Please insert a link to where the video can be viewed. File attachments will not be accepted.
+
+<a href="http://worlddominationsummit.com/foundation/application-2016" target ="_blank" class="button">Apply for the Scholarship for Real Life &rarr;</a>
 
 <div class="line-canvas"></div>
 
@@ -73,6 +81,9 @@ We know the WDS community has a lot to offer, which a wide-range of knowledge an
 
 If you would like to contribute your knowledge and expertise to our Voyagers, whether that be for an hour or a full-year, we’d sincerely appreciate your help. Simply fill out the form below and we’ll be in contact when we have a need for your skills!
 
-<a href="/foundation/mentor-submission">Click here to share your expertise!</a>
+<a href="/foundation/mentor-submission" target ="_blank" class="button">Share Your Expertise! &rarr;</a>
 
-</div>
+
+
+
+
