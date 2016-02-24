@@ -28,7 +28,8 @@ Card = Shelf.Model.extend
 					status: 'process'
 					paid_amount: '0'
 				product.pre_process({user_id: @get('user_id'), post: purchase_data})
-				.then (store_meta) =>
+				.then (pre) =>
+					pre_rsp_params = pre.rsp ? {}
 					stripe.charges.create
 						amount: product.get('cost')
 						currency: 'usd'
@@ -40,12 +41,14 @@ Card = Shelf.Model.extend
 							status: 'paid'
 							paid_amount: product.get('cost')
 							stripe_id: charge.id
-							meta: store_meta
+							meta: pre.meta
 						.save()
 						.then =>
 							product.post_process(transaction, charge)
-							.then =>
-								dfr.resolve(transaction)
+							.then (post_rsp) =>
+								post_rsp_params = post_rsp.rsp ? {}
+								rsp_params = _.extend pre_rsp_params, post_rsp_params
+								dfr.resolve({transaction: transaction, rsp: rsp_params})
 					, (err) ->
 						console.error err
 		return dfr.promise

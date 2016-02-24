@@ -28,8 +28,8 @@ Product = Shelf.Model.extend
 		dfr = Q.defer()
 		if POST[@get('code')]?
 			POST[@get('code')](meta)
-			.then ->
-				dfr.resolve()
+			.then (data) ->
+				dfr.resolve(data)
 		else
 			dfr.resolve()
 		dfr.promise
@@ -48,9 +48,10 @@ PRE =
 			status: 'pending'
 		.save()
 		.then (transfer) ->
-			dfr.resolve(transfer.get('transfer_id'))
+			dfr.resolve
+				meta: transfer.get('transfer_id')
 		, (err) ->
-			tk err
+			console.error(err)
 		return dfr.promise
 
 POST =
@@ -79,7 +80,7 @@ POST =
 						status: 'paid'
 					.save()
 					.then ->
-						dfr.resolve()
+						dfr.resolve({rsp: {transfer_id: xfer.get('transfer_id')}})
 			, (err) ->
 				console.error err
 		dfr.promise

@@ -21,7 +21,13 @@ jQuery.fn.scan
 				noun: noun
 				nouns: nouns
 				code: code
-				billing_addr: billing_addr
+				billing_addr: parseInt(billing_addr)
 				purch_cta: purch_cta
 				checkAvailability: $t.data('check-remaining')?
+				onResponse: (rsp) ->
+					if rsp.charge_success?
+						ap.navigate('your-transfer/'+rsp.transfer_id)
+						$('.payment-processing').hide()
+					else
+						tk 'Not charged or ticketed'
 

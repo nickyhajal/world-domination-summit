@@ -176,6 +176,7 @@ ap.Views.welcome = XView.extend
 		$('.tab-panel-next', w).attr 'class', 'tab-panel tab-panel-active'
 		$('.tab-panel-next-hidden', w).eq(0).attr 'class', 'tab-panel tab-panel-next'
 		@updPosition()
+		#@updMe()
 
 	prev: ->
 		e?.stopPropagation?()
@@ -247,6 +248,26 @@ ap.Views.welcome = XView.extend
 			}
 		'
 		$('body').append style
+
+	updMe: ->
+		tk 'UPD ME'
+		if !(ap.me?.get('has_pw')? and ap.me.get('has_pw')) && $('input[name="new_password"]').is(':visible') and $('input[name="new_password"]').val().length < 5
+			tk 'UPD PW'
+			btn.html('Your password should be at least 6 characters.').addClass('btn-error')
+			setTimeout ->
+				btn.html(original_btn_val).removeClass('btn-error')
+			, 2000
+		else
+			tk 'UPD ME'
+			onTab = ($('.tab-panel-active').index()-1)
+			if ap.me.get('intro') < onTab
+				ap.me.set('intro', onTab-1)
+			if ap.me.changedSinceSave.user_id?
+				ap.me.save ap.me.changedSinceSave,
+					patch: true
+					success: ->
+					error: (rsp) ->
+			else
 
 	###
 		Saves the latest changes to ap.me

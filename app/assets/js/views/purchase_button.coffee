@@ -1,3 +1,4 @@
+
 ap.Views.purchase_button = XView.extend
 	remainTimo: 0
 	product: false
@@ -27,23 +28,13 @@ ap.Views.purchase_button = XView.extend
 		if StripeCheckout?
 			@stripe = StripeCheckout.configure
 				key: ap.stripe_pk
-				image: 'http://worlddominationsummit.com/images/default-avatar.png'
+				image: 'https://worlddominationsummit.com/images/default-avatar.png'
 				locale: 'auto'
 				token: (token) =>
 					data = $('.purchase-data').formToJson()
 					@showProcessing()
-					ap.api 'post product/charge', {card_id: token.id, code: @product.code, purchase_data: data}, (rsp) ->
-						if (rsp.charge_success? and rsp.ticket?)
-							ap.tbyh = {} if not ap.tbyh?
-							ticket = rsp.ticket
-							ticket.meta_data = JSON.parse(ticket.meta_data)
-							ap.tbyh[ticket.hash] = ticket
-							ap.navigate('mission-accomplished/'+rsp.ticket.hash)
-							$('.payment-processing').hide()
-						else if rsp.charge_success?
-							tk 'Charged, not ticketed'
-						else
-							tk 'Not charged or ticketed'
+					ap.api 'post product/charge', {card_id: token.id, code: @product.code, purchase_data: data}, (rsp) =>
+						@options.onResponse(rsp)
 			$(window).on 'popstate', =>
 				@stripe.close();
 		else
@@ -65,6 +56,7 @@ ap.Views.purchase_button = XView.extend
 
 	openPurchase: (e) ->
 		e.preventDefault();
+		email = (if ap.me? then _.trim(ap.me.get('email')) else null)
 		@stripe.open
 			name: @product.name
 			description: @product.descr
@@ -72,7 +64,8 @@ ap.Views.purchase_button = XView.extend
 			panelLabel: @product.purch_cta
 			shippingAddress: false
 			allowRememberMe: false
-			billingAddress: @options.billing_addr
+			email: email
+			billingAddress: if @options.billing_addr then true else false
 
 	whenFinished: ->
 		clearTimeout(@remainTimo)

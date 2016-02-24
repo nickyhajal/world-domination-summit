@@ -38,12 +38,13 @@ routes = (app) ->
 		charge: (req, res, next) ->
 			if req.hasParams ['code', 'card_id'], req, res, next
 				if req.isAuthd req, res, next
-					tk req
 					req.me.getCard(req.query.card_id)
 					.then (card) ->
-						tk 'GOT CARD'
 						card.charge(req.query.code, req.query.purchase_data)
-						.then (transaction) ->
-							res.r.charge = transaction
+						.then (charge) ->
+							res.r = _.extend res.r, charge.rsp
+							res.r.charge = charge.transaction
+							res.r.charge_success = true
+							next()
 
 module.exports = routes
