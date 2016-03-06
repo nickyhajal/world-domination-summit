@@ -21,9 +21,9 @@ WDS was founded by <a href="http://chrisguillebeau.com" target="blank"> Chris Gu
 
 <b>Sorry, main stage tickets for WDS 2016 have sold out. But it's not too late to join us!</b> 
 
-This year we're extending the WDS activities into the days before and after the main stage event and inviting even more people to participate in the WDS experience. Information about these activities, super-meetups, and a special "WDS Connect" ticket will be announced soon. Sign-up at the following page and we'll notify you when WDS Connect tickets become available: <a href="http://worlddominationsummit.com/register">WDS Connect Waiting List.</a> 
+This year we're extending the WDS activities into the days before and after the main stage event and inviting even more people to participate in the WDS experience. Information about these activities, super-meetups, and a special "WDS Connect" ticket will be announced soon. 
 
-If you'd definitely like to attend our 2016 event and want to purchase a WDS Connect ticket when they're available, 
+Sign-up at the following page and we'll notify you when WDS Connect tickets become available: <a href="http://worlddominationsummit.com/register">WDS Connect Waiting List.</a> 
 
 <!--Tickets for WDS are only offered two times a year, and they go quickly. There is no fast-track or secret process to get a ticket; they are all offered on a first-come, first-served basis. The best way to be informed of opportunities to register for next year is to join the 2016 <a href="http://worlddominationsummit.com/register">waiting list.</a> 
 
