@@ -1,5 +1,5 @@
 ap.Routes.hashLogin = (hash) ->
-	hash = location.pathname.substr(1)
+	hash = location.pathname.substr(1).replace('transfer/', '')
 	ap.goTo 'empty', {}, ->
 		ap.api 'post user/login', {hash: hash}, (rsp) ->
 			if rsp.loggedin
