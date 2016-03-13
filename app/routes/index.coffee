@@ -97,8 +97,10 @@ routes = (app) ->
 				if name.indexOf('pages_') isnt 0
 					out[name] = tpl
 
+			loading = false
 			if path.match(/[a-z0-9]{40}/)? or path is 'welcome'
 				counter = 'hide-counter'
+				loading = true
 			countries_out = {all: []}
 			for country in countries.all
 				countries_out.all.push
@@ -109,6 +111,7 @@ routes = (app) ->
 				env: '"'+process.env.NODE_ENV+'"'
 				me: me
 				hide_counter: counter
+				loading: loading
 				year: process.year
 				yr: process.yr
 				stripe_pk: process.env.STRIPE_PK

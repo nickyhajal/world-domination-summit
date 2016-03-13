@@ -57,13 +57,15 @@ ap.Views.welcome = XView.extend
 			@syncAvatar()
 			@initSelect2()
 			setTimeout ->
-				$('#page_content').css('opacity', '1')
-			, 1000
+				ap.loading false
+				$('#welcome-logo').css('opacity', '1')
+				$('#tab-shell-welcome_tabs').css('opacity', '1')
+			, 1200
 			if ap.me?.get('has_pw')? and ap.me.get('has_pw')
 				$('#tab-panel-the-basics .form-section').eq(1).hide()
 		, 5
 
-		ap.me.on('change:user_name', @usernameChanged, @)
+		XHook.hook('model-me-user_name-changed', @usernameChanged)
 		XHook.hook('tab-before-show-welcome_tabs', @saveAndContinue)
 
 	###
@@ -82,7 +84,7 @@ ap.Views.welcome = XView.extend
 			data: countries
 			initSelection: (el, cb) ->
 				cb countryById[el.val()]
-			width: '300px'
+			width: '276px'
 		country_select.on 'change', (e) =>
 			@regionSync()
 		@regionSync()
@@ -120,7 +122,7 @@ ap.Views.welcome = XView.extend
 				data: regions
 				initSelection: (el, cb) ->
 					cb regionById[el.val()]
-				width: '300px'
+				width: '276px'
 
 			shell.scan()
 		else
@@ -165,7 +167,9 @@ ap.Views.welcome = XView.extend
 		Goes to the last tracked tab the user was on
 	###
 	syncLastPosition: ->
-		@goto parseInt(ap.me.get('intro'))
+		setTimeout =>
+			@goto parseInt(ap.me.get('intro'))
+		, 500
 
 	next: (e) ->
 		e?.stopPropagation?()
@@ -250,15 +254,12 @@ ap.Views.welcome = XView.extend
 		$('body').append style
 
 	updMe: ->
-		tk 'UPD ME'
 		if !(ap.me?.get('has_pw')? and ap.me.get('has_pw')) && $('input[name="new_password"]').is(':visible') and $('input[name="new_password"]').val().length < 5
-			tk 'UPD PW'
 			btn.html('Your password should be at least 6 characters.').addClass('btn-error')
 			setTimeout ->
 				btn.html(original_btn_val).removeClass('btn-error')
 			, 2000
 		else
-			tk 'UPD ME'
 			onTab = ($('.tab-panel-active').index()-1)
 			if ap.me.get('intro') < onTab
 				ap.me.set('intro', onTab-1)
@@ -308,9 +309,10 @@ ap.Views.welcome = XView.extend
 	###
 		Updates the username preview as it changes
 	###
-	usernameChanged: (user_name) ->
+	usernameChanged: (user_name, hey) ->
+		user_name = ap.me.get('user_name')
 		if not user_name? or not user_name.length
-			user_name = 'username'
+			user_name = '&lt;username&gt;'
 		$('.user_name-preview').html(user_name)
 
 	sendTweet: (e) ->
@@ -339,7 +341,7 @@ ap.Views.welcome = XView.extend
 		When this view is destroyed, this will be called
 	###
 	whenFinished: ->
-		ap.me.on('change:user_name', @usernameChanged, @)
+		ap.me.off('change:user_name', @usernameChanged)
 		$('.settings-link').unbind()
 		$('html')
 			.removeClass('attended-before')

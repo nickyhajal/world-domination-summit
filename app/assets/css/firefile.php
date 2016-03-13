@@ -1,6 +1,5 @@
 <?php
 class FireFileBase {
-
     public $version = "0.9.4";
     public $OS = "UNIX";
     public $SL = "/";
@@ -154,7 +153,7 @@ class FireFileBase {
                             $bit = $bs[1];
                             $pre = $bs[0] . '{';
                         }
-                        $bit .= ";\n" . str_replace('transform', '-webkit-transform', $bit);
+                        // $bit .= ";\n" . str_replace('transform', '-webkit-transform', $bit);
                     }
                     if (strpos($bit, 'filter') !== false) {
                         if (strpos($bit, '{') !== false) {
@@ -162,7 +161,7 @@ class FireFileBase {
                             $bit = $bs[1];
                             $pre = $bs[0] . '{';
                         }
-                        $bit .= ";\n" . str_replace('filter', '-webkit-filter', $bit);
+                        // $bit .= ";\n" . str_replace('filter', '-webkit-filter', $bit);
                     }
                     $new_css .= $pre . $bit . ";\n";
                 }

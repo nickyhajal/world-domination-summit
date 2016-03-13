@@ -10,7 +10,7 @@ ap.Routes.defaultRoute = (actions) ->
 	else if actions.length is 40
 		actions = false
 		ap.goTo 'blank', {}, ->
-			ap.loading()
+			# ap.loading()
 			ap.api 'post user/login', {hash: actions}, (rsp) ->
 				ap.loaded()
 				if rsp.loggedin

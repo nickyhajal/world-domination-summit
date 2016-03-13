@@ -77,7 +77,7 @@ ap.getAssets = (assets) ->
 
 		_.nowReady('assets')
 
-ap.track = (asset, updated = false) -> 
+ap.track = (asset, updated = false) ->
 	tracker = ap.get('tracker')
 	tracker[asset] = Math.floor((+(new Date())) / 1000)
 	ap.put('tracker', tracker)
@@ -161,7 +161,7 @@ ap.initRouter = ->
 				anchor = $('a[name="'+href.replace('#', '')+'"]')
 				if anchor.length
 					top = anchor.offset().top - 100
-					$.scrollTo top, 150, 
+					$.scrollTo top, 150,
 						axis: 'y'
 					e.preventDefault()
 
@@ -172,6 +172,19 @@ ap.initRouter = ->
 			    e.preventDefault()
 			    url = href.replace(/^\//, '')
 			    ap.Router.navigate url, {trigger: true}
+
+ap.loading = (setLoading = false) ->
+	if setLoading
+		unless $('#loading-logo').length
+			html = '
+			<video id="loading-logo" width="100%" loop="" autoplay="" muted="" poster="/images/logo-alone.png">
+				<source type="video/webm" src="https://zippy.gfycat.com/JoyfulGoodnaturedEeve.webm"></source>
+				<source type="video/mp4" src="https://zippy.gfycat.com/JoyfulGoodnaturedEeve.mp4"></source>
+			</video>
+			'
+			$('body').append(html)
+	else
+		$('#loading-logo').remove()
 
 ap.initSearch = ->
 	_.whenReady 'users', ->

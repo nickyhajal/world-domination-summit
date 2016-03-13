@@ -50,18 +50,18 @@ ap.createRouter = ->
 ###
 	Show Loading
 ###
-ap.loading = (fade = false) ->
-	content = $('#page_content')
-	loading = $('#loading')
-	loading
-		.css
-			left: content.offset().left+'px'
-			top: content.offset().top+'px'
-			width: content.width()+'px'
-			height: content.height()+'px'
-	if fade
-		loading.addClass('loading-faded')
-	loading.addClass('is-loading')
+# ap.loading = (fade = false) ->
+# 	content = $('#page_content')
+# 	loading = $('#loading')
+# 	loading
+# 		.css
+# 			left: content.offset().left+'px'
+# 			top: content.offset().top+'px'
+# 			width: content.width()+'px'
+# 			height: content.height()+'px'
+# 	if fade
+# 		loading.addClass('loading-faded')
+# 	loading.addClass('is-loading')
 
 ap.loaded = ->
 	$('#loading').attr('class', '')

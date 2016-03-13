@@ -29,6 +29,7 @@ jQuery.fn.scan
 				val = $t.val()
 				ap.me.set(name, val)
 				tk name
+				tk 'change:'+name
 				ap.me.trigger('change:'+name)
 				XHook.trigger('model-me-'+name+'-changed', val)
 				if save
