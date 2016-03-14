@@ -275,10 +275,7 @@ ap.Views.welcome = XView.extend
 		$('body').append style
 
 	syncDistance: (user) ->
-		tk user
-		tk user.distance
 		distance = Math.floor(user.distance)
-		tk distance
 		str = 'Why did you decide to attend the World Domination Summit?'
 		if distance > 10
 			str = 'Why did you decide to make the '+distance+' mile journey to the World Domination Summit?'

@@ -1,5 +1,5 @@
 ap.Routes.hub= ->
-	if ap.me.get('intro') < 8
+	if ap.me.get('intro') < 10
 		ap.navigate 'welcome'
 	else
 		ap.loading false
