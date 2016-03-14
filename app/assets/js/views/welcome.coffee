@@ -52,6 +52,7 @@ ap.Views.welcome = XView.extend
 			$('html').addClass('hide-counter')
 			# @sidebarNumbers()
 			@syncLastPosition()
+			@syncDistance(ap.me.attributes)
 			@usernameChanged(ap.me.get('user_name'))
 			@syncTwitterBox()
 			@syncAvatar()
@@ -67,6 +68,7 @@ ap.Views.welcome = XView.extend
 
 		XHook.hook('model-me-user_name-changed', @usernameChanged)
 		XHook.hook('tab-before-show-welcome_tabs', @saveAndContinue)
+		XHook.hook('interests-updated', @interestsUpdated)
 
 	###
 		Use Select2 to have nice select boxes for the address fields
@@ -168,8 +170,28 @@ ap.Views.welcome = XView.extend
 	###
 	syncLastPosition: ->
 		setTimeout =>
+			$('.tab-panel').each ->
+				$t = $(this)
+				$t.data('height', $t.outerHeight()+'px')
+		, 400
+		setTimeout =>
 			@goto parseInt(ap.me.get('intro'))
 		, 500
+
+	interestsUpdated: ->
+		$t = $('#tab-panel-interests')
+		$t.attr 'style', 'opacity:0;'
+		eClass = $t.attr('class')
+		$t.attr('class', 'tab-panel')
+		setTimeout =>
+			$t.data('height', $t.outerHeight()+'px')
+			tk $t.outerHeight()
+			tk $t
+			$t.attr('class', eClass)
+			$t.attr 'style', ''
+		, 1000
+
+
 
 	next: (e) ->
 		e?.stopPropagation?()
@@ -180,7 +202,7 @@ ap.Views.welcome = XView.extend
 		$('.tab-panel-next', w).attr 'class', 'tab-panel tab-panel-active'
 		$('.tab-panel-next-hidden', w).eq(0).attr 'class', 'tab-panel tab-panel-next'
 		@updPosition()
-		#@updMe()
+		@updMe()
 
 	prev: ->
 		e?.stopPropagation?()
@@ -199,7 +221,6 @@ ap.Views.welcome = XView.extend
 		nextFound = false
 		$('.tab-panel').each ->
 			$t = $(this)
-			$t.data('height', $t.outerHeight()+'px')
 			if inx > i
 				$('.tab-panel-last').removeClass('tab-panel-last')
 				$t.attr 'class', 'tab-panel tab-panel-prev-hidden tab-panel-last'
@@ -253,6 +274,16 @@ ap.Views.welcome = XView.extend
 		'
 		$('body').append style
 
+	syncDistance: (user) ->
+		tk user
+		tk user.distance
+		distance = Math.floor(user.distance)
+		tk distance
+		str = 'Why did you decide to attend the World Domination Summit?'
+		if distance > 10
+			str = 'Why did you decide to make the '+distance+' mile journey to the World Domination Summit?'
+		$('#travel-label').html str
+
 	updMe: ->
 		if !(ap.me?.get('has_pw')? and ap.me.get('has_pw')) && $('input[name="new_password"]').is(':visible') and $('input[name="new_password"]').val().length < 5
 			btn.html('Your password should be at least 6 characters.').addClass('btn-error')
@@ -266,7 +297,11 @@ ap.Views.welcome = XView.extend
 			if ap.me.changedSinceSave.user_id?
 				ap.me.save ap.me.changedSinceSave,
 					patch: true
-					success: ->
+					success: (model, rsp) =>
+						tk 'SUCCESS!'
+						tk rsp
+						if rsp.user
+							@syncDistance(rsp.user)
 					error: (rsp) ->
 			else
 

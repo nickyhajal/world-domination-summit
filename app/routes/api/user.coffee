@@ -208,11 +208,6 @@ routes = (app) ->
 						user.set('last_broadcast', new Date(user.get('last_broadcast')))
 						user.save()
 						.then (user) ->
-							if user.addressChanged
-								User.forge({user_id: post.user_id})
-								.fetch()
-								.then (addr_user) ->
-									addr_user.processAddress()
 
 							if req.query.answers?
 								Answers
@@ -228,7 +223,16 @@ routes = (app) ->
 									user.setCapabilities req.query.capabilities.split(",")
 								else
 									user.setCapabilities {}
-							next()
+
+							if user.addressChanged
+								User.forge({user_id: post.user_id})
+								.fetch()
+								.then (addr_user) ->
+									addr_user.processAddress (user) ->
+										res.r.user = _.pick user.attributes, User.prototype.permittedAttributes
+										next()
+							else
+								next()
 						, (err) ->
 							console.error(err)
 			else

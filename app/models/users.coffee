@@ -196,7 +196,7 @@ User = Shelf.Model.extend
 			console.error(err)
 		return dfr.promise
 
-	processAddress: ->
+	processAddress: (cb = false) ->
 		location = @getLocationString()
 		@set 'location', location
 		geocoder.geocode location, (err, data) =>
@@ -219,6 +219,8 @@ User = Shelf.Model.extend
 					@set
 						region: (if @get('country') == 'US' then short else long)
 			@save(null, {method: 'update'})
+			if cb
+				cb(@)
 
 	similar_meetups: ->
 		dfr = Q.defer()
