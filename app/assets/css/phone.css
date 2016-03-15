@@ -3,7 +3,7 @@ h1#header-title span {
     line-height:                110%;
     display:                    block;
 }
-#page-home #header-title:after {
+#page-home #header-title::after {
     bottom:                     -120px ! important;
     top:                        auto;
     left:                       0px;
@@ -12,6 +12,9 @@ h1#header-title {
     font-size:                  16px ! important;
     display:                    block;
     padding:                    0px 30px 20px ! important;
+}
+h1#extra-big {
+    font-size:                  34pt;
 }
 #page-welcome h1 {
     margin-top:                 20px;
@@ -221,7 +224,7 @@ div#your-points, #your-rank {
 #your-points label, #your-rank label {
     font-size:                  16px ! important;
 }
-div#race-user-status:after {
+div#race-user-status::after {
     right:                      -47px;
     top:                        11px;
     display:                    none;
@@ -413,6 +416,22 @@ form#note-form {
 }
 div.note-shell {
     width:                      100%;
+}
+div.tab-prev-btn, div.tab-next-btn {
+    background:                 transparent none repeat scroll 0% 0%;
+}
+div.tab-panel {
+    padding:                    12px 24px;
+}
+#tab-panel-the-basics span.sub-label {
+    display:                    none;
+}
+#page-welcome textarea {
+    width:                      100%;
+}
+#page-welcome a.button, #page-settings a.button {
+    width:                      100%;
+    display:                    block;
 }
 * {
     line-height:                inherit;

@@ -324,7 +324,7 @@ ap.Views.welcome = XView.extend
 					patch: true
 					success: ->
 						switchTab()
-						$.scrollTo(0)
+						$.scrollTo(0, 3000)
 						btn.html(original_btn_val)
 					error: (rsp) ->
 						ap.Notify.now
@@ -336,7 +336,7 @@ ap.Views.welcome = XView.extend
 						, 1000
 			else
 				switchTab()
-				$.scrollTo(0)
+				$.scrollTo(0, 3000)
 
 	###
 		Updates the username preview as it changes

@@ -1,4 +1,5 @@
 ap.Views.InterestList = XView.extend
+	initd: false
 	events:
 		'click .interest-button': 'addInterest'
 		'click .interest-remove-button': 'removeInterest'
@@ -56,7 +57,9 @@ ap.Views.InterestList = XView.extend
 				html += _.t('parts_interest-button', interest.attributes)
 		html += '<div class="clear"></div>'
 		$(@el).html html
-		XHook.trigger('interests-updated')
+		if @initd
+			@initd = true
+			XHook.trigger('interests-updated')
 
 	addInterest: (e) ->
 		$t = $(this)

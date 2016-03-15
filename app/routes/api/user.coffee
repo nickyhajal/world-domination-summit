@@ -306,29 +306,37 @@ routes = (app) ->
 					res.redirect('https://twitter.com/oauth/authenticate?oauth_token='+reqToken)
 
 		twitter_callback: (req, res, next) ->
+			tk 1
 			if req.me and req.session.twitter_connect?
+				tk 2
 				twitter_connect = req.session.twitter_connect
 				twitter.getAccessToken twitter_connect[0], twitter_connect[1], req.query.oauth_verifier, (err, accessToken, accessTokenSecret, results) ->
+					tk '2.2'
 					TwitterLogin.forge
 						user_id: req.me.get('user_id')
 					.fetch()
 					.then (login) ->
-
+						tk 3
 						# We do this to get the full twitter profile
 						twitter.verifyCredentials accessToken, accessTokenSecret, (err, rsp) ->
+							tk 4
 							if not err
+								tk 5
 								if not login
+									tk 6
 									login = TwitterLogin.forge({user_id: req.me.get('user_id')})
 								login.set
 									token: accessToken
 									secret: accessTokenSecret
 								login.save()
 								.then (login) ->
+									tk 7
 									req.me.set
 										twitter: rsp.screen_name
 										pic: rsp.profile_image_url_https
 									req.me.save()
 									.then ->
+										tk 8
 										request 'http://avatar.wds.fm/flush/'+me.get('user_id'), (error, response, body) ->
 										res.redirect('/welcome')
 								, (err) ->
