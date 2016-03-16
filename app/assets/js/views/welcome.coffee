@@ -200,17 +200,18 @@ ap.Views.welcome = XView.extend
 		, 500
 
 	interestsUpdated: ->
-		$t = $('#tab-panel-interests')
-		$t.attr 'style', 'opacity:0;'
-		eClass = $t.attr('class')
-		tk eClass
-		$t.attr('class', 'tab-panel')
-		setTimeout =>
-			tk 'ints timo'
-			$t.data('height', $t.outerHeight()+'px')
-			$t.attr('class', eClass)
-			$t.attr 'style', ''
-		, 1000
+		_.whenReady 'welcome-positions', =>
+			$t = $('#tab-panel-interests')
+			$t.attr 'style', 'opacity:0;'
+			eClass = $t.attr('class')
+			tk eClass
+			$t.attr('class', 'tab-panel')
+			setTimeout =>
+				tk 'ints timo'
+				$t.data('height', $t.outerHeight()+'px')
+				$t.attr('class', eClass)
+				$t.attr 'style', ''
+			, 1000
 
 
 
@@ -294,6 +295,7 @@ ap.Views.welcome = XView.extend
 			}
 		'
 		$('body').append style
+		_.nowReady 'welcome-positions'
 
 	syncDistance: (user) ->
 		distance = Math.floor(user.distance)
