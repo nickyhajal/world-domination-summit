@@ -70,8 +70,26 @@ div(id="page_content")
 			div(class="clear")
 
 		div(id="tab-panel-phone", class="tab-panel")
-			h2(id="extra-big") Your Location
+			h2(id="extra-big") Your Contact Info
 			h3 Text You Maybe?
+			p We'd really like to be able to text you important information and the occasional surprise.
+				| Please add your cell number below (not required but encouraged).
+			div(class="form-section")
+				div(class="form-box")
+					label Country Code
+					input(type="hidden", name="calling_code", id="calling-code-select", class="model-me", value="55")
+				div(class="form-box")
+					label Mobile Number
+					input(type="text", name="phone", class="model-me")
+			div(class="clear")
+			a(href="#", class="tab-save-next button") Save & Continue
+			br
+			br
+			div(class="clear")
+
+		div(id="tab-panel-phone", class="tab-panel")
+			h2(id="extra-big") Your Location
+			h3 Where will you be staying?
 			p We'd really like to be able to text you important information and the occasional surprise.
 				| Please add your cell number below (not required but encouraged).
 			div(class="form-section")

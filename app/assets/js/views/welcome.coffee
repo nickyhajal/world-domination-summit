@@ -7,7 +7,7 @@
 	is above the number of welcome tabs
 
 ###
-
+ap.WELCOME_STEPS = 10
 ap.Views.welcome = XView.extend
 
 	events:
@@ -19,7 +19,7 @@ ap.Views.welcome = XView.extend
 		'click .tab-save-next': 'next'
 
 	initialize: ->
-		if ap.me.get('intro') > 9
+		if ap.me.get('intro') >= ap.WELCOME_STEPS
 			ap.navigate('settings')
 		else
 			# @options.sidebar = 'welcome'
@@ -157,7 +157,7 @@ ap.Views.welcome = XView.extend
 	syncAvatar: ->
 		if ap.me.get('pic')?
 			$('.current-avatar').show()
-			$('.avatar-shell').empty().append $('<img/>').attr('src', ap.me.getPic(256))
+			$('.avatar-shell').empty().append $('<img/>').attr('src', ap.me.getPic(256)+'&'+(''+(+new Date())))
 
 	###
 		Show the appropriate twitter box based on whether or not
@@ -204,10 +204,8 @@ ap.Views.welcome = XView.extend
 			$t = $('#tab-panel-interests')
 			$t.attr 'style', 'opacity:0;'
 			eClass = $t.attr('class')
-			tk eClass
 			$t.attr('class', 'tab-panel')
 			setTimeout =>
-				tk 'ints timo'
 				$t.data('height', $t.outerHeight()+'px')
 				$t.attr('class', eClass)
 				$t.attr 'style', ''
@@ -385,7 +383,7 @@ ap.Views.welcome = XView.extend
 
 	finishWelcome: (e) ->
 		e.preventDefault()
-		ap.me.set('intro', 10)
+		ap.me.set('intro', ap.WELCOME_STEPS)
 		if ap.me.changedSinceSave.user_id?
 			ap.me.save ap.me.changedSinceSave,
 				patch: true
