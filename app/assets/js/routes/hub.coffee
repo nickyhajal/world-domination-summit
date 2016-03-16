@@ -1,5 +1,5 @@
 ap.Routes.hub= ->
-	if ap.me.get('intro') < AP.WELCOME_STEPS
+	if ap.me.get('intro') < ap.WELCOME_STEPS
 		ap.navigate 'welcome'
 	else
 		ap.loading false
