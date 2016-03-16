@@ -13,7 +13,7 @@ div(id="page_content")
 				p We've put together this site that will help you connect with your fellow adventurers.
 				p We need some more information from you, so when you're ready, hit continue.
 			div(class="returning")
-				p We're so excited that you'll be joining us again for the World Domination Summit 2015!
+				p We're so excited that you'll be joining us again for the World Domination Summit 2016!
 				p This year we'll be using this site even more as a way to help WDSers connect.
 				p When you're ready, hit continue to verify that your info from last year is still correct.
 			a(href="#", class="tab-save-next button") Let's Go!
@@ -76,7 +76,10 @@ div(id="page_content")
 				| Please add your cell number below (not required but encouraged).
 			div(class="form-section")
 				div(class="form-box")
-					label Cell Number
+					label Country Code
+					input(type="hidden", name="calling_code", id="calling-code-select", class="model-me", value="55")
+				div(class="form-box")
+					label Mobile Number
 					input(type="text", name="phone", class="model-me")
 			div(class="clear")
 			a(href="#", class="tab-save-next button") Save & Continue
@@ -97,7 +100,7 @@ div(id="page_content")
 				label What's your super-power?
 				textarea(class="attendee-answer", data-question_id="3")
 			div(class="form-section")
-				label What is your goal for WDS 2015?
+				label What is your goal for WDS 2016?
 				textarea(class="attendee-answer", data-question_id="4")
 			a(href="#", class="tab-save-next button") Save & Continue
 

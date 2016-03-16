@@ -1616,12 +1616,17 @@ div.tab-panel-next-hidden, div.tab-panel-prev-hidden {
     filter:                     alpha(opacity=0);
     zoom:                       1;
 }
+#page-settings div.tab-panel {
+    left:                       0px;
+    display:                    none;
+    width:                      100%;
+    position:                   relative;
+}
 .tab-panel, .tab-prev-btn, .tab-next-btn {
     background:                 rgb(255, 255, 255) none repeat scroll 0px 0px;
     left:                       280px;
     overflow:                   hidden;
     padding:                    50px;
-    position:                   absolute;
     top:                        0px;
     transition:                 all 0.6s ease-out 0s;
     -moz-transition:            all 0.6s ease-out 0s;
@@ -1634,6 +1639,7 @@ div.tab-panel-next-hidden, div.tab-panel-prev-hidden {
     -moz-transform:             rotateY(0deg) scale(1) translate3d(0px, 0px, 0px);
     -webkit-transform:          rotateY(0deg) scale(1) translate3d(0px, 0px, 0px);
     -o-transform:               rotateY(0deg) scale(1) translate3d(0px, 0px, 0px);
+    position:                   absolute;
 }
 span.sub-label {
     font-family:                karla;
@@ -3193,6 +3199,9 @@ div#tab-shell-welcome_tabs {
     right:                      0px;
     width:                      550px;
     top:                        178px;
+}
+#page-settings div#tab-shell-settings_tabs {
+    margin:                     -50px;
 }
 * {
     box-sizing:                 border-box;

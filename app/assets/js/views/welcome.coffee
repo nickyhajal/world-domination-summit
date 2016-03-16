@@ -87,8 +87,29 @@ ap.Views.welcome = XView.extend
 			initSelection: (el, cb) ->
 				cb countryById[el.val()]
 			width: '276px'
-		country_select.on 'change', (e) =>
-			@regionSync()
+		calling_select = $('#calling-code-select')
+		callingCountries = []
+		for country in ap.countries.all
+			if country.callingCodes.length
+				code = country.callingCodes[0]
+				id = code.replace('+','')
+				text = '('+code+') '+country.name
+			callingCountries.push {id: id, text: text}
+		callingCountriesById = {}
+		for c in callingCountries
+			callingCountriesById[c.id] = c
+		calling_select.select2
+			placeholder: "Country Code"
+			data: callingCountries
+			value: 'US'
+			initSelection: (el, cb) ->
+				cb callingCountriesById[el.val()]
+			width: '276px'
+		setTimeout ->
+			unless calling_select.select2('val')
+				calling_select.select2('val', '1').trigger('change')
+				calling_select.val('1').trigger('change')
+		, 1000
 		@regionSync()
 
 	regionSync: ->
@@ -186,8 +207,6 @@ ap.Views.welcome = XView.extend
 		$t.attr('class', 'tab-panel')
 		setTimeout =>
 			$t.data('height', $t.outerHeight()+'px')
-			tk $t.outerHeight()
-			tk $t
 			$t.attr('class', eClass)
 			$t.attr 'style', ''
 		, 1000

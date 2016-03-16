@@ -106,6 +106,7 @@ routes = (app) ->
 				countries_out.all.push
 					alpha2: country.alpha2
 					name: country.name
+					callingCodes: country.countryCallingCodes
 			res.render "../views/#{page}",
 				title: "World Domination Summit"
 				env: '"'+process.env.NODE_ENV+'"'
