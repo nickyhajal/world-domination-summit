@@ -57,7 +57,7 @@ ap.Views.InterestList = XView.extend
 				html += _.t('parts_interest-button', interest.attributes)
 		html += '<div class="clear"></div>'
 		$(@el).html html
-		if @initd
+		unless @initd
 			@initd = true
 			XHook.trigger('interests-updated')
 

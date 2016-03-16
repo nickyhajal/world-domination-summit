@@ -19,7 +19,7 @@ ap.Views.welcome = XView.extend
 		'click .tab-save-next': 'next'
 
 	initialize: ->
-		if ap.me.get('intro') > 7
+		if ap.me.get('intro') > 9
 			ap.navigate('settings')
 		else
 			# @options.sidebar = 'welcome'
@@ -136,7 +136,7 @@ ap.Views.welcome = XView.extend
 	syncAvatar: ->
 		if ap.me.get('pic')?
 			$('.current-avatar').show()
-			$('.avatar-shell').empty().append $('<img/>').attr('src', ap.me.get('pic').replace('_normal', ''))
+			$('.avatar-shell').empty().append $('<img/>').attr('src', ap.me.getPic(256))
 
 	###
 		Show the appropriate twitter box based on whether or not
@@ -148,7 +148,7 @@ ap.Views.welcome = XView.extend
 			$('.twitter-not-connected').hide()
 			if ap.me.get('user_name')? and ap.me.get('user_name').length isnt 40
 				user_name = ap.me.get('user_name')
-				$('.tweet-box textarea').val('Just setup my attendee profile for WDS! Check it out: http://wds.fm/~'+user_name+' #wds2015')
+				$('.tweet-box textarea').val('Just setup my attendee profile for WDS! Check it out: http://wds.fm/~'+user_name+' #wds2016')
 				$('.tweet-box').show()
 		else
 			$('.twitter-connected').hide()
@@ -179,6 +179,7 @@ ap.Views.welcome = XView.extend
 		, 500
 
 	interestsUpdated: ->
+		tk 'updatea interests'
 		$t = $('#tab-panel-interests')
 		$t.attr 'style', 'opacity:0;'
 		eClass = $t.attr('class')
@@ -362,7 +363,7 @@ ap.Views.welcome = XView.extend
 
 	finishWelcome: (e) ->
 		e.preventDefault()
-		ap.me.set('intro', 8)
+		ap.me.set('intro', 10)
 		if ap.me.changedSinceSave.user_id?
 			ap.me.save ap.me.changedSinceSave,
 				patch: true
