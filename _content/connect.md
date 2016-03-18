@@ -15,7 +15,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 <br>
 <p>Our all-new Connect tickets allow those without main-stage access to connect with all attendees through our private app.</p>
 
-![](https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg)
+![](https://farm6.staticflickr.com/5586/14614138506_037b8418f8_z_d.jpg)
 <br>
 <p>With a Connect ticket, you'll have access to activities beginning on Tuesday, August 9 and continuing through Sunday, August 14. Every day will feature several optional activities that you can choose from. There will be a yoga or fitness activity in the morning, several "super meetups" in the afternoon, and a focused group experience in the evenings. </p>
 
