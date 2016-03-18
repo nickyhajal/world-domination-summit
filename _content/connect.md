@@ -2,10 +2,10 @@ icon: globe
 sidebar: be-there
 photo_head: https://farm1.staticflickr.com/269/19620492921_bc00a4ea91_z_d.jpg
 
-# In August 2016, a small army of remarkable people will converge on Portland, Oregon for a weekend of community strategizing, adventure, and service.
+# WDS is growing! For the first time in history, we're inviting _everyone_ to join us for an all-new experience called WDS Connect.
 
 <div class="zig-zags_blue"></div>
-<h3 class="sub-karla">This time, everything will be **new**, but our guiding question will be the same: *How do we live a remarkable life in a conventional world*?</h3>
+<h3 class="sub-karla">Our main stage (now called "360") experience is sold out, but you can still participate in dozens of meetups, group conversations, and even a spectactular closing party at the end of the week.</h3>
 <script src="//checkout.stripe.com/checkout.js"></script>
 <div class="ticket-purchase-area"></div>
 <br>
@@ -13,11 +13,11 @@ photo_head: https://farm1.staticflickr.com/269/19620492921_bc00a4ea91_z_d.jpg
 ![](https://farm8.staticflickr.com/7389/9229148524_56612936ec_z_d.jpg)
 
 <br>
-<p>The World Domination Summit (WDS) is a gathering of creative people from all over the world. Every summer thousands of awesome people travel to Portland, Oregon for an immersive experience centered around life, work, and travel.</p>
+<p>Our all-new Connect tickets allow those without main-stage access to connect with all attendees through our private app.</p>
 
 ![](https://farm1.staticflickr.com/269/19620492921_bc00a4ea91_z_d.jpg)
 <br>
-<p>There are many different ways to participate in WDS. Throughout the weekend there will be whole-crew (all of YOU!) collaborations that consist of mainstage keynote talks, world record breaking attempts (and triumphs), a mini-festival featuring many of Portland's most popular food carts and other small businesses, and (of course) great parties!</p>
+<p>With a Connect ticket, you'll have access to activities beginning on Tuesday, August 9 and continuing through Sunday, August 14. Every day will feature several optional activities that you can choose from. There will be a yoga or fitness activity in the morning, several "super meetups" in the afternoon, and a focused group experience in the evenings. </p>
 
 ![](https://farm1.staticflickr.com/495/19421751988_3806f1601f_z_d.jpg)
 
@@ -26,19 +26,27 @@ photo_head: https://farm1.staticflickr.com/269/19620492921_bc00a4ea91_z_d.jpg
 
 ![](https://farm1.staticflickr.com/550/19612696965_bcaf32121a_z_d.jpg)
 
-<p>But what's new about WDS 2016 is the focus on small groups: more attendee-led meetups, more Academies, opportunites for artists to show their work, craft tables, and team challenges like the famed scavenger hunt of 2015. We're excited to experience more of the connection this community is so good at creating.</p>
+<p>The best thing about WDS is always the community. With a Connect ticket, you won't be part of the immersive weekend, but you _will_ be able to hang out with awesome people (from all over the world!) who share the same values of Community, Adventure, and Service. </p>
 
-<p>Everyone who comes to WDS is a big part of the experience, and we want everyone to have a chance to get to know you. If you want to learn more about what it's like hang out with us for the weekend, check out this short documentary from the perspective of one of our WDS 2014 attendees:</p>
+<p>WDS Connect tickets includes all of the following:</p>
 
-<iframe class="modal-remove" src="//player.vimeo.com/video/109484290?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=0" width="600" height="381" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+*Access to the WDS App, which allows attendees to meet virtually and plan in-person meetups
+*Entrance to one Academy, selected on a first-come, first-served basis
+*Entrance to the Closing Party on Sunday night
+*Invitations to more than a dozen featured activities from Tuesday through Friday
 
-### We'll be preparing for a year, and we don't want to miss you!
+<p>WDS Connect tickets *do not* include:
+
+*Entrance to the Friday night Opening Party
+*Theatre access to all main-stage sessions on Saturday and Sunday
+*Special programming that is exlusively for 360 Attendes
+
+### WDS Connect is brand-new. Come and help us make it a great experience! 
 
 <div class="ticket-purchase-area"></div>
 
 #### Refund / exchange policy (please read!):
 
-_All WDS tickets are non-refundable. Transfers and name changes on tickets are available for a $100 fee up to 60 days prior to the event. After June 11, 2015 no further transfers or name changes will be possible. Information about the ticket transfer process can be found here._
+_All WDS Connect tickets are non-refundable and non-transferable._
 
-_Lastly, thanks for being part of WDS. You make this community strong and independent, with no corporate sponsorship and nothing for sale during the event except books from our speakers._
 
