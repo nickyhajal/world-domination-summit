@@ -1,6 +1,6 @@
 icon: globe
 sidebar: be-there
-photo_head: https://farm1.staticflickr.com/269/19620492921_bc00a4ea91_z_d.jpg
+photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 
 # WDS is growing! For the first time in history, we're inviting _everyone_ to join us for an all-new experience called WDS Connect.
 
@@ -10,21 +10,21 @@ photo_head: https://farm1.staticflickr.com/269/19620492921_bc00a4ea91_z_d.jpg
 <div class="ticket-purchase-area"></div>
 <br>
 
-![](https://farm8.staticflickr.com/7389/9229148524_56612936ec_z_d.jpg)
+![](https://farm4.staticflickr.com/3739/19609697715_004f842f01_z_d.jpg)
 
 <br>
 <p>Our all-new Connect tickets allow those without main-stage access to connect with all attendees through our private app.</p>
 
-![](https://farm1.staticflickr.com/269/19620492921_bc00a4ea91_z_d.jpg)
+![](https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg)
 <br>
 <p>With a Connect ticket, you'll have access to activities beginning on Tuesday, August 9 and continuing through Sunday, August 14. Every day will feature several optional activities that you can choose from. There will be a yoga or fitness activity in the morning, several "super meetups" in the afternoon, and a focused group experience in the evenings. </p>
 
-![](https://farm1.staticflickr.com/495/19421751988_3806f1601f_z_d.jpg)
+![](https://farm4.staticflickr.com/3873/14638042061_9afbe0f0fc_z_d.jpg)
 
 <br>
 <div class="ticket-purchase-area"></div>
 
-![](https://farm1.staticflickr.com/550/19612696965_bcaf32121a_z_d.jpg)
+![](https://farm3.staticflickr.com/2928/14660844313_286048b021_z_d.jpg)
 
 <p>The best thing about WDS is always the community. With a Connect ticket, you won't be part of the immersive weekend, but you _will_ be able to hang out with awesome people (from all over the world!) who share the same values of Community, Adventure, and Service. </p>
 
