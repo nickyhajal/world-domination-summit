@@ -28,7 +28,7 @@ photo_head: https://farm1.staticflickr.com/269/19620492921_bc00a4ea91_z_d.jpg
 
 <p>The best thing about WDS is always the community. With a Connect ticket, you won't be part of the immersive weekend, but you _will_ be able to hang out with awesome people (from all over the world!) who share the same values of Community, Adventure, and Service. </p>
 
-<p>WDS Connect tickets includes all of the following:</p>
+<p>WDS Connect tickets include all of the following:</p>
 
 * Access to the WDS App, which allows attendees to meet virtually and plan in-person meetups
 * Entrance to one Academy, selected on a first-come, first-served basis
@@ -39,7 +39,7 @@ photo_head: https://farm1.staticflickr.com/269/19620492921_bc00a4ea91_z_d.jpg
 
 * Entrance to the Friday night Opening Party
 * Theatre access to all main-stage sessions on Saturday and Sunday
-* Special programming that is exlusively for 360 Attendes
+* Special programming that is exclusively for 360 Attendes
 
 ### WDS Connect is brand-new. Come and help us make it a great experience! 
 
@@ -47,6 +47,6 @@ photo_head: https://farm1.staticflickr.com/269/19620492921_bc00a4ea91_z_d.jpg
 
 #### Refund / exchange policy (please read!):
 
-_All WDS Connect tickets are non-refundable and non-transferable._
+_All WDS Connect tickets are non-refundable and non-transferable. Each ticket is assigned to a unique name and user profile._
 
 
