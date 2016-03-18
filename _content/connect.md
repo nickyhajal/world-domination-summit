@@ -10,7 +10,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 <div class="ticket-purchase-area"></div>
 <br>
 
-![](https://farm4.staticflickr.com/3739/19609697715_004f842f01_z_d.jpg)
+![](https://farm1.staticflickr.com/434/19653483776_cf32183cc5_z_d.jpg)
 
 <br>
 <p>Our all-new Connect tickets allow those without main-stage access to connect with all attendees through our private app.</p>
