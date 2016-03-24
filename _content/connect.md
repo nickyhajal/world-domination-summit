@@ -30,7 +30,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 
 <p>WDS Connect tickets include all of the following:</p>
 
-* Access to the WDS App, which allows attendees to meet virtually and plan in-person meetups
+* Access to the WDS mobile-app, which allows attendees to meet virtually and plan in-person meetups
 * Entrance to one Academy, selected on a first-come, first-served basis
 * Entrance to the Closing Party on Sunday night
 * Invitations to more than a dozen featured activities from Tuesday through Friday
@@ -39,7 +39,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 
 * Entrance to the Friday night Opening Party
 * Theatre access to all main-stage sessions on Saturday and Sunday
-* Special programming that is exclusively for 360 Attendes
+* Special programming that is exclusively for 360 Attendees
 
 ### WDS Connect is brand-new. Come and help us make it a great experience! 
 
