@@ -1,7 +1,6 @@
 Shelf = require('./shelf')
 _ = require('underscore')
 Q = require('q')
-stripe = require('stripe')(process.env.STRIPE_SK)
 
 
 [Product, Products] = require('./products')
@@ -16,6 +15,8 @@ Card = Shelf.Model.extend
 	]
 
 	charge: (code, purchase_data) ->
+		key = if code is 'connect' then process.env.STRIPE_SK_TEST else process.env.STRIPE_SK
+		stripe = require('stripe')(key)
 		dfr = Q.defer()
 		Product.forge
 			code: code
@@ -27,28 +28,40 @@ Card = Shelf.Model.extend
 					user_id: @get('user_id')
 					status: 'process'
 					paid_amount: '0'
-				product.pre_process({user_id: @get('user_id'), post: purchase_data})
-				.then (pre) =>
-					pre_rsp_params = pre.rsp ? {}
-					stripe.charges.create
-						amount: product.get('cost')
-						currency: 'usd'
-						customer: @get('customer')
-						source: @get('token')
-						description: product.get('name')+' - '+product.get('descr')
-					.then (charge) =>
-						transaction.set
-							status: 'paid'
-							paid_amount: product.get('cost')
-							stripe_id: charge.id
-							meta: pre.meta
-						.save()
-						.then =>
-							product.post_process(transaction, charge)
-							.then (post_rsp) =>
-								post_rsp_params = post_rsp.rsp ? {}
-								rsp_params = _.extend pre_rsp_params, post_rsp_params
-								dfr.resolve({transaction: transaction, rsp: rsp_params})
+				.save()
+				.then (transaction) =>
+					purchase_data.transaction_id = transaction.get('transaction_id')
+					product.pre_process({user_id: @get('user_id'), post: purchase_data})
+					.then (pre) =>
+						pre_rsp_params = pre?.rsp ? {}
+						price = product.get('cost')
+						price *= purchase_data.quantity if purchase_data.quantity?
+						stripe.charges.create
+							amount: price
+							currency: 'usd'
+							customer: @get('customer')
+							source: @get('token')
+							description: product.get('name')+' - '+product.get('descr')
+						.then (charge) =>
+							Transaction.forge
+								transaction_id: transaction.get("transaction_id")
+							.fetch()
+							.then (transaction) =>
+								transaction.set
+									status: 'paid'
+									paid_amount: price
+									stripe_id: charge.id
+									meta: if pre?.meta? then pre.meta else null
+								.save()
+								.then =>
+									product.post_process(transaction, charge)
+									.then (post_rsp) =>
+										post_rsp_params = post_rsp?.rsp ? {}
+										rsp_params = _.extend pre_rsp_params, post_rsp_params
+										dfr.resolve({transaction: transaction, rsp: rsp_params})
+								, (err) -> console.error(err)
+						, (err) ->
+							console.error err
 					, (err) ->
 						console.error err
 		return dfr.promise

@@ -31,6 +31,20 @@ ap.init = () ->
 		ap.initSearch()
 	ap.Modals.init()
 
+ap.accoms = [
+			{id: 'paramount', text: 'Paramount Hotel'},
+			{id: 'deluxe', text: 'Hotel deLuxe'},
+			{id: 'lucia', text: 'Hotel Lucia'},
+			{id: 'sentinel', text: 'Sentinel Hotel'},
+			{id: 'modera', text: 'Hotel Modera'},
+			{id: 'other', text: 'Another hotel'},
+			{id: 'hostel', text: 'Hostel'},
+			{id: 'airbnb', text: 'AirBnb or Similar'},
+			{id: 'friend', text: 'Staying with a friend'},
+			{id: 'local', text: 'I\'m local!'},
+			{id: 'not-sure', text:'I\'m not sure yet (but I\'ll book soon!)'}
+		]
+
 ap.allUsers = {}
 
 ap.onResizes = {}
@@ -165,6 +179,8 @@ ap.initRouter = ->
 						axis: 'y'
 					e.preventDefault()
 
+			else if href is ':ignore' || href.indexOf('javascript:void') > -1
+				e.preventDefault()
 
 			# Catch clicks on links to use our navigate function instead
 			# Skip if a super-key is being pushed
@@ -177,10 +193,8 @@ ap.loading = (setLoading = false) ->
 	if setLoading
 		unless $('#loading-logo').length
 			html = '
-			<video id="loading-logo" width="100%" loop="" autoplay="" muted="" poster="/images/logo-alone.png">
-				<source type="video/webm" src="https://zippy.gfycat.com/JoyfulGoodnaturedEeve.webm"></source>
-				<source type="video/mp4" src="https://zippy.gfycat.com/JoyfulGoodnaturedEeve.mp4"></source>
-			</video>
+			<div id="loading-logo">
+			</div>
 			'
 			$('body').append(html)
 	else

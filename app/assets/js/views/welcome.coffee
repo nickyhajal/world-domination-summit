@@ -74,19 +74,22 @@ ap.Views.welcome = XView.extend
 		Use Select2 to have nice select boxes for the address fields
 	###
 	initSelect2: ->
+
+		# Country Select
 		country_select = $('#country-select')
 		countries = []
 		countries.push {id: country.alpha2, text: country.name} for country in ap.countries.all
 		countryById = {}
 		for c in countries
 			countryById[c.id] = c
-
 		country_select.select2
 			placeholder: "Country"
 			data: countries
 			initSelection: (el, cb) ->
 				cb countryById[el.val()]
 			width: '276px'
+
+		# Calling Codes
 		calling_select = $('#calling-code-select')
 		callingCountries = []
 		for country in ap.countries.all
@@ -110,6 +113,20 @@ ap.Views.welcome = XView.extend
 				calling_select.select2('val', '1').trigger('change')
 				calling_select.val('1').trigger('change')
 		, 1000
+
+		# Calling Codes
+		accom_select = $('#accommodation-select')
+		accomsById = {}
+		for a in ap.accoms
+			accomsById[a.id] = a
+		accom_select.select2
+			placeholder: "Accomodations"
+			data: ap.accoms
+			initSelection: (el, cb) ->
+				cb accomsById[el.val()]
+			width: '276px'
+
+		# State/Province
 		@regionSync()
 
 	regionSync: ->

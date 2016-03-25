@@ -2,6 +2,7 @@ Shelf = require('./shelf')
 _ = require('underscore')
 Q = require('q')
 chance = require('chance')()
+async = require('async')
 
 [Transfer, Transfers] = require('./transfers')
 [Transaction, Transcations] = require('./transactions')
@@ -53,6 +54,25 @@ PRE =
 		, (err) ->
 			console.error(err)
 		return dfr.promise
+	connect: (meta) ->
+		dfr = Q.defer()
+		ids = []
+		arr = [0...+meta.post.quantity]
+		tk arr
+		async.eachSeries arr, (i, cb) ->
+			Ticket.forge
+				type: 'connect'
+				stripe_id: meta.transaction_id
+				year: process.year
+				user_id: meta.user_id
+				status: 'pending'
+			.save()
+			.then (ticket) =>
+				ids.push ticket.get('ticket_id')
+				cb()
+		, ->
+			dfr.resolve {meta: JSON.stringify(ids)}
+		return dfr.promise
 
 POST =
 	xfer: (transaction, meta) ->
@@ -84,7 +104,48 @@ POST =
 			, (err) ->
 				console.error err
 		dfr.promise
-	connect: ->
+	connect: (transaction, meta) ->
+		[User, Users] = require('./users')
+		dfr = Q.defer()
+		ids = JSON.parse(transaction.get('meta'))
+		tickets = []
+		user = false
+
+		# Get the transaction user
+		User.forge
+			user_id: transaction.get('user_id')
+		.fetch()
+		.then (user) ->
+			tk ids
+			async.eachSeries ids, (id, cb) ->
+
+				# Create the tickets
+				Ticket.forge
+					ticket_id: id
+				.fetch()
+				.then (ticket) =>
+					ticket.set 'status', 'purchased'
+					ticket.save()
+					.then (ticket) ->
+
+						# If the buyer doesn't have a ticket, give her one
+						# otherwise, just add the unclaimed ticket to the response
+						tk user.get('attending'+process.yr).toString()
+						if user.get('attending'+process.yr).toString() is '1'
+							tk 'NO CONNECT'
+							tickets.push(ticket)
+							cb()
+						else
+							tk 'YUP CONNECT'
+							user.connectTicket(ticket)
+							.then (rsp) ->
+								user = rsp.user
+								ticket = rsp.ticket
+								tickets.push(ticket)
+								cb()
+			, ->
+				dfr.resolve({rsp: {tickets: tickets}})
+		return dfr.promise
 	t360: (meta) ->
 		Ticket.forge
 			stripe_id: meta.id,

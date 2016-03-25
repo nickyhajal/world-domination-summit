@@ -20,6 +20,7 @@ routes = (app) ->
 	[UserNote, UserNotes] = require('../../models/user_notes')
 	[TwitterLogin, TwitterLogins] = require('../../models/twitter_logins')
 	[Answer, Answers] = require('../../models/answers')
+	[Ticket, Tickets] = require('../../models/tickets')
 	[UserInterest, UserInterests] = require('../../models/user_interests')
 	[CredentialChange, CredentialChanges] = require('../../models/credential_changes')
 	[Connection, Connections] = require('../../models/connections')
@@ -178,12 +179,30 @@ routes = (app) ->
 
 		create: (req, res, next) ->
 			post = _.pick(req.query, User.prototype.permittedAttributes)
-			user = User.forge(post)
-			.save()
-			.then (new_user, err) ->
+			giveTicket = (u) ->
 				hash = require('crypto').createHash('md5').update(''+(+(new Date()))).digest("hex").substr(0,5)
-				new_user.registerTicket('ADDED_BY_'+req.me.get('user_id')+'_'+hash)
-				next()
+				u.registerTicket('ADDED_BY_'+req.me.get('user_id')+'_'+hash)
+			User.forge
+				email: post.email
+			.fetch()
+			.then (existing) ->
+				tk existing
+				if existing
+					if req.query.t?
+						giveTicket(existing)
+						next()
+					else
+						res.r.existing = true
+						next()
+				else
+					user = User.forge(post)
+					.save()
+					.then (new_user) ->
+						if req.query.t?
+							giveTicket(new_user)
+						if req.query.login
+							new_user.login(req)
+						next()
 
 		ticket: (req, res, next) ->
 			res.r.msg = 'ieanrst'
@@ -198,10 +217,41 @@ routes = (app) ->
 						res.r.msg = 'Registered'
 					next()
 
+		give_tickets: (req, res, next) ->
+			if req.query.attendees?
+				giveTicket = (user, ticket_id, cb) ->
+					Ticket.forge
+						ticket_id: ticket_id
+					.fetch()
+					.then (ticket) ->
+						if ticket.get('user_id') is req.me.get('user_id') and ticket.get('status') is 'purchased'
+							user.connectTicket(ticket)
+							.then ->
+								cb()
+						else
+							cb()
+				async.eachSeries req.query.attendees, (val, cb) ->
+					userPost = _.pick val, User::permittedAttributes
+					User.forge
+						email: val.email
+					.fetch()
+					.then (existing) ->
+						if existing?
+							giveTicket(existing, val.ticket_id, cb)
+						else
+							User.forge(userPost)
+							.save()
+							.then (user) ->
+								giveTicket(user, val.ticket_id, cb)
+				, ->
+					next()
+			else
+				res.status(410)
+				next()
 		update: (req, res, next) ->
 			post = _.pick(req.query, User.prototype.permittedAttributes)
 			if req.me
-				if req.me.get('user_id') is post.user_id or req.me.hasCapability('manifest')
+				if +req.me.get('user_id') is +post.user_id or req.me.hasCapability('manifest')
 					User.forge({user_id: post.user_id})
 					.fetch()
 					.then (user) ->
@@ -209,7 +259,6 @@ routes = (app) ->
 						user.set('last_broadcast', new Date(user.get('last_broadcast')))
 						user.save()
 						.then (user) ->
-
 							if req.query.answers?
 								Answers
 								.forge()

@@ -1,157 +1,182 @@
 doctype html
 html(lang='en', class="#{hide_counter}")
-	head
-		title= title
-		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
-		meta(name='description', content='WDS is a worldwide gathering of remarkable people. Every summer we meet in Portland, Oregon for a weeklong experience focused on community, adventure, and service.')
-		meta(name='keywords', content='Community,Service,Adventure,World Domination Summit,WDS')
-		link(rel="icon", type="image/png", href="/images/favicon.png")
-		//- meta(name='apple-mobile-web-app-capable', content='yes')
-		meta(charset="UTF-8")
-		script.
-			var ap = {};
-			ap.me = !{me};
-			ap.templates = !{tpls};
-			ap.year = !{year};
-			ap.yr = !{yr};
-			ap.provinces = !{provinces};
-			ap.countries = !{countries};
-			ap.env = !{env};
-			ap.stripe_pk = '!{stripe_pk}';
-		//-link(rel='stylesheet', href='/images/apple-icon.png')
-		script(type="text/javascript").
-			!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-			n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-			n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-			t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-			document,'script','//connect.facebook.net/en_US/fbevents.js');
-			fbq('init', '189348644774446');
-			fbq('track', "PageView");
-		noscript
-			img(height="1", width="1", style="display:none", src="https://www.facebook.com/tr?id=189348644774446&ev=PageView&noscript=1")
-		link(rel='stylesheet', type="text/css", href='/app/assets/css/styles.css')
-		link(rel='stylesheet', type="text/css", href='/app/assets/css/fonts.css')
-		link(rel='stylesheet', type="text/css", href='/app/assets/css/tablet.css', media='screen and (max-width:1024px)')
-		link(rel='stylesheet', type="text/css", href='/app/assets/css/phone.css', media='screen and (max-width:682px)')
+  head
+    title= title
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    meta(name='description', content='WDS is a worldwide gathering of remarkable people. Every summer we meet in Portland, Oregon for a weeklong experience focused on community, adventure, and service.')
+    meta(name='keywords', content='Community,Service,Adventure,World Domination Summit,WDS')
+    link(rel="icon", type="image/png", href="/images/favicon.png")
+    //- meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(charset="UTF-8")
+    script.
+      var ap = {};
+      ap.me = !{me};
+      ap.templates = !{tpls};
+      ap.year = !{year};
+      ap.yr = !{yr};
+      ap.provinces = !{provinces};
+      ap.countries = !{countries};
+      ap.env = !{env};
+      ap.stripe_pk = '!{stripe_pk}';
+    //-link(rel='stylesheet', href='/images/apple-icon.png')
+    script(type="text/javascript").
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','//connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '189348644774446');
+      fbq('track', "PageView");
+    noscript
+      img(height="1", width="1", style="display:none", src="https://www.facebook.com/tr?id=189348644774446&ev=PageView&noscript=1")
+    link(rel='stylesheet', type="text/css", href='/app/assets/css/styles.css')
+    link(rel='stylesheet', type="text/css", href='/app/assets/css/fonts.css')
+    link(rel='stylesheet', type="text/css", href='/app/assets/css/tablet.css', media='screen and (max-width:1024px)')
+    link(rel='stylesheet', type="text/css", href='/app/assets/css/phone.css', media='screen and (max-width:682px)')
 
-		!= js('main')
-		script(type="text/javascript").
-			function googleMapsReady() {
-				_.nowReady('googlemaps');
-			}
+    != js('main')
+    script(type="text/javascript").
+      function googleMapsReady() {
+        _.nowReady('googlemaps');
+      }
 
-			function loadGoogleMaps() {
-				var script = document.createElement('script');
-				script.type = 'text/javascript';
-				script.src="https://maps.googleapis.com/maps/api/js?sensor=false&ver=3.7.1&callback=googleMapsReady";
-				document.body.appendChild(script);
-			}
+      function loadGoogleMaps() {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src="https://maps.googleapis.com/maps/api/js?sensor=false&ver=3.7.1&callback=googleMapsReady";
+        document.body.appendChild(script);
+      }
 
-			if (window.attachEvent) {window.attachEvent('onload', loadGoogleMaps);}
-			else if (window.addEventListener) {window.addEventListener('load', loadGoogleMaps, false);}
-			else {document.addEventListener('load', loadGoogleMaps, false);}
-	body(class='ui-body-a')
-		div(class="preload")
-			img(src="/images/button-sprites_nav-hover.png")
-			img(src="/images/separators/zig-zags_blue.png")
-			img(src="/images/icon-sprites_corner.png")
-			img(src="/images/icon-sprites_sidebar.png")
-			img(src="/images/story/circle-1.jpg")
-		div(id="loading")
-			div(id="the-loading-icon")
-		nav(id="top-nav")
-			div(class="contentainer")
-				a(id="back-button", href="#")
-				a(id="small-logo", href="/")
-				a(id="nav-link-expand", href="#")
-					div
-					div
-					div
-				div(id="nav-links")
-					div(id="primary-links")
-						span(class="logged-out")
-							a(id="nav-story", href="/story") Story
-							a(id="nav-schedule", href="/schedule") Schedule
-							a(id="nav-headquarters", href="/headquarters") Headquarters
-							a(id="nav-foundation", href="/foundation") Foundation
-							a(id="nav-academies", href="/academies") Academies
-							a(id="nav-register", href="/register") Register!
-						span(class="logged-in")
-							a(id="nav-hub", class="if-mobile", href="/hub") The Hub
-							a(id="nav-story", href="/story") Story
-							a(id="nav-schedule", href="/schedule") Schedule
-							a(id="nav-headquarters", href="/headquarters") Headquarters
-							a(id="nav-foundation", href="/foundation") Foundation
-							a(id="nav-academies", href="/academies") Academies
-							a(id="nav-communities", class="if-mobile", href="/communities") Communities
-							a(id="nav-settings", class="if-mobile", href="/settings") Account Settings
-							a(id="nav-logout", class="if-mobile", href="/logout") Logout
-					div(id="nav-search", class="search-shell")
-						div(id="search-box")
-							input(type="text", class="search-input", placeholder="Search Attendees")
-							div(class="search-results")
-		div(id="notifications")
-		header(id="main-header")
-			span(id="long-squiggly")
-			div(class="contentainer")
-				a(href="/", id="logo")
-				div(id="logo-waves")
-				div(id="counter-shell")
-					h6 The Revolution Returns In:
-					div(class="clear")
-					div(id="counter-plane")
-					div(class="counter-content")
-						//-div(id="big-content") Is Here!
-						div(id="counter-days", class="counter-section")
-							span Days
-							div
-						div(id="counter-hours", class="counter-section")
-							span Hours
-							div
-						div(id="counter-mins", class="counter-section")
-							span Mins
-							div
-					div(class="clear")
-					div(class="counter-content")
-						div(class="logged-out")
-							a(id="counter-register", class="counter-button" href="/register") Register
-							a(id="counter-login", class="counter-button", href="/login") Login
-						div(class="logged-in")
-							a(id="counter-ops", class="counter-button", href="/hub") Hub
-							a(id="counter-account", class="counter-button", href="/settings") Account
-				div(id="sidebar-shell")
+      if (window.attachEvent) {window.attachEvent('onload', loadGoogleMaps);}
+      else if (window.addEventListener) {window.addEventListener('load', loadGoogleMaps, false);}
+      else {document.addEventListener('load', loadGoogleMaps, false);}
+  body(class='ui-body-a')
+    div(class="preload")
+      img(src="/images/button-sprites_nav-hover.png")
+      img(src="/images/separators/zig-zags_blue.png")
+      img(src="/images/icon-sprites_corner.png")
+      img(src="/images/icon-sprites_sidebar.png")
+      img(src="/images/story/circle-1.jpg")
+    div(id="loading")
+      div(id="the-loading-icon")
+    nav(id="top-nav")
+      div(class="contentainer")
+        a(id="back-button", href="#")
+        a(id="small-logo", href="/")
+        a(id="nav-link-expand", href="#")
+          div
+          div
+          div
+        div(id="nav-links")
+          div(id="primary-links")
+            span(class="logged-out")
+              a(id="nav-story", href="/story") Story
+              a(id="nav-schedule", href="/schedule") Schedule
+              a(id="nav-headquarters", href="/headquarters") Headquarters
+              a(id="nav-foundation", href="/foundation") Foundation
+              a(id="nav-academies", href="/academies") Academies
+              a(id="nav-register", href="/register") Register!
+            span(class="logged-in")
+              a(id="nav-hub", class="if-mobile", href="/hub") The Hub
+              a(id="nav-story", href="/story") Story
+              a(id="nav-schedule", href="/schedule") Schedule
+              a(id="nav-headquarters", href="/headquarters") Headquarters
+              a(id="nav-foundation", href="/foundation") Foundation
+              a(id="nav-academies", href="/academies") Academies
+              a(id="nav-communities", class="if-mobile", href="/communities") Communities
+              a(id="nav-settings", class="if-mobile", href="/settings") Account Settings
+              a(id="nav-logout", class="if-mobile", href="/logout") Logout
+          div(id="nav-search", class="search-shell")
+            div(id="search-box")
+              input(type="text", class="search-input", placeholder="Search Attendees")
+              div(class="search-results")
+    div(id="notifications")
+    header(id="main-header")
+      span(id="long-squiggly")
+      div(class="contentainer")
+        a(href="/", id="logo")
+        div(id="logo-waves")
+        div(id="counter-shell")
+          h6 The Revolution Returns In:
+          div(class="clear")
+          div(id="counter-plane")
+          div(class="counter-content")
+            //-div(id="big-content") Is Here!
+            div(id="counter-days", class="counter-section")
+              span Days
+              div
+            div(id="counter-hours", class="counter-section")
+              span Hours
+              div
+            div(id="counter-mins", class="counter-section")
+              span Mins
+              div
+          div(class="clear")
+          div(class="counter-content")
+            div(class="logged-out")
+              a(id="counter-register", class="counter-button" href="/register") Register
+              a(id="counter-login", class="counter-button", href="/login") Login
+            div(class="logged-in")
+              a(id="counter-ops", class="counter-button", href="/hub") Hub
+              a(id="counter-account", class="counter-button", href="/settings", data-intro="You can always make changes to your settings here.", data-step="4", data-position="right") Account
+        div(id="sidebar-shell")
 
-		main(class="contentainer")
-			!= body
+    main(class="contentainer")
+      != body
 
-		footer
-			div(id="footer-links")
-				a(href="/faqs") FAQ
-				a(href="/contact-us") Contact Us
-			//	a(href="/transfer", class="logged-in") Transfer Ticket
-			div(id="footer-credits")
-				| © World Domination Summit 2011-2016 &nbsp; | &nbsp; Design by
-				a(href="http://jolbyandfriends.com", target="_blank") Jolby & Friends
-				| &nbsp;&nbsp; | &nbsp; Programming by
-				a(href="http://nickyhajal.com", target="_blank") Nicky Hajal
+    footer
+      div(id="footer-links")
+        a(href="/faqs") FAQ
+        a(href="/contact-us") Contact Us
+      //  a(href="/transfer", class="logged-in") Transfer Ticket
+      div(id="footer-credits")
+        | © World Domination Summit 2011-2016 &nbsp; | &nbsp; Design by
+        a(href="http://jolbyandfriends.com", target="_blank") Jolby & Friends
+        | &nbsp;&nbsp; | &nbsp; Programming by
+        a(href="http://nickyhajal.com", target="_blank") Nicky Hajal
 
-		div(class="payment-processing")
-			div(class="payment-processing-text")
-				| Hang tight, we're processing your payment!
-		div(id="modals")
-			div(id="modal-army", class="modal")
-				div(class="modal-content")
-					a(href="#", class="modal-close")
-					div(id="army-map")
-			div(id="modal-video", class="modal")
-				div(class="modal-content")
-					a(class="modal-close")
-					div(id="the-video")
-			div(id="modal-bigger-photo", class="modal")
-				div(class="modal-content")
-					a(class="modal-close")
-					img(src="#", id="modal-bigger-photo-img")
-			div(id="modal-confirm", class="modal")
-				div(class="modal-content")
-					a(class="modal-close")
-					div(class="modal-confirm-content")
+    div(class="payment-processing")
+      div(class="payment-processing-text")
+        | Hang tight, we're processing your payment!
+    div(id="modals")
+      div(id="modal-army", class="modal")
+        div(class="modal-content")
+          a(href="#", class="modal-close")
+          div(id="army-map")
+      div(id="modal-video", class="modal")
+        div(class="modal-content")
+          a(class="modal-close")
+          div(id="the-video")
+      div(id="modal-bigger-photo", class="modal")
+        div(class="modal-content")
+          a(class="modal-close")
+          img(src="#", id="modal-bigger-photo-img")
+      div(id="modal-connect-purchase", class="modal", data-lock_scroll="true", data-no_esc="true")
+        div(class="modal-content")
+          a(class="modal-close")
+          div(class="modal-register xview", data-view="connect-purchase")
+      div(id="modal-tour-start", class="modal")
+        div(class="modal-content")
+          div(class="modal-tour-start-content")
+            h2 Welcome to the WDS Attendee Hub!
+            p There's a lot to explore so let's take a moment to show you around a bit.
+            p Ready?
+            a(href="#", class="button", id="tour-start") Let's do it!
+      div(id="modal-tour-end", class="modal modal-w-cont")
+        div(class="modal-content")
+          a(class="modal-close")
+          div(class="modal-tour-start-content")
+            h2 Ready to Explore?
+            p We'll leave you here for now but there's so much more to discover!
+            p Here are a few things to try:
+            ul
+              li Post a message saying hi on the WDS Dispatch.
+              li Find a WDS Community you like and ask a question or share a story to start a conversation.
+              li Explore WDSers with the Attendee Search and add some friends!
+            p Ready?
+            a(href="#", class="button modal-closer") Start Exploring
+      div(id="modal-confirm", class="modal")
+        div(class="modal-content")
+          a(class="modal-close")
+          div(class="modal-confirm-content")
+    div(id="tour-end", data-step="5", data-intro="end")

@@ -10,6 +10,7 @@ ap.Views.admin_add_attendee = XView.extend
 		el = $(e.currentTarget)
 		post = el.formToJson()
 		post['attending'+ap.yr] = '1'
+		post.t = true;
 		btn = _.btn($('.button', el), 'Adding...', 'Added!')
 		ap.api 'post user', post, (rsp) ->
 			btn.finish()

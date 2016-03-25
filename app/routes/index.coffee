@@ -116,6 +116,7 @@ routes = (app) ->
 				year: process.year
 				yr: process.yr
 				stripe_pk: process.env.STRIPE_PK
+				stripe_pk_test: process.env.STRIPE_PK_TEST
 				tpls: JSON.stringify(out)
 				provinces: JSON.stringify(provinces)
 				countries: JSON.stringify(countries_out)

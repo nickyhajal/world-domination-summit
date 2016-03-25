@@ -46,6 +46,7 @@ shell = (app) ->
 								if user
 									user.registerTicket(attendee.barcode, 'returning')
 									user.set('attending'+process.yr, '1')
+									user.set('ticket_type', '360')
 									user.save()
 									processAttendees attendees, inx
 

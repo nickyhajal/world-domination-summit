@@ -1,13 +1,13 @@
 icon: globe
-sidebar: be-there
+sidebar: connect
 photo_head: https://farm1.staticflickr.com/269/19620492921_bc00a4ea91_z_d.jpg
 
 # In August 2016, a small army of remarkable people will converge on Portland, Oregon for a weekend of community strategizing, adventure, and service.
 
 <div class="zig-zags_blue"></div>
 <h3 class="sub-karla">This time, everything will be **new**, but our guiding question will be the same: *How do we live a remarkable life in a conventional world*?</h3>
-<script src="//checkout.stripe.com/checkout.js"></script>
-<div class="ticket-purchase-area"></div>
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<div class="connect-purchase-area"></div>
 <br>
 
 ![](https://farm8.staticflickr.com/7389/9229148524_56612936ec_z_d.jpg)
@@ -22,7 +22,7 @@ photo_head: https://farm1.staticflickr.com/269/19620492921_bc00a4ea91_z_d.jpg
 ![](https://farm1.staticflickr.com/495/19421751988_3806f1601f_z_d.jpg)
 
 <br>
-<div class="ticket-purchase-area"></div>
+<div class="connect-purchase-area"></div>
 
 ![](https://farm1.staticflickr.com/550/19612696965_bcaf32121a_z_d.jpg)
 
@@ -34,7 +34,7 @@ photo_head: https://farm1.staticflickr.com/269/19620492921_bc00a4ea91_z_d.jpg
 
 ### We'll be preparing for a year, and we don't want to miss you!
 
-<div class="ticket-purchase-area"></div>
+<div class="connect-purchase-area"></div>
 
 #### Refund / exchange policy (please read!):
 

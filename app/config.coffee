@@ -39,14 +39,14 @@ config = (app, express, RedisStore, mysql) ->
       key: process.env.APN_KEY
       ca: process.env.APN_CA
     app.set 'db',
-            client: 'mysql'
-            connection:
-            	host: process.env.DB_HOST
-            	user: process.env.DB_USER
-            	password: process.env.DB_PW
-            	database: process.env.DB
-            	charset: 'utf8'
-            debug: false
+      client: 'mysql'
+      connection:
+      	host: process.env.DB_HOST
+      	user: process.env.DB_USER
+      	password: process.env.DB_PW
+      	database: process.env.DB
+      	charset: 'utf8'
+      debug: false
 
   app.configure 'production', ->
     app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
@@ -56,12 +56,12 @@ config = (app, express, RedisStore, mysql) ->
       ca: process.env.APN_CA
       production: true
     app.set 'db',
-            client: 'mysql'
-            connection:
-              host: process.env.DB_HOST
-              user: process.env.DB_USER
-              password: process.env.DB_PW
-              database: process.env.DB
-              charset: 'utf8'
-            debug: false
+      client: 'mysql'
+      connection:
+        host: process.env.DB_HOST
+        user: process.env.DB_USER
+        password: process.env.DB_PW
+        database: process.env.DB
+        charset: 'utf8'
+      debug: false
 module.exports = config

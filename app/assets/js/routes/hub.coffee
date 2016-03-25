@@ -1,4 +1,4 @@
-ap.Routes.hub= ->
+ap.Routes.hub = ->
 	if ap.me.get('intro') < ap.WELCOME_STEPS
 		ap.navigate 'welcome'
 	else

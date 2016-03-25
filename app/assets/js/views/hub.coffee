@@ -7,13 +7,14 @@
 ap.Views.hub = XView.extend
 	location: false
 	checkinTimo: 0
-	events: 
+	events:
 		'click .broadcast-box-close': 'closeBroadcasts'
 		'click .broadcast-area a': 'saveLastBroadcast'
 		'click #checkin-button': 'showPlaceSelect'
 		'click #checkin-toggle-all-places': 'toggleAllPlaces'
 		'click .checkin-place': 'addCheckin'
-	
+
+
 	initialize: ->
 		@options.sidebar_filler = ap.me.attributes
 		@options.sidebar = 'hub'
@@ -32,24 +33,56 @@ ap.Views.hub = XView.extend
 		$('#small-logo').on('click', @closePlaceSelect)
 		_.whenReady 'assets', =>
 			@getCheckins()
-		
+			@startTour()
+
+	startTour: ->
+		if !+ap.me.get('tour') and ap.isDesktop
+			ap.Modals.open('tour-start')
+			$('#tour-start').on 'click', =>
+				ap.Modals.close()
+				intro = introJs()
+				intro.onbeforechange (elm) =>
+					step = $(elm).data('step')
+					id = $(elm).attr('id')
+					if id  == 'tour-end'
+						ap.Modals.open('tour-end')
+						setTimeout ->
+							$.scrollTo(0)
+							intro.exit()
+							$('.introjs-helperNumberLayer').hide()
+							$('.introjs-tooltip').hide()
+							ap.api 'put user', {tour: '1', user_id: ap.me.get('user_id')}
+						, 5
+						return false
+					else
+						$('#top-nav,.dispatch-feed,#dispatch-shell').attr('style', '')
+						if step is 1
+							$('.dispatch-feed').attr('style', 'height:500px; overflow:hidden; margin-bottom:300px;')
+							$('#dispatch-shell').attr('style', 'margin-left:-20px; padding-left:70px; padding-top:20px;')
+						if step is 3
+							$('#top-nav').attr('style', 'margin-bottom:-41px; position:relative;')
+						$.scrollTo(0)
+				intro.start()
+
 	initBroadcasts: ->
-		@broadcast_list = []
-		@broadcasts = {}
-		for name,page of ap.templates
-			if name.indexOf('pages_broadcasts/') is 0
-				options = _.clone ap.template_options[name]
-				options.date_iso = moment(options.date, 'M-D-YY').format('YYYY-MM-DD')
-				options.date = moment(options.date, 'M-D-YY').format('MMMM Do YYYY')
-				options.url = '/'+name.replace('pages_', '')
-				@broadcast_list.push (options.date_iso+'`'+name)
-				@broadcasts[name] = 
-					content: page
-					options: options
-		@broadcast_list.sort().reverse()
-		nextBroadcast = @broadcasts[_.ari(@broadcast_list[0].split('`'), 1)]
-		if nextBroadcast.options.date_iso > ap.me.get('last_broadcast')
-			@showBroadcast(nextBroadcast)
+		if +ap.me.get('tour')
+			@broadcast_list = []
+			@broadcasts = {}
+			for name,page of ap.templates
+				if name.indexOf('pages_broadcasts/') is 0
+					options = _.clone ap.template_options[name]
+					options.date_iso = moment(options.date, 'M-D-YY').format('YYYY-MM-DD')
+					options.date = moment(options.date, 'M-D-YY').format('MMMM Do YYYY')
+					options.url = '/'+name.replace('pages_', '')
+					@broadcast_list.push (options.date_iso+'`'+name)
+					@broadcasts[name] =
+						content: page
+						options: options
+			@broadcast_list.sort().reverse()
+			nextBroadcast = @broadcasts[_.ari(@broadcast_list[0].split('`'), 1)]
+			if nextBroadcast.options.date_iso > ap.me.get('last_broadcast')
+				@showBroadcast(nextBroadcast)
+
 
 	showBroadcast: (broadcast) ->
 			html = _.t 'parts_broadcast-box', broadcast.options

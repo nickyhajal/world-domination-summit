@@ -30,8 +30,8 @@ User = Shelf.Model.extend
 		'user_id', 'type', 'email', 'first_name', 'last_name', 'attending14', 'attending15', 'attending16',
 		'email', 'hash', 'user_name', 'mf', 'twitter', 'facebook', 'site', 'pic', 'instagram', 'phone',
 		'address', 'address2', 'city', 'region', 'country', 'zip', 'lat', 'lon', 'distance', 'calling_code',
-		'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake',
-		'notification_interval', 'points',
+		'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake', 'accommodation',
+		'notification_interval', 'points', 'tour',
 		'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake', 'notification_interval'
 	]
 	limitedAttributes: [
@@ -129,6 +129,7 @@ User = Shelf.Model.extend
 
 	# Ticket
 	registerTicket: ticket.registerTicket
+	connectTicket: ticket.connectTicket
 	cancelTicket: ticket.cancelTicket
 
 

@@ -16,8 +16,12 @@ h1#header-title {
 h1#extra-big {
     font-size:                  34pt;
 }
+#tab-panel-all-done h1:first-of-type {
+    font-size:                  20pt;
+}
 #page-welcome h1 {
     margin-top:                 20px;
+    font-size:                  23pt;
 }
 #page-race h1 {
     font-size:                  28px;
@@ -29,8 +33,12 @@ h1 {
 div#page_content {
     padding:                    12px 15px;
 }
+#tab-panel-welcome p {
+    font-size:                  12pt ! important;
+}
 #page_content p {
     width:                      100% ! important;
+    font-size:                  11pt;
 }
 a.register-banner {
     width:                      100%;
@@ -58,6 +66,9 @@ div.line-canvas {
     float:                      right;
     font-size:                  12pt;
     margin-right:               9px;
+}
+.tab-panel h3 {
+    font-size:                  16pt;
 }
 h3 {
     width:                      100%;
@@ -162,8 +173,8 @@ div.tweet-box {
 h2 {
     margin-top:                 -12px;
     padding:                    11px 50px 9px;
-    font-size:                  11pt;
     text-align:                 center;
+    font-size:                  10pt;
 }
 .broadcast-box .broadcast-area a {
     width:                      100%;
@@ -432,6 +443,19 @@ div.tab-panel {
 #page-welcome a.button, #page-settings a.button {
     width:                      100%;
     display:                    block;
+}
+div#loading-logo {
+    background-size:            100% auto;
+    -webkit-background-size:    100% auto;
+    width:                      254px;
+    height:                     185px;
+    transform:                  translateY(-80px);
+    -moz-transform:             translateY(-80px);
+    -webkit-transform:          translateY(-80px);
+    -o-transform:               translateY(-80px);
+}
+#page-welcome input[type="text"], input[type="password"], input[type="number"], .pre-input {
+    width:                      100%;
 }
 * {
     line-height:                inherit;

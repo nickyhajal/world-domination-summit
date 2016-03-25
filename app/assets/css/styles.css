@@ -323,7 +323,7 @@ a.subtle-link {
     color:                      rgb(174, 174, 160) ! important;
     background:                 rgb(225, 225, 213) none repeat scroll 0px 0px ! important;
 }
-#sidebar a.ticket-purchase {
+#sidebar a.ticket-purchase, #sidebar .connect-purchase-start {
     width:                      237px;
     text-align:                 center;
 }
@@ -478,6 +478,23 @@ img.photo-head-active {
 }
 #page-welcome input[type="text"], input[type="password"], input[type="number"], .pre-input {
     width:                      276px;
+    transition:                 width 0.5s ease 0s;
+    -moz-transition:            width 0.5s ease 0s;
+    -webkit-transition:         width 0.5s ease 0s;
+    -o-transition:              width 0.5s ease 0s;
+}
+.tour-highlight::before {
+    content:                    "";
+    width:                      100%;
+    display:                    block;
+    position:                   absolute;
+    height:                     100%;
+    background:                 rgb(255, 255, 255) none repeat scroll 0px 0px;
+    padding:                    10px;
+    left:                       -15px;
+    top:                        -15px;
+    z-index:                    -1;
+    border:                     3px solid rgba(33, 28, 18, 0.64);
 }
 div.tab-panel-active * {
     opacity:                    1;
@@ -488,6 +505,17 @@ div.tab-panel-active * {
     -moz-transition:            all 0.2s ease 0s;
     -webkit-transition:         all 0.2s ease 0s;
     -o-transition:              all 0.2s ease 0s;
+}
+div.tourbus-leg h2 {
+    display:                    block;
+    position:                   relative;
+    padding-top:                18px;
+    padding-left:               39px;
+    margin:                     -40px -40px 30px;
+}
+.modal-content h2 {
+    margin:                     -40px -40px 40px;
+    padding-left:               40px;
 }
 h2 {
     margin-left:                -50px;
@@ -680,6 +708,10 @@ a.broadcast-show-all {
     font-family:                karla;
     color:                      rgb(255, 255, 255);
     margin-top:                 -44px;
+}
+#modal-connect-purchase a.modal-close {
+    top:                        18px;
+    right:                      18px;
 }
 a.modal-close {
     background:                 transparent url("/images/button-close.png") repeat scroll 0% 0% / 100% auto;
@@ -974,6 +1006,10 @@ a#checkin-x {
     width:                      31px;
     top:                        0px;
     padding:                    7px 0px 4px 1px;
+}
+.cc-error a {
+    color:                      rgb(255, 255, 255);
+    margin-left:                7px;
 }
 a {
     color:                      rgb(226, 127, 28);
@@ -1346,6 +1382,18 @@ span.pre-input {
     background:                 rgb(227, 227, 218) none repeat scroll 0px 0px;
     z-index:                    3;
 }
+#modal-connect-purchase .form-row .cc-inp-zip {
+    width:                      122px;
+}
+#modal-connect-purchase .form-row .cc-inp-ccv {
+    width:                      90px;
+}
+#modal-connect-purchase .form-box input {
+    width:                      228px;
+}
+.modal-panel-buy select {
+    width:                      100px;
+}
 input[type="text"], input[type="password"], input[type="number"], .pre-input {
     background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     border:                     0px none;
@@ -1386,15 +1434,16 @@ div#your-points, #your-rank {
     padding:                    0px ! important;
     text-transform:             uppercase;
 }
-#page_content label {
+#page_content label, .modal-content label {
+    color:                      rgb(0, 115, 173);
     display:                    block;
     font-family:                karla;
-    color:                      rgb(0, 115, 173);
     margin-bottom:              4px;
-    font-size:                  16px;
+    font-size:                  17px;
 }
 .form-row {
     margin-bottom:              15px;
+    clear:                      both;
 }
 .twitter-connected a:first-of-type {
     margin-right:               10px;
@@ -1512,6 +1561,75 @@ a.note-button {
 #page-mission-accomplished button.button {
     font-size:                  18pt;
     padding:                    16px 60px;
+}
+a.cnct-new-account::before {
+    content:                    "";
+    width:                      4px;
+    z-index:                    10;
+    height:                     70px;
+    left:                       -2px;
+    top:                        20px;
+    background:                 rgba(247, 246, 241, 0) none repeat scroll 0px 0px;
+}
+a.cnct-new-account:hover::before {
+    content:                    "";
+    position:                   absolute;
+    background:                 rgb(247, 246, 241) none repeat scroll 0% 0%;
+    z-index:                    10;
+    height:                     70px;
+    width:                      4px;
+    transition:                 all 0.2s ease 0s;
+    -moz-transition:            all 0.2s ease 0s;
+    -webkit-transition:         all 0.2s ease 0s;
+    -o-transition:              all 0.2s ease 0s;
+    top:                        22px;
+    left:                       -4px;
+    display:                    none;
+}
+a.cnct-new-account {
+    line-height:                69px;
+}
+div.modal-big-btn-shell .button {
+    background:                 transparent none repeat scroll 0% 0%;
+    display:                    table-cell;
+    vertical-align:             middle;
+    height:                     100%;
+    color:                      rgb(226, 127, 28);
+}
+selectorSavingError {
+    background:                 rgba(227, 127, 28, 0) none repeat scroll 0px 0px;
+}
+a.cnct-login:hover::after {
+    background:                 rgba(227, 127, 28, 0) none repeat scroll 0% 0%;
+}
+a.cnct-login::after {
+    width:                      2px;
+    position:                   absolute;
+    content:                    "";
+    height:                     70px;
+    top:                        22px;
+    right:                      -1px;
+    background:                 rgb(248, 247, 240) none repeat scroll 0px 0px;
+    display:                    none;
+}
+.cnct-start a.button:hover {
+    transition:                 all 0.2s ease 0s;
+    -moz-transition:            all 0.2s ease 0s;
+    -webkit-transition:         all 0.2s ease 0s;
+    -o-transition:              all 0.2s ease 0s;
+    color:                      rgb(247, 246, 241);
+    background:                 rgb(226, 127, 28) none repeat scroll 0px 0px;
+}
+.cnct-start a.button {
+    text-align:                 center;
+    height:                     115px;
+    position:                   relative;
+    font-family:                karlabold;
+    margin-right:               14px;
+    width:                      48%;
+    border-left:                7px solid rgb(255, 255, 255);
+    font-size:                  15pt;
+    background:                 rgb(225, 225, 208) none repeat scroll 0px 0px;
 }
 input[type="submit"], .button {
     border:                     0px none;
@@ -1650,6 +1768,9 @@ span.sub-label {
 }
 .current-avatar {
     display:                    none;
+}
+div.form-row:last-of-type {
+    margin-bottom:              -20px;
 }
 .form-section {
     clear:                      both;
@@ -1969,6 +2090,11 @@ span.reg-subhead {
     text-align:                 center;
     width:                      250px;
 }
+.give-ticket-row h4 {
+    margin-top:                 24px;
+    font-size:                  15pt;
+    margin-bottom:              12px;
+}
 h4 {
     clear:                      both;
     text-transform:             uppercase;
@@ -2056,15 +2182,51 @@ span.broadcast-date {
 div#modal-video .modal-content {
     height:                     516px;
 }
+div#modal-tour-start .modal-content p:last-of-type, .modal-w-cont .modal-content p:last-of-type {
+    margin-bottom:              40px;
+}
+div#modal-tour-start .modal-content p, .modal-w-cont .modal-content p {
+    font-family:                karla;
+    font-size:                  14pt;
+    margin-bottom:              20px;
+}
+#modal-tour-end div.modal-content {
+    height:                     520px;
+    transform:                  translateY(-30px);
+    -moz-transform:             translateY(-30px);
+    -webkit-transform:          translateY(-30px);
+    -o-transform:               translateY(-30px);
+}
+div#modal-tour-start .modal-content, .modal-w-cont .modal-content {
+    padding:                    40px;
+    width:                      500px;
+    height:                     300px;
+    transform:                  translateY(-30px);
+    -moz-transform:             translateY(-30px);
+    -webkit-transform:          translateY(-30px);
+    -o-transform:               translateY(-30px);
+}
+div#modal-connect-purchase .modal-content {
+    bottom:                     auto;
+    margin:                     auto;
+    padding:                    40px;
+    overflow-y:                 auto;
+    width:                      570px;
+    overflow-x:                 hidden;
+    top:                        100px;
+    max-height:                 612px;
+}
 div.modal {
     position:                   fixed;
     top:                        0px;
-    left:                       0px;
     width:                      100%;
     height:                     100%;
     z-index:                    10000;
     display:                    none;
     background:                 rgba(30, 27, 25, 0.5) none repeat scroll 0px 0px;
+    right:                      0px;
+    margin:                     0px auto;
+    left:                       0px ! important;
 }
 #modal-army div.modal-content {
     height:                     519px;
@@ -2072,13 +2234,13 @@ div.modal {
 div.modal-content {
     background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
     bottom:                     0px;
-    left:                       0px;
     margin:                     auto;
     padding:                    10px;
     position:                   absolute;
     right:                      0px;
     top:                        0px;
     width:                      800px;
+    left:                       0px ! important;
 }
 div#modal-bigger-photo-img {
     height:                     100%;
@@ -3131,6 +3293,9 @@ div.payment-processing-text {
 #page-welcome #sidebar-shell, #page-empty #sidebar-shell {
     display:                    none;
 }
+#page-welcome .tab-panel-next input[type="text"], #page-welcome .tab-panel-prev input[type="text"] {
+    width:                      140px;
+}
 div.tab-panel-next *, div.tab-panel-prev * {
     filter:                     grayscale(0.6);
     -ms-filter:                 "grayscale(0.6)";
@@ -3199,9 +3364,138 @@ div#tab-shell-welcome_tabs {
     right:                      0px;
     width:                      550px;
     top:                        178px;
+    background:                 transparent url("/images/wds-loading.gif") repeat scroll 0% 0%;
+    height:                     400px;
 }
 #page-settings div#tab-shell-settings_tabs {
     margin:                     -50px;
+}
+div.tour-overlay {
+    position:                   fixed;
+    top:                        0px;
+    left:                       0px;
+    width:                      100%;
+    height:                     100%;
+    background:                 rgb(137, 133, 120) none repeat scroll 0px 0px;
+    z-index:                    9999;
+    display:                    none;
+}
+div.introjs-tooltiptext {
+    font-family:                Karla;
+    padding:                    7px;
+    text-align:                 center;
+}
+.modal-content p {
+    font-family:                karla;
+    font-size:                  14pt;
+}
+div.modal-panel-active {
+    display:                    block;
+}
+.modal-panel {
+    display:                    none;
+}
+.modal-panel h3 {
+    margin-top:                 -12px ! important;
+    width:                      100%;
+}
+div.modal-big-btn-shell {
+    height:                     100%;
+    display:                    table;
+    margin:                     28px -20px -20px -27px;
+}
+div.cc-error {
+    color:                      rgb(255, 255, 255);
+    font-family:                karlabold;
+    background:                 rgb(237, 47, 0) none repeat scroll 0px 0px;
+    padding:                    10px 40px;
+    display:                    none;
+    margin:                     -31px -40px 30px;
+}
+div.cnct-ticket-sale {
+    margin:                     -40px -40px 30px;
+    padding:                    15px 40px;
+    background:                 rgb(252, 252, 248) none repeat scroll 0px 0px;
+    border-bottom:              2px solid rgb(247, 246, 238);
+}
+div.cnct-product-name {
+    display:                    inline-block;
+    font-family:                karlabold;
+    font-size:                  14pt;
+    margin-top:                 1px;
+    color:                      rgb(118, 117, 108);
+}
+div.cnct-quantity::before {
+    content:                    "Quantity";
+    position:                   absolute;
+    font-size:                  11pt;
+    font-family:                karla;
+    left:                       -68px;
+    top:                        11px;
+    color:                      rgb(176, 175, 166);
+}
+div.cnct-total {
+    display:                    block;
+    float:                      right;
+    font-size:                  17pt;
+    position:                   relative;
+    color:                      rgb(118, 117, 108);
+    font-family:                Vitesse;
+    margin-bottom:              -34px;
+    margin-right:               -38px;
+    margin-top:                 -14px;
+    background:                 rgba(255, 255, 255, 0.73) none repeat scroll 0px 0px;
+    border-left:                2px solid rgb(244, 244, 236);
+    padding:                    14px 20px 11px;
+}
+div.cnct-quantity {
+    display:                    block;
+    float:                      right;
+    margin-right:               20px;
+    margin-top:                 -6px;
+    position:                   relative;
+}
+div.cnct-process-shell.active {
+    z-index:                    10;
+    opacity:                    1;
+    -ms-filter:                 "alpha(opacity=100)";
+    filter:                     alpha(opacity=100);
+    zoom:                       1;
+}
+div.cnct-process-shell {
+    position:                   absolute;
+    left:                       0px;
+    background:                 rgba(255, 255, 255, 0.86) none repeat scroll 0% 0%;
+    width:                      100%;
+    height:                     86%;
+    top:                        58px;
+    transition:                 all 0.3s ease 0s;
+    -moz-transition:            all 0.3s ease 0s;
+    -webkit-transition:         all 0.3s ease 0s;
+    -o-transition:              all 0.3s ease 0s;
+    opacity:                    0;
+    -ms-filter:                 "alpha(opacity=0)";
+    filter:                     alpha(opacity=0);
+    zoom:                       1;
+    z-index:                    -1;
+}
+.cnct-process-shell div {
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
+    text-align:                 center;
+    border:                     2px solid rgb(241, 236, 223);
+    font-family:                karlaitalic;
+    font-size:                  15pt;
+    padding:                    16px;
+    margin:                     110px auto;
+    width:                      87%;
+}
+form div.small-text {
+    font-size:                  10pt;
+    width:                      340px;
+    margin-top:                 9px;
+    margin-bottom:              40px;
+    font-family:                karlabold;
+    color:                      rgb(140, 135, 121);
 }
 * {
     box-sizing:                 border-box;
@@ -3220,6 +3514,9 @@ body#page-be-there {
 }
 body#page-welcome, body#page-empty {
     background:                 rgb(177, 186, 30) none repeat scroll 0% 0%;
+}
+body.no-scroll {
+    overflow-y:                 hidden;
 }
 body {
     padding:                    0px;
@@ -3333,6 +3630,16 @@ p.color-blue {
     font-family:                karla;
     margin-bottom:              10px;
 }
+.tourbus-leg p {
+    font-family:                karla;
+    font-size:                  13pt;
+}
+.modal-w-cont li {
+    font-family:                karla;
+    font-size:                  13pt;
+    margin-bottom:              12px;
+    line-height:                134%;
+}
 p, li {
     margin-top:                 0px;
 }
@@ -3375,7 +3682,6 @@ a#nav-register {
     background-position:        0px 0px ! important;
 }
 #nav-search {
-    margin-top:                 -5px ! important;
     width:                      25px;
     position:                   relative;
     padding:                    0px 5px ! important;
@@ -3386,6 +3692,7 @@ a#nav-register {
     -moz-box-sizing:            content-box;
     -webkit-box-sizing:         content-box;
     background:                 rgb(226, 127, 28) url("/images/icon-search.png?12") repeat scroll center 4px / 21px auto;
+    margin-top:                 -7px ! important;
 }
 #nav-search:hover::before {
     content:                    "";
@@ -3453,7 +3760,6 @@ a.ambassador-button {
     text-decoration:            none;
     text-transform:             uppercase;
     background-repeat:          no-repeat ! important;
-    margin-top:                 -4px;
     transition:                 color 0.15s ease 0s;
     -moz-transition:            color 0.15s ease 0s;
     -webkit-transition:         color 0.15s ease 0s;
@@ -3461,6 +3767,7 @@ a.ambassador-button {
     margin-right:               6px;
     cursor:                     pointer;
     padding:                    5.5px 10px 4px;
+    margin-top:                 -4px;
 }
 #nav-links {
     float:                      right;
@@ -3607,23 +3914,11 @@ section#sidebar-shell {
     -o-transition:              all 0s ease 0s ! important;
 }
 #content_shell {
-    position:                   relative;
     margin-left:                261px;
-    transform-origin:           100% 100% 0px;
-    -moz-transform-origin:      100% 100% 0px;
-    -webkit-transform-origin:   100% 100% 0px;
-    -o-transform-origin:        100% 100% 0px;
-    transform:                  rotate(0deg);
-    -moz-transform:             rotate(0deg);
-    -webkit-transform:          rotate(0deg);
-    -o-transform:               rotate(0deg);
-    left:                       0px;
-    top:                        0px;
-    transition:                 all 0.5s ease 0s;
-    -moz-transition:            all 0.5s ease 0s;
-    -webkit-transition:         all 0.5s ease 0s;
-    -o-transition:              all 0.5s ease 0s;
     min-height:                 575px;
+    position:                   relative;
+    top:                        0px;
+    left:                       0px;
 }
 #header-title span {
     font-family:                Populaire;
@@ -4761,7 +5056,6 @@ span.answer_start {
     width:                      100%;
     margin-top:                 -1px;
     position:                   absolute;
-    z-index:                    9999;
     top:                        100%;
     background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
     color:                      rgb(0, 0, 0);
@@ -4781,6 +5075,7 @@ span.answer_start {
     box-shadow:                 0px 4px 5px rgba(0, 0, 0, 0.15);
     -moz-box-shadow:            0px 4px 5px rgba(0, 0, 0, 0.15);
     -webkit-box-shadow:         0px 4px 5px rgba(0, 0, 0, 0.15);
+    z-index:                    999999;
 }
 .select2-drop.select2-drop-above {
     margin-top:                 1px;
@@ -5276,4 +5571,312 @@ div#home-screen-overlay::after {
     vertical-align:             middle;
     margin-top:                 41px;
     padding:                    1em;
+}
+.introjs-overlay {
+    position:                   absolute;
+    z-index:                    999999;
+    opacity:                    0;
+    -ms-filter:                 "alpha(opacity=0)";
+    filter:                     alpha(opacity=0);
+    zoom:                       1;
+    transition:                 all 0.3s ease-out 0s;
+    -moz-transition:            all 0.3s ease-out 0s;
+    -webkit-transition:         all 0.3s ease-out 0s;
+    -o-transition:              all 0.3s ease-out 0s;
+    background:                 rgba(30, 27, 25, 0.5) none repeat scroll 0% 0%;
+}
+.introjs-fixParent {
+    z-index:                    auto ! important;
+    opacity:                    1 ! important;
+    -ms-filter:                 "alpha(opacity=100)";
+    filter:                     alpha(opacity=100);
+    zoom:                       1;
+    position:                   absolute ! important;
+    transform:                  none ! important;
+    -moz-transform:             none ! important;
+    -webkit-transform:          none ! important;
+    -o-transform:               none ! important;
+}
+.introjs-showElement, tr.introjs-showElement > td, tr.introjs-showElement > th {
+    z-index:                    9999999 ! important;
+}
+.introjs-disableInteraction {
+    z-index:                    99999999 ! important;
+    position:                   absolute;
+}
+.introjs-relativePosition, tr.introjs-showElement > td, tr.introjs-showElement > th {
+    position:                   relative;
+}
+.introjs-helperLayer {
+    position:                   absolute;
+    z-index:                    9999998;
+    transition:                 all 0.3s ease-out 0s;
+    -moz-transition:            all 0.3s ease-out 0s;
+    -webkit-transition:         all 0.3s ease-out 0s;
+    -o-transition:              all 0.3s ease-out 0s;
+    box-shadow:                 0px 2px 15px rgba(0, 0, 0, 0.17);
+    -moz-box-shadow:            0px 2px 15px rgba(0, 0, 0, 0.17);
+    -webkit-box-shadow:         0px 2px 15px rgba(0, 0, 0, 0.17);
+    background-color:           rgb(255, 255, 255);
+}
+.introjs-tooltipReferenceLayer {
+    position:                   absolute;
+    visibility:                 hidden;
+    z-index:                    10000000;
+    background-color:           transparent;
+    transition:                 all 0.3s ease-out 0s;
+    -moz-transition:            all 0.3s ease-out 0s;
+    -webkit-transition:         all 0.3s ease-out 0s;
+    -o-transition:              all 0.3s ease-out 0s;
+}
+.introjs-helperLayer *, .introjs-helperLayer *::before, .introjs-helperLayer *::after {
+    box-sizing:                 content-box;
+    -moz-box-sizing:            content-box;
+    -webkit-box-sizing:         content-box;
+}
+.introjs-helperNumberLayer {
+    position:                   absolute;
+    visibility:                 visible;
+    top:                        -16px;
+    left:                       -16px;
+    z-index:                    2147483647 ! important;
+    font-family:                Arial,verdana,tahoma;
+    font-size:                  13px;
+    font-weight:                bold;
+    color:                      white;
+    text-align:                 center;
+    text-shadow:                1px 1px 1px rgba(0, 0, 0, 0.3);
+    line-height:                20px;
+    border-radius:              50%;
+    -moz-border-radius:         50%;
+    -webkit-border-radius:      50%;
+    box-shadow:                 0px 2px 5px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow:            0px 2px 5px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow:         0px 2px 5px rgba(0, 0, 0, 0.4);
+    height:                     30px;
+    width:                      30px;
+    background:                 rgb(163, 170, 91) none repeat scroll 0% 0%;
+    border:                     2px solid rgb(255, 255, 255);
+    padding:                    3px;
+}
+.introjs-arrow {
+    border:                     5px solid white;
+    content:                    "";
+    position:                   absolute;
+}
+.introjs-arrow.top {
+    top:                        -10px;
+    border-color:               transparent transparent white;
+}
+.introjs-arrow.top-right {
+    top:                        -10px;
+    right:                      10px;
+    border-color:               transparent transparent white;
+}
+.introjs-arrow.top-middle {
+    top:                        -10px;
+    left:                       50%;
+    margin-left:                -5px;
+    border-color:               transparent transparent white;
+}
+.introjs-arrow.right {
+    right:                      -10px;
+    top:                        10px;
+    border-color:               transparent transparent transparent white;
+}
+.introjs-arrow.right-bottom {
+    bottom:                     10px;
+    right:                      -10px;
+    border-color:               transparent transparent transparent white;
+}
+.introjs-arrow.bottom {
+    bottom:                     -10px;
+    border-color:               white transparent transparent;
+}
+.introjs-arrow.left {
+    left:                       -10px;
+    top:                        10px;
+    border-color:               transparent white transparent transparent;
+}
+.introjs-arrow.left-bottom {
+    left:                       -10px;
+    bottom:                     10px;
+    border-color:               transparent white transparent transparent;
+}
+.introjs-tooltip {
+    position:                   absolute;
+    visibility:                 visible;
+    padding:                    10px;
+    background-color:           white;
+    transition:                 opacity 0.1s ease-out 0s;
+    -moz-transition:            opacity 0.1s ease-out 0s;
+    -webkit-transition:         opacity 0.1s ease-out 0s;
+    -o-transition:              opacity 0.1s ease-out 0s;
+    max-width:                  370px;
+    min-width:                  310px;
+    box-shadow:                 0px 1px 10px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow:            0px 1px 10px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow:         0px 1px 10px rgba(0, 0, 0, 0.1);
+}
+.introjs-tooltipbuttons {
+    text-align:                 right;
+    white-space:                nowrap;
+    margin:                     0px auto;
+    width:                      138px;
+    position:                   relative;
+    left:                       -2px;
+}
+.introjs-button {
+    position:                   relative;
+    overflow:                   visible;
+    display:                    inline-block;
+    margin:                     10px 0px 0px;
+    text-decoration:            none;
+    white-space:                nowrap;
+    cursor:                     pointer;
+    outline:                    medium none;
+    background-color:           rgb(226, 127, 28);
+    color:                      rgb(255, 255, 255);
+    padding:                    6px 8px;
+    font:                       15px karla;
+}
+.introjs-button:hover {
+    border-color:               rgb(188, 188, 188);
+    text-decoration:            none;
+    box-shadow:                 0px 1px 1px rgb(227, 227, 227);
+    -moz-box-shadow:            0px 1px 1px rgb(227, 227, 227);
+    -webkit-box-shadow:         0px 1px 1px rgb(227, 227, 227);
+}
+.introjs-button::-moz-focus-inner {
+    padding:                    0px;
+    border:                     0px none;
+}
+.introjs-skipbutton {
+    margin-right:               5px;
+    color:                      rgb(122, 122, 122);
+    display:                    none;
+}
+.introjs-prevbutton {
+    border-right:               medium none;
+}
+.introjs-nextbutton {
+    margin-left:                3px;
+}
+.introjs-disabled, .introjs-disabled:hover, .introjs-disabled:focus {
+    color:                      rgb(154, 154, 154);
+    border-color:               rgb(212, 212, 212);
+    box-shadow:                 none;
+    -moz-box-shadow:            none;
+    -webkit-box-shadow:         none;
+    cursor:                     default;
+    background-color:           rgb(244, 244, 244);
+    background-image:           none;
+    text-decoration:            none;
+}
+.introjs-bullets {
+    text-align:                 center;
+}
+.introjs-bullets ul {
+    clear:                      both;
+    margin:                     15px auto 0px;
+    padding:                    0px;
+    display:                    inline-block;
+}
+.introjs-bullets ul li {
+    list-style:                 outside none none;
+    float:                      left;
+    margin:                     0px 2px;
+}
+.introjs-bullets ul li a {
+    display:                    block;
+    width:                      6px;
+    height:                     6px;
+    background:                 rgb(204, 204, 204) none repeat scroll 0% 0%;
+    border-radius:              10px;
+    -moz-border-radius:         10px;
+    -webkit-border-radius:      10px;
+    text-decoration:            none;
+}
+.introjs-bullets ul li a:hover {
+    background:                 rgb(153, 153, 153) none repeat scroll 0% 0%;
+}
+.introjs-bullets ul li a.active {
+    background:                 rgb(153, 153, 153) none repeat scroll 0% 0%;
+}
+.introjs-progress {
+    overflow:                   hidden;
+    height:                     10px;
+    margin:                     10px 0px 5px;
+    border-radius:              4px;
+    -moz-border-radius:         4px;
+    -webkit-border-radius:      4px;
+    background-color:           rgb(236, 240, 241);
+}
+.introjs-progressbar {
+    float:                      left;
+    width:                      0%;
+    height:                     100%;
+    font-size:                  10px;
+    line-height:                10px;
+    text-align:                 center;
+    background-color:           rgb(0, 136, 204);
+}
+.introjsFloatingElement {
+    position:                   absolute;
+    height:                     0px;
+    width:                      0px;
+    left:                       50%;
+    top:                        50%;
+}
+.introjs-fixedTooltip {
+    position:                   fixed;
+}
+.introjs-hint {
+    position:                   absolute;
+    background:                 transparent none repeat scroll 0% 0%;
+    width:                      20px;
+    height:                     15px;
+}
+.introjs-hidehint {
+    display:                    none;
+}
+.introjs-fixedhint {
+    position:                   fixed;
+}
+.introjs-hint:hover > .introjs-hint-pulse {
+    border:                     5px solid rgba(60, 60, 60, 0.57);
+}
+.introjs-hint-pulse {
+    width:                      10px;
+    height:                     10px;
+    border:                     5px solid rgba(60, 60, 60, 0.27);
+    border-radius:              30px;
+    -moz-border-radius:         30px;
+    -webkit-border-radius:      30px;
+    background-color:           rgba(136, 136, 136, 0.24);
+    z-index:                    10;
+    position:                   absolute;
+    transition:                 all 0.2s ease-out 0s;
+    -moz-transition:            all 0.2s ease-out 0s;
+    -webkit-transition:         all 0.2s ease-out 0s;
+    -o-transition:              all 0.2s ease-out 0s;
+}
+.introjs-hint-dot {
+    border:                     10px solid rgba(146, 146, 146, 0.36);
+    background:                 transparent none repeat scroll 0% 0%;
+    border-radius:              60px;
+    -moz-border-radius:         60px;
+    -webkit-border-radius:      60px;
+    height:                     50px;
+    width:                      50px;
+    animation:                  3s ease-out 0s normal none infinite running introjspulse;
+    -webkit-animation:          3s ease-out 0s normal none infinite running introjspulse;
+    position:                   absolute;
+    top:                        -25px;
+    left:                       -25px;
+    z-index:                    1;
+    opacity:                    0;
+    -ms-filter:                 "alpha(opacity=0)";
+    filter:                     alpha(opacity=0);
+    zoom:                       1;
 }
