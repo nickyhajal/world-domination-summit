@@ -133,8 +133,8 @@ POST =
 						tk 4
 						# If the buyer doesn't have a ticket, give her one
 						# otherwise, just add the unclaimed ticket to the response
-						tk user
-						tk process.yr
+						tk user.attributes
+						tk user.get('attending'+process.yr)
 						tk user.get('attending'+process.yr).toString()
 						if user.get('attending'+process.yr).toString() is '1'
 							tk 'NO CONNECT'
