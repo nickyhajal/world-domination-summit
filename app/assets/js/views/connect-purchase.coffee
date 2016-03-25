@@ -81,7 +81,7 @@ ap.Views.connect_purchase = XView.extend
 		it_str = if tickets.length == 1 then 'it\'s' else 'they\'re'
 		descr = 'Great! We registered one ticket in your name,
 		now just complete your other '+t_str+' by telling us who '+it_str+' for.'
-		if completed.length
+		if !completed.length
 			descr = 'Great! Now just complete your '+t_str+' by telling us who '+it_str+' for.'
 		$('.ticket-descr-status').html(descr)
 		html = '<form class="give-ticket-form" action="#" method="post">'

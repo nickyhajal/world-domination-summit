@@ -58,7 +58,6 @@ PRE =
 		dfr = Q.defer()
 		ids = []
 		arr = [0...+meta.post.quantity]
-		tk arr
 		async.eachSeries arr, (i, cb) ->
 			Ticket.forge
 				type: 'connect'
@@ -112,25 +111,19 @@ POST =
 		user = false
 
 		# Get the transaction user
-		tk 1
 		User.forge
 			user_id: transaction.get('user_id')
 		.fetch()
 		.then (user) ->
-			tk 2
-			tk ids
 			async.eachSeries ids, (id, cb) ->
-				tk id
 				# Create the tickets
 				Ticket.forge
 					ticket_id: id
 				.fetch()
 				.then (ticket) =>
-					tk 3
 					ticket.set 'status', 'purchased'
 					ticket.save()
 					.then (ticket) ->
-						tk 4
 						# If the buyer doesn't have a ticket, give her one
 						# otherwise, just add the unclaimed ticket to the response
 						if user.get('attending'+process.yr)?.toString() is '1'
