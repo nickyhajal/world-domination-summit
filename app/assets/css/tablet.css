@@ -885,6 +885,9 @@ div.tab-panel-next-hidden {
     -webkit-transform:          none;
     -o-transform:               none;
 }
+#page_content img {
+    width:                      100%;
+}
 * {
     line-height:                inherit;
 }

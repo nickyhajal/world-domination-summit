@@ -481,6 +481,21 @@ a.modal-close {
     right:                      11px ! important;
     width:                      15px;
 }
+div.cnct-quantity::before {
+    left:                       0px;
+    font-size:                  13pt;
+    top:                        -23px;
+    color:                      rgb(0, 115, 173);
+}
+div.cnct-quantity {
+    float:                      none;
+    position:                   absolute;
+    left:                       40px;
+    top:                        137px;
+}
+div.cnct-ticket-sale {
+    margin-bottom:              88px;
+}
 * {
     line-height:                inherit;
 }

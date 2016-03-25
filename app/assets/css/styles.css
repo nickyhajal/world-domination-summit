@@ -3500,6 +3500,11 @@ form div.small-text {
 .modal-content form#login-form {
     padding-bottom:             20px;
 }
+div.connect-purchase-area {
+    padding:                    20px;
+    margin-bottom:              5px;
+    background:                 rgb(235, 233, 226) none repeat scroll 0px 0px;
+}
 * {
     box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
