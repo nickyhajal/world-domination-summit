@@ -24,10 +24,15 @@ emails =
 
   syncEmailWithTicket: ->
     if @get('attending'+process.yr) is '1'
-      @addToList 'WDS '+process.year+' Attendees'
-      @removeFromList 'WDS '+process.year+' Canceled'
+      if @get('ticket_type')?.length
+        if @get('ticket_type') is 'connect'
+          @addToList 'WDS '+process.year+' Attendees'
+        else
+          @addToList 'WDS '+process.year+' Connect'
+        @removeFromList 'WDS '+process.year+' Canceled'
     else
       @removeFromList 'WDS '+process.year+' Attendees'
+      @removeFromList 'WDS '+process.year+' Connect'
       @addToList 'WDS '+process.year+' Canceled'
 
   addToList: (list) ->
