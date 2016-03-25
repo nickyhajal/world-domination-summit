@@ -38,7 +38,7 @@ routes = (app) ->
 		charge: (req, res, next) ->
 			if req.hasParams ['code', 'card_id'], req, res, next
 				if req.isAuthd req, res, next
-					req.me.getCard(req.query.card_id)
+					req.me.getCard(req.query.card_id, (req.query.code is 'connect'))
 					.then (card) ->
 						card.charge(req.query.code, req.query.purchase_data)
 						.then (charge) ->

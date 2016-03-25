@@ -4,13 +4,15 @@ redis = require("redis")
 rds = redis.createClient()
 RedisSessions = require("redis-sessions");
 rs = new RedisSessions();
-stripe = require('stripe')(process.env.STRIPE_SK)
 ##
 
 [Card, Cards] = require '../cards'
 
 charge =
-	getCard: (card_id) ->
+	getCard: (card_id, test = false) ->
+		stripe_key = process.env.STRIPE_SK
+		stripe_key = process.env.STRIPE_SK_TEST if test
+		stripe = require('stripe')(stripe_key)
 		dfr = Q.defer()
 		if card_id.indexOf('tok_') > -1
 			Card.forge
