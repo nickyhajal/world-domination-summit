@@ -1629,7 +1629,7 @@ a.cnct-login::after {
     width:                      48%;
     border-left:                7px solid rgb(255, 255, 255);
     font-size:                  15pt;
-    background:                 rgb(225, 225, 208) none repeat scroll 0px 0px;
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
 }
 input[type="submit"], .button {
     border:                     0px none;
@@ -3496,6 +3496,9 @@ form div.small-text {
     margin-bottom:              40px;
     font-family:                karlabold;
     color:                      rgb(140, 135, 121);
+}
+.modal-content form#login-form {
+    padding-bottom:             20px;
 }
 * {
     box-sizing:                 border-box;
