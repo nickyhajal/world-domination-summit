@@ -45,6 +45,7 @@ ap.Views.connect_purchase = XView.extend
 			Stripe.card.createToken $t, (status, rsp) =>
 				if rsp.error
 					$('.cc-error').show().html rsp.error.message
+					@processing(false)
 					setTimeout ->
 						$('.cc-error').hide()
 					, 10000
@@ -52,7 +53,6 @@ ap.Views.connect_purchase = XView.extend
 					ap.api 'post product/charge', {card_id: rsp.id, code: 'connect', purchase_data: post}, (rsp) =>
 						needsAction = []
 						completed = []
-						tk rsp.tickets
 						for t in rsp.tickets
 							if t.status == 'purchased'
 								needsAction.push t
@@ -70,6 +70,7 @@ ap.Views.connect_purchase = XView.extend
 			post.login = true
 			ap.api 'post user', _.omit(post, 'quantity'), (rsp) =>
 				if rsp.existing?
+					@processing(false)
 					$('.cc-error').show().html 'That email is in our system. <a href="#" class="show-panel" data-panel="login">Click here to login.</a>'
 				else
 					ap.api 'get me', {}, (rsp) =>

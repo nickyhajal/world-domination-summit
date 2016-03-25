@@ -457,6 +457,30 @@ div#loading-logo {
 #page-welcome input[type="text"], input[type="password"], input[type="number"], .pre-input {
     width:                      100%;
 }
+div.modal-content {
+    right:                      auto;
+    left:                       0px ! important;
+    width:                      100% ! important;
+    top:                        0px ! important;
+    height:                     100%;
+    max-height:                 100% ! important;
+}
+div.modal-big-btn-shell .button {
+    float:                      none;
+    clear:                      both;
+    width:                      100%;
+    display:                    block;
+    height:                     auto;
+    padding:                    20px 40px;
+    margin-top:                 5px;
+    line-height:                21px;
+}
+a.modal-close {
+    height:                     15px;
+    top:                        11px ! important;
+    right:                      11px ! important;
+    width:                      15px;
+}
 * {
     line-height:                inherit;
 }
