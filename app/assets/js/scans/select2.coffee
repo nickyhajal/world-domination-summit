@@ -7,3 +7,5 @@ jQuery.fn.scan
 			opts.width = $(this).data('width')
 			opts.minimumResultsForSearch = if $(this).data('search')? && +$(this).data('search') then null else -1
 			$el.select2(opts)
+			$el.on 'change', ->
+				$el.focus()

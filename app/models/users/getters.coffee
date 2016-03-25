@@ -36,6 +36,8 @@ getters =
               .then (user) =>
                 if user.get('password')?.length
                   user.set('has_pw', true)
+                if user.get('user_name')?.length  is 40
+                  user.set('user_name', '')
                 dfr.resolve(user)
     return dfr.promise
 

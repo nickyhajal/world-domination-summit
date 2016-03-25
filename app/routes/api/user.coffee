@@ -48,6 +48,8 @@ routes = (app) ->
 							.then (user) ->
 								user.getConnections()
 								.then (user) ->
+									if user.get('username')?.length is 40
+										user.set('user_name', '')
 									res.r.me = user
 									next()
 			else

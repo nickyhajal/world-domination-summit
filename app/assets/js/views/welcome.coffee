@@ -19,6 +19,7 @@ ap.Views.welcome = XView.extend
 		'click .tab-save-next': 'next'
 
 	initialize: ->
+		ap.loading(true)
 		if ap.me.get('intro') >= ap.WELCOME_STEPS
 			ap.navigate('settings')
 		else
@@ -35,7 +36,6 @@ ap.Views.welcome = XView.extend
 	rendered: ->
 		# Setup Animation
 		# $('#sidebar-shell').addClass('faded-out')
-
 
 		# Show correct content for if attended
 		if ap.me.attendedBefore()
@@ -88,6 +88,9 @@ ap.Views.welcome = XView.extend
 			initSelection: (el, cb) ->
 				cb countryById[el.val()]
 			width: '276px'
+		country_select.on 'change', (e) =>
+			@regionSync()
+
 
 		# Calling Codes
 		calling_select = $('#calling-code-select')
@@ -186,12 +189,13 @@ ap.Views.welcome = XView.extend
 			$('.twitter-not-connected').hide()
 			if ap.me.get('user_name')? and ap.me.get('user_name').length isnt 40
 				user_name = ap.me.get('user_name')
-				$('.tweet-box textarea').val('Just setup my attendee profile for WDS! Check it out: http://wds.fm/~'+user_name+' #wds2016')
-				$('.tweet-box').show()
+			$('.tweet-box textarea').val('Just setup my attendee profile for WDS! Check it out: http://wds.fm/~'+user_name+' #wds2016')
+			$('.tweet-box').show()
+			$('.tweet-box-shell').hide()
 		else
 			$('.twitter-connected').hide()
 			$('.twitter-not-connected').show()
-			$('.tweet-box').hide()
+			$('.tweet-box-shell').hide()
 
 	###
 		Disconnect the user from twitter
@@ -231,15 +235,15 @@ ap.Views.welcome = XView.extend
 
 
 	next: (e) ->
-		e?.stopPropagation?()
-		w = $('#tab-shell-welcome_tabs')
-		$('.tab-panel', w).css {height: '460px'}
-		$('.tab-panel-prev', w).attr 'class', 'tab-panel tab-panel-prev-hidden'
-		$('.tab-panel-active', w).attr 'class', 'tab-panel tab-panel-prev'
-		$('.tab-panel-next', w).attr 'class', 'tab-panel tab-panel-active'
-		$('.tab-panel-next-hidden', w).eq(0).attr 'class', 'tab-panel tab-panel-next'
-		@updPosition()
-		@updMe()
+		if @updMe()
+			e?.stopPropagation?()
+			w = $('#tab-shell-welcome_tabs')
+			$('.tab-panel', w).css {height: '460px'}
+			$('.tab-panel-prev', w).attr 'class', 'tab-panel tab-panel-prev-hidden'
+			$('.tab-panel-active', w).attr 'class', 'tab-panel tab-panel-prev'
+			$('.tab-panel-next', w).attr 'class', 'tab-panel tab-panel-active'
+			$('.tab-panel-next-hidden', w).eq(0).attr 'class', 'tab-panel tab-panel-next'
+			@updPosition()
 
 	prev: ->
 		e?.stopPropagation?()
@@ -281,7 +285,6 @@ ap.Views.welcome = XView.extend
 		pW = 680
 		pW2 = pW / 2
 		pL = sW2 - pW2
-		tk sW-pW
 		sideW = 600
 		nextL = 20 + sideW + pW + 20
 		prL = -135
@@ -320,11 +323,14 @@ ap.Views.welcome = XView.extend
 		$('#travel-label').html str
 
 	updMe: ->
-		if !(ap.me?.get('has_pw')? and ap.me.get('has_pw')) && $('input[name="new_password"]').is(':visible') and $('input[name="new_password"]').val().length < 5
+		if !(ap.me?.get('has_pw')? and ap.me.get('has_pw')) && $('input[name="new_password"]', '.tab-panel-active').is(':visible') and $('input[name="new_password"]').val().length < 5
+			btn = $('#tab-panel-the-basics .tab-save-next')
+			original_btn_val = btn.html()
 			btn.html('Your password should be at least 6 characters.').addClass('btn-error')
 			setTimeout ->
 				btn.html(original_btn_val).removeClass('btn-error')
 			, 2000
+			return false
 		else
 			onTab = ($('.tab-panel-active').index()-1)
 			if ap.me.get('intro') < onTab
@@ -338,7 +344,7 @@ ap.Views.welcome = XView.extend
 						if rsp.user
 							@syncDistance(rsp.user)
 					error: (rsp) ->
-			else
+			return true
 
 	###
 		Saves the latest changes to ap.me
