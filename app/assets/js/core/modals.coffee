@@ -15,6 +15,8 @@ ap.Modals.open = (modal, opts = {}) ->
 	m = $('#modal-'+modal)
 	if m.data('lock_scroll')?
 		$('body').addClass('no-scroll')
+		if ap.isPhone
+			$('.contentwrap').css('display', 'none')
 		ap.Modals.opts.body_scroll = false
 	if m.data('no_esc')?
 		ap.Modals.opts.esc = false
@@ -48,6 +50,8 @@ ap.Modals.close = (modal = false) ->
 	unless ap.Modals.opts.body_scroll
 		$('body').removeClass('no-scroll')
 		ap.Modals.opts.body_scroll = true
+		if ap.isPhone
+			$('.contentwrap').css('display', 'block')
 	unless ap.Modals.opts.esc
 		$('body').removeClass('no-scroll')
 		ap.Modals.opts.esc = true

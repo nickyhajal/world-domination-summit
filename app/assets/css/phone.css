@@ -457,6 +457,9 @@ div#loading-logo {
 #page-welcome input[type="text"], input[type="password"], input[type="number"], .pre-input {
     width:                      100%;
 }
+div#modal-connect-purchase .modal-content {
+    position:                   fixed;
+}
 div.modal-content {
     right:                      auto;
     left:                       0px ! important;

@@ -1,8 +1,13 @@
 ap.Views.connect_purchase = XView.extend
+	charging: false
+	claiming: false
+	giving: false
 	events:
 		'click .cnct-cnct-account': 'showCreateAccount'
 		'click .show-panel': 'showEvent'
 		'click .done-button': 'done'
+		'click .cnct-forme': 'regTicketForMe'
+		'click .cnct-notforme': 'noTicketsForMe'
 		'submit #login-form': 'login'
 		'submit #purchase-form': 'purchase'
 		'submit .give-ticket-form': 'giveTickets'
@@ -35,9 +40,13 @@ ap.Views.connect_purchase = XView.extend
 		if isProc
 			$('.cnct-process-shell').addClass('active')
 		else
+			@charging = false
 			$('.cnct-process-shell').removeClass('active')
 	purchase: (e) ->
 		e.preventDefault()
+		e.stopPropagation()
+		return if @charging
+		@charging = true
 		$t = $(e.currentTarget)
 		post = $t.formToJson()
 		@processing()
@@ -51,19 +60,12 @@ ap.Views.connect_purchase = XView.extend
 					, 10000
 				else
 					ap.api 'post product/charge', {card_id: rsp.id, code: 'connect', purchase_data: post}, (rsp) =>
-						needsAction = []
-						completed = []
-						for t in rsp.tickets
-							if t.status == 'purchased'
-								needsAction.push t
-							else
-								completed.push t
-						if needsAction.length
-							@processing(false)
-							@completeTickets(needsAction, completed)
+						@processing(false)
+						@tickets = rsp.tickets
+						if rsp.user?.attending16? and rsp.user.attending16 is '1'
+							@showCompleteTickets(rsp.tickets, 'already-has-ticket')
 						else
-							@processing(false)
-							@show('done')
+							@showForYou(rsp.tickets)
 		if ap.me
 			charge()
 		else
@@ -76,17 +78,38 @@ ap.Views.connect_purchase = XView.extend
 					ap.api 'get me', {}, (rsp) =>
 						ap.login(rsp.me)
 						charge()
-	completeTickets: (tickets, completed = []) ->
+	showForYou: (tickets) ->
+		$t = $('.modal-panel-foryou')
+		h3 = 'Is this ticket for you?'
+		p = 'Your purchase was succesful! Is this ticket for you or someone else?'
+		btnyes = 'Yup, it\'s for me!'
+		btnno = 'No, it\'s for someone else.'
+		tk tickets
+		if tickets.length > 1
+			h3 = 'Is one of these tickets for you?'
+			p = 'Your purchase was succesful! Is one of these tickets for you?'
+			btnyes = 'Yup, one is for me!'
+			btnno = 'No, they\'re for other people.'
+		$('h3', $t).html h3
+		$('p', $t).html p
+		$('.cnct-forme', $t).html btnyes
+		$('.cnct-notforme', $t).html btnno
+		@show('foryou')
+
+	showCompleteTickets: (tickets, completed = false) ->
 		@show('completetickets')
 		t_str = if tickets.length == 1 then 'ticket' else 'tickets'
 		it_str = if tickets.length == 1 then 'it\'s' else 'they\'re'
+		is_str = if tickets.length == 1 then 'is this' else 'are these'
+		h2 = 'Complete Your '+t_str
+		h3 = 'Who '+is_str+' '+t_str+' for?'
 		descr = 'Great! We registered one ticket in your name,
 		now just complete your other '+t_str+' by telling us who '+it_str+' for.'
-		if !completed.length
+		if !completed
 			descr = 'Great! Now just complete your '+t_str+' by telling us who '+it_str+' for.'
 		$('.ticket-descr-status').html(descr)
 		html = '<form class="give-ticket-form" action="#" method="post">'
-		count = 1
+		count = if completed then 2 else 1
 		for t in tickets
 			html += '
 			<div class="give-ticket-row">
@@ -117,8 +140,28 @@ ap.Views.connect_purchase = XView.extend
 				to each attendee.</div>
 		</form>'
 		$('.ticket-assign-shell').html(html)
+		$('h2', '.modal-panel-completetickets').html h2
+		$('h3', '.modal-panel-completetickets').html h3
+	regTicketForMe: (e) ->
+		e.stopPropagation()
+		e.preventDefault()
+		return if @claiming
+		@claiming = true
+		ap.api 'post me/claim-ticket', {}, (rsp) =>
+			@claiming = false
+			@showCompleteTickets(rsp.tickets, true)
+
+
+	noTicketsForMe: (e) ->
+		e.stopPropagation()
+		e.preventDefault()
+		@showCompleteTickets(@tickets)
+
 	giveTickets: (e) ->
 		e.preventDefault()
+		e.stopPropagation()
+		return if @giving
+		@giving = true
 		$t = $(e.currentTarget)
 		btn = _.btn $('input[type="submit"]', $t), 'Processing...', 'Done!'
 		raw = $t.formToJson()
@@ -131,9 +174,8 @@ ap.Views.connect_purchase = XView.extend
 				post.attendees[inx] = {}
 			post.attendees[inx][key] = val
 		ap.api 'post user/tickets', post, (rsp) =>
+			@giving = false
 			@show('done')
-
-
 
 	done: (e) ->
 		e.preventDefault()

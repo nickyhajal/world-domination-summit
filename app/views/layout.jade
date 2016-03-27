@@ -33,7 +33,7 @@ html(lang='en', class="#{hide_counter}")
     link(rel='stylesheet', type="text/css", href='/app/assets/css/styles.css')
     link(rel='stylesheet', type="text/css", href='/app/assets/css/fonts.css')
     link(rel='stylesheet', type="text/css", href='/app/assets/css/tablet.css', media='screen and (max-width:1024px)')
-    link(rel='stylesheet', type="text/css", href='/app/assets/css/phone.css', media='screen and (max-width:682px)')
+    link(rel='stylesheet', type="text/css", href='/app/assets/css/phone.css', media='screen and (max-width:736px)')
 
     != js('main')
     script(type="text/javascript").
@@ -52,89 +52,90 @@ html(lang='en', class="#{hide_counter}")
       else if (window.addEventListener) {window.addEventListener('load', loadGoogleMaps, false);}
       else {document.addEventListener('load', loadGoogleMaps, false);}
   body(class='ui-body-a')
-    div(class="preload")
-      img(src="/images/button-sprites_nav-hover.png")
-      img(src="/images/separators/zig-zags_blue.png")
-      img(src="/images/icon-sprites_corner.png")
-      img(src="/images/icon-sprites_sidebar.png")
-      img(src="/images/story/circle-1.jpg")
-    div(id="loading")
-      div(id="the-loading-icon")
-    nav(id="top-nav")
-      div(class="contentainer")
-        a(id="back-button", href="#")
-        a(id="small-logo", href="/")
-        a(id="nav-link-expand", href="#")
-          div
-          div
-          div
-        div(id="nav-links")
-          div(id="primary-links")
-            span(class="logged-out")
-              a(id="nav-story", href="/story") Story
-              a(id="nav-schedule", href="/schedule") Schedule
-              a(id="nav-headquarters", href="/headquarters") Headquarters
-              a(id="nav-foundation", href="/foundation") Foundation
-              a(id="nav-academies", href="/academies") Academies
-              a(id="nav-register", href="/register") Register!
-            span(class="logged-in")
-              a(id="nav-hub", class="if-mobile", href="/hub") The Hub
-              a(id="nav-story", href="/story") Story
-              a(id="nav-schedule", href="/schedule") Schedule
-              a(id="nav-headquarters", href="/headquarters") Headquarters
-              a(id="nav-foundation", href="/foundation") Foundation
-              a(id="nav-academies", href="/academies") Academies
-              a(id="nav-communities", class="if-mobile", href="/communities") Communities
-              a(id="nav-settings", class="if-mobile", href="/settings") Account Settings
-              a(id="nav-logout", class="if-mobile", href="/logout") Logout
-          div(id="nav-search", class="search-shell")
-            div(id="search-box")
-              input(type="text", class="search-input", placeholder="Search Attendees")
-              div(class="search-results")
-    div(id="notifications")
-    header(id="main-header")
-      span(id="long-squiggly")
-      div(class="contentainer")
-        a(href="/", id="logo")
-        div(id="logo-waves")
-        div(id="counter-shell")
-          h6 The Revolution Returns In:
-          div(class="clear")
-          div(id="counter-plane")
-          div(class="counter-content")
-            //-div(id="big-content") Is Here!
-            div(id="counter-days", class="counter-section")
-              span Days
-              div
-            div(id="counter-hours", class="counter-section")
-              span Hours
-              div
-            div(id="counter-mins", class="counter-section")
-              span Mins
-              div
-          div(class="clear")
-          div(class="counter-content")
-            div(class="logged-out")
-              a(id="counter-register", class="counter-button" href="/register") Register
-              a(id="counter-login", class="counter-button", href="/login") Login
-            div(class="logged-in")
-              a(id="counter-ops", class="counter-button", href="/hub") Hub
-              a(id="counter-account", class="counter-button", href="/settings", data-intro="You can always make changes to your settings here.", data-step="4", data-position="right") Account
-        div(id="sidebar-shell")
+    div(class="contentwrap")
+      div(class="preload")
+        img(src="/images/button-sprites_nav-hover.png")
+        img(src="/images/separators/zig-zags_blue.png")
+        img(src="/images/icon-sprites_corner.png")
+        img(src="/images/icon-sprites_sidebar.png")
+        img(src="/images/story/circle-1.jpg")
+      div(id="loading")
+        div(id="the-loading-icon")
+      nav(id="top-nav")
+        div(class="contentainer")
+          a(id="back-button", href="#")
+          a(id="small-logo", href="/")
+          a(id="nav-link-expand", href="#")
+            div
+            div
+            div
+          div(id="nav-links")
+            div(id="primary-links")
+              span(class="logged-out")
+                a(id="nav-story", href="/story") Story
+                a(id="nav-schedule", href="/schedule") Schedule
+                a(id="nav-headquarters", href="/headquarters") Headquarters
+                a(id="nav-foundation", href="/foundation") Foundation
+                a(id="nav-academies", href="/academies") Academies
+                a(id="nav-register", href="/register") Register!
+              span(class="logged-in")
+                a(id="nav-hub", class="if-mobile", href="/hub") The Hub
+                a(id="nav-story", href="/story") Story
+                a(id="nav-schedule", href="/schedule") Schedule
+                a(id="nav-headquarters", href="/headquarters") Headquarters
+                a(id="nav-foundation", href="/foundation") Foundation
+                a(id="nav-academies", href="/academies") Academies
+                a(id="nav-communities", class="if-mobile", href="/communities") Communities
+                a(id="nav-settings", class="if-mobile", href="/settings") Account Settings
+                a(id="nav-logout", class="if-mobile", href="/logout") Logout
+            div(id="nav-search", class="search-shell")
+              div(id="search-box")
+                input(type="text", class="search-input", placeholder="Search Attendees")
+                div(class="search-results")
+      div(id="notifications")
+      header(id="main-header")
+        span(id="long-squiggly")
+        div(class="contentainer")
+          a(href="/", id="logo")
+          div(id="logo-waves")
+          div(id="counter-shell")
+            h6 The Revolution Returns In:
+            div(class="clear")
+            div(id="counter-plane")
+            div(class="counter-content")
+              //-div(id="big-content") Is Here!
+              div(id="counter-days", class="counter-section")
+                span Days
+                div
+              div(id="counter-hours", class="counter-section")
+                span Hours
+                div
+              div(id="counter-mins", class="counter-section")
+                span Mins
+                div
+            div(class="clear")
+            div(class="counter-content")
+              div(class="logged-out")
+                a(id="counter-register", class="counter-button" href="/register") Register
+                a(id="counter-login", class="counter-button", href="/login") Login
+              div(class="logged-in")
+                a(id="counter-ops", class="counter-button", href="/hub") Hub
+                a(id="counter-account", class="counter-button", href="/settings", data-intro="You can always make changes to your settings here.", data-step="4", data-position="right") Account
+          div(id="sidebar-shell")
 
-    main(class="contentainer")
-      != body
+      main(class="contentainer")
+        != body
 
-    footer
-      div(id="footer-links")
-        a(href="/faqs") FAQ
-        a(href="/contact-us") Contact Us
-      //  a(href="/transfer", class="logged-in") Transfer Ticket
-      div(id="footer-credits")
-        | © World Domination Summit 2011-2016 &nbsp; | &nbsp; Design by
-        a(href="http://jolbyandfriends.com", target="_blank") Jolby & Friends
-        | &nbsp;&nbsp; | &nbsp; Programming by
-        a(href="http://nickyhajal.com", target="_blank") Nicky Hajal
+      footer
+        div(id="footer-links")
+          a(href="/faqs") FAQ
+          a(href="/contact-us") Contact Us
+        //  a(href="/transfer", class="logged-in") Transfer Ticket
+        div(id="footer-credits")
+          | © World Domination Summit 2011-2016 &nbsp; | &nbsp; Design by
+          a(href="http://jolbyandfriends.com", target="_blank") Jolby & Friends
+          | &nbsp;&nbsp; | &nbsp; Programming by
+          a(href="http://nickyhajal.com", target="_blank") Nicky Hajal
 
     div(class="payment-processing")
       div(class="payment-processing-text")

@@ -1388,6 +1388,9 @@ span.pre-input {
 #modal-connect-purchase .form-row .cc-inp-ccv {
     width:                      90px;
 }
+#modal-connect-purchase .give-ticket-row .form-box input {
+    width:                      204px;
+}
 #modal-connect-purchase .form-box input {
     width:                      228px;
 }
@@ -1612,24 +1615,24 @@ a.cnct-login::after {
     background:                 rgb(248, 247, 240) none repeat scroll 0px 0px;
     display:                    none;
 }
-.cnct-start a.button:hover {
+.modal-big-btn-shell a.button:hover {
+    background:                 rgb(226, 127, 28) none repeat scroll 0px 0px;
+    color:                      rgb(247, 246, 241);
     transition:                 all 0.2s ease 0s;
     -moz-transition:            all 0.2s ease 0s;
     -webkit-transition:         all 0.2s ease 0s;
     -o-transition:              all 0.2s ease 0s;
-    color:                      rgb(247, 246, 241);
-    background:                 rgb(226, 127, 28) none repeat scroll 0px 0px;
 }
-.cnct-start a.button {
-    text-align:                 center;
-    height:                     115px;
-    position:                   relative;
+.modal-big-btn-shell a.button {
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     font-family:                karlabold;
+    font-size:                  15pt;
+    height:                     115px;
     margin-right:               14px;
+    position:                   relative;
+    text-align:                 center;
     width:                      48%;
     border-left:                7px solid rgb(255, 255, 255);
-    font-size:                  15pt;
-    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
 }
 input[type="submit"], .button {
     border:                     0px none;
@@ -1775,7 +1778,7 @@ div.form-row:last-of-type {
 .form-section {
     clear:                      both;
     min-height:                 60px;
-    margin-bottom:              30px;
+    margin-bottom:              22px;
 }
 div.form-box:nth-of-type(2) {
     margin-right:               0px;
@@ -3505,6 +3508,12 @@ div.connect-purchase-area {
     margin-bottom:              5px;
     background:                 rgb(235, 233, 226) none repeat scroll 0px 0px;
 }
+div.give-ticket-row {
+    margin-bottom:              10px;
+    padding:                    1px 24px 9px;
+    background:                 rgb(252, 252, 249) none repeat scroll 0% 0%;
+    border:                     2px solid rgb(239, 239, 233);
+}
 * {
     box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
@@ -3525,6 +3534,8 @@ body#page-welcome, body#page-empty {
 }
 body.no-scroll {
     overflow-y:                 hidden;
+    height:                     100%;
+    max-height:                 100%;
 }
 body {
     padding:                    0px;

@@ -32,18 +32,18 @@ ap.init = () ->
 	ap.Modals.init()
 
 ap.accoms = [
-			{id: 'paramount', text: 'Paramount Hotel'},
-			{id: 'deluxe', text: 'Hotel deLuxe'},
-			{id: 'lucia', text: 'Hotel Lucia'},
-			{id: 'sentinel', text: 'Sentinel Hotel'},
-			{id: 'modera', text: 'Hotel Modera'},
-			{id: 'other', text: 'Another hotel'},
-			{id: 'hostel', text: 'Hostel'},
-			{id: 'airbnb', text: 'AirBnb or Similar'},
-			{id: 'friend', text: 'Staying with a friend'},
-			{id: 'local', text: 'I\'m local!'},
-			{id: 'not-sure', text:'I\'m not sure yet (but I\'ll book soon!)'}
-		]
+	{id: 'paramount', text: 'Paramount Hotel'},
+	{id: 'deluxe', text: 'Hotel deLuxe'},
+	{id: 'lucia', text: 'Hotel Lucia'},
+	{id: 'sentinel', text: 'Sentinel Hotel'},
+	{id: 'modera', text: 'Hotel Modera'},
+	{id: 'other', text: 'Another hotel'},
+	{id: 'hostel', text: 'Hostel'},
+	{id: 'airbnb', text: 'AirBnb or Similar'},
+	{id: 'friend', text: 'Staying with a friend'},
+	{id: 'local', text: 'I\'m local!'},
+	{id: 'not-sure', text:'I\'m not sure yet (but I\'ll book soon!)'}
+]
 
 ap.allUsers = {}
 

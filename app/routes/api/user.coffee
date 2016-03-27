@@ -55,6 +55,24 @@ routes = (app) ->
 			else
 				res.r.me = false
 				next()
+		claim_ticket: (req, res, next) ->
+			if req.me
+				Tickets.forge().query (qb) ->
+					qb.where('user_id', req.me.get('user_id'))
+					qb.where('status', 'purchased')
+				.fetch()
+				.then (rsp) ->
+					ticket = rsp.models[0]
+					remaining = rsp.models.slice(1)
+					req.me.connectTicket(ticket)
+					.then ->
+						res.r.tickets = remaining
+						next()
+			else
+				res.status(400)
+				res.r.msg = 'No user'
+				next()
+
 
 		# Get a user
 		get: (req, res, next) ->
@@ -188,7 +206,6 @@ routes = (app) ->
 				email: post.email
 			.fetch()
 			.then (existing) ->
-				tk existing
 				if existing
 					if req.query.t?
 						giveTicket(existing)
@@ -221,6 +238,9 @@ routes = (app) ->
 
 		give_tickets: (req, res, next) ->
 			if req.query.attendees?
+				atns = []
+				for atn in req.query.attendees
+					atns.push atn if typeof object is 'object'
 				giveTicket = (user, ticket_id, cb) ->
 					Ticket.forge
 						ticket_id: ticket_id
@@ -232,7 +252,7 @@ routes = (app) ->
 								cb()
 						else
 							cb()
-				async.eachSeries req.query.attendees, (val, cb) ->
+				async.eachSeries atns, (val, cb) ->
 					userPost = _.pick val, User::permittedAttributes
 					User.forge
 						email: val.email

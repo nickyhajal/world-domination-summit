@@ -36,6 +36,7 @@ routes = (app) ->
 
 		# User
 		app.get '/me', user.me
+		app.post '/me/claim-ticket', user.claim_ticket
 		app.get '/users', user.search
 		app.patch '/user', user.update
 		app.put '/user', user.update
