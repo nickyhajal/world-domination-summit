@@ -240,7 +240,7 @@ routes = (app) ->
 			if req.query.attendees?
 				atns = []
 				for atn in req.query.attendees
-					atns.push atn if typeof object is 'object'
+					atns.push atn if typeof atn is 'object'
 				giveTicket = (user, ticket_id, cb) ->
 					Ticket.forge
 						ticket_id: ticket_id
