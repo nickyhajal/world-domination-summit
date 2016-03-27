@@ -19,8 +19,14 @@ emails =
     .then (err, rsp) ->
 
   syncEmail: ->
-    @removeFromList 'WDS '+process.year+' Attendees', @before_save['email']
-    @addToList 'WDS '+process.year+' Attendees'
+    if @get('attending'+process.yr) is '1'
+      if @get('ticket_type')?.length
+        if @get('ticket_type') is 'connect'
+          @addToList 'WDS '+process.year+' Connect'
+          @removeFromList 'WDS '+process.year+' Connect', @before_save['email']
+        else
+          @addToList 'WDS '+process.year+' Attendees'
+          @removeFromList 'WDS '+process.year+' Attendees', @before_save['email']
 
   syncEmailWithTicket: ->
     if @get('attending'+process.yr) is '1'
