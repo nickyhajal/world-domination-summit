@@ -149,7 +149,10 @@ ap.Views.connect_purchase = XView.extend
 		@claiming = true
 		ap.api 'post me/claim-ticket', {}, (rsp) =>
 			@claiming = false
-			@showCompleteTickets(rsp.tickets, true)
+			if rsp.tickets?.length
+				@showCompleteTickets(rsp.tickets, true)
+			else
+				@show('done')
 
 
 	noTicketsForMe: (e) ->
