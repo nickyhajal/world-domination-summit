@@ -3,16 +3,19 @@
 # actual routing happens by Backbone.js
 ###
 redis = require("redis")
+rds = redis.createClient()
 all_provinces = require('provinces')
 countries = require('country-data').countries
 get_templates = require('../processors/templater')
 _ = require('underscore')
 _s = require('underscore.string')
+Q = require('q')
 
 #
 
 [User, Users] = require("../models/users")
 [Transfer, Transfers] = require("../models/transfers")
+[Interest, Interests] = require("../models/interests")
 
 provinces = {}
 for province in all_provinces
@@ -65,6 +68,22 @@ routes = (app) ->
 			title: "World Domination Summit - Avatar Upload"
 			layout: false
 	app.get '/*', (req, res) ->
+		interests = false
+		getInterests =  ->
+			dfr = Q.defer()
+			rds.get 'interests', (err, interests) ->
+					if interests? and interests and typeof JSON.parse(interests) is 'object'
+						dfr.resolve(JSON.parse(interests))
+					else
+						Interests.forge().fetch()
+						.then (interests) ->
+							dfr.resolve(interests)
+							rds.set 'interests', JSON.stringify(interests), (err, rsp) ->
+								rds.expire 'interests', 10000
+				Interests.forge().fetch()
+				.then (interests) ->
+					dfr.resolve(interests)
+			return dfr.promise
 
 		me = if req.session.ident? then JSON.parse(req.session.ident) else {user_id: 0}
 		page = 'index'
@@ -82,10 +101,16 @@ routes = (app) ->
 								user.getMe()
 								.then (user) ->
 									me = JSON.stringify(user)
-									finishRender()
+									getInterests()
+									.then (_interests) ->
+										interests = _interests
+										finishRender()
 							else
 								me = false
-								finishRender()
+								getInterests()
+								.then (_interests) ->
+									interests = _interests
+									finishRender()
 
 		finishRender = ->
 			path = req.path.substr(1)
@@ -115,6 +140,7 @@ routes = (app) ->
 				loading: loading
 				year: process.year
 				yr: process.yr
+				interests: JSON.stringify(interests)
 				stripe_pk: process.env.STRIPE_PK
 				stripe_pk_test: process.env.STRIPE_PK_TEST
 				tpls: JSON.stringify(out)

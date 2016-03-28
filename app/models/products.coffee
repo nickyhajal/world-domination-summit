@@ -60,7 +60,6 @@ PRE =
 		arr = [0...+meta.post.quantity]
 		tk arr
 		async.eachSeries arr, (i, cb) ->
-			tk 'MAKE TICKET'
 			Ticket.forge
 				type: 'connect'
 				stripe_id: meta.transaction_id
@@ -119,7 +118,6 @@ POST =
 		.then (user) ->
 			async.eachSeries ids, (id, cb) ->
 				# Create the tickets
-				tk "PURCH TICKET"
 				Ticket.forge
 					ticket_id: id
 				.fetch()

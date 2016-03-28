@@ -4,20 +4,19 @@ ap.Views.InterestList = XView.extend
 		'click .interest-button': 'addInterest'
 		'click .interest-remove-button': 'removeInterest'
 	initialize: ->
-		_.whenReady 'assets', =>
-			@context = @options.context
-			@selected = []
-			@$selected = $('.interests-selected', @el)
-			@interestById = {}
-			@interestIds = []
-			for interest in ap.interests
-				@interestById[interest.interest_id] = new ap.Interest(interest)
-				@interestIds.push interest.interest_id
+		@context = @options.context
+		@selected = []
+		@$selected = $('.interests-selected', @el)
+		@interestById = {}
+		@interestIds = []
+		for interest in ap.interests
+			@interestById[interest.interest_id] = new ap.Interest(interest)
+			@interestIds.push interest.interest_id
 
-			@render()
-			if @context is 'generic'
-				@input = $('<input/>').attr('name', 'interests').attr('type', 'hidden')
-				$(@el).before(@input)
+		@render()
+		if @context is 'generic'
+			@input = $('<input/>').attr('name', 'interests').attr('type', 'hidden')
+			$(@el).before(@input)
 
 	selectedInterests: ->
 		if @context is 'user'
@@ -68,10 +67,10 @@ ap.Views.InterestList = XView.extend
 		selected = @selectedInterests()
 		selected.push interest_id
 		@setInterests(selected)
+		@render()
 
 		if @context is 'user'
 			ap.api 'post user/interest', {interest_id: interest_id}
-		@render()
 
 	removeInterest: (e) ->
 		$t = $(this)
@@ -82,7 +81,7 @@ ap.Views.InterestList = XView.extend
 		for interest in selected
 			if interest isnt interest_id
 				tmp.push interest
-		if @context is 'user'
-			ap.api 'delete user/interest', {interest_id: interest_id}
 		@setInterests(tmp)
 		@render()
+		if @context is 'user'
+			ap.api 'delete user/interest', {interest_id: interest_id}
