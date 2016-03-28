@@ -1634,6 +1634,12 @@ a.cnct-login::after {
     width:                      48%;
     border-left:                7px solid rgb(255, 255, 255);
 }
+button.connect-purchase-start {
+    margin:                     0px auto;
+    width:                      360px;
+    position:                   relative;
+    display:                    block;
+}
 input[type="submit"], .button {
     border:                     0px none;
     padding:                    8px 40px;

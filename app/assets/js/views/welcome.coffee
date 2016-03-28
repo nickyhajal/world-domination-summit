@@ -324,6 +324,7 @@ ap.Views.welcome = XView.extend
 
 	updMe: ->
 		if !(ap.me?.get('has_pw')? and ap.me.get('has_pw')) && $('input[name="new_password"]', '.tab-panel-active').is(':visible') and $('input[name="new_password"]').val().length < 5
+			tk '1'
 			btn = $('#tab-panel-the-basics .tab-save-next')
 			original_btn_val = btn.html()
 			btn.html('Your password should be at least 6 characters.').addClass('btn-error')
@@ -332,6 +333,7 @@ ap.Views.welcome = XView.extend
 			, 2000
 			return false
 		else
+			tk '2'
 			onTab = ($('.tab-panel-active').index()-1)
 			if ap.me.get('intro') < onTab
 				ap.me.set('intro', onTab-1)

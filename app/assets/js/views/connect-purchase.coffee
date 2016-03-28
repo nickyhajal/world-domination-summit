@@ -2,6 +2,8 @@ ap.Views.connect_purchase = XView.extend
 	charging: false
 	claiming: false
 	giving: false
+	newAccount: false
+	names: []
 	events:
 		'click .cnct-cnct-account': 'showCreateAccount'
 		'click .show-panel': 'showEvent'
@@ -148,18 +150,16 @@ ap.Views.connect_purchase = XView.extend
 		return if @claiming
 		@claiming = true
 		ap.api 'post me/claim-ticket', {}, (rsp) =>
+			newAccount = true
 			@claiming = false
 			if rsp.tickets?.length
 				@showCompleteTickets(rsp.tickets, true)
 			else
 				@show('done')
-
-
 	noTicketsForMe: (e) ->
 		e.stopPropagation()
 		e.preventDefault()
 		@showCompleteTickets(@tickets)
-
 	giveTickets: (e) ->
 		e.preventDefault()
 		e.stopPropagation()
@@ -175,10 +175,17 @@ ap.Views.connect_purchase = XView.extend
 			inx = (+inx) - 1
 			unless post.attendees[inx]?
 				post.attendees[inx] = {}
+			if key == 'first_name'
+				@names.push val
 			post.attendees[inx][key] = val
+		names = _.replaceLast @names.join(', '), ', ', ' & '
+		$('.sent-to-names').html names
 		ap.api 'post user/tickets', post, (rsp) =>
 			@giving = false
-			@show('done')
+			if @newAccount
+				@show('done')
+			else
+				@show('done-no-account')
 
 	done: (e) ->
 		e.preventDefault()

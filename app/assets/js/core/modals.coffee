@@ -7,6 +7,7 @@ ap.Modals.init = ->
 	$('body')
 	.on('keyup', ap.Modals.key)
 	.on('click', '.modal-close', ap.Modals.close)
+	.on('click', '.modal-closer', ap.Modals.close)
 	$('#modals').scan()
 
 ap.Modals.open = (modal, opts = {}) ->

@@ -22,6 +22,11 @@ _d.btn = (el, during, done, reset = 1200) ->
 			, reset
 	}
 
+_d.replaceLast = (str, what, replacement) ->
+  pcs = str.split(what)
+  lastPc = pcs.pop()
+  return pcs.join(what) + replacement + lastPc
+
 _d.autop = (str) ->
 	return '<p>' + str.replace(/\n/g, '</p><p>') + '</p>'
 

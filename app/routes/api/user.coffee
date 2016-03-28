@@ -395,9 +395,11 @@ routes = (app) ->
 									secret: accessTokenSecret
 								login.save()
 								.then (login) ->
+									intro = +req.me.get('intro') + 1
 									req.me.set
 										twitter: rsp.screen_name
 										pic: rsp.profile_image_url_https
+										intro: intro
 									req.me.save()
 									.then ->
 										request 'http://avatar.wds.fm/flush/'+req.me.get('user_id'), (error, response, body) ->
