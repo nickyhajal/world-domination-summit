@@ -22,6 +22,7 @@ ap.Views.welcome = XView.extend
 	initialize: ->
 		ap.loading(true)
 		if ap.me.get('intro') >= ap.WELCOME_STEPS
+			ap.loading(false)
 			ap.navigate('settings')
 		else
 			# @options.sidebar = 'welcome'
@@ -234,7 +235,6 @@ ap.Views.welcome = XView.extend
 			, 1000
 
 	interestButtonClicked: ->
-		tk 'clicked'
 		panel = $('#tab-panel-interests')
 		panel.css 'height', 'auto'
 		height = panel.outerHeight()
