@@ -126,6 +126,8 @@ routes = (app) ->
 							delete user.password
 							delete user.hash
 							delete user.tickets
+							if user.get('user_name').length is 40
+								user.set('user_name', '')
 							dfr.resolve(user)
 				else
 					dfr.resolve(false)
