@@ -3644,11 +3644,15 @@ p.color-blue {
 .meetup-descr p {
     width:                      400px ! important;
 }
+#page_content li {
+    line-height:                150%;
+    margin-bottom:              6px;
+}
 #page_content p {
     font-family:                karla;
+    font-size:                  16px;
     line-height:                150%;
     margin-bottom:              25px;
-    font-size:                  16px;
     width:                      580px;
 }
 #page-foundation li {
@@ -3667,6 +3671,7 @@ p.color-blue {
 }
 p, li {
     margin-top:                 0px;
+    font-family:                karla;
 }
 header#main-header {
     background:                 rgb(177, 186, 30) none repeat scroll 0% 0%;
@@ -4907,8 +4912,8 @@ span.answer_start {
     clear:                      both;
 }
 .file-upload-container {
-    width:                      400px;
     background:                 rgb(242, 242, 234) none repeat scroll 0% 0%;
+    width:                      100%;
 }
 .file-upload-override-button {
     overflow:                   hidden;

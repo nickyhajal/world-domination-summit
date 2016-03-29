@@ -431,8 +431,12 @@ div.note-shell {
 div.tab-prev-btn, div.tab-next-btn {
     background:                 transparent none repeat scroll 0% 0%;
 }
+div.tab-panel-prev, div.tab-panel-next {
+    display:                    none;
+}
 div.tab-panel {
     padding:                    12px 24px;
+    height:                     auto ! important;
 }
 #tab-panel-the-basics span.sub-label {
     display:                    none;
@@ -498,6 +502,9 @@ div.cnct-quantity {
 }
 div.cnct-ticket-sale {
     margin-bottom:              88px;
+}
+button.connect-purchase-start {
+    width:                      100%;
 }
 * {
     line-height:                inherit;

@@ -306,7 +306,11 @@ routes = (app) ->
 							else
 								next()
 						, (err) ->
+							res.r.err = err.clientError
+							msg = err.message.split(',')
+							res.r.err_msg = msg[0]
 							console.error(err)
+							next()
 			else
 				res.status(401)
 				next()

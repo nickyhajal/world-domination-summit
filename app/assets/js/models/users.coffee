@@ -14,6 +14,8 @@ ap.User = window.XModel.extend
 	url: '/api/user'
 	initialize: (opts = {})->
 		@set('pic', 'http://avatar.wds.fm/'+@get('user_id'))
+		if @get('user_name').length is 40
+			@set('user_name', '')
 		@trackChangesSinceSave()
 
 		# This should be done once on the server

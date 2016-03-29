@@ -213,8 +213,9 @@ a#small-logo {
     width:                      30px;
     margin-left:                auto;
     margin-right:               auto;
-    margin-top:                 -3px;
     left:                       0px;
+    margin-top:                 -3px;
+    top:                        9px;
 }
 div#sidebar-shell {
     display:                    none ! important;

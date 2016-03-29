@@ -86,7 +86,6 @@ ap.Views.connect_purchase = XView.extend
 		p = 'Your purchase was succesful! Is this ticket for you or someone else?'
 		btnyes = 'Yup, it\'s for me!'
 		btnno = 'No, it\'s for someone else.'
-		tk tickets
 		if tickets.length > 1
 			h3 = 'Is one of these tickets for you?'
 			p = 'Your purchase was succesful! Is one of these tickets for you?'
@@ -150,7 +149,7 @@ ap.Views.connect_purchase = XView.extend
 		return if @claiming
 		@claiming = true
 		ap.api 'post me/claim-ticket', {}, (rsp) =>
-			newAccount = true
+			@newAccount = true
 			@claiming = false
 			if rsp.tickets?.length
 				@showCompleteTickets(rsp.tickets, true)
@@ -182,6 +181,7 @@ ap.Views.connect_purchase = XView.extend
 		$('.sent-to-names').html names
 		ap.api 'post user/tickets', post, (rsp) =>
 			@giving = false
+			tk @newAccount
 			if @newAccount
 				@show('done')
 			else
