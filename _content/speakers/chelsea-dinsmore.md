@@ -1,5 +1,5 @@
 icon: map
-photo_head: https://farm4.staticflickr.com/3743/9231403243_9fe13f2384_c.jpg
+photo_head: https://farm1.staticflickr.com/350/19642509746_4e8b419f5a_k.jpg
 
 ## 2016 Speaker
 
