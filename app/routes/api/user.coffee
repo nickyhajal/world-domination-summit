@@ -155,8 +155,8 @@ routes = (app) ->
 				.then (byF) ->
 					doQuery('last_name', term+'%')
 					.then (byL) ->
+						tk byF.models.length
 						tk byL.models.length
-						tk byF.models
 						# doQuery('email', '%'+term+'%')
 						# .then (byE) ->
 						# 	tk 'all here'
