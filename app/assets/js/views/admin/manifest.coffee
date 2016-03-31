@@ -72,6 +72,7 @@ ap.Views.admin_manifest = XView.extend
 			years = $('#manifest-year-select').val()
 			types = $('#manifest-type-select').val()
 			ap.api 'get users', {search: val, years: years, types: types}, (rsp) ->
+					user_name = if atn.get('user_name').length then atn.get('user_name') else atn.get('hash')
 					html = ''
 					for atn in rsp.users
 						atn = new ap.User(atn)
@@ -80,7 +81,7 @@ ap.Views.admin_manifest = XView.extend
 							<td>
 								<div class="manifest-avatar" style="background:url('+atn.get('pic')+')"></div>
 								<span>'+atn.get('first_name')+' '+atn.get('last_name')+'</span>
-								<div class="user_name">'+atn.get('user_name')+'</div>
+								<div class="user_name">'+user_name+'</div>
 							</td>
 							<td>'+atn.get('email')+'</td>'
 					$('#manifest-results').html(html)
