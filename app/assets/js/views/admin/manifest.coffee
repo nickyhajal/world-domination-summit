@@ -76,12 +76,13 @@ ap.Views.admin_manifest = XView.extend
 					for atn in rsp.users
 						atn = new ap.User(atn)
 						type = 'type-'+atn.get('ticket_type')
-						user_name = if atn.get('user_name').length then atn.get('user_name') else atn.get('hash')
-						html += '<tr data-user="'+atn.get('user_name')+'" class="'+type+'">
+						user_name_row = if atn.get('user_name').length then atn.get('user_name') else 'Hasn\'t Setup Account'
+						user_name_link = if atn.get('user_name').length then atn.get('user_name') else atn.get('hash')
+						html += '<tr data-user="'+user_name_link+'" class="'+type+'">
 							<td>
 								<div class="manifest-avatar" style="background:url('+atn.get('pic')+')"></div>
 								<span>'+atn.get('first_name')+' '+atn.get('last_name')+'</span>
-								<div class="user_name">'+user_name+'</div>
+								<div class="user_name">'+user_name_row+'</div>
 							</td>
 							<td>'+atn.get('email')+'</td>'
 					$('#manifest-results').html(html)
