@@ -1,5 +1,5 @@
 icon: coins
-photo_head: https://farm4.staticflickr.com/3743/9231403243_9fe13f2384_c.jpg
+photo_head: https://farm8.staticflickr.com/7438/9242331680_8926700e54_b.jpg
 
 ## 2016 Speaker
 
