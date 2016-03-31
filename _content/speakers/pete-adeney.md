@@ -1,4 +1,4 @@
-icon: map
+icon: coins
 photo_head: https://farm4.staticflickr.com/3743/9231403243_9fe13f2384_c.jpg
 
 ## 2016 Speaker
