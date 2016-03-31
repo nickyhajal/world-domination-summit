@@ -153,17 +153,16 @@ routes = (app) ->
 			async.each req.query.search.split(' '), (term, cb) ->
 				doQuery('first_name', term+'%')
 				.then (byF) ->
-					tk byF.models.length
 					doQuery('last_name', term+'%')
 					.then (byL) ->
 						tk byL.models.length
+						tk byF.models
 						# doQuery('email', '%'+term+'%')
 						# .then (byE) ->
 						# 	tk 'all here'
 						for f in byF.models
 							id = f.get('user_id')
 							tk id
-							tk all
 							all[id] = f.attributes unless all[id]
 							if all[id].score? then all[id].score += 2 else (all[id].score = 4)
 						for l in byL.models
