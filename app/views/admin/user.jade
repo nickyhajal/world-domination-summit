@@ -48,13 +48,19 @@ div(id="user-manifest-shell")
 					input(type="text", name="zip", value="{{ zip }}")
 			div(class="form-section")
 				div(class="form-box")
-					label Type
+					label Attendee Type
 					select(name="type", class="select2", style="width: 300px")
 						option(value="attendee") Attendee
 						option(value="ambassador") Ambassador
 						option(value="potential-ambassador") Potential Ambassador
 						option(value="staff") Staff
 						option(value="speaker") Speaker
+				div(class="form-box")
+					label Ticket Type
+					select(name="ticket_type", class="select2", style="width: 300px")
+						option(value="360") 360
+						option(value="connect") Connect
+			div(class="form-section")
 				div(class="form-box")
 					label SuperPowers
 					input(type="hidden" name="capabilities_update" value="yes")
