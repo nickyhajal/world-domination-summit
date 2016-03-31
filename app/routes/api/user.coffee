@@ -154,6 +154,7 @@ routes = (app) ->
 				doQuery('first_name', term+'%')
 				.then (rsp) ->
 					byF = rsp
+					tk byF.models.length
 					doQuery('last_name', term+'%')
 					.then (byL) ->
 						tk byF.models.length
