@@ -153,7 +153,7 @@ routes = (app) ->
 			async.each req.query.search.split(' '), (term, cb) ->
 				doQuery('first_name', term+'%')
 				.then (rsp) ->
-					byF = rsp
+					byF = JSON.parse(JSON.stringify(rsp))
 					tk byF.models.length
 					doQuery('last_name', term+'%')
 					.then (byL) ->
