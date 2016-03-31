@@ -26,7 +26,7 @@ div(id="page_content")
 			p Make sure the address we have for you is accurate
 			div(class="form-section")
 				div(class="form-box")
-					label Country 
+					label Country
 					input(type="hidden", name="country", id="country-select", class="model-me")
 			div(class="form-section")
 				div(class="form-box")
@@ -48,13 +48,6 @@ div(id="page_content")
 					input(type="text", name="zip", class="model-me")
 			div(class="clear")
 
-			h3 Privacy: We Respect It!
-			p We want to show off that you're traveling {{ distance }} miles from {{ location }}
-			div(class="form-section")
-				label Is it cool if we use your location around the site?
-				select(class="box-select model-me", name="pub_loc")
-					option(value="1") Yep, sounds awesome!
-					option(value="0") No, thanks.
 			a(href="#", class="tab-next button") Save & Continue
 
 		div(id="tab-panel-more-about-you", class="tab-panel")
@@ -83,7 +76,7 @@ div(id="page_content")
 			a(href="#", class="tab-next button") Save & Continue
 
 		div(id="tab-panel-around-the-web", class="tab-panel")
-			h2 Connect 
+			h2 Connect
 			h3 Where Can We Find You on the Web?
 			div(class="form-section")
 				div(class="twitter-connected")
@@ -95,7 +88,7 @@ div(id="page_content")
 						div(class="clear")
 				div(class="twitter-not-connected")
 					label Click Below to Connect to Twitter
-					a(href="/api/user/twitter/connect", class="button") Connect to Twitter 
+					a(href="/api/user/twitter/connect", class="button") Connect to Twitter
 
 			div(class="form-section")
 				label Facebook Username

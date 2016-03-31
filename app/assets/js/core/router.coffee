@@ -110,6 +110,10 @@ ap.syncNav = (panel) ->
 ###
 ap.goTo = (panel = '', options = {}, cb = false) ->
 	# Go to the panel
+	if panel.indexOf('admin_') > -1
+		$('body').addClass('is-admin')
+	else
+		$('body').removeClass('is-admin')
 	panel = if panel and panel.length then _.trim(panel, '/') else 'home'
 	$s = $('#')
 	ap.onPanel = panel

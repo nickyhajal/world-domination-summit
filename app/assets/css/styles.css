@@ -2400,6 +2400,31 @@ div.dispatch-loading {
 .search-results div.speaker-avatar {
     margin-bottom:              0px;
 }
+tr.type-connect td div.manifest-avatar::before {
+    background:                 rgb(177, 186, 30) none repeat scroll 0% 0%;
+}
+td div.manifest-avatar::before {
+    content:                    "";
+    position:                   absolute;
+    border-radius:              50%;
+    -moz-border-radius:         50%;
+    -webkit-border-radius:      50%;
+    width:                      10px;
+    height:                     10px;
+    border:                     2px solid rgb(255, 255, 255);
+    left:                       -6px;
+    top:                        -3px;
+    background:                 rgb(226, 127, 28) none repeat scroll 0px 0px;
+}
+td div.manifest-avatar {
+    box-sizing:                 border-box;
+    -moz-box-sizing:            border-box;
+    -webkit-box-sizing:         border-box;
+    height:                     34px;
+    left:                       -18px;
+    top:                        1px;
+    width:                      34px;
+}
 div.manifest-avatar, #speaker-results .speaker-avatar, .search-avatar, #ambassador-results {
     background-size:            100% auto ! important;
     -webkit-background-size:    100% auto ! important;
@@ -2539,6 +2564,13 @@ div.active-ticket {
     background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     width:                      300px;
     padding:                    20px;
+}
+a.enable-ticket:first-of-type {
+    margin-right:               8px;
+}
+div.active-ticket a.enable-ticket {
+    float:                      left;
+    width:                      125px ! important;
 }
 div.active-ticket a {
     width:                      100% ! important;
@@ -3520,6 +3552,9 @@ div.give-ticket-row {
     background:                 rgb(252, 252, 249) none repeat scroll 0% 0%;
     border:                     2px solid rgb(239, 239, 233);
 }
+div.manifest-search-controls {
+    margin-top:                 4px;
+}
 * {
     box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
@@ -3673,6 +3708,9 @@ p, li {
     margin-top:                 0px;
     font-family:                karla;
 }
+.is-admin header#main-header {
+    margin-top:                 2px;
+}
 header#main-header {
     background:                 rgb(177, 186, 30) none repeat scroll 0% 0%;
     margin-top:                 41px;
@@ -3683,6 +3721,9 @@ header#main-header {
     height:                     310px;
 }
 #page-welcome nav#top-nav, #page-empty nav#top-nav {
+    display:                    none;
+}
+.is-admin nav#top-nav {
     display:                    none;
 }
 nav#top-nav {
@@ -4981,7 +5022,7 @@ span.answer_start {
     z-index:                    -1;
 }
 .select2-container {
-    margin:                     0px;
+    margin:                     0px 4px 0px 0px;
     position:                   relative;
     display:                    inline-block;
     vertical-align:             middle;
@@ -5360,7 +5401,7 @@ span.answer_start {
     padding:                    3px 5px ! important;
 }
 .select2-container-multi .select2-choices {
-    min-height:                 37px;
+    min-height:                 34px;
 }
 .select2-container-multi .select2-choices li {
     float:                      left;
@@ -5394,24 +5435,16 @@ html[dir="rtl"] .select2-container-multi .select2-choices li {
     color:                      rgb(153, 153, 153) ! important;
 }
 .select2-container-multi .select2-choices .select2-search-choice {
-    padding:                    3px 5px 3px 18px;
-    margin:                     3px 0px 3px 5px;
     position:                   relative;
-    line-height:                13px;
     color:                      rgb(51, 51, 51);
     cursor:                     default;
-    border:                     1px solid rgb(170, 170, 170);
-    border-radius:              3px;
-    -moz-border-radius:         3px;
-    -webkit-border-radius:      3px;
-    box-shadow:                 0px 0px 2px rgb(255, 255, 255) inset, 0px 1px 0px rgba(0, 0, 0, 0.05);
-    -moz-box-shadow:            0px 0px 2px rgb(255, 255, 255) inset, 0px 1px 0px rgba(0, 0, 0, 0.05);
-    -webkit-box-shadow:         0px 0px 2px rgb(255, 255, 255) inset, 0px 1px 0px rgba(0, 0, 0, 0.05);
     background-clip:            padding-box;
     -webkit-background-clip:    padding-box;
     -moz-user-select:           none;
-    background-color:           rgb(228, 228, 228);
-    background-image:           linear-gradient(to top, rgb(244, 244, 244) 20%, rgb(240, 240, 240) 50%, rgb(232, 232, 232) 52%, rgb(238, 238, 238) 100%);
+    background-color:           rgb(217, 216, 204);
+    margin:                     4px 4px 0px 3px ! important;
+    line-height:                13px ! important;
+    padding:                    10px 10px 11px 18px;
 }
 html[dir="rtl"] .select2-container-multi .select2-choices .select2-search-choice {
     margin-left:                0px;
@@ -5428,11 +5461,11 @@ html[dir="rtl"] .select2-container-multi .select2-choices .select2-search-choice
     width:                      12px;
     height:                     13px;
     position:                   absolute;
-    right:                      3px;
-    top:                        4px;
     font-size:                  1px;
     outline:                    medium none;
     background:                 transparent url("select2.png") no-repeat scroll right top;
+    right:                      3px;
+    top:                        11px;
 }
 html[dir="rtl"] .select2-search-choice-close {
     right:                      auto;

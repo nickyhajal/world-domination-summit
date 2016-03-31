@@ -6,6 +6,7 @@ twitterAPI = require('node-twitter-api')
 fs = require('fs')
 crypto = require('crypto')
 gm = require('gm')
+Q = require('q')
 mkdirp = require('mkdirp')
 request = require('request')
 
@@ -110,36 +111,66 @@ routes = (app) ->
 		search: (req, res, next) ->
 			_Users = Users.forge()
 			all = {}
+			types = req.query.types?.split(',')
+			years = req.query.years?.split(',')
+			doQuery = (col, q = false) ->
+				dfr = Q.defer()
+				_Users.query (qb) ->
+					where = ''
+					params = []
+					if q
+						where += col+' LIKE ?'
+						params.push q
+					if req.query.types.length
+						if q
+							where += ' AND '
+						where += 'ticket_type IN ('
+						c = false
+						for t in types
+							where += ', ' if c
+							where += '?'
+							params.push t
+							c = true
+						where += ')'
+					if years.length
+						if q and req.query.types.length
+							where += ' AND ('
+						c = false
+						for y in years
+							where += ' OR ' if c
+							where += 'attending'+y+ '= ?'
+							params.push '1'
+							c = true
+						where += ')'
+					qb.whereRaw(where, params)
+				.fetch()
+				.then (rsp) ->
+					dfr.resolve(rsp)
+				, (err) ->
+					console.error(err)
+				return dfr.promise
 
 			async.each req.query.search.split(' '), (term, cb) ->
-				_Users
-				.query('orWhere', 'first_name', 'LIKE', term+'%')
-				.query('where', 'attending'+process.yr, '=', '1')
-				_Users.fetch()
+				doQuery('first_name', term+'%')
 				.then (byF) ->
-					_Users = Users.forge()
-					_Users.query('orWhere', 'last_name', 'LIKE', term+'%')
-					.query('where', 'attending'+process.yr, '=', '1')
-					.fetch()
+					doQuery('last_name', term+'%')
 					.then (byL) ->
-						_Users = Users.forge()
-						_Users.query('orWhere', 'email', 'LIKE', '%'+term+'%')
-						.query('where', 'attending'+process.yr, '=', '1')
-						_Users.fetch()
-						.then (byE) ->
-							for f in byF.models
-								id = f.get('user_id')
-								all[id] = f.attributes unless all[id]
-								if all[id].score? then all[id].score += 2 else (all[id].score = 4)
-							for l in byL.models
-								id = l.get('user_id')
-								all[id] = l.attributes unless all[id]
-								if all[id].score? then all[id].score += 5 else (all[id].score = 1)
-							# for e in byE.models
-							# 	id = e.get('user_id')
-							# 	all[id] = e.attributes unless all[id]
-							# 	if all[id].score? then all[id].score += 1 else (all[id].score = 1)
-							cb()
+						# doQuery('email', '%'+term+'%')
+						# .then (byE) ->
+						# 	tk 'all here'
+						for f in byF.models
+							id = f.get('user_id')
+							all[id] = f.attributes unless all[id]
+							if all[id].score? then all[id].score += 2 else (all[id].score = 4)
+						for l in byL.models
+							id = l.get('user_id')
+							all[id] = l.attributes unless all[id]
+							if all[id].score? then all[id].score += 5 else (all[id].score = 1)
+						# for e in byE.models
+						# 	id = e.get('user_id')
+						# 	all[id] = e.attributes unless all[id]
+						# 	if all[id].score? then all[id].score += 1 else (all[id].score = 1)
+						cb()
 			, (err) ->
 				sortable = []
 				for id,user of all
@@ -323,10 +354,14 @@ routes = (app) ->
 				User.forge(query)
 				.fetch()
 				.then (user) ->
-					CredentialChange
-					.forge()
-					.create(user, req.headers['x-real-ip'])
-					.then (rsp) ->
+					if user
+						CredentialChange
+						.forge()
+						.create(user, req.headers['x-real-ip'])
+						.then (rsp) ->
+							next()
+					else
+						res.r.not_existing = true
 						next()
 			else if req.query.hash? && req.query.password?
 				CredentialChange.forge({hash: req.query.hash})

@@ -7,7 +7,7 @@ marked = require('marked')
 execFile = require('child_process').execFile;
 expire = 3600
 if process.env.NODE_ENV is 'development'
-	expire = 3600
+	expire = 0
 
 get_templates = (tpls, type, cb) ->
 	rds.get 'tpls_'+type, (err, existing_tpls) ->

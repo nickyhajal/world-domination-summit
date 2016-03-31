@@ -77,19 +77,21 @@ ap.Views.admin_user = XView.extend
 			ap.me.set('region', '')
 
 	initTickets: ->
-		if @user.get('attending'+ap.yr) is '1'
-			text = 'Attending WDS '+ap.year
-			clss = 'cancel-ticket'
-			action = 'Cancel'
+		if +@user.get('attending'+ap.yr) > 0
+			type = if @user.get('ticket_type') is 'connect' then 'Connect' else '360'
+			text = 'Attending WDS '+type
+			btn = '<a href="#" class="cancel-ticket toggle-ticket button">Cancel Ticket</a>'
 		else
 			text = 'Not Attending WDS '+ap.year
-			clss = 'enable-ticket'
-			action = 'Give'
+			btn = '
+				<a href="#" class="enable-ticket toggle-ticket button" data-type="360">Give 360</a>
+				<a href="#" class="enable-ticket toggle-ticket button" data-type="connect">Give Connect</a>
+			'
 
 		$('.ticket-shell').html('
 			<div class="active-ticket">
-				<h4>'+text+'</h4>
-				<a href="#" class="'+clss+' toggle-ticket button">'+action+' Ticket</a>
+				<h4>'+text+'</h4>'+btn+'
+				<div class="clear"></div>
 			</div>
 		')
 
@@ -143,14 +145,18 @@ ap.Views.admin_user = XView.extend
 		clearTimeout(@ticketTimo)
 		if el.hasClass('cancel-ticket')
 			val = '-1'
+			type = ''
 		else
 			val = '1'
+			type = el.data('type')
 		post =
 			admin: 1
 			user_id: @user.get('user_id')
 		post['attending'+ap.yr] = val
+		post['ticket_type'] = type
 		@user
 		.set('attending'+ap.yr, val)
+		.set('ticket_type', type)
 		.save(post, {patch: true})
 		@initTickets()
 

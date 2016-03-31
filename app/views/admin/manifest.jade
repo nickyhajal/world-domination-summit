@@ -4,6 +4,9 @@ div(id="manifest-shell")
 		a(href="/admin/add-attendee", class="button") Add an Attendee
 	h1 WDS Manifest
 	input(type="text", class="manifest-search", placeholder="Search Attendees by name, email or username")
+	div(class="manifest-search-controls")
+		input(id="manifest-year-select", type="hidden")
+		input(id="manifest-type-select", type="hidden")
 	div(id="manifest-start")
 		| Type an attendees name, email or username above to begin
 	table(id="manifests-results-shell")

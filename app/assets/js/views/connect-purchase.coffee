@@ -57,6 +57,7 @@ ap.Views.connect_purchase = XView.extend
 				if rsp.error
 					$('.cc-error').show().html rsp.error.message
 					@processing(false)
+					$.scrollTo(0)
 					setTimeout ->
 						$('.cc-error').hide()
 					, 10000
@@ -76,6 +77,7 @@ ap.Views.connect_purchase = XView.extend
 				if rsp.existing?
 					@processing(false)
 					$('.cc-error').show().html 'That email is in our system. <a href="#" class="show-panel" data-panel="login">Click here to login.</a>'
+					$.scrollTo(0)
 				else
 					ap.api 'get me', {}, (rsp) =>
 						ap.login(rsp.me)
