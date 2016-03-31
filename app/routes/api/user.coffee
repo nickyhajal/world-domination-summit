@@ -175,6 +175,7 @@ routes = (app) ->
 						cb()
 			, (err) ->
 				sortable = []
+				tk all
 				for id,user of all
 					sortable.push user
 				sortable.sort (a, b) ->
