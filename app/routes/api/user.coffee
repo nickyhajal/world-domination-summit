@@ -153,8 +153,10 @@ routes = (app) ->
 			async.each req.query.search.split(' '), (term, cb) ->
 				doQuery('first_name', term+'%')
 				.then (byF) ->
+					tk byF.models.length
 					doQuery('last_name', term+'%')
 					.then (byL) ->
+						tk byL.models.length
 						# doQuery('email', '%'+term+'%')
 						# .then (byE) ->
 						# 	tk 'all here'
