@@ -152,21 +152,17 @@ routes = (app) ->
 
 			async.each req.query.search.split(' '), (term, cb) ->
 				doQuery('first_name', term+'%')
-				.then (rsp) ->
-					byF = JSON.parse(JSON.stringify(rsp))
-					tk byF.models.length
+				.then (byF) ->
+					for f in byF.models
+						id = f.get('user_id')
+						tk id
+						all[id] = f.attributes unless all[id]
+						if all[id].score? then all[id].score += 2 else (all[id].score = 4)
 					doQuery('last_name', term+'%')
 					.then (byL) ->
-						tk byF.models.length
-						tk byL.models.length
 						# doQuery('email', '%'+term+'%')
 						# .then (byE) ->
 						# 	tk 'all here'
-						for f in byF.models
-							id = f.get('user_id')
-							tk id
-							all[id] = f.attributes unless all[id]
-							if all[id].score? then all[id].score += 2 else (all[id].score = 4)
 						for l in byL.models
 							id = l.get('user_id')
 							all[id] = l.attributes unless all[id]
