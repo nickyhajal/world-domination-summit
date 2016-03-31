@@ -1,5 +1,5 @@
 icon: compass
-photo_head: https://farm4.staticflickr.com/3743/9231403243_9fe13f2384_c.jpg
+photo_head: https://farm4.staticflickr.com/3678/19429978639_b29dcdd402_h.jpg
 
 ## 2016 Speaker
 
