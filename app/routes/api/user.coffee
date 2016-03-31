@@ -162,6 +162,8 @@ routes = (app) ->
 						# 	tk 'all here'
 						for f in byF.models
 							id = f.get('user_id')
+							tk id
+							tk all
 							all[id] = f.attributes unless all[id]
 							if all[id].score? then all[id].score += 2 else (all[id].score = 4)
 						for l in byL.models
