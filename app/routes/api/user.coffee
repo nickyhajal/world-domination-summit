@@ -152,7 +152,8 @@ routes = (app) ->
 
 			async.each req.query.search.split(' '), (term, cb) ->
 				doQuery('first_name', term+'%')
-				.then (byF) ->
+				.then (rsp) ->
+					byF = rsp
 					doQuery('last_name', term+'%')
 					.then (byL) ->
 						tk byF.models.length
