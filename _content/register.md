@@ -1,7 +1,9 @@
 icon: globe
-# Sorry, main stage tickets for WDS 2016 have sold out. But it's not too late to join us!
+# WDS is growing! For the first time in history, we're inviting everyone to join us for an all-new experience called WDS Connect.
 
-This year we're extending the WDS activities into the days before and after the main stage event and inviting even more people to participate in the WDS experience. Information about these activities, super-meetups, and a special "WDS Connect" ticket will be announced soon.
+Our main stage (now called "360") experience is sold out, but you can still participate in dozens of meetups, group conversations, and even a spectactular closing party at the end of the week. Click the button below for all the details.
+
+<a href="/connect" class="register-banner">WDS Connect Registration</a>
 
 <!--<div class="line-canvas"></div>
 
@@ -11,7 +13,7 @@ Until this round of tickets is sold out, you can register through the link below
 
 <a href="http://wds2016.eventbrite.com" target ="_blank" class="button">Register &rarr;</a>
 
-After this sale, we won’t offer any additional main stage tickets. We hope you'll join us if you haven't already planned to, and we hope you'll tell your friends and family to sign up too. -->
+After this sale, we won’t offer any additional main stage tickets. We hope you'll join us if you haven't already planned to, and we hope you'll tell your friends and family to sign up too.
 
 If you'd definitely like to attend our 2016 event and want to purchase a WDS Connect ticket when they're available, use the form below to put your name on the waiting list.
 
@@ -42,3 +44,4 @@ If you'd definitely like to attend our 2016 event and want to purchase a WDS Con
 
                <div style="display: none;"><img src="http://forms.aweber.com/form/displays.htm?id=jIyszJyMDOys7A==" alt="" /></div>
      </form>
+ -->
