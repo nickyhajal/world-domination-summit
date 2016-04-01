@@ -1466,19 +1466,22 @@ a.send-tweet {
     width:                      250px;
     margin-top:                 -3px;
 }
-a.btn-error {
-    background:                 rgb(227, 47, 28) none repeat scroll 0% 0%;
+#page-welcome #content_shell a.btn-error {
+    background:                 rgb(227, 47, 28) none repeat scroll 0px 0px;
     font-size:                  14px ! important;
+    width:                      360px;
+    padding:                    11px 0px ! important;
 }
 #page-welcome a.button, #page-settings a.button {
     display:                    block;
     text-align:                 center;
     position:                   relative;
     clear:                      both;
-    padding:                    7px 0px ! important;
     width:                      250px;
     top:                        0px;
     font-size:                  20px;
+    white-space:                nowrap;
+    padding:                    7px 20px ! important;
 }
 input.photo-submit {
     width:                      400px;
@@ -2416,7 +2419,10 @@ td div.manifest-avatar::before {
     top:                        -3px;
     background:                 rgb(226, 127, 28) none repeat scroll 0px 0px;
 }
-td div.manifest-avatar {
+html td div.transaction-avatar {
+    top:                        7px;
+}
+td div.manifest-avatar, td div.transaction-avatar {
     box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
     -webkit-box-sizing:         border-box;
@@ -2425,7 +2431,7 @@ td div.manifest-avatar {
     top:                        1px;
     width:                      34px;
 }
-div.manifest-avatar, #speaker-results .speaker-avatar, .search-avatar, #ambassador-results {
+div.manifest-avatar, #speaker-results .speaker-avatar, .search-avatar, #ambassador-results, div.transaction-avatar {
     background-size:            100% auto ! important;
     -webkit-background-size:    100% auto ! important;
     border-radius:              50%;
@@ -2438,7 +2444,13 @@ div.manifest-avatar, #speaker-results .speaker-avatar, .search-avatar, #ambassad
     width:                      30px;
     top:                        5px;
 }
-#manifest-shell td, .search-shell th {
+#transactions-shell td:first-of-type {
+    padding:                    5px 0px ! important;
+}
+#transactions-shell td {
+    padding:                    0px 20px ! important;
+}
+#manifest-shell td, .search-shell th, #transactions-shell td {
     font-family:                karla;
     text-align:                 center;
     vertical-align:             middle ! important;
@@ -2452,7 +2464,7 @@ table#manifests-results-shell thead th, table#manifests-results-shell tfoot th, 
 #events-shell #event-review-results tr:nth-of-type(4n) {
     background:                 rgb(255, 254, 249) none repeat scroll 0px 0px ! important;
 }
-#manifest-results tr:nth-of-type(2n), .search-results tr:nth-of-type(2n) {
+#manifest-results tr:nth-of-type(2n), .search-results tr:nth-of-type(2n), #transaction-results tr:nth-of-type(2n) {
     background:                 rgb(248, 246, 236) none repeat scroll 0px 0px;
 }
 #schedule-shell tr td:first-of-type {
@@ -2477,7 +2489,7 @@ td.search-actions {
     padding:                    10px;
     font-family:                karla;
 }
-.manifest-results tr, .search-results tr {
+.manifest-results tr, .search-results tr, #transaction-results tr {
     background:                 rgb(239, 238, 229) none repeat scroll 0% 0%;
     cursor:                     pointer;
 }
@@ -2487,7 +2499,10 @@ table#manifests-results-shell, .search-results-shell {
     width:                      90%;
     margin-top:                 1px;
 }
-#manifest-results tr td:first-of-type, .search-results tr td:first-of-type {
+html #transaction-results tr td:first-of-type {
+    width:                      360px ! important;
+}
+#manifest-results tr td:first-of-type, .search-results tr td:first-of-type, #transaction-results tr td:first-of-type {
     text-align:                 left;
     width:                      400px ! important;
 }
@@ -2514,13 +2529,17 @@ table#manifests-results-shell, .search-results-shell {
     font-size:                  11pt;
     height:                     44px;
 }
-#manifest-results tr td:first-of-type span, .search-results tr td:first-of-type span {
+#transaction-results tr td:first-of-type span {
+    height:                     37px ! important;
+    top:                        -4px ! important;
+}
+#manifest-results tr td:first-of-type span, .search-results tr td:first-of-type span, #transaction-results tr td:first-of-type span {
     display:                    table-cell;
     height:                     40px;
     position:                   relative;
     vertical-align:             middle;
 }
-#manifest-results tr:hover, .search-results tr:hover {
+#manifest-results tr:hover, .search-results tr:hover, #transaction-results tr:hover {
     opacity:                    0.9;
     -ms-filter:                 "alpha(opacity=90)";
     filter:                     alpha(opacity=90);
@@ -2531,6 +2550,11 @@ div#manifest-start, div.search-start {
     text-align:                 center;
     font-size:                  21px;
     width:                      90%;
+}
+#transactions-shell div.user_name {
+    margin-left:                37px;
+    font-size:                  11pt;
+    margin-top:                 -15px;
 }
 div.user_name {
     font-size:                  10pt;
@@ -2786,7 +2810,7 @@ div.meetup-hosted-by {
     top:                        10px;
     font-family:                vitesse;
 }
-#manifest-results tr {
+#manifest-results tr, #transaction-results tr {
     cursor:                     pointer;
 }
 div.event-past {
@@ -3554,6 +3578,9 @@ div.give-ticket-row {
 }
 div.manifest-search-controls {
     margin-top:                 4px;
+}
+#transactions-shell {
+    width:                      100%;
 }
 * {
     box-sizing:                 border-box;

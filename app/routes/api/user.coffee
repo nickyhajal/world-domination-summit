@@ -86,19 +86,23 @@ routes = (app) ->
 				User.forge(where)
 				.fetch()
 				.then (user) ->
-					user.getReadableCapabilities()
-					.then (user) ->
-						user.getAnswers()
+					if user
+						user.getReadableCapabilities()
 						.then (user) ->
-							user.getInterests()
+							user.getAnswers()
 							.then (user) ->
-								user.getAllTickets()
+								user.getInterests()
 								.then (user) ->
-									user.set('password', null)
-									unless req.query.inc_hash?
-										user.set('hash', null)
-									res.r.user = user
-									next()
+									user.getAllTickets()
+									.then (user) ->
+										user.set('password', null)
+										unless req.query.inc_hash?
+											user.set('hash', null)
+										res.r.user = user
+										next()
+					else
+						res.r.not_existing = true
+						next()
 				, (err) ->
 					res.status(400)
 					errors.push(err.message)

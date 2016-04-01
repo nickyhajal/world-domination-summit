@@ -87,6 +87,7 @@ routes = (app) ->
 		app.get '/product', product.get
 		app.get '/product/availability', product.availability
 		app.post '/product/charge', product.charge
+		app.get '/transactions', product.get_transactions
 
 		# Devices
 		app.post '/device', device.add

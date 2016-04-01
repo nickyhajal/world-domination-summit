@@ -302,7 +302,7 @@ User = Shelf.Model.extend
 User.capabilities_map =
 	speakers: ["add-speaker", "speaker"]
 	ambassadors: ["ambassador-review"]
-	manifest: ['add-attendee', 'attendee', 'user']
+	manifest: ['add-attendee', 'attendee', 'user', 'transactions']
 	places: ['add-place', 'place']
 	schedule: ['add-event', 'event', 'meetup', 'meetups', 'meetup-review', 'event-review', 'meetup-print']
 	race: ['add-racetask', 'racetask', 'racetasks', 'rate', 'race-review']

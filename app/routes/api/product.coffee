@@ -12,7 +12,7 @@ chance = require('chance')()
 routes = (app) ->
 
 	[Product, Products] = require('../../models/products')
-	[Transaction, Transcations] = require('../../models/transactions')
+	[Transaction, Transactions] = require('../../models/transactions')
 
 	product =
 		get: (req, res, next) ->
@@ -23,6 +23,18 @@ routes = (app) ->
 				.then (product) ->
 					res.r.product = product
 					next()
+
+		get_transactions: (req, res, next) ->
+			columns = {columns: ['first_name', 'last_name', 'email', 'email_hash', 'pic', 'user_name', 'transactions.*', 'products.name', 'products.code']}
+			Transactions.forge()
+			.query (qb) ->
+				qb.innerJoin('users', 'users.user_id', 'transactions.user_id')
+				qb.innerJoin('products', 'products.product_id', 'transactions.product_id')
+				qb.orderBy('transaction_id', 'DESC')
+			.fetch(columns)
+			.then (rsp) ->
+				res.r.transactions = rsp.models
+				next()
 
 		availability: (req, res, next) ->
 			if req.hasParams ['code'], req, res, next

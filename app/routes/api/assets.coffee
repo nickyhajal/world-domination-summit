@@ -46,13 +46,13 @@ routes = (app) ->
 				ranks: 1
 				tasks: 5
 				places: 300
-				achievements: 0
+				# achievements: 0
 				admin_templates: 0
 
 			get: (req, res, next) ->
 				start = +(new Date())
 				tracker = req.query.tracker ? {}
-				async.each req.query.assets.split(','), (asset, cb) =>
+				async.eachSeries req.query.assets.split(','), (asset, cb) =>
 					assetStart = +(new Date())
 					last = tracker[asset] ? 0
 					now = Math.floor(+(new Date()) / 1000)
@@ -62,15 +62,16 @@ routes = (app) ->
 						expires = 0
 					expired = expires < now
 					if assets[asset]? and expired
+						# tk 'Starting '+asset
 						assets[asset](req)
 						.then (rsp) ->
 							res.r[asset] = rsp
-							#tk 'Grabbing '+asset+ ' took: '+(+(new Date()) - assetStart)+' milliseconds'
+							# tk 'Grabbing '+asset+ ' took: '+(+(new Date()) - assetStart)+' milliseconds'
 							cb()
 					else
 						cb()
 				, ->
-					#tk 'Asset grab took: '+(+(new Date()) - start)+' milliseconds'
+					# tk 'Asset grab took: '+(+(new Date()) - start)+' milliseconds'
 					next()
 
 			redisValue: (value) ->
@@ -126,8 +127,8 @@ routes = (app) ->
 							delete user.password
 							delete user.hash
 							delete user.tickets
-							if user.get('user_name').length is 40
-								user.set('user_name', '')
+							if user.user_name.length is 40
+								user.user_name = ''
 							dfr.resolve(user)
 				else
 					dfr.resolve(false)

@@ -22,11 +22,13 @@ Card = Shelf.Model.extend
 			code: code
 		.fetch()
 		.then (product, meta) =>
+			quantity = if purchase_data.quantity then purchase_data.quantity else 1
 			if product
 				transaction = Transaction.forge
 					product_id: product.get('product_id')
 					user_id: @get('user_id')
 					status: 'process'
+					quantity: quantity
 					paid_amount: '0'
 				.save()
 				.then (transaction) =>
@@ -35,7 +37,7 @@ Card = Shelf.Model.extend
 					.then (pre) =>
 						pre_rsp_params = pre?.rsp ? {}
 						price = product.get('cost')
-						price *= purchase_data.quantity if purchase_data.quantity?
+						price *= 	quantity
 						stripe.charges.create
 							amount: price
 							currency: 'usd'

@@ -30,6 +30,7 @@ ap.Views.welcome = XView.extend
 			@initRender()
 			self = this
 			# $('#content_shell').addClass('start')
+			@username_at_start = ap.me?.get('user_name')
 			unless ap.upload_success?
 				ap.upload_success = (url) ->
 					ap.me.set('pic', url)
@@ -240,8 +241,9 @@ ap.Views.welcome = XView.extend
 		height = panel.outerHeight()
 		panel.css 'height', _.x(height)
 
-	next: (e) ->
-		if @updMe()
+	next: (e, cont = false) ->
+		cont = @updMe() unless cont
+		if cont
 			e?.stopPropagation?()
 			w = $('#tab-shell-welcome_tabs')
 			$('.tab-panel', w).css {height: '460px'}
@@ -337,7 +339,35 @@ ap.Views.welcome = XView.extend
 				btn.html(original_btn_val).removeClass('btn-error')
 			, 2000
 			return false
+
+		if $('input[name="user_name"]', '.tab-panel-active').is(':visible')
+			btn = $('#tab-panel-the-basics .tab-save-next')
+			original_btn_val = btn.html()
+			if ap.me.get('user_name')?.length
+				if ap.me.get('user_name') is @username_at_start
+					@doUpd()
+					@next(null, true)
+				else
+					ap.api 'get user', {user_name: ap.me.get('user_name')}, (rsp) =>
+						if rsp.user?
+							btn.html('That username is taken, try another!').addClass('btn-error')
+							setTimeout ->
+								btn.html(original_btn_val).removeClass('btn-error')
+							, 2000
+						else
+							@doUpd()
+							@next(null, true)
+			else
+				btn.html('You need to set a username!').addClass('btn-error')
+				setTimeout ->
+					btn.html(original_btn_val).removeClass('btn-error')
+				, 2000
+			tk ap.me.get('user_name')
+			return false
 		else
+			@doUpd()
+			return true
+	doUpd: ->
 			onTab = ($('.tab-panel-active').index()-1)
 			if ap.me.get('intro') < onTab
 				ap.me.set('intro', onTab-1)
