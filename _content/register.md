@@ -3,7 +3,7 @@ icon: globe
 
 Our main stage (now called "360") experience is sold out, but you can still participate in dozens of meetups, group conversations, and even a spectactular closing party at the end of the week. Click the button below for all the details.
 
-<a href="/connect" class="register-banner">WDS Connect Registration</a>
+<a href="/connect" class="banner">WDS Connect Registration</a>
 
 <!--<div class="line-canvas"></div>
 
