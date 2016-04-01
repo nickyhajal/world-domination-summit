@@ -37,8 +37,6 @@ ap.Views.hub = XView.extend
 
 	startTour: ->
 		if !+ap.me.get('tour') and ap.isDesktop
-			ap.me.set('tour', '1')
-			ap.me.save(ap.me.changedSinceSave, patch: true)
 			ap.Modals.open('tour-start')
 			$('#tour-start').on 'click', =>
 				ap.Modals.close()
