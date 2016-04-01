@@ -362,7 +362,6 @@ ap.Views.welcome = XView.extend
 				setTimeout ->
 					btn.html(original_btn_val).removeClass('btn-error')
 				, 2000
-			tk ap.me.get('user_name')
 			return false
 		else
 			@doUpd()

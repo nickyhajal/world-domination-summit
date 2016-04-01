@@ -32,11 +32,13 @@ ap.Views.hub = XView.extend
 		, 1
 		$('#small-logo').on('click', @closePlaceSelect)
 		_.whenReady 'assets', =>
-			@getCheckins()
+			# @getCheckins()
 			@startTour()
 
 	startTour: ->
 		if !+ap.me.get('tour') and ap.isDesktop
+			ap.me.set('tour', '1')
+			ap.me.save(ap.me.changedSinceSave, patch: true)
 			ap.Modals.open('tour-start')
 			$('#tour-start').on 'click', =>
 				ap.Modals.close()
@@ -261,9 +263,9 @@ ap.Views.hub = XView.extend
 					'
 
 			$('#happening-list').html(html)
-		@checkinTimo = setTimeout =>
-			@getCheckins()
-		, 750
+		# @checkinTimo = setTimeout =>
+		# 	# @getCheckins()
+		# , 750
 
 
 
