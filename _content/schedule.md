@@ -68,7 +68,7 @@ We'll conclude on Sunday evening with a Farewell party that goes as long as peop
 
 <a name="speakers"></a>
 
-### Your WDS 2015 Speakers
+### Your WDS 2016 Speakers
 
 Upcoming speakers will be added here as they're confirmed.
 
@@ -76,7 +76,7 @@ Upcoming speakers will be added here as they're confirmed.
 
 <div class="line-canvas"></div>
 
-### Featured Speakers (2014)
+### Featured Speakers (2015)
 
 <div class="speaker_list" data-speaker-type="featured"></div>
 
@@ -122,7 +122,7 @@ Most speakers will attend the entire weekend and be available for informal conve
 
 <a name="wds-connect"></a>
 
-Over the years we've learned that two big reasons people come to WDS are to meet people with shared interests and experience some of what the great city of Portland has to offer. Since we can only hold 1,000 people in the main theatre during the big weekend, we've come up with something new: WDS Connect. 
+Over the years we've learned that two big reasons people come to WDS are to meet people with shared interests and experience some of what the great city of Portland has to offer. Since we can only hold 1,000 people in the main theatre during the big weekend, we've come up with something new: [WDS Connect](/connect). 
 
 Starting on Tuesday afternoon, everyone is invited to participate in a series of formal and informal meetups and events. From morning yoga to entrepreneurship workshops, we're hosting groups all over the city. 
 
