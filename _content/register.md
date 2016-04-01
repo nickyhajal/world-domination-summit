@@ -1,5 +1,5 @@
 icon: globe
-photo-head: https://farm1.staticflickr.com/434/19653483776_1420bf6789_k.jpg
+photo_head: https://farm1.staticflickr.com/434/19653483776_1420bf6789_k.jpg
 
 # WDS is growing! For the first time in history, we're inviting everyone to join us for an all-new experience called WDS Connect.
 
