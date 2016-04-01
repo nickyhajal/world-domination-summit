@@ -36,7 +36,7 @@ User = Shelf.Model.extend
 	]
 	limitedAttributes: [
 		'user_id', 'type', 'email', 'first_name', 'last_name', 'attending14', 'attending15',
-		'instagram', 'lat', 'lon', 'distance', 'pub_loc', 'location', 'ticket_type'
+		'instagram', 'lat', 'lon', 'distance', 'pub_loc', 'location', 'ticket_type', 'tour'
 	]
 	defaults:
 		pic: ''
