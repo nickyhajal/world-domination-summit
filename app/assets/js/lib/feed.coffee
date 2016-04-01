@@ -1,5 +1,6 @@
 (($)->
 	$.fn.feed = (fnc = false, opts = {})->
+		tk 'FEED'
 		$t = $(this)
 		$d = $t.closest('.dispatch')
 		$t.empty()
