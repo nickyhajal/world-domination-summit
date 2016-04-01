@@ -1,7 +1,7 @@
 ap.Views.admin_transactions = XView.extend
 	timo: 0
 	events:
-		'click #manifest-results tr': 'row_click'
+		'click #transaction-results tr': 'row_click'
 	initialize: ->
 		@initRender()
 
