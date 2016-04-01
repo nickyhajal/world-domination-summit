@@ -36,7 +36,7 @@
 			if contents.length
 				for content in contents
 					html += @renderContent content
-			tk html
+				tk html
 			else if not $('.dispatch-content-shell', $el).length
 				render = 'replace'
 				html += '<div class="dispatch-empty">No posts yet! Why don\'t you get things started?</div>'
