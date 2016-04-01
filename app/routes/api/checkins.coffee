@@ -1,5 +1,6 @@
 redis = require("redis")
 rds = redis.createClient()
+knex = require('knex')
 
 routes = (app) ->
 
@@ -29,10 +30,10 @@ routes = (app) ->
         Checkins.forge()
         .query (qb) ->
           qb.where('created_at', '>', from)
-          qb.groupBy(qb.raw('location_type, location_id'))
+          qb.groupBy(knex.raw('location_type, location_id'))
           qb.orderBy('num_checkins', 'DESC')
           qb.orderBy('check_in', 'DESC')
-          qb.column(qb.raw('COUNT(*) as num_checkins'))
+          qb.column(knex.raw('COUNT(*) as num_checkins'))
         .fetch({columns: ['location_id', 'location_type']})
         .then (checkins) ->
           checkins = checkins.models
