@@ -17,7 +17,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 
 ![](https://farm1.staticflickr.com/540/19673807691_651055a89b_z_d.jpg)
 <br>
-<p>With a Connect ticket, you'll have access to activities beginning on Tuesday, August 9 and continuing through Sunday, August 14. Every day will feature several optional activities that you can choose from. There will be a yoga or fitness activity in the morning, several "super meetups" in the afternoon, and a focused group experience in the evenings. </p>
+<p>With a Connect ticket, you'll have access to activities beginning on Tuesday, August 9 and continuing through Sunday, August 14. Every day will feature several optional activities that you can choose from. There will be a yoga or fitness activity in the morning, several "spark sessions" in the afternoon, and a focused group experience in the evenings. </p>
 
 ![](https://farm4.staticflickr.com/3873/14638042061_9afbe0f0fc_z_d.jpg)
 
