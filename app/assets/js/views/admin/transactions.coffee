@@ -29,7 +29,6 @@ ap.Views.admin_transactions = XView.extend
 					<td>'+moment(t.updated_at).format('M/DD/YY [at] h:mm a')+'</td>'
 			$('#transaction-results').html(html)
 	row_click: (e) ->
-		ap.lastSearch = $('.manifest-search').val()
 		user = $(e.currentTarget).data('user')
 		ap.navigate('admin/user/'+user)
 
