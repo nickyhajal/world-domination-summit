@@ -27,16 +27,16 @@
 			opts.params.channel_type = $d.data('channel_type')
 
 		@renderFeed = (contents, render = 'replace') ->
-			tk contents
-			tk render
 			html = ''
 			$inner = $('.dispatch-container', $el)
+			tk $inner
 			if !$inner.length
 				$el.append('<div class="dispatch-container"/>')
 				$inner = $('.dispatch-container', $el)
 			if contents.length
 				for content in contents
 					html += @renderContent content
+			tk html
 			else if not $('.dispatch-content-shell', $el).length
 				render = 'replace'
 				html += '<div class="dispatch-empty">No posts yet! Why don\'t you get things started?</div>'
@@ -45,6 +45,7 @@
 			else if render is 'append'
 				$inner.append html
 			else if render is 'prepend'
+				tk 'DO PREPEND'
 				$inner.prepend html
 			setTimeout =>
 				@process()
