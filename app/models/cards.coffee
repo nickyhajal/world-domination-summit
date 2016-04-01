@@ -15,7 +15,7 @@ Card = Shelf.Model.extend
 	]
 
 	charge: (code, purchase_data) ->
-		key = if code is 'connect' then process.env.STRIPE_SK_TEST else process.env.STRIPE_SK
+		key = if code is false then process.env.STRIPE_SK_TEST else process.env.STRIPE_SK
 		stripe = require('stripe')(key)
 		dfr = Q.defer()
 		Product.forge

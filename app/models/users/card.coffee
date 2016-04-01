@@ -11,7 +11,7 @@ rs = new RedisSessions();
 charge =
 	getCard: (card_id, test = false) ->
 		stripe_key = process.env.STRIPE_SK
-		stripe_key = process.env.STRIPE_SK_TEST if test
+		# stripe_key = process.env.STRIPE_SK_TEST if test
 		stripe = require('stripe')(stripe_key)
 		dfr = Q.defer()
 		if card_id.indexOf('tok_') > -1

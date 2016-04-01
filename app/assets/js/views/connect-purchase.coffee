@@ -31,7 +31,7 @@ ap.Views.connect_purchase = XView.extend
 		else
 			$('.if-no-user').show()
 	appeared: ->
-		Stripe.setPublishableKey(ap.stripe_pk_test);
+		Stripe.setPublishableKey(ap.stripe_pk);
 		if ap.me? and ap.me
 			@show('buy')
 	changeQuantity: (e) ->
