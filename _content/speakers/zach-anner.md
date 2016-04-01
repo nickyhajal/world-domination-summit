@@ -1,5 +1,5 @@
 icon: parachute
-photo_head: https://farm4.staticflickr.com/3678/19429978639_b29dcdd402_h.jpg
+photo_head: https://farm4.staticflickr.com/3699/9226362129_8a6395bf8b_b.jpg
 
 ## 2016 Speaker
 
