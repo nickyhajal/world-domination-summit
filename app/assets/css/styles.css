@@ -3582,6 +3582,9 @@ div.manifest-search-controls {
 #transactions-shell {
     width:                      100%;
 }
+#page-connect img {
+    width:                      640px;
+}
 * {
     box-sizing:                 border-box;
     -moz-box-sizing:            border-box;

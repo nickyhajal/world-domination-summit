@@ -27,6 +27,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 ![](https://farm3.staticflickr.com/2928/14660844313_286048b021_z_d.jpg)
 
 
+<br>
 ### WDS Connect Vs. WDS 360 Tickets
 
 The best thing about WDS is always the community. With a Connect ticket, you won't be part of the immersive weekend, but you _will_ be able to hang out with awesome people (from all over the world!) who share the same values of Community, Adventure, and Service.
@@ -35,18 +36,17 @@ The best thing about WDS is always the community. With a Connect ticket, you won
 
 <div class="connect-purchase-area"></div>
 
+<br>
 ### WDS 2016 Schedule
 
 ![](/images/connect/schedule.png)
 
-<div class="connect-purchase-area"></div>
-
+<br>
 ### WDS Connect is brand-new. Come and help us make it a great experience! 
 
 <div class="connect-purchase-area"></div>
 
-### 2
-
+<br>
 #### Refund / exchange policy (please read!):
 
 _All WDS Connect tickets are non-refundable and non-transferable. Each ticket is assigned to a unique name and user profile._
