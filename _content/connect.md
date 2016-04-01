@@ -5,7 +5,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 # WDS is growing! For the first time in history, we're inviting _everyone_ to join us for an all-new experience called WDS Connect.
 
 <div class="zig-zags_blue"></div>
-<h3 class="sub-karla">Our main stage (now called "360") experience is sold out, but you can still participate in dozens of meetups, group conversations, and even a spectactular closing party at the end of the week.</h3>
+<h3 class="sub-karla">Our main stage (now called "360") experience is sold out, but you can still participate in dozens of meetups, group conversations, and even a spectacular closing party at the end of the week.</h3>
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <div class="connect-purchase-area"></div>
 <br>
@@ -17,7 +17,9 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 
 ![](https://farm1.staticflickr.com/540/19673807691_651055a89b_z_d.jpg)
 <br>
-<p>With a Connect ticket, you'll have access to activities beginning on Tuesday, August 9 and continuing through Sunday, August 14. Every day will feature several optional activities that you can choose from. There will be a yoga or fitness activity in the morning, several "spark sessions" in the afternoon, and a focused group experience in the evenings. </p>
+<p>With a Connect ticket, you'll have access to activities beginning on <b>Tuesday, August 9</b> and continuing through <b>Sunday, August 14</b>. </p>
+
+<p>Every day will feature several optional activities that you can choose from. There will be a yoga or fitness activity in the morning, several "Spark Sessions" in the afternoon, and a focused group experience in the evenings. </p>
 
 ![](https://farm4.staticflickr.com/3873/14638042061_9afbe0f0fc_z_d.jpg)
 
@@ -30,7 +32,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 <br>
 ### WDS Connect Vs. WDS 360 Tickets
 
-The best thing about WDS is always the community. With a Connect ticket, you won't be part of the immersive weekend, but you _will_ be able to hang out with awesome people (from all over the world!) who share the same values of Community, Adventure, and Service.
+With a Connect ticket, you won't be part of the immersive weekend, but you _will_ be able to hang out with awesome people (from all over the world!) who share the same values of Community, Adventure, and Service.
 
 ![](/images/connect/comparison.png)
 
