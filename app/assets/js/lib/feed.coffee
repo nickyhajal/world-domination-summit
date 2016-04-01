@@ -173,6 +173,7 @@
 			else
 				params.since = $('.dispatch-content-shell', $el).first().data('content_id')
 			ap.api 'get feed', params, (rsp) =>
+				tk rsp
 				@renderFeed(rsp.feed_contents, get_opts.render)
 				if get_opts.cb
 					get_opts.cb()
