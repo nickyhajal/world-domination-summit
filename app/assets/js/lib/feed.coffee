@@ -1,6 +1,5 @@
 (($)->
 	$.fn.feed = (fnc = false, opts = {})->
-		tk 'FEED'
 		$t = $(this)
 		$d = $t.closest('.dispatch')
 		$t.empty()
@@ -29,14 +28,12 @@
 		@renderFeed = (contents, render = 'replace') ->
 			html = ''
 			$inner = $('.dispatch-container', $el)
-			tk $inner
 			if !$inner.length
 				$el.append('<div class="dispatch-container"/>')
 				$inner = $('.dispatch-container', $el)
 			if contents.length
 				for content in contents
 					html += @renderContent content
-				tk html
 			else if not $('.dispatch-content-shell', $el).length
 				render = 'replace'
 				html += '<div class="dispatch-empty">No posts yet! Why don\'t you get things started?</div>'
@@ -45,7 +42,6 @@
 			else if render is 'append'
 				$inner.append html
 			else if render is 'prepend'
-				tk 'DO PREPEND'
 				$inner.prepend html
 			setTimeout =>
 				@process()
@@ -77,7 +73,7 @@
 			return str
 
 		@renderContent = (content) ->
-			author = ap.Users.get(content.user_id)
+			author = new ap.User(content)
 			html = ''
 			if author?
 				comments = @commentsStr +content.num_comments
@@ -169,13 +165,13 @@
 				cb: false
 			get_opts = _.defaults get_opts, get_defs
 			params = _.defaults extra, opts.params
+			params.include_author = 1
 			if get_opts.render is 'replace'
 				$('.dispatch-container').html('<div class="dispatch-loading"></div>')
 				params.since = 0
 			else
 				params.since = $('.dispatch-content-shell', $el).first().data('content_id')
 			ap.api 'get feed', params, (rsp) =>
-				tk rsp
 				@renderFeed(rsp.feed_contents, get_opts.render)
 				if get_opts.cb
 					get_opts.cb()
@@ -227,11 +223,12 @@
 				feed_id: feed_id
 			if since
 				data.since = since
+			data.include_author = 1
 			ap.api 'get feed/comments', data, (rsp) ->
 				if (rsp.comments?.length)
 					html = ''
 					for comment in rsp.comments
-						author = ap.Users.get(comment.user_id	)
+						author = new ap.User(comment)
 						if author?
 							html += '
 								<div class="comment-shell" data-comment_id="'+comment.feed_comment_id+'">

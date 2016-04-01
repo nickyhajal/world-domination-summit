@@ -560,7 +560,6 @@ window.wall =
 							atn.post_name = "'s super-power is..."
 						return atn
 
-		tk type
 		fetchFrom = wall.contByType[type] # Types left after this point = flickr_stream, featured_tweets, speaker_quotes
 		tk fetchFrom
 		for content in fetchFrom
