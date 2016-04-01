@@ -26,6 +26,8 @@
 			opts.params.channel_type = $d.data('channel_type')
 
 		@renderFeed = (contents, render = 'replace') ->
+			tk contents
+			tk render
 			html = ''
 			$inner = $('.dispatch-container', $el)
 			if !$inner.length
