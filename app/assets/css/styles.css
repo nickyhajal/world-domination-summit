@@ -3582,7 +3582,7 @@ div.manifest-search-controls {
 #transactions-shell {
     width:                      100%;
 }
-#page-connect img {
+#page-connect .lifted-content img {
     width:                      640px;
 }
 * {
