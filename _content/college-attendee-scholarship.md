@@ -25,7 +25,7 @@ WDS was founded by <a href="http://chrisguillebeau.com/about/" target="_blank">C
 
 # College Scholarship Program
 
-Last year was the first time WDS opened up a small number of free seats for local college students, and the feedback from participants was fantastic. This year, WDS will be available to 30 new college students with big potential who otherwise couldn’t afford to attend. 
+Last year was the first time WDS opened up a small number of free seats for local college students, and the feedback from participants was fantastic. This year, WDS will be available to 25 new college students with big potential who otherwise couldn’t afford to attend. 
 
 In exchange for the free ticket (valued at $647), accepted applicants will participate in two group meet-ups with other scholarship participants during the weekend and submit an Action Plan for how they will apply what they’ve experienced at WDS. 
 
