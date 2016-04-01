@@ -17,7 +17,8 @@ ap.Views.admin_transactions = XView.extend
 			for t in rsp.transactions
 				atn = new ap.User(t)
 				quantity = if t.quantity? then t.quantity else 1
-				html += '<tr>
+				user_name_link = if atn.get('user_name').length then atn.get('user_name') else atn.get('hash')
+				html += '<tr data-user="'+user_name_link+'">
 					<td>
 						<div class="transaction-avatar" style="background:url('+atn.getPic(64)+')"></div>
 						<span>'+t.first_name+' '+t.last_name+'</span>

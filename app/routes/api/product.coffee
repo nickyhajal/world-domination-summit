@@ -25,7 +25,7 @@ routes = (app) ->
 					next()
 
 		get_transactions: (req, res, next) ->
-			columns = {columns: ['first_name', 'last_name', 'email', 'email_hash', 'pic', 'user_name', 'transactions.*', 'products.name', 'products.code']}
+			columns = {columns: ['first_name', 'last_name', 'email', 'email_hash', 'users.hash', 'pic', 'user_name', 'transactions.*', 'products.name', 'products.code']}
 			Transactions.forge()
 			.query (qb) ->
 				qb.innerJoin('users', 'users.user_id', 'transactions.user_id')
