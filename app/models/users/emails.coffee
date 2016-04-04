@@ -6,7 +6,6 @@ _ = require('underscore')
 
 emails =
   sendEmail: (promo, subject, params = {}) ->
-    return false
     mailer = require('../mailer')
     user_params =
       first_name: @get('first_name')
