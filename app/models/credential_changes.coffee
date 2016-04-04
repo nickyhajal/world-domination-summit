@@ -39,8 +39,8 @@ CredentialChange = Shelf.Model.extend
 			console.error(err)
 		return dfr.promise
 
-  isValid: ->
-  	return @get('used') is '0000-00-00 00:00:00'
+	isValid: ->
+		return @get('used') is '0000-00-00 00:00:00'
 
 	use: ->
 		dfr = Q.defer()
@@ -52,6 +52,6 @@ CredentialChange = Shelf.Model.extend
 		return dfr.promise
 
 CredentialChanges = Shelf.Collection.extend
-  model: CredentialChange
+	model: CredentialChange
 
 module.exports = [CredentialChange, CredentialChanges]
