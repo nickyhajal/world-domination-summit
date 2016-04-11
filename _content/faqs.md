@@ -21,9 +21,11 @@ WDS was founded by <a href="http://chrisguillebeau.com" target="blank"> Chris Gu
 
 <b>Sorry, main stage tickets for WDS 2016 have sold out. But it's not too late to join us!</b> 
 
-This year we're extending the WDS activities into the days before and after the main stage event and inviting even more people to participate in the WDS experience. Information about these activities, super-meetups, and a special "WDS Connect" ticket will be announced soon. 
+This year we're extending the WDS activities into the days before and after the main stage event and inviting even more people to participate in the WDS experience. This new experience is called "WDS Connect." It <em>doesn't</em> include theater access, but it does allow you to attend special activities, your choice of hundreds of meetups, and even the spectactular closing party. 
 
-Sign-up at the following page and we'll notify you when WDS Connect tickets become available: <a href="http://worlddominationsummit.com/register">WDS Connect Waiting List.</a> 
+<a href="/connect">Get your WDS Connect ticket now!</a> 
+
+As with main-stage (now called WDS 360) tickets, all WDS Connect tickets are offered on a first-come, first-served basis. 
 
 <!--Tickets for WDS are only offered two times a year, and they go quickly. There is no fast-track or secret process to get a ticket; they are all offered on a first-come, first-served basis. The best way to be informed of opportunities to register for next year is to join the 2016 <a href="http://worlddominationsummit.com/register">waiting list.</a> 
 
@@ -36,7 +38,7 @@ Please note: Once tickets are gone, they're gone. We do not hold any tickets bac
 
 ### What is the refund/exchange policy on WDS tickets?
 
-All WDS tickets are non-refundable. Transfers and name changes on tickets are available for a $100 fee up to 60 days prior to the event. After **June 10th, 2016** no further transfers or name changes will be possible.
+All WDS tickets are non-refundable. Transfers and name changes on main-stage (360) tickets are available for a $100 fee up to 60 days prior to the event. After **June 10th, 2016** no further transfers or name changes will be possible.
 
 <div class="line-canvas"></div>
 
