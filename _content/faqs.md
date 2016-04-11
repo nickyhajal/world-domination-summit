@@ -21,9 +21,9 @@ WDS was founded by <a href="http://chrisguillebeau.com" target="blank"> Chris Gu
 
 <b>Sorry, main stage tickets for WDS 2016 have sold out. But it's not too late to join us!</b> 
 
-This year we're extending the WDS activities into the days before and after the main stage event and inviting even more people to participate in the WDS experience. This new experience is called "WDS Connect." It <em>doesn't</em> include theater access, but it does allow you to attend special activities, your choice of hundreds of meetups, and even the spectactular closing party. 
+This year we're extending the WDS activities into the days before and after the main stage event and inviting even more people to participate in the WDS experience. This new experience is called "WDS Connect." It <em>doesn't</em> include theater access, but it <em>does</em> allow you to attend special activities, your choice of hundreds of meetups, and even the spectactular closing party. 
 
-<a href="/connect">Get your WDS Connect ticket now!</a> 
+<strong>--> <a href="/connect">Get your WDS Connect ticket now!</a></strong>
 
 As with main-stage (now called WDS 360) tickets, all WDS Connect tickets are offered on a first-come, first-served basis. 
 
