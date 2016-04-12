@@ -84,6 +84,7 @@ POST =
 		.fetch()
 		.then (xfer) ->
 			new_attendee = JSON.parse(xfer.get('new_attendee'))
+			delete new_attendee.transaction_id
 			new_attendee['attending'+process.yr] = 1
 			User.forge(new_attendee)
 			.save()
