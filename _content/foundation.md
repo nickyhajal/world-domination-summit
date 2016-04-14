@@ -5,7 +5,7 @@ photo_head: /images/foundation/foundation.jpg
 
 The WDS Foundation seeks to put the right resources in the hands of amazing people who are acting on the three core values of WDS—<i>community</i>, <i>adventure</i>, and <i>service</i>. 
 
-We do this by providing what we call "Scholarships For Real Life." The goal of these scholarships is to empower individuals to pursue their dreams and impact their community. 
+We do this by providing what we call <b>"Scholarships For Real Life."</b> The goal of these scholarships is to empower individuals to pursue their dreams and impact their community. 
 
 Have a crazy project you want to bring to life? Want to take a trip around the earth and share what you learned with the world? Trying to build something that’s a bit out of your reach? Whatever it is, the WDS Foundation can help fund it. We look for inspiring projects that will improve your life *and* make the world a better place.
 
@@ -58,7 +58,7 @@ Our selection committee will be looking at a number of factors to determine whic
 
 The Scholarships for Real Life Grant was created to connect smart and passionate people with the resources they need to bring big plans to life. To know if we can help you with your ambitions, we need to know a few things about your project. 
 
-Please complete your application by <b>9:00pm on Friday, April 15, 2016</b>.
+Please complete your application by <b>9:00pm (PST) on Friday, April 15, 2016</b>.
 
 <b>Late applications will not be considered.</b> Many applicants have found the questions to take between 2-4 hours to complete.</b>
 
