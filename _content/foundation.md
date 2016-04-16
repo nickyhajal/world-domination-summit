@@ -59,6 +59,8 @@ Our selection committee will be looking at a number of factors to determine whic
 So sorry we missed you! <p>
 Applications for the 2016 Scholarship for Real Life program are <b>currently closed</b>. If you would like to be notified when applications open for 2017, please email <b><a href="mailto:foundation@wds.fm">foundation@wds.fm</a></b> with your contact information. 
 
+<div class="line-canvas"></div>
+
 <!--
 
 The Scholarships for Real Life Grant was created to connect smart and passionate people with the resources they need to bring big plans to life. To know if we can help you with your ambitions, we need to know a few things about your project. 
