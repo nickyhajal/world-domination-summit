@@ -54,7 +54,11 @@ Our selection committee will be looking at a number of factors to determine whic
 
 <div class="line-canvas"></div>
 
-### How to Apply
+### I'm in! How do I apply?
+
+So sorry we missed you! Applications for the 2016 Scholarship for Real Life program are currently closed. If you would like to be notified when applications open for 2017, please email foundation@wds.fm with your contact information. 
+
+<!--
 
 The Scholarships for Real Life Grant was created to connect smart and passionate people with the resources they need to bring big plans to life. To know if we can help you with your ambitions, we need to know a few things about your project. 
 
@@ -70,6 +74,8 @@ Along with the questions outlined below, we would like you to include an <b>OPTI
 <a href="http://worlddominationsummit.com/foundation/application-2016" target ="_blank" class="button">Apply for the Scholarship for Real Life &rarr;</a>
 
 <div class="line-canvas"></div>
+
+-->
 
 ### Register To Be A Mentor
 
