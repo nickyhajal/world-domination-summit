@@ -7,5 +7,5 @@
 #= require_tree core
 #= require_tree routes
 #= require_tree models
-#= require_tree views 
+#= require_tree views
 #= require_tree scans

@@ -28,10 +28,6 @@ config = (app, express, RedisStore, mysql) ->
 		app.use(express.methodOverride())
 		app.use require('connect-assets')(
 			src: 'app/assets'
-			paths: [
-		    'assets/css',
-		    'assets/js'
-		  ]
 		)
 		app.use(app.router)
 		app.use(express.static(__dirname + '/public'))
