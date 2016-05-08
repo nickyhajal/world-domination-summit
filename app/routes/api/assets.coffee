@@ -38,7 +38,7 @@ routes = (app) ->
 			# How long before an asset expires (in minutes)
 			expires:
 				me: 0
-				tpls: 60
+				tpls: 0
 				all_attendees: 60
 				speakers: 300
 				interests: 5
@@ -224,7 +224,7 @@ routes = (app) ->
 				dfr = Q.defer()
 				rds.get 'events', (err, events) ->
 
-					if events? and events and typeof JSON.parse(events) is 'object'
+					if events? and events and typeof JSON.parse(events) is 'object' and 0
 						dfr.resolve(JSON.parse(events))
 					else
 						Events.forge()
@@ -233,6 +233,7 @@ routes = (app) ->
 						.query('orderBy', 'start')
 						.fetch()
 						.then (rsp) ->
+							tk rsp.models.length
 							evs = []
 							async.each rsp.models, (ev, cb) ->
 								ev.set('startStr', moment(ev.get('start')).format('h:mm a'))

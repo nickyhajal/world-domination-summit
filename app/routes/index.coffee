@@ -23,7 +23,6 @@ for province in all_provinces
 		provinces[province.country] = []
 	provinces[province.country].push province
 
-
 routes = (app) ->
 	app.all '/transfers', (req, res) ->
 		c = {columns: ['first_name', 'last_name', 'new_attendee']}
@@ -58,7 +57,6 @@ routes = (app) ->
 			title: "World Domination Summit - Avatar Upload"
 			layout: false
 			rsp: rsp
-
 	app.all '/text', (req, res) ->
 		res.render "../views/text",
 			title: "World Domination Summit - Text Maker"
@@ -88,7 +86,6 @@ routes = (app) ->
 		me = if req.session.ident? then JSON.parse(req.session.ident) else {user_id: 0}
 		page = 'index'
 		templates = {}
-
 		get_templates {}, 'pages', (tpls) ->
 			get_templates tpls, 'parts', (tpls) ->
 				get_templates tpls, '_content', (tpls) ->
@@ -111,7 +108,6 @@ routes = (app) ->
 								.then (_interests) ->
 									interests = _interests
 									finishRender()
-
 		finishRender = ->
 			path = req.path.substr(1)
 			counter = ''
@@ -121,7 +117,6 @@ routes = (app) ->
 			for name,tpl of templates
 				if name.indexOf('pages_') isnt 0
 					out[name] = tpl
-
 			loading = false
 			if path.match(/[a-z0-9]{40}/)? or path is 'welcome'
 				counter = 'hide-counter'

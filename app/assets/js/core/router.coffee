@@ -23,7 +23,9 @@ ap.createRouter = ->
 			@route("logout", 'logout', ap.Routes.logout)
 			@route("reset-password/:hash", 'reset', ap.Routes.reset)
 			@route("transfer/:hash", 'transfer', ap.Routes.hashLogin)
+			@route("academies/:hash", 'academies', ap.Routes.hashLogin)
 			@route("community/:community", 'community', ap.Routes.community)
+			@route("academy/:academy", 'academy', ap.Routes.academy)
 			@route("dispatch/:feed_id", 'dispatch', ap.Routes.dispatch)
 			@route("task/:task_slug", 'task', ap.Routes.task)
 			@route("notes/:user_id", 'notes', ap.Routes.notes)
@@ -110,6 +112,7 @@ ap.syncNav = (panel) ->
 ###
 ap.goTo = (panel = '', options = {}, cb = false) ->
 	# Go to the panel
+	ap.Modals.close()
 	if panel.indexOf('admin_') > -1
 		$('body').addClass('is-admin')
 	else

@@ -1,0 +1,100 @@
+div(id="admin-add-event-shell")
+	h1 {{ what }}
+		a(href="/admin/academies", class="button") Back to Academies
+	form(id="admin-event-update", method="post", action="#")
+		div(class="form-section")
+			div(class="form-box")
+				label Event Name
+				input(name="what", type="text", value="{{ what }}")
+		div(class="form-section")
+			div(class="form-box")
+				label This academy is for someone who...
+				input(name="who", type="text", value="{{ who }}")
+		div(class="form-section")
+			div(class="form-box")
+				label Description
+				textarea(name="descr", style="width:400px; height:120px;") {{ descr }}
+		div(class="form-section")
+			label Venue Name
+			input(name="place", type="text", value="{{ place }}")
+		div(class="form-section")
+			label Address
+			input(name="address", type="text", value="{{ address }}")
+		div(class="form-section")
+			label Starts At
+			div(class="form-box")
+				select(name="date", class="select2", style="width:150px")
+					option(value="08") August 8th
+					option(value="09") August 9th
+					option(value="10") August 10th
+					option(value="11") August 11th
+					option(value="12") August 12th
+					option(value="13") August 13th
+					option(value="14") August 14th
+					option(value="15") August 15th
+					option(value="16") August 16th
+			div(class="form-box")
+				select(name="hour", class="select2", style="width:120px")
+					option(value="01") 01
+					option(value="02") 02
+					option(value="03") 03
+					option(value="04") 04
+					option(value="05") 05
+					option(value="06") 06
+					option(value="07") 07
+					option(value="08") 08
+					option(value="09") 09
+					option(value="10") 10
+					option(value="11") 11
+					option(value="12", selected="selected") 12
+				select(name="minute", class="select2", style="width:65px")
+					option(value="00") 00
+					option(value="15") 15
+					option(value="30") 30
+					option(value="45") 45
+				select(name="pm", class="select2", style="width:65px")
+					option(value="0") am
+					option(value="12", selected="selected") pm
+		div(class="form-section")
+			label Ends At
+			div(class="form-box")
+					select(name="end_hour", class="select2", style="width:120px")
+						option(value="01") 01
+						option(value="02") 02
+						option(value="03") 03
+						option(value="04") 04
+						option(value="05") 05
+						option(value="06") 06
+						option(value="07") 07
+						option(value="08") 08
+						option(value="09") 09
+						option(value="10") 10
+						option(value="11") 11
+						option(value="12", selected="selected") 12
+					select(name="end_minute", class="select2", style="width:65px")
+						option(value="00") 00
+						option(value="15") 15
+						option(value="30") 30
+						option(value="45") 45
+					select(name="end_pm", class="select2", style="width:65px")
+						option(value="0") am
+						option(value="12", selected="selected") pm
+		div(class="form-section")
+			label Hosted By
+			div(class="attendee-selector", data-name="hosts", data-selected="{{ host_ids }}", data-atn_type_w_a="an Attendee")
+		div(class="form-section")
+			label How many people can attend?
+			input(type="number", name="max", min="1", max="5000", value="{{ max }}")
+		div(class="form-section")
+			label How many free tickets are available?
+			input(type="number", name="free_max", min="1", max="5000", value="{{ free_max }}")
+		div(class="form-section")
+			label Publicly Visible
+			div(class="form-box")
+				select(name="active", class="select2", style="width:120px")
+					option(value="1") Yes
+					option(value="0") No
+		div(class="clear")
+		div(class="form-section")
+			input(type="hidden", name="event_id", value="{{ event_id }}")
+			input(type="submit", value="Save Event", class="button")

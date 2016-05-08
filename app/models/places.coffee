@@ -1,6 +1,5 @@
 geocoder = require('geocoder')
 Shelf = require('./shelf')
-
 Place = Shelf.Model.extend
   tableName: 'places'
   idAttribute: 'place_id'

@@ -252,6 +252,9 @@
 #page-settings #sidebar-shell {
     top:                        475px;
 }
+.is-admin div#sidebar-shell {
+    top:                        261px;
+}
 #sidebar-shell {
     display:                    block;
     height:                     200px;
@@ -354,6 +357,9 @@ a.sidebar-price {
 }
 #page-welcome .sidebar-fixed #sidebar, #page-settings.sidebar-fixed #sidebar {
     margin-top:                 21px;
+}
+.is-admin .sidebar-fixed #sidebar {
+    margin-top:                 -31px;
 }
 .sidebar-fixed #sidebar {
     margin-top:                 230px;
@@ -709,7 +715,7 @@ a.broadcast-show-all {
     color:                      rgb(255, 255, 255);
     margin-top:                 -44px;
 }
-#modal-connect-purchase a.modal-close {
+.modal-type-purchase a.modal-close {
     top:                        18px;
     right:                      18px;
 }
@@ -839,6 +845,21 @@ a#attendee-search-x {
     margin-top:                 -55px;
     background:                 rgba(255, 255, 255, 0.46) none repeat scroll 0px 0px;
     display:                    none;
+}
+a.attendee-selector-add {
+    display:                    block;
+    padding:                    5px;
+    text-align:                 center;
+    width:                      400px;
+    font-family:                karlabold;
+    text-decoration:            none;
+    background:                 rgb(226, 127, 28) none repeat scroll 0px 0px;
+    color:                      rgb(255, 255, 255);
+}
+a.attendee-selector-remove {
+    text-decoration:            none;
+    float:                      right;
+    font-family:                karlabold;
 }
 a {
     color:                      rgb(226, 127, 28);
@@ -1010,6 +1031,16 @@ a#checkin-x {
 .cc-error a {
     color:                      rgb(255, 255, 255);
     margin-left:                7px;
+}
+a.attendee-selector-edit-bio {
+    float:                      right;
+    text-decoration:            none;
+    font-family:                karlabold;
+    font-size:                  11pt;
+    padding:                    3px 8px;
+    margin-top:                 -2px;
+    margin-right:               10px;
+    background:                 rgb(251, 250, 242) none repeat scroll 0% 0%;
 }
 a {
     color:                      rgb(226, 127, 28);
@@ -1382,20 +1413,24 @@ span.pre-input {
     background:                 rgb(227, 227, 218) none repeat scroll 0px 0px;
     z-index:                    3;
 }
-#modal-connect-purchase .form-row .cc-inp-zip {
+.modal-type-purchase .form-row .cc-inp-zip {
     width:                      122px;
 }
-#modal-connect-purchase .form-row .cc-inp-ccv {
+.modal-type-purchase .form-row .cc-inp-ccv {
     width:                      90px;
 }
-#modal-connect-purchase .give-ticket-row .form-box input {
+.modal-type-purchase .give-ticket-row .form-box input {
     width:                      204px;
 }
-#modal-connect-purchase .form-box input {
+.modal-type-purchase .form-box input {
     width:                      228px;
 }
 .modal-panel-buy select {
     width:                      100px;
+}
+input.attendee-selection-search {
+    width:                      100% ! important;
+    margin-bottom:              4px;
 }
 input[type="text"], input[type="password"], input[type="number"], .pre-input {
     background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
@@ -1637,11 +1672,18 @@ a.cnct-login::after {
     width:                      48%;
     border-left:                7px solid rgb(255, 255, 255);
 }
-button.connect-purchase-start {
+.connect-purchase-start {
     margin:                     0px auto;
     width:                      360px;
     position:                   relative;
     display:                    block;
+}
+.academy-box .button {
+    float:                      right;
+    display:                    block;
+    margin-top:                 -9px;
+    margin-right:               -9px;
+    padding:                    8px 20px;
 }
 input[type="submit"], .button {
     border:                     0px none;
@@ -1783,6 +1825,7 @@ span.sub-label {
 }
 div.form-row:last-of-type {
     margin-bottom:              -20px;
+    display:                    block;
 }
 .form-section {
     clear:                      both;
@@ -1826,6 +1869,9 @@ textarea.meetup-descr-inp {
 textarea#note-input {
     width:                      100%;
     margin-bottom:              -2px;
+}
+textarea.attendee-bio-textarea {
+    width:                      370px;
 }
 textarea {
     background:                 rgb(242, 242, 234) none repeat scroll 0% 0%;
@@ -2107,6 +2153,11 @@ span.reg-subhead {
     font-size:                  15pt;
     margin-bottom:              12px;
 }
+h4.academy-title {
+    margin:                     0px;
+    clear:                      left;
+    width:                      100%;
+}
 h4 {
     clear:                      both;
     text-transform:             uppercase;
@@ -2218,7 +2269,7 @@ div#modal-tour-start .modal-content, .modal-w-cont .modal-content {
     -webkit-transform:          translateY(-30px);
     -o-transform:               translateY(-30px);
 }
-div#modal-connect-purchase .modal-content {
+div.modal-type-purchase .modal-content {
     bottom:                     auto;
     margin:                     auto;
     padding:                    40px;
@@ -2227,6 +2278,11 @@ div#modal-connect-purchase .modal-content {
     overflow-x:                 hidden;
     top:                        100px;
     max-height:                 612px;
+}
+div#modal-attendee-selector .modal-content {
+    min-height:                 400px;
+    max-height:                 500px;
+    width:                      500px;
 }
 div.modal {
     position:                   fixed;
@@ -2242,6 +2298,11 @@ div.modal {
 }
 #modal-army div.modal-content {
     height:                     519px;
+}
+#modal-attendee-bio div.modal-content {
+    padding:                    40px;
+    width:                      450px;
+    height:                     280px;
 }
 div.modal-content {
     background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
@@ -2406,7 +2467,11 @@ div.dispatch-loading {
 tr.type-connect td div.manifest-avatar::before {
     background:                 rgb(177, 186, 30) none repeat scroll 0% 0%;
 }
-td div.manifest-avatar::before {
+td div.attendee-selection-avatar {
+    top:                        9px ! important;
+    left:                       5px ! important;
+}
+td div.manifest-avatar::before, td div.attendee-selection-avatar::before {
     content:                    "";
     position:                   absolute;
     border-radius:              50%;
@@ -2422,7 +2487,7 @@ td div.manifest-avatar::before {
 html td div.transaction-avatar {
     top:                        7px;
 }
-td div.manifest-avatar, td div.transaction-avatar {
+td div.attendee-selection-avatar, td div.manifest-avatar, td div.transaction-avatar {
     box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
     -webkit-box-sizing:         border-box;
@@ -2431,7 +2496,7 @@ td div.manifest-avatar, td div.transaction-avatar {
     top:                        1px;
     width:                      34px;
 }
-div.manifest-avatar, #speaker-results .speaker-avatar, .search-avatar, #ambassador-results, div.transaction-avatar {
+.attendee-selection-avatar, div.manifest-avatar, #speaker-results .speaker-avatar, .search-avatar, #ambassador-results, div.transaction-avatar {
     background-size:            100% auto ! important;
     -webkit-background-size:    100% auto ! important;
     border-radius:              50%;
@@ -2450,7 +2515,7 @@ div.manifest-avatar, #speaker-results .speaker-avatar, .search-avatar, #ambassad
 #transactions-shell td {
     padding:                    0px 20px ! important;
 }
-#manifest-shell td, .search-shell th, #transactions-shell td {
+#manifest-shell td, .search-shell th, #transactions-shell td, #attendee-selection-shell td {
     font-family:                karla;
     text-align:                 center;
     vertical-align:             middle ! important;
@@ -2464,7 +2529,10 @@ table#manifests-results-shell thead th, table#manifests-results-shell tfoot th, 
 #events-shell #event-review-results tr:nth-of-type(4n) {
     background:                 rgb(255, 254, 249) none repeat scroll 0px 0px ! important;
 }
-#manifest-results tr:nth-of-type(2n), .search-results tr:nth-of-type(2n), #transaction-results tr:nth-of-type(2n) {
+.attendee-selection-shell tr {
+    cursor:                     pointer;
+}
+.attendee-selection-shell tr:nth-of-type(2n), #manifest-results tr:nth-of-type(2n), .search-results tr:nth-of-type(2n), #transaction-results tr:nth-of-type(2n) {
     background:                 rgb(248, 246, 236) none repeat scroll 0px 0px;
 }
 #schedule-shell tr td:first-of-type {
@@ -2489,11 +2557,14 @@ td.search-actions {
     padding:                    10px;
     font-family:                karla;
 }
-.manifest-results tr, .search-results tr, #transaction-results tr {
+.attendee-selection-results tr, .manifest-results tr, .search-results tr, #transaction-results tr {
     background:                 rgb(239, 238, 229) none repeat scroll 0% 0%;
     cursor:                     pointer;
 }
-table#manifests-results-shell, .search-results-shell {
+table#attendee-selection-results-shell {
+    width:                      475px;
+}
+#attendee-selection-results-shell, table#manifests-results-shell, .search-results-shell {
     border-spacing:             0px;
     display:                    none;
     width:                      90%;
@@ -2502,7 +2573,7 @@ table#manifests-results-shell, .search-results-shell {
 html #transaction-results tr td:first-of-type {
     width:                      360px ! important;
 }
-#manifest-results tr td:first-of-type, .search-results tr td:first-of-type, #transaction-results tr td:first-of-type {
+#attendee-selection-results tr td:first-of-type #manifest-results tr td:first-of-type, .search-results tr td:first-of-type, #transaction-results tr td:first-of-type {
     text-align:                 left;
     width:                      400px ! important;
 }
@@ -2533,19 +2604,22 @@ html #transaction-results tr td:first-of-type {
     height:                     37px ! important;
     top:                        -4px ! important;
 }
-#manifest-results tr td:first-of-type span, .search-results tr td:first-of-type span, #transaction-results tr td:first-of-type span {
+#attendee-selection-results tr td:first-of-type span {
+    left:                       11px ! important;
+}
+#attendee-selection-results tr td:first-of-type span, #manifest-results tr td:first-of-type span, .search-results tr td:first-of-type span, #transaction-results tr td:first-of-type span {
     display:                    table-cell;
     height:                     40px;
     position:                   relative;
     vertical-align:             middle;
 }
-#manifest-results tr:hover, .search-results tr:hover, #transaction-results tr:hover {
+#attendee-selection-results tr:hover, #manifest-results tr:hover, .search-results tr:hover, #transaction-results tr:hover {
     opacity:                    0.9;
     -ms-filter:                 "alpha(opacity=90)";
     filter:                     alpha(opacity=90);
     zoom:                       1;
 }
-div#manifest-start, div.search-start {
+#attendee-selection-start, div#manifest-start, div.search-start {
     padding:                    70px 0px;
     text-align:                 center;
     font-size:                  21px;
@@ -2555,6 +2629,11 @@ div#manifest-start, div.search-start {
     margin-left:                37px;
     font-size:                  11pt;
     margin-top:                 -15px;
+}
+.attendee-selection-shell div.user_name {
+    margin-left:                45px;
+    font-family:                karla;
+    margin-top:                 -12px;
 }
 div.user_name {
     font-size:                  10pt;
@@ -2660,6 +2739,15 @@ div.connect {
 }
 div.dispatch-content-like-shell {
     float:                      left;
+}
+.no-venue div#meetup-address-overlay {
+    margin-left:                -50px;
+    background:                 rgba(249, 249, 241, 0.81) none repeat scroll 0px 0px;
+    margin-top:                 -13px;
+    width:                      815px;
+    padding-left:               50px;
+    padding-right:              132px;
+    height:                     41px;
 }
 div#meetup-address-overlay {
     width:                      765px;
@@ -3477,6 +3565,11 @@ div.cc-error {
     display:                    none;
     margin:                     -31px -40px 30px;
 }
+div.cnct-with-descr .cnct-total {
+    margin-top:                 -58px;
+    height:                     73px;
+    padding-top:                25px;
+}
 div.cnct-ticket-sale {
     margin:                     -40px -40px 30px;
     padding:                    15px 40px;
@@ -3495,9 +3588,9 @@ div.cnct-quantity::before {
     position:                   absolute;
     font-size:                  11pt;
     font-family:                karla;
-    left:                       -68px;
     top:                        11px;
     color:                      rgb(176, 175, 166);
+    left:                       -68px;
 }
 div.cnct-total {
     display:                    block;
@@ -3513,12 +3606,15 @@ div.cnct-total {
     border-left:                2px solid rgb(244, 244, 236);
     padding:                    14px 20px 11px;
 }
+.cnct-with-descr div.cnct-quantity {
+    margin-top:                 -37px;
+}
 div.cnct-quantity {
     display:                    block;
     float:                      right;
-    margin-right:               20px;
     margin-top:                 -6px;
     position:                   relative;
+    margin-right:               64px;
 }
 div.cnct-process-shell.active {
     z-index:                    10;
@@ -3584,6 +3680,80 @@ div.manifest-search-controls {
 }
 #page-connect .lifted-content img {
     width:                      640px;
+}
+div.academy-box {
+    padding:                    20px;
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
+    margin-bottom:              7px;
+}
+.no-venue div#meetup-address {
+    display:                    none;
+}
+div.cnct-product-descr {
+    font-size:                  11pt;
+    color:                      rgb(152, 151, 144);
+}
+div.card-existing {
+    padding:                    30px 40px 0px;
+    background:                 rgb(255, 255, 245) none repeat scroll 0px 0px;
+    margin:                     -30px -40px 82px -39px;
+}
+body.has-card .card-new {
+    display:                    none;
+}
+div.if-card-existing {
+    display:                    none;
+}
+body.has-card div.if-card-existing {
+    display:                    block;
+}
+div.card-intro {
+    display:                    inline-block;
+    font-family:                vitesse;
+    color:                      rgb(154, 153, 136);
+}
+div.card-name {
+    display:                    inline-block;
+    margin-left:                11px;
+    font-family:                karlabold;
+    color:                      rgb(96, 95, 85);
+}
+div.card-exp {
+    display:                    inline-block;
+    float:                      right;
+    font-family:                karla;
+    color:                      rgb(118, 117, 108);
+}
+a.use-existing-card {
+    margin:                     -32px -40px 28px;
+    border-top:                 2px solid rgb(241, 238, 227);
+}
+a.use-new-card, .use-existing-card {
+    display:                    block;
+    text-align:                 center;
+    padding:                    8px 0px 5px;
+    border-top:                 2px solid rgb(235, 231, 217);
+    text-decoration:            none;
+    font-family:                vitessebook;
+    font-size:                  12pt;
+    background:                 rgb(249, 248, 244) none repeat scroll 0px 0px;
+    margin:                     29px -40px -4px;
+}
+div.attendee-selection-shell {
+    height:                     490px;
+    overflow-y:                 auto;
+    margin-right:               -10px;
+    padding-right:              10px;
+}
+#attendee-selection-results td:nth-of-type(2) {
+    font-family:                karla;
+}
+div.attendee-selector-selected-row {
+    background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
+    width:                      400px;
+    margin-bottom:              4px;
+    padding:                    8px;
+    font-family:                karla;
 }
 * {
     box-sizing:                 border-box;
@@ -3915,6 +4085,9 @@ div#welcome-logo {
 #page-empty a#logo, #page-welcome a#logo {
     display:                    none;
 }
+.is-admin a#logo {
+    margin-top:                 27px;
+}
 a#logo {
     background:                 transparent url("/images/logo.png") repeat scroll 0% 0% / 100% auto;
     height:                     215px;
@@ -3928,6 +4101,9 @@ a#logo {
 .counter-fixed {
     position:                   fixed ! important;
     top:                        41px ! important;
+}
+.is-admin div#counter-shell {
+    display:                    none;
 }
 #counter-shell::before {
     background:                 transparent url("/images/countdown-login-icon.png") repeat scroll 0px 0px / 100% auto;

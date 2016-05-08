@@ -1,0 +1,9 @@
+div(class="attendee-selection-shell")
+	input(type="text", class="attendee-selection-search", placeholder="Search for an attendee...")
+	div(class="attendee-selection-search-controls")
+		input(id="attendee-selection-year-select", type="hidden")
+		input(id="attendee-selection-type-select", type="hidden")
+	div(id="attendee-selection-start")
+		| Type an attendees name, email or username above to begin
+	table(id="attendee-selection-results-shell")
+		tbody(id="attendee-selection-results")

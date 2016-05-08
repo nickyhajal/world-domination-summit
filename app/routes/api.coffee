@@ -43,6 +43,7 @@ routes = (app) ->
 		app.get '/user/validate', user.validate
 		app.get '/user', user.get
 		app.get '/user/ticket', user.ticket
+		app.get '/user/card', user.card
 		app.post '/user', user.create
 		app.post '/user/tickets', user.give_tickets
 		app.post '/user/login', user.login
@@ -98,6 +99,8 @@ routes = (app) ->
 
 		# Events
 		app.get '/event', event.get
+		app.get '/academies', event.academies
+		app.post '/event/claim-academy', event.claim_academy
 		app.post '/event', event.add
 		app.put '/event', event.upd
 		app.get '/event/attendees', event.get_attendees
@@ -158,6 +161,7 @@ routes = (app) ->
 		app.all '/admin/*', admin.get_capabilities
 		app.get '/admin/download', admin.download
 		app.get '/admin/schedule', admin.schedule
+		app.get '/admin/academies', admin.academies
 		app.get '/admin/ambassadors', admin.ambassadors
 		app.get '/admin/ambassador_accept', admin.ambassador_accept
 		app.get '/admin/ambassador_reject', admin.ambassador_reject

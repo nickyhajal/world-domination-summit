@@ -29,6 +29,7 @@ routes = (app) ->
 	[Notification, Notifications] = require('../../models/notifications')
 	[RaceSubmission, RaceSubmissions] = require('../../models/race_submissions')
 	[Checkin, Checkins] = require('../../models/checkins')
+	[Card, Cards] = require('../../models/cards')
 
 	user =
 		# Get logged in user
@@ -74,6 +75,18 @@ routes = (app) ->
 				res.r.msg = 'No user'
 				next()
 
+		card: (req, res, next) ->
+			Cards.forge()
+			.query (qb) ->
+				qb.where('user_id', req.me.get('user_id'))
+				qb.orderBy('card_id', 'desc')
+			.fetch()
+			.then (rsp) ->
+				if rsp.models.length
+					res.r.card = _.pick rsp.models[0].attributes, Card::permittedAttributes
+				else
+					res.r.card = false
+				next()
 
 		# Get a user
 		get: (req, res, next) ->
@@ -159,7 +172,6 @@ routes = (app) ->
 				.then (byF) ->
 					for f in byF.models
 						id = f.get('user_id')
-						tk id
 						all[id] = f.attributes unless all[id]
 						if all[id].score? then all[id].score += 2 else (all[id].score = 4)
 					doQuery('last_name', term+'%')
@@ -178,7 +190,6 @@ routes = (app) ->
 						cb()
 			, (err) ->
 				sortable = []
-				tk all
 				for id,user of all
 					sortable.push user
 				sortable.sort (a, b) ->
@@ -194,6 +205,7 @@ routes = (app) ->
 
 		# Authenticate a user
 		login: (req, res, next) ->
+			tk 'wut'
 			finish = (user = false) ->
 				if user
 					user.login req

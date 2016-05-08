@@ -7,7 +7,8 @@ marked = require('marked')
 execFile = require('child_process').execFile;
 expire = 3600
 if process.env.NODE_ENV is 'development'
-	expire = 300
+	expire = 30
+loadingTpls = false
 
 get_templates = (tpls, type, cb) ->
 	rds.get 'tpls_'+type, (err, existing_tpls) ->
@@ -118,5 +119,24 @@ get_templates = (tpls, type, cb) ->
 						else
 							finishedRendering()
 					renderTplFile files, 0
+
+# Load tpls continually calls the templates
+# to make sure that the latest templates are in redis
+# so they load fast on any actual http call
+loadTpls = ->
+	loadingTpls = true
+	get_templates {}, 'pages', (tpls) ->
+			get_templates tpls, 'parts', (tpls) ->
+				get_templates tpls, '_content', (tpls) ->
+					get_templates tpls, '_sidebars', (tpls) ->
+	setTimeout ->
+		loadTpls()
+	, 30000
+unless loadingTpls
+	rds.expire 'tpls_pages', 0
+	rds.expire 'tpls_parts', 0
+	rds.expire 'tpls__content', 0
+	rds.expire 'tpls__sidebars', 0
+	loadTpls()
 
 module.exports = get_templates

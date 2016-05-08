@@ -43,7 +43,7 @@ charge =
 								tk err
 		else
 			Card.forge
-				card_id: card_id
+				hash: card_id
 			.fetch()
 			.then (exists) =>
 				dfr.resolve(exists)

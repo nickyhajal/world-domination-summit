@@ -6,7 +6,6 @@ ap.Views.claim_ticket = XView.extend
 		@initTemplateOptions()
 		@initRender()
 	rendered: ->
-		tk 'RENDERED'
 		@stripe = StripeCheckout.configure
 			key: ap.stripe_pk
 			image: 'http://worlddominationsummit.com/images/default-avatar.png'
@@ -27,7 +26,6 @@ ap.Views.claim_ticket = XView.extend
 			@stripe.close();
 
 	showProcessing: ->
-		tk 'PROCESSINGGG'
 
 	openPurchase: (e) ->
 		e.preventDefault();

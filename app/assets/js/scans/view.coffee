@@ -7,10 +7,6 @@ jQuery.fn.scan
       options = $el.data()
       options.el = $el
       options.render = 'replace'
-      tk options
       delete options.view
-      tk view
-      tk ap.Views[view]
       xview = new ap.Views[view](options)
-      tk xview
       $el.data('xview', xview)

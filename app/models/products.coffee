@@ -7,6 +7,7 @@ async = require('async')
 [Transfer, Transfers] = require('./transfers')
 [Transaction, Transcations] = require('./transactions')
 [Ticket, Tickets] = require('./tickets')
+[EventRsvp, EventRsvps] = require('./event_rsvps')
 
 Product = Shelf.Model.extend
 	tableName: 'products'
@@ -40,6 +41,18 @@ Products = Shelf.Collection.extend
 
 
 PRE =
+	academy: (meta) ->
+		dfr = Q.defer()
+		[User, Users] = require('./users')
+		User.forge
+			user_id: meta.user_id
+		.fetch()
+		.then (user) ->
+			rsp = {meta: meta.post.event_id}
+			if user? and user.get('attending'+process.yr) is 1
+				rsp.price = 2900
+			dfr.resolve(rsp)
+		return dfr.promise
 	xfer: (meta) ->
 		dfr = Q.defer()
 		Transfer.forge
@@ -58,7 +71,6 @@ PRE =
 		dfr = Q.defer()
 		ids = []
 		arr = [0...+meta.post.quantity]
-		tk arr
 		async.eachSeries arr, (i, cb) ->
 			Ticket.forge
 				type: 'connect'
@@ -75,6 +87,23 @@ PRE =
 		return dfr.promise
 
 POST =
+	academy: (transaction, meta) ->
+		dfr = Q.defer()
+		event_id = transaction.get('meta')
+		user_id = transaction.get('user_id')
+		rsvp = EventRsvp.forge
+			user_id: user_id
+			event_id: event_id
+		rsvp.fetch()
+		.then (existing) ->
+			if existing
+				dfr.resolve({rsvp_id: existing.get('rsvp_id')})
+			else
+				rsvp.save()
+				.then (newrsvp) ->
+					dfr.resolve({rsvp_id: newrsvp.get('rsvp_id')})
+		return dfr.promise
+
 	xfer: (transaction, meta) ->
 		[User, Users] = require('./users')
 		dfr = Q.defer()
@@ -95,6 +124,8 @@ POST =
 				User.forge({user_id: xfer.get('user_id')})
 				.fetch()
 				.then (old_user) ->
+					new_user.set('ticket_type', old_user.get('ticket_type'))
+					new_user.save()
 					old_user.cancelTicket()
 					old_user.sendEmail('transfer-receipt', 'Your ticket transfer was successful!', {to_name: new_user.get('first_name')+' '+new_user.get('last_name')})
 					xfer.set

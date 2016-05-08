@@ -1,5 +1,5 @@
 ap.Routes.hashLogin = (hash) ->
-	hash = location.pathname.substr(1).replace('transfer/', '')
+	hash = location.pathname.substr(1).replace('transfer/', '').replace('academies/', '')
 	ap.loading true
 	ap.goTo 'empty', {}, ->
 		ap.api 'post user/login', {hash: hash}, (rsp) ->
@@ -8,6 +8,9 @@ ap.Routes.hashLogin = (hash) ->
 				if location.pathname.indexOf('transfer') > -1
 					ap.loading false
 					ap.navigate('transfer')
+				else if location.pathname.indexOf('academies') > -1
+					ap.loading false
+					ap.navigate('academies')
 				else
 					ap.navigate('hub')
 			else

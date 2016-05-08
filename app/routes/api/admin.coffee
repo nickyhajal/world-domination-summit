@@ -1,12 +1,11 @@
 async = require 'async'
 _s = require('underscore.string')
 routes = (app) ->
-
 	[User, Users] = require('../../models/users')
 	[Event, Events] = require('../../models/events')
+	[EventHost, EventHosts] = require('../../models/event_hosts')
 	[RaceSubmission, RaceSubmissions] = require('../../models/race_submissions')
 	[Achievement, Achievements] = require('../../models/achievements')
-
 	admin =
 		get_capabilities: (req, res, next) ->
 			req.me.getCapabilities()
@@ -132,6 +131,33 @@ routes = (app) ->
 					evs.push(tmp)
 				res.r.events = evs
 				next()
+		academies: (req, res, next) ->
+			Events.forge()
+			.query('where', 'type', 'academy')
+			.query('where', 'year', process.yr)
+			.query('orderBy', 'start')
+			.fetch()
+			.then (events) ->
+				evs = []
+				async.each events.models, (ev, cb) ->
+					tmp = ev.attributes
+					EventHosts.forge()
+					.query('where', 'event_id', tmp.event_id)
+					.fetch()
+					.then (hs) ->
+						host_ids = []
+						for h in hs.models
+							host_ids.push h.get('user_id')
+						start = (tmp.start+'').split(' GMT')
+						start = moment(start[0])
+						tmp.start = start.format('YYYY-MM-DD HH:mm:ss')
+						tmp.host_ids = host_ids
+						evs.push(tmp)
+						cb()
+
+				, ->
+					res.r.events = evs
+					next()
 
 		ambassadors: (req, res, next) ->
 			Users.forge()

@@ -23,6 +23,8 @@ ap.Views.admin = XView.extend
                                 title: "Schedule Management"
                                 pages:
                                         [
+                                                {page: 'academies', title: 'Academies'}
+                                                {page: 'add-academy', title: 'Add Academy'}
                                                 {page: 'schedule', title: 'WDS Schedule'}
                                                 {page: 'add-event', title: 'Add an Event'}
                                                 {page: 'event-review', title: 'Event Review'}

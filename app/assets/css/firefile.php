@@ -128,6 +128,7 @@ class FireFileBase {
             "Variables"                     => false,
             "RemoveLastDelarationSemiColon" => false
         );
+        file_put_contents('/e/ff', 'hey');
         CssMin::setVerbose(true);
         $css = str_replace("-moz-box-sizing", "box-sizing", $css);
         $css = CssMin::minify($css, $filters);

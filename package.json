@@ -27,7 +27,7 @@
     "instagram-node": "^0.4.2",
     "jade": "<1.0.0",
     "juice": "^0.4.0",
-    "knex": "~0.7.3",
+    "knex": "~0.11.1",
     "less": "~1.5.0",
     "madmimi-node": "~0.1.7",
     "mailer": "~0.6.7",
@@ -41,7 +41,6 @@
     "node-twitter-api": "~1.2.0",
     "node-uuid": "~1.4.1",
     "nodemailer": "~0.3.20",
-    "nodetime": "~0.2.12",
     "oauth": "~0.9.7",
     "orm": "~0.1.8-10",
     "provinces": "~0.2.0",
@@ -56,7 +55,6 @@
     "underscore.string": "~3.1.1",
     "validator": "~0.4.28",
     "when": "~2.6.0",
-    "wufoo": "icole/node-wufoo",
     "yamljs": "~0.1.5"
   },
   "devDependencies": {

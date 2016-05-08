@@ -1,0 +1,124 @@
+//- LOGIN
+div(class="modal-panel modal-panel-ac-start cnct-start modal-panel-active")
+	h2 Already a WDSer?
+	h3 Do you already have a WDS Account?
+	p If you're already signed up for WDS, sign-in to your account to claim your free academy.
+	p If you're not attending this year but have been with us in the past, login to connect to your existing account.
+	div(class="modal-big-btn-shell")
+		a(class="button cnct-login show-panel", data-panel="login") Login to my account!
+		a(class="button cnct-new-account show-panel", data-panel="buy") It's my first time!
+div(class="modal-panel modal-panel-ac-login")
+	h2 Login to Your Account
+	h3 Connect Your Account
+	div(class="login-error")
+		| Hmmmm, seems like your login information isn't quite right. Give it another try!
+	p Use your email address or WDS username to login below.&nbsp;&nbsp;
+		a(href="forgot-password", target="_blank") Forgot your password?
+	form(action="#", method="post", id="login-form")
+		div(class="form-row")
+			label E-Mail Address or Username
+			input(type="text", name="username")
+		div(class="form-row")
+			label Password
+			input(type="password", name="password")
+		div(class="form-row")
+			input(type="submit", value="Login")
+
+//- CLAIMING
+div(class="modal-panel modal-panel-ac-free")
+	h2 Redeem Your Free Academy!
+	h3 Do you want to claim your free academy to attend the {{ what }}?
+	p You get one free academy with your WDS ticket. Once you've chosen you cannot
+		| change your choice.
+	div(class="modal-big-btn-shell")
+		a(class="button claim-academy") Claim My Free Academy
+		a(class="button modal-close", data-panel="buy") Oops, I'll choose another.
+	p(class="small") Remember, you cannot transfer or change your free academy!
+div(class="modal-panel modal-panel-ac-claimed")
+	h2 Academy Claimed
+	h3 Aw yeah! You're confirmed!
+	p See you at {{ what }}! We just sent you an email with all the details.
+
+//- PURCHASING
+div(class="modal-panel modal-panel-ac-buy")
+	h2 Let's Do This!
+	div(class="cnct-process-shell")
+		div Hang tight, we're processing your payment!
+	form(action="#", method="post", id="purchase-form")
+		div(class="cnct-ticket-sale cnct-with-descr")
+			div(class="cnct-product-name") WDS Academy
+			div(class="cnct-product-descr") {{ what }}
+			div(class="cnct-total")
+				${{ price }}
+		div(class="clear")
+		div(class="cc-error")
+		div(class="if-no-user form-row")
+			div(class="form-box")
+				label First Name
+				input(type="text", name="first_name")
+			div(class="form-box")
+				label Last Name
+				input(type="text", name="last_name")
+		div(class="if-no-user form-row")
+			div(class="form-box")
+				label E-Mail Address
+				input(type="text", name="email")
+		div(class="card-existing if-card-existing")
+			div(class="card-intro") Charge to:
+			div(class="card-name") {{ card_type }} ending in {{ card_end }}
+			div(class="card-exp") Expires {{ card_exp }}
+			a(href="#", class="use-new-card") Add a new card
+		div(class="card-new")
+			div(class="if-card-existing")
+				a(class="use-existing-card" href="#") Use Existing Card
+			div(class="form-row")
+				label Credit Card Number
+				input(type="text", data-stripe="number")
+			div(class="form-row")
+				div(class="form-box")
+					label Exp. Month
+					select(class="select2", data-width="100px", data-stripe="exp-month", data-search="false")
+						option("1") 1
+						option("2") 2
+						option("3") 3
+						option("4") 4
+						option("5") 5
+						option("6") 6
+						option("7") 7
+						option("8") 8
+						option("9") 9
+						option("10") 10
+						option("11") 11
+						option("12") 12
+				div(class="form-box")
+					label Exp. Year
+					select(class="select2", data-width="125px", data-stripe="exp-year", data-search="false")
+						option("2016") 2016
+						option("2017") 2017
+						option("2018") 2018
+						option("2019") 2019
+						option("2020") 2020
+						option("2021") 2021
+						option("2022") 2022
+						option("2023") 2023
+						option("2024") 2024
+						option("2025") 2025
+			div(class="form-row")
+				div(class="form-box")
+					label Billing Zip Code
+					input(type="text", class="cc-inp-zip", data-stripe='zip')
+				div(class="form-box")
+					label CVV
+					input(type="text", data-stripe="cvc", class="cc-inp-cvv")
+		div(class="form-row form-section")
+			input(type="submit", value="Purchase Academy Ticket")
+div(class="modal-panel modal-panel-ac-purchased")
+	h2 Mission Accomplished
+	h3 You did it! You're all signed up for {{ what }}
+	br
+	p Nice work! We'll send all the details to your email address.
+	p See you there!
+	br
+	br
+	a(href="/academies", class="button done-button") Back to Academies
+

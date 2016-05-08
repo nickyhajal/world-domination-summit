@@ -66,3 +66,18 @@ ap.Modals.key = (e) ->
 ap.Modals.click = (e) ->
 	e.preventDefault()
 	ap.Modals.close()
+
+ap.Modals.add = (id, classes = '') ->
+	dash_id = 'modal-'+id
+	id = 'modal_'+id
+	unless $('#'+dash_id).length
+		classes += ' modal'
+		html = '<div id="'+dash_id+'" class="'+classes+'">';
+		html += '
+			<div class="modal-content">
+			<a href="#" class="modal-close"></a>
+			<div class="'+dash_id+' xview" data-view="'+id+'"
+			</div>
+		'
+		$('#modals').append(html)
+		$('#'+dash_id).scan()

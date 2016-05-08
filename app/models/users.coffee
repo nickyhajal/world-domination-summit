@@ -31,7 +31,7 @@ User = Shelf.Model.extend
 		'email', 'hash', 'user_name', 'mf', 'twitter', 'facebook', 'site', 'pic', 'instagram', 'phone',
 		'address', 'address2', 'city', 'region', 'country', 'zip', 'lat', 'lon', 'distance', 'calling_code',
 		'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake', 'accommodation',
-		'notification_interval', 'points', 'tour', 'ticket_type',
+		'notification_interval', 'points', 'tour', 'ticket_type', 'academy',
 		'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake', 'notification_interval'
 	]
 	limitedAttributes: [
@@ -304,7 +304,7 @@ User.capabilities_map =
 	ambassadors: ["ambassador-review"]
 	manifest: ['add-attendee', 'attendee', 'user', 'transactions']
 	places: ['add-place', 'place']
-	schedule: ['add-event', 'event', 'meetup', 'meetups', 'meetup-review', 'event-review', 'meetup-print']
+	schedule: ['add-event', 'event', 'meetup', 'meetups', 'meetup-review', 'event-review', 'meetup-print', 'add-academy', 'academies', 'academy']
 	race: ['add-racetask', 'racetask', 'racetasks', 'rate', 'race-review']
 	downloads: ['admin_downloads']
 	screens: ['screens']

@@ -1,6 +1,7 @@
 Shelf = require('./shelf')
 _ = require('underscore')
 Q = require('q')
+crypto = require('crypto')
 
 
 [Product, Products] = require('./products')
@@ -11,8 +12,16 @@ Card = Shelf.Model.extend
 	idAttribute: 'card_id'
 	hasTimestamps: true
 	permittedAttributes: [
-		'card_id', 'user_id', 'token', 'last4', 'exp'
+		'card_id', 'hash', 'user_id', 'brand', 'last4', 'exp_month', 'exp_year'
 	]
+	initialize: ->
+		this.on 'creating', this.creating, this
+
+	creating: (e)->
+		rand = (new Date()).valueOf().toString() + Math.random().toString()
+		hash = crypto.createHash('sha1').update(rand).digest('hex')
+		@set
+			hash: hash
 
 	charge: (code, purchase_data) ->
 		key = if code is false then process.env.STRIPE_SK_TEST else process.env.STRIPE_SK
@@ -36,7 +45,7 @@ Card = Shelf.Model.extend
 					product.pre_process({user_id: @get('user_id'), post: purchase_data})
 					.then (pre) =>
 						pre_rsp_params = pre?.rsp ? {}
-						price = product.get('cost')
+						price = if pre.price? then pre.price else product.get('cost')
 						price *= 	quantity
 						stripe.charges.create
 							amount: price
@@ -58,6 +67,7 @@ Card = Shelf.Model.extend
 								.then =>
 									product.post_process(transaction, charge)
 									.then (post_rsp) =>
+										tk 'POST DONE'
 										post_rsp_params = post_rsp?.rsp ? {}
 										rsp_params = _.extend pre_rsp_params, post_rsp_params
 										dfr.resolve({transaction: transaction, rsp: rsp_params})

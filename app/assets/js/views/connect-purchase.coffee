@@ -183,7 +183,6 @@ ap.Views.connect_purchase = XView.extend
 		$('.sent-to-names').html names
 		ap.api 'post user/tickets', post, (rsp) =>
 			@giving = false
-			tk @newAccount
 			if @newAccount
 				@show('done')
 			else

@@ -2,17 +2,17 @@ sidebar: academies
 icon: theater
 photo_head: https://farm3.staticflickr.com/2031/5800591550_94fa52c7b4_b.jpg,https://farm8.staticflickr.com/7457/9226356063_2f05f24588_c.jpg,https://farm4.staticflickr.com/3680/9226354561_60e1c77986_c.jpg,https://farm8.staticflickr.com/7422/9226351955_26fafe47fe_c.jpg,https://farm3.staticflickr.com/2868/9229137606_aa502275bb_c.jpg,https://farm3.staticflickr.com/2317/5800027355_42530f678d_b.jpg,
 
-# As the WDS community grows, more people are arriving early and staying late. 2014 marked the launch of WDS Academies: a series of mini-events focused on specific topics that take place on the days surrounding WDS weekend. 
+# As the WDS community grows, more people are arriving early and staying late. 2014 marked the launch of WDS Academies: a series of mini-events focused on specific topics that take place on the days surrounding WDS weekend.
 
 This short video shows more of what it's all about:
 
 <iframe src="https://player.vimeo.com/video/121164251?title=0&byline=0&portrait=0" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>&nbsp; <br>
 
-We're excited to announce that Academies will be back in 2016! We're extending this year's Academies to include a wide range of awesome topics and feature several favorite WDS speakers from over the years. 
+We're excited to announce that Academies will be back in 2016! We're extending this year's Academies to include a wide range of awesome topics and feature several favorite WDS speakers from over the years.
 
-Registration for Academies is separate from WDS itself, and we offer registration both to WDS attendees as well as to the general public (for a slightly higher registration fee). Because they are hosted at different venues around Portland, please note that there is a separate registration process for each Academy you would like to attend. 
+Registration for Academies is separate from WDS itself, and we offer registration both to WDS attendees as well as to the general public (for a slightly higher registration fee). Because they are hosted at different venues around Portland, please note that there is a separate registration process for each Academy you would like to attend.
 
-There is no limit to how many Academies you can register for. Academy tickets are capacity controlled and offered on a first-come first-served basis. Once an Academy session sells out, we will not be issuing extra tickets, and all tickets are non-refundable and non-transferrable. 
+There is no limit to how many Academies you can register for. Academy tickets are capacity controlled and offered on a first-come first-served basis. Once an Academy session sells out, we will not be issuing extra tickets, and all tickets are non-refundable and non-transferrable.
 
 <b>PLEASE NOTE: Registration details for 2016 Academies will be available after regular ticket sales end.</b>
 
@@ -37,7 +37,7 @@ For an idea of what to expect next year, take a look at our Academy schedule fro
 		<h4>Summary</h4>
 		Are YOU ready to... Share your passion with the world? Change lives for the better? Make money while doing it? If you're ready to build a community-driven business with a loyal fan base, you'll need a step-by-step action plan to fuel your own passion. We're here to share that action plan, along with the "behind the scenes” essentials of building an authentic online presence to stand out (even in a crowded marketplace). Spend the morning with Jadah Sellner and Jen Hansard, founders of Simple Green Smoothies, and hear their honest entrepreneurial story of how they went from Broke to a Book Deal in just two years.<p></p>
 
-In this Academy you’ll learn: 
+In this Academy you’ll learn:
 &nbsp;
 <ul>
   <li>Community Growth: how to grow your social media following and build your email list with authentic engagement strategies. </li>
@@ -68,7 +68,7 @@ In this Academy you’ll learn:
 	<div class="collapsable-content">
 	Thursday, July 9th from 9:00 AM to 12:00 PM
 		<h4>Summary</h4>
-		Join Theresa Reed, The Tarot Lady — a 25-year Tarot industry veteran, pro blogger and business mentor — for a fun, fresh, fast-paced crash course on reading Tarot. You'll learn how Tarot decks work, what the major cards represent, and how to do a couple of simple spreads for quick decision making + crystal clear guidance. 
+		Join Theresa Reed, The Tarot Lady — a 25-year Tarot industry veteran, pro blogger and business mentor — for a fun, fresh, fast-paced crash course on reading Tarot. You'll learn how Tarot decks work, what the major cards represent, and how to do a couple of simple spreads for quick decision making + crystal clear guidance.
 		
 		<p></p>Theresa specializes in a "jargon-free" and hands-on approach to Tarot. No metaphysical fluff, just plain English and easy-to-learn techniques that you can start using immediately. Walk in a Tarot virgin. Walk out reading Tarot like a BO$$. No experience, deck, potions or patchouli incense required. Just show up with an open mind... and get ready to gain a priceless new business + life superpower!
 		<h4><a href="https://www.eventbrite.com/e/wds-academy-hack-your-world-with-tarot-tickets-16193227379" target="_blank">Register for Hack Your World with Tarot</a></h4>

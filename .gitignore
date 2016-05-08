@@ -5,8 +5,11 @@ lib-cov
 *.dat
 *.out
 *.pid
+__logs
 *.gz
 
+deploy
+Vagrantfile
 pids
 logs
 results
@@ -25,6 +28,7 @@ wds-start.sh
 TASKS.md
 .DS_Store
 builtAssets
+.vagrant
 #Test processor
 app/processors/tester.coffee
 

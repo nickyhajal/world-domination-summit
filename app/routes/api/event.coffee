@@ -8,6 +8,7 @@ async = require('async')
 pdf = require('html-pdf');
 _s = require('underscore.string')
 fs = require 'fs'
+knex = require('knex')
 routes = (app) ->
 
 	[Event, Events] = require('../../models/events')
@@ -20,19 +21,48 @@ routes = (app) ->
 		add: (req, res, next) ->
 			if req.me
 				post = _.pick req.query, Event::permittedAttributes
-				start = moment.utc(process.year+'-07-'+req.query.date+' '+req.query.hour+':'+req.query.minute+':00', 'YYYY-MM-DD HH:mm:ss')
+
+				# Parse Start Time
+				start = moment.utc(process.year+'-08-'+req.query.date+' '+req.query.hour+':'+req.query.minute+':00', 'YYYY-MM-DD HH:mm:ss')
 				if req.query.hour is '12'
 					req.query.pm = Math.abs(req.query.pm - 12)
 				post.start = start.add('hours', req.query.pm).format('YYYY-MM-DD HH:mm:ss')
 
+				# Parse End Time if we have one
+				if req.query.end_hour && req.query.end_minute
+					end = moment.utc(process.year+'-08-'+req.query.date+' '+req.query.end_hour+':'+req.query.end_minute+':00', 'YYYY-MM-DD HH:mm:ss')
+					if req.query.end_hour is '12'
+						req.query.end_pm = Math.abs(req.query.end_pm - 12)
+					post.end = end.add('hours', req.query.end_pm).format('YYYY-MM-DD HH:mm:ss')
+
 				if not post.type?
 					post.type = 'meetup'
+
+				post.slug = _s.slugify(post.what)
 
 				post.year = process.yr
 
 				Event.forge(post)
 				.save()
 				.then (event) ->
+					if req.query.hosts?
+						EventHosts.forge().query (qb) ->
+							qb.where('event_id', event.get('event_id'))
+						.fetch()
+						.then (exh) ->
+							async.each exh.models, (h, cb) ->
+								h.destroy()
+								.then ->
+									cb()
+							, ->
+								ids = req.query.hosts.split(',')
+								async.each ids, (id, cb) ->
+									host = EventHost.forge({event_id: event.get('event_id'), user_id: id})
+									host.save()
+									.then (_host) ->
+										cb()
+								, () ->
+									next()
 					if post.type is 'meetup'
 						EventHost.forge({event_id: event.get('event_id'), user_id: req.me.get('user_id')})
 						.save()
@@ -61,33 +91,52 @@ routes = (app) ->
 		upd: (req, res, next) ->
 			if req.me
 				post = _.pick req.query, Event::permittedAttributes
-				start = moment.utc(process.year+'-07-'+req.query.date+' '+req.query.hour+':'+req.query.minute+':00', 'YYYY-MM-DD HH:mm:ss')
+				start = moment.utc(process.year+'-08-'+req.query.date+' '+req.query.hour+':'+req.query.minute+':00', 'YYYY-MM-DD HH:mm:ss')
 				if req.query.hour is '12'
 					req.query.pm = Math.abs(req.query.pm - 12)
 				post.start = start.add('hours', req.query.pm).format('YYYY-MM-DD HH:mm:ss')
 				Event.forge({event_id: post.event_id})
 				.fetch()
 				.then (ev) ->
-					EventHost.forge({event_id: post.event_id, user_id: req.me.get('user_id')})
-					.fetch()
-					.then (host) ->
-						if not host
-							req.me.getCapabilities()
-							.then ->
-								if req.me.hasCapability('schedule')
+					if req.query.hosts?
+						EventHosts.forge().query (qb) ->
+							qb.where('event_id', post.event_id)
+						.fetch()
+						.then (exh) ->
+							async.each exh.models, (h, cb) ->
+								h.destroy()
+								.then ->
+									cb()
+							, ->
+								ids = req.query.hosts.split(',')
+								async.each ids, (id, cb) ->
+									host = EventHost.forge({event_id: post.event_id, user_id: id})
+									host.save()
+									.then (_host) ->
+										cb()
+								, () ->
+									next()
+					else
+						EventHost.forge({event_id: post.event_id, user_id: req.me.get('user_id')})
+						.fetch()
+						.then (host) ->
+							if not host
+								req.me.getCapabilities()
+								.then ->
+									if req.me.hasCapability('schedule')
+										ev.set(post)
+										.save()
+										.then ->
+											next()
+									else
+										res.r.msg = 'You don\'t have permission to do that!'
+										res.status(403)
+										next()
+							else
 									ev.set(post)
 									.save()
 									.then ->
 										next()
-								else
-									res.r.msg = 'You don\'t have permission to do that!'
-									res.status(403)
-									next()
-						else
-								ev.set(post)
-								.save()
-								.then ->
-									next()
 			else
 				res.r.msg = 'You don\'t have permission to do that!'
 				res.status(403)
@@ -154,8 +203,10 @@ routes = (app) ->
 
 		get: (req, res, next) ->
 			events = Events.forge()
-			if req.query.event_id
+			if req.query.event_id?
 				events.query('where', 'event_id', req.query.event_id)
+			else if req.query.slug?
+				events.query('where', 'slug', req.query.slug)
 			events
 			.fetch()
 			.then (events) ->
@@ -186,7 +237,6 @@ routes = (app) ->
 						.fetch
 							columns: ['users.*']
 						.then (rsp) ->
-							tk 'RSVP DN'
 							for atn in rsp.models
 								atn = _.pick atn.attributes, User::limitedAttributes
 								tmp.atns.push(atn)
@@ -265,6 +315,32 @@ routes = (app) ->
 					, (err) ->
 						console.err(err)
 
+		academies: (req, res, next) ->
+			Events.forge()
+			.query('where', 'type', 'academy')
+			.query('where', 'year', process.yr)
+			.query('orderBy', 'start')
+			.fetch()
+			.then (events) ->
+				evs = []
+				async.each events.models, (ev, cb) ->
+					tmp = ev.attributes
+					EventHosts.forge()
+					.query('where', 'event_id', tmp.event_id)
+					.fetch()
+					.then (hs) ->
+						host_ids = []
+						for h in hs.models
+							host_ids.push h.get('user_id')
+						start = (tmp.start+'').split(' GMT')
+						start = moment(start[0])
+						tmp.start = start.format('YYYY-MM-DD HH:mm:ss')
+						tmp.host_ids = host_ids
+						evs.push(tmp)
+						cb()
+				, ->
+					res.r.events = evs
+					next()
 
 		rsvp: (req, res, next) ->
 			event_id = req.query.event_id
@@ -295,8 +371,19 @@ routes = (app) ->
 							.save()
 						next()
 
+		claim_academy: (req, res, next) ->
+			academy = req.me.get('academy')
+			if academy > 0
+				res.r.err = 'You already claimed your free academy!'
+				next()
+			else
+				event.rsvp req, res, ->
+					req.me.set('academy', req.query.event_id)
+					req.me.save()
+					res.r.success = true
+					next()
 		get_pdf: (req, res, next) ->
-			from = process.year+"-07-"+req.query.from_date+" "
+			from = process.year+"-08-"+req.query.from_date+" "
 			from_hour = req.query.from_hour
 			if req.query.from_pm == '12'
 				if req.query.from_hour != '12'
@@ -306,7 +393,7 @@ routes = (app) ->
 			if (''+from_hour).length == 1
 				from_hour = '0'+from_hour
 			from += from_hour+":"+req.query.from_minute+":00"
-			to = process.year+"-07-"+req.query.to_date+" "
+			to = process.year+"-08-"+req.query.to_date+" "
 			to_hour = req.query.to_hour
 			if req.query.to_pm == '12'
 				if req.query.to_hour != '12'

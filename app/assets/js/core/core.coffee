@@ -9,7 +9,7 @@ and extremely broad tasks (like calling the api)
 
 window.tk = (data)->
 	if console
-		console.log(data)
+		console.info(data)
 $ = jQuery
 $('html').addClass('jsOn')
 $ ->
