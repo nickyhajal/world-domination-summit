@@ -72,7 +72,7 @@ Card = Shelf.Model.extend
 									meta: if pre?.meta? then pre.meta else null
 								.save()
 								.then =>
-								tk 'r8'
+									tk 'r8'
 									product.post_process(transaction, charge)
 									.then (post_rsp) =>
 										tk 'POST DONE'
