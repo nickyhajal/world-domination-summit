@@ -10,7 +10,6 @@ jQuery.fn.scan
 				atn_type_w_a: $el.data('atn_type_w_a')
 				selected: $el.data('selected') ? ''
 				bios: ap.bios ? ''
-			tk filler.selected
 			options =
 				el: $el
 				name: name

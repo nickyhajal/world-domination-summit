@@ -24,7 +24,6 @@ Card = Shelf.Model.extend
 			hash: hash
 
 	charge: (code, purchase_data) ->
-		tk 'r1'
 		key = if code is false then process.env.STRIPE_SK_TEST else process.env.STRIPE_SK
 		stripe = require('stripe')(key)
 		dfr = Q.defer()
@@ -32,7 +31,6 @@ Card = Shelf.Model.extend
 			code: code
 		.fetch()
 		.then (product, meta) =>
-			tk 'r2'
 			quantity = if purchase_data.quantity then purchase_data.quantity else 1
 			if product
 				Transaction.forge
@@ -44,7 +42,6 @@ Card = Shelf.Model.extend
 				.save()
 				.then (transaction) =>
 					purchase_data.transaction_id = transaction.get('transaction_id')
-					tk purchase_data
 					product.pre_process({user_id: @get('user_id'), post: purchase_data})
 					.then (pre) =>
 						pre_rsp_params = pre?.rsp ? {}

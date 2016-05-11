@@ -71,7 +71,6 @@ PRE =
 		dfr = Q.defer()
 		ids = []
 		arr = [0...+meta.post.quantity]
-		tk meta
 		async.eachSeries arr, (i, cb) ->
 			Ticket.forge
 				type: 'connect'
@@ -125,7 +124,8 @@ POST =
 				User.forge({user_id: xfer.get('user_id')})
 				.fetch()
 				.then (old_user) ->
-					new_user.set('ticket_type', old_user.get('ticket_type'))
+					ticket_type = old_user.get('ticket_type')
+					new_user.set('ticket_type', ticket_type)
 					new_user.save()
 					old_user.cancelTicket()
 					old_user.sendEmail('transfer-receipt', 'Your ticket transfer was successful!', {to_name: new_user.get('first_name')+' '+new_user.get('last_name')})

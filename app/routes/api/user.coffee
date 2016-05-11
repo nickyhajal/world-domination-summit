@@ -205,7 +205,6 @@ routes = (app) ->
 
 		# Authenticate a user
 		login: (req, res, next) ->
-			tk 'wut'
 			finish = (user = false) ->
 				if user
 					user.login req
