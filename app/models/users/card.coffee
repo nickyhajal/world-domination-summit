@@ -14,24 +14,18 @@ charge =
 		# stripe_key = process.env.STRIPE_SK_TEST if test
 		stripe = require('stripe')(stripe_key)
 		dfr = Q.defer()
-		tk 'c1'
 		if card_id.indexOf('tok_') > -1
-			tk 'c2'
 			Card.forge
 				token: card_id
 			.fetch()
 			.then (exists) =>
-				tk 'c3'
 				if exists
-					tk 'c4'
 					dfr.resolve(exists)
 				else
-					tk 'c5'
 					stripe.customers.create
 						source: card_id
 						email: @get('email')
 					.then (customer) =>
-						tk 'c6'
 						stripe.tokens.retrieve card_id, (err, token) =>
 							c = token.card
 							Card.forge
@@ -48,7 +42,6 @@ charge =
 							, (err) ->
 								tk err
 		else
-			tk 'cc1'
 			Card.forge
 				hash: card_id
 			.fetch()

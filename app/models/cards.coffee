@@ -35,8 +35,7 @@ Card = Shelf.Model.extend
 			tk 'r2'
 			quantity = if purchase_data.quantity then purchase_data.quantity else 1
 			if product
-				tk 'r3'
-				transaction = Transaction.forge
+				Transaction.forge
 					product_id: product.get('product_id')
 					user_id: @get('user_id')
 					status: 'process'
@@ -44,11 +43,10 @@ Card = Shelf.Model.extend
 					paid_amount: '0'
 				.save()
 				.then (transaction) =>
-					tk 'r4'
 					purchase_data.transaction_id = transaction.get('transaction_id')
+					tk purchase_data
 					product.pre_process({user_id: @get('user_id'), post: purchase_data})
 					.then (pre) =>
-						tk 'r5'
 						pre_rsp_params = pre?.rsp ? {}
 						price = if pre.price? then pre.price else product.get('cost')
 						price *= 	quantity
@@ -59,12 +57,10 @@ Card = Shelf.Model.extend
 							source: @get('token')
 							description: product.get('name')+' - '+product.get('descr')
 						.then (charge) =>
-							tk 'r6'
 							Transaction.forge
-								transaction_id: transaction.get("transaction_id")
+								transaction_id: transaction.get('transaction_id')
 							.fetch()
 							.then (transaction) =>
-								tk 'r7'
 								transaction.set
 									status: 'paid'
 									paid_amount: price
@@ -72,10 +68,8 @@ Card = Shelf.Model.extend
 									meta: if pre?.meta? then pre.meta else null
 								.save()
 								.then =>
-									tk 'r8'
 									product.post_process(transaction, charge)
 									.then (post_rsp) =>
-										tk 'POST DONE'
 										post_rsp_params = post_rsp?.rsp ? {}
 										rsp_params = _.extend pre_rsp_params, post_rsp_params
 										dfr.resolve({transaction: transaction, rsp: rsp_params})
