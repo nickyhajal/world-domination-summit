@@ -71,7 +71,9 @@ PRE =
 		dfr = Q.defer()
 		ids = []
 		arr = [0...+meta.post.quantity]
+		tk 'p1'
 		async.eachSeries arr, (i, cb) ->
+			tk 'p2'
 			Ticket.forge
 				type: 'connect'
 				stripe_id: meta.transaction_id
@@ -80,9 +82,11 @@ PRE =
 				status: 'pending'
 			.save()
 			.then (ticket) =>
+				tk 'p3'
 				ids.push ticket.get('ticket_id')
 				cb()
 		, ->
+				tk 'p4'
 			dfr.resolve {meta: JSON.stringify(ids)}
 		return dfr.promise
 
