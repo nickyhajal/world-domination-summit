@@ -5365,6 +5365,9 @@ span.answer_start {
     -moz-box-shadow:            0px -4px 5px rgba(0, 0, 0, 0.15);
     -webkit-box-shadow:         0px -4px 5px rgba(0, 0, 0, 0.15);
 }
+.select2-nosearch .select2-drop-active {
+    margin-top:                 38px;
+}
 .select2-drop-active {
     border:                     0px none;
     box-shadow:                 none;
