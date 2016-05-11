@@ -12,7 +12,10 @@ photo_head: https://farm1.staticflickr.com/528/19614072281_88ef8433f8_z_d.jpg,ht
 
 Our entire team is composed of volunteers and has been working for a year to prepare. For the big weekend, we’ll be recruiting additional help. You’ll work directly with the WDS organizers in serving our attendees by making them feel welcome and ensuring that everything runs smoothly. Rewards include fame, pizza, high fives, unforgettable memories, and your very own coveted Ambassador t-shirt! 
 
-**Please note WDS 2016 is taking place from Tuesday August 9th - Monday August 15th. Though we don't expect Ambassadors to be available and serving for all 7 days, you must at least be available the entire weekend from Friday, August 12th to Sunday, 14th and for an orientation the evening of Monday, August 8th.**
+**Please note WDS 2016 is taking place from Tuesday August 9th - Monday August 15th. Though we don't expect Ambassadors to be available and serving for all 7 days, we do ask that you:<ul>
+  <li>be available for an orientation the evening of Monday, August 8th</li>
+  <li>be available the entire weekend of WDS main events from Friday, August 12th to Sunday, 14th</li>
+</ul>**
 
 So, you want to apply to be a WDS 2016 Ambassador? Awesome! 
 
