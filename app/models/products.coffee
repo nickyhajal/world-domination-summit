@@ -75,7 +75,7 @@ PRE =
 		async.eachSeries arr, (i, cb) ->
 			Ticket.forge
 				type: 'connect'
-				stripe_id: meta.transaction_id
+				stripe_id: meta.post.transaction_id
 				year: process.year
 				user_id: meta.user_id
 				status: 'pending'
