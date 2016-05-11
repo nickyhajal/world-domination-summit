@@ -6,7 +6,6 @@ ap.Views.AttendeeSelector = XView.extend
 		'click .attendee-selector-edit-bio': 'editBio'
 		'click .attendee-selector-remove': 'removeAtn'
 	initialize: ->
-		tk @options.filler
 		@selected = []
 		@options.out = _.t('parts_attendee-selector', @options.filler)
 		@initRender()

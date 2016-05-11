@@ -5378,6 +5378,7 @@ span.answer_start {
     -moz-border-radius:         0px;
     -webkit-border-radius:      0px;
     font-family:                karla;
+    margin-top:                 37px;
 }
 .select2-drop.select2-drop-above.select2-drop-active {
     border-top:                 1px solid rgb(88, 151, 251);
