@@ -89,33 +89,48 @@ routes = (app) ->
 				next()
 
 		upd: (req, res, next) ->
+			tk '>>>'
 			if req.me
+				tk '<<<'
 				post = _.pick req.query, Event::permittedAttributes
 				start = moment.utc(process.year+'-08-'+req.query.date+' '+req.query.hour+':'+req.query.minute+':00', 'YYYY-MM-DD HH:mm:ss')
 				if req.query.hour is '12'
 					req.query.pm = Math.abs(req.query.pm - 12)
 				post.start = start.add('hours', req.query.pm).format('YYYY-MM-DD HH:mm:ss')
+				tk 'post'
+				tk post
 				Event.forge({event_id: post.event_id})
 				.fetch()
 				.then (ev) ->
+					tk ev
 					if req.query.hosts?
-						EventHosts.forge().query (qb) ->
-							qb.where('event_id', post.event_id)
-						.fetch()
-						.then (exh) ->
-							async.each exh.models, (h, cb) ->
-								h.destroy()
+						req.me.getCapabilities()
+						.then ->
+							if req.me.hasCapability('schedule')
+								ev.set(post)
+								.save()
 								.then ->
-									cb()
-							, ->
-								ids = req.query.hosts.split(',')
-								async.each ids, (id, cb) ->
-									host = EventHost.forge({event_id: post.event_id, user_id: id})
-									host.save()
-									.then (_host) ->
-										cb()
-								, () ->
-									next()
+									EventHosts.forge().query (qb) ->
+										qb.where('event_id', post.event_id)
+									.fetch()
+									.then (exh) ->
+										async.each exh.models, (h, cb) ->
+											h.destroy()
+											.then ->
+												cb()
+										, ->
+											ids = req.query.hosts.split(',')
+											async.each ids, (id, cb) ->
+												host = EventHost.forge({event_id: post.event_id, user_id: id})
+												host.save()
+												.then (_host) ->
+													cb()
+											, () ->
+												next()
+							else
+								res.r.msg = 'You don\'t have permission to do that!'
+								res.status(403)
+								next()
 					else
 						EventHost.forge({event_id: post.event_id, user_id: req.me.get('user_id')})
 						.fetch()
