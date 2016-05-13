@@ -19,7 +19,7 @@ Our entire team is composed of volunteers and has been working for a year to pre
 
 So, you want to apply to be a WDS 2016 Ambassador? Awesome! 
 
-Just fill out this brief form and tell us a little bit about yourself. 
+Just fill out this brief form and tell us a little bit about yourself <b>(please apply by June 10th)</b>. 
 
 <div class="line-canvas"></div>
 
