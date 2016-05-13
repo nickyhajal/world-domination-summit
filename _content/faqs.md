@@ -46,7 +46,7 @@ All WDS tickets are non-refundable. Transfers and name changes on main-stage (36
 
 ### How can I transfer a ticket?
 
-Contact our Concierge team at <a href="mailto:concierge@wds.fm">concierge@wds.fm</a> and they will provide you with your special, unique link to go through the transfer process (note: if you have more than 1 ticket to transfer, you will need a unique link for each ticket).
+Contact our Concierge team at <b>concierge@wds.fm</b> and they will provide you with your special, unique link to go through the transfer process (note: if you have more than 1 ticket to transfer, you will need a unique link for each ticket).
 <!--If you are a registered attendee log into your WDS account and then look for the "Transfer" link that appears on the bottom of the WDS website when you are logged in. 
 -->
 
