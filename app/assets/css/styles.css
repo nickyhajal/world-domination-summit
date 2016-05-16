@@ -1684,7 +1684,7 @@ a.cnct-login::after {
     margin-top:                 -9px;
     margin-right:               -9px;
     padding:                    8px 20px;
-    margin-left:                34px;
+    margin-left:                14px;
 }
 input[type="submit"], .button {
     border:                     0px none;
@@ -2103,10 +2103,6 @@ form.dispatch-content-comment-form {
     color:                      rgb(226, 127, 28);
     padding:                    3px 0px 0px;
 }
-.modal-panel div.login-error, .form-error {
-    width:                      100%;
-    padding:                    20px 50px;
-}
 .login-error, .form-error {
     font-family:                karla;
     background:                 rgb(227, 47, 28) none repeat scroll 0% 0%;
@@ -2159,12 +2155,12 @@ span.reg-subhead {
     margin-bottom:              12px;
 }
 h4.academy-title {
-    margin:                     -3px 0px 0px;
+    margin:                     0px;
     clear:                      left;
     width:                      100%;
+    font-family:                karlabold;
     text-transform:             none;
-    font-family:                karla;
-    font-size:                  16pt;
+    font-size:                  15pt;
 }
 h4 {
     clear:                      both;
@@ -3574,9 +3570,9 @@ div.cc-error {
     margin:                     -31px -40px 30px;
 }
 div.cnct-with-descr .cnct-total {
-    margin-top:                 -58px;
-    height:                     73px;
     padding-top:                25px;
+    margin-top:                 -56px;
+    height:                     71px;
 }
 div.cnct-ticket-sale {
     margin:                     -40px -40px 30px;
@@ -3690,10 +3686,9 @@ div.manifest-search-controls {
     width:                      640px;
 }
 div.academy-box {
+    padding:                    20px;
     background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
-    margin-right:               -130px;
     margin-bottom:              7px;
-    padding:                    20px 20px 18px;
 }
 .no-venue div#meetup-address {
     display:                    none;
