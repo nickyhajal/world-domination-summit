@@ -48,12 +48,17 @@ routes = (app) ->
 					next()
 
 		charge: (req, res, next) ->
+			tk 1
 			if req.hasParams ['code', 'card_id'], req, res, next
+				tk 2
 				if req.isAuthd req, res, next
+					tk 3
 					req.me.getCard(req.query.card_id)
 					.then (card) ->
+						tk 4
 						card.charge(req.query.code, req.query.purchase_data)
 						.then (charge) ->
+							tk 5
 							res.r = _.extend res.r, charge.rsp
 							res.r.charge = charge.transaction
 							res.r.charge_success = true

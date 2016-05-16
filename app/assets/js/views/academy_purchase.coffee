@@ -23,7 +23,7 @@ ap.Views.academy_purchase = XView.extend
 
 	getCard: ->
 		ap.api 'get user/card', {}, (rsp) =>
-			if rsp.card?
+			if rsp.card? and rsp.card
 				@useExisting = true
 				@card = rsp.card
 			else

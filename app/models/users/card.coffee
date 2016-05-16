@@ -19,9 +19,12 @@ charge =
 				token: card_id
 			.fetch()
 			.then (exists) =>
+				tk 1
 				if exists
+					tk 2
 					dfr.resolve(exists)
 				else
+					tk 3
 					stripe.customers.create
 						source: card_id
 						email: @get('email')
