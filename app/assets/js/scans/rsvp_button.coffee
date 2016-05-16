@@ -8,6 +8,7 @@ jQuery.fn.scan
 			maxed = $t.data('maxed')?
 			start = $t.data('start') ? 'RSVP to this Meetup'
 			fullMessage = $t.data('fullMessage') ? 'Event Full'
+			loggedOut = $t.data('logged_out') ? 'Login to RSVP'
 			performRsvp = $t.data('dorsvp') ? 1
 			if maxed
 				start = fullMessage
@@ -44,7 +45,7 @@ jQuery.fn.scan
 						$t.removeClass('attending')
 						$t.html(start)
 				else
-					$t.html('Login to RSVP')
+					$t.html(loggedOut)
 
 			buttonText()
 

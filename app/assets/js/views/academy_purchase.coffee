@@ -31,9 +31,11 @@ ap.Views.academy_purchase = XView.extend
 			@updateRender()
 
 	updateRender: ->
-		filler = {what: '', price: '', card_exp: '', card_type: 'visa', card_end: ''}
+		filler = {what: '', what_short: '', price: '', card_exp: '', card_type: 'visa', card_end: ''}
 		if ap.activeAcademy
 			filler = _.defaults ap.activeAcademy, filler
+			if filler.what?
+				filler.what_short = _.truncate(filler.what, 48)
 		if @status == 'out'
 			filler.price = '59'
 		else

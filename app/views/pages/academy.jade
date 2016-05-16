@@ -4,11 +4,11 @@ div(id="page_content")
 	div(id="meetup-profile-map")
 	div(id="meetup-address-overlay")
 		div(id="meetup-time", class="format-time", data-format="MMMM Do [at] h:mm a") {{ start }}
-		div(id="meetup-address") {{ place }} - {{ address }} -
-			a(href="https://www.google.com/maps/preview?q={{ address }}", target="_blank") Directions
+		div(id="meetup-address") {{ place }} - {{ address }}
+			//- a(href="https://www.google.com/maps/preview?q={{ address }}", target="_blank") Directions
 	h3 {{ what }}
 	div(class="meetup-who")
-		| An academy for {{ who }}
+		| Attendees will learn {{ who }}
 	div(class="meetup-hosts")
 	div(class="line-canvas")
 	div(class="meetup-descr")

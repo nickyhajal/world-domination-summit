@@ -11,9 +11,9 @@ jQuery.fn.scan
 					data-fullMessage="Academy Full"
 					data-event_id="'+event_id+'"
 					data-start="Attend this Academy"
+					data-logged_out="Attend this Academy"
 					data-cancel="You\'re Attending!"
 					data-type="academy">Attend this Academy</a>'
-			# html = '<button class="button academy-purchase-start">Attend this Academy!</button>'
 			$t.html(html)
 			$('body').on 'click', '.academy-purchase-start', (e) ->
 				$t = $(e.currentTarget)
