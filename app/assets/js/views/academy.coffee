@@ -3,6 +3,7 @@ ap.Views.academy = XView.extend
     ap.api 'get event', {slug: @options.slug}, (rsp) =>
       @event = rsp.event
       ap.activeAcademy = @event
+      @event.descr = markdown.toHTML(@event.descr)
       @options.out = _.template @options.out, @event
       @options.sidebar = 'academy'
       @options.sidebar_filler = @event
