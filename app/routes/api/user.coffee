@@ -76,16 +76,20 @@ routes = (app) ->
 				next()
 
 		card: (req, res, next) ->
-			Cards.forge()
-			.query (qb) ->
-				qb.where('user_id', req.me.get('user_id'))
-				qb.orderBy('card_id', 'desc')
-			.fetch()
-			.then (rsp) ->
-				if rsp.models.length
-					res.r.card = _.pick rsp.models[0].attributes, Card::permittedAttributes
-				else
-					res.r.card = false
+			if req.me? and req.me
+				Cards.forge()
+				.query (qb) ->
+					qb.where('user_id', req.me.get('user_id'))
+					qb.orderBy('card_id', 'desc')
+				.fetch()
+				.then (rsp) ->
+					if rsp.models.length
+						res.r.card = _.pick rsp.models[0].attributes, Card::permittedAttributes
+					else
+						res.r.card = false
+					next()
+			else
+				res.r.card = false
 				next()
 
 		# Get a user

@@ -2103,6 +2103,10 @@ form.dispatch-content-comment-form {
     color:                      rgb(226, 127, 28);
     padding:                    3px 0px 0px;
 }
+.modal-panel div.login-error, .form-error {
+    width:                      100%;
+    padding:                    20px 50px;
+}
 .login-error, .form-error {
     font-family:                karla;
     background:                 rgb(227, 47, 28) none repeat scroll 0% 0%;
