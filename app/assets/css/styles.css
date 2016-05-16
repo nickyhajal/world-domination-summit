@@ -1684,7 +1684,7 @@ a.cnct-login::after {
     margin-top:                 -9px;
     margin-right:               -9px;
     padding:                    8px 20px;
-    margin-left:                14px;
+    margin-left:                34px;
 }
 input[type="submit"], .button {
     border:                     0px none;
@@ -2155,12 +2155,12 @@ span.reg-subhead {
     margin-bottom:              12px;
 }
 h4.academy-title {
-    margin:                     0px;
+    margin:                     -3px 0px 0px;
     clear:                      left;
     width:                      100%;
-    font-family:                karlabold;
     text-transform:             none;
-    font-size:                  15pt;
+    font-family:                karla;
+    font-size:                  16pt;
 }
 h4 {
     clear:                      both;
@@ -3686,9 +3686,10 @@ div.manifest-search-controls {
     width:                      640px;
 }
 div.academy-box {
-    padding:                    20px;
     background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
+    margin-right:               -130px;
     margin-bottom:              7px;
+    padding:                    20px 20px 18px;
 }
 .no-venue div#meetup-address {
     display:                    none;
