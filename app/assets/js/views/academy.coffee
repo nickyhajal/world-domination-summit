@@ -2,6 +2,7 @@ ap.Views.academy = XView.extend
   initialize: ->
     ap.api 'get event', {slug: @options.slug}, (rsp) =>
       @event = rsp.event
+      @event.what_no_the = @event.what.replace('The', '')
       ap.activeAcademy = @event
       @event.descr = markdown.toHTML(@event.descr)
       @options.out = _.template @options.out, @event
