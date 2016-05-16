@@ -89,20 +89,15 @@ routes = (app) ->
 				next()
 
 		upd: (req, res, next) ->
-			tk '>>>'
 			if req.me
-				tk '<<<'
 				post = _.pick req.query, Event::permittedAttributes
 				start = moment.utc(process.year+'-08-'+req.query.date+' '+req.query.hour+':'+req.query.minute+':00', 'YYYY-MM-DD HH:mm:ss')
 				if req.query.hour is '12'
 					req.query.pm = Math.abs(req.query.pm - 12)
 				post.start = start.add('hours', req.query.pm).format('YYYY-MM-DD HH:mm:ss')
-				tk 'post'
-				tk post
 				Event.forge({event_id: post.event_id})
 				.fetch()
 				.then (ev) ->
-					tk ev
 					if req.query.hosts?
 						req.me.getCapabilities()
 						.then ->

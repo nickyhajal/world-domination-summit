@@ -60,15 +60,10 @@ ap.Views.academy_purchase = XView.extend
 	show: (panel) ->
 		$('.cc-error').hide()
 		$('.modal-panel').hide()
-		tk '.modal-panel-ac-'+panel
-		tk $('.modal-panel-ac-'+panel)
-		tk $('.modal-panel')
 		$('.modal-panel-ac-'+panel).show()
 		if ap.me
-			tk 'mee'
 			$('.if-no-user').hide()
 		else
-			tk 'not mee'
 			$('.if-no-user').show()
 
 	appeared: ->
@@ -82,7 +77,6 @@ ap.Views.academy_purchase = XView.extend
 			@status = 'not-atn'
 		else
 			@status = 'out'
-		tk @status
 		@updateRender()
 		Stripe.setPublishableKey(ap.stripe_pk);
 

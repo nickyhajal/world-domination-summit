@@ -233,7 +233,6 @@ routes = (app) ->
 						.query('orderBy', 'start')
 						.fetch()
 						.then (rsp) ->
-							tk rsp.models.length
 							evs = []
 							async.each rsp.models, (ev, cb) ->
 								ev.set('startStr', moment(ev.get('start')).format('h:mm a'))
