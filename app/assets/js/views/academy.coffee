@@ -64,9 +64,12 @@ ap.Views.academy = XView.extend
     clearTimeout(@atnTimo)
     ap.api 'get event/attendees', {event_id: @event.event_id}, (rsp) =>
       if rsp.attendees?.length > 0
+        str = rsp.attendees.length+' WDSers Are Attending'
+        if rsp.attendees.length is 1
+          str = rsp.attendees.length+' WDSer Is Attending'
         html = '
         <div class="line-canvas"></div>
-        <h3>'+rsp.attendees.length+' WDSers Are Attending</h3>
+        <h3>'+str+'</h3>
         <div id="meetup-attendees-shell">
         '
         noPic = []
