@@ -16,7 +16,6 @@ window.XView = Backbone.View.extend
 				this.options[opt_name] = val
 
 	initRender: ->
-		tk @options
 		if @options
 			@render @options.render
 		if @options.view?
