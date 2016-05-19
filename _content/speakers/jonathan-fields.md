@@ -4,8 +4,6 @@ photo_head: https://farm3.staticflickr.com/2032/5807194798_2928ec745c_b.jpg,http
 ## 2011 and 2016 Speaker
 # ![Jonathan Fields](http://imgs.wds.fm/jonathan-fields-round.png) Jonathan Fields
 
-# Jonathan Fields has been coming to WDS since year one. Whether speaking from the main stage, facilitating a conversation, or leading a workshop, attendees love interacting with him all weekend long.
-
 <div class="zig-zags_blue"></div>
 
 **Jonathan Fields** is on a quest to inspire possibility. A New York City dad, husband, entrepreneur and author, he founded mission-driven media and education venture, [Good Life Project®](http://goodlifeproject.com), where he and his team lead a global community in the quest to live more meaningful, connected and vital lives, produce a top-rated podcast with millions of downloads, and offer a growing catalog of events, trainings and courses. His next book, *How to Live a Good Life: Soulful Stories, Surprising Science and Practical Wisdom*, is due out in October 2016.
