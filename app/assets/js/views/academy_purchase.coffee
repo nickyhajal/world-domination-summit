@@ -68,7 +68,7 @@ ap.Views.academy_purchase = XView.extend
 
 	appeared: ->
 		@getCard()
-		if ap.me? and ap.me and ap.me.get('attending'+ap.yr) is 1
+		if ap.me? and ap.me and parseInt(ap.me.get('attending'+ap.yr)) is 1
 			if ap.me.get('academy') > 0
 				@status = 'claimed'
 			else
