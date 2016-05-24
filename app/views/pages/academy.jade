@@ -7,12 +7,12 @@ div(id="page_content")
 		div(id="meetup-address") {{ place }} - {{ address }}
 			//- a(href="https://www.google.com/maps/preview?q={{ address }}", target="_blank") Directions
 	h3 {{ what }}
-	div(class="meetup-who")
-		| Attendees will learn {{ who }}
 	div(class="meetup-hosts")
 	div(class="line-canvas")
 	div(class="meetup-descr")
 		p {{ descr }}
+	div(class="meetup-who")
+		| Attendees will learn {{ who }}
 	div(id="meetup-attendees")
 	div(class="line-canvas")
 	div(class="academy-purchase-area", data-event_id="{{ event_id }}")
