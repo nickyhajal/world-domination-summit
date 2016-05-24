@@ -1666,11 +1666,11 @@ a.cnct-login::after {
     font-family:                karlabold;
     font-size:                  15pt;
     height:                     115px;
-    margin-right:               14px;
     position:                   relative;
     text-align:                 center;
-    width:                      48%;
     border-left:                7px solid rgb(255, 255, 255);
+    margin-right:               14px;
+    width:                      48%;
 }
 .connect-purchase-start {
     margin:                     0px auto;
@@ -3542,6 +3542,13 @@ div.introjs-tooltiptext {
     padding:                    7px;
     text-align:                 center;
 }
+.modal-panel-ac-free p.small {
+    display:                    block;
+    margin-top:                 40px;
+    font-family:                karlaitalic;
+    font-size:                  11pt;
+    margin-bottom:              -10px;
+}
 .modal-content p {
     font-family:                karla;
     font-size:                  14pt;
@@ -3559,7 +3566,7 @@ div.modal-panel-active {
 div.modal-big-btn-shell {
     height:                     100%;
     display:                    table;
-    margin:                     28px -20px -20px -27px;
+    margin:                     28px -15px -20px -20px;
 }
 div.cc-error {
     color:                      rgb(255, 255, 255);
