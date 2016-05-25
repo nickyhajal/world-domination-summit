@@ -352,7 +352,7 @@ routes = (app) ->
 					res.r.events = evs
 					next()
 
-		rsvp: (req, res, next) ->
+		rsvp: (req, res, next, free_rsvp = false) ->
 			event_id = req.query.event_id
 			if req.me
 				rsvp = EventRsvp.forge({user_id: req.me.get('user_id'), event_id: event_id})
@@ -377,8 +377,15 @@ routes = (app) ->
 						.then (rsp) ->
 							Event.forge
 								event_id: event_id
-								num_rsvps: rsp.models.length
-							.save()
+							.fetch()
+							.then (ev) ->
+								num_free = ev.get('num_free') ? 0
+								if free_rsvp
+									num_free += 1
+								ev.set
+									num_rsvps: rsp.models.length
+									num_free: num_free
+								.save()
 						next()
 
 		claim_academy: (req, res, next) ->
@@ -392,6 +399,7 @@ routes = (app) ->
 					req.me.save()
 					res.r.success = true
 					next()
+				, true
 		get_pdf: (req, res, next) ->
 			from = process.year+"-08-"+req.query.from_date+" "
 			from_hour = req.query.from_hour

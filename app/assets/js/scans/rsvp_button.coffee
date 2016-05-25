@@ -14,13 +14,11 @@ jQuery.fn.scan
 			freeMaxedMessage = $t.data('freemaxed_message') ? false
 			performRsvp = $t.data('dorsvp') ? 1
 			allowCancel = true
-			tk freeMessage
-			tk status
 			if freeMessage
 				if status is 'claim'
-					start = freeMessage
+					start += '<span class="sidebar-btn-sub btn-free-ac">'+freeMessage+'</span>'
 				else if status is 'free-maxed'
-					start += '<span class="btn-freemaxed">'+freeMaxedMessage+'</span>'
+					start += '<span class="sidebar-btn-sub btn-freemaxed">'+freeMaxedMessage+'</span>'
 
 				else if status is 'maxed'
 					maxed = true

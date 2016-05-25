@@ -77,7 +77,7 @@ ap.Views.academy_purchase = XView.extend
 			@free_maxed = true
 		@getCard()
 		if ap.me? and ap.me and parseInt(ap.me.get('attending'+ap.yr)) is 1
-			if ap.me.get('academy') > 0
+			if parseInt(ap.me.get('academy')) > 0
 					@status = 'claimed'
 			else
 				if @free_maxed
@@ -92,7 +92,7 @@ ap.Views.academy_purchase = XView.extend
 		Stripe.setPublishableKey(ap.stripe_pk);
 
 	showFromStatus: ->
-		if @status == 'claimed' or @status == 'not-atn' or 'free-maxed'
+		if @status == 'claimed' or @status == 'not-atn' or @status == 'free-maxed'
 			@show('buy')
 		else if @status == 'claim'
 			@show('free')
