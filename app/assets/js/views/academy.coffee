@@ -28,6 +28,11 @@ ap.Views.academy = XView.extend
     if ev.num_rsvps? and ev.num_rsvps > ev.max
       status = 'maxed'
     $('.rsvp-button', '#sidebar').attr('data-status', status)
+    $('body').on 'click', '.academy-purchase-start', (e) ->
+        $t = $(e.currentTarget)
+        e.preventDefault()
+        unless $t.hasClass('attending')
+          ap.Modals.open('academy-purchase')
 
   rendered: ->
     @renderMap()
@@ -58,12 +63,11 @@ ap.Views.academy = XView.extend
       $('body').addClass('no-venue')
 
   renderHosts: ->
-    html = ''
+    html = '<div class="meetup-hosted-by">Hosted by</div>'
     for host in @event.hosts
       host = ap.Users.get(host.user_id)
       if host
         html += '
-          <div class="meetup-hosted-by">Hosted by</div>
           <div class="meetup-host-shell">
             <div class="meetup-host-avatar" style="background:url('+host.get('pic')+')"></div>
             <div class="meetup-host-name">'+host.get('first_name')+' '+host.get('last_name')+'</div>

@@ -776,7 +776,7 @@ a.meetup-edit {
     padding:                    7px 11px;
 }
 .meetup-who-content {
-    text-transform: none;
+    text-transform:             none;
 }
 .meetup-attendees-closed a.meetup-attendees-toggle {
     position:                   absolute;
@@ -2894,17 +2894,18 @@ div.meetup-host-avatar {
 }
 div.meetup-host-name {
     position:                   relative;
-    top:                        9px;
+    top:                        -1px;
 }
 div.meetup-host-shell {
     margin:                     14px 0px -10px;
 }
 div.meetup-hosted-by {
-    float:                      left;
     margin-right:               9px;
     position:                   relative;
-    top:                        10px;
     font-family:                vitesse;
+    display:                    block;
+    float:                      none;
+    top:                        6px;
 }
 #manifest-results tr, #transaction-results tr {
     cursor:                     pointer;
@@ -3792,6 +3793,12 @@ span.btn-freemaxed {
     padding:                    5px 7px;
     font-size:                  11pt;
     background:                 rgb(217, 213, 199) none repeat scroll 0px 0px;
+}
+div.meetup-host-shell {
+    display:                    inline-block;
+}
+div.meetup-hosts {
+    margin-bottom:              -30px;
 }
 * {
     box-sizing:                 border-box;
