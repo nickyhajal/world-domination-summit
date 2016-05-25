@@ -52,8 +52,10 @@ ap.Views.academy_purchase = XView.extend
 		if @card
 			$('body').addClass('has-card')
 		@showFromStatus()
-
-
+		if @status == 'free-maxed'
+			$('.ac-free-full-alert').removeClass('hidden')
+		else
+			$('.ac-free-full-alert').addClass('hidden')
 
 	showEvent: (e) ->
 		$t = $(e.currentTarget)
@@ -71,16 +73,17 @@ ap.Views.academy_purchase = XView.extend
 
 	appeared: ->
 		ac = ap.activeAcademy
-		if ac.num_free > ac.free_max
+		if ac.num_free >= ac.free_max
 			@free_maxed = true
 		@getCard()
 		if ap.me? and ap.me and parseInt(ap.me.get('attending'+ap.yr)) is 1
-			if ap.me.get('academy') > 0 or @free_maxed
-				if @free_maxed
-					$('.ac-free-full-alert').show()
-				@status = 'claimed'
+			if ap.me.get('academy') > 0
+					@status = 'claimed'
 			else
-				@status = 'claim'
+				if @free_maxed
+					@status = 'free-maxed'
+				else
+					@status = 'claim'
 		else if ap.me? and ap.me
 			@status = 'not-atn'
 		else
@@ -89,7 +92,7 @@ ap.Views.academy_purchase = XView.extend
 		Stripe.setPublishableKey(ap.stripe_pk);
 
 	showFromStatus: ->
-		if @status == 'claimed' or @status == 'not-atn'
+		if @status == 'claimed' or @status == 'not-atn' or 'free-maxed'
 			@show('buy')
 		else if @status == 'claim'
 			@show('free')

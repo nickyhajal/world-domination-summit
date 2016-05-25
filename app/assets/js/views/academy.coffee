@@ -13,11 +13,21 @@ ap.Views.academy = XView.extend
 
   sidebarRendered: ->
     ev = @event
-    maxed = false
+    status = 'normal'
+    ac = ap.activeAcademy
+    if ac.num_free >= ac.free_max
+      free_maxed = true
+    if ap.me? and ap.me and parseInt(ap.me.get('attending'+ap.yr)) is 1
+      if ap.me.get('academy') > 0
+          status = 'normal'
+      else
+        if free_maxed
+          status = 'free-maxed'
+        else
+          status = 'claim'
     if ev.num_rsvps? and ev.num_rsvps > ev.max
-      maxed = true
-    if maxed
-      $('.rsvp-button', '#sidebar').attr('data-maxed', 'true')
+      status = 'maxed'
+    $('.rsvp-button', '#sidebar').attr('data-status', status)
 
   rendered: ->
     @renderMap()

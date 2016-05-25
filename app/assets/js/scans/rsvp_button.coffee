@@ -7,16 +7,33 @@ jQuery.fn.scan
 			cancel = $t.data('cancel') ? 'Cancel Your RSVP'
 			maxed = $t.data('maxed')?
 			start = $t.data('start') ? 'RSVP to this Meetup'
-			fullMessage = $t.data('fullMessage') ? 'Event Full'
+			fullMessage = $t.data('full_message') ? 'Event Full'
 			loggedOut = $t.data('logged_out') ? 'Login to RSVP'
+			status = $t.data('status') ? false
+			freeMessage = $t.data('free_message') ? false
+			freeMaxedMessage = $t.data('freemaxed_message') ? false
 			performRsvp = $t.data('dorsvp') ? 1
-			if maxed
+			allowCancel = true
+			tk freeMessage
+			tk status
+			if freeMessage
+				if status is 'claim'
+					start = freeMessage
+				else if status is 'free-maxed'
+					start += '<span class="btn-freemaxed">'+freeMaxedMessage+'</span>'
+
+				else if status is 'maxed'
+					maxed = true
+					allowCancel = false
+					start = fullMessage
+					$t.addClass('maxed')
+			else if maxed
 				start = fullMessage
 
 			if +performRsvp
 				$t.click ->
 					if ap.me? and ap.me
-						if (maxed and ($t.html() is cancel)) or not maxed
+						if allowCancel and (maxed and ($t.html() is cancel)) or not maxed
 							ap.api 'post event/rsvp', {event_id: event_id}, (rsp) ->
 								rsvps =	ap.me.get('rsvps')
 								if rsp.action is 'rsvp'
