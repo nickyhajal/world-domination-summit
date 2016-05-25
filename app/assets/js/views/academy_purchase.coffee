@@ -3,6 +3,7 @@ ap.Views.academy_purchase = XView.extend
 	claiming: false
 	card: false
 	useExisting: false
+	free_maxed: false
 	giving: false
 	newAccount: false
 	names: []
@@ -52,6 +53,8 @@ ap.Views.academy_purchase = XView.extend
 			$('body').addClass('has-card')
 		@showFromStatus()
 
+
+
 	showEvent: (e) ->
 		$t = $(e.currentTarget)
 		panel = $t.data('panel')
@@ -67,9 +70,14 @@ ap.Views.academy_purchase = XView.extend
 			$('.if-no-user').show()
 
 	appeared: ->
+		ac = ap.activeAcademy
+		if ac.num_free > ac.free_max
+			@free_maxed = true
 		@getCard()
 		if ap.me? and ap.me and parseInt(ap.me.get('attending'+ap.yr)) is 1
-			if ap.me.get('academy') > 0
+			if ap.me.get('academy') > 0 or @free_maxed
+				if @free_maxed
+					$('.ac-free-full-alert').show()
 				@status = 'claimed'
 			else
 				@status = 'claim'

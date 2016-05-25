@@ -5,6 +5,7 @@ ap.Views.academy = XView.extend
       @event.what_no_the = @event.what.replace('The', '')
       ap.activeAcademy = @event
       @event.descr = markdown.toHTML(@event.descr)
+      @event.who = markdown.toHTML(@event.who)
       @options.out = _.template @options.out, @event
       @options.sidebar = 'academy'
       @options.sidebar_filler = @event

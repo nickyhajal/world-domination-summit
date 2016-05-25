@@ -12,7 +12,8 @@ div(id="page_content")
 	div(class="meetup-descr")
 		p {{ descr }}
 	div(class="meetup-who")
-		| Attendees will learn {{ who }}
+		h4 Attendees will learn
+		div(class="meetup-who-content") {{ who }}
 	div(id="meetup-attendees")
 	div(class="line-canvas")
 	div(class="academy-purchase-area", data-event_id="{{ event_id }}")
