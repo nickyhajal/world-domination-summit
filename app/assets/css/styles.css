@@ -2890,6 +2890,8 @@ div.meetup-descr-host-shell {
     height:                     64px;
     width:                      64px;
     margin-right:               12px;
+    display: block;
+    float: left;
 }
 div.meetup-host-avatar {
     background-size:            100% auto ! important;
@@ -2899,12 +2901,14 @@ div.meetup-host-avatar {
     -webkit-border-radius:      50%;
     width:                      34px;
     height:                     34px;
-    float:                      left;
+    display: inline-block;
     margin-right:               5px;
 }
 div.meetup-host-name {
-    position:                   relative;
-    top:                        -1px;
+    position: relative;
+    top: -12px;
+    display: inline-block;
+    margin-right: 10px;
 }
 div.meetup-host-shell {
     margin:                     14px 0px -10px;
