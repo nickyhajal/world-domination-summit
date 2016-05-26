@@ -80,7 +80,9 @@ ap.Views.academy = XView.extend
         bhtml += '
           <div class="meetup-bio-shell">
             <div class="meetup-host-avatar" style="background:url('+host.get('pic')+')"></div>
-            <div class="meetup-bio-name">'+host.get('first_name')+' '+host.get('last_name')+'</div>'+bio+'
+            <div class="meetup-bio-content">
+              <div class="meetup-bio-name">'+host.get('first_name')+' '+host.get('last_name')+'</div>'+bio+'
+            </div>
           </div>
         '
     $('.meetup-hosts', $(@el)).html(html)

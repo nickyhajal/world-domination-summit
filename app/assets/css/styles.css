@@ -1285,6 +1285,11 @@ img#schedule-circle-2 {
     margin-bottom:              30px;
     margin-top:                 -10px;
 }
+#page_content .meetup-who ul {
+    left:                       0px;
+    margin-left:                -25px;
+    width:                      530px;
+}
 #page_content ul {
     position:                   relative;
     left:                       15px;
@@ -2884,6 +2889,7 @@ div.meetup-descr-host-shell {
 .meetup-bios div.meetup-host-avatar {
     height:                     64px;
     width:                      64px;
+    margin-right:               12px;
 }
 div.meetup-host-avatar {
     background-size:            100% auto ! important;
@@ -3811,14 +3817,20 @@ div.meetup-hosts {
 div.meetup-bio-shell {
     clear:                      both;
     min-height:                 64px;
-    margin-bottom:              11px;
     font-family:                karla;
+    width:                      530px;
+    line-height:                135%;
+    margin-bottom:              24px;
 }
 div.meetup-bio-name {
-    text-transform:             uppercase;
     display:                    inline-block;
     margin-right:               5px;
-    font-family:                vitessebook;
+    text-transform:             none;
+    font-family:                karlaitalic;
+    font-size:                  14pt;
+}
+div.meetup-bio-content {
+    margin-left:                76px;
 }
 * {
     box-sizing:                 border-box;
@@ -3940,6 +3952,9 @@ p.color-blue {
 .dispatch-content-shell p {
     width:                      100% ! important;
     margin-bottom:              9px ! important;
+}
+#page-academy #page_content .meetup-descr p {
+    width:                      530px ! important;
 }
 .meetup-descr p {
     width:                      400px ! important;
