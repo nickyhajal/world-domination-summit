@@ -64,8 +64,12 @@ ap.Views.academy = XView.extend
 
   renderHosts: ->
     html = '<div class="meetup-hosted-by">Hosted by</div>'
+    bhtml = ''
+    bios = JSON.parse(@event.bios)
+    tk bios
     for host in @event.hosts
       host = ap.Users.get(host.user_id)
+      bio = bios[host.get('user_id')]
       if host
         html += '
           <div class="meetup-host-shell">
@@ -73,7 +77,14 @@ ap.Views.academy = XView.extend
             <div class="meetup-host-name">'+host.get('first_name')+' '+host.get('last_name')+'</div>
           </div>
         '
+        bhtml += '
+          <div class="meetup-bio-shell">
+            <div class="meetup-host-avatar" style="background:url('+host.get('pic')+')"></div>
+            <div class="meetup-bio-name">'+host.get('first_name')+' '+host.get('last_name')+'</div>'+bio+'
+          </div>
+        '
     $('.meetup-hosts', $(@el)).html(html)
+    $('.meetup-bios', $(@el)).html(bhtml)
 
   renderAttendees: ->
     clearTimeout(@atnTimo)

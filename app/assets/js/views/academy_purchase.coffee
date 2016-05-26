@@ -160,6 +160,7 @@ ap.Views.academy_purchase = XView.extend
 		ap.api 'post product/charge', {card_id: card_id, code: 'academy', purchase_data: purchase_data}, (rsp) =>
 			@processing(false)
 			@show('purchased')
+			@finishButton()
 
 	claim: (e) ->
 		$t = $(e.currentTarget)
@@ -168,6 +169,10 @@ ap.Views.academy_purchase = XView.extend
 		$t.html('Claiming...')
 		ap.api 'post event/claim-academy', {event_id: ap.activeAcademy.event_id}, (rsp) =>
 			@show('claimed')
+			@finishButton()
+
+	finishButton: ->
+		$('.rsvp-button').html('You\'re Attending!').addClass('attending')
 
 	login: (e) ->
 		e.preventDefault()

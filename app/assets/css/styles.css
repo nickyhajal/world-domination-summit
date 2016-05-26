@@ -2881,6 +2881,10 @@ div.meetup-descr-host-shell {
     margin:                     2px 0px;
     padding:                    5px 9px;
 }
+.meetup-bios div.meetup-host-avatar {
+    height:                     64px;
+    width:                      64px;
+}
 div.meetup-host-avatar {
     background-size:            100% auto ! important;
     -webkit-background-size:    100% auto ! important;
@@ -3803,6 +3807,18 @@ div.meetup-host-shell {
 }
 div.meetup-hosts {
     margin-bottom:              -30px;
+}
+div.meetup-bio-shell {
+    clear:                      both;
+    min-height:                 64px;
+    margin-bottom:              11px;
+    font-family:                karla;
+}
+div.meetup-bio-name {
+    text-transform:             uppercase;
+    display:                    inline-block;
+    margin-right:               5px;
+    font-family:                vitessebook;
 }
 * {
     box-sizing:                 border-box;
