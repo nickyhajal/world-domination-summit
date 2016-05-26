@@ -333,7 +333,7 @@ routes = (app) ->
 			.fetch()
 			.then (events) ->
 				evs = []
-				async.each events.models, (ev, cb) ->
+				async.eachSeries events.models, (ev, cb) ->
 					tmp = ev.attributes
 					EventHosts.forge()
 					.query('where', 'event_id', tmp.event_id)
