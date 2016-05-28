@@ -82,9 +82,9 @@ img#schedule-circle-3 {
     margin:                     28px 0px 1px;
 }
 div.lifted-content {
-    padding:                    12px 15px;
-    margin:                     -199px 0px 0px -15px;
-    width:                      105%;
+    margin: -199px -8px 0;
+    padding: 12px 15px;
+    width: 105%;
 }
 .place-row span {
     float:                      none;

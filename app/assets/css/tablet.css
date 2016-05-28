@@ -13,6 +13,10 @@ a.wall-content-type-attendee .block-content {
     width:                      auto ! important;
     padding-left:               0px ! important;
 }
+div.academy-box {
+    margin-right: 0;
+    width: 100%;
+}
 .wall-content {
     float:                      left ! important;
     width:                      50% ! important;
