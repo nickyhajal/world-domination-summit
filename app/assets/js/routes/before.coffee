@@ -14,5 +14,6 @@ ap.Routes.before = ->
 					redirect = pdetails.redirect ? 'login'
 					ap.login_redirect = path
 					ap.navigate(redirect)
+					ap.loading(false)
 				, 5
 				return false
