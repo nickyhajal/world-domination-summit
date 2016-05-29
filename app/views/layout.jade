@@ -169,6 +169,17 @@ html(lang='en', class="#{hide_counter}")
             p There's a lot to explore so let's take a moment to show you around a bit.
             p Ready?
             a(href="#", class="button", id="tour-start") Let's do it!
+      div(id="modal-attending-ac", class="modal")
+        div(class="modal-content")
+          a(class="modal-close")
+          h2 You're attending this academy!
+          p See you at
+            span(class="acm-ac-name")
+            | !
+          p(class="acm-ac-start")
+          p(class="acm-ac-location") Location TBD
+          p There are no transfers or refunds on WDS Academies.
+
       div(id="modal-tour-end", class="modal modal-w-cont")
         div(class="modal-content")
           a(class="modal-close")

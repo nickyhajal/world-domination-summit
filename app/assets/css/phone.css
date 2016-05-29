@@ -36,6 +36,9 @@ div#page_content {
 #tab-panel-welcome p {
     font-size:                  12pt ! important;
 }
+#page-academy #page_content .meetup-descr p {
+    width:                      100% ! important;
+}
 #page_content p {
     width:                      100% ! important;
     font-size:                  11pt;
@@ -82,9 +85,9 @@ img#schedule-circle-3 {
     margin:                     28px 0px 1px;
 }
 div.lifted-content {
-    margin: -199px -8px 0;
-    padding: 12px 15px;
-    width: 105%;
+    padding:                    12px 15px;
+    margin:                     -199px 0px 0px -15px;
+    width:                      105%;
 }
 .place-row span {
     float:                      none;
@@ -504,6 +507,9 @@ div.cnct-ticket-sale {
     margin-bottom:              88px;
 }
 button.connect-purchase-start {
+    width:                      100%;
+}
+#page_content .meetup-who ul {
     width:                      100%;
 }
 * {

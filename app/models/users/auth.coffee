@@ -21,7 +21,9 @@ auth =
     return dfr.promise
 
   login: (req) ->
+    # tk 'LOGIN'
     req.session.ident = JSON.stringify(this)
+    # tk req.session.ident
     req.session.save()
 
   requestUserToken: (ip) ->

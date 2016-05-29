@@ -13,7 +13,7 @@ ap.scrollPos = {}
 ap.createRouter = ->
 	window.Router = Backbone.Router.extend
 		protect: [
-			'hub', 'welcome', 'settings', 'propose-a-meetup', 'communities',
+			{path: 'hub', allowed: ['360', 'connect'], redirect: 'attendees-only'}, 'welcome', 'settings', 'propose-a-meetup', 'communities',
 			'your-schedule', 'meetups', 'your-schedule', 'race', 'transfer'
 		]
 		initialize: ->
@@ -74,8 +74,19 @@ ap.loaded = ->
 	happens server-side to be sure a logged-out user
 	can't get or save anything protected
 ###
-ap.protect = ->
-	return ap.me? and ap.me
+ap.protect = (p) ->
+	if p.allowed?
+		allowed = p.allowed
+		isAllowed = false
+		for a in allowed
+			type = ap.me.get('ticket_type')
+			me = ap.me
+			attending = ap.me.get('attending'+ap.yr)
+			if (me? and me) and (type? and type is a) and (parseInt(attending) > 1)
+				isAllowed = true
+		return isAllowed
+	else
+		return ap.me? and ap.me
 
 
 ap.login = (me) ->

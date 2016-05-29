@@ -46,7 +46,7 @@ config = (app, express, RedisStore, mysql) ->
       	password: process.env.DB_PW
       	database: process.env.DB
       	charset: 'utf8'
-      debug: true
+      debug: false
 
   app.configure 'production', ->
     app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
@@ -54,7 +54,7 @@ config = (app, express, RedisStore, mysql) ->
       cert: process.env.APN_CERT
       key: process.env.APN_KEY
       ca: process.env.APN_CA
-      production: true
+      production: false
     app.set 'db',
       client: 'mysql'
       connection:

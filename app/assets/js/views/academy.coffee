@@ -66,11 +66,11 @@ ap.Views.academy = XView.extend
     html = '<div class="meetup-hosted-by">Hosted by</div>'
     bhtml = ''
     bios = JSON.parse(@event.bios)
-    tk bios
     for host in @event.hosts
       host = ap.Users.get(host.user_id)
       bio = bios[host.get('user_id')]
       if host
+        bio = markdown.toHTML(bio)
         html += '
           <div class="meetup-host-shell">
             <div class="meetup-host-avatar" style="background:url('+host.get('pic')+')"></div>
