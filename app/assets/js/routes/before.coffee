@@ -15,5 +15,6 @@ ap.Routes.before = ->
 					ap.login_redirect = path
 					ap.navigate(redirect)
 					ap.loading(false)
+					$('html').removeClass('hide-counter')
 				, 5
 				return false
