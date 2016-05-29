@@ -28,10 +28,14 @@ ap.Views.academy = XView.extend
     if ev.num_rsvps? and ev.num_rsvps > ev.max
       status = 'maxed'
     $('.rsvp-button', '#sidebar').attr('data-status', status)
-    $('body').on 'click', '.academy-purchase-start', (e) ->
+    $('body').on 'click', '.academy-purchase-start', (e) =>
         $t = $(e.currentTarget)
         e.preventDefault()
-        unless $t.hasClass('attending')
+        if $t.hasClass('attending')
+          $('.acm-ac-name').html(@event.what)
+          $('.acm-ac-start').html(moment(@event.start).format('MMMM Do [at] h:mma'))
+          ap.Modals.open('attending-ac')
+        else
           ap.Modals.open('academy-purchase')
 
   rendered: ->
