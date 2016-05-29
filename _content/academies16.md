@@ -12,9 +12,11 @@ We're excited to announce that Academies are back in 2016! We're extending this 
 
 Registration for Academies is separate from WDS itself, and we offer registration both to WDS attendees as well as to the general public (for a slightly higher registration fee). Please note, if you are attending WDS (360 or Connect), please log in to your WDS account before making your Academy selection. 
 
-**Each Academy has a limited number of free "Indsider Access" seats only available to WDS 360 and Connect attendees on a first-come, first-serve basis.**
+**Each Academy has a limited number of free "Insider Access" seats only available to WDS 360 and Connect attendees on a first-come, first-serve basis.**
 
-There is no limit to how many Academies you can register for. Academy tickets are capacity controlled and offered on a first-come first-served basis. Once an Academy session sells out, we will not be issuing extra tickets, and all tickets are <b>non-refundable</b> and <b>non-transferrable</b>. If you have any questions or need any assistance, please contact our concierge team at <b><font color="orange">concierge@wds.fm</font></b>. 
+There is no limit to how many Academies you can register for. Academy tickets are capacity controlled and offered on a first-come first-served basis. All tickets are <b>non-refundable</b> and <b>non-transferrable</b>. 
+
+If you have any questions or need any assistance, please contact our concierge team at <b><font color="orange">concierge@wds.fm</font></b>. 
 
 <div class="zig-zags_blue"></div>
 
