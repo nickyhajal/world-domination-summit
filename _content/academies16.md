@@ -14,7 +14,7 @@ Registration for Academies is separate from WDS itself, and we offer registratio
 
 **Each Academy has a limited number of free "Insider Access" seats only available to WDS 360 and Connect attendees on a first-come, first-serve basis.**
 
-There is no limit to how many Academies you can register for but please note that you can only purchase Academies for yourself. You will be asked to provide photo identification when checking in. Academy tickets are capacity controlled and offered on a first-come, first-served basis. All tickets are <b>non-refundable</b> and <b>non-transferrable</b>. 
+There is no limit to how many Academies you can register for but please note that you can only purchase Academies for yourself. No physical ticket or confirmation will be required upon check in, just a valid photo ID. Academy tickets are capacity controlled and offered on a first-come, first-served basis. All tickets are <b>non-refundable</b> and <b>non-transferrable</b>. 
 
 If you have any questions or need any assistance, please contact our concierge team at <b><font color="orange">concierge@wds.fm</font></b>. 
 
