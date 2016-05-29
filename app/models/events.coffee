@@ -1,5 +1,6 @@
 geocoder = require('geocoder')
 Q = require('q')
+moment = require('moment')
 
 Shelf = require('./shelf')
 
@@ -48,6 +49,24 @@ Event = Shelf.Model.extend
             lon: location.lng
           event.save()
 
+  list: ->
+    process.year+ ' Academy: '+ @get('what').substr(0, 32)
+
+  sendAcademyConfirmation: (user_id) ->
+    [User, Users] = require('./users')
+    User.forge
+      user_id: user_id
+    .fetch()
+    .then (user) =>
+      if user
+        tk user.get('email')
+        tk @list()
+        user.addToList(@list())
+        .then =>
+          tk 'added to list'
+          user.sendEmail 'academy-confirmation', 'You\'re! registered for a WDS Academy!',
+            what: @get('what')
+            start: moment(@get('start')).format('MMMM Do [at] h:mma')
   hosts: ->
     [User, Users] = require './users'
     dfr = Q.defer()

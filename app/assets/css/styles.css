@@ -1235,6 +1235,9 @@ h3.sub-karla {
     margin-top:                 -12px;
     margin-bottom:              30px;
 }
+#modal-attending-ac h3 {
+    width:                      100%;
+}
 h3 {
     font-size:                  24px;
     font-family:                vitesselight;
@@ -1440,6 +1443,9 @@ span.pre-input {
 input.attendee-selection-search {
     width:                      100% ! important;
     margin-bottom:              4px;
+}
+.modal-type-purchase .form-box input.cc-inp-cvv {
+    width:                      50px;
 }
 input[type="text"], input[type="password"], input[type="number"], .pre-input {
     background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
@@ -3848,9 +3854,25 @@ div.meetup-bio-name {
     text-transform:             none;
     font-family:                karlaitalic;
     font-size:                  14pt;
+    float:                      left;
+}
+#page_content .meetup-bio-content p {
+    width:                      390px;
 }
 div.meetup-bio-content {
     margin-left:                76px;
+}
+.ac-purchase-shell .rsvp-button {
+    display:                    block;
+    margin:                     -20px 0px;
+    font-family:                karlabold;
+    background:                 rgb(226, 127, 28) none repeat scroll 0% 0%;
+    padding:                    10px;
+    text-align:                 center;
+    color:                      rgb(255, 255, 255);
+    text-decoration:            none;
+    font-size:                  16pt;
+    width:                      567px;
 }
 * {
     box-sizing:                 border-box;

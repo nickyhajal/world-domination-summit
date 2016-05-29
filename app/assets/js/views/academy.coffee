@@ -28,6 +28,8 @@ ap.Views.academy = XView.extend
     if ev.num_rsvps? and ev.num_rsvps > ev.max
       status = 'maxed'
     $('.rsvp-button', '#sidebar').attr('data-status', status)
+    $('.rsvp-button', @el).attr('data-status', status)
+    $('#ac-purchase-shell').scan({rescan: true})
     $('body').on 'click', '.academy-purchase-start', (e) =>
         $t = $(e.currentTarget)
         e.preventDefault()

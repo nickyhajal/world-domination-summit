@@ -89,6 +89,7 @@ PRE =
 
 POST =
 	academy: (transaction, meta) ->
+		[Event, Events] = require('./events')
 		dfr = Q.defer()
 		event_id = transaction.get('meta')
 		user_id = transaction.get('user_id')
@@ -103,6 +104,11 @@ POST =
 				rsvp.save()
 				.then (newrsvp) ->
 					dfr.resolve({rsvp_id: newrsvp.get('rsvp_id')})
+					Event.forge
+						event_id: event_id
+					.fetch()
+					.then (ev) ->
+						ev.sendAcademyConfirmation(user_id)
 		return dfr.promise
 
 	xfer: (transaction, meta) ->

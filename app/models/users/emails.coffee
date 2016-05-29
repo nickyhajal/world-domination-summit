@@ -39,7 +39,6 @@ emails =
       @removeFromList 'WDS '+process.year+' Attendees'
       @removeFromList 'WDS '+process.year+' Connect'
       @addToList 'WDS '+process.year+' Canceled'
-
   addToList: (list) ->
     dfr = Q.defer()
     params =
@@ -49,12 +48,21 @@ emails =
       first_name: @get('first_name')
       last_name: @get('last_name')
       unique_link: @get('hash')
-    call =
+    call_list =
+      url: 'https://api.madmimi.com/audience_lists'
+      method: 'post'
+      form:
+        name: list
+        username: process.env.MM_USER
+        api_key: process.env.MM_PW
+    call_user =
       url: 'https://api.madmimi.com/audience_lists/'+list+'/add'
       method: 'post'
       form: params
-    request call, (err, code, rsp) ->
-      dfr.resolve(rsp)
+    request call_list, (err, code, rsp) ->
+      request call_user, (err, code, rsp) ->
+        tk rsp
+        dfr.resolve(rsp)
     return dfr.promise
 
   removeFromList: (list, email = false) ->

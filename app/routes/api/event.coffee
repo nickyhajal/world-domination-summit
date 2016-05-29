@@ -397,6 +397,7 @@ routes = (app) ->
 				event.rsvp req, res, ->
 					req.me.set('academy', req.query.event_id)
 					req.me.save()
+					event.sendAcademyConfirmation(req.me.get('user_id'))
 					res.r.success = true
 					next()
 				, true
