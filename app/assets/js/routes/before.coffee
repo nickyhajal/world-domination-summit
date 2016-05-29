@@ -6,6 +6,7 @@ ap.Routes.before = ->
 		for p in @protect
 			if p is path or (p.path? and p.path is path)
 				pdetails = p
+		tk pdetails
 		if pdetails
 			unless ap.protect(pdetails)
 				@stop()

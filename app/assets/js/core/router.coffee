@@ -82,7 +82,7 @@ ap.protect = (p) ->
 			type = ap.me.get('ticket_type')
 			me = ap.me
 			attending = ap.me.get('attending'+ap.yr)
-			if (me? and me) and (type? and type is a) and (parseInt(attending) > 1)
+			if (me? and me) and (type? and type is a) and (parseInt(attending) > 0)
 				isAllowed = true
 		return isAllowed
 	else
