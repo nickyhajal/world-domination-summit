@@ -22,6 +22,8 @@ ap.Views.admin_academies = XView.extend
           <td>
             <span>'+ev.what+'</span>
           </td>
+          <td>'+ev.num_free+'/'+ev.free_max+'</td>
+          <td>'+ev.num_rsvps+'/'+ev.max+'</td>
           <td class="search-actions">
             <a href="#" class="button">Edit</a></span>
           </td>
