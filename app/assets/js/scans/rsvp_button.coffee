@@ -16,7 +16,7 @@ jQuery.fn.scan
 			performRsvp = $t.data('dorsvp') ? 1
 			allowCancel = true
 			if freeMessage
-				if (only360 and ap.me.get('ticket_type') is '360') or !only360
+				if (only360 and ap.me.get? and ap.me.get('ticket_type') is '360') or !only360
 					if status is 'claim'
 						start += '<span class="sidebar-btn-sub btn-free-ac">'+freeMessage+'</span>'
 					else if status is 'free-maxed'
@@ -31,6 +31,7 @@ jQuery.fn.scan
 					start += '<span class="sidebar-btn-sub btn-ac-closed">
 						Only available for WDS 360 Attendees until June 6th.
 					</span>'
+					loggedOut = start
 					$t.addClass('not-360')
 			else if maxed
 				start = fullMessage

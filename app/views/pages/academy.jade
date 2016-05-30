@@ -3,7 +3,7 @@ div(id="page_content")
 	div(class="attendee-avatar", style="background:url()")
 	div(id="meetup-profile-map")
 	div(id="meetup-address-overlay")
-		div(id="meetup-time", class="format-time", data-format="MMMM Do [at] h:mm a") {{ start }}
+		div(id="meetup-time") {{ start_end }}
 		div(id="meetup-address") {{ place }} - {{ address }}
 			//- a(href="https://www.google.com/maps/preview?q={{ address }}", target="_blank") Directions
 	h3 {{ what }}
