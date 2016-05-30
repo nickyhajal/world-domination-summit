@@ -27,7 +27,7 @@ jQuery.fn.scan
 						start = fullMessage
 						$t.addClass('maxed')
 				else
-					start = 'Not Available Yet'
+					start = 'Registration Not Yet Open'
 					start += '<span class="sidebar-btn-sub btn-ac-closed">
 						Only available for WDS 360 Attendees until June 6th.
 					</span>'
