@@ -3574,11 +3574,15 @@ div.introjs-tooltiptext {
     text-align:                 center;
 }
 .modal-panel-ac-free p.small {
-    display:                    block;
     margin-top:                 40px;
+}
+.modal p.small {
+    display:                    block;
     font-family:                karlaitalic;
     font-size:                  11pt;
     margin-bottom:              -10px;
+    color:                      rgb(118, 117, 108);
+    margin-top:                 7px;
 }
 #modal-attending-ac .subtext {
     margin-top:                 60px;
