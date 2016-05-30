@@ -18,7 +18,7 @@ There is no limit to how many Academies you can register for but please note tha
 
 If you have any questions or need any assistance, please contact our concierge team at <b><font color="orange">concierge@wds.fm</font></b>. 
 
-**Please Note: Registration for WDS Academies is currently open, only for WDS 360 attendees. Registration for WDS Connect and the general public will go live June 6th.**
+**Please Note: registration for WDS Academies is currently open, only for WDS 360 attendees. Registration for WDS Connect and the general public will go live June 6th.**
 
 <div class="zig-zags_blue"></div>
 
