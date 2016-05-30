@@ -10,7 +10,7 @@ ap.Views.admin_academies = XView.extend
 
   listing: ->
     ap.api 'get admin/academies', {}, (rsp) ->
-      html = ''
+      html = '<tr><td>Time</td><td>Academy</td><td>Free</td><td>Paid</td><td></td>'
       lastDay = '0'
       for ev in rsp.events
         start = moment.utc(ev.start)

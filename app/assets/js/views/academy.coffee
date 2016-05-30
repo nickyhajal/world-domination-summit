@@ -37,6 +37,8 @@ ap.Views.academy = XView.extend
           $('.acm-ac-name').html(@event.what)
           $('.acm-ac-start').html(moment(@event.start).format('MMMM Do [at] h:mma'))
           ap.Modals.open('attending-ac')
+        else if $t.hasClass('not-360')
+          ap.Modals.open('ac-coming-soon')
         else
           ap.Modals.open('academy-purchase')
 

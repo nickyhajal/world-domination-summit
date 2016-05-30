@@ -1235,7 +1235,7 @@ h3.sub-karla {
     margin-top:                 -12px;
     margin-bottom:              30px;
 }
-#modal-attending-ac h3 {
+#modal-attending-ac h3, #modal-ac-coming-soon h3 {
     width:                      100%;
 }
 h3 {
@@ -2288,7 +2288,7 @@ div#modal-tour-start .modal-content, .modal-w-cont .modal-content {
     -webkit-transform:          translateY(-30px);
     -o-transform:               translateY(-30px);
 }
-#modal-attending-ac .modal-content {
+#modal-attending-ac .modal-content, #modal-ac-coming-soon .modal-content {
     padding:                    40px;
     top:                        100px;
     width:                      570px;

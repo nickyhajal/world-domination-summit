@@ -12,19 +12,26 @@ jQuery.fn.scan
 			status = $t.data('status') ? false
 			freeMessage = $t.data('free_message') ? false
 			freeMaxedMessage = $t.data('freemaxed_message') ? false
+			only360 = if $t.data('only360')? then true else false
 			performRsvp = $t.data('dorsvp') ? 1
 			allowCancel = true
 			if freeMessage
-				if status is 'claim'
-					start += '<span class="sidebar-btn-sub btn-free-ac">'+freeMessage+'</span>'
-				else if status is 'free-maxed'
-					start += '<span class="sidebar-btn-sub btn-freemaxed">'+freeMaxedMessage+'</span>'
-
-				else if status is 'maxed'
-					maxed = true
-					allowCancel = false
-					start = fullMessage
-					$t.addClass('maxed')
+				if (only360 and ap.me.get('ticket_type') is '360') or !only360
+					if status is 'claim'
+						start += '<span class="sidebar-btn-sub btn-free-ac">'+freeMessage+'</span>'
+					else if status is 'free-maxed'
+						start += '<span class="sidebar-btn-sub btn-freemaxed">'+freeMaxedMessage+'</span>'
+					else if status is 'maxed'
+						maxed = true
+						allowCancel = false
+						start = fullMessage
+						$t.addClass('maxed')
+				else
+					start = 'Not Available Yet'
+					start += '<span class="sidebar-btn-sub btn-ac-closed">
+						Only available for WDS 360 Attendees until June 6th.
+					</span>'
+					$t.addClass('not-360')
 			else if maxed
 				start = fullMessage
 
