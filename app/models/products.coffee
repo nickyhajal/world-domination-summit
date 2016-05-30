@@ -49,7 +49,7 @@ PRE =
 		.fetch()
 		.then (user) ->
 			rsp = {meta: meta.post.event_id}
-			if user? and user.get('attending'+process.yr) is 1
+			if user? and parseInt(user.get('attending'+process.yr)) is 1
 				rsp.price = 2900
 			dfr.resolve(rsp)
 		return dfr.promise
