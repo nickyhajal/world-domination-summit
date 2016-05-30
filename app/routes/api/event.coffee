@@ -382,6 +382,7 @@ routes = (app) ->
 								num_free = ev.get('num_free') ? 0
 								if free_rsvp
 									num_free += 1
+									ev.sendAcademyConfirmation(req.me.get('user_id'))
 								ev.set
 									num_rsvps: rsp.models.length
 									num_free: num_free
@@ -397,7 +398,6 @@ routes = (app) ->
 				event.rsvp req, res, ->
 					req.me.set('academy', req.query.event_id)
 					req.me.save()
-					event.sendAcademyConfirmation(req.me.get('user_id'))
 					res.r.success = true
 					next()
 				, true
