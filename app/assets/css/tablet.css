@@ -147,16 +147,6 @@ div.counter-fixed {
     position:                   relative ! important;
     top:                        60px ! important;
 }
-div.meetup-bio-shell {
-    width: 100%;
-}
-div.meetup-bio-content {
-    margin-left: 0;
-    width: 100%;
-}
-#page_content .meetup-bio-content p {
-    width: 100% !important;
-}
 #reg-open, #reg-schedule, #reg-army, #reg-headquarters, #reg-chris, #reg-story, #reg-attendees, .waterfall-flare {
     display:                    none;
 }

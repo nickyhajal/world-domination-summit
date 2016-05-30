@@ -114,6 +114,16 @@ div.orange-box p {
     width:                      89%;
     margin:                     0px 0px 4px;
 }
+div.meetup-bio-shell {
+    width: 100%;
+}
+div.meetup-bio-content {
+    margin-left: 0;
+    width: 100%;
+}
+#page_content .meetup-bio-content p {
+    width: 100% !important;
+}
 div.wall-content-type-icon {
     display:                    none ! important;
 }
