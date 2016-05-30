@@ -3827,16 +3827,22 @@ div.ac-free-full-alert {
 span.btn-free-ac.sidebar-btn-sub {
     padding:                    5px 60px;
 }
+#page_content .sidebar-btn-sub {
+    margin: 9px -10px -10px;
+    padding: 8px 13px;
+}
 span.sidebar-btn-sub {
-    background:                 rgb(217, 213, 199) none repeat scroll 0px 0px;
-    color:                      rgb(111, 109, 99);
-    display:                    block;
-    font-family:                karlaitalic;
-    font-size:                  11pt;
-    margin:                     10px -11px -9px;
-    text-align:                 center;
-    padding:                    5px 13px;
-    line-height:                118%;
+    background: rgb(217, 213, 199) none repeat scroll 0px 0px;
+    color: rgb(111, 109, 99);
+    display: block;
+    font-family: karlaitalic;
+    font-size: 11pt;
+    margin: 9px -11px -10px;
+    text-align: center;
+    padding: 5px 13px;
+    line-height: 118%;
+    border-radius: 0;
+    border-bottom: 0;
 }
 div.meetup-host-shell {
     display:                    inline-block;
