@@ -114,16 +114,6 @@ div.orange-box p {
     width:                      89%;
     margin:                     0px 0px 4px;
 }
-div.meetup-bio-shell {
-    width: 100%;
-}
-div.meetup-bio-content {
-    margin-left: 0;
-    width: 100%;
-}
-#page_content .meetup-bio-content p {
-    width: 100% !important;
-}
 div.wall-content-type-icon {
     display:                    none ! important;
 }
@@ -521,6 +511,34 @@ button.connect-purchase-start {
 }
 #page_content .meetup-who ul {
     width:                      100%;
+}
+div.cnct-product-descr {
+    margin-right:               70px;
+}
+div.card-existing {
+    margin-top:                 -88px;
+}
+div.card-intro {
+    display:                    block;
+}
+div.card-name {
+    margin-left:                0px;
+    margin-top:                 5px;
+}
+div.card-exp {
+    margin-top:                 5px;
+}
+div.card-new {
+    margin-top:                 -90px;
+}
+h4.academy-title {
+    font-size:                  13pt;
+}
+.academy-box .button {
+    font-size:                  11pt;
+    padding:                    8px 12px;
+    margin-top:                 -20px;
+    margin-right:               -20px;
 }
 * {
     line-height:                inherit;

@@ -897,6 +897,10 @@ div.tab-panel-next-hidden {
     width:                      100%;
     font-size:                  14pt;
 }
+#page-academies16 iframe, #page-academies iframe {
+    height:                     auto;
+    width:                      100%;
+}
 * {
     line-height:                inherit;
 }
