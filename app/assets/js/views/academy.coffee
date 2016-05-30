@@ -74,6 +74,11 @@ ap.Views.academy = XView.extend
     html = '<div class="meetup-hosted-by">Hosted by</div>'
     bhtml = ''
     bios = JSON.parse(@event.bios)
+    title = 'More about your hosts'
+    if @event.hosts.length is 1
+      title = 'More about your host'
+    $('h4', '.meetup-host-details').html(title)
+
     for host in @event.hosts
       host = ap.Users.get(host.user_id)
       bio = bios[host.get('user_id')]

@@ -3867,7 +3867,9 @@ div.meetup-bio-name {
     float:                      left;
 }
 #page_content .meetup-bio-content p {
-    width:                      390px;
+    width: 390px;
+    position: relative;
+    top: -2px;
 }
 div.meetup-bio-content {
     margin-left:                76px;
