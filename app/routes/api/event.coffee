@@ -29,11 +29,12 @@ routes = (app) ->
 				post.start = start.add('hours', req.query.pm).format('YYYY-MM-DD HH:mm:ss')
 
 				# Parse End Time if we have one
-				if req.query.end_hour && req.query.end_minute
+				if req.query.end_hour? && req.query.end_minute?
 					end = moment.utc(process.year+'-08-'+req.query.date+' '+req.query.end_hour+':'+req.query.end_minute+':00', 'YYYY-MM-DD HH:mm:ss')
 					if req.query.end_hour is '12'
 						req.query.end_pm = Math.abs(req.query.end_pm - 12)
 					post.end = end.add('hours', req.query.end_pm).format('YYYY-MM-DD HH:mm:ss')
+				tk post.end
 
 				if not post.type?
 					post.type = 'meetup'
