@@ -419,7 +419,7 @@ routes = (app) ->
 								.fetch()
 								.then (ev) ->
 									tk (ev.get('event_id')+':'+user.get('user_id'))
-									# ev.sendAcademyConfirmation(user.get('user_id'))
+									ev.sendAcademyConfirmation(user.get('user_id'))
 									cb()
 							else
 								cb()
