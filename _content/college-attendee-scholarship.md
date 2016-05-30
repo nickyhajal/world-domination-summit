@@ -46,7 +46,7 @@ Housing, transportation, and meals during the weekend are the responsibility of 
 # Timeline
 
 <ul>
-<li>Submit online application (below) by June 7th, 2016</li>
+<li>Submit online application (below) by June 4th, 2016</li>
 <li>Scholarship winners announced mid June</li>
 <li>WDS Registration and college meet up Friday morning, August 12</li>
 <li>Submit Action Plan by August 22nd.</li>
