@@ -100,6 +100,7 @@ routes = (app) ->
 		# Events
 		app.get '/event', event.get
 		app.get '/academies', event.academies
+		app.get '/freeconf', event.send_confs
 		app.post '/event/claim-academy', event.claim_academy
 		app.post '/event', event.add
 		app.put '/event', event.upd

@@ -401,6 +401,32 @@ routes = (app) ->
 					res.r.success = true
 					next()
 				, true
+		send_confs: (req, res, next) ->
+			Users.forge().query (qb) ->
+				qb.where('academy', '>', '0')
+			.fetch()
+			.then (rsp) ->
+				async.eachSeries rsp.models, (user, cb) ->
+					EventRsvp.forge
+						event_id: user.get('academy')
+						user_id: user.get('user_id')
+					.fetch()
+					.then (rsvp) ->
+						if rsvp
+							if parseInt(rsvp.get('rsvp_id')) < 14079
+								Event.forge
+									event_id: rsvp.get('event_id')
+								.fetch()
+								.then (ev) ->
+									tk (ev.get('event_id')+':'+user.get('user_id'))
+									# ev.sendAcademyConfirmation(user.get('user_id'))
+									cb()
+							else
+								cb()
+						else
+							cb()
+				, ->
+					next()
 		get_pdf: (req, res, next) ->
 			from = process.year+"-08-"+req.query.from_date+" "
 			from_hour = req.query.from_hour
