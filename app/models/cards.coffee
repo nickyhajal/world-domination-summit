@@ -71,7 +71,7 @@ Card = Shelf.Model.extend
 										rsp_params = _.extend pre_rsp_params, post_rsp_params
 										dfr.resolve({transaction: transaction, rsp: rsp_params})
 								, (err) -> console.error(err)
-						.catch (err) =>
+						, (err) =>
 							tk '>>> CATCH'
 							Transaction.forge
 								transaction_id: transaction.get('transaction_id')
