@@ -71,8 +71,16 @@ Card = Shelf.Model.extend
 										rsp_params = _.extend pre_rsp_params, post_rsp_params
 										dfr.resolve({transaction: transaction, rsp: rsp_params})
 								, (err) -> console.error(err)
-						, (err) ->
-							console.error err
+						.catch (err) =>
+							Transaction.forge
+								transaction_id: transaction.get('transaction_id')
+							.fetch()
+							.then (transaction) =>
+								transaction.set
+									status: 'declined'
+								.save()
+								.then =>
+									dfr.resolve({transaction: transaction, rsp: {err: err, declined: true}})
 					, (err) ->
 						console.error err
 		return dfr.promise

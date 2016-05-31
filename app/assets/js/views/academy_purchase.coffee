@@ -158,9 +158,17 @@ ap.Views.academy_purchase = XView.extend
 						charge()
 	doCharge: (card_id, purchase_data) ->
 		ap.api 'post product/charge', {card_id: card_id, code: 'academy', purchase_data: purchase_data}, (rsp) =>
-			@processing(false)
-			@show('purchased')
-			@finishButton()
+			if (rsp.declined? and rsp.declined)
+				$('.cc-error').show().html "Your card was declined. Please double check your details or try another card."
+				@processing(false)
+				$.scrollTo(0)
+				setTimeout ->
+					$('.cc-error').hide()
+				, 10000
+			else
+				@processing(false)
+				@show('purchased')
+				@finishButton()
 
 	claim: (e) ->
 		$t = $(e.currentTarget)
