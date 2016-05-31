@@ -1,4 +1,6 @@
 ap.Views.academy = XView.extend
+  events:
+    'click .meetup-attendees-toggle': 'toggle_attendees'
   initialize: ->
     ap.api 'get event', {slug: @options.slug}, (rsp) =>
       @event = rsp.event
