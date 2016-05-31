@@ -52,11 +52,17 @@ routes = (app) ->
 				if req.isAuthd req, res, next
 					req.me.getCard(req.query.card_id)
 					.then (card) ->
-						card.charge(req.query.code, req.query.purchase_data)
-						.then (charge) ->
-							res.r = _.extend res.r, charge.rsp
-							res.r.charge = charge.transaction
-							res.r.charge_success = true
+						if card.status? and card.status is 'declined'
+							res.r.declined = true
+							res.r.err = card.err
 							next()
+						else
+							card.charge(req.query.code, req.query.purchase_data)
+							.then (charge) ->
+								res.r = _.extend res.r, charge.rsp
+								if !res.r.declined?
+									res.r.charge = charge.transaction
+									res.r.charge_success = true
+								next()
 
 module.exports = routes

@@ -27,20 +27,23 @@ charge =
 						email: @get('email')
 					.then (customer) =>
 						stripe.tokens.retrieve card_id, (err, token) =>
-							c = token.card
-							Card.forge
-								user_id: @get('user_id')
-								brand: c.brand
-								exp_month: c.exp_month
-								exp_year: c.exp_year
-								last4: c.last4
-								customer: customer.id
-								token: c.id
-							.save()
-							.then (card) =>
-								dfr.resolve(card)
-							, (err) ->
-								tk err
+							if err
+								dfr.resolve({status: 'declined', err: err})
+							else
+								c = token.card
+								Card.forge
+									user_id: @get('user_id')
+									brand: c.brand
+									exp_month: c.exp_month
+									exp_year: c.exp_year
+									last4: c.last4
+									customer: customer.id
+									token: c.id
+								.save()
+								.then (card) =>
+									dfr.resolve(card)
+								, (err) ->
+									tk err
 		else
 			Card.forge
 				hash: card_id

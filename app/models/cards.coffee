@@ -32,9 +32,7 @@ Card = Shelf.Model.extend
 		.fetch()
 		.then (product, meta) =>
 			quantity = if purchase_data.quantity then purchase_data.quantity else 1
-			tk '1'
 			if product
-				tk '2'
 				Transaction.forge
 					product_id: product.get('product_id')
 					user_id: @get('user_id')
@@ -43,63 +41,48 @@ Card = Shelf.Model.extend
 					paid_amount: '0'
 				.save()
 				.then (transaction) =>
-					tk '3'
 					purchase_data.transaction_id = transaction.get('transaction_id')
 					product.pre_process({user_id: @get('user_id'), post: purchase_data})
 					.then (pre) =>
 						pre_rsp_params = pre?.rsp ? {}
 						price = if pre.price? then pre.price else product.get('cost')
 						price *= 	quantity
-						try
-							tk '4'
-							stripe.charges.create(
-								amount: price
-								currency: 'usd'
-								customer: @get('customer')
-								source: @get('token')
-								description: product.get('name')+' - '+product.get('descr')
-							).then((charge) =>
-								tk '5'
-								Transaction.forge
-									transaction_id: transaction.get('transaction_id')
-								.fetch()
-								.then (transaction) =>
-									transaction.set
-										status: 'paid'
-										paid_amount: price
-										stripe_id: charge.id
-										meta: if pre?.meta? then pre.meta else null
-									.save()
-									.then =>
-										product.post_process(transaction, charge)
-										.then (post_rsp) =>
-											post_rsp_params = post_rsp?.rsp ? {}
-											rsp_params = _.extend pre_rsp_params, post_rsp_params
-											dfr.resolve({transaction: transaction, rsp: rsp_params})
-									, (err) -> console.error(err)
-							).catch((err) =>
-								tk '>>> CATCH'
-								Transaction.forge
-									transaction_id: transaction.get('transaction_id')
-								.fetch()
-								.then (transaction) =>
-									transaction.set
-										status: 'declined'
-									.save()
-									.then =>
-										dfr.resolve({transaction: transaction, rsp: {err: err, declined: true}})
-							)
-						catch err
-								tk '>>> CATCH 2'
-								Transaction.forge
-									transaction_id: transaction.get('transaction_id')
-								.fetch()
-								.then (transaction) =>
-									transaction.set
-										status: 'declined'
-									.save()
-									.then =>
-										dfr.resolve({transaction: transaction, rsp: {err: err, declined: true}})
+						stripe.charges.create(
+							amount: price
+							currency: 'usd'
+							customer: @get('customer')
+							source: @get('token')
+							description: product.get('name')+' - '+product.get('descr')
+						).then((charge) =>
+							Transaction.forge
+								transaction_id: transaction.get('transaction_id')
+							.fetch()
+							.then (transaction) =>
+								transaction.set
+									status: 'paid'
+									paid_amount: price
+									stripe_id: charge.id
+									meta: if pre?.meta? then pre.meta else null
+								.save()
+								.then =>
+									product.post_process(transaction, charge)
+									.then (post_rsp) =>
+										post_rsp_params = post_rsp?.rsp ? {}
+										rsp_params = _.extend pre_rsp_params, post_rsp_params
+										dfr.resolve({transaction: transaction, rsp: rsp_params})
+								, (err) -> console.error(err)
+						).catch((err) =>
+							tk '>>> CATCH'
+							Transaction.forge
+								transaction_id: transaction.get('transaction_id')
+							.fetch()
+							.then (transaction) =>
+								transaction.set
+									status: 'declined'
+								.save()
+								.then =>
+									dfr.resolve({transaction: transaction, rsp: {err: err, declined: true}})
+						)
 					, (err) ->
 						console.error err
 		return dfr.promise
