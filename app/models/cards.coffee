@@ -32,7 +32,9 @@ Card = Shelf.Model.extend
 		.fetch()
 		.then (product, meta) =>
 			quantity = if purchase_data.quantity then purchase_data.quantity else 1
+			tk '1'
 			if product
+				tk '2'
 				Transaction.forge
 					product_id: product.get('product_id')
 					user_id: @get('user_id')
@@ -41,6 +43,7 @@ Card = Shelf.Model.extend
 					paid_amount: '0'
 				.save()
 				.then (transaction) =>
+					tk '3'
 					purchase_data.transaction_id = transaction.get('transaction_id')
 					product.pre_process({user_id: @get('user_id'), post: purchase_data})
 					.then (pre) =>
@@ -48,6 +51,7 @@ Card = Shelf.Model.extend
 						price = if pre.price? then pre.price else product.get('cost')
 						price *= 	quantity
 						try
+							tk '4'
 							stripe.charges.create(
 								amount: price
 								currency: 'usd'
@@ -55,6 +59,7 @@ Card = Shelf.Model.extend
 								source: @get('token')
 								description: product.get('name')+' - '+product.get('descr')
 							).then((charge) =>
+								tk '5'
 								Transaction.forge
 									transaction_id: transaction.get('transaction_id')
 								.fetch()
