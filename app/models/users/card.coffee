@@ -15,35 +15,41 @@ charge =
 		stripe = require('stripe')(stripe_key)
 		dfr = Q.defer()
 		if card_id.indexOf('tok_') > -1
+			tk 'forge card'
 			Card.forge
 				token: card_id
 			.fetch()
 			.then (exists) =>
+				tk 'exists?'
 				if exists
 					dfr.resolve(exists)
 				else
+					tk 'create'
 					stripe.customers.create
 						source: card_id
 						email: @get('email')
 					.then (customer) =>
-						stripe.tokens.retrieve card_id, (err, token) =>
-							if err
-								dfr.resolve({status: 'declined', err: err})
-							else
-								c = token.card
-								Card.forge
-									user_id: @get('user_id')
-									brand: c.brand
-									exp_month: c.exp_month
-									exp_year: c.exp_year
-									last4: c.last4
-									customer: customer.id
-									token: c.id
-								.save()
-								.then (card) =>
-									dfr.resolve(card)
-								, (err) ->
-									tk err
+						tk 'retrieve'
+						stripe.tokens.retrieve card_id
+						.then (token) =>
+							tk 'worked'
+							c = token.card
+							Card.forge
+								user_id: @get('user_id')
+								brand: c.brand
+								exp_month: c.exp_month
+								exp_year: c.exp_year
+								last4: c.last4
+								customer: customer.id
+								token: c.id
+							.save()
+							.then (card) =>
+								dfr.resolve(card)
+							, (err) ->
+								tk err
+						.catch (err) =>
+							tk 'err'
+							dfr.resolve({status: 'declined', err: err})
 		else
 			Card.forge
 				hash: card_id
