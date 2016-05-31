@@ -47,13 +47,13 @@ Card = Shelf.Model.extend
 						pre_rsp_params = pre?.rsp ? {}
 						price = if pre.price? then pre.price else product.get('cost')
 						price *= 	quantity
-						stripe.charges.create
+						stripe.charges.create(
 							amount: price
 							currency: 'usd'
 							customer: @get('customer')
 							source: @get('token')
 							description: product.get('name')+' - '+product.get('descr')
-						.then (charge) =>
+						).then((charge) =>
 							Transaction.forge
 								transaction_id: transaction.get('transaction_id')
 							.fetch()
@@ -71,7 +71,7 @@ Card = Shelf.Model.extend
 										rsp_params = _.extend pre_rsp_params, post_rsp_params
 										dfr.resolve({transaction: transaction, rsp: rsp_params})
 								, (err) -> console.error(err)
-						, (err) =>
+						).catch((err) =>
 							tk '>>> CATCH'
 							Transaction.forge
 								transaction_id: transaction.get('transaction_id')
@@ -82,6 +82,7 @@ Card = Shelf.Model.extend
 								.save()
 								.then =>
 									dfr.resolve({transaction: transaction, rsp: {err: err, declined: true}})
+						)
 					, (err) ->
 						console.error err
 		return dfr.promise
