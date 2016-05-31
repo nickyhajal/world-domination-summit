@@ -227,7 +227,7 @@ routes = (app) ->
 
 			# Get a users feed
 			if channel_type is 'user'
-				feeds.query('where', 'user_id', '=', req.query.channel_id)
+				feeds.query('where', 'feed.user_id', '=', req.query.channel_id)
 
 			# Get a specific feed post
 			else if channel_type is 'feed_item'
@@ -247,7 +247,7 @@ routes = (app) ->
 			else if req.query.since?
 				feeds.query('where', 'feed_id', '>', req.query.since)
 			if req.query.user_id
-				feeds.query('where', 'user_id', '=', req.query.user_id)
+				feeds.query('where', 'feed.user_id', '=', req.query.user_id)
 			if req.query.include_author?
 				feeds.query('join', 'users', 'users.user_id', '=', 'feed.user_id', 'left')
 				columns = {columns: ['feed_id', 'feed.created_at', 'content', 'num_comments', 'num_likes', 'channel_id', 'channel_type', 'feed.user_id', 'first_name', 'last_name', 'user_name', 'pic']}
