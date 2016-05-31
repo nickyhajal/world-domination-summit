@@ -91,6 +91,13 @@
 						meta += ' - Meetup: <a href="'+channel_url+'" class="dispatch-meta-link">'+event.get('what')+'</a>'
 					else
 						channel_url = '/hub'
+				else if channel_name is 'academy'
+					event = ap.Events.get(content.channel_id)
+					if event?.get('what')?
+						channel_url = '/academy/'+_.slugify(ap.Events.get(content.channel_id).get('what').toLowerCase())
+						meta += ' - Academy: <a href="'+channel_url+'" class="dispatch-meta-link">'+event.get('what')+'</a>'
+					else
+						channel_url = '/hub'
 				else if channel_name is 'global'
 					channel_url = '/hub'
 
