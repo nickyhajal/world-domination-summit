@@ -1,6 +1,6 @@
-date: 5-21-16
-headline: WDS Academies registration goes live May 30th! 
+date: 5-30-16
+headline: WDS Academies registration are now live for WDS 360 attendees! 
 
-#Save the Date: March 30th Academies Registration Goes Live
+# WDS Academies registration is now open for WDS 360 ticket attendees. They will go live to WDS Connect attendees and the general public starting June 6th.
 
-For a glimpse of confirmed Academies and Academy Leaders go to the following link: <a href="https://madmimi.com/p/875bc7">WDS 2016 Academies</a>
+For a list of confirmed Academies and Academy leaders and registration, go to the following link: <a href="https://wds.fm/academies">WDS 2016 Academies</a>
