@@ -94,7 +94,7 @@
 				else if channel_name is 'academy'
 					event = ap.Events.get(content.channel_id)
 					if event?.get('what')?
-						channel_url = '/academy/'+ev.get('slug')
+						channel_url = '/academy/'+event.get('slug')
 						meta += ' - Academy: <a href="'+channel_url+'" class="dispatch-meta-link">'+event.get('what')+'</a>'
 					else
 						channel_url = '/hub'
