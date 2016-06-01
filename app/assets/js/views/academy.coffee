@@ -92,11 +92,8 @@ ap.Views.academy = XView.extend
       host = ap.Users.get(host.user_id)
       bio = bios[host.get('user_id')]
       if host
-        tk host
-        tk lastType
         if h.host_type? and lastType != h.host_type
-          tk 'add h4'
-          lastType = host.host_type
+          lastType = h.host_type
           html += '<div class="meetup-hosted-by">With Guest Speakers</div>'
         bio = markdown.toHTML(bio)
         html += '
