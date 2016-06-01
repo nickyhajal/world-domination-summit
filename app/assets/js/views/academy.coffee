@@ -86,7 +86,7 @@ ap.Views.academy = XView.extend
     hosts = _.sortBy @event.hosts, (host) ->
       tk 'sort'
       type = if host.type? then host.type else '0000'
-      return type+'_'+host.host_id
+      return host.host_id
     tk hosts
 
     lastType = ''
