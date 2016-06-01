@@ -251,6 +251,8 @@ routes = (app) ->
 					.then (rsp) ->
 						for host in rsp.models
 							h = _.pick host.attributes, User::limitedAttributes
+							h.host_id = host.get('host_id')
+							h.host_type = host.get('host_type')
 							tmp.hosts.push(h)
 						EventRsvps.forge()
 						.query('join', 'users', 'event_rsvps.user_id', '=', 'users.user_id', 'inner')
