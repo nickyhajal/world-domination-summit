@@ -54,7 +54,8 @@ Contact our Concierge team at <b><font color="orange">concierge@wds.fm</font></b
   <li>First and last name</li>
  <li>Email address</li>
  <li>Mailing address</li>
- </ul>Once you've entered the necessary information, you'll be asked to pay the transfer fee to complete the process.
+ </ul>
+ Once you've entered the necessary information, you'll be asked to pay the transfer fee to complete the process.
 
 <div class="line-canvas"></div>
 
