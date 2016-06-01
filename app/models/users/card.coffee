@@ -50,6 +50,9 @@ charge =
 						.catch (err) =>
 							tk 'err'
 							dfr.resolve({status: 'declined', err: err})
+					.catch (err) =>
+						tk 'err'
+						dfr.resolve({status: 'declined', err: err})
 		else
 			Card.forge
 				hash: card_id
