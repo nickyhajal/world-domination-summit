@@ -43,8 +43,10 @@ charge =
 							, (err) ->
 								tk err
 						.catch (err) =>
+							tk err
 							dfr.resolve({status: 'declined', err: err})
 					.catch (err) =>
+						tk err
 						tk 'Card add error'
 						dfr.resolve({status: 'declined', err: err})
 		else
