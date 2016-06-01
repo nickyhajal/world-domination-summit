@@ -18,6 +18,7 @@ ap.Views.admin_transactions = XView.extend
 				atn = new ap.User(t)
 				quantity = if t.quantity? then t.quantity else 1
 				user_name_link = if atn.get('user_name').length then atn.get('user_name') else atn.get('hash')
+				paid = if t.status == 'declined' then 'Declined' else _.money(t.paid_amount)
 				html += '<tr data-user="'+user_name_link+'">
 					<td>
 						<div class="transaction-avatar" style="background:url('+atn.getPic(64)+')"></div>
@@ -25,7 +26,7 @@ ap.Views.admin_transactions = XView.extend
 						<div class="user_name">'+t.name+'</div>
 					</td>
 					<td>'+quantity+'</td>
-					<td>'+_.money(t.paid_amount)+'</td>
+					<td>'+paid+'</td>
 					<td>'+moment(t.updated_at).format('M/DD/YY [at] h:mm a')+'</td>'
 			$('#transaction-results').html(html)
 	row_click: (e) ->
