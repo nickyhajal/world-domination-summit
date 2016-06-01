@@ -83,11 +83,18 @@ ap.Views.academy = XView.extend
     if @event.hosts.length is 1
       title = 'More about your host'
     $('h4', '.meetup-host-details').html(title)
+    hosts = _.sortBy @event.hosts, (host) ->
+      type = if host.type? then host.type else '0000'
+      return type+'_'+host.host_id
 
-    for host in @event.hosts
+    lastType = ''
+    for host in hosts
       host = ap.Users.get(host.user_id)
       bio = bios[host.get('user_id')]
       if host
+        if host.type? and lastType != host.type
+          lastType = host.type
+          html = '<div class="meetup-hosted-by">With Guest Speakers</div>'
         bio = markdown.toHTML(bio)
         html += '
           <div class="meetup-host-shell">
