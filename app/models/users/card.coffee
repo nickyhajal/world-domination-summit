@@ -25,8 +25,9 @@ charge =
 					stripe.customers.create(
 						source: card_id
 						email: @get('email')
-					).then((customer) =>
-						stripe.tokens.retrieve card_id
+					)
+					.then((customer) =>
+						stripe.tokens.retrieve(card_id)
 						.then((token) =>
 							c = token.card
 							Card.forge
@@ -46,7 +47,8 @@ charge =
 							tk err
 							dfr.resolve({status: 'declined', err: err})
 						)
-					).catch((err) =>
+					)
+					.catch((err) =>
 						tk err
 						tk 'Card add error'
 						dfr.resolve({status: 'declined', err: err})
