@@ -84,8 +84,10 @@ ap.Views.academy = XView.extend
       title = 'More about your host'
     $('h4', '.meetup-host-details').html(title)
     hosts = _.sortBy @event.hosts, (host) ->
+      tk 'sort'
       type = if host.type? then host.type else '0000'
       return type+'_'+host.host_id
+    tk hosts
 
     lastType = ''
     for host in hosts
