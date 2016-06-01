@@ -22,12 +22,12 @@ charge =
 				if exists
 					dfr.resolve(exists)
 				else
-					stripe.customers.create
+					stripe.customers.create(
 						source: card_id
 						email: @get('email')
-					.then (customer) =>
+					).then((customer) =>
 						stripe.tokens.retrieve card_id
-						.then (token) =>
+						.then((token) =>
 							c = token.card
 							Card.forge
 								user_id: @get('user_id')
@@ -42,13 +42,15 @@ charge =
 								dfr.resolve(card)
 							, (err) ->
 								tk err
-						.catch (err) =>
+						).catch((err) =>
 							tk err
 							dfr.resolve({status: 'declined', err: err})
-					.catch (err) =>
+						)
+					).catch((err) =>
 						tk err
 						tk 'Card add error'
 						dfr.resolve({status: 'declined', err: err})
+					)
 		else
 			Card.forge
 				hash: card_id
