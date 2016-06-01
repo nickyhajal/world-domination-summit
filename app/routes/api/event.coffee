@@ -247,7 +247,7 @@ routes = (app) ->
 					.query('join', 'users', 'users.user_id', '=', 'event_hosts.user_id', 'inner')
 					.query('where', 'event_id', '=', tmp.event_id)
 					.fetch
-						columns: ['users.*']
+						columns: ['users.*', 'host_id', 'host_type']
 					.then (rsp) ->
 						for host in rsp.models
 							h = _.pick host.attributes, User::limitedAttributes
@@ -256,7 +256,7 @@ routes = (app) ->
 						.query('join', 'users', 'event_rsvps.user_id', '=', 'users.user_id', 'inner')
 						.query('where', 'event_id', '=', tmp.event_id)
 						.fetch
-							columns: ['users.*', 'host_id', 'host_type']
+							columns: ['users.*']
 						.then (rsp) ->
 							for atn in rsp.models
 								atn = _.pick atn.attributes, User::limitedAttributes
