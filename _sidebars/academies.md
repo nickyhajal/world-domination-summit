@@ -8,4 +8,4 @@
 [Engaged Community](/academy/how-to-create-build-a-hyper-engaged-community)
 [Travel Hacking](/academy/travel-hacking)
 [Hack with Tarot](/academy/hack-your-world-with-tarot)
-[Decoding Greatness](/academy/decoding-greatness)
+[School of Greatness](/academy/decoding-greatness)
