@@ -399,9 +399,9 @@ routes = (app) ->
 								if free_rsvp
 									num_free += 1
 									ev.sendAcademyConfirmation(req.me.get('user_id'))
-								ev.set
-									num_free: num_free
-								.save()
+									ev.set
+										num_free: num_free
+									.save()
 						next()
 
 		claim_academy: (req, res, next) ->
