@@ -393,11 +393,13 @@ routes = (app) ->
 							.fetch()
 							.then (ev) ->
 								num_free = ev.get('num_free') ? 0
+								ev.set
+									num_rsvps: rsp.models.length
+								.save()
 								if free_rsvp
 									num_free += 1
 									ev.sendAcademyConfirmation(req.me.get('user_id'))
 								ev.set
-									num_rsvps: rsp.models.length
 									num_free: num_free
 								.save()
 						next()

@@ -3574,7 +3574,7 @@ div.introjs-tooltiptext {
     text-align:                 center;
 }
 .modal-panel-ac-free p.small {
-    margin-top:                 40px;
+    margin-top:                 40px !important;
 }
 .modal p.small {
     display:                    block;
