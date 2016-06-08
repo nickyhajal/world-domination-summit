@@ -36,7 +36,7 @@ Housing, transportation, and meals during the weekend are the responsibility of 
 # Requirements
 
 <ul>
-  <li>Applicants must be full-time students in the 2015-16 school year at one of the qualifying college programs: UP, PSU, Concordia, ActSix, PCC</li>
+  <li>Applicants must have been full-time students in the 2015-16 school year at a college or university in Oregon</li>
 <li>Applicants must be between the ages of 18 and 25 on August 9, 2016</li>
 <li>Applicants must arrange their own housing in Portland and transportation to and from the event each day.</li>
 <li>Applicants must be available to attend all sessions between the morning of Friday, August 12th to Sunday evening, August 14th. (Activities through the rest of the week are optional.) <a href="http://worlddominationsummit.com/schedule" target="_blank">View WDS Schedule</a></li>
