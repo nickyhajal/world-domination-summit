@@ -56,7 +56,8 @@ If you are a registered attendee log into your WDS account and then look for the
  <li>Email address</li>
  <li>Mailing address</li>
  </ul>
- Once you've entered the necessary information, you'll be asked to pay the transfer fee to complete the process.-->
+ Once you've entered the necessary information, you'll be asked to pay the transfer fee to complete the process.
+ -->
 
 <div class="line-canvas"></div>
 
