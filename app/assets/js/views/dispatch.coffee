@@ -6,16 +6,19 @@ ap.Views.Dispatch = XView.extend
 		'blur .dispatch-post-inp': 'blurControls'
 
 	initialize: ->
-		defaults =
-			channel_id: 0
-			channel_type: 'global'
-		@options = _.defaults @options, defaults
-		render = true
-		if $(@el).data('desktop_only')? and not ap.isDesktop
-			render = false
-		_.whenReady 'me', =>
-			if render
-				@render()
+		if ap.me
+			defaults =
+				channel_id: 0
+				channel_type: 'global'
+			@options = _.defaults @options, defaults
+			render = true
+			if $(@el).data('desktop_only')? and not ap.isDesktop
+				render = false
+			_.whenReady 'me', =>
+				if render
+					@render()
+		else
+			ap.login_redirect = 'dispatch'
 	render: ->
 		_.whenReady 'tpls', =>
 			html = _.t 'parts_dispatch', {}

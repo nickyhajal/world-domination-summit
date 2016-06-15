@@ -171,7 +171,8 @@ routes = (app) ->
 					console.error(err)
 				return dfr.promise
 
-			async.each req.query.search.split(' '), (term, cb) ->
+			terms = if req.query.search? then req.query.search.split(' ') else []
+			async.each terms, (term, cb) ->
 				doQuery('first_name', term+'%')
 				.then (byF) ->
 					for f in byF.models

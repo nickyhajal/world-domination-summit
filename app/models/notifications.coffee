@@ -146,10 +146,10 @@ Notifications = Shelf.Collection.extend
 					if html
 						link = '<a href="http://worlddominationsummit.com'+link+'">'
 						text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
-						text += link+user.get('first_name')+' '+user.get('last_name')+' commented your post!</a>'
+						text += link+user.get('first_name')+' '+user.get('last_name')+' commented on your post!</a>'
 						text += '</a>'
 					else
-						text += user.get('first_name')+' '+user.get('last_name')+' commented your post!'
+						text += user.get('first_name')+' '+user.get('last_name')+' commented on your post!'
 					if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
 			when 'connected'
 				User.forge({user_id: data.from_id})

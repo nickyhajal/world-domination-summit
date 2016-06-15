@@ -132,6 +132,7 @@ loadTpls = ->
 	setTimeout ->
 		loadTpls()
 	, 30000
+
 unless loadingTpls
 	rds.expire 'tpls_pages', 0
 	rds.expire 'tpls_parts', 0
