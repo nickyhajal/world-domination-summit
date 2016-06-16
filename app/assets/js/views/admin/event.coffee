@@ -1,6 +1,6 @@
 ap.Views.admin_event = XView.extend
 	ticketTimo: 0
-	events: 
+	events:
 		'submit #admin-event-update': 'event_submit'
 	initialize: ->
 		theEvent = false
@@ -31,6 +31,7 @@ ap.Views.admin_event = XView.extend
 		$('select[name="minute"]').select2('val', start.format('mm'))
 		$('select[name="pm"]').select2('val', pm)
 		$('select[name="active"]').select2('val', @event.active)
+		$('select[name="for_type"]').select2('val', @event.for_type)
 
 	event_submit: (e) ->
 		e.preventDefault()

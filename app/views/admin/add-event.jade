@@ -48,6 +48,13 @@ div(id="admin-add-event-shell")
 					option(value="0") am
 					option(value="12", selected="selected") pm
 		div(class="form-section")
+			label For Ticket Type
+			div(class="form-box")
+				select(name="date", class="select2", style="width:150px")
+					option(value="all") All
+					option(value="360") 360 Only
+					option(value="connect") Connect Only
+		div(class="form-section")
 			label Publicly Visible
 			div(class="form-box")
 				select(name="include_full", class="select2", style="width:120px")
