@@ -15,7 +15,7 @@ ap.Views.propose_a_meetup = XView.extend
 		ap.api 'post event', post, ->
 			btn.finish()
 			$('#page_content').html "
-				<h2 id='header-title'>Success!</h2> 
+				<h2 id='header-title'>Success!</h2>
 				<h3>Your Meetup Was Submitted!</h3>
 				We'll be in touch with you shortly so keep an eye on your inbox over the next week!
 			"

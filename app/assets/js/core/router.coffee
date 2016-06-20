@@ -24,6 +24,7 @@ ap.createRouter = ->
 			@route("reset-password/:hash", 'reset', ap.Routes.reset)
 			@route("transfer/:hash", 'transfer', ap.Routes.hashLogin)
 			@route("academies/:hash", 'academies', ap.Routes.hashLogin)
+			@route("propose-a-meetup/:ticket_hash", 'propose-meetup', ap.Routes.hashLogin)
 			@route("community/:community", 'community', ap.Routes.community)
 			@route("academy/:academy", 'academy', ap.Routes.academy)
 			@route("dispatch/:feed_id", 'dispatch', ap.Routes.dispatch)

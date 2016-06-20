@@ -1,85 +1,139 @@
 div(id="page_content")
-	h2(id="header-title") Want to Host a WDS Meetup?
-	h3 Propose a Meetup
-	div(class="form-error")
-		| Hm, seems like the information you submitted isn't quite right. Take a look and try again.
-	p Want to host an adventure, hangout or something in between during this year's World Domination Summit?
-	p
-		i Before you propose a meetup, use this information to help you organize a successful event:
-			a(href="https://docs.google.com/document/d/1vUHpxvGlSnMUTN6QFuwdmy0dywj9zCejZuXNphMBX9I/edit", target="_blank") WDS Meetup Guidelines
-	p Ready?
-	p Complete the form below with the details on what you have planned. We'll review your proposal and get back to you shortly.
-	p Once your proposal is accepted, it will be listed in our official directory of WDS meetups and made available to all the attendees!
+	div(class="photo-header")
+		img(src="https://farm4.staticflickr.com/3659/5806649453_3cf1c49833_z_d.jpg" class="photo-head-active")
+	div(class="lifted-content")
+		h3 Facilitate Awesome! Propose a Meetup.
+		div(class="form-error")
+			| Hm, seems like the information you submitted isn't quite right. Take a look and try again.
+		p The goal of WDS has always been to bring amazing people together who believe in and live out the core values of Community, Adventure, and Service.  For the past 5 years, attendee-led meetups have been an integral part of the WDS experience and the best way for us as a community to learn from each other.
+		p Here are the goals of meetups:
+		ul
+			li Help each other in our pursuits to live remarkable lives
+			li Learn and discover
+			li Make new connections within the WDS community
+			li Do something fun and memorable together
+		p As an attendee, you have the opportunity to host meetups, attend meetups, or both using our online system and mobile app.
+		h4 When should I host a meetup?
+		p Here are the best times to host a meet-up that doesn’t conflict with WDS programming:
+		table
+			tr
+				td Tuesday, August 9th
+				td Anytime
+			tr
+				td Wednesday, August 10th
+				td Anytime
+			tr
+				td Thursday, August 11th
+				td 8am-1pm, 4:30pm-6pm
+			tr
+				td Friday, August 12th
+				td 4:30pm-6:00pm
+			tr
+				td Saturday, August 13th
+				td Anytime
+			tr
+				td Sunday, August 14th
+				td Anytime
+		h4 How to host a meetup
+		p Want to host an adventure, hang out or something in between during this year's World Domination Summit? Here’s what you need to do:
+		ol
+			li Before you propose a meetup, use this information to help you organize a successful event:
+				a(href"", target="_blank") WDS Meetup Guidelines - Create the Best Meetup Ever!!!
+				p(class="small") (Spoiler alert: The chances of your meetup getting approved goes up astronomically if you read and use this document)
+			li Complete the form below with the details on what you have planned. We'll review your proposal and get back to you shortly.
+		p Once your proposal is accepted, it will be listed in our official directory of WDS meetups and made available to all the attendees when the mobile app goes live.
 
-	h3 Meetup Proposal Form
-	form(action="#", method="post", id="meetup-proposal-form")
-		div(class="form-section")
-			div(class="form-box")
-				label What are you planning?
-				label(class="sub-label") This will be the name of your meetup
-				input(type="text", name="what")
-		div(class="form-section")
-			div(class="form-box")
-				label Briefly describe what you're planning
-				textarea(name="descr", class="meetup-descr-inp")
-		div(class="form-section")
-			div(class="form-box")
-				label Where will it be hosted?
-				label(class="sub-label") Your meetup is much more likely to be accepted if you have a venue planned
-				input(type="text", name="place")
-		div(class="form-section")
-			div(class="form-box")
-				label Venue Address
-				label(class="sub-label") Or meeting point if your meetup is on the move
-				input(type="text", name="address")
-		div(class="form-section")
-			div(class="form-box")
-				label What kind of person might enjoy this? Who's this for?
-				input(type="text", name="who")
-		div(class="form-section")
-				label What interests might be associated with your meetup?
-				div(class="interest-select-list", data-context="generic")
-		div(class="form-section")
-			label When will your meetup happen?
-			label(class="sub-label") We suggest: Thursday afternoon or evening, Friday afternoon, Saturday evening, Sunday afternoon, and Monday anytime
-			div(class="form-box")
-				select(name="date", class="select2", style="width:120px")
-					option(value="07") July 7th
-					option(value="08") July 8th
-					option(value="09") July 9th
-					option(value="10") July 10th
-					option(value="11") July 11th
-					option(value="12") July 12th
-					option(value="13") July 13th
-					option(value="14") July 14th
-					option(value="15") July 15th
-					option(value="16") July 16th
-			div(class="form-box")
-				select(name="hour", class="select2", style="width:120px")
-					option(value="01") 01
-					option(value="02") 02
-					option(value="03") 03
-					option(value="04") 04
-					option(value="05") 05
-					option(value="06") 06
-					option(value="07") 07
-					option(value="08") 08
-					option(value="09") 09
-					option(value="10") 10
-					option(value="11") 11
-					option(value="12") 12
-				select(name="minute", class="select2", style="width:65px")
-					option(value="00") 00
-					option(value="15") 15
-					option(value="30") 30
-					option(value="45") 45
-				select(name="pm", class="select2", style="width:65px")
-					option(value="0") am
-					option(value="12") pm
-		div(class="form-section")
-			label How many people can attend?
-			label(class="sub-label") We'll close your event after it has this many RSVPs
-			input(type="number", name="max", min="1", max="5000")
-		div(class="clear")
-		div(class="form-section")
-			input(type="submit", value="Submit Meetup")
+		h4 Meetup Proposal Form
+		p Use the form below to tell us about your exciting event. **Please note that if your meetup is approved, we will use the information from this form to display your meetup in our system** (unless otherwise noted). Think about what you want publicly displayed when submitting the this form and what will best communicate your meet-up to other attendees.
+
+		form(action="#", method="post", id="meetup-proposal-form")
+			div(class="form-section")
+				div(class="form-box")
+					label What's the name of your meetup?
+					label(class="sub-label") Be clear, specific ,and catchy
+					input(type="text", name="what")
+			div(class="form-section")
+				label What type of meetup will this be?
+				div(class="form-box")
+					select(name="date", class="select2", style="width:120px")
+						option(value="discover") Discover: (Class/Workshop)
+						option(value="connect") Connect: (Hang-out/Networking)
+						option(value="experience") Experience: (Adventure/Activity)
+			div(class="form-section")
+				div(class="form-box")
+					label Briefly describe what you're planning
+					textarea(name="descr", class="meetup-descr-inp")
+			div(class="form-section")
+				div(class="form-box")
+					label Where will it be hosted?
+					label(class="sub-label") Your meetup is much more likely to be accepted if you have a venue planned
+					input(type="text", name="place")
+			div(class="form-section")
+				div(class="form-box")
+					label Venue Address
+					label(class="sub-label") Make sure this is an address that can be found using Google maps. If your meetup is on the move, this is the meeting point.
+					input(type="text", name="address")
+			div(class="form-section")
+				div(class="form-box")
+					label Note about Venue/Location
+					label(class="sub-label") Anything attendees should know about where to find your meetup (i.e. the room behind the bar, at the umbrella man statue in Pioneer Square, etc.)
+					input(type="text", name="venue_note")
+			div(class="form-section")
+				div(class="form-box")
+					label What kind of person might enjoy this? Who's this for?
+					input(type="text", name="who")
+			div(class="form-section")
+					label What interests might be associated with your meetup?
+					div(class="interest-select-list", data-context="generic")
+			div(class="form-section")
+				label When will your meetup happen?
+				label(class="sub-label") We suggest: Thursday afternoon or evening, Friday afternoon, Saturday evening, Sunday afternoon, and Monday anytime
+				div(class="form-box")
+					select(name="date", class="select2", style="width:120px")
+						option(value="07") July 7th
+						option(value="08") July 8th
+						option(value="09") July 9th
+						option(value="10") July 10th
+						option(value="11") July 11th
+						option(value="12") July 12th
+						option(value="13") July 13th
+						option(value="14") July 14th
+						option(value="15") July 15th
+						option(value="16") July 16th
+				div(class="form-box")
+					select(name="hour", class="select2", style="width:120px")
+						option(value="01") 01
+						option(value="02") 02
+						option(value="03") 03
+						option(value="04") 04
+						option(value="05") 05
+						option(value="06") 06
+						option(value="07") 07
+						option(value="08") 08
+						option(value="09") 09
+						option(value="10") 10
+						option(value="11") 11
+						option(value="12") 12
+					select(name="minute", class="select2", style="width:65px")
+						option(value="00") 00
+						option(value="15") 15
+						option(value="30") 30
+						option(value="45") 45
+					select(name="pm", class="select2", style="width:65px")
+						option(value="0") am
+						option(value="12") pm
+			div(class="form-section")
+				label How many people can attend?
+				label(class="sub-label") We'll close your event after it has this many RSVPs
+				input(type="number", name="max", min="1", max="5000")
+			div(class="form-section")
+				label Provide a brief outline of the agenda for this event:
+				label(class="sub-label") This is for review purposes only and will not be displayed publicly. Please include the names and affiliations of any presenters, the general points to be discussed or questions to be asked, and allot an estimated time for each activity. Refer to the
+				a(href="", target="_blank") WDS Meetup Guidelines
+				| to ensure it’s as awesome as possible.
+				textarea(name="outline", class="meetup-descr-inp")
+
+			div(class="clear")
+			div(class="form-section")
+				input(type="submit", value="Submit Meetup")
+

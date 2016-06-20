@@ -74,6 +74,7 @@ routes = (app) ->
 									.then (interest) ->
 										cb()
 								, ->
+									req.me.sendEmail('meetup-submitted', 'Thanks for your meetup proposal!')
 									next()
 							else
 								next()
@@ -281,7 +282,7 @@ routes = (app) ->
 						User.forge({user_id: host.get('user_id')})
 						.fetch()
 						.then (host) ->
-							host.sendEmail('meetup-approved', 'Thanks for your meetup proposal!')
+							host.sendEmail('meetup-approved', 'Your meetup has been approved!')
 							model.set('active', 1)
 							model.save()
 							next()

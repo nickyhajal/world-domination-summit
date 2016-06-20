@@ -8,6 +8,9 @@ ap.Routes.hashLogin = (hash) ->
 				if location.pathname.indexOf('transfer') > -1
 					ap.loading false
 					ap.navigate('transfer')
+				else if location.pathname.indexOf('propose-a-meetup') > -1
+					ap.loading false
+					ap.navigate('propose-a-meetup')
 				else if location.pathname.indexOf('academies') > -1
 					ap.loading false
 					ap.navigate('academies')
