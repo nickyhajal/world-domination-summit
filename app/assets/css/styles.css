@@ -1456,11 +1456,11 @@ input[type="text"], input[type="password"], input[type="number"], .pre-input {
     padding:                    9px;
     width:                      300px;
 }
-.sub-label {
-    font-size:                  10pt ! important;
+.sub-label, .sub-label p {
     color:                      rgb(118, 118, 118) ! important;
-    margin-bottom:              7px ! important;
+    font-size:                  10pt ! important;
     width:                      430px;
+    margin-bottom:              7px ! important;
 }
 #page-propose-a-meetup .interest-select-list label:first-of-type {
     display:                    none;
