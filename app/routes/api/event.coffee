@@ -67,6 +67,7 @@ routes = (app) ->
 						EventHost.forge({event_id: event.get('event_id'), user_id: req.me.get('user_id')})
 						.save()
 						.then (host) ->
+							req.me.sendEmail('meetup-submitted', 'Thanks for your meetup proposal!')
 							if req.query.interests? and req.query.interests.length
 								async.each req.query.interests.split(','), (interest, cb) ->
 									EventInterest.forge({event_id: event.get('event_id'), interest_id: interest})
@@ -74,7 +75,6 @@ routes = (app) ->
 									.then (interest) ->
 										cb()
 								, ->
-									req.me.sendEmail('meetup-submitted', 'Thanks for your meetup proposal!')
 									next()
 							else
 								next()
