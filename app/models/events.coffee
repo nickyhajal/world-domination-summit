@@ -12,7 +12,7 @@ Event = Shelf.Model.extend
   permittedAttributes: [
     'event_id', 'year', 'ignored', 'type', 'for_type', 'title', 'descr', 'what', 'active',
     'note', 'place', 'who', 'utc', 'end', 'venue', 'address', 'note', 'max', 'bios',
-    'free_max'
+    'free_max', 'format', 'outline', 'venue_note'
   ]
   defaults: {
   	descr: ''
