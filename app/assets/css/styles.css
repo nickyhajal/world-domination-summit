@@ -3574,7 +3574,7 @@ div.introjs-tooltiptext {
     text-align:                 center;
 }
 .modal-panel-ac-free p.small {
-    margin-top:                 40px !important;
+    margin-top:                 40px ! important;
 }
 .modal p.small {
     display:                    block;
@@ -3828,21 +3828,23 @@ span.btn-free-ac.sidebar-btn-sub {
     padding:                    5px 60px;
 }
 #page_content .sidebar-btn-sub {
-    margin: 9px -10px -10px;
-    padding: 8px 13px;
+    margin:                     9px -10px -10px;
+    padding:                    8px 13px;
 }
 span.sidebar-btn-sub {
-    background: rgb(217, 213, 199) none repeat scroll 0px 0px;
-    color: rgb(111, 109, 99);
-    display: block;
-    font-family: karlaitalic;
-    font-size: 11pt;
-    margin: 9px -11px -10px;
-    text-align: center;
-    padding: 5px 13px;
-    line-height: 118%;
-    border-radius: 0;
-    border-bottom: 0;
+    background:                 rgb(217, 213, 199) none repeat scroll 0px 0px;
+    color:                      rgb(111, 109, 99);
+    display:                    block;
+    font-family:                karlaitalic;
+    font-size:                  11pt;
+    margin:                     9px -11px -10px;
+    text-align:                 center;
+    padding:                    5px 13px;
+    line-height:                118%;
+    border-radius:              0px;
+    -moz-border-radius:         0px;
+    -webkit-border-radius:      0px;
+    border-bottom:              0px none;
 }
 div.meetup-host-shell {
     display:                    inline-block;
@@ -3867,9 +3869,9 @@ div.meetup-bio-name {
     float:                      left;
 }
 #page_content .meetup-bio-content p {
-    width: 390px;
-    position: relative;
-    top: -2px;
+    width:                      390px;
+    position:                   relative;
+    top:                        -2px;
 }
 div.meetup-bio-content {
     margin-left:                76px;
@@ -3885,6 +3887,23 @@ div.meetup-bio-content {
     text-decoration:            none;
     font-size:                  16pt;
     width:                      567px;
+}
+table.time-table td {
+    vertical-align:             middle;
+    font-family:                karla;
+    font-size:                  12pt;
+    padding:                    9px 21px 8px;
+}
+table.time-table tr:nth-of-type(2n) {
+    background:                 rgb(255, 250, 244) none repeat scroll 0% 0%;
+}
+table.time-table tr {
+    background:                 rgb(255, 244, 232) none repeat scroll 0% 0%;
+    vertical-align:             middle;
+}
+table.time-table {
+    vertical-align:             middle;
+    border-collapse:            collapse;
 }
 * {
     box-sizing:                 border-box;
