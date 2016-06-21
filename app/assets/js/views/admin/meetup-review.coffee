@@ -43,7 +43,7 @@ ap.Views.admin_meetup_review = XView.extend
           <a data-action="accept" href="/api/admin/event_accept?id='+atn.event_id+'" class="button ambassador-button event-button">Accept</a>
           </td></tr>
           <tr id="event-detail-'+atn.event_id+'" class="event-detail" style="display:none;">
-          <td colspan="3">
+          <td colspan="5">
             <a href="/admin/meetup/'+atn.event_id+'" class="meetup-edit">Edit Meetup</a>
             <b>Host</b>
             <div>'+host_str+'</div>
