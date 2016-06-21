@@ -25,12 +25,13 @@ ap.Views.admin_meetup_review = XView.extend
         place = if atn.place.length then atn.place else 'No Venue'
         addr = if atn.address? and atn.address?.length then atn.address else 'No Address'
         vnotes = if atn.venue_note? and atn.venue_note.length then atn.venue_note else 'No Venue Note'
+        format = if atn.format? and atn.format.length then _.titleize(atn.format) else 'No format'
         html += '<tr data-event_id="'+atn.event_id+'">
           <td>
             '+host_str+'
           </td>
           <td>
-            '+_.titleize(atn.format)+'
+            '+format+'
           </td>
           <td>
             <span>'+atn.what+'</span>
