@@ -26,6 +26,7 @@ ap.Views.admin_meetup_review = XView.extend
         addr = if atn.address? and atn.address?.length then atn.address else 'No Address'
         vnotes = if atn.venue_note? and atn.venue_note.length then atn.venue_note else 'No Venue Note'
         format = if atn.format? and atn.format.length then _.titleize(atn.format) else 'No format'
+        outline = if atn.outline? and atn.outline.length then markdown.toHTML(atn.outline) else 'No outline'
         html += '<tr data-event_id="'+atn.event_id+'">
           <td>
             '+host_str+'
@@ -64,7 +65,7 @@ ap.Views.admin_meetup_review = XView.extend
             <b>Capacity</b>
             <div>'+atn.max+'</div>
             <b>Outline</b>
-            <div>'+markdown.toHTML(atn.outline)+'</div>
+            <div>'+outline+'</div>
             <br/>
           </td>
           </tr>'
