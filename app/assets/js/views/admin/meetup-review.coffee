@@ -12,7 +12,7 @@ ap.Views.admin_meetup_review = XView.extend
 
   listing: ->
     ap.api 'get admin/events', {active: 0, type: 'meetup'}, (rsp) ->
-      html = '<tr class="tbl-head"><th>Meetup</th><th>Venue</th><th>Actions</th></tr>'
+      html = '<tr class="tbl-head"><th>Host</th><th>Format</th><th>Meetup</th><th>Venue</th><th>Actions</th></tr>'
       for atn in rsp.events
       #   atn = new ap.Event(atn)
         host = ''
@@ -21,8 +21,17 @@ ap.Views.admin_meetup_review = XView.extend
           host_str = host.first_name+' '+host.last_name
           if host['attending'+ap.yr] != '1'
             host_str += ' (Not attending WDS 2015 - user_id: '+host.user_id+')'
+          av = 'http://avatar.wds.fm/'+host.user_id+'?width=64'
         place = if atn.place.length then atn.place else 'No Venue'
+        addr = if atn.address.length then atn.address else 'No Address'
+        vnotes = if atn.venue_note.length then atn.venue_note else 'No Venue Note'
         html += '<tr data-event_id="'+atn.event_id+'">
+          <td>
+            '+host_str+'
+          </td>
+          <td>
+            '+_.titleize(atn.format)+'
+          </td>
           <td>
             <span>'+atn.what+'</span>
           </td>
@@ -37,6 +46,11 @@ ap.Views.admin_meetup_review = XView.extend
             <b>Host</b>
             <div>'+host_str+'</div>
             <br/>
+            <b>Venue</b>
+            <div>'+place+'</div>
+            <div>'+addr+'</div>
+            <div>'+vnotes+'</div>
+            <br/>
             <b>Description</b>
             <div>'+atn.descr+'</div>
             <br/>
@@ -48,6 +62,9 @@ ap.Views.admin_meetup_review = XView.extend
             <br>
             <b>Capacity</b>
             <div>'+atn.max+'</div>
+            <b>Outline</b>
+            <div>'+markdown.toHTML(atn.outline)+'</div>
+            <br/>
           </td>
           </tr>'
       html += '<tr class="tbl-head"><th>Meetup</th><th>Venue</th><th>Actions</th></tr>'
