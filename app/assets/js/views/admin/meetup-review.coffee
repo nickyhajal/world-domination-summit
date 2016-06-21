@@ -23,8 +23,8 @@ ap.Views.admin_meetup_review = XView.extend
             host_str += ' (Not attending WDS 2015 - user_id: '+host.user_id+')'
           av = 'http://avatar.wds.fm/'+host.user_id+'?width=64'
         place = if atn.place.length then atn.place else 'No Venue'
-        addr = if atn.address?.length then atn.address else 'No Address'
-        vnotes = if atn.venue_note?.length then atn.venue_note else 'No Venue Note'
+        addr = if atn.address? and atn.address?.length then atn.address else 'No Address'
+        vnotes = if atn.venue_note? and atn.venue_note.length then atn.venue_note else 'No Venue Note'
         html += '<tr data-event_id="'+atn.event_id+'">
           <td>
             '+host_str+'
