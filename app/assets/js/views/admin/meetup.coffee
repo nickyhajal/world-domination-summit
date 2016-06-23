@@ -1,6 +1,6 @@
 ap.Views.admin_meetup = XView.extend
 	ticketTimo: 0
-	events: 
+	events:
 		'submit #admin-meetup-update': 'meetup_submit'
 	initialize: ->
 		theEvent = false
@@ -32,6 +32,7 @@ ap.Views.admin_meetup = XView.extend
 		$('select[name="minute"]').select2('val', start.format('mm'))
 		$('select[name="pm"]').select2('val', pm)
 		$('select[name="active"]').select2('val', @event.active)
+		$('select[name="format"]').select2('val', @event.format)
 		if +@event.active
 			$('h1 a')
 			.html('Back to Meetups')

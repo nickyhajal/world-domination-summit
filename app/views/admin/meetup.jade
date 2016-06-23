@@ -7,11 +7,21 @@ div(id="admin-add-meetup-shell")
 				label Meetup Name
 				input(name="what", type="text", value="{{ what }}")
 		div(class="form-section")
+				label What type of meetup will this be?
+				div(class="form-box")
+					select(name="format", class="select2", style="width:360px")
+						option(value="discover") Discover: (Class/Workshop)
+						option(value="network") Network: (Hangout/Collaborate)
+						option(value="experience") Experience: (Adventure/Activity)
+		div(class="form-section")
 			label Venue Name
 			input(name="place", type="text", value="{{ place }}")
 		div(class="form-section")
 			label Address
 			input(name="address", type="text", value="{{ address }}")
+		div(class="form-box")
+			label Any Special Notes About the Venue/Location
+			input(type="text", name="venue_note", value="{{ venue_note }}")
 		div(class="form-section")
 			label Description
 			textarea(name="descr") {{ descr }}
@@ -21,17 +31,15 @@ div(id="admin-add-meetup-shell")
 		div(class="form-section")
 			label Event Start
 			div(class="form-box")
-				select(name="date", class="select2", style="width:120px")
-					option(value="07") July 7th
-					option(value="08") July 8th
-					option(value="09") July 9th
-					option(value="10") July 10th
-					option(value="11") July 11th
-					option(value="12") July 12th
-					option(value="13") July 13th
-					option(value="14") July 14th
-					option(value="15") July 15th
-					option(value="16") July 16th
+					select(name="date", class="select2", style="width:250px", data-search="0")
+						option(value="09") Tuesday, August 9th
+						option(value="10") Wednesday, August 10th
+						option(value="11") Thursday, August 11th
+						option(value="12") Friday, August 12th
+						option(value="13") Saturday, August 13th
+						option(value="14") Sunday, August 14th
+						option(value="15") Monday, August 15th
+						option(value="16") Tuesday, August 16th
 			div(class="form-box")
 				select(name="hour", class="select2", style="width:120px")
 					option(value="01") 01
@@ -64,6 +72,10 @@ div(id="admin-add-meetup-shell")
 				select(name="active", class="select2", style="width:120px")
 					option(value="1") Yes
 					option(value="0") No
+		div(class="form-section")
+				label Provide a brief outline of the agenda for this event:
+				textarea(name="outline", class="meetup-descr-inp") {{ outline }}
+
 		div(class="clear")
 		div(class="form-section")
 			input(type="hidden", name="event_id", value="{{ event_id }}")
