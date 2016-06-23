@@ -40,6 +40,11 @@ ap.Views.profile = XView.extend
 			'What are you excited about these days?'
 			'What\'s your super-power?'
 			'What is your goal for WDS 2016?'
+			'What\'s your favorite song?'
+			'What\'s your favorite treat?'
+			'What\'s your favorite beverage?'
+			'What\'s your favorite quote?'
+			'What are you looking forward to during your time in Portland?'
 		]
 		count = 0
 		html = ''
