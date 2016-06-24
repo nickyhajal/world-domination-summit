@@ -22,7 +22,7 @@ ap.Views.admin_transfers = XView.extend
 					<td>'+count+'</td>
 					<td><a href="/admin/user/'+t.user_id+'">'+t.first_name+' '+t.last_name+'</a></td>
 					<td><a href="/admin/user/'+t.to_id+'">'+n.first_name+' '+n.last_name+'</a></td>
-					<td>'+moment(t.stamp).format('MMMM Do [at] h:mma')+'</td>
+					<td>'+moment(t.created_at).format('MMMM Do [at] h:mma')+'</td>
 				</tr>
 				'
 			$('#transfer-results').html(html)
