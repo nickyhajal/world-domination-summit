@@ -135,7 +135,8 @@ routes = (app) ->
 				res.attachment 'attendees'+process.year+'.csv'
 
 				# Headers
-				response = "First Name;Last Name;Email;Twitter;Type;Location;Address;City;State/Region;Country;Zip\n"
+				response = "sep=;"
+				response += "First Name;Last Name;Email;Twitter;Type;Location;Address;City;State/Region;Country;Zip\n"
 
 				# Attendee list for current year
 				Users.forge()
