@@ -6,6 +6,7 @@ routes = (app) ->
 	[EventHost, EventHosts] = require('../../models/event_hosts')
 	[RaceSubmission, RaceSubmissions] = require('../../models/race_submissions')
 	[Achievement, Achievements] = require('../../models/achievements')
+	[Transfer, Transfers] = require('../../models/transfers')
 	admin =
 		get_capabilities: (req, res, next) ->
 			req.me.getCapabilities()
@@ -131,6 +132,46 @@ routes = (app) ->
 					evs.push(tmp)
 				res.r.events = evs
 				next()
+
+		transfers: (req, res, next) ->
+			columns = {}
+			columns = {columns: ['transfer_id', 'new_attendee', 'users.user_id', 'first_name', 'last_name', 'user_name', 'pic', 'transfers.created_at']}
+			Transfers.forge()
+			.query (qb) ->
+				qb.where('year', process.year)
+				qb.where('status', 'paid')
+				qb.orderBy('transfer_id')
+				qb.join('users', 'users.user_id', '=', 'transfers.user_id')
+			.fetch(columns)
+			.then (rsp) ->
+				ts = []
+				async.eachSeries rsp.models, (t, cb) ->
+					if t.get('to_id') > 0
+						ts.push t
+						cb()
+					else
+						atn = JSON.parse(t.get('new_attendee'))
+						User.forge
+							email: atn.email
+						.fetch()
+						.then (existing) ->
+							if existing
+								user_id = existing.get('user_id')
+								ts.push t
+								cb()
+								Transfer.forge
+									transfer_id: t.get('transfer_id')
+									to_id: user_id
+								.save()
+								.then (tx) ->
+									tk 'saved'
+							else
+								ts.push t
+								cb()
+				, ->
+					res.r.transfers = ts
+					next()
+
 		academies: (req, res, next) ->
 			Events.forge()
 			.query('where', 'type', 'academy')

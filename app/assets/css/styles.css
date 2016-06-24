@@ -2540,6 +2540,9 @@ td div.attendee-selection-avatar, td div.manifest-avatar, td div.transaction-ava
 #transactions-shell td {
     padding:                    0px 20px ! important;
 }
+#transfers-shell td {
+    padding:                    12px 27px ! important;
+}
 #manifest-shell td, .search-shell th, #transactions-shell td, #attendee-selection-shell td {
     font-family:                karla;
     text-align:                 center;
@@ -2557,7 +2560,7 @@ table#manifests-results-shell thead th, table#manifests-results-shell tfoot th, 
 .attendee-selection-shell tr {
     cursor:                     pointer;
 }
-.attendee-selection-shell tr:nth-of-type(2n), #manifest-results tr:nth-of-type(2n), .search-results tr:nth-of-type(2n), #transaction-results tr:nth-of-type(2n) {
+.attendee-selection-shell tr:nth-of-type(2n), #manifest-results tr:nth-of-type(2n), .search-results tr:nth-of-type(2n), #transaction-results tr:nth-of-type(2n), #transfer-results tr:nth-of-type(2n) {
     background:                 rgb(248, 246, 236) none repeat scroll 0px 0px;
 }
 #schedule-shell tr td:first-of-type {
@@ -2582,7 +2585,7 @@ td.search-actions {
     padding:                    10px;
     font-family:                karla;
 }
-.attendee-selection-results tr, .manifest-results tr, .search-results tr, #transaction-results tr {
+.attendee-selection-results tr, .manifest-results tr, .search-results tr, #transaction-results tr, #transfer-results tr {
     background:                 rgb(239, 238, 229) none repeat scroll 0% 0%;
     cursor:                     pointer;
 }
@@ -3904,6 +3907,14 @@ table.time-table tr {
 table.time-table {
     vertical-align:             middle;
     border-collapse:            collapse;
+}
+table#transfers-shell {
+    border-collapse:            collapse;
+}
+#transfers-shell thead th {
+    text-align:                 center;
+    padding:                    14px;
+    background:                 rgb(252, 251, 247) none repeat scroll 0% 0%;
 }
 * {
     box-sizing:                 border-box;

@@ -5,6 +5,7 @@ Q = require('q')
 Transfer = Shelf.Model.extend
   tableName: 'transfers'
   idAttribute: 'transfer_id'
+  hasTimestamps: true
   permittedAttributes: [
   	'transfer_id', 'new_attendee', 'year', 'service_id', 'status', 'user_id'
   ]

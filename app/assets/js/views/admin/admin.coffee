@@ -50,6 +50,7 @@ ap.Views.admin = XView.extend
                                         [
                                                 {page: 'manifest', title: 'Attendee Manifest'}
                                                 {page: 'add-attendee', title: 'Add an Attendee'}
+                                                {page: 'transfers', title: 'Transfers'}
                                                 {page: 'transactions', title: 'Transactions'}
                                         ]
                         screens:

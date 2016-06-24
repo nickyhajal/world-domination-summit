@@ -171,6 +171,7 @@ routes = (app) ->
 		app.get '/admin/fixattendees', admin.process_attendees
 		app.get '/admin/events', event.get_admin
 		app.get '/admin/event_accept', event.accept
+		app.get '/admin/transfers', admin.transfers
 		app.get '/admin/event_reject', event.reject
 		app.post '/admin/notification', notifications.send
 		app.get '/admin/notification', notifications.get_count
