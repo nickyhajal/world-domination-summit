@@ -135,7 +135,7 @@ routes = (app) ->
 
 		transfers: (req, res, next) ->
 			columns = {}
-			columns = {columns: ['transfer_id', 'new_attendee', 'users.user_id', 'first_name', 'last_name', 'user_name', 'pic', 'transfers.created_at']}
+			columns = {columns: ['transfer_id', 'new_attendee', 'users.user_id', 'first_name', 'last_name', 'user_name', 'pic', 'transfers.created_at', 'to_id']}
 			Transfers.forge()
 			.query (qb) ->
 				qb.where('year', process.year)
