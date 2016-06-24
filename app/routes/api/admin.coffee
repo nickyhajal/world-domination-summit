@@ -99,36 +99,31 @@ routes = (app) ->
 				next()
 
 		transfer_export: (req, res, next) ->
-			tk '>TRANS'
 			if req.me.hasCapability('manifest')
-				tk '1'
 				res.status(200)
 				res.attachment 'transfers-'+process.year+'.csv'
 				ts = []
 
 				# Headers
-				response = "From Name;To Name;To Email\n"
-				tk 2
+				response = "sep=;\n"
+				response += "From Name;To Name;To Email\n"
 
 				# Attendee list for current year
 				columns = {columns: ['transfer_id', 'new_attendee', 'users.user_id', 'first_name', 'last_name', 'user_name', 'pic', 'transfers.created_at', 'to_id']}
 				Transfers.forge()
 				.query (qb) ->
-					tk 3
 					qb.where('year', process.year)
 					qb.where('status', 'paid')
 					qb.orderBy('transfer_id')
 					qb.join('users', 'users.user_id', '=', 'transfers.user_id')
 				.fetch(columns)
 				.then (rsp) ->
-					tk 4
 					for t in rsp.models
 						n = JSON.parse(t.get('new_attendee'))
 						response += t.get('first_name')+' '+t.get('last_name')+';'
 						response += n.first_name+' '+n.last_name+';'
 						response += n.email+';'
 						response += "\n"
-					tk response
 					res.send response
 					res.r.msg = 'Success'
 			else
