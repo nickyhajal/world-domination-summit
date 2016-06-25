@@ -15,13 +15,16 @@ div#search_start {
     text-align:                 center;
 }
 div.search-row:nth-child(2n) {
-    background:                 rgb(255, 254, 249) none repeat scroll 0px 0px;
+    background:                 rgb(255, 255, 254) none repeat scroll 0px 0px;
 }
 div.search-row {
     background:                 rgb(252, 250, 242) none repeat scroll 0% 0%;
     font-family:                karla;
     font-size:                  16pt;
     padding:                    21px 15px;
+    clear:                      both;
+    min-height:                 69px;
+    border-bottom:              1px solid rgb(242, 239, 223);
 }
 div#search-results {
     position:                   relative;
@@ -93,7 +96,9 @@ body {
 div.location {
     color:                      rgb(142, 135, 125);
     float:                      right;
-    margin-right:               15px;
+    font-size:                  12pt;
+    margin-right:               11px;
+    margin-top:                 4px;
 }
 a#clear-inp {
     display:                    none;
@@ -131,10 +136,10 @@ div.reg-panel {
     width:                      670px;
     margin:                     0px auto;
 }
-#academy-list.reg-page-nav a {
-    text-align:                 left;
+#academy-list.reg-page-nav a, #activity-list.reg-page-nav a {
     font-family:                karlaitalic;
     font-size:                  18pt;
+    text-align:                 left;
 }
 .reg-page-nav a.low-profile {
     color:                      rgb(147, 144, 132);
@@ -149,10 +154,10 @@ div.reg-panel {
     color:                      rgb(255, 255, 255);
     display:                    block;
     font-size:                  29px;
-    margin-bottom:              7px;
     text-align:                 center;
     text-decoration:            none;
     padding:                    22px;
+    margin-bottom:              6px;
 }
 h4 {
     padding:                    12px 0px 10px;
@@ -173,6 +178,22 @@ a.go-home {
     cursor:                     pointer;
     display:                    none;
     z-index:                    10;
+}
+div.reg-info {
+    float:                      left;
+    margin-top:                 -15px;
+}
+div.reg-ttype {
+    font-size:                  13pt;
+    text-align:                 center;
+    padding:                    2px 4px;
+    width:                      79px;
+    color:                      rgb(255, 255, 255);
+    background:                 rgb(188, 181, 171) none repeat scroll 0px 0px;
+    border-radius:              4px;
+    -moz-border-radius:         4px;
+    -webkit-border-radius:      4px;
+    margin-top:                 2px;
 }
 * {
     line-height:                inherit;

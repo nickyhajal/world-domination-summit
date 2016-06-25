@@ -88,10 +88,14 @@ ap.initSearch = ->
 					else
 						str = 'Sign-In'
 						reg_class = 'registered'
+					ttype = result.get('ticket_type') ? '360'
 					html += '
 						<div class="search-row" href="/~'+result.get('user_name')+'">
 							<span style="background:url('+result.get('pic')+')"></span>
-						'+result.get('first_name')+' '+result.get('last_name')+'
+							<div class="reg-info">
+								<div class="reg-name">'+result.get('first_name')+' '+result.get('last_name')+'</div>
+								<div class="reg-ttype">'+ttype+'</div>
+							</div>
 						<a href="#" data-user_id="'+result.get('user_id')+'" class="register-button '+reg_class+'">'+str+'</a>
 						<div class="location">'+result.get('location')+'</div>
 						</div>
@@ -153,6 +157,14 @@ ap.onShow.academies = ->
 			html += '<a href="#" data-event_id="'+ev.event_id+'">'+ev.what+'</a>'
 	tk html
 	$('#academy-list').html(html)
+ap.onShow.activities = ->
+	acs = []
+	html = ''
+	for ev in ap.events
+		if ev.type is 'activity'
+			acs.push(ev)
+			html += '<a href="#" data-event_id="'+ev.event_id+'">'+ev.what+'</a>'
+	$('#activity-list').html(html)
 
 ap.updateEvent = (event_id) ->
 	ap.event_id = event_id

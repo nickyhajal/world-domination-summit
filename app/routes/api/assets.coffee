@@ -105,7 +105,7 @@ routes = (app) ->
 						Users.forge()
 						.query('where', 'attending'+process.yr, '1')
 						.fetch
-							columns: ['user_id', 'first_name', 'last_name', 'user_name', 'pic', 'distance', 'lat', 'lon', 'location']
+							columns: ['user_id', 'ticket_type', 'first_name', 'last_name', 'user_name', 'pic', 'distance', 'lat', 'lon', 'location']
 						.then (attendees) ->
 							atns = []
 							for atn in attendees.models
@@ -268,7 +268,6 @@ routes = (app) ->
 			signin_events: (req) ->
 				dfr = Q.defer()
 				rds.get 'signin_events', (err, events) ->
-
 					if events? and events and typeof JSON.parse(events) is 'object' and 0
 						dfr.resolve(JSON.parse(events))
 					else
