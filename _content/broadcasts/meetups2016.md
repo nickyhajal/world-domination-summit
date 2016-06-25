@@ -1,5 +1,5 @@
 date: 6-20-16
-headline: Now Open(!): Propose an Attendee Meetup and Help Facilitate Awesome
+headline: (Now Open) Propose an Attendee Meetup and Help Facilitate Awesome
 
 # The ability to submit an attendee meetup is now open for all WDS attendees (360 & Connect). 
 
