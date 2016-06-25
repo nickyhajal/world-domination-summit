@@ -546,7 +546,10 @@ routes = (app) ->
 			regs = req.query.regs ? []
 			successes = []
 			async.each regs, (reg, cb) ->
-				Registration.forge({user_id: reg.user_id, year: process.yr})
+				Registration.forge
+					user_id: reg.user_id
+					year: process.yr
+					event_id: reg.event_id
 				.fetch()
 				.then (existing) ->
 					if existing and reg.action is 'unregister'
@@ -555,7 +558,10 @@ routes = (app) ->
 							successes.push(reg)
 							cb()
 					else if reg.action is 'register' and not existing
-						Registration.forge({user_id: reg.user_id, year: process.yr})
+						Registration.forge
+							user_id: reg.user_id
+							year: process.yr
+							event_id: reg.event_id
 						.save()
 						.then ->
 							successes.push(reg)
@@ -569,15 +575,15 @@ routes = (app) ->
 			, ->
 				_Rs = Registrations.forge()
 				_Rs
+				.query('where', 'created_at', '>', moment(new Date(new Date().getTime() - 3600000)).format('YYYY-MM-DD HH:mm:ss'))
 				.query('where', 'year', '=', process.yr)
-				.query('where', 'created_at', '>', (new Date(new Date().getTime() - 3600000)))
 				.fetch()
 				.then (past_hour) ->
+					res.r.reg_past_hour = past_hour.models.length
 					_Rs
 					.query('where', 'year', '=', process.yr)
 					.fetch()
 					.then (all_time) ->
-						res.r.reg_past_hour = past_hour.models.length
 						res.r.reg_all = all_time.models.length
 						res.r.successes = successes
 						regs = {}

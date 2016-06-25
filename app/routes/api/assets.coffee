@@ -43,6 +43,7 @@ routes = (app) ->
 				speakers: 300
 				interests: 5
 				events: 5
+				signin_events: 5
 				ranks: 1
 				tasks: 5
 				places: 300
@@ -257,12 +258,46 @@ routes = (app) ->
 											h = _.pick host.attributes, ['first_name', 'last_name', 'pic', 'user_id']
 											hosts.push h
 										ev.set('hosts', hosts)
-										evs.push _.omit(ev.attributes, 'year', 'ignored', 'note', 'created_at', 'updated_at', 'end', 'active')
+										evs.push _.omit(ev.attributes, 'year', 'ignored', 'note', 'created_at', 'updated_at', 'end', 'active', 'outline')
 										cb()
 							, ->
 								dfr.resolve(evs)
 								rds.set 'events', JSON.stringify(evs), (err, rsp) ->
 									rds.expire 'events', 240
+				return dfr.promise
+			signin_events: (req) ->
+				dfr = Q.defer()
+				rds.get 'signin_events', (err, events) ->
+
+					if events? and events and typeof JSON.parse(events) is 'object' and 0
+						dfr.resolve(JSON.parse(events))
+					else
+						Events.forge()
+						.query('where', 'active', '1')
+						.query('where', 'year', process.yr)
+						.query('where', 'signin', '1')
+						.query('orderBy', 'start')
+						.fetch()
+						.then (rsp) ->
+							evs = []
+							async.each rsp.models, (ev, cb) ->
+								ev.set('startStr', moment(ev.get('start')).format('h:mm a'))
+								ev.set('dayStr', moment(ev.get('start')).format('dddd[,] MMMM Do'))
+								ev.set('startDay', moment(ev.get('start')).format('YYYY-MM-DD'))
+								EventRsvps.forge()
+								.query('where', 'event_id', '=', ev.get('event_id'))
+								.fetch()
+								.then (rsp) ->
+									rsvps = []
+									for rsvp in rsp.models
+										rsvps.push rsvp.get('user_id')
+									ev.set('rsvps', rsvps)
+									evs.push _.pick(ev.attributes, ['event_id', 'type', 'what', 'start', 'rsvps'])
+									cb()
+							, ->
+								dfr.resolve(evs)
+								rds.set 'signin_events', JSON.stringify(evs), (err, rsp) ->
+									rds.expire 'signin_events', 240
 				return dfr.promise
 			tpls: ->
 				get_templates = require('../../processors/templater')

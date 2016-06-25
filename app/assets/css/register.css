@@ -1,4 +1,4 @@
-div#search_start table th {
+div#rp-stats table th {
     text-align:                 left;
     padding:                    7px;
     font-weight:                normal;
@@ -15,10 +15,10 @@ div#search_start {
     text-align:                 center;
 }
 div.search-row:nth-child(2n) {
-    background:                 none repeat scroll 0px 0px rgb(255, 254, 249);
+    background:                 rgb(255, 254, 249) none repeat scroll 0px 0px;
 }
 div.search-row {
-    background:                 none repeat scroll 0% 0% rgb(252, 250, 242);
+    background:                 rgb(252, 250, 242) none repeat scroll 0% 0%;
     font-family:                karla;
     font-size:                  16pt;
     padding:                    21px 15px;
@@ -27,12 +27,12 @@ div#search-results {
     position:                   relative;
     top:                        -40px;
 }
-#search_start table {
-    margin:                     -40px auto 0px;
+#rp-stats table {
     width:                      100%;
     font-size:                  14pt;
     padding:                    110px;
-    background:                 none repeat scroll 0px 0px rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0px 0px;
+    margin:                     20px auto 0px;
 }
 header#main-header {
     margin:                     0px;
@@ -47,12 +47,12 @@ header#main-header {
     width:                      100%;
 }
 a.unregistered {
-    background:                 none repeat scroll 0px 0px rgb(233, 245, 200) ! important;
+    background:                 rgb(233, 245, 200) none repeat scroll 0px 0px ! important;
     color:                      rgb(166, 190, 97) ! important;
 }
 a.register-button {
     display:                    block;
-    background:                 none repeat scroll 0% 0% rgb(226, 127, 28);
+    background:                 rgb(226, 127, 28) none repeat scroll 0% 0%;
     text-decoration:            none;
     text-align:                 center;
     color:                      rgb(255, 255, 255);
@@ -65,12 +65,13 @@ a.register-button {
 div#page_content {
     padding:                    20px 0px;
 }
-div#page_content:before {
+div#page_content::before {
     display:                    none;
 }
 div#page_content {
-    margin-left:                0px;
     margin-top:                 0px ! important;
+    margin-right:               auto;
+    margin-left:                auto;
 }
 div#content_shell {
     margin-left:                0px;
@@ -87,7 +88,7 @@ div#content_shell {
     margin-left:                -7px;
 }
 body {
-    background:                 none repeat scroll 0% 0% rgb(255, 255, 255);
+    background:                 rgb(255, 255, 255) none repeat scroll 0% 0%;
 }
 div.location {
     color:                      rgb(142, 135, 125);
@@ -97,7 +98,7 @@ div.location {
 a#clear-inp {
     display:                    none;
 }
-a#clear-inp:before {
+a#clear-inp::before {
     content:                    "x";
     display:                    block;
     border-radius:              50%;
@@ -110,7 +111,7 @@ a#clear-inp:before {
     color:                      rgb(156, 151, 119) ! important;
     font-size:                  15pt;
     font-family:                vitesselight;
-    background:                 none repeat scroll 0px 0px rgba(224, 221, 203, 0.68);
+    background:                 rgba(224, 221, 203, 0.68) none repeat scroll 0px 0px;
     width:                      36px;
     padding-top:                5px;
     height:                     30px;
@@ -118,6 +119,60 @@ a#clear-inp:before {
 }
 div#input-shell {
     position:                   relative;
+}
+nav#reg-nav {
+    background:                 rgb(177, 186, 30) none repeat scroll 0px 0px;
+}
+div.reg-panel.reg-panel-active {
+    display:                    block;
+}
+div.reg-panel {
+    display:                    none;
+    width:                      670px;
+    margin:                     0px auto;
+}
+#academy-list.reg-page-nav a {
+    text-align:                 left;
+    font-family:                karlaitalic;
+    font-size:                  18pt;
+}
+.reg-page-nav a.low-profile {
+    color:                      rgb(147, 144, 132);
+    font-size:                  15pt;
+    padding:                    13px 0px 10px;
+    bottom:                     0px;
+    margin-top:                 10px;
+    background:                 rgb(239, 237, 226) none repeat scroll 0px 0px;
+}
+.reg-page-nav a {
+    background:                 rgb(226, 127, 28) none repeat scroll 0px 0px;
+    color:                      rgb(255, 255, 255);
+    display:                    block;
+    font-size:                  29px;
+    margin-bottom:              7px;
+    text-align:                 center;
+    text-decoration:            none;
+    padding:                    22px;
+}
+h4 {
+    padding:                    12px 0px 10px;
+    font-family:                karlaitalic;
+    font-size:                  24pt;
+    text-align:                 left;
+    text-transform:             none;
+    margin:                     10px 0px 2px;
+}
+a.go-home {
+    background:                 transparent url("/images/back.png") no-repeat scroll 0% 0% / 100% auto;
+    float:                      left;
+    position:                   absolute;
+    top:                        9px;
+    width:                      41px;
+    left:                       10px;
+    height:                     29px;
+    cursor:                     pointer;
+    display:                    none;
+    z-index:                    10;
 }
 * {
     line-height:                inherit;

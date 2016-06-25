@@ -12,25 +12,35 @@ $ = jQuery
 $('html').addClass('jsOn')
 $ ->
 	ap.init();
-
-user = {};
+user = {}
+ap.event_id = 0;
+ap.page = 'home';
 ap.Views = {}
 ap.Routes = {}
+ap.eMap =
+	id1:
+		name: 'WDS 360 & Connect'
+	id999999:
+		name: 'Kindness'
+		title: 'Kindness Tracker'
 
 ap.init = () ->
+	$('body').on('click', '.reg-page-nav a', ap.showPage_click)
 	if ap.me
 		$('html').addClass('is-logged-in')
 	ap.initAssets()
 	_.whenReady 'me', ->
 		ap.initSearch()
 	$('body').on('click', '.register-button', ap.register_click)
+	$('body').on 'click', '.go-home', ->
+		ap.showPage('home')
 
 
 ap.allUsers = {}
 ap.registrations = {}
 ap.initAssets = ->
 	ap.register_sync()
-	assets = 'all_attendees,me'
+	assets = 'all_attendees,me,signin_events'
 	ap.api 'get assets', {assets: assets}, (rsp) ->
 		if rsp.all_attendees
 			setTimeout ->
@@ -39,13 +49,21 @@ ap.initAssets = ->
 			, 500
 		if rsp.me
 			ap.me = new ap.User(rsp.me)
+		if rsp.signin_events
+			ap.events = rsp.signin_events
 		ap.poll()
 		_.isReady 'me'
 
 ap.localizeRegistrations = (regs) ->
 	ap.registrations = regs
 	for id,reg of ap.get('registrations')
-		ap.registrations[reg.user_id] = 1
+		ap.registrations[reg.user_id+'_'+reg.event_id] = 1
+
+ap.getEvent = (id) ->
+	for ev in ap.events
+		if ev.event_id is id
+			return ev
+	return false
 
 ap.initSearch = ->
 	_.whenReady 'users', ->
@@ -54,14 +72,21 @@ ap.initSearch = ->
 			val = $(this).val()
 			if val.length > 1
 				$('#clear-inp').show()
+				ev = ap.getEvent(ap.event_id)
 				results = ap.Users.search(val)
+				if ev and ap.event_id > 20
+					final = []
+					for r in results
+						if ev.rsvps.indexOf(r.get('user_id')) > -1
+							final.push(r)
+					results = final
 				html = ''
 				for result in results
-					if ap.registrations[result.get('user_id')]
-						str = 'Unregister'
+					if ap.registrations[result.get('user_id')+'_'+ap.event_id]
+						str = 'Signed-In'
 						reg_class = 'unregistered'
 					else
-						str = 'Register'
+						str = 'Sign-In'
 						reg_class = 'registered'
 					html += '
 						<div class="search-row" href="/~'+result.get('user_name')+'">
@@ -84,6 +109,54 @@ ap.initSearch = ->
 			setTimeout ->
 				$('#register_search').focus()
 			, 100
+
+ap.showPage_click = (e) ->
+	e.stopPropagation()
+	e.preventDefault()
+	$t = $(e.currentTarget)
+	event_id = $t.data('event_id')
+	if event_id? and event_id
+		ap.updateEvent(event_id)
+		page = 'search'
+	else
+		page = $t.data('page')
+	ap.showPage(page)
+
+ap.showPage = (page) ->
+	if page == 'home'
+		$('.go-home', '#reg-nav').hide()
+	else
+		$('.go-home', '#reg-nav').show()
+	$('.reg-panel-active').removeClass('reg-panel-active')
+	$('#rp-'+page).addClass('reg-panel-active')
+	ap.page = page
+	if ap.onShow[page]?
+		ap.onShow[page]()
+ap.onShow = {}
+ap.onShow.search = ->
+	$('#register_search').val('')
+	$('#clear-inp').hide()
+	$('#search-results').hide()
+	$('#search_start').show()
+	id = 'id'+ap.event_id
+	ev = if ap.eMap[id]? then ap.eMap[id] else {}
+	name = if ev.name then ev.name else ap.event.what
+	title = if ev.title? then ev.title else 'Sign-in for '+name
+	$('h4.active-event').html(title)
+ap.onShow.academies = ->
+	acs = []
+	html = ''
+	tk ap.events
+	for ev in ap.events
+		if ev.type is 'academy'
+			acs.push(ev)
+			html += '<a href="#" data-event_id="'+ev.event_id+'">'+ev.what+'</a>'
+	tk html
+	$('#academy-list').html(html)
+
+ap.updateEvent = (event_id) ->
+	ap.event_id = event_id
+	ap.event = ap.getEvent(event_id)
 
 ap.poll = ->
 	now = (new Date()).getTime()
@@ -133,17 +206,21 @@ ap.register_click = (e) ->
 	e.preventDefault()
 	el = $(e.currentTarget)
 	user_id = el.data('user_id')
-	if ap.registrations[user_id]?
+	event_id = ap.event_id
+	key = user_id+'_'+event_id
+	if ap.registrations[key]?
 		action = 'unregister'
 		el.html('Register').addClass('registered').removeClass('unregistered')
-		delete ap.registrations[user_id]
+		delete ap.registrations[key]
 	else
 		action = 'register'
 		el.html('Unregister').addClass('unregistered').removeClass('registered')
-		ap.registrations[user_id] = '1'
+		ap.registrations[key] = '1'
 	ap.register(user_id, action)
 
 ap.register = (user_id, action) ->
+	event_id = ap.event_id
+	key = user_id+'_'+event_id
 	registration_log = ap.get 'registration_log'
 	registrations = ap.get 'registrations'
 	changes = ap.get 'changes'
@@ -153,25 +230,26 @@ ap.register = (user_id, action) ->
 		registrations = {}
 	if not changes?
 		changes = {}
-	if not registration_log[user_id]?
-		registration_log[user_id] = []
-	reg = 
+	if not registration_log[key]?
+		registration_log[key] = []
+	reg =
 		action: action
 		user_id: user_id
+		event_id: event_id
 		date: (new Date()).getTime()
-	if changes[user_id]?
-		if reg.action is 'register' and changes[user_id].action is 'unregister'
-			delete changes[user_id]
-		if reg.action is 'unregistered' and changes[user_id].action is 'register'
-			delete changes[user_id]
+	if changes[key]?
+		if reg.action is 'register' and changes[key].action is 'unregister'
+			delete changes[key]
+		if reg.action is 'unregistered' and changes[key].action is 'register'
+			delete changes[key]
 	else
-		changes[user_id] = reg
+		changes[key] = reg
 
-	if registrations[user_id]? and reg.action is 'unregister'
-		delete registrations[user_id]
+	if registrations[key]? and reg.action is 'unregister'
+		delete registrations[key]
 	else if reg.action is 'register'
-		registrations[user_id] = reg
-	registration_log[user_id].push reg
+		registrations[key] = reg
+	registration_log[key].push reg
 	ap.put 'registration_log', registration_log
 	ap.put 'registrations', registrations
 	ap.put 'changes', changes
@@ -185,7 +263,7 @@ ap.register_sync = ->
 	ap.api 'post user/registrations', {regs: send_changes}, (rsp) ->
 		changes = ap.get 'changes'
 		for success in rsp.successes
-			delete changes[success.user_id]
+			delete changes[success.user_id+'_'+success.event_id]
 		ap.put 'changes', changes
 		ap.total_all = rsp.reg_all
 		ap.total_hour = rsp.reg_past_hour
@@ -216,3 +294,5 @@ ap.get = (i) ->
 		{}
 ap.put = (i, v) ->
 	localStorage[i] = JSON.stringify v
+# JSON.stringify v
+# ify v

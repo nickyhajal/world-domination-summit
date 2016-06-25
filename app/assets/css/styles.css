@@ -1238,6 +1238,14 @@ h3.sub-karla {
 #modal-attending-ac h3, #modal-ac-coming-soon h3 {
     width:                      100%;
 }
+#reg-nav h3 {
+    text-align:                 center;
+    width:                      100%;
+    margin:                     0px;
+    font-family:                Vitesse;
+    color:                      rgb(255, 255, 255);
+    padding:                    8px 0px 6px;
+}
 h3 {
     font-size:                  24px;
     font-family:                vitesselight;
