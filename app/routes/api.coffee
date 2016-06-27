@@ -177,6 +177,7 @@ routes = (app) ->
 		app.post '/admin/notification', notifications.send
 		app.get '/admin/notification', notifications.get_count
 		app.post '/admin/rate', admin.rate
+		app.post '/admin/kind', admin.kind
 
 		app.get 'tpl', (req, res, next) ->
 			get_templates = require('../processors/templater')

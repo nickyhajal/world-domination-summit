@@ -17,6 +17,26 @@ div#search_start {
 div.search-row:nth-child(2n) {
     background:                 rgb(255, 255, 254) none repeat scroll 0px 0px;
 }
+div.search-row.is-kinded::before {
+    box-sizing:                 border-box;
+    -moz-box-sizing:            border-box;
+    -webkit-box-sizing:         border-box;
+    content:                    "✓";
+    position:                   absolute;
+    text-align:                 center;
+    top:                        12px;
+    background:                 rgb(246, 251, 164) none repeat scroll 0px 0px;
+    color:                      rgb(117, 122, 37);
+    border-radius:              50%;
+    -moz-border-radius:         50%;
+    -webkit-border-radius:      50%;
+    height:                     40px;
+    width:                      40px;
+    font-size:                  13pt;
+    padding:                    8px 0px;
+    left:                       -47px;
+    border:                     2px solid rgb(177, 186, 30);
+}
 div.search-row {
     background:                 rgb(252, 250, 242) none repeat scroll 0% 0%;
     font-family:                karla;
@@ -25,6 +45,7 @@ div.search-row {
     clear:                      both;
     min-height:                 69px;
     border-bottom:              1px solid rgb(242, 239, 223);
+    position:                   relative;
 }
 div#search-results {
     position:                   relative;
@@ -53,17 +74,24 @@ a.unregistered {
     background:                 rgb(233, 245, 200) none repeat scroll 0px 0px ! important;
     color:                      rgb(166, 190, 97) ! important;
 }
-a.register-button {
-    display:                    block;
-    background:                 rgb(226, 127, 28) none repeat scroll 0% 0%;
-    text-decoration:            none;
-    text-align:                 center;
+a.next-button {
+    width:                      60px ! important;
+    font-size:                  23pt;
+    color:                      rgb(163, 155, 129) ! important;
+    background:                 transparent none repeat scroll 0px 0px ! important;
+    margin-top:                 -20px;
+}
+a.register-button, .next-button {
+    background:                 rgb(226, 127, 28) none repeat scroll 0px 0px;
     color:                      rgb(255, 255, 255);
-    width:                      220px;
+    display:                    block;
+    float:                      right;
+    margin-right:               -6px;
     margin-top:                 -14px;
     padding:                    14px;
-    margin-right:               -6px;
-    float:                      right;
+    text-align:                 center;
+    text-decoration:            none;
+    width:                      220px;
 }
 div#page_content {
     padding:                    20px 0px;
@@ -127,6 +155,11 @@ div#input-shell {
 }
 nav#reg-nav {
     background:                 rgb(177, 186, 30) none repeat scroll 0px 0px;
+    position:                   fixed;
+    top:                        0px;
+    left:                       0px;
+    width:                      100%;
+    z-index:                    10;
 }
 div.reg-panel.reg-panel-active {
     display:                    block;
@@ -179,6 +212,9 @@ a.go-home {
     display:                    none;
     z-index:                    10;
 }
+.kindness-row div.reg-info {
+    margin-top:                 0px;
+}
 div.reg-info {
     float:                      left;
     margin-top:                 -15px;
@@ -194,6 +230,47 @@ div.reg-ttype {
     -moz-border-radius:         4px;
     -webkit-border-radius:      4px;
     margin-top:                 2px;
+}
+a.kinded-button {
+    display:                    block;
+    text-align:                 center;
+    background:                 rgb(226, 127, 28) none repeat scroll 0px 0px;
+    color:                      rgb(255, 255, 255);
+    font-size:                  16pt;
+    text-decoration:            none;
+    padding:                    15px 30px 13px;
+    width:                      510px;
+    margin:                     40px auto 0px;
+}
+div.question {
+    font-family:                karlaitalic;
+    margin-bottom:              8px;
+    font-size:                  15pt;
+}
+div.attendee-question-shell:last-of-type {
+    margin-bottom:              80px;
+}
+div.attendee-question-shell {
+    padding:                    20px;
+    background:                 rgb(244, 242, 238) none repeat scroll 0px 0px;
+    margin-bottom:              6px;
+    width:                      680px;
+}
+div.answer {
+    font-family:                karla;
+    font-size:                  12pt;
+}
+#rp-loading div#loading {
+    display:                    block;
+    font-family:                karlaitalic;
+    font-size:                  32pt;
+    margin-top:                 130px;
+    text-align:                 center;
+    width:                      680px;
+    color:                      rgb(160, 158, 155);
+}
+main.contentainer {
+    padding-top:                40px;
 }
 * {
     line-height:                inherit;

@@ -17,6 +17,7 @@ ap.event_id = 0;
 ap.page = 'home';
 ap.Views = {}
 ap.Routes = {}
+ap.holdSearch = false
 ap.eMap =
 	id1:
 		name: 'WDS 360 & Connect'
@@ -33,18 +34,25 @@ ap.init = () ->
 		ap.initSearch()
 	$('body').on('click', '.register-button', ap.register_click)
 	$('body').on 'click', '.go-home', ->
-		ap.showPage('home')
+		if ap.page is 'kinduser'
+			ap.holdSearch = true
+			$('#kind-button').click()
+			setTimeout ->
+				ap.holdSearch = false
+			, 50
+		else
+			ap.showPage('home')
 
 
 ap.allUsers = {}
 ap.registrations = {}
 ap.initAssets = ->
 	ap.register_sync()
-	assets = 'all_attendees,me,signin_events'
+	assets = 'reg_attendees,me,signin_events'
 	ap.api 'get assets', {assets: assets}, (rsp) ->
-		if rsp.all_attendees
+		if rsp.reg_attendees
 			setTimeout ->
-				ap.Users.add(rsp.all_attendees)
+				ap.Users.add(rsp.reg_attendees)
 			_.isReady 'users'
 			, 500
 		if rsp.me
@@ -52,6 +60,7 @@ ap.initAssets = ->
 		if rsp.signin_events
 			ap.events = rsp.signin_events
 		ap.poll()
+		ap.showPage('home')
 		_.isReady 'me'
 
 ap.localizeRegistrations = (regs) ->
@@ -74,7 +83,7 @@ ap.initSearch = ->
 				$('#clear-inp').show()
 				ev = ap.getEvent(ap.event_id)
 				results = ap.Users.search(val)
-				if ev and ap.event_id > 20
+				if ev and ap.event_id > 20 and (''+ap.event_id isnt '999999')
 					final = []
 					for r in results
 						if ev.rsvps.indexOf(r.get('user_id')) > -1
@@ -89,17 +98,32 @@ ap.initSearch = ->
 						str = 'Sign-In'
 						reg_class = 'registered'
 					ttype = result.get('ticket_type') ? '360'
-					html += '
-						<div class="search-row" href="/~'+result.get('user_name')+'">
-							<span style="background:url('+result.get('pic')+')"></span>
-							<div class="reg-info">
-								<div class="reg-name">'+result.get('first_name')+' '+result.get('last_name')+'</div>
-								<div class="reg-ttype">'+ttype+'</div>
+					if ''+ap.event_id is '999999'
+						if result.get('ticket_type') is '360'
+							kclass = 'not-kinded'
+							if result.get('kinded')? and ''+result.get('kinded') is '1'
+								kclass = 'is-kinded'
+							html += '
+								<div class="search-row kindness-row '+kclass+'" id="krow-'+result.get('user_id')+'" data-user_id="'+result.get('user_id')+'">
+									<span style="background:url('+result.get('pic')+')"></span>
+									<div class="reg-info">
+										<div class="reg-name">'+result.get('first_name')+' '+result.get('last_name')+'</div>
+									</div>
+									<a href="#" data-user_id="'+result.get('user_id')+'" class="next-button">❯</a>
+								</div>
+							'
+					else
+						html += '
+							<div class="search-row">
+								<span style="background:url('+result.get('pic')+')"></span>
+								<div class="reg-info">
+									<div class="reg-name">'+result.get('first_name')+' '+result.get('last_name')+'</div>
+									<div class="reg-ttype">'+ttype+'</div>
+								</div>
+							<a href="#" data-user_id="'+result.get('user_id')+'" class="register-button '+reg_class+'">'+str+'</a>
+							<div class="location">'+result.get('location')+'</div>
 							</div>
-						<a href="#" data-user_id="'+result.get('user_id')+'" class="register-button '+reg_class+'">'+str+'</a>
-						<div class="location">'+result.get('location')+'</div>
-						</div>
-					'
+						'
 				$('#search-results').html(html).show()
 				$('#search_start').hide()
 			else
@@ -113,7 +137,15 @@ ap.initSearch = ->
 			setTimeout ->
 				$('#register_search').focus()
 			, 100
+		.on('click', '.kindness-row', ap.showKindUser)
+		.on('click', '.kinded-button', ap.toggleKinded)
 
+ap.showKindUser = (e) ->
+	e.stopPropagation()
+	e.preventDefault()
+	$t = $(e.currentTarget)
+	ap.active_user = $t.data('user_id')
+	ap.showPage('kinduser')
 ap.showPage_click = (e) ->
 	e.stopPropagation()
 	e.preventDefault()
@@ -138,10 +170,11 @@ ap.showPage = (page) ->
 		ap.onShow[page]()
 ap.onShow = {}
 ap.onShow.search = ->
-	$('#register_search').val('')
-	$('#clear-inp').hide()
-	$('#search-results').hide()
-	$('#search_start').show()
+	unless ap.holdSearch
+		$('#register_search').val('')
+		$('#clear-inp').hide()
+		$('#search-results').hide()
+		$('#search_start').show()
 	id = 'id'+ap.event_id
 	ev = if ap.eMap[id]? then ap.eMap[id] else {}
 	name = if ev.name then ev.name else ap.event.what
@@ -150,13 +183,37 @@ ap.onShow.search = ->
 ap.onShow.academies = ->
 	acs = []
 	html = ''
-	tk ap.events
 	for ev in ap.events
 		if ev.type is 'academy'
 			acs.push(ev)
 			html += '<a href="#" data-event_id="'+ev.event_id+'">'+ev.what+'</a>'
-	tk html
 	$('#academy-list').html(html)
+ap.onShow.kinduser = ->
+	user = ap.Users.get(ap.active_user)
+	ap.active_user = user
+	questions = [
+			'Why did you travel <span class="ceil">{{ distance }}</span> miles to the World Domination Summit'
+			'What are you excited about these days?'
+			'What\'s your super-power?'
+			'What is your goal for WDS 2016?'
+			'What\'s your favorite song?'
+			'What\'s your favorite treat?'
+			'What\'s your favorite beverage?'
+			'What\'s your favorite quote?'
+			'What are you looking forward to during your time in Portland?'
+		]
+		count = 0
+		html = ''
+		for answer in user.get('answers')
+			q = questions[answer.question_id - 1].replace('<span class="ceil">{{ distance }}</span> miles', '')
+			html += '<div class="attendee-question-shell">'
+			html += '<div class="question">'+q+'</div><div class="answer">'+answer.answer+'</div>'
+			html += '</div>'
+			count += 1
+		html += '<div class="clear"></div>'
+	$('.k-name').html(user.get('first_name')+' '+user.get('last_name'))
+	$('.k-info').html(html)
+	ap.updKinded()
 ap.onShow.activities = ->
 	acs = []
 	html = ''
@@ -165,6 +222,32 @@ ap.onShow.activities = ->
 			acs.push(ev)
 			html += '<a href="#" data-event_id="'+ev.event_id+'">'+ev.what+'</a>'
 	$('#activity-list').html(html)
+
+ap.toggleKinded = (e) ->
+	e.stopPropagation()
+	e.preventDefault()
+	$t = $(e.currentTarget)
+	kind = '1'
+	if $t.hasClass('kinded')
+		kind = '0'
+	ap.active_user.set('kinded', kind)
+	ap.api 'post admin/kind', {user_id: ap.active_user.get('user_id'), kinded: kind}, (rsp) ->
+	ap.updKinded()
+
+ap.updKinded = ->
+	btn = $('.kinded-button')
+	user = ap.active_user
+	kinded = user.get('kinded') ? '0'
+	kclass = 'not-kinded'
+	if parseInt(kinded)
+		kclass = 'is-kinded'
+		btn.html('Kinded - Tap to Unkind').addClass('kinded')
+	else
+		btn.html('Mark as Kinded').removeClass('kinded')
+	$('#krow-'+user.get('user_id'))
+	.removeClass('not-kinded')
+	.removeClass('is-kinded')
+	.addClass(kclass)
 
 ap.updateEvent = (event_id) ->
 	ap.event_id = event_id
@@ -308,3 +391,6 @@ ap.put = (i, v) ->
 	localStorage[i] = JSON.stringify v
 # JSON.stringify v
 # ify v
+
+# ify v
+

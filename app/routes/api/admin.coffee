@@ -35,6 +35,17 @@ routes = (app) ->
 				, ->
 					next()
 
+		kind: (req, res, next) ->
+			if req.query.user_id? and req.query.kinded?
+				User.forge
+					user_id: req.query.user_id
+					kinded: req.query.kinded
+				.save()
+				.then (user) ->
+					next()
+			else
+				next()
+
 		process_locations: (req, res, next) ->
 			Users.forge()
 			.query('where', 'attending'+process.yr, '=', '1')

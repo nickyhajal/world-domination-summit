@@ -22,11 +22,13 @@ html
 		main(class="contentainer")
 			div(id="content_shell")
 				div(id="page_content")
-					div(id="rp-home", class="reg-page-nav reg-panel reg-panel-active")
+					div(id="rp-loading", class="reg-page-nav reg-panel reg-panel-active")
+						div(id="loading") Loading attendee data...
+					div(id="rp-home", class="reg-page-nav reg-panel")
 						a(href="#", data-event_id="1") 360/Connect
 						a(href="#", data-page="academies") Academies
 						a(href="#", data-page="activities") Activities
-						a(href="#", data-event_id="999999") Kindness
+						a(href="#", id="kind-button", data-event_id="999999") Kindness
 						a(href="#", data-page="stats", class="low-profile") Stats
 					div(id="rp-academies", class="reg-panel")
 						div(id="academy-list", class="reg-page-nav")
@@ -39,6 +41,10 @@ html
 							a(href="#", id="clear-inp")
 						div(id="search-results")
 						div(id="search_start", class="srch_msg")
+					div(id="rp-kinduser", class="reg-panel")
+						h4(class="k-name")
+						div(class="k-info")
+						a(href="#", class="kinded-button") Mark as Kinded
 					div(id="rp-stats", class="reg-panel")
 						table
 							tr

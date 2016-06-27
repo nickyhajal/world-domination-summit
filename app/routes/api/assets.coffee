@@ -32,6 +32,7 @@ routes = (app) ->
 	[RaceTask, RaceTasks] = require('../../models/racetasks')
 	[Achievement, Achievements] = require('../../models/achievements')
 	[Place, Places] = require('../../models/places')
+	[Answer, Answers] = require('../../models/answers')
 
 	assets =
 
@@ -40,6 +41,7 @@ routes = (app) ->
 				me: 0
 				tpls: 0
 				all_attendees: 60
+				reg_attendees: 60
 				speakers: 300
 				interests: 5
 				events: 5
@@ -115,6 +117,49 @@ routes = (app) ->
 							rds.set 'all_attendees', JSON.stringify(atns), (err, rsp) ->
 								rds.expire 'all_attendees', 1000, (err, rsp) ->
 									dfr.resolve(atns)
+				return dfr.promise
+
+			reg_attendees: ->
+				dfr = Q.defer()
+				rds.get 'reg_attendees', (err, atns) ->
+					if atns? and atns and typeof JSON.parse(atns) is 'object' and 0
+						dfr.resolve(JSON.parse(atns))
+					else
+						Users.forge()
+						.query (qb) ->
+							qb.where('attending'+process.yr, '1')
+							qb.orWhere('t.product_id', '6')
+							qb.leftJoin('transactions as t', 'users.user_id', 't.user_id')
+						.fetch
+							columns: [
+								'users.user_id', 'ticket_type', 'first_name', 'last_name', 'pic', 'location', 'kinded'
+							]
+						.then (attendees) ->
+							atns = []
+							Answers.forge()
+							.query (qb) ->
+								qb.where('attending'+process.yr, '1')
+								qb.orWhere('t.product_id', '6')
+								qb.leftJoin('transactions as t', 'answers.user_id', 't.user_id')
+								qb.leftJoin('users as u', 'answers.user_id', 'u.user_id')
+								qb.groupBy('answers.answer_id')
+							.fetch()
+							.then (answers) ->
+								aByUid = {}
+								for a in answers.models
+									user_id = a.get('user_id')
+									unless aByUid[user_id]?
+										aByUid[user_id] = []
+									aByUid[user_id].push(a.attributes)
+								async.each attendees.models, (atn, cb) ->
+									if aByUid[atn.get('user_id')]?
+										atn.set('answers', aByUid[atn.get('user_id')])
+										atns.push atn
+									cb()
+								, ->
+									rds.set 'reg_attendees', JSON.stringify(atns), (err, rsp) ->
+										rds.expire 'reg_attendees', 60, (err, rsp) ->
+											dfr.resolve(atns)
 				return dfr.promise
 
 			me: (req) ->
