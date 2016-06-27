@@ -79,7 +79,7 @@ ap.initSearch = ->
 		$('body')
 		.on 'keyup', '#register_search', ->
 			val = $(this).val()
-			if val.length > 1
+			if val.length > 0
 				$('#clear-inp').show()
 				ev = ap.getEvent(ap.event_id)
 				results = ap.Users.search(val)
