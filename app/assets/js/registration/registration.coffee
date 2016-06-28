@@ -397,12 +397,3 @@ ap.get = (i) ->
 		{}
 ap.put = (i, v) ->
 	localStorage[i] = JSON.stringify v
-# JSON.stringify v
-# ify v
-
-# ify v
-
-v
-
-# ify v
-
