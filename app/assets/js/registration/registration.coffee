@@ -114,41 +114,39 @@ ap.search = ->
 	html = ''
 	count = 0
 	for result in results
-		if count < max
-			count += 1
-			if ap.registrations[result.get('user_id')+'_'+ap.event_id]
-				str = 'Signed-In'
-				reg_class = 'unregistered'
-			else
-				str = 'Sign-In'
-				reg_class = 'registered'
-			ttype = result.get('ticket_type') ? '360'
-			if ''+ap.event_id is '999999'
-				if result.get('ticket_type') is '360'
-					kclass = 'not-kinded'
-					if result.get('kinded')? and ''+result.get('kinded') is '1'
-						kclass = 'is-kinded'
-					html += '
-						<div class="search-row kindness-row '+kclass+'" id="krow-'+result.get('user_id')+'" data-user_id="'+result.get('user_id')+'">
-							<span style="background:url('+result.get('pic')+')"></span>
-							<div class="reg-info">
-								<div class="reg-name">'+result.get('first_name')+' '+result.get('last_name')+'</div>
-							</div>
-							<a href="#" data-user_id="'+result.get('user_id')+'" class="next-button">❯</a>
-						</div>
-					'
-			else
+		if ap.registrations[result.get('user_id')+'_'+ap.event_id]
+			str = 'Signed-In'
+			reg_class = 'unregistered'
+		else
+			str = 'Sign-In'
+			reg_class = 'registered'
+		ttype = result.get('ticket_type') ? '360'
+		if ''+ap.event_id is '999999'
+			if result.get('ticket_type') is '360'
+				kclass = 'not-kinded'
+				if result.get('kinded')? and ''+result.get('kinded') is '1'
+					kclass = 'is-kinded'
 				html += '
-					<div class="search-row">
+					<div class="search-row kindness-row '+kclass+'" id="krow-'+result.get('user_id')+'" data-user_id="'+result.get('user_id')+'">
 						<span style="background:url('+result.get('pic')+')"></span>
 						<div class="reg-info">
 							<div class="reg-name">'+result.get('first_name')+' '+result.get('last_name')+'</div>
-							<div class="reg-ttype">'+ttype+'</div>
 						</div>
-					<a href="#" data-user_id="'+result.get('user_id')+'" class="register-button '+reg_class+'">'+str+'</a>
-					<div class="location">'+result.get('location')+'</div>
+						<a href="#" data-user_id="'+result.get('user_id')+'" class="next-button">❯</a>
 					</div>
 				'
+		else
+			html += '
+				<div class="search-row">
+					<span style="background:url('+result.get('pic')+')"></span>
+					<div class="reg-info">
+						<div class="reg-name">'+result.get('first_name')+' '+result.get('last_name')+'</div>
+						<div class="reg-ttype">'+ttype+'</div>
+					</div>
+				<a href="#" data-user_id="'+result.get('user_id')+'" class="register-button '+reg_class+'">'+str+'</a>
+				<div class="location">'+result.get('location')+'</div>
+				</div>
+			'
 	$('#search-results').html(html).show()
 
 
