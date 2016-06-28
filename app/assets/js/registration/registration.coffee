@@ -94,10 +94,9 @@ ap.search = ->
 	max = 90000
 	tk 'val'
 	results = []
+	ev = ap.getEvent(ap.event_id)
 	if val.length > 0
-		tk 'wut'
 		$('#clear-inp').show()
-		ev = ap.getEvent(ap.event_id)
 		results = ap.Users.search(val)
 	else
 		$('#clear-inp').hide()
