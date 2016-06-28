@@ -100,10 +100,7 @@ ap.search = ->
 		results = ap.Users.search(val)
 	else
 		$('#clear-inp').hide()
-		max = 300
 		results = ap.Users.models
-		if ap.event_id is 1 or ap.event_id is 999999
-			results = results.splice(100)
 
 	if ev and ap.event_id > 20 and (''+ap.event_id isnt '999999')
 		final = []
@@ -400,6 +397,10 @@ ap.put = (i, v) ->
 	localStorage[i] = JSON.stringify v
 # JSON.stringify v
 # ify v
+
+# ify v
+
+v
 
 # ify v
 
