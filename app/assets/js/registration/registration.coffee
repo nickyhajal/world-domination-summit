@@ -111,6 +111,7 @@ ap.search = ->
 	html = ''
 	count = 0
 	for result in results
+		count += 1
 		if ap.registrations[result.get('user_id')+'_'+ap.event_id]
 			str = 'Signed-In'
 			reg_class = 'unregistered'
@@ -133,6 +134,7 @@ ap.search = ->
 					</div>
 				'
 		else
+			tk count
 			html += '
 				<div class="search-row">
 					<span style="background:url('+result.get('pic')+')"></span>
