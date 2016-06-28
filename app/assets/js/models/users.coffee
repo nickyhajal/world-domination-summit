@@ -100,6 +100,8 @@ Users = Backbone.Collection.Lunr.extend
         { name: "user_name"}
         { name: "email"}
     ]
+  comparator: (model) ->
+	  return model.get('last_name')
   getByUsername: (username, cb) ->
   	results = @search(username)
   	for atn in results

@@ -130,6 +130,7 @@ routes = (app) ->
 							qb.where('attending'+process.yr, '1')
 							qb.orWhere('t.product_id', '6')
 							qb.leftJoin('transactions as t', 'users.user_id', 't.user_id')
+							qb.orderBy('last_name')
 						.fetch
 							columns: [
 								'users.user_id', 'ticket_type', 'first_name', 'last_name', 'pic', 'location', 'kinded'

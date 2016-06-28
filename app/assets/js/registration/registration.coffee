@@ -53,6 +53,7 @@ ap.initAssets = ->
 		if rsp.reg_attendees
 			setTimeout ->
 				ap.Users.add(rsp.reg_attendees)
+				ap.Users.sort()
 			_.isReady 'users'
 			, 500
 		if rsp.me
@@ -77,68 +78,78 @@ ap.getEvent = (id) ->
 ap.initSearch = ->
 	_.whenReady 'users', ->
 		$('body')
-		.on 'keyup', '#register_search', ->
-			val = $(this).val()
-			if val.length > 0
-				$('#clear-inp').show()
-				ev = ap.getEvent(ap.event_id)
-				results = ap.Users.search(val)
-				if ev and ap.event_id > 20 and (''+ap.event_id isnt '999999')
-					final = []
-					for r in results
-						if ev.rsvps.indexOf(r.get('user_id')) > -1
-							final.push(r)
-					results = final
-				html = ''
-				for result in results
-					if ap.registrations[result.get('user_id')+'_'+ap.event_id]
-						str = 'Signed-In'
-						reg_class = 'unregistered'
-					else
-						str = 'Sign-In'
-						reg_class = 'registered'
-					ttype = result.get('ticket_type') ? '360'
-					if ''+ap.event_id is '999999'
-						if result.get('ticket_type') is '360'
-							kclass = 'not-kinded'
-							if result.get('kinded')? and ''+result.get('kinded') is '1'
-								kclass = 'is-kinded'
-							html += '
-								<div class="search-row kindness-row '+kclass+'" id="krow-'+result.get('user_id')+'" data-user_id="'+result.get('user_id')+'">
-									<span style="background:url('+result.get('pic')+')"></span>
-									<div class="reg-info">
-										<div class="reg-name">'+result.get('first_name')+' '+result.get('last_name')+'</div>
-									</div>
-									<a href="#" data-user_id="'+result.get('user_id')+'" class="next-button">❯</a>
-								</div>
-							'
-					else
-						html += '
-							<div class="search-row">
-								<span style="background:url('+result.get('pic')+')"></span>
-								<div class="reg-info">
-									<div class="reg-name">'+result.get('first_name')+' '+result.get('last_name')+'</div>
-									<div class="reg-ttype">'+ttype+'</div>
-								</div>
-							<a href="#" data-user_id="'+result.get('user_id')+'" class="register-button '+reg_class+'">'+str+'</a>
-							<div class="location">'+result.get('location')+'</div>
-							</div>
-						'
-				$('#search-results').html(html).show()
-				$('#search_start').hide()
-			else
-				$('#clear-inp').hide()
-				$('#search-results').hide()
-				$('#search_start').show()
-
-		$('body')
+		.on('keyup', '#register_search', ap.search)
+		.on('click', '.kindness-row', ap.showKindUser)
+		.on('click', '.kinded-button', ap.toggleKinded)
 		.on 'click', '#clear-inp', ->
 			$('#register_search').val('').keyup()
 			setTimeout ->
 				$('#register_search').focus()
 			, 100
-		.on('click', '.kindness-row', ap.showKindUser)
-		.on('click', '.kinded-button', ap.toggleKinded)
+
+
+ap.search = ->
+	tk 'SEARCH'
+	val = $('#register_search').val()
+	max = 90000
+	tk 'val'
+	if val.length > 0
+		tk 'wut'
+		$('#clear-inp').show()
+		ev = ap.getEvent(ap.event_id)
+		results = ap.Users.search(val)
+	else
+		$('#clear-inp').hide()
+		max = 300
+		if ap.event_id isnt 1
+			results = ap.Users.models.splice(0, max)
+
+	if ev and ap.event_id > 20 and (''+ap.event_id isnt '999999')
+		final = []
+		for r in results
+			if ev.rsvps.indexOf(r.get('user_id')) > -1
+				final.push(r)
+		results = final
+	html = ''
+	count = 0
+	for result in results
+		if count < max
+			count += 1
+			if ap.registrations[result.get('user_id')+'_'+ap.event_id]
+				str = 'Signed-In'
+				reg_class = 'unregistered'
+			else
+				str = 'Sign-In'
+				reg_class = 'registered'
+			ttype = result.get('ticket_type') ? '360'
+			if ''+ap.event_id is '999999'
+				if result.get('ticket_type') is '360'
+					kclass = 'not-kinded'
+					if result.get('kinded')? and ''+result.get('kinded') is '1'
+						kclass = 'is-kinded'
+					html += '
+						<div class="search-row kindness-row '+kclass+'" id="krow-'+result.get('user_id')+'" data-user_id="'+result.get('user_id')+'">
+							<span style="background:url('+result.get('pic')+')"></span>
+							<div class="reg-info">
+								<div class="reg-name">'+result.get('first_name')+' '+result.get('last_name')+'</div>
+							</div>
+							<a href="#" data-user_id="'+result.get('user_id')+'" class="next-button">❯</a>
+						</div>
+					'
+			else
+				html += '
+					<div class="search-row">
+						<span style="background:url('+result.get('pic')+')"></span>
+						<div class="reg-info">
+							<div class="reg-name">'+result.get('first_name')+' '+result.get('last_name')+'</div>
+							<div class="reg-ttype">'+ttype+'</div>
+						</div>
+					<a href="#" data-user_id="'+result.get('user_id')+'" class="register-button '+reg_class+'">'+str+'</a>
+					<div class="location">'+result.get('location')+'</div>
+					</div>
+				'
+	$('#search-results').html(html).show()
+
 
 ap.showKindUser = (e) ->
 	e.stopPropagation()
@@ -173,8 +184,7 @@ ap.onShow.search = ->
 	unless ap.holdSearch
 		$('#register_search').val('')
 		$('#clear-inp').hide()
-		$('#search-results').hide()
-		$('#search_start').show()
+		ap.search()
 	id = 'id'+ap.event_id
 	ev = if ap.eMap[id]? then ap.eMap[id] else {}
 	name = if ev.name then ev.name else ap.event.what
