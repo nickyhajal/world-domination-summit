@@ -156,6 +156,8 @@ routes = (app) ->
 									if aByUid[atn.get('user_id')]?
 										atn.set('answers', aByUid[atn.get('user_id')])
 										atns.push atn
+									else
+										atns.push atn
 									cb()
 								, ->
 									rds.set 'reg_attendees', JSON.stringify(atns), (err, rsp) ->
