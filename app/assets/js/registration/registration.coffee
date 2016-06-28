@@ -103,7 +103,7 @@ ap.search = ->
 		max = 300
 		results = ap.Users.models
 		if ap.event_id is 1 or ap.event_id is 999999
-			results = Users.models.splice(100)
+			results = results.splice(100)
 
 	if ev and ap.event_id > 20 and (''+ap.event_id isnt '999999')
 		final = []
