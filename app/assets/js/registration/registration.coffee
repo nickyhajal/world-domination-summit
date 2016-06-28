@@ -93,6 +93,7 @@ ap.search = ->
 	val = $('#register_search').val()
 	max = 90000
 	tk 'val'
+	results = []
 	if val.length > 0
 		tk 'wut'
 		$('#clear-inp').show()
@@ -102,7 +103,7 @@ ap.search = ->
 		$('#clear-inp').hide()
 		max = 300
 		if ap.event_id isnt 1
-			results = ap.Users.models.splice(0, max)
+			results = ap.Users.models
 
 	if ev and ap.event_id > 20 and (''+ap.event_id isnt '999999')
 		final = []
