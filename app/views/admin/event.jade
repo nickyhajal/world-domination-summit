@@ -48,6 +48,13 @@ div(id="admin-add-event-shell")
 					option(value="0") am
 					option(value="12", selected="selected") pm
 		div(class="form-section")
+			label Event Type
+			div(class="form-box")
+				select(name="type", class="select2", style="width:150px")
+					option(value="program") WDS Program Event (No RSVP)
+					option(value="spark_session") Spark Session (RSVP)
+					option(value="activity") Activity (RSVP)
+		div(class="form-section")
 			label For Ticket Type
 			div(class="form-box")
 				select(name="for_type", class="select2", style="width:150px")

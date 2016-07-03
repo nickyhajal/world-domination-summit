@@ -32,6 +32,7 @@ ap.Views.admin_event = XView.extend
 		$('select[name="pm"]').select2('val', pm)
 		$('select[name="active"]').select2('val', @event.active)
 		$('select[name="for_type"]').select2('val', @event.for_type)
+		$('select[name="type"]').select2('val', @event.type)
 
 	event_submit: (e) ->
 		e.preventDefault()
