@@ -1,5 +1,5 @@
 ap.Views.admin_add_event = XView.extend
-	events: 
+	events:
 		'submit #admin-add-event': 'addEvent_submit'
 	initialize: ->
 		@initRender()
@@ -7,7 +7,6 @@ ap.Views.admin_add_event = XView.extend
 		e.preventDefault()
 		el = $(e.currentTarget)
 		post = el.formToJson()
-		post.type = 'program'
 		btn = _.btn($('.button', el), 'Adding...', 'Added!')
 		ap.api 'post event', post, (rsp) ->
 			ap.events = rsp.events
