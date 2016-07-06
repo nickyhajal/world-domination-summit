@@ -50,6 +50,8 @@ What is the difference between WDS Connect and WDS "360" Tickets? While both tic
 
 <p align="center"><div class="zig-zags_blue"></div></p>
 
+
+
 ### Activity Descriptions 
 
 #### Attendee Led Meetups 
@@ -85,6 +87,8 @@ What is the difference between WDS Connect and WDS "360" Tickets? While both tic
 
 
 ![](/images/connect/schedule.png)
+
+![](https://c7.staticflickr.com/8/7308/27854414710_255173cdfb_o.jpg)
 
 
 ####Registration for WDS Connect is now open. We hope to see you there!
