@@ -29,7 +29,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 
 <p>World Domination Summit (WDS) is a week-long gathering of creative, remarkable people from all over the world, and every summer, <em>thousands</em> of people travel to Portland, Oregon for an immersive experience in life, work, and travel.</p>
 
-<p>When you spend WDS with us in Portland, you’ll help us take over the city. With main-stage keynotes, hundreds of attendee-led meetups, dozens of workshops known as “Academies,” a city-wide scavenger hunt, a Guinness World Record Attempt, two big parties, and hundreds of new friends high-fiving you on street corners, it’s a truly immersive and awesome experience.</p>
+<p>When you spend WDS with us in Portland, you’ll help us take over the city. With main-stage keynotes, hundreds of attendee-led meetups, dozens of workshops known as “Academies,” two big parties, and hundreds of new friends high-fiving you on street corners, it’s a truly immersive and awesome experience.</p>
 
 <p>Everyone who comes to WDS is a big part of everything that happens. Our attendees make the community strong and independent with no corporate sponsorships and nothing for sale during the event except books from our speakers.</p>
 
@@ -44,7 +44,7 @@ What is the difference between WDS Connect and WDS "360" Tickets? While both tic
 
 ![](/images/connect/comparison.png)
 
-####Note: Connect ticket holders also get a discount on Academy tickets for only $29!
+####Note: Connect Ticket holders also receive a special discount on Academy Registration ($29 per Academy)
 
 <p align="center"><div class="connect-purchase-area"></div></p>
 
@@ -78,8 +78,6 @@ What is the difference between WDS Connect and WDS "360" Tickets? While both tic
 #### WDS 5K Fun Run
 <p>Start the morning off with a refreshing run through the city.</p>
 
-#### Hero's Journey
-<p>Face your fears, flex your mind and your muscles, and show yourself and the world the superhero you truly are. Join as a team or meet new friends for an exciting adventure of puzzles, challenges, and races around downtown Portland.</p>
 
 
 
