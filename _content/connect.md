@@ -4,7 +4,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 
 # WDS is growing! For the first time in history, we're inviting _everyone_ to join us for an all-new experience called WDS Connect.
 
-<div class="zig-zags_blue"></div>
+<p align="center"><div class="zig-zags_blue"></div></p>
 <h3 class="sub-karla">2016 marks our sixth annual World Domination Summit, and we’re so grateful to each and every one who has helped us make WDS such a success over the years! We could not do it without you. As many of you know, each year we completely sell out of our main stage event tickets, so this year keeping align with our strong values of community, we’ve decided to open up registration to anyone interested in being part of the WDS experience!</h3>
 
 <p>With a WDS Connect ticket you will still be able to participate in dozens of activities beginning on <b>Tuesday, August 9th </b>through <b>Sunday, August 14th</b>. Each day will feature several optional activities that you can choose from with yoga or a fitness activity in the morning, several “Spark Sessions” in the afternoon, and a focused group experience in the evening. Plus, you’ll get to rock out with us at our spectacular closing party on Sunday!</p>
@@ -15,11 +15,13 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 
 
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+####WDS Connect is brand-new. Come help us make it a great experience!
+
 <p align="center"><div class="connect-purchase-area"></div></p>
 
-#### WDS Connect is brand-new. Come help us make it a great experience!
 
-<div class="zig-zags_blue"></div>
+<p align="center"><div class="zig-zags_blue"></div></p>
 
 ### What is WDS?
 
@@ -33,7 +35,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 
 ![](https://c8.staticflickr.com/8/7524/28092469135_d594c4c421_o.jpg)
 
-<div class="zig-zags_blue"></div>
+<p align="center"><div class="zig-zags_blue"></div></p>
 
 ### WDS Connect Vs. WDS 360 Tickets
 
@@ -45,7 +47,7 @@ What is the difference between WDS Connect and WDS "360" Tickets? While both tic
 
 <p align="center"><div class="connect-purchase-area"></div></p>
 
-<div class="zig-zags_blue"></div>
+<p align="center"><div class="zig-zags_blue"></div></p>
 
 ### Activity Descriptions 
 
@@ -74,7 +76,7 @@ What is the difference between WDS Connect and WDS "360" Tickets? While both tic
 <p>Start the morning off with a refreshing run through the city.</p>
 
 #### Hero's Journey
-<p>Face your fears, flex your mind and your muscles, and show yourself and the world the superhero you truly are. Join as a team or meet new friends for an exciting adventure of puzzles, challenges, and races around downtown Portland.</p>
+<p>Face your fears, flex your mind and your muscles, and show yourself and the world the superhero you truly are. Join as a team or meet new friends for an exciting adventure of puzzles, challenges, and races around downtown Portland.</p><br>
 
 
 
