@@ -11,14 +11,13 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 
 <p>A WDS Connect ticket does not include main stage (now called “360”) event access, but you will be able to hang out with awesome people from all over the world who share the same values of <em>Community</em>, <em>Adventure</em>, and <em>Service</em>. If you’ve never had the opportunity to be a part of the WDS experience, a WDS Connect ticket will give you a taste of what people travel <em>thousands</em> of miles to be a part of each year.</p>
 
-![](https://c8.staticflickr.com/8/7735/28092418055_67136e670e_z.jpg)
+![](https://c8.staticflickr.com/8/7735/28092418055_f02b98820b_o.jpg)
 <br><br>
 
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <p align="center"><div class="connect-purchase-area"></div></p><br><br>
 
-#### WDS Connect is brand-new. Come help us make it a great experience!<br>
-<br>
+#### WDS Connect is brand-new. Come help us make it a great experience!
 
 <div class="zig-zags_blue"></div>
 
@@ -32,7 +31,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 
 <p>Everyone who comes to WDS is a big part of everything that happens. Our attendees make the community strong and independent with no corporate sponsorships and nothing for sale during the event except books from our speakers.</p>
 
-![](https://c8.staticflickr.com/8/7524/28092469135_3ea5443f66_z.jpg)
+![](https://c8.staticflickr.com/8/7524/28092469135_d594c4c421_o.jpg)
 
 <div class="zig-zags_blue"></div>
 
@@ -76,12 +75,15 @@ What is the difference between WDS Connect and WDS "360" Tickets? While both tic
 
 #### Hero's Journey
 <p>Face your fears, flex your mind and your muscles, and show yourself and the world the superhero you truly are. Join as a team or meet new friends for an exciting adventure of puzzles, challenges, and races around downtown Portland.</p>
-<br>
+
+
+
 ### WDS 2016 Schedule
 
 ![](/images/connect/schedule.png)
 
 ####Registration for WDS Connect is now open. We hope to see you there!
+
 <p align="center"><div class="connect-purchase-area"></div></p>
 
 <br>
