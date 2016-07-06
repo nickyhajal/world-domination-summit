@@ -12,10 +12,10 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 <p>A WDS Connect ticket does not include main stage (now called “360”) event access, but you will be able to hang out with awesome people from all over the world who share the same values of <em>Community</em>, <em>Adventure</em>, and <em>Service</em>. If you’ve never had the opportunity to be a part of the WDS experience, a WDS Connect ticket will give you a taste of what people travel <em>thousands</em> of miles to be a part of each year.</p>
 
 ![](https://c8.staticflickr.com/8/7735/28092418055_f02b98820b_o.jpg)
-<br><br>
+
 
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-<p align="center"><div class="connect-purchase-area"></div></p><br><br>
+<p align="center"><div class="connect-purchase-area"></div></p>
 
 #### WDS Connect is brand-new. Come help us make it a great experience!
 
@@ -48,7 +48,7 @@ What is the difference between WDS Connect and WDS "360" Tickets? While both tic
 <div class="zig-zags_blue"></div>
 
 ### Activity Descriptions 
-<br>
+
 #### Attendee Led Meetups 
 <p>These meetups are brought to you <em>by</em> WDSer’s <em>for</em> WDS’ers and are taking place all over the city. A great cup of coffee, a tasty microbrew, a stunning view of the river - you can get a taste of Portland while you connect with your community based on your own interests and passions.</p>
 
@@ -86,7 +86,7 @@ What is the difference between WDS Connect and WDS "360" Tickets? While both tic
 
 <p align="center"><div class="connect-purchase-area"></div></p>
 
-<br>
+
 #### Refund / exchange policy (please read!):
 
 _All WDS Connect tickets are non-refundable and non-transferable. Each ticket is assigned to a unique name and user profile._
