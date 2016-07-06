@@ -39,6 +39,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 
 ### WDS Connect Vs. WDS 360 Tickets
 
+
 What is the difference between WDS Connect and WDS "360" Tickets? While both tickets give the holder access to all of the awesome activities we have planned for the week, only WDS 360 has full access to all of the parties, main-stage weekend sessions, and the Big Adventure scheduled for Friday.   
 
 ![](/images/connect/comparison.png)
@@ -76,13 +77,15 @@ What is the difference between WDS Connect and WDS "360" Tickets? While both tic
 <p>Start the morning off with a refreshing run through the city.</p>
 
 #### Hero's Journey
-<p>Face your fears, flex your mind and your muscles, and show yourself and the world the superhero you truly are. Join as a team or meet new friends for an exciting adventure of puzzles, challenges, and races around downtown Portland.</p><br>
+<p>Face your fears, flex your mind and your muscles, and show yourself and the world the superhero you truly are. Join as a team or meet new friends for an exciting adventure of puzzles, challenges, and races around downtown Portland.</p>
 
 
 
 ### WDS 2016 Schedule
 
+
 ![](/images/connect/schedule.png)
+
 
 ####Registration for WDS Connect is now open. We hope to see you there!
 
