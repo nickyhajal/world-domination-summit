@@ -14,10 +14,10 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 ![](https://c8.staticflickr.com/8/7735/28092418055_f02b98820b_o.jpg)
 <br>
 
-#### WDS Connect is brand-new. Come help us make it a great experience!<br>
-
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <div class="connect-purchase-area"></div>
+
+#### WDS Connect is brand-new. Come help us make it a great experience!<br>
 <br>
 
 <div class="zig-zags_blue"></div>
