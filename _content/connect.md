@@ -92,7 +92,7 @@ What is the difference between WDS Connect and WDS "360" Tickets? While both tic
 <p>Start the morning off with a refreshing run through the city.</p>
 
 
-![](https://c2.staticflickr.com/8/7367/27523468304_7a742b3e81_o.png)
+![](https://c2.staticflickr.com/8/7324/28081036591_82a9168acb_o.png)
 
 
 ### WDS 2016 Schedule
@@ -100,7 +100,7 @@ What is the difference between WDS Connect and WDS "360" Tickets? While both tic
 
 ![](/images/connect/schedule.png)
 
-![](https://c7.staticflickr.com/8/7308/27854414710_255173cdfb_o.jpg)
+![](https://c2.staticflickr.com/8/7464/28159503065_ebefdfdd58_o.png)
 
 
 ####Registration for WDS Connect is now open. We hope to see you there!
