@@ -5,7 +5,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 # WDS is growing! For the first time in history, we're inviting _everyone_ to join us for an all-new experience called WDS Connect.
 
 <p align="center"><div class="zig-zags_blue"></div></p>
-<h3 class="sub-karla">If you've just heard of WDS or weren't able to get main stage tickets earlier, it's not too late to participate. By registering for WDS Connect, you'll be able to:</h3>
+<h3 class="sub-karla">If you've just heard of WDS or weren't able to get main stage tickets earlier, it's not too late to participate. By registering for WDS Connect, you'll be able to:
 
 <ul>
       <li><b>Attend (or host!) your choice of hundreds of meetups and gatherings</b></li>
@@ -15,7 +15,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
       <li><b>Get complimentary entry to one WDS Academy (half-day workshops focused on a specific learning objective)</b></li>
 
       <li><b>Attend our spectacular Closing Party on Sunday, August 14th</b></li>
-</ul>
+</ul></h3>
 
 
 
@@ -55,7 +55,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 What is the difference between WDS Connect and WDS "360" Tickets? While both tickets give the holder access to all of the awesome activities we have planned for the week, only WDS 360 has full access to all of the parties, main-stage weekend sessions, and the Big Adventure scheduled for Friday.   
 
 ![](/images/connect/comparison.png)
-![](https://c2.staticflickr.com/8/7459/27876757190_ebdace6357_o.png)
+![](https://c2.staticflickr.com/8/7276/27543432064_a9c4d6d10a_o.png)
 
 ####Note: Connect Ticket holders also receive a special discount on Academy Registration ($29 per Academy)
 
