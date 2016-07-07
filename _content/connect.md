@@ -7,6 +7,8 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 <p align="center"><div class="zig-zags_blue"></div></p>
 <h3 class="sub-karla">2016 marks our sixth annual World Domination Summit, and we’re so grateful to each and every one who has helped us make WDS such a success over the years! We could not do it without you. As many of you know, each year we completely sell out of our main stage event tickets, so this year keeping in line with our strong values of community, we’ve decided to open up registration to anyone interested in being part of the WDS experience!</h3>
 
+![](https://c2.staticflickr.com/8/7352/27876756430_06d75cf3f4_o.png)
+
 <p>With a WDS Connect ticket you will still be able to participate in dozens of activities beginning on <b>Tuesday, August 9th </b>through <b>Sunday, August 14th</b>. Each day will feature several optional activities that you can choose from with yoga or a fitness activity in the morning, several “Spark Sessions” in the afternoon, and a focused group experience in the evening. Plus, you’ll get to rock out with us at our spectacular closing party on Sunday!</p>
 
 <p>A WDS Connect ticket does not include main stage (now called “360”) event access, but you will be able to hang out with awesome people from all over the world who share the same values of <em>Community</em>, <em>Adventure</em>, and <em>Service</em>. If you’ve never had the opportunity to be a part of the WDS experience, a WDS Connect ticket will give you a taste of what people travel <em>thousands</em> of miles to be a part of each year.</p>
