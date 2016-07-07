@@ -33,7 +33,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 
 <p>Everyone who comes to WDS is a big part of everything that happens. Our attendees make the community strong and independent with no corporate sponsorships and nothing for sale during the event except books from our speakers.</p>
 
-![](https://c8.staticflickr.com/8/7524/28092469135_d594c4c421_o.jpg)
+![](https://c2.staticflickr.com/8/7459/27876757190_ebdace6357_o.png)
 
 <p align="center"><div class="zig-zags_blue"></div></p>
 
