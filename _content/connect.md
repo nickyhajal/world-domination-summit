@@ -18,6 +18,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 </ul>
 
 
+
 <p>With a WDS Connect ticket you will still be able to participate in dozens of activities beginning on <b>Tuesday, August 9th </b>through <b>Sunday, August 14th</b>. Each day will feature several optional activities that you can choose from with yoga or a fitness activity in the morning, several “Spark Sessions” in the afternoon, and a focused group experience in the evening. Plus, you’ll get to rock out with us at our spectacular closing party on Sunday!</p>
 
 <p>A WDS Connect ticket does not include main stage (now called “360”) event access, but you will be able to hang out with awesome people from all over the world who share the same values of <em>Community</em>, <em>Adventure</em>, and <em>Service</em>. If you’ve never had the opportunity to be a part of the WDS experience, a WDS Connect ticket will give you a taste of what people travel <em>thousands</em> of miles to be a part of each year.</p>
@@ -54,7 +55,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 What is the difference between WDS Connect and WDS "360" Tickets? While both tickets give the holder access to all of the awesome activities we have planned for the week, only WDS 360 has full access to all of the parties, main-stage weekend sessions, and the Big Adventure scheduled for Friday.   
 
 ![](/images/connect/comparison.png)
-![](https://c2.staticflickr.com/8/7538/27543742943_c263f69d8b_o.png)
+![](https://c2.staticflickr.com/8/7459/27876757190_ebdace6357_o.png)
 
 ####Note: Connect Ticket holders also receive a special discount on Academy Registration ($29 per Academy)
 
