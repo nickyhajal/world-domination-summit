@@ -43,7 +43,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 
 <p>When you spend WDS with us in Portland, you’ll help us take over the city. With main-stage keynotes, hundreds of attendee-led meetups, dozens of workshops known as “Academies,” two big parties, and hundreds of new friends high-fiving you on street corners, it’s a truly immersive and awesome experience.</p>
 
-<p>Everyone who comes to WDS is a big part of everything that happens, and our attendees make the community strong and independent. While we do offer some high quality branded merchandise (swag!:sparkles:) at bargain prices, WDS is operated as not-for-profit, and all proceeds at the end of the event are contributed to the WDS Foundation, funding ["Scholarships for Real Life"](https://worlddominationsummit.com/foundation).</p>
+<p>Everyone who comes to WDS is a big part of everything that happens, and our attendees make the community strong and independent. While we do offer some high quality branded merchandise (swag! :sparkles: ) at bargain prices, WDS is operated as not-for-profit, and all proceeds at the end of the event are contributed to the WDS Foundation, funding ["Scholarships for Real Life"](https://worlddominationsummit.com/foundation).</p>
 
 
 ![](https://c8.staticflickr.com/8/7524/28092469135_d594c4c421_o.jpg)
