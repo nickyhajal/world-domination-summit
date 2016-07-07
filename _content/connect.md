@@ -13,7 +13,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 
 <p>A WDS Connect ticket does not include main stage (now called “360”) event access, but you will be able to hang out with awesome people from all over the world who share the same values of <em>Community</em>, <em>Adventure</em>, and <em>Service</em>. If you’ve never had the opportunity to be a part of the WDS experience, a WDS Connect ticket will give you a taste of what people travel <em>thousands</em> of miles to be a part of each year.</p>
 
-![](https://c2.staticflickr.com/8/7460/27876756730_5b6de9d586_o.png)
+![](https://c8.staticflickr.com/8/7735/28092418055_f02b98820b_o.jpg)
 
 
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
@@ -35,7 +35,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 
 <p>Everyone who comes to WDS is a big part of everything that happens. Our attendees make the community strong and independent with no corporate sponsorships and nothing for sale during the event except books from our speakers.</p>
 
-![](https://c2.staticflickr.com/8/7459/27876757190_ebdace6357_o.png)
+![](https://c8.staticflickr.com/8/7524/28092469135_d594c4c421_o.jpg)
 
 <p align="center"><div class="zig-zags_blue"></div></p>
 
@@ -45,6 +45,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 What is the difference between WDS Connect and WDS "360" Tickets? While both tickets give the holder access to all of the awesome activities we have planned for the week, only WDS 360 has full access to all of the parties, main-stage weekend sessions, and the Big Adventure scheduled for Friday.   
 
 ![](/images/connect/comparison.png)
+![](https://c2.staticflickr.com/8/7459/27876757190_ebdace6357_o.png)
 
 ####Note: Connect Ticket holders also receive a special discount on Academy Registration ($29 per Academy)
 
