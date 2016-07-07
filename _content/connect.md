@@ -11,7 +11,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 
 <p>A WDS Connect ticket does not include main stage (now called “360”) event access, but you will be able to hang out with awesome people from all over the world who share the same values of <em>Community</em>, <em>Adventure</em>, and <em>Service</em>. If you’ve never had the opportunity to be a part of the WDS experience, a WDS Connect ticket will give you a taste of what people travel <em>thousands</em> of miles to be a part of each year.</p>
 
-![](https://c8.staticflickr.com/8/7735/28092418055_f02b98820b_o.jpg)
+![](https://c2.staticflickr.com/8/7621/28158265505_fc7b038d3c_o.png)
 
 
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
