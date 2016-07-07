@@ -8,13 +8,13 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 <h3 class="sub-karla">If you've just heard of WDS or weren't able to get main stage tickets earlier, it's not too late to participate. By registering for WDS Connect, you'll be able to:
 
 <ul>
-      <li><b>Attend (or host!) your choice of hundreds of meetups and gatherings</b></li>
+      <li>Attend (or host!) your choice of hundreds of meetups and gatherings</li>
       
-      <li><b>Connect with worldwide attendees based on shared interests or goals</b></li>
+      <li>Connect with worldwide attendees based on shared interests or goals</li>
 
-      <li><b>Get complimentary entry to one WDS Academy (half-day workshops focused on a specific learning objective)</b></li>
+      <li>Get complimentary entry to one WDS Academy (half-day workshops focused on a specific learning objective)</li>
 
-      <li><b>Attend our spectacular Closing Party on Sunday, August 14th</b></li>
+      <li>Attend our spectacular Closing Party on Sunday, August 14th</li>
 </ul></h3>
 
 
