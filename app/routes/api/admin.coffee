@@ -188,6 +188,7 @@ routes = (app) ->
 								rsp += "Y;"
 							if hasPic
 								rsp += "Y;"
+							rsp += "\n"
 					res.send rsp
 					res.r.msg = 'Success'
 			else
