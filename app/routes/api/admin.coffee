@@ -167,7 +167,7 @@ routes = (app) ->
 				res.attachment 'attendee_profiles-'+process.year+'.csv'
 
 				# Headers
-				rsp = "sep=;"
+				rsp = "sep=;\n"
 				rsp += "First Name;Last Name;Email;Profile Step;Has Username;Has Address;Has Pic;\n"
 
 				# Attendee list for current year
