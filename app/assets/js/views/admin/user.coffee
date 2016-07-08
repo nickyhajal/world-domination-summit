@@ -21,7 +21,8 @@ ap.Views.admin_user = XView.extend
 	rendered: ->
 		@initSelect2()
 		@initTickets()
-		$('input[name="type"]').val(@user.get('type'))
+		# $('input[name="type"]').val(@user.get('type'))
+		$('select[name="type"]').select2('val', @user.get('type'))
 	initSelect2: ->
 		country_select = $('#country-select')
 		countries = []
