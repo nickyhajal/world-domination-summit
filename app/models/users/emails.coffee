@@ -37,6 +37,8 @@ emails =
         else
           @addToList 'WDS '+process.year+' Attendees'
         @removeFromList 'WDS '+process.year+' Canceled'
+      if @get('type') is 'friend'
+          @addToList 'WDS '+process.year+' Friends'
     else
       @removeFromList 'WDS '+process.year+' Attendees'
       @removeFromList 'WDS '+process.year+' Connect'
