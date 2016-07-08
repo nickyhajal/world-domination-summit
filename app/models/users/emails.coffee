@@ -26,6 +26,8 @@ emails =
         else
           @addToList 'WDS '+process.year+' Attendees'
           @removeFromList 'WDS '+process.year+' Attendees', @before_save['email']
+      if @get('type') is 'friend'
+          @addToList 'WDS '+process.year+' Friends'
 
   syncEmailWithTicket: ->
     if @get('attending'+process.yr) is '1'
