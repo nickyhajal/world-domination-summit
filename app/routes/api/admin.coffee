@@ -184,10 +184,16 @@ routes = (app) ->
 							rsp += a.get('intro')+";"
 							if hasAddress
 								rsp += "Y;"
+							else
+								rsp += "N;"
 							if hasUsername
 								rsp += "Y;"
+							else
+								rsp += "N;"
 							if hasPic
 								rsp += "Y;"
+							else
+								rsp += "N;"
 							rsp += "\n"
 					res.send rsp
 					res.r.msg = 'Success'
