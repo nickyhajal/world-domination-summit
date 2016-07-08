@@ -164,7 +164,7 @@ routes = (app) ->
 		export_profile_stat: (req, res, next) ->
 			if req.me.hasCapability('manifest')
 				res.status(200)
-				res.attachment 'attendees'+process.year+'.csv'
+				res.attachment 'attendee_profiles-'+process.year+'.csv'
 
 				# Headers
 				rsp = "sep=;"
