@@ -180,7 +180,7 @@ routes = (app) ->
 						hasUsername = a.get('user_name').length < 40
 						hasPic = a.get('pic').length > 0
 						if profileStep < 10 || !hasAddress || !hasUsername || !hasPic
-							rsp += a.get('first_name')+";"+a.get('last_name')+";"
+							rsp += a.get('first_name')+";"+a.get('last_name')+";"+a.get('email')+";"
 							rsp += a.get('intro')+";"
 							if hasAddress
 								rsp += "Y;"
