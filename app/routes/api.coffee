@@ -167,6 +167,7 @@ routes = (app) ->
 		app.get '/admin/ambassador_accept', admin.ambassador_accept
 		app.get '/admin/ambassador_reject', admin.ambassador_reject
 		app.get '/admin/user_export', admin.export
+		app.get '/admin/profile_stat', admin.export_profile_stat
 		app.get '/admin/transfer_export', admin.transfer_export
 		app.get '/admin/locations', admin.process_locations
 		app.get '/admin/fixattendees', admin.process_attendees

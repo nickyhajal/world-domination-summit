@@ -160,6 +160,39 @@ routes = (app) ->
 			else
 				res.status(401)
 
+
+		export_profile_stat: (req, res, next) ->
+			if req.me.hasCapability('manifest')
+				res.status(200)
+				res.attachment 'attendees'+process.year+'.csv'
+
+				# Headers
+				rsp = "sep=;"
+				rsp += "First Name;Last Name;Email;Profile Step;Has Username;Has Address;Has Pic;\n"
+
+				# Attendee list for current year
+				Users.forge()
+				.query('where', 'attending'+process.yr, '1')
+				.fetch().then (model) ->
+					for a in model.models
+						profileStep = a.get('intro')
+						hasAddress = a.get('address')?.length > 0 || a.get('region')?.length > 0
+						hasUsername = a.get('user_name').length < 40
+						hasPic = a.get('pic').length > 0
+						if profileStep < 10 || !hasAddress || !hasUsername || !hasPic
+							rsp += attendee.get('first_name')+";"+attendee.get('last_name')+";"
+							rsp += a.get('intro')+";"
+							if hasAddress
+								rsp += "Y;"
+							if hasUsername
+								rsp += "Y;"
+							if hasPic
+								rsp += "Y;"
+					res.send rsp
+					res.r.msg = 'Success'
+			else
+				res.status(401)
+
 		schedule: (req, res, next) ->
 			Events.forge()
 			.query('whereIn', 'type', ['program', 'spark_session', 'activity'])

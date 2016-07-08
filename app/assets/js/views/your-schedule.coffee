@@ -31,7 +31,7 @@ ap.Views.your_schedule = XView.extend
 					html += '<h3 id="dayhead-'+day_slug+'">'+day+'</h3>'
 				hosts = @renderHosts(ev)
 				note = @renderNote(ev)
-				event = 
+				event =
 					time: time.format('h:mm a')
 					hosts: hosts
 					event_id: ev.get('event_id')
