@@ -168,7 +168,7 @@ routes = (app) ->
 
 				# Headers
 				rsp = "sep=;\n"
-				rsp += "First Name;Last Name;Email;Profile Step;Has Username;Has Address;Has Pic;\n"
+				rsp += "First Name;Last Name;Email;Profile Step;Has Username;Has Address;Has Pic;Profile Link;\n"
 
 				# Attendee list for current year
 				Users.forge()
@@ -194,6 +194,7 @@ routes = (app) ->
 								rsp += "Y;"
 							else
 								rsp += "N;"
+							rsp += "http://wds.fm/"+a.get('hash')+";"
 							rsp += "\n"
 					res.send rsp
 					res.r.msg = 'Success'
