@@ -3,6 +3,13 @@ div(id="admin-add-event-shell")
 		a(href="/admin/schedule", class="button") Back to Schedule
 	form(id="admin-event-update", method="post", action="#")
 		div(class="form-section")
+			label Event Type
+			div(class="form-box")
+				select(name="type", class="select2", style="width:150px")
+					option(value="program") WDS Program Event (No RSVP)
+					option(value="spark_session") Spark Session (RSVP)
+					option(value="activity") Activity (RSVP)
+		div(class="form-section")
 			div(class="form-box")
 				label Event Name
 				input(name="what", type="text", value="{{ what }}")
@@ -12,6 +19,15 @@ div(id="admin-add-event-shell")
 		div(class="form-section")
 			label Address
 			input(name="address", type="text", value="{{ address }}")
+		div(class="form-box")
+			label Any Special Notes About the Venue/Location
+			input(type="text", name="venue_note", value="{{ venue_note }}")
+		div(class="form-section")
+			label Description
+			textarea(name="descr") {{ descr }}
+		div(class="form-section")
+			label Who It's For
+			textarea(name="who") {{ who }}
 		div(class="form-section")
 			label Event Start
 			div(class="form-box")
@@ -48,12 +64,9 @@ div(id="admin-add-event-shell")
 					option(value="0") am
 					option(value="12", selected="selected") pm
 		div(class="form-section")
-			label Event Type
-			div(class="form-box")
-				select(name="type", class="select2", style="width:150px")
-					option(value="program") WDS Program Event (No RSVP)
-					option(value="spark_session") Spark Session (RSVP)
-					option(value="activity") Activity (RSVP)
+			label How many people can attend?
+			label(class="sub-label") We'll close the meetup after it has this many RSVPs
+			input(type="number", name="max", min="1", max="5000", value="{{ max }}")
 		div(class="form-section")
 			label For Ticket Type
 			div(class="form-box")
