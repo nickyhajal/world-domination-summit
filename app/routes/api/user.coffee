@@ -132,49 +132,38 @@ routes = (app) ->
 		search: (req, res, next) ->
 			_Users = Users.forge()
 			all = {}
-			tk 1
 			types = req.query.types?.split(',')
-			tk 2
 			years = req.query.years?.split(',')
-			tk 3
 			doQuery = (col, q = false) ->
-				tk 4
 				dfr = Q.defer()
 				_Users.query (qb) ->
-					tk 5
 					where = ''
 					params = []
-					tk 6
 					if q
 						where += col+' LIKE ?'
 						params.push q
 					if req.query.types?.length
-						tk 7
 						if q
 							where += ' AND '
 						where += 'ticket_type IN ('
 						c = false
-						tk 8
 						for t in types
-							tk 9
 							where += ', ' if c
 							where += '?'
 							params.push t
 							c = true
 						where += ')'
-					tk 10
 					if years?.length
 						if q and req.query.types?.length
 							where += ' AND ('
 						c = false
 						for y in years
 							where += ' OR ' if c
-							where += 'attending'+y+ '= ?'
+							where += ' attending'+y+ '= ?'
 							params.push '1'
 							c = true
 						where += ')'
 					qb.whereRaw(where, params)
-					tk 11
 				.fetch()
 				.then (rsp) ->
 					dfr.resolve(rsp)
