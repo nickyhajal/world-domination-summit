@@ -163,7 +163,7 @@ routes = (app) ->
 							c = true
 						where += ')'
 					tk 10
-					if years.length
+					if years?.length
 						if q and req.query.types?.length
 							where += ' AND ('
 						c = false
