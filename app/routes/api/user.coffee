@@ -142,7 +142,7 @@ routes = (app) ->
 					if q
 						where += col+' LIKE ?'
 						params.push q
-					if req.query.types.length
+					if req.query.types?.length
 						if q
 							where += ' AND '
 						where += 'ticket_type IN ('
@@ -154,7 +154,7 @@ routes = (app) ->
 							c = true
 						where += ')'
 					if years.length
-						if q and req.query.types.length
+						if q and req.query.types?.length
 							where += ' AND ('
 						c = false
 						for y in years
