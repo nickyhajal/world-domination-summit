@@ -111,7 +111,7 @@ What is the difference between WDS Connect and WDS "360" Tickets? While both tic
 
 <p align="center"><div class="connect-purchase-area"></div></p>
 
-####*Seats are limited. First come, first served!
+*Seats are limited. First come, first served!
 #### Refund / exchange policy (please read!):
 
 _All WDS Connect tickets are non-refundable and non-transferable. Each ticket is assigned to a unique name and user profile._
