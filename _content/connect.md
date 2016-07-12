@@ -12,16 +12,18 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
       
       <li>Connect with worldwide attendees based on shared interests or goals</li>
 
-      <li>Get complimentary entry to one WDS Academy (half-day workshops focused on a specific learning objective)</li>
+      <li>Get complimentary entry to one WDS Academy (half-day workshops focused on a specific learning objective) and discounted tickets to any additional Academies ($29 per Academy)*</li>
 
       <li>Attend our spectacular Closing Party on Sunday, August 14th</li>
 </ul></h3>
 
 
 
-<p>With a WDS Connect ticket you will still be able to participate in dozens of activities beginning on <b>Tuesday, August 9th </b>through <b>Sunday, August 14th</b>. Each day will feature several optional activities that you can choose from with yoga or a fitness activity in the morning, several “Spark Sessions” in the afternoon, and a focused group experience in the evening. Plus, you’ll get to rock out with us at our spectacular closing party on Sunday!</p>
+<p>With a WDS Connect ticket you can participate in dozens of activities beginning on <b>Tuesday, August 9th </b>through <b>Monday, August 15th</b>. Each day will feature several optional activities, from morning fitness to thought-provoking “Spark Sessions." Plus, you’ll get to rock out with us at our spectacular closing party on Sunday!</p>
 
-<p>A WDS Connect ticket does not include main stage (now called “360”) event access, but you will be able to hang out with awesome people from all over the world who share the same values of <em>Community</em>, <em>Adventure</em>, and <em>Service</em>. If you’ve never had the opportunity to be a part of the WDS experience, a WDS Connect ticket will give you a taste of what people travel <em>thousands</em> of miles to be a part of each year.</p>
+<p>Although the WDS Connect ticket does not include main stage (now called “360”) event access, you'll have tons of opportunities to connect with interesting people from all over the world who care about <em>Community</em>, <em>Adventure</em>, and <em>Service</em>.</p>
+
+<p>If you’ve never had the opportunity to be a part of the WDS experience, a WDS Connect ticket will give you a taste of what people travel <em>thousands</em> of miles to be a part of each year.</p>
 
 ![](https://c8.staticflickr.com/8/7735/28092418055_f02b98820b_o.jpg)
 
@@ -37,13 +39,11 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
 
 ### What is WDS?
 
-<p><b>Five years ago, 500 like-minded individuals and friends came together to explore the answer to the question: “How do we live a remarkable life in a conventional world?"</b> Our numbers have grown significantly since then, but our quest to answer that initial question remains year after year.</p>
-
-<p>World Domination Summit (WDS) is a week-long gathering of creative, remarkable people from all over the world, and every summer, <em>thousands</em> of people travel to Portland, Oregon for an immersive experience in life, work, and travel.</p>
+<p>World Domination Summit (WDS) is a week-long gathering of creative, remarkable people who are asking: "How do we live a remarkable life in a conventional world?" Every summer, <em>thousands</em> of people travel from all over the world to Portland, Oregon for this immersive experience in life, work, and travel.</p>
 
 <p>When you spend WDS with us in Portland, you’ll help us take over the city. With main-stage keynotes, hundreds of attendee-led meetups, dozens of workshops known as “Academies,” two big parties, and a ridiculous number of new friends high-fiving you on street corners, it’s a truly immersive and awesome experience.</p>
 
-<p>Everyone who comes to WDS is a big part of everything that happens, and our attendees make the community strong and independent. While we do offer some high quality branded merchandise (<b>swag!</b>) at bargain prices, WDS is operated as not-for-profit, and all proceeds at the end of the event are contributed to the WDS Foundation, funding ["Scholarships for Real Life"](https://worlddominationsummit.com/foundation).</p>
+<p>WDS is operated as not-for-profit, and all proceeds at the end of the event are contributed to the WDS Foundation, funding ["Scholarships for Real Life"](https://worlddominationsummit.com/foundation).</p>
 
 
 ![](https://c8.staticflickr.com/8/7524/28092469135_d594c4c421_o.jpg)
@@ -70,6 +70,9 @@ What is the difference between WDS Connect and WDS "360" Tickets? While both tic
 
 #### Attendee Led Meetups 
 <p>These meetups are brought to you <em>by</em> WDSer’s <em>for</em> WDS’ers and are taking place all over the city. A great cup of coffee, a tasty microbrew, a stunning view of the river - you can get a taste of Portland while you connect with your community based on your own interests and passions.</p>
+
+#### Academies
+<p>Dig deep into your favorite topics with these half-day workshops, led by experts from the WDS community. From travel hacking to creating killer online enterprises, Academies are a great way to launch yourself into new adventures. [Academy tickets](https://worlddominationsummit.com/academies) are purchased separately (and discount pricing is available for Connect ticket holders).</p>
 
 #### Spark Sessions
 <p>Get ignited as this facilitated meetup session offers thought-provoking talks and hands on strategizing. Read the details for each session in your schedule.</p>
@@ -108,7 +111,7 @@ What is the difference between WDS Connect and WDS "360" Tickets? While both tic
 
 <p align="center"><div class="connect-purchase-area"></div></p>
 
-
+*Seats are limited. First come, first served!
 #### Refund / exchange policy (please read!):
 
 _All WDS Connect tickets are non-refundable and non-transferable. Each ticket is assigned to a unique name and user profile._
