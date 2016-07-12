@@ -12,7 +12,7 @@ photo_head: https://farm4.staticflickr.com/3741/19481517920_e3181da4be_z_d.jpg
       
       <li>Connect with worldwide attendees based on shared interests or goals</li>
 
-      <li>Get complimentary entry to one WDS Academy (half-day workshops focused on a specific learning objective)</li>
+      <li>Get complimentary entry to one WDS Academy (half-day workshops focused on a specific learning objective) and discounted tickets to any additional Academies ($29 per Academy)*</li>
 
       <li>Attend our spectacular Closing Party on Sunday, August 14th</li>
 </ul></h3>
@@ -71,6 +71,9 @@ What is the difference between WDS Connect and WDS "360" Tickets? While both tic
 #### Attendee Led Meetups 
 <p>These meetups are brought to you <em>by</em> WDSer’s <em>for</em> WDS’ers and are taking place all over the city. A great cup of coffee, a tasty microbrew, a stunning view of the river - you can get a taste of Portland while you connect with your community based on your own interests and passions.</p>
 
+#### Academies
+<p>Dig deep into your favorite topics with these half-day workshops, led by experts from the WDS community. From travel hacking to creating killer online enterprises, Academies are a great way to launch yourself into new adventures. [Academy tickets](https://worlddominationsummit.com/academies) are purchased separately (and discount pricing is available for Connect ticket holders).</p>
+
 #### Spark Sessions
 <p>Get ignited as this facilitated meetup session offers thought-provoking talks and hands on strategizing. Read the details for each session in your schedule.</p>
 
@@ -108,7 +111,7 @@ What is the difference between WDS Connect and WDS "360" Tickets? While both tic
 
 <p align="center"><div class="connect-purchase-area"></div></p>
 
-
+####*Seats are limited. First come, first served!
 #### Refund / exchange policy (please read!):
 
 _All WDS Connect tickets are non-refundable and non-transferable. Each ticket is assigned to a unique name and user profile._
