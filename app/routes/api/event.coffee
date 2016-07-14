@@ -40,7 +40,7 @@ routes = (app) ->
 
 				post.slug = _s.slugify(post.what)
 				Events.query (qb) ->
-					slug: post.slug
+					qb.where 'slug', post.slug
 				.fetch()
 				.then (slugs) ->
 					if slugs.models.length
