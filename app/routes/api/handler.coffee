@@ -76,6 +76,7 @@ handler =
 					getMe()
 				else
 					res.r.token_invalid = true
+					next()
 		else
 			getMe()
 
