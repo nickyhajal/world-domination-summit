@@ -69,6 +69,8 @@ handler =
 				token: req.query.user_token
 				ttl: 31536000
 			, (err, rsp) ->
+				tk err
+				tk rsp
 				req.session.ident = JSON.stringify({id: rsp.id})
 				getMe()
 		else
