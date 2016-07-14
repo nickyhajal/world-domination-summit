@@ -39,51 +39,56 @@ routes = (app) ->
 					post.type = 'meetup'
 
 				post.slug = _s.slugify(post.what)
+				Events.query (qb) ->
+					slug: post.slug
+				.fetch()
+				.then (slugs) ->
+					if slugs.models.length
+						post.slug += '-'+(slugs.models.length+1)
+					post.year = process.yr
 
-				post.year = process.yr
-
-				Event.forge(post)
-				.save()
-				.then (event) ->
-					if req.query.hosts?
-						EventHosts.forge().query (qb) ->
-							qb.where('event_id', event.get('event_id'))
-						.fetch()
-						.then (exh) ->
-							async.each exh.models, (h, cb) ->
-								h.destroy()
-								.then ->
-									cb()
-							, ->
-								ids = req.query.hosts.split(',')
-								async.each ids, (id, cb) ->
-									host = EventHost.forge({event_id: event.get('event_id'), user_id: id})
-									host.save()
-									.then (_host) ->
-										cb()
-								, () ->
-									next()
-					if post.type is 'meetup'
-						EventHost.forge({event_id: event.get('event_id'), user_id: req.me.get('user_id')})
-						.save()
-						.then (host) ->
-							req.me.sendEmail('meetup-submitted', 'Thanks for your meetup proposal!')
-							if req.query.interests? and req.query.interests.length
-								async.each req.query.interests.split(','), (interest, cb) ->
-									EventInterest.forge({event_id: event.get('event_id'), interest_id: interest})
-									.save()
-									.then (interest) ->
+					Event.forge(post)
+					.save()
+					.then (event) ->
+						if req.query.hosts?
+							EventHosts.forge().query (qb) ->
+								qb.where('event_id', event.get('event_id'))
+							.fetch()
+							.then (exh) ->
+								async.each exh.models, (h, cb) ->
+									h.destroy()
+									.then ->
 										cb()
 								, ->
+									ids = req.query.hosts.split(',')
+									async.each ids, (id, cb) ->
+										host = EventHost.forge({event_id: event.get('event_id'), user_id: id})
+										host.save()
+										.then (_host) ->
+											cb()
+									, () ->
+										next()
+						if post.type is 'meetup'
+							EventHost.forge({event_id: event.get('event_id'), user_id: req.me.get('user_id')})
+							.save()
+							.then (host) ->
+								req.me.sendEmail('meetup-submitted', 'Thanks for your meetup proposal!')
+								if req.query.interests? and req.query.interests.length
+									async.each req.query.interests.split(','), (interest, cb) ->
+										EventInterest.forge({event_id: event.get('event_id'), interest_id: interest})
+										.save()
+										.then (interest) ->
+											cb()
+									, ->
+										next()
+								else
 									next()
-							else
-								next()
-						, (err) ->
-							console.error(err)
-					else
-						next()
-				, (err) ->
-					console.error(err)
+							, (err) ->
+								console.error(err)
+						else
+							next()
+					, (err) ->
+						console.error(err)
 			else
 				res.r.msg = 'You\'re not logged in!'
 				res.status(401)
