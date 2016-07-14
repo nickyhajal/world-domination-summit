@@ -34,7 +34,7 @@ div(id="admin-add-event-shell")
 		div(class="form-section")
 			label Event Start
 			div(class="form-box")
-				select(name="date", class="select2", style="width:150px")
+				select(name="date", class="select2", style="width:250px")
 					option(value="08") Monday, August 8th
 					option(value="09") Tuesday, August 9th
 					option(value="10") Wednesday, August 10th
@@ -69,7 +69,7 @@ div(id="admin-add-event-shell")
 		div(class="form-section")
 			label How many people can attend?
 			label(class="sub-label") We'll close the event after it has this many RSVPs
-			input(type="number", name="max", min="1", max="5000", value="{{ max }}")
+			input(type="number", name="max", min="0", max="5000", value="{{ max }}")
 		div(class="form-section")
 			label For Ticket Type
 			div(class="form-box")
