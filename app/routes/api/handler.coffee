@@ -71,8 +71,11 @@ handler =
 			, (err, rsp) ->
 				tk err
 				tk rsp
-				req.session.ident = JSON.stringify({id: rsp.id})
-				getMe()
+				if rsp.id?
+					req.session.ident = JSON.stringify({id: rsp.id})
+					getMe()
+				else
+					res.r.token_invalid = true
 		else
 			getMe()
 
