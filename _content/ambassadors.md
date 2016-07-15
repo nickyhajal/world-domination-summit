@@ -3,12 +3,17 @@ photo_head: https://farm1.staticflickr.com/528/19614072281_88ef8433f8_z_d.jpg,ht
 
 ## Ambassadors
 
-<!--###Applications for 2015 WDS Ambassador positions are now closed but thanks for your interest. Keep doing amazing things and please apply next year when applications become available for WDS 2016!
--->
-
-# Over 1000 attendees from dozens of countries are coming to Portland for the 6th annual World Domination Summit in August. Want to help?
+# Over 1000 attendees from dozens of countries are coming to Portland for the 6th annual World Domination Summit in August.
 
 <div class="zig-zags_blue"></div>
+
+Thanks for your interest in joining us as an Ambassador for WDS 2016. While we've filled all our Ambassador roles for 2016, we'd still love for you to be a part of WDS and attend as a <a href="https://worlddominationsummit.com/connect">Connect ticket holder</a>.
+
+If you have any questions, please don't hesitate to connect with our Ambassador Coordinator Tina at tinahartpdx@gmail.com 
+
+Thank you!
+
+<!--
 
 Our entire team is composed of volunteers and has been working for a year to prepare. For the big weekend, we’ll be recruiting additional help. You’ll work directly with the WDS organizers in serving our attendees by making them feel welcome and ensuring that everything runs smoothly. Rewards include fame, pizza, high fives, unforgettable memories, and your very own coveted Ambassador t-shirt! 
 
@@ -42,4 +47,4 @@ var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') retu
 try { k1qb9rtw1jhaxfo = new WufooForm();k1qb9rtw1jhaxfo.initialize(options);k1qb9rtw1jhaxfo.display(); } catch (e) {}};
 var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, 'script');</script>
-
+-->
