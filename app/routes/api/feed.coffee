@@ -288,7 +288,10 @@ routes = (app) ->
 							feeds.query 'where', 'channel_type', '!=', 'meetup'
 							cb()
 						else
+							tk 1
+							tk req.me
 							if req.me? and req.me
+								tk 2
 								req.me.getRsvps()
 								.then (rsp) ->
 									rsvps = rsp.get('rsvps')
@@ -297,6 +300,7 @@ routes = (app) ->
 										feeds.query 'whereRaw', "(`channel_type` != 'meetup' OR (`channel_type` = 'meetup' AND `channel_id` IN ("+meetups+")))"
 									cb()
 							else
+								tk 3
 								cb()
 				else
 					cb()
@@ -328,4 +332,4 @@ routes = (app) ->
 			, (err) ->
 				console.error(err)
 
-module.exports = routes
+module.exports = routess
