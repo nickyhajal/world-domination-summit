@@ -288,7 +288,7 @@ routes = (app) ->
 							feeds.query 'where', 'channel_type', '!=', 'meetup'
 							cb()
 						else
-							if req.me?
+							if req.me? and req.me
 								req.me.getRsvps()
 								.then (rsp) ->
 									rsvps = rsp.get('rsvps')
