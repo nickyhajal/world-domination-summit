@@ -288,6 +288,7 @@ routes = (app) ->
 							feeds.query 'where', 'channel_type', '!=', 'meetup'
 							cb()
 						else
+							tk "MEETUPS"
 							tk req.me
 							tk 1
 							if req.me? and req.me
