@@ -23,6 +23,8 @@ routes = (app) ->
 				# Check if this is a duplicate post
 				uniq = moment().format('YYYY-MM-DD HH:mm') + post.content + post.user_id
 				post.hash = crypto.createHash('md5').update(uniq).digest('hex')
+				if post.channel_type == 'meetup'
+					post.channel_type = 'event'
 				Feed.forge
 					hash: post.hash
 
@@ -200,8 +202,10 @@ routes = (app) ->
 				if req.query.channel_id?
 					id += req.query.channel_id
 				if req.query.filters?
+					if req.query.filters.meetups?
+						req.query.filters.events = req.query.filters.meetups
 					id += 'filters_'+JSON.stringify(req.query.filters)
-					if req.query.filters['attendees'] == '1' || req.query.filters['meetups'] == '1' || req.query.filters['communities'] == '1'
+					if req.query.filters['attendees'] == '1' || req.query.filters['events'] == '1' || req.query.filters['communities'] == '1'
 						cache = false
 				id += req.query.since
 				rds.get id, (err, feeds) =>
@@ -219,6 +223,7 @@ routes = (app) ->
 			else
 				next()
 		get: (req, res, next) ->
+			tk '>> GET FEED'
 			feeds = Feeds.forge()
 			limit = req.query.per_page ? 50
 			page = req.query.page ? 1
@@ -292,10 +297,10 @@ routes = (app) ->
 									interests = interests.join(',')
 									feeds.query 'whereRaw', "(`channel_type` != 'interest' OR (`channel_type` = 'interest' AND `channel_id` IN ("+interests+")))"
 								cb()
-					if filter.name is 'meetups'
+					if filter.name is 'meetups' || filter.name is 'events'
 						tk 'meetups'
 						if filter.val is '2'
-							feeds.query 'where', 'channel_type', '!=', 'meetup'
+							feeds.query 'where', 'channel_type', '!=', 'event'
 							cb()
 						else
 							tk "MEETUPS"
@@ -308,7 +313,7 @@ routes = (app) ->
 									rsvps = rsp.get('rsvps')
 									if rsvps.length
 										meetups = rsp.get('rsvps').join(',')
-										feeds.query 'whereRaw', "(`channel_type` != 'meetup' OR (`channel_type` = 'meetup' AND `channel_id` IN ("+meetups+")))"
+										feeds.query 'whereRaw', "(`channel_type` != 'event' OR (`channel_type` = 'event' AND `channel_id` IN ("+meetups+")))"
 									cb()
 							else
 								tk 3
