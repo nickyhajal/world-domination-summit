@@ -276,6 +276,8 @@ routes = (app) ->
 							feeds.query 'where', 'channel_type', '!=', 'interest'
 							cb()
 						else
+							tk req.me
+							tk 'INTERESTS'
 							req.me.getInterests()
 							.then (rsp) ->
 								interests = rsp.get('interests')
