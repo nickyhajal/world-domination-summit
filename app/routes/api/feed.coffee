@@ -288,12 +288,15 @@ routes = (app) ->
 							feeds.query 'where', 'channel_type', '!=', 'meetup'
 							cb()
 						else
-							req.me.getRsvps()
-							.then (rsp) ->
-								rsvps = rsp.get('rsvps')
-								if rsvps.length
-									meetups = rsp.get('rsvps').join(',')
-									feeds.query 'whereRaw', "(`channel_type` != 'meetup' OR (`channel_type` = 'meetup' AND `channel_id` IN ("+meetups+")))"
+							if req.me?
+								req.me.getRsvps()
+								.then (rsp) ->
+									rsvps = rsp.get('rsvps')
+									if rsvps.length
+										meetups = rsp.get('rsvps').join(',')
+										feeds.query 'whereRaw', "(`channel_type` != 'meetup' OR (`channel_type` = 'meetup' AND `channel_id` IN ("+meetups+")))"
+									cb()
+							else
 								cb()
 				else
 					cb()
