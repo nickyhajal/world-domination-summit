@@ -54,7 +54,7 @@ config = (app, express, RedisStore, mysql) ->
       cert: process.env.APN_CERT
       key: process.env.APN_KEY
       ca: process.env.APN_CA
-      production: false
+      production: true
     app.set 'db',
       client: 'mysql'
       connection:
