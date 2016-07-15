@@ -332,4 +332,4 @@ routes = (app) ->
 			, (err) ->
 				console.error(err)
 
-module.exports = routess
+module.exports = routes
