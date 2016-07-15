@@ -314,6 +314,27 @@ routes = (app) ->
 							else
 								tk 3
 								cb()
+					if filter.name is 'events'
+						tk 'meetups'
+						if filter.val is '2'
+							feeds.query 'where', 'channel_type', '!=', 'event'
+							cb()
+						else
+							tk "MEETUPS"
+							tk req.me
+							tk 1
+							if req.me? and req.me
+								tk 2
+								req.me.getRsvps()
+								.then (rsp) ->
+									rsvps = rsp.get('rsvps')
+									if rsvps.length
+										rsvps = rsp.get('rsvps').join(',')
+										feeds.query 'whereRaw', "(`channel_type` != 'event' OR (`channel_type` = 'event' AND `channel_id` IN ("+rsvps+")))"
+									cb()
+							else
+								tk 3
+								cb()
 				else
 					cb()
 			, ->
