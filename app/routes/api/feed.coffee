@@ -261,7 +261,7 @@ routes = (app) ->
 			tk filters
 			tk 'FILTER'
 			async.each filters, (filter, cb) ->
-				tk 1
+				tk 'RUN FILTER: '+filter
 				if +filter.val
 					tk 2
 					if filter.name is 'twitter'
