@@ -30,14 +30,13 @@ Notification = Shelf.Model.extend
 			.then (rsp) =>
 				devices = rsp.models
 				tokens = []
+				note = new apn.Notification()
+				note.alert = str
+				note.payload = {content: @get('content'), type: @get('type'), link: @get('link')}
 				for device in devices
-					tokens.push device.get('token')
-				if tokens.length
-					note = new apn.Notification()
-					note.alert = str
-					note.payload = {content: @get('content'), type: @get('type'), link: @get('link')}
-					tk note
-					tk process.APN.pushNotification(note, tokens)
+					d = new apn.Device(device.get('token'))
+					tk d
+					process.APN.pushNotification(note, d)
 			Devices.forge()
 			.query('where', 'user_id', user_id)
 			.query('where', 'type', 'and')
