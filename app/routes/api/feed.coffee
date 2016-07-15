@@ -259,11 +259,15 @@ routes = (app) ->
 			for key,val of raw_filters
 				filters.push({name: key, val: val})
 			async.each filters, (filter, cb) ->
+				tk 1
 				if +filter.val
+					tk 2
 					if filter.name is 'twitter'
+						tk 'twit'
 						feeds.query('where', 'channel_type', '!=', 'twitter')
 						cb()
 					if filter.name is 'following'
+						tk 'follow'
 						req.me.getConnections()
 						.then (rsp) ->
 							ids = rsp.get('connected_ids')
@@ -272,6 +276,7 @@ routes = (app) ->
 							feeds.query('whereIn', 'feed.user_id', ids)
 							cb()
 					if filter.name is 'communities'
+						tk 'comm'
 						if filter.val is '2'
 							feeds.query 'where', 'channel_type', '!=', 'interest'
 							cb()
@@ -286,6 +291,7 @@ routes = (app) ->
 									feeds.query 'whereRaw', "(`channel_type` != 'interest' OR (`channel_type` = 'interest' AND `channel_id` IN ("+interests+")))"
 								cb()
 					if filter.name is 'meetups'
+						tk 'meetups'
 						if filter.val is '2'
 							feeds.query 'where', 'channel_type', '!=', 'meetup'
 							cb()
