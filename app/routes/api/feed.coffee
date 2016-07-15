@@ -258,6 +258,8 @@ routes = (app) ->
 			filters = []
 			for key,val of raw_filters
 				filters.push({name: key, val: val})
+			tk filters
+			tk 'FILTER'
 			async.each filters, (filter, cb) ->
 				tk 1
 				if +filter.val
