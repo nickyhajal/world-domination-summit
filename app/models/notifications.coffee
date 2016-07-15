@@ -36,7 +36,8 @@ Notification = Shelf.Model.extend
 					note = new apn.Notification()
 					note.alert = str
 					note.payload = {content: @get('content'), type: @get('type'), link: @get('link')}
-					process.APN.pushNotification(note, tokens)
+					tk note
+					tk process.APN.pushNotification(note, tokens)
 			Devices.forge()
 			.query('where', 'user_id', user_id)
 			.query('where', 'type', 'and')

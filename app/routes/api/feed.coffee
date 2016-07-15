@@ -219,7 +219,6 @@ routes = (app) ->
 			else
 				next()
 		get: (req, res, next) ->
-			tk '>> GET FEED'
 			feeds = Feeds.forge()
 			limit = req.query.per_page ? 50
 			page = req.query.page ? 1
@@ -259,18 +258,12 @@ routes = (app) ->
 			filters = []
 			for key,val of raw_filters
 				filters.push({name: key, val: val})
-			tk filters
-			tk 'FILTER'
 			async.each filters, (filter, cb) ->
-				tk 'RUN FILTER: '+filter
 				if +filter.val
-					tk 2
 					if filter.name is 'twitter'
-						tk 'twit'
 						feeds.query('where', 'channel_type', '!=', 'twitter')
 						cb()
 					if filter.name is 'following'
-						tk 'follow'
 						req.me.getConnections()
 						.then (rsp) ->
 							ids = rsp.get('connected_ids')
@@ -279,13 +272,10 @@ routes = (app) ->
 							feeds.query('whereIn', 'feed.user_id', ids)
 							cb()
 					if filter.name is 'communities'
-						tk 'comm'
 						if filter.val is '2'
 							feeds.query 'where', 'channel_type', '!=', 'interest'
 							cb()
 						else
-							tk req.me
-							tk 'INTERESTS'
 							req.me.getInterests()
 							.then (rsp) ->
 								interests = rsp.get('interests')
@@ -294,16 +284,11 @@ routes = (app) ->
 									feeds.query 'whereRaw', "(`channel_type` != 'interest' OR (`channel_type` = 'interest' AND `channel_id` IN ("+interests+")))"
 								cb()
 					if filter.name is 'meetups'
-						tk 'meetups'
 						if filter.val is '2'
 							feeds.query 'where', 'channel_type', '!=', 'meetup'
 							cb()
 						else
-							tk "MEETUPS"
-							tk req.me
-							tk 1
 							if req.me? and req.me
-								tk 2
 								req.me.getRsvps()
 								.then (rsp) ->
 									rsvps = rsp.get('rsvps')
@@ -312,19 +297,13 @@ routes = (app) ->
 										feeds.query 'whereRaw', "(`channel_type` != 'meetup' OR (`channel_type` = 'meetup' AND `channel_id` IN ("+meetups+")))"
 									cb()
 							else
-								tk 3
 								cb()
 					if filter.name is 'events'
-						tk 'meetups'
 						if filter.val is '2'
 							feeds.query 'where', 'channel_type', '!=', 'event'
 							cb()
 						else
-							tk "MEETUPS"
-							tk req.me
-							tk 1
 							if req.me? and req.me
-								tk 2
 								req.me.getRsvps()
 								.then (rsp) ->
 									rsvps = rsp.get('rsvps')
@@ -333,7 +312,6 @@ routes = (app) ->
 										feeds.query 'whereRaw', "(`channel_type` != 'event' OR (`channel_type` = 'event' AND `channel_id` IN ("+rsvps+")))"
 									cb()
 							else
-								tk 3
 								cb()
 				else
 					cb()
