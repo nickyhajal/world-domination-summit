@@ -21,8 +21,9 @@ icon: parachute
 	<h5>WDS 360</h5>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Friday</div>
-		<div class="main-schedule-time">8:30am–9:30am</div>
+		<div class="main-schedule-time">7:00am–8:00am</div>
 		<div class="main-schedule-descr">5K Fun Run</div>
+		<div class="main-schedule-time">1:00pm–4:00pm</div>
 		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="/academies">Afternoon Academies</a></div>
 		<div class="main-schedule-time">6:00pm–10:00pm</div>
 		<div class="main-schedule-descr">"Can't Wait" Welcoming Party</div>
@@ -32,7 +33,7 @@ icon: parachute
 		<div class="main-schedule-time">9:00am–12:30pm</div>
 		<div class="main-schedule-descr">Main Stage Sessions</div>
 		<div class="main-schedule-time">12:30pm–4:00pm</div>
-		<div class="main-schedule-descr">WDS Connect <br></div>
+		<div class="main-schedule-descr">Attendee-led Meetups <br></div>
 		<div class="main-schedule-time">4:30pm–6:00pm</div>
 		<div class="main-schedule-descr">Main Stage Session</div>
 		<div class="main-schedule-time">7:00pm–10:00pm</div>
@@ -43,7 +44,7 @@ icon: parachute
 		<div class="main-schedule-time">9:00am–12:30pm</div>
 		<div class="main-schedule-descr">Main Stage Sessions</div>
 		<div class="main-schedule-time">12:30pm–4:00pm</div>
-		<div class="main-schedule-descr">WDS Connect</div>
+		<div class="main-schedule-descr">Attendee-led Meetups</div>
 		<div class="main-schedule-time">4:30pm–6:30pm</div>
 		<div class="main-schedule-descr">Main Stage Session</div>
 		<div class="main-schedule-time">8:00pm–midnight</div>
