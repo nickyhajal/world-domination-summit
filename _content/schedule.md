@@ -30,6 +30,8 @@ icon: parachute
 	</div>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Saturday</div>
+	        <div class="main-schedule-time">9:00am–5:00pm</div>
+		<div class="main-schedule-descr">Highly Sensitive Person Lounge</div>
 		<div class="main-schedule-time">9:00am–12:30pm</div>
 		<div class="main-schedule-descr">Main Stage Sessions</div>
 		<div class="main-schedule-time">12:30pm–4:00pm</div>
@@ -41,6 +43,8 @@ icon: parachute
 	</div>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Sunday</div>
+		<div class="main-schedule-time">9:00am–5:00pm</div>
+		<div class="main-schedule-descr">Highly Sensitive Person Lounge</div>
 		<div class="main-schedule-time">9:00am–12:30pm</div>
 		<div class="main-schedule-descr">Main Stage Sessions</div>
 		<div class="main-schedule-time">12:30pm–4:00pm</div>
