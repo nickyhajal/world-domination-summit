@@ -7,6 +7,8 @@ icon: parachute
 	<h5>WDS CONNECT</h5>
 	<div class="main-schedule-item">
 		<div class="main-schedule-day">Tuesday–Wednesday</div>
+		<div class="main-schedule-time">All Day</div>
+		<div class="main-schedule-descr">Attendee-led Meetups</div>
 		<div class="main-schedule-time">1:00pm–4:00pm</div>
 		<div class="main-schedule-descr">Afternoon Jam Sessions</div>
 		<div class="main-schedule-time">6:00pm–10:00pm</div>
@@ -23,6 +25,8 @@ icon: parachute
 		<div class="main-schedule-day">Friday</div>
 		<div class="main-schedule-time">7:00am–8:00am</div>
 		<div class="main-schedule-descr">5K Fun Run</div>
+		<div class="main-schedule-time">9:00am–12:00pm</div>
+		<div class="main-schedule-descr">Hero's Journey</div>
 		<div class="main-schedule-time">1:00pm–4:00pm</div>
 		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="/academies">Afternoon Academies</a></div>
 		<div class="main-schedule-time">6:00pm–10:00pm</div>
