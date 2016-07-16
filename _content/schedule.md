@@ -15,6 +15,8 @@ icon: parachute
 		<div class="main-schedule-descr">Evening Arts Focus</a></div>
 	</div>	<div class="main-schedule-item">
 		<div class="main-schedule-day">Thursday</div>
+		<div class="main-schedule-time">All Day</div>
+		<div class="main-schedule-descr">Attendee-led Meetups</div>
 		<div class="main-schedule-time">9:00am–12:00pm</div>
 		<div class="main-schedule-descr"><a style="color: rgb(35,31,32) !important" href="/academies">Morning Academies</a></div>
 		<div class="main-schedule-time">1:00pm–4:00pm</div>
