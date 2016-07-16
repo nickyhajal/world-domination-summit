@@ -57,14 +57,14 @@ Notification = Shelf.Model.extend
 							content: @get('content')
 							type: @get('type')
 							link: @get('link')
-					# tk "GCM SEND:"
+					tk "GCM SEND:"
 					process.gcmSender.send message, tokens, (err, result) ->
-						# if err
-						# 	# tk "GCM ERR"
-						# 	# console.error err
-						# else
-						# 	tk "GCM SENT"
-						# 	tk result
+						if err
+							tk "GCM ERR"
+							console.error err
+						else
+							tk "GCM SENT"
+							tk result
 
 Notifications = Shelf.Collection.extend
 	model: Notification
