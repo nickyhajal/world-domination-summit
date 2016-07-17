@@ -1,3 +1,5 @@
+<p><a href="/events" class="subtle-link">← Back to Events</a></p>
+
 [Think & Live Better](/academy/think-better-live-better)
 [Stress-Less](/academy/the-stress-less-strategy)
 [Own Your Unconventional Life](/academy/wayfinding)

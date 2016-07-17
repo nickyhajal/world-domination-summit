@@ -31,6 +31,8 @@ ap.createRouter = ->
 			@route("task/:task_slug", 'task', ap.Routes.task)
 			@route("notes/:user_id", 'notes', ap.Routes.notes)
 			@route("meetup/:meetup", 'meetup', ap.Routes.meetup)
+			@route("spark-session/:spark", 'spark-session', ap.Routes.spark_session)
+			@route("activity/:activity", 'activity', ap.Routes.activity)
 			@route("your-transfer/:transfer_id", 'reset', ap.Routes.your_transfer)
 			@route("mission-accomplished/:ticket_hash", 'mission_accomplished', ap.Routes.mission_accomplished)
 			@route("send-ticket/:ticket_hash", 'send_accomplished', ap.Routes.send_ticket)

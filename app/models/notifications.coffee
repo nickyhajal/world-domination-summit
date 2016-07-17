@@ -45,8 +45,7 @@ Notification = Shelf.Model.extend
 				devices = rsp.models
 				tokens = []
 				for device in devices
-					tokens.push device.get('token')
-				if tokens.length
+					token = device.get('token')
 					message = new gcm.Message
 						collapseKey: "WDS Notifications"
 						data:
@@ -57,14 +56,14 @@ Notification = Shelf.Model.extend
 							content: @get('content')
 							type: @get('type')
 							link: @get('link')
-					tk "GCM SEND:"
-					process.gcmSender.send message, tokens, (err, result) ->
+					# tk "GCM SEND:"
+					process.gcmSender.send message, [token], (err, result) ->
 						if err
 							tk "GCM ERR"
 							console.error err
 						else
 							tk "GCM SENT"
-							tk result
+						# 	tk result
 
 Notifications = Shelf.Collection.extend
 	model: Notification

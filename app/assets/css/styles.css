@@ -323,8 +323,8 @@ a.tab-invisible {
     display:                    none ! important;
 }
 a.subtle-link {
-    color:                      rgb(174, 174, 160) ! important;
     background:                 rgb(225, 225, 213) none repeat scroll 0px 0px ! important;
+    color:                      rgb(140, 140, 125) ! important;
 }
 #sidebar a.ticket-purchase, #sidebar .connect-purchase-start {
     width:                      237px;
@@ -346,7 +346,6 @@ a.sidebar-price {
     margin-left:                15px;
     margin-bottom:              8px;
     display:                    inline-block;
-    color:                      rgb(242, 242, 233);
     clear:                      both;
     float:                      left;
     transition:                 all 0.1s ease 0s;
@@ -355,6 +354,7 @@ a.sidebar-price {
     -o-transition:              all 0.1s ease 0s;
     padding:                    11px 11px 9px;
     max-width:                  240px;
+    color:                      rgb(242, 242, 233);
 }
 #page-welcome .sidebar-fixed #sidebar, #page-settings.sidebar-fixed #sidebar {
     margin-top:                 21px;
@@ -2847,12 +2847,13 @@ div#meetup-time {
 }
 div.meetup-time {
     font-size:                  15pt;
-    font-family:                karla;
     padding:                    7px;
     text-align:                 center;
     margin-right:               16px;
     background:                 rgb(242, 242, 234) none repeat scroll 0px 0px;
     width:                      100%;
+    font-family:                karlabold;
+    color:                      rgb(118, 106, 92);
 }
 div.meetup-maxed {
     opacity:                    0.4;
@@ -2877,6 +2878,7 @@ div.meetup-actions {
 }
 div.meetup-name {
     font-size:                  24px;
+    font-family:                Vitesse;
 }
 div.meetup-descr-who {
     font-family:                karlabold;
@@ -3923,6 +3925,66 @@ table#transfers-shell {
     text-align:                 center;
     padding:                    14px;
     background:                 rgb(252, 251, 247) none repeat scroll 0% 0%;
+}
+a.event-type-meetups {
+    background:                 transparent url("/images/tile_meetups.jpg") repeat scroll 0px 0px / 100% auto;
+}
+a.event-type-btn span {
+    text-decoration:            none;
+    font-size:                  29pt;
+    position:                   absolute;
+    bottom:                     41px;
+}
+a.event-type-academies {
+    background:                 transparent url("/images/tile_academies.jpg") repeat scroll 0% 0%;
+}
+a.event-type-spark-sessions {
+    background:                 transparent url("/images/tile_spark_sessions.jpg") repeat scroll 0% 0%;
+}
+a.event-type-activities {
+    background:                 transparent url("/images/tile_activities.jpg") repeat scroll 0px 0px;
+    margin-bottom:              -50px;
+}
+a.event-type-btn::before {
+    width:                      100%;
+    height:                     100%;
+    content:                    "";
+    position:                   absolute;
+    left:                       0px;
+    bottom:                     0px;
+    background:                 transparent url("/images/faded_overlay.png") repeat scroll 0px 0px;
+}
+.event-type-btn {
+    display:                    block;
+    background-color:           rgb(204, 204, 204);
+    background-image:           none;
+    background-repeat:          repeat;
+    background-attachment:      scroll;
+    background-clip:            border-box;
+    -webkit-background-clip:    border-box;
+    background-origin:          padding-box;
+    -webkit-background-origin:  padding-box;
+    text-decoration:            none;
+    color:                      rgb(255, 255, 255);
+    font-family:                Vitesse;
+    font-size:                  18pt;
+    padding:                    20px;
+    background-size:            100% auto ! important;
+    -webkit-background-size:    100% auto ! important;
+    background-position:        0px -39px ! important;
+    height:                     239px;
+    margin-left:                -50px;
+    width:                      815px;
+    margin-top:                 -50px;
+    margin-bottom:              50px;
+    position:                   relative;
+    text-shadow:                1px 1px 7px rgba(0, 0, 0, 0.7), 1px 1px 0px rgba(0, 0, 0, 0.8);
+}
+.event-type-btn div {
+    font-family:                KarlaItalic;
+    font-size:                  17pt;
+    position:                   absolute;
+    bottom:                     18px;
 }
 * {
     box-sizing:                 border-box;

@@ -21,7 +21,6 @@ process.yr = '16';
 process.lastYear = '2015';
 process.dmn = process.env.DOMAIN;
 process.rsapp = 'mobile_logins';
-tk(app.settings.apn);
 process.APN = new apn.Connection(app.settings.apn);
 process.gcmSender = new gcm.Sender(process.env.GCM_KEY);
 
