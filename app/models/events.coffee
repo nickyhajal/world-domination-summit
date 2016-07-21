@@ -63,8 +63,7 @@ Event = Shelf.Model.extend
         tk @list()
         user.addToList(@list())
         .then =>
-          tk 'added to list'
-          user.sendEmail 'academy-confirmation', 'You\'re! registered for a WDS Academy!',
+          user.sendEmail 'academy-confirmation', 'You\'re registered for a WDS Academy!',
             what: @get('what')
             start: moment(@get('start')).format('MMMM Do [at] h:mma')
   hosts: ->

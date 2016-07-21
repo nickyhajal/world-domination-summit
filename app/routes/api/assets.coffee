@@ -33,6 +33,7 @@ routes = (app) ->
 	[Achievement, Achievements] = require('../../models/achievements')
 	[Place, Places] = require('../../models/places')
 	[Answer, Answers] = require('../../models/answers')
+	[Card, Cards] = require('../../models/cards')
 
 	assets =
 
@@ -178,7 +179,17 @@ routes = (app) ->
 							delete user.tickets
 							if user.user_name.length is 40
 								user.user_name = ''
-							dfr.resolve(user)
+							Cards.forge()
+							.query (qb) ->
+								qb.where('user_id', req.me.get('user_id'))
+								qb.orderBy('card_id', 'desc')
+							.fetch()
+							.then (rsp) ->
+								if rsp.models.length
+									user.card = _.pick rsp.models[0].attributes, Card::permittedAttributes
+								else
+									user.card = false
+								dfr.resolve(user)
 				else
 					dfr.resolve(false)
 				return dfr.promise
