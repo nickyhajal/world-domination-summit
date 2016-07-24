@@ -57,7 +57,8 @@ routes = (app) ->
 							res.r.err = card.err
 							next()
 						else
-							card.charge(req.query.code, req.query.purchase_data)
+							via = req.query.via ? 'web'
+							card.charge(req.query.code, via, req.query.purchase_data)
 							.then (charge) ->
 								res.r = _.extend res.r, charge.rsp
 								if !res.r.declined?

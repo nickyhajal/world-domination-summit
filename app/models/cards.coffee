@@ -23,7 +23,7 @@ Card = Shelf.Model.extend
 		@set
 			hash: hash
 
-	charge: (code, purchase_data) ->
+	charge: (code, via, purchase_data) ->
 		key = if code is false then process.env.STRIPE_SK_TEST else process.env.STRIPE_SK
 		stripe = require('stripe')(key)
 		dfr = Q.defer()
@@ -36,6 +36,7 @@ Card = Shelf.Model.extend
 				Transaction.forge
 					product_id: product.get('product_id')
 					user_id: @get('user_id')
+					via: via
 					status: 'process'
 					quantity: quantity
 					paid_amount: '0'
@@ -47,6 +48,8 @@ Card = Shelf.Model.extend
 						pre_rsp_params = pre?.rsp ? {}
 						price = if pre.price? then pre.price else product.get('cost')
 						price *= 	quantity
+						if via is 'ios'
+							price = 50
 						stripe.charges.create(
 							amount: price
 							currency: 'usd'
