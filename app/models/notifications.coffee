@@ -33,7 +33,7 @@ Notification = Shelf.Model.extend
 				note = new apn.Notification()
 				note.alert = str
 				note.payload = {content: @get('content'), type: @get('type'), link: @get('link')}
-				note.badge = 0
+				note.badge = -1
 				note.expiry = Math.floor(Date.now() / 1000) + 3600;
 				for device in devices
 					d = new apn.Device(device.get('token'))
