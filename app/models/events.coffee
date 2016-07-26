@@ -26,7 +26,7 @@ Event = Shelf.Model.extend
     EventRsvps.forge()
     .query('where', 'event_id', event_id)
     .fetch()
-    .then (rsp) ->
+    .then (rsp) =>
       if rsp.models?.length?
         tk rsp.models.length
         @set 'num_rsvps', rsp.models.length
