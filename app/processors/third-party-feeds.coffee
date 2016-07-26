@@ -16,6 +16,7 @@ ig = require('instagram-node').instagram({})
 Events.forge().query (qb) ->
 	qb.where('year', '16')
 	qb.where('type', 'academy')
+.fetch()
 .then (rsp) ->
 	for a in rsp.models
 		a.updateRsvpCount()
