@@ -11,17 +11,6 @@ ig = require('instagram-node').instagram({})
 
 [Feed, Feeds] = require('../models/feeds')
 [User, Users] = require('../models/users')
-[Event, Events] = require('../models/events')
-
-Events.forge().query (qb) ->
-	qb.where('year', '16')
-	qb.where('type', 'academy')
-.fetch()
-.then (rsp) ->
-	for a in rsp.models
-		a.updateRsvpCount()
-# [RaceTask, RaceTasks] = require('../models/racetasks')
-# [RaceSubmission, RaceSubmissions] = require('../models/race_submissions')
 
 shell = (app, db) ->
 	twit = new Twit

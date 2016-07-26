@@ -28,7 +28,6 @@ Event = Shelf.Model.extend
     .fetch()
     .then (rsp) =>
       if rsp.models?.length?
-        tk rsp.models.length
         @set 'num_rsvps', rsp.models.length
       @save()
   initialize: ->

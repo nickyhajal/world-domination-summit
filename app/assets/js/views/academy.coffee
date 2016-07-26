@@ -38,14 +38,15 @@ ap.Views.academy = XView.extend
     $('body').on 'click', '.academy-purchase-start', (e) =>
         $t = $(e.currentTarget)
         e.preventDefault()
-        if $t.hasClass('attending')
-          $('.acm-ac-name').html(@event.what)
-          $('.acm-ac-start').html(moment(@event.start).format('MMMM Do [at] h:mma'))
-          ap.Modals.open('attending-ac')
-        else if $t.hasClass('not-360')
-          ap.Modals.open('ac-coming-soon')
-        else
-          ap.Modals.open('academy-purchase')
+        if !$t.hasClass('maxed')
+          if $t.hasClass('attending')
+            $('.acm-ac-name').html(@event.what)
+            $('.acm-ac-start').html(moment(@event.start).format('MMMM Do [at] h:mma'))
+            ap.Modals.open('attending-ac')
+          else if $t.hasClass('not-360')
+            ap.Modals.open('ac-coming-soon')
+          else
+            ap.Modals.open('academy-purchase')
 
   rendered: ->
     @renderMap()
