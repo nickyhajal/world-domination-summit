@@ -8,7 +8,7 @@ ap.Views.spark_session = XView.extend
 		_.whenReady 'assets', =>
 			@options.spark_session = ap.Events.getBySlug(@options.spark_session)
 			@options.out = _.template @options.out, @options.spark_session.attributes
-			@options.sidebar = 'spark_session'
+			@options.sidebar = 'spark-session'
 			@options.sidebar_filler = @options.spark_session.attributes
 			@initRender()
 
