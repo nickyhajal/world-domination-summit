@@ -47,7 +47,7 @@ ap.Views.spark_sessions = XView.extend
 							<div class="meetup-time">'+time.format('h:mm a')+'</div>
 							<div class="meetup-host">'+hosts+'</div>
 							' + event_button + '
-							<a href="/activity/'+ev.get('slug')+'">More Details</a>
+							<a href="/spark-session/'+ev.get('slug')+'">More Details</a>
 						</div>
 					</div>
 					<div class="clear"></div>
