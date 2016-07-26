@@ -291,6 +291,7 @@ routes = (app) ->
 						.query('where', 'active', '1')
 						.query('where', 'year', process.yr)
 						.query('orderBy', 'start')
+						.query('orderBy', 'what')
 						.fetch()
 						.then (rsp) ->
 							evs = []
