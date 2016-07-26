@@ -107,6 +107,7 @@ POST =
 						event_id: event_id
 					.fetch()
 					.then (ev) ->
+						ev.updateRsvpCount()
 						ev.sendAcademyConfirmation(user_id)
 		return dfr.promise
 
