@@ -11,7 +11,7 @@ ig = require('instagram-node').instagram({})
 
 [Feed, Feeds] = require('../models/feeds')
 [User, Users] = require('../models/users')
-[Event, Events] = require('../../models/events')
+[Event, Events] = require('../models/events')
 
 Events.forge().query (qb) ->
 	qb.where('year', '16')
