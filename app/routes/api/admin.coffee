@@ -147,14 +147,14 @@ routes = (app) ->
 
 				# Headers
 				response = "sep=;"
-				response += "First Name;Last Name;Email;Twitter;Type;Location;Address;City;State/Region;Country;Zip\n"
+				response += "First Name;Last Name;Email;Twitter;Ticket Type;Attendee Type;Location;Address;City;State/Region;Country;Zip\n"
 
 				# Attendee list for current year
 				Users.forge()
 				.query('where', 'attending'+process.yr, '1')
 				.fetch().then (model) ->
 					for attendee in model.models
-						response = response + attendee.get('first_name')+";"+attendee.get('last_name')+";"+attendee.get('email')+";"+attendee.get('twitter')+";"+attendee.get('type')+';"'+attendee.get('location')+'";"'+attendee.get('address')+'";"'+attendee.get('city')+'";"'+attendee.get('region')+'";"'+attendee.get('country')+'";"'+attendee.get('zip')+'"'+"\n"
+						response = response + attendee.get('first_name')+";"+attendee.get('last_name')+";"+attendee.get('email')+";"+attendee.get('twitter')+";"+attendee.get('ticket_type')+";"+attendee.get('type')+';"'+attendee.get('location')+'";"'+attendee.get('address')+'";"'+attendee.get('city')+'";"'+attendee.get('region')+'";"'+attendee.get('country')+'";"'+attendee.get('zip')+'"'+"\n"
 					res.send response
 					res.r.msg = 'Success'
 			else
