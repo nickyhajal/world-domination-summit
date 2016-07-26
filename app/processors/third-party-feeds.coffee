@@ -11,8 +11,16 @@ ig = require('instagram-node').instagram({})
 
 [Feed, Feeds] = require('../models/feeds')
 [User, Users] = require('../models/users')
-[RaceTask, RaceTasks] = require('../models/racetasks')
-[RaceSubmission, RaceSubmissions] = require('../models/race_submissions')
+[Event, Events] = require('../../models/events')
+
+Events.forge().query (qb) ->
+	qb.where('year', '16')
+	qb.where('type', 'academy')
+.then (rsp) ->
+	for a in rsp.models
+		a.updateRsvpCount()
+# [RaceTask, RaceTasks] = require('../models/racetasks')
+# [RaceSubmission, RaceSubmissions] = require('../models/race_submissions')
 
 shell = (app, db) ->
 	twit = new Twit
@@ -26,59 +34,59 @@ shell = (app, db) ->
 		client_secret: app.settings.ig_sec
 
 	grab = ->
-		grabs = 
-			instagram: ->
-				tk 'Check Instagram'
-				rds.get 'feed_ig_since', (err, since_id) ->
-					if not since_id
-						since_id = '0'
-					opts =
-						min_tag_id: since_id
-					ig.tag_media_recent 'wds2015', opts, (err, medias, pg, lim) ->
-						if pg?.next_min_id?
-							rds.set 'feed_ig_since', pg.next_min_id, ->
-								rds.expire 'feed_ig_since', 30000
+		grabs =
+			# instagram: ->
+			# 	tk 'Check Instagram'
+			# 	rds.get 'feed_ig_since', (err, since_id) ->
+			# 		if not since_id
+			# 			since_id = '0'
+			# 		opts =
+			# 			min_tag_id: since_id
+			# 		ig.tag_media_recent 'wds2016', opts, (err, medias, pg, lim) ->
+			# 			if pg?.next_min_id?
+			# 				rds.set 'feed_ig_since', pg.next_min_id, ->
+			# 					rds.expire 'feed_ig_since', 30000
 
-						if medias?.length
-							RaceTasks::getById('instagram')
-							.then (tasksById) ->
-								async.each medias, (media, cb) ->
-									ig_user = media.user.username
-									User.forge({instagram: ig_user})
-									.fetch()
-									.then (user) ->
-										if user
-											found = false
-											for tag in media.tags
-												if tasksById[tag]? and media.type is 'video'
-													found = true
-													task = tasksById[tag]
-													slug = task.slug
-													user.markAchieved(slug)
-													.then (rsp) ->
-														hash = crypto.createHash('md5').update((new Date().getTime())+'').digest("hex").substr(0, 5)
-														RaceSubmission.forge
-															ext: media.videos.standard_resolution.url
-															type: 'ig'
-															ach_id: rsp.ach_id
-															hash: hash
-															user_id: user.get('user_id')
-															slug: slug
-														.save()
-														cb()
-											unless found
-												cb()
-										else
-											cb()
-						else
-							tk 'No new instagrams'
+			# 			if medias?.length
+			# 				RaceTasks::getById('instagram')
+			# 				.then (tasksById) ->
+			# 					async.each medias, (media, cb) ->
+			# 						ig_user = media.user.username
+			# 						User.forge({instagram: ig_user})
+			# 						.fetch()
+			# 						.then (user) ->
+			# 							if user
+			# 								found = false
+			# 								for tag in media.tags
+			# 									if tasksById[tag]? and media.type is 'video'
+			# 										found = true
+			# 										task = tasksById[tag]
+			# 										slug = task.slug
+			# 										user.markAchieved(slug)
+			# 										.then (rsp) ->
+			# 											hash = crypto.createHash('md5').update((new Date().getTime())+'').digest("hex").substr(0, 5)
+			# 											RaceSubmission.forge
+			# 												ext: media.videos.standard_resolution.url
+			# 												type: 'ig'
+			# 												ach_id: rsp.ach_id
+			# 												hash: hash
+			# 												user_id: user.get('user_id')
+			# 												slug: slug
+			# 											.save()
+			# 											cb()
+			# 								unless found
+			# 									cb()
+			# 							else
+			# 								cb()
+			# 			else
+			# 				tk 'No new instagrams'
 			tweet: ->
 				rds.get 'feed_twitter_since', (err, since_id) ->
 
 					if not since_id
 						since_id = '0'
 					tk 'Check Twitter'
-					twit.get 'search/tweets', {q: '#wds2014 OR #wds2015', since_id: since_id, result_type:'recent', count:'100'}, (err, twts) ->
+					twit.get 'search/tweets', {q: '#wds2015 OR #wds2016', since_id: since_id, result_type:'recent', count:'100'}, (err, twts) ->
 						if twts?.statuses?.length
 							last_id = false
 							async.each twts.statuses, (twt, cb) ->
@@ -92,7 +100,7 @@ shell = (app, db) ->
 								.then (login) ->
 									if login
 										user_id = login.get('user_id')
-										add(user_id, hash, twt.text, 0, 'twitter') 
+										add(user_id, hash, twt.text, 0, 'twitter')
 									cb()
 							, ->
 								if last_id
@@ -100,7 +108,7 @@ shell = (app, db) ->
 										rds.expire 'feed_twitter_since', 1000000
 						else
 							tk 'No new tweets.'
-				
+
 		for type, fnc of grabs
 			fnc()
 

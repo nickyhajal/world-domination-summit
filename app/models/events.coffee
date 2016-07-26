@@ -18,6 +18,15 @@ Event = Shelf.Model.extend
   	descr: ''
   }
 
+  updateRsvpCount: ->
+    [EventRsvp, EventRsvps] = require('../../models/event_rsvps')
+    event_id = @get('event_id')
+    EventRsvps.forge()
+    .query('where', 'event_id', event_id)
+    .fetch()
+    .then (rsp) ->
+      if rsp.models?.length?
+        @set 'num_rsvps', rsp.models.length
   initialize: ->
     this.on 'saving', this.saving, this
     this.on 'saved', this.saved, this

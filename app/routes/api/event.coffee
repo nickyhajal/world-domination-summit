@@ -390,40 +390,34 @@ routes = (app) ->
 							finish()
 
 					finish = ->
-						EventRsvps.forge()
-						.query('where', 'event_id', event_id)
+						Event.forge
+							event_id: event_id
 						.fetch()
-						.then (rsp) ->
-							Event.forge
-								event_id: event_id
-							.fetch()
-							.then (ev) ->
-								num_free = ev.get('num_free') ? 0
+						.then (ev) ->
+							num_free = ev.get('num_free') ? 0
+							ev.updateRsvpCount()
+							if free_rsvp
+								num_free += 1
+								ev.sendAcademyConfirmation(req.me.get('user_id'))
 								ev.set
-									num_rsvps: rsp.models.length
+									num_free: num_free
 								.save()
-								if free_rsvp
-									num_free += 1
-									ev.sendAcademyConfirmation(req.me.get('user_id'))
-									ev.set
-										num_free: num_free
-									.save()
-								if res.r.action is 'rsvp'
-									promo = 'event_confirmation_'+req.me.get('ticket_type')
-									start = (ev.get('start')+'').split(' GMT')
-									start = moment(start[0])
-									start = start.format('YYYY-MM-DD HH:mm:ss')
-									timeStr = moment(start).format('h:mm a')
-									dayStr = moment(start).format('dddd[,] MMMM Do')
-									params =
-										venue: ev.get('place')
-										event_name: ev.get('what')
-										startStr: dayStr+' at '+timeStr
-									subName = ev.get('what')
-									if subName.length > 35
-										subName = subName.substr(0, 32)+'...'
-									subject = "See you at \""+subName+'"'
-									req.me.sendEmail promo, subject, params
+							if res.r.action is 'rsvp'
+								promo = 'event_confirmation_'+req.me.get('ticket_type')
+								start = (ev.get('start')+'').split(' GMT')
+								start = moment(start[0])
+								start = start.format('YYYY-MM-DD HH:mm:ss')
+								timeStr = moment(start).format('h:mm a')
+								dayStr = moment(start).format('dddd[,] MMMM Do')
+								params =
+									venue: ev.get('place')
+									event_name: ev.get('what')
+									startStr: dayStr+' at '+timeStr
+								subName = ev.get('what')
+								if subName.length > 35
+									subName = subName.substr(0, 32)+'...'
+								subject = "See you at \""+subName+'"'
+								req.me.sendEmail promo, subject, params
 						next()
 
 		claim_academy: (req, res, next) ->
