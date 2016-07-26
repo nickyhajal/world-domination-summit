@@ -16,7 +16,7 @@ Events = XCollection.extend
 		return model.get('start')
 	getBySlug: (slug) ->
 		for model in @models
-			if _.slugify(model.get('what')) is slug
+			if _.slugify(model.get('what')) is slug || model.get(slug) is slug
 				return model
 		return false
 
