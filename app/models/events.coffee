@@ -27,6 +27,7 @@ Event = Shelf.Model.extend
     .then (rsp) ->
       if rsp.models?.length?
         @set 'num_rsvps', rsp.models.length
+      @save()
   initialize: ->
     this.on 'saving', this.saving, this
     this.on 'saved', this.saved, this
