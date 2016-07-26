@@ -19,7 +19,7 @@ Event = Shelf.Model.extend
   }
 
   updateRsvpCount: ->
-    [EventRsvp, EventRsvps] = require('../../models/event_rsvps')
+    [EventRsvp, EventRsvps] = require('./event_rsvps')
     event_id = @get('event_id')
     tk "update rsvp count"
     tk event_id
