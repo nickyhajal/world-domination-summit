@@ -77,6 +77,7 @@ Event = Shelf.Model.extend
         .then =>
           user.sendEmail 'academy-confirmation', 'You\'re registered for a WDS Academy!',
             what: @get('what')
+            venue: @get('place')
             start: moment(@get('start')).format('MMMM Do [at] h:mma')
   hosts: ->
     [User, Users] = require './users'
