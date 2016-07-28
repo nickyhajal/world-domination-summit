@@ -135,13 +135,13 @@ ap.search = ->
 				if result.get('kinded')? and ''+result.get('kinded') is '1'
 					kclass = 'is-kinded'
 				html += '
-					<div class="search-row kindness-row '+kclass+'" id="krow-'+result.get('user_id')+'" data-user_id="'+result.get('user_id')+'">
+					<a href="#" class="search-row kindness-row '+kclass+'" id="krow-'+result.get('user_id')+'" data-user_id="'+result.get('user_id')+'">
 						<span style="background:url('+result.get('pic')+')"></span>
 						<div class="reg-info">
 							<div class="reg-name">'+result.get('first_name')+' '+result.get('last_name')+'</div>
 						</div>
-						<a href="#" data-user_id="'+result.get('user_id')+'" class="next-button">❯</a>
-					</div>
+						<div data-user_id="'+result.get('user_id')+'" class="next-button">❯</div>
+					</a>
 				'
 		else
 			html += '

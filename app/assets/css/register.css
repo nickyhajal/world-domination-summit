@@ -14,10 +14,10 @@ input#register_search {
 div#search_start {
     text-align:                 center;
 }
-div.search-row:nth-child(2n) {
+.search-row:nth-child(2n) {
     background:                 rgb(255, 255, 254) none repeat scroll 0px 0px;
 }
-div.search-row.is-kinded::before {
+.search-row.is-kinded::before {
     box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
     -webkit-box-sizing:         border-box;
@@ -37,15 +37,15 @@ div.search-row.is-kinded::before {
     left:                       -47px;
     border:                     2px solid rgb(177, 186, 30);
 }
-div.search-row {
-    background:                 rgb(252, 250, 242) none repeat scroll 0% 0%;
-    font-family:                karla;
-    font-size:                  16pt;
-    padding:                    21px 15px;
+.search-row {
+    background:                 rgb(252, 250, 242) none repeat scroll 0px 0px;
     clear:                      both;
+    font-family:                karla;
     min-height:                 69px;
-    border-bottom:              1px solid rgb(242, 239, 223);
+    padding:                    21px 15px;
     position:                   relative;
+    border-bottom:              1px solid rgb(242, 239, 223);
+    font-size:                  16pt;
 }
 div#search-results {
     position:                   relative;
@@ -74,7 +74,7 @@ a.unregistered {
     background:                 rgb(233, 245, 200) none repeat scroll 0px 0px ! important;
     color:                      rgb(166, 190, 97) ! important;
 }
-a.next-button {
+.next-button {
     width:                      60px ! important;
     font-size:                  23pt;
     color:                      rgb(163, 155, 129) ! important;
@@ -201,15 +201,15 @@ h4 {
     margin:                     10px 0px 2px;
 }
 a.go-home {
-    background:                 transparent url("/images/back.png") no-repeat scroll 0% 0% / 100% auto;
+    background:                 transparent url("/images/back.png") no-repeat scroll 0px 0px / 100% auto;
+    cursor:                     pointer;
+    display:                    none;
     float:                      left;
+    height:                     29px;
+    left:                       10px;
     position:                   absolute;
     top:                        9px;
     width:                      41px;
-    left:                       10px;
-    height:                     29px;
-    cursor:                     pointer;
-    display:                    none;
     z-index:                    10;
 }
 .kindness-row div.reg-info {

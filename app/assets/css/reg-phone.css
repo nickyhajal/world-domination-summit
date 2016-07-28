@@ -1,7 +1,8 @@
 #rp-loading div#loading {
     width:                      100%;
-    font-size:                  28pt;
     padding:                    0px 20px;
+    font-size:                  18pt;
+    margin-top:                 80px;
 }
 input#register_search {
     width:                      100% ! important;
@@ -53,11 +54,12 @@ div.reg-info {
     font-size:                  11pt;
     margin-top:                 -8px ! important;
 }
-div.kindness-row {
-    min-height:                 2px;
+.kindness-row {
     height:                     9px;
+    min-height:                 2px;
+    display:                    block;
 }
-a.next-button {
+.next-button {
     width:                      30px ! important;
     font-size:                  14pt;
     margin-top:                 -30px;
