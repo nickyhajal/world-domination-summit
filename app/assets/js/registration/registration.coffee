@@ -175,9 +175,6 @@ ap.showPage_click = (e) ->
 	else
 		page = $t.data('page')
 	ap.showPage(page)
-	setTimeout ->
-		$.scrollTo(0)
-	, 50
 
 ap.showPage = (page) ->
 	if page == 'home'
@@ -234,6 +231,9 @@ ap.onShow.kinduser = ->
 	$('.k-name').html(user.get('first_name')+' '+user.get('last_name'))
 	$('.k-info').html(html)
 	ap.updKinded()
+	setTimeout ->
+		$.scrollTo(0)
+	, 200
 ap.onShow.activities = ->
 	acs = []
 	html = ''
