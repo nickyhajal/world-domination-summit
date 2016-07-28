@@ -14,6 +14,7 @@ html
 		link(rel='stylesheet', type="text/css", href='/app/assets/css/register.css')
 		link(rel='stylesheet', type="text/css", href='/app/assets/css/fonts.css')
 		link(rel='stylesheet', type="text/css", href='/app/assets/css/tablet.css', media='screen and (max-width:1024px)')
+		link(rel='stylesheet', type="text/css", href='/app/assets/css/reg-phone.css', media='screen and (max-width:736px)')
 		!= js('registration')
 	body(class='ui-body-a')
 		nav(id="reg-nav")
@@ -25,11 +26,11 @@ html
 					div(id="rp-loading", class="reg-page-nav reg-panel reg-panel-active")
 						div(id="loading") Loading attendee data...
 					div(id="rp-home", class="reg-page-nav reg-panel")
-						a(href="#", data-event_id="1") 360/Connect
-						a(href="#", data-page="academies") Academies
-						a(href="#", data-page="activities") Activities
-						a(href="#", id="kind-button", data-event_id="999999") Kindness
-						a(href="#", data-page="stats", class="low-profile") Stats
+						a(href="#", data-event_id="1", class="home-btn reg-btn") 360/Connect
+						a(href="#", data-page="academies", class="home-btn reg-btn") Academies
+						a(href="#", data-page="activities", class="home-btn reg-btn") Activities
+						a(href="#", id="kind-button", data-event_id="999999", class="home-btn kind-btn") Kindness
+						a(href="#", data-page="stats", class="low-profile home-btn reg-btn") Stats
 					div(id="rp-academies", class="reg-panel")
 						div(id="academy-list", class="reg-page-nav")
 					div(id="rp-activities", class="reg-panel")

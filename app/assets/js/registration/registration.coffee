@@ -18,6 +18,7 @@ ap.page = 'home';
 ap.Views = {}
 ap.Routes = {}
 ap.holdSearch = false
+ap.mode = 'registration'
 ap.eMap =
 	id1:
 		name: 'WDS 360 & Connect'
@@ -26,6 +27,9 @@ ap.eMap =
 		title: 'Kindness Tracker'
 
 ap.init = () ->
+	if location.pathname.indexOf("kindness") > -1
+		ap.mode = 'kind'
+		$('#reg-nav h3').html("WDS Kindness App")
 	$('body').on('click', '.reg-page-nav a', ap.showPage_click)
 	if ap.me
 		$('html').addClass('is-logged-in')
@@ -41,7 +45,11 @@ ap.init = () ->
 				ap.holdSearch = false
 			, 50
 		else
-			ap.showPage('home')
+			if ap.mode is 'kind'
+				ap.updateEvent('999999')
+				ap.showPage('search')
+			else
+				ap.showPage('home')
 
 
 ap.allUsers = {}
@@ -61,7 +69,11 @@ ap.initAssets = ->
 		if rsp.signin_events
 			ap.events = rsp.signin_events
 		ap.poll()
-		ap.showPage('home')
+		if ap.mode is 'kind'
+			ap.updateEvent('999999')
+			ap.showPage('search')
+		else
+			ap.showPage('home')
 		_.isReady 'me'
 
 ap.localizeRegistrations = (regs) ->
@@ -89,10 +101,8 @@ ap.initSearch = ->
 
 
 ap.search = ->
-	tk 'SEARCH'
 	val = $('#register_search').val()
 	max = 90000
-	tk 'val'
 	results = []
 	ev = ap.getEvent(ap.event_id)
 	if val.length > 0
@@ -134,7 +144,6 @@ ap.search = ->
 					</div>
 				'
 		else
-			tk count
 			html += '
 				<div class="search-row">
 					<span style="background:url('+result.get('pic')+')"></span>

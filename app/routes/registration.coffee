@@ -12,4 +12,11 @@ routes = (app) ->
 			title: "World Domination Summit"
 			layout: false
 
+	app.get '/admin/kindness', (req, res) ->
+		me = req.session.ident ? false
+		page = 'index'
+		res.render "../views/registration",
+			title: "World Domination Summit"
+			layout: false
+
 module.exports = routes

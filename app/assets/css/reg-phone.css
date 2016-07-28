@@ -1,0 +1,81 @@
+#rp-loading div#loading {
+    width:                      100%;
+    font-size:                  28pt;
+    padding:                    0px 20px;
+}
+input#register_search {
+    width:                      100% ! important;
+    padding:                    12px;
+    text-align:                 left;
+    font-size:                  12pt;
+}
+div#rp-kinduser {
+    padding:                    0px 10px;
+}
+div.reg-panel {
+    width:                      100%;
+    padding:                    0px;
+}
+h4.active-event {
+    margin-bottom:              -3px;
+    font-size:                  19pt;
+}
+h4.active-event {
+    margin-top:                 -10px;
+    margin-left:                12px;
+}
+#reg-nav h3 {
+    font-weight:                normal;
+    height:                     46px;
+    font-size:                  13pt;
+    padding-top:                13px;
+}
+a.go-home {
+    width:                      33px;
+    margin-top:                 2px;
+}
+a#clear-inp::before {
+    height:                     26px;
+    font-size:                  12pt;
+    top:                        7px;
+    padding-top:                5px;
+    width:                      32px;
+    right:                      6px;
+    font-family:                vitesse;
+}
+.search-row span {
+    margin-left:                -14px;
+    height:                     40px;
+    width:                      40px;
+    margin-top:                 -21px;
+}
+div.reg-info {
+    font-size:                  11pt;
+    margin-top:                 -8px ! important;
+}
+div.kindness-row {
+    min-height:                 2px;
+    height:                     9px;
+}
+a.next-button {
+    width:                      30px ! important;
+    font-size:                  14pt;
+    margin-top:                 -30px;
+    position:                   relative;
+    top:                        4px;
+}
+h4.k-name {
+    font-size:                  18pt;
+    margin-left:                12px;
+    margin-bottom:              -2px;
+    margin-top:                 -2px;
+}
+div.attendee-question-shell {
+    width:                      100%;
+}
+a.kinded-button {
+    width:                      100%;
+}
+* {
+    line-height:                inherit;
+}
