@@ -71,8 +71,6 @@ Event = Shelf.Model.extend
     .fetch()
     .then (user) =>
       if user
-        tk user.get('email')
-        tk @list()
         user.addToList(@list())
         .then =>
           user.sendEmail 'academy-confirmation', 'You\'re registered for a WDS Academy!',
