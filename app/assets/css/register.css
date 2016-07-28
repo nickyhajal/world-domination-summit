@@ -24,18 +24,18 @@ div#search_start {
     content:                    "✓";
     position:                   absolute;
     text-align:                 center;
-    top:                        12px;
     background:                 rgb(246, 251, 164) none repeat scroll 0px 0px;
-    color:                      rgb(117, 122, 37);
     border-radius:              50%;
     -moz-border-radius:         50%;
     -webkit-border-radius:      50%;
-    height:                     40px;
-    width:                      40px;
-    font-size:                  13pt;
-    padding:                    8px 0px;
-    left:                       -47px;
+    padding:                    1px 0px;
+    color:                      rgba(166, 167, 145, 0.97);
     border:                     2px solid rgb(177, 186, 30);
+    width:                      30px;
+    height:                     30px;
+    font-size:                  15pt;
+    top:                        19px;
+    right:                      71px;
 }
 .search-row {
     background:                 rgb(252, 250, 242) none repeat scroll 0px 0px;
@@ -46,6 +46,7 @@ div#search_start {
     position:                   relative;
     border-bottom:              1px solid rgb(242, 239, 223);
     font-size:                  16pt;
+    display:                    block;
 }
 div#search-results {
     position:                   relative;
@@ -87,11 +88,11 @@ a.register-button, .next-button {
     display:                    block;
     float:                      right;
     margin-right:               -6px;
-    margin-top:                 -14px;
     padding:                    14px;
     text-align:                 center;
     text-decoration:            none;
     width:                      220px;
+    margin-top:                 -20px;
 }
 div#page_content {
     padding:                    20px 0px;

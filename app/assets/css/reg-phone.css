@@ -54,6 +54,13 @@ div.reg-info {
     font-size:                  11pt;
     margin-top:                 -8px ! important;
 }
+.search-row.is-kinded::before {
+    width:                      20px;
+    height:                     20px;
+    right:                      33px;
+    font-size:                  9pt;
+    top:                        11px;
+}
 .kindness-row {
     height:                     9px;
     min-height:                 2px;

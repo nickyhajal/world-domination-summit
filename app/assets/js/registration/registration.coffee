@@ -141,15 +141,16 @@ ap.search = ->
 				kclass = 'not-kinded'
 				if result.get('kinded')? and ''+result.get('kinded') is '1'
 					kclass = 'is-kinded'
-				html += '
-					<a href="#" class="search-row kindness-row '+kclass+'" id="krow-'+result.get('user_id')+'" data-user_id="'+result.get('user_id')+'">
-						<span style="background:url('+result.get('pic')+')"></span>
-						<div class="reg-info">
-							<div class="reg-name">'+result.get('first_name')+' '+result.get('last_name')+'</div>
-						</div>
-						<div data-user_id="'+result.get('user_id')+'" class="next-button">❯</div>
-					</a>
-				'
+				if ap.registrations[result.get('user_id')+'_1']
+					html += '
+						<a href="#" class="search-row kindness-row '+kclass+'" id="krow-'+result.get('user_id')+'" data-user_id="'+result.get('user_id')+'">
+							<span style="background:url('+result.get('pic')+')"></span>
+							<div class="reg-info">
+								<div class="reg-name">'+result.get('first_name')+' '+result.get('last_name')+'</div>
+							</div>
+							<div data-user_id="'+result.get('user_id')+'" class="next-button">❯</div>
+						</a>
+					'
 		else
 			html += '
 				<div class="search-row">
@@ -171,6 +172,7 @@ ap.showKindUser = (e) ->
 	$t = $(e.currentTarget)
 	ap.active_user = $t.data('user_id')
 	ap.showPage('kinduser')
+
 ap.showPage_click = (e) ->
 	e.stopPropagation()
 	e.preventDefault()
