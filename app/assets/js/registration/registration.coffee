@@ -175,6 +175,7 @@ ap.showPage_click = (e) ->
 	else
 		page = $t.data('page')
 	ap.showPage(page)
+	$.scrollTo(0)
 
 ap.showPage = (page) ->
 	if page == 'home'

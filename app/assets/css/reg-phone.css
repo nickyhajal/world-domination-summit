@@ -77,6 +77,10 @@ div.attendee-question-shell {
 }
 a.kinded-button {
     width:                      100%;
+    padding:                    9px;
+    font-size:                  14pt;
+    font-family:                vitesse;
+    margin:                     10px 0px;
 }
 * {
     line-height:                inherit;
