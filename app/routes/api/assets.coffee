@@ -123,7 +123,7 @@ routes = (app) ->
 			reg_attendees: ->
 				dfr = Q.defer()
 				rds.get 'reg_attendees', (err, atns) ->
-					if atns? and atns and typeof JSON.parse(atns) is 'object' and 0
+					if atns? and atns and typeof JSON.parse(atns) is 'object'
 						dfr.resolve(JSON.parse(atns))
 					else
 						Users.forge()
@@ -134,7 +134,7 @@ routes = (app) ->
 							qb.orderBy('last_name')
 						.fetch
 							columns: [
-								'users.user_id', 'ticket_type', 'first_name', 'last_name', 'pic', 'location', 'kinded'
+								'users.user_id', 'ticket_type', 'type', 'first_name', 'last_name', 'pic', 'location', 'kinded'
 							]
 						.then (attendees) ->
 							atns = []

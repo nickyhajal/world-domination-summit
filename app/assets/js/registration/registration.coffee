@@ -49,6 +49,7 @@ ap.init = () ->
 				ap.updateEvent('999999')
 				ap.showPage('search')
 			else
+				$('.kind-btn').hide()
 				ap.showPage('home')
 
 
@@ -74,6 +75,7 @@ ap.initAssets = ->
 			ap.showPage('search')
 		else
 			ap.showPage('home')
+			$('.kind-btn').hide()
 		_.isReady 'me'
 
 ap.localizeRegistrations = (regs) ->
@@ -128,7 +130,12 @@ ap.search = ->
 		else
 			str = 'Sign-In'
 			reg_class = 'registered'
+		atype = result.get('type') ? 'attendee'
 		ttype = result.get('ticket_type') ? '360'
+		if atype != 'attendee'
+			ttype = atype
+		if ttype is 'friend'
+			ttype = 'f&f'
 		if ''+ap.event_id is '999999'
 			if result.get('ticket_type') is '360'
 				kclass = 'not-kinded'
