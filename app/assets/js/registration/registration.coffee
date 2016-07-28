@@ -233,7 +233,7 @@ ap.onShow.kinduser = ->
 	ap.updKinded()
 	setTimeout ->
 		$.scrollTo(0)
-	, 200
+	, 80
 ap.onShow.activities = ->
 	acs = []
 	html = ''
