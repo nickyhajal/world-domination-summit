@@ -175,7 +175,9 @@ ap.showPage_click = (e) ->
 	else
 		page = $t.data('page')
 	ap.showPage(page)
-	$.scrollTo(0)
+	setTimeout ->
+		$.scrollTo(0)
+	, 50
 
 ap.showPage = (page) ->
 	if page == 'home'
