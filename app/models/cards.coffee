@@ -48,8 +48,8 @@ Card = Shelf.Model.extend
 						pre_rsp_params = pre?.rsp ? {}
 						price = if pre.price? then pre.price else product.get('cost')
 						price *= 	quantity
-						# if via is 'ios'
-						# 	price = 50
+						if via is 'and'
+							price = 50
 						stripe.charges.create(
 							amount: price
 							currency: 'usd'
