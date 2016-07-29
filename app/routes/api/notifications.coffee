@@ -29,8 +29,18 @@ routes = (app) ->
                 content: req.query.dispatch_text
                 user_id: '8082'
               if req.query.event_id? and req.query.event_id != 'all'
-                post.channel_type = 'event'
+                post.channel_type = 'meetup'
                 post.channel_id = req.query.event_id
+              if req.query.type?
+                type = req.query.type
+                if type is '360'
+                  post.restrict = '360'
+                if type is 'staff'
+                  post.restrict = 'staff'
+                if type is 'ambassador'
+                  post.restrict = 'ambassador'
+                if type is 'staff,ambassador'
+                  post.restrict = 'ambnstaff'
               uniq = moment().format('YYYY-MM-DD HH:mm') + post.content + post.user_id
               post.hash = crypto.createHash('md5').update(uniq).digest('hex')
               Feed.forge
@@ -49,13 +59,13 @@ routes = (app) ->
                         type = device.get('type')
                         user_id = device.get('user_id')
                         link = '/dispatch/'+feed_id
-                        if type is 'ios' and user_id == 176
+                        if type is 'ios' # and user_id == 176
                           note = new apn.Notification()
                           note.alert = req.query.notification_text
                           note.payload = {content: '{"user_id":"8082"}', type: 'feed_comment', link: link}
                           tk note
                           process.APN.pushNotification(note, tokens)
-                        else if type is 'and' and user_id == 176
+                        else if type is 'and' # and user_id == 176
                           tk 'STAT AND'
                           message = new gcm.Message
                             collapseKey: "WDS Notifications"
@@ -68,7 +78,7 @@ routes = (app) ->
                               type: 'feed_comment'
                               link: link
                           tk message
-                          process.gcmSender.send message, tokens, (err, result) ->
+                          # process.gcmSender.send message, tokens, (err, result) ->
                       res.r.sent = true
                       next()
                   , (err) ->

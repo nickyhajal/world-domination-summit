@@ -224,6 +224,19 @@ routes = (app) ->
 			page = req.query.page ? 1
 			channel_type = req.query.channel_type
 			columns = null
+			include = ['none']
+			if req.me.get("ticket_type") is '360'
+				include.push '360'
+			if req.me.get('type') is 'ambassador'
+				include.push '360'
+				include.push 'ambassador'
+				include.push 'ambnstaff'
+			if req.me.get('type') is 'staff'
+				include.push '360'
+				include.push 'ambnstaff',
+				include.push 'staff'
+
+			feeds.query('whereIn', 'restrict', include)
 
 			# Get a users feed
 			if channel_type is 'user'
