@@ -3,10 +3,25 @@ ap.Views.admin_notification = XView.extend
 	events:
 		'submit #admin-confirm-notification': 'do_submit'
 	initialize: ->
-		@initRender()
+		ap.api 'get admin/events', {types: ['academy', 'meetup', 'activity', 'spark_session']}, (rsp) =>
+			ehtml = ''
+			evs = _.sortBy(rsp.events, (ev) -> [ev.type, ev.what])
+			ehtml += '<option value="all">All</option>'
+			for ev in evs
+				type = _.titleize(ev.type.replace('_', ' '))
+				ehtml += '<option value="'+ev.event_id+'">'+type+': '+_.truncate(ev.what, 45)+'</option>'
+			@out = _.template @options.out, {events: ehtml}
+			@initRender()
 
 	rendered: ->
+		@getCount()
+		$('.select2', @el).change @getCount
 
+	getCount: ->
+		$f = $('#admin-confirm-notification')
+		form = $f.formToJson()
+		ap.api 'get admin/notification', form, (rsp) =>
+			$('#notn-count').html(rsp.user_count)
 	do_submit: (e) ->
 		e.preventDefault()
 		el = $(e.currentTarget)

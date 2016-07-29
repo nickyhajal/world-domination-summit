@@ -1709,6 +1709,9 @@ a.cnct-login::after {
     padding:                    8px 20px;
     margin-left:                30px;
 }
+#page-admin_notification input.button {
+    float:                      left;
+}
 input[type="submit"], .button {
     border:                     0px none;
     padding:                    8px 40px;
@@ -3985,6 +3988,20 @@ a.event-type-btn::before {
     font-size:                  17pt;
     position:                   absolute;
     bottom:                     18px;
+}
+#notn-count-shell {
+    font-family:                karla;
+    float:                      left;
+    color:                      rgb(132, 125, 127);
+    margin-left:                9px;
+    line-height:                118%;
+    margin-top:                 0px;
+    width:                      214px;
+}
+span#notn-count {
+    font-family:                karlabold;
+    color:                      rgb(136, 124, 127);
+    font-size:                  14pt;
 }
 * {
     box-sizing:                 border-box;

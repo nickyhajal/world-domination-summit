@@ -18,6 +18,23 @@ div(id="events-shell")
           option(value="yes") Yes
           option(value="no") No
     div(class="form-section")
+      label Attendee Type
+      div(class="form-box")
+        select(name="type", class="select2", style="width:340px")
+          option(value="all") All
+          option(value="360") 360
+          option(value="connect") Connect
+          //- option(value="360,connect") 360 & Connect
+          //- option(value="friend") Friends & Family
+          //- option(value="360,connect,friend") 360, Connect, Friends & Family
+          option(value="staff") Staff
+          option(value="ambassador") Ambassador
+          option(value="staff,ambassador") Staff & Ambassador
+    div(class="form-section")
+      label Attending Event
+      div(class="form-box")
+        select(name="event_id", class="select2", style="width:540px", data-search="true") {{ events }}
+    div(class="form-section")
       label Notification (Keep it short!)
       div(class="form-box")
         input(type="text", name="notification_text")
@@ -28,3 +45,7 @@ div(id="events-shell")
     div(class="clear")
     div(class="form-section")
       input(type="submit", value="Continue", class="button")
+      div(id="notn-count-shell") This will be sent to
+        br
+        span(id="notn-count")
+        | &nbsp;people

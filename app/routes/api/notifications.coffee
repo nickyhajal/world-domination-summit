@@ -3,6 +3,7 @@ rds = redis.createClient()
 crypto = require('crypto')
 apn = require('apn')
 gcm = require('node-gcm')
+_ = require('underscore')
 
 routes = (app) ->
 
@@ -27,6 +28,9 @@ routes = (app) ->
               post =
                 content: req.query.dispatch_text
                 user_id: '8082'
+              if req.query.event_id? and req.query.event_id != 'all'
+                post.channel_type = 'event'
+                post.channel_id = req.query.event_id
               uniq = moment().format('YYYY-MM-DD HH:mm') + post.content + post.user_id
               post.hash = crypto.createHash('md5').update(uniq).digest('hex')
               Feed.forge
@@ -45,14 +49,13 @@ routes = (app) ->
                         type = device.get('type')
                         user_id = device.get('user_id')
                         link = '/dispatch/'+feed_id
-                        if type is 'ios' #and user_id == 176
+                        if type is 'ios' and user_id == 176
                           note = new apn.Notification()
                           note.alert = req.query.notification_text
                           note.payload = {content: '{"user_id":"8082"}', type: 'feed_comment', link: link}
-                          tk tokens
                           tk note
                           process.APN.pushNotification(note, tokens)
-                        else if type is 'and' # and user_id == 176
+                        else if type is 'and' and user_id == 176
                           tk 'STAT AND'
                           message = new gcm.Message
                             collapseKey: "WDS Notifications"
@@ -64,7 +67,6 @@ routes = (app) ->
                               content: '{"user_id":"8082"}'
                               type: 'feed_comment'
                               link: link
-                          tk tokens
                           tk message
                           process.gcmSender.send message, tokens, (err, result) ->
                       res.r.sent = true
@@ -86,15 +88,48 @@ routes = (app) ->
       device_type = req.query.device
       devices = Devices.forge()
       registered = req.query.registered
+      type = req.query.type
+      event_id = req.query.event_id
       devices.query('join', 'users', 'users.user_id', '=', 'devices.user_id', 'left')
       if device_type != 'all'
         devices.query('where', 'devices.type', req.query.device)
       if registered != 'all'
-        devices.query('join', 'registrations', 'registrations.user_id', '=', 'devices.user_id', 'left')
         if registered == 'yes'
-          devices.query('where', 'registrations.year', '=', process.year)
+          devices.query('join', 'registrations', 'registrations.user_id', '=', 'devices.user_id', 'left')
+          devices.query('where', 'registrations.event_id', '=', '1')
+          devices.query('where', 'registrations.year', '=', process.yr)
         else
-          devices.query('whereNull', 'registrations.year')
+          devices.query 'whereNotExists', ->
+            @select('*').from('registrations').whereRaw("
+              devices.user_id = registrations.user_id
+              AND event_id='1'
+              AND year = '"+process.yr+"'"
+            )
+      if type != 'all'
+        types = type.split(',')
+        ttypes = []
+        atypes = []
+        for type in types
+          if ['360', 'connect'].indexOf(type) > -1
+            ttypes.push type
+          else
+            atypes.push type
+        _ttypes = (_.map ttypes, (v) ->
+          "'"+v+"'"
+        ).join(', ')
+        _atypes = (_.map atypes, (v) ->
+          "'"+v+"'"
+        ).join(', ')
+        if ttypes.length and atypes.length
+          devices.query('whereRaw', '(users.ticket_type in ('+_ttypes+') OR users.type in ('+_atypes+'))')
+        else if ttypes.length
+          devices.query('whereIn', 'users.ticket_type', ttypes)
+        else if atypes.length
+          devices.query('whereIn', 'users.type', atypes)
+      if event_id != 'all'
+        devices.query('join', 'event_rsvps', 'event_rsvps.user_id', '=', 'devices.user_id', 'left')
+        devices.query('where', 'event_rsvps.event_id', '=', event_id)
+
       devices.fetch()
       .then (rsp) ->
         user_ids = {}

@@ -194,6 +194,8 @@ routes = (app) ->
 				events.query('where', 'active', active)
 			if req.query.type?
 				events.query('where', 'type', req.query.type)
+			if req.query.types?
+				events.query('whereIn', 'type', req.query.types)
 			if req.query.event_id
 				events.query('where', 'event_id', req.query.event_id)
 			events.query('orderBy', 'event_id',  'DESC')
