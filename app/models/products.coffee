@@ -54,6 +54,7 @@ PRE =
 			dfr.resolve(rsp)
 		return dfr.promise
 	wds2017: (meta) ->
+		dfr = Q.defer()
 		dfr.resolve({})
 		return dfr.promise
 	xfer: (meta) ->
