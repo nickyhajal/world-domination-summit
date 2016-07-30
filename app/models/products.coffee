@@ -53,6 +53,9 @@ PRE =
 				rsp.price = 2900
 			dfr.resolve(rsp)
 		return dfr.promise
+	wds2017: (meta) ->
+		dfr.resolve({})
+		return dfr.promise
 	xfer: (meta) ->
 		dfr = Q.defer()
 		Transfer.forge
