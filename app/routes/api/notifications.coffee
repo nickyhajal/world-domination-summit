@@ -31,7 +31,7 @@ routes = (app) ->
               if req.query.event_id? and req.query.event_id != 'all'
                 post.channel_type = 'meetup'
                 post.channel_id = req.query.event_id
-              if req.query.test? req.query.test == 'yes'
+              if req.query.test? and req.query.test == 'yes'
                 post.channel_type = 'meetup'
                 post.channel_id = '0'
               if req.query.type?
@@ -72,6 +72,7 @@ routes = (app) ->
                           process.APN.pushNotification(note, tokens)
                         else if type is 'and' # and user_id == 176
                           tk 'STAT AND'
+                          tokens = [device.get('token')]
                           message = new gcm.Message
                             collapseKey: "WDS Notifications"
                             data:
