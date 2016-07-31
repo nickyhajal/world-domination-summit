@@ -29,10 +29,10 @@ routes = (app) ->
                 content: req.query.dispatch_text
                 user_id: '8082'
               if req.query.event_id? and req.query.event_id != 'all'
-                post.restrict = 'staff'
-              if req.query.test? and req.query.test == 'yes'
                 post.channel_type = 'meetup'
-                post.channel_id = '0'
+                post.channel_id = req.query.event_id
+              if req.query.test? and req.query.test == 'yes'
+                post.restrict = 'staff'
               if req.query.type?
                 type = req.query.type
                 if type is '360'
