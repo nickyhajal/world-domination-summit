@@ -31,6 +31,9 @@ routes = (app) ->
               if req.query.event_id? and req.query.event_id != 'all'
                 post.channel_type = 'meetup'
                 post.channel_id = req.query.event_id
+              if req.query.test? req.query.test == 'yes'
+                post.channel_type = 'meetup'
+                post.channel_id = '0'
               if req.query.type?
                 type = req.query.type
                 if type is '360'
@@ -59,11 +62,13 @@ routes = (app) ->
                         type = device.get('type')
                         user_id = device.get('user_id')
                         link = '/dispatch/'+feed_id
+                        tk device.get('token')
                         if type is 'ios' # and user_id == 176
                           note = new apn.Notification()
                           note.alert = req.query.notification_text
                           note.payload = {content: '{"user_id":"8082"}', type: 'feed_comment', link: link}
-                          tk note
+                          tk 'ios'
+                          # tk note
                           process.APN.pushNotification(note, tokens)
                         else if type is 'and' # and user_id == 176
                           tk 'STAT AND'
@@ -77,8 +82,9 @@ routes = (app) ->
                               content: '{"user_id":"8082"}'
                               type: 'feed_comment'
                               link: link
+                          tk 'android'
                           tk message
-                          # process.gcmSender.send message, tokens, (err, result) ->
+                          process.gcmSender.send message, tokens, (err, result) ->
                       res.r.sent = true
                       next()
                   , (err) ->
@@ -95,12 +101,15 @@ routes = (app) ->
 
 
     get_devices: (req, res, cb) ->
+      test = req.query.test
       device_type = req.query.device
       devices = Devices.forge()
       registered = req.query.registered
       type = req.query.type
       event_id = req.query.event_id
       devices.query('join', 'users', 'users.user_id', '=', 'devices.user_id', 'left')
+      if test == 'yes'
+        devices.query('whereIn', 'devices.user_id', ['176', '179', '6292'])
       if device_type != 'all'
         devices.query('where', 'devices.type', req.query.device)
       if registered != 'all'

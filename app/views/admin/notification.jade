@@ -4,6 +4,12 @@ div(id="events-shell")
     | Send a Push Notification below. Please be careful. :)
   form(id="admin-confirm-notification", method="post", action="#")
     div(class="form-section")
+      label Test Run
+      div(class="form-box")
+        select(name="test", class="select2", style="width:220px")
+          option(value="yes") Yes
+          option(value="no") No, do it live!
+    div(class="form-section")
       label Device Type
       div(class="form-box")
         select(name="device", class="select2", style="width:120px")
