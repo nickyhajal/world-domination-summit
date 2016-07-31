@@ -29,8 +29,7 @@ routes = (app) ->
                 content: req.query.dispatch_text
                 user_id: '8082'
               if req.query.event_id? and req.query.event_id != 'all'
-                post.channel_type = 'meetup'
-                post.channel_id = req.query.event_id
+                post.restrict = 'staff'
               if req.query.test? and req.query.test == 'yes'
                 post.channel_type = 'meetup'
                 post.channel_id = '0'
@@ -71,7 +70,7 @@ routes = (app) ->
                           # tk note
                           process.APN.pushNotification(note, tokens)
                         else if type is 'and' # and user_id == 176
-                          tk 'STAT AND'
+                          process.gcmSender.send message, [token], (err, result) ->
                           tokens = [device.get('token')]
                           message = new gcm.Message
                             collapseKey: "WDS Notifications"
@@ -83,9 +82,10 @@ routes = (app) ->
                               content: '{"user_id":"8082"}'
                               type: 'feed_comment'
                               link: link
-                          tk 'android'
-                          tk message
+                          tk JSON.stringify(message)
                           process.gcmSender.send message, tokens, (err, result) ->
+                            tk err
+                            tk result
                       res.r.sent = true
                       next()
                   , (err) ->
