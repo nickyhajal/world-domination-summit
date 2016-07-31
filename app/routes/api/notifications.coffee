@@ -70,7 +70,6 @@ routes = (app) ->
                           # tk note
                           process.APN.pushNotification(note, tokens)
                         else if type is 'and' # and user_id == 176
-                          process.gcmSender.send message, [token], (err, result) ->
                           tokens = [device.get('token')]
                           message = new gcm.Message
                             collapseKey: "WDS Notifications"
