@@ -110,7 +110,7 @@ routes = (app) ->
       event_id = req.query.event_id
       devices.query('join', 'users', 'users.user_id', '=', 'devices.user_id', 'left')
       if test == 'yes'
-        devices.query('whereIn', 'devices.user_id', ['176', '179', '6292'])
+        devices.query('whereIn', 'devices.user_id', ['176', '179', '216', '6292'])
       if device_type != 'all'
         devices.query('where', 'devices.type', req.query.device)
       if registered != 'all'
