@@ -21,7 +21,6 @@ firebase.initializeApp({
 [Feed, Feeds] = require '../feeds'
 [EventRsvp, EventRsvps] = require '../event_rsvps'
 [Achievement, Achievements] = require '../achievements'
-[User, Users] = require '../users'
 
 getters =
 	getMe: ->
@@ -55,6 +54,7 @@ getters =
 		if existing? and existing.length
 			dfr.resolve(@)
 		else
+			[User, Users] = require '../users'
 			uid = @get('hash')
 			params =
 				first_name: @get('first_name')
