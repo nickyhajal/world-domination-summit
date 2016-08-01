@@ -4,6 +4,11 @@ Q = require('q')
 async = require('async')
 _s = require('underscore.string')
 countries = require('country-data').countries
+firebase = require("firebase")
+firebase.initializeApp({
+  serviceAccount: process.env.FIREBASE_CONF,
+  databaseURL: process.env.FIREBASE_URL
+});
 
 ##
 
@@ -34,12 +39,32 @@ getters =
             .then (user) =>
               @getRsvps()
               .then (user) =>
-                if user.get('password')?.length
-                  user.set('has_pw', true)
-                if user.get('user_name')?.length  is 40
-                  user.set('user_name', '')
-                dfr.resolve(user)
+                @getFireUser()
+                .then (user) =>
+                  if user.get('password')?.length
+                    user.set('has_pw', true)
+                  if user.get('user_name')?.length  is 40
+                    user.set('user_name', '')
+                  dfr.resolve(user)
     return dfr.promise
+
+  getFireUser: ->
+    dfr = Q.defer()
+    existing = @get('firetoken')
+    if existing? and existing.length
+      dfr.resolve(@)
+    else
+      uid = @get('hash')
+      params =
+        first_name: @get('first_name')
+        last_name: @get('last_name')
+        email: @get('email')
+        user_id: @get('user_id')
+      token = firebase.auth().createCustomToken(uid, params)
+      @set('firetoken', token)
+      dfr.resolve(@)
+      @save()
+    dfr.promise
 
   getFriends: (this_year = false, include_user = false) ->
     dfr = Q.defer()
