@@ -62,7 +62,10 @@ getters =
 				user_id: @get('user_id')
 			token = firebase.auth().createCustomToken(uid, params)
 			@set('firetoken', token)
-			@save()
+			User.forge
+				user_id: @get('user_id')
+				token: token
+			.save()
 			dfr.resolve(@)
 		return dfr.promise
 
