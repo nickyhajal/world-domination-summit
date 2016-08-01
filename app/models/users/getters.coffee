@@ -51,23 +51,25 @@ getters =
 	getFire: ->
 		dfr = Q.defer()
 		existing = @get('firetoken')
-		if existing? and existing.length
-			dfr.resolve(@)
-		else
-			[User, Users] = require '../users'
-			uid = @get('hash')
-			params =
-				first_name: @get('first_name')
-				last_name: @get('last_name')
-				email: @get('email')
-				user_id: @get('user_id')
-			token = firebase.auth().createCustomToken(uid, params)
-			@set('firetoken', token)
-			User.forge
-				user_id: @get('user_id')
-				firetoken: token
-			.save()
-			dfr.resolve(@)
+		token = firebase.auth().createCustomToken(uid, params)
+		@set('firetoken', token)
+		dfr.resolve(@)
+		# if existing? and existing.length
+		# 	dfr.resolve(@)
+		# else
+		# 	[User, Users] = require '../users'
+		# 	uid = @get('hash')
+		# 	params =
+		# 		first_name: @get('first_name')
+		# 		last_name: @get('last_name')
+		# 		email: @get('email')
+		# 		user_id: @get('user_id')
+		# 	@set('firetoken', token)
+		# 	User.forge
+		# 		user_id: @get('user_id')
+		# 		firetoken: token
+		# 	.save()
+		# 	dfr.resolve(@)
 		return dfr.promise
 
 	getFriends: (this_year = false, include_user = false) ->
