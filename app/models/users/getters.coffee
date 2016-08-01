@@ -69,13 +69,14 @@ getters =
 
 		if existing? and existing.length
 			tk existing
-			firebase.auth().verifyIdToken(existing)
-			.then (decodedToken) ->
-				tk decodedToken
-				dfr.resolve(@)
-			.catch (error) ->
-				tk error
-				genFire()
+			dfr.resolve(@)
+			# firebase.auth().verifyIdToken(existing)
+			# .then (decodedToken) ->
+			# 	tk decodedToken
+			# 	dfr.resolve(@)
+			# .catch (error) ->
+			# 	tk error
+			# 	genFire()
 		else
 			genFire()
 		return dfr.promise
