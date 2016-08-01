@@ -68,6 +68,7 @@ getters =
 			dfr.resolve(@)
 
 		if existing? and existing.length
+			tk existing
 			firebase.auth().verifyIdToken(existing)
 			.then (decodedToken) ->
 				tk decodedToken
