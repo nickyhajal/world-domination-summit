@@ -51,7 +51,8 @@ getters =
 	getFire: ->
 		dfr = Q.defer()
 		existing = @get('firetoken')
-		genFire = ->
+		genFire = =>
+			tk 'genning'
 			[User, Users] = require '../users'
 			uid = @get('hash')
 			params =
@@ -59,7 +60,9 @@ getters =
 				last_name: @get('last_name')
 				email: @get('email')
 				user_id: @get('user_id')
+			tk params
 			token = firebase.auth().createCustomToken(uid, params)
+			tk token
 			@set('firetoken', token)
 			User.forge
 				user_id: @get('user_id')
@@ -68,16 +71,9 @@ getters =
 			dfr.resolve(@)
 
 		if existing? and existing.length
-			tk existing
 			dfr.resolve(@)
-			# firebase.auth().verifyIdToken(existing)
-			# .then (decodedToken) ->
-			# 	tk decodedToken
-			# 	dfr.resolve(@)
-			# .catch (error) ->
-			# 	tk error
-			# 	genFire()
 		else
+			tk 'gen'
 			genFire()
 		return dfr.promise
 
