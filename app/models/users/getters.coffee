@@ -39,8 +39,8 @@ getters =
 						.then (user) =>
 							@getRsvps()
 							.then (user) =>
-								tk 'GET FIRE USER'
-								@getFireUser()
+								tk 'GET FIRE'
+								@getFire()
 								.then (user) =>
 									if user.get('password')?.length
 										user.set('has_pw', true)
@@ -49,7 +49,7 @@ getters =
 									dfr.resolve(user)
 		return dfr.promise
 
-	getFireUser: ->
+	getFire: ->
 		tk 1
 		dfr = Q.defer()
 		existing = @get('firetoken')
