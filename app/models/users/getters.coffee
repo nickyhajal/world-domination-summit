@@ -49,22 +49,30 @@ getters =
     return dfr.promise
 
   getFireUser: ->
+    tk 1
     dfr = Q.defer()
     existing = @get('firetoken')
     if existing? and existing.length
+      tk 2
       dfr.resolve(@)
     else
+      tk 3
       uid = @get('hash')
+      tk 4
       params =
         first_name: @get('first_name')
         last_name: @get('last_name')
         email: @get('email')
         user_id: @get('user_id')
+      tk 5
       token = firebase.auth().createCustomToken(uid, params)
+      tk 6
       @set('firetoken', token)
+      tk 7
       dfr.resolve(@)
+      tk 8
       @save()
-    dfr.promise
+    return dfr.promise
 
   getFriends: (this_year = false, include_user = false) ->
     dfr = Q.defer()
