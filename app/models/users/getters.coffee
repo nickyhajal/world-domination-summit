@@ -51,7 +51,7 @@ getters =
 	getFire: ->
 		dfr = Q.defer()
 		existing = @get('firetoken')
-		genFire ->
+		genFire = ->
 			[User, Users] = require '../users'
 			uid = @get('hash')
 			params =
