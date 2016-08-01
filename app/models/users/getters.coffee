@@ -21,6 +21,7 @@ firebase.initializeApp({
 [Feed, Feeds] = require '../feeds'
 [EventRsvp, EventRsvps] = require '../event_rsvps'
 [Achievement, Achievements] = require '../achievements'
+[User, Users] = require '../users'
 
 getters =
 	getMe: ->
