@@ -39,6 +39,7 @@ getters =
             .then (user) =>
               @getRsvps()
               .then (user) =>
+                tk 'GET FIRE USER'
                 @getFireUser()
                 .then (user) =>
                   if user.get('password')?.length
