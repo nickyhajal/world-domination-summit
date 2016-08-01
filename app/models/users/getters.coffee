@@ -40,40 +40,39 @@ getters =
 							@getRsvps()
 							.then (user) =>
 								tk 'GET FIRE'
-								@getFire()
-								.then (user) =>
-									if user.get('password')?.length
-										user.set('has_pw', true)
-									if user.get('user_name')?.length  is 40
-										user.set('user_name', '')
-									dfr.resolve(user)
+								# @getFire()
+								# .then (user) =>
+								if user.get('password')?.length
+									user.set('has_pw', true)
+								if user.get('user_name')?.length  is 40
+									user.set('user_name', '')
+								dfr.resolve(user)
 		return dfr.promise
 
 	getFire: ->
 		tk 1
 		dfr = Q.defer()
-		# existing = @get('firetoken')
-		# if existing? and existing.length
-		# 	tk 2
-		# 	dfr.resolve(@)
-		# else
-		# 	tk 3
-		# 	uid = @get('hash')
-		# 	tk 4
-		# 	params =
-		# 		first_name: @get('first_name')
-		# 		last_name: @get('last_name')
-		# 		email: @get('email')
-		# 		user_id: @get('user_id')
-		# 	tk 5
-		# 	token = firebase.auth().createCustomToken(uid, params)
-		# 	tk 6
-		# 	@set('firetoken', token)
-		# 	tk 7
-		# 	dfr.resolve(@)
-		# 	tk 8
-			# @save()
-		dfr.resolve(@)
+		existing = @get('firetoken')
+		if existing? and existing.length
+			tk 2
+			dfr.resolve(@)
+		else
+			tk 3
+			uid = @get('hash')
+			tk 4
+			params =
+				first_name: @get('first_name')
+				last_name: @get('last_name')
+				email: @get('email')
+				user_id: @get('user_id')
+			tk 5
+			token = firebase.auth().createCustomToken(uid, params)
+			tk 6
+			@set('firetoken', token)
+			tk 7
+			dfr.resolve(@)
+			tk 8
+			@save()
 		return dfr.promise
 
 	getFriends: (this_year = false, include_user = false) ->
