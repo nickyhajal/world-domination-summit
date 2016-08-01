@@ -57,9 +57,14 @@ ap.User = window.XModel.extend
 			if +ticket.year < +ap.year
 				return true
 
+	hasPermissionForEvent: (event) ->
+		ftype = event.get('for_type')
+		ftype = 'all' unless ftype?
+		return ftype is 'all' or ftype is ap.me.get('ticket_type')
+
 	isAttendingEvent: (event) ->
 		if event.get('type') is 'program'
-			return true
+			return @hasPermissionForEvent(event)
 		else
 			if ap.me.get('rsvps')?.length
 				return ap.me.get('rsvps').indexOf(event.get('event_id')) > -1
