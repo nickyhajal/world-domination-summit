@@ -105,6 +105,7 @@ User = Shelf.Model.extend
 	getFriends: getters.getFriends
 	getFriendedMe: getters.getFriendedMe
 	getLocationString: getters.getLocationString
+	getFire: getters.getFire
 
 	# Emails
 	sendEmail: emails.sendEmail

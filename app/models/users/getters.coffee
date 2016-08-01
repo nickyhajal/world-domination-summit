@@ -39,14 +39,13 @@ getters =
 						.then (user) =>
 							@getRsvps()
 							.then (user) =>
-								tk 'GET FIRE'
-								# @getFire()
-								# .then (user) =>
-								if user.get('password')?.length
-									user.set('has_pw', true)
-								if user.get('user_name')?.length  is 40
-									user.set('user_name', '')
-								dfr.resolve(user)
+								@getFire()
+								.then (user) =>
+									if user.get('password')?.length
+										user.set('has_pw', true)
+									if user.get('user_name')?.length  is 40
+										user.set('user_name', '')
+									dfr.resolve(user)
 		return dfr.promise
 
 	getFire: ->
@@ -66,6 +65,7 @@ getters =
 				email: @get('email')
 				user_id: @get('user_id')
 			tk 5
+			tk firebase
 			token = firebase.auth().createCustomToken(uid, params)
 			tk 6
 			@set('firetoken', token)
