@@ -65,7 +65,7 @@ getters =
 			@set('firetoken', token)
 			User.forge
 				user_id: @get('user_id')
-				token: token
+				firetoken: token
 			.save()
 			dfr.resolve(@)
 		return dfr.promise
