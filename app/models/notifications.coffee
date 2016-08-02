@@ -178,7 +178,7 @@ Notifications = Shelf.Collection.extend
 						text += link+user.get('first_name')+' '+user.get('last_name')+' sent you a message!</a>'
 						text += '</a>'
 					else
-						text += notn.get('content')
+						text += JSON.parse(notn.get('content').content_str
 					if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
 
 		return dfr.promise
