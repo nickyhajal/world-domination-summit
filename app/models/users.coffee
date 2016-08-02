@@ -85,7 +85,7 @@ User = Shelf.Model.extend
 		Notifications.forge().query (qb) =>
 			qb.where('user_id', @get('user_id'))
 		.fetch()
-		.then (rsp) ->
+		.then (rsp) =>
 			notns = rsp.models
 			out = []
 			for n in notns
