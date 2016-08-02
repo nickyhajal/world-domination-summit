@@ -81,7 +81,7 @@ User = Shelf.Model.extend
 			@syncEmailWithTicket()
 
 	processNotifications: ->
-		[Notification, Notifications] = require('../../models/notifications')
+		[Notification, Notifications] = require('./notifications')
 		Notifications.forge().query (qb) ->
 			qb.where('user_id', @get('user_id'))
 		.fetch()
