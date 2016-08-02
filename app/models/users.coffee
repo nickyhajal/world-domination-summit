@@ -111,7 +111,7 @@ User = Shelf.Model.extend
 				o[''+c] = el
 				c += 1
 			tk el
-			process.fire.database().ref().child('notifications/'+@get('user_id')+'/').set(el)
+			process.fire.database().ref().child('notifications/'+@get('user_id')+'/').set(o)
 
 
 	# Auth
