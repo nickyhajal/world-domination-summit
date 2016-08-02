@@ -97,9 +97,7 @@ User = Shelf.Model.extend
 					# so we always replace the last with the newest
 					chat_id = n.get('link').replace('/message/', '')
 					found = false
-					tk out
 					for i in [0..(out.length-1)]
-						tk i
 						m = out[i]
 						if m.type == 'message'
 							if m.link.indexOf(chat_id)
@@ -107,7 +105,13 @@ User = Shelf.Model.extend
 								out[i] = n
 					unless found
 						out.push n.attributes
-			process.fire.database().ref('notifications/'+@get('user_id')+'/').set out, (rsp) ->
+			o = {}
+			c = 0
+			for el in out
+				o[''+c] = el
+				c += 1
+			tk el
+			process.fire.database().ref('notifications/'+@get('user_id')+'/').set el, (rsp) ->
 				tk rsp
 
 
