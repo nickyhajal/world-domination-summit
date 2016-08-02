@@ -25,6 +25,7 @@ routes = (app) ->
     message: (req, res, next) ->
       if req.me? and req.m
         name = req.me.get('first_name')+' '+req.me.get('last_name')[0]+': '
+        tk req.query.user_id
         for to_id in req.query.user_id
           Notification.forge
             type: 'message'
@@ -37,7 +38,7 @@ routes = (app) ->
             link: '/message/'+req.query.chat_id
             emailed: 1
           .save()
-          next()
+        next()
       else
         next()
 
