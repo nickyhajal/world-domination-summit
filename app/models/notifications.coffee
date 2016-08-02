@@ -65,6 +65,10 @@ Notification = Shelf.Model.extend
 						else
 							tk "GCM SENT"
 						# 	tk result
+		[User, Users] = require './users'
+		User.forge
+			user_id: user_id
+		.processNotifications()
 
 Notifications = Shelf.Collection.extend
 	model: Notification
@@ -138,7 +142,6 @@ Notifications = Shelf.Collection.extend
 					else
 						text += user.get('first_name')+' '+user.get('last_name')+' liked your post!'
 					if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
-
 			when 'feed_comment'
 				User.forge({user_id: data.commenter_id})
 				.fetch()
@@ -203,9 +206,12 @@ Notifications = Shelf.Collection.extend
 		<table class="notn-table">'
 		dfr = Q.defer()
 		async.each notns, (notn, cb) =>
-			@notificationText(notn)
-			.then (text) ->
-				html += '<tr><td>'+text+'</td></tr>'
+			if notn.get('type') != 'message'
+				@notificationText(notn)
+				.then (text) ->
+					html += '<tr><td>'+text+'</td></tr>'
+					cb()
+			else
 				cb()
 		, ->
 			html += '</table><div class="freqmsg">

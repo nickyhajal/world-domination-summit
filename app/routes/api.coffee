@@ -53,6 +53,9 @@ routes = (app) ->
 		app.post '/user/connection', user.add_connection
 
 		#
+		app.post '/message', notifications.message
+
+		#
 		app.delete '/user/twitter', user.del_twitter
 		app.delete '/user/connection', user.del_connection
 		app.delete '/user/interest', user.del_interest

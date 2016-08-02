@@ -6,6 +6,12 @@ Twit = require('twit')
 _ = require('underscore')
 Q = require('q')
 async = require('async')
+firebase = require("firebase")
+firebase.initializeApp
+  serviceAccount: process.env.FIREBASE_CONF,
+  databaseURL: process.env.FIREBASE_URL
+  databaseAuthVariableOverride:
+    uid: 'wdsfm-ak89aoemakqysbk48zcbp73aiaoe381c'
 
 ##
 
@@ -79,6 +85,30 @@ User = Shelf.Model.extend
 
 		if @lastDidChange ['attending'+process.yr]
 			@syncEmailWithTicket()
+
+	processNotifications: ->
+		[Notification, Notifications] = require('../../models/notifications')
+		Notifications.forge().query (qb) ->
+			qb.where('user_id', @get('user_id'))
+		.fetch()
+		.then (rsp) ->
+			notns = rsp.models
+			out = []
+			for n in notns
+				if n.get('type') != 'message'
+					out.push n.attributes
+				else
+					# We don't want 20 notifications from the same message
+					# so we always replace the last with the newest
+					chat_id = n.get('link').replace('/message/', '')
+					for i in [0..out.length]
+						m = out[i]
+						if m.get('type') == 'message'
+							if m.get('link').indexOf(chat_id)
+								out[i] = n
+			firebase.database().ref('notifications/'+@get('user_id')+'/').set(out)
+
+
 
 	# Auth
 	authenticate: auth.authenticate
