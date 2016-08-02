@@ -98,7 +98,7 @@ User = Shelf.Model.extend
 					chat_id = n.get('link').replace('/message/', '')
 					found = false
 					tk out
-					for i in [0..out.length]
+					for i in [0..(out.length-1)]
 						tk i
 						m = out[i]
 						if m.type == 'message'
