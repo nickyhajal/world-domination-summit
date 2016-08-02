@@ -97,6 +97,7 @@ User = Shelf.Model.extend
 					# so we always replace the last with the newest
 					chat_id = n.get('link').replace('/message/', '')
 					found = false
+					tk out
 					for i in [0..out.length]
 						tk i
 						m = out[i]
