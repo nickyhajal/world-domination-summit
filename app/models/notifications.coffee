@@ -168,6 +168,18 @@ Notifications = Shelf.Collection.extend
 					else
 						text += user.get('first_name')+' '+user.get('last_name')+' friended you!'
 					if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
+			when 'message'
+				User.forge({user_id: data.from_id})
+				.fetch()
+				.then (user) ->
+					if html
+						link = '<a href="http://worlddominationsummit.com/'+link+'">'
+						text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
+						text += link+user.get('first_name')+' '+user.get('last_name')+' sent you a message!</a>'
+						text += '</a>'
+					else
+						text += notn.get('content')
+					if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
 
 		return dfr.promise
 
