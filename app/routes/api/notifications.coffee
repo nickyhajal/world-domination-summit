@@ -23,7 +23,7 @@ routes = (app) ->
         next()
 
     message: (req, res, next) ->
-      if req.me? and req.m
+      if req.me? and req.me
         name = req.me.get('first_name')+' '+req.me.get('last_name')[0]+': '
         tk req.query.user_id
         for to_id in req.query.user_id
