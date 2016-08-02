@@ -84,6 +84,7 @@ User = Shelf.Model.extend
 		[Notification, Notifications] = require('./notifications')
 		Notifications.forge().query (qb) =>
 			qb.where('user_id', @get('user_id'))
+			qb.where('read', '0')
 		.fetch()
 		.then (rsp) =>
 			notns = rsp.models
