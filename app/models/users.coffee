@@ -98,8 +98,8 @@ User = Shelf.Model.extend
 					chat_id = n.get('link').replace('/message/', '')
 					for i in [0..out.length]
 						m = out[i]
-						if m.get('type') == 'message'
-							if m.get('link').indexOf(chat_id)
+						if m.type == 'message'
+							if m.link.indexOf(chat_id)
 								out[i] = n
 			process.fire.database().ref('notifications/'+@get('user_id')+'/').set(out)
 
