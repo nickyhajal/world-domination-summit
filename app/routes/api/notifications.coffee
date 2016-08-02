@@ -23,7 +23,7 @@ routes = (app) ->
         next()
 
     message: (req, res, next) ->
-      if req.query.me?
+      if req.me? and req.me
         name = req.me.get('first_name')+' '+req.me.get('last_name')[0]+': '
         Notification.forge
           type: 'message'
