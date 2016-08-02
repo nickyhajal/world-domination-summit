@@ -102,7 +102,7 @@ User = Shelf.Model.extend
 						if m.type == 'message'
 							if m.link.indexOf(chat_id)
 								found = true
-								out[i] = n
+								out[i] = n.attributes
 					unless found
 						out.push n.attributes
 			o = {}
