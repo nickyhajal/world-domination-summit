@@ -96,11 +96,16 @@ User = Shelf.Model.extend
 					# We don't want 20 notifications from the same message
 					# so we always replace the last with the newest
 					chat_id = n.get('link').replace('/message/', '')
+					found = false
 					for i in [0..out.length]
+						tk i
 						m = out[i]
 						if m.type == 'message'
 							if m.link.indexOf(chat_id)
+								found = true
 								out[i] = n
+					unless found
+						out.push n.attributes
 			process.fire.database().ref('notifications/'+@get('user_id')+'/').set(out)
 
 
