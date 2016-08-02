@@ -23,20 +23,21 @@ routes = (app) ->
         next()
 
     message: (req, res, next) ->
-      if req.me? and req.me
+      if req.me? and req.m
         name = req.me.get('first_name')+' '+req.me.get('last_name')[0]+': '
-        Notification.forge
-          type: 'message'
-          channel_type: 'message'
-          channel_id: '0'
-          user_id: req.query.user_id
-          content: JSON.stringify
-            from_id: req.me.get('user_id')
-            content_str: _s.truncate(name+req.query.summary, 200)
-          link: '/message/'+req.query.chat_id
-          emailed: 1
-        .save()
-        next()
+        for to_id in req.query.user_id
+          Notification.forge
+            type: 'message'
+            channel_type: 'message'
+            channel_id: '0'
+            user_id: to_id
+            content: JSON.stringify
+              from_id: req.me.get('user_id')
+              content_str: _s.truncate(name+req.query.summary, 200)
+            link: '/message/'+req.query.chat_id
+            emailed: 1
+          .save()
+          next()
       else
         next()
 
