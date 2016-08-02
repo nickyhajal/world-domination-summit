@@ -82,7 +82,7 @@ User = Shelf.Model.extend
 
 	processNotifications: ->
 		[Notification, Notifications] = require('./notifications')
-		Notifications.forge().query (qb) ->
+		Notifications.forge().query (qb) =>
 			qb.where('user_id', @get('user_id'))
 		.fetch()
 		.then (rsp) ->

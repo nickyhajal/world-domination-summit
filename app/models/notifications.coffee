@@ -19,6 +19,10 @@ Notification = Shelf.Model.extend
 		this.on 'created', this.created, this
 	created: ->
 		user_id = @get('user_id')
+		[User, Users] = require './users'
+		User.forge
+			user_id: user_id
+		.processNotifications()
 		Notifications::notificationText(this, false, true)
 		.then (ntrsp) =>
 			str = ntrsp[0]
@@ -37,6 +41,8 @@ Notification = Shelf.Model.extend
 				note.expiry = Math.floor(Date.now() / 1000) + 3600;
 				for device in devices
 					d = new apn.Device(device.get('token'))
+					tk note
+					tk d
 					process.APN.pushNotification(note, d)
 			Devices.forge()
 			.query('where', 'user_id', user_id)
@@ -65,10 +71,6 @@ Notification = Shelf.Model.extend
 						else
 							tk "GCM SENT"
 						# 	tk result
-		[User, Users] = require './users'
-		User.forge
-			user_id: user_id
-		.processNotifications()
 
 Notifications = Shelf.Collection.extend
 	model: Notification
