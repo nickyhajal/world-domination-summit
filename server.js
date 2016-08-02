@@ -23,6 +23,14 @@ process.dmn = process.env.DOMAIN;
 process.rsapp = 'mobile_logins';
 process.APN = new apn.Connection(app.settings.apn);
 process.gcmSender = new gcm.Sender(process.env.GCM_KEY);
+process.fire = require("firebase")
+process.fire.initializeApp({
+  serviceAccount: process.env.FIREBASE_CONF,
+  databaseURL: process.env.FIREBASE_URL,
+  databaseAuthVariableOverride: {
+    uid: 'wdsfm-ak89aoemakqysbk48zcbp73aiaoe381c'
+  }
+});
 
 //require('./app/processors/wufoo')(app)
 //require('./app/processors/meetup_suggestions')(app)

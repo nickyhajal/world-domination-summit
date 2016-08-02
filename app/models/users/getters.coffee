@@ -4,11 +4,6 @@ Q = require('q')
 async = require('async')
 _s = require('underscore.string')
 countries = require('country-data').countries
-firebase = require("firebase")
-firebase.initializeApp({
-	serviceAccount: process.env.FIREBASE_CONF,
-	databaseURL: process.env.FIREBASE_URL
-});
 
 ##
 
@@ -59,7 +54,7 @@ getters =
 				last_name: @get('last_name')
 				email: @get('email')
 				user_id: @get('user_id')
-			token = firebase.auth().createCustomToken(uid, params)
+			token = process.fire.auth().createCustomToken(uid, params)
 			@set('firetoken', token)
 			User.forge
 				user_id: @get('user_id')

@@ -6,12 +6,6 @@ Twit = require('twit')
 _ = require('underscore')
 Q = require('q')
 async = require('async')
-firebase = require("firebase")
-firebase.initializeApp
-  serviceAccount: process.env.FIREBASE_CONF,
-  databaseURL: process.env.FIREBASE_URL
-  databaseAuthVariableOverride:
-    uid: 'wdsfm-ak89aoemakqysbk48zcbp73aiaoe381c'
 
 ##
 
@@ -106,7 +100,7 @@ User = Shelf.Model.extend
 						if m.get('type') == 'message'
 							if m.get('link').indexOf(chat_id)
 								out[i] = n
-			firebase.database().ref('notifications/'+@get('user_id')+'/').set(out)
+			process.fire.database().ref('notifications/'+@get('user_id')+'/').set(out)
 
 
 
