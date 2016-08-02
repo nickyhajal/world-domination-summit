@@ -107,7 +107,8 @@ User = Shelf.Model.extend
 								out[i] = n
 					unless found
 						out.push n.attributes
-			process.fire.database().ref('notifications/'+@get('user_id')+'/').set(out)
+			process.fire.database().ref('notifications/'+@get('user_id')+'/').set out, (rsp) ->
+				tk rsp
 
 
 
