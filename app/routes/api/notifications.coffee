@@ -96,12 +96,10 @@ routes = (app) ->
                         type = device.get('type')
                         user_id = device.get('user_id')
                         link = '/dispatch/'+feed_id
-                        tk device.get('token')
                         if type is 'ios' # and user_id == 176
                           note = new apn.Notification()
                           note.alert = req.query.notification_text
                           note.payload = {content: '{"user_id":"8082"}', type: 'feed_comment', link: link}
-                          tk 'ios'
                           # tk note
                           process.APN.pushNotification(note, tokens)
                         else if type is 'and' # and user_id == 176
@@ -116,7 +114,6 @@ routes = (app) ->
                               content: '{"user_id":"8082"}'
                               type: 'feed_comment'
                               link: link
-                          tk JSON.stringify(message)
                           process.gcmSender.send message, tokens, (err, result) ->
                             tk err
                             tk result

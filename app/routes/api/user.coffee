@@ -220,8 +220,17 @@ routes = (app) ->
 					qb.limit(25)
 				.fetch()
 				.then (rsp) ->
-					res.r.notifications = rsp.models
-					next()
+					notns = []
+					async.each rsp.models, (notn, cb) ->
+						Notifications::notificationText(notn, false, true)
+						.then (ntrsp) ->
+							notn.set('text', ntrsp[0])
+							notn.set('from', _.pick(ntrsp[1].attributes, ['user_id', 'first_name', 'last_name']))
+							notns.push notn
+							cb()
+					, ->
+						res.r.notifications = notns
+						next()
 			else
 				next()
 
