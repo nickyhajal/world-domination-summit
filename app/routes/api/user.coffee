@@ -221,7 +221,7 @@ routes = (app) ->
 				.fetch()
 				.then (rsp) ->
 					notns = []
-					async.each rsp.models, (notn, cb) ->
+					async.eachSeries rsp.models, (notn, cb) ->
 						Notifications::notificationText(notn, false, true)
 						.then (ntrsp) ->
 							notn.set('text', ntrsp[0])
@@ -229,7 +229,7 @@ routes = (app) ->
 							notns.push notn
 							cb()
 					, ->
-						res.r.notifications = notns
+						res.r.notifications = (_.sortBy notns, 'notification_id').reverse()
 						next()
 			else
 				next()
