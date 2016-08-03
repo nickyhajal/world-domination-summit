@@ -229,7 +229,7 @@ routes = (app) ->
 							notns.push notn
 							cb()
 					, ->
-						res.r.notifications = (_.sortBy notns, 'notification_id').reverse()
+						res.r.notifications = (_.sortBy notns, 'notification_id')
 						next()
 			else
 				next()
