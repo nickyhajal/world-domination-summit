@@ -256,6 +256,7 @@ routes = (app) ->
 
 		mark_read_notifications: (req, res, next) ->
 			if req.me? and req.me
+				tk 'UPDATE NOTIFICATIONS'
 				knex('notifications')
 				.where('user_id', req.me.get('user_id'))
 				.update

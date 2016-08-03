@@ -40,6 +40,7 @@ routes = (app) ->
                 read: 0
                 clicked: 0
               existing.save()
+              existing.created()
             else
               Notification.forge
                 type: 'message'
