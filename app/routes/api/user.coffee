@@ -261,6 +261,10 @@ routes = (app) ->
 				.where('user_id', req.me.get('user_id'))
 				.update
 					read: '1'
+				.then (rsp) ->
+					tk rsp
+				, (err) ->
+					console.error(err)
 			next()
 
 		logout: (req, res, next) ->
