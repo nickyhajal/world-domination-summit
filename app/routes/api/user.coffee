@@ -830,18 +830,18 @@ routes = (app) ->
 			else
 				next()
 
-		get_notifications: (req, res, next) ->
-			if req.me
-				Notifications.forge()
-				.query("where", "user_id", "=", req.me.get('user_id'))
-				.fetch()
-				.then (notifications) ->
-					res.r.notifications = notifications.models
-					next()
-				, (err) ->
-					console.error err
-			else
-				next()
+		# get_notifications: (req, res, next) ->
+		# 	if req.me
+		# 		Notifications.forge()
+		# 		.query("where", "user_id", "=", req.me.get('user_id'))
+		# 		.fetch()
+		# 		.then (notifications) ->
+		# 			res.r.notifications = notifications.models
+		# 			next()
+		# 		, (err) ->
+		# 			console.error err
+		# 	else
+		# 		next()
 
 		get_unread_notifications: (req, res, next) ->
 			if req.me
