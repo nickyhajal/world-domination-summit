@@ -114,12 +114,13 @@ routes = (app) ->
 									.then (user) ->
 										user.set('password', null)
 										unless req.query.inc_hash?
+											block = []
 											user.set('hash', null)
-										if req.me.get('user_id') != user.get('user_id')
-											block = ['address', 'phone', 'pub_loc', 'pub_att',
-												'intro', 'intro14', 'last_shake', 'accommodation',
-												'notification_interval', 'tour', 'academy'
-											]
+											if req.me.get('user_id') != user.get('user_id')
+												block = ['address', 'phone', 'pub_loc', 'pub_att',
+													'intro', 'intro14', 'last_shake', 'accommodation',
+													'notification_interval', 'tour', 'academy'
+												]
 											for b in block
 												delete user.attributes[b]
 										res.r.user = user
@@ -242,6 +243,15 @@ routes = (app) ->
 					next()
 			else
 				next()
+
+		mark_read_notifications: (req, res, next) ->
+			if req.me? and req.me
+				Notifications.forge()
+				.query (qb) ->
+					qb.where('user_id', req.me.get('user_id'))
+					qb.update
+						read: '1'
+			next()
 
 		logout: (req, res, next) ->
 			if req.session.ident?

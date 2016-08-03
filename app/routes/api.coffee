@@ -81,6 +81,7 @@ routes = (app) ->
 		app.get '/user/notifications', user.get_notifications
 		app.get '/user/notifications/unread', user.get_unread_notifications
 		app.get '/user/notifications/read', user.read_notifications
+		app.post '/user/notifications/read', user.mark_read_notifications
 
 		# Ticket
 		app.get '/ticket', ticket.get
