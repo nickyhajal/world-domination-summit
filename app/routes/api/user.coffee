@@ -8,7 +8,7 @@ crypto = require('crypto')
 gm = require('gm')
 Q = require('q')
 mkdirp = require('mkdirp')
-knex = require('knex')
+knex = require('knex')(process.db)
 request = require('request')
 
 routes = (app) ->
