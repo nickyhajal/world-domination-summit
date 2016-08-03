@@ -8,6 +8,7 @@ crypto = require('crypto')
 gm = require('gm')
 Q = require('q')
 mkdirp = require('mkdirp')
+knex = require('knex')
 request = require('request')
 
 routes = (app) ->
@@ -255,11 +256,10 @@ routes = (app) ->
 
 		mark_read_notifications: (req, res, next) ->
 			if req.me? and req.me
-				Notifications.forge()
-				.query (qb) ->
-					qb.where('user_id', req.me.get('user_id'))
-					qb.update
-						read: '1'
+				knex('notifications')
+				.where('user_id', req.me.get('user_id'))
+				.update
+					read: '1'
 			next()
 
 		logout: (req, res, next) ->

@@ -27,8 +27,9 @@ routes = (app) ->
         name = req.me.get('first_name')+' '+req.me.get('last_name')[0]+': '
         for to_id in req.query.user_id
           Notification.forge
-            channel_type: 'channel_id'
+            channel_type: 'message'
             channel_id: req.query.chat_id
+            user_id: to_id
           .fetch()
           .then (existing) ->
             if existing
