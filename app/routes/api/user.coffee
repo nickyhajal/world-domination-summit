@@ -115,6 +115,13 @@ routes = (app) ->
 										user.set('password', null)
 										unless req.query.inc_hash?
 											user.set('hash', null)
+										if req.me.get('user_id') != user.get('user_id')
+											block = ['address', 'phone', 'pub_loc', 'pub_att',
+												'intro', 'intro14', 'last_shake', 'accommodation',
+												'notification_interval', 'tour', 'academy'
+											]
+											for b in block
+												delete user.attributes[b]
 										res.r.user = user
 										next()
 					else
@@ -201,6 +208,39 @@ routes = (app) ->
 					return a.score - b.score
 				sortable.reverse()
 				res.r.users = sortable
+				next()
+
+		notifications: (req, res, next) ->
+			if req.me? and req.me
+				Notifications.forge()
+				.query (qb) ->
+					qb.where('user_id', req.me.get('user_id'))
+					qb.orderBy('notification_id', 'DESC')
+					qb.limit(25)
+				.fetch()
+				.then (rsp) ->
+					res.r.notifications = rsp.models
+					next()
+			else
+				next()
+
+		notifications: (req, res, next) ->
+			if req.me? and req.me and req.query.notifications
+				async.each notifications, (notn, cb) ->
+					Notification.forge
+						notification_id: notn.notification_id
+					.fetch (row) ->
+						if row? and row and row.get('user_id') == req.me.get('user_id')
+							for state in ['read', 'clicked', 'emailed']
+								row.set(state, notn[state]) if notn[state]?
+							row.save()
+							cb()
+						else
+							cb()
+					notn
+				, ->
+					next()
+			else
 				next()
 
 		logout: (req, res, next) ->
@@ -323,6 +363,7 @@ routes = (app) ->
 			else
 				res.status(410)
 				next()
+
 		update: (req, res, next) ->
 			post = _.pick(req.query, User.prototype.permittedAttributes)
 			if req.me
@@ -616,7 +657,6 @@ routes = (app) ->
 							res.r.points = points
 							next()
 
-
 		add_unote: (req, res, next) ->
 			if req.me
 				post = _.pick req.query, UserNote::permittedAttributes
@@ -646,7 +686,6 @@ routes = (app) ->
 			else
 				res.status(401)
 				next()
-
 
 		achieved: (req, res, next) ->
 			if req.me
@@ -701,7 +740,6 @@ routes = (app) ->
 			else
 				next()
 
-
 		task: (req, res, next) ->
 			task_slug = req.query.task_slug
 			RaceSubmissions.forge()
@@ -722,7 +760,6 @@ routes = (app) ->
 					next()
 			, (err) ->
 				console.error(err)
-
 
 		race_submission: (req, res, next) ->
 			if req.me and req.query.slug?.length

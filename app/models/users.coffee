@@ -88,30 +88,31 @@ User = Shelf.Model.extend
 		.fetch()
 		.then (rsp) =>
 			notns = rsp.models
-			out = []
-			for n in notns
-				if n.get('type') != 'message'
-					out.push n.attributes
-				else
-					# We don't want 20 notifications from the same message
-					# so we always replace the last with the newest
-					chat_id = n.get('link').replace('/message/', '')
-					found = false
-					for i in [0..(out.length-1)]
-						m = out[i]
-						if m.type == 'message'
-							if m.link.indexOf(chat_id)
-								found = true
-								out[i] = n.attributes
-					unless found
-						out.push n.attributes
-			o = {}
-			c = 0
-			for el in out
-				o[''+c] = el
-				c += 1
-			tk el
-			process.fire.database().ref().child('notifications/'+@get('user_id')+'/').set(o)
+			process.fire.database().ref().child('users/'+@get('user_id')+'/notification_count').set(notns.length)
+			# out = []
+			# for n in notns
+			# 	if n.get('type') != 'message'
+			# 		out.push n.attributes
+			# 	else
+			# 		# We don't want 20 notifications from the same message
+			# 		# so we always replace the last with the newest
+			# 		chat_id = n.get('link').replace('/message/', '')
+			# 		found = false
+			# 		for i in [0..(out.length-1)]
+			# 			m = out[i]
+			# 			if m.type == 'message'
+			# 				if m.link.indexOf(chat_id)
+			# 					found = true
+			# 					out[i] = n.attributes
+			# 		unless found
+			# 			out.push n.attributes
+			# o = {}
+			# c = 0
+			# for el in out
+			# 	o[''+c] = el
+			# 	c += 1
+			# tk el
+			# process.fire.database().ref().child('notifications/'+@get('user_id')+'/').set(o)
 
 
 	# Auth

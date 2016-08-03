@@ -25,19 +25,32 @@ routes = (app) ->
     message: (req, res, next) ->
       if req.me? and req.me
         name = req.me.get('first_name')+' '+req.me.get('last_name')[0]+': '
-        tk req.query.user_id
         for to_id in req.query.user_id
           Notification.forge
-            type: 'message'
-            channel_type: 'message'
-            channel_id: '0'
-            user_id: to_id
-            content: JSON.stringify
-              from_id: req.me.get('user_id')
-              content_str: _s.truncate(name+req.query.summary, 200)
-            link: '/message/'+req.query.chat_id
-            emailed: 1
-          .save()
+            channel_type: 'channel_id'
+            channel_id: req.query.chat_id
+          .fetch()
+          .then (existing) ->
+            if existing
+              existing.set
+                content: JSON.stringify
+                  from_id: req.me.get('user_id')
+                  content_str: _s.truncate(name+req.query.summary, 200)
+                read: 0
+                clicked: 0
+              existing.save()
+            else
+              Notification.forge
+                type: 'message'
+                channel_type: 'message'
+                channel_id: req.query.chat_id
+                user_id: to_id
+                content: JSON.stringify
+                  from_id: req.me.get('user_id')
+                  content_str: _s.truncate(name+req.query.summary, 200)
+                link: '/message/'+req.query.chat_id
+                emailed: 1
+              .save()
         next()
       else
         next()
