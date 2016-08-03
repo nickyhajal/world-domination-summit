@@ -210,7 +210,7 @@ routes = (app) ->
 				res.r.users = sortable
 				next()
 
-		notifications: (req, res, next) ->
+		get_notifications: (req, res, next) ->
 			if req.me? and req.me
 				Notifications.forge()
 				.query (qb) ->
@@ -224,7 +224,7 @@ routes = (app) ->
 			else
 				next()
 
-		notifications: (req, res, next) ->
+		upd_notifications: (req, res, next) ->
 			if req.me? and req.me and req.query.notifications
 				async.each notifications, (notn, cb) ->
 					Notification.forge
