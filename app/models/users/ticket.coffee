@@ -21,7 +21,7 @@ ticket =
       .then (ticket) =>
         ticket_ids.push ticket.get('ticket_id')
         cb()
-    , ->
+    , =>
       dfr.resolve(ticket_ids)
       @addToList('WDS '+(process.year+1)+ ' Pre-Orders')
       .then =>
