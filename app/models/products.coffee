@@ -133,7 +133,10 @@ POST =
 					qb.where('type', '360')
 				.fetch()
 				.then (rsp) ->
+					tk rsp.models.length
 					process.fire.database().ref().child('state/pre/sold').set(rsp.models.length)
+				, (err) ->
+					console.err(error)
 				transaction.set('meta', JSON.stringify(tickets))
 				transaction.save()
 				dfr.resolve({rsp: {tickets: tickets, user: user}})
