@@ -17,6 +17,7 @@ Notification = Shelf.Model.extend
 	]
 	initialize: ->
 		this.on 'created', this.created, this
+		this.on 'saving', this.saving, this
 	created: ->
 		user_id = @get('user_id')
 		[User, Users] = require './users'
