@@ -10,7 +10,7 @@ ticket =
     dfr = Q.defer()
     ticket_ids = []
     @set('pre17', '1')
-    async.each [0..quantity], (i, cb) ->
+    async.each [0..quantity], (i, cb) =>
       Ticket.forge
         type: '360'
         user_id: @get('user_id')
@@ -18,7 +18,7 @@ ticket =
         year: (process.year+1)
       .save()
       .then (ticket) =>
-        ticket_ids.push ticket
+        ticket_ids.push ticket.get('ticket_id')
         cb()
     , ->
       dfr.resolve(ticket_ids)
