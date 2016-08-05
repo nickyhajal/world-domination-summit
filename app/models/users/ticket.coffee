@@ -18,7 +18,7 @@ ticket =
         year: (process.year+1)
       .save()
       .then (ticket) =>
-        ticket_ids.push ticket.get('ticket_id')
+        ticket_ids.push ticket
         cb()
     , ->
       dfr.resolve(ticket_ids)
