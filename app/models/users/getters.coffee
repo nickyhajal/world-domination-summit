@@ -16,6 +16,7 @@ countries = require('country-data').countries
 [Feed, Feeds] = require '../feeds'
 [EventRsvp, EventRsvps] = require '../event_rsvps'
 [Achievement, Achievements] = require '../achievements'
+[Registration, Registrations] = require '../registrations'
 
 getters =
 	getMe: ->
@@ -36,11 +37,13 @@ getters =
 							.then (user) =>
 								@getFire()
 								.then (user) =>
-									if user.get('password')?.length
-										user.set('has_pw', true)
-									if user.get('user_name')?.length  is 40
-										user.set('user_name', '')
-									dfr.resolve(user)
+									@getRegistered()
+									.then (user) =>
+										if user.get('password')?.length
+											user.set('has_pw', true)
+										if user.get('user_name')?.length  is 40
+											user.set('user_name', '')
+										dfr.resolve(user)
 		return dfr.promise
 
 	getFire: ->
@@ -227,6 +230,21 @@ getters =
 		return dfr.promise
 
 	getFollowingIds: ->
+
+	getRegistration: ->
+		dfr = Q.defer()
+		Registrations.forge().query (qb) =>
+			qb.where('user_id', @get('user_id'))
+			qb.where('event_id', '1')
+			qb.where('year', process.yr)
+		.fetch()
+		.then (rsp) =>
+			if rsp.models.length
+				@set('registered', 1)
+			else
+				@set('registered', 0)
+			dfr.resove(@)
+		dfr.promise
 
 	getRsvps: ->
 		dfr = Q.defer()
