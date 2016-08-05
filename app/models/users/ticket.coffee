@@ -23,7 +23,7 @@ ticket =
         cb()
     , ->
       dfr.resolve(ticket_ids)
-      @addToList('WDS '+(process.year+1)+ ' Attendees')
+      @addToList('WDS '+(process.year+1)+ ' Pre-Orders')
       .then =>
         promo = 'preorder'
         subject = "You're coming to WDS 2017! Awesome!"
