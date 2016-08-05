@@ -1,4 +1,5 @@
 Q = require('q')
+async = require('async')
 
 ##
 
