@@ -22,12 +22,12 @@ ticket =
         ticket_ids.push ticket.get('ticket_id')
         cb()
     , =>
-      dfr.resolve(ticket_ids)
-      @addToList('WDS '+(process.year+1)+ ' Pre-Orders')
+      @addToList('WDS 2017 Pre-Orders')
       .then =>
         promo = 'preorder'
         subject = "You're coming to WDS 2017! Awesome!"
         @sendEmail(promo, subject)
+      dfr.resolve(ticket_ids)
     , (err) ->
       console.error err
     return dfr.promise
