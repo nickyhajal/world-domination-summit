@@ -27,7 +27,7 @@ ticket =
       .then =>
         promo = 'preorder'
         subject = "You're coming to WDS 2017! Awesome!"
-       #   @sendEmail(promo, subject)
+        @sendEmail(promo, subject)
     , (err) ->
       console.error err
     return dfr.promise
