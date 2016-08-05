@@ -13,7 +13,6 @@ ticket =
     async.each [0..quantity], (i, cb) ->
       Ticket.forge
         type: '360'
-        eventbrite_id: eventbrite_id
         user_id: @get('user_id')
         purchaser_id: @get('user_id')
         year: (process.year+1)
