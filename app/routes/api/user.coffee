@@ -237,6 +237,7 @@ routes = (app) ->
 
 		upd_notifications: (req, res, next) ->
 			if req.me? and req.me and req.query.notifications
+				tk req.query
 				async.each req.query.notifications, (notn, cb) ->
 					tk notn
 					Notification.forge
