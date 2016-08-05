@@ -164,6 +164,7 @@ User = Shelf.Model.extend
 	isFollowing: twitter.isFollowing
 
 	# Ticket
+	preregisterTicket: ticket.preregisterTicket
 	registerTicket: ticket.registerTicket
 	connectTicket: ticket.connectTicket
 	cancelTicket: ticket.cancelTicket

@@ -5,6 +5,31 @@ Q = require('q')
 [Ticket, Tickets] = require '../tickets'
 
 ticket =
+  preregisterTicket: (quantity = 1) ->
+    dfr = Q.defer()
+    ticket_ids = []
+    @set('pre17', '1')
+    async.each [0..quantity], (i, cb) ->
+      Ticket.forge
+        type: '360'
+        eventbrite_id: eventbrite_id
+        user_id: @get('user_id')
+        purchaser_id: @get('user_id')
+        year: (process.year+1)
+      .save()
+      .then (ticket) =>
+        ticket_ids.push ticket.get('ticket_id')
+        cb()
+    , ->
+      dfr.resolve(ticket_ids)
+      @addToList('WDS '+(process.year+1)+ ' Attendees')
+      .then =>
+        promo = 'preorder'
+        subject = "You're coming to WDS 2017! Awesome!"
+       #   @sendEmail(promo, subject)
+    , (err) ->
+      console.error err
+    return dfr.promise
   registerTicket: (eventbrite_id, returning = false, transfer_from = null) ->
     dfr = Q.defer()
     Ticket.forge

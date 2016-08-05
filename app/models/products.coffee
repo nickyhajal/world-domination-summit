@@ -115,6 +115,31 @@ POST =
 						ev.sendAcademyConfirmation(user_id)
 		return dfr.promise
 
+	wds2017: (transaction, meta) ->
+		[User, Users] = require('./users')
+		dfr = Q.defer()
+		User.forge
+			user_id: transaction.get('user_id')
+		.fetch()
+		.then (user) ->
+			user.preregisterTicket(transaction.get('quantity'))
+			.then (tickets) ->
+				process.fire.database().ref().child('presales/').push
+					user_id: user.get('user_id')
+					name: user.get('first_name')+' '+user.get('last_name')
+					created_at: (+(new Date()))
+				Tickets.forge().query (qb) ->
+					qb.where('year', '2017')
+					qb.where('type', '360')
+				.fetch()
+				.then (rsp) ->
+					process.fire.database().ref().child('state/pre/sold').set(rsp.length)
+				transaction.set('meta', JSON.stringify(tickets))
+				transaction.save()
+				dfr.resolve({rsp: {tickets: tickets, user: user}})
+		dfr.resolve({})
+		return dfr.promise
+
 	xfer: (transaction, meta) ->
 		[User, Users] = require('./users')
 		dfr = Q.defer()
