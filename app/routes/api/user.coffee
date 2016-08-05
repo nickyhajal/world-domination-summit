@@ -238,10 +238,12 @@ routes = (app) ->
 		upd_notifications: (req, res, next) ->
 			if req.me? and req.me and req.query.notifications
 				async.each req.query.notifications, (notn, cb) ->
+					tk notn
 					Notification.forge
 						notification_id: notn.notification_id
 					.fetch()
 					.then (row) ->
+						tk row
 						if row? and row and row.get('user_id') == req.me.get('user_id')
 							for state in ['read', 'clicked', 'emailed']
 								row.set(state, notn[state]) if notn[state]?
