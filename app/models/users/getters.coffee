@@ -66,7 +66,8 @@ getters =
 			dfr.resolve(@)
 
 		if existing? and existing.length
-			dfr.resolve(@)
+			genFire()
+			# dfr.resolve(@)
 		else
 			genFire()
 		return dfr.promise
