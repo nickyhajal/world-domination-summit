@@ -24,7 +24,7 @@ Notification = Shelf.Model.extend
 		User.forge
 			user_id: user_id
 		.processNotifications()
-		.then (count) ->
+		.then (count) =>
 			Notifications::notificationText(this, false, true)
 			.then (ntrsp) =>
 				if count < 1
