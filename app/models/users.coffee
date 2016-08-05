@@ -81,6 +81,7 @@ User = Shelf.Model.extend
 			@syncEmailWithTicket()
 
 	processNotifications: ->
+		dfr = Q.defer()
 		[Notification, Notifications] = require('./notifications')
 		Notifications.forge().query (qb) =>
 			qb.where('user_id', @get('user_id'))
@@ -89,6 +90,8 @@ User = Shelf.Model.extend
 		.then (rsp) =>
 			notns = rsp.models
 			process.fire.database().ref().child('users/'+@get('user_id')+'/notification_count').set(notns.length)
+			dfr.resolve(notns.length)
+		dfr.promise
 			# out = []
 			# for n in notns
 			# 	if n.get('type') != 'message'

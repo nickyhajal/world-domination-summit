@@ -24,53 +24,55 @@ Notification = Shelf.Model.extend
 		User.forge
 			user_id: user_id
 		.processNotifications()
-		Notifications::notificationText(this, false, true)
-		.then (ntrsp) =>
-			str = ntrsp[0]
-			user = ntrsp[1]
-			Devices.forge()
-			.query('where', 'user_id', user_id)
-			.query('where', 'type', 'ios')
-			.fetch()
-			.then (rsp) =>
-				devices = rsp.models
-				tokens = []
-				note = new apn.Notification()
-				note.alert = str
-				note.payload = {content: @get('content'), type: @get('type'), link: @get('link')}
-				note.badge = -1
-				note.expiry = Math.floor(Date.now() / 1000) + 3600;
-				for device in devices
-					d = new apn.Device(device.get('token'))
-					tk note
-					tk d
-					process.APN.pushNotification(note, d)
-			Devices.forge()
-			.query('where', 'user_id', user_id)
-			.query('where', 'type', 'and')
-			.fetch()
-			.then (rsp) =>
-				devices = rsp.models
-				tokens = []
-				for device in devices
-					token = device.get('token')
-					message = new gcm.Message
-						collapseKey: "WDS Notifications"
-						data:
-							title: "WDS App"
-							message: str
-							id: @get("notification_id")
-							user_id: user.get('user_id')
-							content: @get('content')
-							type: @get('type')
-							link: @get('link')
-					# tk "GCM SEND:"
-					process.gcmSender.send message, [token], (err, result) ->
-						if err
-							tk "GCM ERR"
-							console.error err
-						else
-							tk "GCM SENT"
+		.then (count) ->
+			Notifications::notificationText(this, false, true)
+			.then (ntrsp) =>
+				if count < 1
+					count = -1
+				str = ntrsp[0]
+				user = ntrsp[1]
+				Devices.forge()
+				.query('where', 'user_id', user_id)
+				.query('where', 'type', 'ios')
+				.fetch()
+				.then (rsp) =>
+					devices = rsp.models
+					tokens = []
+					note = new apn.Notification()
+					note.alert = str
+					note.payload = {content: @get('content'), type: @get('type'), link: @get('link')}
+					note.badge = count
+					note.sound = 'notify'
+					note.expiry = Math.floor(Date.now() / 1000) + 3600;
+					for device in devices
+						d = new apn.Device(device.get('token'))
+						process.APN.pushNotification(note, d)
+				Devices.forge()
+				.query('where', 'user_id', user_id)
+				.query('where', 'type', 'and')
+				.fetch()
+				.then (rsp) =>
+					devices = rsp.models
+					tokens = []
+					for device in devices
+						token = device.get('token')
+						message = new gcm.Message
+							collapseKey: "WDS Notifications"
+							data:
+								title: "WDS App"
+								message: str
+								id: @get("notification_id")
+								user_id: user.get('user_id')
+								content: @get('content')
+								type: @get('type')
+								link: @get('link')
+						# tk "GCM SEND:"
+						process.gcmSender.send message, [token], (err, result) ->
+							if err
+								tk "GCM ERR"
+								console.error err
+							else
+								tk "GCM SENT"
 						# 	tk result
 
 Notifications = Shelf.Collection.extend
