@@ -237,7 +237,7 @@ routes = (app) ->
 
 		upd_notifications: (req, res, next) ->
 			if req.me? and req.me and req.query.notifications
-				async.each notifications, (notn, cb) ->
+				async.each req.query.notifications, (notn, cb) ->
 					Notification.forge
 						notification_id: notn.notification_id
 					.fetch (row) ->
