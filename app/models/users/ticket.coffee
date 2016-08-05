@@ -16,7 +16,7 @@ ticket =
         type: '360'
         user_id: @get('user_id')
         purchaser_id: @get('user_id')
-        year: (process.year+1)
+        year: '2017'
       .save()
       .then (ticket) =>
         ticket_ids.push ticket.get('ticket_id')
