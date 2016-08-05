@@ -243,7 +243,7 @@ getters =
 				@set('registered', 1)
 			else
 				@set('registered', 0)
-			dfr.resove(@)
+			dfr.resolve(@)
 		dfr.promise
 
 	getRsvps: ->
