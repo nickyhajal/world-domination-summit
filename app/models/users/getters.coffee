@@ -37,7 +37,7 @@ getters =
 							.then (user) =>
 								@getFire()
 								.then (user) =>
-									@getRegistered()
+									@getRegistration()
 									.then (user) =>
 										if user.get('password')?.length
 											user.set('has_pw', true)
