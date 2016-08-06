@@ -52,6 +52,7 @@ routes = (app) ->
 		app.post '/user/interest', user.add_interest
 		app.post '/user/connection', user.add_connection
 		app.post '/user/notifications', user.upd_notifications
+		app.post '/user/story', user.post_story
 
 		#
 		app.post '/message', notifications.message

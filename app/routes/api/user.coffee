@@ -212,6 +212,25 @@ routes = (app) ->
 				res.r.users = sortable
 				next()
 
+		post_story: (req, res, next) ->
+			if req.me? and req.me and req.query.story? and req.query.phone?
+				name = req.me.get('first_name')+' '+req.me.get('last_name')
+				knex('stories')
+				.insert
+					user_id: req.me.get('user_id')
+					phone: req.query.phone
+					story: req.query.story
+					User.forge
+						user_id: '216'
+					.fetch()
+					.then (jolie) ->
+						parms =
+							name: name
+							phone: req.query.phone
+							story: req.query.story
+						jolie.sendEmail('WDS_atnstory', 'New Attendee Story Submitted!', params)
+			next()
+
 		get_notifications: (req, res, next) ->
 			if req.me? and req.me
 				Notifications.forge()
@@ -260,7 +279,6 @@ routes = (app) ->
 
 		mark_read_notifications: (req, res, next) ->
 			if req.me? and req.me
-				tk 'UPDATE NOTIFICATIONS'
 				knex('notifications')
 				.where('user_id', req.me.get('user_id'))
 				.update
