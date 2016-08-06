@@ -217,7 +217,7 @@ routes = (app) ->
 				Notifications.forge()
 				.query (qb) ->
 					qb.where('user_id', req.me.get('user_id'))
-					qb.orderBy('notification_id', 'DESC')
+					qb.orderBy('updated_at', 'DESC')
 					qb.limit(25)
 				.fetch()
 				.then (rsp) ->
