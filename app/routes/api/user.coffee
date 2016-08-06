@@ -220,15 +220,15 @@ routes = (app) ->
 					user_id: req.me.get('user_id')
 					phone: req.query.phone
 					story: req.query.story
-					User.forge
-						user_id: '216'
-					.fetch()
-					.then (jolie) ->
-						parms =
-							name: name
-							phone: req.query.phone
-							story: req.query.story
-						jolie.sendEmail('WDS_atnstory', 'New Attendee Story Submitted!', params)
+				User.forge
+					user_id: '216'
+				.fetch()
+				.then (jolie) ->
+					parms =
+						name: name
+						phone: req.query.phone
+						story: req.query.story
+					jolie.sendEmail('WDS_atnstory', 'New Attendee Story Submitted!', params)
 			next()
 
 		get_notifications: (req, res, next) ->
