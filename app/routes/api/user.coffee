@@ -213,9 +213,12 @@ routes = (app) ->
 				next()
 
 		post_story: (req, res, next) ->
+			tk req.me
+			tk req.query
 			if req.me? and req.me and req.query.story? and req.query.phone?
 				name = req.me.get('first_name')+' '+req.me.get('last_name')
 				tk name
+				tk req.query
 				knex('stories')
 				.insert
 					user_id: req.me.get('user_id')
