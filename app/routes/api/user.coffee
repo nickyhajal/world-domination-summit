@@ -220,15 +220,16 @@ routes = (app) ->
 				tk name
 				tk req.query
 				knex('stories')
-				.insert
+				.insert({
 					user_id: req.me.get('user_id')
 					phone: req.query.phone
 					story: req.query.story
+				})
 				User.forge
 					user_id: '216'
 				.fetch()
 				.then (jolie) ->
-					parms =
+					params =
 						name: name
 						phone: req.query.phone
 						story: req.query.story
