@@ -225,15 +225,27 @@ routes = (app) ->
 					phone: req.query.phone
 					story: req.query.story
 				})
-				User.forge
-					user_id: '216'
-				.fetch()
-				.then (jolie) ->
-					params =
-						name: name
-						phone: req.query.phone
-						story: req.query.story
-					jolie.sendEmail('WDS_atnstory', 'New Attendee Story Submitted!', params)
+				.then (rsp) =>
+					User.forge
+						user_id: '216'
+					.fetch()
+					.then (jolie) ->
+						params =
+							name: name
+							phone: req.query.phone
+							story: req.query.story
+						jolie.sendEmail('atnstory', 'New Attendee Story Submitted!', params)
+						User.forge
+							user_id: '176'
+						.fetch()
+						.then (nicky) ->
+							params =
+								name: name
+								phone: req.query.phone
+								story: req.query.story
+							nicky.sendEmail('atnstory', 'New Attendee Story Submitted!', params)
+				, (err) =>
+					console.error(err)
 			next()
 
 		get_notifications: (req, res, next) ->
