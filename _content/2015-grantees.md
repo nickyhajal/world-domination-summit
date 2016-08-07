@@ -16,17 +16,6 @@ There are many steps in her journey to build the school, and the Scholarship for
 
 <div class="line-canvas"></div>
 
-### Denise Logan
-
-<img src="http://imgs.wds.fm/foundation_denise.jpg" alt="WDS 2015 Foundation Grantee, Denise Logan" width="600"/>
-
-Imagine yourself right now as a seven year old child whose family has just lost everything in a flood. Or as a ten year old who has just landed in a shelter because the abuse at home got so bad that mom finally took the kids and fled for her life. What kind of dreams would fill your sleep? Who would be there reminding you “I believe in you! You can do it!” What would it mean to you to open a beautiful gift box and see inside a stuffed bear, shiny barrettes, a box of pencils, a clean t-shirt and a new toothbrush?
-
-The Dream Box Project works with volunteers from all over North America to pack boxes full of school supplies, toiletries and toys, before delivering them to children in distressed living situations. Each box lid is decorated with a message of hope from the volunteer responsible. Not only does the project making a difference in the lives of children everywhere, but engages the hearts and minds of volunteers by enabling them to help non-profit organizations in a meaningful way. 
-
-Denise will be using her Scholarship funds to systemize her process, so groups all over the world can launch box building events of their own. She is currently looking for assistance with graphic design, system mapping, shipping logistics and management, and video production. If you are interested in contributing to The Dream Box Project, visit [thedreamboxproject.org](http://thedreamboxproject.org) or email [denise@thedreamboxproject.org](http:/denise@thedreamboxproject.org).
-<div class="line-canvas"></div>
-
 ### Emily Wray
 
 <img src="http://imgs.wds.fm/foundation_emily.jpg" alt="WDS 2015 Foundation Grantee, Emily Wray" width="600"/>
