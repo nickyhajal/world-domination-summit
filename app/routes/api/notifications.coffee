@@ -5,6 +5,7 @@ apn = require('apn')
 gcm = require('node-gcm')
 _ = require('underscore')
 _s = require('underscore.string')
+moment = require('moment')
 
 routes = (app) ->
 
@@ -38,6 +39,7 @@ routes = (app) ->
                   from_id: req.me.get('user_id')
                   content_str: _s.truncate(name+req.query.summary, 200)
                 read: 0
+                created_at: moment().format('YYYY-MM-DD HH:mm:ss')
                 clicked: 0
               existing.save()
               existing.created()
