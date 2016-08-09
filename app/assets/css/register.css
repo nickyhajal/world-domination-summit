@@ -38,7 +38,7 @@ div#search_start {
     width:                      30px;
 }
 a.is-kinded {
-    background:                 rgb(250, 254, 197) none repeat scroll 0px 0px;
+    background:                 rgb(250, 254, 197) none repeat scroll 0px 0px ! important;
 }
 .search-row {
     background:                 rgb(252, 250, 242) none repeat scroll 0px 0px;
