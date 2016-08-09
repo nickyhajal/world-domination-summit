@@ -178,6 +178,7 @@ routes = (app) ->
 		app.get '/admin/locations', admin.process_locations
 		app.get '/admin/fixattendees', admin.process_attendees
 		app.get '/admin/events', event.get_admin
+		app.get '/admin/event-export', admin.event_export
 		app.get '/admin/event_accept', event.accept
 		app.get '/admin/transfers', admin.transfers
 		app.get '/admin/event_reject', event.reject

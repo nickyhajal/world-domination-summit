@@ -1,0 +1,9 @@
+div(id="events-shell")
+  h2 Event Export
+  form(id="admin-event-export", method="post", action="/api/admin/event-export")
+    div(class="form-section")
+      label Event
+      div(class="form-box")
+        select(name="event_id", class="select2", style="width:540px", data-search="true") {{ events }}
+    div(class="form-section")
+      input(type="submit", value="Download", class="button")

@@ -3,6 +3,7 @@ _s = require('underscore.string')
 routes = (app) ->
 	[User, Users] = require('../../models/users')
 	[Event, Events] = require('../../models/events')
+	[EventRsvp, EventRsvps] = require('../../models/event_rsvps')
 	[EventHost, EventHosts] = require('../../models/event_hosts')
 	[RaceSubmission, RaceSubmissions] = require('../../models/race_submissions')
 	[Achievement, Achievements] = require('../../models/achievements')
@@ -108,6 +109,38 @@ routes = (app) ->
 			else
 				res.r.msg = 'Not logged in'
 				next()
+
+		event_export: (req, res, next) ->
+			if req.me.hasCapability('schedule')
+				res.status(200)
+				Event.forge
+					event_id: req.query.event_id
+				.fetch()
+				.then (ev) ->
+					slug = _.truncate ev.get('slug'), 20, ''
+					res.attachment slug+'-rsvps-'+process.year+'.csv'
+				ts = []
+
+				# Headers
+				response = "sep=;\n"
+				response += "Name;To Email\n"
+
+				# Attendee list for current year
+				columns = {columns: ['event_rsvps.event_id', 'first_name', 'last_name', 'email']}
+				EventRsvps.forge()
+				.query (qb) ->
+					qb.where('event_id', req.query.event_id)
+					qb.orderBy('rsvp_id')
+					qb.join('users', 'users.user_id', '=', 'transfers.user_id')
+				.fetch(columns)
+				.then (rsp) ->
+					for t in rsp.models
+						response += t.get('first_name')+' '+t.get('last_name')+';'
+						response += t.email+';'
+						response += "\n"
+					res.send response
+			else
+				res.status(401)
 
 		transfer_export: (req, res, next) ->
 			if req.me.hasCapability('manifest')
