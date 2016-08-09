@@ -131,7 +131,7 @@ routes = (app) ->
 				.query (qb) ->
 					qb.where('event_id', req.query.event_id)
 					qb.orderBy('rsvp_id')
-					qb.join('users', 'users.user_id', '=', 'transfers.user_id')
+					qb.join('users', 'users.user_id', '=', 'event_rsvps.user_id')
 				.fetch(columns)
 				.then (rsp) ->
 					for t in rsp.models
