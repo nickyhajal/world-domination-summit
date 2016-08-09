@@ -1,6 +1,4 @@
 ap.Views.admin_event_export = XView.extend
-	ticketTimo: 0
-	events:
 	initialize: ->
 		ap.api 'get admin/events', {types: ['academy', 'meetup', 'activity', 'spark_session']}, (rsp) =>
 			ehtml = ''
