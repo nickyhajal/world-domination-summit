@@ -137,8 +137,8 @@ routes = (app) ->
 				.fetch(columns)
 				.then (rsp) ->
 					for t in rsp.models
-						response += t.get('first_name')+' '+t.get('last_name')+';'
-						response += t.get('email')+';'
+						response += _s.trim(t.get('first_name'))+' '+_s.trim(t.get('last_name'))+';'
+						response += _s.trim(t.get('email'))+';'
 						response += "\n"
 					res.send response
 			else
