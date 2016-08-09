@@ -21,21 +21,24 @@ div#search_start {
     box-sizing:                 border-box;
     -moz-box-sizing:            border-box;
     -webkit-box-sizing:         border-box;
-    content:                    "✓";
     position:                   absolute;
     text-align:                 center;
-    background:                 rgb(246, 251, 164) none repeat scroll 0px 0px;
     border-radius:              50%;
     -moz-border-radius:         50%;
     -webkit-border-radius:      50%;
     padding:                    1px 0px;
     color:                      rgba(166, 167, 145, 0.97);
     border:                     2px solid rgb(177, 186, 30);
-    width:                      30px;
-    height:                     30px;
     font-size:                  15pt;
     top:                        19px;
     right:                      71px;
+    background:                 rgb(177, 186, 30) none repeat scroll 0px 0px;
+    content:                    "";
+    height:                     30px;
+    width:                      30px;
+}
+a.is-kinded {
+    background:                 rgb(250, 254, 197) none repeat scroll 0px 0px;
 }
 .search-row {
     background:                 rgb(252, 250, 242) none repeat scroll 0px 0px;
