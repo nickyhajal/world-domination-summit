@@ -1,5 +1,6 @@
 async = require 'async'
 _s = require('underscore.string')
+moment = require('moment')
 routes = (app) ->
 	[User, Users] = require('../../models/users')
 	[Event, Events] = require('../../models/events')
@@ -117,8 +118,9 @@ routes = (app) ->
 					event_id: req.query.event_id
 				.fetch()
 				.then (ev) ->
+					start = _s.slugify(moment(ev.get('start')).format('MMM D'))
 					slug = _s.truncate ev.get('slug'), 20, ''
-					res.attachment slug+'-rsvps-'+process.year+'.csv'
+					res.attachment slug+'-'+start+'-rsvps-'+process.year+'.csv'
 				ts = []
 
 				# Headers
