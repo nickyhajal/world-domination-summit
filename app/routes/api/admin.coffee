@@ -117,7 +117,7 @@ routes = (app) ->
 					event_id: req.query.event_id
 				.fetch()
 				.then (ev) ->
-					slug = _.truncate ev.get('slug'), 20, ''
+					slug = _s.truncate ev.get('slug'), 20, ''
 					res.attachment slug+'-rsvps-'+process.year+'.csv'
 				ts = []
 
