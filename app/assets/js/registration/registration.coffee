@@ -117,8 +117,8 @@ ap.search = ->
 	if ev and ap.event_id > 20 and (''+ap.event_id isnt '999999')
 		final = []
 		for r in results
-			if ev.rsvps.indexOf(r.get('user_id')) > -1
-				final.push(r)
+			final.push(r)
+			# if ev.rsvps.indexOf(r.get('user_id')) > -1
 		results = final
 	html = ''
 	count = 0
