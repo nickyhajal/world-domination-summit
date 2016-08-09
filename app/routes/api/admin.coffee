@@ -128,7 +128,7 @@ routes = (app) ->
 				response += "Name;To Email;Date RSVPd\n"
 
 				# Attendee list for current year
-				columns = {columns: ['event_rsvps.event_id', 'first_name', 'last_name', 'email', 'event_rsvps.created_at']}
+				columns = {columns: ['event_rsvps.event_id', 'first_name', 'last_name', 'email', 'event_rsvps.stamp']}
 				EventRsvps.forge()
 				.query (qb) ->
 					qb.where('event_id', req.query.event_id)
@@ -139,7 +139,7 @@ routes = (app) ->
 					for t in rsp.models
 						response += _s.trim(t.get('first_name'))+' '+_s.trim(t.get('last_name'))+';'
 						response += _s.trim(t.get('email'))+';'
-						response += t.get('created_at')+';'
+						response += t.get('stamp')+';'
 						response += "\n"
 					res.send response
 			else
