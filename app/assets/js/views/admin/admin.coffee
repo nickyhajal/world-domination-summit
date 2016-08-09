@@ -28,6 +28,7 @@ ap.Views.admin = XView.extend
                                                 {page: 'schedule', title: 'WDS Schedule'}
                                                 {page: 'add-event', title: 'Add an Event'}
                                                 {page: 'event-review', title: 'Event Review'}
+                                                {page: 'event-export', title: 'Event Export'}
                                                 {page: 'meetups', title: 'Meetups'}
                                                 {page: 'meetup-review', title: 'Meetup Review'}
                                         ]
