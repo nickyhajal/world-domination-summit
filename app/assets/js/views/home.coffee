@@ -163,6 +163,7 @@ window.wall =
 			, 1000
 
 	autoScroll: ->
+		return false
 		rightNow = new Date().getTime()
 
 		unless @autoScrollTimerStart?
