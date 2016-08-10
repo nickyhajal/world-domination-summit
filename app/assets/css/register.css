@@ -40,6 +40,12 @@ div#search_start {
 a.is-kinded {
     background:                 rgb(250, 254, 197) none repeat scroll 0px 0px ! important;
 }
+.kindness-row.not-registered {
+    opacity:                    0.6;
+    -ms-filter:                 "alpha(opacity=60)";
+    filter:                     alpha(opacity=60);
+    zoom:                       1;
+}
 .search-row {
     background:                 rgb(252, 250, 242) none repeat scroll 0px 0px;
     clear:                      both;

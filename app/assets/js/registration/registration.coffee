@@ -142,9 +142,9 @@ ap.search = ->
 				if result.get('kinded')? and ''+result.get('kinded') is '1'
 					kclass = 'is-kinded'
 				if(ap.registrations[result.get('user_id')+'_1'])
-					kclass += 'is-registered'
+					kclass += ' is-registered'
 				else
-					kclass += 'not-registered'
+					kclass += ' not-registered'
 
 				html += '
 					<a href="#" class="search-row kindness-row '+kclass+'" id="krow-'+result.get('user_id')+'" data-user_id="'+result.get('user_id')+'">
