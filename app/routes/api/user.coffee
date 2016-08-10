@@ -692,7 +692,7 @@ routes = (app) ->
 						res.r.successes = successes
 						regs = {}
 						for reg in all_time.models
-							regs[reg.get('user_id')] = '1'
+							regs[reg.get('user_id')+'_'+reg.get('event_id')] = '1'
 						res.r.registrations = regs
 						next()
 				, (err) ->
