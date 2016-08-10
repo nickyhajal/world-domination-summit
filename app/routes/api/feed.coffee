@@ -20,24 +20,29 @@ routes = (app) ->
 				post = _.pick req.query, Feed.prototype.permittedAttributes
 				post.user_id = req.me.get('user_id')
 
-				# Check if this is a duplicate post
-				uniq = moment().format('YYYY-MM-DD HH:mm') + post.content + post.user_id
-				post.hash = crypto.createHash('md5').update(uniq).digest('hex')
-				Feed.forge
-					hash: post.hash
+				if _s.trim(post.content).length > 0
+					# Check if this is a duplicate post
+					uniq = moment().format('YYYY-MM-DD HH:mm') + post.content + post.user_id
+					post.hash = crypto.createHash('md5').update(uniq).digest('hex')
+					Feed.forge
+						hash: post.hash
 
-				.fetch()
-				.then (existing) ->
-					if not existing
-						feed = Feed.forge post
-						feed
-						.save()
-						.then (feed) ->
+					.fetch()
+					.then (existing) ->
+						if not existing
+							feed = Feed.forge post
+							feed
+							.save()
+							.then (feed) ->
+								next()
+						else
+							res.r.msg = 'You already posted that!'
+							res.status(409)
 							next()
-					else
-						res.r.msg = 'You already posted that!'
-						res.status(409)
-						next()
+				else
+					res.r.msg = "You didn't submit anything!"
+					res.status(409)
+					next()
 			else
 				res.r.msg = 'You\'re not logged in!'
 				res.status(401)
