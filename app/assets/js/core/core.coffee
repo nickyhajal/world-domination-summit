@@ -67,7 +67,7 @@ ap.unbindResize = (id) ->
 
 ap.update = {}
 ap.initAssets = ->
-	assets = ['all_attendees','me','events', 'tpls', 'interests', 'speakers', 'ranks', 'tasks', 'achievements', 'places']
+	assets = ['all_attendees','me','events', 'tpls', 'interests', 'speakers', 'tasks', 'places']
 	ap.getAssets(assets)
 ap.getAssets = (assets) ->
 	tracker = ap.get('tracker')
