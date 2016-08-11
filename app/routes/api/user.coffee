@@ -143,6 +143,8 @@ routes = (app) ->
 			all = {}
 			types = req.query.types?.split(',')
 			years = req.query.years?.split(',')
+			if req.query.user_token
+				years = ['16']
 			doQuery = (col, q = false) ->
 				dfr = Q.defer()
 				_Users.query (qb) ->
