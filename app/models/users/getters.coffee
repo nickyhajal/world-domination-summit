@@ -79,6 +79,7 @@ getters =
 		.query('where', 'connections.user_id', @get('user_id'))
 		if this_year
 			q.query('where', 'created_at', '>', process.year+'-01-01 00:00:00')
+		q.query('where', 'attending'+process.yr, '1')
 		if include_user
 			columns = {columns: ['users.user_id', 'first_name', 'last_name', 'user_name', 'pic']}
 			q.query('join', 'users', 'connections.to_id', '=', 'users.user_id', 'inner')
