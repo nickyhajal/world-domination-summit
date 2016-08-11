@@ -5,70 +5,71 @@ div(id="user-manifest-shell")
 	//- div(class="tab-links", data-context="user")
 	//- 	a(class='tab-link', data-tabname="basics") Basics
 	//- 	a(class='tab-link', data-tabname="rsvps") RSVPs
-	div(id="tab-shell-user", class="user-tabs")
-		div(id="tab-panel-basics" class="tab-panel")
-			h3 Tickets
-			div(class="ticket-shell")
-			h3 Attendee Account
+	//- div(id="tab-shell-user", class="user-tabs")
+	//- 	div(id="tab-panel-basics" class="tab-panel")
+
+	h3 Tickets
+	div(class="ticket-shell")
+	h3 Attendee Account
+	div(class="form-section")
+		div(class="form-box")
+			label Unique Link
+			input(type="text", value="http://worlddominationsummit.com/{{ hash }}")
+		div(class="form-box")
+			label Profile
+			input(type="text", value="http://worlddominationsummit.com/~{{ user_name }}")
+	form(id="admin-user-update", method="post", action="#")
+		input(type="hidden", name="user_id", value="{{ user_id }}")
+		h3 Attendee Info
+		div(class="form-section")
+			div(class="form-box")
+				label First Name
+				input(name="first_name", type="text", value="{{ first_name }}")
+			div(class="form-box")
+				label Last Name
+				input(name="last_name", type="text", value="{{ last_name }}")
 			div(class="form-section")
 				div(class="form-box")
-					label Unique Link
-					input(type="text", value="http://worlddominationsummit.com/{{ hash }}")
+					label E-Mail Address
+					input(type="text", name="email", value="{{ email }} ")
+			div(class="form-section")
 				div(class="form-box")
-					label Profile
-					input(type="text", value="http://worlddominationsummit.com/~{{ user_name }}")
-			form(id="admin-user-update", method="post", action="#")
-				input(type="hidden", name="user_id", value="{{ user_id }}")
-				h3 Attendee Info
-				div(class="form-section")
-					div(class="form-box")
-						label First Name
-						input(name="first_name", type="text", value="{{ first_name }}")
-					div(class="form-box")
-						label Last Name
-						input(name="last_name", type="text", value="{{ last_name }}")
-					div(class="form-section")
-						div(class="form-box")
-							label E-Mail Address
-							input(type="text", name="email", value="{{ email }} ")
-					div(class="form-section")
-						div(class="form-box")
-							label Country
-							input(type="hidden", name="country", id="country-select", value="{{ country }}")
-					div(class="form-section")
-						div(class="form-box")
-							label Address
-							input(type="text", name="address", value="{{ address }}")
-						div(class="form-box")
-							label Address 2
-							input(type="text", name="address2", value="{{ address2 }}")
-					div(class="form-section")
-						div(class="form-box")
-							label City
-							input(type="text", name="city", value="{{ city }}")
-						div(class="form-box")
-							dive(id="region-shell", data-value="{{ region }}")
-					div(class="form-section")
-						div(class="form-box")
-							label Zip
-							input(type="text", name="zip", value="{{ zip }}")
-					div(class="form-section")
-						div(class="form-box")
-							label Type
-							select(name="type", class="select2", style="width: 300px")
-								option(value="attendee") Attendee
-								option(value="ambassador") Ambassador
-								option(value="potential-ambassador") Potential Ambassador
-								option(value="staff") Staff
-								option(value="speaker") Speaker
-								option(value="friend") Friends and Family
-						div(class="form-box")
-							label SuperPowers
-							input(type="hidden" name="capabilities_update" value="yes")
-							input(type="hidden" name="capabilities", id="capabilities-select", value="{{ capabilities }}")
-					div(class="clear")
-					div(class="form-section")
-						input(type="submit", value="Save Attendee Info", class="button")
+					label Country
+					input(type="hidden", name="country", id="country-select", value="{{ country }}")
+			div(class="form-section")
+				div(class="form-box")
+					label Address
+					input(type="text", name="address", value="{{ address }}")
+				div(class="form-box")
+					label Address 2
+					input(type="text", name="address2", value="{{ address2 }}")
+			div(class="form-section")
+				div(class="form-box")
+					label City
+					input(type="text", name="city", value="{{ city }}")
+				div(class="form-box")
+					dive(id="region-shell", data-value="{{ region }}")
+			div(class="form-section")
+				div(class="form-box")
+					label Zip
+					input(type="text", name="zip", value="{{ zip }}")
+			div(class="form-section")
+				div(class="form-box")
+					label Type
+					select(name="type", class="select2", style="width: 300px")
+						option(value="attendee") Attendee
+						option(value="ambassador") Ambassador
+						option(value="potential-ambassador") Potential Ambassador
+						option(value="staff") Staff
+						option(value="speaker") Speaker
+						option(value="friend") Friends and Family
+				div(class="form-box")
+					label SuperPowers
+					input(type="hidden" name="capabilities_update" value="yes")
+					input(type="hidden" name="capabilities", id="capabilities-select", value="{{ capabilities }}")
+			div(class="clear")
+			div(class="form-section")
+				input(type="submit", value="Save Attendee Info", class="button")
 		//- div(id="tab-panel-basics" class="tab-panel")
 		//- 	h3 Attending Events
 		//- 	div(class="event-list")
