@@ -344,7 +344,7 @@ routes = (app) ->
 						rds.expire sig, 45
 						next()
 					, (err) ->
-						console.err(err)
+						console.error(err)
 
 		academies: (req, res, next) ->
 			Events.forge()
