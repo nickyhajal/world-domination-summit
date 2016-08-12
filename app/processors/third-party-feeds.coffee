@@ -122,7 +122,7 @@ shell = (app, db) ->
 					channel_type: channel_type
 				new_feed.save()
 				.then (row) ->
-					cb row
+					# cb row
 				, (err) ->
 					err
 
