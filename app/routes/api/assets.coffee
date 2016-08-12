@@ -47,7 +47,7 @@ routes = (app) ->
 				interests: 5
 				events: 5
 				signin_events: 5
-				ranks: 1
+				ranks: 1000000
 				tasks: 5
 				places: 300
 				# achievements: 0

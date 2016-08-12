@@ -165,8 +165,8 @@ routes = (app) ->
 							c = true
 						where += ')'
 					if years?.length
-						if q and req.query.types?.length
-							where += ' AND ('
+						# if q and req.query.types?.length
+						where += ' AND ('
 						c = false
 						for y in years
 							where += ' OR ' if c
