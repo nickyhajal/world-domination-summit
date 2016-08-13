@@ -69,6 +69,7 @@
     width:                      315px;
     background-size:            auto 100% ! important;
     -webkit-background-size:    auto 100% ! important;
+    background-repeat: no-repeat;
 }
 .tpl-2 .block-5 .answer .answer_start {
     margin-left:                -15px;

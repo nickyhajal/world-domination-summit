@@ -357,15 +357,9 @@ window.wall =
 		wall.$q.append($tpl)
 
 	displayPanels: ->
-		tk 'DISPLAY PANELS'
 		if @screenMode
 			left = $('#waterfall').css('left')
 			space = wall.drawnHeight - ($(window).width() + Math.abs(parseInt(left)))
-			tk wall.drawnHeight
-			tk $(window).width()
-			tk parseInt($('#waterfall').css('left'))
-			tk '-------'
-			tk space
 			shouldLoadMore = space < $(window).width()
 		else
 			space = $('#waterfall').height() - wall.drawnHeight
@@ -376,6 +370,9 @@ window.wall =
 				_.nowReady('firstpanel')
 				_next = $(queue[0])
 				next = _next.clone()
+				if next.hasClass("tpl-2")
+					randTop = Math.random() * (100 - 30) + 30;
+					next.css('top', _.x(randTop))
 				_next.remove()
 				wall.$el.append next
 				if @screenMode
