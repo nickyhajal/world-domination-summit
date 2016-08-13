@@ -231,7 +231,7 @@ routes = (app) ->
 					.fetch()
 					.then (jolie) ->
 						params =
-							name: name
+							story_name: name
 							email: req.me.get('email')
 							phone: req.query.phone
 							story: req.query.story
@@ -241,7 +241,7 @@ routes = (app) ->
 						.fetch()
 						.then (nicky) ->
 							params =
-								name: name
+								story_name: name
 								email: req.me.get('email')
 								phone: req.query.phone
 								story: req.query.story
