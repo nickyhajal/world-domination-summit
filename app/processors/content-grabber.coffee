@@ -17,7 +17,7 @@ shell = (app, db) ->
 
 	grab = ->
 		tk 'Grab'
-		grabs = 
+		grabs =
 			featured_tweet: ->
 				tk 'Start twitter...'
 				twit.get 'favorites/list', {}, (err, twts) ->
@@ -35,6 +35,7 @@ shell = (app, db) ->
 					else
 						tk 'No new tweets.'
 			flickr_stream: ->
+
 				tk 'Start flickr...'
 				https.request(
 					host: 'api.flickr.com'
@@ -64,10 +65,10 @@ shell = (app, db) ->
 								add 'flickr_stream', uniqid, data, (row) ->
 						else
 							tk 'No new tweets.'
-							
+
 				).end()
-				
-				
+
+
 		for type, fnc of grabs
 			fnc()
 
