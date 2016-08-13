@@ -222,7 +222,6 @@ routes = (app) ->
 				knex('stories')
 				.insert({
 					user_id: req.me.get('user_id')
-					email: req.me.get('email')
 					phone: req.query.phone
 					story: req.query.story
 				})
@@ -233,6 +232,7 @@ routes = (app) ->
 					.then (jolie) ->
 						params =
 							name: name
+							email: req.me.get('email')
 							phone: req.query.phone
 							story: req.query.story
 						jolie.sendEmail('atnstory', 'New Attendee Story Submitted!', params)
@@ -242,6 +242,7 @@ routes = (app) ->
 						.then (nicky) ->
 							params =
 								name: name
+								email: req.me.get('email')
 								phone: req.query.phone
 								story: req.query.story
 							nicky.sendEmail('atnstory', 'New Attendee Story Submitted!', params)
