@@ -373,6 +373,7 @@ window.wall =
 				if next.hasClass("tpl-2")
 					randTop = Math.random() * (100 - 30) + 30;
 					next.css('top', _.x(randTop))
+					next.css('width', _.x(@widths[2]))
 				_next.remove()
 				wall.$el.append next
 				if @screenMode
