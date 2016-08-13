@@ -64,7 +64,6 @@ shell = (app, db) ->
 								add 'flickr_stream', uniqid, data, (row) ->
 						else
 							tk 'No new tweets.'
-
 				).end()
 
 
