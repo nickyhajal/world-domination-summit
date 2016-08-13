@@ -35,7 +35,6 @@ shell = (app, db) ->
 					else
 						tk 'No new tweets.'
 			flickr_stream: ->
-
 				tk 'Start flickr...'
 				https.request(
 					host: 'api.flickr.com'
