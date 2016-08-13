@@ -14,6 +14,7 @@
 #wall-queue {
     position:                   absolute;
     left:                       -9999px;
+    top:                       -9999px;
 }
 .tpl-2 .block-1 .speaker-photo {
     background-size:            100% auto ! important;

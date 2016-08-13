@@ -39,6 +39,7 @@ window.wall =
 			.on('click', '#video', wall.showVideo)
 			.on('click', '#reg-army', wall.showArmy)
 
+		@widths = [0, 990, 976, 990, 990]
 		wall.zoomFactor = 1
 		url_params = @urlParams()
 		if url_params['screenmode']=='1'
@@ -55,6 +56,25 @@ window.wall =
 		else
 			@screenMode = 0
 
+	addScreenCss: ->
+		css = '<style type="text/css">
+			#waterfall {
+				top: 0 !important;
+				height: 0;
+				width: 5850px;
+				transition: left 1s linear;
+			}
+			.wall-section {
+				float: left;
+				width: 990px;
+				clear: none !important;
+			}
+			div.tpl-4 {
+			    width: 990px;
+			}
+		</style>'
+		$('body').append(css)
+
 	checkForReset: ->
 		ap.api 'get screens/reset', {}, (rsp) ->
 			if rsp.lastResetUTC?
@@ -62,7 +82,7 @@ window.wall =
 					location.reload(true)
 		setTimeout =>
 			wall.checkForReset()
-		, 5000
+		, 50000000
 
 
 	urlParams: ->
@@ -97,6 +117,7 @@ window.wall =
 
 		@autoScroll()
 		@screenMessage()
+		@addScreenCss()
 
 	emptyDivsNoLongerVisible: ->
 		$('#waterfall').find('.wall-section.slated-for-empty').removeClass('slated-for-empty').addClass('emptied').each ->
@@ -119,20 +140,40 @@ window.wall =
 					if wall.screenMode == 1
 						wall.emptyDivsNoLongerVisible()
 
+	loadMoreContentIfWeScrolledLeftEnough: ->
+		_.whenReady 'firstpanel', =>
+			wall = window.wall
+			if wall.zoomFactor?
+				wall.displayPanels()
+				# left = parseInt(wall.$el.css('left'))
+				# # width = wall.$el.width()
+				# width = wall.drawnHeight
+				# # tk 'LEFT: '+left
+				# # tk 'WIDTH: '+ width
+				# if left > (width - (4 * $(window).width()))
+				# 	# tk '____redraw'
+				# 	# tk Math.max(Math.abs(left) + 4 * $(window).width())
+				# 	wall.$el.css('width', (Math.max(Math.abs(left) + $(window).width(), 2000)) + 'px')
+					# if wall.screenMode == 1
+					# 	wall.emptyDivsNoLongerVisible()
+
 
 	scaleForScreenMode: ->
 		_.whenReady 'firstpanel', =>
-			viewportSize = $(window).width()
+			# return false
+			viewportSize = $(window).height()
 			unless @originalContentainerSize?
-				@originalContentainerSize = $('main.contentainer').width()
+				@originalContentainerSize = 782
 			@zoomFactor = viewportSize / @originalContentainerSize
+			# tk 'ZOOM:'
+			# tk @originalContentainerSize
 
 			$('#waterfall').css('transform', 'scale(' + @zoomFactor + ')')
 				       .css('-moz-transform', 'scale(' + @zoomFactor + ')')
 				       .css('-ms-transform', 'scale(' + @zoomFactor + ')')
 				       .css('-o-transform', 'scale(' + @zoomFactor + ')')
 				       .css('-webkit-transform', 'scale(' + @zoomFactor + ')')
-				       .css('top', (1200 * @zoomFactor) + 'px')
+				       .css('left', (-600 * @zoomFactor) + 'px')
 
 			$('body').css('overflow', 'hidden')
 
@@ -160,17 +201,17 @@ window.wall =
 
 			setTimeout =>
 				wall.screenMessage()
-			, 1000
+			, 1000000
 
 	autoScroll: ->
-		return false
+		# return false
 		rightNow = new Date().getTime()
 
 		unless @autoScrollTimerStart?
 			@autoScrollTimerStart = rightNow
 
 		diff = rightNow - @autoScrollTimerStart
-		pixels = Math.round(diff / @autoScrollDelay)
+		pixels = diff / @autoScrollDelay
 
 		if diff > @autoScrollDelay
 			newDelay = 0
@@ -178,11 +219,21 @@ window.wall =
 			newDelay = @autoScrollDelay - diff
 
 		@autoScrollTimerStart = rightNow
-		window.scrollBy(0,pixels)
-
+		# # window.scrollBy((-1*pixels),0)
+		# $('#waterfall').animate {left: "-="+20}, 1000, =>
+		# 	setTimeout ->
+		# 		@autoScroll()
+		# 	, 100
+		left = parseInt(wall.$el.css('left')) - 15
+		wall.$el.css('left', _.x(left))
+		@loadMoreContentIfWeScrolledLeftEnough()
 		@autoScrollTimo = setTimeout =>
 			@autoScroll()
-		, newDelay
+		, 1000
+
+		# @autoScrollTimo = setTimeout =>
+		# 	@autoScroll()
+		# , 1000
 
 	stopAutoScroll: ->
 		if @autoScrollTimo?
@@ -227,7 +278,6 @@ window.wall =
 		if not wall.content
 			_.whenReady 'assets', =>
 				ap.api 'get content', {}, (rsp) =>
-					tk rsp
 					wall.content = rsp.content
 					for content in wall.content
 						if not wall.contByType[content.type]?
@@ -307,8 +357,20 @@ window.wall =
 		wall.$q.append($tpl)
 
 	displayPanels: ->
-		space = $('#waterfall').height() - wall.drawnHeight
-		if space > 100
+		tk 'DISPLAY PANELS'
+		if @screenMode
+			left = $('#waterfall').css('left')
+			space = wall.drawnHeight - ($(window).width() + Math.abs(parseInt(left)))
+			tk wall.drawnHeight
+			tk $(window).width()
+			tk parseInt($('#waterfall').css('left'))
+			tk '-------'
+			tk space
+			shouldLoadMore = space < $(window).width()
+		else
+			space = $('#waterfall').height() - wall.drawnHeight
+			shouldLoadMore = space > 100
+		if shouldLoadMore
 			queue = $('.wall-section', wall.$q)
 			if queue? and queue.length
 				_.nowReady('firstpanel')
@@ -316,7 +378,13 @@ window.wall =
 				next = _next.clone()
 				_next.remove()
 				wall.$el.append next
-				wall.drawnHeight += next.height()
+				if @screenMode
+
+					# This is technically width in horizontal mode
+					wall.drawnHeight += next.width()
+					wall.$el.css('width', _.x(wall.drawnHeight + 100))
+				else
+					wall.drawnHeight += next.height()
 				@postProcess next
 			queue = $('.wall-section', wall.$q)
 			if queue.length < 5
@@ -562,7 +630,6 @@ window.wall =
 						return atn
 
 		fetchFrom = wall.contByType[type] # Types left after this point = flickr_stream, featured_tweets, speaker_quotes
-		tk fetchFrom
 		for content in fetchFrom
 			unless wall.used_content[type]
 				wall.used_content[type] = []
