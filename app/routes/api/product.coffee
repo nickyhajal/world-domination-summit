@@ -55,8 +55,8 @@ routes = (app) ->
 					tk 'IS AUTHD'
 					req.me.getCard(req.query.card_id)
 					.then (card) ->
-						tk 'ERR'
 						if card.status? and card.status is 'declined'
+							tk 'ERR'
 							res.r.declined = true
 							res.r.err = card.err
 							next()
