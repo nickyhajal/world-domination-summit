@@ -21,8 +21,6 @@ Event = Shelf.Model.extend
   updateRsvpCount: ->
     [EventRsvp, EventRsvps] = require('./event_rsvps')
     event_id = @get('event_id')
-    tk "update rsvp count"
-    tk event_id
     EventRsvps.forge()
     .query('where', 'event_id', event_id)
     .fetch()
