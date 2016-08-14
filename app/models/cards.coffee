@@ -52,6 +52,8 @@ Card = Shelf.Model.extend
 						price *= 	quantity
 						if @get('user_id') is '176'
 							price = 50
+						tk 'PERFORM CHARGE ON:'
+						tk @get('token')
 						stripe.charges.create(
 							amount: price
 							currency: 'usd'
