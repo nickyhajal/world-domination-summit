@@ -54,7 +54,7 @@ routes = (app) ->
 				tk 'PARAMS GOOD'
 				if req.isAuthd req, res, next
 					tk 'IS AUTHD'
-					if @ids.indexOf(req.query.card_id) === -1
+					if @ids.indexOf(req.query.card_id) == -1
 						if req.query.card_id.indexOf('tok_') > -1
 							@ids.push req.query.card_id
 						req.me.getCard(req.query.card_id)
