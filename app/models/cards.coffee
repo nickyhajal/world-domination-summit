@@ -40,7 +40,7 @@ Card = Shelf.Model.extend
 				.then (existing) ->
 					if existing?
 						err = "Looks like you already bought that!"
-						dfr.resolve({transaction: transaction, rsp: {err: err, declined: true}})
+						dfr.resolve({rsp: {err: err, declined: true}})
 					else
 						Transaction.forge
 							product_id: product.get('product_id')
