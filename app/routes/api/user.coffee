@@ -606,8 +606,8 @@ routes = (app) ->
 				to_id = req.query.to_id
 				Connection.forge({user_id: user_id, to_id: to_id})
 				.fetch()
-				.then ->
-					if existing
+				.then (existing) ->
+					if existing?
 						next()
 					else
 						Connection.forge({user_id: user_id, to_id: to_id, year: process.year})
