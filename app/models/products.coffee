@@ -53,6 +53,10 @@ PRE =
 				rsp.price = 2900
 			dfr.resolve(rsp)
 		return dfr.promise
+	wds17test: (meta) ->
+		dfr = Q.defer()
+		dfr.resolve({})
+		return dfr.promise
 	wds2017: (meta) ->
 		dfr = Q.defer()
 		dfr.resolve({})
