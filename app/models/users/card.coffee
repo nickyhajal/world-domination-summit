@@ -10,6 +10,7 @@ rs = new RedisSessions();
 
 charge =
 	getCard: (card_id, test = false) ->
+
 		stripe_key = process.env.STRIPE_SK
 		# stripe_key = process.env.STRIPE_SK_TEST if test
 		stripe = require('stripe')(stripe_key)
@@ -17,6 +18,7 @@ charge =
 		tk 'CHARGE >>'
 		tk card_id
 		if card_id.indexOf('tok_') > -1
+			tk 'GEN >>'
 			Card.forge
 				token: card_id
 			.fetch()
@@ -56,6 +58,7 @@ charge =
 						dfr.resolve({status: 'declined', err: err})
 					)
 		else
+			tk 'HAVE >>'
 			Card.forge
 				hash: card_id
 			.fetch()
