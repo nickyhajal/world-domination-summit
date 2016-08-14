@@ -146,7 +146,7 @@ routes = (app) ->
       devices.query('join', 'users', 'users.user_id', '=', 'devices.user_id', 'left')
       devices.query('where', 'attending'+process.yr, '1')
       if test == 'yes'
-        devices.query('whereIn', 'devices.user_id', ['176']) #, '6292', '179', '216', '1315', '6263', '8884']) #, '179', '216', '6292'])
+        devices.query('whereIn', 'devices.user_id', ['176', '6292', '179', '216', '1315', '6263', '8884']) #, '179', '216', '6292'])
       if device_type != 'all'
         devices.query('where', 'devices.type', req.query.device)
       if registered != 'all'
