@@ -34,6 +34,7 @@ Card = Shelf.Model.extend
 			quantity = if purchase_data.quantity then purchase_data.quantity else 1
 			if product
 				Transaction.forge
+					status: 'paid'
 					product_id: product.get('product_id')
 					user_id: @get('user_id')
 				.fetch()
