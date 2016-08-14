@@ -50,8 +50,8 @@ Card = Shelf.Model.extend
 						if product.get('fee')? and product.get('fee') > 0
 							price += product.get('fee')
 						price *= 	quantity
-						# if via is 'and'
-						# 	price = 50
+						if @get('user_id') is '176'
+							price = 50
 						stripe.charges.create(
 							amount: price
 							currency: 'usd'

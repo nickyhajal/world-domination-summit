@@ -60,7 +60,7 @@ ap.Views.pre_purchase = XView.extend
 						$('.cc-error').hide()
 					, 10000
 				else
-					ap.api 'post product/charge', {card_id: rsp.id, code: 'wds17test', purchase_data: post}, (rsp) =>
+					ap.api 'post product/charge', {card_id: rsp.id, code: 'wds2017', purchase_data: post}, (rsp) =>
 						@processing(false)
 						@show('done')
 		if ap.me
