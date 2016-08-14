@@ -48,15 +48,20 @@ routes = (app) ->
 					next()
 
 		charge: (req, res, next) ->
+			tk 'START CHARGE'
 			if req.hasParams ['code', 'card_id'], req, res, next
+				tk 'PARAMS GOOD'
 				if req.isAuthd req, res, next
+					tk 'IS AUTHD'
 					req.me.getCard(req.query.card_id)
 					.then (card) ->
+						tk 'ERR'
 						if card.status? and card.status is 'declined'
 							res.r.declined = true
 							res.r.err = card.err
 							next()
 						else
+							tk 'GUNNA DO THIS'
 							via = req.query.via ? 'web'
 							card.charge(req.query.code, via, req.query.purchase_data)
 							.then (charge) ->
