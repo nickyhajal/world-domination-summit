@@ -1,0 +1,79 @@
+div(class="modal-panel modal-panel-buy modal-panel-active")
+	h2 Let's Do This!
+	div(class="cnct-process-shell")
+		div Hang tight, we're processing your payment!
+	form(action="#", method="post", id="purchase-form")
+		div(class="cnct-ticket-sale")
+			div(class="cnct-product-name") WDS 2017 Ticket
+			div(class="cnct-total")
+				$547
+			div(class="cnct-fee") +10.00
+			div(class="cnct-quantity")
+				select(class="select2", data-width="80px", name="quantity", data-search="false")
+					option("1") 1
+					option("2") 2
+					option("3") 3
+		div(class="clear")
+		div(class="cc-error")
+		div(class="if-no-user form-row")
+			div(class="form-box")
+				label First Name
+				input(type="text", name="first_name")
+			div(class="form-box")
+				label Last Name
+				input(type="text", name="last_name")
+		div(class="if-no-user form-row")
+			div(class="form-box")
+				label E-Mail Address
+				input(type="text", name="email")
+		div(class="form-row")
+			label Credit Card Number
+			input(type="text", data-stripe="number")
+		div(class="form-row")
+			div(class="form-box")
+				label Exp. Month
+				select(class="select2", data-width="100px", data-stripe="exp-month", data-search="false")
+					option("1") 1
+					option("2") 2
+					option("3") 3
+					option("4") 4
+					option("5") 5
+					option("6") 6
+					option("7") 7
+					option("8") 8
+					option("9") 9
+					option("10") 10
+					option("11") 11
+					option("12") 12
+			div(class="form-box")
+				label Exp. Year
+				select(class="select2", data-width="125px", data-stripe="exp-year", data-search="false")
+					option("2016") 2016
+					option("2017") 2017
+					option("2018") 2018
+					option("2019") 2019
+					option("2020") 2020
+					option("2021") 2021
+					option("2022") 2022
+					option("2023") 2023
+					option("2024") 2024
+					option("2025") 2025
+		div(class="form-row")
+			div(class="form-box")
+				label Billing Zip Code
+				input(type="text", class="cc-inp-zip", data-stripe='zip')
+			div(class="form-box")
+				label CVV
+				input(type="text", data-stripe="cvc", class="cc-inp-cvv")
+		div(class="form-row form-section")
+			input(type="submit", value="Purchase Tickets")
+div(class="modal-panel modal-panel-done")
+	h2 See You at WDS 2017!
+	h3 You did it!
+	p
+		br
+		| Success! You're all set for WDS 2017.
+	p You'll receive an email with more details shortly!
+	br
+	br
+	a(href="#", class="button modal-closer") Done

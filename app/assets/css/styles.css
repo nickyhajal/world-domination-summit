@@ -365,7 +365,7 @@ a.sidebar-price {
     margin-top:                 -31px;
 }
 .sidebar-fixed #sidebar {
-    margin-top:                 247px;
+    margin-top:                 249px;
 }
 .tpl-3 .block-6 .tweet-avatar {
     width:                      50px;
@@ -2322,6 +2322,9 @@ div#modal-attendee-selector .modal-content {
     max-height:                 500px;
     width:                      500px;
 }
+div#modal-pre-purchase .cnct-ticket-sale {
+    padding:                    26px 40px;
+}
 div.modal {
     position:                   fixed;
     top:                        0px;
@@ -3649,6 +3652,7 @@ div.cnct-ticket-sale {
     padding:                    15px 40px;
     background:                 rgb(252, 252, 248) none repeat scroll 0px 0px;
     border-bottom:              2px solid rgb(247, 246, 238);
+    position:                   relative;
 }
 div.cnct-product-name {
     display:                    inline-block;
@@ -3665,6 +3669,10 @@ div.cnct-quantity::before {
     top:                        11px;
     color:                      rgb(176, 175, 166);
     left:                       -68px;
+}
+#modal-pre-purchase div.cnct-total {
+    top:                        -12px;
+    padding:                    21px 20px 27px;
 }
 div.cnct-total {
     display:                    block;
@@ -3688,7 +3696,7 @@ div.cnct-quantity {
     float:                      right;
     margin-top:                 -6px;
     position:                   relative;
-    margin-right:               64px;
+    margin-right:               15px;
 }
 div.cnct-process-shell.active {
     z-index:                    10;
@@ -4006,7 +4014,17 @@ span#notn-count {
     font-size:                  14pt;
 }
 div#sidebar {
-    margin-top:                 33px;
+    margin-top:                 35px;
+}
+div.cnct-fee {
+    position:                   absolute;
+    font-size:                  9pt;
+    opacity:                    0.6;
+    -ms-filter:                 "alpha(opacity=60)";
+    filter:                     alpha(opacity=60);
+    zoom:                       1;
+    right:                      29px;
+    top:                        46px;
 }
 * {
     box-sizing:                 border-box;
