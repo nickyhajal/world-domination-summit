@@ -36,63 +36,72 @@ Card = Shelf.Model.extend
 				Transaction.forge
 					product_id: product.get('product_id')
 					user_id: @get('user_id')
-					via: via
-					status: 'process'
-					quantity: quantity
-					paid_amount: '0'
-				.save()
-				.then (transaction) =>
-					purchase_data.transaction_id = transaction.get('transaction_id')
-					product.pre_process({user_id: @get('user_id'), post: purchase_data})
-					.then (pre) =>
-						pre_rsp_params = pre?.rsp ? {}
-						price = if pre.price? then pre.price else product.get('cost')
-						if product.get('fee')? and product.get('fee') > 0
-							price += product.get('fee')
-						price *= 	quantity
-						if @get('user_id') is '176' or @get('user_id') is '6292'
-							price = 30
-						tk 'PERFORM CHARGE ON:'
-						tk @get('token')
-						stripe.charges.create(
-							amount: price
-							currency: 'usd'
-							customer: @get('customer')
-							source: @get('token')
-							description: product.get('name')+' - '+product.get('descr')
-						).then((charge) =>
-							Transaction.forge
-								transaction_id: transaction.get('transaction_id')
-							.fetch()
-							.then (transaction) =>
-								transaction.set
-									status: 'paid'
-									paid_amount: price
-									stripe_id: charge.id
-									meta: if pre?.meta? then pre.meta else null
-								.save()
-								.then =>
-									product.post_process(transaction, charge)
-									.then (post_rsp) =>
-										post_rsp_params = post_rsp?.rsp ? {}
-										rsp_params = _.extend pre_rsp_params, post_rsp_params
-										dfr.resolve({transaction: transaction, rsp: rsp_params})
-								, (err) -> console.error(err)
-						).catch((err) =>
-							tk 'Card charge error'
-							Transaction.forge
-								transaction_id: transaction.get('transaction_id')
-							.fetch()
-							.then (transaction) =>
-								transaction.set
-									status: 'declined'
-								.save()
-								.then =>
-									dfr.resolve({transaction: transaction, rsp: {err: err, declined: true}})
-						)
-					, (err) ->
-						console.error err
-		return dfr.promise
+				.fetch()
+				.then (existing) ->
+					if existing?
+						err = "Looks like you already bought that!"
+						dfr.resolve({transaction: transaction, rsp: {err: err, declined: true}})
+					else
+						Transaction.forge
+							product_id: product.get('product_id')
+							user_id: @get('user_id')
+							via: via
+							status: 'process'
+							quantity: quantity
+							paid_amount: '0'
+						.save()
+						.then (transaction) =>
+							purchase_data.transaction_id = transaction.get('transaction_id')
+							product.pre_process({user_id: @get('user_id'), post: purchase_data})
+							.then (pre) =>
+								pre_rsp_params = pre?.rsp ? {}
+								price = if pre.price? then pre.price else product.get('cost')
+								if product.get('fee')? and product.get('fee') > 0
+									price += product.get('fee')
+								price *= 	quantity
+								if @get('user_id') is '176' or @get('user_id') is '6292'
+									price = 30
+								tk 'PERFORM CHARGE ON:'
+								tk @get('token')
+								stripe.charges.create(
+									amount: price
+									currency: 'usd'
+									customer: @get('customer')
+									source: @get('token')
+									description: product.get('name')+' - '+product.get('descr')
+								).then((charge) =>
+									Transaction.forge
+										transaction_id: transaction.get('transaction_id')
+									.fetch()
+									.then (transaction) =>
+										transaction.set
+											status: 'paid'
+											paid_amount: price
+											stripe_id: charge.id
+											meta: if pre?.meta? then pre.meta else null
+										.save()
+										.then =>
+											product.post_process(transaction, charge)
+											.then (post_rsp) =>
+												post_rsp_params = post_rsp?.rsp ? {}
+												rsp_params = _.extend pre_rsp_params, post_rsp_params
+												dfr.resolve({transaction: transaction, rsp: rsp_params})
+										, (err) -> console.error(err)
+								).catch((err) =>
+									tk 'Card charge error'
+									Transaction.forge
+										transaction_id: transaction.get('transaction_id')
+									.fetch()
+									.then (transaction) =>
+										transaction.set
+											status: 'declined'
+										.save()
+										.then =>
+											dfr.resolve({transaction: transaction, rsp: {err: err, declined: true}})
+								)
+							, (err) ->
+								console.error err
+			return dfr.promise
 
 
 
