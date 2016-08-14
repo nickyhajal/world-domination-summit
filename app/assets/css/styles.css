@@ -14,7 +14,7 @@
 #wall-queue {
     position:                   absolute;
     left:                       -9999px;
-    top:                       -9999px;
+    top:                        -9999px;
 }
 .tpl-2 .block-1 .speaker-photo {
     background-size:            100% auto ! important;
@@ -69,7 +69,7 @@
     width:                      315px;
     background-size:            auto 100% ! important;
     -webkit-background-size:    auto 100% ! important;
-    background-repeat: no-repeat;
+    background-repeat:          no-repeat;
 }
 .tpl-2 .block-5 .answer .answer_start {
     margin-left:                -15px;
@@ -365,7 +365,7 @@ a.sidebar-price {
     margin-top:                 -31px;
 }
 .sidebar-fixed #sidebar {
-    margin-top:                 230px;
+    margin-top:                 247px;
 }
 .tpl-3 .block-6 .tweet-avatar {
     width:                      50px;
@@ -4004,6 +4004,9 @@ span#notn-count {
     font-family:                karlabold;
     color:                      rgb(136, 124, 127);
     font-size:                  14pt;
+}
+div#sidebar {
+    margin-top:                 33px;
 }
 * {
     box-sizing:                 border-box;
