@@ -23,6 +23,8 @@ routes = (app) ->
 	checkins = require('./api/checkins')(app)
 	notifications = require('./api/notifications')(app)
 	places = require('./api/places')(app)
+	knex = require('knex')(process.db)
+
 
 	app.namespace '/api', (req, res, next)->
 
@@ -186,6 +188,17 @@ routes = (app) ->
 		app.get '/admin/notification', notifications.get_count
 		app.post '/admin/rate', admin.rate
 		app.post '/admin/kind', admin.kind
+
+		app.get '/admin/stories', (req, res, next) ->
+			knex = require('knex')(process.db)
+			knex
+			.select('first_name', 'last_name', 'email', 'stories.phone', 'story')
+			.from('stories')
+			.leftJoin('users', 'users.user_id', 'stories.user_id')
+			.then (rsp) ->
+				res.r.stories = rsp
+				next()
+
 
 		app.get 'tpl', (req, res, next) ->
 			get_templates = require('../processors/templater')

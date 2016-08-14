@@ -11,9 +11,12 @@ routes = (app) ->
 	[Transfer, Transfers] = require('../../models/transfers')
 	admin =
 		get_capabilities: (req, res, next) ->
-			req.me.getCapabilities()
-			.then (capable_me) ->
-				req.me = capable_me
+			if req.me?
+				req.me.getCapabilities()
+				.then (capable_me) ->
+					req.me = capable_me
+					next()
+			else
 				next()
 		process_attendees: (req, res, next) ->
 			Users.forge()

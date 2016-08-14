@@ -65,6 +65,28 @@ routes = (app) ->
 		res.render "../views/upload",
 			title: "World Domination Summit - Avatar Upload"
 			layout: false
+	app.all '/atnstories', (req, res) ->
+		knex = require('knex')(process.db)
+		html = '
+			<style type="text/css">
+				* { font-family: arial; color:#444; font-weight:300;}
+				div {padding:5px; margin-bottom:3px; background:#f4f4f4;}
+				</style>'
+		html += '<h1>Attendee Story Submissions</h1>'
+		knex
+			.select('first_name', 'last_name', 'email', 'stories.phone', 'story')
+			.from('stories')
+			.leftJoin('users', 'users.user_id', 'stories.user_id')
+			.then (rsp) ->
+				nums = []
+				for s in rsp
+					if nums.indexOf(s.phone) == -1
+						nums.push s.phone
+						html += '<h4>'+s.first_name+' '+s.last_name+'</h4>'
+						html += '<h5>'+s.email+'  -  '+s.phone.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, '$1-$2-$3')+'</h5>'
+						html += '<p>'+s.story+'</p>'
+						html += '<br><br>'
+				res.send(html)
 	app.get '/*', (req, res) ->
 		interests = false
 		getInterests =  ->
