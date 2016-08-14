@@ -8,7 +8,7 @@ request = require('request')
 async = require('async')
 stripe = require('stripe')(process.env.STRIPE_SK)
 chance = require('chance')()
-ids = []
+@ids = []
 
 routes = (app) ->
 
@@ -54,27 +54,22 @@ routes = (app) ->
 				tk 'PARAMS GOOD'
 				if req.isAuthd req, res, next
 					tk 'IS AUTHD'
-					if ids.indexOf(req.query.card_id) == -1
-						if req.query.card_id.indexOf('tok_') > -1
-							ids.push req.query.card_id
-						req.me.getCard(req.query.card_id)
-						.then (card) ->
-							if card.status? and card.status is 'declined'
-								tk 'ERR'
-								res.r.declined = true
-								res.r.err = card.err
+					req.me.getCard(req.query.card_id)
+					.then (card) ->
+						if card.status? and card.status is 'declined'
+							tk 'ERR'
+							res.r.declined = true
+							res.r.err = card.err
+							next()
+						else
+							tk 'GUNNA DO THIS'
+							via = req.query.via ? 'web'
+							card.charge(req.query.code, via, req.query.purchase_data)
+							.then (charge) ->
+								res.r = _.extend res.r, charge.rsp
+								if !res.r.declined?
+									res.r.charge = charge.transaction
+									res.r.charge_success = true
 								next()
-							else
-								tk 'GUNNA DO THIS'
-								via = req.query.via ? 'web'
-								card.charge(req.query.code, via, req.query.purchase_data)
-								.then (charge) ->
-									res.r = _.extend res.r, charge.rsp
-									if !res.r.declined?
-										res.r.charge = charge.transaction
-										res.r.charge_success = true
-									next()
-					else
-						tk 'DROP REQUEST'
 
 module.exports = routes
