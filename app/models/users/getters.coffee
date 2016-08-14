@@ -52,17 +52,12 @@ getters =
 		genFire = =>
 			[User, Users] = require '../users'
 			uid = @get('hash')
-			params =
-				first_name: @get('first_name')
-				last_name: @get('last_name')
-				email: @get('email')
-				user_id: @get('user_id')
-			token = process.fire.auth().createCustomToken(uid, params)
+			token = process.fire.auth().createCustomToken(uid, {})
 			@set('firetoken', token)
-			User.forge
-				user_id: @get('user_id')
-				firetoken: token
-			.save()
+			# User.forge
+			# 	user_id: @get('user_id')
+			# 	firetoken: token
+			# .save()
 			dfr.resolve(@)
 
 		if existing? and existing.length
