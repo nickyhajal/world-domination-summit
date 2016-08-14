@@ -14,6 +14,8 @@ charge =
 		# stripe_key = process.env.STRIPE_SK_TEST if test
 		stripe = require('stripe')(stripe_key)
 		dfr = Q.defer()
+		tk 'CHARGE >>'
+		tk card_id
 		if card_id.indexOf('tok_') > -1
 			Card.forge
 				token: card_id
