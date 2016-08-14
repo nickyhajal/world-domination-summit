@@ -37,8 +37,9 @@ Card = Shelf.Model.extend
 					product_id: product.get('product_id')
 					user_id: @get('user_id')
 				.fetch()
-				.then (existing) ->
+				.then (existing) =>
 					if existing?
+						tk 'Prevented duplicate for '+@get('first_name')+' '+@get('last_name')
 						err = "Looks like you already bought that!"
 						dfr.resolve({rsp: {err: err, declined: true}})
 					else
