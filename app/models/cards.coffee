@@ -47,6 +47,8 @@ Card = Shelf.Model.extend
 					.then (pre) =>
 						pre_rsp_params = pre?.rsp ? {}
 						price = if pre.price? then pre.price else product.get('cost')
+						if product.get('fee')? and product.get('fee') > 0
+							price += product.get('fee')
 						price *= 	quantity
 						# if via is 'and'
 						# 	price = 50
