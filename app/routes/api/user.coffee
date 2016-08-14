@@ -604,24 +604,30 @@ routes = (app) ->
 			if req.me
 				user_id = req.me.get('user_id')
 				to_id = req.query.to_id
-				Connection.forge({user_id: user_id, to_id: to_id, year: process.year})
-				.save()
-				.then (connection) ->
-					req.me.getConnections()
-					.then (user) ->
-						#res.r.connections = user.get('connections')
-						res.r.connected_ids = user.get('connected_ids')
-						if req.me.get('user_id') isnt to_id
-							Notification.forge
-								type: 'connected'
-								channel_type: 'connection'
-								channel_id: '0'
-								user_id: to_id
-								content: JSON.stringify
-									from_id: req.me.get('user_id')
-								link: '~'+req.me.get('user_name')
-							.save()
+				Connection.forge({user_id: user_id, to_id: to_id})
+				.fetch()
+				.then ->
+					if existing
 						next()
+					else
+						Connection.forge({user_id: user_id, to_id: to_id, year: process.year})
+						.save()
+						.then (connection) ->
+							req.me.getConnections()
+							.then (user) ->
+								#res.r.connections = user.get('connections')
+								res.r.connected_ids = user.get('connected_ids')
+								if req.me.get('user_id') isnt to_id
+									Notification.forge
+										type: 'connected'
+										channel_type: 'connection'
+										channel_id: '0'
+										user_id: to_id
+										content: JSON.stringify
+											from_id: req.me.get('user_id')
+										link: '~'+req.me.get('user_name')
+									.save()
+								next()
 				, (err) ->
 					console.error(err)
 			else
