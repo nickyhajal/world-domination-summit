@@ -1,10 +1,10 @@
 icon: pin
 
-# Thanks for signing up!
+# Awesome, thank you! 
 
-Your email address has been successfully processed by our feline assistants, and you'll be among the first to know when the next wave of tickets goes on sale.
+Your email address has been successfully processed by our feline assistants, and you'll be among the first to know when we have more info on WDS 2017!
 
-In the meantime, if you'd like to see 1,200+ photos of WDS 2014, head over [here](https://www.flickr.com/photos/chrisguillebeau/collections/72157646294878398/).
+In the meantime, if you'd like to see 1,300+ photos of WDS 2016, head over [here](https://www.flickr.com/photos/chrisguillebeau/).
 
 You can also check out a 10-minute video of an attendee's experience at WDS:
 
@@ -12,4 +12,4 @@ You can also check out a 10-minute video of an attendee's experience at WDS:
  
 
 
-### We hope to see you in July!
+### We hope to see you next year!
