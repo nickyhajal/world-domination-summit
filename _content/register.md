@@ -3,9 +3,9 @@ photo_head: https://c7.staticflickr.com/9/8889/28673994110_e11aff59b3_c.jpg
 
 # Couldn't make it to WDS 2016? There's always next year! Sign-up to be notified when WDS 2017 tickets become available.
 
-<div class="line-canvas"></div>
+<div class="zig-zags_blue"></div>
 
-If you'd <strong>definitely like to attend</strong> our 2017 WDS event and want to purchase a ticket once they're available later this year, use the form below to put your name on the waiting list. When the first wave of ticket sales is announced, you'll be the first to know. We'd love to see you there!
+If you'd <strong>definitely like to attend</strong> our 2017 WDS event and want to purchase a ticket once they're available later this year, use the form below to put your name on the waiting list. When the first wave of ticket sales is announced, you'll be the first to know. We can't wait to see you there!
 
 <form method="post" class="af-form-wrapper" action="http://www.aweber.com/scripts/addlead.pl"  >
                <input type="hidden" name="meta_web_form_id" value="1153910757" />
