@@ -1,24 +1,11 @@
 icon: globe
-photo_head: https://farm1.staticflickr.com/434/19653483776_1420bf6789_k.jpg
+photo_head: https://c7.staticflickr.com/9/8889/28673994110_e11aff59b3.jpg
 
-# WDS is growing! For the first time in history, we're inviting everyone to join us for an all-new experience called WDS Connect.
+# Couldn't make it to WDS 2016? There's always next year! Sign-up to be notified when WDS 2017 tickets become available.
 
-Our main stage (now called "360") experience is sold out, but you can still participate in dozens of meetups, group conversations, and even a spectactular closing party at the end of the week. WDS Connect tickets are now on sale, but with limited availability.
+<div class="line-canvas"></div>
 
-<a href="/connect" class="button">WDS Connect &rarr;</a>
-
-<!--<div class="line-canvas"></div>
-
-Our last round of main stage tickets for the greatest adventure of all time is now open. All tickets will be sold on a first-come, first-served basis—we hope to see you this summer!
-
-Until this round of tickets is sold out, you can register through the link below:
-
-<a href="http://wds2016.eventbrite.com" target ="_blank" class="button">Register &rarr;</a>
-
-After this sale, we won’t offer any additional main stage tickets. We hope you'll join us if you haven't already planned to, and we hope you'll tell your friends and family to sign up too.
-
-If you'd definitely like to attend our 2016 event and want to purchase a WDS Connect ticket when they're available, use the form below to put your name on the waiting list.
-
+If you'd <strong>definitely like to attend</strong> our 2017 WDS event and want to purchase a ticket once they're available later this year, use the form below to put your name on the waiting list. When the first wave of ticket sales is announced, you'll be the first to know. We'd love to see you there!
 
 <form method="post" class="af-form-wrapper" action="http://www.aweber.com/scripts/addlead.pl"  >
                <input type="hidden" name="meta_web_form_id" value="1153910757" />
@@ -46,4 +33,3 @@ If you'd definitely like to attend our 2016 event and want to purchase a WDS Con
 
                <div style="display: none;"><img src="http://forms.aweber.com/form/displays.htm?id=jIyszJyMDOys7A==" alt="" /></div>
      </form>
- -->
