@@ -1,5 +1,5 @@
 icon: globe
-photo_head: https://c7.staticflickr.com/9/8889/28673994110_e11aff59b3.jpg
+photo_head: https://c7.staticflickr.com/9/8889/28673994110_e11aff59b3_c.jpg
 
 # Couldn't make it to WDS 2016? There's always next year! Sign-up to be notified when WDS 2017 tickets become available.
 
