@@ -370,7 +370,7 @@ window.wall =
 				_.nowReady('firstpanel')
 				_next = $(queue[0])
 				next = _next.clone()
-				if next.hasClass("tpl-2")
+				if next.hasClass("tpl-2") && @screenMode
 					randTop = Math.random() * (100 - 30) + 30;
 					next.css('top', _.x(randTop))
 					next.css('width', _.x(@widths[2]))
