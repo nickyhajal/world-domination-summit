@@ -14,7 +14,7 @@ ap.createRouter = ->
 	window.Router = Backbone.Router.extend
 		protect: [
 			{path: 'hub', allowed: ['360', 'connect'], redirect: 'attendees-only'}, {path: 'welcome', allowed: ['360', 'connect'], redirect: 'attendees-only'}, 'settings', 'propose-a-meetup', 'communities',
-			'your-schedule', 'meetups', 'your-schedule', 'race', 'transfer', '2017'
+			'your-schedule', 'meetups', 'your-schedule', 'race', 'transfer'
 		]
 		initialize: ->
 			$('#back-button').click(ap.back)
