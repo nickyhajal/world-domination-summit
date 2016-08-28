@@ -47,7 +47,7 @@ All WDS tickets are non-refundable. Transfers and name changes on main-stage (36
 
 ### How can I transfer a ticket?
 
-Soon after the first ticket sale for WDS 2017, ticket holders can transfer their ticket by contacting our concierge team at mailto:concierge@wds.fm
+Soon after the first ticket sale for WDS 2017, ticket holders can transfer their ticket by contacting our concierge team at <a href="mailto:mailto:concierge@wds.fm">. 
 <!-- Due to the complexity of planning involved to make WDS as special as possible, we do not allow ticket transfers after June 10th (30 days prior to WDS).-->
 
 <div class="line-canvas"></div>
