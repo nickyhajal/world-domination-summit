@@ -5,7 +5,7 @@ photo_head: https://c7.staticflickr.com/9/8889/28673994110_e11aff59b3_c.jpg
 
 <div class="zig-zags_blue"></div>
 
-### Tuesday, July 11th - Monday, July 17th
+### Save the Dates: Tuesday, July 11th - Monday, July 17th
 
 If you already know you'd like to attend our 2017 WDS event and want to purchase a ticket once they're available later this year, use the form below to put your name on the waiting list. When the first wave of ticket sales is announced, you'll be the first to know. We can't wait to see you there!
 
