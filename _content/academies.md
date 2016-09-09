@@ -8,7 +8,9 @@ This short video shows more of what it's all about:
 
 <iframe src="https://player.vimeo.com/video/121164251?title=0&byline=0&portrait=0" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>&nbsp; <br>
 
-We're excited to announce that Academies are back in 2016! We're extending this year's Academies to include a wide range of awesome topics and feature several favorite WDS speakers from over the years.
+Academies will be back for WDS 2017 but until then, feel free to look through this past year's Academies schedule (below) to get a sense of the topics that are generally covered. 
+
+<!-- We're excited to announce that Academies are back in 2016! We're extending this year's Academies to include a wide range of awesome topics and feature several favorite WDS speakers from over the years.
 
 Registration for Academies is separate from WDS itself, and we offer registration both to WDS attendees as well as to the general public (for a slightly higher registration fee). Please note, if you are attending WDS (360 or Connect), please log in to your WDS account before making your Academy selection. 
 
@@ -19,6 +21,8 @@ There is no limit to how many Academies you can register for but please note tha
 If you have any questions or need any assistance, please contact our concierge team at <b><font color="orange">concierge@wds.fm</font></b>. 
 
 **Please Note: registration for WDS Academies is currently open, only for WDS 360 attendees. Registration for WDS Connect and the general public will go live June 6th.**
+
+-->
 
 <div class="zig-zags_blue"></div>
 
