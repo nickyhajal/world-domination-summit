@@ -1,7 +1,7 @@
 icon: globe
 photo_head: https://c5.staticflickr.com/8/7747/28927611716_beba120762_c.jpg
 
-# Interested in being a part of WDS 2017? Sign up below to be notified when WDS 2017 tickets become available!
+# Want to come to WDS 2017? Sign up below to be notified when tickets go on sale!
 
 <div class="zig-zags_blue"></div>
 
