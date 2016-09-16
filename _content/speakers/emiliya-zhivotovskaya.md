@@ -11,7 +11,7 @@ photo_head: https://c1.staticflickr.com/9/8586/28703009940_a989783e35_b.jpg,http
 
 <div class="line-canvas"></div>
 
-**Emiliya Zhivotovskay** is a leading voice in the world of positive psychology and the science of flourishing, Emiliya Zhivotovskaya is a widely sought-after speaker, educator, facilitator and coach.
+**Emiliya Zhivotovskay** is a leading voice in the world of positive psychology and the science of flourishing, as well as a widely sought-after speaker, educator, facilitator and coach.
 
 At the age of 5, Emiliya and her family fled from Kiev, escaping the fall of Communism and the nuclear disaster at Chernobyl. Growing up in a foreign country, she faced challenges unknown to the average kid growing up in a New York suburb. 9 years later, she faced tragedy when she lost her brother as he saved his fiance from drowning and again some years later with the loss of her mother. Instead of giving up and blaming the world she found awakening, strength and a renewed sense of gratitude. Her goal is to help others flourish in the face of adversity.
 
