@@ -1,7 +1,7 @@
 icon: coins
 photo_head: https://c1.staticflickr.com/9/8426/28362385233_27b2b601b6_b.jpg,https://c1.staticflickr.com/9/8427/28902773171_d6e1f5a414_b.jpg,https://c1.staticflickr.com/9/8752/28946719926_842e7dd7af_b.jpg
 
-## Mr. Money Moustache (Pete Adeney) | 2016 Speaker
+## Mr. Money Mustache (Pete Adeney) | 2016 Speaker
 
 # “If you can get yourself financially independent, not only does it give you the power to eliminate most of the bullshit in life, but it frees your life’s work to become more truthful.”
 
