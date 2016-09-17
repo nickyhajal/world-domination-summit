@@ -1,11 +1,15 @@
 icon: namaste
-photo_head: https://farm4.staticflickr.com/3678/19429978639_b29dcdd402_h.jpg
+photo_head: https://c1.staticflickr.com/9/8237/28935093581_81901f3bf3_b.jpg,https://c1.staticflickr.com/9/8332/28912649142_7c1d218869_b.jpg,https://c1.staticflickr.com/9/8444/28725070110_618aac90c3_b.jpg,https://c1.staticflickr.com/9/8095/28725033320_a8e5bdeb17_b.jpg
 
-## 2016 Speaker
+## Rev. angel Kyodo Williams  | 2016 Speaker 
 
-# ![Rev. anger Kyodo williams](http://imgs.wds.fm/kyodo-williams-round.png) Rev. angel Kyodo williams
+# “As people who want to commit themselves to ‘world domination,’ it is our responsibility to have some kind of a practice while the world is going to hell in a handbasket, other than buying handbaskets.”
 
 <div class="zig-zags_blue"></div>
+
+<iframe src="//player.vimeo.com/video/183123706?byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+<div class="line-canvas"></div>
 
 **Reverend angel Kyodo Williams** is an author, activist, master trainer and founder of the Center for Transformative Change. She has been bridging the worlds of transformation and justice since releasing her critically acclaimed book, *Being Black: Zen and the Art of Living With Fearlessness and Grace*. She is one of only three black women Zen "senseis" and applies wisdom teachings and embodied practice to intractable social issues at the intersections of climate change, racial and economic justice, and Transformative Social Change.
 
