@@ -11,7 +11,7 @@ Fast forward to 2016 and we’re still exploring that question every summer, wit
 
 In July 2017 we’ll be doing it again and inviting all our friends (you!) to Portland for the Seventh *World Domination Summit* (WDS). Some things this year will be new, but our core principles of *Community*, *Adventure*, and *Service* will continue to guide our shared pursuit of changing the world. Want to [join us](/register)?
 
-##**What It’s Like**
+## **What It’s Like**
  
 When you spend WDS with us in Portland, you’ll help us take over the city. With main-stage keynotes, hundreds of attendee-led meetups, dozens of workshops known as “Academies,” a city-wide scavenger hunt, a Guinness World Record Attempt, two big parties, and hundreds of new friends high-fiving you on street corners, it’s a truly immersive and awesome experience.
  
@@ -25,7 +25,7 @@ To learn more about what it's like to hang out with us, check out this short doc
 
 <div class="zig-zags_blue"></div>
 
-##**Tickets**
+## **Tickets**
 
 Similar to years past we'll release tickets on a first-come, first-served basis, likely in two rounds of ticket sales.
 
