@@ -31,7 +31,7 @@ At the moment several groups are already meeting regularly and more are being la
 
 *WDS Local is for anyone that:*
 <ul>
-  <li>Lives out the<a href="https://worlddominationsummit.com/story">WDS mission and core values</a></li>
+  <li>Lives out the <a href="https://worlddominationsummit.com/story">WDS mission and core values</a></li>
   <li>Has previously attended a WDS</li>
   <li>OR personally knows a WDS alum and is planning to be an active member of the WDS community</li>
   <li>Wants to meet and get to know other awesome WDS community members</li>
@@ -40,7 +40,7 @@ At the moment several groups are already meeting regularly and more are being la
 
 Does this sound like you? Click on the button below and we'll do our best to get you connected to a local group or help you start one in your area if it's possible. 
 
-<a href="https://www.eventbrite.com/e/worldwide-waffles-make-breakfast-in-bed-history-tickets-16759507137" style ="background:rgb(226, 127, 28); text-decoration:none; color: rgb(242, 242, 233); padding: 11px; font-size: 20px;">Connect Me &#8594;</a>
+<center><a href="https://www.eventbrite.com/e/worldwide-waffles-make-breakfast-in-bed-history-tickets-16759507137" style ="background:rgb(226, 127, 28); text-decoration:none; color: rgb(242, 242, 233); padding: 11px; font-size: 20px;">Connect Me to a WDS Local Group &#8594;</a></center>
 
 <i>Though we'd love to see everyone get connected to a local group we know this might not be possible right away, but know we'll keep working to get you connected to the WDS community one way or another.</i> 
 
