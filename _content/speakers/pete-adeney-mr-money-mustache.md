@@ -1,11 +1,15 @@
 icon: coins
-photo_head: https://farm8.staticflickr.com/7438/9242331680_8926700e54_b.jpg
+photo_head: https://c1.staticflickr.com/9/8426/28362385233_27b2b601b6_b.jpg,https://c1.staticflickr.com/9/8427/28902773171_d6e1f5a414_b.jpg,https://c1.staticflickr.com/9/8752/28946719926_842e7dd7af_b.jpg
 
-## 2016 Speaker
+## Mr. Money Mustache (Pete Adeney) | 2016 Speaker
 
-# ![Pete Adeney](http://imgs.wds.fm/pete-adeney-round.png) Mr Money Moustache
+# “If you can get yourself financially independent, not only does it give you the power to eliminate most of the bullshit in life, but it frees your life’s work to become more truthful.”
 
 <div class="zig-zags_blue"></div>
+
+<iframe src="//player.vimeo.com/video/183016901?byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+<div class="line-canvas"></div>
 
 **Mr Money Mustache** (Pete Adeney in real life) retired with his wife at the age of 30 to start a family. Six years into his new life, he realized his peers were still not only stuck in their well-paying jobs, but barely able to meet their ever-increasing lifestyle inflation bills.
 
