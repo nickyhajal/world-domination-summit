@@ -1,5 +1,6 @@
-[What It's All About](/local#about)
+[WDS Local](/local#wds-local)
 [How to Participate](/local#participate)
+[List of Local Groups](/local#groups)
 [Portland](/local#portland)
 [Seattle](/local#seattle)
 [San Diego](/local#san-diego)
