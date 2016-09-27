@@ -1,4 +1,3 @@
-sidebar: academies
 icon: theater
 photo_head: https://farm1.staticflickr.com/441/19058706513_60baf3aefb_z_d.jpg,https://farm3.staticflickr.com/2031/5800591550_94fa52c7b4_b.jpg,https://farm4.staticflickr.com/3680/9226354561_60e1c77986_c.jpg,https://farm8.staticflickr.com/7422/9226351955_26fafe47fe_c.jpg,https://farm3.staticflickr.com/2317/5800027355_42530f678d_b.jpg
 
