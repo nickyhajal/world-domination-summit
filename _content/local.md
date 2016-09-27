@@ -14,7 +14,7 @@ Since our very first WDS in 2011 the alumni community has grown to over 10,000 a
 
 We're excited to officially introduce:
 
-<img src="images/WDS-Local-Place-holder-image.png" width="600" />
+<img src="/images/WDS-Local-Place-holder-image.png" width="600" />
 *800+ fun people breaking a record with us in Pioneer Courthouse Square last year.*
 
 WDS Local is a way that alumni can gather regularly through out the year, support each other, and bring WDS home to their local communities. It's a way to continue conversations and go on new adventures together outside the annual WDS gathering in Portland. We know that the best thing about WDS is you, the people who make up this vibrant and wonderful community. And there's nothing better than for awesome people to hang out more often with other awesome people. 
