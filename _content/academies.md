@@ -24,5 +24,7 @@ If you have any questions or need any assistance, please contact our concierge t
 
 -->
 
+Academies will return for WDS 2017 with more amazing topics and Academy leaders. The list of WDS 2017 Academies will be made available spring 2017 so stay tuned!
+
 <div class="zig-zags_blue"></div>
 
