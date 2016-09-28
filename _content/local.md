@@ -49,17 +49,31 @@ Does this sound like you? Click on the button below and we'll do our best to get
 <a name="Groups"></a>
 ### WDS Local Groups List
 
-Here are the current WDS Local Groups:
+Here are the current WDS Local Groups with more being announced each month:
 
-<b>Portland</b>
-<img src="/images/WDS-Local-San-Diego.png" width="600" />
-
-<b>San Diego</b>
-<img src="/images/WDS-Local-Seattle.png" width="600" />
-
-<b>Seattle</b>
 <img src="/images/WDS-Local-Portland.png" width="600" />
+<b>Portland</b>
+Next meeting: TBA
+
+<img src="/images/WDS-Local-San-Diego.png" width="600" />
+<b>San Diego</b>
+Next meeting: TBA
+
+<img src="/images/WDS-Local-Seattle.png" width="600" />
+<b>Seattle</b>
+Next meeting: TBA
 
 <div class="zig-zags_blue"></div>
 
 Coming Soon:
+<ul>
+  <li>Bay Area (San Francisco, Oakland, San Jose, etc..</li>  
+  <li>Los Angeles</li>
+  <li>New York City</li>
+  <li>Washington D.C.</li> 
+  <li>Vancouver B.C.</li>
+</ul>
+
+Want to connect with any of these group or want to see if it's possible to start a group in your area (that isn't listed), fill out the following form:
+
+<a href="http://bit.ly/WDS-Local-Interest-Form" style ="background:rgb(226, 127, 28); text-decoration:none; color: rgb(242, 242, 233); padding: 11px; font-size: 20px;">Connect Me to a WDS Local Group &#8594;</a>
