@@ -77,6 +77,8 @@ Coming Soon:
   <li>Vancouver B.C.</li>
 </ul>
 
+<hr>
+
 Want to connect with any of these group or want to see if it's possible to start a group in your area (that isn't listed), fill out the following form:
 
 <a href="http://bit.ly/WDS-Local-Interest-Form" style ="background:rgb(226, 127, 28); text-decoration:none; color: rgb(242, 242, 233); padding: 11px; font-size: 20px;">Connect Me to a WDS Local Group &#8594;</a>
