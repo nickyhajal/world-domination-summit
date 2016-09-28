@@ -22,9 +22,10 @@ We need <i>you</i>.
 
 <div class="zig-zags_blue"></div>
 
+<a name="get-involved"></a>
+
 ### How to Get Involved
 
-<a name="participate"></a>
 <img src="https://farm6.staticflickr.com/5158/5807211362_7aaaa0bf9c_z_d.jpg" width="600" />
 
 At the moment several groups are already meeting regularly and more are being launched each month. Our goal is to help launch WDS Local groups in areas where there are at least 3 people that are willing to meet on a regular basis. The focus is not about how many people get together, but solely on the commitment that members of these groups have to each other. The success of WDS Local groups is solely dependent on the commitmment and active participation of it's members. 
@@ -46,7 +47,7 @@ Does this sound like you? Click on the button below and we'll do our best to get
 
 <div class="zig-zags_blue"></div>
 
-<a name="Groups"></a>
+<a name="groups"></a>
 ### WDS Local Groups List
 
 Here are the current WDS Local Groups with more being announced each month:
