@@ -6,7 +6,7 @@ sidebar: local
 
 # WDS Local: Living out our remarkable lives in community
 
-<a name="wds-local"></a>
+<a name="about"></a>
 
 <div class="zig-zags_blue"></div>
 
@@ -70,7 +70,7 @@ Next meeting: TBA
 
 <div class="zig-zags_blue"></div>
 
-Coming Soon:
+<b>Coming Soon:</b>
 <ul>
   <li>Bay Area (San Francisco, Oakland, San Jose)</li>
   <li>Los Angeles</li>
@@ -78,8 +78,6 @@ Coming Soon:
   <li>Washington D.C.</li> 
   <li>Vancouver B.C.</li>
 </ul>
-
-<hr>
 
 Want to connect with any of these group or want to see if it's possible to start a group in your area (that isn't listed), fill out the following form:
 
