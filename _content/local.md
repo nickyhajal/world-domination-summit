@@ -25,8 +25,7 @@ We need <i>you</i>.
 ### How to Get Involved
 
 <a name="participate"></a>
-<img src="https://cdn.evbuc.com/eventlogos/65656417/14638837834390f06bdeek.jpg" width="600" />
-*Last year, we donated yoga mats. This year we'll be putting 150 beds in homes that need them around Portland.*
+<img src="https://farm6.staticflickr.com/5158/5807211362_7aaaa0bf9c_z_d.jpg" width="600" />
 
 At the moment several groups are already meeting regularly and more are being launched each month. Our goal is to help launch WDS Local groups in areas where there are at least 3 people that are willing to meet on a regular basis. The focus is not about how many people get together, but solely on the commitment that members of these groups have to each other. The success of WDS Local groups is solely dependent on the commitmment and active participation of it's members. 
 
@@ -41,7 +40,7 @@ At the moment several groups are already meeting regularly and more are being la
 
 Does this sound like you? Click on the button below and we'll do our best to get you connected to a local group or help you start one in your area if it's possible. 
 
-<center><a href="https://www.eventbrite.com/e/worldwide-waffles-make-breakfast-in-bed-history-tickets-16759507137" style ="background:rgb(226, 127, 28); text-decoration:none; color: rgb(242, 242, 233); padding: 11px; font-size: 20px;">Connect Me to a WDS Local Group &#8594;</a></center>
+<a href="https://www.eventbrite.com/e/worldwide-waffles-make-breakfast-in-bed-history-tickets-16759507137" style ="background:rgb(226, 127, 28); text-decoration:none; color: rgb(242, 242, 233); padding: 11px; font-size: 20px;">Connect Me to a WDS Local Group &#8594;</a>
 
 <i>Though we'd love to see everyone get connected to a local group we know this might not be possible right away, but know we'll keep working to get you connected to the WDS community one way or another.</i> 
 
