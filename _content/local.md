@@ -20,9 +20,9 @@ WDS Local is a way that alumni can gather regularly through out the year, suppor
 
 We need <i>you</i>. 
 
-<div class="zig-zags_blue"></div>
-
 <a name="get-involved"></a>
+
+<div class="zig-zags_blue"></div>
 
 ### How to Get Involved
 
@@ -45,9 +45,10 @@ Does this sound like you? Click on the button below and we'll do our best to get
 
 <i>Though we'd love to see everyone get connected to a local group we know this might not be possible right away, but know we'll keep working to get you connected to the WDS community one way or another.</i> 
 
+<a name="groups"></a>
+
 <div class="zig-zags_blue"></div>
 
-<a name="groups"></a>
 ### WDS Local Groups List
 
 Here are the current WDS Local Groups with more being announced each month:
