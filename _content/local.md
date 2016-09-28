@@ -52,13 +52,13 @@ Does this sound like you? Click on the button below and we'll do our best to get
 Here are the current WDS Local Groups:
 
 <b>Portland</b>
-<img src="/images/WDS-Local-Place-holder-image.png" width="600" />
+<img src="/images/WDS-Local-San-Diego.png" width="600" />
 
 <b>San Diego</b>
-<img src="/images/WDS-Local-Place-holder-image.png" width="600" />
+<img src="/images/WDS-Local-Seattle.png" width="600" />
 
 <b>Seattle</b>
-<img src="/images/WDS-Local-Place-holder-image.png" width="600" />
+<img src="/images/WDS-Local-Portland.png" width="600" />
 
 <div class="zig-zags_blue"></div>
 
