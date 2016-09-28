@@ -81,9 +81,9 @@ We'll conclude on Sunday evening with a Farewell party that goes as long as peop
 
 <a name="speakers"></a>
 
-### Your WDS 2016 Speakers
+### Featured Speakers (2016)
 
-Upcoming speakers will be added here as they're confirmed.
+Watch the videos from each speaker's talk from WDS 2016 on their speaker page!
 
 <div class="speaker_list" data-speaker-type="upcoming"></div>
 
