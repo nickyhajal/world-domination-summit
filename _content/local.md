@@ -40,7 +40,7 @@ At the moment several groups are already meeting regularly and more are being la
 
 Does this sound like you? Click on the button below and we'll do our best to get you connected to a local group or help you start one in your area if it's possible. 
 
-<a href="https://www.eventbrite.com/e/worldwide-waffles-make-breakfast-in-bed-history-tickets-16759507137" style ="background:rgb(226, 127, 28); text-decoration:none; color: rgb(242, 242, 233); padding: 11px; font-size: 20px;">Connect Me to a WDS Local Group &#8594;</a>
+<a href="http://bit.ly/WDS-Local-Interest-Form" style ="background:rgb(226, 127, 28); text-decoration:none; color: rgb(242, 242, 233); padding: 11px; font-size: 20px;">Connect Me to a WDS Local Group &#8594;</a>
 
 <i>Though we'd love to see everyone get connected to a local group we know this might not be possible right away, but know we'll keep working to get you connected to the WDS community one way or another.</i> 
 
@@ -49,4 +49,17 @@ Does this sound like you? Click on the button below and we'll do our best to get
 <a name="Groups"></a>
 ### WDS Local Groups List
 
-There are two important qualifications you'll need ....
+Here are the current WDS Local Groups:
+
+<b>Portland</b>
+<img src="/images/WDS-Local-Place-holder-image.png" width="600" />
+
+<b>San Diego</b>
+<img src="/images/WDS-Local-Place-holder-image.png" width="600" />
+
+<b>Seattle</b>
+<img src="/images/WDS-Local-Place-holder-image.png" width="600" />
+
+<div class="zig-zags_blue"></div>
+
+Coming Soon:
