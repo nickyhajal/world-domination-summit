@@ -60,13 +60,13 @@ Here are the current WDS Local Groups with more being announced each month:
     -moz-column-count: 2; /* Firefox */
     column-count: 2;
 
-    -webkit-column-gap: 20px; /* Chrome, Safari, Opera */
-    -moz-column-gap: 20px; /* Firefox */
-    column-gap: 20px;
+    -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 40px; /* Firefox */
+    column-gap: 40px;
 
-    -webkit-column-rule: 4px outset #e38325; /* Chrome, Safari, Opera */
-    -moz-column-rule: 4px outset #e38325; /* Firefox */
-    column-rule: 4px outset #e38325;
+    -webkit-column-rule: 6px outset #e38325; /* Chrome, Safari, Opera */
+    -moz-column-rule: 6px outset #e38325; /* Firefox */
+    column-rule: 6px outset #e38325;
 }
 </style>
 </head>
