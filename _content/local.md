@@ -53,60 +53,16 @@ Does this sound like you? Click on the button below and we'll do our best to get
 
 Here are the current WDS Local Groups with more being announced each month:
 
-<head>
-<style>
-.newspaper {
-    -webkit-column-count: 2; /* Chrome, Safari, Opera */
-    -moz-column-count: 2; /* Firefox */
-    column-count: 2;
-
-    -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
-    -moz-column-gap: 40px; /* Firefox */
-    column-gap: 40px;
-
-    -webkit-column-rule: 6px outset #e38325; /* Chrome, Safari, Opera */
-    -moz-column-rule: 6px outset #e38325; /* Firefox */
-    column-rule: 6px outset #e38325;
-}
-</style>
-</head>
-
-<body>
-
-<div class="newspaper">
-<img src="/images/WDS-Local-Portland.png" width="250" />
-<br>
-Portland
-<b>Next meeting: TBA</b>
-<p>
-<img src="/images/WDS-Local-San-Diego.png" width="250" />
-<br>
-San Diego
-<b>Next meeting: TBA</b>
-</div>
-
-<div class="newspaper">
-<img src="/images/WDS-Local-Seattle.png" width="250" />
-<br>
-Seattle
-<b>Next meeting: TBA</b>
-</div>
-</body>
-
-### WDS Local Groups List
-
-Here are the current WDS Local Groups with more being announced each month:
-
 <img src="/images/WDS-Local-Portland.png" width="600" />
 <b>Portland</b>
 <br>
 Next meeting: TBA
-
+<hr>
 <img src="/images/WDS-Local-San-Diego.png" width="600" />
 <b>San Diego</b>
 <br>
 Next meeting: TBA
-
+<hr>
 <img src="/images/WDS-Local-Seattle.png" width="600" />
 <b>Seattle</b>
 <br>
