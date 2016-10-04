@@ -78,10 +78,7 @@ Here are the current WDS Local Groups with more being announced each month:
 <br>
 <b>Portland</b>
 Next meeting: TBA
-</div>
-<br>
-
-<div class="newspaper">
+<p>
 <img src="/images/WDS-Local-San-Diego.png" width="250" />
 <br>
 <b>San Diego</b>
