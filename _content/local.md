@@ -74,8 +74,15 @@ Here are the current WDS Local Groups with more being announced each month:
 <body>
 
 <div class="newspaper">
-<img src="/images/WDS-Local-Portland.png" width="300" />
+<img src="/images/WDS-Local-Portland.png" width="200" />
 <b>Portland</b>
+<br>
+Next meeting: TBA
+</div>
+
+<div class="newspaper">
+<img src="/images/WDS-Local-San-Diego.png" width="200" />
+<b>San Diego</b>
 <br>
 Next meeting: TBA
 </div>
@@ -107,6 +114,7 @@ Next meeting: TBA
 <ul>
   <li>Bay Area (San Francisco, Oakland, San Jose)</li>
   <li>Los Angeles</li>
+  <li>Nashville</li>
   <li>New York City</li>
   <li>Washington D.C.</li> 
   <li>Vancouver B.C.</li>
