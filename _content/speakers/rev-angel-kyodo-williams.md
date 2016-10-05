@@ -1,5 +1,5 @@
 icon: namaste
-photo_head: https://c1.staticflickr.com/9/8237/28935093581_81901f3bf3_b.jpg,https://c1.staticflickr.com/9/8332/28912649142_7c1d218869_b.jpg,https://c1.staticflickr.com/9/8444/28725070110_618aac90c3_b.jpg,https://c1.staticflickr.com/9/8095/28725033320_a8e5bdeb17_b.jpg
+photo_head: https://c1.staticflickr.com/9/8642/28391063454_f2c2a60962_b.jpg,https://c1.staticflickr.com/9/8237/28935093581_81901f3bf3_b.jpg,https://c1.staticflickr.com/9/8721/29011070575_bf49aa90ef_b.jpg,https://c1.staticflickr.com/9/8786/29011066945_39c51a852b_b.jpg
 
 ## Rev. angel Kyodo Williams  | 2016 Speaker 
 
