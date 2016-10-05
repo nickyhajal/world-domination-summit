@@ -72,12 +72,41 @@ Next meetup: October 19th
 
 <b>Coming Soon:</b>
 
-<img src="/images/WDS_Local_DC.Header.png" width="600" />
-<img src="/images/WDS_Local_Nashville.Header.png" width="600" />
-<img src="/images/WDS_Local_LA.Header.png" width="600" />
-<img src="/images/WDS_Local_NYC.Header.png" width="600" />
-<img src="/images/WDS_Local_SanFrancisco.Header.png" width="600" />
-<img src="/images/WDS_Local_Vancouver.Header.png" width="600" />
+<head>
+<style>
+.newspaper {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+
+    -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 40px; /* Firefox */
+    column-gap: 40px;
+
+    -webkit-column-rule: 4px outset #b0be35; /* Chrome, Safari, Opera */
+    -moz-column-rule: 4px outset #b0be35; /* Firefox */
+    column-rule: 4px outset #b0be35;
+}
+</style>
+</head>
+
+<body>
+
+<p><strong>Note:</strong> The column-rule property is not supported in Internet Explorer 9 and earlier versions.</p>
+
+<div class="newspaper">
+<img src="/images/WDS_Local_DC.Header.png" width="250" />
+<br>
+<img src="/images/WDS_Local_Nashville.Header.png" width="250" />
+<br>
+<img src="/images/WDS_Local_LA.Header.png" width="250" />
+<br>
+<img src="/images/WDS_Local_NYC.Header.png" width="250" />
+<img src="/images/WDS_Local_SanFrancisco.Header.png" width="250" />
+<img src="/images/WDS_Local_Vancouver.Header.png" width="250" />
+</div>
+
+</body>
 
 Want to connect with any of these group or want to see if it's possible to start a group in your area (that isn't listed), fill out the following form:
 
