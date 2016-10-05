@@ -56,29 +56,28 @@ Here are the current WDS Local Groups with more being announced each month:
 <img src="/images/WDS-Local-Portland.png" width="600" />
 <b>Portland</b>
 <br>
-Next meeting: TBA
-<hr>
+Next meetup: TBA
+
 <img src="/images/WDS-Local-San-Diego.png" width="600" />
 <b>San Diego</b>
 <br>
-Next meeting: TBA
-<hr>
+Next meetup: TBA
+
 <img src="/images/WDS-Local-Seattle.png" width="600" />
 <b>Seattle</b>
 <br>
-Next meeting: TBA
+Next meetup: October 19th
 
 <div class="zig-zags_blue"></div>
 
 <b>Coming Soon:</b>
-<ul>
-  <li>Bay Area (San Francisco, Oakland, San Jose)</li>
-  <li>Los Angeles</li>
-  <li>Nashville</li>
-  <li>New York City</li>
-  <li>Washington D.C.</li> 
-  <li>Vancouver B.C.</li>
-</ul>
+
+<img src="/images/WDS_Local_DC.Header.png" width="600" />
+<img src="/images/WDS_Local_Nashville.Header.png" width="600" />
+<img src="/images/WDS_Local_LA.Header.png" width="600" />
+<img src="/images/WDS_Local_NYC.Header.png" width="600" />
+<img src="/images/WDS_Local_SanFrancisco.Header.png" width="600" />
+<img src="/images/WDS_Local_Vancouver.Header.png" width="600" />
 
 Want to connect with any of these group or want to see if it's possible to start a group in your area (that isn't listed), fill out the following form:
 
