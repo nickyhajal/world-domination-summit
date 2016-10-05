@@ -82,10 +82,6 @@ Next meetup: October 19th
     -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
     -moz-column-gap: 40px; /* Firefox */
     column-gap: 40px;
-
-    -webkit-column-rule: 4px outset #0a72b0; /* Chrome, Safari, Opera */
-    -moz-column-rule: 4px outset #0a72b0; /* Firefox */
-    column-rule: 4px outset #0a72b0;
 }
 </style>
 </head>
