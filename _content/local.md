@@ -83,31 +83,29 @@ Next meetup: October 19th
     -moz-column-gap: 40px; /* Firefox */
     column-gap: 40px;
 
-    -webkit-column-rule: 4px outset #b0be35; /* Chrome, Safari, Opera */
-    -moz-column-rule: 4px outset #b0be35; /* Firefox */
-    column-rule: 4px outset #b0be35;
+    -webkit-column-rule: 4px outset #0a72b0; /* Chrome, Safari, Opera */
+    -moz-column-rule: 4px outset #0a72b0; /* Firefox */
+    column-rule: 4px outset #0a72b0;
 }
 </style>
 </head>
 
 <body>
 
-<p><strong>Note:</strong> The column-rule property is not supported in Internet Explorer 9 and earlier versions.</p>
-
 <div class="newspaper">
-<img src="/images/WDS_Local_DC.Header.png" width="250" />
+<img src="/images/WDS_Local_DC.Header.png" width="275" />
 <br>
-<img src="/images/WDS_Local_Nashville.Header.png" width="250" />
+<img src="/images/WDS_Local_Nashville.Header.png" width="275" />
 <br>
-<img src="/images/WDS_Local_LA.Header.png" width="250" />
+<img src="/images/WDS_Local_LA.Header.png" width="275" />
 <br>
-<img src="/images/WDS_Local_NYC.Header.png" width="250" />
-<img src="/images/WDS_Local_SanFrancisco.Header.png" width="250" />
-<img src="/images/WDS_Local_Vancouver.Header.png" width="250" />
+<img src="/images/WDS_Local_NYC.Header.png" width="275" />
+<img src="/images/WDS_Local_SanFrancisco.Header.png" width="275" />
+<img src="/images/WDS_Local_Vancouver.Header.png" width="275" />
 </div>
 
 </body>
 
-Want to connect with any of these group or want to see if it's possible to start a group in your area (that isn't listed), fill out the following form:
+<p>Want to connect with any of these group or want to see if it's possible to start a group in your area (that isn't listed), fill out the following form:</p>
 
 <a href="http://bit.ly/WDS-Local-Interest-Form" style ="background:rgb(226, 127, 28); text-decoration:none; color: rgb(242, 242, 233); padding: 11px; font-size: 20px;">Connect Me to a WDS Local Group &#8594;</a>
