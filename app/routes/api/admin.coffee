@@ -358,7 +358,8 @@ routes = (app) ->
 				res.status(401)
 				next()
 		hs_convo: (req, res, next) ->
-			mailbox = Helpscout(ap.env.HELPSCOUT, ap.env.HELPSCOUTMB);
+			mailbox = Helpscout(process.env.HELPSCOUT, process.env.HELPSCOUTMB);
+			tk mailbox
 			parts = req.query.name.split(' ')
 			customer =
 				email: req.query.email
