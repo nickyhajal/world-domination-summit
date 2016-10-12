@@ -375,8 +375,10 @@ routes = (app) ->
     			body: req.query.message
     		}]
     	, (err, res) ->
-    		if (err) console.error(err)
-    		tk(res)
+    		if err
+    			console.error(err)
+    		else
+	    		tk res
     		next()
 
 
