@@ -37,12 +37,12 @@ process.fire.initializeApp({
 	// require('./app/processors/eventbrite_dup_check')(app)
 if (process.env.NODE_ENV === 'production' && process.env.PORT == '7676') {
 	// require('./app/processors/academies')(app);
-	require('./app/processors/clean-sessions')(app);
-	require('./app/processors/eventbrite')(app);
-	require('./app/processors/content-grabber')(app);
-	require('./app/processors/third-party-feeds')(app);
+	// require('./app/processors/clean-sessions')(app);
+	// require('./app/processors/eventbrite')(app);
+	// require('./app/processors/content-grabber')(app);
+	// require('./app/processors/third-party-feeds')(app);
 	setTimeout(function(){
-		Notifications = require('./app/models/notifications')[1];
+		// Notifications = require('./app/models/notifications')[1];
 		Notifications.prototype.process();
 	}, 500);
 }
