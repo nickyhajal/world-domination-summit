@@ -362,24 +362,24 @@ routes = (app) ->
 			customer =
 				email: req.query.email
 				firstName: parts[0]
-  			lastName: parts.splice(1).join(' ')
-  			type: "customer"
+				lastName: parts.splice(1).join(' ')
+				type: "customer"
 			hsmb.conversations.create
 				type: 'email'
 				customer: customer
-    		subject: "Contact via 2017 Site"
-    		tags: "2017 Wave 1"
-    		threads:[{
-    			type: "customer"
-    			createdBy: customer
-    			body: req.query.message
-    		}]
-    	, (err, res) ->
-    		if err
-    			console.error(err)
-    		else
-	    		tk res
-    		next()
+				subject: "Contact via 2017 Site"
+				tags: "2017 Wave 1"
+				threads:[{
+					type: "customer"
+					createdBy: customer
+					body: req.query.message
+				}]
+			, (err, res) ->
+				if err
+					console.error(err)
+				else
+					tk res
+				next()
 
 
 module.exports = routes
