@@ -52,6 +52,7 @@ routes = (app) ->
 			tk 'START CHARGE'
 			if req.hasParams ['code', 'card_id'], req, res, next
 				tk 'PARAMS GOOD'
+				tk req
 				if req.isAuthd req, res, next
 					tk 'IS AUTHD'
 					req.me.getCard(req.query.card_id)
@@ -71,5 +72,9 @@ routes = (app) ->
 									res.r.charge = charge.transaction
 									res.r.charge_success = true
 								next()
+				else
+					res.r.declined = true
+					res.r.err = 'Hm, there was an authentication problem.'
+					next()
 
 module.exports = routes
