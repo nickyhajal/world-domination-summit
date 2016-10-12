@@ -52,7 +52,6 @@ routes = (app) ->
 			tk 'START CHARGE'
 			if req.hasParams ['code', 'card_id'], req, res, next
 				tk 'PARAMS GOOD'
-				tk req
 				if req.isAuthd req, res, next
 					tk 'IS AUTHD'
 					req.me.getCard(req.query.card_id)
