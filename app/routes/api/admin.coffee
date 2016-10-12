@@ -364,6 +364,8 @@ routes = (app) ->
 				firstName: parts[0]
 				lastName: parts.splice(1).join(' ')
 				type: "customer"
+			tk hsmb
+			tk hsmb.conversations
 			hsmb.conversations.create
 				type: 'email'
 				customer: customer
