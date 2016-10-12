@@ -1,7 +1,7 @@
 async = require 'async'
 _s = require('underscore.string')
 moment = require('moment')
-hsmb = require('helpscout')(process.env.HELPSCOUT, process.env.HELPSCOUTMB)
+Helpscout = require('helpscout')
 
 routes = (app) ->
 	[User, Users] = require('../../models/users')
@@ -358,6 +358,7 @@ routes = (app) ->
 				res.status(401)
 				next()
 		hs_convo: (req, res, next) ->
+			mailbox = Helpscout(ap.env.HELPSCOUT, ap.env.HELPSCOUTMB);
 			parts = req.query.name.split(' ')
 			customer =
 				email: req.query.email
@@ -366,7 +367,7 @@ routes = (app) ->
 				type: "customer"
 			tk hsmb
 			tk hsmb.conversations
-			hsmb.conversations.create
+			mailbox.conversations.create
 				type: 'email'
 				customer: customer
 				subject: "Contact via 2017 Site"
