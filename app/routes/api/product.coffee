@@ -72,9 +72,5 @@ routes = (app) ->
 									res.r.charge = charge.transaction
 									res.r.charge_success = true
 								next()
-				else
-					res.r.declined = true
-					res.r.err = 'Hm, there was an authentication problem.'
-					next()
 
 module.exports = routes
