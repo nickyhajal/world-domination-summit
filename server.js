@@ -41,10 +41,10 @@ if (process.env.NODE_ENV === 'production' && process.env.PORT == '7676') {
 	// require('./app/processors/eventbrite')(app);
 	// require('./app/processors/content-grabber')(app);
 	// require('./app/processors/third-party-feeds')(app);
-	setTimeout(function(){
-		// Notifications = require('./app/models/notifications')[1];
-		Notifications.prototype.process();
-	}, 500);
+	// setTimeout(function(){
+	// 	// Notifications = require('./app/models/notifications')[1];
+	// 	// Notifications.prototype.process();
+	// }, 500);
 }
 
 // Uncomment to update twitter avatars
