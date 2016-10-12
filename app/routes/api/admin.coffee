@@ -370,7 +370,7 @@ routes = (app) ->
 				type: 'email'
 				customer: customer
 				subject: "Contact via 2017 Site"
-				tags: "2017 Wave 1"
+				tags: ["2017 Wave 1"]
 				threads:[{
 					type: "customer"
 					createdBy: customer
