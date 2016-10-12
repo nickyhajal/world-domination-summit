@@ -169,6 +169,7 @@ routes = (app) ->
 		# capabilities to be grabbed automatically
 		app.all '/admin/*', admin.get_capabilities
 		app.get '/admin/download', admin.download
+		app.post '/admin/helpscout', admin.hs_convo
 		app.get '/admin/schedule', admin.schedule
 		app.get '/admin/academies', admin.academies
 		app.get '/admin/ambassadors', admin.ambassadors
