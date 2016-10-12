@@ -1,6 +1,8 @@
 async = require 'async'
 _s = require('underscore.string')
 moment = require('moment')
+hsmb = require('helpscout')(process.env.HELPSCOUT, process.env.HELPSCOUTMB)
+
 routes = (app) ->
 	[User, Users] = require('../../models/users')
 	[Event, Events] = require('../../models/events')
@@ -355,5 +357,27 @@ routes = (app) ->
 			else
 				res.status(401)
 				next()
+		hs_convo: (req, res, next) ->
+			parts = req.query.name.split(' ')
+			customer =
+				email: req.query.email
+				firstName: parts[0]
+  			lastName: parts.splice(1).join(' ')
+  			type: "customer"
+			hsmb.conversations.create
+				type: 'email'
+				customer: customer
+    		subject: "Contact via 2017 Site"
+    		tags: "2017 Wave 1"
+    		threads:[{
+    			type: "customer"
+    			createdBy: customer
+    			body: req.query.message
+    		}]
+    	, (err, res) ->
+    		if (err) console.error(err)
+    		tk(res)
+    		next()
+
 
 module.exports = routes
