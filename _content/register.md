@@ -11,6 +11,7 @@ Today is the day that we open up the first public round of ticket sales for WDS 
 
 <center>**Click on the link below to be redirected to our new puchasing site!**</center>
 
-<center><a href="https://2017.worlddominationsummit.com/" target="blank"> Register for WDS 2017!</a></center>
+
+### <center><a href="https://2017.worlddominationsummit.com/" target="blank"> Register for WDS 2017!</a></center>
 
 
