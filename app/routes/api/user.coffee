@@ -365,6 +365,10 @@ routes = (app) ->
 					if req.query.t?
 						giveTicket(existing)
 						next()
+					else if req.query.ignore_existing?
+						if req.query.login
+							existing.login(req)
+						next()
 					else
 						res.r.existing = true
 						next()
