@@ -33,12 +33,6 @@ Similar to years past we're releasing tickets on a first-come, first-served basi
 
 ### <center><a href="https://2017.worlddominationsummit.com/" target="blank"> Join Us!</a></center>
 
-<!--
-Join our mailing list and you'll be notified about upcoming ticket sales and important dates.
-
-
-<a href="https://2017.worlddominationsummit.com/" target="blank"> Join Us!</a>
-
-# 
+<!--# 
 <a href="/academies" class="register-banner"><span class="reg-heading">Register now for Academies!</span><span class="reg-subhead">The main stage show is sold out, but you can still attend WDS Academies.</span></a>
 -->
