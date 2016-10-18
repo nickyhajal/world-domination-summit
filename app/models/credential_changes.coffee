@@ -21,7 +21,7 @@ CredentialChange = Shelf.Model.extend
 
 		TODO: Invalidate pre-existing hashes?
 	###
-	create: (user, ip) ->
+	create: (user, ip, domain = false, path = false) ->
 		dfr = Q.defer()
 		user_id = user.get('user_id')
 		uniq = (+(new Date())) + user_id
@@ -32,7 +32,11 @@ CredentialChange = Shelf.Model.extend
 			ip_address: ip
 		@save()
 		.then (change) ->
-			change_url = 'http://'+process.env.DOMAIN+'/reset-password/'+change.get('hash')
+			unless domain
+				domain = process.env.DOMAIN
+			unless path
+				path = 'reset-password'
+			change_url = 'https://'+domain+'/'+path+'/'+change.get('hash')
 			user.sendEmail('pw-reset', 'Reset Your Password', {change_url: change_url})
 			dfr.resolve()
 		, (err) ->

@@ -484,9 +484,11 @@ routes = (app) ->
 				.fetch()
 				.then (user) ->
 					if user
+						domain = if req.query.domain? then req.query.domain else false
+						path = if req.query.path? then req.query.path else false
 						CredentialChange
 						.forge()
-						.create(user, req.headers['x-real-ip'])
+						.create(user, req.headers['x-real-ip'], domain, path)
 						.then (rsp) ->
 							next()
 					else
@@ -507,6 +509,7 @@ routes = (app) ->
 					else
 						res.r.msg = 'That reset request isn\'t valid'
 						res.status(401)
+						next()
 
 		add_interest: (req, res, next) ->
 			if req.me
