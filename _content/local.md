@@ -51,27 +51,24 @@ Does this sound like you? Click on the button below and we'll do our best to get
 
 ### WDS Local Groups List
 
-Here are the current WDS Local Groups with more being announced each month:
+Here are the current WDS Local Groups with more being announced each month (click on any of the images to be taken to the group's FB page and find out when their next event is):
 
-<img src="/images/WDS-Local-Portland.png" width="600" />
-<b>Portland</b>
+<a href="https://www.facebook.com/groups/pdxwds/" target="_blank"><img src="/images/WDS-Local-Portland.png" alt="WDS Local Portland" width="600" /></a>
+<b>Portland <a href="https://www.facebook.com/groups/pdxwds/" target="_blank">(FB group)</a></b>
 <br>
-Next meetup: TBA
 
-<img src="/images/WDS-Local-San-Diego.png" width="600" />
-<b>San Diego</b>
+<a href="https://www.facebook.com/groups/362794770457200/" target="_blank"><img src="/images/WDS-Local-San-Diego.png" alt="WDS Local San Diego" width="600" /></a>
+<b>San Diego <a href="https://www.facebook.com/groups/362794770457200/" target="_blank">(FB group)</a></b>
 <br>
-Next meetup: TBA
 
-<img src="/images/WDS-Local-Seattle.png" width="600" />
-<b>Seattle</b>
+<a href="https://www.facebook.com/groups/WDSLocalSeattle/" target="_blank"><img src="/images/WDS-Local-Seattle.png" alt="WDS Local Seattle" width="600" /></a>
+<b>Seattle <a href="https://www.facebook.com/groups/WDSLocalSeattle/" target="_blank">(FB group)</a></b>
 <br>
-Next meetup: October 19th
 
 <div class="zig-zags_blue"></div>
 
 <b>Coming Soon:</b>
-
+WDS Local is growing and hopefully coming soon to a town/city/area near you. Click on any of the images below to get connected to these Local group's Facebook pages to find out when their next event is.:
 <head>
 <style>
 .newspaper {
@@ -89,19 +86,19 @@ Next meetup: October 19th
 <body>
 
 <div class="newspaper">
-<img src="/images/WDS_Local_DC.Header.png" width="275" />
+<a href="https://www.facebook.com/groups/263193840458019/" target="_blank"><img src="/images/WDS_Local_DC.Header.png" alt="WDS Local DC" width="275" /></a>
 <br>
-<img src="/images/WDS_Local_Nashville.Header.png" width="275" />
+<a href="https://www.facebook.com/groups/263193840458019/" target="_blank"><img src="/images/WDS_Local_Nashville.Header.png" alt="WDS Local Nashville" width="275" /></a>
 <br>
-<img src="/images/WDS_Local_LA.Header.png" width="275" />
+<a href="https://www.facebook.com/groups/1605379959756248/" target="_blank"><img src="/images/WDS_Local_LA.Header.png" alt="WDS Local Los Angeles" width="275" /></a>
 <br>
-<img src="/images/WDS_Local_NYC.Header.png" width="275" />
-<img src="/images/WDS_Local_SanFrancisco.Header.png" width="275" />
-<img src="/images/WDS_Local_Vancouver.Header.png" width="275" />
+<a href="https://www.facebook.com/groups/NYCWDS/" target="_blank"><img src="/images/WDS_Local_NYC.Header.png" alt="WDS Local NYC" width="275" /></a>
+<a href="https://www.facebook.com/groups/BayAreaWDSAlums/" target="_blank"><img src="/images/WDS_Local_SanFrancisco.Header.png" alt="WDS Local San Francisco" width="275" /></a>
+<a href="https://www.facebook.com/groups/VancouverWDS/" target="_blank"><img src="/images/WDS_Local_Vancouver.Header.png" alt="WDS Local Vancouver" width="275" /></a>
 </div>
 
 </body>
 
-<p>Want to connect with any of these group or want to see if it's possible to start a group in your area (that isn't listed), fill out the following form:</p>
+<p>Not seeing your town/city/area above but are interested in possibly to starting a group in your area? Fill out the following short form and we'll do our best to see if we can connect you to others in your area:</p>
 
 <a href="http://bit.ly/WDS-Local-Interest-Form" style ="background:rgb(226, 127, 28); text-decoration:none; color: rgb(242, 242, 233); padding: 11px; font-size: 20px;">Connect Me to a WDS Local Group &#8594;</a>
