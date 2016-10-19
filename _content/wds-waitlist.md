@@ -7,7 +7,7 @@ photo_head: https://c5.staticflickr.com/8/7747/28927611716_beba120762_c.jpg
 
 ### WDS 2017: Tuesday, July 11th - Monday, July 17th
 
-Join our WDS Waitlist to be among the first to learn when our second round of tickets go on sale! Whether this is your first time, your second, or even your seventh, each WDS is unique in it's own way because of the diversity in the community that attends. You make the WDS experience because of what you bring to it. We hope to see you in Portland in July!
+Join the WDS Waitlist to be the first to learn when our next round of tickets go on sale! Whether this is your first time, your second, or even your seventh, each WDS is unique in it's own way because of the amazing community that makes it possible. We hope to see you in Portland in July!
 
 <form id="ema_signup_form" target="_blank" action="https://madmimi.com/signups/subscribe/268574" accept-charset="UTF-8" method="post">
        <input name="utf8" type="hidden" value="✓"/>
