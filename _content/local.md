@@ -57,7 +57,7 @@ Here are the current WDS Local Groups with more being announced each month (clic
 <b>Los Angeles <a href="https://www.facebook.com/groups/WDSLocalLosAngeles/" target="_blank">(FB group)</a></b>
 <br>
 
-<a href="https://www.facebook.com/groups/NYCWDS/" target="_blank"><img src="/images/WDS-Local-NYC-Group-Photo-1" alt="WDS Local NYC" width="600" /></a>
+<a href="https://www.facebook.com/groups/NYCWDS/" target="_blank"><img src="/images/WDS-Local-NYC-Group-Photo-1.png" alt="WDS Local NYC" width="600" /></a>
 <b>New York City <a href="https://www.facebook.com/groups/NYCWDS/" target="_blank">(FB group)</a></b>
 <br>
 
