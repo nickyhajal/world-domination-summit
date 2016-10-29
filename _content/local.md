@@ -53,10 +53,6 @@ Does this sound like you? Click on the button below and we'll do our best to get
 
 Here are the current WDS Local Groups with more being announced each month (click on any of the images to be taken to the group's FB page and find out when their next event is):
 
-<a href="https://www.facebook.com/groups/WDSLocalLosAngeles/" target="_blank"><img src="/images/WDS-Local-Los-Angeles-Group-Photo.png" alt="WDS Local Los Angeles" width="600" /></a>
-<b>Los Angeles <a href="https://www.facebook.com/groups/WDSLocalLosAngeles/" target="_blank">(FB group)</a></b>
-<br>
-
 <a href="https://www.facebook.com/groups/NYCWDS/" target="_blank"><img src="/images/WDS-Local-NYC-Group-Photo-1.png" alt="WDS Local NYC" width="600" /></a>
 <b>New York City <a href="https://www.facebook.com/groups/NYCWDS/" target="_blank">(FB group)</a></b>
 <br>
