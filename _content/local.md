@@ -96,10 +96,11 @@ WDS Local is growing and hopefully coming soon to a town/city/area near you. Cli
 <div class="newspaper">
 <a href="https://www.facebook.com/groups/263193840458019/" target="_blank"><img src="/images/WDS_Local_DC.Header.png" alt="WDS Local DC" width="275" /></a>
 <br>
-<a href="https://www.facebook.com/groups/263193840458019/" target="_blank"><img src="/images/WDS_Local_Nashville.Header.png" alt="WDS Local Nashville" width="275" /></a>
+<img src="/images/WDS_Local_Nashville.Header.png" alt="WDS Local Nashville" width="275" />
 <br>
 <a href="https://www.facebook.com/groups/BayAreaWDSAlums/" target="_blank"><img src="/images/WDS_Local_SanFrancisco.Header.png" alt="WDS Local San Francisco" width="275" /></a>
 <a href="https://www.facebook.com/groups/VancouverWDS/" target="_blank"><img src="/images/WDS_Local_Vancouver.Header.png" alt="WDS Local Vancouver" width="275" /></a>
+<a href="https://www.facebook.com/groups/121832781617165/" target="_blank"><img src="/images/WDS_Local_Victoria.Header.png" alt="WDS Local Victoria" width="275" /></a>
 </div>
 
 </body>
