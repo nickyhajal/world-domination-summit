@@ -2,7 +2,7 @@
 @font-face {font-family: "Karla"; src: url("https://worlddominationsummit.com/fonts/Karla-Regular.ttf") format("truetype");}
 #logo a
 {
-	background-image:url(http://gdurl.com/n2bZ);
+	background-image:url("/WDS_2017_Form_Banner.png");
 	min-height:0;
 	width: 640px;
 	height: 206px;
@@ -13,7 +13,7 @@
 }
 * html #logo a
 {
-    background-image:url(http://gdurl.com/n2bZ);
+    background-image:url("/WDS_2017_Form_Banner.png");
     min-height: 0;
     width: 640px;
     height: 206px;
