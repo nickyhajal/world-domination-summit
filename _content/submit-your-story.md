@@ -3,46 +3,20 @@ photo_head: https://farm4.staticflickr.com/3902/14640865692_cfb9058895_z_d.jpg,h
 
 ## Submit Your Story
 
-<!-- # The best part about WDS is you and your stories.
+# The best part about WDS is you and your stories.
 
-As we've done for the past several years, this year we'll feature stories from the WDS community that can be told in impactful, bite-size tales that are 2 minutes or less. These stories will be used in a variety of ways over the WDS weekend. 
-
-Keep reading to learn more or nominate a story... 
-
-<div class="zig-zags_blue"></div>
-
-Here are some of the Attendee Stories from WDS 2014:
-
-<iframe src="//player.vimeo.com/video/102690045?title=0&amp;byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-Hosted by WDS Action Team member, Jolie Guillebeau. 
-
-Featuring [Oliver Asis](/~oliverasis), [Andrew Newman](/~andrewnewman), [Jon Giganti](/~JonGiganti), Sara Harmeier, Chris Plough, [Marsha Shandur](/~yesyesmarsha), [Sandi Wheaton](/~sandi), [Dustin Main](/~dustin), [Esme Wang](/~esmewwang), [Josh LaMar](/~joshlamar), [Akshay Nanavati](/~Existing2Living), and [Taylor Cocalis](/~tayloratgoodfoodjobs)
+Over the past 6 years 10,000+ amazing adventurers have taken part in WDS. As we reflect over the many memories and connections we've made together, we want to know <b>how has WDS impacted your life?</b>
 
 <div class="line-canvas"></div>
 
-<iframe src="//player.vimeo.com/video/102690046?title=0&amp;byline=0&amp;portrait=0&amp;color=adbf27" width="570" height="321" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<b>Here's what we're looking for:</b>
 
-Hosted by WDS Magician, Michelle Jones. 
-
-Featuring one-minute stories from the Hurricane Round by [Jennifer Idol](/~uwDesigner), [Jonathan Ronzio](/~ronzio), [Harmony Eichsteadt](/~harmony), [Ryan Haack](/~LivingOneHanded), and [Alicia Ostarello](/~aliciao).
-
-<div class="zig-zags_blue"></div>
-
-#Submit a Story
-
-This year, we're looking for a few specific kinds of stories:
-
-1. Stories about love (of all kinds), overcoming challenges, and quests or adventures (of all kinds)
-
-2. Stories that involve a skill you can teach the WDS community in less than two minutes -- in a fun, engaging way, of course
-
-3. Stories about how WDS has impacted your life or others
+What connections have you made within the WDS community that have helped you in your work or life? Was there a speaker, fellow attendee, Academy, or meet up that gave you an "a-ha" moment or changed your perspective about something? etc.
 
 Do you have (or know of another attendee that has) an awesome story that you think the WDS Community should hear about? Tell us below:
 
 <div id="wufoo-s1wmwbs81n6u528">
-Fill out my <a href="https://worlddominationsummit.wufoo.com/forms/s1wmwbs81n6u528">online form</a>.
+Fill out my <a href="https://worlddominationsummit.wufoo.com/forms/s1wmwbs81n6u528/">online form</a>.
 </div>
 <script type="text/javascript">var s1wmwbs81n6u528;(function(d, t) {
 var s = d.createElement(t), options = {
@@ -60,12 +34,6 @@ var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') retu
 try { s1wmwbs81n6u528 = new WufooForm();s1wmwbs81n6u528.initialize(options);s1wmwbs81n6u528.display(); } catch (e) {}};
 var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, 'script');</script>
-
--->
-
-### Whoa - that was a lot of stories!
-
-Attendee story submissions for 2015 are now closed, but keep doing awesome stuff and get ready to share with the WDS community in person!
 
 <div class="line-canvas"></div>
 
