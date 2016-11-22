@@ -10,9 +10,16 @@ Over the past 6 years 10,000+ amazing adventurers have taken part in WDS. As we 
 
 <div class="line-canvas"></div>
 
-<b>Here's what we're looking for:</b>
+<h3>Here's what we're looking for:</h3>
 
-What connections have you made within the WDS community that have helped you in your work or life? Was there a speaker, fellow attendee, Academy, or meet up that gave you an "a-ha" moment or changed your perspective about something? etc.
+<ul>
+  <li>How has WDS inspired you and what has happened since attending?</li>
+  <li>What has WDS confirmed or challenged you to think about in your life?</li>
+  <li>What are the most valuable things you learned from WDS?</li>
+  <li>Do you have any awesome WDS stories the world should know about?</li>
+  <li>What connections have you made within the WDS community that have helped you in your work or personal life?</li>
+  <li>Was there a speaker, fellow attendee, Academy, or meet up that gave you an "a-ha" moment or changed your perspective about something?</li>
+</ul>
 
 Do you have (or know of another attendee that has) an awesome story that you think the WDS Community should hear about? Tell us below:
 
