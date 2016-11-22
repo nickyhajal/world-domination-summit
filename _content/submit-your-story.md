@@ -36,5 +36,3 @@ try { s1wmwbs81n6u528 = new WufooForm();s1wmwbs81n6u528.initialize(options);s1wm
 var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 })(document, 'script');</script>
 
-<div class="line-canvas"></div>
-
