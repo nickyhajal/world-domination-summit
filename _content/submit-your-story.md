@@ -4,7 +4,7 @@ photo_head: https://farm4.staticflickr.com/3902/14640865692_cfb9058895_z_d.jpg,h
 
 ## Submit Your Story
 
-# The best part about WDS is you and your stories.
+# The best part of WDS is you.
 
 Over the past 6 years 10,000+ amazing adventurers have taken part in WDS. As we reflect over the many memories and connections we've made together, we want to know <b>how has WDS impacted your life?</b>
 
