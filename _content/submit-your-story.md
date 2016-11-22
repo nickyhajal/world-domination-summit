@@ -16,14 +16,14 @@ What connections have you made within the WDS community that have helped you in 
 Do you have (or know of another attendee that has) an awesome story that you think the WDS Community should hear about? Tell us below:
 
 <div id="wufoo-s1wmwbs81n6u528">
-Fill out my <a href="https://worlddominationsummit.wufoo.com/forms/s1wmwbs81n6u528/">online form</a>.
+Fill out my <a href="https://worlddominationsummit.wufoo.com/forms/s1wmwbs81n6u528">online form</a>.
 </div>
 <script type="text/javascript">var s1wmwbs81n6u528;(function(d, t) {
 var s = d.createElement(t), options = {
 'userName':'worlddominationsummit',
 'formHash':'s1wmwbs81n6u528',
 'autoResize':true,
-'height':'1374',
+'height':'1417',
 'async':true,
 'host':'wufoo.com',
 'header':'show',
