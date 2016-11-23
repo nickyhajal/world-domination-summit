@@ -98,7 +98,7 @@ WDS Local is growing and hopefully coming soon to a town/city/area near you. Cli
 <br>
 <img src="/images/WDS_Local_Nashville.Header.png" alt="WDS Local Nashville" width="275" />
 <br>
-<a href="https://www.facebook.com/groups/WDSLocalPhiladelphia/" target="_blank"><img src="/images/WDS_Local_Philadelphia.Header" alt="WDS Local Philadelphia" width="275" /></a>
+<a href="https://www.facebook.com/groups/WDSLocalPhiladelphia/" target="_blank"><img src="/images/WDS_Local_Philadelphia.Header.png" alt="WDS Local Philadelphia" width="275" /></a>
 <a href="https://www.facebook.com/groups/BayAreaWDSAlums/" target="_blank"><img src="/images/WDS_Local_SanFrancisco.Header.png" alt="WDS Local San Francisco" width="275" /></a>
 <a href="https://www.facebook.com/groups/WDSToronto/" target="_blank"><img src="/images/WDS_Local_Toronto.Header.png" alt="WDS Local Toronto" width="275" /></a>
 <a href="https://www.facebook.com/groups/VancouverWDS/" target="_blank"><img src="/images/WDS_Local_Vancouver.Header.png" alt="WDS Local Vancouver" width="275" /></a>
