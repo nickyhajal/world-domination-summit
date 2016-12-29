@@ -1,7 +1,7 @@
 sidebar: schedule
 icon: parachute
 
-# On [August 11-15, 2016](/register) the sixth annual World Domination Summit will take over Portland, Oregon yet again. Our plan of action? Have fun and create meaningful adventure. Check out [the full schedule for WDS 2016!](https://worlddominationsummit.com/files/schedule-2016.pdf)
+# On [July 11-17, 2017](/register) the seventh annual World Domination Summit will take over Portland, Oregon yet again. Our plan of action? Have fun and create meaningful adventure in community. What should you expect? Check out [the full schedule from WDS 2016!](https://worlddominationsummit.com/files/schedule-2016.pdf)
 <div class="main-schedule-box">
 	<h3>2016 Schedule</h3>
 	<h5>WDS CONNECT</h5>
