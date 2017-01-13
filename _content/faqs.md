@@ -55,8 +55,8 @@ There are no transfers or name changes for WDS Connect tickets.
 
 (Starting in mid-February) Ticket holders can transfer their ticket by: 
 <ol>
-  <li>Logging into your WDS account and looking for the transfer link at the bottom of the page</li> 
-<li>contacting our concierge team at <a href="mailto:concierge@wds.fm">concierge@wds.fm</a>.</li>
+<li>Logging into your WDS account and looking for the transfer link at the bottom of the page OR</li> 
+<li>Contacting our concierge team at <a href="mailto:concierge@wds.fm">concierge@wds.fm</a>.</li>
 </ol>
 
 <div class="line-canvas"></div>
