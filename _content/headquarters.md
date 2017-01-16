@@ -4,7 +4,7 @@ sidebar: headquarters
 
 <h3>Your Base in Portland, Oregon</h3>
 <p>
-	We'll base out of the Newmark Theatre in the Antoinette Hatfield Hall, located two blocks from a light-rail stop and directly across from the south park blocks. On Saturday morning, one of the city's main Farmer's Markets will be open in the park, with cupcakes, fresh vegetables, and local art available for sale.
+	We'll base out of the Antoinette Hatfield Hall, located two blocks from a light-rail stop and directly across from the south park blocks. On Saturday morning, one of the city's main Farmer's Markets will be open in the park, with cupcakes, fresh vegetables, and local art available for sale.
 </p>
 <div class="place-row">
 	<a href="http://www.portland5.com/newmark-theatre">1111 SW Broadway, Portland, OR 97205</a>
