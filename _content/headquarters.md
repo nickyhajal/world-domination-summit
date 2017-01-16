@@ -20,10 +20,10 @@ sidebar: headquarters
 <h3 class="side-icon-moon">Lodging</h3>
 <p>Portland is an affordable destination, with the lowest hotel rates of any major west coast city. Every year we arrange a number of discounts from partner hotels. Other attendees rent through AirBnB or stay at a local hostel.
 <p>
-With Portland being a very popular destination in the summertime, it's important to book your rooms ASAP. This year we've secured rooms at these five iconic Portland properties, all within walking distance to WDS events and activities:</p>
+We'll be launching our official hotel partners list for WDS 2017 soon but here is an example list of hotels we partnered with last year:</p>
 
 <div class="place-row">
-	<a href="http://uspor.webhotel.microsdc.us/bp/search_rooms.jsp">Paramount Hotel</a> 
+	<a href="http://www.portlandparamount.com/">Paramount Hotel</a> 
 	<span>
 		<a href="http://goo.gl/WexjC9" target ="_blank">0.2 Mi</a>
 		From Base
@@ -31,14 +31,14 @@ With Portland being a very popular destination in the summertime, it's important
 </div>
 
 <div class="place-row">
-	<a href="https://bookings.ihotelier.com/Hotel-Lucia/bookings.jsp?hotelID=6833&groupID=1571255">Hotel Lucia</a><span>
+	<a href="https://hotellucia.com/">Hotel Lucia</a><span>
 		<a href="https://goo.gl/maps/aRBcQETC6iq" target ="_blank">0.3 Mi</a>
 		From Base
 	</span>
 </div>
 
 <div class="place-row">
-	<a href="https://gc.synxis.com/rez.aspx?chain=5173&hotel=53439&arrive=08/11/2016&depart=08/15/2016">Hotel Modera</a>
+	<a href="https://www.hotelmodera.com/">Hotel Modera</a>
 	<span>
 		<a href="https://goo.gl/maps/T3BnDWTY9oq" target ="_blank">0.3 Mi</a>
 		From Base
@@ -46,7 +46,7 @@ With Portland being a very popular destination in the summertime, it's important
 </div>
 
 <div class="place-row">
-	<a href="https://bookings.ihotelier.com/Sentinel/bookings.jsp?hotelID=17435&groupID=1571225">Hotel Sentinel</a>  
+	<a href="https://www.sentinelhotel.com/">Hotel Sentinel</a>  
 	<span>
 		<a href="https://goo.gl/maps/Z1o9iXoS98N2" target ="_blank">0.4 Mi</a>
 		From Base
@@ -54,14 +54,12 @@ With Portland being a very popular destination in the summertime, it's important
 </div>
 
 <div class="place-row">
-	<a href="https://bookings.ihotelier.com/Hotel-Deluxe/bookings.jsp?hotelID=6835&groupID=1574087">Hotel deLuxe</a>  
+	<a href="https://www.hoteldeluxeportland.com/">Hotel deLuxe</a>  
 	<span>
 		<a href="https://goo.gl/maps/kncUcATiUPT2" target ="_blank">0.6 Mi</a>
 		From Base
 	</span>
 </div>
-
-<i>*use the group code: <b>WDS16</b> when booking the Paramount Hotel and the the special code: <b>WDS2016</b> when booking the Hotel Modera</i>
 
 <p></p>
 <b>Alternative Lodging Options</b>
