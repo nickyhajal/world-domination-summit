@@ -1,4 +1,4 @@
-Bookshelf = require('bookshelf')
+Bookshelf = require('bookshelf')(process.db);
 whn      = require('when')
 moment    = require('moment')
 _         = require('underscore')
@@ -8,7 +8,7 @@ sanitize  = require('validator').sanitize
 S = require 'underscore.string'
 
 # Initializes a new Bookshelf instance, for reference elsewhere.
-Shelf = Bookshelf.ap = Bookshelf.initialize(process.db);
+Shelf = Bookshelf.ap = Bookshelf;
 Shelf.client = process.db.client
 Shelf.validator = new Validator();
 Shelf.Model = Shelf.Model.extend
