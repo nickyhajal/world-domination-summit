@@ -2,7 +2,6 @@ global.tk = console.log;
 require('coffee-script');
 require('coffee-trace');
 var Bookshelf = require('bookshelf');
-var Knex = require('knex');
 var express = require('express');
 var RedisStore = require('connect-redis')(express);
 var app = module.exports = express.createServer();
@@ -13,7 +12,7 @@ require('express-namespace');
 if (process.env.DIR !== undefined) {
 	process.chdir(process.env.DIR);
 }
-
+process.knex = require('knex')(app.settings.db);
 db = process.db = app.settings.db;
 process.mail = app.settings.mail;
 process.year = '2016';
