@@ -1,4 +1,4 @@
-Bookshelf = require('bookshelf')(process.db);
+Bookshelf = require('bookshelf')(process.knex);
 whn      = require('when')
 moment    = require('moment')
 _         = require('underscore')
