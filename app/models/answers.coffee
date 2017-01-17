@@ -9,9 +9,6 @@ Answer = Shelf.Model.extend
     'question_id', 'answer', 'user_id'
   ]
   idAttribute: 'answer_id'
-  initialize: ->
-    this.on 'creating', this.creating, this
-    this.on 'created', this.created, this
 
 Answers = Shelf.Collection.extend
   model: Answer
