@@ -29,9 +29,9 @@ To learn more about what it's like to hang out with us, check out this short doc
 
 # **Tickets for WDS 2017**
 
-Similar to years past we're releasing tickets on a first-come, first-served basis, in two rounds of ticket sales. Round one is now open - grab your ticket while you can at the link below!
+Similar to years past we're releasing tickets on a first-come, first-served basis, in two rounds of ticket sales. We just wrapped up our first round of ticket sales, but join the waitlist and be among the first to know when tickets for the second round go on sale!
 
-### <center><a href="https://2017.worlddominationsummit.com/" target="blank"> Join Us!</a></center>
+### <center><a href="https://2017.worlddominationsummit.com/#tickets" target="blank"> Join the Waitlist!</a></center>
 
 <!--# 
 <a href="/academies" class="register-banner"><span class="reg-heading">Register now for Academies!</span><span class="reg-subhead">The main stage show is sold out, but you can still attend WDS Academies.</span></a>

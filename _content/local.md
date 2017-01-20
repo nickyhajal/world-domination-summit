@@ -53,6 +53,14 @@ Does this sound like you? Click on the button below and we'll do our best to get
 
 Here are the current WDS Local Groups with more being announced each month (click on any of the images to be taken to the group's FB page and find out when their next event is):
 
+<a href="https://www.facebook.com/groups/WDSLocalLosAngeles/" target="_blank"><img src="/images/WDS-Local-Los-Angeles-Group-Photo.png" alt="WDS Local Los Angeles" width="600" /></a>
+<b>Los Angeles <a href="https://www.facebook.com/groups/WDSLocalLosAngeles/" target="_blank">(FB group)</a></b>
+<br>
+
+<a href="https://www.facebook.com/groups/NYCWDS/" target="_blank"><img src="/images/WDS-Local-NYC-Group-Photo-1.png" alt="WDS Local NYC" width="600" /></a>
+<b>New York City <a href="https://www.facebook.com/groups/NYCWDS/" target="_blank">(FB group)</a></b>
+<br>
+
 <a href="https://www.facebook.com/groups/pdxwds/" target="_blank"><img src="/images/WDS-Local-Portland.png" alt="WDS Local Portland" width="600" /></a>
 <b>Portland <a href="https://www.facebook.com/groups/pdxwds/" target="_blank">(FB group)</a></b>
 <br>
@@ -88,13 +96,14 @@ WDS Local is growing and hopefully coming soon to a town/city/area near you. Cli
 <div class="newspaper">
 <a href="https://www.facebook.com/groups/263193840458019/" target="_blank"><img src="/images/WDS_Local_DC.Header.png" alt="WDS Local DC" width="275" /></a>
 <br>
-<a href="https://www.facebook.com/groups/263193840458019/" target="_blank"><img src="/images/WDS_Local_Nashville.Header.png" alt="WDS Local Nashville" width="275" /></a>
+<a href="https://www.facebook.com/groups/WDSLocalMSP" target="_blank"><img src="/images/WDS_Local_Minneapolis-St.Paul.Header.png" alt="WDS Local Minneapolis-St.Paul" width="275" /></a>
+<img src="/images/WDS_Local_Nashville.Header.png" alt="WDS Local Nashville" width="275" />
 <br>
-<a href="https://www.facebook.com/groups/1605379959756248/" target="_blank"><img src="/images/WDS_Local_LA.Header.png" alt="WDS Local Los Angeles" width="275" /></a>
-<br>
-<a href="https://www.facebook.com/groups/NYCWDS/" target="_blank"><img src="/images/WDS_Local_NYC.Header.png" alt="WDS Local NYC" width="275" /></a>
+<a href="https://www.facebook.com/groups/WDSLocalPhiladelphia/" target="_blank"><img src="/images/WDS_Local_Philadelphia.Header.png" alt="WDS Local Philadelphia" width="275" /></a>
 <a href="https://www.facebook.com/groups/BayAreaWDSAlums/" target="_blank"><img src="/images/WDS_Local_SanFrancisco.Header.png" alt="WDS Local San Francisco" width="275" /></a>
+<a href="https://www.facebook.com/groups/WDSToronto/" target="_blank"><img src="/images/WDS_Local_Toronto.Header.png" alt="WDS Local Toronto" width="275" /></a>
 <a href="https://www.facebook.com/groups/VancouverWDS/" target="_blank"><img src="/images/WDS_Local_Vancouver.Header.png" alt="WDS Local Vancouver" width="275" /></a>
+<a href="https://www.facebook.com/groups/121832781617165/" target="_blank"><img src="/images/WDS_Local_Victoria.Header.png" alt="WDS Local Victoria" width="275" /></a>
 </div>
 
 </body>
