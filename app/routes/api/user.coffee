@@ -484,6 +484,9 @@ routes = (app) ->
 					first_name: bits[0]
 					last_name: bits[1]
 				user.addToList(req.query.list);
+				next()
+			else
+				next()
 
 		reset: (req, res, next) ->
 			if req.query.username?
