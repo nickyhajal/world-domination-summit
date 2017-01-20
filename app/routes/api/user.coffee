@@ -475,6 +475,15 @@ routes = (app) ->
 				res.status(401)
 				next()
 
+		addToList: (req, res, next) ->
+			if req.query.email? and req.query.name?
+				bits = req.query.name.split(' ');
+				user = User.forge
+					email: req.query.email
+					first_name: bits[0]
+					last_name: bits[1]
+				user.addToList(req.query.list);
+
 		reset: (req, res, next) ->
 			if req.query.username?
 				query = {user_name: req.query.username}

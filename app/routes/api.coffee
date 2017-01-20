@@ -49,6 +49,7 @@ routes = (app) ->
 		app.post '/user', user.create
 		app.post '/user/tickets', user.give_tickets
 		app.post '/user/login', user.login
+		app.post '/user/addToList', user.addToList
 		app.post '/user/reset', user.reset
 		app.post '/user/registrations', user.registrations
 		app.post '/user/interest', user.add_interest
