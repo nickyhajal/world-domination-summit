@@ -476,6 +476,7 @@ routes = (app) ->
 				next()
 
 		addToList: (req, res, next) ->
+			console.log(req.query);
 			if req.query.email? and req.query.name?
 				bits = req.query.name.split(' ');
 				user = User.forge
