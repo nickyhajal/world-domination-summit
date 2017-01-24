@@ -483,6 +483,7 @@ routes = (app) ->
 					email: req.query.email
 					first_name: bits[0]
 					last_name: bits[1]
+				console.log(req.query);
 				user.addToList(req.query.list);
 				next()
 			else

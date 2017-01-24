@@ -43,7 +43,7 @@ emails =
       @removeFromList 'WDS '+process.year+' Attendees'
       @removeFromList 'WDS '+process.year+' Connect'
       @addToList 'WDS '+process.year+' Canceled'
-  addToList: (list) ->
+  addToList: (list, custom = false) ->
     dfr = Q.defer()
     params =
       username: process.env.MM_USER
@@ -52,6 +52,9 @@ emails =
       first_name: @get('first_name')
       last_name: @get('last_name')
       unique_link: @get('hash')
+    if custom
+      for i,v of custom
+        params[i] = v
     call_list =
       url: 'https://api.madmimi.com/audience_lists'
       method: 'post'
