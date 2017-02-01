@@ -80,6 +80,36 @@ ticket =
       console.error err
     return dfr.promise
 
+  assignTicket: (ticket, returning = false, purchaser = null) ->
+    dfr = Q.defer()
+    type = ticket.get('type')
+    ticket.set
+      status: 'active'
+      user_id: @get('user_id')
+    .save()
+    .then (upd_ticket) =>
+      @set 'attending'+process.yr, '1'
+      @set 'ticket_type', type
+      @save()
+      .then (upd_user) =>
+        list = 'WDS '+process.year+' Attendees'
+        if type is 'connect'
+          list = 'WDS '+process.year+' Connect'
+        @addToList(list)
+        .then =>
+          promo = 'Welcome'
+          subject = "You're coming to WDS! Awesome!"
+          if returning
+            promo = 'WelcomeBack'
+          if type is 'connect'
+            promo = 'WelcomeConnect'
+          # @sendEmail(promo, subject)
+          dfr.resolve({user: upd_user, ticket: upd_ticket})
+    , (err) ->
+      console.error err
+    return dfr.promise
+
+
   cancelTicket: ->
     dfr = Q.defer()
     @set('attending'+process.yr, '-1')

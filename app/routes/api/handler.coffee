@@ -83,7 +83,7 @@ handler =
 		res.setHeader('Content-Type', 'application/json')
 		if not req.query.clean?
 			if res.errors.length
-				res.r.errors = errors
+				res.r.errors = res.errors
 				res.r.err = 1
 			else
 				res.r.suc = 1

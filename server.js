@@ -1,3 +1,4 @@
+Error.stackTraceLimit = Infinity;
 global.tk = console.log;
 require('coffee-script');
 require('coffee-trace');
@@ -5,6 +6,7 @@ var Bookshelf = require('bookshelf');
 var express = require('express');
 var RedisStore = require('connect-redis')(express);
 var app = module.exports = express.createServer();
+process.io = require('socket.io').listen(app);
 var apn = require('apn');
 var gcm = require('node-gcm');
 require('./app/config')(app, express, RedisStore);
@@ -15,16 +17,16 @@ if (process.env.DIR !== undefined) {
 process.knex = require('knex')(app.settings.db);
 db = process.db = app.settings.db;
 process.mail = app.settings.mail;
-process.year = '2016';
-process.yr = '16';
-process.lastYear = '2015';
+process.year = '2017';
+process.yr = '17';
+process.lastYear = '2016';
 process.dmn = process.env.DOMAIN;
 process.rsapp = 'mobile_logins';
 process.APN = new apn.Connection(app.settings.apn);
 process.gcmSender = new gcm.Sender(process.env.GCM_KEY);
-process.fire = require("firebase")
+process.fire = require("firebase-admin");
 process.fire.initializeApp({
-  serviceAccount: process.env.FIREBASE_CONF,
+  credential: process.fire.credential.cert(process.env.FIREBASE_CONF),
   databaseURL: process.env.FIREBASE_URL,
   databaseAuthVariableOverride: {
     uid: 'wdsfm-ak89aoemakqysbk48zcbp73aiaoe381c'

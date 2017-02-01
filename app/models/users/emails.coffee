@@ -55,7 +55,6 @@ emails =
     if custom
       for i,v of custom
         params[i] = v
-    console.log(params);
     call_list =
       url: 'https://api.madmimi.com/audience_lists'
       method: 'post'
