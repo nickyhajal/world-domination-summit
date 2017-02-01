@@ -330,6 +330,7 @@ routes = (app) ->
 					res.r.loggedin = false
 					next()
 
+			console.log(req.query)
 			if req.query.hash?
 				User.forge(hash: req.query.hash)
 				.fetch()
