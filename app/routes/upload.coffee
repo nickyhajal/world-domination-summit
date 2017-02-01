@@ -17,7 +17,7 @@ routes = (app) ->
 		console.log(req.file)
 		if req.file
 			console.log(req.file.path)
-			ext = req.file.path.split('.')
+			ext = req.file.originalname.split('.')
 			ext = ext[ext.length - 1]
 			console.log(req.session)
 			Users.forge().getMe(req)
@@ -25,8 +25,8 @@ routes = (app) ->
 				url = "/images/avatars/"+me.get('user_id')+'.'+ext
 				console.log(url);
 				newPath = __dirname + '/../..' + url
-				console.log(req.file.path)
 				console.log(newPath)
+				console.log(req.file.path)
 				gm(req.file.path)
 				.resize('400^')
 				.gravity('Center')
