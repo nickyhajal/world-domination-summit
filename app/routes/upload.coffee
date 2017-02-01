@@ -19,6 +19,7 @@ routes = (app) ->
 			console.log(req.file.path)
 			ext = req.file.path.split('.')
 			ext = ext[ext.length - 1]
+			console.log(req.session)
 			Users.forge().getMe(req)
 			.then (me) ->
 				url = "/images/avatars/"+me.get('user_id')+'.'+ext
@@ -40,10 +41,11 @@ routes = (app) ->
 					me.save()
 					.then ->
 						request 'http://avatar.wds.fm/flush/'+me.get('user_id'), (error, response, body) ->
-						res.render "../views/upload-success"
-							layout: false
-							url: (url + '?'+crypto.createHash('md5').update((new Date().getTime())+'').digest("hex"))
-							title: "World Domination Summit - Upload Success"
+						res.send('');
+						# res.render "../views/upload-success"
+						# 	layout: false
+						# 	url: (url + '?'+crypto.createHash('md5').update((new Date().getTime())+'').digest("hex"))
+						# 	title: "World Domination Summit - Upload Success"
 		else
 			res.render "../views/upload",
 				title: "World Domination Summit - Avatar Upload"
