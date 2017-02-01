@@ -38,8 +38,11 @@ routes = (app) ->
 
 		# User
 		app.get '/me', user.me
+		app.get '/me/twitter', user.twitterCheck
 		app.post '/me/claim-ticket', user.claim_ticket
+		app.post '/me/give-ticket', user.give_ticket
 		app.get '/users', user.search
+		app.post '/user/update', user.update
 		app.patch '/user', user.update
 		app.put '/user', user.update
 		app.get '/user/validate', user.validate

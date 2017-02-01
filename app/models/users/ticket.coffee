@@ -4,6 +4,7 @@ async = require('async')
 ##
 
 [Ticket, Tickets] = require '../tickets'
+[User, Users] = require '../users'
 
 ticket =
   preregisterTicket: (quantity = 1) ->
@@ -79,6 +80,35 @@ ticket =
     , (err) ->
       console.error err
     return dfr.promise
+
+  assignTicket: (ticket, returning = false, purchaser = null) ->
+    dfr = Q.defer()
+    type = ticket.get('type')
+    ticket.set
+      status: 'active'
+      user_id: @get('user_id')
+    .save()
+    .then (upd_ticket) =>
+      @set 'attending'+process.yr, '1'
+      @set 'ticket_type', type
+      @save()
+      .then (upd_user) =>
+        list = 'WDS '+process.year+' Attendees'
+        if type is 'connect'
+          list = 'WDS '+process.year+' Connect'
+        @addToList(list)
+        .then =>
+          promo = 'WelcomeAssignee'
+          subject = "You're coming to WDS! Awesome!"
+          if type is 'connect'
+            promo = 'WelcomeConnectAssignee'
+          @sendEmail(promo, subject, {purchaser: purchaser.getFullName()})
+          purchaser.sendEmail('TicketAssignConfirmation', 'Great, your ticket was assigned!', {assignee: @getFullName()})
+          dfr.resolve({user: upd_user, ticket: upd_ticket})
+    , (err) ->
+      console.error err
+    return dfr.promise
+
 
   cancelTicket: ->
     dfr = Q.defer()

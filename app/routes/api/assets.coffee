@@ -176,7 +176,6 @@ routes = (app) ->
 							user = user.toJSON()
 							delete user.password
 							delete user.hash
-							delete user.tickets
 							if user.user_name.length is 40
 								user.user_name = ''
 							Cards.forge()

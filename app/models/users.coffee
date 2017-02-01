@@ -129,6 +129,7 @@ User = Shelf.Model.extend
 
 	# Getters
 	getPic: getters.getPic
+	getFullName: getters.getFullName
 	getMe: getters.getMe
 	getUrl: getters.getUrl
 	getDistanceFromPDX: getters.getDistanceFromPDX
@@ -138,6 +139,7 @@ User = Shelf.Model.extend
 	getConnections: getters.getConnections
 	getFeedLikes: getters.getFeedLikes
 	getAllTickets: getters.getAllTickets
+	getCurrentTickets: getters.getCurrentTickets
 	getRsvps: getters.getRsvps
 	getAchievedTasks: getters.getAchievedTasks
 	getFriends: getters.getFriends
@@ -171,6 +173,7 @@ User = Shelf.Model.extend
 	preregisterTicket: ticket.preregisterTicket
 	registerTicket: ticket.registerTicket
 	connectTicket: ticket.connectTicket
+	assignTicket: ticket.assignTicket
 	cancelTicket: ticket.cancelTicket
 
 
@@ -355,6 +358,7 @@ Users = Shelf.Collection.extend
 	model: User
 	getMe: (req) ->
 		dfr = Q.defer()
+		console.log(req.session)
 		ident = if req.session.ident then JSON.parse(req.session.ident) else false
 		if ident
 			id = ident.user_id ? ident.id

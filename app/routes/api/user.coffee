@@ -39,6 +39,11 @@ routes = (app) ->
 				res.r.valid = 1
 			next()
 
+		twitterCheck: (req, res, next) ->
+			if req.me
+				res.r.twitter = req.me.get('twitter')
+				next()
+
 		me: (req, res, next) ->
 			if req.me
 				Users.forge().getUser(req.me.get('user_id'))
@@ -62,15 +67,63 @@ routes = (app) ->
 			if req.me
 				Tickets.forge().query (qb) ->
 					qb.where('user_id', req.me.get('user_id'))
-					qb.where('status', 'purchased')
+					qb.where('status', 'unclaimed')
 				.fetch()
 				.then (rsp) ->
 					ticket = rsp.models[0]
-					remaining = rsp.models.slice(1)
 					req.me.connectTicket(ticket)
 					.then ->
-						res.r.tickets = remaining
-						next()
+						req.me.getCurrentTickets()
+						.then (user) ->
+							res.r.tickets = user.get('tickets')
+							next()
+			else
+				res.status(400)
+				res.r.msg = 'No user'
+				next()
+		give_ticket: (req, res, next) ->
+			giveTicket = (atn, tkt, returning) ->
+					atn.assignTicket(tkt, returning, req.me)
+					.then ->
+						req.me.getCurrentTickets()
+						.then (user) ->
+							res.r.tickets = user.get('tickets')
+							next()
+			if req.me
+				if req.query.name? and req.query.email?
+					Tickets.forge().query (qb) ->
+						qb.where('purchaser_id', req.me.get('user_id'))
+						qb.where('status', 'unclaimed')
+					.fetch()
+					.then (rsp) ->
+						ticket = rsp.models[0]
+						User.forge
+							email: req.query.email
+						.fetch()
+						.then (existing) ->
+							if existing
+								Tickets.forge
+									user_id: existing.get('user_id')
+									year: process.year,
+									status: 'active'
+								.fetch()
+								.then (existing_tkt) ->
+									if existing_tkt
+										res.errors.push('Looks like '+existing.get('first_name')+' already has a ticket to WDS 2017. You could try someone else or contact concierge@wds.fm for help. ')
+										next()
+									else
+										giveTicket(existing, ticket, true)
+							else
+								bits = req.query.name.split(' ')
+								User.forge
+									first_name: bits[0]
+									last_name: bits[1]
+									email: req.query.email
+								.save()
+								.then (user) ->
+									giveTicket(user, ticket, false)
+				else
+					res.r.msg = "Hm, looks like you're missing some data."
 			else
 				res.status(400)
 				res.r.msg = 'No user'
@@ -217,8 +270,6 @@ routes = (app) ->
 		post_story: (req, res, next) ->
 			if req.me? and req.me and req.query.story? and req.query.phone?
 				name = req.me.get('first_name')+' '+req.me.get('last_name')
-				tk name
-				tk req.query
 				knex('stories')
 				.insert({
 					user_id: req.me.get('user_id')
@@ -483,7 +534,6 @@ routes = (app) ->
 					email: req.query.email
 					first_name: bits[0]
 					last_name: bits[1]
-				console.log(req.query);
 				user.addToList(req.query.list, JSON.parse(req.query.custom));
 				next()
 			else
@@ -560,7 +610,8 @@ routes = (app) ->
 					res.status = '400'
 				else
 					req.session.twitter_connect = [reqToken, reqTokenSec]
-					res.redirect('https://twitter.com/oauth/authenticate?oauth_token='+reqToken)
+					url = 'https://twitter.com/oauth/authenticate?oauth_token='+reqToken+'&oauth_callback=https://wds.nky'+encodeURI('/user/twitter/callback')
+					res.redirect(url)
 
 		twitter_callback: (req, res, next) ->
 			if req.me and req.session.twitter_connect?
@@ -588,12 +639,12 @@ routes = (app) ->
 									req.me.save()
 									.then ->
 										request 'http://avatar.wds.fm/flush/'+req.me.get('user_id'), (error, response, body) ->
-										res.redirect('/welcome')
+										res.send('');
 								, (err) ->
 									console.error(err)
 							else
 								req.session.twitter_err = 1
-								res.redirect('/welcome')
+								res.send('<script type="text/javascript>window.close();</script>');
 
 		del_twitter: (req, res, next) ->
 			if req.me

@@ -199,7 +199,6 @@ ap.loading = (setLoading = false) ->
 			$('body').append(html)
 	else
 		$('#loading-logo').remove()
-
 ap.initSearch = ->
 	_.whenReady 'users', ->
 		$('body')
