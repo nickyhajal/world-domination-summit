@@ -7,27 +7,26 @@ fs = require('fs')
 crypto = require('crypto')
 gm = require('gm')
 request = require('request')
+multer  = require('multer')
+upload = multer({ dest: '/tmp_uploads/' })
 
 [User, Users] = require('../models/users')
 routes = (app) ->
-	app.all '/upload-avatar', (req, res) ->
+	app.all '/upload-avatar', upload.single('pic'), (req, res) ->
 
-		console.log(req.files)
-		if req.files
-			console.log(req.files.pic.path)
-			ext = req.files.pic.path.split('.')
+		console.log(req.file)
+		if req.file
+			console.log(req.file.path)
+			ext = req.file.path.split('.')
 			ext = ext[ext.length - 1]
-			console.log(req.session)
-			console.log(req.me)
 			Users.forge().getMe(req)
 			.then (me) ->
-				console.log(me)
 				url = "/images/avatars/"+me.get('user_id')+'.'+ext
 				console.log(url);
 				newPath = __dirname + '/../..' + url
-				console.log(req.files.pic.path)
+				console.log(req.file.path)
 				console.log(newPath)
-				gm(req.files.pic.path)
+				gm(req.file.path)
 				.resize('400^')
 				.gravity('Center')
 				.crop(400, 400, 0, 0)
