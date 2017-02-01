@@ -613,7 +613,7 @@ routes = (app) ->
 					res.status = '400'
 				else
 					req.session.twitter_connect = [reqToken, reqTokenSec]
-					url = 'https://twitter.com/oauth/authenticate?oauth_token='+reqToken+'&oauth_callback=https://api.worlddominationsummit.com'+encodeURI('/user/twitter/callback')
+					url = 'https://twitter.com/oauth/authenticate?oauth_token='+reqToken+'&oauth_callback=https://'+encodeURI('api.worlddominationsummit.com/user/twitter/callback')
 					res.redirect(url)
 
 		twitter_callback: (req, res, next) ->
