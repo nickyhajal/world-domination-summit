@@ -22,6 +22,7 @@ routes = (app) ->
 			console.log(req.session)
 			Users.forge().getMe(req)
 			.then (me) ->
+				request 'http://avatar.wds.fm/flush/'+me.get('user_id'), (error, response, body) ->
 				url = "/images/avatars/"+me.get('user_id')+'.'+ext
 				console.log(url);
 				newPath = __dirname + '/../..' + url
@@ -41,6 +42,7 @@ routes = (app) ->
 					me.save()
 					.then ->
 						request 'http://avatar.wds.fm/flush/'+me.get('user_id'), (error, response, body) ->
+
 						res.send('');
 						# res.render "../views/upload-success"
 						# 	layout: false
