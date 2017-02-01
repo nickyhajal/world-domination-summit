@@ -90,7 +90,7 @@ routes = (app) ->
 							res.r.tickets = user.get('tickets')
 							next()
 			if req.me
-				if req.query.name? and req.query.email?
+				if req.query.first_name? and req.query.last_name? and req.query.email?
 					Tickets.forge().query (qb) ->
 						qb.where('purchaser_id', req.me.get('user_id'))
 						qb.where('status', 'unclaimed')
@@ -116,8 +116,8 @@ routes = (app) ->
 							else
 								bits = req.query.name.split(' ')
 								User.forge
-									first_name: bits[0]
-									last_name: bits[1]
+									first_name: req.query.first_name
+									last_name: req.query.last_name
 									email: req.query.email
 								.save()
 								.then (user) ->
