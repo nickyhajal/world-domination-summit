@@ -23,7 +23,7 @@ getters =
 		dfr = Q.defer()
 #    @raceCheck()
 #    .then =>
-		@getAllTickets()
+		@getCurrentTickets()
 		.then (user) =>
 			@getAnswers()
 			.then (user) =>
@@ -39,6 +39,7 @@ getters =
 								.then (user) =>
 									@getRegistration()
 									.then (user) =>
+										user.set('password', '')
 										if user.get('password')?.length
 											user.set('has_pw', true)
 										if user.get('user_name')?.length  is 40
@@ -57,13 +58,16 @@ getters =
 				last_name: @get('last_name')
 				email: @get('email')
 				user_id: @get('user_id')
-			token = process.fire.auth().createCustomToken(uid, params)
-			@set('firetoken', token)
-			User.forge
-				user_id: @get('user_id')
-				firetoken: token
-			.save()
-			dfr.resolve(@)
+			process.fire.auth().createCustomToken(uid, params)
+			.then (token) =>
+				@set('firetoken', token)
+				User.forge
+					user_id: @get('user_id')
+					firetoken: token
+				.save()
+				dfr.resolve(@)
+			.catch (err) =>
+				console.error(err)
 
 		if existing? and existing.length
 			genFire()
@@ -227,6 +231,34 @@ getters =
 		Tickets.forge()
 		.query('where', 'user_id', @get('user_id'))
 		.fetch()
+		.then (rows) =>
+			@set('tickets', rows.models)
+			dfr.resolve this
+		, (err) ->
+			console.error(err)
+		return dfr.promise
+	getCurrentTickets: ->
+		dfr = Q.defer()
+		columns = [
+			'ticket_id', 'tickets.type', 'tickets.created_at', 'tickets.user_id', 'purchaser_id', 'status',
+			'tickets.year',
+			'p.first_name as purchaser_first_name',
+			'p.last_name as purchaser_last_name',
+			'p.email as purchaser_email',
+			'u.first_name as attendee_first_name',
+			'u.last_name as attendee_last_name',
+			'u.email as attendee_email',
+		]
+		Tickets.forge()
+		.query (qb) =>
+			user = this;
+			qb.where ->
+				@where('tickets.user_id', user.get('user_id'))
+				.orWhere('purchaser_id', user.get('user_id'))
+			qb.where('year', process.year)
+			qb.leftJoin('users as p', 'p.user_id', '=', 'tickets.user_id')
+			qb.leftJoin('users as u', 'u.user_id', '=', 'tickets.user_id')
+		.fetch({columns: columns})
 		.then (rows) =>
 			@set('tickets', rows.models)
 			dfr.resolve this
