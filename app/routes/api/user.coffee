@@ -66,7 +66,7 @@ routes = (app) ->
 		claim_ticket: (req, res, next) ->
 			if req.me
 				Tickets.forge().query (qb) ->
-					qb.where('user_id', req.me.get('user_id'))
+					qb.where('purchaser_id', req.me.get('user_id'))
 					qb.where('status', 'unclaimed')
 				.fetch()
 				.then (rsp) ->
