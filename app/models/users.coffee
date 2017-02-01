@@ -36,7 +36,7 @@ User = Shelf.Model.extend
 	]
 	limitedAttributes: [
 		'user_id', 'type', 'email', 'first_name', 'last_name', 'attending14', 'attending15',
-		'instagram', 'lat', 'lon', 'distance', 'pub_loc', 'location', 'ticket_type', 'tour'
+		'instagram', 'lat', 'lon', 'distance', 'pub_loc', 'location', 'ticket_type', 'tour', 'intro'
 	]
 	defaults:
 		pic: ''
@@ -358,7 +358,6 @@ Users = Shelf.Collection.extend
 	model: User
 	getMe: (req) ->
 		dfr = Q.defer()
-		console.log(req.session)
 		ident = if req.session.ident then JSON.parse(req.session.ident) else false
 		if ident
 			id = ident.user_id ? ident.id

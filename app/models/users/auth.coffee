@@ -21,9 +21,7 @@ auth =
     return dfr.promise
 
   login: (req) ->
-    tk 'LOGIN'
     req.session.ident = JSON.stringify(this)
-    tk req.session.ident
     # req.session.save() # Seems like calling this prevents it from saving in redis
 
   requestUserToken: (ip) ->

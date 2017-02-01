@@ -381,7 +381,6 @@ routes = (app) ->
 					res.r.loggedin = false
 					next()
 
-			console.log(req.query)
 			if req.query.hash?
 				User.forge(hash: req.query.hash)
 				.fetch()
@@ -484,7 +483,11 @@ routes = (app) ->
 
 		update: (req, res, next) ->
 			post = _.pick(req.query, User.prototype.permittedAttributes)
+			console.log(post);
 			if req.me
+				if post.calling_code?
+					bits = post.calling_code.split('-');
+					post.calling_code = bits[0]
 				if +req.me.get('user_id') is +post.user_id or req.me.hasCapability('manifest')
 					User.forge({user_id: post.user_id})
 					.fetch()
@@ -528,7 +531,6 @@ routes = (app) ->
 				next()
 
 		addToList: (req, res, next) ->
-			console.log(req.query);
 			if req.query.email? and req.query.name?
 				bits = req.query.name.split(' ');
 				user = User.forge
