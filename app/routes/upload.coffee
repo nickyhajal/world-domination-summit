@@ -12,6 +12,7 @@ request = require('request')
 routes = (app) ->
 	app.all '/upload-avatar', (req, res) ->
 
+		console.log(req.files)
 		if req.files
 			console.log(req.files.pic.path)
 			ext = req.files.pic.path.split('.')
