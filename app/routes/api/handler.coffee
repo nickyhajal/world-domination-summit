@@ -96,7 +96,8 @@ handler =
 			rsp: res.r
 			cb: (req.query.callback ? '')
 
-		res.render '../views/api', render
+		# res.render '../views/api', render
+		res.send(JSON.stringify(res.r));
 		me = false
 		ident = false
 		errors = []

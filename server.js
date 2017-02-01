@@ -5,9 +5,23 @@ require('coffee-trace');
 var Bookshelf = require('bookshelf');
 var express = require('express');
 var session = require('express-session');
+var cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 var RedisStore = require('connect-redis')(session);
-var app = module.exports = express.createServer();
-process.io = require('socket.io').listen(app);
+var app = express();
+app.use(cookieParser());
+app.use(bodyParser.json({
+  extended: true,
+  uploadDir:'/tmp_uploads',
+  keepExtensions: true
+}));
+app.use(session({
+  secret: process.env.SESS_SEC,
+  store: new RedisStore,
+  cookie:{ maxAge: 10000000000 },
+  resave: false,
+  saveUninitialized: false,
+}));
 var apn = require('apn');
 var gcm = require('node-gcm');
 require('./app/config')(app, express, RedisStore);
