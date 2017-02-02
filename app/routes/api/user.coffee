@@ -114,7 +114,6 @@ routes = (app) ->
 									else
 										giveTicket(existing, ticket, true)
 							else
-								bits = req.query.name.split(' ')
 								User.forge
 									first_name: req.query.first_name
 									last_name: req.query.last_name
