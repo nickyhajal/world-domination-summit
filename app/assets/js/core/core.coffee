@@ -185,9 +185,9 @@ ap.initRouter = ->
 			# Catch clicks on links to use our navigate function instead
 			# Skip if a super-key is being pushed
 			else if href isnt '#' and link.attr('target') isnt '_blank' and !e.altKey and !e.ctrlKey and !e.metaKey and !e.shiftKey and href.indexOf('http') != 0 and href.indexOf('/api/') < 0
-			    e.preventDefault()
-			    url = href.replace(/^\//, '')
-			    ap.Router.navigate url, {trigger: true}
+					e.preventDefault()
+					url = href.replace(/^\//, '')
+					ap.Router.navigate url, {trigger: true}
 
 ap.loading = (setLoading = false) ->
 	if setLoading
@@ -243,6 +243,10 @@ ap.api = (url, data, success = false, error = false, opts = {}) ->
 		opts.success = success
 	if error
 		opts.error = error
+	opts.xhrFields = {
+		withCredentials: true
+	}
+	opts.crossDomain = true
 	$.ajax url, opts
 
 ap.get = (i) ->

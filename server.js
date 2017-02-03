@@ -11,11 +11,13 @@ var layout = require('express-layout');
 var RedisStore = require('connect-redis')(session);
 var app = express();
 app.use(cookieParser());
-app.use(bodyParser.json({
-  extended: true,
-  uploadDir:'/tmp_uploads',
-  keepExtensions: true
-}));
+// app.use(bodyParser.json({
+//   extended: true,
+//   uploadDir:'/tmp_uploads',
+//   keepExtensions: true
+// }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(layout());
 app.set('layouts', './app/views');
 app.set('layout', 'layout');

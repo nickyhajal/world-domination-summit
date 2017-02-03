@@ -4,6 +4,9 @@ rs = new RedisSessions();
 _ = require('underscore')
 handler =
 	start: (req, res, next)->
+
+		tk 'API START'
+		tk req.query
 		# tk '>>> START'
 		# tk req.session
 		req.hasParams = (params, req, res, next) ->
@@ -47,6 +50,7 @@ handler =
 			next()
 
 		res.contentType 'json'
+		tk req
 		req.query = _.defaults(req.body, req.query)
 		res.r = {}
 		res.errors = []

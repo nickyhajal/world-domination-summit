@@ -20,6 +20,10 @@ _a.a = (action, data, callback = false, opts)->
 	jQuery.ajax(
 		url : url,
 		data : data,
+		xhrFields: {
+       withCredentials: true
+    },
+    crossDomain: true,
 		type : 'GET',
 		dataType : 'jsonp',
 		complete : (rsp, status)->
