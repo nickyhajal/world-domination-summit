@@ -102,7 +102,7 @@ routes = (app) ->
 						.fetch()
 						.then (existing) ->
 							if existing
-								Tickets.forge
+								Ticket.forge
 									user_id: existing.get('user_id')
 									year: process.year
 									status: 'active'
