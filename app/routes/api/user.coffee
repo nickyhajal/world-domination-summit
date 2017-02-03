@@ -109,6 +109,7 @@ routes = (app) ->
 								.fetch()
 								.then (existing_tkt) ->
 									if existing_tkt
+										tk existing_tkt
 										tk existing_tkt.attributes
 										res.errors.push('Looks like '+existing.get('first_name')+' already has a ticket to WDS 2017. You could try someone else or contact concierge@wds.fm for help. ')
 										next()
