@@ -6,7 +6,8 @@ var Bookshelf = require('bookshelf');
 var express = require('express');
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
+var layout = require('express-layout');
 var RedisStore = require('connect-redis')(session);
 var app = express();
 app.use(cookieParser());
@@ -15,6 +16,9 @@ app.use(bodyParser.json({
   uploadDir:'/tmp_uploads',
   keepExtensions: true
 }));
+app.use(layout());
+app.set('layouts', './app/views');
+app.set('layout', 'layout');
 app.use(session({
   secret: process.env.SESS_SEC,
   store: new RedisStore,
@@ -25,7 +29,6 @@ app.use(session({
 var apn = require('apn');
 var gcm = require('node-gcm');
 require('./app/config')(app, express, RedisStore);
-require('express-namespace');
 if (process.env.DIR !== undefined) {
 	process.chdir(process.env.DIR);
 }
