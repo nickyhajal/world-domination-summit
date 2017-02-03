@@ -9,7 +9,6 @@ ap.Views.pre_purchase = XView.extend
 		'submit #purchase-form': 'purchase'
 	initialize: ->
 		@out = _.t 'parts_pre-purchase', {}
-		tk @out
 		@initRender()
 		$('body').on 'click', '.pre-purchase-start', (e) ->
 				e.preventDefault()

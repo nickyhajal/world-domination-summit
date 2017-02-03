@@ -5,10 +5,6 @@ _ = require('underscore')
 handler =
 	start: (req, res, next)->
 
-		tk 'API START'
-		tk req.query
-		# tk '>>> START'
-		# tk req.session
 		req.hasParams = (params, req, res, next) ->
 			allow = true
 			for p in params
@@ -50,7 +46,6 @@ handler =
 			next()
 
 		res.contentType 'json'
-		tk req
 		req.query = _.defaults(req.body, req.query)
 		res.r = {}
 		res.errors = []
