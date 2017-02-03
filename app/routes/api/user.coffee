@@ -104,10 +104,11 @@ routes = (app) ->
 							if existing
 								Tickets.forge
 									user_id: existing.get('user_id')
-									year: process.year,
+									year: process.year
 									status: 'active'
 								.fetch()
 								.then (existing_tkt) ->
+									tk existing_tkt
 									if existing_tkt
 										res.errors.push('Looks like '+existing.get('first_name')+' already has a ticket to WDS 2017. You could try someone else or contact concierge@wds.fm for help. ')
 										next()
