@@ -539,6 +539,8 @@ routes = (app) ->
 					email: req.query.email
 					first_name: bits[0]
 					last_name: bits[1]
+				custom = {}
+				custom = req.query.custom if req.query.custom?
 				user.addToList(req.query.list, JSON.parse(req.query.custom));
 				next()
 			else
