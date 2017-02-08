@@ -35,7 +35,7 @@ User = Shelf.Model.extend
 		'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake', 'notification_interval'
 	]
 	limitedAttributes: [
-		'user_id', 'type', 'email', 'first_name', 'last_name', 'attending14', 'attending15',
+		'user_id', 'type', 'email', 'first_name', 'last_name', 'attending14', 'attending15', 'attending16', 'attending17',
 		'instagram', 'lat', 'lon', 'distance', 'pub_loc', 'location', 'ticket_type', 'tour', 'intro'
 	]
 	defaults:
@@ -126,6 +126,7 @@ User = Shelf.Model.extend
 
 	# Card
 	getCard: card.getCard
+	getStripeCustomer: card.getStripeCustomer
 
 	# Getters
 	getPic: getters.getPic

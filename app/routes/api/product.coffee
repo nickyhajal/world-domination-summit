@@ -54,17 +54,30 @@ routes = (app) ->
 				tk 'PARAMS GOOD'
 				if req.isAuthd req, res, next
 					tk 'IS AUTHD'
-					req.me.getCard(req.query.card_id)
+					fireRef = process.fire.database().ref().child('sales/sale_wave1_2017').push
+						user_id: req.me.get('user_id')
+						created_at: (+(new Date()))
+						status: 'start'
+
+					# Return the firebase reference so we know how the process
+					# is going
+					res.r.fire = fireRef.key
+					next()
+
+					# Now, actually start processing
+					req.me.getCard(req.query.card_id, fireRef)
 					.then (card) ->
 						if card.status? and card.status is 'declined'
 							tk 'ERR'
-							res.r.declined = true
-							res.r.err = card.err
-							next()
+							fireRef.update
+								status: 'error'
+								declined: true
+								error: card.err
 						else
 							tk 'GUNNA DO THIS'
+							fireRef.update({status: 'card-ready'})
 							via = req.query.via ? 'web'
-							card.charge(req.query.code, via, req.query.purchase_data)
+							card.charge(req.query.code, via, req.query.purchase_data, fireRef)
 							.then (charge) ->
 								res.r = _.extend res.r, charge.rsp
 								if !res.r.declined?

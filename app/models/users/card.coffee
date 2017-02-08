@@ -5,20 +5,41 @@ rds = redis.createClient()
 RedisSessions = require("redis-sessions");
 rs = new RedisSessions();
 ##
+stripe_key = process.env.STRIPE_SK
+stripe = require('stripe')(stripe_key)
 
 [Card, Cards] = require '../cards'
 
 charge =
-	getCard: (card_id, test = false) ->
-
-		stripe_key = process.env.STRIPE_SK
-		# stripe_key = process.env.STRIPE_SK_TEST if test
-		stripe = require('stripe')(stripe_key)
+	getStripeCustomer: (card_id) ->
 		dfr = Q.defer()
-		tk 'CHARGE >>'
-		tk card_id
+		createStripeUser = ->
+		stripeUserId = @get('stripe')
+		if stripeUserId? and stripeUserId
+			stripe.customers.retrieve(stripeUserId)
+			.then (stripeUser) =>
+				stripe.customers.update stripeUser.id,
+					source: card_id
+				.then =>
+					dfr.resolve(stripeUser)
+		else
+			stripe.customers.create
+				source: card_id
+				email: @get('email')
+				description: @getFullName()
+			.then (stripeUser) =>
+				@set('stripe', stripeUser.id).save()
+				dfr.resolve(stripeUser)
+
+		return dfr.promise
+
+	getCard: (card_id, fireRef) ->
+
+		dfr = Q.defer()
+		fireRef.update({status: 'start-card', name: @getFullName()})
+		tk 'Getting '+@getFullName()+'\'s card from '+card_id+'...'
 		if card_id.indexOf('tok_') > -1
-			tk 'GEN >>'
+			tk 'Generating a Stripe card for '+@getFullName()+'...'
 			Card.forge
 				token: card_id
 			.fetch()
@@ -26,10 +47,8 @@ charge =
 				if exists
 					dfr.resolve(exists)
 				else
-					stripe.customers.create(
-						source: card_id
-						email: @get('email')
-					)
+					fireRef.update({status: 'create-customer'})
+					@getStripeCustomer(card_id)
 					.then((customer) =>
 						stripe.tokens.retrieve(card_id)
 						.then((token) =>
@@ -58,7 +77,7 @@ charge =
 						dfr.resolve({status: 'declined', err: err})
 					)
 		else
-			tk 'HAVE >>'
+			tk 'Using existing card in our DB...'
 			Card.forge
 				hash: card_id
 			.fetch()

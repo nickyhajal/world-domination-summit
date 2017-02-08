@@ -23,7 +23,7 @@ Card = Shelf.Model.extend
 		@set
 			hash: hash
 
-	charge: (code, via, purchase_data) ->
+	charge: (code, via, purchase_data, fireRef) ->
 		key = if code is false then process.env.STRIPE_SK_TEST else process.env.STRIPE_SK
 		stripe = require('stripe')(key)
 		dfr = Q.defer()
@@ -33,6 +33,7 @@ Card = Shelf.Model.extend
 		.then (product, meta) =>
 			quantity = if purchase_data.quantity then purchase_data.quantity else 1
 			if product
+				fireRef.update({status: 'check-transaction'})
 				Transaction.forge
 					status: 'paid'
 					product_id: product.get('product_id')
@@ -44,6 +45,7 @@ Card = Shelf.Model.extend
 						err = "Looks like you already bought that!"
 						dfr.resolve({rsp: {err: err, declined: true}})
 					else
+						fireRef.update({status: 'create-transaction'})
 						Transaction.forge
 							product_id: product.get('product_id')
 							user_id: @get('user_id')
@@ -53,6 +55,9 @@ Card = Shelf.Model.extend
 							paid_amount: '0'
 						.save()
 						.then (transaction) =>
+							fireRef.update
+								status: 'pre-process'
+								transaction_id: transaction.get('transaction_id')
 							purchase_data.transaction_id = transaction.get('transaction_id')
 							product.pre_process({user_id: @get('user_id'), post: purchase_data})
 							.then (pre) =>
@@ -65,6 +70,7 @@ Card = Shelf.Model.extend
 									price = 30
 								tk 'PERFORM CHARGE ON:'
 								tk @get('token')
+								fireRef.update({status: 'stripe-charge'})
 								stripe.charges.create(
 									amount: price
 									currency: 'usd'
@@ -72,10 +78,12 @@ Card = Shelf.Model.extend
 									source: @get('token')
 									description: product.get('name')+' - '+product.get('descr')
 								).then((charge) =>
+									fireRef.update({status: 'charged'})
 									Transaction.forge
 										transaction_id: transaction.get('transaction_id')
 									.fetch()
 									.then (transaction) =>
+										fireRef.update({status: 'paid'})
 										transaction.set
 											status: 'paid'
 											paid_amount: price
@@ -87,6 +95,7 @@ Card = Shelf.Model.extend
 											.then (post_rsp) =>
 												post_rsp_params = post_rsp?.rsp ? {}
 												rsp_params = _.extend pre_rsp_params, post_rsp_params
+												fireRef.update({status: 'done', rsp: rsp_params})
 												dfr.resolve({transaction: transaction, rsp: rsp_params})
 										, (err) -> console.error(err)
 								).catch((err) =>
@@ -99,6 +108,7 @@ Card = Shelf.Model.extend
 											status: 'declined'
 										.save()
 										.then =>
+											fireRef.update({status: 'error', error: err, declined: true})
 											dfr.resolve({transaction: transaction, rsp: {err: err, declined: true}})
 								)
 							, (err) ->

@@ -109,8 +109,6 @@ routes = (app) ->
 								.fetch()
 								.then (existing_tkt) ->
 									if existing_tkt
-										tk existing_tkt
-										tk existing_tkt.attributes
 										res.errors.push('Looks like '+existing.get('first_name')+' already has a ticket to WDS 2017. You could try someone else or contact concierge@wds.fm for help. ')
 										next()
 									else
@@ -388,6 +386,7 @@ routes = (app) ->
 				.then (user) ->
 					finish(user)
 			else
+				tk req.query
 				query = {user_name: req.query.username}
 				if req.query.username.indexOf('@') > -1
 					query = {email: req.query.username}
@@ -420,6 +419,7 @@ routes = (app) ->
 					else if req.query.ignore_existing?
 						if req.query.login
 							existing.login(req)
+							res.r.me = _.pick(existing.attributes, User::limitedAttributes)
 						next()
 					else
 						res.r.existing = true
@@ -432,6 +432,7 @@ routes = (app) ->
 							giveTicket(new_user)
 						if req.query.login
 							new_user.login(req)
+							res.r.me = _.pick(new_user.attributes, User::limitedAttributes)
 						next()
 
 		ticket: (req, res, next) ->

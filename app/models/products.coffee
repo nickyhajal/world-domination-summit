@@ -126,18 +126,14 @@ POST =
 			user_id: transaction.get('user_id')
 		.fetch()
 		.then (user) ->
-			user.preregisterTicket(transaction.get('quantity'))
+			user.registerTicket(transaction.get('quantity'), transaction.get('paid_amount'))
 			.then (tickets) ->
-				process.fire.database().ref().child('presales/').push
-					user_id: user.get('user_id')
-					name: user.get('first_name')+' '+user.get('last_name')
-					created_at: (+(new Date()))
 				Tickets.forge().query (qb) ->
 					qb.where('year', '2017')
 					qb.where('type', '360')
 				.fetch()
 				.then (rsp) ->
-					process.fire.database().ref().child('state/pre/sold').set(rsp.models.length)
+					process.fire.database().ref().child('state/sale_wave1_2017/sold').set(rsp.models.length)
 				, (err) ->
 					console.err(error)
 				transaction.set('meta', JSON.stringify(tickets))
