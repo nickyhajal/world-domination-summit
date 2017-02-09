@@ -39,9 +39,9 @@ getters =
 								.then (user) =>
 									@getRegistration()
 									.then (user) =>
-										user.set('password', '')
 										if user.get('password')?.length
 											user.set('has_pw', true)
+										user.set('password', '')
 										if user.get('user_name')?.length  is 40
 											user.set('user_name', '')
 										dfr.resolve(user)
