@@ -181,7 +181,7 @@ routes = (app) ->
 										unless req.query.inc_hash?
 											block = []
 											user.set('hash', null)
-											if req.me.get('user_id') != user.get('user_id')
+											if req.me and (req.me.get('user_id') != user.get('user_id'))
 												block = ['address', 'phone', 'pub_loc', 'pub_att',
 													'intro', 'intro14', 'last_shake', 'accommodation',
 													'notification_interval', 'tour', 'academy'
