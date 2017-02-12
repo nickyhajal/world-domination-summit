@@ -146,6 +146,18 @@ routes = (app) ->
 				next()
 
 		# Get a user
+		username_check: (req, res, next) ->
+			where = {}
+			if req.query.user_name?
+				User.forge
+					user_name: req.query.user_name
+				.fetch()
+				.then (user) ->
+					exists = (!_.isNull(user))
+					res.r.exists = if exists then true else false
+					next()
+			else
+				next()
 		get: (req, res, next) ->
 			where = {}
 			if req.query.user_name? || req.query.user_id?
@@ -485,11 +497,14 @@ routes = (app) ->
 
 		update: (req, res, next) ->
 			post = _.pick(req.query, User.prototype.permittedAttributes)
-			console.log(post);
 			if req.me
 				if post.calling_code?
 					bits = post.calling_code.split('-');
 					post.calling_code = bits[0]
+
+				# Todo: better job ensuring user_name
+				# if post.user_name?
+				# 	post = _.omit(post, ['user_name'])
 				if +req.me.get('user_id') is +post.user_id or req.me.hasCapability('manifest')
 					User.forge({user_id: post.user_id})
 					.fetch()

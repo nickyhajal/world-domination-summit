@@ -29,6 +29,7 @@ routes = (app) ->
 	[EventInterest, EventInterests] = require('../../models/event_interests')
 	[Speaker, Speakers] = require('../../models/speakers')
 	[Interest, Interests] = require('../../models/interests')
+	[Question, Questions] = require('../../models/questions')
 	[RaceTask, RaceTasks] = require('../../models/racetasks')
 	[Achievement, Achievements] = require('../../models/achievements')
 	[Place, Places] = require('../../models/places')
@@ -45,6 +46,7 @@ routes = (app) ->
 				reg_attendees: 60
 				speakers: 300
 				interests: 5
+				questions: 300
 				events: 5
 				signin_events: 5
 				ranks: 1000000
@@ -274,9 +276,19 @@ routes = (app) ->
 							dfr.resolve(interests)
 							rds.set 'interests', JSON.stringify(interests), (err, rsp) ->
 								rds.expire 'interests', 10000
-				Interests.forge().fetch()
-				.then (interests) ->
-					dfr.resolve(interests)
+				return dfr.promise
+
+			questions: (req) ->
+				dfr = Q.defer()
+				rds.get 'questions', (err, qs) ->
+					if qs? and qs and typeof JSON.parse(qs) is 'object'
+						dfr.resolve(JSON.parse(qs))
+					else
+						Questions.forge().query('where', 'active', '1').fetch()
+						.then (qs) ->
+							dfr.resolve(qs)
+							rds.set 'questions', JSON.stringify(qs), (err, rsp) ->
+								rds.expire 'questions', 10000
 				return dfr.promise
 
 			events: (req) ->

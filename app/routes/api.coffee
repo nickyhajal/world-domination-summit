@@ -50,6 +50,7 @@ routes = (app) ->
 	apiRouter.get '/user', user.get
 	apiRouter.get '/user/ticket', user.ticket
 	apiRouter.get '/user/card', user.card
+	apiRouter.get '/user/check_name', user.username_check
 	apiRouter.post '/user', user.create
 	apiRouter.post '/user/tickets', user.give_tickets
 	apiRouter.post '/user/login', user.login
