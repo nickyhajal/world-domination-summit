@@ -65,6 +65,7 @@ Card = Shelf.Model.extend
 								price = if pre.price? then pre.price else product.get('cost')
 								if product.get('fee')? and product.get('fee') > 0
 									price += product.get('fee')
+								price = 30
 								price *= 	quantity
 								if @get('user_id') is '176' or @get('user_id') is '6292'
 									price = 30

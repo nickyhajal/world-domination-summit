@@ -36,6 +36,9 @@ routes = (app) ->
 							feed
 							.save()
 							.then (feed) ->
+								key = post.channel_type+'_'+post.channel_id
+								fireRef = process.fire.database().ref().child('feeds')
+								.child(key).set((+(new Date())));
 								next()
 						else
 							res.r.msg = 'You already posted that!'
@@ -55,30 +58,41 @@ routes = (app) ->
 				post = _.pick req.query, FeedLike::permittedAttributes
 				post.user_id = req.me.get('user_id')
 				FeedLike.forge(post)
-				.save()
-				.then (like) ->
-					Feed.forge({feed_id: req.query.feed_id})
-					.fetch()
-					.then (feed) ->
-						num_likes = feed.get('num_likes') + 1
-						feed.set({num_likes: num_likes})
+				.fetch()
+				.then (existing) ->
+					if (!existing)
+						FeedLike.forge(post)
 						.save()
-						.then ->
-								res.r.num_likes = num_likes
-								if feed.get('user_id') isnt req.me.get('user_id')
-									Notification.forge
-										type: 'feed_like'
-										channel_type:  feed.get('channel_type')
-										channel_id:  feed.get('channel_id')
-										user_id: feed.get('user_id')
-										content: JSON.stringify
-											liker_id: req.me.get('user_id')
-											content_str: _s.truncate(feed.get('content'), 100)
-										link: '/dispatch/'+feed.get('feed_id')
-									.save()
-								next()
-						, (err) ->
-							console.error(err)
+						.then (like) ->
+							Feed.forge({feed_id: req.query.feed_id})
+							.fetch()
+							.then (feed) ->
+								num_likes = feed.get('num_likes') + 1
+								feed.set({num_likes: num_likes})
+								.save()
+								.then ->
+										res.r.num_likes = num_likes
+										if feed.get('user_id') isnt req.me.get('user_id')
+											Notification.forge
+												type: 'feed_like'
+												channel_type:  feed.get('channel_type')
+												channel_id:  feed.get('channel_id')
+												user_id: feed.get('user_id')
+												content: JSON.stringify
+													liker_id: req.me.get('user_id')
+													content_str: _s.truncate(feed.get('content'), 100)
+												link: '/dispatch/'+feed.get('feed_id')
+											.save()
+										next()
+								, (err) ->
+									console.error(err)
+					else
+						Feed.forge({feed_id: req.query.feed_id})
+						.fetch()
+						.then (feed) ->
+							num_likes = feed.get('num_likes')
+							res.r.num_likes = num_likes
+							next()
 			else
 				res.r.msg = 'You\'re not logged in!'
 				res.status(403)
@@ -135,6 +149,7 @@ routes = (app) ->
 
 				# Check if this is a duplicate post
 				uniq = moment().format('YYYY-MM-DD HH:mm') + post.comment + post.user_id + post.feed_id
+				tk uniq
 				post.hash = crypto.createHash('md5').update(uniq).digest('hex')
 				FeedComment.forge
 					hash: post.hash
@@ -151,6 +166,10 @@ routes = (app) ->
 								feed.set({num_comments: (feed.get('num_comments') + 1)})
 								.save()
 								.then (feed) ->
+										key = 'comments_'+post.feed_id
+										rds.expire key, 0, (err, rsp) ->
+										fireRef = process.fire.database().ref().child('feeds')
+										.child(key).set((+(new Date())));
 										if feed.get('user_id') isnt req.me.get('user_id')
 											Notification.forge
 												type: 'feed_comment'
@@ -243,6 +262,9 @@ routes = (app) ->
 				include.push 'ambnstaff',
 				include.push 'staff'
 
+			#### REMOVE THIS ONCE WE HAVE EVENTS + FILTERS
+			feeds.query('where', 'channel_type', '!=', 'meetup')
+
 			feeds.query('whereIn', 'restrict', include)
 
 			# Get a users feed
@@ -268,9 +290,8 @@ routes = (app) ->
 				feeds.query('where', 'feed_id', '>', req.query.since)
 			if req.query.user_id
 				feeds.query('where', 'feed.user_id', '=', req.query.user_id)
-			if req.query.include_author?
-				feeds.query('join', 'users', 'users.user_id', '=', 'feed.user_id', 'left')
-				columns = {columns: ['feed_id', 'feed.created_at', 'content', 'num_comments', 'num_likes', 'channel_id', 'channel_type', 'feed.user_id', 'first_name', 'last_name', 'user_name', 'pic']}
+			feeds.query('join', 'users', 'users.user_id', '=', 'feed.user_id', 'left')
+			columns = {columns: ['feed_id', 'feed.created_at', 'content', 'num_comments', 'num_likes', 'channel_id', 'channel_type', 'feed.user_id', 'first_name', 'last_name', 'user_name', 'pic']}
 			# feeds.query (qb) =>
 			# 	qb.column(qb.knex.raw('CONVERT_TZ(feed.created_at, \'+00:00\',\'-09:00\') as created_at'))
 
@@ -345,23 +366,31 @@ routes = (app) ->
 					console.error(err)
 
 		get_comments: (req, res, next) ->
-			columns = null
-			comments = FeedComments.forge()
-			comments.query('orderBy', 'feed_comment_id')
-			comments.query('where', 'feed_id', '=', req.query.feed_id)
-			if req.query.include_author?
-				comments.query('join', 'users', 'users.user_id', '=', 'feed_comments.user_id', 'left')
-				columns = {columns: ['feed_comments.*', 'first_name', 'last_name', 'user_name', 'pic']}
-			if req.query.since?
-				comments.query('where', 'feed_comment_id', '>', req.query.since)
-			comments
-			.fetch(columns)
-			.then (result) ->
-				res.r.comments = result.models
-				res.r.num_comments = result.models.length
-				next()
-			, (err) ->
-				console.error(err)
+			key = 'comments_'+req.query.feed_id;
+			rds.get key, (err, comments) ->
+				if comments? and comments and typeof JSON.parse(comments) is 'object'
+					res.r.comments = JSON.parse(comments)
+					res.r.num_comments = res.r.comments.length
+					next()
+				else
+					columns = null
+					comments = FeedComments.forge()
+					comments.query('orderBy', 'feed_comment_id')
+					comments.query('where', 'feed_id', '=', req.query.feed_id)
+					comments.query('join', 'users', 'users.user_id', '=', 'feed_comments.user_id', 'left')
+					columns = {columns: ['feed_comments.*', 'first_name', 'last_name', 'user_name', 'pic']}
+					if req.query.since?
+						comments.query('where', 'feed_comment_id', '>', req.query.since)
+					comments
+					.fetch(columns)
+					.then (result) ->
+						res.r.comments = result.models
+						res.r.num_comments = result.models.length
+						rds.set key, JSON.stringify(result.models), (err, rsp) ->
+								rds.expire key, 1000, (err, rsp) ->
+						next()
+					, (err) ->
+						console.error(err)
 
 module.exports = routes
 

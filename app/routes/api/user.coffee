@@ -497,6 +497,7 @@ routes = (app) ->
 
 		update: (req, res, next) ->
 			post = _.pick(req.query, User.prototype.permittedAttributes)
+			tk post
 			if req.me
 				if post.calling_code?
 					bits = post.calling_code.split('-');
