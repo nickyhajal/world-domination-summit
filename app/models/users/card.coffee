@@ -65,9 +65,17 @@ charge =
 							.then (card) =>
 								dfr.resolve(card)
 							, (err) ->
+								fireRef.update
+									status: 'error'
+									declined: true
+									error: err
 								tk err
 						).catch((err) =>
 							tk err
+							fireRef.update
+								status: 'error'
+								declined: true
+								error: err
 							dfr.resolve({status: 'declined', err: err})
 						)
 					)
