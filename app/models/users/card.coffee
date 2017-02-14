@@ -22,6 +22,8 @@ charge =
 					source: card_id
 				.then =>
 					dfr.resolve(stripeUser)
+				.catch (err) =>
+					dfr.reject(err)
 		else
 			stripe.customers.create
 				source: card_id
@@ -30,6 +32,8 @@ charge =
 			.then (stripeUser) =>
 				@set('stripe', stripeUser.id).save()
 				dfr.resolve(stripeUser)
+			.catch (err) =>
+				dfr.reject(err)
 
 		return dfr.promise
 
@@ -72,10 +76,6 @@ charge =
 								tk err
 						).catch((err) =>
 							tk err
-							fireRef.update
-								status: 'error'
-								declined: true
-								error: err
 							dfr.resolve({status: 'declined', err: err})
 						)
 					)
