@@ -69,6 +69,9 @@ routes = (app) ->
 					.then (card) ->
 						if card.status? and card.status is 'declined'
 							tk 'ERR'
+							tk card.err
+							tk 'UPDATE REF'
+							tk fireRef
 							fireRef.update
 								status: 'error'
 								declined: true

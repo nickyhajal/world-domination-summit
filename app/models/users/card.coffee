@@ -76,13 +76,13 @@ charge =
 								tk err
 						).catch((err) =>
 							tk err
-							dfr.resolve({status: 'declined', err: err})
+							dfr.resolve({status: 'declined', err: err.message})
 						)
 					)
 					.catch((err) =>
 						tk err
 						tk 'Card add error'
-						dfr.resolve({status: 'declined', err: err})
+						dfr.resolve({status: 'declined', err: err.message})
 					)
 		else
 			tk 'Using existing card in our DB...'
