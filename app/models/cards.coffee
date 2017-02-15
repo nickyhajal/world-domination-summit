@@ -108,7 +108,7 @@ Card = Shelf.Model.extend
 											status: 'declined'
 										.save()
 										.then =>
-											fireRef.update({status: 'error', error: err, declined: true})
+											fireRef.update({status: 'error', error: err.message, declined: true})
 											dfr.resolve({transaction: transaction, rsp: {err: err, declined: true}})
 								)
 							, (err) ->

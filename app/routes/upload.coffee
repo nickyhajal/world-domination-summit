@@ -14,7 +14,6 @@ upload = multer({ dest: '/tmp_uploads/' })
 routes = (app) ->
 	app.all '/upload-avatar', upload.single('pic'), (req, res) ->
 
-		console.log(req.file)
 		if req.file
 			ext = req.file.originalname.split('.')
 			ext = ext[ext.length - 1]
