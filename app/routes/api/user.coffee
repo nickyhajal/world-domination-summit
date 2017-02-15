@@ -500,8 +500,8 @@ routes = (app) ->
 				if post.calling_code?
 					bits = post.calling_code.split('-');
 					post.calling_code = bits[0]
-				if post.user_name? and !post.user_name.length
-					post = _.omit post, ['user_name']
+				# if post.user_name? and !post.user_name.length
+				# 	post = _.omit post, ['user_name']
 
 				# Todo: better job ensuring user_name
 				# if post.user_name?
