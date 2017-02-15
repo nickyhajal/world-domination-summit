@@ -149,7 +149,6 @@ routes = (app) ->
 
 				# Check if this is a duplicate post
 				uniq = moment().format('YYYY-MM-DD HH:mm') + post.comment + post.user_id + post.feed_id
-				tk uniq
 				post.hash = crypto.createHash('md5').update(uniq).digest('hex')
 				FeedComment.forge
 					hash: post.hash

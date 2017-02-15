@@ -398,7 +398,6 @@ routes = (app) ->
 				.then (user) ->
 					finish(user)
 			else
-				tk req.query
 				query = {user_name: req.query.username}
 				if req.query.username.indexOf('@') > -1
 					query = {email: req.query.username}
@@ -497,11 +496,12 @@ routes = (app) ->
 
 		update: (req, res, next) ->
 			post = _.pick(req.query, User.prototype.permittedAttributes)
-			tk post
 			if req.me
 				if post.calling_code?
 					bits = post.calling_code.split('-');
 					post.calling_code = bits[0]
+				if post.user_name? and !post.user_name.length
+					post = _.omit post, ['user_name']
 
 				# Todo: better job ensuring user_name
 				# if post.user_name?
