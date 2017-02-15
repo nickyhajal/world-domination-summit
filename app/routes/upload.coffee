@@ -23,9 +23,7 @@ routes = (app) ->
 				url = "/images/avatars/"+me.get('user_id')+'.'+ext
 				newPath = __dirname + '/../..' + url
 				gm(req.file.path)
-				.resize('400^')
-				.gravity('Center')
-				.crop(400, 400, 0, 0)
+				.resize('1200^')
 				.write newPath, (err) ->
 					url = url.split('?')
 					me.set
