@@ -14,22 +14,25 @@ Answers = Shelf.Collection.extend
   model: Answer
   addOrUpdate: (user_id, question_id, answer) ->
     dfr = Q.defer()
-    Answer.forge
-      question_id: question_id
-      user_id: user_id
-    .fetch()
-    .then (row) ->
-      if not row
-        row = Answer.forge
-          question_id: question_id
-          user_id: user_id
-      row.set('answer', answer)
-      row
-      .save()
-      .then ->
-        dfr.resolve answer
-      , (err) ->
-        console.error(err)
+    if answer and answer.length
+      Answer.forge
+        question_id: question_id
+        user_id: user_id
+      .fetch()
+      .then (row) ->
+        if not row
+          row = Answer.forge
+            question_id: question_id
+            user_id: user_id
+        row.set('answer', answer)
+        row
+        .save()
+        .then ->
+          dfr.resolve answer
+        , (err) ->
+          console.error(err)
+    else
+      dfr.resolve()
     dfr.promise
 
   updateAnswers: (user_id, answers) ->
