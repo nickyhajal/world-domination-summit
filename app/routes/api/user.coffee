@@ -244,6 +244,7 @@ routes = (app) ->
 							c = true
 						where += ')'
 					qb.whereRaw(where, params)
+					qb.limit(100)
 				.fetch()
 				.then (rsp) ->
 					dfr.resolve(rsp)
