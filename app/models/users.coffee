@@ -11,6 +11,7 @@ async = require('async')
 
 [Capability, Capabilities] = require './capabilities'
 [Event, Events] = require './events'
+[Ticket, Tickets] = require './tickets'
 
 ##
 
@@ -31,7 +32,7 @@ User = Shelf.Model.extend
 		'email', 'hash', 'user_name', 'mf', 'twitter', 'facebook', 'site', 'pic', 'instagram', 'phone',
 		'address', 'address2', 'city', 'region', 'country', 'zip', 'lat', 'lon', 'distance', 'calling_code',
 		'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake', 'accommodation',
-		'notification_interval', 'points', 'tour', 'ticket_type', 'academy', 'size',
+		'notification_interval', 'points', 'tour', 'ticket_type', 'academy', 'size', 'attending17',
 		'pub_loc', 'pub_att', 'marker', 'intro', 'points', 'last_broadcast', 'last_shake', 'notification_interval'
 	]
 	limitedAttributes: [
@@ -79,6 +80,21 @@ User = Shelf.Model.extend
 
 		if @lastDidChange ['attending'+process.yr]
 			@syncEmailWithTicket()
+			attending = @get('attending'+process.yr)
+			if attending is '1'
+				@registerTicket(1, 0)
+				.then =>
+					Tickets.forge().query (qb) =>
+						qb.where('user_id', @get('user_id'))
+						qb.where('status', 'unclaimed')
+					.fetch()
+					.then (rsp) =>
+						ticket = rsp.models[0]
+						@connectTicket(ticket)
+			else
+				tk 'CANCEL'
+				@cancelTicket()
+
 
 	processNotifications: ->
 		dfr = Q.defer()

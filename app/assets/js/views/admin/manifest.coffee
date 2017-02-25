@@ -18,6 +18,7 @@ ap.Views.admin_manifest = XView.extend
 		# Country Select
 		year_select = $('#manifest-year-select')
 		years = [
+			{id: 'no', text: 'No Ticket'},
 			{id: '17', text: '2017'},
 			{id: '16', text: '2016'},
 			{id: '15', text: '2015'},

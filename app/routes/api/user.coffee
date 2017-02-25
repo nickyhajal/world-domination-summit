@@ -205,10 +205,14 @@ routes = (app) ->
 		search: (req, res, next) ->
 			_Users = Users.forge()
 			all = {}
-			types = req.query.types?.split(',')
-			years = req.query.years?.split(',')
+			years = []
+			types = []
+			if req.query.types?.length
+				types = req.query.types?.split(',')
+			if req.query.years?.length
+				years = req.query.years?.split(',')
 			if req.query.user_token
-				years = ['16']
+				years = [process.yr]
 			doQuery = (col, q = false) ->
 				dfr = Q.defer()
 				_Users.query (qb) ->
@@ -228,6 +232,7 @@ routes = (app) ->
 							params.push t
 							c = true
 						where += ')'
+					tk years
 					if years?.length
 						# if q and req.query.types?.length
 						where += ' AND ('
