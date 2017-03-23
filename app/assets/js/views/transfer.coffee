@@ -1,7 +1,6 @@
 ap.Views.transfer = XView.extend
 
 	initialize: ->
-		ap.navigate('hub')
 		@initRender()
 
 	rendered: ->
