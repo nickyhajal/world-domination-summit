@@ -54,7 +54,9 @@ routes = (app) ->
 				tk 'PARAMS GOOD'
 				if req.isAuthd req, res, next
 					tk 'IS AUTHD'
-					fireRef = process.fire.database().ref().child('sales/sale_wave1_2017').push
+					code = req.query.code
+					firePath =  if code is 'wds2017' then 'sales/sale_wave2_2017' else 'sales/'+code
+					fireRef = process.fire.database().ref().child(firePath).push
 						user_id: req.me.get('user_id')
 						created_at: (+(new Date()))
 						status: 'start'
