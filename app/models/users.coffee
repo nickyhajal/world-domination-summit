@@ -92,7 +92,7 @@ User = Shelf.Model.extend
           .then (rsp) =>
             ticket = rsp.models[0]
             @connectTicket(ticket)
-      else
+      else if attending is '0'
         tk 'CANCEL'
         @cancelTicket()
 
