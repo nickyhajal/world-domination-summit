@@ -39,7 +39,6 @@ Product = Shelf.Model.extend
 Products = Shelf.Collection.extend
   model: Product
 
-
 PRE =
   academy: (meta) ->
     dfr = Q.defer()
@@ -133,7 +132,7 @@ POST =
           qb.where('type', '360')
         .fetch()
         .then (rsp) ->
-          process.fire.database().ref().child('state/sale_wave1_2017/sold').set(rsp.models.length)
+          process.fire.database().ref().child('state/sale_wave2_2017/sold').set(rsp.models.length)
         , (err) ->
           console.err(error)
         transaction.set('meta', JSON.stringify(tickets))

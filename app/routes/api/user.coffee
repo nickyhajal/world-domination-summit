@@ -64,17 +64,22 @@ routes = (app) ->
 				res.r.me = false
 				next()
 		claim_ticket: (req, res, next) ->
+			tk 'CLAIM ROUTE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.'
 			if req.me
+				tk 'YUP ME'
 				Tickets.forge().query (qb) ->
 					qb.where('purchaser_id', req.me.get('user_id'))
 					qb.where('status', 'unclaimed')
 				.fetch()
 				.then (rsp) ->
+					tk 'CLAIM FETCHED'
 					ticket = rsp.models[0]
 					req.me.connectTicket(ticket)
 					.then ->
+						tk 'GET TICKET'
 						req.me.getCurrentTickets()
 						.then (user) ->
+							tk 'SEND TICKETS'
 							res.r.tickets = user.get('tickets')
 							next()
 			else

@@ -82,7 +82,7 @@ User = Shelf.Model.extend
     if @lastDidChange ['attending'+process.yr]
       @syncEmailWithTicket()
       attending = @get('attending'+process.yr)
-      if attending is '1'
+      if attending is '1' and @transferFrom
         @registerTicket(1, 0, @transferFrom)
         .then =>
           Tickets.forge().query (qb) =>

@@ -61,6 +61,7 @@ ticket =
     return dfr.promise
 
   connectTicket: (ticket, returning = false, transfer_from = null) ->
+    tk "CLAIM IT"
     dfr = Q.defer()
     type = ticket.get('type')
     ticket.set
