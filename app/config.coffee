@@ -20,7 +20,7 @@ config = (app, express, RedisStore, mysql) ->
   app.set('uploadDir', '/tmp')
   # app.use(express.methodOverride())
   app.use require('connect-assets')(
-    src: 'app/assets'
+    paths: ['app/assets', 'app/assets/js', 'app/assets/css']
   )
   app.use(express.static(__dirname + '/public'))
   app.set('port', process.env.PORT)
