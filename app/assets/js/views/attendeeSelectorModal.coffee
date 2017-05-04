@@ -66,7 +66,7 @@ ap.Views.modal_attendee_selector = XView.extend
 			@search()
 		setTimeout ->
 			$('#attendee-selection-year-select').select2('val', ['17'])
-			$('#attendee-selection-type-select').select2('val', ['360', 'connect'])
+			$('#attendee-selection-type-select').select2('val', ['360'])
 		, 100
 
 	search: ->
