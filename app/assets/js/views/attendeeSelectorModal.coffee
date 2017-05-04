@@ -16,6 +16,7 @@ ap.Views.modal_attendee_selector = XView.extend
 		@initSelect2()
 		@search()
 
+
 	initSelect2: ->
 		# Country Select
 		year_select = $('#attendee-selection-year-select')
