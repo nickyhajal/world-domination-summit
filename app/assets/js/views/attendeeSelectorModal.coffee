@@ -20,6 +20,7 @@ ap.Views.modal_attendee_selector = XView.extend
 		# Country Select
 		year_select = $('#attendee-selection-year-select')
 		years = [
+			{id: '17', text: '2017'},
 			{id: '16', text: '2016'},
 			{id: '15', text: '2015'},
 			{id: '14', text: '2014'}
@@ -63,7 +64,7 @@ ap.Views.modal_attendee_selector = XView.extend
 		type_select.on 'change', (e) =>
 			@search()
 		setTimeout ->
-			$('#attendee-selection-year-select').select2('val', ['16'])
+			$('#attendee-selection-year-select').select2('val', ['17'])
 			$('#attendee-selection-type-select').select2('val', ['360', 'connect'])
 		, 100
 
