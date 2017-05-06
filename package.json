@@ -17,9 +17,11 @@
     "connect-redis": "^3.2.0",
     "cookie-parser": "^1.4.3",
     "country-data": "0.0.13",
+    "dotenv": "^4.0.0",
     "elasticemail": "~0.1.0",
     "eventbrite": "~0.1.6",
     "express": "^4.14.1",
+    "express-graphql": "^0.6.4",
     "express-namespace": "~0.1.0",
     "express-session": "^1.15.0",
     "firebase": "^3.2.1",
@@ -27,6 +29,7 @@
     "geocoder": "~0.1.0",
     "geolib": "~1.3.5",
     "gm": "^1.23.0",
+    "graphql": "^0.9.6",
     "helpscout": "0.0.1",
     "hiredis": "^0.4.1",
     "html-pdf": "^1.2.1",
@@ -68,9 +71,12 @@
   },
   "devDependencies": {
     "mocha": "~1.0.3",
+    "nodemon": "^1.11.0",
     "request": "~2.9.202"
   },
   "scripts": {
-    "test": "./bin/test"
+    "test": "./bin/test",
+    "dev": "nodemon server.js --debug",
+    "start": "node server.js"
   }
 }

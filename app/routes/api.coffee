@@ -25,6 +25,9 @@ routes = (app) ->
 	places = require('./api/places')(app)
 	knex = require('knex')(process.db)
 	express = require('express')
+	expressGraphql = require('express-graphql')
+	graphql = require('./api/graphql')
+
 	apiRouter = express.Router()
 
 	app.use('/api', apiRouter);
@@ -32,6 +35,8 @@ routes = (app) ->
 	# Setup
 	apiRouter.all '/*', handler.start
 	apiRouter.get '/assets', assets.get
+
+	apiRouter.all '/graphql', graphql
 
 	# Content
 	apiRouter.get '/parse', content.parse

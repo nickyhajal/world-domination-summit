@@ -1,3 +1,4 @@
+require('dotenv').config();
 Error.stackTraceLimit = Infinity;
 global.tk = console.log;
 require('coffee-script');
