@@ -77,6 +77,6 @@
   "scripts": {
     "test": "./bin/test",
     "dev": "nodemon server.js --debug",
-    "start": "node server.js"
+    "start": "pm2 start -al /var/log/wds.log /var/www/world-domination-summit/server.js"
   }
 }

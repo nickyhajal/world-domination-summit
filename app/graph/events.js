@@ -59,11 +59,13 @@ const Field = {
   type: Type,
   args: {
     event_id: { type: GraphQLString },
+    slug: { type: GraphQLString },
   },
   resolve: async (root, args) => {
-    const row = await Event.forge({
-      event_id: args.event_id,
-    }).fetch();
+    const query = {};
+    if (args.event_id !== undefined) query.event_id = args.event_id;
+    if (args.slug !== undefined) query.slug = args.slug;
+    const row = await Event.forge(query).fetch();
     return row.attributes;
   },
 };
@@ -90,11 +92,15 @@ const Field = {
 // };
 const Fields = {
   type: new GraphQLList(Type),
-  // args: {
-  //   q: { type: GraphQLString },
-  // },
+  args: {
+    type: { type: GraphQLString },
+  },
   resolve: async (root, args) => {
-    const rows = await Events.forge().query();
+    const evs = Events.forge().query();
+    if (args.type !== undefined) {
+      evs.query('where', 'type', args.type);
+    }
+    const rows = await evs;
     return rows.models.map(row => row.attributes);
   },
 };
