@@ -2,7 +2,6 @@ Bookshelf = require('bookshelf')(process.knex);
 whn      = require('when')
 moment    = require('moment')
 _         = require('underscore')
-uuid      = require('node-uuid')
 Validator = require('validator').Validator
 sanitize  = require('validator').sanitize
 S = require 'underscore.string'

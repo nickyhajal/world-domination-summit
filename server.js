@@ -25,7 +25,7 @@ app.set('layout', 'layout');
 app.use(
   session({
     secret: process.env.SESS_SEC,
-    store: new RedisStore(),
+    store: new RedisStore({ host: process.env.REDIS_HOST }),
     cookie: { maxAge: 10000000000 },
     resave: false,
     saveUninitialized: false,

@@ -237,7 +237,7 @@ Notifications = Shelf.Collection.extend
 				</div>
 			'
 
-			juice.juiceContent html,
+			juice.juiceResources html,
 				url: 'http://worlddominationsummit.com'
 			, (err, html) ->
 				dfr.resolve(html)
