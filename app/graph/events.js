@@ -94,13 +94,19 @@ const Fields = {
   type: new GraphQLList(Type),
   args: {
     type: { type: GraphQLString },
+    year: { type: GraphQLString },
   },
   resolve: async (root, args) => {
-    const evs = Events.forge().query();
+    const evs = Events.forge();
+    console.log(args);
     if (args.type !== undefined) {
       evs.query('where', 'type', args.type);
     }
-    const rows = await evs;
+    if (args.year !== undefined) {
+      evs.query('where', 'year', args.year);
+    }
+    const rows = await evs.fetch();
+    console.log(rows);
     return rows.models.map(row => row.attributes);
   },
 };
