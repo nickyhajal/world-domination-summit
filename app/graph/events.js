@@ -98,7 +98,6 @@ const Fields = {
   },
   resolve: async (root, args) => {
     const evs = Events.forge();
-    console.log(args);
     if (args.type !== undefined) {
       evs.query('where', 'type', args.type);
     }
@@ -106,7 +105,6 @@ const Fields = {
       evs.query('where', 'year', args.year);
     }
     const rows = await evs.fetch();
-    console.log(rows);
     return rows.models.map(row => row.attributes);
   },
 };
