@@ -104,7 +104,7 @@ const Fields = {
     if (args.year !== undefined) {
       evs.query('where', 'year', args.year);
     }
-    evs.orderBy('start');
+    evs.query('orderBy', 'start');
     const rows = await evs.fetch();
     return rows.models.map(row => row.attributes);
   },
