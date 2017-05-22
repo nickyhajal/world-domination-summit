@@ -48,7 +48,6 @@ const Type = new GraphQLObjectType({
       type: new GraphQLList(UserGraph.Type),
       description: 'Event Host',
       resolve: async root => {
-        console.log('root', root);
         const hosts = await Event.forge({ event_id: root.event_id }).hosts();
         return hosts.map(row => row.attributes);
       },
