@@ -64,6 +64,30 @@ div(id="admin-add-meetup-shell")
 					option(value="0") am
 					option(value="12") pm
 		div(class="form-section")
+			label Ends At
+			div(class="form-box")
+					select(name="end_hour", class="select2", style="width:120px")
+						option(value="01") 01
+						option(value="02") 02
+						option(value="03") 03
+						option(value="04") 04
+						option(value="05") 05
+						option(value="06") 06
+						option(value="07") 07
+						option(value="08") 08
+						option(value="09") 09
+						option(value="10") 10
+						option(value="11") 11
+						option(value="12", selected="selected") 12
+					select(name="end_minute", class="select2", style="width:65px")
+						option(value="00") 00
+						option(value="15") 15
+						option(value="30") 30
+						option(value="45") 45
+					select(name="end_pm", class="select2", style="width:65px")
+						option(value="0") am
+						option(value="12", selected="selected") pm
+		div(class="form-section")
 			label How many people can attend?
 			label(class="sub-label") We'll close the meetup after it has this many RSVPs
 			input(type="number", name="max", min="1", max="5000", value="{{ max }}")
