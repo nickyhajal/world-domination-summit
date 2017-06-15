@@ -20,7 +20,7 @@ ap.Views.admin_meetup_review = XView.extend
           host = atn.hosts[0]#ap.Users.get(atn.hosts[0])
           host_str = host.first_name+' '+host.last_name
           console.log(host)
-          if host['attending'+ap.yr] != '1'
+          if +host['attending'+ap.yr] != 1
             host_str += ' (Not attending WDS 20'+ap.yr+' - user_id: '+host.user_id+')'
           av = 'http://avatar.wds.fm/'+host.user_id+'?width=64'
         place = if atn.place.length then atn.place else 'No Venue'
