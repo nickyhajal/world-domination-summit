@@ -77,6 +77,7 @@ routes = (app) ->
 								declined: true
 								error: card.err
 						else
+							tk req.query
 							tk 'GUNNA DO THIS'
 							fireRef.update({status: 'card-ready'})
 							via = req.query.via ? 'web'

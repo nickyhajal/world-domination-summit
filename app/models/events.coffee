@@ -12,7 +12,7 @@ Event = Shelf.Model.extend
   permittedAttributes: [
     'event_id', 'year', 'ignored', 'type', 'for_type', 'title', 'descr', 'what', 'active',
     'note', 'place', 'who', 'utc', 'end', 'venue', 'address', 'note', 'max', 'bios',
-    'free_max', 'format', 'outline', 'venue_note'
+    'free_max', 'format', 'outline', 'venue_note', 'price', 'pay_link'
   ]
   defaults: {
   	descr: ''
@@ -72,6 +72,24 @@ Event = Shelf.Model.extend
             what: @get('what')
             venue: @get('place')
             start: moment(@get('start')).format('MMMM Do [at] h:mma')
+  sendRsvpConfirmation: (user_id) ->
+    [User, Users] = require('./users')
+    user = User.forge({user_id: user_id})
+    promo = 'event_confirmation_'+req.me.get('ticket_type')
+    start = (@get('start')+'').split(' GMT')
+    start = moment(start[0])
+    start = start.format('YYYY-MM-DD HH:mm:ss')
+    timeStr = moment(start).format('h:mm a')
+    dayStr = moment(start).format('dddd[,] MMMM Do')
+    params =
+      venue: @get('place')
+      event_name: @get('what')
+      startStr: dayStr+' at '+timeStr
+    subName = @get('what')
+    if subName.length > 35
+      subName = subName.substr(0, 32)+'...'
+    subject = "See you at \""+subName+'"'
+    user.sendEmail promo, subject, params
   hosts: ->
     [User, Users] = require './users'
     dfr = Q.defer()

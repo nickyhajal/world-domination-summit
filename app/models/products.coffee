@@ -52,6 +52,23 @@ PRE =
         rsp.price = 2900
       dfr.resolve(rsp)
     return dfr.promise
+  event: (meta) ->
+    dfr = Q.defer()
+    [User, Users] = require('./users')
+    [Event, Events] = require('./events')
+    User.forge
+      user_id: meta.user_id
+    .fetch()
+    .then (user) ->
+      Event.forge
+        event_id: meta.post.event_id
+      .fetch()
+      .then (ev) ->
+        if ev.price? and ev.price > 0
+          rsp.price = ev.price
+        rsp = {meta: meta.post.event_id}
+        dfr.resolve(rsp)
+    return dfr.promise
   wds17test: (meta) ->
     dfr = Q.defer()
     dfr.resolve({})
@@ -116,6 +133,30 @@ POST =
           .then (ev) ->
             ev.updateRsvpCount()
             ev.sendAcademyConfirmation(user_id)
+    return dfr.promise
+  
+  event: (transaction, meta) ->
+    [Event, Events] = require('./events')
+    dfr = Q.defer()
+    event_id = transaction.get('meta')
+    user_id = transaction.get('user_id')
+    rsvp = EventRsvp.forge
+      user_id: user_id
+      event_id: event_id
+    rsvp.fetch()
+    .then (existing) ->
+      if existing
+        dfr.resolve({rsvp_id: existing.get('rsvp_id')})
+      else
+        rsvp.save()
+        .then (newrsvp) ->
+          dfr.resolve({rsvp_id: newrsvp.get('rsvp_id')})
+          Event.forge
+            event_id: event_id
+          .fetch()
+          .then (ev) ->
+            ev.updateRsvpCount()
+            ev.sendRsvpConfirmation(user_id)
     return dfr.promise
 
   wds2017: (transaction, meta) ->

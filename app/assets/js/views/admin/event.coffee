@@ -9,6 +9,7 @@ ap.Views.admin_event = XView.extend
 			for ev in events
 				if +ev.event_id is +@options.extra
 					theEvent = ev
+			theEvent.pay_price = theEvent.price / 100
 			@options.out = _.template @options.out, theEvent
 			@event = theEvent
 			@initRender()
@@ -39,6 +40,7 @@ ap.Views.admin_event = XView.extend
 		el = $(e.currentTarget)
 		btn = _.btn($('.button', el), 'Saving...', 'Saved!')
 		form = el.formToJson()
+		form.price = form.price * 100
 		ap.api 'put event', form, (rsp) ->
 			#ap.schedule = rsp.schedule
 			btn.finish()

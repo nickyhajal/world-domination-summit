@@ -10,7 +10,7 @@ div(id="admin-add-event-shell")
 				select(name="type", class="select2", style="width:250px")
 					option(value="program") WDS Program Event (No RSVP)
 					option(value="registration") Registration
-					option(value="spark_session") Spark Session (RSVP)
+					option(value="expedition") Expedition (RSVP)
 					option(value="activity") Activity (RSVP)
 		div(class="form-section")
 			div(class="form-box")
@@ -100,6 +100,15 @@ div(id="admin-add-event-shell")
 					option(value="all") All
 					option(value="360") 360 Only
 					option(value="connect") Connect Only
+		div(class="form-section")
+			label Price
+			label(class="sub-label") Price in dollars (Set to 0 if free event)
+			| $ 
+			input(type="number", name="price", min="0", max="5000", value="{{ pay_price }}")
+		div(class="form-section")
+			label Purchase Link
+			label(class="sub-label") Leave blank unless purchase happens off-site
+			input(type="text", name="pay_link", value="{{ pay_link }}")
 		div(class="form-section")
 			label Publicly Visible
 			div(class="form-box")

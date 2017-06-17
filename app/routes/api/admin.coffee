@@ -244,7 +244,7 @@ routes = (app) ->
 
 		schedule: (req, res, next) ->
 			Events.forge()
-			.query('whereIn', 'type', ['program', 'spark_session', 'activity', 'registration'])
+			.query('whereIn', 'type', ['program', 'spark_session', 'activity', 'registration', 'expedition'])
 			.query('where', 'year', process.yr)
 			.query('orderBy', 'start')
 			.fetch()
