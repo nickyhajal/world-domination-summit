@@ -375,34 +375,27 @@ routes = (app) ->
 
 		rsvp: (req, res, next, free_rsvp = false) ->
 			event_id = req.query.event_id
-			puts 1
 			if req.me
-				puts 2
 				rsvp = EventRsvp.forge({user_id: req.me.get('user_id'), event_id: event_id})
 				rsvp
 				.fetch()
 				.then (existing) ->
-					puts 3
 					if existing
-						puts 4
 						res.r.action = 'cancel'
 						existing.destroy()
 						.then ->
 							finish()
 					else
-						puts 5
 						res.r.action = 'rsvp'
 						rsvp.save()
 						.then ->
 							finish()
 
 					finish = ->
-						puts 6
 						Event.forge
 							event_id: event_id
 						.fetch()
 						.then (ev) ->
-							puts 7
 							num_free = ev.get('num_free') ? 0
 							ev.updateRsvpCount()
 							if free_rsvp

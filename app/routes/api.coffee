@@ -125,7 +125,8 @@ routes = (app) ->
 	apiRouter.put '/event', event.upd
 	apiRouter.get '/event/attendees', event.get_attendees
 	# apiRouter.get '/event/hosts', event.get_hosts
-	apiRouter.post '/event/rsvp', event.rsvp
+	apiRouter.post '/event/rsvp', (req, res, next) -> 
+		event.rsvp(req, res, next)
 	apiRouter.get '/event/pdf', event.get_pdf
 
 	# # Feed

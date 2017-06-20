@@ -63,7 +63,7 @@
   },
   "scripts": {
     "test": "./bin/test",
-    "dev": "nodemon server.js --debug",
+    "dev": "nodemon server.js --debug --verbose",
     "start": "pm2 start -al /var/log/wds.log /var/www/world-domination-summit/server.js"
   }
 }
