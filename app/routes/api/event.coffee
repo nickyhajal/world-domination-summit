@@ -377,7 +377,7 @@ routes = (app) ->
 			event_id = req.query.event_id
 			puts 1
 			if req.me
-			puts 2
+				puts 2
 				rsvp = EventRsvp.forge({user_id: req.me.get('user_id'), event_id: event_id})
 				rsvp
 				.fetch()
