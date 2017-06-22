@@ -24,6 +24,7 @@ routes = (app) ->
 	[Answer, Answers] = require('../../models/answers')
 	[Ticket, Tickets] = require('../../models/tickets')
 	[UserInterest, UserInterests] = require('../../models/user_interests')
+	[Interest, Interests] = require('../../models/interests')
 	[CredentialChange, CredentialChanges] = require('../../models/credential_changes')
 	[Connection, Connections] = require('../../models/connections')
 	[Registration, Registrations] = require('../../models/registrations')
@@ -617,8 +618,11 @@ routes = (app) ->
 					user_id: req.me.get('user_id')
 				.save()
 				.then (row) ->
-					res.r.msg = "Interest added!"
-					next()
+					UserInterests.forge().countInterests(req.query.interest_id)
+					.then (rsp) ->
+						res.r.members = rsp[0].get('memberCount')
+						res.r.msg = "Interest added!"
+						next()
 			else
 				next()
 
@@ -631,10 +635,13 @@ routes = (app) ->
 				.then (row) ->
 					if row
 						row.destroy()
-						res.r.msg = 'Interest deleted.'
-						next()
+						UserInterests.forge().countInterests(req.query.interest_id)
+						.then (rsp) ->
+							res.r.members = rsp[0].get('memberCount')
+							res.r.msg = 'Interest deleted.'
+							next()
 					else
-						res.rsp.msg = 'That interest already wasn\'t there'
+						res.r.msg = 'That interest already wasn\'t there'
 						res.status(410)
 						next()
 

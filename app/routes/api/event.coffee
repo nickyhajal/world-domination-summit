@@ -321,7 +321,7 @@ routes = (app) ->
 
 		get_attendees: (req, res, next) ->
 			event_id = req.query.event_id
-			sig = 'event_atns_'+event_id+'_'+req.query.include_users?
+			sig = 'event_atns_'+event_id
 			rds.get sig, (err, atns) ->
 				if atns? and atns and typeof JSON.parse(atns) is 'object'
 					res.r.attendees = JSON.parse(atns)
@@ -335,13 +335,13 @@ routes = (app) ->
 					.then (rsp) ->
 						atns = []
 						for atn in rsp.models
-							if req.query.include_users?
+							if req.query.include_users? || 1
 								atns.push(atn)
 							else
 								atns.push(atn.get('user_id'))
 						res.r.attendees = atns
 						rds.set sig, JSON.stringify(atns), ->
-						rds.expire sig, 45
+						rds.expire sig, 10000
 						next()
 					, (err) ->
 						console.error(err)
@@ -375,6 +375,7 @@ routes = (app) ->
 
 		rsvp: (req, res, next, free_rsvp = false) ->
 			event_id = req.query.event_id
+			atnRdsId = 'event_atns_'+event_id
 			if req.me
 				rsvp = EventRsvp.forge({user_id: req.me.get('user_id'), event_id: event_id})
 				rsvp
@@ -398,6 +399,7 @@ routes = (app) ->
 						.then (ev) ->
 							num_free = ev.get('num_free') ? 0
 							ev.updateRsvpCount()
+							rds.expire atnRdsId, 0
 							if free_rsvp
 								num_free += 1
 								ev.sendAcademyConfirmation(req.me.get('user_id'))

@@ -59,11 +59,12 @@
     "yamljs": "~0.2.1"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "node-dev": "^2.7.0"
   },
   "scripts": {
     "test": "./bin/test",
-    "dev": "nodemon server.js --debug --verbose",
+    "dev": "node-dev server.js",
     "start": "pm2 start -al /var/log/wds.log /var/www/world-domination-summit/server.js"
   }
 }
