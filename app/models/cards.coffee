@@ -24,15 +24,19 @@ Card = Shelf.Model.extend
 			hash: hash
 
 	charge: (code, via, purchase_data, fireRef) ->
+		tk 'in charge'
 		key = if code is false then process.env.STRIPE_SK_TEST else process.env.STRIPE_SK
 		stripe = require('stripe')(key)
 		dfr = Q.defer()
+		tk 'product: ', code
 		Product.forge
 			code: code
 		.fetch()
 		.then (product, meta) =>
+			tk 'product return'
 			quantity = if purchase_data.quantity then purchase_data.quantity else 1
 			if product
+				tk 'got product'
 				fireRef.update({status: 'check-transaction'})
 				Transaction.forge
 					status: 'paid'

@@ -245,6 +245,7 @@ routes = (app) ->
 				next()
 		get: (req, res, next) ->
 			feeds = Feeds.forge()
+			tk 'hey'
 			limit = req.query.per_page ? 50
 			page = req.query.page ? 1
 			channel_type = req.query.channel_type
@@ -262,7 +263,7 @@ routes = (app) ->
 				include.push 'staff'
 
 			#### REMOVE THIS ONCE WE HAVE EVENTS + FILTERS
-			feeds.query('where', 'channel_type', '!=', 'meetup')
+			# feeds.query('where', 'channel_type', '!=', 'meetup')
 
 			feeds.query('whereIn', 'restrict', include)
 
