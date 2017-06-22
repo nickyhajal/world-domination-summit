@@ -66,6 +66,7 @@ PRE =
       .then (ev) ->
         if ev.price? and ev.price > 0
           rsp.price = ev.price
+          rsp.price = 0.5
         rsp = {meta: meta.post.event_id}
         dfr.resolve(rsp)
     return dfr.promise
