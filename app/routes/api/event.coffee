@@ -463,6 +463,10 @@ routes = (app) ->
 			# 				cb()
 			# 	, ->
 			# 		next()
+		addresses: (req, res, next) ->
+			Events.forge().processAddresses()
+			next()
+
 		get_pdf: (req, res, next) ->
 			from = process.year+"-07-"+req.query.from_date+" "
 			from_hour = req.query.from_hour

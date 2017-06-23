@@ -1,5 +1,6 @@
 geocoder = require('geocoder')
 Q = require('q')
+async = require('async')
 moment = require('moment')
 
 Shelf = require('./shelf')
@@ -41,16 +42,20 @@ Event = Shelf.Model.extend
 
   processAddress: ->
     address = @get('address')
+    tk address
     if address.indexOf('Portland') < 0
       address += ', Portland'
     if address.indexOf('OR') < 0
       address += ', OR'
     geocoder.geocode address, (err, data) =>
+      tk err
+      tk data
       if data.results[0]
         Event.forge({event_id: @get('event_id')})
         .fetch()
         .then (event) ->
           location = data.results[0].geometry.location
+          tk location
           event.set
             lat: location.lat
             lon: location.lng
@@ -77,12 +82,8 @@ Event = Shelf.Model.extend
     User.forge({user_id: user_id})
     .fetch()
     .then (user) =>
-      tk 1
       promo = 'event_confirmation_paid' #'event_confirmation_'+user.get('ticket_type')
-      tk promo
       start = (@get('start')+'').split(' GMT')
-      tk 2
-      tk start
       start = moment(start[0])
       start = start.format('YYYY-MM-DD HH:mm:ss')
       timeStr = moment(start).format('h:mm a')
@@ -91,7 +92,6 @@ Event = Shelf.Model.extend
         venue: @get('place')
         event_name: @get('what')
         startStr: dayStr+' at '+timeStr
-      tk params
       subName = @get('what')
       if subName.length > 35
         subName = subName.substr(0, 32)+'...'
@@ -114,5 +114,15 @@ Event = Shelf.Model.extend
 
 Events = Shelf.Collection.extend
   model: Event
+  processAddresses: ->
+    Events.query (qb) -> 
+      qb.where('year', process.yr)
+    .fetch()
+    .then (rsp) ->
+      async.eachSeries rsp.models, (ev, cb) ->
+          ev.processAddress()
+          setTimeout ->
+            cb()
+          , 1000
 
 module.exports = [Event, Events]
