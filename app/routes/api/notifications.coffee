@@ -104,7 +104,8 @@ routes = (app) ->
                           note = new apn.Notification()
                           note.alert = req.query.notification_text
                           note.payload = {content: '{"user_id":"8082"}', type: 'feed_comment', link: link}
-                          # tk note
+                          tk note
+                          tk tokens
                           process.APN.pushNotification(note, tokens)
                         else if type is 'and' # and user_id == 176
                           tokens = [device.get('token')]
