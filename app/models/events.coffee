@@ -119,6 +119,7 @@ Events = Shelf.Collection.extend
       qb.where('year', process.yr)
     .fetch()
     .then (rsp) ->
+
       async.eachSeries rsp.models, (ev, cb) ->
           ev.processAddress()
           setTimeout ->
