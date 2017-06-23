@@ -104,8 +104,8 @@ routes = (app) ->
                           note = new apn.Notification()
                           note.alert = req.query.notification_text
                           note.payload = {content: '{"user_id":"8082"}', type: 'feed_comment', link: link}
-                          tk note
-                          tk tokens
+                          # tk note
+                          # tk tokens
                           process.APN.pushNotification(note, tokens)
                         else if type is 'and' # and user_id == 176
                           tokens = [device.get('token')]
@@ -147,7 +147,7 @@ routes = (app) ->
       devices.query('join', 'users', 'users.user_id', '=', 'devices.user_id', 'left')
       # devices.query('where', 'attending'+process.yr, '1')
       if test == 'yes'
-        devices.query('whereIn', 'devices.user_id', ['176']) #, '6292', '179', '216', '1315', '6263', '8884']) #, '179', '216', '6292'])
+        devices.query('whereIn', 'devices.user_id', ['176', '6292', '179', '216', '1315', '6263', '8884']) #, '179', '216', '6292'])
       if device_type != 'all'
         devices.query('where', 'devices.type', req.query.device)
       if registered != 'all'
