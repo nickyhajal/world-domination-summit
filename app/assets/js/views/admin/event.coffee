@@ -16,8 +16,9 @@ ap.Views.admin_event = XView.extend
 
 	rendered: ->
 		start = moment.utc(@event.start)
-		window.start = start
+		end = moment.utc(@event.end)
 		hour = start.format('HH')
+		end_hour = end.format('HH')
 		pm = 0
 		if hour >= 12
 			if hour > 12
@@ -27,6 +28,15 @@ ap.Views.admin_event = XView.extend
 			pm = 12
 		if hour is '00'
 			hour = '12'
+		end_pm = 0
+		if end_hour >= 12
+			if end_hour > 12
+				end_hour -= 12
+			if end_hour < 10
+				end_hour = '0'+end_hour
+			end_pm = 12
+		if end_hour is '00'
+			end_hour = '12'
 		$('select[name="date"]').select2('val', start.format('DD'))
 		$('select[name="hour"]').select2('val', hour)
 		$('select[name="minute"]').select2('val', start.format('mm'))
@@ -35,8 +45,7 @@ ap.Views.admin_event = XView.extend
 		$('select[name="end_minute"]').select2('val', end.format('mm'))
 		$('select[name="end_pm"]').select2('val', end_pm)
 		$('select[name="active"]').select2('val', @event.active)
-		$('select[name="for_type"]').select2('val', @event.for_type)
-		$('select[name="type"]').select2('val', @event.type)
+		$('select[name="format"]').select2('val', @event.format)
 
 	event_submit: (e) ->
 		e.preventDefault()
