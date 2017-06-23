@@ -87,6 +87,7 @@ Event = Shelf.Model.extend
         venue: @get('place')
         event_name: @get('what')
         startStr: dayStr+' at '+timeStr
+      tk params
       subName = @get('what')
       if subName.length > 35
         subName = subName.substr(0, 32)+'...'
