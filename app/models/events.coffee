@@ -78,7 +78,7 @@ Event = Shelf.Model.extend
     .fetch()
     .then (user) =>
       tk 1
-      promo = 'event_confirmation_'+user.get('ticket_type')
+      promo = 'event_confirmation_paid' #'event_confirmation_'+user.get('ticket_type')
       tk promo
       start = (@get('start')+'').split(' GMT')
       tk 2
