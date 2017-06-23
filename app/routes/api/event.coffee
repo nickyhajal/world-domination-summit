@@ -322,6 +322,7 @@ routes = (app) ->
 		get_attendees: (req, res, next) ->
 			event_id = req.query.event_id
 			sig = 'event_atns_'+event_id
+			rds.expire sig, 0
 			rds.get sig, (err, atns) ->
 				if atns? and atns and typeof JSON.parse(atns) is 'object'
 					res.r.attendees = JSON.parse(atns)
@@ -350,7 +351,7 @@ routes = (app) ->
 							hosts = []
 							for host in rsp.models
 								h = _.pick host.attributes, ['first_name', 'last_name', 'pic', 'user_id']
-								if ids.indexOf(h.user_id) > -1
+								if ids.indexOf(h.user_id) < 0
 									atns.push h
 							res.r.attendees = atns
 							rds.set sig, JSON.stringify(atns), ->
