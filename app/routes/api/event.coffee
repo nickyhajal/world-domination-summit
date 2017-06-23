@@ -339,10 +339,20 @@ routes = (app) ->
 								atns.push(atn)
 							else
 								atns.push(atn.get('user_id'))
-						res.r.attendees = atns
-						rds.set sig, JSON.stringify(atns), ->
-						rds.expire sig, 10000
-						next()
+						EventHosts.forge()
+						.query('join', 'users', 'users.user_id', '=', 'event_hosts.user_id', 'inner')
+						.query('where', 'event_id', '=', ev.get('event_id'))
+						.fetch
+							columns: ['users.*']
+						.then (rsp) ->
+							hosts = []
+							for host in rsp.models
+								h = _.pick host.attributes, ['first_name', 'last_name', 'pic', 'user_id']
+								atns.push h
+							res.r.attendees = atns
+							rds.set sig, JSON.stringify(atns), ->
+							rds.expire sig, 10000
+							next()
 					, (err) ->
 						console.error(err)
 
