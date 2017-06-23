@@ -76,7 +76,7 @@ Event = Shelf.Model.extend
     [User, Users] = require('./users')
     User.forge({user_id: user_id})
     .fetch()
-    .then (user) ->
+    .then (user) =>
       tk 1
       promo = 'event_confirmation_'+user.get('ticket_type')
       tk promo
