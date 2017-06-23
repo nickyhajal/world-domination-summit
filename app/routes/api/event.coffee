@@ -334,21 +334,24 @@ routes = (app) ->
 					.fetch(columns)
 					.then (rsp) ->
 						atns = []
+						ids = []
 						for atn in rsp.models
+							ids.push atn.get('user_id')
 							if req.query.include_users? || 1
 								atns.push(atn)
 							else
 								atns.push(atn.get('user_id'))
 						EventHosts.forge()
 						.query('join', 'users', 'users.user_id', '=', 'event_hosts.user_id', 'inner')
-						.query('where', 'event_id', '=', ev.get('event_id'))
+						.query('where', 'event_id', '=', event_id)
 						.fetch
 							columns: ['users.*']
 						.then (rsp) ->
 							hosts = []
 							for host in rsp.models
 								h = _.pick host.attributes, ['first_name', 'last_name', 'pic', 'user_id']
-								atns.push h
+								if ids.indexOf(h.user_id) > -1
+									atns.push h
 							res.r.attendees = atns
 							rds.set sig, JSON.stringify(atns), ->
 							rds.expire sig, 10000
