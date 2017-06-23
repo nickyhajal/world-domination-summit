@@ -77,8 +77,12 @@ Event = Shelf.Model.extend
     User.forge({user_id: user_id})
     .fetch()
     .then (user) ->
+      tk 1
       promo = 'event_confirmation_'+user.get('ticket_type')
+      tk promo
       start = (@get('start')+'').split(' GMT')
+      tk 2
+      tk start
       start = moment(start[0])
       start = start.format('YYYY-MM-DD HH:mm:ss')
       timeStr = moment(start).format('h:mm a')
