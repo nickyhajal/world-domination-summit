@@ -308,6 +308,7 @@ routes = (app) ->
 							evs = []
 							async.each rsp.models, (ev, cb) ->
 								ev.set('startStr', moment(ev.get('start')).format('h:mm a'))
+								ev.set('endStr', moment(ev.get('end')).format('h:mm a'))
 								ev.set('dayStr', moment(ev.get('start')).format('dddd[,] MMMM Do'))
 								ev.set('startDay', moment(ev.get('start')).format('YYYY-MM-DD'))
 								EventInterests.forge()
