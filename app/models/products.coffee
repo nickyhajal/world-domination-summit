@@ -65,9 +65,9 @@ PRE =
       .fetch()
       .then (ev) ->
         rsp = {meta: meta.post.event_id}
-        if ev.price? and ev.price > 0
-          rsp.price = ev.price
-          rsp.price = 50
+        if ev.get('price')? and ev.get('price') > 0
+          rsp.price = ev.('price')
+          # rsp.price = 50
         dfr.resolve(rsp)
     return dfr.promise
   wds17test: (meta) ->
