@@ -1,8 +1,11 @@
+const moment = require('moment');
+
 const {
   GraphQLString,
   GraphQLObjectType,
   GraphQLNonNull,
   GraphQLInt,
+  GraphQLBoolean,
   GraphQLList,
 } = require('graphql');
 const [User, Users] = require('../models/users');
@@ -38,6 +41,24 @@ const Type = new GraphQLObjectType({
     lat: { type: GraphQLString },
     lon: { type: GraphQLString },
     note: { type: GraphQLString },
+    startStr: {
+      type: GraphQLString,
+      resolve: row => moment(row.start).format('h:mm a'),
+    },
+    endStr: {
+      type: GraphQLString,
+      resolve: row => moment(row.end).format('h:mm a'),
+    },
+    dayStr: {
+      type: GraphQLString,
+      resolve: row => moment(row.start).format('dddd[,] MMMM Do'),
+    },
+    startDay: {
+      type: GraphQLString,
+      resolve: row => moment(row.start).format('YYYY-MM-DD'),
+    },
+    price: { type: GraphQLInt },
+    pay_link: { type: GraphQLString },
     max: { type: GraphQLInt },
     num_rsvps: { type: GraphQLInt },
     free_max: { type: GraphQLInt },
@@ -94,6 +115,7 @@ const Fields = {
   args: {
     type: { type: GraphQLString },
     year: { type: GraphQLString },
+    showInactive: { type: GraphQLBoolean },
   },
   resolve: async (root, args) => {
     const evs = Events.forge();
@@ -102,6 +124,9 @@ const Fields = {
     }
     if (args.year !== undefined) {
       evs.query('where', 'year', args.year);
+    }
+    if (args.showInactive === undefined) {
+      evs.query('where', 'active', '1');
     }
     evs.query('orderBy', 'start');
     const rows = await evs.fetch();

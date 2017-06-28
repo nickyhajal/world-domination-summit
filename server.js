@@ -11,7 +11,6 @@ var bodyParser = require('body-parser');
 var layout = require('express-layout');
 var RedisStore = require('connect-redis')(session);
 var app = express();
-app.use(cookieParser());
 // app.use(bodyParser.json({
 //   extended: true,
 //   uploadDir:'/tmp_uploads',
@@ -22,11 +21,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(layout());
 app.set('layouts', './app/views');
 app.set('layout', 'layout');
+app.use(cookieParser());
 app.use(
   session({
     secret: process.env.SESS_SEC,
     store: new RedisStore({ host: process.env.REDIS_HOST }),
-    cookie: { maxAge: 10000000000 },
+    cookie: { maxAge: 10000000000, secure: false },
     resave: false,
     saveUninitialized: false,
   })
