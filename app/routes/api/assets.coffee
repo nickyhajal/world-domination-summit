@@ -43,6 +43,7 @@ routes = (app) ->
 				me: 0
 				tpls: 0
 				all_attendees: 60
+				slim_attendees: 60
 				reg_attendees: 60
 				speakers: 300
 				interests: 5
@@ -58,7 +59,7 @@ routes = (app) ->
 			get: (req, res, next) ->
 				start = +(new Date())
 				tracker = req.query.tracker ? {}
-				async.eachSeries req.query.assets.split(','), (asset, cb) =>
+				async.each req.query.assets.split(','), (asset, cb) =>
 					assetStart = +(new Date())
 					last = tracker[asset] ? 0
 					now = Math.floor(+(new Date()) / 1000)
@@ -119,6 +120,27 @@ routes = (app) ->
 								atns.push atn
 							rds.set 'all_attendees', JSON.stringify(atns), (err, rsp) ->
 								rds.expire 'all_attendees', 1000, (err, rsp) ->
+									dfr.resolve(atns)
+				return dfr.promise
+			
+			slim_attendees: ->
+				dfr = Q.defer()
+				rds.get 'slim_attendees', (err, atns) ->
+					if atns? and atns and typeof JSON.parse(atns) is 'object'
+						dfr.resolve(JSON.parse(atns))
+					else
+						Users.forge()
+						.query('where', 'attending'+process.yr, '1')
+						.fetch
+							columns: ['user_id', 'first_name', 'last_name', 'user_name', 'type']
+						.then (attendees) ->
+							atns = []
+							for atn in attendees.models
+								if atn.get('user_name').length is 40
+									atn.set('user_name', 'no-profile')
+								atns.push atn
+							rds.set 'slim_attendees', JSON.stringify(atns), (err, rsp) ->
+								rds.expire 'slim_attendees', 1000, (err, rsp) ->
 									dfr.resolve(atns)
 				return dfr.promise
 
@@ -295,7 +317,7 @@ routes = (app) ->
 				dfr = Q.defer()
 				rds.get 'events', (err, events) ->
 
-					if events? and events and typeof JSON.parse(events) is 'object' and 0
+					if events? and events and typeof JSON.parse(events) is 'object'
 						dfr.resolve(JSON.parse(events))
 					else
 						Events.forge()
@@ -327,7 +349,7 @@ routes = (app) ->
 									.then (rsp) ->
 										hosts = []
 										for host in rsp.models
-											h = _.pick host.attributes, ['first_name', 'last_name', 'pic', 'user_id']
+											h = _.pick host.attributes, ['first_name', 'last_name', 'user_id']
 											hosts.push h
 										ev.set('hosts', hosts)
 										evs.push _.omit(ev.attributes, 'year', 'ignored', 'note', 'created_at', 'updated_at', 'end', 'active', 'outline')
@@ -335,7 +357,7 @@ routes = (app) ->
 							, ->
 								dfr.resolve(evs)
 								rds.set 'events', JSON.stringify(evs), (err, rsp) ->
-									rds.expire 'events', 240
+									rds.expire 'events', 3000000
 				return dfr.promise
 			signin_events: (req) ->
 				dfr = Q.defer()

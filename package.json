@@ -10,20 +10,19 @@
     "body-parser": "^1.16.0",
     "bookshelf": "~0.7.9",
     "chance": "^1.0.1",
-    "coffee-script": "~1.3.3",
+    "coffee-script": "^1.3.3",
     "coffee-trace": "~1.4.0",
     "connect-assets": "~3.0.0",
     "connect-busboy": "0.0.2",
     "connect-redis": "^3.2.0",
     "cookie-parser": "^1.4.3",
-    "redis-sessions": "1.2.0",
     "country-data": "0.0.13",
     "dotenv": "^4.0.0",
     "eventbrite": "~0.1.6",
     "express": "^4.14.1",
     "express-graphql": "^0.6.4",
-    "express-session": "^1.15.0",
     "express-layout": "^0.1.0",
+    "express-session": "^1.15.0",
     "firebase": "^3.2.1",
     "firebase-admin": "^4.0.6",
     "geocoder": "~0.1.0",
@@ -49,6 +48,7 @@
     "provinces": "~0.2.0",
     "q": "~1.0.0",
     "redis": "~0.7.2",
+    "redis-sessions": "1.2.0",
     "request": "~2.9.202",
     "stripe": "^4.4.0",
     "twit": "~1.1.7",
@@ -59,12 +59,12 @@
     "yamljs": "~0.2.1"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0",
-    "node-dev": "^2.7.0"
+    "node-dev": "^2.7.0",
+    "nodemon": "^1.11.0"
   },
   "scripts": {
     "test": "./bin/test",
-    "dev": "node-dev server.js",
+    "dev": "nodemon --debug --verbose server.js",
     "start": "pm2 start -al /var/log/wds.log /var/www/world-domination-summit/server.js"
   }
 }

@@ -4,6 +4,8 @@ Q = require('q')
 async = require('async')
 _s = require('underscore.string')
 countries = require('country-data').countries
+redis = require("redis")
+rds = redis.createClient()
 
 ##
 
@@ -23,29 +25,72 @@ getters =
 		dfr = Q.defer()
 #    @raceCheck()
 #    .then =>
-		@getCurrentTickets()
-		.then (user) =>
+		Q.all([
+			@getCurrentTickets()
 			@getAnswers()
-			.then (user) =>
-				@getInterests()
-				.then (user) =>
-					@getConnections()
-					.then (user) =>
-						@getFeedLikes()
-						.then (user) =>
-							@getRsvps()
-							.then (user) =>
-								@getFire()
-								.then (user) =>
-									@getRegistration()
-									.then (user) =>
-										if user.get('password')?.length
-											user.set('has_pw', true)
-										user.set('password', '')
-										if user.get('user_name')?.length  is 40
-											user.set('user_name', '')
-										dfr.resolve(user)
+			@getInterests()
+			@getConnections()
+			@getFeedLikes()
+			@getRsvps()
+			@getFire()
+			@getRegistration()
+		])
+		.then =>
+			user = this
+			if user.get('password')?.length
+				user.set('has_pw', true)
+			user.set('password', '')
+			if user.get('user_name')?.length  is 40
+				user.set('user_name', '')
+			dfr.resolve(user)
 		return dfr.promise
+
+		# 	@getCurrentTickets()
+		# .then (user) =>
+		# 	tk 'Get Current'
+		# 	last = (+(new Date()) / 1000)
+		# 	tk (last - start)
+		# 	@getAnswers()
+		# 	.then (user) =>
+		# 		tk 'Get Answers'
+		# 		last1 = (+(new Date()) / 1000)
+		# 		tk last1 - last
+		# 		@getInterests()
+		# 		.then (user) =>
+		# 			tk 'Get Interests'
+		# 			last2 = (+(new Date()) / 1000)
+		# 			tk last2 - last1
+		# 			@getConnections()
+		# 			.then (user) =>
+		# 				tk 'Get Connections'
+		# 				last3 = (+(new Date()) / 1000)
+		# 				tk last3 - last2
+		# 				@getFeedLikes()
+		# 				.then (user) =>
+		# 					tk 'Get FeedLikes'
+		# 					last4 = (+(new Date()) / 1000)
+		# 					tk last4 - last3
+		# 					@getRsvps()
+		# 					.then (user) =>
+		# 						tk 'Get Rsvp'
+		# 						last5 = (+(new Date()) / 1000)
+		# 						tk last5 - last4
+		# 						@getFire()
+		# 						.then (user) =>
+		# 							tk 'Get Fire'
+		# 							last6 = (+(new Date()) / 1000)
+		# 							tk last6 - last5
+		# 							@getRegistration()
+		# 							.then (user) =>
+		# 								tk 'Get Regi'
+		# 								last7 = (+(new Date()) / 1000)
+		# 								tk last7 - last6
+		# 								if user.get('password')?.length
+		# 									user.set('has_pw', true)
+		# 								user.set('password', '')
+		# 								if user.get('user_name')?.length  is 40
+		# 									user.set('user_name', '')
+		# 								dfr.resolve(user)
 
 	getFire: ->
 		dfr = Q.defer()
@@ -154,14 +199,22 @@ getters =
 
 	getAnswers: ->
 		dfr = Q.defer()
-		Answers.forge()
-		.query('where', 'user_id', @get('user_id'))
-		.fetch()
-		.then (rsp) =>
-			@set('answers', JSON.stringify(rsp.models))
-			dfr.resolve this
-		, (err) ->
-			console.error(err)
+		id = 'answers_'+@get('user_id')
+		rds.get id, (err, rsp) =>
+			if rsp? and rsp and typeof JSON.parse(rsp) is 'object'
+				@set('answers', rsp)
+				dfr.resolve()
+			else
+				Answers.forge()
+				.query('where', 'user_id', @get('user_id'))
+				.fetch()
+				.then (rsp) =>
+					@set('answers', JSON.stringify(rsp.models))
+					rds.set id, JSON.stringify(rsp), (err, rsp) ->
+						rds.expire id, 300000, (err, rsp) ->
+					dfr.resolve this
+				, (err) ->
+					console.error(err)
 		return dfr.promise
 
 	getCapabilities: ->
@@ -179,51 +232,75 @@ getters =
 
 	getInterests: ->
 		dfr = Q.defer()
-		UserInterests.forge()
-		.query('where', 'user_id', @get('user_id'))
-		.fetch()
-		.then (rsp) =>
-			interests = []
-			for interest in rsp.models
-				interests.push interest.get('interest_id')
-			@set('interests', interests)
-			dfr.resolve this
-		, (err) ->
-			console.error(err)
+		id = 'interests_'+@get('user_id')
+		rds.get id, (err, rsp) =>
+			if rsp? and rsp and typeof JSON.parse(rsp) is 'object'
+				@set('interests', JSON.parse(rsp))
+				dfr.resolve()
+			else
+				UserInterests.forge()
+				.query('where', 'user_id', @get('user_id'))
+				.fetch()
+				.then (rsp) =>
+					interests = []
+					for interest in rsp.models
+						interests.push interest.get('interest_id')
+					@set('interests', interests)
+					rds.set id, JSON.stringify(interests), (err, rsp) ->
+						rds.expire id, 300000, (err, rsp) ->
+					dfr.resolve this
+				, (err) ->
+					console.error(err)
 		return dfr.promise
 
 	getConnections: ->
 		dfr = Q.defer()
-		Connections.forge()
-		.query('where', 'user_id', @get('user_id'))
-		.fetch()
-		.then (connections) =>
-			connected_ids = []
-			for connection in connections.models
-				connected_ids.push connection.get('to_id')
-	#    connected_ids.push(176)
-			connected_ids.push(179)
-			@set
-				connected_ids: connected_ids
-			dfr.resolve(this)
-		, (err) ->
-			console.error(err)
+		id = 'connections_'+@get('user_id')
+		rds.get id, (err, rsp) =>
+			if rsp? and rsp and typeof JSON.parse(rsp) is 'object'
+				@set('connections', JSON.parse(rsp))
+				dfr.resolve()
+			else
+				Connections.forge()
+				.query('where', 'user_id', @get('user_id'))
+				.fetch()
+				.then (connections) =>
+					connected_ids = []
+					for connection in connections.models
+						connected_ids.push connection.get('to_id')
+			#    connected_ids.push(176)
+					connected_ids.push(179)
+					@set
+						connected_ids: connected_ids
+					rds.set id, JSON.stringify(connected_ids), (err, rsp) ->
+						rds.expire id, 300000, (err, rsp) ->
+					dfr.resolve(this)
+				, (err) ->
+					console.error(err)
 		return dfr.promise
 
 	getFeedLikes: ->
 		dfr = Q.defer()
-		FeedLikes.forge()
-		.query('where', 'user_id', @get('user_id'))
-		.fetch()
-		.then (likes) =>
-			like_ids = []
-			for like in likes.models
-				like_ids.push like.get('feed_id')
-			@set
-				feed_likes: like_ids
-			dfr.resolve(this)
-		, (err) ->
-			console.error(err)
+		id = 'feed_likes_'+@get('user_id')
+		rds.get id, (err, rsp) =>
+			if rsp? and rsp and typeof JSON.parse(rsp) is 'object'
+				@set('feed_likes', JSON.parse(rsp))
+				dfr.resolve()
+			else
+				FeedLikes.forge()
+				.query('where', 'user_id', @get('user_id'))
+				.fetch()
+				.then (likes) =>
+					like_ids = []
+					for like in likes.models
+						like_ids.push like.get('feed_id')
+					@set
+						feed_likes: like_ids
+					rds.set id, JSON.stringify(like_ids), (err, rsp) ->
+						rds.expire id, 300000, (err, rsp) ->
+					dfr.resolve(this)
+				, (err) ->
+					console.error(err)
 		return dfr.promise
 
 	getAllTickets: ->
@@ -239,31 +316,39 @@ getters =
 		return dfr.promise
 	getCurrentTickets: ->
 		dfr = Q.defer()
-		columns = [
-			'ticket_id', 'tickets.type', 'tickets.created_at', 'tickets.user_id', 'purchaser_id', 'status',
-			'tickets.year',
-			'p.first_name as purchaser_first_name',
-			'p.last_name as purchaser_last_name',
-			'p.email as purchaser_email',
-			'u.first_name as attendee_first_name',
-			'u.last_name as attendee_last_name',
-			'u.email as attendee_email',
-		]
-		Tickets.forge()
-		.query (qb) =>
-			user = this;
-			qb.where ->
-				@where('tickets.user_id', user.get('user_id'))
-				.orWhere('purchaser_id', user.get('user_id'))
-			qb.where('year', process.year)
-			qb.leftJoin('users as p', 'p.user_id', '=', 'tickets.user_id')
-			qb.leftJoin('users as u', 'u.user_id', '=', 'tickets.user_id')
-		.fetch({columns: columns})
-		.then (rows) =>
-			@set('tickets', rows.models)
-			dfr.resolve this
-		, (err) ->
-			console.error(err)
+		id = 'current_tickets'+@get('user_id')
+		rds.get id, (err, rsp) =>
+			if rsp? and rsp and typeof JSON.parse(rsp) is 'object'
+				@set('tickets', JSON.parse(rsp))
+				dfr.resolve(this)
+			else
+				columns = [
+					'ticket_id', 'tickets.type', 'tickets.created_at', 'tickets.user_id', 'purchaser_id', 'status',
+					'tickets.year',
+					'p.first_name as purchaser_first_name',
+					'p.last_name as purchaser_last_name',
+					'p.email as purchaser_email',
+					'u.first_name as attendee_first_name',
+					'u.last_name as attendee_last_name',
+					'u.email as attendee_email',
+				]
+				Tickets.forge()
+				.query (qb) =>
+					user = this;
+					qb.where ->
+						@where('tickets.user_id', user.get('user_id'))
+						.orWhere('purchaser_id', user.get('user_id'))
+					qb.where('year', process.year)
+					qb.leftJoin('users as p', 'p.user_id', '=', 'tickets.user_id')
+					qb.leftJoin('users as u', 'u.user_id', '=', 'tickets.user_id')
+				.fetch({columns: columns})
+				.then (rows) =>
+					@set('tickets', rows.models)
+					rds.set id, JSON.stringify(rows.models), (err, rsp) ->
+						rds.expire id, 30000, (err, rsp) ->
+					dfr.resolve this
+				, (err) ->
+					console.error(err)
 		return dfr.promise
 
 	getFollowingIds: ->
@@ -288,16 +373,24 @@ getters =
 
 	getRsvps: ->
 		dfr = Q.defer()
-		EventRsvps.forge()
-		.query('where', 'user_id', @get('user_id'))
-		.fetch()
-		.then (rsp) =>
-			rsvps = []
-			for rsvp in rsp.models
-				rsvps.push rsvp.get('event_id')
-			@set('rsvps', rsvps)
-			dfr.resolve(@)
-		return dfr.promise
+		id = 'rsvps_'+@get('user_id')
+		rds.get id, (err, rsp) =>
+			if rsp? and rsp and typeof JSON.parse(rsp) is 'object'
+				@set('rsvps', JSON.parse(rsp))
+				dfr.resolve()
+			else
+				EventRsvps.forge()
+				.query('where', 'user_id', @get('user_id'))
+				.fetch()
+				.then (rsp) =>
+					rsvps = []
+					for rsvp in rsp.models
+						rsvps.push rsvp.get('event_id')
+					@set('rsvps', rsvps)
+					rds.set id, JSON.stringify(rsvps), (err, rsp) ->
+						rds.expire id, 30000, (err, rsp) ->
+					dfr.resolve(@)
+				return dfr.promise
 
 	getLocationString: ->
 		address = _s.titleize(@get('city'))+', '

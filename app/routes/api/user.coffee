@@ -65,22 +65,18 @@ routes = (app) ->
 				res.r.me = false
 				next()
 		claim_ticket: (req, res, next) ->
-			tk 'CLAIM ROUTE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.'
 			if req.me
-				tk 'YUP ME'
 				Tickets.forge().query (qb) ->
 					qb.where('purchaser_id', req.me.get('user_id'))
 					qb.where('status', 'unclaimed')
 				.fetch()
 				.then (rsp) ->
-					tk 'CLAIM FETCHED'
 					ticket = rsp.models[0]
 					req.me.connectTicket(ticket)
 					.then ->
-						tk 'GET TICKET'
+						rds.expire('current_tickets_'+req.me.get('user_id'), 0)
 						req.me.getCurrentTickets()
 						.then (user) ->
-							tk 'SEND TICKETS'
 							res.r.tickets = user.get('tickets')
 							next()
 			else
@@ -91,6 +87,7 @@ routes = (app) ->
 			giveTicket = (atn, tkt, returning) ->
 					atn.assignTicket(tkt, returning, req.me)
 					.then ->
+						rds.expire('current_tickets_'+req.me.get('user_id'), 0)
 						req.me.getCurrentTickets()
 						.then (user) ->
 							res.r.tickets = user.get('tickets')
@@ -531,6 +528,9 @@ routes = (app) ->
 								Answers
 								.forge()
 								.updateAnswers(post.user_id, JSON.parse(req.query.answers))
+								setTimeout ->
+									rds.expire('answers_'+post.user_id, 0)
+								, 2000
 
 							if req.query.new_password? and req.query.new_password.length
 								User.forge({user_id: post.user_id}).updatePassword(req.query.new_password)
@@ -613,13 +613,15 @@ routes = (app) ->
 
 		add_interest: (req, res, next) ->
 			if req.me
+				user_id = req.me.get('user_id')
 				UserInterest.forge
 					interest_id: req.query.interest_id
-					user_id: req.me.get('user_id')
+					user_id: user_id
 				.save()
 				.then (row) ->
 					UserInterests.forge().countInterests(req.query.interest_id)
 					.then (rsp) ->
+						rds.expire('interests_'+user_id, 0)
 						res.r.members = rsp[0].get('memberCount')
 						res.r.msg = "Interest added!"
 						next()
@@ -628,15 +630,17 @@ routes = (app) ->
 
 		del_interest: (req, res, next) ->
 			if req.me
+				user_id = req.me.get('user_id')
 				UserInterest.forge
 					interest_id: req.query.interest_id
-					user_id: req.me.get('user_id')
+					user_id: user_id
 				.fetch()
 				.then (row) ->
 					if row
 						row.destroy()
 						UserInterests.forge().countInterests(req.query.interest_id)
 						.then (rsp) ->
+							rds.expire('interests_'+user_id, 0)
 							res.r.members = rsp[0].get('memberCount')
 							res.r.msg = 'Interest deleted.'
 							next()
@@ -725,6 +729,7 @@ routes = (app) ->
 						Connection.forge({user_id: user_id, to_id: to_id, year: process.year})
 						.save()
 						.then (connection) ->
+							rds.expire('connections_'+user_id, 0)
 							req.me.getConnections()
 							.then (user) ->
 								#res.r.connections = user.get('connections')
@@ -755,6 +760,7 @@ routes = (app) ->
 				.then (connection) ->
 					connection.destroy()
 					.then ->
+						rds.expire('connections_'+user_id, 0)
 						req.me.getConnections()
 						.then (user) ->
 						#	res.r.connections = user.get('connections')

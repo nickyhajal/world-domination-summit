@@ -71,6 +71,7 @@ routes = (app) ->
 								feed.set({num_likes: num_likes})
 								.save()
 								.then ->
+										rds.expire('feed_likes_'+post.user_id, 0)
 										res.r.num_likes = num_likes
 										if feed.get('user_id') isnt req.me.get('user_id')
 											Notification.forge
@@ -110,6 +111,7 @@ routes = (app) ->
 						Feed.forge({feed_id: req.query.feed_id})
 						.fetch()
 						.then (feed) ->
+							rds.expire('feed_likes_'+post.user_id, 0)
 							num_likes = feed.get('num_likes') - 1
 							feed.set({num_likes: num_likes})
 							.save()

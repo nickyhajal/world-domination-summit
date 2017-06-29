@@ -46,6 +46,9 @@ routes = (app) ->
 					if slugs.models.length
 						post.slug += '-'+(slugs.models.length+1)
 					post.year = process.yr
+					setTimeout ->
+						rds.expire('events', 0)
+					, 1000
 
 					Event.forge(post)
 					.save()
@@ -135,6 +138,9 @@ routes = (app) ->
 												.then (_host) ->
 													cb()
 											, () ->
+												setTimeout ->
+													rds.expire('events', 0)
+												, 1000
 												next()
 							else
 								res.r.msg = 'You don\'t have permission to do that!'
@@ -148,6 +154,9 @@ routes = (app) ->
 								req.me.getCapabilities()
 								.then ->
 									if req.me.hasCapability('schedule')
+										setTimeout -> 
+											rds.expire('events', 0)
+										, 1000
 										ev.set(post)
 										.save()
 										.then ->
@@ -157,10 +166,13 @@ routes = (app) ->
 										res.status(403)
 										next()
 							else
-									ev.set(post)
-									.save()
-									.then ->
-										next()
+								setTimeout ->
+									rds.expire('events', 0)
+								, 1000
+								ev.set(post)
+								.save()
+								.then ->
+									next()
 			else
 				res.r.msg = 'You don\'t have permission to do that!'
 				res.status(403)
@@ -292,6 +304,9 @@ routes = (app) ->
 							host.sendEmail('meetup-approved', 'Your meetup has been approved!')
 							model.set('active', 1)
 							model.save()
+							setTimeout ->
+								rds.expire('events', 0)
+							, 1000
 							next()
 			else
 				res.status(401)
@@ -312,6 +327,9 @@ routes = (app) ->
 		#					host.sendEmail('meetup-declined', 'Thanks for your meetup proposal!')
 							model.set('ignored', 1)
 							model.save()
+							setTimeout ->
+								rds.expire('events', 0)
+							, 1000
 							next()
 				, (err) ->
 					console.error(err)
@@ -391,7 +409,8 @@ routes = (app) ->
 			event_id = req.query.event_id
 			atnRdsId = 'event_atns_'+event_id
 			if req.me
-				rsvp = EventRsvp.forge({user_id: req.me.get('user_id'), event_id: event_id})
+				user_id = req.me.get('user_id')
+				rsvp = EventRsvp.forge({user_id: user_id, event_id: event_id})
 				rsvp
 				.fetch()
 				.then (existing) ->
@@ -416,7 +435,7 @@ routes = (app) ->
 							rds.expire atnRdsId, 0
 							if free_rsvp
 								num_free += 1
-								ev.sendAcademyConfirmation(req.me.get('user_id'))
+								ev.sendAcademyConfirmation(user_id)
 								ev.set
 									num_free: num_free
 								.save()
@@ -436,6 +455,10 @@ routes = (app) ->
 									subName = subName.substr(0, 32)+'...'
 								subject = "See you at \""+subName+'"'
 								req.me.sendEmail promo, subject, params
+								setTimeout -> 
+									rds.expire('events', 0)
+									rds.expire('rsvps_'+user_id, 0)
+								, 1000
 						next()
 
 		claim_academy: (req, res, next) ->
@@ -448,6 +471,9 @@ routes = (app) ->
 					req.me.set('academy', req.query.event_id)
 					req.me.save()
 					res.r.success = true
+					setTimeout ->
+						rds.expire('events', 0)
+					, 1000
 					next()
 				, true
 		send_confs: (req, res, next) ->

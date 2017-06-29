@@ -2,6 +2,8 @@ async = require 'async'
 _s = require('underscore.string')
 moment = require('moment')
 Helpscout = require('helpscout')
+redis = require("redis")
+rds = redis.createClient()
 
 routes = (app) ->
 	[User, Users] = require('../../models/users')
