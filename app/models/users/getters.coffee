@@ -390,7 +390,7 @@ getters =
 					rds.set id, JSON.stringify(rsvps), (err, rsp) ->
 						rds.expire id, 30000, (err, rsp) ->
 					dfr.resolve(@)
-				return dfr.promise
+		return dfr.promise
 
 	getLocationString: ->
 		address = _s.titleize(@get('city'))+', '
