@@ -203,7 +203,7 @@ getters =
 		rds.get id, (err, rsp) =>
 			if rsp? and rsp and typeof JSON.parse(rsp) is 'object'
 				@set('answers', rsp)
-				dfr.resolve()
+				dfr.resolve(this)
 			else
 				Answers.forge()
 				.query('where', 'user_id', @get('user_id'))
@@ -236,7 +236,7 @@ getters =
 		rds.get id, (err, rsp) =>
 			if rsp? and rsp and typeof JSON.parse(rsp) is 'object'
 				@set('interests', JSON.parse(rsp))
-				dfr.resolve()
+				dfr.resolve(this)
 			else
 				UserInterests.forge()
 				.query('where', 'user_id', @get('user_id'))
@@ -259,7 +259,7 @@ getters =
 		rds.get id, (err, rsp) =>
 			if rsp? and rsp and typeof JSON.parse(rsp) is 'object'
 				@set('connections', JSON.parse(rsp))
-				dfr.resolve()
+				dfr.resolve(this)
 			else
 				Connections.forge()
 				.query('where', 'user_id', @get('user_id'))
@@ -285,7 +285,7 @@ getters =
 		rds.get id, (err, rsp) =>
 			if rsp? and rsp and typeof JSON.parse(rsp) is 'object'
 				@set('feed_likes', JSON.parse(rsp))
-				dfr.resolve()
+				dfr.resolve(this)
 			else
 				FeedLikes.forge()
 				.query('where', 'user_id', @get('user_id'))
@@ -377,7 +377,7 @@ getters =
 		rds.get id, (err, rsp) =>
 			if rsp? and rsp and typeof JSON.parse(rsp) is 'object'
 				@set('rsvps', JSON.parse(rsp))
-				dfr.resolve()
+				dfr.resolve(this)
 			else
 				EventRsvps.forge()
 				.query('where', 'user_id', @get('user_id'))
