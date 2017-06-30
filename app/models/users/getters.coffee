@@ -258,7 +258,7 @@ getters =
 		id = 'connections_'+@get('user_id')
 		rds.get id, (err, rsp) =>
 			if rsp? and rsp and typeof JSON.parse(rsp) is 'object'
-				@set('connections', JSON.parse(rsp))
+				@set('connected_ids', JSON.parse(rsp))
 				dfr.resolve(this)
 			else
 				Connections.forge()
