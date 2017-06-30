@@ -112,6 +112,7 @@ routes = (app) ->
 						req.query.end_pm = Math.abs(req.query.end_pm - 12)
 					post.end = end.add('hours', req.query.end_pm).format('YYYY-MM-DD HH:mm:ss')
 
+				tk 'UPD EVENT'
 				Event.forge({event_id: post.event_id})
 				.fetch()
 				.then (ev) ->

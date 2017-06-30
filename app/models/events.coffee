@@ -18,6 +18,9 @@ Event = Shelf.Model.extend
   defaults: {
   	descr: ''
   }
+  initialize: ->
+    this.on 'saved', this.saved, this
+    this.on 'saving', this.saving, this
 
   updateRsvpCount: ->
     [EventRsvp, EventRsvps] = require('./event_rsvps')
@@ -36,7 +39,7 @@ Event = Shelf.Model.extend
   saved: (obj, rsp, opts) ->
     @id = rsp
     addressChanged = @lastDidChange ['address']
-    if addressChanged and @get('address')?.length
+    if (addressChanged and @get('address')?.length) || (@get('address')?.length && !@get('lat')?)
       @processAddress()
     return true
 
