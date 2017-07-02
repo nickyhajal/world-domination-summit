@@ -37,6 +37,7 @@ require('./app/config')(app, express, RedisStore);
 if (process.env.DIR !== undefined) {
   process.chdir(process.env.DIR);
 }
+
 process.knex = require('knex')(app.settings.db);
 db = process.db = app.settings.db;
 process.mail = app.settings.mail;
