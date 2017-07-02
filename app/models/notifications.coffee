@@ -6,6 +6,8 @@ _s = require('underscore.string')
 apn = require('apn')
 gcm = require('node-gcm')
 
+# https://github.com/node-apn/node-apn/wiki/Preparing-Certificates
+
 [Device, Devices] = require './devices'
 
 Notification = Shelf.Model.extend
