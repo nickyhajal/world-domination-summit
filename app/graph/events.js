@@ -119,10 +119,10 @@ const Fields = {
   },
   resolve: async (root, args) => {
     const evs = Events.forge();
-    if (args.type !== undefined && args.type) {
+    if (args.type !== undefined && args.type !== null) {
       evs.query('where', 'type', args.type);
     }
-    if (args.year !== undefined && args.year) {
+    if (args.year !== undefined && args.year !== null) {
       evs.query('where', 'year', args.year);
     }
     if (args.showInactive === undefined) {
