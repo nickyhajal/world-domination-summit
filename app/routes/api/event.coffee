@@ -112,7 +112,6 @@ routes = (app) ->
 						req.query.end_pm = Math.abs(req.query.end_pm - 12)
 					post.end = end.add('hours', req.query.end_pm).format('YYYY-MM-DD HH:mm:ss')
 
-				tk 'UPD EVENT'
 				Event.forge({event_id: post.event_id})
 				.fetch()
 				.then (ev) ->
@@ -427,6 +426,10 @@ routes = (app) ->
 							finish()
 
 					finish = ->
+						setTimeout -> 
+							rds.expire('events', 0)
+							rds.expire('rsvps_'+user_id, 0)
+						, 1000
 						Event.forge
 							event_id: event_id
 						.fetch()
@@ -456,10 +459,6 @@ routes = (app) ->
 									subName = subName.substr(0, 32)+'...'
 								subject = "See you at \""+subName+'"'
 								req.me.sendEmail promo, subject, params
-								setTimeout -> 
-									rds.expire('events', 0)
-									rds.expire('rsvps_'+user_id, 0)
-								, 1000
 						next()
 
 		claim_academy: (req, res, next) ->

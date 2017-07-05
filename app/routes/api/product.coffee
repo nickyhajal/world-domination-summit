@@ -56,6 +56,7 @@ routes = (app) ->
 					tk 'IS AUTHD'
 					code = req.query.code
 					firePath =  if code is 'wds2017' then 'sales/sale_wave2_2017' else 'sales/'+code
+					firePath =  'sales/'+code
 					fireRef = process.fire.database().ref().child(firePath).push
 						user_id: req.me.get('user_id')
 						created_at: (+(new Date()))
