@@ -35,6 +35,7 @@ Notification = Shelf.Model.extend
 				Devices.forge()
 				.query('where', 'user_id', user_id)
 				.query('where', 'type', 'ios')
+				.query('where', 'active', '1')
 				.fetch()
 				.then (rsp) =>
 					devices = rsp.models
@@ -53,6 +54,7 @@ Notification = Shelf.Model.extend
 				Devices.forge()
 				.query('where', 'user_id', user_id)
 				.query('where', 'type', 'and')
+				.query('where', 'active', '1')
 				.fetch()
 				.then (rsp) =>
 					devices = rsp.models
