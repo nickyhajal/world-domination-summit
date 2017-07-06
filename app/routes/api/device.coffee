@@ -5,7 +5,9 @@ routes = (app) ->
 	device =
 		add: (req, res, next) ->
 			if req.me
+				tk 'device update/add'
 				if req.query.token && req.query.type
+					tk req
 					create = ->
 						Device.forge
 							user_id: req.me.get('user_id')
@@ -17,17 +19,21 @@ routes = (app) ->
 							res.r.saved_token = 1
 							next()
 					if req.query.uuid? and req.query.uuid.length
+						tk 'byuuid'
 						Device.forge
 							uuid: req.query.uuid
 						.fetch()
 						.then (existing) ->
 							if existing
+								tk 'existing'
 								existing.set('token', req.query.token)
 								existing.save()
 								next()
 							else
+								tk 'new uuid'
 								create()
 					else
+						tk 'no uuid'
 						create()
 
 				else
