@@ -7,7 +7,7 @@ routes = (app) ->
 			if req.me
 				tk 'device update/add'
 				if req.query.token && req.query.type
-					tk req
+					tk req.query
 					create = ->
 						Device.forge
 							user_id: req.me.get('user_id')
