@@ -64,6 +64,7 @@ User = Shelf.Model.extend
     @set
       email_hash: email_hash
       user_name: user_hash
+      last_broadcast: moment().subtract(1, 'days').format('YYYY-MM-DD')
       hash: user_hash
     return true
   saving: (e) ->
