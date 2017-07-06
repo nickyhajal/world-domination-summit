@@ -48,6 +48,7 @@ routes = (app) ->
                 type: 'message'
                 channel_type: 'message'
                 channel_id: req.query.chat_id
+                title: req.query.title
                 user_id: to_id
                 content: JSON.stringify
                   from_id: req.me.get('user_id')

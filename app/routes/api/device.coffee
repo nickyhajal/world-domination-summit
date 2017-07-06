@@ -6,14 +6,30 @@ routes = (app) ->
 		add: (req, res, next) ->
 			if req.me
 				if req.query.token && req.query.type
-					Device.forge
-						user_id: req.me.get('user_id')
-						token: req.query.token
-						type: req.query.type
-					.save()
-					.then ->
-						res.r.saved_token = 1
-						next()
+					create = ->
+						Device.forge
+							user_id: req.me.get('user_id')
+							token: req.query.token
+							type: req.query.type
+							uuid: req.query.uuid
+						.save()
+						.then ->
+							res.r.saved_token = 1
+							next()
+					if req.query.uuid? and req.query.uuid.length
+						Device.forge
+							uuid: req.query.uuid
+						.fetch()
+						.then (existing) ->
+							if existing
+								existing.set('token', req.query.token)
+								existing.save()
+								next()
+							else
+								create()
+					else
+						create()
+
 				else
 					res.r.msg = 'No token'
 					res.status(401)
