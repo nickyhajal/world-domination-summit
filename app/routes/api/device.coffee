@@ -28,6 +28,7 @@ routes = (app) ->
 								tk 'existing'
 								existing.set('token', req.query.token)
 								existing.save()
+								res.r.saved_token = 1
 								next()
 							else
 								tk 'new uuid'
