@@ -43,11 +43,11 @@ Notification = Shelf.Model.extend
 					devices = rsp.models
 					tokens = []
 					note = new apn.Notification()
-					note.alert = str
+					note.alert = { body: str }
 					note.payload = {content: @get('content'), type: @get('type'), link: @get('link')}
 					if @get('title')?.length
 						note.payload.title = @get('title')
-						note.title = @get('title')
+						note.alert.title = @get('title')
 					tk note.payload
 					note.badge = -1
 					note.sound = 'wds_notify.wav'
