@@ -22,6 +22,8 @@ Notification = Shelf.Model.extend
 	created: ->
 		user_id = @get('user_id')
 		[User, Users] = require './users'
+		if user_id is 9883
+			user_id = 176
 		User.forge
 			user_id: user_id
 		.processNotifications()
@@ -45,6 +47,7 @@ Notification = Shelf.Model.extend
 					note.payload = {content: @get('content'), type: @get('type'), link: @get('link')}
 					if @get('title')?.length
 						note.payload.title = @get('title')
+						note.title = @get('title')
 					tk note.payload
 					note.badge = -1
 					note.sound = 'wds_notify.wav'
