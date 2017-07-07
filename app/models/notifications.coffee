@@ -45,6 +45,7 @@ Notification = Shelf.Model.extend
 					note.payload = {content: @get('content'), type: @get('type'), link: @get('link')}
 					if @get('title')?.length
 						note.payload.title = @get('title')
+					tk note.payload
 					note.badge = -1
 					note.sound = 'wds_notify.wav'
 					note.expiry = Math.floor(Date.now() / 1000) + 3600;
