@@ -103,10 +103,8 @@ getters =
 				last_name: @get('last_name')
 				email: @get('email')
 				user_id: @get('user_id')
-			puts uid
 			process.fire.auth().createCustomToken(uid, params)
 			.then (token) =>
-				puts token
 				@set('firetoken', token)
 				User.forge
 					user_id: @get('user_id')
