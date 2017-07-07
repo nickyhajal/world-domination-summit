@@ -29,6 +29,7 @@ routes = (app) ->
         name = req.me.get('first_name')+' '+req.me.get('last_name')[0]+': '
         to_ids = req.query.user_id
         async.each to_ids, (to_id, cb) ->
+          tk to_id
           Notification.forge
             channel_type: 'message'
             channel_id: req.query.chat_id
@@ -60,7 +61,7 @@ routes = (app) ->
                 emailed: 1
               .save()
               cb()
-              
+
         next()
       else
         next()
