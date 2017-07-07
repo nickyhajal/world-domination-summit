@@ -4,6 +4,7 @@ crypto = require('crypto')
 apn = require('apn')
 gcm = require('node-gcm')
 _ = require('underscore')
+async = require('async')
 _s = require('underscore.string')
 moment = require('moment')
 
@@ -26,7 +27,8 @@ routes = (app) ->
     message: (req, res, next) ->
       if req.me? and req.me
         name = req.me.get('first_name')+' '+req.me.get('last_name')[0]+': '
-        for to_id in req.query.user_id
+        to_ids = req.query.user_id
+        async.each to_ids, (to_id, cb) ->
           Notification.forge
             channel_type: 'message'
             channel_id: req.query.chat_id
@@ -43,6 +45,7 @@ routes = (app) ->
                 clicked: 0
               existing.save()
               existing.created()
+              cb()
             else
               Notification.forge
                 type: 'message'
@@ -56,6 +59,8 @@ routes = (app) ->
                 link: '/message/'+req.query.chat_id
                 emailed: 1
               .save()
+              cb()
+              
         next()
       else
         next()
