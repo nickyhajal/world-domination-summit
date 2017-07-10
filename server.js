@@ -17,7 +17,7 @@ var app = express();
 //   keepExtensions: true
 // }));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(layout());
 app.set('layouts', './app/views');
 app.set('layout', 'layout');
