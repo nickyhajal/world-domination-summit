@@ -120,6 +120,7 @@ div#content_shell {
 .search-row span {
     display:                    block;
     float:                      left;
+    background-size: cover;
     margin-right:               10px;
     background-size:            100% auto ! important;
     -webkit-background-size:    100% auto ! important;

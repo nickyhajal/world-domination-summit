@@ -21,7 +21,7 @@ ap.holdSearch = false
 ap.mode = 'registration'
 ap.eMap =
 	id1:
-		name: 'WDS 360 & Connect'
+		name: 'WDS Main Registration'
 	id999999:
 		name: 'Kindness'
 		title: 'Kindness Tracker'
@@ -131,7 +131,9 @@ ap.search = ->
 			str = 'Sign-In'
 			reg_class = 'registered'
 		atype = result.get('type') ? 'attendee'
-		ttype = result.get('ticket_type') ? '360'
+		ttype = result.get('ticket_type') ? 'attendee'
+		if ttype == '360'
+			ttype = 'attendee'
 		if atype != 'attendee'
 			ttype = atype
 		if ttype is 'friend'

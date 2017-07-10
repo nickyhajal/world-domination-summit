@@ -148,25 +148,30 @@ routes = (app) ->
 				dfr = Q.defer()
 				rds.get 'reg_attendees', (err, atns) ->
 					if atns? and atns and typeof JSON.parse(atns) is 'object'
+						tk ' CACHE'
 						dfr.resolve(JSON.parse(atns))
 					else
+						tk 'CREATE'
 						Users.forge()
 						.query (qb) ->
 							qb.where('attending'+process.yr, '1')
-							qb.orWhere('t.product_id', '6')
-							qb.leftJoin('transactions as t', 'users.user_id', 't.user_id')
+							# qb.orWhere('t.product_id', '6')
+							# qb.leftJoin('transactions as t', 'users.user_id', 't.user_id')
 							qb.orderBy('last_name')
 						.fetch
 							columns: [
-								'users.user_id', 'ticket_type', 'type', 'first_name', 'last_name', 'pic', 'location', 'kinded'
+								'users.user_id', 'type', 'first_name', 'last_name', 'location' #, 'ticket_type', 'pic' # , 'kinded'
 							]
 						.then (attendees) ->
 							atns = []
+							# dfr.resolve(attendees.models)
+							# rds.set 'reg_attendees', JSON.stringify(attendees.models), (err, rsp) ->
+							# 	rds.expire 'reg_attendees', 60, (err, rsp) ->
 							Answers.forge()
 							.query (qb) ->
 								qb.where('attending'+process.yr, '1')
-								qb.orWhere('t.product_id', '6')
-								qb.leftJoin('transactions as t', 'answers.user_id', 't.user_id')
+								# qb.orWhere('t.product_id', '6')
+								# qb.leftJoin('transactions as t', 'answers.user_id', 't.user_id')
 								qb.leftJoin('users as u', 'answers.user_id', 'u.user_id')
 								qb.groupBy('answers.answer_id')
 							.fetch()
@@ -185,9 +190,9 @@ routes = (app) ->
 										atns.push atn
 									cb()
 								, ->
+									dfr.resolve(atns)
 									rds.set 'reg_attendees', JSON.stringify(atns), (err, rsp) ->
-										rds.expire 'reg_attendees', 60, (err, rsp) ->
-											dfr.resolve(atns)
+										rds.expire 'reg_attendees', 600, (err, rsp) ->
 				return dfr.promise
 
 			me: (req) ->
