@@ -92,6 +92,7 @@ routes = (app) ->
 	apiRouter.post '/user/note', user.add_unote
 	apiRouter.get '/user/notes', user.get_unotes
 	apiRouter.post '/user/checkin', user.add_checkin
+	apiRouter.get '/user/notification_tokens', user.get_notification_tokens
 	apiRouter.get '/user/notifications', user.get_notifications
 	apiRouter.get '/user/notifications/unread', user.get_unread_notifications
 	apiRouter.get '/user/notifications/read', user.read_notifications

@@ -29,6 +29,7 @@ routes = (app) ->
 	[Connection, Connections] = require('../../models/connections')
 	[Registration, Registrations] = require('../../models/registrations')
 	[Notification, Notifications] = require('../../models/notifications')
+	[Device, Devices] = require('../../models/devices')
 	[RaceSubmission, RaceSubmissions] = require('../../models/race_submissions')
 	[Checkin, Checkins] = require('../../models/checkins')
 	[Card, Cards] = require('../../models/cards')
@@ -64,6 +65,16 @@ routes = (app) ->
 			else
 				res.r.me = false
 				next()
+		get_notification_tokens: (req, res, next) ->
+			if req.query.user_id?
+				Devices.forge().query (qb) ->
+					qb.where('user_id', req.query.user_id)
+					qb.where('active', '1')
+				.fetch()
+				.then (rsp) ->
+					res.r.tokens = rsp.models
+					next()
+
 		claim_ticket: (req, res, next) ->
 			if req.me
 				Tickets.forge().query (qb) ->
