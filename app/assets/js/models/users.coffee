@@ -13,7 +13,7 @@ ap.User = window.XModel.extend
 	idAttribute: 'user_id'
 	url: '/api/user'
 	initialize: (opts = {})->
-		@set('pic', 'http://avatar.wds.fm/'+@get('user_id'))
+		@set('pic', 'https://avatar.wds.fm/'+@get('user_id'))
 		if @get('user_name')?.length is 40
 			@set('user_name', '')
 		@trackChangesSinceSave()
@@ -22,7 +22,7 @@ ap.User = window.XModel.extend
 	saved: (rsp)->
 
 	getPic: (size) ->
-		return 'http://avatar.wds.fm/'+@get('user_id')+'?width='+size
+		return 'https://avatar.wds.fm/'+@get('user_id')+'?width='+size
 	toggleConnection: (to_id, cb = false) ->
 		if @isConnected(to_id)
 			ap.api 'delete user/connection', {to_id: to_id}, (rsp) =>
