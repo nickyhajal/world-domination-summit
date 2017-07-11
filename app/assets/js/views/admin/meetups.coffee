@@ -13,6 +13,7 @@ ap.Views.admin_meetups = XView.extend
       _.whenReady 'users', =>
         html = '<tr class="tbl-head"><th>Start</th><th>Host</th><th>Meetup</th><th>Venue</th></tr>'
         for atn in rsp.events
+          console.log atn
           host = atn.hosts[0]#ap.Users.get(atn.hosts[0])
           host_str = host.first_name+' '+host.last_name
           place = if atn.place.length then atn.place else 'No Venue'
