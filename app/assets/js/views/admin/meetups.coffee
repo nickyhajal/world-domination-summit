@@ -11,7 +11,7 @@ ap.Views.admin_meetups = XView.extend
   listing: ->
     ap.api 'get admin/events', {active: 1, type: 'meetup'}, (rsp) ->
       _.whenReady 'users', =>
-        html = '<tr class="tbl-head"><th>Host</th><th>Meetup</th><th>Venue</th></tr>'
+        html = '<tr class="tbl-head"><th>Start</th><th>Meetup</th><th>Venue</th></tr>'
         for atn in rsp.events
           host = ''
           if ap.Users.get(atn.hosts[0])
@@ -20,7 +20,7 @@ ap.Views.admin_meetups = XView.extend
           place = if atn.place.length then atn.place else 'No Venue'
           html += '
           <tr data-event_id="'+atn.event_id+'">
-            <td>'+host+'</td>
+            <td>'+atn.startStr+'</td>
             <td>
               <span>'+atn.what+'</span>
             </td>

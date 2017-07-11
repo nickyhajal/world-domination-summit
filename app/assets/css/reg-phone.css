@@ -78,6 +78,9 @@ div.reg-info {
     width: 94px !important;
     padding: 18px 0px !important;
 }
+div.reg-ttype {
+    font-size: 11pt;
+}
 h4.k-name {
     font-size:                  18pt;
     margin-left:                12px;
