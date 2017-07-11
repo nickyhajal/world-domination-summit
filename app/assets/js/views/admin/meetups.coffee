@@ -27,7 +27,7 @@ ap.Views.admin_meetups = XView.extend
             <td>'+place+'</td>
           </tr>
         '
-        html = '<tr class="tbl-head"><th>Start</th><th>Host</th><th>Meetup</th><th>Venue</th></tr>'
+        html += '<tr class="tbl-head"><th>Start</th><th>Host</th><th>Meetup</th><th>Venue</th></tr>'
         $('#event-review-results').html(html)
         $('#event-start').hide()
         $('#event-review-results-shell').show()
