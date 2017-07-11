@@ -11,23 +11,22 @@ ap.Views.admin_meetups = XView.extend
   listing: ->
     ap.api 'get admin/events', {active: 1, type: 'meetup'}, (rsp) ->
       _.whenReady 'users', =>
-        html = '<tr class="tbl-head"><th>Start</th><th>Meetup</th><th>Venue</th></tr>'
+        html = '<tr class="tbl-head"><th>Start</th><th>Host</th><th>Meetup</th><th>Venue</th></tr>'
         for atn in rsp.events
-          host = ''
-          if ap.Users.get(atn.hosts[0])
-            host = ap.Users.get(atn.hosts[0])
-            host = host.get('first_name')+' '+host.get('last_name')
+          host = atn.hosts[0]#ap.Users.get(atn.hosts[0])
+          host_str = host.first_name+' '+host.last_name
           place = if atn.place.length then atn.place else 'No Venue'
           html += '
           <tr data-event_id="'+atn.event_id+'">
-            <td>'+atn.startStr+'</td>
+            <td>'+moment(atn.start).format('MMM Do, h:mma')+'</td>
+            <td>'+host_str+'</td>
             <td>
               <span>'+atn.what+'</span>
             </td>
             <td>'+place+'</td>
           </tr>
         '
-        html += '<tr class="tbl-head"><th>Host</th><th>Meetup</th><th>Venue</th></tr>'
+        html = '<tr class="tbl-head"><th>Start</th><th>Host</th><th>Meetup</th><th>Venue</th></tr>'
         $('#event-review-results').html(html)
         $('#event-start').hide()
         $('#event-review-results-shell').show()

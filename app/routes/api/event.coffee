@@ -210,7 +210,7 @@ routes = (app) ->
 				events.query('whereIn', 'type', req.query.types)
 			if req.query.event_id
 				events.query('where', 'event_id', req.query.event_id)
-			events.query('orderBy', 'event_id',  'DESC')
+			events.query('orderBy', 'start')
 			events.query('limit', limit)
 			events.query('where', 'ignored', 0)
 			events

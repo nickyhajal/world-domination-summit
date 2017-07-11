@@ -2636,8 +2636,10 @@ html #transaction-results tr td:first-of-type {
     width:                      auto;
 }
 #event-review-results tr td:first-of-type {
-    padding-left:               10px;
-    width:                      280px ! important;
+    padding-left: 10px;
+    text-align: center;
+    width: 140px !important;
+    text-align: center;
 }
 #event-review-results td {
     font-family:                karla;
