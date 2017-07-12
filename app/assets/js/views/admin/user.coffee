@@ -29,7 +29,7 @@ ap.Views.admin_user = XView.extend
 				html += '<tr class="tbl-head"><th>ID</th><th>Type</th><th>Time</th><th>Event</th><th>Venue</th></tr>'
 				for ev in events
 					html += '<tr><td>'+ev.event_id+'</td>'
-					html += '<tr><td>'+_.titleize(ev.type)+'</td>'
+					html += '<td>'+_.titleize(ev.type)+'</td>'
 					html += '<td>'+moment(ev.start).format('dd Do, h:mma')+'</td>'
 					html += '<td>'+ev.what+'</td>'
 					html += '<td>'+ev.place+' ('+ev.address+')</td></tr>'
