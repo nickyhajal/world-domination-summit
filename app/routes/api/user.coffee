@@ -218,7 +218,7 @@ routes = (app) ->
 				next()
 
 		get_events: (req, res, next) ->
-			columns = { columns: [ 'event_id', 'what', 'type', 'start', 'place', 'address' ]}
+			columns = { columns: [ 'events.event_id', 'what', 'type', 'start', 'place', 'address' ]}
 			EventRsvps.forge().query (qb) ->
 				qb.where('user_id', req.query.user_id)
 				qb.where('year', process.yr)
