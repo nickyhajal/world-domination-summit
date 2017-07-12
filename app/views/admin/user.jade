@@ -10,6 +10,9 @@ div(id="user-manifest-shell")
 
 	h3 Tickets
 	div(class="ticket-shell")
+	div(id="attending-events")
+		h3 Attending Events
+		div(id="attending-eventlist")
 	h3 Attendee Account
 	div(class="form-section")
 		div(class="form-box")
@@ -18,9 +21,6 @@ div(id="user-manifest-shell")
 		div(class="form-box")
 			label Profile
 			input(type="text", value="http://worlddominationsummit.com/~{{ user_name }}")
-	div(id="attending-events")
-		h3 Attending Events
-		div(id="attending-eventlist")
 	form(id="admin-user-update", method="post", action="#")
 		input(type="hidden", name="user_id", value="{{ user_id }}")
 		h3 Attendee Info
