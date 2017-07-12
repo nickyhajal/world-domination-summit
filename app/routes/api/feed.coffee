@@ -247,7 +247,7 @@ routes = (app) ->
 				next()
 		get: (req, res, next) ->
 			feeds = Feeds.forge()
-			tk 'hey'
+			tk 'hey...'
 			limit = req.query.per_page ? 50
 			page = req.query.page ? 1
 			channel_type = req.query.channel_type
@@ -309,6 +309,7 @@ routes = (app) ->
 					if filter.name is 'following'
 						req.me.getConnections()
 						.then (rsp) ->
+							tk rsp
 							ids = rsp.get('connected_ids')
 							if not ids.length
 								ids = [0]
@@ -321,6 +322,7 @@ routes = (app) ->
 						else
 							req.me.getInterests()
 							.then (rsp) ->
+								tk 'intersets'
 								interests = rsp.get('interests')
 								if interests.length
 									interests = interests.join(',')
@@ -334,8 +336,10 @@ routes = (app) ->
 							if req.me? and req.me
 								req.me.getRsvps()
 								.then (rsp) ->
+									tk 'rsvps'
 									rsvps = rsp.get('rsvps')
 									if rsvps.length
+										tk 'rsvpsss'
 										meetups = rsp.get('rsvps').join(',')
 										feeds.query 'whereRaw', "(`channel_type` != 'meetup' OR (`channel_type` = 'meetup' AND `channel_id` IN ("+meetups+")))"
 									cb()
@@ -349,8 +353,10 @@ routes = (app) ->
 							if req.me? and req.me
 								req.me.getRsvps()
 								.then (rsp) ->
+									tk 'arssv'
 									rsvps = rsp.get('rsvps')
 									if rsvps.length
+										tk 'arsrscnnasv'
 										rsvps = rsp.get('rsvps').join(',')
 										feeds.query 'whereRaw', "(`channel_type` != 'event' OR (`channel_type` = 'event' AND `channel_id` IN ("+rsvps+")))"
 									cb()

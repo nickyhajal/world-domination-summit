@@ -63,5 +63,9 @@ config = (app, express, RedisStore, mysql) ->
         password: process.env.DB_PW
         database: process.env.DB
         charset: 'utf8mb4'
+      pool:
+        min: 1
+        max: 50
       debug: false
 module.exports = config
+
