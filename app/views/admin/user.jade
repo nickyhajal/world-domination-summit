@@ -18,6 +18,9 @@ div(id="user-manifest-shell")
 		div(class="form-box")
 			label Profile
 			input(type="text", value="http://worlddominationsummit.com/~{{ user_name }}")
+	div(id="attending-events")
+		h3 Attending Events
+		div(id="attending-eventlist")
 	form(id="admin-user-update", method="post", action="#")
 		input(type="hidden", name="user_id", value="{{ user_id }}")
 		h3 Attendee Info
@@ -70,6 +73,3 @@ div(id="user-manifest-shell")
 			div(class="clear")
 			div(class="form-section")
 				input(type="submit", value="Save Attendee Info", class="button")
-		//- div(id="tab-panel-basics" class="tab-panel")
-		//- 	h3 Attending Events
-		//- 	div(class="event-list")

@@ -48,6 +48,7 @@ routes = (app) ->
 	apiRouter.post '/me/claim-ticket', user.claim_ticket
 	apiRouter.post '/me/give-ticket', user.give_ticket
 	apiRouter.get '/users', user.search
+	apiRouter.get '/user/events', user.get_events
 	apiRouter.post '/user/update', user.update
 	apiRouter.patch '/user', user.update
 	apiRouter.put '/user', user.update

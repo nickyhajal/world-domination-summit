@@ -19,6 +19,7 @@ routes = (app) ->
 		callback: 'http://'+process.dmn+'/api/user/twitter/callback'
 
 	[User, Users] = require('../../models/users')
+	[EventRsvp, EventRsvps] = require('../../models/event_rsvps')
 	[UserNote, UserNotes] = require('../../models/user_notes')
 	[TwitterLogin, TwitterLogins] = require('../../models/twitter_logins')
 	[Answer, Answers] = require('../../models/answers')
@@ -214,6 +215,17 @@ routes = (app) ->
 			else
 				res.status(400)
 				res.r.msg = 'No user'
+				next()
+
+		get_events: (req, res, next) ->
+			columns = { columns: [ 'what', 'type', 'start', 'place', 'address' ]}
+			EventRsvps.forge().query (qb) ->
+				qb.where('user_id', req.query.user_id)
+				qb.where('year', process.yr)
+				qb.leftJoin('events', 'event_rsvps.event_id', 'events.event_id')
+			.fetch(columns)
+			.then (rsp) ->
+				res.r.events = rsp.models
 				next()
 
 		search: (req, res, next) ->

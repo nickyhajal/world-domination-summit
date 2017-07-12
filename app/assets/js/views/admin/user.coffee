@@ -21,7 +21,23 @@ ap.Views.admin_user = XView.extend
 	rendered: ->
 		@initSelect2()
 		@initTickets()
-		# $('input[name="type"]').val(@user.get('type'))
+		ap.api 'get user/events', {user_id: @user.get('user_id')}, (rsp) =>
+			events = rsp.events
+			if events? and events.length
+				html = '<table id="event-review-results-shell" class="search-results-shell">'
+				html += '<tbody class="search-results">'
+				html += '<tr class="tbl-head"><th>Type</th><th>Time</th><th>Event</th><th>Venue</th></tr>'
+				for ev in events
+					html += '<tr><td>'+_.titleize(ev.type)+'</td>'
+					html += '<td>'+moment(ev.start).format('dd Do, h:mma')+'</td>'
+					html += '<td>'+ev.what+'</td>'
+					html += '<td>'+ev.place+' ('+ev.address+')</td></tr>'
+				html += '<tr class="tbl-head"><th>Type</th><th>Time</th><th>Event</th><th>Venue</th></tr>'
+				html += '</tbody></table>'
+			else
+				html = '<div>'+@user.get('first_name')+' hasn\'t RSVPd to any events yet'
+			$('#attending-eventlist').html(html)
+			$('#event-review-results-shell').show()
 		$('select[name="type"]').select2('val', @user.get('type'))
 	initSelect2: ->
 		country_select = $('#country-select')

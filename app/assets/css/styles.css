@@ -2641,6 +2641,12 @@ html #transaction-results tr td:first-of-type {
     width: 140px !important;
     text-align: center;
 }
+#attending-eventlist #event-review-results-shell tr td:first-of-type {
+    width: 90px !important;
+}
+#attending-eventlist #event-review-results-shell tr td {
+    font-size: 11pt;
+}
 #event-review-results td {
     font-family:                karla;
     font-size:                  11pt;
