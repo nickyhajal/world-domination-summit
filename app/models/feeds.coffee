@@ -6,7 +6,7 @@ Feed = Shelf.Model.extend
   idAttribute: 'feed_id'
   hasTimestamps: true
   permittedAttributes: [
-    'content', 'channel_id', 'channel_type'
+    'content', 'channel_id', 'channel_type', 'media', 'media_type'
   ]
 
 Feeds = Shelf.Collection.extend
