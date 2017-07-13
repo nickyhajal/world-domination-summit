@@ -353,10 +353,8 @@ routes = (app) ->
 							if req.me? and req.me
 								req.me.getRsvps()
 								.then (rsp) ->
-									tk 'arssv'
 									rsvps = rsp.get('rsvps')
 									if rsvps.length
-										tk 'arsrscnnasv'
 										rsvps = rsp.get('rsvps').join(',')
 										feeds.query 'whereRaw', "(`channel_type` != 'event' OR (`channel_type` = 'event' AND `channel_id` IN ("+rsvps+")))"
 									cb()

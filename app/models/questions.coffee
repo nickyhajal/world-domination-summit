@@ -4,6 +4,7 @@ Q = require('q')
 
 Question = Shelf.Model.extend
   tableName: 'questions'
+  idAttribute: 'question_id'
   permittedAttributes: [
     'questionid', 'question', 'question-slug'
   ]

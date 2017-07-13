@@ -4,6 +4,7 @@ Q = require('q')
 
 Registration = Shelf.Model.extend
   tableName: 'registrations'
+  idAttribute: 'registration_id'
   hasTimestamps: true
   
 Registrations = Shelf.Collection.extend
