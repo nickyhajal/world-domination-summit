@@ -24,6 +24,8 @@ charge =
 					dfr.resolve(stripeUser)
 				.catch (err) =>
 					dfr.reject(err)
+			.catch (err) =>
+				dfr.reject(err)
 		else
 			stripe.customers.create
 				source: card_id
@@ -52,6 +54,7 @@ charge =
 					dfr.resolve(exists)
 				else
 					fireRef.update({status: 'create-customer'})
+					try
 					@getStripeCustomer(card_id)
 					.then((customer) =>
 						stripe.tokens.retrieve(card_id)
@@ -75,12 +78,11 @@ charge =
 									error: err
 								tk err
 						).catch((err) =>
-							tk err
+							tk 'Custom create error'
 							dfr.resolve({status: 'declined', err: err.message})
 						)
 					)
 					.catch((err) =>
-						tk err
 						tk 'Card add error'
 						dfr.resolve({status: 'declined', err: err.message})
 					)

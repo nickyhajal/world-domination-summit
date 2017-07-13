@@ -10,13 +10,14 @@ ticket =
   registerTicket: (quantity = 1, total = 0, transferFrom = null) ->
     dfr = Q.defer()
     ticket_ids = []
+    @set('pre18').save()
     async.each [0..quantity-1], (i, cb) =>
       Ticket.forge
         type: '360'
         user_id: @get('user_id')
         purchaser_id: @get('user_id')
         status: 'unclaimed'
-        year: '2017'
+        year: '2018'
         transfer_from: transferFrom
       .save()
       .then (ticket) =>
@@ -28,7 +29,8 @@ ticket =
         cb()
     , =>
       if total > 0
-        @addToList('WDS 2017 Purchasers')
+        @addToList('WDS 2018 Pre-Orders')
+        @addToList('WDS 2018 Purchasers')
         .then =>
           promo = 'TicketReceipt'
           subject = "Aw yeah! Your purchase was successful!"

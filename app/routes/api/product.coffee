@@ -68,26 +68,34 @@ routes = (app) ->
 					next()
 
 					# Now, actually start processing
-					req.me.getCard(req.query.card_id, fireRef)
-					.then (card) ->
-						if card.status? and card.status is 'declined'
-							tk 'ERR'
-							tk card.err
-							fireRef.update
-								status: 'error'
-								declined: true
-								error: card.err
-						else
-							tk req.query
-							tk 'GUNNA DO THIS'
-							fireRef.update({status: 'card-ready'})
-							via = req.query.via ? 'web'
-							card.charge(req.query.code, via, req.query.purchase_data, fireRef)
-							.then (charge) ->
-								res.r = _.extend res.r, charge.rsp
-								if !res.r.declined?
-									res.r.charge = charge.transaction
-									res.r.charge_success = true
-								next()
+					try
+						req.me.getCard(req.query.card_id, fireRef)
+						.then (card) ->
+							if card.status? and card.status is 'declined'
+								tk 'ERR'
+								tk card.err
+								fireRef.update
+									status: 'error'
+									declined: true
+									error: card.err
+							else
+								tk req.query
+								tk 'GUNNA DO THIS'
+								fireRef.update({status: 'card-ready'})
+								via = req.query.via ? 'web'
+								card.charge(req.query.code, via, req.query.purchase_data, fireRef)
+								.then (charge) ->
+									res.r = _.extend res.r, charge.rsp
+									# if !res.r.declined?
+									# 	res.r.charge = charge.transaction
+									# 	res.r.charge_success = true
+									# next()
+					catch error
+						tk 'catch err'
+						fireRef.update
+							status: 'error'
+							declined: true
+							error: error
+
 
 module.exports = routes

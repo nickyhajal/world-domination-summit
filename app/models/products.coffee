@@ -78,6 +78,14 @@ PRE =
     dfr = Q.defer()
     dfr.resolve({})
     return dfr.promise
+  wds18test: (meta) ->
+    dfr = Q.defer()
+    dfr.resolve({})
+    return dfr.promise
+  wds2018: (meta) ->
+    dfr = Q.defer()
+    dfr.resolve({})
+    return dfr.promise
   xfer: (meta) ->
     dfr = Q.defer()
     Transfer.forge
@@ -160,7 +168,7 @@ POST =
             ev.sendRsvpConfirmation(user_id)
     return dfr.promise
 
-  wds2017: (transaction, meta) ->
+  wds2018: (transaction, meta) ->
     [User, Users] = require('./users')
     dfr = Q.defer()
     User.forge
@@ -170,11 +178,11 @@ POST =
       user.registerTicket(transaction.get('quantity'), transaction.get('paid_amount'))
       .then (tickets) ->
         Tickets.forge().query (qb) ->
-          qb.where('year', '2017')
+          qb.where('year', '2018')
           qb.where('type', '360')
         .fetch()
         .then (rsp) ->
-          process.fire.database().ref().child('state/sale_wave2_2017/sold').set(rsp.models.length)
+          process.fire.database().ref().child('state/sale_wave1_2018/sold').set(rsp.models.length)
         , (err) ->
           console.err(error)
         transaction.set('meta', JSON.stringify(tickets))

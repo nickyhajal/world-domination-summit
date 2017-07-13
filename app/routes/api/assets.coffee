@@ -155,8 +155,8 @@ routes = (app) ->
 						Users.forge()
 						.query (qb) ->
 							qb.where('attending'+process.yr, '1')
-							# qb.orWhere('t.product_id', '6')
-							# qb.leftJoin('transactions as t', 'users.user_id', 't.user_id')
+							qb.orWhere('t.product_id', '6')
+							qb.leftJoin('transactions as t', 'users.user_id', 't.user_id')
 							qb.orderBy('last_name')
 						.fetch
 							columns: [
@@ -170,8 +170,8 @@ routes = (app) ->
 							Answers.forge()
 							.query (qb) ->
 								qb.where('attending'+process.yr, '1')
-								# qb.orWhere('t.product_id', '6')
-								# qb.leftJoin('transactions as t', 'answers.user_id', 't.user_id')
+								qb.orWhere('t.product_id', '6')
+								qb.leftJoin('transactions as t', 'answers.user_id', 't.user_id')
 								qb.leftJoin('users as u', 'answers.user_id', 'u.user_id')
 								qb.groupBy('answers.answer_id')
 							.fetch()
