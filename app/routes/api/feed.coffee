@@ -293,7 +293,7 @@ routes = (app) ->
 			if req.query.user_id
 				feeds.query('where', 'feed.user_id', '=', req.query.user_id)
 			feeds.query('join', 'users', 'users.user_id', '=', 'feed.user_id', 'left')
-			columns = {columns: ['feed_id', 'feed.created_at', 'content', 'num_comments', 'num_likes', 'channel_id', 'channel_type', 'feed.user_id', 'first_name', 'last_name', 'user_name', 'pic']}
+			columns = {columns: ['feed_id', 'feed.created_at', 'content', 'num_comments', 'num_likes', 'channel_id', 'channel_type', 'feed.user_id', 'first_name', 'last_name', 'user_name', 'pic', 'media', 'media_type']}
 			# feeds.query (qb) =>
 			# 	qb.column(qb.knex.raw('CONVERT_TZ(feed.created_at, \'+00:00\',\'-09:00\') as created_at'))
 
@@ -322,7 +322,6 @@ routes = (app) ->
 						else
 							req.me.getInterests()
 							.then (rsp) ->
-								tk 'intersets'
 								interests = rsp.get('interests')
 								if interests.length
 									interests = interests.join(',')
