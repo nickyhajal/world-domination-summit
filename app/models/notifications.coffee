@@ -19,6 +19,18 @@ Notification = Shelf.Model.extend
 	]
 	initialize: ->
 		this.on 'created', this.created, this
+		this.on 'saving', this.saving, this
+		this.on 'fetched', this.fetched, this
+	saving: ->
+		title = @get('title')
+		if title? and (title is '0' or title is 0)
+			@set('title', null)
+
+	fetched: ->
+		title = @get('title')
+		if title? and (title is '0' or title is 0)
+			@set('title', null)
+
 	created: ->
 		user_id = @get('user_id')
 		[User, Users] = require './users'
