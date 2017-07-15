@@ -24,6 +24,10 @@ routes = (app) ->
 					# Check if this is a duplicate post
 					if post.channel_type == 'event'
 						post.channel_type = 'meetup'
+
+					if post.channel_id is 650 or post.channel_id is '650'
+						post.channel_id = '0'
+						post.channel_type = 'global'
 					uniq = moment().format('YYYY-MM-DD HH:mm') + post.content + post.user_id
 					post.hash = crypto.createHash('md5').update(uniq).digest('hex')
 					Feed.forge
