@@ -23,12 +23,12 @@ Notification = Shelf.Model.extend
 		this.on 'fetched', this.fetched, this
 	saving: ->
 		title = @get('title')
-		if title? and (title is '0' or title is 0)
+		if title? and (title is '0' or title is 0 or title is '')
 			@set('title', null)
 
 	fetched: ->
 		title = @get('title')
-		if title? and (title is '0' or title is 0)
+		if title? and (title is '0' or title is 0 or title is '')
 			@set('title', null)
 
 	created: ->
