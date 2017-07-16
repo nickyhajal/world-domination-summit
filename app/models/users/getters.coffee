@@ -340,7 +340,7 @@ getters =
 							@where('tickets.user_id', user.get('user_id'))
 							.orWhere('purchaser_id', user.get('user_id'))
 						# qb.where('year', process.year)
-							qb.where('year', '2018')
+						qb.where('year', '2018')
 						qb.leftJoin('users as p', 'p.user_id', '=', 'tickets.user_id')
 						qb.leftJoin('users as u', 'u.user_id', '=', 'tickets.user_id')
 					.fetch({columns: columns})
