@@ -205,6 +205,24 @@ routes = (app) ->
 	apiRouter.post '/admin/rate', admin.rate
 	apiRouter.post '/admin/kind', admin.kind
 
+	# apiRouter.get '/fire', (req, res, next) ->
+	# 	process.fire.database().ref().child('/presales').push({
+	# 		created_at: (+ new Date()) + 21600000,
+	# 		name: 'Lindsay Stevens',
+	# 		user_id: 378
+	# 	})
+	# 	process.fire.database().ref().child('/presales').push({
+	# 		created_at: (+ new Date()) + 21600000,
+	# 		name: 'Ron Frank',
+	# 		user_id: 379
+	# 	})
+	# 	process.fire.database().ref().child('/presales').push({
+	# 		created_at: (+ new Date()) + 21600000,
+	# 		name: 'Jen Bridges',
+	# 		user_id: 391
+	# 	})
+	# 	next()
+
 	apiRouter.get '/admin/stories', (req, res, next) ->
 		knex = require('knex')(process.db)
 		knex

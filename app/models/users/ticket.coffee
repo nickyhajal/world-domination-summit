@@ -71,11 +71,12 @@ ticket =
       user_id: @get('user_id')
     .save()
     .then (upd_ticket) =>
-      @set 'attending'+process.yr, '1'
+      @set 'attending18', '1' #+process.yr, '1'
       @set 'ticket_type', type
       @save()
       .then (upd_user) =>
-        list = 'WDS '+process.year+' Attendees'
+        # list = 'WDS '+process.year+' Attendees'
+        list = 'WDS 2018 Attendees'
         if type is 'connect'
           list = 'WDS '+process.year+' Connect'
         @addToList(list)
