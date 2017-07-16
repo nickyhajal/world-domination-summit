@@ -316,40 +316,41 @@ getters =
 		return dfr.promise
 	getCurrentTickets: ->
 		dfr = Q.defer()
-		id = 'current_tickets'+@get('user_id')
-		rds.get id, (err, rsp) =>
-			if rsp? and rsp and typeof JSON.parse(rsp) is 'object'
-				@set('tickets', JSON.parse(rsp))
-				dfr.resolve(this)
-			else
-				columns = [
-					'ticket_id', 'tickets.type', 'tickets.created_at', 'tickets.user_id', 'purchaser_id', 'status',
-					'tickets.year',
-					'p.first_name as purchaser_first_name',
-					'p.last_name as purchaser_last_name',
-					'p.email as purchaser_email',
-					'u.first_name as attendee_first_name',
-					'u.last_name as attendee_last_name',
-					'u.email as attendee_email',
-				]
-				Tickets.forge()
-				.query (qb) =>
-					user = this;
-					qb.where ->
-						@where('tickets.user_id', user.get('user_id'))
-						.orWhere('purchaser_id', user.get('user_id'))
-					# qb.where('year', process.year)
-					qb.where('year', '2018')
-					qb.leftJoin('users as p', 'p.user_id', '=', 'tickets.user_id')
-					qb.leftJoin('users as u', 'u.user_id', '=', 'tickets.user_id')
-				.fetch({columns: columns})
-				.then (rows) =>
-					@set('tickets', rows.models)
-					rds.set id, JSON.stringify(rows.models), (err, rsp) ->
-						rds.expire id, 30000, (err, rsp) ->
-					dfr.resolve this
-				, (err) ->
-					console.error(err)
+		rds.expire id, 0, (err, rsp) -> # Set the expiry below too long once
+			id = 'current_tickets'+@get('user_id')
+			rds.get id, (err, rsp) =>
+				if rsp? and rsp and typeof JSON.parse(rsp) is 'object'
+					@set('tickets', JSON.parse(rsp))
+					dfr.resolve(this)
+				else
+					columns = [
+						'ticket_id', 'tickets.type', 'tickets.created_at', 'tickets.user_id', 'purchaser_id', 'status',
+						'tickets.year',
+						'p.first_name as purchaser_first_name',
+						'p.last_name as purchaser_last_name',
+						'p.email as purchaser_email',
+						'u.first_name as attendee_first_name',
+						'u.last_name as attendee_last_name',
+						'u.email as attendee_email',
+					]
+					Tickets.forge()
+					.query (qb) =>
+						user = this;
+						qb.where ->
+							@where('tickets.user_id', user.get('user_id'))
+							.orWhere('purchaser_id', user.get('user_id'))
+						# qb.where('year', process.year)
+							qb.where('year', '2018')
+						qb.leftJoin('users as p', 'p.user_id', '=', 'tickets.user_id')
+						qb.leftJoin('users as u', 'u.user_id', '=', 'tickets.user_id')
+					.fetch({columns: columns})
+					.then (rows) =>
+						@set('tickets', rows.models)
+						rds.set id, JSON.stringify(rows.models), (err, rsp) ->
+							rds.expire id, 30, (err, rsp) ->
+						dfr.resolve this
+					, (err) ->
+						console.error(err)
 		return dfr.promise
 
 	getFollowingIds: ->
