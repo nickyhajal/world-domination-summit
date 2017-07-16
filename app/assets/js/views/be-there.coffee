@@ -56,7 +56,7 @@ ap.Views.be_there = XView.extend
 		@stripe.open
 			name: 'WDS 2016'
 			description: 'Main Stage Ticket'
-			amount: 64700
+			amount: 54700
 			panelLabel: "Get Your Ticket!"
 			shippingAddress: false
 			allowRememberMe: false

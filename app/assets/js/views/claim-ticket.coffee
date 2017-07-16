@@ -30,9 +30,9 @@ ap.Views.claim_ticket = XView.extend
 	openPurchase: (e) ->
 		e.preventDefault();
 		@stripe.open
-			name: 'WDS 2016'
+			name: 'WDS 2018'
 			description: 'Main Stage Ticket'
-			amount: 64700
+			amount: 54700
 			panelLabel: "Get Your Ticket!"
 			shippingAddress: false
 			allowRememberMe: false
