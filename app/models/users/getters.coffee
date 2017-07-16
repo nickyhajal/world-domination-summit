@@ -317,7 +317,7 @@ getters =
 	getCurrentTickets: ->
 		dfr = Q.defer()
 		id = 'current_tickets'+@get('user_id')
-		rds.expire id, 0, (err, rsp) -> # Set the expiry below too long once
+		rds.expire id, 0, (err, rsp) => # Set the expiry below too long once
 			rds.get id, (err, rsp) =>
 				if rsp? and rsp and typeof JSON.parse(rsp) is 'object'
 					@set('tickets', JSON.parse(rsp))
