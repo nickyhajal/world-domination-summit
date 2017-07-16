@@ -177,6 +177,10 @@ POST =
     .then (user) ->
       user.registerTicket(transaction.get('quantity'), transaction.get('paid_amount'))
       .then (tickets) ->
+        process.fire.database().ref().child('presales/').push
+					user_id: user.get('user_id')
+					name: user.get('first_name')+' '+user.get('last_name')
+					created_at: (+(new Date()))
         Tickets.forge().query (qb) ->
           qb.where('year', '2018')
           qb.where('type', '360')
