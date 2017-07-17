@@ -223,6 +223,29 @@ routes = (app) ->
 	# 	})
 	# 	next()
 
+	apiRouter.get '/fixandroid', (req, res, next) ->
+		async = require('async')
+		[Transaction, Transactions] = require('../models/transactions')
+		Transactions.forge().query (qb) ->
+			qb.where('product_id', '9')
+			qb.where('created_at', '2017-07-01 00:00:00')
+		.fetch()
+		.then (rsp) ->
+			[User, Users] = require('../models/users')
+			async.each rsp.models, (row, cb) ->
+				User.forge
+					user_id: row.get('user_id')
+				.fetch()
+				.then (user) ->
+					user.registerTicket(row.get('quantity'), row.get('paid_amount'))
+					.then (tickets) ->
+						transaction.set('meta', JSON.stringify(tickets))
+						transaction.save()
+						cb()
+			, ->
+				next()
+
+
 	apiRouter.get '/admin/stories', (req, res, next) ->
 		knex = require('knex')(process.db)
 		knex
