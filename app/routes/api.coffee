@@ -229,7 +229,7 @@ routes = (app) ->
 		[Transaction, Transactions] = require('../models/transactions')
 		Transactions.forge().query (qb) ->
 			qb.where('product_id', '9')
-			qb.where('created_at', '2017-07-01 00:00:00')
+			qb.where('created_at', '>', '2017-07-01 00:00:00')
 		.fetch()
 		.then (rsp) ->
 			tk rsp.models.length
