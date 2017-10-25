@@ -10,7 +10,7 @@ ticket =
   registerTicket: (quantity = 1, total = 0, transferFrom = null) ->
     dfr = Q.defer()
     ticket_ids = []
-    @set('pre18','1').save()
+    # @set('pre18','1').save() ONLY DURING PRESALE
     async.each [0..quantity-1], (i, cb) =>
       Ticket.forge
         type: '360'
