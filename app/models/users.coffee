@@ -402,12 +402,13 @@ Users = Shelf.Collection.extend
     _Users = Users.forge()
 
     # Get user accepts user_id or email
-    if typeof +user_id is 'number'
-      type = 'user_id'
-    else if typeof user_id is 'string'
+    if (''+user_id).indexOf('@') > 0
       type = 'email'
+    else
+      type = 'user_id'
 
     # Run query
+    tk type
     _Users.query('where', type, '=', user_id)
     .fetch()
     .then (rsp)->
@@ -420,6 +421,96 @@ Users = Shelf.Collection.extend
           results.password = null
           results.hash = null
       dfr.resolve(results)
+    return dfr.promise
+  
+  search: (query) ->
+    dfr = Q.defer()
+    _Users = Users.forge()
+    all = {}
+    years = []
+    types = []
+    if query.types?.length
+      types = query.types?.split(',')
+    if query.years?.length
+      years = query.years?.split(',')
+    if query.user_token
+      years = [process.yr]
+    years = [process.yr] if !years.length
+    types = ['360', 'connect'] if !types.length
+    doQuery = (col, q = false) ->
+      dfr = Q.defer()
+      _Users.query (qb) ->
+        where = ''
+        params = []
+        if q
+          where += col+' LIKE ?'
+          params.push q
+        if query.types?.length
+          if q
+            where += ' AND '
+          where += 'ticket_type IN ('
+          c = false
+          for t in types
+            where += ', ' if c
+            where += '?'
+            params.push t
+            c = true
+          where += ')'
+        tk years
+        if years?.length
+          # if q and q.query.types?.length
+          where += ' AND ('
+          c = false
+          for y in years
+            where += ' OR ' if c
+            where += ' attending'+y+ '= ?'
+            if (y == '18')
+              where += ' OR '
+              where += ' pre'+y+ '= ?'
+              params.push '1'
+            params.push '1'
+            c = true
+          where += ')'
+        qb.whereRaw(where, params)
+        qb.limit(100)
+      .fetch()
+      .then (rsp) ->
+        dfr.resolve(rsp)
+      , (err) ->
+        console.error(err)
+      return dfr.promise
+
+    terms = if query.search? then query.search.split(' ') else []
+    async.each terms, (term, cb) ->
+      tk term
+      doQuery('first_name', term+'%')
+      .then (byF) ->
+        for f in byF.models
+          id = f.get('user_id')
+          all[id] = f.attributes unless all[id]
+          if all[id].score? then all[id].score += 2 else (all[id].score = 4)
+        doQuery('last_name', term+'%')
+        .then (byL) ->
+          # doQuery('email', '%'+term+'%')
+          # .then (byE) ->
+          # 	tk 'all here'
+          for l in byL.models
+            id = l.get('user_id')
+            all[id] = l.attributes unless all[id]
+            if all[id].score? then all[id].score += 5 else (all[id].score = 1)
+          # for e in byE.models
+          # 	id = e.get('user_id')
+          # 	all[id] = e.attributes unless all[id]
+          # 	if all[id].score? then all[id].score += 1 else (all[id].score = 1)
+          cb()
+    , (err) ->
+      sortable = []
+      for id,user of all
+        sortable.push user
+      sortable.sort (a, b) ->
+        return a.score - b.score
+      sortable.reverse()
+      dfr.resolve(sortable)
     return dfr.promise
 
 module.exports = [User, Users]

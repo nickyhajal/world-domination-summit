@@ -2,54 +2,41 @@ const {
   GraphQLString,
   GraphQLObjectType,
   GraphQLNonNull,
+  GraphQLBoolean,
   GraphQLInt,
   GraphQLList,
 } = require('graphql');
+const [User, Users] = require('../models/users');
+const [Ticket, Tickets] = require('../models/tickets');
+const [Transaction, Transactions] = require('../models/transactions');
+const TransactionGraph = require('./transactions');
+const TicketGraph = require('./tickets');
+const UserGraphType = require('./UserGraphType');
 
-const Type = new GraphQLObjectType({
-  name: 'User',
-  description: 'User',
-  fields: () => ({
-    user_id: { type: GraphQLString },
-    attending14: { type: GraphQLInt },
-    attending15: { type: GraphQLInt },
-    attending16: { type: GraphQLInt },
-    attending17: { type: GraphQLInt },
-    pre17: { type: GraphQLInt },
-    ticket_type: { type: GraphQLString },
-    type: { type: GraphQLString },
-    first_name: { type: GraphQLString },
-    last_name: { type: GraphQLString },
-    user_name: {
-      type: GraphQLString,
-      resolve: row => {
-        const u = row.user_name;
-        if (u === undefined) return '';
-        return u.length === 40 ? '' : u;
-      },
-    },
-    email_hash: { type: GraphQLString },
-    facebook: { type: GraphQLString },
-    twitter: { type: GraphQLString },
-    instagram: { type: GraphQLString },
-    location: { type: GraphQLString },
-    lat: { type: GraphQLString },
-    lon: { type: GraphQLString },
-    distance: { type: GraphQLString },
-    academy: { type: GraphQLString },
-    created_at: { type: GraphQLString },
-    updated_at: { type: GraphQLString },
-  }),
-});
+const Type = UserGraphType;
+const Search = {
+  type: new GraphQLList(Type),
+  args: {
+    years: { type: GraphQLString },
+    types: { type: GraphQLString },
+    search: { type: GraphQLString },
+  },
+  resolve: async (root, { search, years, types }, req) => {
+    const results = await Users.forge().search({
+      search,
+      years,
+      types,
+    });
+    return results.map(v => v.attributes);
+  },
+};
 const Field = {
   type: Type,
   args: {
     id: { type: GraphQLString },
   },
-  resolve: async (root, args) => {
-    const row = await User.forge({
-      user_id: args.id,
-    }).fetch();
+  resolve: async (root, { id }) => {
+    const row = await Users.forge().getUser(id);
     return row.attributes;
   },
 };
@@ -88,6 +75,7 @@ const Fields = {
 module.exports = {
   Type,
   Field,
+  Search,
   // Create,
   Fields,
 };

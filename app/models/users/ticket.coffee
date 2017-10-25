@@ -101,6 +101,9 @@ ticket =
       user_id: @get('user_id')
     .save()
     .then (upd_ticket) =>
+      boughtMonth = ticket.get('created_at').getMonth()+1
+      if [6,7,8].indexOf(boughtMonth) > -1
+        @set 'pre'+process.yr, '1'
       @set 'attending'+process.yr, '1'
       @set 'ticket_type', type
       @save()
@@ -120,7 +123,6 @@ ticket =
     , (err) ->
       console.error err
     return dfr.promise
-
 
   cancelTicket: ->
     dfr = Q.defer()

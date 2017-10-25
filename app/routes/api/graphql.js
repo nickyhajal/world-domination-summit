@@ -10,6 +10,7 @@ const query = new GraphQLObjectType({
     event: EventGraph.Field,
     events: EventGraph.Fields,
     user: UserGraph.Field,
+    users: UserGraph.Search,
   }),
 });
 
