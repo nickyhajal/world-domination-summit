@@ -27,7 +27,10 @@ const Search = {
       years,
       types,
     });
-    return results.map(v => v.attributes);
+    const final = results.map(v => (v.attributes ? v.attributes : v));
+    console.log('>>>>>>>>>>>>>>>>>>>');
+    console.log(final);
+    return final;
   },
 };
 const Field = {

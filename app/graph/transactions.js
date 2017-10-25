@@ -45,7 +45,6 @@ const Fields = {
     page: { type: GraphQLInt, defaultValue: 0 },
   },
   resolve: async (root, { page, per_page, order_by, order }) => {
-    console.log(page, per_page);
     const rows = await Transactions.forge()
       .query(qb => {
         qb

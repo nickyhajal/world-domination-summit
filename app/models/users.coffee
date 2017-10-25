@@ -438,7 +438,7 @@ Users = Shelf.Collection.extend
     years = [process.yr] if !years.length
     types = ['360', 'connect'] if !types.length
     doQuery = (col, q = false) ->
-      dfr = Q.defer()
+      idfr = Q.defer()
       _Users.query (qb) ->
         where = ''
         params = []
@@ -456,7 +456,6 @@ Users = Shelf.Collection.extend
             params.push t
             c = true
           where += ')'
-        tk years
         if years?.length
           # if q and q.query.types?.length
           where += ' AND ('
@@ -475,12 +474,14 @@ Users = Shelf.Collection.extend
         qb.limit(100)
       .fetch()
       .then (rsp) ->
-        dfr.resolve(rsp)
+        idfr.resolve(rsp)
       , (err) ->
+        tk 'err'
         console.error(err)
-      return dfr.promise
+      return idfr.promise
 
     terms = if query.search? then query.search.split(' ') else []
+    tk terms
     async.each terms, (term, cb) ->
       tk term
       doQuery('first_name', term+'%')
@@ -505,11 +506,13 @@ Users = Shelf.Collection.extend
           cb()
     , (err) ->
       sortable = []
+      console.log(all);
       for id,user of all
         sortable.push user
       sortable.sort (a, b) ->
         return a.score - b.score
       sortable.reverse()
+      # tk sortable
       dfr.resolve(sortable)
     return dfr.promise
 
