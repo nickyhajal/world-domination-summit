@@ -29,7 +29,7 @@ ticket =
         cb()
     , =>
       if total > 0
-        @addToList('WDS 2018 Pre-Orders')
+        # @addToList('WDS 2018 Pre-Orders')
         @addToList('WDS 2018 Purchasers')
         .then =>
           promo = 'TicketReceipt'
