@@ -6,6 +6,7 @@ const {
   GraphQLInt,
   GraphQLList,
 } = require('graphql');
+const moment = require('moment');
 const [Ticket, Tickets] = require('../models/tickets');
 const [User, Users] = require('../models/users');
 const UserGraph = require('./users');
@@ -41,7 +42,10 @@ const Field = {
       const status = v.get('status');
       if (['pending', 'canceled', 'refunded'].indexOf(status) === -1) {
         vals.total_tickets += 1;
-        if (v.get('created_at') > '2017-10-01 00:00:00') {
+        if (
+          moment(v.get('created_at')).format('YYYY-MM-DD') >
+          '2017-10-01 00:00:00'
+        ) {
           vals.current_wave_tickets += 1;
         }
       }
