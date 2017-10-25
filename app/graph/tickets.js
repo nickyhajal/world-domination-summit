@@ -9,38 +9,59 @@ const {
 const [Ticket, Tickets] = require('../models/tickets');
 const [User, Users] = require('../models/users');
 const UserGraph = require('./users');
+const TicketGraphType = require('./TicketGraphType');
 
-const Type = new GraphQLObjectType({
-  name: 'Ticket',
-  description: 'Ticket Type',
-  fields: () => ({
-    ticket_id: { type: GraphQLString },
-    user_id: { type: GraphQLInt },
-    purchaser_id: { type: GraphQLInt },
-    status: { type: GraphQLString },
-    year: { type: GraphQLInt },
-    created_at: { type: GraphQLString },
-    updated_at: { type: GraphQLString },
-    user: {
-      type: UserGraph.Type,
-      resolve: async row => {
-        const u = await User.forge({
-          user_id: row.user_id,
-        }).fetch();
-        return u.attributes;
-      },
-    },
-    purchaser: {
-      type: UserGraph.Type,
-      resolve: async row => {
-        const u = await User.forge({
-          user_id: row.purchaser_id,
-        }).fetch();
-        return u.attributes;
-      },
-    },
-  }),
+const Type = TicketGraphType;
+const PluralType = new GraphQLObjectType({
+  name: 'Tickets',
+  description: 'Tickets Type',
+  fields: () => {
+    return {
+      tickets: { type: new GraphQLList(Type) },
+      pages: { type: GraphQLInt },
+      count: { type: GraphQLInt },
+    };
+  },
 });
+const Field = {
+  type: Type,
+  args: {
+    id: { type: GraphQLString },
+  },
+  resolve: async (root, { id }) => {
+    const row = await Ticket.forge({ ticket_id: id }).fetch();
+    return row.attributes;
+  },
+};
+const Fields = {
+  type: PluralType,
+  args: {
+    order_by: { type: GraphQLString, defaultValue: 'ticket_id' },
+    order: { type: GraphQLString, defaultValue: 'DESC' },
+    per_page: { type: GraphQLInt, defaultValue: 20 },
+    page: { type: GraphQLInt, defaultValue: 0 },
+  },
+  resolve: async (root, { page, per_page, order_by, order }) => {
+    console.log(page, per_page);
+    const rows = await Tickets.forge()
+      .query(qb => {
+        qb
+          .limit(per_page)
+          .offset(page * per_page)
+          .orderBy(order_by, order);
+      })
+      .fetch();
+    let countRes = await process.knex('tickets').count('ticket_id as cnt');
+    countRes = countRes[0].cnt;
+    return {
+      tickets: rows.models.map(row => row.attributes),
+      count: countRes,
+      pages: countRes / per_page,
+    };
+  },
+};
 module.exports = {
   Type,
+  Field,
+  Fields,
 };

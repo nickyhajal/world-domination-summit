@@ -23,6 +23,7 @@ routes = (app) ->
 	checkins = require('./api/checkins')(app)
 	notifications = require('./api/notifications')(app)
 	places = require('./api/places')(app)
+	# contact = require('./api/contact')
 	knex = require('knex')(process.db)
 	express = require('express')
 	expressGraphql = require('express-graphql')
