@@ -315,7 +315,6 @@ getters =
 			console.error(err)
 		return dfr.promise
 	getCurrentTickets: ->
-		tk 'current tickets'
 		dfr = Q.defer()
 		id = 'current_tickets'+@get('user_id')
 		columns = [
@@ -340,7 +339,6 @@ getters =
 			qb.leftJoin('users as u', 'u.user_id', '=', 'tickets.user_id')
 		.fetch({columns: columns})
 		.then (rows) =>
-			tk rows.length
 			this.set('tickets')
 			@set('tickets', rows.models)
 			dfr.resolve this
