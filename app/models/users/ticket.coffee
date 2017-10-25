@@ -64,13 +64,16 @@ ticket =
 
   connectTicket: (ticket, returning = false, transfer_from = null) ->
     tk "CLAIM IT"
+    tk ticket
     dfr = Q.defer()
     type = ticket.get('type')
+    tk type
     ticket.set
       status: 'active'
       user_id: @get('user_id')
     .save()
     .then (upd_ticket) =>
+      tk 'ticket updated'
       @set 'attending18', '1' #+process.yr, '1'
       @set 'ticket_type', type
       @save()
