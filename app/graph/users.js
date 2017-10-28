@@ -28,8 +28,6 @@ const Search = {
       types,
     });
     const final = results.map(v => (v.attributes ? v.attributes : v));
-    console.log('>>>>>>>>>>>>>>>>>>>');
-    console.log(final);
     return final;
   },
 };

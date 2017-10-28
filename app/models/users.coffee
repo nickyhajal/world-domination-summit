@@ -404,11 +404,12 @@ Users = Shelf.Collection.extend
     # Get user accepts user_id or email
     if (''+user_id).indexOf('@') > 0
       type = 'email'
+    if (''+user_id).length === 40
+      type = 'hash'
     else
       type = 'user_id'
 
     # Run query
-    tk type
     _Users.query('where', type, '=', user_id)
     .fetch()
     .then (rsp)->
@@ -481,39 +482,41 @@ Users = Shelf.Collection.extend
       return idfr.promise
 
     terms = if query.search? then query.search.split(' ') else []
-    tk terms
-    async.each terms, (term, cb) ->
-      tk term
-      doQuery('first_name', term+'%')
-      .then (byF) ->
-        for f in byF.models
-          id = f.get('user_id')
-          all[id] = f.attributes unless all[id]
-          if all[id].score? then all[id].score += 2 else (all[id].score = 4)
-        doQuery('last_name', term+'%')
-        .then (byL) ->
-          # doQuery('email', '%'+term+'%')
-          # .then (byE) ->
-          # 	tk 'all here'
-          for l in byL.models
-            id = l.get('user_id')
-            all[id] = l.attributes unless all[id]
-            if all[id].score? then all[id].score += 5 else (all[id].score = 1)
-          # for e in byE.models
-          # 	id = e.get('user_id')
-          # 	all[id] = e.attributes unless all[id]
-          # 	if all[id].score? then all[id].score += 1 else (all[id].score = 1)
-          cb()
-    , (err) ->
-      sortable = []
-      console.log(all);
-      for id,user of all
-        sortable.push user
-      sortable.sort (a, b) ->
-        return a.score - b.score
-      sortable.reverse()
-      # tk sortable
-      dfr.resolve(sortable)
+    if (terms.length === 1 && (terms[0].length === 40 || terms[0].indexOf('@') > 0))
+      this.getUser(terms[0]).then (user) -> 
+        resolve([user])
+    else
+      async.each terms, (term, cb) ->
+        doQuery('first_name', term+'%')
+        .then (byF) ->
+          for f in byF.models
+            id = f.get('user_id')
+            all[id] = f.attributes unless all[id]
+            if all[id].score? then all[id].score += 2 else (all[id].score = 4)
+          doQuery('last_name', term+'%')
+          .then (byL) ->
+            # doQuery('email', '%'+term+'%')
+            # .then (byE) ->
+            # 	tk 'all here'
+            for l in byL.models
+              id = l.get('user_id')
+              all[id] = l.attributes unless all[id]
+              if all[id].score? then all[id].score += 5 else (all[id].score = 1)
+            # for e in byE.models
+            # 	id = e.get('user_id')
+            # 	all[id] = e.attributes unless all[id]
+            # 	if all[id].score? then all[id].score += 1 else (all[id].score = 1)
+            cb()
+      , (err) ->
+        sortable = []
+        console.log(all);
+        for id,user of all
+          sortable.push user
+        sortable.sort (a, b) ->
+          return a.score - b.score
+        sortable.reverse()
+        # tk sortable
+        dfr.resolve(sortable)
     return dfr.promise
 
 module.exports = [User, Users]
