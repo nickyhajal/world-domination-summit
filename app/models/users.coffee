@@ -483,7 +483,7 @@ Users = Shelf.Collection.extend
 
     terms = if query.search? then query.search.split(' ') else []
     if (terms.length == 1 && (terms[0].length == 40 || terms[0].indexOf('@') > 0))
-      this.getUser(terms[0]).then (user) -> 
+      Users.forge().getUser(terms[0]).then (user) -> 
         resolve([user])
     else
       async.each terms, (term, cb) ->
