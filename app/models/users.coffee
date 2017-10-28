@@ -404,7 +404,7 @@ Users = Shelf.Collection.extend
     # Get user accepts user_id or email
     if (''+user_id).indexOf('@') > 0
       type = 'email'
-    if (''+user_id).length === 40
+    if (''+user_id).length == 40
       type = 'hash'
     else
       type = 'user_id'
