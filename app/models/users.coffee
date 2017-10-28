@@ -410,6 +410,7 @@ Users = Shelf.Collection.extend
       type = 'user_id'
 
     # Run query
+    tk type
     _Users.query('where', type, '=', user_id)
     .fetch()
     .then (rsp)->
@@ -483,7 +484,9 @@ Users = Shelf.Collection.extend
 
     terms = if query.search? then query.search.split(' ') else []
     if (terms.length == 1 && (terms[0].length == 40 || terms[0].indexOf('@') > 0))
+      tk terms[0]
       Users.forge().getUser(terms[0]).then (user) -> 
+        tk user
         resolve([user])
     else
       async.each terms, (term, cb) ->
