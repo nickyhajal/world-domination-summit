@@ -136,7 +136,6 @@ User = Shelf.Model.extend
       # for el in out
       # 	o[''+c] = el
       # 	c += 1
-      # tk el
       # process.fire.database().ref().child('notifications/'+@get('user_id')+'/').set(o)
 
 
@@ -409,7 +408,6 @@ Users = Shelf.Collection.extend
       type = 'user_id'
 
     # Run query
-    tk type
     _Users.query('where', type, '=', user_id)
     .fetch()
     .then (rsp)->
@@ -482,12 +480,9 @@ Users = Shelf.Collection.extend
       return idfr.promise
 
     terms = if query.search? then query.search.split(' ') else []
-    tk terms
     if (terms.length == 1 && (terms[0].length == 40 || terms[0].indexOf('@') > 0))
-      tk terms[0]
       Users.forge().getUser(terms[0]).then (user) -> 
-        # tk user
-        resolve([user])
+        dfr.resolve([user.attributes])
     else
       async.each terms, (term, cb) ->
         doQuery('first_name', term+'%')
@@ -500,7 +495,6 @@ Users = Shelf.Collection.extend
           .then (byL) ->
             # doQuery('email', '%'+term+'%')
             # .then (byE) ->
-            # 	tk 'all here'
             for l in byL.models
               id = l.get('user_id')
               all[id] = l.attributes unless all[id]
@@ -512,13 +506,11 @@ Users = Shelf.Collection.extend
             cb()
       , (err) ->
         sortable = []
-        console.log(all);
         for id,user of all
           sortable.push user
         sortable.sort (a, b) ->
           return a.score - b.score
         sortable.reverse()
-        # tk sortable
         dfr.resolve(sortable)
     return dfr.promise
 
