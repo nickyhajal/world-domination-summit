@@ -1,7 +1,6 @@
 const Shelf = require('./shelf');
 const Bookshelf = require('bookshelf');
 const Q = require('q');
-const [User, Users] = require('../models/users');
 
 const Ticket = Shelf.Model.extend({
   tableName: 'tickets',
@@ -12,6 +11,7 @@ const Ticket = Shelf.Model.extend({
 const Tickets = Shelf.Collection.extend({
   model: Ticket,
   async getUser() {
+    const [User, Users] = require('../models/users');
     const user = await Users.forge({ user_id: this.user_id }).fetch();
     return user;
   },
