@@ -482,6 +482,7 @@ Users = Shelf.Collection.extend
       return idfr.promise
 
     terms = if query.search? then query.search.split(' ') else []
+    tk terms
     if (terms.length == 1 && (terms[0].length == 40 || terms[0].indexOf('@') > 0))
       tk terms[0]
       Users.forge().getUser(terms[0]).then (user) -> 
