@@ -1,9 +1,7 @@
 const Shelf = require('./shelf');
 const Bookshelf = require('bookshelf');
 const Q = require('q');
-const __users = require('./users');
-const User = __users[0];
-const Users = __users[1];
+const [User, Users] = require('../models/users');
 
 const Ticket = Shelf.Model.extend({
   tableName: 'tickets',
