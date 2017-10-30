@@ -17,32 +17,45 @@ const Ticket = Shelf.Model.extend({
   // when purchasing/transferring it happens in user->tickets,
   // but maybe that's stupid
   async cancel() {
+    console.log('CANCEL');
     const yr = 'attending' + process.yr;
     const originalStatus = this.get('status');
     const saveResult = await this.set({ status: 'canceled' }).save();
+    console.log(originalStatus);
     if (originalStatus === 'active') {
       const user = await this.getUser();
-      const userRes = await user.set({ [yr]: '-1' }).save();
-      user.removeFromList('WDS ' + process.year + ' Attendees').then(rsp => {
-        user.addToList('WDS ' + process.year + ' Canceled');
-      });
+      const userRes = await user.syncAttending();
+      console.log(userRes.attributes);
+      console.log(userRes.get('attending' + process.yr));
+      if (userRes.get('attending' + process.yr) !== '1') {
+        user.removeFromList('WDS ' + process.year + ' Attendees').then(rsp => {
+          user.addToList('WDS ' + process.year + ' Canceled');
+        });
+      }
       return [user, this];
     }
     return [null, this];
   },
   async activate() {
+    console.log('ACTIVATE');
     const yr = 'attending' + process.yr;
     const originalStatus = this.get('status');
     const saveResult = await this.set({ status: 'active' }).save();
     const user = await this.getUser();
-    const userRes = await user.set({ [yr]: '1' }).save();
-    user.removeFromList('WDS ' + process.year + ' Canceled').then(rsp => {
-      user.addToList('WDS ' + process.year + ' Attendees');
-    });
+    const userRes = await user.syncAttending();
+    console.log(userRes.attributes);
+    console.log(userRes.get('attending' + process.yr));
+    if (userRes.get('attending' + process.yr) === '1') {
+      user.removeFromList('WDS ' + process.year + ' Canceled').then(rsp => {
+        user.addToList('WDS ' + process.year + ' Attendees');
+      });
+    }
+    return [user, this];
     return [user, this];
   },
   async updateStatus(newStatus) {
     let row = false;
+    console.log(newStatus);
     switch (newStatus) {
       case 'canceled':
         row = await this.cancel();
@@ -52,6 +65,7 @@ const Ticket = Shelf.Model.extend({
         break;
       case 'active':
         row = await this.activate();
+        break;
     }
     return row;
   },

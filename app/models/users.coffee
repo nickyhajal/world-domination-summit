@@ -102,6 +102,23 @@ User = Shelf.Model.extend
     @transferFrom = transferFrom
     return @
 
+  syncAttending: ->
+    dfr = Q.defer()
+    @getCurrentTickets().then (user) =>
+      atnStr = 'attending'+process.yr
+      attending = @get('tickets').find (t) =>
+        return (t.get('user_id') is @get('user_id') and t.get('status') is 'active')
+      saysAttending = @get(atnStr) is '1'
+      if (attending)
+        saysAttending = '1'
+      else if(!attending and saysAttending)
+        saysAttending = '-1'
+      update = {};
+      update[atnStr] = saysAttending
+      @save(update, {patch: true}).then =>
+        dfr.resolve(this)
+    return dfr.promise
+
   processNotifications: ->
     dfr = Q.defer()
     [Notification, Notifications] = require('./notifications')
@@ -444,31 +461,31 @@ Users = Shelf.Collection.extend
         if q
           where += col+' LIKE ?'
           params.push q
-        if query.types?.length
-          if q
-            where += ' AND '
-          where += 'ticket_type IN ('
-          c = false
-          for t in types
-            where += ', ' if c
-            where += '?'
-            params.push t
-            c = true
-          where += ')'
-        if years?.length
-          # if q and q.query.types?.length
-          where += ' AND ('
-          c = false
-          for y in years
-            where += ' OR ' if c
-            where += ' attending'+y+ '= ?'
-            if (y == '18')
-              where += ' OR '
-              where += ' pre'+y+ '= ?'
-              params.push '1'
-            params.push '1'
-            c = true
-          where += ')'
+        # if query.types?.length
+        #   if q
+        #     where += ' AND '
+        #   where += 'ticket_type IN ('
+        #   c = false
+        #   for t in types
+        #     where += ', ' if c
+        #     where += '?'
+        #     params.push t
+        #     c = true
+        #   where += ')'
+        # if years?.length
+        #   # if q and q.query.types?.length
+        #   where += ' AND ('
+        #   c = false
+        #   for y in years
+        #     where += ' OR ' if c
+        #     where += ' attending'+y+ '= ?'
+        #     if (y == '18')
+        #       where += ' OR '
+        #       where += ' pre'+y+ '= ?'
+        #       params.push '1'
+        #     params.push '1'
+        #     c = true
+        #   where += ')'
         qb.whereRaw(where, params)
         qb.limit(100)
       .fetch()
@@ -507,6 +524,8 @@ Users = Shelf.Collection.extend
       , (err) ->
         sortable = []
         for id,user of all
+          if user['attending'+process.yr] is '1'
+            user.score += 10
           sortable.push user
         sortable.sort (a, b) ->
           return a.score - b.score

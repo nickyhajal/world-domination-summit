@@ -10,6 +10,7 @@ const [Ticket, Tickets] = require('../models/tickets');
 const [User, Users] = require('../models/users');
 const UserGraph = require('./users');
 const TicketGraphType = require('./TicketGraphType');
+const makeGraphNonNull = require('../util/makeGraphNonNull');
 
 const Type = TicketGraphType;
 const PluralType = new GraphQLObjectType({
@@ -42,7 +43,6 @@ const Fields = {
     page: { type: GraphQLInt, defaultValue: 0 },
   },
   resolve: async (root, { page, per_page, order_by, order }) => {
-    console.log(page, per_page);
     const rows = await Tickets.forge()
       .query(qb => {
         qb
@@ -62,15 +62,16 @@ const Fields = {
 };
 
 const Args = {
-  ticket_id: { type: new GraphQLNonNull(GraphQLInt) },
+  ticket_id: { type: GraphQLInt },
   type: { type: GraphQLString },
   user_id: { type: GraphQLInt },
+  purchaser_id: { type: GraphQLInt },
   status: { type: GraphQLString },
 };
 
 const Update = {
   type: Type,
-  args: Args,
+  args: makeGraphNonNull(Args, ['ticket_id'], 'all'),
   resolve: async (root, { ticket_id, type, user_id, status }) => {
     let row = {};
     const ticket = await Ticket.forge({ ticket_id }).fetch();
@@ -80,9 +81,29 @@ const Update = {
     return row.attributes;
   },
 };
+const Add = {
+  type: Type,
+  args: makeGraphNonNull(Args, ['user_id'], 'all'),
+  resolve: async (root, { type, user_id, status, purchaser_id }) => {
+    let row = {};
+    purchaser_id =
+      purchaser_id !== undefined && purchaser_id ? purchaser_id : '10124';
+    type = type !== undefined && type ? type : '360';
+    status = status !== undefined && status ? status : 'unclaimed';
+    const ticket = await Ticket.forge({
+      user_id,
+      purchaser_id,
+      type,
+      year: process.year,
+      status,
+    }).save();
+    return ticket.attributes;
+  },
+};
 module.exports = {
   Type,
   Update,
+  Add,
   Field,
   Fields,
 };
