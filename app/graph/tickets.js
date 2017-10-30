@@ -60,8 +60,29 @@ const Fields = {
     };
   },
 };
+
+const Args = {
+  ticket_id: { type: new GraphQLNonNull(GraphQLInt) },
+  type: { type: GraphQLString },
+  user_id: { type: GraphQLInt },
+  status: { type: GraphQLString },
+};
+
+const Update = {
+  type: Type,
+  args: Args,
+  resolve: async (root, { ticket_id, type, user_id, status }) => {
+    let row = {};
+    const ticket = await Ticket.forge({ ticket_id }).fetch();
+    if (status !== undefined) {
+      row = ticket.updateStatus(status);
+    }
+    return row.attributes;
+  },
+};
 module.exports = {
   Type,
+  Update,
   Field,
   Fields,
 };

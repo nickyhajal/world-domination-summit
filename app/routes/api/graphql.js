@@ -21,16 +21,16 @@ const query = new GraphQLObjectType({
   }),
 });
 
-// const mutation = new GraphQLObjectType({
-//   name: 'Mutation',
-//   fields: {
-//     createValue: Value.GraphCreate,
-//   },
-// });
+const mutation = new GraphQLObjectType({
+  name: 'Mutation',
+  fields: {
+    ticketUpdate: Tickets.Update,
+  },
+});
 
 const schema = new GraphQLSchema({
   query,
-  // mutation,
+  mutation,
 });
 
 module.exports = graphqlHTTP({

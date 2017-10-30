@@ -40,7 +40,7 @@ ticket =
           params =
             quantity: quantity
             price: (total/100)
-            claim_url: 'https://worlddominationsummit.com/claim/'+@get('hash')
+            claim_url: 'https://worlddominationsummit.com/assign/'+@get('hash')
             tickets: tickets
           @sendEmail(promo, subject, params)
       dfr.resolve(ticket_ids)
