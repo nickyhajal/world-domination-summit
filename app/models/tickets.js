@@ -7,7 +7,16 @@ const Ticket = Shelf.Model.extend({
   idAttribute: 'ticket_id',
   hasTimestamps: true,
 
-  async cancelTicket() {
+  async getUser() {
+    const [User, Users] = require('../models/users');
+    const user = await User.forge({ user_id: this.get('user_id') }).fetch();
+    return user;
+  },
+
+  // These are called by the admin/graphql
+  // when purchasing/transferring it happens in user->tickets,
+  // but maybe that's stupid
+  async cancel() {
     const yr = 'attending' + process.yr;
     const originalStatus = this.get('status');
     const saveResult = await this.set({ status: 'canceled' }).save();
@@ -21,12 +30,28 @@ const Ticket = Shelf.Model.extend({
     }
     return [null, this];
   },
+  async activate() {
+    const yr = 'attending' + process.yr;
+    const originalStatus = this.get('status');
+    const saveResult = await this.set({ status: 'active' }).save();
+    const user = await this.getUser();
+    const userRes = await user.set({ [yr]: '1' }).save();
+    user.removeFromList('WDS ' + process.year + ' Canceled').then(rsp => {
+      user.addToList('WDS ' + process.year + ' Attendees');
+    });
+    return [user, this];
+  },
   async updateStatus(newStatus) {
     let row = false;
     switch (newStatus) {
       case 'canceled':
-        row = await this.cancelTicket();
+        row = await this.cancel();
         break;
+      case 'unclaimed':
+        row = await this.set('status', 'unclaimed').save();
+        break;
+      case 'active':
+        row = await this.activate();
     }
     return row;
   },
@@ -34,11 +59,6 @@ const Ticket = Shelf.Model.extend({
 
 const Tickets = Shelf.Collection.extend({
   model: Ticket,
-  async getUser() {
-    const [User, Users] = require('../models/users');
-    const user = await Users.forge({ user_id: this.user_id }).fetch();
-    return user;
-  },
 });
 
 module.exports = [Ticket, Tickets];
