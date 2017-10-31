@@ -27,6 +27,7 @@ routes = (app) ->
 	knex = require('knex')(process.db)
 	express = require('express')
 	expressGraphql = require('express-graphql')
+	async = require('async');
 	graphql = require('./api/graphql')
 	existingAttendes = require('../util/existingAttendes');
 	existingPurchasers = require('../util/existingPurchasers');
@@ -229,7 +230,7 @@ routes = (app) ->
 	apiRouter.get '/fixpurchasers', (req, res, next) ->
 		knex
 		.select('email', 'users.user_id')
-		.count('ticket_id as num')
+		.count('ticket_id as quantity')
 		.from('tickets')
 		.leftJoin('users', 'tickets.purchaser_id', 'users.user_id')
 		.whereRaw("status!='canceled' AND tickets.year='2018'")
@@ -237,13 +238,39 @@ routes = (app) ->
 		.then (rsp) ->
 			out = { numAll: 0, addresses: [], numOut: 0}
 
-			rsp.forEach((v) -> 
+			async.each rsp, (v, cb) ->
+				[User, Users] = require('../models/users')
 				if existingPurchasers.indexOf(v.email) is -1
-					out.addresses.push(v.email)
-			)
-			out.numAll = rsp.length
-			out.numOut = out.addresses.length
-			res.send(out);
+					User.forge({ user_id: v.user_id})
+					.fetch().then (user) ->
+						obj = {
+							user_id: user.get('user_id'),
+							email: v.email,
+							quantity: v.quantity,
+							price: (v.quantity*707),
+							tickets: if (+v.quantity > 1) then 'tickets' else 'ticket'
+						}
+						out.addresses.push(obj)
+						cb()
+
+						# user.addToList('WDS 2018 Purchasers')
+						# .then ->
+						# 	promo = 'TicketReceipt'
+						# 	subject = "Aw yeah! Your purchase was successful!"
+						# 	tickets = 'ticket'
+						# 	tickets = 'tickets' if (quantity > 1)
+						# 	params =
+						# 		quantity: quantity
+						# 		price: (total/100)
+						# 		claim_url: 'https://worlddominationsummit.com/assign/'+@get('hash')
+						# 		tickets: tickets
+						# 	user.sendEmail(promo, subject, params)
+				else
+					cb()
+			, ->
+				out.numAll = rsp.length
+				out.numOut = out.addresses.length
+				res.send(out);
 
 	apiRouter.get '/fixattendees', (req, res, next) ->
 		knex
