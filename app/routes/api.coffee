@@ -250,9 +250,9 @@ routes = (app) ->
 		.select('email', 'users.user_id')
 		.count('ticket_id as num')
 		.from('tickets')
-		.leftJoin('users', 'tickets.purchaser_id', 'users.user_id')
+		.leftJoin('users', 'tickets.user_id', 'users.user_id')
 		.whereRaw("status='active' AND tickets.year='2018'")
-		.groupBy('purchaser_id')
+		.groupBy('user_id')
 		.then (rsp) ->
 			out = { numAll: 0, addresses: [], numOut: 0}
 
