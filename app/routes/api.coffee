@@ -289,23 +289,21 @@ routes = (app) ->
 					.fetch().then (user) ->
 						tk (user.get('first_name')+' '+user.get('last_name')+': '+user.get('email'))
 						obj = {
+							user_id: user.get('user_id'),
 							email: v.email,
-							quantity: v.quantity,
-							price: (v.quantity*707),
-							tickets: if (+v.quantity > 1) then 'tickets' else 'ticket'
 						}
-						out.addresses.push(obj);
-						cb()
+						user.addToList('WDS 2018 Attendees')
+						.then ->
+							tk 'sent'
+							promo = 'Welcome'
+							subject = "You're coming to WDS! Awesome!"
+							user.sendEmail(promo, subject, {})
+							out.addresses.push(obj);
+							cb()
 					, (err) ->
 						tk err
 
 					# 	out.addresses.push(obj)
-					# 	user.addToList('WDS 2018 Attendees')
-					# 	.then ->
-					# 		tk 'sent'
-					# 		promo = 'Welcome'
-					# 		subject = "You're coming to WDS! Awesome!"
-					# 		user.sendEmail(promo, subject, {})
 					# 		cb()
 				else
 					cb()
