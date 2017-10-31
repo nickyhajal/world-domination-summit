@@ -285,17 +285,19 @@ routes = (app) ->
 			async.eachSeries rsp, (v, cb) ->
 				[User, Users] = require('../models/users')
 				if existingAttendes.indexOf(v.email) is -1
-					obj = {
-						email: v.email,
-						quantity: v.quantity,
-						price: (v.quantity*707),
-						tickets: if (+v.quantity > 1) then 'tickets' else 'ticket'
-					}
-					out.addresses.push(obj);
-					cb()
-					# User.forge({ user_id: v.user_id})
-					# .fetch().then (user) ->
-					# 	tk (user.get('first_name')+' '+user.get('last_name')+': '+user.get('email'))
+					User.forge({ user_id: v.user_id})
+					.fetch().then (user) ->
+						tk (user.get('first_name')+' '+user.get('last_name')+': '+user.get('email'))
+						obj = {
+							email: v.email,
+							quantity: v.quantity,
+							price: (v.quantity*707),
+							tickets: if (+v.quantity > 1) then 'tickets' else 'ticket'
+						}
+						out.addresses.push(obj);
+						cb()
+					, (err) ->
+						tk err
 
 					# 	out.addresses.push(obj)
 					# 	user.addToList('WDS 2018 Attendees')
