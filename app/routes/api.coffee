@@ -28,6 +28,8 @@ routes = (app) ->
 	express = require('express')
 	expressGraphql = require('express-graphql')
 	graphql = require('./api/graphql')
+	existingAttendes = require('../util/existingAttendes');
+	existingPurchasers = require('../util/existingPurchasers');
 
 	apiRouter = express.Router()
 
@@ -223,6 +225,25 @@ routes = (app) ->
 	# 		user_id: 391
 	# 	})
 	# 	next()
+
+	apiRouter.get '/fixpurchasers', (req, res, next) ->
+		knex
+		.select('email', 'users.user_id')
+		.count('ticket_id as num')
+		.from('tickets')
+		.leftJoin('users', 'tickets.purchaser_id', 'users.user_id')
+		.whereRaw("status!='canceled' AND tickets.year='2018'")
+		.groupBy('purchaser_id')
+		.then (rsp) ->
+			out = { numAll: 0, addresses: [], numOut: 0}
+
+			rsp.forEach((v) -> 
+				if existingPurchasers.indexOf(v.email) is -1
+					out.addresses.push(v.email)
+			)
+			out.numAll = rsp.length
+			out.numOut = out.addresses.length
+			res.send(out);
 
 	# apiRouter.get '/fixandroid', (req, res, next) ->
 	# 	async = require('async')
