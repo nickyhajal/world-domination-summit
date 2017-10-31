@@ -251,7 +251,7 @@ routes = (app) ->
 							tickets: if (+v.quantity > 1) then 'tickets' else 'ticket'
 						}
 						out.addresses.push(obj)
-						tk user.get('first_name')+' 'user.get('last_name')+': '+user.get('email')
+						tk (user.get('first_name')+' '+user.get('last_name')+': '+user.get('email'))
 						user.addToList('WDS 2018 Purchasers')
 						.then ->
 							tk 'sent'
