@@ -280,10 +280,11 @@ routes = (app) ->
 		.whereRaw("status='active' AND tickets.year='2018'")
 		.groupBy('user_id')
 		.then (rsp) ->
+			tk 'start'
 			out = { numAll: 0, addresses: [], numOut: 0}
 			async.eachSeries rsp, (v, cb) ->
 				[User, Users] = require('../models/users')
-				if existingPurchasers.indexOf(v.email) is -1
+				if existingAttendes.indexOf(v.email) is -1
 					User.forge({ user_id: v.user_id})
 					.fetch().then (user) ->
 						tk (user.get('first_name')+' '+user.get('last_name')+': '+user.get('email'))
@@ -302,14 +303,14 @@ routes = (app) ->
 							subject = "You're coming to WDS! Awesome!"
 							user.sendEmail(promo, subject, {})
 							cb()
-
-			rsp.forEach((v) -> 
-				if existingAttendes.indexOf(v.email) is -1
-					out.addresses.push(v.email)
-			)
-			out.numAll = rsp.length
-			out.numOut = out.addresses.length
-			res.send(out);
+			, () ->
+				rsp.forEach((v) -> 
+					if existingAttendes.indexOf(v.email) is -1
+						out.addresses.push(v.email)
+				)
+				out.numAll = rsp.length
+				out.numOut = out.addresses.length
+				res.send(out);
 
 	# apiRouter.get '/fixandroid', (req, res, next) ->
 	# 	async = require('async')
