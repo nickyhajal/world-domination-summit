@@ -238,7 +238,7 @@ routes = (app) ->
 		.then (rsp) ->
 			out = { numAll: 0, addresses: [], numOut: 0}
 
-			async.each rsp, (v, cb) ->
+			async.eachSeries rsp, (v, cb) ->
 				[User, Users] = require('../models/users')
 				if existingPurchasers.indexOf(v.email) is -1
 					User.forge({ user_id: v.user_id})
