@@ -284,14 +284,15 @@ routes = (app) ->
 			out = { numAll: 0, addresses: [], numOut: 0}
 			async.eachSeries rsp, (v, cb) ->
 				[User, Users] = require('../models/users')
-				obj = {
-					email: v.email,
-					quantity: v.quantity,
-					price: (v.quantity*707),
-					tickets: if (+v.quantity > 1) then 'tickets' else 'ticket'
-				}
-				out.addresses.push(obj);
 				if existingAttendes.indexOf(v.email) is -1
+					obj = {
+						email: v.email,
+						quantity: v.quantity,
+						price: (v.quantity*707),
+						tickets: if (+v.quantity > 1) then 'tickets' else 'ticket'
+					}
+					out.addresses.push(obj);
+					cb()
 					# User.forge({ user_id: v.user_id})
 					# .fetch().then (user) ->
 					# 	tk (user.get('first_name')+' '+user.get('last_name')+': '+user.get('email'))
