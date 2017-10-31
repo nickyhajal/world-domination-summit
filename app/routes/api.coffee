@@ -257,7 +257,7 @@ routes = (app) ->
 			out = { numAll: 0, addresses: [], numOut: 0}
 
 			rsp.forEach((v) -> 
-				if existingAttendees.indexOf(v.email) is -1
+				if existingAttendes.indexOf(v.email) is -1
 					out.addresses.push(v.email)
 			)
 			out.numAll = rsp.length
