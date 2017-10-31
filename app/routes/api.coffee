@@ -227,49 +227,49 @@ routes = (app) ->
 	# 	})
 	# 	next()
 
-	apiRouter.get '/fixpurchasers', (req, res, next) ->
-		knex
-		.select('email', 'users.user_id')
-		.count('ticket_id as quantity')
-		.from('tickets')
-		.leftJoin('users', 'tickets.purchaser_id', 'users.user_id')
-		.whereRaw("status!='canceled' AND tickets.year='2018'")
-		.groupBy('purchaser_id')
-		.then (rsp) ->
-			out = { numAll: 0, addresses: [], numOut: 0}
+	# apiRouter.get '/fixpurchasers', (req, res, next) ->
+	# 	knex
+	# 	.select('email', 'users.user_id')
+	# 	.count('ticket_id as quantity')
+	# 	.from('tickets')
+	# 	.leftJoin('users', 'tickets.purchaser_id', 'users.user_id')
+	# 	.whereRaw("status!='canceled' AND tickets.year='2018'")
+	# 	.groupBy('purchaser_id')
+	# 	.then (rsp) ->
+	# 		out = { numAll: 0, addresses: [], numOut: 0}
 
-			async.eachSeries rsp, (v, cb) ->
-				[User, Users] = require('../models/users')
-				if existingPurchasers.indexOf(v.email) is -1
-					User.forge({ user_id: v.user_id})
-					.fetch().then (user) ->
-						obj = {
-							user_id: user.get('user_id'),
-							email: v.email,
-							quantity: v.quantity,
-							price: (v.quantity*707),
-							tickets: if (+v.quantity > 1) then 'tickets' else 'ticket'
-						}
-						out.addresses.push(obj)
-						tk (user.get('first_name')+' '+user.get('last_name')+': '+user.get('email'))
-						user.addToList('WDS 2018 Purchasers')
-						.then ->
-							tk 'sent'
-							promo = 'TicketReceipt'
-							subject = "Aw yeah! Your purchase was successful!"
-							params =
-								quantity: obj.quantity
-								price: obj.price
-								claim_url: 'https://worlddominationsummit.com/assign/'+user.get('hash')
-								tickets: obj.tickets
-							user.sendEmail(promo, subject, params)
-							cb()
-				else
-					cb()
-			, ->
-				out.numAll = rsp.length
-				out.numOut = out.addresses.length
-				res.send(out);
+	# 		async.eachSeries rsp, (v, cb) ->
+	# 			[User, Users] = require('../models/users')
+	# 			if existingPurchasers.indexOf(v.email) is -1
+	# 				User.forge({ user_id: v.user_id})
+	# 				.fetch().then (user) ->
+	# 					obj = {
+	# 						user_id: user.get('user_id'),
+	# 						email: v.email,
+	# 						quantity: v.quantity,
+	# 						price: (v.quantity*707),
+	# 						tickets: if (+v.quantity > 1) then 'tickets' else 'ticket'
+	# 					}
+	# 					out.addresses.push(obj)
+	# 					tk (user.get('first_name')+' '+user.get('last_name')+': '+user.get('email'))
+	# 					user.addToList('WDS 2018 Purchasers')
+	# 					.then ->
+	# 						tk 'sent'
+	# 						promo = 'TicketReceipt'
+	# 						subject = "Aw yeah! Your purchase was successful!"
+	# 						params =
+	# 							quantity: obj.quantity
+	# 							price: obj.price
+	# 							claim_url: 'https://worlddominationsummit.com/assign/'+user.get('hash')
+	# 							tickets: obj.tickets
+	# 						user.sendEmail(promo, subject, params)
+	# 						cb()
+	# 			else
+	# 				cb()
+	# 		, ->
+	# 			out.numAll = rsp.length
+	# 			out.numOut = out.addresses.length
+	# 			res.send(out);
 
 	apiRouter.get '/fixattendees', (req, res, next) ->
 		knex
@@ -281,6 +281,27 @@ routes = (app) ->
 		.groupBy('user_id')
 		.then (rsp) ->
 			out = { numAll: 0, addresses: [], numOut: 0}
+			async.eachSeries rsp, (v, cb) ->
+				[User, Users] = require('../models/users')
+				if existingPurchasers.indexOf(v.email) is -1
+					User.forge({ user_id: v.user_id})
+					.fetch().then (user) ->
+						tk (user.get('first_name')+' '+user.get('last_name')+': '+user.get('email'))
+						obj = {
+							user_id: user.get('user_id'),
+							email: v.email,
+							quantity: v.quantity,
+							price: (v.quantity*707),
+							tickets: if (+v.quantity > 1) then 'tickets' else 'ticket'
+						}
+						out.addresses.push(obj)
+						user.addToList('WDS 2018 Attendees')
+						.then ->
+							tk 'sent'
+							promo = 'Welcome'
+							subject = "You're coming to WDS! Awesome!"
+							user.sendEmail(promo, subject, {})
+							cb()
 
 			rsp.forEach((v) -> 
 				if existingAttendes.indexOf(v.email) is -1
