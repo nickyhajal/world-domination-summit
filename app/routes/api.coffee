@@ -284,32 +284,29 @@ routes = (app) ->
 			out = { numAll: 0, addresses: [], numOut: 0}
 			async.eachSeries rsp, (v, cb) ->
 				[User, Users] = require('../models/users')
+				obj = {
+					email: v.email,
+					quantity: v.quantity,
+					price: (v.quantity*707),
+					tickets: if (+v.quantity > 1) then 'tickets' else 'ticket'
+				}
+				out.addresses.push(obj);
 				if existingAttendes.indexOf(v.email) is -1
-					User.forge({ user_id: v.user_id})
-					.fetch().then (user) ->
-						tk (user.get('first_name')+' '+user.get('last_name')+': '+user.get('email'))
-						obj = {
-							user_id: user.get('user_id'),
-							email: v.email,
-							quantity: v.quantity,
-							price: (v.quantity*707),
-							tickets: if (+v.quantity > 1) then 'tickets' else 'ticket'
-						}
-						out.addresses.push(obj)
-						user.addToList('WDS 2018 Attendees')
-						.then ->
-							tk 'sent'
-							promo = 'Welcome'
-							subject = "You're coming to WDS! Awesome!"
-							user.sendEmail(promo, subject, {})
-							cb()
+					# User.forge({ user_id: v.user_id})
+					# .fetch().then (user) ->
+					# 	tk (user.get('first_name')+' '+user.get('last_name')+': '+user.get('email'))
+
+					# 	out.addresses.push(obj)
+					# 	user.addToList('WDS 2018 Attendees')
+					# 	.then ->
+					# 		tk 'sent'
+					# 		promo = 'Welcome'
+					# 		subject = "You're coming to WDS! Awesome!"
+					# 		user.sendEmail(promo, subject, {})
+					# 		cb()
 				else
 					cb()
 			, () ->
-				rsp.forEach((v) -> 
-					if existingAttendes.indexOf(v.email) is -1
-						out.addresses.push(v.email)
-				)
 				out.numAll = rsp.length
 				out.numOut = out.addresses.length
 				res.send(out);
