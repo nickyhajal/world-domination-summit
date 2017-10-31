@@ -245,6 +245,25 @@ routes = (app) ->
 			out.numOut = out.addresses.length
 			res.send(out);
 
+	apiRouter.get '/fixattendees', (req, res, next) ->
+		knex
+		.select('email', 'users.user_id')
+		.count('ticket_id as num')
+		.from('tickets')
+		.leftJoin('users', 'tickets.purchaser_id', 'users.user_id')
+		.whereRaw("status='active' AND tickets.year='2018'")
+		.groupBy('purchaser_id')
+		.then (rsp) ->
+			out = { numAll: 0, addresses: [], numOut: 0}
+
+			rsp.forEach((v) -> 
+				if existingAttendees.indexOf(v.email) is -1
+					out.addresses.push(v.email)
+			)
+			out.numAll = rsp.length
+			out.numOut = out.addresses.length
+			res.send(out);
+
 	# apiRouter.get '/fixandroid', (req, res, next) ->
 	# 	async = require('async')
 	# 	tk 'fix android'
