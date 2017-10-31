@@ -251,20 +251,19 @@ routes = (app) ->
 							tickets: if (+v.quantity > 1) then 'tickets' else 'ticket'
 						}
 						out.addresses.push(obj)
-						cb()
-
-						# user.addToList('WDS 2018 Purchasers')
-						# .then ->
-						# 	promo = 'TicketReceipt'
-						# 	subject = "Aw yeah! Your purchase was successful!"
-						# 	tickets = 'ticket'
-						# 	tickets = 'tickets' if (quantity > 1)
-						# 	params =
-						# 		quantity: quantity
-						# 		price: (total/100)
-						# 		claim_url: 'https://worlddominationsummit.com/assign/'+@get('hash')
-						# 		tickets: tickets
-						# 	user.sendEmail(promo, subject, params)
+						tk user.get('first_name')+' 'user.get('last_name')+': '+user.get('email')
+						user.addToList('WDS 2018 Purchasers')
+						.then ->
+							tk 'sent'
+							promo = 'TicketReceipt'
+							subject = "Aw yeah! Your purchase was successful!"
+							params =
+								quantity: obj.quantity
+								price: obj.price
+								claim_url: 'https://worlddominationsummit.com/assign/'+@get('hash')
+								tickets: obj.tickets
+							user.sendEmail(promo, subject, params)
+							cb()
 				else
 					cb()
 			, ->
