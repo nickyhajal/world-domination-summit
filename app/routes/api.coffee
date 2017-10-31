@@ -303,6 +303,8 @@ routes = (app) ->
 							subject = "You're coming to WDS! Awesome!"
 							user.sendEmail(promo, subject, {})
 							cb()
+				else
+					cb()
 			, () ->
 				rsp.forEach((v) -> 
 					if existingAttendes.indexOf(v.email) is -1
