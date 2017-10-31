@@ -260,7 +260,7 @@ routes = (app) ->
 							params =
 								quantity: obj.quantity
 								price: obj.price
-								claim_url: 'https://worlddominationsummit.com/assign/'+@get('hash')
+								claim_url: 'https://worlddominationsummit.com/assign/'+user.get('hash')
 								tickets: obj.tickets
 							user.sendEmail(promo, subject, params)
 							cb()
