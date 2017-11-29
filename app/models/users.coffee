@@ -111,10 +111,13 @@ User = Shelf.Model.extend
       saysAttending = @get(atnStr) is '1'
       if (attending)
         saysAttending = '1'
+        type = @get('tickets')[0].get('type')
       else if(!attending and saysAttending)
         saysAttending = '-1'
+        type = ''
       update = {};
       update[atnStr] = saysAttending
+      update.ticket_type = type
       @save(update, {patch: true}).then =>
         dfr.resolve(this)
     return dfr.promise

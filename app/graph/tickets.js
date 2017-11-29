@@ -90,13 +90,17 @@ const Add = {
       purchaser_id !== undefined && purchaser_id ? purchaser_id : '10124';
     type = type !== undefined && type ? type : '360';
     status = status !== undefined && status ? status : 'unclaimed';
-    const ticket = await Ticket.forge({
+    let ticket = await Ticket.forge({
       user_id,
       purchaser_id,
       type,
       year: process.year,
-      status,
+      status: 'unclaimed',
     }).save();
+    if (status === 'active') {
+      const res = await ticket.activate();
+      ticket = res[0];
+    }
     return ticket.attributes;
   },
 };

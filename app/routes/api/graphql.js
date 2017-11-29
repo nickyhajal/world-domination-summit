@@ -26,6 +26,8 @@ const mutation = new GraphQLObjectType({
   fields: {
     ticketUpdate: Tickets.Update,
     ticketAdd: Tickets.Add,
+    userAdd: UserGraph.Add,
+    userGiveTicket: UserGraph.GiveTicket,
   },
 });
 

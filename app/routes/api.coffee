@@ -271,46 +271,46 @@ routes = (app) ->
 	# 			out.numOut = out.addresses.length
 	# 			res.send(out);
 
-	apiRouter.get '/fixattendees', (req, res, next) ->
-		knex
-		.select('email', 'users.user_id')
-		.count('ticket_id as num')
-		.from('tickets')
-		.leftJoin('users', 'tickets.user_id', 'users.user_id')
-		.whereRaw("status='active' AND tickets.year='2018'")
-		.groupBy('user_id')
-		.then (rsp) ->
-			tk 'start'
-			out = { numAll: 0, addresses: [], numOut: 0}
-			async.eachSeries rsp, (v, cb) ->
-				[User, Users] = require('../models/users')
-				if existingAttendes.indexOf(v.email) is -1
-					User.forge({ user_id: v.user_id})
-					.fetch().then (user) ->
-						tk (user.get('first_name')+' '+user.get('last_name')+': '+user.get('email'))
-						obj = {
-							user_id: user.get('user_id'),
-							email: v.email,
-						}
-						user.addToList('WDS 2018 Attendees')
-						.then ->
-							tk 'sent'
-							promo = 'Welcome'
-							subject = "You're coming to WDS! Awesome!"
-							user.sendEmail(promo, subject, {})
-							out.addresses.push(obj);
-							cb()
-					, (err) ->
-						tk err
+	# apiRouter.get '/fixattendees', (req, res, next) ->
+	# 	knex
+	# 	.select('email', 'users.user_id')
+	# 	.count('ticket_id as num')
+	# 	.from('tickets')
+	# 	.leftJoin('users', 'tickets.user_id', 'users.user_id')
+	# 	.whereRaw("status='active' AND tickets.year='2018'")
+	# 	.groupBy('user_id')
+	# 	.then (rsp) ->
+	# 		tk 'start'
+	# 		out = { numAll: 0, addresses: [], numOut: 0}
+	# 		async.eachSeries rsp, (v, cb) ->
+	# 			[User, Users] = require('../models/users')
+	# 			if existingAttendes.indexOf(v.email) is -1
+	# 				User.forge({ user_id: v.user_id})
+	# 				.fetch().then (user) ->
+	# 					tk (user.get('first_name')+' '+user.get('last_name')+': '+user.get('email'))
+	# 					obj = {
+	# 						user_id: user.get('user_id'),
+	# 						email: v.email,
+	# 					}
+	# 					user.addToList('WDS 2018 Attendees')
+	# 					.then ->
+	# 						tk 'sent'
+	# 						promo = 'Welcome'
+	# 						subject = "You're coming to WDS! Awesome!"
+	# 						user.sendEmail(promo, subject, {})
+	# 						out.addresses.push(obj);
+	# 						cb()
+	# 				, (err) ->
+	# 					tk err
 
-					# 	out.addresses.push(obj)
-					# 		cb()
-				else
-					cb()
-			, () ->
-				out.numAll = rsp.length
-				out.numOut = out.addresses.length
-				res.send(out);
+	# 				# 	out.addresses.push(obj)
+	# 				# 		cb()
+	# 			else
+	# 				cb()
+	# 		, () ->
+	# 			out.numAll = rsp.length
+	# 			out.numOut = out.addresses.length
+	# 			res.send(out);
 
 	# apiRouter.get '/fixandroid', (req, res, next) ->
 	# 	async = require('async')

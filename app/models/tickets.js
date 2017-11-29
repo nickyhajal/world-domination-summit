@@ -37,14 +37,11 @@ const Ticket = Shelf.Model.extend({
     return [null, this];
   },
   async activate() {
-    console.log('ACTIVATE');
     const yr = 'attending' + process.yr;
     const originalStatus = this.get('status');
     const saveResult = await this.set({ status: 'active' }).save();
     const user = await this.getUser();
     const userRes = await user.syncAttending();
-    console.log(userRes.attributes);
-    console.log(userRes.get('attending' + process.yr));
     if (userRes.get('attending' + process.yr) === '1') {
       user.removeFromList('WDS ' + process.year + ' Canceled').then(rsp => {
         user.addToList('WDS ' + process.year + ' Attendees');
@@ -55,7 +52,6 @@ const Ticket = Shelf.Model.extend({
   },
   async updateStatus(newStatus) {
     let row = false;
-    console.log(newStatus);
     switch (newStatus) {
       case 'canceled':
         row = await this.cancel();
