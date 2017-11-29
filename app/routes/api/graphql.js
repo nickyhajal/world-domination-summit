@@ -5,6 +5,7 @@ const UserGraph = require('../../graph/users');
 const Transactions = require('../../graph/transactions');
 const Tickets = require('../../graph/tickets');
 const Stats = require('../../graph/stats');
+const UserNoteGraph = require('../../graph/UserNoteGraph');
 
 const query = new GraphQLObjectType({
   name: 'Query',
@@ -28,6 +29,7 @@ const mutation = new GraphQLObjectType({
     ticketAdd: Tickets.Add,
     userAdd: UserGraph.Add,
     userGiveTicket: UserGraph.GiveTicket,
+    userNoteAdd: UserNoteGraph.Add,
   },
 });
 

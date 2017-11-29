@@ -5,7 +5,7 @@ Q = require('q')
 UserNote = Shelf.Model.extend
   tableName: 'user_notes'
   permittedAttributes: [
-    'unote_id', 'user_id', 'about_id', 'note', 'year'
+    'unote_id', 'user_id', 'about_id', 'note', 'admin', 'year'
   ]
   idAttribute: 'unote_id'
   hasTimestamps: true

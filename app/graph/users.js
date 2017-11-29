@@ -55,7 +55,6 @@ const Add = {
     country: { type: GraphQLString },
   },
   resolve: async (obj, args) => {
-    console.log(args);
     const existing = await User.forge({
       email: args.email,
     }).fetch();
@@ -63,7 +62,6 @@ const Add = {
       console.log('EXISTING');
       return Object.assign({}, existing.attributes, { existing: true });
     }
-    console.log('NOT EXISTING');
     const row = await User.forge(args).save();
     return row.attributes;
   },
@@ -76,24 +74,18 @@ const GiveTicket = {
     },
   },
   resolve: async (obj, { user_id }, req) => {
-    console.log(user_id);
     const existing = await User.forge({
       user_id,
     }).fetch();
     if (existing) {
-      console.log('EXISTING');
-      console.log(existing);
       const admin_id =
         req.me !== undefined ? req.me.get('user_id') : 'no-admin';
-      console.log(1);
       hash = require('crypto')
         .createHash('md5')
         .update('' + +new Date())
         .digest('hex')
         .substr(0, 5);
-      console.log(2);
       existing.registerTicket('ADDED_BY_' + admin_id + '_' + hash);
-      console.log(3);
       return Object.assign({}, existing.attributes, { existing: true });
     }
     return {};

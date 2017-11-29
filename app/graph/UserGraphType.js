@@ -9,7 +9,9 @@ const {
 const [User, Users] = require('../models/users');
 const [Ticket, Tickets] = require('../models/tickets');
 const [Transaction, Transactions] = require('../models/transactions');
+const [UserNote, UserNotes] = require('../models/user_notes');
 const TransactionGraph = require('./transactions');
+const UserNoteGraphType = require('./UserNoteGraphType');
 
 module.exports = new GraphQLObjectType({
   name: 'User',
@@ -91,6 +93,20 @@ module.exports = new GraphQLObjectType({
             })
             .fetch();
           return ts.map(v => (v.attributes !== undefined ? v.attributes : {}));
+        },
+      },
+      admin_notes: {
+        type: new GraphQLList(UserNoteGraphType),
+        resolve: async row => {
+          const notes = await UserNotes.forge()
+            .query(qb => {
+              qb.where('about_id', row.user_id);
+              qb.where('admin', '1');
+            })
+            .fetch();
+          return notes.map(
+            v => (v.attributes !== undefined ? v.attributes : {})
+          );
         },
       },
     };
