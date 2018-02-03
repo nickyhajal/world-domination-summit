@@ -4,7 +4,6 @@ async = require('async')
 ##
 
 [Ticket, Tickets] = require '../tickets'
-[User, Users] = require '../users'
 
 ticket =
   registerTicket: (quantity = 1, total = 0, transferFrom = null) ->
@@ -64,6 +63,7 @@ ticket =
     return dfr.promise
 
   connectTicket: (ticket, returning = false, transfer_from = null) ->
+    [User, Users] = require '../users'
     tk "CLAIM IT"
     dfr = Q.defer()
     type = ticket.get('type')
@@ -73,9 +73,10 @@ ticket =
     .save()
     .then (upd_ticket) =>
       tk 'CLAIMED'
-      @set 'attending18', '1' #+process.yr, '1'
-      @set 'ticket_type', type
-      @save()
+      user = User.forge(@attributes)
+      user.set 'attending18', '1' #+process.yr, '1'
+      user.set 'ticket_type', type
+      user.save()
       .then (upd_user) =>
         # list = 'WDS '+process.year+' Attendees'
         list = 'WDS 2018 Attendees'

@@ -99,6 +99,8 @@ const Add = {
     }).save();
     if (status === 'active') {
       const res = await ticket.activate();
+      const user = await User.forge({ user_id: user_id }).fetch();
+      // send email: user.
       ticket = res[0];
     }
     return ticket.attributes;

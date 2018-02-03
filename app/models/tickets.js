@@ -17,16 +17,12 @@ const Ticket = Shelf.Model.extend({
   // when purchasing/transferring it happens in user->tickets,
   // but maybe that's stupid
   async cancel() {
-    console.log('CANCEL');
     const yr = 'attending' + process.yr;
     const originalStatus = this.get('status');
     const saveResult = await this.set({ status: 'canceled' }).save();
-    console.log(originalStatus);
     if (originalStatus === 'active') {
       const user = await this.getUser();
       const userRes = await user.syncAttending();
-      console.log(userRes.attributes);
-      console.log(userRes.get('attending' + process.yr));
       if (userRes.get('attending' + process.yr) !== '1') {
         user.removeFromList('WDS ' + process.year + ' Attendees').then(rsp => {
           user.addToList('WDS ' + process.year + ' Canceled');
