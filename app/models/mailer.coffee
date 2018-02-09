@@ -7,9 +7,11 @@ mailer =
 	send: (promo, subject, to, params = {}) ->
 		dfr = Q.defer()
 		use_to = 'nhajal@gmail.com'
+		tk promo
+		tk params
+
 		if process.env.NODE_ENV is 'production'
 			use_to = to
-
 		email_options =
 			promotion_name: 'WDS_'+promo
 			subject: '[WDS] '+subject

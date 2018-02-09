@@ -7,6 +7,7 @@ async = require('async')
 [Transfer, Transfers] = require('./transfers')
 [Transaction, Transcations] = require('./transactions')
 [Ticket, Tickets] = require('./tickets')
+[Booking, Bookings] = require('./bookings')
 [EventRsvp, EventRsvps] = require('./event_rsvps')
 
 Product = Shelf.Model.extend
@@ -85,6 +86,26 @@ PRE =
   wds2018: (meta) ->
     dfr = Q.defer()
     dfr.resolve({})
+    return dfr.promise
+  hotelbunk: (meta) ->
+    dfr = Q.defer()
+    Bookings.forge().isTypeSoldOut('bunk')
+    .then (isSoldOut) ->
+      dfr.resolve({error: if isSoldOut then  'Oh no, all the bunks have sold out!' else false})
+    return dfr.promise
+  hotelroom: (meta) ->
+    dfr = Q.defer()
+    Bookings.forge().isTypeSoldOut('room')
+    .then (isSoldOut) ->
+      dfr.resolve({error: if isSoldOut then  'Oh no, all the standard rooms have sold out!' else false})
+    return dfr.promise
+  hotelsuite: (meta) ->
+    dfr = Q.defer()
+    Bookings.forge().isTypeSoldOut('suite')
+    .then (isSoldOut) ->
+        dfr.resolve({error: if isSoldOut then  'Oh no, all the suites have sold out!' else false})
+    .catch ->
+        throw ("oh no")
     return dfr.promise
   xfer: (meta) ->
     dfr = Q.defer()
@@ -293,6 +314,48 @@ POST =
       res.r.ticket_success = true
       res.r.ticket = ticket
       next()
+  hotelbunk: (transaction, meta) ->
+    dfr = Q.defer()
+    Booking.forge
+      user_id: transaction.get('user_id')
+      type: 'bunk'
+      status: 'active'
+    .save()
+    .then (booking) ->
+      booking.sendConfirmation()
+      Bookings.forge().numOfType('bunk')
+      .then (num) ->
+        process.fire.database().ref().child('state/hotels/bunk_sales').set(num)
+      dfr.resolve({})
+    return dfr.promise
+  hotelroom: (transaction, meta) ->
+    dfr = Q.defer()
+    Booking.forge
+      user_id: transaction.get('user_id')
+      type: 'room'
+      status: 'active'
+    .save()
+    .then (booking) ->
+      booking.sendConfirmation()
+      Bookings.forge().numOfType('room')
+      .then (num) ->
+        process.fire.database().ref().child('state/hotels/room_sales').set(num)
+      dfr.resolve({})
+    return dfr.promise
+  hotelsuite: (transaction, meta) ->
+    dfr = Q.defer()
+    Booking.forge
+      user_id: transaction.get('user_id')
+      type: 'suite'
+      status: 'active'
+    .save()
+    .then (booking) ->
+      booking.sendConfirmation()
+      Bookings.forge().numOfType('suite')
+      .then (num) ->
+        process.fire.database().ref().child('state/hotels/suite_sales').set(num)
+      dfr.resolve({})
+    return dfr.promise
 
 
 module.exports = [Product, Products]

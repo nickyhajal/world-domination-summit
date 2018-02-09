@@ -65,6 +65,8 @@ Card = Shelf.Model.extend
 							purchase_data.transaction_id = transaction.get('transaction_id')
 							product.pre_process({user_id: @get('user_id'), post: purchase_data})
 							.then (pre) =>
+								if pre.error? and pre.error
+									throw (new Error(pre.error))
 								pre_rsp_params = pre?.rsp ? {}
 								price = if pre.price? then pre.price else product.get('cost')
 								if product.get('fee')? and product.get('fee') > 0
@@ -115,7 +117,19 @@ Card = Shelf.Model.extend
 											fireRef.update({status: 'error', error: err.message, declined: true})
 											dfr.resolve({transaction: transaction, rsp: {err: err, declined: true}})
 								)
-							, (err) ->
+							.catch (err) ->
+								tk 'preprocess error'
+								Transaction.forge
+									transaction_id: transaction.get('transaction_id')
+								.fetch()
+								.then (transaction) =>
+									transaction.set
+										status: 'declined'
+									.save()
+									.then =>
+										tk err
+										fireRef.update({status: 'error', error: err.message, declined: true})
+										dfr.resolve({transaction: transaction, rsp: {err: err, declined: true}})
 								console.error err
 			return dfr.promise
 
