@@ -41,8 +41,8 @@ const Bookings = Shelf.Collection.extend({
   },
   isTypeSoldOut: async type => {
     const maxes = {
-      bunk: 25,
-      room: 24,
+      bunk: 24,
+      room: 25,
       suite: 12,
     };
     const numType = await Bookings.forge().numOfType(type);
