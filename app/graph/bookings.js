@@ -20,6 +20,7 @@ const Type = new GraphQLObjectType({
     },
     type: { type: GraphQLString },
     status: { type: GraphQLString },
+    notes: { type: GraphQLString },
     created_at: { type: GraphQLString },
     updated_at: { type: GraphQLString },
     user: {
@@ -27,7 +28,7 @@ const Type = new GraphQLObjectType({
       description: 'Customers',
       resolve: async root => {
         const user = await User.forge({ user_id: root.user_id }).fetch();
-        return user.attributes;
+        return user ? user.attributes : {};
       },
     },
     extra: { type: GraphQLString },
@@ -66,7 +67,9 @@ const Fields = {
     // }
     evs.query('orderBy', 'created_at', 'desc');
     const rows = await evs.fetch();
-    return rows.models.map(row => row.attributes);
+    return rows.models.map(
+      row => (console.log(row), row ? row.attributes : null)
+    );
   },
 };
 const Update = {
