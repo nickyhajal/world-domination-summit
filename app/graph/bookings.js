@@ -67,9 +67,7 @@ const Fields = {
     // }
     evs.query('orderBy', 'created_at', 'desc');
     const rows = await evs.fetch();
-    return rows.models.map(
-      row => (console.log(row), row ? row.attributes : null)
-    );
+    return rows.models.map(row => (row ? row.attributes : null));
   },
 };
 const Update = {
