@@ -1,5 +1,6 @@
 _ = require('underscore')
 redis = require("redis")
+
 rds = redis.createClient()
 twitterAPI = require('node-twitter-api')
 Q = require('q')
@@ -35,6 +36,7 @@ routes = (app) ->
 	[Place, Places] = require('../../models/places')
 	[Answer, Answers] = require('../../models/answers')
 	[Card, Cards] = require('../../models/cards')
+	[Page, Pages] = require('../../models/pages');
 
 	assets =
 
@@ -234,6 +236,21 @@ routes = (app) ->
 							dfr.resolve(rsp.models)
 							rds.set 'tasks', JSON.stringify(rsp.models), ->
 								rds.expire 'tasks', 5000
+				return dfr.promise
+			
+			pages: (req) ->
+				dfr = Q.defer()
+				rds.get 'pagess', (err, pages) ->
+					if pages? and pages and typeof JSON.parse(pages) is 'object'
+						dfr.resolve(JSON.parse(pages))
+					else
+						Pages.forge()
+						.fetch()
+						.then (rsp) ->
+							out = rsp.models.map (r) -> {title: r.get('title'), slug: r.get('slug')}
+							dfr.resolve(out)
+							rds.set 'pages', JSON.stringify(out), ->
+								rds.expire 'pages', 600
 				return dfr.promise
 
 			ranks: (req) ->

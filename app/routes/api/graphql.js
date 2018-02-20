@@ -7,6 +7,7 @@ const Tickets = require('../../graph/tickets');
 const Stats = require('../../graph/stats');
 const UserNoteGraph = require('../../graph/UserNoteGraph');
 const BookingGraph = require('../../graph/bookings');
+const PagesGraph = require('../../graph/pages');
 
 const query = new GraphQLObjectType({
   name: 'Query',
@@ -19,6 +20,8 @@ const query = new GraphQLObjectType({
     stats: Stats.Field,
     booking: BookingGraph.Field,
     bookings: BookingGraph.Fields,
+    page: PagesGraph.Field,
+    pages: PagesGraph.Fields,
     transaction: Transactions.Field,
     transactions: Transactions.Fields,
     tickets: Tickets.Fields,
@@ -33,6 +36,8 @@ const mutation = new GraphQLObjectType({
     userAdd: UserGraph.Add,
     userGiveTicket: UserGraph.GiveTicket,
     userNoteAdd: UserNoteGraph.Add,
+    pageAdd: PagesGraph.Add,
+    pageUpdate: PagesGraph.Update,
     bookingUpdate: BookingGraph.Update,
   },
 });

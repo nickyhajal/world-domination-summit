@@ -207,7 +207,7 @@ POST =
           qb.where('type', '360')
         .fetch()
         .then (rsp) ->
-          process.fire.database().ref().child('state/sale_wave1_2018/sold').set(rsp.models.length)
+          process.fire.database().ref().child('state/sale_wave3_2018/sold').set(rsp.models.length)
         , (err) ->
           console.err(error)
         transaction.set('meta', JSON.stringify(tickets))
@@ -232,9 +232,10 @@ POST =
         Tickets.forge().query (qb) ->
           qb.where('year', '2018')
           qb.where('type', '360')
+          qb.whereIn('status', ['active', 'unclaimed'])
         .fetch()
         .then (rsp) ->
-          process.fire.database().ref().child('state/sale_wave1_2018/sold').set(rsp.models.length)
+          process.fire.database().ref().child('state/sale_wave3_2018/sold').set(rsp.models.length)
         , (err) ->
           console.err(error)
         transaction.set('meta', JSON.stringify(tickets))
