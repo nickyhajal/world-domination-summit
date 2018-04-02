@@ -302,6 +302,9 @@ POST =
           ticket.set 'status', 'purchased'
           ticket.save()
           user.connectTicket(ticket).then ->
+            params =
+              price: 189
+            user.sendEmail('ConnectReceipt', "Aw yeah! Your purchase was successful!", params)
             tickets.push(ticket)
             cb()
       , ->

@@ -90,7 +90,7 @@ ticket =
           #   promo = 'WelcomeBack'
           if type is 'connect'
             promo = 'WelcomeConnect'
-          # @sendEmail(promo, subject)
+          @sendEmail(promo, subject)
           dfr.resolve({user: upd_user, ticket: upd_ticket})
     , (err) ->
       console.error err
