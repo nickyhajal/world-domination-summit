@@ -123,14 +123,18 @@ PRE =
     return dfr.promise
   connect: (meta) ->
     dfr = Q.defer()
+    quantity = if meta.post.quantity and +meta.post.quantity then +meta.post.quantity else 1
+    tk quantity
     ids = []
-    arr = [0...+meta.post.quantity]
+    arr = [0...quantity]
+    tk arr
     async.eachSeries arr, (i, cb) ->
       Ticket.forge
         type: 'connect'
         stripe_id: meta.post.transaction_id
         year: process.year
         user_id: meta.user_id
+        purchaser_id: meta.user_id
         status: 'pending'
       .save()
       .then (ticket) =>
@@ -297,10 +301,11 @@ POST =
         .then (ticket) =>
           ticket.set 'status', 'purchased'
           ticket.save()
-          tickets.push(ticket)
-          cb()
+          user.connectTicket(ticket).then ->
+            tickets.push(ticket)
+            cb()
       , ->
-        dfr.resolve({rsp: {tickets: tickets, user: user}})
+        dfr.resolve({rsp: {tickets: tickets.toString() }})
     return dfr.promise
   t360: (meta) ->
     Ticket.forge

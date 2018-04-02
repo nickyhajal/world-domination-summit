@@ -61,6 +61,7 @@ User = Shelf.Model.extend
     email_hash = crypto.createHash('md5').update(self.get('email')).digest('hex')
     rand = (new Date()).valueOf().toString() + Math.random().toString()
     user_hash = crypto.createHash('sha1').update(rand).digest('hex')
+    type = this.get('type') || 'attendee'
     @set
       email_hash: email_hash
       user_name: user_hash

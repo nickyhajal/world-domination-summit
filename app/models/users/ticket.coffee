@@ -78,16 +78,16 @@ ticket =
       user.set 'ticket_type', type
       user.save()
       .then (upd_user) =>
-        # list = 'WDS '+process.year+' Attendees'
-        list = 'WDS 2018 Attendees'
+        list = 'WDS '+process.year+' Attendees'
+        # list = 'WDS 2018 Attendees'
         if type is 'connect'
           list = 'WDS '+process.year+' Connect'
         @addToList(list)
         .then =>
           promo = 'Welcome'
           subject = "You're coming to WDS! Awesome!"
-          if returning
-            promo = 'WelcomeBack'
+          # if returning
+          #   promo = 'WelcomeBack'
           if type is 'connect'
             promo = 'WelcomeConnect'
           # @sendEmail(promo, subject)

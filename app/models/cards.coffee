@@ -100,7 +100,7 @@ Card = Shelf.Model.extend
 											product.post_process(transaction, charge)
 											.then (post_rsp) =>
 												post_rsp_params = post_rsp?.rsp ? {}
-												rsp_params = _.extend pre_rsp_params, post_rsp_params
+												rsp_params = {}
 												fireRef.update({status: 'done', rsp: rsp_params})
 												dfr.resolve({transaction: transaction, rsp: rsp_params})
 										, (err) -> console.error(err)
