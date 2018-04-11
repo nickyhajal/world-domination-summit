@@ -299,15 +299,15 @@ POST =
           ticket_id: id
         .fetch()
         .then (ticket) =>
-          ticket.set 'status', 'purchased'
+          ticket.set 'status', 'unclaimed'
           ticket.save()
-          user.connectTicket(ticket).then ->
-            params =
-              price: 189
-            user.sendEmail('ConnectReceipt', "Aw yeah! Your purchase was successful!", params)
-            tickets.push(ticket)
-            cb()
+          tickets.push(ticket)
+          cb()
       , ->
+        params =
+          price: transaction.get('paid_amount')
+          quantity: transaction.get('quantity')
+        user.sendEmail('ConnectReceipt', "Aw yeah! Your purchase was successful!", params)
         dfr.resolve({rsp: {tickets: tickets.toString() }})
     return dfr.promise
   t360: (meta) ->
