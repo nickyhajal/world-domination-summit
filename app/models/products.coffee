@@ -305,7 +305,8 @@ POST =
           cb()
       , ->
         params =
-          price: transaction.get('paid_amount')
+          price: transaction.get('paid_amount')/100
+          tickets: if transaction.get('quantity') == 1 then 'ticket' else 'tickets'
           quantity: transaction.get('quantity')
         user.sendEmail('ConnectReceipt', "Aw yeah! Your purchase was successful!", params)
         dfr.resolve({rsp: {tickets: tickets.toString() }})
