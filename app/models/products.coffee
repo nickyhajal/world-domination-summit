@@ -110,7 +110,7 @@ PRE =
   xfer: (meta) ->
     dfr = Q.defer()
     Transfer.forge
-      new_attendee: JSON.stringify(meta.post)
+      new_attendee: JSON.stringify(_.omit(meta.post, ['quantity']))
       user_id: meta.user_id
       year: process.year
       status: 'pending'
@@ -124,10 +124,8 @@ PRE =
   connect: (meta) ->
     dfr = Q.defer()
     quantity = if meta.post.quantity and +meta.post.quantity then +meta.post.quantity else 1
-    tk quantity
     ids = []
     arr = [0...quantity]
-    tk arr
     async.eachSeries arr, (i, cb) ->
       Ticket.forge
         type: 'connect'
