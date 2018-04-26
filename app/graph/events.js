@@ -166,6 +166,7 @@ const Fields = {
 };
 
 const Args = {
+  event_id: { type: GraphQLString },
   year: { type: GraphQLString },
   active: { type: GraphQLString },
   ignored: { type: GraphQLString },
@@ -198,62 +199,93 @@ const Args = {
   free_max: { type: GraphQLInt },
 };
 
+const getEventFromArgs = async args => {
+  const post = _.pick(args, Event.prototype.permittedAttributes);
+  let {
+    what,
+    date,
+    hour,
+    minute,
+    ampm,
+    end_hour,
+    end_minute,
+    type,
+    end_ampm,
+  } = args;
+  const month = `-0${+date > 20 ? '6' : '7'}-`;
+  const start = moment.utc(
+    process.year + month + date + ' ' + hour + ':' + minute + ':00',
+    'YYYY-MM-DD HH:mm:ss'
+  );
+  if (hour === '12') {
+    ampm = Math.abs(ampm - 12);
+  }
+  post.start = start.add('hours', ampm).format('YYYY-MM-DD HH:mm:ss');
+
+  // Parse End Time if we have one
+  if (end_hour != null && end_minute != null) {
+    const end = moment.utc(
+      process.year + month + date + ' ' + end_hour + ':' + end_minute + ':00',
+      'YYYY-MM-DD HH:mm:ss'
+    );
+    if (end_hour === '12') {
+      end_ampm = Math.abs(end_ampm - 12);
+    }
+    post.end = end.add('hours', end_ampm).format('YYYY-MM-DD HH:mm:ss');
+  }
+
+  if (type == null) {
+    type = 'meetup';
+  }
+
+  post.slug = _s.slugify(what);
+  const slugs = await Events.query(qb =>
+    qb.where('slug', 'LIKE', `${post.slug}%`)
+  ).fetch();
+  if (slugs.models.length) {
+    if (slugs.models.length) {
+      post.slug += `-${slugs.models.length + 1}`;
+    }
+  }
+  post.year = process.yr;
+  return post;
+};
+
 const Add = {
   type: Type,
   args: Args,
-  resolve: async (root, args) => {
-    const post = _.pick(args, Event.prototype.permittedAttributes);
-    let {
-      what,
-      date,
-      hour,
-      minute,
-      ampm,
-      end_hour,
-      end_minute,
-      type,
-      end_ampm,
-      hosts,
-    } = args;
-    const month = `-0${+date > 20 ? '6' : '7'}-`;
-    const start = moment.utc(
-      process.year + month + date + ' ' + hour + ':' + minute + ':00',
-      'YYYY-MM-DD HH:mm:ss'
-    );
-    if (hour === '12') {
-      ampm = Math.abs(ampm - 12);
-    }
-    post.start = start.add('hours', ampm).format('YYYY-MM-DD HH:mm:ss');
-
-    // Parse End Time if we have one
-    if (end_hour != null && end_minute != null) {
-      const end = moment.utc(
-        process.year + month + date + ' ' + end_hour + ':' + end_minute + ':00',
-        'YYYY-MM-DD HH:mm:ss'
-      );
-      if (end_hour === '12') {
-        end_ampm = Math.abs(end_ampm - 12);
-      }
-      post.end = end.add('hours', end_ampm).format('YYYY-MM-DD HH:mm:ss');
-    }
-
-    if (type == null) {
-      type = 'meetup';
-    }
-
-    post.slug = _s.slugify(what);
-    const slugs = await Events.query(qb =>
-      qb.where('slug', 'LIKE', `${post.slug}%`)
-    ).fetch();
-    if (slugs.models.length) {
-      if (slugs.models.length) {
-        post.slug += `-${slugs.models.length + 1}`;
-      }
-    }
-    post.year = process.yr;
+  resolve: async (root, args, req) => {
+    const post = await getEventFromArgs(args);
+    const { hosts } = args;
     const event = await Event.forge(post).save();
     setTimeout(() => rds.expire('events', 0), 1000);
     if (hosts != null) {
+      const ids = hosts.split(',').map(id =>
+        EventHost.forge({
+          event_id: event.get('event_id'),
+          user_id: id,
+        }).save()
+      );
+      await Promise.all(ids);
+    }
+    return event.attributes;
+  },
+};
+
+const Update = {
+  type: Type,
+  args: Args,
+  resolve: async (root, args, req) => {
+    const { event_id } = args;
+    const post = await getEventFromArgs(args);
+    const { hosts } = args;
+    const event = await Event.forge({ event_id }).fetch();
+    await event.set(post).save();
+    setTimeout(() => rds.expire('events', 0), 1000);
+    if (hosts != null) {
+      await process.knex.raw(
+        `DELETE FROM event_hosts WHERE event_id ='${event_id}'`
+      );
       const ids = hosts.split(',').map(id =>
         EventHost.forge({
           event_id: event.get('event_id'),
@@ -270,5 +302,6 @@ module.exports = {
   Type,
   Field,
   Add,
+  Update,
   Fields,
 };
