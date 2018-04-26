@@ -6,6 +6,7 @@ const {
   GraphQLInt,
   GraphQLList,
 } = require('graphql');
+const _ = require('underscore');
 const [User, Users] = require('../models/users');
 const [Ticket, Tickets] = require('../models/tickets');
 const [Transaction, Transactions] = require('../models/transactions');
@@ -66,6 +67,36 @@ const Add = {
     return row.attributes;
   },
 };
+const Update = {
+  type: Type,
+  args: {
+    user_id: { type: GraphQLString },
+    type: { type: GraphQLString },
+    email: { type: GraphQLString },
+    site: { type: GraphQLString },
+    facebook: { type: GraphQLString },
+    instagram: { type: GraphQLString },
+    first_name: { type: GraphQLString },
+    last_name: { type: GraphQLString },
+    user_name: { type: GraphQLString },
+    address: { type: GraphQLString },
+    address2: { type: GraphQLString },
+    city: { type: GraphQLString },
+    region: { type: GraphQLString },
+    zip: { type: GraphQLString },
+    country: { type: GraphQLString },
+  },
+  resolve: async (obj, args) => {
+    const post = _.pick(args, User.prototype.permittedAttributes);
+    const { user_id } = args;
+    const user = await User.forge({ user_id }).fetch();
+    let update;
+    if (user) {
+      update = await user.set(post).save();
+    }
+    return update.attributes;
+  },
+};
 const GiveTicket = {
   type: Type,
   args: {
@@ -107,6 +138,7 @@ module.exports = {
   Field,
   Search,
   Add,
+  Update,
   GiveTicket,
   Fields,
 };
