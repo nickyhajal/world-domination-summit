@@ -37,7 +37,12 @@ const Type = new GraphQLObjectType({
     descr: { type: GraphQLString },
     what: { type: GraphQLString },
     who: { type: GraphQLString },
-    bios: { type: GraphQLString },
+    bios: {
+      type: GraphQLString,
+      resolve: ({ bios }) => {
+        return bios.includes('{') ? bios : Buffer.from(bios, 'base64');
+      },
+    },
     start: { type: GraphQLString },
     end: { type: GraphQLString },
     place: { type: GraphQLString },
