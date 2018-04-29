@@ -40,7 +40,7 @@ const Type = new GraphQLObjectType({
     bios: {
       type: GraphQLString,
       resolve: ({ bios }) => {
-        return bios.includes('{') ? bios : Buffer.from(bios, 'base64');
+        return bios && bios.includes('{') ? bios : Buffer.from(bios, 'base64');
       },
     },
     start: { type: GraphQLString },
