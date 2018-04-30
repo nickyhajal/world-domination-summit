@@ -211,6 +211,7 @@ const Args = {
 const getEventFromArgs = async args => {
   const post = _.pick(args, Event.prototype.permittedAttributes);
   let {
+    event_id,
     what,
     date,
     hour,
@@ -246,14 +247,15 @@ const getEventFromArgs = async args => {
   if (type == null) {
     type = 'meetup';
   }
-
   post.slug = _s.slugify(what);
-  const slugs = await Events.query(qb =>
-    qb.where('slug', 'LIKE', `${post.slug}%`)
-  ).fetch();
-  if (slugs.models.length) {
+  if (!event_id) {
+    const slugs = await Events.query(qb =>
+      qb.where('slug', 'LIKE', `${post.slug}%`)
+    ).fetch();
     if (slugs.models.length) {
-      post.slug += `-${slugs.models.length + 1}`;
+      if (slugs.models.length) {
+        post.slug += `-${slugs.models.length + 1}`;
+      }
     }
   }
   post.year = process.yr;
