@@ -72,6 +72,7 @@ const Update = {
   args: {
     user_id: { type: GraphQLString },
     type: { type: GraphQLString },
+    ticket_type: { type: GraphQLString },
     email: { type: GraphQLString },
     site: { type: GraphQLString },
     facebook: { type: GraphQLString },
