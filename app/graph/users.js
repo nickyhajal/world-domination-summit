@@ -65,9 +65,7 @@ const Add = {
       console.log('EXISTING');
       return Object.assign({}, existing.attributes, { existing: true });
     }
-    console.log(args);
     const row = await User.forge(args).save();
-    console.log(row.attributes);
     return row.attributes;
   },
 };
@@ -113,6 +111,7 @@ const GiveTicket = {
     const existing = await User.forge({
       user_id,
     }).fetch();
+    console.log(existing.attributes);
     if (existing) {
       const admin_id =
         req.me !== undefined ? req.me.get('user_id') : 'no-admin';
