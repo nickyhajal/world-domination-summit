@@ -115,12 +115,20 @@ const GiveTicket = {
     if (existing) {
       const admin_id =
         req.me !== undefined ? req.me.get('user_id') : 'no-admin';
-      hash = require('crypto')
+      const hash = require('crypto')
         .createHash('md5')
         .update('' + +new Date())
         .digest('hex')
         .substr(0, 5);
-      existing.registerTicket('ADDED_BY_' + admin_id + '_' + hash);
+      const ticket = await Ticket.forge({
+        type: existing.get('ticket_type'),
+        eventbrite_id: `ADDED_BY_ADMIN_${hash}`,
+        user_id: user_id,
+        purchaser_id: user_id,
+        status: 'unclaimed',
+        year: process.year,
+      }).save();
+      existing.connectTicket(ticket);
       return Object.assign({}, existing.attributes, { existing: true });
     }
     return {};
