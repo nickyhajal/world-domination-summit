@@ -9,11 +9,17 @@ ticket =
   registerTicket: (quantity = 1, total = 0, transferFrom = null) ->
     dfr = Q.defer()
     ticket_ids = []
+    type = @get('type')
+    ticket_type = @get('ticket_type')
     # @set('pre18','1').save() ONLY DURING PRESALE
-    @set('type','attendee').save()
+    if (!type && !type.length)
+      @set('type','attendee').save()
+    if (!ticket_type && !ticket_type.length)
+      ticket_type = '360'
+
     async.each [0..quantity-1], (i, cb) =>
       Ticket.forge
-        type: '360'
+        type: ticket_type
         user_id: @get('user_id')
         purchaser_id: @get('user_id')
         status: 'unclaimed'
