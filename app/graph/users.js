@@ -65,6 +65,7 @@ const Add = {
       console.log('EXISTING');
       return Object.assign({}, existing.attributes, { existing: true });
     }
+    console.log(args);
     const row = await User.forge(args).save();
     return row.attributes;
   },
