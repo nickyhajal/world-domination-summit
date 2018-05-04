@@ -88,6 +88,9 @@ const Add = {
     let row = {};
     purchaser_id =
       purchaser_id !== undefined && purchaser_id ? purchaser_id : '10124';
+    console.log(user_id);
+    console.log(type);
+    console.log(status);
     type = type !== undefined && type ? type : '360';
     status = status !== undefined && status ? status : 'unclaimed';
     let ticket = await Ticket.forge({
