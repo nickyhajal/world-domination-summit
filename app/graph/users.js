@@ -46,6 +46,8 @@ const Add = {
   type: Type,
   args: {
     email: { type: GraphQLString },
+    type: { type: GraphQLString },
+    ticket_type: { type: GraphQLString },
     first_name: { type: GraphQLString },
     last_name: { type: GraphQLString },
     address: { type: GraphQLString },
