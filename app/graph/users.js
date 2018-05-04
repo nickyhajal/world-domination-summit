@@ -111,6 +111,8 @@ const GiveTicket = {
     const existing = await User.forge({
       user_id,
     }).fetch();
+    console.log('give ticket');
+    console.log(existing);
     console.log(existing.attributes);
     if (existing) {
       const admin_id =
