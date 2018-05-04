@@ -67,6 +67,7 @@ const Add = {
     }
     console.log(args);
     const row = await User.forge(args).save();
+    console.log(row.attributes);
     return row.attributes;
   },
 };
