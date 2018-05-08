@@ -12,7 +12,7 @@ ticket =
     type = @get('type')
     ticket_type = @get('ticket_type')
     # @set('pre18','1').save() ONLY DURING PRESALE
-    if (!type && !type.length)
+    if (!type || !type.length)
       @set('type','attendee').save()
     if (!ticket_type && !ticket_type.length)
       ticket_type = '360'
