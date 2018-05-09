@@ -14,7 +14,7 @@ ticket =
     # @set('pre18','1').save() ONLY DURING PRESALE
     if (!type || !type.length)
       @set('type','attendee').save()
-    if (!ticket_type && !ticket_type.length)
+    if (!ticket_type || !ticket_type.length)
       ticket_type = '360'
 
     async.each [0..quantity-1], (i, cb) =>
