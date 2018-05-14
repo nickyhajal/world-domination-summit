@@ -127,7 +127,7 @@ const Field = {
 const Fields = {
   type: new GraphQLList(Type),
   args: {
-    year: { type: GraphQLInt },
+    year: { type: GraphQLString },
     active: { type: GraphQLString },
     ignored: { type: GraphQLString },
     type: { type: GraphQLString },
