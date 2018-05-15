@@ -96,7 +96,7 @@ routes = (app) ->
 				res.r.msg = 'You\'re not logged in!'
 				res.status(401)
 				next()
-				
+
 		upd: (req, res, next) ->
 			if req.me
 				post = _.pick req.query, Event::permittedAttributes
@@ -154,7 +154,7 @@ routes = (app) ->
 								req.me.getCapabilities()
 								.then ->
 									if req.me.hasCapability('schedule')
-										setTimeout -> 
+										setTimeout ->
 											rds.expire('events', 0)
 										, 1000
 										ev.set(post)
@@ -426,7 +426,7 @@ routes = (app) ->
 							finish()
 
 					finish = ->
-						setTimeout -> 
+						setTimeout ->
 							rds.expire('events', 0)
 							rds.expire('rsvps_'+user_id, 0)
 						, 1000
@@ -458,6 +458,7 @@ routes = (app) ->
 								if subName.length > 35
 									subName = subName.substr(0, 32)+'...'
 								subject = "See you at \""+subName+'"'
+								tk 'Send RSVP from Model'
 								req.me.sendEmail promo, subject, params
 						next()
 

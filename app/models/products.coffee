@@ -145,6 +145,7 @@ PRE =
 
 POST =
   academy: (transaction, meta) ->
+    tk 'Product: Academy'
     [Event, Events] = require('./events')
     dfr = Q.defer()
     event_id = transaction.get('meta')
@@ -165,10 +166,12 @@ POST =
           .fetch()
           .then (ev) ->
             ev.updateRsvpCount()
+            tk 'Academy Conf from Prod'
             ev.sendAcademyConfirmation(user_id)
     return dfr.promise
-  
+
   event: (transaction, meta) ->
+    tk 'Product: Event'
     [Event, Events] = require('./events')
     dfr = Q.defer()
     event_id = transaction.get('meta')
@@ -189,6 +192,7 @@ POST =
           .fetch()
           .then (ev) ->
             ev.updateRsvpCount()
+            tk 'RSVP Conf from Prod'
             ev.sendRsvpConfirmation(user_id)
     return dfr.promise
 

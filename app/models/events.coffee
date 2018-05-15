@@ -94,6 +94,7 @@ Event = Shelf.Model.extend
       subName = @get('what')
       if subName.length > 35
         subName = subName.substr(0, 32)+'...'
+      tk 'Send RSVP from Model'
       subject = "See you at \""+subName+'"'
       user.sendEmail promo, subject, params
   hosts: ->
@@ -114,7 +115,7 @@ Event = Shelf.Model.extend
 Events = Shelf.Collection.extend
   model: Event
   processAddresses: ->
-    Events.query (qb) -> 
+    Events.query (qb) ->
       qb.where('year', process.yr)
     .fetch()
     .then (rsp) ->
