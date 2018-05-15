@@ -443,7 +443,7 @@ routes = (app) ->
 								ev.set
 									num_free: num_free
 								.save()
-							if res.r.action is 'rsvp'
+							if !free_rsvp && res.r.action is 'rsvp'
 								promo = 'event_confirmation_'+req.me.get('ticket_type')
 								start = (ev.get('start')+'').split(' GMT')
 								start = moment(start[0])
@@ -458,7 +458,7 @@ routes = (app) ->
 								if subName.length > 35
 									subName = subName.substr(0, 32)+'...'
 								subject = "See you at \""+subName+'"'
-								tk 'Send RSVP from Model'
+								tk 'Send RSVP from Route'
 								req.me.sendEmail promo, subject, params
 						next()
 
