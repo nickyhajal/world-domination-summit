@@ -287,10 +287,18 @@ const Update = {
   type: Type,
   args: Args,
   resolve: async (root, args, req) => {
-    const { event_id } = args;
+    const { event_id, active, ignored } = args;
     const post = await getEventFromArgs(args);
     const { hosts } = args;
     const event = await Event.forge({ event_id }).fetch();
+    if (event.type === 'meetup') {
+      if (+ignored !== +event.ignored && +ignored) {
+        await event.reject();
+      }
+      if (+active !== +event.active && +active) {
+        await event.approve();
+      }
+    }
     await event.set(post).save();
     setTimeout(() => rds.expire('events', 0), 1000);
     if (hosts != null) {

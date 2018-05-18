@@ -23,14 +23,15 @@ routes = (app) ->
 				post = _.pick req.query, Event::permittedAttributes
 
 				# Parse Start Time
-				start = moment.utc(process.year+'-07-'+req.query.date+' '+req.query.hour+':'+req.query.minute+':00', 'YYYY-MM-DD HH:mm:ss')
+				month = '-0' + (if +date > 20 then '6' : '7') + '-'
+				start = moment.utc(process.year+month+req.query.date+' '+req.query.hour+':'+req.query.minute+':00', 'YYYY-MM-DD HH:mm:ss')
 				if req.query.hour is '12'
 					req.query.pm = Math.abs(req.query.pm - 12)
 				post.start = start.add('hours', req.query.pm).format('YYYY-MM-DD HH:mm:ss')
 
 				# Parse End Time if we have one
 				if req.query.end_hour? && req.query.end_minute?
-					end = moment.utc(process.year+'-07-'+req.query.date+' '+req.query.end_hour+':'+req.query.end_minute+':00', 'YYYY-MM-DD HH:mm:ss')
+					end = moment.utc(process.year+month+req.query.date+' '+req.query.end_hour+':'+req.query.end_minute+':00', 'YYYY-MM-DD HH:mm:ss')
 					if req.query.end_hour is '12'
 						req.query.end_pm = Math.abs(req.query.end_pm - 12)
 					post.end = end.add('hours', req.query.end_pm).format('YYYY-MM-DD HH:mm:ss')
@@ -100,14 +101,15 @@ routes = (app) ->
 		upd: (req, res, next) ->
 			if req.me
 				post = _.pick req.query, Event::permittedAttributes
-				start = moment.utc(process.year+'-07-'+req.query.date+' '+req.query.hour+':'+req.query.minute+':00', 'YYYY-MM-DD HH:mm:ss')
+				month = '-0' + (if +date > 20 then '6' : '7') + '-'
+				start = moment.utc(process.year+month+req.query.date+' '+req.query.hour+':'+req.query.minute+':00', 'YYYY-MM-DD HH:mm:ss')
 				if req.query.hour is '12'
 					req.query.pm = Math.abs(req.query.pm - 12)
 				post.start = start.add('hours', req.query.pm).format('YYYY-MM-DD HH:mm:ss')
 
 				# Parse End Time if we have one
 				if req.query.end_hour? && req.query.end_minute?
-					end = moment.utc(process.year+'-07-'+req.query.date+' '+req.query.end_hour+':'+req.query.end_minute+':00', 'YYYY-MM-DD HH:mm:ss')
+					end = moment.utc(process.year+month+req.query.date+' '+req.query.end_hour+':'+req.query.end_minute+':00', 'YYYY-MM-DD HH:mm:ss')
 					if req.query.end_hour is '12'
 						req.query.end_pm = Math.abs(req.query.end_pm - 12)
 					post.end = end.add('hours', req.query.end_pm).format('YYYY-MM-DD HH:mm:ss')
@@ -509,7 +511,7 @@ routes = (app) ->
 			next()
 
 		get_pdf: (req, res, next) ->
-			from = process.year+"-07-"+req.query.from_date+" "
+			from = process.year+"-06-"+req.query.from_date+" "
 			from_hour = req.query.from_hour
 			if req.query.from_pm == '12'
 				if req.query.from_hour != '12'
@@ -519,7 +521,7 @@ routes = (app) ->
 			if (''+from_hour).length == 1
 				from_hour = '0'+from_hour
 			from += from_hour+":"+req.query.from_minute+":00"
-			to = process.year+"-07-"+req.query.to_date+" "
+			to = process.year+"-06-"+req.query.to_date+" "
 			to_hour = req.query.to_hour
 			if req.query.to_pm == '12'
 				if req.query.to_hour != '12'

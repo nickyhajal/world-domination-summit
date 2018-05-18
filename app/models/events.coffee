@@ -1,5 +1,7 @@
 geocoder = require('geocoder')
 Q = require('q')
+redis = require("redis")
+rds = redis.createClient()
 async = require('async')
 moment = require('moment')
 
@@ -62,6 +64,42 @@ Event = Shelf.Model.extend
 
   list: ->
     process.year+ ' Academy: '+ @get('what').substr(0, 32)
+
+  reject: ->
+    dfr = Q.defer()
+    EventHost.forge({event_id: @get('event_id')})
+    .fetch()
+    .then (host) ->
+      User.forge({user_id: host.get('user_id')})
+      .fetch()
+      .then (host) ->
+        host.sendEmail('meetup-declined', 'Thanks for your meetup proposal!')
+        @set('ignored', 1)
+        @set('active', 0)
+        @save()
+        setTimeout ->
+          rds.expire('events', 0)
+        , 100
+        dfr.resolve(true)
+    return dfr.promise
+  
+  accept: (req, res, next) ->
+    dfr = Q.defer()
+    EventHost.forge({event_id: @get('event_id')})
+    .fetch()
+    .then (host) ->
+      User.forge({user_id: host.get('user_id')})
+      .fetch()
+      .then (host) ->
+        host.sendEmail('meetup-approved', 'Your meetup has been approved!')
+        @set('active', 1)
+        @set('ignored', 0)
+        @save()
+        setTimeout ->
+          rds.expire('events', 0)
+        , 100
+        dfr.resolve(true)
+    return dfr.promise
 
   sendAcademyConfirmation: (user_id) ->
     [User, Users] = require('./users')
