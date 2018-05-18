@@ -23,7 +23,7 @@ routes = (app) ->
 				post = _.pick req.query, Event::permittedAttributes
 
 				# Parse Start Time
-				month = '-0' + (if +req.query.date > 20 then '6' : '7') + '-'
+				month = '-0' + (if +req.query.date > 20 then '6' else '7') + '-'
 				start = moment.utc(process.year+month+req.query.date+' '+req.query.hour+':'+req.query.minute+':00', 'YYYY-MM-DD HH:mm:ss')
 				if req.query.hour is '12'
 					req.query.pm = Math.abs(req.query.pm - 12)
@@ -101,7 +101,7 @@ routes = (app) ->
 		upd: (req, res, next) ->
 			if req.me
 				post = _.pick req.query, Event::permittedAttributes
-				month = '-0' + (if +req.query.date > 20 then '6' : '7') + '-'
+				month = '-0' + (if +req.query.date > 20 then '6' else '7') + '-'
 				start = moment.utc(process.year+month+req.query.date+' '+req.query.hour+':'+req.query.minute+':00', 'YYYY-MM-DD HH:mm:ss')
 				if req.query.hour is '12'
 					req.query.pm = Math.abs(req.query.pm - 12)
