@@ -84,7 +84,7 @@ Event = Shelf.Model.extend
         dfr.resolve(true)
     return dfr.promise
   
-  accept: (req, res, next) ->
+  approve: (req, res, next) ->
     dfr = Q.defer()
     [EventHost, EventHosts] = require('./event_hosts')
     EventHost.forge({event_id: @get('event_id')})
