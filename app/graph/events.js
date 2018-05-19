@@ -293,10 +293,10 @@ const Update = {
     const event = await Event.forge({ event_id }).fetch();
     if (event.get('type') === 'meetup') {
       if (+ignored !== +event.get('ignored') && +ignored) {
-        await event.reject();
+        event.reject().then();
       }
       if (+active !== +event.get('active') && +active) {
-        await event.approve();
+        event.approve().then();
       }
     }
     await event.set(post).save();
