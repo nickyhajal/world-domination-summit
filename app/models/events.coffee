@@ -68,6 +68,7 @@ Event = Shelf.Model.extend
   reject: ->
     dfr = Q.defer()
     [EventHost, EventHosts] = require('./event_hosts')
+    [User, Users] = require('./users')
     EventHost.forge({event_id: @get('event_id')})
     .fetch()
     .then (host) ->
@@ -87,6 +88,7 @@ Event = Shelf.Model.extend
   approve: (req, res, next) ->
     dfr = Q.defer()
     [EventHost, EventHosts] = require('./event_hosts')
+    [User, Users] = require('./users')
     EventHost.forge({event_id: @get('event_id')})
     .fetch()
     .then (host) ->
