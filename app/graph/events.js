@@ -291,11 +291,11 @@ const Update = {
     const post = await getEventFromArgs(args);
     const { hosts } = args;
     const event = await Event.forge({ event_id }).fetch();
-    if (event.type === 'meetup') {
-      if (+ignored !== +event.ignored && +ignored) {
+    if (event.get('type') === 'meetup') {
+      if (+ignored !== +event.get('ignored') && +ignored) {
         await event.reject();
       }
-      if (+active !== +event.active && +active) {
+      if (+active !== +event.get('active') && +active) {
         await event.approve();
       }
     }
