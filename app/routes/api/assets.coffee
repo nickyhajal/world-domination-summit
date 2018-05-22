@@ -339,7 +339,10 @@ routes = (app) ->
 
 			events: (req) ->
 				dfr = Q.defer()
-				rds.get 'events', (err, events) ->
+				key = 'events'
+				if req.query.encoded
+					key += '_enc'
+				rds.get key, (err, events) ->
 
 					if events? and events and typeof JSON.parse(events) is 'object'
 						dfr.resolve(JSON.parse(events))
@@ -384,8 +387,8 @@ routes = (app) ->
 										cb()
 							, ->
 								dfr.resolve(evs)
-								rds.set 'events', JSON.stringify(evs), (err, rsp) ->
-									rds.expire 'events', 3000000
+								rds.set key, JSON.stringify(evs), (err, rsp) ->
+									rds.expire key, 3000000
 				return dfr.promise
 			signin_events: (req) ->
 				dfr = Q.defer()
