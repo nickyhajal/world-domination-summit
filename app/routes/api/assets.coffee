@@ -340,7 +340,7 @@ routes = (app) ->
 			events: (req) ->
 				dfr = Q.defer()
 				key = 'events'
-				if req.query.encoded
+				if req.query.encode
 					key += '_enc'
 				rds.get key, (err, events) ->
 
