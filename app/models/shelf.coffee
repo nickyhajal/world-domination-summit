@@ -2,14 +2,11 @@ Bookshelf = require('bookshelf')(process.knex);
 whn      = require('when')
 moment    = require('moment')
 _         = require('underscore')
-Validator = require('validator').Validator
-sanitize  = require('validator').sanitize
 S = require 'underscore.string'
 
 # Initializes a new Bookshelf instance, for reference elsewhere.
 Shelf = Bookshelf.ap = Bookshelf;
 Shelf.client = process.db.client
-Shelf.validator = new Validator();
 Shelf.Model = Shelf.Model.extend
   saveChanging: ->
     @before_save = @_previousAttributes
