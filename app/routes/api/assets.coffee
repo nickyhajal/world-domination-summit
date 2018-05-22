@@ -377,10 +377,9 @@ routes = (app) ->
 											hosts.push h
 										ev.set('hosts', hosts)
 										attrs = ev.attrs
-										if (req.query.encode) {
+										if req.query.encode)
 											attrs.descr = he.encode(attrs.descr)
 											attrs.who = he.encode(attrs.who)
-										}
 										evs.push _.omit(attrs, 'year', 'ignored', 'note', 'created_at', 'updated_at', 'end', 'active', 'outline')
 										cb()
 							, ->
