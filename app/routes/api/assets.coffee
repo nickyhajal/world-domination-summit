@@ -1,5 +1,6 @@
 _ = require('underscore')
 redis = require("redis")
+he = require('he')
 
 rds = redis.createClient()
 twitterAPI = require('node-twitter-api')
@@ -375,7 +376,12 @@ routes = (app) ->
 											h = _.pick host.attributes, ['first_name', 'last_name', 'user_id']
 											hosts.push h
 										ev.set('hosts', hosts)
-										evs.push _.omit(ev.attributes, 'year', 'ignored', 'note', 'created_at', 'updated_at', 'end', 'active', 'outline')
+										attrs = ev.attrs
+										if (req.query.encode) {
+											attrs.descr = he.encode(attrs.descr)
+											attrs.who = he.encode(attrs.who)
+										}
+										evs.push _.omit(attrs, 'year', 'ignored', 'note', 'created_at', 'updated_at', 'end', 'active', 'outline')
 										cb()
 							, ->
 								dfr.resolve(evs)
