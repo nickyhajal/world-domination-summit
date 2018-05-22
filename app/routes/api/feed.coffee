@@ -272,6 +272,7 @@ routes = (app) ->
 			# feeds.query('where', 'channel_type', '!=', 'meetup')
 
 			feeds.query('whereIn', 'restrict', include)
+			feeds.query('where', '>', '2017-09-01 00:00:00')
 
 			# Get a users feed
 			if channel_type is 'user'
