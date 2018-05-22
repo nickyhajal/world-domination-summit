@@ -376,7 +376,7 @@ routes = (app) ->
 											h = _.pick host.attributes, ['first_name', 'last_name', 'user_id']
 											hosts.push h
 										ev.set('hosts', hosts)
-										attrs = ev.attrs
+										attrs = ev.attributes
 										if req.query.encode
 											attrs.descr = he.encode(attrs.descr)
 											attrs.who = he.encode(attrs.who)
