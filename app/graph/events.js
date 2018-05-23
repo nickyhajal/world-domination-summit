@@ -269,7 +269,10 @@ const Add = {
     const post = await getEventFromArgs(args);
     const { hosts } = args;
     const event = await Event.forge(post).save();
-    setTimeout(() => rds.expire('events', 0), 1000);
+    setTimeout(() => {
+      rds.expire('events', 0);
+      rds.expire('events_enc', 0);
+    }, 1000);
     if (hosts != null) {
       const ids = hosts.split(',').map(id =>
         EventHost.forge({
@@ -300,7 +303,10 @@ const Update = {
       }
     }
     await event.set(post).save();
-    setTimeout(() => rds.expire('events', 0), 1000);
+    setTimeout(() => {
+      rds.expire('events', 0);
+      rds.expire('events_enc', 0);
+    }, 1000);
     if (hosts != null) {
       await process.knex.raw(
         `DELETE FROM event_hosts WHERE event_id ='${event_id}'`
