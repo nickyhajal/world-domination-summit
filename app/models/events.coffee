@@ -81,6 +81,7 @@ Event = Shelf.Model.extend
         @save()
         setTimeout ->
           rds.expire('events', 0)
+          rds.expire('events_enc', 0)
         , 100
         dfr.resolve(true)
     return dfr.promise
@@ -101,6 +102,7 @@ Event = Shelf.Model.extend
         @save()
         setTimeout ->
           rds.expire('events', 0)
+          rds.expire('events_enc', 0)
         , 100
         dfr.resolve(true)
     return dfr.promise
