@@ -2,6 +2,8 @@ Shelf = require('./shelf')
 _ = require('underscore')
 Q = require('q')
 chance = require('chance')()
+redis = require("redis")
+rds = redis.createClient()
 async = require('async')
 
 [Transfer, Transfers] = require('./transfers')
@@ -172,6 +174,7 @@ POST =
 
   event: (transaction, meta) ->
     tk 'Product: Event'
+    [User, Users] = require('./users')
     [Event, Events] = require('./events')
     dfr = Q.defer()
     event_id = transaction.get('meta')
@@ -194,6 +197,7 @@ POST =
             ev.updateRsvpCount()
             tk 'RSVP Conf from Prod'
             ev.sendRsvpConfirmation(user_id)
+            rds.expire('rsvps_'+user_id, 0)
     return dfr.promise
 
   wds17test: (transaction, meta) ->
