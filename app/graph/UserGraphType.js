@@ -171,7 +171,7 @@ const TransferType = new GraphQLObjectType({
           const ticket = await Ticket.forge({ user_id: row.to_id, year: row.year }).fetch();
           return ticket.attributes;
         }
-      }
+      },
       created_at: { type: GraphQLString },
     };
   },
