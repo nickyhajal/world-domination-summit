@@ -13,6 +13,8 @@ const [Transfer, Transfers] = require('../models/transfers');
 const [UserNote, UserNotes] = require('../models/user_notes');
 const TransactionGraph = require('./transactions');
 const UserNoteGraphType = require('./UserNoteGraphType');
+const TicketGraphType = require('./TicketGraphType');
+const tickets = require('../models/tickets');
 
 const UserType = new GraphQLObjectType({
   name: 'User',
@@ -163,6 +165,13 @@ const TransferType = new GraphQLObjectType({
           return user.attributes;
         },
       },
+      ticket: {
+        type: TicketGraphType
+        resolve: async row => {
+          const ticket = await Ticket.forge({ user_id: row.to_id, year: row.year }).fetch();
+          return ticket.attributes;
+        }
+      }
       created_at: { type: GraphQLString },
     };
   },

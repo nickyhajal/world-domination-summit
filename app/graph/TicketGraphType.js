@@ -23,6 +23,7 @@ module.exports = new GraphQLObjectType({
       year: { type: GraphQLInt },
       created_at: { type: GraphQLString },
       updated_at: { type: GraphQLString },
+      transfer_from: { type: GraphQLString },
       user: {
         type: UserGraphType,
         resolve: async row => {
