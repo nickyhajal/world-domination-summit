@@ -141,7 +141,7 @@ const UserType = new GraphQLObjectType({
 
           // console.log(rsvps);
           return rsvps.map(
-            v => (v.attributes !== undefined ? v.attributes : {})
+            v => (v.attributes !== undefined && v ? v.attributes : {})
           );
         },
       },
@@ -153,7 +153,9 @@ const UserType = new GraphQLObjectType({
               qb.where('to_id', row.user_id);
             })
             .fetch();
-          return ts.map(v => (v.attributes !== undefined ? v.attributes : {}));
+          return ts.map(
+            v => (v.attributes !== undefined && v ? v.attributes : {})
+          );
         },
       },
       transfers_from: {
@@ -164,7 +166,9 @@ const UserType = new GraphQLObjectType({
               qb.where('user_id', row.user_id);
             })
             .fetch();
-          return ts.map(v => (v.attributes !== undefined ? v.attributes : {}));
+          return ts.map(
+            v => (v.attributes !== undefined && v ? v.attributes : {})
+          );
         },
       },
       tickets: {
@@ -176,7 +180,9 @@ const UserType = new GraphQLObjectType({
               qb.orWhere('purchaser_id', row.user_id);
             })
             .fetch();
-          return ts.map(v => (v.attributes !== undefined ? v.attributes : {}));
+          return ts.map(
+            v => (v.attributes !== undefined && v ? v.attributes : {})
+          );
         },
       },
       admin_notes: {
