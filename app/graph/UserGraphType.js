@@ -16,7 +16,7 @@ const TransactionGraph = require('./transactions');
 const UserNoteGraphType = require('./UserNoteGraphType');
 const TicketGraphType = require('./TicketGraphType');
 const tickets = require('../models/tickets');
-const events = require('./events');
+const EventGraphType = require('./EventGraphType');
 
 const RsvpType = new GraphQLObjectType({
   name: 'RSVP',
@@ -129,7 +129,7 @@ const UserType = new GraphQLObjectType({
         },
       },
       rsvps: {
-        type: new GraphQLList(events.Type),
+        type: new GraphQLList(EventGraphType),
         resolve: async row => {
           const rsvps = await EventRsvps.forge()
             .query()
