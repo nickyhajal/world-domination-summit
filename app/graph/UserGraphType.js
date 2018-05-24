@@ -9,11 +9,12 @@ const {
 const [User, Users] = require('../models/users');
 const [Ticket, Tickets] = require('../models/tickets');
 const [Transaction, Transactions] = require('../models/transactions');
+const [Transfer, Transfers] = require('../models/transfers');
 const [UserNote, UserNotes] = require('../models/user_notes');
 const TransactionGraph = require('./transactions');
 const UserNoteGraphType = require('./UserNoteGraphType');
 
-module.exports = new GraphQLObjectType({
+const UserType = new GraphQLObjectType({
   name: 'User',
   description: 'User',
   fields: () => {
@@ -83,6 +84,28 @@ module.exports = new GraphQLObjectType({
           return ts.map(v => (v.attributes !== undefined ? v.attributes : {}));
         },
       },
+      transfers_to: {
+        type: new GraphQLList(TransferType),
+        resolve: async row => {
+          const ts = await Transfers.forge()
+            .query(qb => {
+              qb.where('to_id', row.user_id);
+            })
+            .fetch();
+          return ts.map(v => (v.attributes !== undefined ? v.attributes : {}));
+        },
+      },
+      transfers_from: {
+        type: new GraphQLList(TransferType),
+        resolve: async row => {
+          const ts = await Transfers.forge()
+            .query(qb => {
+              qb.where('user_id', row.user_id);
+            })
+            .fetch();
+          return ts.map(v => (v.attributes !== undefined ? v.attributes : {}));
+        },
+      },
       tickets: {
         type: new GraphQLList(TicketGraphType),
         resolve: async row => {
@@ -112,3 +135,37 @@ module.exports = new GraphQLObjectType({
     };
   },
 });
+
+const TransferType = new GraphQLObjectType({
+  name: 'Transfer',
+  description: 'Transfer',
+  fields: () => {
+    const TransactionGraphType = require('./TransactionGraphType');
+    const TicketGraphType = require('./TicketGraphType');
+    return {
+      transfer_id: { type: GraphQLString },
+      user_id: { type: GraphQLString },
+      to_id: { type: GraphQLString },
+      new_attendee: { type: GraphQLString },
+      year: { type: GraphQLString },
+      status: { type: GraphQLString },
+      from: {
+        type: UserType,
+        resolve: async row => {
+          const user = await User.forge({ user_id: row.from_id });
+          return user.attributes;
+        },
+      },
+      to: {
+        type: UserType,
+        resolve: async row => {
+          const user = await User.forge({ user_id: row.to_id });
+          return user.attributes;
+        },
+      },
+      created_at: { type: GraphQLString },
+    };
+  },
+});
+
+module.exports = UserType;

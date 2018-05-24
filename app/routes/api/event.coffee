@@ -49,6 +49,7 @@ routes = (app) ->
 					post.year = process.yr
 					setTimeout ->
 						rds.expire('events', 0)
+						rds.expire('events_enc', 0)
 					, 1000
 
 					Event.forge(post)
@@ -142,6 +143,7 @@ routes = (app) ->
 											, () ->
 												setTimeout ->
 													rds.expire('events', 0)
+													rds.expire('events_enc', 0)
 												, 1000
 												next()
 							else
@@ -158,6 +160,7 @@ routes = (app) ->
 									if req.me.hasCapability('schedule')
 										setTimeout ->
 											rds.expire('events', 0)
+											rds.expire('events_enc', 0)
 										, 1000
 										ev.set(post)
 										.save()
@@ -170,6 +173,7 @@ routes = (app) ->
 							else
 								setTimeout ->
 									rds.expire('events', 0)
+									rds.expire('events_enc', 0)
 								, 1000
 								ev.set(post)
 								.save()
@@ -308,6 +312,7 @@ routes = (app) ->
 							model.save()
 							setTimeout ->
 								rds.expire('events', 0)
+								rds.expire('events_enc', 0)
 							, 1000
 							next()
 			else
@@ -331,6 +336,7 @@ routes = (app) ->
 							model.save()
 							setTimeout ->
 								rds.expire('events', 0)
+								rds.expire('events_enc', 0)
 							, 1000
 							next()
 				, (err) ->
@@ -430,6 +436,7 @@ routes = (app) ->
 					finish = ->
 						setTimeout ->
 							rds.expire('events', 0)
+							rds.expire('events_enc', 0)
 							rds.expire('rsvps_'+user_id, 0)
 						, 1000
 						Event.forge
@@ -476,6 +483,7 @@ routes = (app) ->
 					res.r.success = true
 					setTimeout ->
 						rds.expire('events', 0)
+						rds.expire('events_enc', 0)
 					, 1000
 					next()
 				, true
