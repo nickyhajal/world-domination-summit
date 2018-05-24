@@ -153,7 +153,7 @@ const TransferType = new GraphQLObjectType({
         type: UserType,
         resolve: async row => {
           console.log(row.user_id);
-          const user = await User.forge({ user_id: row.user_id });
+          const user = await User.forge({ user_id: row.user_id }).fetch();
           console.log(user);
           console.log(user.attributes);
           return user.attributes;
@@ -163,7 +163,7 @@ const TransferType = new GraphQLObjectType({
         type: UserType,
         resolve: async row => {
           console.log(row);
-          const user = await User.forge({ user_id: row.to_id });
+          const user = await User.forge({ user_id: row.to_id }).fetch();
           console.log(user);
           return user.attributes;
         },
