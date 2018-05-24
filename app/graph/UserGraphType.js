@@ -138,6 +138,7 @@ const UserType = new GraphQLObjectType({
               qb.leftJoin('events', 'events.event_id', 'event_rsvps.event_id');
             })
             .fetch();
+          console.log(rsvps);
           return rsvps.map(
             v => (v.attributes !== undefined ? v.attributes : {})
           );
