@@ -135,7 +135,8 @@ const UserType = new GraphQLObjectType({
             .query()
             .where('user_id', row.user_id)
             .where('year', process.yr)
-            .leftJoin('events', 'events.event_id', 'event_rsvps.event_id');
+            .leftJoin('events', 'events.event_id', 'event_rsvps.event_id')
+            .fetch();
           return rsvps.map(
             v => (v.attributes !== undefined ? v.attributes : {})
           );
