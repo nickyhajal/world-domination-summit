@@ -197,7 +197,7 @@ const TransferType = new GraphQLObjectType({
             user_id: row.to_id,
             year: row.year,
           }).fetch();
-          return user !== undefined && user ? ticket.attributes : {};
+          return ticket !== undefined && ticket ? ticket.attributes : {};
         },
       },
       created_at: { type: GraphQLString },
