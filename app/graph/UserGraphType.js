@@ -11,10 +11,52 @@ const [Ticket, Tickets] = require('../models/tickets');
 const [Transaction, Transactions] = require('../models/transactions');
 const [Transfer, Transfers] = require('../models/transfers');
 const [UserNote, UserNotes] = require('../models/user_notes');
+const [EventRsvp, EventRsvps] = require('../models/event_rsvps');
 const TransactionGraph = require('./transactions');
 const UserNoteGraphType = require('./UserNoteGraphType');
 const TicketGraphType = require('./TicketGraphType');
 const tickets = require('../models/tickets');
+const events = require('./events');
+
+const RsvpType = new GraphQLObjectType({
+  name: 'RSVP',
+  description: 'RSVP',
+  fields: () => {
+    return {
+      transfer_id: { type: GraphQLString },
+      user_id: { type: GraphQLString },
+      to_id: { type: GraphQLString },
+      new_attendee: { type: GraphQLString },
+      year: { type: GraphQLString },
+      status: { type: GraphQLString },
+      from: {
+        type: UserType,
+        resolve: async row => {
+          const user = await User.forge({ user_id: row.user_id }).fetch();
+          return user.attributes;
+        },
+      },
+      to: {
+        type: UserType,
+        resolve: async row => {
+          const user = await User.forge({ user_id: row.to_id }).fetch();
+          return user.attributes;
+        },
+      },
+      ticket: {
+        type: TicketGraphType,
+        resolve: async row => {
+          const ticket = await Ticket.forge({
+            user_id: row.to_id,
+            year: row.year,
+          }).fetch();
+          return ticket.attributes;
+        },
+      },
+      created_at: { type: GraphQLString },
+    };
+  },
+});
 
 const UserType = new GraphQLObjectType({
   name: 'User',
@@ -84,6 +126,19 @@ const UserType = new GraphQLObjectType({
             })
             .fetch();
           return ts.map(v => (v.attributes !== undefined ? v.attributes : {}));
+        },
+      },
+      rsvps: {
+        type: new GraphQLList(events.type),
+        resolve: async row => {
+          const rsvps = await EventRsvps.forge()
+            .query()
+            .where('user_id', row.user_id)
+            .where('year', process.yr)
+            .leftJoin('events', 'events.event_id', 'event_rsvps.event_id');
+          return rsvps.map(
+            v => (v.attributes !== undefined ? v.attributes : {})
+          );
         },
       },
       transfers_to: {
