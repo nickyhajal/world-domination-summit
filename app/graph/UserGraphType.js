@@ -141,10 +141,7 @@ const UserType = new GraphQLObjectType({
 
           // console.log(rsvps);
           return rsvps.map(
-            v => (
-              console.log(v.attributes),
-              v.attributes !== undefined ? v.attributes : {}
-            )
+            v => (v.attributes !== undefined ? v.attributes : {})
           );
         },
       },
