@@ -16,7 +16,6 @@ const TransactionGraph = require('./transactions');
 const UserNoteGraphType = require('./UserNoteGraphType');
 const TicketGraphType = require('./TicketGraphType');
 const tickets = require('../models/tickets');
-const EventGraphType = require('./EventGraphType');
 
 const RsvpType = new GraphQLObjectType({
   name: 'RSVP',
@@ -63,6 +62,7 @@ const UserType = new GraphQLObjectType({
   description: 'User',
   fields: () => {
     const TransactionGraphType = require('./TransactionGraphType');
+    const EventGraphType = require('./EventGraphType');
     const TicketGraphType = require('./TicketGraphType');
     return {
       user_id: { type: GraphQLString },
@@ -128,19 +128,19 @@ const UserType = new GraphQLObjectType({
           return ts.map(v => (v.attributes !== undefined ? v.attributes : {}));
         },
       },
-      // rsvps: {
-      //   type: new GraphQLList(EventGraphType),
-      //   resolve: async row => {
-      //     const rsvps = await EventRsvps.forge()
-      //       .query()
-      //       .where('user_id', row.user_id)
-      //       .where('year', process.yr)
-      //       .leftJoin('events', 'events.event_id', 'event_rsvps.event_id');
-      //     return rsvps.map(
-      //       v => (v.attributes !== undefined ? v.attributes : {})
-      //     );
-      //   },
-      // },
+      rsvps: {
+        type: new GraphQLList(EventGraphType),
+        resolve: async row => {
+          const rsvps = await EventRsvps.forge()
+            .query()
+            .where('user_id', row.user_id)
+            .where('year', process.yr)
+            .leftJoin('events', 'events.event_id', 'event_rsvps.event_id');
+          return rsvps.map(
+            v => (v.attributes !== undefined ? v.attributes : {})
+          );
+        },
+      },
       transfers_to: {
         type: new GraphQLList(TransferType),
         resolve: async row => {
