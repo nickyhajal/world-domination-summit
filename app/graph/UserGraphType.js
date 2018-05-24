@@ -132,10 +132,11 @@ const UserType = new GraphQLObjectType({
         type: new GraphQLList(EventGraphType),
         resolve: async row => {
           const rsvps = await EventRsvps.forge()
-            .query()
-            .where('user_id', row.user_id)
-            .where('year', process.yr)
-            .leftJoin('events', 'events.event_id', 'event_rsvps.event_id')
+            .query(qb => {
+              qb.where('user_id', row.user_id);
+              qb.where('year', process.yr);
+              qb.leftJoin('events', 'events.event_id', 'event_rsvps.event_id');
+            })
             .fetch();
           return rsvps.map(
             v => (v.attributes !== undefined ? v.attributes : {})
