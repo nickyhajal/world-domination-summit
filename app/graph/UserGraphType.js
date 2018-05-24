@@ -17,51 +17,6 @@ const UserNoteGraphType = require('./UserNoteGraphType');
 const TicketGraphType = require('./TicketGraphType');
 const tickets = require('../models/tickets');
 
-const RsvpType = new GraphQLObjectType({
-  name: 'RSVP',
-  description: 'RSVP',
-  fields: () => {
-    return {
-      transfer_id: { type: GraphQLString },
-      user_id: { type: GraphQLString },
-      to_id: { type: GraphQLString },
-      new_attendee: { type: GraphQLString },
-      year: { type: GraphQLString },
-      status: { type: GraphQLString },
-      from: {
-        type: UserType,
-        resolve: async row => {
-          const user = await User.forge({ user_id: row.user_id }).fetch();
-          console.log('>> from ');
-          console.log(user);
-          return user ? user.attributes : {};
-        },
-      },
-      to: {
-        type: UserType,
-        resolve: async row => {
-          const user = await User.forge({ user_id: row.to_id }).fetch();
-          console.log('>> to ');
-          console.log(user);
-          return user ? user.attributes : {};
-        },
-      },
-      ticket: {
-        type: TicketGraphType,
-        resolve: async row => {
-          const ticket = await Ticket.forge({
-            user_id: row.to_id,
-            year: row.year,
-          }).fetch();
-          console.log('>> ticket ');
-          return ticket ? ticket.attributes : {};
-        },
-      },
-      created_at: { type: GraphQLString },
-    };
-  },
-});
-
 const UserType = new GraphQLObjectType({
   name: 'User',
   description: 'User',
