@@ -32,6 +32,8 @@ const RsvpType = new GraphQLObjectType({
         type: UserType,
         resolve: async row => {
           const user = await User.forge({ user_id: row.user_id }).fetch();
+          console.log('>> from ');
+          console.log(user);
           return user ? user.attributes : {};
         },
       },
@@ -39,6 +41,8 @@ const RsvpType = new GraphQLObjectType({
         type: UserType,
         resolve: async row => {
           const user = await User.forge({ user_id: row.to_id }).fetch();
+          console.log('>> to ');
+          console.log(user);
           return user ? user.attributes : {};
         },
       },
@@ -49,6 +53,7 @@ const RsvpType = new GraphQLObjectType({
             user_id: row.to_id,
             year: row.year,
           }).fetch();
+          console.log('>> ticket ');
           return ticket ? ticket.attributes : {};
         },
       },
