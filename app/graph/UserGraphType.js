@@ -135,14 +135,14 @@ const UserType = new GraphQLObjectType({
             qb.where('user_id', row.user_id);
             qb.where('year', process.yr);
             qb.leftJoin('events', 'events.event_id', 'event_rsvps.event_id');
-            console.log(qb.toSQL());
           });
-          const rsvps = query.fetch();
+          const rsvps = await query.fetch();
 
-          console.log(rsvps);
+          // console.log(rsvps);
           return rsvps.map(
             v => (
-              console.log(v), v.attributes !== undefined ? v.attributes : {}
+              console.log(v.attributes),
+              v.attributes !== undefined ? v.attributes : {}
             )
           );
         },
