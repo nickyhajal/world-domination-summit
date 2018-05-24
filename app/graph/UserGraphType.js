@@ -136,7 +136,7 @@ const UserType = new GraphQLObjectType({
             qb.where('year', process.yr);
             // qb.leftJoin('events', 'events.event_id', 'event_rsvps.event_id');
           });
-          console.log(query.toSql());
+          console.log(query.toSQL());
           const rsvps = query.fetch();
 
           console.log(rsvps);
