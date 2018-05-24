@@ -180,14 +180,14 @@ const TransferType = new GraphQLObjectType({
         type: UserType,
         resolve: async row => {
           const user = await User.forge({ user_id: row.user_id }).fetch();
-          return user ? user.attributes : {};
+          return user !== undefined && user ? user.attributes : {};
         },
       },
       to: {
         type: UserType,
         resolve: async row => {
           const user = await User.forge({ user_id: row.to_id }).fetch();
-          return user ? user.attributes : {};
+          return user !== undefined && user ? user.attributes : {};
         },
       },
       ticket: {
@@ -197,7 +197,7 @@ const TransferType = new GraphQLObjectType({
             user_id: row.to_id,
             year: row.year,
           }).fetch();
-          return user ? ticket.attributes : {};
+          return user !== undefined && user ? ticket.attributes : {};
         },
       },
       created_at: { type: GraphQLString },
