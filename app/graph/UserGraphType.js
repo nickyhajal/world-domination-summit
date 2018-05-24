@@ -32,14 +32,14 @@ const RsvpType = new GraphQLObjectType({
         type: UserType,
         resolve: async row => {
           const user = await User.forge({ user_id: row.user_id }).fetch();
-          return user.attributes;
+          return user ? user.attributes : {};
         },
       },
       to: {
         type: UserType,
         resolve: async row => {
           const user = await User.forge({ user_id: row.to_id }).fetch();
-          return user.attributes;
+          return user ? user.attributes : {};
         },
       },
       ticket: {
