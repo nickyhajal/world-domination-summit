@@ -166,11 +166,14 @@ const TransferType = new GraphQLObjectType({
         },
       },
       ticket: {
-        type: TicketGraphType
+        type: TicketGraphType,
         resolve: async row => {
-          const ticket = await Ticket.forge({ user_id: row.to_id, year: row.year }).fetch();
+          const ticket = await Ticket.forge({
+            user_id: row.to_id,
+            year: row.year,
+          }).fetch();
           return ticket.attributes;
-        }
+        },
       },
       created_at: { type: GraphQLString },
     };
