@@ -132,6 +132,7 @@ const UserType = new GraphQLObjectType({
         type: new GraphQLList(EventGraphType),
         resolve: async row => {
           const query = EventRsvps.forge().query(qb => {
+            qb.select('*');
             qb.where('user_id', row.user_id);
             qb.where('year', process.yr);
             qb.leftJoin('events', 'events.event_id', 'event_rsvps.event_id');
