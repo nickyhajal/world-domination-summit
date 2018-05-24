@@ -129,7 +129,7 @@ const UserType = new GraphQLObjectType({
         },
       },
       rsvps: {
-        type: new GraphQLList(events.Type),
+        type: new GraphQLList(EventGraphType),
         resolve: async row => {
           const rsvps = await EventRsvps.forge()
             .query()
