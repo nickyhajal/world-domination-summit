@@ -49,7 +49,7 @@ const RsvpType = new GraphQLObjectType({
             user_id: row.to_id,
             year: row.year,
           }).fetch();
-          return ticket.attributes;
+          return ticket ? ticket.attributes : {};
         },
       },
       created_at: { type: GraphQLString },
