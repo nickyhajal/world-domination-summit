@@ -152,9 +152,10 @@ const TransferType = new GraphQLObjectType({
       from: {
         type: UserType,
         resolve: async row => {
-          console.log(row);
+          console.log(row.user_id);
           const user = await User.forge({ user_id: row.user_id });
           console.log(user);
+          console.log(user.attributes);
           return user.attributes;
         },
       },
