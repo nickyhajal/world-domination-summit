@@ -81,7 +81,9 @@ const RsvpAdd = {
       user_id: args.user_id,
       event_id: args.event_id,
     }).fetch();
+    console.log(existing);
     if (!existing) {
+      console.log('create rsvp');
       const rsvp = await EventRsvp.forge({
         user_id: args.user_id,
         event_id: args.event_id,
@@ -102,7 +104,9 @@ const RsvpDelete = {
       user_id: args.user_id,
       event_id: args.event_id,
     }).fetch();
-    if (!existing) {
+    console.log(existing);
+    if (existing) {
+      console;
       await existing.delete();
     }
     return {};
