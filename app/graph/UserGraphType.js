@@ -77,6 +77,17 @@ const UserType = new GraphQLObjectType({
       size: { type: GraphQLString },
       created_at: { type: GraphQLString },
       updated_at: { type: GraphQLString },
+      emails: {
+        type: new GraphQLList(EmailType),
+        resolve: async row => {
+          const [Email, Emails] = require('../models/emails');
+          const emails = await Emails.forge().query(qb => {
+            qb.where('user_id', row.get('user_id'));
+            qb.orderBy('create_at', 'desc');
+          });
+          return emails ? emails : [];
+        },
+      },
       transactions: {
         type: new GraphQLList(TransactionGraphType),
         resolve: async row => {
@@ -159,6 +170,21 @@ const UserType = new GraphQLObjectType({
           );
         },
       },
+    };
+  },
+});
+
+const EmailType = new GraphQLObjectType({
+  name: 'Email',
+  description: 'Email',
+  fields: () => {
+    return {
+      email_id: { type: GraphQLString },
+      user_id: { type: GraphQLString },
+      promo: { type: GraphQLString },
+      data: { type: GraphQLString },
+      subject: { type: GraphQLString },
+      promo: { type: GraphQLString },
     };
   },
 });
