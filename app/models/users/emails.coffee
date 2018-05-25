@@ -16,7 +16,7 @@ emails =
       hash: @get('hash')
     params = _.defaults user_params, params
     mailer.send(promo, subject, @get('email'), params)
-    .then (err, rsp) ->
+    .then (err, rsp) =>
       log ={promo, subject, user_id: @get('user_id'), data: JSON.stringify(params)} 
       if resend
         log.resent_from = resend
