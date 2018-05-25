@@ -188,6 +188,8 @@ const EmailType = new GraphQLObjectType({
       promo: { type: GraphQLString },
       data: { type: GraphQLString },
       subject: { type: GraphQLString },
+      created_at: { type: GraphQLString },
+      resent_from: { type: GraphQLString },
       promo: { type: GraphQLString },
     };
   },
