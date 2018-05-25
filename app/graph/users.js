@@ -62,7 +62,6 @@ const Add = {
       email: args.email,
     }).fetch();
     if (existing) {
-      console.log('EXISTING');
       return Object.assign({}, existing.attributes, { existing: true });
     }
     const row = await User.forge(args).save();
@@ -105,6 +104,22 @@ const RsvpDelete = {
     if (existing) {
       console.log(existing);
       await existing.destroy();
+    }
+    return {};
+  },
+};
+const ResendEmail = {
+  type: Type,
+  args: {
+    email_id: { type: GraphQLString },
+  },
+  resolve: async (obj, args) => {
+    const [Email, Emails] = require('../models/emails');
+    const email = await EventRsvp.forge({
+      email_id: args.email_id,
+    }).fetch();
+    if (email) {
+      await email.resend();
     }
     return {};
   },
@@ -194,6 +209,7 @@ module.exports = {
   Add,
   RsvpAdd,
   RsvpDelete,
+  ResendEmail,
   Update,
   GiveTicket,
   Fields,
