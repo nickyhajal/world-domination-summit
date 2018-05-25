@@ -69,6 +69,42 @@ const Add = {
     return row.attributes;
   },
 };
+const RsvpAdd = {
+  type: Type,
+  args: {
+    user_id: { type: GraphQLString },
+    event_id: { type: GraphQLString },
+  },
+  resolve: async (obj, args) => {
+    const [EventRsvp, EventRsvps] = require('../models/tickets');
+    const existing = await EventRsvp.forge({
+      user_id: args.user_id,
+      event_id: args.event_id,
+    }).fetch();
+    if (!existing) {
+      await existing.save();
+    }
+    return {};
+  },
+};
+const RsvpDelete = {
+  type: Type,
+  args: {
+    user_id: { type: GraphQLString },
+    event_id: { type: GraphQLString },
+  },
+  resolve: async (obj, args) => {
+    const [EventRsvp, EventRsvps] = require('../models/tickets');
+    const existing = await EventRsvp.forge({
+      user_id: args.user_id,
+      event_id: args.event_id,
+    }).fetch();
+    if (!existing) {
+      await existing.delete();
+    }
+    return {};
+  },
+};
 const Update = {
   type: Type,
   args: {
@@ -152,6 +188,8 @@ module.exports = {
   Field,
   Search,
   Add,
+  RsvpAdd,
+  RsvpDelete,
   Update,
   GiveTicket,
   Fields,

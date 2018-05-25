@@ -87,6 +87,7 @@ const Type = new GraphQLObjectType({
           qb.select('*');
           qb.where('event_id', row.event_id);
           qb.leftJoin('users', 'users.user_id', 'event_rsvps.user_id');
+          qb.orderBy('created_at', 'DESC');
         });
         const rsvps = await query.fetch();
 
