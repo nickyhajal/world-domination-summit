@@ -82,7 +82,10 @@ const RsvpAdd = {
       event_id: args.event_id,
     }).fetch();
     if (!existing) {
-      await existing.save();
+      const rsvp = await EventRsvp.forge({
+        user_id: args.user_id,
+        event_id: args.event_id,
+      }).save();
     }
     return {};
   },
