@@ -1,11 +1,12 @@
 Q = require('q')
 request = require('request')
 _ = require('underscore')
+[Email, Emails] = require('../emails');
 
 ##
 
 emails =
-  sendEmail: (promo, subject, params = {}) ->
+  sendEmail: (promo, subject, params = {}, resend = false) ->
     mailer = require('../mailer')
     user_params =
       first_name: @get('first_name')
@@ -16,6 +17,10 @@ emails =
     params = _.defaults user_params, params
     mailer.send(promo, subject, @get('email'), params)
     .then (err, rsp) ->
+      log ={promo, subject, user_id: @get('user_id'), data: JSON.stringify(params)} 
+      if resend
+        log.resent_from = resend
+      Email.forge(log).save().then()
 
   syncEmail: ->
     if @get('attending'+process.yr) is '1'
