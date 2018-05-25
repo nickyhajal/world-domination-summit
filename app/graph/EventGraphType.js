@@ -15,6 +15,7 @@ const {
 const [User, Users] = require('../models/users');
 const [Event, Events] = require('../models/events');
 const [EventHost, EventHosts] = require('../models/event_hosts');
+const [EventRsvp, EventRsvps] = require('../models/event_rsvps');
 const UserGraph = require('./users');
 const Type = new GraphQLObjectType({
   name: 'Event',
@@ -79,6 +80,22 @@ const Type = new GraphQLObjectType({
     num_free: { type: GraphQLInt },
     created_at: { type: GraphQLString },
     updated_at: { type: GraphQLString },
+    rsvps: {
+      type: new GraphQLList(UserGraph.Type),
+      resolve: async root => {
+        const query = EventRsvps.forge().query(qb => {
+          qb.select('*');
+          qb.where('event_id', row.event_id);
+          qb.leftJoin('users', 'users.user_id', 'event_rsvps.user_id');
+        });
+        const rsvps = await query.fetch();
+
+        // console.log(rsvps);
+        return rsvps.map(
+          v => (v.attributes !== undefined && v ? v.attributes : {})
+        );
+      },
+    },
     hosts: {
       type: new GraphQLList(UserGraph.Type),
       description: 'Event Host',
