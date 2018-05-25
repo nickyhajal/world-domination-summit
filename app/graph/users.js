@@ -104,7 +104,7 @@ const RsvpDelete = {
     }).fetch();
     if (existing) {
       console.log(existing);
-      await existing.delete();
+      await existing.destroy();
     }
     return {};
   },
