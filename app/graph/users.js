@@ -115,7 +115,7 @@ const ResendEmail = {
   },
   resolve: async (obj, args) => {
     const [Email, Emails] = require('../models/emails');
-    const email = await EventRsvp.forge({
+    const email = await Email.forge({
       email_id: args.email_id,
     }).fetch();
     if (email) {
