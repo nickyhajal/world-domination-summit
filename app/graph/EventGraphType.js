@@ -82,7 +82,7 @@ const Type = new GraphQLObjectType({
     updated_at: { type: GraphQLString },
     rsvps: {
       type: new GraphQLList(UserGraph.Type),
-      resolve: async root => {
+      resolve: async row => {
         const query = EventRsvps.forge().query(qb => {
           qb.select('*');
           qb.where('event_id', row.event_id);
