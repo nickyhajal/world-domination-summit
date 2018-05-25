@@ -76,7 +76,7 @@ const RsvpAdd = {
     event_id: { type: GraphQLString },
   },
   resolve: async (obj, args) => {
-    const [EventRsvp, EventRsvps] = require('../models/tickets');
+    const [EventRsvp, EventRsvps] = require('../models/event_rsvps');
     const existing = await EventRsvp.forge({
       user_id: args.user_id,
       event_id: args.event_id,
