@@ -81,9 +81,7 @@ const RsvpAdd = {
       user_id: args.user_id,
       event_id: args.event_id,
     }).fetch();
-    console.log(existing);
     if (!existing) {
-      console.log('create rsvp');
       const rsvp = await EventRsvp.forge({
         user_id: args.user_id,
         event_id: args.event_id,
@@ -99,14 +97,13 @@ const RsvpDelete = {
     event_id: { type: GraphQLString },
   },
   resolve: async (obj, args) => {
-    const [EventRsvp, EventRsvps] = require('../models/tickets');
+    const [EventRsvp, EventRsvps] = require('../models/event_rsvps');
     const existing = await EventRsvp.forge({
       user_id: args.user_id,
       event_id: args.event_id,
     }).fetch();
-    console.log(existing);
     if (existing) {
-      console;
+      console.log(existing);
       await existing.delete();
     }
     return {};
