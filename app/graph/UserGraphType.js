@@ -82,7 +82,7 @@ const UserType = new GraphQLObjectType({
         resolve: async row => {
           const [Email, Emails] = require('../models/emails');
           const emails = await Emails.forge().query(qb => {
-            qb.where('user_id', row.get('user_id'));
+            qb.where('user_id', row.user_id);
             qb.orderBy('create_at', 'desc');
           });
           return emails ? emails : [];
