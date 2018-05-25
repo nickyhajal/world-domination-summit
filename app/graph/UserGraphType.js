@@ -87,7 +87,9 @@ const UserType = new GraphQLObjectType({
               qb.orderBy('created_at', 'desc');
             })
             .fetch();
-          return emails ? emails : [];
+          return emails.map(
+            v => (v.attributes !== undefined ? v.attributes : {})
+          );
         },
       },
       transactions: {
