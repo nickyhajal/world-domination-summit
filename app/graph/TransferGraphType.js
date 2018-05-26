@@ -1,3 +1,11 @@
+const {
+  GraphQLString,
+  GraphQLObjectType,
+  GraphQLNonNull,
+  GraphQLInt,
+  GraphQLBoolean,
+  GraphQLList,
+} = require('graphql');
 const TransferType = new GraphQLObjectType({
   name: 'UserTransfer',
   description: 'Transfer',
