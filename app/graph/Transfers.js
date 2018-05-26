@@ -1,5 +1,4 @@
 const moment = require('moment');
-const TransferGraphType = require('./TransferGraphType');
 
 const {
   GraphQLString,
@@ -12,6 +11,7 @@ const {
 const [User, Users] = require('../models/users');
 const [Transfer, Transfers] = require('../models/transfers');
 const UserGraph = require('./users');
+const TransferGraphType = require('./TransferGraphType');
 const Type = TransferGraphType;
 
 const Field = {
