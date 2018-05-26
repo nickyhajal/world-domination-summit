@@ -45,7 +45,7 @@ const Fields = {
     if (status === undefined || !status) {
       query.query('where', 'status', 'paid');
     }
-    evs.query('orderBy', 'created_at', 'desc');
+    query.query('orderBy', 'created_at', 'desc');
     const rows = await query.fetch();
     return rows.models.map(row => (row ? row.attributes : null));
   },
