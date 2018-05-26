@@ -1,4 +1,5 @@
 const moment = require('moment');
+const TransferGraphType = require('./TransferGraphType');
 
 const {
   GraphQLString,
@@ -11,39 +12,8 @@ const {
 const [User, Users] = require('../models/users');
 const [Transfer, Transfers] = require('../models/transfers');
 const UserGraph = require('./users');
-const Type = new GraphQLObjectType({
-  name: 'Transfer',
-  description: 'Transfer Type',
-  fields: () => ({
-    tranfer_id: {
-      type: GraphQLInt,
-    },
-    user_id: { type: GraphQLString },
-    to_id: { type: GraphQLString },
-    new_attendee: { type: GraphQLString },
-    year: { type: GraphQLString },
-    status: { type: GraphQLString },
-    created_at: { type: GraphQLString },
-    updated_at: { type: GraphQLString },
-    from: {
-      type: UserGraph.Type,
-      description: 'Customers',
-      resolve: async root => {
-        const user = await User.forge({ user_id: root.user_id }).fetch();
-        return user ? user.attributes : {};
-      },
-    },
-    to: {
-      type: UserGraph.Type,
-      description: 'Customers',
-      resolve: async root => {
-        const user = await User.forge({ user_id: root.to_id }).fetch();
-        return user ? user.attributes : {};
-      },
-    },
-    extra: { type: GraphQLString },
-  }),
-});
+const Type = TransferGraphType;
+
 const Field = {
   type: Type,
   args: {

@@ -21,6 +21,7 @@ const UserType = new GraphQLObjectType({
   name: 'User',
   description: 'User',
   fields: () => {
+    const TransferGraphType = require('./TransferGraphType');
     const TransactionGraphType = require('./TransactionGraphType');
     const EventGraphType = require('./EventGraphType');
     const TicketGraphType = require('./TicketGraphType');
@@ -121,7 +122,7 @@ const UserType = new GraphQLObjectType({
         },
       },
       transfers_to: {
-        type: new GraphQLList(TransferType),
+        type: new GraphQLList(TransferGraphType),
         resolve: async row => {
           const ts = await Transfers.forge()
             .query(qb => {
@@ -134,7 +135,7 @@ const UserType = new GraphQLObjectType({
         },
       },
       transfers_from: {
-        type: new GraphQLList(TransferType),
+        type: new GraphQLList(TransferGraphType),
         resolve: async row => {
           const ts = await Transfers.forge()
             .query(qb => {
@@ -191,48 +192,6 @@ const EmailType = new GraphQLObjectType({
       created_at: { type: GraphQLString },
       resent_from: { type: GraphQLString },
       promo: { type: GraphQLString },
-    };
-  },
-});
-
-const TransferType = new GraphQLObjectType({
-  name: 'UserTransfer',
-  description: 'Transfer',
-  fields: () => {
-    const TransactionGraphType = require('./TransactionGraphType');
-    const TicketGraphType = require('./TicketGraphType');
-    return {
-      transfer_id: { type: GraphQLString },
-      user_id: { type: GraphQLString },
-      to_id: { type: GraphQLString },
-      new_attendee: { type: GraphQLString },
-      year: { type: GraphQLString },
-      status: { type: GraphQLString },
-      from: {
-        type: UserType,
-        resolve: async row => {
-          const user = await User.forge({ user_id: row.user_id }).fetch();
-          return user !== undefined && user ? user.attributes : {};
-        },
-      },
-      to: {
-        type: UserType,
-        resolve: async row => {
-          const user = await User.forge({ user_id: row.to_id }).fetch();
-          return user !== undefined && user ? user.attributes : {};
-        },
-      },
-      ticket: {
-        type: TicketGraphType,
-        resolve: async row => {
-          const ticket = await Ticket.forge({
-            user_id: row.to_id,
-            year: row.year,
-          }).fetch();
-          return ticket !== undefined && ticket ? ticket.attributes : {};
-        },
-      },
-      created_at: { type: GraphQLString },
     };
   },
 });
