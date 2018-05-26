@@ -6,10 +6,12 @@ const {
   GraphQLBoolean,
   GraphQLList,
 } = require('graphql');
+
 const TransferType = new GraphQLObjectType({
   name: 'UserTransfer',
   description: 'Transfer',
   fields: () => {
+    const UserGraphType = require('./UserGraphType');
     const TransactionGraphType = require('./TransactionGraphType');
     const TicketGraphType = require('./TicketGraphType');
     return {
@@ -20,14 +22,14 @@ const TransferType = new GraphQLObjectType({
       year: { type: GraphQLString },
       status: { type: GraphQLString },
       from: {
-        type: UserType,
+        type: UserGraphType,
         resolve: async row => {
           const user = await User.forge({ user_id: row.user_id }).fetch();
           return user !== undefined && user ? user.attributes : {};
         },
       },
       to: {
-        type: UserType,
+        type: UserGraphType,
         resolve: async row => {
           const user = await User.forge({ user_id: row.to_id }).fetch();
           return user !== undefined && user ? user.attributes : {};
