@@ -8,6 +8,7 @@ const Stats = require('../../graph/stats');
 const UserNoteGraph = require('../../graph/UserNoteGraph');
 const BookingGraph = require('../../graph/bookings');
 const PagesGraph = require('../../graph/pages');
+const Transfers = require('../../graph/Transfers');
 
 const query = new GraphQLObjectType({
   name: 'Query',
@@ -20,6 +21,7 @@ const query = new GraphQLObjectType({
     stats: Stats.Field,
     booking: BookingGraph.Field,
     bookings: BookingGraph.Fields,
+    transfers: Transfers.Fields,
     page: PagesGraph.Field,
     pages: PagesGraph.Fields,
     transaction: Transactions.Field,
