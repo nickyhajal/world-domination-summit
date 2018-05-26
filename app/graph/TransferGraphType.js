@@ -14,6 +14,7 @@ const TransferType = new GraphQLObjectType({
     const UserGraphType = require('./UserGraphType');
     const TransactionGraphType = require('./TransactionGraphType');
     const TicketGraphType = require('./TicketGraphType');
+    const [User, Users] = require('../models/users');
     return {
       transfer_id: { type: GraphQLString },
       user_id: { type: GraphQLString },
