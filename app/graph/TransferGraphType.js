@@ -47,3 +47,4 @@ const TransferType = new GraphQLObjectType({
     };
   },
 });
+module.exports = TransferType;
