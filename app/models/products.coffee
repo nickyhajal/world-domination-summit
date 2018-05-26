@@ -169,7 +169,7 @@ POST =
           .then (ev) ->
             ev.updateRsvpCount()
             tk 'Academy Conf from Prod'
-            ev.sendAcademyConfirmation(user_id)
+            ev.sendAcademyConfirmation(user_id, '$'+(transaction.get('paid_amount') / 100))
     return dfr.promise
 
   event: (transaction, meta) ->
@@ -196,7 +196,7 @@ POST =
           .then (ev) ->
             ev.updateRsvpCount()
             tk 'RSVP Conf from Prod'
-            ev.sendRsvpConfirmation(user_id)
+            ev.sendRsvpConfirmation(user_id, '$'+(transaction.get('paid_amount') / 100))
             rds.expire('rsvps_'+user_id, 0)
     return dfr.promise
 

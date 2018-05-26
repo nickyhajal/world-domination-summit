@@ -33,6 +33,8 @@ Event = Shelf.Model.extend
     .then (rsp) =>
       if rsp.models?.length?
         @set 'num_rsvps', rsp.models.length
+        rds.expire 'events', 0
+        rds.expire 'events_enend', 0
       @save()
 
   saving: (e) ->
@@ -107,7 +109,7 @@ Event = Shelf.Model.extend
         dfr.resolve(true)
     return dfr.promise
 
-  sendAcademyConfirmation: (user_id) ->
+  sendAcademyConfirmation: (user_id, price) ->
     [User, Users] = require('./users')
     User.forge
       user_id: user_id
@@ -120,12 +122,16 @@ Event = Shelf.Model.extend
             what: @get('what')
             venue: @get('place')
             start: moment(@get('start')).format('MMMM Do [at] h:mma')
-  sendRsvpConfirmation: (user_id) ->
+            price: price
+  sendRsvpConfirmation: (user_id, price) ->
     [User, Users] = require('./users')
+    rds.expire 'rsvps_'+user_id, 0
     User.forge({user_id: user_id})
     .fetch()
     .then (user) =>
-      promo = 'event_confirmation_paid' #'event_confirmation_'+user.get('ticket_type')
+      promo = 'event_confirmation_'+user.get('ticket_type')
+      if price
+        promo = 'event_confirmation_paid'
       start = (@get('start')+'').split(' GMT')
       start = moment(start[0])
       start = start.format('YYYY-MM-DD HH:mm:ss')
@@ -135,6 +141,7 @@ Event = Shelf.Model.extend
         venue: @get('place')
         event_name: @get('what')
         startStr: dayStr+' at '+timeStr
+        price: price
       subName = @get('what')
       if subName.length > 35
         subName = subName.substr(0, 32)+'...'

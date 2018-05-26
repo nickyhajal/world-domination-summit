@@ -74,17 +74,21 @@ const RsvpAdd = {
     user_id: { type: GraphQLString },
     event_id: { type: GraphQLString },
   },
-  resolve: async (obj, args) => {
+  resolve: async (obj, { user_id, event_id }) => {
+    const [Event, Events] = require('../models/events');
     const [EventRsvp, EventRsvps] = require('../models/event_rsvps');
     const existing = await EventRsvp.forge({
-      user_id: args.user_id,
-      event_id: args.event_id,
+      user_id,
+      event_id,
     }).fetch();
     if (!existing) {
       const rsvp = await EventRsvp.forge({
-        user_id: args.user_id,
-        event_id: args.event_id,
+        user_id,
+        event_id,
       }).save();
+      const event = await Event.forge({ event_id }).fetch();
+      event.sendRsvpConfirmation(user_id);
+      event.updateRsvpCount();
     }
     return {};
   },
