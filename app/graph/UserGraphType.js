@@ -196,7 +196,7 @@ const EmailType = new GraphQLObjectType({
 });
 
 const TransferType = new GraphQLObjectType({
-  name: 'Transfer',
+  name: 'UserTransfer',
   description: 'Transfer',
   fields: () => {
     const TransactionGraphType = require('./TransactionGraphType');
