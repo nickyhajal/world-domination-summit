@@ -35,6 +35,8 @@ const Type = new GraphQLObjectType({
     format: { type: GraphQLString },
     outline: { type: GraphQLString },
     slug: { type: GraphQLString },
+    photo: { type: GraphQLString },
+    photo_dims: { type: GraphQLString },
     descr: { type: GraphQLString },
     what: { type: GraphQLString },
     who: { type: GraphQLString },
