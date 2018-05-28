@@ -39,6 +39,7 @@ const TransferType = new GraphQLObjectType({
       ticket: {
         type: TicketGraphType,
         resolve: async row => {
+          const [Ticket, Tickets] = require('../models/tickets');
           const ticket = await Ticket.forge({
             user_id: row.to_id,
             year: row.year,
