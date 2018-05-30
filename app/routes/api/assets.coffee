@@ -158,45 +158,46 @@ routes = (app) ->
 						tk 'CREATE'
 						Users.forge()
 						.query (qb) ->
-							qb.where('attending'+process.yr, '1')
-							qb.orWhere('t.product_id', '6')
+							qb.whereRaw('attending'+process.yr+' = ? OR (t.product_id = ? AND t.created_at = ?)', ['1', '6', '2018-02-13 00:00:00'])
 							qb.leftJoin('transactions as t', 'users.user_id', 't.user_id')
 							qb.orderBy('last_name')
+							# qb.orWhere('t.product_id', '6')
+							# qb.orWhere('t.created_at', '')
 						.fetch
 							columns: [
-								'users.user_id', 'type', 'first_name', 'last_name', 'location' #, 'ticket_type', 'pic' # , 'kinded'
+								'users.user_id', 'type', 'first_name', 'last_name', 'location', 'ticket_type' #, 'pic' # , 'kinded'
 							]
 						.then (attendees) ->
-							atns = []
+							atns = attendees.models
+							dfr.resolve(atns)
+							rds.set 'reg_attendees', JSON.stringify(atns), (err, rsp) ->
+								rds.expire 'reg_attendees', 600, (err, rsp) ->
 							# dfr.resolve(attendees.models)
 							# rds.set 'reg_attendees', JSON.stringify(attendees.models), (err, rsp) ->
 							# 	rds.expire 'reg_attendees', 60, (err, rsp) ->
-							Answers.forge()
-							.query (qb) ->
-								qb.where('attending'+process.yr, '1')
-								qb.orWhere('t.product_id', '6')
-								qb.leftJoin('transactions as t', 'answers.user_id', 't.user_id')
-								qb.leftJoin('users as u', 'answers.user_id', 'u.user_id')
-								qb.groupBy('answers.answer_id')
-							.fetch()
-							.then (answers) ->
-								aByUid = {}
-								for a in answers.models
-									user_id = a.get('user_id')
-									unless aByUid[user_id]?
-										aByUid[user_id] = []
-									aByUid[user_id].push(a.attributes)
-								async.each attendees.models, (atn, cb) ->
-									if aByUid[atn.get('user_id')]?
-										atn.set('answers', aByUid[atn.get('user_id')])
-										atns.push atn
-									else
-										atns.push atn
-									cb()
-								, ->
-									dfr.resolve(atns)
-									rds.set 'reg_attendees', JSON.stringify(atns), (err, rsp) ->
-										rds.expire 'reg_attendees', 600, (err, rsp) ->
+							# Answers.forge()
+							# .query (qb) ->
+							# 	qb.where('attending'+process.yr, '1')
+							# 	qb.orWhere('t.product_id', '6')
+							# 	qb.leftJoin('transactions as t', 'answers.user_id', 't.user_id')
+							# 	qb.leftJoin('users as u', 'answers.user_id', 'u.user_id')
+							# 	qb.groupBy('answers.answer_id')
+							# .fetch()
+							# .then (answers) ->
+							# 	aByUid = {}
+							# 	for a in answers.models
+							# 		user_id = a.get('user_id')
+							# 		unless aByUid[user_id]?
+							# 			aByUid[user_id] = []
+							# 		aByUid[user_id].push(a.attributes)
+							# 	async.each attendees.models, (atn, cb) ->
+							# 		if aByUid[atn.get('user_id')]?
+							# 			atn.set('answers', aByUid[atn.get('user_id')])
+							# 			atns.push atn
+							# 		else
+							# 			atns.push atn
+							# 		cb()
+							# 	, ->
 				return dfr.promise
 
 			me: (req) ->

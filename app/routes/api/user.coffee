@@ -1,6 +1,7 @@
 _ = require('underscore')
 redis = require("redis")
 async = require("async")
+moment = require('moment');
 rds = redis.createClient()
 twitterAPI = require('node-twitter-api')
 fs = require('fs')
