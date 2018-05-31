@@ -132,8 +132,11 @@ ap.search = ->
 			reg_class = 'registered'
 		atype = result.get('type') ? 'attendee'
 		ttype = result.get('ticket_type') ? 'attendee'
+		console.log(ttype);
 		if ttype == '360'
-			ttype = 'attendee'
+			ttype = '360'
+		if ttype == 'connect'
+			ttype = 'connect'
 		if atype != 'attendee'
 			ttype = atype
 		if ttype is 'friend'
@@ -234,15 +237,15 @@ ap.onShow.kinduser = ->
 			'What\'s your favorite quote?'
 			'What are you looking forward to during your time in Portland?'
 		]
-		count = 0
-		html = ''
-		for answer in user.get('answers')
-			q = questions[answer.question_id - 1].replace('<span class="ceil">{{ distance }}</span> miles', '')
-			html += '<div class="attendee-question-shell">'
-			html += '<div class="question">'+q+'</div><div class="answer">'+answer.answer+'</div>'
-			html += '</div>'
-			count += 1
-		html += '<div class="clear"></div>'
+	count = 0
+	html = ''
+	for answer in user.get('answers')
+		q = questions[answer.question_id - 1].replace('<span class="ceil">{{ distance }}</span> miles', '')
+		html += '<div class="attendee-question-shell">'
+		html += '<div class="question">'+q+'</div><div class="answer">'+answer.answer+'</div>'
+		html += '</div>'
+		count += 1
+	html += '<div class="clear"></div>'
 	$('.k-name').html(user.get('first_name')+' '+user.get('last_name'))
 	$('.k-info').html(html)
 	ap.updKinded()

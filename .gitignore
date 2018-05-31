@@ -33,5 +33,18 @@ builtAssets
 #Test processor
 app/processors/tester.coffee
 
+.dockerignore
+.env
+.vscode/
+Dockerfile
+app/routes/api/contact.js
+cluster.js
+docker-compose.yml
+images/default-avatar_old.png
+package-lock.json
+secure_files/
+worlddominationsummit*.json
+yarn.lock
+
 # vim swap files
 *.swp
