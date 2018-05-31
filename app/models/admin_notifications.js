@@ -17,19 +17,6 @@ const AdminNotification = Shelf.Model.extend({
   tableName: 'admin_notifications',
   idAttribute: 'admin_notification_id',
   hasTimestamps: true,
-  async send() {
-    this.set({
-      sent_on: moment()
-        .utc()
-        .format('YYYY-MM-DD HH:mm:ss'),
-    });
-    try {
-      await this.push();
-      await this.save();
-    } catch (e) {
-      console.log(e);
-    }
-  },
   async getDevices() {
     const {
       device: device_type,
@@ -145,7 +132,7 @@ AND year = '` +
       devices: rsp.models,
     };
   },
-  async push() {
+  async send() {
     const {
       device,
       registered,
@@ -159,7 +146,7 @@ AND year = '` +
       title,
     } = this.attributes;
     if (device != null && registered != null) {
-      const { devices, device_count } = await this.getDevices();
+      const { devices, device_count, user_count } = await this.getDevices();
       if (+device_count > 0) {
         if (content != null) {
           let type;
@@ -223,28 +210,28 @@ AND year = '` +
                   // console.log(user_id);
                   // console.log(note);
                   // console.log(tokens);
-                  const result = await process.APN.pushNotification(
-                    note,
-                    device.get('token')
-                  );
+                  // const result = await process.APN.pushNotification(
+                  //   note,
+                  //   device.get('token')
+                  // );
                   // console.log(result);
                   // console.log('error: ', result.failed[0].error);
                   // console.log('error: ', result.failed[0].response);
                 } else if (type === 'and') {
                   // and user_id == 176
-                  tokens = [device.get('token')];
-                  const message = new gcm.Message({
-                    collapseKey: 'WDS Notifications',
-                    data: {
-                      title: title ? title : 'WDS App',
-                      message: msg,
-                      id: post.hash,
-                      user_id: '8082',
-                      content: '{"user_id":"8082"}',
-                      type: 'feed_comment',
-                      link,
-                    },
-                  });
+                  // tokens = [device.get('token')];
+                  // const message = new gcm.Message({
+                  //   collapseKey: 'WDS Notifications',
+                  //   data: {
+                  //     title: title ? title : 'WDS App',
+                  //     message: msg,
+                  //     id: post.hash,
+                  //     user_id: '8082',
+                  //     content: '{"user_id":"8082"}',
+                  //     type: 'feed_comment',
+                  //     link,
+                  //   },
+                  // });
                   // console.log('>> GCM');
                   // console.log(message);
                   // process.gcmSender.send(message, tokens, function(
@@ -256,6 +243,14 @@ AND year = '` +
                   // });
                 }
               }
+              this.set({
+                sent_devices: device_count,
+                sent_users: user_count,
+                sent_on: moment()
+                  .utc()
+                  .format('YYYY-MM-DD HH:mm:ss'),
+              });
+              await this.save();
               return true;
             }
           } else {
@@ -282,6 +277,15 @@ const AdminNotifications = Shelf.Collection.extend({
       .fetch();
     await Promise.all(unsent.map(n => n.send()));
   },
+  async watchNotifications() {
+    console.log('>> Check notifications');
+    await AdminNotifications.forge().sendUnsent();
+    setTimeout(() => {
+      AdminNotifications.forge().watchNotifications();
+    }, 60000);
+  },
 });
+
+AdminNotifications.forge().watchNotifications();
 
 module.exports = [AdminNotification, AdminNotifications];

@@ -26,6 +26,8 @@ const NotificationType = new GraphQLObjectType({
       link: { type: GraphQLString },
       send_on: { type: GraphQLString },
       sent_on: { type: GraphQLString },
+      sent_users: { type: GraphQLInt },
+      sent_devices: { type: GraphQLInt },
       created_at: { type: GraphQLString },
       updated_at: { type: GraphQLString },
     };
