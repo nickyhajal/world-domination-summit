@@ -146,7 +146,6 @@ AND year = '` +
     };
   },
   async push() {
-    console.log('PUSH');
     const {
       device,
       registered,
@@ -203,16 +202,14 @@ AND year = '` +
             const feed_rsp = await feed.save();
             const feed_id = feed_rsp.get('feed_id');
             if (feed_id != null && feed_id > 0) {
-              console.log(devices.length);
+              // console.log(devices.length);
               for (let device of Array.from(devices)) {
                 let tokens = [device.get('token')];
                 type = device.get('type');
                 const user_id = device.get('user_id');
                 const link = `/dispatch/${feed_id}`;
-                console.log(user_id);
+                // console.log(user_id);
                 if (type === 'ios' && user_id == 176) {
-                  console.log('send');
-                  console.log(tokens);
                   // and user_id == 176
                   const note = new apn.Notification();
                   note.alert = msg;
@@ -223,9 +220,13 @@ AND year = '` +
                   };
                   // tk note
                   // tk tokens
+                  // console.log(user_id);
                   // console.log(note);
                   // console.log(tokens);
-                  process.APN.pushNotification(note, tokens);
+                  const result = await process.APN.pushNotification(
+                    note,
+                    device.get('token')
+                  );
                 } else if (type === 'and') {
                   // and user_id == 176
                   tokens = [device.get('token')];
