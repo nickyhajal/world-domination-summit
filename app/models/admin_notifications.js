@@ -209,7 +209,7 @@ AND year = '` +
                 const user_id = device.get('user_id');
                 const link = `/dispatch/${feed_id}`;
                 // console.log(user_id);
-                if (type === 'ios' && user_id == 176) {
+                if (type === 'ios') {
                   // and user_id == 176
                   const note = new apn.Notification();
                   note.alert = msg;
