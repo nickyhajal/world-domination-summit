@@ -19,7 +19,6 @@ const Field = {
     admin_notification_id: { type: GraphQLString },
   },
   resolve: async (root, { admin_notification_id }, req) => {
-    console.log(admin_notification_id);
     const obj = AdminNotifications.forge();
     obj.query('where', 'admin_notification_id', admin_notification_id);
     const rows = await obj.fetch();
