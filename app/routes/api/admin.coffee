@@ -3,6 +3,7 @@ _s = require('underscore.string')
 moment = require('moment')
 Helpscout = require('helpscout')
 redis = require("redis")
+
 rds = redis.createClient()
 
 routes = (app) ->
@@ -14,6 +15,11 @@ routes = (app) ->
 	[Achievement, Achievements] = require('../../models/achievements')
 	[Transfer, Transfers] = require('../../models/transfers')
 	admin =
+		merge: (req, res, next) ->
+			console.log('merge')
+			merge = require('../../models/users/merge')
+			merge(req.query.from, req.query.to).then ->
+				next()
 		get_capabilities: (req, res, next) ->
 			if req.me?
 				req.me.getCapabilities()

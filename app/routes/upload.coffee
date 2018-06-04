@@ -12,6 +12,23 @@ upload = multer({ dest: '/tmp_uploads/' })
 
 [User, Users] = require('../models/users')
 routes = (app) ->
+	app.all '/rotate', (req, res) ->
+			user_id = req.query.user_id
+			Users.forge({user_id: user_id})
+			.fetch()
+			.then (user) ->
+				path = user.get('pic')
+				if path.indexOf '/images/' is 0
+					fullPath = __dirname + '/../..' + path
+					gm(fullPath)
+					.rotate(90)
+					.write fullPath, (err) ->
+						request 'https://avatar.wds.fm/flush/'+me.get('user_id'), (error, response, body) ->
+						res.send('');
+						# res.render "../views/upload-success"
+						# 	layout: false
+						# 	url: (url + '?'+crypto.createHash('md5').update((new Date().getTime())+'').digest("hex"))
+						# 	title: "World Domination Summit - Upload Success"
 	app.all '/upload-avatar', upload.single('pic'), (req, res) ->
 
 		if req.file
