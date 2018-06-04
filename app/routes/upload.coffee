@@ -24,7 +24,9 @@ routes = (app) ->
 					.rotate(90)
 					.write fullPath, (err) ->
 						request 'https://avatar.wds.fm/flush/'+me.get('user_id'), (error, response, body) ->
-						res.send('');
+						res.send('rotated');
+				else
+					res.send('offsite image')
 						# res.render "../views/upload-success"
 						# 	layout: false
 						# 	url: (url + '?'+crypto.createHash('md5').update((new Date().getTime())+'').digest("hex"))
