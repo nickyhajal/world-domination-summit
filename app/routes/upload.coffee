@@ -24,8 +24,9 @@ routes = (app) ->
 					fullPath = __dirname + '/../..' + path
 					console.log(fullPath)
 					gm(fullPath)
-					.rotate(90)
+					.rotate('90')
 					.write fullPath, (err) ->
+						console.log(err)
 						request 'https://avatar.wds.fm/flush/'+user_id, (error, response, body) ->
 						res.send('rotated');
 				else
