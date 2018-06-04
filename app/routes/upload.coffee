@@ -14,7 +14,7 @@ upload = multer({ dest: '/tmp_uploads/' })
 routes = (app) ->
 	app.all '/rotate', (req, res) ->
 			user_id = req.query.user_id
-			Users.forge({user_id: user_id})
+			User.forge({user_id: user_id})
 			.fetch()
 			.then (user) ->
 				console.log(user)
