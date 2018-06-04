@@ -26,7 +26,7 @@ routes = (app) ->
 					gm(fullPath)
 					.rotate(90)
 					.write fullPath, (err) ->
-						request 'https://avatar.wds.fm/flush/'+me.get('user_id'), (error, response, body) ->
+						request 'https://avatar.wds.fm/flush/'+user_id, (error, response, body) ->
 						res.send('rotated');
 				else
 					res.send('offsite image')
