@@ -17,9 +17,12 @@ routes = (app) ->
 			Users.forge({user_id: user_id})
 			.fetch()
 			.then (user) ->
+				console.log(user)
 				path = user.get('pic')
+				console.log(path)
 				if path.indexOf '/images/' is 0
 					fullPath = __dirname + '/../..' + path
+					console.log(fullPath)
 					gm(fullPath)
 					.rotate(90)
 					.write fullPath, (err) ->
