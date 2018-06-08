@@ -90,6 +90,7 @@ const x = {
   }),
   tickets: ({ query: { year, type, status } }) => ({
     fields: [
+      't.ticket_id as ticket_id',
       't.status as ticket_status',
       't.type as ticket_type',
       'u.first_name as attendee_first_name',
