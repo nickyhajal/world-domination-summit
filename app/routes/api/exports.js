@@ -175,7 +175,7 @@ const x = {
       if (rsvp && rsvp !== 'all') {
         qb.where('max', rsvp === 'yes' ? '>' : '=', '0');
       }
-      if (availabe && available !== 'all') {
+      if (available && available !== 'all') {
         qb.whereRaw(`max ${available === 'yes' ? '>' : '<='} num_rsvps`);
       }
     },
