@@ -24,11 +24,13 @@ const Field = {
   args: {
     event_id: { type: GraphQLString },
     slug: { type: GraphQLString },
+    orderBy: { type: GraphQLString },
   },
   resolve: async (root, args) => {
     const query = {};
     if (args.event_id !== undefined) query.event_id = args.event_id;
     if (args.slug !== undefined) query.slug = args.slug;
+    if (args.orderBy !== undefined) query.orderByRaw(args.orderBy);
     const row = await Event.forge(query).fetch();
     return row.attributes;
   },
@@ -86,6 +88,7 @@ const Fields = {
     created_at: { type: GraphQLString },
     updated_at: { type: GraphQLString },
     showInactive: { type: GraphQLBoolean },
+    orderBy: { type: GraphQLString },
   },
   resolve: async (root, args) => {
     const evs = Events.forge();
@@ -98,7 +101,11 @@ const Fields = {
     if (args.showInactive === undefined) {
       evs.query('where', 'active', '1');
     }
-    evs.query('orderBy', 'start');
+    if (args.orderBy !== undefined) {
+      evs.query('orderByRaw', args.orderBy);
+    } else {
+      evs.query('orderBy', 'start');
+    }
     const rows = await evs.fetch();
     return rows.models.map(row => row.attributes);
   },

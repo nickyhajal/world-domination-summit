@@ -3,6 +3,7 @@ _s = require('underscore.string')
 moment = require('moment')
 Helpscout = require('helpscout')
 redis = require("redis")
+exports = require('./exports');
 
 rds = redis.createClient()
 
@@ -20,6 +21,26 @@ routes = (app) ->
 			merge = require('../../models/users/merge')
 			merge(req.query.from, req.query.to).then ->
 				next()
+		export: (req, res, next) ->
+			format = 'csv'
+			query = exports
+				name: req.query.export
+				orderBy: req.query.orderBy
+				sortDir: req.query.sortDir
+				wheres: req.query.wheres
+				query: req.query
+				format: format,
+			query.then (results) ->
+				if format is 'csv'
+					file = if req.query.filename then req.query.filename else req.query.export
+					res.status(200)
+					res.attachment file+'-'+moment().format('YY-MM-DD_HH:mm:ss')+'.csv'
+					res.send(results)
+				else
+					res.r.count = results.length
+					res.r.results = results
+					next()
+
 		get_capabilities: (req, res, next) ->
 			if req.me?
 				req.me.getCapabilities()
@@ -189,25 +210,25 @@ routes = (app) ->
 			else
 				res.status(401)
 
-		export: (req, res, next) ->
-			if req.me.hasCapability('manifest')
-				res.status(200)
-				res.attachment 'attendees'+process.year+'.csv'
+		# export: (req, res, next) ->
+		# 	if req.me.hasCapability('manifest')
+		# 		res.status(200)
+		# 		res.attachment 'attendees'+process.year+'.csv'
 
-				# Headers
-				response = "sep=;"
-				response += "First Name;Last Name;Email;Twitter;Ticket Type;Attendee Type;Location;Address;City;State/Region;Country;Zip\n"
+		# 		# Headers
+		# 		response = "sep=;"
+		# 		response += "First Name;Last Name;Email;Twitter;Ticket Type;Attendee Type;Location;Address;City;State/Region;Country;Zip\n"
 
-				# Attendee list for current year
-				Users.forge()
-				.query('where', 'attending'+process.yr, '1')
-				.fetch().then (model) ->
-					for attendee in model.models
-						response = response + attendee.get('first_name')+";"+attendee.get('last_name')+";"+attendee.get('email')+";"+attendee.get('twitter')+";"+attendee.get('ticket_type')+";"+attendee.get('type')+';"'+attendee.get('location')+'";"'+attendee.get('address')+'";"'+attendee.get('city')+'";"'+attendee.get('region')+'";"'+attendee.get('country')+'";"'+attendee.get('zip')+'"'+"\n"
-					res.send response
-					res.r.msg = 'Success'
-			else
-				res.status(401)
+		# 		# Attendee list for current year
+		# 		Users.forge()
+		# 		.query('where', 'attending'+process.yr, '1')
+		# 		.fetch().then (model) ->
+		# 			for attendee in model.models
+		# 				response = response + attendee.get('first_name')+";"+attendee.get('last_name')+";"+attendee.get('email')+";"+attendee.get('twitter')+";"+attendee.get('ticket_type')+";"+attendee.get('type')+';"'+attendee.get('location')+'";"'+attendee.get('address')+'";"'+attendee.get('city')+'";"'+attendee.get('region')+'";"'+attendee.get('country')+'";"'+attendee.get('zip')+'"'+"\n"
+		# 			res.send response
+		# 			res.r.msg = 'Success'
+		# 	else
+		# 		res.status(401)
 
 
 		export_profile_stat: (req, res, next) ->

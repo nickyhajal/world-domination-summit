@@ -22,12 +22,12 @@ const Type = new GraphQLObjectType({
   description: 'Event',
   fields: () => ({
     event_id: {
-      type: GraphQLInt,
+      type: GraphQLString,
       resolve: row => {
         return row.event_id;
       },
     },
-    year: { type: GraphQLInt },
+    year: { type: GraphQLString },
     active: { type: GraphQLString },
     ignored: { type: GraphQLString },
     type: { type: GraphQLString },

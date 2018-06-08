@@ -35,7 +35,7 @@ routes = (app) ->
 	apiRouter = express.Router()
 
 	app.use('/api', apiRouter);
-	
+
 	# Setup
 	apiRouter.all '/*', handler.start
 	apiRouter.get '/assets', assets.get
@@ -131,7 +131,7 @@ routes = (app) ->
 	apiRouter.put '/event', event.upd
 	apiRouter.get '/event/attendees', event.get_attendees
 	# apiRouter.get '/event/hosts', event.get_hosts
-	apiRouter.post '/event/rsvp', (req, res, next) -> 
+	apiRouter.post '/event/rsvp', (req, res, next) ->
 		event.rsvp(req, res, next)
 	apiRouter.get '/event/pdf', event.get_pdf
 	apiRouter.get '/event/addresses', event.addresses
@@ -189,6 +189,7 @@ routes = (app) ->
 	apiRouter.all '/admin/*', admin.get_capabilities
 	apiRouter.get '/admin/download', admin.download
 	apiRouter.get '/admin/merge', admin.merge
+	apiRouter.get '/admin/export', admin.export
 	apiRouter.post '/admin/helpscout', admin.hs_convo
 	apiRouter.get '/admin/schedule', admin.schedule
 	apiRouter.get '/admin/academies', admin.academies
