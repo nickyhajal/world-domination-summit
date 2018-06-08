@@ -139,18 +139,9 @@ const x = {
       'num_free',
       'free_max',
       'created_at',
-      'p.last_name as purchaser_last_name',
-      'p.email as purchaser_email',
-      'u.ticket_type as user_ticket_type',
-      'u.type as attendee_type',
-      'u.attending18',
-      't.created_at as ticket_created',
     ],
-    from: 'tickets as t',
-    joins: [
-      ['users as p', 't.purchaser_id', 'p.user_id'],
-      ['users as u', 't.user_id', 'u.user_id'],
-    ],
+    from: 'events as e',
+    joins: [],
     orderBy: 't.created_at',
     wheres: qb => {
       if (year) {
