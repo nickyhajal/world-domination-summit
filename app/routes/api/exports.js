@@ -100,7 +100,7 @@ const x = {
       'p.email as purchaser_email',
       'u.ticket_type as user_ticket_type',
       'u.type as attendee_type',
-      'attending18',
+      'u.attending18',
       't.created_at as ticket_created',
     ],
     from: 'tickets as t',
