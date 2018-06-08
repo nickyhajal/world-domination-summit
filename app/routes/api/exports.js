@@ -155,7 +155,9 @@ const x = {
       }
       if (for_type) {
         if (typeof for_type === 'string') for_type = for_type.split(',');
-        qb.whereIn('for_type', for_type);
+        if (for_type.length === 1) {
+          qb.whereIn('for_type', for_type);
+        }
       }
       if (active && active !== 'all') {
         qb.where('active', active === 'yes' ? '1' : '0');
