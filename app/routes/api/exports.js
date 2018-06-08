@@ -142,7 +142,7 @@ const x = {
     ],
     from: 'events as e',
     joins: [],
-    orderBy: 't.created_at',
+    orderBy: 'type, created_at',
     wheres: qb => {
       if (year) {
         if (typeof year === 'string')
