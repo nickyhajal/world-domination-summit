@@ -125,6 +125,61 @@ const x = {
       }
     },
   }),
+  events: ({
+    query: { year, type, active, rejected, rsvp, available, for_type },
+  }) => ({
+    fields: [
+      'event_id',
+      'year',
+      'type',
+      'for_type',
+      'what',
+      'num_rsvps',
+      'max',
+      'num_free',
+      'free_max',
+      'created_at',
+      'p.last_name as purchaser_last_name',
+      'p.email as purchaser_email',
+      'u.ticket_type as user_ticket_type',
+      'u.type as attendee_type',
+      'u.attending18',
+      't.created_at as ticket_created',
+    ],
+    from: 'tickets as t',
+    joins: [
+      ['users as p', 't.purchaser_id', 'p.user_id'],
+      ['users as u', 't.user_id', 'u.user_id'],
+    ],
+    orderBy: 't.created_at',
+    wheres: qb => {
+      if (year) {
+        if (typeof year === 'string')
+          year = year.split(',').map(y => y.substr(2, 2));
+        qb.whereIn('year', year);
+      }
+      if (type) {
+        if (typeof type === 'string') type = type.split(',');
+        qb.whereIn('type', type);
+      }
+      if (for_type) {
+        if (typeof for_type === 'string') for_type = for_type.split(',');
+        qb.whereIn('for_type', for_type);
+      }
+      if (active && active !== 'all') {
+        qb.where('active', active === 'yes' ? '1' : '0');
+      }
+      if (rejected && rejected !== 'all') {
+        qb.where('ignored', rejected === 'yes' ? '1' : '0');
+      }
+      if (rsvp && rsvp !== 'all') {
+        qb.where('max', rsvp === 'yes' ? '>' : '=', '0');
+      }
+      if (availabe && available !== 'all') {
+        qb.whereRaw(`max ${available === 'yes' ? '>' : '<='} num_rsvps`);
+      }
+    },
+  }),
   hotel: args => ({
     fields: [
       'first_name',
