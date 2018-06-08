@@ -88,6 +88,42 @@ const x = {
       }
     },
   }),
+  tickets: ({ query: { year, type, status } }) => ({
+    fields: [
+      't.status as ticket_status',
+      't.type as ticket_type',
+      'u.first_name as attendee_first_name',
+      'u.last_name as attendee_last_name',
+      'u.email as attendee_email',
+      'p.first_name as purchaser_first_name',
+      'p.last_name as purchaser_last_name',
+      'p.email as purchaser_email',
+      'u.ticket_type as user_ticket_type',
+      'u.type as attendee_type',
+      'attending18',
+      't.created_at as ticket_created',
+    ],
+    from: 'tickets as t',
+    joins: [
+      ['users as p', 't.purchaser_id', 'p.user_id'],
+      ['users as u', 't.user_id', 'u.user_id'],
+    ],
+    orderBy: 't.created_at',
+    wheres: qb => {
+      if (year) {
+        if (typeof year === 'string') year = year.split(',');
+        qb.whereIn('t.year', year);
+      }
+      if (type) {
+        if (typeof type === 'string') type = type.split(',');
+        qb.whereIn('t.type', type);
+      }
+      if (status) {
+        if (typeof status === 'string') status = status.split(',');
+        qb.whereIn('t.status', status);
+      }
+    },
+  }),
   hotel: args => ({
     fields: [
       'first_name',
