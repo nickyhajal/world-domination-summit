@@ -1,5 +1,5 @@
 const x = {
-  people: ({ query: { year, type, first_time } }) => ({
+  people: ({ query: { year, type, first_time, intro } }) => ({
     fields: [
       'first_name',
       'last_name',
@@ -27,6 +27,7 @@ const x = {
       'zip',
       'calling_code',
       'phone',
+      'intro as intro_step',
     ],
     from: 'users as u',
     joins: [],
@@ -69,6 +70,20 @@ const x = {
               );
             });
           }
+        }
+      }
+      if (intro) {
+        switch (intro) {
+          case 'complete':
+            {
+              qb.where('intro', '=', '4,0');
+            }
+            break;
+          case 'yes':
+            {
+              qb.where('intro', '!=', '4,0');
+            }
+            break;
         }
       }
     },
