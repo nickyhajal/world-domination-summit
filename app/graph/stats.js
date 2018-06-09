@@ -40,7 +40,7 @@ const Field = {
     }).fetch();
     row.models.forEach(v => {
       const status = v.get('status');
-      if (['pending', 'canceled', 'refunded'].indexOf(status) === -1) {
+      if (status === 'active' || status === 'unclaimed') {
         vals.total_tickets += 1;
         if (
           moment(v.get('created_at')).format('YYYY-MM-DD') >
