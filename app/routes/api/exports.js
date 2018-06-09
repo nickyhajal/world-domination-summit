@@ -48,7 +48,7 @@ const x = {
       if (first_time) {
         let yr = +process.yr - 1;
         let yrs = [];
-        while (yr >= 14) {
+        while (yr >= 11) {
           yrs.push(yr);
           yr -= 1;
         }
