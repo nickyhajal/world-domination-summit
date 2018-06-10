@@ -78,6 +78,30 @@ const UserType = new GraphQLObjectType({
       size: { type: GraphQLString },
       created_at: { type: GraphQLString },
       updated_at: { type: GraphQLString },
+      stripe: { type: GraphQLString },
+      merge_log: { type: GraphQLString },
+      merged: { type: GraphQLString },
+      merge_user: {
+        type: UserType,
+        resolve: async row => {
+          if (row.merged && +row.merged > 0) {
+            const u = await User.forge({ user_id: row.merged }).fetch();
+            return u.attributes;
+          }
+          return {};
+        },
+      },
+      merged_users: {
+        type: new GraphQLList(UserType),
+        resolve: async row => {
+          const rows = await Users.forge()
+            .query('where', { merged: row.user_id })
+            .fetch();
+          return rows.map(
+            v => (v.attributes !== undefined ? v.attributes : {})
+          );
+        },
+      },
       emails: {
         type: new GraphQLList(EmailType),
         resolve: async row => {

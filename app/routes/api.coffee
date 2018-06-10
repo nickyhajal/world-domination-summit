@@ -188,7 +188,7 @@ routes = (app) ->
 	# # capabilities to be grabbed automatically
 	apiRouter.all '/admin/*', admin.get_capabilities
 	apiRouter.get '/admin/download', admin.download
-	apiRouter.get '/admin/merge', admin.merge
+	apiRouter.all '/admin/merge', admin.merge
 	apiRouter.get '/admin/export', admin.export
 	apiRouter.post '/admin/helpscout', admin.hs_convo
 	apiRouter.get '/admin/schedule', admin.schedule

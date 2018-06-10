@@ -19,7 +19,8 @@ routes = (app) ->
 		merge: (req, res, next) ->
 			console.log('merge')
 			merge = require('../../models/users/merge')
-			merge(req.query.from, req.query.to).then ->
+			merge(req.query.to, req.query.from).then (output) ->
+				res.r.output = output
 				next()
 		export: (req, res, next) ->
 			format = 'csv'
