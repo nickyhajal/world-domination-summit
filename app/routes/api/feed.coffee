@@ -175,32 +175,71 @@ routes = (app) ->
 										rds.expire key, 0, (err, rsp) ->
 										fireRef = process.fire.database().ref().child('feeds')
 										.child(key).set((+(new Date())));
-										notifications = {}
-										ntfn_ids = []
+										notifications = {author: [], commented: [], liked: []}
+										ntfnIds = []
 										if feed.get('user_id') isnt req.me.get('user_id')
 											notifications.author = [feed.get('user_id')]
 											ntfnIds.push(feed.get('user_id'))
 										FeedComments.forge().query('where', 'feed_id', feed.get('feed_id'))
+										.fetch()
 										.then (commented) ->
 											if commented.models.length
-												notifications.commented = 'hey'
-
-
+												commented_ids = commented.filter (i) ->
+													if (!ntfnIds.includes(i.get('user_id')))
+														ntfnIds.push(i.get('user_id'))
+														return true
+													return false
+												.map (i) ->
+													i.get('user_id')
+												notifications.commented = commented_ids
 											FeedLikes.forge().query('where', 'feed_id', feed.get('feed_id'))
+											.fetch()
 											.then (liked) ->
-
-										if feed.get('user_id') isnt req.me.get('user_id')
-											Notification.forge
-												type: 'feed_comment'
-												channel_type:  feed.get('channel_type')
-												channel_id:  feed.get('channel_id')
-												user_id: feed.get('user_id')
-												content: JSON.stringify
-													commenter_id: req.me.get('user_id')
-													content_str: _s.truncate(feed.get('content'), 100)
-												link: '/dispatch/'+feed.get('feed_id')
-											.save()
-										next()
+												if liked.models.length
+													liked_ids = liked.filter (i) ->
+														if (!ntfnIds.includes(i.get('user_id')))
+															ntfnIds.push(i.get('user_id'))
+															return true
+														return false
+													.map (i) ->
+														i.get('user_id')
+													notifications.liked= liked_ids
+												tk notifications
+												n =
+													channel_type:  feed.get('channel_type')
+													channel_id:  feed.get('channel_id')
+													content: JSON.stringify
+														commenter_id: req.me.get('user_id')
+														content_str: _s.truncate(feed.get('content'), 100)
+													link: '/dispatch/'+feed.get('feed_id')
+												if notifications.author.length
+													notifications.author.forEach (id) ->
+														tk 'author: feed_comment'
+														tk id
+														Notification.forge Object.assign
+															type: 'feed_comment'
+															user_id: id
+														, n
+														.save()
+												if notifications.commented.length
+													notifications.commented.forEach (id) ->
+														tk 'commented: comment'
+														tk id
+														Notification.forge Object.assign
+															type: 'feed_comment_on_commented'
+															user_id: id
+														, n
+														.save()
+												if notifications.liked.length
+													notifications.liked.forEach (id) ->
+														tk 'liked: like'
+														tk id
+														Notification.forge Object.assign
+															type: 'feed_comment_on_liked'
+															user_id: id
+														, n
+														.save()
+												next()
 								, (err) ->
 									console.error(err)
 					else
