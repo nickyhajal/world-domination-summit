@@ -343,11 +343,11 @@ ap.register_click = (e) ->
 	key = user_id+'_'+event_id
 	if ap.registrations[key]?
 		action = 'unregister'
-		el.html('Register').addClass('registered').removeClass('unregistered')
+		el.html('Sign-In').addClass('registered').removeClass('unregistered')
 		delete ap.registrations[key]
 	else
 		action = 'register'
-		el.html('Unregister').addClass('unregistered').removeClass('registered')
+		el.html('Un-Sign-In').addClass('unregistered').removeClass('registered')
 		ap.registrations[key] = '1'
 	ap.register(user_id, action)
 

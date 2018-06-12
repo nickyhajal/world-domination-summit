@@ -175,6 +175,20 @@ routes = (app) ->
 										rds.expire key, 0, (err, rsp) ->
 										fireRef = process.fire.database().ref().child('feeds')
 										.child(key).set((+(new Date())));
+										notifications = {}
+										ntfn_ids = []
+										if feed.get('user_id') isnt req.me.get('user_id')
+											notifications.author = [feed.get('user_id')]
+											ntfnIds.push(feed.get('user_id'))
+										FeedComments.forge().query('where', 'feed_id', feed.get('feed_id'))
+										.then (commented) ->
+											if commented.models.length
+												notifications.commented = 'hey'
+
+
+											FeedLikes.forge().query('where', 'feed_id', feed.get('feed_id'))
+											.then (liked) ->
+
 										if feed.get('user_id') isnt req.me.get('user_id')
 											Notification.forge
 												type: 'feed_comment'
