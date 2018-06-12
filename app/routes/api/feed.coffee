@@ -12,6 +12,7 @@ routes = (app) ->
 	[Feed, Feeds] = require('../../models/feeds')
 	[FeedComment, FeedComments] = require('../../models/feed_comments')
 	[FeedLike, FeedLikes] = require('../../models/feed_likes')
+	[EventHost, EventHosts] = require('../../models/event_hosts')
 	[Notification, Notifications] = require('../../models/notifications')
 
 	feed_routes =
@@ -28,11 +29,11 @@ routes = (app) ->
 					if post.channel_id is 650 or post.channel_id is '650'
 						post.channel_id = '0'
 						post.channel_type = 'global'
+					post.channel_id = '0' if !post.channel_id
 					uniq = moment().format('YYYY-MM-DD HH:mm') + post.content + post.user_id
 					post.hash = crypto.createHash('md5').update(uniq).digest('hex')
 					Feed.forge
 						hash: post.hash
-
 					.fetch()
 					.then (existing) ->
 						if not existing
@@ -40,6 +41,26 @@ routes = (app) ->
 							feed
 							.save()
 							.then (feed) ->
+								if post.channel_id != '0'
+									EventHosts.forge().query('where', 'event_id', post.channel_id)
+									.fetch()
+									.then (hosts) ->
+										if hosts.models.length
+											host_ids = hosts.filter (i) ->
+												i.get('user_id') != post.user_id
+											.map (i) ->
+												i.get('user_id')
+											host_ids.forEach (id) ->
+												Notification.forge
+													type: 'feed_for_event_host'
+													user_id: id
+													channel_type:  feed.get('channel_type')
+													channel_id:  feed.get('channel_id')
+													content: JSON.stringify
+														commenter_id: req.me.get('user_id')
+														content_str: _s.truncate(feed.get('content'), 100)
+													link: '/dispatch/'+feed.get('feed_id')
+												.save()
 								key = post.channel_type+'_'+post.channel_id
 								fireRef = process.fire.database().ref().child('feeds')
 								.child(key).set((+(new Date())));
@@ -204,7 +225,6 @@ routes = (app) ->
 													.map (i) ->
 														i.get('user_id')
 													notifications.liked= liked_ids
-												tk notifications
 												n =
 													channel_type:  feed.get('channel_type')
 													channel_id:  feed.get('channel_id')

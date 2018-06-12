@@ -203,6 +203,18 @@ Notifications = Shelf.Collection.extend
 					else
 						text += user.get('first_name')+' '+user.get('last_name')+' commented discussion you liked.'
 					if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
+			when 'feed_for_event_host'
+				User.forge({user_id: data.commenter_id})
+				.fetch()
+				.then (user) ->
+					if html
+						link = '<a href="http://worlddominationsummit.com'+link+'">'
+						text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
+						text += link+user.get('first_name')+' '+user.get('last_name')+'  posted to your event dispatch.</a>'
+						text += '</a>'
+					else
+						text += user.get('first_name')+' '+user.get('last_name')+' posted to your event dispatch.'
+					if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
 			when 'connected'
 				User.forge({user_id: data.from_id})
 				.fetch()
