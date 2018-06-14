@@ -25,6 +25,8 @@ routes = (app) ->
 					# Check if this is a duplicate post
 					if post.channel_type == 'event'
 						post.channel_type = 'meetup'
+					if post.channel_type == 'ambassador'
+						post.restrict = 'ambnstaff'
 
 					if post.channel_id is 650 or post.channel_id is '650'
 						post.channel_id = '0'

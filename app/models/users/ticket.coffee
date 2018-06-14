@@ -6,12 +6,14 @@ async = require('async')
 [Ticket, Tickets] = require '../tickets'
 
 ticket =
-  registerTicket: (quantity = 1, total = 0, transferFrom = null) ->
+  registerTicket: (quantity = 1, total = 0, transferFrom = null, link20=false) ->
     dfr = Q.defer()
     ticket_ids = []
     type = @get('type')
     ticket_type = @get('ticket_type')
-    # @set('pre18','1').save() ONLY DURING PRESALE
+    @set('pre19','1').save() #ONLY DURING PRESALE
+    if link20
+      @set('preDouble', '1').save()
     if (!type || !type.length)
       @set('type','attendee').save()
     if (!ticket_type || !ticket_type.length)
