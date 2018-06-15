@@ -25,22 +25,39 @@ ticket =
         user_id: @get('user_id')
         purchaser_id: @get('user_id')
         status: 'unclaimed'
-        year: '2018'
+        year: '2019'
         transfer_from: transferFrom
       .save()
       .then (ticket) =>
-        if transferFrom
-          promo = 'WelcomeTransfer'
-          subject = "You're coming to WDS! Awesome!"
-          @sendEmail(promo, subject)
         ticket_ids.push ticket.get('ticket_id')
-        cb()
+        if link20
+          Ticket.forge
+            type: ticket_type
+            user_id: @get('user_id')
+            purchaser_id: @get('user_id')
+            status: 'unclaimed'
+            year: '2020'
+            transfer_from: transferFrom
+          .save()
+          .then (ticket20) =>
+            ticket_ids.push ticket20.get('ticket_id')
+            cb()
+        else
+          if transferFrom
+            promo = 'WelcomeTransfer'
+            subject = "You're coming to WDS! Awesome!"
+            @sendEmail(promo, subject)
+          cb()
     , =>
       if total > 0
-        # @addToList('WDS 2018 Pre-Orders')
-        @addToList('WDS 2018 Purchasers')
+        if link20
+          @addToList('WDS 2020 Purchasers').then()
+          @addToList('WDS 2020 Pre-Orders').then()
+          @addToList('WDS 2019 and 2020 Pre-Orders').then()
+        @addToList('WDS 2019 Pre-Orders').then()
+        @addToList('WDS 2019 Purchasers')
         .then =>
-          promo = 'TicketReceipt'
+          promo = link20 ? 'TicketDoubleReceipt' : 'TicketReceipt'
           subject = "Aw yeah! Your purchase was successful!"
           tickets = 'ticket'
           tickets = 'tickets' if (quantity > 1)
