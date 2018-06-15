@@ -35,6 +35,7 @@ ticket =
             type: ticket_type
             user_id: @get('user_id')
             purchaser_id: @get('user_id')
+            linked_id: ticket.get('ticket_id')
             status: 'unclaimed'
             year: '2020'
             transfer_from: transferFrom
