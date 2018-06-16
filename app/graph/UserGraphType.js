@@ -135,6 +135,7 @@ const UserType = new GraphQLObjectType({
             qb.select('*');
             qb.where('user_id', row.user_id);
             qb.where('year', process.yr);
+            qb.orderBy('events.start');
             qb.leftJoin('events', 'events.event_id', 'event_rsvps.event_id');
           });
           const rsvps = await query.fetch();
