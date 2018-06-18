@@ -205,7 +205,13 @@ const x = {
       : [['year', '=', process.year], ['status', '=', 'paid']],
   }),
   rsvps: ({ query: { event_id } }) => ({
-    fields: ['u.first_name', 'u.last_name', 'u.email'],
+    fields: [
+      'u.first_name',
+      'u.last_name',
+      'u.email',
+      'u.type',
+      'u.ticket_type',
+    ],
     from: 'event_rsvps as r',
     joins: [['users as u', 'u.user_id', 'r.user_id']],
     orderBy: 'r.stamp',
