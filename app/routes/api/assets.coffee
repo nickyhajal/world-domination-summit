@@ -176,7 +176,7 @@ routes = (app) ->
 							out = []
 							async.each atns, (atn, cb) ->
 								UserNotes.forge().query('where', 'user_id', '0').query('where', 'about_id', atn.get('user_id')).fetch().then (notes) ->
-									atn.notes = notes.models
+									atn.set('notes', notes.models)
 									out.push(atn)
 									cb()
 							,
