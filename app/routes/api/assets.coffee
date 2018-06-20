@@ -33,6 +33,7 @@ routes = (app) ->
 	[Interest, Interests] = require('../../models/interests')
 	[Question, Questions] = require('../../models/questions')
 	[RaceTask, RaceTasks] = require('../../models/racetasks')
+	[UserNote, UserNotes] = require('../../models/user_notes')
 	[Achievement, Achievements] = require('../../models/achievements')
 	[Place, Places] = require('../../models/places')
 	[Answer, Answers] = require('../../models/answers')
@@ -169,9 +170,16 @@ routes = (app) ->
 							]
 						.then (attendees) ->
 							atns = attendees.models
-							dfr.resolve(atns)
-							rds.set 'reg_attendees', JSON.stringify(atns), (err, rsp) ->
-								rds.expire 'reg_attendees', 600, (err, rsp) ->
+							out = []
+							async.each atns, (atn, cb) ->
+								UserNotes.forge().query('where', 'user_id', '0').query('where', 'about_id', atn.get('user_id')).then (notes) ->
+									atn.notes = notes.models
+									out.push(atn)
+									cb()
+							,
+								dfr.resolve(out)
+								rds.set 'reg_attendees', JSON.stringify(out), (err, rsp) ->
+									rds.expire 'reg_attendees', 600, (err, rsp) ->
 							# dfr.resolve(attendees.models)
 							# rds.set 'reg_attendees', JSON.stringify(attendees.models), (err, rsp) ->
 							# 	rds.expire 'reg_attendees', 60, (err, rsp) ->
