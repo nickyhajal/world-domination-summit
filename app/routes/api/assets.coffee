@@ -173,20 +173,26 @@ routes = (app) ->
 							]
 						.then (attendees) ->
 							atns = attendees.models
-							out = []
+							outAtns = []
 							# dfr.resolve(atns)
 							async.eachSeries atns, (atn, cb) =>
-								UserNotes.forge().query('where', 'user_id', '0').query('where', 'about_id', atn.get('user_id')).fetch().then (notes) =>
-									tk '> 1'
-									out.push(atn)
+								UserNotes
+								.forge()
+								.query('where', 'user_id', '0')
+								.query('where', 'about_id', atn.get('user_id'))
+								.fetch()
+								.then (notes) ->
+									tk notes.models.length
+									tk outAtns
+									outAtns.push(atn)
 									cb()
 								# 	atn.set('notes', notes.models)
 								# 	out.push(atn)
 									# cb()
 							,
 								tk '>>>> here'
-								tk out
-								dfr.resolve(out)
+								tk outAtns
+								dfr.resolve(outAtns)
 								# rds.set 'reg_attendees', JSON.stringify(out), (err, rsp) ->
 								# 	rds.expire 'reg_attendees', 600, (err, rsp) ->
 							# dfr.resolve(attendees.models)
