@@ -176,9 +176,9 @@ routes = (app) ->
 							out = []
 							# dfr.resolve(atns)
 							async.each atns, (atn, cb) ->
-								out.push(atn)
-								cb()
-								# UserNotes.forge().query('where', 'user_id', '0').query('where', 'about_id', atn.get('user_id')).fetch().then (notes) ->
+								UserNotes.forge().query('where', 'user_id', '0').query('where', 'about_id', atn.get('user_id')).fetch().then (notes) ->
+									out.push(atn)
+									cb()
 								# 	atn.set('notes', notes.models)
 								# 	out.push(atn)
 									# cb()
