@@ -175,14 +175,15 @@ routes = (app) ->
 							atns = attendees.models
 							outAtns = []
 							# dfr.resolve(atns)
-							async.eachSeries atns, (atn, cb) =>
+							async.each atns, (atn, cb) =>
 								UserNotes
 								.forge()
 								.query('where', 'user_id', '0')
 								.query('where', 'about_id', atn.get('user_id'))
 								.fetch()
 								.then (notes) ->
-									tk '1'
+									# tk '1'
+									# tk outAtns.length
 									outAtns.push(atn)
 									cb()
 								, -> 
