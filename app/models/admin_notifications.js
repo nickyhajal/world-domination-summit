@@ -85,11 +85,11 @@ AND year = '` +
       const types = attendee_type.split(',');
       const ttypes = [];
       const atypes = [];
-      for (type of Array.from(types)) {
-        if (['360', 'connect'].indexOf(type) > -1) {
-          ttypes.push(type);
+      for (let t of Array.from(types)) {
+        if (['360', 'connect'].indexOf(t) > -1) {
+          ttypes.push(t);
         } else {
-          atypes.push(type);
+          atypes.push(t);
         }
       }
       const _ttypes = _.map(ttypes, v => `'${v}'`).join(', ');
