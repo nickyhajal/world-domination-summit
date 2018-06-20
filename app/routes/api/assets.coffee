@@ -183,7 +183,7 @@ routes = (app) ->
 								.fetch()
 								.then (notes) ->
 									# tk '1'
-									# tk outAtns.length
+									tk outAtns.length
 									outAtns.push(atn)
 									cb()
 								, -> 
