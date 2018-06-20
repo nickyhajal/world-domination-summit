@@ -18,7 +18,7 @@ const Type = new GraphQLObjectType({
   name: 'Place',
   description: 'Place',
   fields: () => ({
-    place_: { type: GraphQLString },
+    place_id: { type: GraphQLString },
     name: { type: GraphQLString },
     place_type: { type: GraphQLString },
     type: {
