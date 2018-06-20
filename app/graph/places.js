@@ -37,7 +37,7 @@ const Fields = {
     if (args.orderBy !== undefined) {
       pls.query('orderByRaw', args.orderBy);
     } else {
-      pls.query('orderBy', 'place_type').query('orderBy', 'place_id');
+      pls.query('orderBy', 'place_id', 'DESC');
     }
     const rows = await pls.fetch();
     return rows.models.map(row => row.attributes);

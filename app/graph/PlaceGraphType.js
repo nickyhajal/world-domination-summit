@@ -27,7 +27,10 @@ const Type = new GraphQLObjectType({
         const ptype = await PlaceType.forge({
           placetypeid: place_type,
         }).fetch();
-        return ptype.get('type_name');
+        if (ptype) {
+          return ptype.get('type_name');
+        }
+        return 'No type';
       },
     },
     pick: { type: GraphQLString },
