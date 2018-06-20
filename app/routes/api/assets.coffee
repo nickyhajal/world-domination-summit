@@ -183,8 +183,8 @@ routes = (app) ->
 								tk '>>>> here'
 								tk out
 								dfr.resolve(out)
-								rds.set 'reg_attendees', JSON.stringify(out), (err, rsp) ->
-									rds.expire 'reg_attendees', 600, (err, rsp) ->
+								# rds.set 'reg_attendees', JSON.stringify(out), (err, rsp) ->
+								# 	rds.expire 'reg_attendees', 600, (err, rsp) ->
 							# dfr.resolve(attendees.models)
 							# rds.set 'reg_attendees', JSON.stringify(attendees.models), (err, rsp) ->
 							# 	rds.expire 'reg_attendees', 60, (err, rsp) ->
