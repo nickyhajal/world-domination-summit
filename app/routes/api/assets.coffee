@@ -151,15 +151,12 @@ routes = (app) ->
 
 			reg_attendees: ->
 				dfr = Q.defer()
-				tk 'reg atns'
-				rds.expire 'reg_attendees', 0
 				rds.get 'reg_attendees', (err, atns) ->
 					if atns? and atns and typeof JSON.parse(atns) is 'object'
-						tk 'reg atns cache'
-						tk ' CACHE'
+						tk ' CACHE reg atns'
 						dfr.resolve(JSON.parse(atns))
 					else
-						tk 'CREATE'
+						tk 'CREATE reg atns'
 						Users.forge()
 						.query (qb) ->
 							qb.whereRaw('attending'+process.yr+' = ? OR (t.product_id = ? AND t.created_at > ?) GROUP BY users.user_id', ['1', '6', '2018-02-13 00:00:00'])
@@ -175,33 +172,22 @@ routes = (app) ->
 							atns = attendees.models
 							outAtns = []
 							# dfr.resolve(atns)
-							async.each atns, (atn, cb) =>
+							Promise.all atns.map (atn) ->
+								dr = Q.defer()
 								UserNotes
 								.forge()
 								.query('where', 'user_id', '0')
 								.query('where', 'about_id', atn.get('user_id'))
 								.fetch()
 								.then (notes) ->
-									# tk '1'
-									tk outAtns.length
+									atn.set('notes', notes)
 									outAtns.push(atn)
-									cb()
-								, -> 
-									tk '2'
-									outAtns.push(atn)
-									cb()
-								.catch ->
-									tk 'catch'
-									outAtns.push(atn)
-									cb()
-								# 	atn.set('notes', notes.models)
-								# 	out.push(atn)
-									# cb()
-							,
-								tk 'resolve'
+									dr.resolve()
+								return dr.promise
+							.then ->
 								dfr.resolve(outAtns)
-								# rds.set 'reg_attendees', JSON.stringify(out), (err, rsp) ->
-								# 	rds.expire 'reg_attendees', 600, (err, rsp) ->
+								rds.set 'reg_attendees', JSON.stringify(outAtns), (err, rsp) ->
+									rds.expire 'reg_attendees', 600, (err, rsp) ->
 							# dfr.resolve(attendees.models)
 							# rds.set 'reg_attendees', JSON.stringify(attendees.models), (err, rsp) ->
 							# 	rds.expire 'reg_attendees', 60, (err, rsp) ->
