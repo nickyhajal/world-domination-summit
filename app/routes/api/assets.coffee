@@ -151,8 +151,11 @@ routes = (app) ->
 
 			reg_attendees: ->
 				dfr = Q.defer()
+				tk 'reg atns'
+				rds.expire 'reg_attendees', 0
 				rds.get 'reg_attendees', (err, atns) ->
 					if atns? and atns and typeof JSON.parse(atns) is 'object'
+						tk 'reg atns cache'
 						tk ' CACHE'
 						dfr.resolve(JSON.parse(atns))
 					else
@@ -172,7 +175,7 @@ routes = (app) ->
 							atns = attendees.models
 							out = []
 							async.each atns, (atn, cb) ->
-								UserNotes.forge().query('where', 'user_id', '0').query('where', 'about_id', atn.get('user_id')).then (notes) ->
+								UserNotes.forge().query('where', 'user_id', '0').query('where', 'about_id', atn.get('user_id')).fetch().then (notes) ->
 									atn.notes = notes.models
 									out.push(atn)
 									cb()
