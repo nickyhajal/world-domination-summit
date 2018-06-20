@@ -174,7 +174,6 @@ routes = (app) ->
 						.then (attendees) ->
 							atns = attendees.models
 							outAtns = []
-							tk atns.length
 							# dfr.resolve(atns)
 							async.each atns, (atn, cb) =>
 								UserNotes
@@ -184,7 +183,7 @@ routes = (app) ->
 								.fetch()
 								.then (notes) ->
 									# tk '1'
-									# tk outAtns.length
+									tk outAtns.length
 									outAtns.push(atn)
 									cb()
 								, -> 
