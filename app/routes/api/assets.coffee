@@ -182,16 +182,15 @@ routes = (app) ->
 								.query('where', 'about_id', atn.get('user_id'))
 								.fetch()
 								.then (notes) ->
-									tk notes.models.length
-									tk outAtns
+									outAtns.push(atn)
+									cb()
+								, -> 
 									outAtns.push(atn)
 									cb()
 								# 	atn.set('notes', notes.models)
 								# 	out.push(atn)
 									# cb()
 							,
-								tk '>>>> here'
-								tk outAtns
 								dfr.resolve(outAtns)
 								# rds.set 'reg_attendees', JSON.stringify(out), (err, rsp) ->
 								# 	rds.expire 'reg_attendees', 600, (err, rsp) ->
