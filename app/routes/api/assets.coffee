@@ -187,6 +187,9 @@ routes = (app) ->
 								, -> 
 									outAtns.push(atn)
 									cb()
+								.catch ->
+									outAtns.push(atn)
+									cb()
 								# 	atn.set('notes', notes.models)
 								# 	out.push(atn)
 									# cb()
