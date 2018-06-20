@@ -162,7 +162,7 @@ routes = (app) ->
 						tk 'CREATE'
 						Users.forge()
 						.query (qb) ->
-							qb.whereRaw('attending'+process.yr+' = ? OR (t.product_id = ? AND t.created_at = ?)', ['1', '6', '2018-02-13 00:00:00'])
+							qb.whereRaw('attending'+process.yr+' = ? OR (t.product_id = ? AND t.created_at > ?) GROUP BY u.user_id', ['1', '6', '2018-02-13 00:00:00'])
 							qb.leftJoin('transactions as t', 'users.user_id', 't.user_id')
 							qb.orderBy('last_name')
 							# qb.orWhere('t.product_id', '6')
