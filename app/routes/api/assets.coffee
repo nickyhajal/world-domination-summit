@@ -174,16 +174,18 @@ routes = (app) ->
 						.then (attendees) ->
 							atns = attendees.models
 							out = []
-							dfr.resolve(atns)
-							# async.each atns, (atn, cb) ->
-							# 	UserNotes.forge().query('where', 'user_id', '0').query('where', 'about_id', atn.get('user_id')).fetch().then (notes) ->
-							# 		atn.set('notes', notes.models)
-							# 		out.push(atn)
-							# 		cb()
-							# ,
-							# 	tk '>>>> here'
-							# 	tk out
-							# 	dfr.resolve(out)
+							# dfr.resolve(atns)
+							async.each atns, (atn, cb) ->
+								out.push(atn)
+								cb()
+								# UserNotes.forge().query('where', 'user_id', '0').query('where', 'about_id', atn.get('user_id')).fetch().then (notes) ->
+								# 	atn.set('notes', notes.models)
+								# 	out.push(atn)
+									# cb()
+							,
+								tk '>>>> here'
+								tk out
+								dfr.resolve(out)
 								# rds.set 'reg_attendees', JSON.stringify(out), (err, rsp) ->
 								# 	rds.expire 'reg_attendees', 600, (err, rsp) ->
 							# dfr.resolve(attendees.models)
