@@ -175,12 +175,12 @@ routes = (app) ->
 							atns = attendees.models
 							out = []
 							async.each atns, (atn, cb) ->
-								tk 'atn'
 								UserNotes.forge().query('where', 'user_id', '0').query('where', 'about_id', atn.get('user_id')).fetch().then (notes) ->
 									atn.notes = notes.models
 									out.push(atn)
 									cb()
 							,
+								tk '>>>> here'
 								tk out
 								dfr.resolve(out)
 								rds.set 'reg_attendees', JSON.stringify(out), (err, rsp) ->
