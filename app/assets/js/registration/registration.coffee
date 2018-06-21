@@ -136,11 +136,13 @@ ap.search = ->
 		if ttype == '360'
 			ttype = '360'
 		if ttype == 'connect'
-			ttype = 'connect'
+			ttype = 'cnct'
 		if atype != 'attendee'
 			ttype = atype
 		if ttype is 'friend'
 			ttype = 'f&f'
+		if ttype == 'ambassador'
+			ttype = 'ambsdr'
 		notes = result.get('notes')
 		noteStr = ''
 		noteElm = ''
@@ -175,11 +177,12 @@ ap.search = ->
 					<span style="background:url('+result.get('pic')+')"></span>
 					<div class="reg-info">
 						<div class="reg-name">'+result.get('first_name')+' '+result.get('last_name')+'</div>
+				<div class="location">'+result.get('location')+'</div>
 						<div class="reg-ttype">'+ttype+'</div>
 						'+noteElm+'
 					</div>
 				<a href="#" data-user_id="'+result.get('user_id')+'" class="register-button '+reg_class+'">'+str+'</a>
-				<div class="location">'+result.get('location')+'</div>
+				<div class="clear" />
 				</div>
 			'
 	$('#search-results').html(html).show()

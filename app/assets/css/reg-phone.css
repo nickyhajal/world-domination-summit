@@ -1,105 +1,112 @@
 #rp-loading div#loading {
-    width:                      100%;
-    padding:                    0px 20px;
-    font-size:                  18pt;
-    margin-top:                 80px;
+  width: 100%;
+  padding: 0px 20px;
+  font-size: 18pt;
+  margin-top: 80px;
 }
 input#register_search {
-    width:                      100% ! important;
-    padding:                    12px;
-    text-align:                 left;
-    font-size:                  12pt;
+  width: 100% !important;
+  padding: 12px;
+  text-align: left;
+  font-size: 12pt;
 }
 div#rp-kinduser {
-    padding:                    0px 10px;
+  padding: 0px 10px;
 }
 div.reg-panel {
-    width:                      100%;
-    padding:                    0px;
+  width: 100%;
+  padding: 0px;
 }
 h4.active-event {
-    margin-bottom:              -3px;
-    font-size:                  17pt;
+  margin-bottom: -3px;
+  font-size: 17pt;
 }
 h4.active-event {
-    margin-top:                 -10px;
-    margin-left:                12px;
+  margin-top: -10px;
+  margin-left: 12px;
 }
 #reg-nav h3 {
-    font-weight:                normal;
-    height:                     46px;
-    font-size:                  13pt;
-    padding-top:                13px;
+  font-weight: normal;
+  height: 46px;
+  font-size: 13pt;
+  padding-top: 13px;
 }
 a.go-home {
-    width:                      33px;
-    margin-top:                 2px;
+  width: 33px;
+  margin-top: 2px;
 }
 a#clear-inp::before {
-    height:                     26px;
-    font-size:                  12pt;
-    top:                        7px;
-    padding-top:                5px;
-    width:                      32px;
-    right:                      6px;
-    font-family:                vitesse;
+  height: 26px;
+  font-size: 12pt;
+  top: 7px;
+  padding-top: 5px;
+  width: 32px;
+  right: 6px;
+  font-family: vitesse;
 }
 .search-row span {
-    margin-left:                -7px;
-    height:                     40px;
-    width:                      40px;
-    margin-top:                 -7px;
+  margin-left: -7px;
+  height: 40px;
+  width: 40px;
+  margin-top: -7px;
 }
 div.reg-info {
-    font-size:                  11pt;
-    margin-top:                 -8px ! important;
+  font-size: 11pt;
+  margin-top: -8px !important;
 }
 .search-row.is-kinded::before {
-    right:                      33px;
-    font-size:                  9pt;
-    width:                      12px;
-    height:                     12px;
-    top:                        15px;
+  right: 33px;
+  font-size: 9pt;
+  width: 12px;
+  height: 12px;
+  top: 15px;
 }
 .kindness-row {
-    height:                     9px;
-    min-height:                 2px;
-    display:                    block;
+  height: 9px;
+  min-height: 2px;
+  display: block;
 }
 .next-button {
-    width:                      30px ! important;
-    font-size:                  14pt;
-    margin-top:                 -30px;
-    position:                   relative;
-    top:                        4px;
+  width: 30px !important;
+  font-size: 14pt;
+  margin-top: -30px;
+  position: relative;
+  top: 4px;
 }
 .register-button {
-    font-size: 11pt;
-    width: 94px !important;
-    padding: 18px 0px !important;
+  font-size: 11pt;
+  width: 94px !important;
+  padding: 18px 0px !important;
+  height: 38px;
 }
 div.reg-ttype {
-    font-size: 11pt;
+  width: 72px;
+  font-size: 10pt;
+}
+div.reg-notes {
+  width: 75px;
+  font-size: 10pt;
+  padding: 3px 0 2px;
 }
 h4.k-name {
-    font-size:                  18pt;
-    margin-left:                12px;
-    margin-bottom:              -2px;
-    margin-top:                 -2px;
+  font-size: 18pt;
+  margin-left: 12px;
+  margin-bottom: -2px;
+  margin-top: -2px;
 }
 div.attendee-question-shell {
-    width:                      100%;
+  width: 100%;
 }
 a.kinded-button {
-    width:                      100%;
-    padding:                    9px;
-    font-size:                  14pt;
-    font-family:                vitesse;
-    margin:                     10px 0px;
+  width: 100%;
+  padding: 9px;
+  font-size: 14pt;
+  font-family: vitesse;
+  margin: 10px 0px;
 }
 * {
-    line-height:                inherit;
+  line-height: inherit;
 }
 .location {
-    font-size: 10pt !important;
+  font-size: 10pt !important;
 }

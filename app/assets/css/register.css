@@ -104,6 +104,13 @@ a.register-button,
   text-decoration: none;
   width: 220px;
   margin-top: -14px;
+  position: absolute;
+  right: 12px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  height: 48px;
+  padding: 11px !important;
 }
 div#page_content {
   padding: 20px 0px;
@@ -135,10 +142,10 @@ body {
 }
 div.location {
   color: rgb(142, 135, 125);
-  float: right;
+  /* float: right; */
   font-size: 12pt;
   margin-right: 11px;
-  margin-top: 4px;
+  margin-top: 1px;
 }
 a#clear-inp {
   display: none;
@@ -244,9 +251,10 @@ div.reg-ttype {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   margin-top: 2px;
+  float: left;
 }
 .reg-notes {
-  width: 100px;
+  width: 68px;
   text-align: center;
   float: left;
   font-size: 11pt;
