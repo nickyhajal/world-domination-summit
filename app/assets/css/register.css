@@ -49,6 +49,7 @@ a.is-kinded {
 .search-row {
   background: rgb(252, 250, 242) none repeat scroll 0px 0px;
   clear: both;
+  cursor: pointer;
   font-family: karla;
   min-height: 69px;
   padding: 21px 15px;
