@@ -141,6 +141,15 @@ ap.search = ->
 			ttype = atype
 		if ttype is 'friend'
 			ttype = 'f&f'
+		notes = result.get('notes')
+		noteStr = ''
+		noteElm = ''
+		if notes?.length > 0
+			if notes.length == 1
+				noteStr = '1 note'
+			else
+				noteStr = notes.length + ' notes'
+			noteElm = '<div class="reg-notes">'+noteStr+'</div>'
 		if ''+ap.event_id is '999999'
 			if result.get('ticket_type') is '360'
 				kclass = 'not-kinded'
@@ -167,6 +176,7 @@ ap.search = ->
 					<div class="reg-info">
 						<div class="reg-name">'+result.get('first_name')+' '+result.get('last_name')+'</div>
 						<div class="reg-ttype">'+ttype+'</div>
+						'+noteElm+'
 					</div>
 				<a href="#" data-user_id="'+result.get('user_id')+'" class="register-button '+reg_class+'">'+str+'</a>
 				<div class="location">'+result.get('location')+'</div>
