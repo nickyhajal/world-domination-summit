@@ -73,7 +73,7 @@ div.reg-info {
   position: relative;
   top: 4px;
 }
-.register-button {
+a.register-button {
   font-size: 11pt;
   width: 94px !important;
   padding: 18px 0px !important;
@@ -86,7 +86,7 @@ div.reg-ttype {
 div.reg-notes {
   width: 75px;
   font-size: 10pt;
-  padding: 3px 0 2px;
+  padding: 2px 0 2px;
 }
 h4.k-name {
   font-size: 18pt;
