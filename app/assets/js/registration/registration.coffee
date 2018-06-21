@@ -22,9 +22,9 @@ ap.mode = 'registration'
 ap.eMap =
 	id1:
 		name: 'WDS Main Registration'
-	id999999:
-		name: 'Kindness'
-		title: 'Kindness Tracker'
+	# id999999:
+	# 	name: 'Kindness'
+	# 	title: 'Kindness Tracker'
 
 ap.init = () ->
 	if location.pathname.indexOf("kindness") > -1
@@ -37,16 +37,17 @@ ap.init = () ->
 	_.whenReady 'me', ->
 		ap.initSearch()
 	$('body').on('click', '.register-button', ap.register_click)
-	$('body').on 'click', '.go-home', ->
+	$('body').on 'click', '.go-home, .go-back', ->
 		if ap.page is 'kinduser'
 			ap.holdSearch = true
-			$('#kind-button').click()
+			# $('#kind-button').click()
+			ap.showPage('search')
 			setTimeout ->
 				ap.holdSearch = false
 			, 50
 		else
 			if ap.mode is 'kind'
-				ap.updateEvent('999999')
+				# ap.updateEvent('999999')
 				ap.showPage('search')
 			else
 				$('.kind-btn').hide()
@@ -71,7 +72,7 @@ ap.initAssets = ->
 			ap.events = rsp.signin_events
 		ap.poll()
 		if ap.mode is 'kind'
-			ap.updateEvent('999999')
+			# ap.updateEvent('999999')
 			ap.showPage('search')
 		else
 			ap.showPage('home')
@@ -93,7 +94,7 @@ ap.initSearch = ->
 	_.whenReady 'users', ->
 		$('body')
 		.on('keyup', '#register_search', ap.search)
-		.on('click', '.kindness-row', ap.showKindUser)
+		.on('click', '.search-row', ap.showKindUser)
 		.on('click', '.kinded-button', ap.toggleKinded)
 		.on 'click', '#clear-inp', ->
 			$('#register_search').val('').keyup()
@@ -132,7 +133,6 @@ ap.search = ->
 			reg_class = 'registered'
 		atype = result.get('type') ? 'attendee'
 		ttype = result.get('ticket_type') ? 'attendee'
-		console.log(ttype);
 		if ttype == '360'
 			ttype = '360'
 		if ttype == 'connect'
@@ -162,7 +162,7 @@ ap.search = ->
 				'
 		else
 			html += '
-				<div class="search-row">
+				<div class="search-row"  data-user_id="'+result.get('user_id')+'">
 					<span style="background:url('+result.get('pic')+')"></span>
 					<div class="reg-info">
 						<div class="reg-name">'+result.get('first_name')+' '+result.get('last_name')+'</div>
@@ -245,10 +245,21 @@ ap.onShow.kinduser = ->
 		html += '<div class="question">'+q+'</div><div class="answer">'+answer.answer+'</div>'
 		html += '</div>'
 		count += 1
+	notes = user.get('notes')
+	html += '<div class="attendee-question-shell">'
+	if notes.length
+		for note in notes
+			html += '<div class="answer">'+note.note+'</div>'
+			count += 1
+		html 
+	else
+		html += '<div class="answer">No notes about '+user.get('first_name')+'.</div>'
+	html += '</div>'
+
 	html += '<div class="clear"></div>'
 	$('.k-name').html(user.get('first_name')+' '+user.get('last_name'))
 	$('.k-info').html(html)
-	ap.updKinded()
+	# ap.updKinded()
 	setTimeout ->
 		$.scrollTo(0)
 	, 80
@@ -337,6 +348,7 @@ ap.registration_stats = ->
 
 ap.register_click = (e) ->
 	e.preventDefault()
+	e.stopPropagation()
 	el = $(e.currentTarget)
 	user_id = el.data('user_id')
 	event_id = ap.event_id
@@ -347,7 +359,7 @@ ap.register_click = (e) ->
 		delete ap.registrations[key]
 	else
 		action = 'register'
-		el.html('Un-Sign-In').addClass('unregistered').removeClass('registered')
+		el.html('Signed-In').addClass('unregistered').removeClass('registered')
 		ap.registrations[key] = '1'
 	ap.register(user_id, action)
 
