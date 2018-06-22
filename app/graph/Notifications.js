@@ -52,7 +52,7 @@ const Add = {
     title: { type: GraphQLString },
     content: { type: GraphQLString },
     channel_type: { type: GraphQLString },
-    channel_id: { type: GraphQLString },
+    event_id: { type: GraphQLString },
     send_on: { type: GraphQLString },
   },
   resolve: async (root, args) => {
@@ -74,7 +74,7 @@ const Update = {
     title: { type: GraphQLString },
     content: { type: GraphQLString },
     channel_type: { type: GraphQLString },
-    channel_id: { type: GraphQLString },
+    event_id: { type: GraphQLString },
     send_on: { type: GraphQLString },
   },
   resolve: async (root, args) => {

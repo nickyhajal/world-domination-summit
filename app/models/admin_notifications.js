@@ -105,17 +105,17 @@ AND year = '` +
         devices.query('whereIn', 'users.type', atypes);
       }
     }
-    // if (event_id !== 'all') {
-    //   devices.query(
-    //     'join',
-    //     'event_rsvps',
-    //     'event_rsvps.user_id',
-    //     '=',
-    //     'devices.user_id',
-    //     'left'
-    //   );
-    //   devices.query('where', 'event_rsvps.event_id', '=', event_id);
-    // }
+    if (event_id !== 'all' && event_id) {
+      devices.query(
+        'join',
+        'event_rsvps',
+        'event_rsvps.user_id',
+        '=',
+        'devices.user_id',
+        'left'
+      );
+      devices.query('where', 'event_rsvps.event_id', '=', event_id);
+    }
     const rsp = await devices.fetch();
     const user_ids = {};
     let id_count = 0;
@@ -138,7 +138,7 @@ AND year = '` +
       registered,
       event_id,
       channel_type,
-      channel_id,
+      event_id,
       content,
       test,
       attendee_type,
@@ -154,10 +154,10 @@ AND year = '` +
             content,
             user_id: '8082',
           };
-          // if (req.query.event_id != null && req.query.event_id !== 'all') {
-          //   post.channel_type = 'meetup';
-          //   post.channel_id = req.query.event_id;
-          // }
+          if (event_id != null && event_id !== 'all') {
+            post.channel_type = 'meetup';
+            post.channel_id = event_id;
+          }
           if (test != null && test === 'yes') {
             post.restrict = 'staff';
           }
