@@ -22,7 +22,7 @@ const NotificationType = new GraphQLObjectType({
       content: { type: GraphQLString },
       type: { type: GraphQLString },
       channel_type: { type: GraphQLString },
-      channel_id: { type: GraphQLString },
+      event_id: { type: GraphQLString },
       link: { type: GraphQLString },
       send_on: { type: GraphQLString },
       sent_on: { type: GraphQLString },
