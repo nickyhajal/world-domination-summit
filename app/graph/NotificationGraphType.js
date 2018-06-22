@@ -6,6 +6,8 @@ const {
   GraphQLBoolean,
   GraphQLList,
 } = require('graphql');
+const EventGraphType = require('./EventGraphType');
+const [Event, Events] = require('../models/events');
 
 const NotificationType = new GraphQLObjectType({
   name: 'Notification',
@@ -22,7 +24,16 @@ const NotificationType = new GraphQLObjectType({
       content: { type: GraphQLString },
       type: { type: GraphQLString },
       channel_type: { type: GraphQLString },
-      event_id: { type: GraphQLString },
+      event_id: {
+        type: GraphQLString,
+        resolve: async ({ event_id }) => {
+          ev = await Event.forge({ event_id }).fetch();
+          if (ev) {
+            return ev.attributes;
+          }
+          return {};
+        },
+      },
       link: { type: GraphQLString },
       send_on: { type: GraphQLString },
       sent_on: { type: GraphQLString },
