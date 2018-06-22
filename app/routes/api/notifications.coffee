@@ -153,7 +153,7 @@ routes = (app) ->
       event_id = req.query.event_id
       devices.query('join', 'users', 'users.user_id', '=', 'devices.user_id', 'left')
       devices.query('where', 'attending'+process.yr, '1')
-      devices.query('where', 'devices.active', '1')
+      # devices.query('where', 'devices.active', '1')
       devices.query('whereNotNull', 'devices.uuid')
       if test == 'yes'
         devices.query('whereIn', 'devices.user_id', ['176', '6292', '179', '216', '1315', '6263', '8884', '6291']) #, '179', '216', '6292'])
