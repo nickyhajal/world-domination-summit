@@ -258,12 +258,12 @@ div.reg-ttype {
   text-align: center;
   float: left;
   font-size: 11pt;
-  background: #eae7e1;
   margin-left: 3px;
   padding: 4px 0 3px;
   margin-top: 2px;
   border-radius: 5px;
-  color: #968e81;
+  background: #046cde;
+  color: #fff;
 }
 a.kinded-button,
 .generic-button {
