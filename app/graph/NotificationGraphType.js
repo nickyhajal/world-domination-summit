@@ -24,8 +24,8 @@ const NotificationType = new GraphQLObjectType({
       content: { type: GraphQLString },
       type: { type: GraphQLString },
       channel_type: { type: GraphQLString },
-      event_id: {
-        type: GraphQLString,
+      event: {
+        type: EventGraphType,
         resolve: async ({ event_id }) => {
           ev = await Event.forge({ event_id }).fetch();
           if (ev) {
