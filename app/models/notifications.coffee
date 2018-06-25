@@ -201,7 +201,7 @@ Notifications = Shelf.Collection.extend
 						text += link+user.get('first_name')+' '+user.get('last_name')+' commented on a discussion you liked</a>'
 						text += '</a>'
 					else
-						text += user.get('first_name')+' '+user.get('last_name')+' commented discussion you liked.'
+						text += user.get('first_name')+' '+user.get('last_name')+' commented on a discussion you liked.'
 					if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
 			when 'feed_for_event_host'
 				User.forge({user_id: data.commenter_id})
