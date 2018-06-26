@@ -201,6 +201,7 @@ AND year = '` +
                   const note = new apn.Notification();
                   note.alert = msg;
                   note.payload = {
+                    title: title ? title : null,
                     content: '{"user_id":"8082"}',
                     type: 'feed_comment',
                     link,
