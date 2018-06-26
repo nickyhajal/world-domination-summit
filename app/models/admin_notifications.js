@@ -138,7 +138,6 @@ AND year = '` +
       registered,
       event_id,
       channel_type,
-      event_id,
       content,
       test,
       attendee_type,
