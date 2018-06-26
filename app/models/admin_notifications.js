@@ -185,9 +185,9 @@ AND year = '` +
             hash: post.hash,
           }).fetch();
           if (!existing) {
-            // const feed = Feed.forge(post);
-            // const feed_rsp = await feed.save();
-            // const feed_id = feed_rsp.get('feed_id');
+            const feed = Feed.forge(post);
+            const feed_rsp = await feed.save();
+            const feed_id = feed_rsp.get('feed_id');
             const feed_id = 99999;
             if (feed_id != null && feed_id > 0) {
               // console.log(devices.length);
@@ -211,37 +211,37 @@ AND year = '` +
                   // console.log(user_id);
                   // console.log(note);
                   // console.log(tokens);
-                  // const result = await process.APN.pushNotification(
-                  //   note,
-                  //   device.get('token')
-                  // );
+                  const result = await process.APN.pushNotification(
+                    note,
+                    device.get('token')
+                  );
                   // console.log(result);
                   // console.log('error: ', result.failed[0].error);
                   // console.log('error: ', result.failed[0].response);
                 } else if (type === 'and') {
                   // and user_id == 176
-                  // tokens = [device.get('token')];
-                  // const message = new gcm.Message({
-                  //   collapseKey: 'WDS Notifications',
-                  //   data: {
-                  //     title: title ? title : 'WDS App',
-                  //     message: msg,
-                  //     id: post.hash,
-                  //     user_id: '8082',
-                  //     content: '{"user_id":"8082"}',
-                  //     type: 'feed_comment',
-                  //     link,
-                  //   },
-                  // });
+                  tokens = [device.get('token')];
+                  const message = new gcm.Message({
+                    collapseKey: 'WDS Notifications',
+                    data: {
+                      title: title ? title : 'WDS App',
+                      message: msg,
+                      id: post.hash,
+                      user_id: '8082',
+                      content: '{"user_id":"8082"}',
+                      type: 'feed_comment',
+                      link,
+                    },
+                  });
                   // console.log('>> GCM');
                   // console.log(message);
-                  // process.gcmSender.send(message, tokens, function(
-                  //   err,
-                  //   result
-                  // ) {
-                  //   console.log(err);
-                  //   console.log(result);
-                  // });
+                  process.gcmSender.send(message, tokens, function(
+                    err,
+                    result
+                  ) {
+                    console.log(err);
+                    console.log(result);
+                  });
                 }
               }
               this.set({
@@ -282,11 +282,13 @@ const AdminNotifications = Shelf.Collection.extend({
     console.log('>> Check notifications');
     await AdminNotifications.forge().sendUnsent();
     setTimeout(() => {
+      console.log('>> Schedule next notifications check (60s)');
       AdminNotifications.forge().watchNotifications();
     }, 60000);
   },
 });
 
+console.log('>> Start watching notifications');
 AdminNotifications.forge().watchNotifications();
 
 module.exports = [AdminNotification, AdminNotifications];
