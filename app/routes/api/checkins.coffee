@@ -30,10 +30,10 @@ routes = (app) ->
         Checkins.forge()
         .query (qb) ->
           qb.where('created_at', '>', from)
-          qb.groupBy(knex.raw('location_type, location_id'))
+          qb.groupBy(process.knex.raw('location_type, location_id'))
           qb.orderBy('num_checkins', 'DESC')
           qb.orderBy('check_in', 'DESC')
-          qb.column(knex.raw('COUNT(*) as num_checkins'))
+          qb.column(process.knex.raw('COUNT(*) as num_checkins'))
         .fetch({columns: ['location_id', 'location_type']})
         .then (checkins) ->
           checkins = checkins.models
