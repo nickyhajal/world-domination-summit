@@ -27,14 +27,14 @@ routes = (app) ->
 				start = moment.utc(process.year+month+req.query.date+' '+req.query.hour+':'+req.query.minute+':00', 'YYYY-MM-DD HH:mm:ss')
 				if req.query.hour is '12'
 					req.query.pm = Math.abs(req.query.pm - 12)
-				post.start = start.add('hours', req.query.pm).format('YYYY-MM-DD HH:mm:ss')
+				post.start = start.add(req.query.pm, 'h').format('YYYY-MM-DD HH:mm:ss')
 
 				# Parse End Time if we have one
 				if req.query.end_hour? && req.query.end_minute?
 					end = moment.utc(process.year+month+req.query.date+' '+req.query.end_hour+':'+req.query.end_minute+':00', 'YYYY-MM-DD HH:mm:ss')
 					if req.query.end_hour is '12'
 						req.query.end_pm = Math.abs(req.query.end_pm - 12)
-					post.end = end.add('hours', req.query.end_pm).format('YYYY-MM-DD HH:mm:ss')
+					post.end = end.add(req.query.end_pm, 'h').format('YYYY-MM-DD HH:mm:ss')
 
 				if not post.type?
 					post.type = 'meetup'
@@ -106,14 +106,14 @@ routes = (app) ->
 				start = moment.utc(process.year+month+req.query.date+' '+req.query.hour+':'+req.query.minute+':00', 'YYYY-MM-DD HH:mm:ss')
 				if req.query.hour is '12'
 					req.query.pm = Math.abs(req.query.pm - 12)
-				post.start = start.add('hours', req.query.pm).format('YYYY-MM-DD HH:mm:ss')
+				post.start = start.add(req.query.pm, 'h').format('YYYY-MM-DD HH:mm:ss')
 
 				# Parse End Time if we have one
 				if req.query.end_hour? && req.query.end_minute?
 					end = moment.utc(process.year+month+req.query.date+' '+req.query.end_hour+':'+req.query.end_minute+':00', 'YYYY-MM-DD HH:mm:ss')
 					if req.query.end_hour is '12'
 						req.query.end_pm = Math.abs(req.query.end_pm - 12)
-					post.end = end.add('hours', req.query.end_pm).format('YYYY-MM-DD HH:mm:ss')
+					post.end = end.add(req.query.end_pm, 'h').format('YYYY-MM-DD HH:mm:ss')
 
 				Event.forge({event_id: post.event_id})
 				.fetch()

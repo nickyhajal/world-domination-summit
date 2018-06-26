@@ -169,7 +169,7 @@ const getEventFromArgs = async args => {
   if (hour === '12') {
     ampm = Math.abs(ampm - 12);
   }
-  post.start = start.add('hours', ampm).format('YYYY-MM-DD HH:mm:ss');
+  post.start = start.add(ampm, 'h').format('YYYY-MM-DD HH:mm:ss');
 
   // Parse End Time if we have one
   if (end_hour != null && end_minute != null) {
@@ -180,7 +180,7 @@ const getEventFromArgs = async args => {
     if (end_hour === '12') {
       end_ampm = Math.abs(end_ampm - 12);
     }
-    post.end = end.add('hours', end_ampm).format('YYYY-MM-DD HH:mm:ss');
+    post.end = end.add(end_ampm, 'h').format('YYYY-MM-DD HH:mm:ss');
   }
 
   if (type == null) {

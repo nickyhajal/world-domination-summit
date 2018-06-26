@@ -326,7 +326,7 @@ routes = (app) ->
 				next()
 		get: (req, res, next) ->
 			feeds = Feeds.forge()
-			tk 'hey...'
+			tk 'Attendee loaded feed'
 			limit = req.query.per_page ? 50
 			page = req.query.page ? 1
 			channel_type = req.query.channel_type
