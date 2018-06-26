@@ -199,9 +199,11 @@ AND year = '` +
                 if (type === 'ios') {
                   // and user_id == 176
                   const note = new apn.Notification();
-                  note.alert = msg;
-                  note.payload = {
+                  note.alert = {
                     title: title ? title : null,
+                    body: msg,
+                  };
+                  note.payload = {
                     content: '{"user_id":"8082"}',
                     type: 'feed_comment',
                     link,
