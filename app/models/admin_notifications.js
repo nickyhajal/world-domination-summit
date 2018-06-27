@@ -215,10 +215,10 @@ AND year = '` +
                   // console.log(user_id);
                   // console.log(note);
                   // console.log(tokens);
-                  // const result = await process.APN.pushNotification(
-                  //   note,
-                  //   device.get('token')
-                  // );
+                  const result = await process.APN.pushNotification(
+                    note,
+                    device.get('token')
+                  );
                   // console.log(result);
                   // console.log('error: ', result.failed[0].error);
                   // console.log('error: ', result.failed[0].response);
@@ -239,13 +239,13 @@ AND year = '` +
                   });
                   // console.log('>> GCM');
                   // console.log(message);
-                  // process.gcmSender.send(message, tokens, function(
-                  //   err,
-                  //   result
-                  // ) {
-                  //   console.log(err);
-                  //   console.log(result);
-                  // });
+                  process.gcmSender.send(message, tokens, function(
+                    err,
+                    result
+                  ) {
+                    console.log(err);
+                    console.log(result);
+                  });
                 }
               }
               this.set({
