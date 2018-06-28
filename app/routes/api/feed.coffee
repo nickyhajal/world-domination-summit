@@ -199,7 +199,7 @@ routes = (app) ->
 										fireRef = process.fire.database().ref().child('feeds')
 										.child(key).set((+(new Date())));
 										notifications = {author: [], commented: [], liked: []}
-										ntfnIds = []
+										ntfnIds = [req.me.get('user_id')]
 										if feed.get('user_id') isnt req.me.get('user_id')
 											notifications.author = [feed.get('user_id')]
 											ntfnIds.push(feed.get('user_id'))
