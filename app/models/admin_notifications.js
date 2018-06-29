@@ -292,7 +292,7 @@ const AdminNotifications = Shelf.Collection.extend({
   },
 });
 
-console.log('>> Start watching notifications');
-AdminNotifications.forge().watchNotifications();
+// console.log('>> Start watching notifications');
+// AdminNotifications.forge().watchNotifications();
 
 module.exports = [AdminNotification, AdminNotifications];
