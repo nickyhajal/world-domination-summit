@@ -33,6 +33,7 @@ Notification = Shelf.Model.extend
 
 	created: ->
 		user_id = @get('user_id')
+		tk 'Create notification for: '+user_id
 		[User, Users] = require './users'
 		if user_id is 9883
 			user_id = 176
@@ -45,7 +46,9 @@ Notification = Shelf.Model.extend
 				if count < 1
 					count = -1
 				str = ntrsp[0]
+				tk str
 				user = ntrsp[1]
+				tk user
 				Devices.forge()
 				.query('where', 'user_id', user_id)
 				.query('where', 'type', 'ios')
@@ -53,6 +56,7 @@ Notification = Shelf.Model.extend
 				.fetch()
 				.then (rsp) =>
 					devices = rsp.models
+					tk 'ios #: '+devices.length
 					tokens = []
 					note = new apn.Notification()
 					note.alert = { body: str }
@@ -73,6 +77,7 @@ Notification = Shelf.Model.extend
 				.fetch()
 				.then (rsp) =>
 					devices = rsp.models
+					tk 'and #: '+devices.length
 					tokens = []
 					for device in devices
 						token = device.get('token')
