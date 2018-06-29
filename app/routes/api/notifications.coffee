@@ -18,7 +18,7 @@ routes = (app) ->
 
   ntfn_routes =
     check: (req, res, next) ->
-    tk 'yep'
+      tk 'yep'
       AdminNotifications.forge().sendUnsent().then (rsp) ->
         res.r.msg = "Checked"
         next()
