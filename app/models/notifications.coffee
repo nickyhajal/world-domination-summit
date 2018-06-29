@@ -48,7 +48,7 @@ Notification = Shelf.Model.extend
 				str = ntrsp[0]
 				tk str
 				user = ntrsp[1]
-				tk user
+				tk user.get('email')
 				Devices.forge()
 				.query('where', 'user_id', user_id)
 				.query('where', 'type', 'ios')
