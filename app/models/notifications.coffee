@@ -219,14 +219,18 @@ Notifications = Shelf.Collection.extend
 				User.forge({user_id: data.from_id})
 				.fetch()
 				.then (user) ->
-					if html
-						link = '<a href="http://worlddominationsummit.com/'+link+'">'
-						text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
-						text += link+user.get('first_name')+' '+user.get('last_name')+' friended you!</a>'
-						text += '</a>'
+					if user
+						if html
+							link = '<a href="http://worlddominationsummit.com/'+link+'">'
+							text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
+							text += link+user.get('first_name')+' '+user.get('last_name')+' friended you!</a>'
+							text += '</a>'
+						else
+							text += user.get('first_name')+' '+user.get('last_name')+' friended you!'
+						if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
 					else
-						text += user.get('first_name')+' '+user.get('last_name')+' friended you!'
-					if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
+						dfr.resolve(false)
+
 			when 'message'
 				User.forge({user_id: data.from_id})
 				.fetch()
@@ -282,7 +286,8 @@ Notifications = Shelf.Collection.extend
 			if notn.get('type') != 'message'
 				@notificationText(notn)
 				.then (text) ->
-					html += '<tr><td>'+text+'</td></tr>'
+					if text
+						html += '<tr><td>'+text+'</td></tr>'
 					cb()
 			else
 				cb()

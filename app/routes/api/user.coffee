@@ -358,9 +358,10 @@ routes = (app) ->
 					async.eachSeries rsp.models, (notn, cb) ->
 						Notifications::notificationText(notn, false, true)
 						.then (ntrsp) ->
-							notn.set('text', ntrsp[0])
-							notn.set('from', _.pick(ntrsp[1].attributes, ['user_id', 'first_name', 'last_name']))
-							notns.push notn
+							if ntrsp
+								notn.set('text', ntrsp[0])
+								notn.set('from', _.pick(ntrsp[1].attributes, ['user_id', 'first_name', 'last_name']))
+								notns.push notn
 							cb()
 					, ->
 						res.r.notifications = (_.sortBy notns, 'notification_id')
