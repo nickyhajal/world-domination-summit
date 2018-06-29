@@ -390,7 +390,6 @@ routes = (app) ->
 					if filter.name is 'following'
 						req.me.getConnections()
 						.then (rsp) ->
-							tk rsp
 							ids = rsp.get('connected_ids')
 							if not ids.length
 								ids = [0]
@@ -416,10 +415,8 @@ routes = (app) ->
 							if req.me? and req.me
 								req.me.getRsvps()
 								.then (rsp) ->
-									tk 'rsvps'
 									rsvps = rsp.get('rsvps')
 									if rsvps.length
-										tk 'rsvpsss'
 										meetups = rsp.get('rsvps').join(',')
 										feeds.query 'whereRaw', "(`channel_type` != 'meetup' OR (`channel_type` = 'meetup' AND `channel_id` IN ("+meetups+")))"
 									cb()
