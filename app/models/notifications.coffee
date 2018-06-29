@@ -86,7 +86,8 @@ Notification = Shelf.Model.extend
 								content: @get('content')
 								type: @get('type')
 								link: @get('link')
-						# tk "GCM SEND:"
+						tk "GCM SEND:"
+						tk token
 						process.gcmSender.send message, [token], (err, result) ->
 							if err
 								tk "GCM ERR"

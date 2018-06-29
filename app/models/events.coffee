@@ -87,17 +87,17 @@ Event = Shelf.Model.extend
         , 100
         dfr.resolve(true)
     return dfr.promise
-  
+
   approve: (req, res, next) ->
     dfr = Q.defer()
     [EventHost, EventHosts] = require('./event_hosts')
     [User, Users] = require('./users')
     EventHost.forge({event_id: @get('event_id')})
     .fetch()
-    .then (host) ->
+    .then (host) =>
       User.forge({user_id: host.get('user_id')})
       .fetch()
-      .then (host) ->
+      .then (host) =>
         host.sendEmail('meetup-approved', 'Your meetup has been approved!')
         @set('active', 1)
         @set('ignored', 0)
