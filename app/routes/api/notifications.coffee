@@ -11,11 +11,17 @@ moment = require('moment')
 routes = (app) ->
 
   [Notification, Notifications] = require('../../models/notifications')
+  [AdminNotification, AdminNotifications] = require('../../models/admin_notifications')
   [Device, Devices] = require('../../models/devices')
   [Registration, Registrations] = require('../../models/registrations')
   [Feed, Feeds] = require('../../models/feeds')
 
   ntfn_routes =
+    check: (req, res, next) ->
+    tk 'yep'
+      AdminNotifications.forge().sendUnsent().then (rsp) ->
+        res.r.msg = "Checked"
+        next()
     get_count: (req, res, next) ->
       if req.query.device? and req.query.registered?
         ntfn_routes.get_devices req, res, (devices) ->

@@ -181,6 +181,8 @@ routes = (app) ->
 	apiRouter.get '/checkins', checkins.get
 	apiRouter.get '/checkins/recent', checkins.get_recent
 
+	apiRouter.get '/notification/check', notifications.check
+
 
 	# # Admin
 	# # Anything in the /admin path will pull the users capabilities

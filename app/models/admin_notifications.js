@@ -271,6 +271,7 @@ const AdminNotifications = Shelf.Collection.extend({
   model: AdminNotification,
 
   async sendUnsent() {
+    console.log('>> Check notifications');
     const now = moment()
       .utc()
       .format('YYYY-MM-DD HH:mm:ss');
@@ -283,7 +284,6 @@ const AdminNotifications = Shelf.Collection.extend({
     await Promise.all(unsent.map(n => n.send()));
   },
   async watchNotifications() {
-    console.log('>> Check notifications');
     await AdminNotifications.forge().sendUnsent();
     setTimeout(() => {
       console.log('>> Schedule next notifications check (60s)');
