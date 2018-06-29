@@ -92,6 +92,8 @@ Notification = Shelf.Model.extend
 								tk "GCM ERR"
 								console.error err
 							else
+								tk err
+								tk result
 								tk "GCM SENT"
 						# 	tk result
 
