@@ -48,23 +48,23 @@ process.lastYear = '2017';
 process.dmn = process.env.DOMAIN;
 process.rsapp = 'mobile_logins';
 process.APN = new apn.Connection(app.settings.apn);
-function handleFeedback(feedbackData) {
-  feedbackData.forEach(function(feedbackItem) {
-    console.log(
-      'Device: ' +
-        feedbackItem.device.toString('hex') +
-        ' has been unreachable, since: ' +
-        feedbackItem.time
-    );
-  });
-}
+// function handleFeedback(feedbackData) {
+//   feedbackData.forEach(function(feedbackItem) {
+//     console.log(
+//       'Device: ' +
+//         feedbackItem.device.toString('hex') +
+//         ' has been unreachable, since: ' +
+//         feedbackItem.time
+//     );
+//   });
+// }
 
-// Setup a connection to the feedback service using a custom interval (10 seconds)
-const fbOpts = Object.assign({ interval: 10 }, app.settings.apn);
-var feedback = new apn.feedback(fbOpts);
+// // Setup a connection to the feedback service using a custom interval (10 seconds)
+// const fbOpts = Object.assign({ interval: 10 }, app.settings.apn);
+// var feedback = new apn.feedback(fbOpts);
 
-feedback.on('feedback', handleFeedback);
-feedback.on('feedbackError', console.error);
+// feedback.on('feedback', handleFeedback);
+// feedback.on('feedbackError', console.error);
 process.gcmSender = new gcm.Sender(process.env.GCM_KEY);
 process.fire = require('firebase-admin');
 process.fire.initializeApp({
