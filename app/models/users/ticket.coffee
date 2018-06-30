@@ -58,7 +58,7 @@ ticket =
         @addToList('WDS 2019 Pre-Orders').then()
         @addToList('WDS 2019 Purchasers')
         .then =>
-          promo = link20 ? 'TicketDoubleReceipt' : 'TicketReceipt'
+          promo = if link20 then 'TicketDoubleReceipt' else 'TicketReceipt'
           subject = "Aw yeah! Your purchase was successful!"
           tickets = 'ticket'
           tickets = 'tickets' if (quantity > 1)
@@ -91,6 +91,10 @@ ticket =
   connectTicket: (ticket, returning = false, transfer_from = null) ->
     [User, Users] = require '../users'
     tk "CLAIM IT"
+    # yr = process.yr
+    yr = '19'
+    # year = process.year
+    year = '2019'
     dfr = Q.defer()
     type = ticket.get('type')
     ticket.set
@@ -100,14 +104,14 @@ ticket =
     .then (upd_ticket) =>
       tk 'CLAIMED'
       user = User.forge(@attributes)
-      user.set 'attending18', '1' #+process.yr, '1'
+      user.set 'attending19', '1' #+process.yr, '1'
       user.set 'ticket_type', type
       user.save()
       .then (upd_user) =>
-        list = 'WDS '+process.year+' Attendees'
+        list = 'WDS '+year+' Attendees'
         # list = 'WDS 2018 Attendees'
         if type is 'connect'
-          list = 'WDS '+process.year+' Connect'
+          list = 'WDS '+year+' Connect'
         @addToList(list)
         .then =>
           promo = 'Welcome'
@@ -124,6 +128,10 @@ ticket =
 
   assignTicket: (ticket, returning = false, purchaser = null) ->
     dfr = Q.defer()
+    yr = process.yr
+    yr = '19'
+    year = process.year
+    year = '2019'
     type = ticket.get('type')
     ticket.set
       status: 'active'
@@ -132,14 +140,14 @@ ticket =
     .then (upd_ticket) =>
       boughtMonth = ticket.get('created_at').getMonth()+1
       if [6,7,8].indexOf(boughtMonth) > -1
-        @set 'pre'+process.yr, '1'
-      @set 'attending'+process.yr, '1'
+        @set 'pre'+yr, '1'
+      @set 'attending'+yr, '1'
       @set 'ticket_type', type
       @save()
       .then (upd_user) =>
-        list = 'WDS '+process.year+' Attendees'
+        list = 'WDS '+year+' Attendees'
         if type is 'connect'
-          list = 'WDS '+process.year+' Connect'
+          list = 'WDS '+year+' Connect'
         @addToList(list)
         .then =>
           promo = 'WelcomeAssignee'
