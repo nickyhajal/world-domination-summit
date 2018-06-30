@@ -35,12 +35,7 @@ config = (app, express, RedisStore, mysql) ->
       cert: process.env.APN_CERT
       key: process.env.APN_KEY
       ca: process.env.APN_CA
-      production: true
-      enhanced: true
-      errorCallback: (err, obj) ->
-        tk '>>> APN ERROR'
-        tk err
-        tk obj
+      production: false
     app.set 'db',
       client: 'mysql'
       connection:
