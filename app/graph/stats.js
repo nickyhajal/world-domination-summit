@@ -15,6 +15,10 @@ const [Connection, Connections] = require('../models/connections');
 const [Event, Events] = require('../models/events');
 const [EventRsvp, EventRsvps] = require('../models/event_rsvps');
 const [User, Users] = require('../models/users');
+const [
+  CredentialChange,
+  CredentialChanges,
+] = require('../models/credential_changes');
 const UserGraph = require('./users');
 const TicketGraphType = require('./TicketGraphType');
 
@@ -34,6 +38,7 @@ const Type = new GraphQLObjectType({
       rsvps: { type: GraphQLInt },
       posts: { type: GraphQLInt },
       likes: { type: GraphQLInt },
+      pw: { type: GraphQLInt },
       num_finished_profile: { type: GraphQLInt },
     };
   },
@@ -54,8 +59,12 @@ const Field = {
       likes: 0,
       meetups: 0,
       posts: 0,
+      pw: 0,
     };
     const posts = await Feeds.query(qb => {
+      qb.where('created_at', '>', '2018-06-01 00:00:00');
+    }).fetch();
+    const pw = await CredentialChanges.query(qb => {
       qb.where('created_at', '>', '2018-06-01 00:00:00');
     }).fetch();
     const likes = await FeedLikes.query(qb => {
@@ -93,6 +102,7 @@ const Field = {
     vals.posts = posts.models.length;
     vals.likes = likes.models.length;
     vals.meetups = meetups.models.length;
+    vals.pw = pw.models.length;
     vals.rsvps = rsvps.models.length;
     row.models.forEach(v => {
       const status = v.get('status');
