@@ -51,11 +51,11 @@ const Field = {
     const row = await Tickets.query(qb => {
       qb.where('year', '2019');
     }).fetch();
-    vals.double_buys = doubleBuys.reduce((sum, row) => {
-      return sum + +row.quantity;
+    vals.double_buys = doubleBuys.models.reduce((sum, row) => {
+      return sum + +row.get('quantity');
     }, 0);
-    vals.single_buys = singleBuys.reduce((sum, row) => {
-      return sum + +row.quantity;
+    vals.single_buys = singleBuys.models.reduce((sum, row) => {
+      return sum + +row.get('quantity');
     }, 0);
     row.models.forEach(v => {
       const status = v.get('status');
