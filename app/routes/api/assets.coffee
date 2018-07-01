@@ -127,7 +127,7 @@ routes = (app) ->
 								rds.expire 'all_attendees', 1000, (err, rsp) ->
 									dfr.resolve(atns)
 				return dfr.promise
-			
+
 			slim_attendees: ->
 				dfr = Q.defer()
 				rds.get 'slim_attendees', (err, atns) ->
@@ -256,7 +256,7 @@ routes = (app) ->
 							rds.set 'tasks', JSON.stringify(rsp.models), ->
 								rds.expire 'tasks', 5000
 				return dfr.promise
-			
+
 			pages: (req) ->
 				dfr = Q.defer()
 				rds.get 'pagess', (err, pages) ->
@@ -473,8 +473,6 @@ routes = (app) ->
 						regs[reg.get('user_id')] = '1'
 					dfr.resolve(regs)
 				return dfr.promise
-
-
 
 
 module.exports = routes
