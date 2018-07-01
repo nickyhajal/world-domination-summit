@@ -68,7 +68,7 @@ const Field = {
     const rsvps = await EventRsvps.query(qb => {
       qb.where('stamp', '>', '2018-05-01 00:00:00');
     }).fetch();
-    const friends = await Friends.query(qb => {
+    const friends = await Connections.query(qb => {
       qb.where('created_at', '>', '2018-04-01 00:00:00');
     }).fetch();
     const doubleBuys = await Transactions.query(qb => {
