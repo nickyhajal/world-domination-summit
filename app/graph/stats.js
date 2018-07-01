@@ -63,6 +63,7 @@ const Field = {
     }).fetch();
     const meetups = await Events.query(qb => {
       qb.where('year', process.yr);
+      qb.where('type', 'meetup');
       qb.where('active', 1);
     }).fetch();
     const rsvps = await EventRsvps.query(qb => {
