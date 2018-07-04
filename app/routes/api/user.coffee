@@ -125,7 +125,7 @@ routes = (app) ->
 								.fetch()
 								.then (existing_tkt) ->
 									if existing_tkt
-										res.errors.push('Looks like '+existing.get('first_name')+' already has a ticket to WDS 2018. You could try someone else or contact concierge@wds.fm for help. ')
+										res.errors.push('Looks like '+existing.get('first_name')+' already has a ticket to WDS '+process.year+'. You could try someone else or contact concierge@wds.fm for help. ')
 										next()
 									else
 										giveTicket(existing, ticket, true)
