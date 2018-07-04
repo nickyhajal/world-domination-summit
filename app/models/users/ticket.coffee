@@ -11,7 +11,7 @@ ticket =
     ticket_ids = []
     type = @get('type')
     ticket_type = @get('ticket_type')
-    @set('pre19','1').save() #ONLY DURING PRESALE
+    @set('pre'+process.yr,'1').save() #ONLY DURING PRESALE
     if link20
       @set('preDouble', '1').save()
     if (!type || !type.length)
@@ -25,7 +25,7 @@ ticket =
         user_id: @get('user_id')
         purchaser_id: @get('user_id')
         status: 'unclaimed'
-        year: '2019'
+        year: process.year
         transfer_from: transferFrom
       .save()
       .then (ticket) =>
@@ -91,10 +91,8 @@ ticket =
   connectTicket: (ticket, returning = false, transfer_from = null) ->
     [User, Users] = require '../users'
     tk "CLAIM IT"
-    # yr = process.yr
-    yr = '19'
-    # year = process.year
-    year = '2019'
+    yr = process.yr
+    year = process.year
     dfr = Q.defer()
     type = ticket.get('type')
     ticket.set
@@ -104,7 +102,7 @@ ticket =
     .then (upd_ticket) =>
       tk 'CLAIMED'
       user = User.forge(@attributes)
-      user.set 'attending19', '1' #+process.yr, '1'
+      user.set 'attending'+process.yr, '1' #+process.yr, '1'
       user.set 'ticket_type', type
       user.save()
       .then (upd_user) =>
@@ -129,9 +127,7 @@ ticket =
   assignTicket: (ticket, returning = false, purchaser = null) ->
     dfr = Q.defer()
     yr = process.yr
-    yr = '19'
     year = process.year
-    year = '2019'
     type = ticket.get('type')
     ticket.set
       status: 'active'
