@@ -45,8 +45,7 @@ const Fields = {
   resolve: async (root, { page, per_page, order_by, order }) => {
     const rows = await Tickets.forge()
       .query(qb => {
-        qb
-          .limit(per_page)
+        qb.limit(per_page)
           .offset(page * per_page)
           .orderBy(order_by, order);
       })
@@ -88,16 +87,13 @@ const Add = {
     let row = {};
     purchaser_id =
       purchaser_id !== undefined && purchaser_id ? purchaser_id : '10124';
-    console.log(user_id);
-    console.log(type);
-    console.log(status);
     type = type !== undefined && type ? type : '360';
     status = status !== undefined && status ? status : 'unclaimed';
     let ticket = await Ticket.forge({
       user_id,
       purchaser_id,
       type,
-      year: process.year,
+      year: process.tkyear,
       status: 'unclaimed',
     }).save();
     if (status === 'active') {

@@ -120,12 +120,12 @@ routes = (app) ->
 							if existing
 								Ticket.forge
 									user_id: existing.get('user_id')
-									year: process.year
+									year: process.tkyear
 									status: 'active'
 								.fetch()
 								.then (existing_tkt) ->
 									if existing_tkt
-										res.errors.push('Looks like '+existing.get('first_name')+' already has a ticket to WDS '+process.year+'. You could try someone else or contact concierge@wds.fm for help. ')
+										res.errors.push('Looks like '+existing.get('first_name')+' already has a ticket to WDS '+process.tkyear+'. You could try someone else or contact concierge@wds.fm for help. ')
 										next()
 									else
 										giveTicket(existing, ticket, true)
@@ -259,7 +259,6 @@ routes = (app) ->
 							params.push t
 							c = true
 						where += ')'
-					tk years
 					if years?.length
 						# if q and req.query.types?.length
 						where += ' AND ('
@@ -489,7 +488,7 @@ routes = (app) ->
 					if (user)
 						hash = require('crypto').createHash('md5').update(''+(+(new Date()))).digest("hex").substr(0,5)
 						user.registerTicket('ADDED_BY_176_'+hash)
-						user.set('attending'+process.yr, '1').save()
+						user.set('attending'+process.tkyr, '1').save()
 						res.r.msg = 'Registered'
 					next()
 

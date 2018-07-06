@@ -141,7 +141,7 @@ PRE =
       Ticket.forge
         type: 'connect'
         stripe_id: meta.post.transaction_id
-        year: process.year
+        year: process.tkyear
         user_id: meta.user_id
         purchaser_id: meta.user_id
         status: 'pending'
@@ -366,7 +366,7 @@ POST =
   t360: (meta) ->
     Ticket.forge
       stripe_id: meta.id,
-      year: process.year
+      year: process.tkyear
       hash: chance.string({pool: 'abcdefghijklmnopqrstuvwxyz', length:6})
       meta_data: JSON.stringify
         shipping: meta.shipping

@@ -11,7 +11,7 @@ ticket =
     ticket_ids = []
     type = @get('type')
     ticket_type = @get('ticket_type')
-    @set('pre'+process.yr,'1').save() #ONLY DURING PRESALE
+    @set('pre'+process.tkyr,'1').save() #ONLY DURING PRESALE
     if link20
       @set('preDouble', '1').save()
     if (!type || !type.length)
@@ -25,7 +25,7 @@ ticket =
         user_id: @get('user_id')
         purchaser_id: @get('user_id')
         status: 'unclaimed'
-        year: process.year
+        year: process.tkyear
         transfer_from: transferFrom
       .save()
       .then (ticket) =>
@@ -77,11 +77,11 @@ ticket =
     dfr = Q.defer()
     Ticket.forge
       user_id: @get('user_id')
-      year: process.year
+      year: process.tkyear
       transfer_from: transfer_from
     .save()
     .then (ticket) =>
-      @addToList('WDS '+process.year+ ' Attendees')
+      @addToList('WDS '+process.tkyear+ ' Attendees')
       .then =>
         promo = 'Welcome'
         subject = "You're coming to WDS! Awesome!"
@@ -91,8 +91,8 @@ ticket =
   connectTicket: (ticket, returning = false, transfer_from = null) ->
     [User, Users] = require '../users'
     tk "CLAIM IT"
-    yr = process.yr
-    year = process.year
+    yr = process.tkyr
+    year = process.tkyear
     dfr = Q.defer()
     type = ticket.get('type')
     ticket.set
@@ -102,14 +102,14 @@ ticket =
     .then (upd_ticket) =>
       tk 'CLAIMED'
       user = User.forge(@attributes)
-      user.set 'attending'+process.yr, '1' #+process.yr, '1'
+      user.set 'attending'+process.tkyr, '1' #+process.yr, '1'
       user.set 'ticket_type', type
       user.save()
       .then (upd_user) =>
-        list = 'WDS '+year+' Attendees'
+        list = 'WDS '+tkyear+' Attendees'
         # list = 'WDS 2018 Attendees'
         if type is 'connect'
-          list = 'WDS '+year+' Connect'
+          list = 'WDS '+tkyear+' Connect'
         @addToList(list)
         .then =>
           promo = 'Welcome'
@@ -126,8 +126,8 @@ ticket =
 
   assignTicket: (ticket, returning = false, purchaser = null) ->
     dfr = Q.defer()
-    yr = process.yr
-    year = process.year
+    yr = process.tkyr
+    year = process.tkyear
     type = ticket.get('type')
     ticket.set
       status: 'active'
@@ -136,14 +136,14 @@ ticket =
     .then (upd_ticket) =>
       boughtMonth = ticket.get('created_at').getMonth()+1
       if [6,7,8].indexOf(boughtMonth) > -1
-        @set 'pre'+yr, '1'
-      @set 'attending'+yr, '1'
+        @set 'pre'+tkyr, '1'
+      @set 'attending'+tkyr, '1'
       @set 'ticket_type', type
       @save()
       .then (upd_user) =>
-        list = 'WDS '+year+' Attendees'
+        list = 'WDS '+tkyear+' Attendees'
         if type is 'connect'
-          list = 'WDS '+year+' Connect'
+          list = 'WDS '+tkyear+' Connect'
         @addToList(list)
         .then =>
           promo = 'WelcomeAssignee'
@@ -159,13 +159,13 @@ ticket =
 
   cancelTicket: ->
     dfr = Q.defer()
-    yr = 'attending'+process.yr
+    yr = 'attending'+process.tkyr
     if (@get(yr) != '-1')
       @set(yr, '-1')
       .save()
     Ticket.forge
       user_id: @get('user_id')
-      year: process.year
+      year: process.tkyear
     .fetch()
     .then (ticket) =>
       if ticket
@@ -173,9 +173,9 @@ ticket =
           status: 'canceled'
         .save()
         .then =>
-          @removeFromList('WDS '+process.year+' Attendees')
+          @removeFromList('WDS '+process.tkyear+' Attendees')
           .then =>
-            @addToList('WDS '+process.year+' Canceled')
+            @addToList('WDS '+process.tkyear+' Canceled')
             dfr.resolve [this, ticket]
         , (err) ->
           console.error err
