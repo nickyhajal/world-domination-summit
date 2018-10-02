@@ -12,6 +12,36 @@ async = require('async')
 [Booking, Bookings] = require('./bookings')
 [EventRsvp, EventRsvps] = require('./event_rsvps')
 
+
+postProcessTicket = (transaction, meta, year, wave, presale = false) ->
+  [User, Users] = require('./users')
+  dfr = Q.defer()
+  User.forge
+    user_id: transaction.get('user_id')
+  .fetch()
+  .then (user) ->
+    user.registerTicket(transaction.get('quantity'), transaction.get('paid_amount'))
+    .then (tickets) ->
+      if presale
+        process.fire.database().ref().child('presales/').push
+          user_id: user.get('user_id')
+          name: user.get('first_name')+' '+user.get('last_name')
+          created_at: (+(new Date()))
+      Tickets.forge().query (qb) ->
+        qb.where('year', year)
+        qb.where('type', '360')
+        qb.whereIn('status', ['active', 'unclaimed'])
+      .fetch()
+      .then (rsp) ->
+        process.fire.database().ref().child('state/'+wave+'/sold').set(rsp.models.length)
+      , (err) ->
+        console.err(error)
+      transaction.set('meta', JSON.stringify(tickets))
+      transaction.save()
+      dfr.resolve({rsp: {tickets: tickets, user: user}})
+  dfr.resolve({})
+  return dfr.promise
+
 Product = Shelf.Model.extend
   tableName: 'products'
   idAttribute: 'product_id'
@@ -91,6 +121,10 @@ PRE =
     dfr.resolve({})
     return dfr.promise
   wds2019: (meta) ->
+    dfr = Q.defer()
+    dfr.resolve({})
+    return dfr.promise
+  wds2019plan: (meta) ->
     dfr = Q.defer()
     dfr.resolve({})
     return dfr.promise
@@ -235,32 +269,32 @@ POST =
     dfr.resolve({})
     return dfr.promise
 
-  wds2019: (transaction, meta) ->
-    [User, Users] = require('./users')
+  wds2019: (transaction, meta) -> return postProcessTicket(transaction, meta, '2019', 'sale_wave1_2019')
+  wds2019plan: (transaction, meta) -> 
     dfr = Q.defer()
-    User.forge
-      user_id: transaction.get('user_id')
-    .fetch()
-    .then (user) ->
-      user.registerTicket(transaction.get('quantity'), transaction.get('paid_amount'))
-      .then (tickets) ->
-        process.fire.database().ref().child('presales/').push
-          user_id: user.get('user_id')
-          name: user.get('first_name')+' '+user.get('last_name')
-          created_at: (+(new Date()))
-        Tickets.forge().query (qb) ->
-          qb.where('year', '2019')
-          qb.where('type', '360')
-          qb.whereIn('status', ['active', 'unclaimed'])
+      postProcessTicket(transaction, meta, '2019', 'sale_wave1_2019')
+      .then ->
+        [User, Users] = require('./users')
+        User.forge
+          user_id: transaction.get('user_id')
         .fetch()
-        .then (rsp) ->
-          process.fire.database().ref().child('state/sale_pre_2019/sold').set(rsp.models.length)
-        , (err) ->
-          console.err(error)
-        transaction.set('meta', JSON.stringify(tickets))
-        transaction.save()
-        dfr.resolve({rsp: {tickets: tickets, user: user}})
-    dfr.resolve({})
+        .then (user) ->
+          stripe = require('stripe')(process.env.STRIPE_SK)
+          pkg = {
+            customer: user.stripe_user,
+            items: [{ plan: process.env.STRIPE_PLAN_ID, quantity: +transaction.get('quantity') }],
+            meta: {installments_paid: 1}
+          }
+          stripe.subscriptions.create(pkg).then (created) ->
+            transaction.set({subscription_type: 'create_subscription', subscription_id: created.id})
+            transaction.save();
+            user.set({plan_installments: 1})
+            user.save();
+          .catch(e) ->
+            console.error(e)
+
+
+
     return dfr.promise
 
   wdsDouble: (transaction, meta) ->
