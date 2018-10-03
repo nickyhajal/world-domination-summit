@@ -272,29 +272,27 @@ POST =
   wds2019: (transaction, meta) -> return postProcessTicket(transaction, meta, '2019', 'sale_wave1_2019')
   wds2019plan: (transaction, meta) -> 
     dfr = Q.defer()
-      postProcessTicket(transaction, meta, '2019', 'sale_wave1_2019')
-      .then ->
-        [User, Users] = require('./users')
-        User.forge
-          user_id: transaction.get('user_id')
-        .fetch()
-        .then (user) ->
-          stripe = require('stripe')(process.env.STRIPE_SK)
-          pkg = {
-            customer: user.stripe_user,
-            items: [{ plan: process.env.STRIPE_PLAN_ID, quantity: +transaction.get('quantity') }],
-            meta: {installments_paid: 1}
-          }
-          stripe.subscriptions.create(pkg).then (created) ->
-            transaction.set({subscription_type: 'create_subscription', subscription_id: created.id})
-            transaction.save();
-            user.set({plan_installments: 1})
-            user.save();
-          .catch(e) ->
-            console.error(e)
-
-
-
+    postProcessTicket(transaction, meta, '2019', 'sale_wave1_2019')
+    .then ->
+      [User, Users] = require('./users')
+      User.forge
+        user_id: transaction.get('user_id')
+      .fetch()
+      .then (user) ->
+        stripe = require('stripe')(process.env.STRIPE_SK)
+        pkg = {
+          customer: user.get('stripe'),
+          items: [{ plan: process.env.STRIPE_PLAN_ID, quantity: +transaction.get('quantity') }],
+          metadata: {installments_paid: 1},
+          trial_from_plan: true
+        }
+        stripe.subscriptions.create(pkg).then (created) ->
+          transaction.set({subscription_type: 'create_subscription', subscription_id: created.id})
+          transaction.save();
+          user.set({plan_installments: 1})
+          user.save();
+        .catch(e) ->
+          console.error(e)
     return dfr.promise
 
   wdsDouble: (transaction, meta) ->
