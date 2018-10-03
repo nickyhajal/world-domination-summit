@@ -291,7 +291,9 @@ POST =
           transaction.save();
           user.set({plan_installments: 1})
           user.save();
+          dfr.resolve({})
         .catch(e) ->
+          dfr.resolve({})
           console.error(e)
     return dfr.promise
 
