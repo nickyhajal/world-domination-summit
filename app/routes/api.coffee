@@ -1,6 +1,7 @@
 ###
 	Routes for the WDS API
 ###
+bodyParser = require('body-parser');
 
 routes = (app) ->
 
@@ -35,6 +36,8 @@ routes = (app) ->
 	apiRouter = express.Router()
 
 	app.use('/api', apiRouter);
+	# apiRouter.use(bodyParser.json());
+	# apiRouter.use(bodyParser.urlencoded({ extended: true }));
 
 	# Setup
 	apiRouter.all '/*', handler.start

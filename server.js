@@ -17,11 +17,10 @@ var app = express();
 //   uploadDir:'/tmp_uploads',
 //   keepExtensions: true
 // }));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(layout());
-app.set('layouts', './app/views');
-app.set('layout', 'layout');
+
+// app.use(layout());
+// app.set('layouts', './app/views');
+// app.set('layout', 'layout');
 app.use(cookieParser());
 app.use(
   session({
@@ -109,6 +108,8 @@ var oa = new OAuth(
 app.set('oa', oa);
 require('./app/views/helpers')(app);
 require('./app/routes/stripe-hook')(app);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 require('./app/routes/registration')(app);
 require('./app/routes/api')(app);
 require('./app/routes/upload')(app);
