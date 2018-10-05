@@ -1,6 +1,7 @@
 const stripe = require('stripe')(process.env.STRIPE_SK);
 const [Transaction, Transactions] = require('../models/transactions');
 const [User, Users] = require('../models/users');
+const [StripeEvent, StripeEvents] = require('../models/StripeEvents');
 
 const log = args => console.log('StripeHook: ', args);
 const updateSub = async (id, sub, paidCount) => {
@@ -44,24 +45,51 @@ const processInstallment = async (inv, sub, user, transaction) => {
   await updateUser(user, paidCount);
   await updateTransaction(inv, sub, user, transaction);
 };
+const checkIfEventExists = async event => {
+  const row = StripeEvent.forge({ service_id: event.id });
+  const existing = await row.fetch();
+  return existing;
+};
+const recordEvent = async event => {
+  const row = StripeEvent.forge({
+    service_id: event.id,
+    status: 'processing',
+    type: event.type,
+  });
+  await row.save();
+  return row;
+};
 const processEvent = async event => {
-  const inv = event.data.object;
-  const sub = inv.lines.data[0];
-  log(`process event: ${event.id}, ${inv.id}, ${sub.id}`);
-  if (
-    sub.metadata &&
-    sub.metadata.installments_paid &&
-    +sub.metadata.installments_paid > 0
-  ) {
-    log(`get assets for process installment paid`);
-    const transaction = await Transaction.forge({
-      subscription_id: sub.id,
-    }).fetch();
-    const user = await User.forge({
-      user_id: transaction.get('user_id'),
-    }).fetch();
-    await processInstallment(inv, sub, user, transaction);
-    return true;
+  const exists = await checkIfEventExists(event);
+  if (!exists) {
+    const log = await recordEvent(event);
+    if (event && event.type === 'invoice.payment_succeeeded') {
+      const inv = event.data.object;
+      const sub = inv.lines.data[0];
+      log(`process event: ${event.id}, ${inv.id}, ${sub.id}`);
+      if (
+        sub.metadata &&
+        sub.metadata.installments_paid &&
+        +sub.metadata.installments_paid > 0
+      ) {
+        log(`get assets for process installment paid`);
+        const transaction = await Transaction.forge({
+          subscription_id: sub.id,
+        }).fetch();
+        const user = await User.forge({
+          user_id: transaction.get('user_id'),
+        }).fetch();
+        await processInstallment(inv, sub, user, transaction);
+        return true;
+      } else {
+        log.set({ status: 'ignored-no-meta' }).save();
+      }
+    } else {
+      log.set({ status: 'ignored-not-invoice' }).save();
+      console.log('Stripe Hook: ', ev.type);
+    }
+  } else {
+    console.log('Ignored duplicate event: ', event.id);
   }
   return false;
 };
