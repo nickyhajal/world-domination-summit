@@ -3,7 +3,7 @@ const stripe = require('stripe')(process.env.STRIPE_SK);
 const { processEvent } = require('./stripe-hook-functions');
 
 const routes = app => {
-  app.all('/stripewh', (req, res) => {
+  return app.all('/stripewh', (req, res) => {
     res.send('hey');
     return;
     try {
