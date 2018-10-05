@@ -62,7 +62,7 @@ const recordEvent = async event => {
 const processEvent = async event => {
   const exists = await checkIfEventExists(event);
   if (!exists) {
-    const log = await recordEvent(event);
+    const record = await recordEvent(event);
     if (event && event.type === 'invoice.payment_succeeded') {
       const inv = event.data.object;
       const sub = inv.lines.data[0];
@@ -80,12 +80,13 @@ const processEvent = async event => {
           user_id: transaction.get('user_id'),
         }).fetch();
         await processInstallment(inv, sub, user, transaction);
+        record.set({ status: 'success' }).save();
         return true;
       } else {
-        log.set({ status: 'ignored-no-meta' }).save();
+        record.set({ status: 'ignored-no-meta' }).save();
       }
     } else {
-      log.set({ status: 'ignored-not-invoice' }).save();
+      record.set({ status: 'ignored-not-invoice' }).save();
       console.log('Stripe Hook: ', event.type);
     }
   } else {
