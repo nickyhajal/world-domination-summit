@@ -1,9 +1,14 @@
 const stripe = require('stripe')(process.env.STRIPE_SK);
+const bodyParser = require('body-parser');
+const express = require('express');
+const stripeHookRouter = express.Router();
 
 const { processEvent } = require('./stripe-hook-functions');
 
 const routes = app => {
-  return app.all('/stripewh', (req, res) => {
+  app.use('/stripewh', stripeHookRouter);
+  stripeHookRouter.use(bodyParser.raw({ type: '*/*' }));
+  stripeHookRouter.all('/', (req, res) => {
     try {
       let sig = req.headers['stripe-signature'];
       console.log(req.body);
