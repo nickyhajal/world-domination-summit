@@ -5,9 +5,9 @@ const [StripeEvent, StripeEvents] = require('../models/StripeEvents');
 
 const log = args => console.log('StripeHook: ', args);
 const updateSub = async (id, sub, paidCount) => {
-  const activeSub = await stripe.subscriptions.retrieve(id);
-  activeSub.metadata.installments_paid = paidCount;
-  await activeSub.save();
+  await stripe.subscriptions.update(id, {
+    metadata: { installments_paid: paidCount },
+  });
   if (paidCount > 3) {
     await activeSub.delete();
     log(`${sub.id} completed and deleted (paid ${paidCount} times)`);
