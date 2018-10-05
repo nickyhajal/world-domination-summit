@@ -88,7 +88,7 @@ const processEvent = async event => {
       } else {
         record
           .set({
-            status: inv.charge ? 'ignored-trial-invoice' : 'ignored-no-meta',
+            status: !inv.charge ? 'ignored-trial-invoice' : 'ignored-no-meta',
           })
           .save();
       }
