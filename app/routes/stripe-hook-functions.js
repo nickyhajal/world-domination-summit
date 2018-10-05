@@ -35,7 +35,7 @@ const updateTransaction = async (inv, sub, user, transaction) => {
     meta: transaction.get('transaction_id'),
   };
   log(`create transaction: ${row}`);
-  await transaction.forge(row);
+  await Transaction.forge(row);
   return row;
 };
 const processInstallment = async (inv, sub, user, transaction) => {
