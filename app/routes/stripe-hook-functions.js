@@ -70,6 +70,7 @@ const processEvent = async event => {
       const sub = inv.lines.data[0];
       log(`process event: ${event.id}, ${inv.id}, ${sub.id}`);
       if (
+        inv.charge &&
         sub.metadata &&
         sub.metadata.installments_paid &&
         +sub.metadata.installments_paid > 0
@@ -85,7 +86,11 @@ const processEvent = async event => {
         record.set({ status: 'success' }).save();
         return true;
       } else {
-        record.set({ status: 'ignored-no-meta' }).save();
+        record
+          .set({
+            status: inv.charge ? 'ignored-trial-invoice' : 'ignored-no-meta',
+          })
+          .save();
       }
     } else {
       record.set({ status: 'ignored-not-invoice' }).save();
