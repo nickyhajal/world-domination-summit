@@ -63,7 +63,7 @@ const processEvent = async event => {
   const exists = await checkIfEventExists(event);
   if (!exists) {
     const log = await recordEvent(event);
-    if (event && event.type === 'invoice.payment_succeeeded') {
+    if (event && event.type === 'invoice.payment_succeeded') {
       const inv = event.data.object;
       const sub = inv.lines.data[0];
       log(`process event: ${event.id}, ${inv.id}, ${sub.id}`);
@@ -86,7 +86,7 @@ const processEvent = async event => {
       }
     } else {
       log.set({ status: 'ignored-not-invoice' }).save();
-      console.log('Stripe Hook: ', ev.type);
+      console.log('Stripe Hook: ', event.type);
     }
   } else {
     console.log('Ignored duplicate event: ', event.id);
