@@ -5,7 +5,7 @@ const [StripeEvent, StripeEvents] = require('../models/StripeEvents');
 
 const log = args => console.log('StripeHook: ', args);
 const updateSub = async (id, sub, paidCount) => {
-  const activeSub = await stripe.subscription.retrieve(id);
+  const activeSub = await stripe.subscriptions.retrieve(id);
   activeSub.metadata.installments_paid = paidCount;
   await activeSub.save();
   if (paidCount > 3) {
