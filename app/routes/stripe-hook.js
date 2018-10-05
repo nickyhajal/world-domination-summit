@@ -23,6 +23,8 @@ const routes = app => {
         res.send('success');
       }
     } catch (e) {
+      console.log(e);
+      console.log(e.message);
       return res.sendStatus(401);
     }
   });
