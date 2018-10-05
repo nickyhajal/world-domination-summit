@@ -6,6 +6,9 @@ const routes = app => {
   return app.all('/stripewh', (req, res) => {
     try {
       let sig = req.headers['stripe-signature'];
+      console.log(req.body);
+      console.log(sig);
+      console.log(process.env.STRIPE_WHSEC);
       let ev = stripe.webhooks.constructEvent(
         req.body,
         sig,
