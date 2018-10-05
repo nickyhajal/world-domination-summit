@@ -25,6 +25,7 @@ const updateUser = async (user, paidCount) => {
 const updateTransaction = async (inv, sub, user, transaction) => {
   const row = {
     user_id: user.get('user_id'),
+    status: 'paid',
     product_id: '2011',
     via: 'hook',
     stripe_id: inv.charge,
@@ -35,7 +36,7 @@ const updateTransaction = async (inv, sub, user, transaction) => {
     meta: transaction.get('transaction_id'),
   };
   log(`create transaction: ${row}`);
-  await Transaction.forge(row);
+  await Transaction.forge(row).save();
   return row;
 };
 const processInstallment = async (inv, sub, user, transaction) => {
