@@ -4,8 +4,6 @@ const { processEvent } = require('./stripe-hook-functions');
 
 const routes = app => {
   return app.all('/stripewh', (req, res) => {
-    res.send('hey');
-    return;
     try {
       let sig = req.headers['stripe-signature'];
       let ev = stripe.webhooks.constructEvent(
