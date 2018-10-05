@@ -9,10 +9,10 @@ const updateSub = async (id, sub, paidCount) => {
     metadata: { installments_paid: paidCount },
   });
   if (paidCount > 3) {
-    await activeSub.delete();
-    log(`${sub.id} completed and deleted (paid ${paidCount} times)`);
+    await stripe.subscriptions.del(id);
+    log(`${id} completed and deleted (paid ${paidCount} times)`);
   } else {
-    log(`${sub.id} payment success (paid ${paidCount} times)`);
+    log(`${id} payment success (paid ${paidCount} times)`);
   }
   return true;
 };
