@@ -40,7 +40,8 @@ const updateTransaction = async (inv, sub, user, transaction) => {
 };
 const processInstallment = async (inv, sub, user, transaction) => {
   log(`start process installment`);
-  const paidCount = sub.metadata.installments_paid + 1;
+  console.log(sub.metadata);
+  const paidCount = +sub.metadata.installments_paid + 1;
   await updateSub(sub.id);
   await updateUser(user, paidCount);
   await updateTransaction(inv, sub, user, transaction);
