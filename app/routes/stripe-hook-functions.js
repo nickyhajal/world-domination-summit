@@ -4,7 +4,7 @@ const [User, Users] = require('../models/users');
 const [StripeEvent, StripeEvents] = require('../models/StripeEvents');
 
 const log = args => console.log('StripeHook: ', args);
-const updateSub = async (id, sub, paidCount) => {
+const updateSub = async (id, paidCount) => {
   await stripe.subscriptions.update(id, {
     metadata: { installments_paid: paidCount },
   });
@@ -42,7 +42,7 @@ const processInstallment = async (inv, sub, user, transaction) => {
   log(`start process installment`);
   console.log(sub.metadata);
   const paidCount = +sub.metadata.installments_paid + 1;
-  await updateSub(sub.id);
+  await updateSub(sub.id, paidCount);
   await updateUser(user, paidCount);
   await updateTransaction(inv, sub, user, transaction);
 };
