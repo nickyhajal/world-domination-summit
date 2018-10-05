@@ -18,9 +18,9 @@ var app = express();
 //   keepExtensions: true
 // }));
 
-// app.use(layout());
-// app.set('layouts', './app/views');
-// app.set('layout', 'layout');
+app.use(layout());
+app.set('layouts', './app/views');
+app.set('layout', 'layout');
 app.use(cookieParser());
 app.use(
   session({
