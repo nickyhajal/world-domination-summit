@@ -106,10 +106,10 @@ ticket =
       user.set 'ticket_type', type
       user.save()
       .then (upd_user) =>
-        list = 'WDS '+tkyear+' Attendees'
+        list = 'WDS '+year+' Attendees'
         # list = 'WDS 2018 Attendees'
         if type is 'connect'
-          list = 'WDS '+tkyear+' Connect'
+          list = 'WDS '+year+' Connect'
         @addToList(list)
         .then =>
           promo = 'Welcome'
