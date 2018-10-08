@@ -136,14 +136,14 @@ ticket =
     .then (upd_ticket) =>
       boughtMonth = ticket.get('created_at').getMonth()+1
       if [6,7,8].indexOf(boughtMonth) > -1
-        @set 'pre'+tkyr, '1'
-      @set 'attending'+tkyr, '1'
+        @set 'pre'+yr, '1'
+      @set 'attending'+yr, '1'
       @set 'ticket_type', type
       @save()
       .then (upd_user) =>
-        list = 'WDS '+tkyear+' Attendees'
+        list = 'WDS '+year+' Attendees'
         if type is 'connect'
-          list = 'WDS '+tkyear+' Connect'
+          list = 'WDS '+year+' Connect'
         @addToList(list)
         .then =>
           promo = 'WelcomeAssignee'
