@@ -290,6 +290,7 @@ User = Shelf.Model.extend
     location = @getLocationString()
     @set 'location', location
     geocoder.geocode location, (err, data) =>
+      console.log(data.results[0])
       if data.results[0]
         latlon = data.results[0].geometry.location
         distance = geolib.getDistance
@@ -298,10 +299,10 @@ User = Shelf.Model.extend
         ,
           latitude: latlon.lat
           longitude: latlon.lng
-      @set
-        lat: latlon.lat
-        lon: latlon.lng
-        distance: ( (distance / 1000) * 0.6214 )
+        @set
+          lat: latlon.lat
+          lon: latlon.lng
+          distance: ( (distance / 1000) * 0.6214 )
       if !@get('region')? or !@get('region').length or !(+@get('region'))
         if data?.results[0]?.address_components?[4]?
           short = data.results[0].address_components[4].short_name

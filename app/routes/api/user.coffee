@@ -17,7 +17,7 @@ routes = (app) ->
 	twitter = new twitterAPI
 		consumerKey: app.settings.twitter_consumer_key
 		consumerSecret: app.settings.twitter_consumer_secret
-		callback: 'http://'+process.dmn+'/api/user/twitter/callback'
+		callback: 'https://api.worlddominationsummit.com/api/user/twitter/callback'
 
 	[User, Users] = require('../../models/users')
 	[EventRsvp, EventRsvps] = require('../../models/event_rsvps')
@@ -674,10 +674,13 @@ routes = (app) ->
 						next()
 
 		twitter_connect: (req, res, next) ->
+			tk 'con'
 			twitter.getRequestToken (err, reqToken, reqTokenSec, twitter_rsp) ->
+				tk err
 				if err
 					res.r.msg = err
 					res.status = '400'
+					next();
 				else
 					req.session.twitter_connect = [reqToken, reqTokenSec]
 					url = 'https://twitter.com/oauth/authenticate?oauth_token='+reqToken+'&oauth_callback=https://'+encodeURI('api.worlddominationsummit.com/user/twitter/callback')
