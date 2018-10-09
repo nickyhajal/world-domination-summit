@@ -88,6 +88,7 @@ const Field = {
     }).fetch();
     const singleBuysThisWave = await Transactions.query(qb => {
       qb.where('product_id', '15');
+      qb.where('created_at', '>', '2018-10-01 00:00:00');
       qb.where('paid_amount', '>', '63000');
     }).fetch();
     const singleBuys = await Transactions.query(qb => {
