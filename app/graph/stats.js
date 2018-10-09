@@ -27,12 +27,13 @@ const Type = new GraphQLObjectType({
   description: 'Stats Type',
   fields: () => {
     return {
+      current_wave_total: { type: GraphQLInt },
+      current_wave_plan: { type: GraphQLInt },
       current_wave_tickets: { type: GraphQLInt },
       total_tickets: { type: GraphQLInt },
       num_assigned: { type: GraphQLInt },
       num_started_profile: { type: GraphQLInt },
       single_buys: { type: GraphQLInt },
-      this_wave: { type: GraphQLInt },
       payment_plans: { type: GraphQLInt },
       meetups: { type: GraphQLInt },
       friends: { type: GraphQLInt },
@@ -62,14 +63,15 @@ const Field = {
       posts: 0,
       pw: 0,
     };
+    const waveDate = '2018-10-01 00:00:00'
     const posts = await Feeds.query(qb => {
-      qb.where('created_at', '>', '2018-10-01 00:00:00');
+      qb.where('created_at', '>', waveDate);
     }).fetch();
     const pw = await CredentialChanges.query(qb => {
-      qb.where('created_at', '>', '2018-10-01 00:00:00');
+      qb.where('created_at', '>', waveDate);
     }).fetch();
     const likes = await FeedLikes.query(qb => {
-      qb.where('created_at', '>', '2018-10-01 00:00:00');
+      qb.where('created_at', '>', waveDate);
     }).fetch();
     const meetups = await Events.query(qb => {
       qb.where('year', process.yr);
@@ -77,18 +79,23 @@ const Field = {
       qb.where('active', 1);
     }).fetch();
     const rsvps = await EventRsvps.query(qb => {
-      qb.where('stamp', '>', '2018-10-01 00:00:00');
+      qb.where('stamp', '>', waveDate);
     }).fetch();
     const friends = await Connections.query(qb => {
-      qb.where('created_at', '>', '2018-10-01 00:00:00');
+      qb.where('created_at', '>', waveDate);
     }).fetch();
     const paymentPlans = await Transactions.query(qb => {
       qb.where('product_id', '17');
       qb.where('paid_amount', '>', '5000');
     }).fetch();
+    const paymentPlansThisWave = await Transactions.query(qb => {
+      qb.where('product_id', '17');
+      qb.where('created_at', '>', waveDate);
+      qb.where('paid_amount', '>', '5000');
+    }).fetch();
     const singleBuysThisWave = await Transactions.query(qb => {
       qb.where('product_id', '15');
-      qb.where('created_at', '>', '2018-10-01 00:00:00');
+      qb.where('created_at', '>', waveDate);
       qb.where('paid_amount', '>', '63000');
     }).fetch();
     const singleBuys = await Transactions.query(qb => {
@@ -102,6 +109,9 @@ const Field = {
     const row = await Tickets.query(qb => {
       qb.where('year', '2019');
     }).fetch();
+    vals.current_wave_plans = paymentPlansThisWave.models.reduce((sum, row) => {
+      return sum + +row.get('quantity');
+    }, 0);
     vals.payment_plans = paymentPlans.models.reduce((sum, row) => {
       return sum + +row.get('quantity');
     }, 0);
@@ -115,6 +125,10 @@ const Field = {
     vals.current_wave_tickets = singleBuysThisWave.models.reduce((sum, row) => {
       return sum + +row.get('quantity');
     }, 0);
+    vals.current_wave_plan = paymentPlansThisWave.models.reduce((sum, row) => {
+      return sum + +row.get('quantity');
+    }, 0);
+    vals.current_wave_total = vals.current_wave_plan + vals.current_wave_tickets;
     vals.friends = friends.models.length;
     vals.posts = posts.models.length;
     vals.likes = likes.models.length;
