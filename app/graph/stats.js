@@ -94,6 +94,10 @@ const Field = {
       qb.where('product_id', '15');
       qb.where('paid_amount', '>', '10000');
     }).fetch();
+    const doubleBuys = await Transactions.query(qb => {
+      qb.where('product_id', '16');
+      qb.where('paid_amount', '>', '5000');
+    }).fetch();
     const row = await Tickets.query(qb => {
       qb.where('year', '2019');
     }).fetch();
@@ -103,6 +107,10 @@ const Field = {
     vals.single_buys = singleBuys.models.reduce((sum, row) => {
       return sum + +row.get('quantity');
     }, 0);
+    const double_buys = doubleBuys.models.reduce((sum, row) => {
+      return sum + +row.get('quantity');
+    }, 0);
+    vals.single_buys += double_buys;
     vals.current_wave_tickets = singleBuysThisWave.models.reduce((sum, row) => {
       return sum + +row.get('quantity');
     }, 0);
