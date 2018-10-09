@@ -103,7 +103,7 @@ const Field = {
     vals.single_buys = singleBuys.models.reduce((sum, row) => {
       return sum + +row.get('quantity');
     }, 0);
-    vals.this_wave = singleBuysThisWave.models.reduce((sum, row) => {
+    vals.current_wave_tickets = singleBuysThisWave.models.reduce((sum, row) => {
       return sum + +row.get('quantity');
     }, 0);
     vals.friends = friends.models.length;
@@ -116,12 +116,12 @@ const Field = {
       const status = v.get('status');
       if (status === 'active' || status === 'unclaimed') {
         vals.total_tickets += 1;
-        if (
-          moment(v.get('created_at')).format('YYYY-MM-DD') >
-          '2017-10-01 00:00:00'
-        ) {
-          vals.current_wave_tickets += 1;
-        }
+        // if (
+        //   moment(v.get('created_at')).format('YYYY-MM-DD') >
+        //   '2017-10-01 00:00:00'
+        // ) {
+        //   vals.current_wave_tickets += 1;
+        // }
       }
       if (status === 'active') {
         vals.num_assigned += 1;
