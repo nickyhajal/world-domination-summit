@@ -5,12 +5,16 @@ const [User, Users] = require('../models/users');
 const [StripeEvent, StripeEvents] = require('../models/StripeEvents');
 
 const log = args => console.log('StripeHook: ', args);
-const updateSub = async (id, paidCount) => {
+const updateSub = async (user, id, paidCount) => {
   await stripe.subscriptions.update(id, {
     metadata: { installments_paid: paidCount },
   });
   if (paidCount > 3) {
     await stripe.subscriptions.del(id);
+    user.sendEmail(
+      'PaymentPlanComplete',
+      "Woohoo! You've completed your WDS Payment Plan!"
+    );
     log(`${id} completed and deleted (paid ${paidCount} times)`);
   } else {
     log(`${id} payment success (paid ${paidCount} times)`);
@@ -44,7 +48,7 @@ const processInstallment = async (inv, sub, user, transaction) => {
   log(`start process installment`);
   console.log(sub.metadata);
   const paidCount = +sub.metadata.installments_paid + 1;
-  await updateSub(sub.id, paidCount);
+  await updateSub(user, sub.id, paidCount);
   await updateUser(user, paidCount);
   await updateTransaction(inv, sub, user, transaction);
 };
@@ -106,10 +110,14 @@ const processEvent = async event => {
         const { inv, sub, user, transation } = await getInvoiceParts(event);
         log(`process upcoming invoice: ${event.id}, ${inv.id}, ${sub.id}`);
         if (inv && sub && user && transaction) {
-          user.sendEmail('PaymentPlanReminder', {
-            amount: `$${inv.amount_due / 100}`,
-            charge_date: moment(inv.period_end).format('l'),
-          });
+          user.sendEmail(
+            'PaymentPlanReminder',
+            'Reminder: Upcoming WDS Charge',
+            {
+              amount: `$${inv.amount_due / 100}`,
+              charge_date: moment(inv.period_end).format('l'),
+            }
+          );
         }
       } else {
         record.set({ status: 'ignored-not-invoice' }).save();
