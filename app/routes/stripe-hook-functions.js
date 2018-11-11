@@ -1,4 +1,5 @@
 const stripe = require('stripe')(process.env.STRIPE_SK);
+const moment = require('moment');
 const [Transaction, Transactions] = require('../models/transactions');
 const [User, Users] = require('../models/users');
 const [StripeEvent, StripeEvents] = require('../models/StripeEvents');
@@ -52,6 +53,26 @@ const checkIfEventExists = async event => {
   const existing = await row.fetch();
   return existing;
 };
+const getInvoiceParts = async event => {
+  const inv = event.data.object;
+  const sub = inv.lines.data[0];
+  if (
+    inv.charge &&
+    sub.metadata &&
+    sub.metadata.installments_paid &&
+    +sub.metadata.installments_paid > 0
+  ) {
+    log(`get assets for process installment paid`);
+    const transaction = await Transaction.forge({
+      subscription_id: sub.id,
+    }).fetch();
+    const user = await User.forge({
+      user_id: transaction.get('user_id'),
+    }).fetch();
+    return { inv, sub, transaction, user };
+  }
+  return { inv: false, sub: false, user: false, transaction: false };
+};
 const recordEvent = async event => {
   const row = StripeEvent.forge({
     service_id: event.id,
@@ -66,22 +87,10 @@ const processEvent = async event => {
   if (!exists) {
     const record = await recordEvent(event);
     if (event && event.type === 'invoice.payment_succeeded') {
-      const inv = event.data.object;
-      const sub = inv.lines.data[0];
+      const { inv, sub, user, transaction } = await getInvoiceParts(event);
       log(`process event: ${event.id}, ${inv.id}, ${sub.id}`);
-      if (
-        inv.charge &&
-        sub.metadata &&
-        sub.metadata.installments_paid &&
-        +sub.metadata.installments_paid > 0
-      ) {
+      if (inv && sub && user && transaction) {
         log(`get assets for process installment paid`);
-        const transaction = await Transaction.forge({
-          subscription_id: sub.id,
-        }).fetch();
-        const user = await User.forge({
-          user_id: transaction.get('user_id'),
-        }).fetch();
         await processInstallment(inv, sub, user, transaction);
         record.set({ status: 'success' }).save();
         return true;
@@ -92,12 +101,23 @@ const processEvent = async event => {
           })
           .save();
       }
+      if (event && event.type === 'invoice.upcoming') {
+        await record.set({ status: 'processing' }).save();
+        const { inv, sub, user, transation } = await getInvoiceParts(event);
+        log(`process upcoming invoice: ${event.id}, ${inv.id}, ${sub.id}`);
+        if (inv && sub && user && transaction) {
+          user.sendEmail('PaymentPlanReminder', {
+            amount: `$${inv.amount_due / 100}`,
+            charge_date: moment(inv.period_end).format('l'),
+          });
+        }
+      } else {
+        record.set({ status: 'ignored-not-invoice' }).save();
+        console.log('Stripe Hook: ', event.type);
+      }
     } else {
-      record.set({ status: 'ignored-not-invoice' }).save();
-      console.log('Stripe Hook: ', event.type);
+      console.log('Ignored duplicate event: ', event.id);
     }
-  } else {
-    console.log('Ignored duplicate event: ', event.id);
   }
   return false;
 };
