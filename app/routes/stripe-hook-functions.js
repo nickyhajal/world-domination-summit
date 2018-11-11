@@ -123,9 +123,9 @@ const processEvent = async event => {
         record.set({ status: 'ignored-not-invoice' }).save();
         console.log('Stripe Hook: ', event.type);
       }
-    } else {
-      console.log('Ignored duplicate event: ', event.id);
     }
+  } else {
+    console.log('Ignored duplicate event: ', event.id);
   }
   return false;
 };
