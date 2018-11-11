@@ -118,6 +118,7 @@ const processEvent = async event => {
               charge_date: moment(inv.period_end).format('l'),
             }
           );
+          record.set({ status: 'sent-reminder' }).save();
         }
       } else {
         record.set({ status: 'ignored-not-invoice' }).save();
