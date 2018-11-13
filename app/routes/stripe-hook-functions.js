@@ -107,7 +107,7 @@ const processEvent = async event => {
       }
       if (event && event.type === 'invoice.upcoming') {
         await record.set({ status: 'processing' }).save();
-        const { inv, sub, user, transation } = await getInvoiceParts(event);
+        const { inv, sub, user, transaction } = await getInvoiceParts(event);
         log(`process upcoming invoice: ${event.id}, ${inv.id}, ${sub.id}`);
         if (inv && sub && user && transaction) {
           user.sendEmail(
