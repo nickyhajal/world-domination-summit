@@ -105,25 +105,20 @@ const processEvent = async event => {
           })
           .save();
       }
-      if (event && event.type === 'invoice.upcoming') {
-        await record.set({ status: 'processing' }).save();
-        const { inv, sub, user, transaction } = await getInvoiceParts(event);
-        log(`process upcoming invoice: ${event.id}, ${inv.id}, ${sub.id}`);
-        if (inv && sub && user && transaction) {
-          user.sendEmail(
-            'PaymentPlanReminder',
-            'Reminder: Upcoming WDS Charge',
-            {
-              amount: `$${inv.amount_due / 100}`,
-              charge_date: moment(inv.period_end).format('l'),
-            }
-          );
-          record.set({ status: 'sent-reminder' }).save();
-        }
-      } else {
-        record.set({ status: 'ignored-not-invoice' }).save();
-        console.log('Stripe Hook: ', event.type);
+    } else if (event && event.type === 'invoice.upcoming') {
+      await record.set({ status: 'processing' }).save();
+      const { inv, sub, user, transaction } = await getInvoiceParts(event);
+      log(`process upcoming invoice: ${event.id}, ${inv.id}, ${sub.id}`);
+      if (inv && sub && user && transaction) {
+        user.sendEmail('PaymentPlanReminder', 'Reminder: Upcoming WDS Charge', {
+          amount: `$${inv.amount_due / 100}`,
+          charge_date: moment(inv.period_end).format('l'),
+        });
+        record.set({ status: 'sent-reminder' }).save();
       }
+    } else {
+      record.set({ status: 'ignored-not-invoice' }).save();
+      console.log('Stripe Hook: ', event.type);
     }
   } else {
     console.log('Ignored duplicate event: ', event.id);
