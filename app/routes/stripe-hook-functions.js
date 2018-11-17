@@ -60,6 +60,7 @@ const checkIfEventExists = async event => {
 const getInvoiceParts = async (event, allowUncharged = false) => {
   const inv = event.data.object;
   const sub = inv.lines.data[0];
+  log(`allow uncharged: ${allowUncharged}`);
   if (
     (inv.charge || allowUncharged) &&
     sub.metadata &&
