@@ -57,11 +57,11 @@ const checkIfEventExists = async event => {
   const existing = await row.fetch();
   return existing;
 };
-const getInvoiceParts = async event => {
+const getInvoiceParts = async (event, allowUncharged = false) => {
   const inv = event.data.object;
   const sub = inv.lines.data[0];
   if (
-    inv.charge &&
+    (inv.charge || allowUncharged) &&
     sub.metadata &&
     sub.metadata.installments_paid &&
     +sub.metadata.installments_paid > 0
@@ -91,8 +91,11 @@ const processEvent = async event => {
   if (!exists) {
     const record = await recordEvent(event);
     if (event && event.type === 'invoice.payment_succeeded') {
-      const { inv, sub, user, transaction } = await getInvoiceParts(event);
-      log(`process event: ${event.id}, ${inv.id}, ${sub.id}`);
+      const { inv, sub, user, transaction } = await getInvoiceParts(
+        event,
+        true
+      );
+      log(`process event: ${event.id}, ${inv.customer}, ${sub.id}`);
       if (inv && sub && user && transaction) {
         log(`get assets for process installment paid`);
         await processInstallment(inv, sub, user, transaction);
