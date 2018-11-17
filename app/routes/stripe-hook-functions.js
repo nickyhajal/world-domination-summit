@@ -91,10 +91,7 @@ const processEvent = async event => {
   if (!exists) {
     const record = await recordEvent(event);
     if (event && event.type === 'invoice.payment_succeeded') {
-      const { inv, sub, user, transaction } = await getInvoiceParts(
-        event,
-        true
-      );
+      const { inv, sub, user, transaction } = await getInvoiceParts(event);
       log(`process event: ${event.id}, ${inv.customer}, ${sub.id}`);
       if (inv && sub && user && transaction) {
         log(`get assets for process installment paid`);
@@ -110,7 +107,10 @@ const processEvent = async event => {
       }
     } else if (event && event.type === 'invoice.upcoming') {
       await record.set({ status: 'processing' }).save();
-      const { inv, sub, user, transaction } = await getInvoiceParts(event);
+      const { inv, sub, user, transaction } = await getInvoiceParts(
+        event,
+        true
+      );
       log(`process upcoming invoice: ${event.id}, ${inv.id}, ${sub.id}`);
       if (inv && sub && user && transaction) {
         user.sendEmail('PaymentPlanReminder', 'Reminder: Upcoming WDS Charge', {
