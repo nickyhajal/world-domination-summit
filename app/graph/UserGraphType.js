@@ -33,7 +33,9 @@ const UserType = new GraphQLObjectType({
       attending16: { type: GraphQLString },
       attending17: { type: GraphQLString },
       attending18: { type: GraphQLString },
+      attending19: { type: GraphQLString },
       pre18: { type: GraphQLString },
+      pre19: { type: GraphQLString },
       ticket_type: { type: GraphQLString },
       type: { type: GraphQLString },
       email: { type: GraphQLString },
@@ -97,8 +99,8 @@ const UserType = new GraphQLObjectType({
           const rows = await Users.forge()
             .query('where', { merged: row.user_id })
             .fetch();
-          return rows.map(
-            v => (v.attributes !== undefined ? v.attributes : {})
+          return rows.map(v =>
+            v.attributes !== undefined ? v.attributes : {}
           );
         },
       },
@@ -112,8 +114,8 @@ const UserType = new GraphQLObjectType({
               qb.orderBy('created_at', 'desc');
             })
             .fetch();
-          return emails.map(
-            v => (v.attributes !== undefined ? v.attributes : {})
+          return emails.map(v =>
+            v.attributes !== undefined ? v.attributes : {}
           );
         },
       },
@@ -141,8 +143,8 @@ const UserType = new GraphQLObjectType({
           const rsvps = await query.fetch();
 
           // console.log(rsvps);
-          return rsvps.map(
-            v => (v.attributes !== undefined && v ? v.attributes : {})
+          return rsvps.map(v =>
+            v.attributes !== undefined && v ? v.attributes : {}
           );
         },
       },
@@ -154,8 +156,8 @@ const UserType = new GraphQLObjectType({
               qb.where('to_id', row.user_id);
             })
             .fetch();
-          return ts.map(
-            v => (v.attributes !== undefined && v ? v.attributes : {})
+          return ts.map(v =>
+            v.attributes !== undefined && v ? v.attributes : {}
           );
         },
       },
@@ -167,8 +169,8 @@ const UserType = new GraphQLObjectType({
               qb.where('user_id', row.user_id);
             })
             .fetch();
-          return ts.map(
-            v => (v.attributes !== undefined && v ? v.attributes : {})
+          return ts.map(v =>
+            v.attributes !== undefined && v ? v.attributes : {}
           );
         },
       },
@@ -181,8 +183,8 @@ const UserType = new GraphQLObjectType({
               qb.orWhere('purchaser_id', row.user_id);
             })
             .fetch();
-          return ts.map(
-            v => (v.attributes !== undefined && v ? v.attributes : {})
+          return ts.map(v =>
+            v.attributes !== undefined && v ? v.attributes : {}
           );
         },
       },
@@ -195,8 +197,8 @@ const UserType = new GraphQLObjectType({
               qb.where('admin', '1');
             })
             .fetch();
-          return notes.map(
-            v => (v.attributes !== undefined ? v.attributes : {})
+          return notes.map(v =>
+            v.attributes !== undefined ? v.attributes : {}
           );
         },
       },
