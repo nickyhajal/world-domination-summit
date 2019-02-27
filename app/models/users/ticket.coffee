@@ -53,9 +53,9 @@ ticket =
       if total > 0
         if link20
           @addToList('WDS 2020 Purchasers').then()
-          @addToList('WDS 2020 Pre-Orders').then()
+          # @addToList('WDS 2020 Pre-Orders').then()
           @addToList('WDS 2019 and 2020 Pre-Orders').then()
-        @addToList('WDS 2019 Pre-Orders').then()
+        # @addToList('WDS 2019 Pre-Orders').then()
         @addToList('WDS 2019 Purchasers')
         .then =>
           promo = if link20 then 'TicketDoubleReceipt' else 'TicketReceipt'
