@@ -41,8 +41,8 @@ if (process.env.DIR !== undefined) {
 process.knex = require('knex')(app.settings.db);
 db = process.db = app.settings.db;
 process.mail = app.settings.mail;
-process.year = '2018';
-process.yr = '18';
+process.year = '2019';
+process.yr = '19';
 process.tkyear = '2019';
 process.tkyr = '19';
 process.lastYear = '2018';
