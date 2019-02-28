@@ -107,11 +107,14 @@ routes = (app) ->
 							next()
 			if req.me
 				if req.query.first_name? and req.query.last_name? and req.query.email?
+					tk req.me
 					Tickets.forge().query (qb) ->
 						qb.where('purchaser_id', req.me.get('user_id'))
 						qb.where('status', 'unclaimed')
+						qb.where('year', process.tkyear)
 					.fetch()
 					.then (rsp) ->
+						tk rsp.models
 						ticket = rsp.models[0]
 						User.forge
 							email: req.query.email
