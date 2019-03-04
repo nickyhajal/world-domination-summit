@@ -42,7 +42,8 @@ charge =
 	getCard: (card_id, fireRef) ->
 
 		dfr = Q.defer()
-		fireRef.update({status: 'start-card', name: @getFullName()})
+		if fireRef
+			fireRef.update({status: 'start-card', name: @getFullName()})
 		tk 'Getting '+@getFullName()+'\'s card from '+card_id+'...'
 		if card_id.indexOf('tok_') > -1
 			tk 'Generating a Stripe card for '+@getFullName()+'...'
@@ -53,7 +54,8 @@ charge =
 				if exists
 					dfr.resolve(exists)
 				else
-					fireRef.update({status: 'create-customer'})
+					if fireRef
+						fireRef.update({status: 'create-customer'})
 					try
 					@getStripeCustomer(card_id)
 					.then((customer) =>
@@ -72,17 +74,19 @@ charge =
 							.then (card) =>
 								dfr.resolve(card)
 							, (err) ->
-								fireRef.update
-									status: 'error'
-									declined: true
-									error: err
-								tk err
+								if fireRef
+									fireRef.update
+										status: 'error'
+										declined: true
+										error: err
+									tk err
 						).catch((err) =>
 							tk 'Custom create error'
 							dfr.resolve({status: 'declined', err: err.message})
 						)
 					)
 					.catch((err) =>
+						tk err
 						tk 'Card add error'
 						dfr.resolve({status: 'declined', err: err.message})
 					)
