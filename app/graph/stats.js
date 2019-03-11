@@ -63,7 +63,7 @@ const Field = {
       posts: 0,
       pw: 0,
     };
-    const waveDate = '2018-10-01 00:00:00'
+    const waveDate = '2019-03-03 00:00:00';
     const posts = await Feeds.query(qb => {
       qb.where('created_at', '>', waveDate);
     }).fetch();
@@ -128,7 +128,8 @@ const Field = {
     vals.current_wave_plan = paymentPlansThisWave.models.reduce((sum, row) => {
       return sum + +row.get('quantity');
     }, 0);
-    vals.current_wave_total = vals.current_wave_plan + vals.current_wave_tickets;
+    vals.current_wave_total =
+      vals.current_wave_plan + vals.current_wave_tickets;
     vals.friends = friends.models.length;
     vals.posts = posts.models.length;
     vals.likes = likes.models.length;
