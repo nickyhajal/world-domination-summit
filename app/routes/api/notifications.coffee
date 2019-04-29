@@ -120,18 +120,22 @@ routes = (app) ->
                           # tk tokens
                           process.APN.pushNotification(note, tokens)
                         else if type is 'and' # and user_id == 176
-                          tokens = [device.get('token')]
-                          message = new gcm.Message
-                            collapseKey: "WDS Notifications"
-                            data:
+                          token = device.get('token')
+                          message =
+                            to: token,
+                            collapse_key: "WDS Notifications"
+                            notification:
                               title: "WDS App"
-                              message: req.query.notification_text
+                              body: req.query.notification_text
+                            data:
                               id: post.hash
                               user_id: '8082'
                               content: '{"user_id":"8082"}'
                               type: 'feed_comment'
-                              link: link
-                          process.gcmSender.send message, tokens, (err, result) ->
+                              link:  link
+                          tk 'SEND FCM'
+                          process.fcm.send message, (err, result) ->
+                            tk 'FCM RSP:'
                             tk err
                             tk result
                       res.r.sent = true

@@ -10,6 +10,7 @@ var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var layout = require('express-layout');
+var FCM = require('fcm-node');
 var RedisStore = require('connect-redis')(session);
 var app = express();
 // app.use(bodyParser.json({
@@ -66,7 +67,7 @@ process.APN = new apn.Connection(app.settings.apn);
 
 // feedback.on('feedback', handleFeedback);
 // feedback.on('feedbackError', console.error);
-process.gcmSender = new gcm.Sender(process.env.GCM_KEY);
+process.fcm = new FCM(process.env.FCM_KEY);
 process.fire = require('firebase-admin');
 process.fire.initializeApp({
   credential: process.fire.credential.cert(process.env.FIREBASE_CONF),

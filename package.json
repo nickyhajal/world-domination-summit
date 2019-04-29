@@ -23,6 +23,7 @@
     "express-graphql": "^0.6.4",
     "express-layout": "^0.1.0",
     "express-session": "^1.15.0",
+    "fcm-node": "^1.4.0",
     "firebase": "^3.2.1",
     "firebase-admin": "^4.0.6",
     "fsevents": "^1.2.4",

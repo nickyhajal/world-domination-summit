@@ -4,7 +4,6 @@ Q = require('q')
 juice = require('juice')
 _s = require('underscore.string')
 apn = require('apn')
-gcm = require('node-gcm')
 
 # https://github.com/node-apn/node-apn/wiki/Preparing-Certificates
 
@@ -81,26 +80,29 @@ Notification = Shelf.Model.extend
 					tokens = []
 					for device in devices
 						token = device.get('token')
-						message = new gcm.Message
-							collapseKey: "WDS Notifications"
-							data:
+						message = {
+							to: token,
+							collapse_key: "WDS Notifications"
+							notification:
 								title: "WDS App"
-								message: str
+								body: str
+							data:
 								id: @get("notification_id")
 								user_id: user.get('user_id')
 								content: @get('content')
 								type: @get('type')
 								link: @get('link')
-						tk "GCM SEND:"
+						}
+						tk "FCM SEND:"
 						tk token
-						process.gcmSender.send message, [token], (err, result) ->
+						process.fcm.send message, (err, result) ->
 							if err
-								tk "GCM ERR"
+								tk "FCM ERR"
 								console.error err
 							else
 								tk err
 								tk result
-								tk "GCM SENT"
+								tk "FCM SENT FROM MODEL"
 						# 	tk result
 
 Notifications = Shelf.Collection.extend
