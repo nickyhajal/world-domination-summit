@@ -224,27 +224,31 @@ AND year = '` +
                   // console.log('error: ', result.failed[0].response);
                 } else if (type === 'and') {
                   // and user_id == 176
-                  tokens = [device.get('token')];
-                  const message = new gcm.Message({
-                    collapseKey: 'WDS Notifications',
+                  token = device.get('token');
+
+                  message = {
+                    to: token,
+                    collapse_key: 'WDS Notifications',
+                    notification: {
+                      title: 'WDS App',
+                      body: req.query.notification_text,
+                    },
                     data: {
-                      title: title ? title : 'WDS App',
-                      message: msg,
                       id: post.hash,
                       user_id: '8082',
                       content: '{"user_id":"8082"}',
                       type: 'feed_comment',
-                      link,
+                      link: link,
                     },
-                  });
-                  // console.log('>> GCM');
-                  // console.log(message);
-                  process.gcmSender.send(message, tokens, function(
-                    err,
-                    result
-                  ) {
-                    console.log(err);
-                    console.log(result);
+                  };
+
+                  console.log(message);
+                  console.log('SEND FCM');
+
+                  process.fcm.send(message, function(err, result) {
+                    tk('FCM RSP:');
+                    tk(err);
+                    return tk(result);
                   });
                 }
               }
