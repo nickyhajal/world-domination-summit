@@ -137,7 +137,7 @@ routes = (app) ->
                               type: 'feed_comment'
                               link:  link
                           tk 'SEND FCM'
-                          process.fcm.send message, (err, result) ->
+                          fcm.send message, (err, result) ->
                             tk 'FCM RSP:'
                             tk err
                             tk result
