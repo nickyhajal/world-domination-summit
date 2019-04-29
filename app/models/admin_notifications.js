@@ -229,11 +229,9 @@ AND year = '` +
                   message = {
                     to: token,
                     collapse_key: 'WDS Notifications',
-                    notification: {
+                    data: {
                       title: title ? title : 'WDS App',
                       body: msg,
-                    },
-                    data: {
                       id: post.hash,
                       user_id: '8082',
                       content: '{"user_id":"8082"}',
