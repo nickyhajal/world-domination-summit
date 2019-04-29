@@ -75,8 +75,10 @@ routes = (app) ->
         next()
 
     send: (req, res, next) ->
+      tk 'send'
       if req.query.device? and req.query.registered?
         ntfn_routes.get_devices req, res, (devices) ->
+          tk devices
           if +res.r.device_count > 0
             if req.query.dispatch_text?
               post =
@@ -99,6 +101,7 @@ routes = (app) ->
                   post.restrict = 'ambnstaff'
               uniq = moment().format('YYYY-MM-DD HH:mm') + post.content + post.user_id
               post.hash = crypto.createHash('md5').update(uniq).digest('hex')
+              tk 'create feed'
               Feed.forge
                 hash: post.hash
               .fetch()
@@ -123,6 +126,7 @@ routes = (app) ->
                           # tk tokens
                           process.APN.pushNotification(note, tokens)
                         else if type is 'and' # and user_id == 176
+                          tk 'and'
                           token = device.get('token')
                           message =
                             to: token,
@@ -136,6 +140,7 @@ routes = (app) ->
                               content: '{"user_id":"8082"}'
                               type: 'feed_comment'
                               link:  link
+                          tk message
                           tk 'SEND FCM'
                           fcm.send message, (err, result) ->
                             tk 'FCM RSP:'
