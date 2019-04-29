@@ -8,6 +8,9 @@ async = require('async')
 _s = require('underscore.string')
 moment = require('moment')
 
+FCM = require('fcm-node');
+fcm = new FCM(process.env.FCM_KEY);
+
 routes = (app) ->
 
   [Notification, Notifications] = require('../../models/notifications')
