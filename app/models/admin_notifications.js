@@ -230,8 +230,8 @@ AND year = '` +
                     to: token,
                     collapse_key: 'WDS Notifications',
                     notification: {
-                      title: 'WDS App',
-                      body: req.query.notification_text,
+                      title: title ? title : 'WDS App',
+                      body: msg,
                     },
                     data: {
                       id: post.hash,
