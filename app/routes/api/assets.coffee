@@ -224,6 +224,7 @@ routes = (app) ->
 						user.getMe()
 						.then (user) ->
 							user = user.toJSON()
+							user.pre17 = user.pre19
 							delete user.password
 							delete user.hash
 							if user.user_name.length is 40
