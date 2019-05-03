@@ -42,7 +42,7 @@ Event = Shelf.Model.extend
 
   saved: (obj, rsp, opts) ->
     @id = rsp
-    addressChanged = @lastDidChange ['address']
+    addressChanged = @lastDidChange['address']
     if (addressChanged and @get('address')?.length) || (@get('address')?.length && !@get('lat')?)
       @processAddress()
     return true
