@@ -59,6 +59,7 @@ Event = Shelf.Model.extend
         .fetch()
         .then (event) ->
           location = data.results[0].geometry.location
+          tk location
           event.set
             lat: location.lat
             lon: location.lng
