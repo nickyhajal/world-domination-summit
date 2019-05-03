@@ -55,7 +55,10 @@ Event = Shelf.Model.extend
       address += ', Portland'
     if address.indexOf('OR') < 0
       address += ', OR'
+    tk 'process addr'
+    tk address
     geocoder.geocode address, (err, data) =>
+      tk data
       tk err
       if data.results[0]
         Event.forge({event_id: @get('event_id')})
