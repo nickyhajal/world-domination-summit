@@ -56,6 +56,7 @@ Event = Shelf.Model.extend
     if address.indexOf('OR') < 0
       address += ', OR'
     geocoder.geocode address, (err, data) =>
+      tk err
       if data.results[0]
         Event.forge({event_id: @get('event_id')})
         .fetch()
