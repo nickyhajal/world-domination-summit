@@ -70,6 +70,7 @@ Event = Shelf.Model.extend
             lat: location.lat
             lon: location.lng
           event.save()
+    , {key: process.env.MAP_KEY}
 
   list: ->
     process.year+ ' Academy: '+ @get('what').substr(0, 32)
