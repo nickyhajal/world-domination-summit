@@ -57,7 +57,7 @@ Event = Shelf.Model.extend
       address += ', OR'
     tk 'process addr'
     tk address
-    geocoder.geocode address, (err, data) =>
+    geocoder.geocode address, {key: process.env.MAP_KEY}, (err, data) =>
       tk data
       tk err
       if data.results[0]
