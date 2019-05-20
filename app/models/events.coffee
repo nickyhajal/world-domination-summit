@@ -106,7 +106,7 @@ Event = Shelf.Model.extend
       User.forge({user_id: host.get('user_id')})
       .fetch()
       .then (host) =>
-        host.sendEmail('meetup-approved', 'Your meetup has been approved!')
+        host.sendEmail('meetup-approved', 'Your meetup has been approved!', {url: 'https://worlddominationsummit.com/meetup/'+event.get('slug')})
         @set('active', 1)
         @set('ignored', 0)
         @save()
