@@ -44,7 +44,7 @@ Event = Shelf.Model.extend
     tk 'Event saved: ' + @get('slug')
     tk 'Changed: ' + @lastDidChange
     @id = rsp
-    addressChanged = @lastDidChange['address']
+    addressChanged = @lastDidChange ['address']
     tk addressChanged
     if (addressChanged and @get('address')?.length) || (@get('address')?.length && !@get('lat')?)
       tk 'it changed'
