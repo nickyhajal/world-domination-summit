@@ -41,6 +41,8 @@ Event = Shelf.Model.extend
     @saveChanging()
 
   saved: (obj, rsp, opts) ->
+    tk 'Event saved: ' + @get('slug')
+    tk 'Changed: ' + @lastDidChange
     @id = rsp
     addressChanged = @lastDidChange['address']
     tk addressChanged
