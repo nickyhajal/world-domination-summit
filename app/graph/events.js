@@ -231,7 +231,6 @@ const Update = {
   resolve: async (root, args, req) => {
     const { event_id, active, ignored } = args;
     const post = await getEventFromArgs(args);
-    console.log(post);
     const { hosts } = args;
     const event = await Event.forge({ event_id }).fetch();
     if (event.get('type') === 'meetup') {
