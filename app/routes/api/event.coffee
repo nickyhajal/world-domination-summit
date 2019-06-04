@@ -446,14 +446,8 @@ routes = (app) ->
 							num_free = ev.get('num_free') ? 0
 							ev.updateRsvpCount()
 							rds.expire atnRdsId, 0
-							if free_rsvp
-								num_free += 1
-								ev.sendAcademyConfirmation(user_id)
-								ev.set
-									num_free: num_free
-								.save()
-							if !free_rsvp && res.r.action is 'rsvp'
-								promo = 'event_confirmation_'+req.me.get('ticket_type')
+							if +event_id is 1245
+								promo = 'picnic_confirmation'
 								start = (ev.get('start')+'').split(' GMT')
 								start = moment(start[0])
 								start = start.format('YYYY-MM-DD HH:mm:ss')
@@ -466,9 +460,33 @@ routes = (app) ->
 								subName = ev.get('what')
 								if subName.length > 35
 									subName = subName.substr(0, 32)+'...'
-								subject = "See you at \""+subName+'"'
-								tk 'Send RSVP from Route'
+								subject = "[Action Required] Your food options for the WDS Picnic!"
 								req.me.sendEmail promo, subject, params
+								tk 'Send Picnic from Route'
+							else
+								if free_rsvp
+									num_free += 1
+									ev.sendAcademyConfirmation(user_id)
+									ev.set
+										num_free: num_free
+									.save()
+								if !free_rsvp && res.r.action is 'rsvp'
+									promo = 'event_confirmation_'+req.me.get('ticket_type')
+									start = (ev.get('start')+'').split(' GMT')
+									start = moment(start[0])
+									start = start.format('YYYY-MM-DD HH:mm:ss')
+									timeStr = moment(start).format('h:mm a')
+									dayStr = moment(start).format('dddd[,] MMMM Do')
+									params =
+										venue: ev.get('place')
+										event_name: ev.get('what')
+										startStr: dayStr+' at '+timeStr
+									subName = ev.get('what')
+									if subName.length > 35
+										subName = subName.substr(0, 32)+'...'
+									subject = "See you at \""+subName+'"'
+									tk 'Send RSVP from Route'
+									req.me.sendEmail promo, subject, params
 						next()
 
 		claim_academy: (req, res, next) ->

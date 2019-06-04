@@ -7,7 +7,7 @@ rds = redis.createClient()
 async = require('async')
 
 [Transfer, Transfers] = require('./transfers')
-[Transaction, Transcations] = require('./transactions')
+[Transaction, Transactions] = require('./transactions')
 [Ticket, Tickets] = require('./tickets')
 [Booking, Bookings] = require('./bookings')
 [EventRsvp, EventRsvps] = require('./event_rsvps')
@@ -151,6 +151,18 @@ PRE =
         dfr.resolve({error: if isSoldOut then  'Oh no, all the suites have sold out!' else false})
     .catch ->
         throw ("oh no")
+    return dfr.promise
+  mealsandwich: (meta) ->
+    dfr = Q.defer()
+    dfr.resolve({})
+    return dfr.promise
+  mealveggie: (meta) ->
+    dfr = Q.defer()
+    dfr.resolve({})
+    return dfr.promise
+  mealchicken: (meta) ->
+    dfr = Q.defer()
+    dfr.resolve({})
     return dfr.promise
   xfer: (meta) ->
     dfr = Q.defer()
@@ -450,6 +462,24 @@ POST =
       Bookings.forge().numOfType('suite')
       .then (num) ->
         process.fire.database().ref().child('state/hotels/suite_sales').set(num)
+      dfr.resolve({})
+    return dfr.promise
+  mealsandwich: (meta) ->
+    dfr = Q.defer()
+    Transactions.forge().query('where', 'product_id', '18').query('where', 'status', 'paid').fetch().then (rows) ->
+      process.fire.database().ref().child('state/meals/sandwich_sales').set(rows.length)
+      dfr.resolve({})
+    return dfr.promise
+  mealchicken: (meta) ->
+    dfr = Q.defer()
+    Transactions.forge().query('where', 'product_id', '19').query('where', 'status', 'paid').fetch().then (rows) ->
+      process.fire.database().ref().child('state/meals/sandwich_sales').set(rows.length)
+      dfr.resolve({})
+    return dfr.promise
+  mealveggie: (meta) ->
+    dfr = Q.defer()
+    Transactions.forge().query('where', 'product_id', '20').query('where', 'status', 'paid').fetch().then (rows) ->
+      process.fire.database().ref().child('state/meals/sandwich_sales').set(rows.length)
       dfr.resolve({})
     return dfr.promise
 

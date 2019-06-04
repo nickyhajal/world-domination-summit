@@ -139,25 +139,43 @@ Event = Shelf.Model.extend
     User.forge({user_id: user_id})
     .fetch()
     .then (user) =>
-      promo = 'event_confirmation_'+user.get('ticket_type')
-      if price
-        promo = 'event_confirmation_paid'
-      start = (@get('start')+'').split(' GMT')
-      start = moment(start[0])
-      start = start.format('YYYY-MM-DD HH:mm:ss')
-      timeStr = moment(start).format('h:mm a')
-      dayStr = moment(start).format('dddd[,] MMMM Do')
-      params =
-        venue: @get('place')
-        event_name: @get('what')
-        startStr: dayStr+' at '+timeStr
-        price: price
-      subName = @get('what')
-      if subName.length > 35
-        subName = subName.substr(0, 32)+'...'
-      tk 'Send RSVP from Model'
-      subject = "See you at \""+subName+'"'
-      user.sendEmail promo, subject, params
+      if +@get('event_id') is 1245
+        promo = 'picnic_confirmation'
+        start = (@get('start')+'').split(' GMT')
+        start = moment(start[0])
+        start = start.format('YYYY-MM-DD HH:mm:ss')
+        timeStr = moment(start).format('h:mm a')
+        dayStr = moment(start).format('dddd[,] MMMM Do')
+        params =
+          venue: @get('place')
+          event_name: @get('what')
+          startStr: dayStr+' at '+timeStr
+        subName = @get('what')
+        if subName.length > 35
+          subName = subName.substr(0, 32)+'...'
+        subject = "[Action Required] Your food options for the WDS Picnic!"
+        user.sendEmail promo, subject, params
+        tk 'Send Picnic from Model'
+      else
+        promo = 'event_confirmation_'+user.get('ticket_type')
+        if price
+          promo = 'event_confirmation_paid'
+        start = (@get('start')+'').split(' GMT')
+        start = moment(start[0])
+        start = start.format('YYYY-MM-DD HH:mm:ss')
+        timeStr = moment(start).format('h:mm a')
+        dayStr = moment(start).format('dddd[,] MMMM Do')
+        params =
+          venue: @get('place')
+          event_name: @get('what')
+          startStr: dayStr+' at '+timeStr
+          price: price
+        subName = @get('what')
+        if subName.length > 35
+          subName = subName.substr(0, 32)+'...'
+        tk 'Send RSVP from Model'
+        subject = "See you at \""+subName+'"'
+        user.sendEmail promo, subject, params
   hosts: ->
     [User, Users] = require './users'
     dfr = Q.defer()
