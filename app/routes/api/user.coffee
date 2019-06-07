@@ -994,56 +994,41 @@ routes = (app) ->
 				console.error(err)
 
 		race_submission: (req, res, next) ->
+			tk req.query.slug
+			tk req.me.user_id
 			if req.me and req.query.slug?.length
 				slug = req.query.slug
-				if req.files
-					req.me.markAchieved(slug)
-					.then (ach_rsp) ->
-						ext = req.files.pic.path.split('.')
-						ext = ext[ext.length - 1]
-						hash = crypto.createHash('md5').update((new Date().getTime())+'').digest("hex").substr(0, 5)
-						name = hash+'.'+ext
-						newPath = __dirname + '/../../../images/race_submissions/'+req.me.get('user_name')+'/'+slug
-						fullPath = newPath+'/'+name
-						smallPath = newPath+'/w600_'+name
-						mkdirp newPath, (err, path) ->
-							gm(req.files.pic.path)
-							.autoOrient()
-							.resize('1024^')
-							.write fullPath, (err) ->
-								gm(fullPath)
-								.resize('600^')
-								.write smallPath, (err) ->
-									RaceSubmission.forge
-										user_id: req.me.get('user_id')
-										ach_id: ach_rsp.ach_id
-										slug: slug
-										hash: hash
-										ext: ext
-									.save()
-									.then ->
-										req.me.getAchievedTasks()
-										.then (achievements) ->
-											short_achs = []
-											for ach in achievements.models
-												short_achs.push
-													t: ach.get('task_id')
-													c: ach.get('custom_points')
-													a: ach.get('add_points')
+				req.me.markAchieved(slug)
+				.then (ach_rsp) ->
+					RaceSubmission.forge
+						user_id: req.me.get('user_id')
+						ach_id: ach_rsp.ach_id
+						slug: slug
+						hash: req.query.media
+					.save()
+					.then ->
+						req.me.getAchievedTasks()
+						.then (achievements) ->
+							short_achs = []
+							for ach in achievements.models
+								short_achs.push
+									t: ach.get('task_id')
+									c: ach.get('custom_points')
+									a: ach.get('add_points')
 
-											rsp = JSON.stringify
-												points: ach_rsp.points
-												new_points: ach_rsp.points - req.query.cur_ponts
-												task_id: req.query.task_id
-												achievements: short_achs
+							rsp = JSON.stringify
+								points: ach_rsp.points
+								new_points: ach_rsp.points - req.query.cur_ponts
+								task_id: req.query.task_id
+								achievements: short_achs
 
-											# Expire rank cache so next rank request
-											# is recalculated
-											rds.expire 'ranks', 0
-											res.redirect('/upload-race?rsp='+rsp)
-									, (err) ->
-										console.error(err)
-										next()
+							# Expire rank cache so next rank request
+							# is recalculated
+							rds.expire 'ranks', 0
+							res.r = rsp
+					, (err) ->
+						console.error(err)
+						next()
 
 		add_checkin: (req, res, next) ->
 			if req.me and req.query.location_id and req.query.location_type

@@ -11,6 +11,7 @@ const PagesGraph = require('../../graph/pages');
 const Transfers = require('../../graph/Transfers');
 const Notifications = require('../../graph/Notifications');
 const Places = require('../../graph/places');
+const RaceTasks = require('../../graph/racetasks');
 
 const query = new GraphQLObjectType({
   name: 'Query',
@@ -32,6 +33,8 @@ const query = new GraphQLObjectType({
     transactions: Transactions.Fields,
     place: Places.Field,
     places: Places.Fields,
+    racetask: RaceTasks.Field,
+    racetasks: RaceTasks.Fields,
     tickets: Tickets.Fields,
   }),
 });
@@ -50,6 +53,9 @@ const mutation = new GraphQLObjectType({
     placeAdd: Places.Add,
     placeUpdate: Places.Update,
     placeDelete: Places.Delete,
+    racetaskAdd: RaceTasks.Add,
+    racetaskUpdate: RaceTasks.Update,
+    racetaskDelete: RaceTasks.Delete,
     userUpdate: UserGraph.Update,
     eventAdd: EventGraph.Add,
     eventUpdate: EventGraph.Update,
