@@ -58,7 +58,7 @@ routes = (app) ->
 				tasks: 5
 				places: 300
 				pages: 300
-				# achievements: 0
+				achievements: 0
 				admin_templates: 0
 
 			get: (req, res, next) ->

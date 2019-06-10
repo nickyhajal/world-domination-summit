@@ -994,8 +994,6 @@ routes = (app) ->
 				console.error(err)
 
 		race_submission: (req, res, next) ->
-			tk req.query.slug
-			tk req.me.user_id
 			if req.me and req.query.slug?.length
 				slug = req.query.slug
 				req.me.markAchieved(slug)

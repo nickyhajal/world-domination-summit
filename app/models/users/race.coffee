@@ -61,6 +61,11 @@ race =
         dfr.resolve(out)
     return dfr.promise
 
+  syncAchievements: ->
+    @getAchievements()
+    .then (achs) => 
+      process.fire.database().ref().child('race/user/'+@get('user_id')+'/achieved').set(achs)
+
   markAchieved: (task_slug, custom_points = 0) ->
 
     # More advanced racetask checking
@@ -70,27 +75,30 @@ race =
       RaceTask.forge({slug: task_slug})
       .fetch()
       .then (task) =>
-        task_id = task.get('racetask_id')
-        times = achs[task.get('slug')] ? 0
-        if +times < +task.get('attendee_max')
-          Achievement.forge()
-          .set
-            user_id: @get('user_id')
-            task_id: task_id
-            custom_points: custom_points
-          .save()
-          .then (ach) =>
-            rsp = 
-              ach_id: ach.get('ach_id')
-            @processPoints()
-            .then (points) =>
-              # @set('points', points)
-              # .save()
-              # .then ->
-              rsp.points = points
-              dfr.resolve(rsp)
-          , (err) ->
-            console.error(err)
+        if task
+          task_id = task.get('racetask_id')
+          times = achs[task.get('slug')] ? 0
+          if +times < +task.get('attendee_max')
+            Achievement.forge
+              user_id: @get('user_id')
+              task_id: task_id
+              custom_points: custom_points
+            .save()
+            .then (ach) =>
+              rsp = 
+                ach_id: ach.get('ach_id')
+              @processPoints()
+              .then (points) =>
+                @set('points', points)
+                .save()
+                .then =>
+                  @syncAchievements().then ->
+                    rsp.points = points
+                    dfr.resolve(rsp)
+            , (err) ->
+              console.error(err)
+          else
+            dfr.resolve(false)
         else
           dfr.resolve(false)
       return dfr.promise
@@ -109,8 +117,9 @@ race =
         .set
           custom_points: custom_points
         .save()
-        .then (ach) ->
-          dfr.resolve(ach)
+        .then (ach) =>
+          @syncAchievements().then ->
+            dfr.resolve(ach)
       return dfr.promise
 
   raceCheck: ->
@@ -136,8 +145,8 @@ race =
               user.processPoints()
               .then (points) ->
                 tk ('Race check took: '+((new Date()) - start )+' milliseconds')
-                #user.set('points', points)
-                #.save()
+                user.set('points', points)
+                .save().then()
                 dfr.resolve(points)
                 rds.set user_key, 'true', ->
                   rds.expire user_key, 90
@@ -231,18 +240,18 @@ race =
         ,
 
         # Ten Met
-        (cb) ->
-          if not @achieved('friend-10-attendees-on-wdsfm', achs)
-            Connections.forge()
-            .query('where', 'user_id', @get('user_id'))
-            .fetch()
-            .then (rsp) =>
-              if rsp.models.length > 9
-                @markAchieved('ten-met')
-              cb()
-          else
-            cb()
-        , 
+        # (cb) ->
+        #   if not @achieved('friend-10-attendees-on-wdsfm', achs)
+        #     Connections.forge()
+        #     .query('where', 'user_id', @get('user_id'))
+        #     .fetch()
+        #     .then (rsp) =>
+        #       if rsp.models.length > 9
+        #         @markAchieved('ten-met')
+        #       cb()
+        #   else
+        #     cb()
+        # , 
         # Five
         (cb) ->
             points = Math.floor(muts.length % 5)

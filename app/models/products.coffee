@@ -473,13 +473,13 @@ POST =
   mealchicken: (meta) ->
     dfr = Q.defer()
     Transactions.forge().query('where', 'product_id', '19').query('where', 'status', 'paid').fetch().then (rows) ->
-      process.fire.database().ref().child('state/meals/sandwich_sales').set(rows.length)
+      process.fire.database().ref().child('state/meals/chicken_sales').set(rows.length)
       dfr.resolve({})
     return dfr.promise
   mealveggie: (meta) ->
     dfr = Q.defer()
     Transactions.forge().query('where', 'product_id', '20').query('where', 'status', 'paid').fetch().then (rows) ->
-      process.fire.database().ref().child('state/meals/sandwich_sales').set(rows.length)
+      process.fire.database().ref().child('state/meals/veggie_sales').set(rows.length)
       dfr.resolve({})
     return dfr.promise
 

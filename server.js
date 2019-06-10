@@ -1,7 +1,6 @@
 require('dotenv').config();
 Error.stackTraceLimit = Infinity;
 global.tk = console.log;
-require('coffee-script');
 require('coffee-script/register');
 require('coffee-trace');
 var Bookshelf = require('bookshelf');
