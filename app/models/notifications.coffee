@@ -166,6 +166,7 @@ Notifications = Shelf.Collection.extend
 
 		switch notn.get('type')
 			when 'feed_like'
+				tk "liker: "+data.liker_id
 				User.forge({user_id: data.liker_id})
 				.fetch()
 				.then (user) ->
@@ -178,6 +179,7 @@ Notifications = Shelf.Collection.extend
 						text += user.get('first_name')+' '+user.get('last_name')+' liked your post!'
 					if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
 			when 'feed_comment'
+				tk "cmntr: "+data.commenter_id
 				User.forge({user_id: data.commenter_id})
 				.fetch()
 				.then (user) ->
@@ -190,6 +192,7 @@ Notifications = Shelf.Collection.extend
 						text += user.get('first_name')+' '+user.get('last_name')+' commented on your post!'
 					if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
 			when 'feed_comment_on_commented'
+				tk "cmtn_cmntr: "+data.commenter_id
 				User.forge({user_id: data.commenter_id})
 				.fetch()
 				.then (user) ->

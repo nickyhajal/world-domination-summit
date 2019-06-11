@@ -2,6 +2,7 @@ crypto = require('crypto')
 Q = require('q')
 async = require('async')
 _s = require('underscore.string')
+knex = require('knex');
 redis = require("redis")
 rds = redis.createClient()
 
@@ -31,14 +32,9 @@ race =
       return achs[task_id]
     else
       return false
-
   processPoints: ->
-    dfr = Q.defer()
-    Achievements.forge()
+    return Achievements.forge()
     .processPoints(@get('user_id'))
-    .then (points) ->
-      dfr.resolve(points)
-    return dfr.promise
 
   getAchievements: ->
     dfr = Q.defer()

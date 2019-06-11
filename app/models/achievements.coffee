@@ -1,6 +1,10 @@
+knex = require('knex');
+moment = require('moment');
 Shelf = require('./shelf')
 Bookshelf = require('bookshelf')
 Q = require('q')
+redis = require("redis")
+rds = redis.createClient()
 
 Achievement = Shelf.Model.extend
   tableName: 'race_achievements'
@@ -12,22 +16,41 @@ Achievement = Shelf.Model.extend
 
 Achievements = Shelf.Collection.extend
 	model: Achievement
+	generateRanksSince: (time) ->
+		dfr = Q.defer()
+		tk '>> GEN RANK SINCE'+time
+		process.knex('race_achievements as a')
+		.select(knex.raw('user_id, sum(points + custom_points + add_points) as total'))
+		.leftJoin('racetasks as t', 'a.task_id', 't.racetask_id')
+		.where('add_points', '>', '-1')
+		.where('created_at', '>', time)
+		.orderBy('total', 'DESC')
+		.groupBy('user_id')
+		.then (ranks) ->
+			dfr.resolve(ranks)
+		return dfr.promise
+	generateRanks: ->
+		dfr = Q.defer()
+		Promise.all([
+			@generateRanksSince(moment().startOf('year').format('YYYY-MM-DD hh:mm:ss')),
+			@generateRanksSince(moment().subtract(1, 'h').format('YYYY-MM-DD hh:mm:ss')),
+			@generateRanksSince(moment().subtract(24, 'h').format('YYYY-MM-DD hh:mm:ss')),
+		])
+		.then ([all, day, hour]) ->
+			ranks = {all: all, day: day, hour: hour}
+			process.fire.database().ref().child('race/state/ranks').set(ranks)
+			rds.set 'ranks', JSON.stringify(ranks), ->
+			dfr.resolve(ranks)
+		return dfr.promise
 	processPoints: (user_id) ->
 		dfr = Q.defer()
-		[RaceTask, RaceTasks] = require('./racetasks')
-		RaceTasks::getById()
-		.then (tasksById) ->
-			Achievements.forge()
-			.query('where', 'user_id', user_id)
-			.fetch()
-			.then (rsp) ->
-				points = 0
-				for ach in rsp.models
-					if ach.get('custom_points')? and +ach.get('custom_points') > 0
-						points += +ach.get('custom_points')
-					else
-						points += (+tasksById[ach.get('task_id')].points) + (+ach.get('add_points'))
-				dfr.resolve(points)
+		@generateRanks()
+		.then (ranks) ->
+			out = 0
+			ranks.all.forEach (row) ->
+				if (row.user_id == user_id)
+					out = row.total
+			dfr.resolve(out)
 		return dfr.promise
 
 

@@ -4,7 +4,6 @@ rs = new RedisSessions();
 _ = require('underscore')
 handler =
 	start: (req, res, next)->
-		tk req.query
 		req.hasParams = (params, req, res, next) ->
 			allow = true
 			for p in params
