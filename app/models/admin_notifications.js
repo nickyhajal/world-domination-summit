@@ -42,12 +42,12 @@ const AdminNotification = Shelf.Model.extend({
     if (test === 'yes') {
       devices.query('whereIn', 'devices.user_id', [
         '176',
-        '6292',
-        '6256',
-        '179',
-        '216',
-        '6263',
-        '8884',
+        // '6292',
+        // '6256',
+        // '179',
+        // '216',
+        // '6263',
+        // '8884',
       ]); //, '179', '216', '6292'])
     }
     if (device_type !== 'all') {
