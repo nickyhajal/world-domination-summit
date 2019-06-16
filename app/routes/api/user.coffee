@@ -1016,17 +1016,25 @@ routes = (app) ->
 
 							rsp = JSON.stringify
 								points: ach_rsp.points
-								new_points: ach_rsp.points - req.query.cur_ponts
+								new_points: ach_rsp.points - req.query.cur_points
 								task_id: req.query.task_id
 								achievements: short_achs
 
 							# Expire rank cache so next rank request
 							# is recalculated
 							rds.expire 'ranks', 0
-							res.r = rsp
+							res.r ={
+								points: ach_rsp.points
+								new_points: ach_rsp.points - req.query.cur_ponts
+								task_id: req.query.task_id
+								achievements: short_achs
+							}
+							next()
 					, (err) ->
 						console.error(err)
 						next()
+			else
+				next()
 
 		add_checkin: (req, res, next) ->
 			if req.me and req.query.location_id and req.query.location_type

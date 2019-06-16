@@ -373,6 +373,7 @@ POST =
           old_user.sendEmail('transfer-receipt', 'Your ticket transfer was successful!', {to_name: new_user.get('first_name')+' '+new_user.get('last_name')})
           xfer.set
             status: 'paid'
+            to_id: new_user.get('user_id')
           .save()
           .then ->
             dfr.resolve({rsp: {transfer_id: xfer.get('transfer_id')}})
