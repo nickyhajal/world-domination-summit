@@ -1,4 +1,5 @@
 crypto = require('crypto')
+moment = require('moment');
 Q = require('q')
 async = require('async')
 _s = require('underscore.string')
@@ -57,10 +58,26 @@ race =
         dfr.resolve(out)
     return dfr.promise
 
-  syncAchievements: ->
-    @getAchievements()
-    .then (achs) => 
-      process.fire.database().ref().child('race/user/'+@get('user_id')+'/achieved').set(achs)
+  syncAchievements: (data) ->
+    user_id = @get('user_id')
+    achs = Achievements.forge()
+    Q.all([
+      @getAchievements(),
+      achs.achsSince(moment().startOf('year').format('YYYY-MM-DD hh:mm:ss'), user_id),
+      achs.achsSince(moment().subtract(24, 'h').format('YYYY-MM-DD hh:mm:ss'), user_id),
+      achs.achsSince(moment().subtract(1, 'h').format('YYYY-MM-DD hh:mm:ss'), user_id),
+    ])
+    .then ([achs, achsAll, achsDay, achsHour]) => 
+      process.fire.database().ref().child('race/user/'+@get('user_id')).set({
+        achieved: achs
+        achs: {
+          all: achsAll
+          day: achsDay
+          hour: achsHour
+        }
+        points: data.points,
+        ranks: data.ranks,
+      })
 
   markAchieved: (task_slug, custom_points = 0) ->
 
@@ -85,17 +102,19 @@ race =
                 ach_id: ach.get('ach_id')
               @processPoints()
               .then (points) =>
-                @set('points', points)
+                @set('points', points.all)
                 .save()
                 .then =>
-                  @syncAchievements().then ->
+                  @syncAchievements(points).then ->
                     rsp.points = points
                     dfr.resolve(rsp)
             , (err) ->
               console.error(err)
           else
+            tk 'Above attendee max: ' + task_slug
             dfr.resolve(false)
         else
+          tk 'TASK NOT FOUND: ' + task_slug
           dfr.resolve(false)
       return dfr.promise
 

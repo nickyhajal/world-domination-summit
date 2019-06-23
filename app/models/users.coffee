@@ -79,8 +79,8 @@ User = Shelf.Model.extend
     ]
     @addressChanged = addressChanged
 
-    if @lastDidChange ['points']
-      process.fire.database().ref().child('race/user/'+@get('user_id')+'/points').set(@get('points'))
+    # if @lastDidChange ['points']
+    #   process.fire.database().ref().child('race/user/'+@get('user_id')+'/points').set(@get('points'))
     if @lastDidChange ['email'] and @get('attending'+process.yr) is '1'
       @syncEmail()
 

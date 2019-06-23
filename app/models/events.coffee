@@ -153,7 +153,7 @@ Event = Shelf.Model.extend
         subName = @get('what')
         if subName.length > 35
           subName = subName.substr(0, 32)+'...'
-        subject = "[Action Required] Your food options for the WDS Picnic!"
+        subject = "[WDS] Confirmed for Adventure: WDS Picnic"
         user.sendEmail promo, subject, params
         tk 'Send Picnic from Model'
       else
