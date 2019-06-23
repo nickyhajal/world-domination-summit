@@ -815,6 +815,35 @@ routes = (app) ->
 			else
 				res.status(401)
 
+		register_extra: (req, res, next) ->
+			cols = ['glb', 'gsp']
+			if req.query.col and cols.indexOf(req.query.col) > -1 && req.query.user_id
+				col = req.query.col
+				User.forge({user_id: req.query.user_id})
+				.fetch()
+				.then (user) ->
+					if (user)
+						existing = user.get(col)
+						if (+existing > 0)
+							user.set(col, '0')
+						else
+							user.set(col, '1')
+						user.save().then -> 
+							User.forge({user_id: req.query.user_id})
+							.fetch()
+							.then (rs) ->
+								res.r[col] = rs.get(col)
+								next()
+					else
+						next()
+			else
+				next()
+
+		show_race_instructions: (req, res, next) ->
+			console.log('mark', req.me.get('user_id'))
+			next()
+
+
 		registrations: (req, res, next) ->
 			regs = req.query.regs ? []
 			successes = []

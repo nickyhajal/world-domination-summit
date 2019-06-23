@@ -71,7 +71,9 @@ routes = (app) ->
 	apiRouter.post '/user/addToList', user.addToList
 	apiRouter.post '/user/reset', user.reset
 	apiRouter.post '/user/registrations', user.registrations
+	apiRouter.post '/user/register_extra', user.register_extra
 	apiRouter.post '/user/interest', user.add_interest
+	apiRouter.post '/user/show_race_instructions', user.show_race_instructions
 	apiRouter.post '/user/connection', user.add_connection
 	apiRouter.post '/user/notifications', user.upd_notifications
 	apiRouter.post '/user/story', user.post_story

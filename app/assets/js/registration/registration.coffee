@@ -107,7 +107,9 @@ ap.search = ->
 	val = $('#register_search').val()
 	max = 90000
 	results = []
+	console.log(ap.event_id)
 	ev = ap.getEvent(ap.event_id)
+	console.log(ev)
 	if val.length > 0
 		$('#clear-inp').show()
 		results = ap.Users.search(val)
@@ -134,9 +136,13 @@ ap.search = ->
 		atype = result.get('type') ? 'attendee'
 		ttype = result.get('ticket_type') ? 'attendee'
 		if ttype == '360'
-			ttype = '360'
+			ttype = 'attnd'
 		if ttype == 'connect'
-			ttype = 'cnct'
+			ttype = 'attnd'
+		if ttype == 'attendee'
+			ttype = 'attnd'
+		if ttype == 'attendee'
+			ttype = 'attnd'
 		if atype != 'attendee'
 			ttype = atype
 		if ttype is 'friend'
@@ -153,7 +159,7 @@ ap.search = ->
 				noteStr = notes.length + ' notes'
 			noteElm = '<div class="reg-notes">'+noteStr+'</div>'
 		if ''+ap.event_id is '999999'
-			if result.get('ticket_type') is '360'
+			if result.get('ticket_type') is 'attendee'
 				kclass = 'not-kinded'
 				if result.get('kinded')? and ''+result.get('kinded') is '1'
 					kclass = 'is-kinded'
@@ -238,6 +244,7 @@ ap.onShow.academies = ->
 	$('#academy-list').html(html)
 ap.onShow.kinduser = ->
 	user = ap.Users.get(ap.active_user)
+	console.log(ap.event_id+">>>>>>>>>>>>>>>.")
 	ap.active_user = user
 	questions = [
 			'Why did you travel <span class="ceil">{{ distance }}</span> miles to the World Domination Summit'
@@ -280,7 +287,7 @@ ap.onShow.activities = ->
 	acs = []
 	html = ''
 	for ev in ap.events
-		if ev.type is 'activity'
+		if ev.type is 'activity' || ev.type is 'program'
 			acs.push(ev)
 			html += '<a href="#" data-event_id="'+ev.event_id+'">'+ev.what+'</a>'
 	$('#activity-list').html(html)
