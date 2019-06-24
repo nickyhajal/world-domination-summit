@@ -49,7 +49,7 @@ const Add = {
     section: { type: new GraphQLNonNull(GraphQLString) },
     type: { type: new GraphQLNonNull(GraphQLString) },
     points: { type: new GraphQLNonNull(GraphQLString) },
-    descr: { type: new GraphQLNonNull(GraphQLString) },
+    descr: { type: GraphQLString },
     note: { type: GraphQLString },
     active: { type: GraphQLString },
     address: { type: GraphQLString },

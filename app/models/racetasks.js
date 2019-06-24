@@ -25,33 +25,29 @@ ranks=a.ranks.day
 ranks=a.ranks.all`;
   const instructions = `<div style='margin-top: 14px'></div>
 
-## Welcome to the Unconventional Race!
+  ## Welcome to the Unconventional Race!
 
-The Unconventional Race is amazing!
-
-### Complete Tasks to Earn Points!
-
-Some sample text explaining rules, submitting.
-
-You'll get points immediately but we've got a crack team reviewing submissions.
-
-Standout submissions will be posted to the Dispatch. 
-
-### Groups Earn More Points!
-
-Coming soon: join groups to earn more points. 2x, 3x, or 4x points up to 4 players.
-
-After 4 players, an additional point per member (fill in with actual details).
-
-### Prizes
-
-Coming Soon: Randomly win real prizes! You'll receive a notification after submitting if you received a prize.
-
-You can monitor all prizes from the app and collect at the WDS books store.
-
-### Be Respectful and Have Fun!
-
-General ground rules? Code of conduct?`;
+  The Unconventional Race will guide you to different parts of Portland to complete exciting challenges for points and prizes. To celebrate its return, this year we have some new surprises in store. Read on to learn how to play!
+  
+  ### Complete Challenges to Win Points and Prizes
+  
+  The race is comprised of a wide variety of challenges, ranging from easy to difficult to impossible. Your mission is to choose the challenges that excite you the most and complete them to earn points along the way. Try wandering out of your comfort zone. After all, fortune favors the bold!
+  
+  Choose a challenge, and use the app to snap a photo or video to prove that you've successfully completed it. Don't forget to get creative! Our expert jury of race judges will be reviewing each submission, and we'll be highlighting some of the best entries throughout WDS.
+  
+  During WDS, you'll be able to win prizes throughout the WDS weekend. Be on the lookout for notifications letting you know you've won a prize! Make sure to keep playing, and check back frequently because you never know when we'll add new challenges and prizes.
+  
+  ### You Can Start Now!
+  
+  WDS is almost here, but you can start winning points before you even arrive. Complete all the pre-WDS challenges and get warmed up before the official start of the race!
+  
+  ### Be Respectful and Have Fun!
+  
+  As you play, please remember to adhere to the WDS Code of Conduct. Also, don't forget to stay safe!
+  
+  ## Good Luck!
+  
+  P.S. Have questions? Need assistance with anything? Reach out to our concierge team at concierge@wds.fm.`;
   process.fire
     .database()
     .ref()
