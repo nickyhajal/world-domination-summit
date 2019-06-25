@@ -8,6 +8,7 @@ const Shelf = require('./shelf');
 const redis = require('redis');
 const rds = redis.createClient();
 const Q = require('q');
+raceRef = require('../util/raceRef');
 
 // setTimeout(() => {
 //   const layout = `# Your Stats
@@ -51,12 +52,12 @@ const Q = require('q');
 //   process.fire
 //     .database()
 //     .ref()
-//     .child('race/rundown/layout')
+//     .child(raceRef()+'/rundown/layout')
 //     .set(layout);
 //   process.fire
 //     .database()
 //     .ref()
-//     .child('race/instructions')
+//     .child(raceRef()+'/instructions')
 //     .set(instructions);
 // }, 2000);
 

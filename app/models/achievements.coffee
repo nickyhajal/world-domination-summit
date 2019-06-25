@@ -6,6 +6,8 @@ Q = require('q')
 redis = require("redis")
 rds = redis.createClient()
 
+raceRef = require('../util/raceRef')
+
 getNumberWithOrdinal = (n) ->
     s=["th","st","nd","rd"]
     v=n%100;
@@ -84,7 +86,7 @@ Achievements = Shelf.Collection.extend
 			})
 		return dfr.promise
 	updateFire: (data) ->
-		process.fire.database().ref().child('race/rundown/stats').set(data)
+		process.fire.database().ref().child(raceRef()+'/rundown/stats').set(data)
 	processPoints: (user_id) ->
 		dfr = Q.defer()
 		@generateRanks()

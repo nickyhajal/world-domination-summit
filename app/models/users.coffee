@@ -10,6 +10,8 @@ async = require('async')
 
 ##
 
+
+raceRef = require('../util/raceRef')
 [Capability, Capabilities] = require './capabilities'
 [Event, Events] = require './events'
 [Ticket, Tickets] = require './tickets'
@@ -80,7 +82,7 @@ User = Shelf.Model.extend
     @addressChanged = addressChanged
 
     # if @lastDidChange ['points']
-    #   process.fire.database().ref().child('race/user/'+@get('user_id')+'/points').set(@get('points'))
+    #   process.fire.database().ref().child(raceRef()+'/user/'+@get('user_id')+'/points').set(@get('points'))
     if @lastDidChange ['email'] and @get('attending'+process.yr) is '1'
       @syncEmail()
 
@@ -208,6 +210,7 @@ User = Shelf.Model.extend
   syncAchievements: race.syncAchievements
   updateAchieved: race.updateAchieved
   processPoints: race.processPoints
+  markAchievedSimple: race.markAchievedSimple
   getAchievements: race.getAchievements
 
   # Twitter

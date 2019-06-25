@@ -23,8 +23,7 @@ rds = redis.createClient()
 getters =
 	getMe: ->
 		dfr = Q.defer()
-#    @raceCheck()
-#    .then =>
+		@raceCheck().then ->
 		Q.all([
 			@getCurrentTickets()
 			@getAnswers()

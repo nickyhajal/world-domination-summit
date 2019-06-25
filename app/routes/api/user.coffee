@@ -841,6 +841,9 @@ routes = (app) ->
 
 		show_race_instructions: (req, res, next) ->
 			console.log('mark', req.me.get('user_id'))
+			if req.me
+				req.me.markAchieved('race-guide')
+
 			next()
 
 
