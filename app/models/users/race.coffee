@@ -51,6 +51,8 @@ race =
       .then (achs) ->
         out = {}
         for ach in achs.models
+          tk (+ach.get('points') + +ach.get('add_points') + +ach.get('custom_points'))
+          tk ach.get('slug')
           out[ach.get('slug')] = (+ach.get('points') + +ach.get('add_points') + +ach.get('custom_points'))
           # else
           #   out[ach.get('slug')] += 1
