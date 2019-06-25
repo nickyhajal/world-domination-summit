@@ -52,9 +52,9 @@ race =
         out = {}
         for ach in achs.models
           if not out[ach.get('slug')]?
-            out[ach.get('slug')] = 1
-          else
-            out[ach.get('slug')] += 1
+            out[ach.get('slug')] = (+ach.get('points') + +ach.get('add_points') + +ach.get('custom_points'))
+          # else
+          #   out[ach.get('slug')] += 1
         dfr.resolve(out)
     return dfr.promise
 
