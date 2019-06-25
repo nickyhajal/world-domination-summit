@@ -47,12 +47,11 @@ race =
       .query('where', 'add_points', '<>', '-1')
       .query('join', 'racetasks', 'race_achievements.task_id', '=', 'racetasks.racetask_id', 'left')
       .fetch
-        columns: ['task_id', 'slug', 'points']
+        columns: ['task_id', 'slug', 'points', 'add_points', 'custom_points']
       .then (achs) ->
         out = {}
         for ach in achs.models
-          if not out[ach.get('slug')]?
-            out[ach.get('slug')] = (+ach.get('points') + +ach.get('add_points') + +ach.get('custom_points'))
+          out[ach.get('slug')] = (+ach.get('points') + +ach.get('add_points') + +ach.get('custom_points'))
           # else
           #   out[ach.get('slug')] += 1
         dfr.resolve(out)
