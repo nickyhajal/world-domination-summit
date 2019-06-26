@@ -1014,8 +1014,8 @@ routes = (app) ->
 				.then (user_prizes) ->
 					res.r.user_prizes = user_prizes
 					RacePrizes.forge()
-					.query('columns', ['prize_id', 'description', 'name'])
-					.fetch()
+					.fetch
+						columns: ['prize_id', 'descriptin', 'name']
 					.then (prizes) ->
 						res.r.prizes = prizes
 						next()
