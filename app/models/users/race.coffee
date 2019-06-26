@@ -175,7 +175,6 @@ race =
           achs = rsp_achs
           user.achs = achs
           async.each checks, (check, cb) =>
-            tk 'check'
             check.call(user, cb)
           , =>
             tk ('Race check took: '+((new Date()) - start )+' milliseconds')
@@ -200,30 +199,22 @@ race =
       checks = [
         # Profile 
         (cb) ->
-          tk 'pr'
-          tk @
           if not @achieved('profile', achs)
-            tk 'xx'
             if @get('intro') is '4,0'
-              tk 'go'
               @markAchievedSimple('profile')
           cb()
         ,
 
         # Photo
         (cb) ->
-          tk 'pic'
           if not @achieved('pic', achs)
-            tk 'xx'
             if @get('pic').length > 1
               @markAchievedSimple('pic')
           cb()
         ,
         # Host
         (cb) ->
-          tk 'ev'
           if not @achieved('host-meetup', achs)
-            tk 'xx'
             EventHosts.forge()
             .query('where', 'user_id', @get('user_id'))
             .query('where', 'event_id', '>', '1237')
@@ -238,9 +229,7 @@ race =
 
         # RSVP
         (cb) ->
-          tk 'rsv'
           if not @achieved('rsvp', achs)
-            tk 'xx'
             EventRsvps.forge()
             .query('join', 'events', 'events.event_id', 'event_rsvps.event_id')
             .query('where', 'user_id', @get('user_id'))
@@ -282,9 +271,7 @@ race =
 
         # Register
         (cb) ->
-          tk 'reg'
           if not @achieved('register-at-wds', achs)
-            tk 'xx'
             Registrations.forge()
             .query('where', 'user_id', @get('user_id'))
             .query('where', 'event_id', '1')
@@ -361,9 +348,7 @@ race =
         # , 
         # Post to Community
         (cb)->
-          tk 'dis'
           if not @achieved('wds-dispatch', achs)
-            tk 'xx'
             Feeds.forge()
             .query('where', 'user_id', @get('user_id'))
             .fetch()
