@@ -89,6 +89,7 @@ Notification = Shelf.Model.extend
 							data:
 								id: @get("notification_id")
 								user_id: user.get('user_id')
+								body: str
 								content: @get('content')
 								type: @get('type')
 								link: @get('link')
