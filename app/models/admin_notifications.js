@@ -229,7 +229,7 @@ AND year = '` +
                     collapse_key: 'WDS Notifications',
                     notification: {
                       title: 'WDS App',
-                      body: str,
+                      body: msg,
                     },
                     data: {
                       title: title ? title : 'WDS App',
