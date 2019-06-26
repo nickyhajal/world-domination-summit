@@ -64,6 +64,7 @@ const Add = {
     if (existing) {
       return Object.assign({}, { ...existing.attributes }, { existing: true });
     }
+    args.slug = _s.slugify(args.task);
     const row = await RaceTask.forge(args).save();
     setTimeout(() => {
       rds.expire('tasks', 0);
