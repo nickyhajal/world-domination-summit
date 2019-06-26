@@ -33,6 +33,8 @@ routes = (app) ->
 	[Notification, Notifications] = require('../../models/notifications')
 	[Device, Devices] = require('../../models/devices')
 	[RaceSubmission, RaceSubmissions] = require('../../models/race_submissions')
+	[RacePrize, RacePrizes] = require('../../models/RacePrizes')
+	[RaceUserPrize, RaceUserPrizes] = require('../../models/RaceUserPrizes')
 	[Checkin, Checkins] = require('../../models/checkins')
 	[Card, Cards] = require('../../models/cards')
 
@@ -1006,9 +1008,36 @@ routes = (app) ->
 				next()
 
 		get_prizes: (req, res, next) ->
-			next()
+			if req.me
+				RaceUserPrizes.forge().query('where', 'user_id', req.me.get('user_id'))
+				.fetch()
+				.then (user_prizes) ->
+					res.r.user_prizes = user_prizes
+					RacePrizes.forge()
+					.columns(['prize_id', 'description', 'name'])
+					.then (prizes) ->
+						res.r.prizes = prizes
+						next()
+			else
+				next()
 		claim_prize: (req, res, next) ->
-			next()
+			if req.me and req.query.prize_id
+				RaceUserPrize.forge
+					user_id: req.me.get('user_id')
+					race_user_prize_id: req.query.prize_id
+				.fetch()
+				.then (prize) ->
+					if prize
+						prize.set('redeemed', '1')
+						res.r.redeemed = true
+						next()
+					else
+						tk 'Tried to claim a prize that doesn\'t exist for that user'
+						tk 'user_id: '+req.me.get('user_id')+', prize_id: '+req.query.prize_id
+						res.r.redeemed = false
+						next()
+			else
+				next()
 		task: (req, res, next) ->
 			task_slug = req.query.task_slug
 			RaceSubmissions.forge()
@@ -1045,7 +1074,6 @@ routes = (app) ->
 			else
 				next()
 		race_submission: (req, res, next) ->
-
 			syncSubmission = (id, attempt = 0) ->
 				if attempt < 3
 					call =
@@ -1053,15 +1081,11 @@ routes = (app) ->
 						method: 'get'
 					request call, (err, rsp) ->
 						tk 'sub sync rsp for '+id+':'
-						tk err
-						tk rsp.statusCode
 						if (err || rsp.statusCode != 200)
 							setTimeout ->
 								syncSubmission(id, attempt+1)
 							, 2000
-
 			if req.me and req.query.slug?.length
-				tk 'Race Submission!'
 				slug = req.query.slug
 				req.me.markAchieved(slug)
 				.then (ach_rsp) ->
