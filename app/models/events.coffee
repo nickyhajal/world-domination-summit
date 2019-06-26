@@ -41,13 +41,9 @@ Event = Shelf.Model.extend
     @saveChanging()
 
   saved: (obj, rsp, opts) ->
-    tk 'Event saved: ' + @get('slug')
-    tk 'Changed: ' + @lastDidChange
     @id = rsp
     addressChanged = @lastDidChange ['address']
-    tk addressChanged
     if (addressChanged and @get('address')?.length) || (@get('address')?.length && !@get('lat')?)
-      tk 'it changed'
       @processAddress()
     return true
 
@@ -57,8 +53,6 @@ Event = Shelf.Model.extend
       address += ', Portland'
     if address.indexOf('OR') < 0
       address += ', OR'
-    tk 'process addr'
-    tk address
     geocoder.geocode address, (err, data) =>
       tk data
       tk err

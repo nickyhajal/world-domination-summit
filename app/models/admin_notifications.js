@@ -144,8 +144,7 @@ AND year = '` +
     } = this.attributes;
     if (device != null && registered != null) {
       const { devices, device_count, user_count } = await this.getDevices();
-      console.log(devices.map(v => v.get('token')));
-      console.log(devices.length);
+      // console.log(devices.map(v => v.get('token')));
       if (+device_count > 0) {
         if (content != null) {
           let type;
