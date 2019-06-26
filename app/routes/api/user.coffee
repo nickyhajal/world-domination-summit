@@ -1047,6 +1047,7 @@ routes = (app) ->
 							, 2000
 
 			if req.me and req.query.slug?.length
+				tk 'Race Submission!'
 				slug = req.query.slug
 				req.me.markAchieved(slug)
 				.then (ach_rsp) ->
@@ -1082,6 +1083,7 @@ routes = (app) ->
 								task_id: req.query.task_id
 								achievements: short_achs
 							}
+							syncSubmission(sub.get('submission_id'), 0)
 							next()
 					, (err) ->
 						console.error(err)
