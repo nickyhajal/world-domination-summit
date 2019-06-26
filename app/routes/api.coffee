@@ -79,6 +79,7 @@ routes = (app) ->
 	apiRouter.post '/user/story', user.post_story
 	apiRouter.get '/user/prizes', user.get_prizes
 	apiRouter.post '/user/prize_claim', user.claim_prize
+	apiRouter.get '/user/race_sync', user.race_sync
 
 	#
 	apiRouter.post '/message', notifications.message

@@ -1030,6 +1030,20 @@ routes = (app) ->
 			, (err) ->
 				console.error(err)
 
+		race_sync: (req, res, next) ->
+			if (req.query.user_id)
+				User.forge({user_id: req.query.user_id})
+				.fetch()
+				.then (user) ->
+					user.processPoints()
+					.then (points) ->
+						user.set('points', points.all)
+						.save()
+						.then ->
+							user.syncAchievements(points).then ->
+								next()
+			else
+				next()
 		race_submission: (req, res, next) ->
 
 			syncSubmission = (id, attempt = 0) ->
