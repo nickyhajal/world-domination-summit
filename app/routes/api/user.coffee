@@ -1083,7 +1083,8 @@ routes = (app) ->
 								task_id: req.query.task_id
 								achievements: short_achs
 							}
-							syncSubmission(sub.get('submission_id'), 0)
+							if sub.get("hash") != "submitted"
+								syncSubmission(sub.get('submission_id'), 0)
 							next()
 					, (err) ->
 						console.error(err)
