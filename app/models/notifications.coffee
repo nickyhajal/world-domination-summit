@@ -45,9 +45,7 @@ Notification = Shelf.Model.extend
 				if count < 1
 					count = -1
 				str = ntrsp[0]
-				tk str
 				user = ntrsp[1]
-				tk user.get('email')
 				Devices.forge()
 				.query('where', 'user_id', user_id)
 				.query('where', 'type', 'ios')
@@ -68,7 +66,7 @@ Notification = Shelf.Model.extend
 					note.expiry = Math.floor(Date.now() / 1000) + 3600;
 					for device in devices
 						d = new apn.Device(device.get('token'))
-						tk process.APN.pushNotification(note, d)
+						process.APN.pushNotification(note, d)
 				Devices.forge()
 				.query('where', 'user_id', user_id)
 				.query('where', 'type', 'and')
