@@ -87,6 +87,7 @@ Notification = Shelf.Model.extend
 								title: "WDS App"
 								body: str
 							data:
+								title: "WDS App"
 								id: @get("notification_id")
 								user_id: user.get('user_id')
 								body: str
