@@ -1037,11 +1037,11 @@ routes = (app) ->
 					call =
 						url: 'https://us-central1-worlddominationsummit.cloudfunctions.net/notifySubmission?submission_id='+id
 						method: 'get'
-					request call, (err, code) ->
+					request call, (err, rsp) ->
 						tk 'sub sync rsp for '+id+':'
 						tk err
-						tk code
-						if (err || code != 200)
+						tk rsp.statusCode
+						if (err || rsp.statusCode != 200)
 							setTimeout ->
 								syncSubmission(id, attempt+1)
 							, 2000
