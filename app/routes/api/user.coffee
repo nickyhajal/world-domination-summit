@@ -1005,6 +1005,10 @@ routes = (app) ->
 			else
 				next()
 
+		get_prizes: (req, res, next) ->
+			next()
+		claim_prize: (req, res, next) ->
+			next()
 		task: (req, res, next) ->
 			task_slug = req.query.task_slug
 			RaceSubmissions.forge()
@@ -1027,6 +1031,21 @@ routes = (app) ->
 				console.error(err)
 
 		race_submission: (req, res, next) ->
+
+			syncSubmission = (id, attempt = 0) ->
+				if attempt < 3
+					call =
+						url: 'https://us-central1-worlddominationsummit.cloudfunctions.net/notifySubmission?submission_id='+id
+						method: 'get'
+					request call, (err, code) ->
+						tk 'sub sync rsp for '+id+':'
+						tk err
+						tk code
+						if (err || code != 200)
+							setTimeout ->
+								syncSubmission(id, attempt+1)
+							, 2000
+
 			if req.me and req.query.slug?.length
 				slug = req.query.slug
 				req.me.markAchieved(slug)
@@ -1037,7 +1056,7 @@ routes = (app) ->
 						slug: slug
 						hash: req.query.media
 					.save()
-					.then ->
+					.then (sub) ->
 						req.me.getAchievedTasks()
 						.then (achievements) ->
 							short_achs = []
@@ -1056,6 +1075,7 @@ routes = (app) ->
 							# Expire rank cache so next rank request
 							# is recalculated
 							rds.expire 'ranks', 0
+							
 							res.r ={
 								points: ach_rsp.points
 								new_points: ach_rsp.points - req.query.cur_ponts
