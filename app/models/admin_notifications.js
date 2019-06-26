@@ -5,7 +5,6 @@ const redis = require('redis');
 const rds = redis.createClient();
 const crypto = require('crypto');
 const apn = require('apn');
-const gcm = require('node-gcm');
 const _ = require('underscore');
 const async = require('async');
 const _s = require('underscore.string');
@@ -228,6 +227,10 @@ AND year = '` +
                   message = {
                     to: token,
                     collapse_key: 'WDS Notifications',
+                    notification: {
+                      title: 'WDS App',
+                      body: str,
+                    },
                     data: {
                       title: title ? title : 'WDS App',
                       body: msg,
