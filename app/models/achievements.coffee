@@ -68,11 +68,11 @@ Achievements = Shelf.Collection.extend
 		return dfr.promise
 	generateRanks: ->
 		dfr = Q.defer()
-		tk moment().subtract(1, 'h').format('YYYY-MM-DD hh:mm:ss')
+		tk moment().subtract(1, 'h').format('YYYY-MM-DD HH:mm:ss')
 		Q.all([
-			@generateRanksSince(moment().startOf('year').format('YYYY-MM-DD hh:mm:ss')),
-			@generateRanksSince(moment().utc().subtract(31, 'h').format('YYYY-MM-DD hh:mm:ss')),
-			@generateRanksSince(moment().utc().subtract(8, 'h').format('YYYY-MM-DD hh:mm:ss')),
+			@generateRanksSince(moment().startOf('year').format('YYYY-MM-DD HH:mm:ss')),
+			@generateRanksSince(moment().utc().subtract(31, 'h').format('YYYY-MM-DD HH:mm:ss')),
+			@generateRanksSince(moment().utc().subtract(8, 'h').format('YYYY-MM-DD HH:mm:ss')),
 		])
 		.then ([all, day, hour]) ->
 			ranks = {all: all, day: day, hour: hour}
@@ -82,9 +82,9 @@ Achievements = Shelf.Collection.extend
 	generateRundown: ->
 		dfr = Q.defer()
 		Q.all([
-			@achsSince(moment().startOf('year').format('YYYY-MM-DD hh:mm:ss')),
-			@achsSince(moment().utc().subtract(31, 'h').format('YYYY-MM-DD hh:mm:ss')),
-			@achsSince(moment().utc().subtract(8, 'h').format('YYYY-MM-DD hh:mm:ss')),
+			@achsSince(moment().startOf('year').format('YYYY-MM-DD HH:mm:ss')),
+			@achsSince(moment().utc().subtract(31, 'h').format('YYYY-MM-DD HH:mm:ss')),
+			@achsSince(moment().utc().subtract(8, 'h').format('YYYY-MM-DD HH:mm:ss')),
 			@generateActivity()
 		]).then ([all, day, hour, activity]) =>
 			dfr.resolve({
