@@ -50,13 +50,13 @@ Achievements = Shelf.Collection.extend
 		
 	generateRanksSince: (time, user_id) ->
 		dfr = Q.defer()
-		tk process.knex('race_achievements as a')
+		tk (process.knex('race_achievements as a')
 		.select(process.knex.raw('user_id, sum(points + custom_points + add_points) as total'))
 		.leftJoin('racetasks as t', 'a.task_id', 't.racetask_id')
 		.where('add_points', '>', '-1')
 		.where('created_at', '>', time)
 		.orderBy('total', 'DESC')
-		.groupBy('user_id').toString()
+		.groupBy('user_id').toString())
 		q = process.knex('race_achievements as a')
 		.select(process.knex.raw('user_id, sum(points + custom_points + add_points) as total'))
 		.leftJoin('racetasks as t', 'a.task_id', 't.racetask_id')
