@@ -170,64 +170,79 @@ Notifications = Shelf.Collection.extend
 				User.forge({user_id: data.liker_id})
 				.fetch()
 				.then (user) ->
-					if html
-						link = '<a href="http://worlddominationsummit.com'+link+'">'
-						text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
-						text += link+user.get('first_name')+' '+user.get('last_name')+' liked your post!</a>'
-						text += '</a>'
+					if user
+						if html
+							link = '<a href="http://worlddominationsummit.com'+link+'">'
+							text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
+							text += link+user.get('first_name')+' '+user.get('last_name')+' liked your post!</a>'
+							text += '</a>'
+						else
+							text += user.get('first_name')+' '+user.get('last_name')+' liked your post!'
+						if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
 					else
-						text += user.get('first_name')+' '+user.get('last_name')+' liked your post!'
-					if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
+						dfr.resolve(false)
 			when 'feed_comment'
 				tk "cmntr: "+data.commenter_id
 				User.forge({user_id: data.commenter_id})
 				.fetch()
 				.then (user) ->
-					if html
-						link = '<a href="http://worlddominationsummit.com'+link+'">'
-						text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
-						text += link+user.get('first_name')+' '+user.get('last_name')+' commented on your post!</a>'
-						text += '</a>'
+					if user
+						if html
+							link = '<a href="http://worlddominationsummit.com'+link+'">'
+							text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
+							text += link+user.get('first_name')+' '+user.get('last_name')+' commented on your post!</a>'
+							text += '</a>'
+						else
+							text += user.get('first_name')+' '+user.get('last_name')+' commented on your post!'
+						if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
 					else
-						text += user.get('first_name')+' '+user.get('last_name')+' commented on your post!'
-					if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
+						dfr.resolve false
 			when 'feed_comment_on_commented'
 				tk "cmtn_cmntr: "+data.commenter_id
 				User.forge({user_id: data.commenter_id})
 				.fetch()
 				.then (user) ->
-					if html
-						link = '<a href="http://worlddominationsummit.com'+link+'">'
-						text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
-						text += link+user.get('first_name')+' '+user.get('last_name')+' commented on a discuss you\'re part of.</a>'
-						text += '</a>'
+					if user
+						if html
+							link = '<a href="http://worlddominationsummit.com'+link+'">'
+							text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
+							text += link+user.get('first_name')+' '+user.get('last_name')+' commented on a discuss you\'re part of.</a>'
+							text += '</a>'
+						else
+							text += user.get('first_name')+' '+user.get('last_name')+' commented on a discussion you\'re part of.'
+						if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
 					else
-						text += user.get('first_name')+' '+user.get('last_name')+' commented on a discussion you\'re part of.'
-					if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
+						dfr.resolve false
 			when 'feed_comment_on_liked'
 				User.forge({user_id: data.commenter_id})
 				.fetch()
 				.then (user) ->
-					if html
-						link = '<a href="http://worlddominationsummit.com'+link+'">'
-						text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
-						text += link+user.get('first_name')+' '+user.get('last_name')+' commented on a discussion you liked</a>'
-						text += '</a>'
+					if user
+						if html
+							link = '<a href="http://worlddominationsummit.com'+link+'">'
+							text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
+							text += link+user.get('first_name')+' '+user.get('last_name')+' commented on a discussion you liked</a>'
+							text += '</a>'
+						else
+							text += user.get('first_name')+' '+user.get('last_name')+' commented on a discussion you liked.'
+						if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
 					else
-						text += user.get('first_name')+' '+user.get('last_name')+' commented on a discussion you liked.'
-					if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
+						dfr.resolve false
 			when 'feed_for_event_host'
 				User.forge({user_id: data.commenter_id})
 				.fetch()
 				.then (user) ->
-					if html
-						link = '<a href="http://worlddominationsummit.com'+link+'">'
-						text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
-						text += link+user.get('first_name')+' '+user.get('last_name')+'  posted to your event dispatch.</a>'
-						text += '</a>'
+					if user
+						if html
+							link = '<a href="http://worlddominationsummit.com'+link+'">'
+							text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
+							text += link+user.get('first_name')+' '+user.get('last_name')+'  posted to your event dispatch.</a>'
+							text += '</a>'
+						else
+							text += user.get('first_name')+' '+user.get('last_name')+' posted to your event dispatch.'
+						if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
 					else
-						text += user.get('first_name')+' '+user.get('last_name')+' posted to your event dispatch.'
-					if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
+						dfr.resolve false
 			when 'connected'
 				User.forge({user_id: data.from_id})
 				.fetch()
@@ -248,14 +263,17 @@ Notifications = Shelf.Collection.extend
 				User.forge({user_id: data.from_id})
 				.fetch()
 				.then (user) ->
-					if html
-						link = '<a href="http://worlddominationsummit.com/'+link+'">'
-						text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
-						text += link+user.get('first_name')+' '+user.get('last_name')+' sent you a message!</a>'
-						text += '</a>'
+					if user
+						if html
+							link = '<a href="http://worlddominationsummit.com/'+link+'">'
+							text += link+'<img src="'+user.getPic()+'" class="notn-av"/></a></td><td>'
+							text += link+user.get('first_name')+' '+user.get('last_name')+' sent you a message!</a>'
+							text += '</a>'
+						else
+							text += JSON.parse(notn.get('content')).content_str
+						if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
 					else
-						text += JSON.parse(notn.get('content')).content_str
-					if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
+						dfr.resolve false
 
 		return dfr.promise
 
