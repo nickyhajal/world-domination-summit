@@ -86,7 +86,6 @@ Achievements = Shelf.Collection.extend
 			})
 		return dfr.promise
 	updateFire: (data) ->
-		tk data.ranks.hour
 		process.fire.database().ref().child(raceRef()+'/rundown/stats').set(data)
 	processPoints: (user_id) ->
 		dfr = Q.defer()
@@ -97,6 +96,7 @@ Achievements = Shelf.Collection.extend
 				ranks: {all: 0, day: 0, hour: 0}
 			}
 			c = 0
+			tk ranks
 			ranks.all.forEach (row) =>
 				c += 1
 				if (row.user_id == user_id)
