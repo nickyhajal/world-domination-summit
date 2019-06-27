@@ -50,6 +50,13 @@ Achievements = Shelf.Collection.extend
 		
 	generateRanksSince: (time, user_id) ->
 		dfr = Q.defer()
+		tk process.knex('race_achievements as a')
+		.select(process.knex.raw('user_id, sum(points + custom_points + add_points) as total'))
+		.leftJoin('racetasks as t', 'a.task_id', 't.racetask_id')
+		.where('add_points', '>', '-1')
+		.where('created_at', '>', time)
+		.orderBy('total', 'DESC')
+		.groupBy('user_id').toSql()
 		q = process.knex('race_achievements as a')
 		.select(process.knex.raw('user_id, sum(points + custom_points + add_points) as total'))
 		.leftJoin('racetasks as t', 'a.task_id', 't.racetask_id')
@@ -62,6 +69,7 @@ Achievements = Shelf.Collection.extend
 		return dfr.promise
 	generateRanks: ->
 		dfr = Q.defer()
+		tk moment().subtract(1, 'h').format('YYYY-MM-DD hh:mm:ss')
 		Q.all([
 			@generateRanksSince(moment().startOf('year').format('YYYY-MM-DD hh:mm:ss')),
 			@generateRanksSince(moment().subtract(24, 'h').format('YYYY-MM-DD hh:mm:ss')),
@@ -96,7 +104,7 @@ Achievements = Shelf.Collection.extend
 				ranks: {all: 0, day: 0, hour: 0}
 			}
 			c = 0
-			tk ranks
+			# tk ranks
 			ranks.all.forEach (row) =>
 				c += 1
 				if (row.user_id == user_id)
