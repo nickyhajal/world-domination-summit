@@ -64,8 +64,8 @@ race =
     Q.all([
       @getAchievements(),
       achs.achsSince(moment().startOf('year').format('YYYY-MM-DD hh:mm:ss'), user_id),
-      achs.achsSince(moment().subtract(24, 'h').format('YYYY-MM-DD hh:mm:ss'), user_id),
-      achs.achsSince(moment().subtract(1, 'h').format('YYYY-MM-DD hh:mm:ss'), user_id),
+      achs.achsSince(moment().utc().subtract(31, 'h').format('YYYY-MM-DD hh:mm:ss'), user_id),
+      achs.achsSince(moment().utc().subtract(8, 'h').format('YYYY-MM-DD hh:mm:ss'), user_id),
     ])
     .then ([achs, achsAll, achsDay, achsHour]) => 
       process.fire.database().ref().child(raceRef()+'user/'+@get('user_id')).set({

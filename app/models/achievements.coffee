@@ -83,8 +83,8 @@ Achievements = Shelf.Collection.extend
 		dfr = Q.defer()
 		Q.all([
 			@achsSince(moment().startOf('year').format('YYYY-MM-DD hh:mm:ss')),
-			@achsSince(moment().subtract(24, 'h').format('YYYY-MM-DD hh:mm:ss')),
-			@achsSince(moment().subtract(1, 'h').format('YYYY-MM-DD hh:mm:ss')),
+			@achsSince(moment().utc().subtract(31, 'h').format('YYYY-MM-DD hh:mm:ss')),
+			@achsSince(moment().utc().subtract(8, 'h').format('YYYY-MM-DD hh:mm:ss')),
 			@generateActivity()
 		]).then ([all, day, hour, activity]) =>
 			dfr.resolve({
