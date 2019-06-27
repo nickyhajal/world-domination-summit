@@ -1022,6 +1022,7 @@ routes = (app) ->
 			else
 				next()
 		claim_prize: (req, res, next) ->
+			tk req.query
 			if req.me and req.query.prize_id
 				RaceUserPrize.forge
 					user_id: req.me.get('user_id')
@@ -1030,8 +1031,10 @@ routes = (app) ->
 				.then (prize) ->
 					if prize
 						prize.set('redeemed', '1')
-						res.r.redeemed = true
-						next()
+						.save()
+						.then ->
+							res.r.redeemed = true
+							next()
 					else
 						tk 'Tried to claim a prize that doesn\'t exist for that user'
 						tk 'user_id: '+req.me.get('user_id')+', prize_id: '+req.query.prize_id
