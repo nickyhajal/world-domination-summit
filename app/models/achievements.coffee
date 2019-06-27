@@ -56,7 +56,7 @@ Achievements = Shelf.Collection.extend
 		.where('add_points', '>', '-1')
 		.where('created_at', '>', time)
 		.orderBy('total', 'DESC')
-		.groupBy('user_id').toSql()
+		.groupBy('user_id').toSQL()
 		q = process.knex('race_achievements as a')
 		.select(process.knex.raw('user_id, sum(points + custom_points + add_points) as total'))
 		.leftJoin('racetasks as t', 'a.task_id', 't.racetask_id')
