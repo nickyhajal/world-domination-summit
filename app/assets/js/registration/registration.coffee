@@ -53,8 +53,6 @@ ap.init = () ->
 		user_id = $t.data('user_id')
 		col = $t.data('id')
 		sendCol = col
-		tk col
-		tk sendCol
 		inx = $t.data('inx')
 		isSelected = $t.hasClass('selected')
 		val = false
@@ -319,7 +317,9 @@ syncButtonState = (pre, user_id, sel, inx = 0, bnt = 0) ->
 ap.onShow.kinduser = ->
 	user = ap.Users.get(ap.active_user)
 	user_id = user.get('user_id')
-	bnts = bentos[user_id]
+	tk user_id
+	bnts = bentos[''+user_id]
+	tk bnts
 	ap.api 'get usersp', {user_id: user_id}, (rsp) ->
 		syncButtonState('glb', user_id, +rsp.glb is 1)
 		syncButtonState('gsp', user_id, +rsp.gsp is 1)
