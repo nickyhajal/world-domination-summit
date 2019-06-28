@@ -360,7 +360,7 @@ ap.onShow.kinduser = ->
 	html += '	<div class="answer">'
 	html += '		<h5>Lunchbox</h5>'
 	html += '		<button id="glb-'+user_id+'" class="checkbutton" data-id="glb" data-user_id="'+user_id+'"></button>'
-	if bnts and bnts > 0
+	if bnts and bnts.length > 0
 		html += '		<h5>Bentos</h5>'
 		c = 0
 		for b in bnts
