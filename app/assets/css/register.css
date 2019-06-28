@@ -309,6 +309,10 @@ main.contentainer {
 }
 .not-loaded {
   opacity: 0.2;
+  transition: all 0.2s;
+}
+.loaded {
+  transition: all 0.2s;
 }
 .checkbutton {
   display: block;
