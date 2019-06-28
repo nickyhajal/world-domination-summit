@@ -308,7 +308,7 @@ main.contentainer {
   padding-top: 40px;
 }
 .not-loaded {
-  opacity: 0.2;
+  opacity: 0.5;
   transition: all 0.2s;
 }
 .loaded {
