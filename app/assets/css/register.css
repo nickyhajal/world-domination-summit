@@ -307,6 +307,58 @@ div.answer {
 main.contentainer {
   padding-top: 40px;
 }
+.not-loaded {
+  opacity: 0.2;
+}
+.checkbutton {
+  display: block;
+  background: #e0dbd3;
+  color: #333;
+  border: 0;
+  padding: 16px;
+  padding-left: 54px;
+  width: 100%;
+  font-family: karla;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: left;
+  margin-bottom: 4px;
+  position: relative;
+  cursor: pointer;
+}
+.checkbutton:before {
+  position: absolute;
+  height: 19px;
+  width: 19px;
+  border: 2px solid #b6b0a7;
+  background: transparent;
+  content: '';
+  left: 15px;
+  top: 12px;
+  z-index: 3;
+  display: block;
+}
+.selected.checkbutton {
+  background: #e4e996;
+  color: #333;
+}
+.selected.checkbutton:before {
+  border: 2px solid #96b163;
+}
+.selected.checkbutton:after {
+  content: '✓';
+  position: absolute;
+  height: 19px;
+  width: 19px;
+  border: 2px solid rgba(0, 0, 0, 0);
+  background: transparent;
+  left: 16px;
+  color: #618d0d;
+  top: 11px;
+  z-index: 3;
+  display: block;
+  font-size: 18px;
+}
 * {
   line-height: inherit;
 }

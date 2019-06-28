@@ -195,6 +195,23 @@ routes = (app) ->
 					next()
 			else
 				next()
+		getsp: (req, res, next) ->
+			if req.query.user_id
+				User.forge({
+					user_id: req.query.user_id
+				})
+				.fetch()
+				.then (user) ->
+					if user
+						res.r.glb = user.get('glb')
+						res.r.gsp = user.get('gsp')
+						res.r.nsp = user.get('nsp')
+						res.r.bentos = user.get('bentos')
+						next()
+					else
+						next()
+			else
+				next()
 		get: (req, res, next) ->
 			where = {}
 			if req.query.user_name? || req.query.user_id?
@@ -818,18 +835,14 @@ routes = (app) ->
 				res.status(401)
 
 		register_extra: (req, res, next) ->
-			cols = ['glb', 'gsp']
-			if req.query.col and cols.indexOf(req.query.col) > -1 && req.query.user_id
+			cols = ['glb', 'gsp', 'bentos']
+			if req.query.col and cols.indexOf(req.query.col) > -1 && req.query.user_id && req.query.val
 				col = req.query.col
 				User.forge({user_id: req.query.user_id})
 				.fetch()
 				.then (user) ->
 					if (user)
-						existing = user.get(col)
-						if (+existing > 0)
-							user.set(col, '0')
-						else
-							user.set(col, '1')
+						user.set(col, req.query.val)
 						user.save().then -> 
 							User.forge({user_id: req.query.user_id})
 							.fetch()

@@ -61,6 +61,7 @@ routes = (app) ->
 	apiRouter.put '/user', user.update
 	apiRouter.get '/user/validate', user.validate
 	apiRouter.get '/user', user.get
+	apiRouter.get '/usersp', user.getsp
 	apiRouter.get '/user/ticket', user.ticket
 	apiRouter.get '/user/card', user.card
 	apiRouter.post '/user/card', user.updCard

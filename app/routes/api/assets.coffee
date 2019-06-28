@@ -166,7 +166,7 @@ routes = (app) ->
 							# qb.orWhere('t.created_at', '')
 						.fetch
 							columns: [
-								'users.user_id', 'type', 'first_name', 'last_name', 'location', 'ticket_type', 'glb', 'gsp', 'nsp' #, 'pic' # , 'kinded'
+								'users.user_id', 'type', 'first_name', 'last_name', 'location', 'ticket_type', 'glb', 'gsp', 'nsp', 'bentos' #, 'pic' # , 'kinded'
 							]
 						.then (attendees) ->
 							atns = attendees.models
