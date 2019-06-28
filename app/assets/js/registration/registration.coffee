@@ -46,10 +46,12 @@ ap.init = () ->
 
 
 	################ CHECK BUTTON
-	$('body').on 'click', '.checkbutton', (e) ->
+	$('body').on 'click', '.loaded .checkbutton', (e) ->
 		e.preventDefault()
 		e.stopPropagation()
 		$t = $(this)
+		if $t.hasClass('loading')
+			return false
 		user_id = $t.data('user_id')
 		col = $t.data('id')
 		sendCol = col
@@ -69,8 +71,10 @@ ap.init = () ->
 		if !val
 			val = if isSelected then '0' else '1'
 
+		$t.addClass('loading')
 		ap.api 'post user/register_extra', {col: sendCol, val: val, user_id: user_id}, (rsp) ->
-				syncButtonState(col, user_id, !isSelected, inx)
+			$t.removeClass('loading')
+			syncButtonState(col, user_id, !isSelected, inx)
 		return false
 
 	####################################
@@ -323,8 +327,8 @@ ap.onShow.kinduser = ->
 	ap.api 'get usersp', {user_id: user_id}, (rsp) ->
 		syncButtonState('glb', user_id, +rsp.glb is 1)
 		syncButtonState('gsp', user_id, +rsp.gsp is 1)
+		$('#atn-controls').removeClass('not-loaded').addClass('loaded')
 		c = 0
-		console.log(rsp)
 		for b in bnts
 			b = bTypes[b]
 			sel = false
@@ -333,7 +337,6 @@ ap.onShow.kinduser = ->
 				sel = +bs[c] is 1
 			syncButtonState('bnt', user_id, sel, c)
 			c += 1
-		$('.attendee-controls').removeClass('not-loaded').addClass('loaded')
 	ap.active_user = user
 	questions = [
 			'Why did you travel <span class="ceil">{{ distance }}</span> miles to the World Domination Summit'
@@ -356,10 +359,10 @@ ap.onShow.kinduser = ->
 		count += 1
 	notes = user.get('notes')
 	nsp = +user.get('nsp')
-	html += '<div id="atn-controls not-loaded" class="attendee-question-shell">'
+	html += '<div id="atn-controls" class="attendee-question-shell not-loaded">'
 	html += '	<div class="answer">'
 	html += '		<h5>Lunchbox</h5>'
-	html += '		<button id="glb-'+user_id+'" class="checkbutton" data-id="glb" data-user_id="'+user_id+'"></button>'
+	html += '		<button id="glb-'+user_id+'" class="checkbutton" data-id="glb" data-user_id="'+user_id+'">&nbsp;</button>'
 	if bnts and bnts.length > 0
 		html += '		<h5>Bentos</h5>'
 		c = 0
@@ -369,7 +372,7 @@ ap.onShow.kinduser = ->
 			c += 1
 	if nsp > 0
 		html += '		<h5>To-go Ware</h5>'
-		html += '		<button id="gsp-'+user_id+'" class="checkbutton" data-id="gsp" data-user_id="'+user_id+'"></button>'
+		html += '		<button id="gsp-'+user_id+'" class="checkbutton" data-id="gsp" data-user_id="'+user_id+'">&nbsp;</button>'
 	html += '	</div>'
 	html += '</div>'
 

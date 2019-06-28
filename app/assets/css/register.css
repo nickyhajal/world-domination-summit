@@ -325,6 +325,10 @@ main.contentainer {
   margin-bottom: 4px;
   position: relative;
   cursor: pointer;
+  transition: all 0.2s;
+}
+.loading.checkbutton {
+  opacity: 0.5;
 }
 .checkbutton:before {
   position: absolute;
@@ -337,27 +341,15 @@ main.contentainer {
   top: 12px;
   z-index: 3;
   display: block;
+  transition: all 0.2s;
 }
 .selected.checkbutton {
   background: #e4e996;
   color: #333;
 }
 .selected.checkbutton:before {
-  border: 2px solid #96b163;
-}
-.selected.checkbutton:after {
-  content: '✓';
-  position: absolute;
-  height: 19px;
-  width: 19px;
-  border: 2px solid rgba(0, 0, 0, 0);
-  background: transparent;
-  left: 16px;
-  color: #618d0d;
-  top: 11px;
-  z-index: 3;
-  display: block;
-  font-size: 18px;
+  border: 2px solid #7dbf00;
+  background: #81c500;
 }
 * {
   line-height: inherit;
