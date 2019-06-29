@@ -124,6 +124,10 @@ PRE =
     dfr = Q.defer()
     dfr.resolve({})
     return dfr.promise
+  wds2020: (meta) ->
+    dfr = Q.defer()
+    dfr.resolve({})
+    return dfr.promise
   wds2019plan: (meta) ->
     dfr = Q.defer()
     dfr.resolve({})
@@ -282,6 +286,7 @@ POST =
     return dfr.promise
 
   wds2019: (transaction, meta) -> return postProcessTicket(transaction, meta, '2019', 'sale_wave2_2019')
+  wds2020: (transaction, meta) -> return postProcessTicket(transaction, meta, '2020', 'pre', true)
   wds2019plan: (transaction, meta) -> 
     dfr = Q.defer()
     postProcessTicket(transaction, meta, '2019', 'sale_wave2_2019')
