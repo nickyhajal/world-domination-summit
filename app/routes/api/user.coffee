@@ -383,6 +383,7 @@ routes = (app) ->
 			next()
 
 		prize_notification: (req, res, next) ->
+			tk 'tk: '+req.query
 			if req.query.user_id and req.query.submission_id
 				Notification.forge
 					type: 'prize'
