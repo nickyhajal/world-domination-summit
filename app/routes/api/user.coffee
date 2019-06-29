@@ -382,6 +382,17 @@ routes = (app) ->
 					console.error(err)
 			next()
 
+		prize_notification: (req, res, next) ->
+			if req.query.user_id
+				Notification.forge
+					type: 'prize'
+					user_id: req.query.user_id
+					channel_type: 0
+					channel_id: 0
+					content: {}
+					link: ''
+				.save()
+
 		get_notifications: (req, res, next) ->
 			if req.me? and req.me
 				Notifications.forge()

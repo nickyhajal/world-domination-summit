@@ -165,6 +165,8 @@ Notifications = Shelf.Collection.extend
 		text = ''
 
 		switch notn.get('type')
+			when 'prize'
+				dfr.resolve("Woah, you just received a prize playing the Unconventional Race!")
 			when 'feed_like'
 				tk "liker: "+data.liker_id
 				User.forge({user_id: data.liker_id})
