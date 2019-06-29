@@ -383,7 +383,7 @@ routes = (app) ->
 			next()
 
 		prize_notification: (req, res, next) ->
-			if req.query.user_id
+			if req.query.user_id and req.query.submission_id
 				Notification.forge
 					type: 'prize'
 					user_id: req.query.user_id
@@ -392,7 +392,14 @@ routes = (app) ->
 					content: '{"user_id":'+req.query.user_id+'}'
 					link: ''
 				.save()
-				next()
+				.then ->
+					RaceUserPrize.forge
+						submission_id: req.query.submission_id
+						user_id: req.query.user_id
+					.fetch()
+					.then (p) ->
+						p.set('notified', 1).save()
+					next()
 
 		get_notifications: (req, res, next) ->
 			if req.me? and req.me
@@ -1047,7 +1054,6 @@ routes = (app) ->
 			else
 				next()
 		claim_prize: (req, res, next) ->
-			tk req.query
 			if req.me and req.query.prize_id
 				RaceUserPrize.forge
 					user_id: req.me.get('user_id')
