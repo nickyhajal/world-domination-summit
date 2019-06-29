@@ -169,7 +169,7 @@ Notifications = Shelf.Collection.extend
 				User.forge({user_id: data.user_id})
 				.fetch()
 				.then (user) ->
-					text = "Woah, you just received a prize playing the Unconventional Race!"
+					text = "Awesome! You just received a prize playing the Unconventional Race!"
 					if inc_user then dfr.resolve([text, user]) else dfr.resolve(text)
 			when 'feed_like'
 				tk "liker: "+data.liker_id
