@@ -392,6 +392,7 @@ routes = (app) ->
 					content: '{"user_id":'+req.query.user_id+'}'
 					link: ''
 				.save()
+				next()
 
 		get_notifications: (req, res, next) ->
 			if req.me? and req.me
