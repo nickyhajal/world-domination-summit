@@ -389,7 +389,7 @@ routes = (app) ->
 					user_id: req.query.user_id
 					channel_type: '0'
 					channel_id: '0'
-					content: '{user_id:'+req.query.user_id+'}'
+					content: '{"user_id":'+req.query.user_id+'}'
 					link: ''
 				.save()
 
