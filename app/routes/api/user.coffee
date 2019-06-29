@@ -387,9 +387,9 @@ routes = (app) ->
 				Notification.forge
 					type: 'prize'
 					user_id: req.query.user_id
-					channel_type: 0
-					channel_id: 0
-					content: {}
+					channel_type: '0'
+					channel_id: '0'
+					content: '{}'
 					link: ''
 				.save()
 
