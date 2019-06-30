@@ -107,7 +107,7 @@ const Field = {
       qb.where('paid_amount', '>', '5000');
     }).fetch();
     const row = await Tickets.query(qb => {
-      qb.where('year', '2019');
+      qb.where('year', '2020');
     }).fetch();
     vals.current_wave_plans = paymentPlansThisWave.models.reduce((sum, row) => {
       return sum + +row.get('quantity');
