@@ -53,6 +53,7 @@ race =
         out = {}
         for ach in achs.models
           out[ach.get('slug')] = (+ach.get('points') + +ach.get('add_points') + +ach.get('custom_points'))
+          
           # else
           #   out[ach.get('slug')] += 1
         dfr.resolve(out)
@@ -68,16 +69,17 @@ race =
       achs.achsSince(moment().utc().subtract(8, 'h').format('YYYY-MM-DD HH:mm:ss'), user_id),
     ])
     .then ([achs, achsAll, achsDay, achsHour]) => 
-      process.fire.database().ref().child(raceRef()+'user/'+@get('user_id')).set({
-        achieved: achs
-        achs: {
-          all: achsAll
-          day: achsDay
-          hour: achsHour
-        }
-        points: data.points,
-        ranks: data.ranks,
-      })
+      x = 1
+      # process.fire.database().ref().child(raceRef()+'user/'+@get('user_id')).set({
+      #   achieved: achs
+      #   achs: {
+      #     all: achsAll
+      #     day: achsDay
+      #     hour: achsHour
+      #   }
+      #   points: data.points,
+      #   ranks: data.ranks,
+      # })
 
   markAchievedSimple: (task_slug) ->
     dfr = Q.defer()

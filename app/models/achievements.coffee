@@ -93,7 +93,8 @@ Achievements = Shelf.Collection.extend
 			})
 		return dfr.promise
 	updateFire: (data) ->
-		process.fire.database().ref().child(raceRef()+'/rundown/stats').set(data)
+		x = 1
+		# process.fire.database().ref().child(raceRef()+'/rundown/stats').set(data)
 	processPoints: (user_id) ->
 		dfr = Q.defer()
 		@generateRanks()
