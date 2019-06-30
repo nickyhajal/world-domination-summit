@@ -99,7 +99,7 @@ const Field = {
       qb.where('paid_amount', '>', '63000');
     }).fetch();
     const singleBuys = await Transactions.query(qb => {
-      qb.whereIn('product_id', ['16', '21']);
+      qb.whereIn('product_id', '21');
       qb.where('paid_amount', '>', '10000');
     }).fetch();
     const doubleBuys = await Transactions.query(qb => {
