@@ -99,15 +99,15 @@ const Field = {
       qb.where('paid_amount', '>', '63000');
     }).fetch();
     const singleBuys = await Transactions.query(qb => {
-      qb.where('product_id', '21');
+      qb.whereIn('product_id', ['16', '21']);
       qb.where('paid_amount', '>', '10000');
     }).fetch();
     const doubleBuys = await Transactions.query(qb => {
-      qb.where('product_id', '24');
+      qb.where('product_id', '16');
       qb.where('paid_amount', '>', '5000');
     }).fetch();
     const row = await Tickets.query(qb => {
-      qb.where('year', '2020');
+      qb.where('year', '2019');
     }).fetch();
     vals.current_wave_plans = paymentPlansThisWave.models.reduce((sum, row) => {
       return sum + +row.get('quantity');
