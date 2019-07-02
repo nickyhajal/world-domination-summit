@@ -132,6 +132,10 @@ PRE =
     dfr = Q.defer()
     dfr.resolve({})
     return dfr.promise
+  wds2020plan: (meta) ->
+    dfr = Q.defer()
+    dfr.resolve({})
+    return dfr.promise
   wdsDouble: (meta) ->
     dfr = Q.defer()
     dfr.resolve({})
@@ -290,6 +294,32 @@ POST =
   wds2019plan: (transaction, meta) -> 
     dfr = Q.defer()
     postProcessTicket(transaction, meta, '2019', 'sale_wave2_2019')
+    .then ->
+      [User, Users] = require('./users')
+      User.forge
+        user_id: transaction.get('user_id')
+      .fetch()
+      .then (user) ->
+        stripe = require('stripe')(process.env.STRIPE_SK)
+        pkg = {
+          customer: user.get('stripe'),
+          items: [{ plan: process.env.STRIPE_PLAN_ID, quantity: +transaction.get('quantity') }],
+          metadata: {installments_paid: 1},
+          trial_from_plan: true
+        }
+        stripe.subscriptions.create(pkg).then (created) ->
+          transaction.set({subscription_type: 'create_subscription', subscription_id: created.id})
+          transaction.save();
+          user.set({plan_installments: 1})
+          user.save();
+          dfr.resolve({})
+        .catch(e) ->
+          dfr.resolve({})
+          console.error(e)
+    return dfr.promise
+  wds2020plan: (transaction, meta) -> 
+    dfr = Q.defer()
+    postProcessTicket(transaction, meta, '2020', 'sale_pre_2020')
     .then ->
       [User, Users] = require('./users')
       User.forge
