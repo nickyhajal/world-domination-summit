@@ -85,11 +85,11 @@ const Field = {
       qb.where('created_at', '>', waveDate);
     }).fetch();
     const paymentPlans = await Transactions.query(qb => {
-      qb.where('product_id', '23');
+      qb.where('product_id', '22');
       qb.where('paid_amount', '>', '5000');
     }).fetch();
     const paymentPlansThisWave = await Transactions.query(qb => {
-      qb.where('product_id', '23');
+      qb.where('product_id', '22');
       qb.where('created_at', '>', waveDate);
       qb.where('paid_amount', '>', '5000');
     }).fetch();
