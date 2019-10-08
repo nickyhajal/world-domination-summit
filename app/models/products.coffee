@@ -280,7 +280,7 @@ POST =
           qb.where('type', '360')
         .fetch()
         .then (rsp) ->
-          process.fire.database().ref().child('state/sale_wave3_2018/sold').set(rsp.models.length)
+          process.fire.database().ref().child('state/sales_wave1_2020/sold').set(rsp.models.length)
         , (err) ->
           console.err(error)
         transaction.set('meta', JSON.stringify(tickets))
@@ -289,8 +289,8 @@ POST =
     dfr.resolve({})
     return dfr.promise
 
-  wds2019: (transaction, meta) -> return postProcessTicket(transaction, meta, '2019', 'sale_wave2_2019')
-  wds2020: (transaction, meta) -> return postProcessTicket(transaction, meta, '2020', 'pre', true)
+  wds2019: (transaction, meta) -> return postProcessTicket(transaction, meta, '2019', 'sales_wave1_2020')
+  wds2020: (transaction, meta) -> return postProcessTicket(transaction, meta, '2020', 'sales_wave1_2020', true)
   wds2019plan: (transaction, meta) -> 
     dfr = Q.defer()
     postProcessTicket(transaction, meta, '2019', 'sale_wave2_2019')

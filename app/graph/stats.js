@@ -63,7 +63,7 @@ const Field = {
       posts: 0,
       pw: 0,
     };
-    const waveDate = '2019-06-29 00:00:00';
+    const waveDate = '2019-10-07 00:00:00';
     const posts = await Feeds.query(qb => {
       qb.where('created_at', '>', waveDate);
     }).fetch();
