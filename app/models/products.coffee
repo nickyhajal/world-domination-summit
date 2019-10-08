@@ -319,7 +319,7 @@ POST =
     return dfr.promise
   wds2020plan: (transaction, meta) -> 
     dfr = Q.defer()
-    postProcessTicket(transaction, meta, '2020', 'sale_pre_2020')
+    postProcessTicket(transaction, meta, '2020', 'sales_wave1_2020')
     .then ->
       [User, Users] = require('./users')
       User.forge
