@@ -480,6 +480,7 @@ routes = (app) ->
 									params =
 										venue: ev.get('place')
 										event_name: ev.get('what')
+										event_url: 'https://wds.fm/meetup/'+ev.get('slug')
 										startStr: dayStr+' at '+timeStr
 									subName = ev.get('what')
 									if subName.length > 35

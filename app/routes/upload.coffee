@@ -8,7 +8,7 @@ crypto = require('crypto')
 gm = require('gm')
 request = require('request')
 multer  = require('multer')
-upload = multer({ dest: '/tmp_uploads/' })
+upload = multer({ dest: './tmp_uploads/' })
 
 [User, Users] = require('../models/users')
 routes = (app) ->
