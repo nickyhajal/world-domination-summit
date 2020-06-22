@@ -5,7 +5,6 @@ const redis = require('redis');
 const rds = redis.createClient();
 const crypto = require('crypto');
 const apn = require('apn');
-const gcm = require('node-gcm');
 const _ = require('underscore');
 const async = require('async');
 const _s = require('underscore.string');
@@ -42,13 +41,12 @@ const AdminNotification = Shelf.Model.extend({
     if (test === 'yes') {
       devices.query('whereIn', 'devices.user_id', [
         '176',
-        '6292',
-        '179',
-        '216',
-        '1315',
-        '6263',
-        '8884',
-        '6291',
+        // '6292',
+        // '6256',
+        // '179',
+        // '216',
+        // '6263',
+        // '8884',
       ]); //, '179', '216', '6292'])
     }
     if (device_type !== 'all') {
@@ -146,8 +144,7 @@ AND year = '` +
     } = this.attributes;
     if (device != null && registered != null) {
       const { devices, device_count, user_count } = await this.getDevices();
-      console.log(devices.map(v => v.get('token')));
-      console.log(devices.length);
+      // console.log(devices.map(v => v.get('token')));
       if (+device_count > 0) {
         if (content != null) {
           let type;
@@ -229,6 +226,10 @@ AND year = '` +
                   message = {
                     to: token,
                     collapse_key: 'WDS Notifications',
+                    notification: {
+                      title: 'WDS App',
+                      body: msg,
+                    },
                     data: {
                       title: title ? title : 'WDS App',
                       body: msg,

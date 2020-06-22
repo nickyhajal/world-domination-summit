@@ -10,6 +10,8 @@ async = require('async')
 
 ##
 
+
+raceRef = require('../util/raceRef')
 [Capability, Capabilities] = require './capabilities'
 [Event, Events] = require './events'
 [Ticket, Tickets] = require './tickets'
@@ -79,6 +81,8 @@ User = Shelf.Model.extend
     ]
     @addressChanged = addressChanged
 
+    # if @lastDidChange ['points']
+    #   process.fire.database().ref().child(raceRef()+'/user/'+@get('user_id')+'/points').set(@get('points'))
     if @lastDidChange ['email'] and @get('attending'+process.yr) is '1'
       @syncEmail()
 
@@ -203,8 +207,10 @@ User = Shelf.Model.extend
   raceCheck: race.raceCheck
   achieved: race.achieved
   markAchieved: race.markAchieved
+  syncAchievements: race.syncAchievements
   updateAchieved: race.updateAchieved
   processPoints: race.processPoints
+  markAchievedSimple: race.markAchievedSimple
   getAchievements: race.getAchievements
 
   # Twitter
@@ -290,7 +296,6 @@ User = Shelf.Model.extend
     location = @getLocationString()
     @set 'location', location
     geocoder.geocode location, (err, data) =>
-      console.log(data.results[0])
       if data.results[0]
         latlon = data.results[0].geometry.location
         distance = geolib.getDistance

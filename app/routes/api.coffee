@@ -61,9 +61,12 @@ routes = (app) ->
 	apiRouter.put '/user', user.update
 	apiRouter.get '/user/validate', user.validate
 	apiRouter.get '/user', user.get
+	apiRouter.get '/usersp', user.getsp
 	apiRouter.get '/user/ticket', user.ticket
 	apiRouter.get '/user/card', user.card
 	apiRouter.post '/user/card', user.updCard
+	apiRouter.get '/user/prize_notification', user.prize_notification
+	# apiRouter.get '/user/prize_notification_test', user.prize_notification
 	apiRouter.get '/user/check_name', user.username_check
 	apiRouter.post '/user', user.create
 	apiRouter.post '/user/tickets', user.give_tickets
@@ -71,10 +74,15 @@ routes = (app) ->
 	apiRouter.post '/user/addToList', user.addToList
 	apiRouter.post '/user/reset', user.reset
 	apiRouter.post '/user/registrations', user.registrations
+	apiRouter.post '/user/register_extra', user.register_extra
 	apiRouter.post '/user/interest', user.add_interest
+	apiRouter.post '/user/show_race_instructions', user.show_race_instructions
 	apiRouter.post '/user/connection', user.add_connection
 	apiRouter.post '/user/notifications', user.upd_notifications
 	apiRouter.post '/user/story', user.post_story
+	apiRouter.get '/user/prizes', user.get_prizes
+	apiRouter.post '/user/prize_claim', user.claim_prize
+	apiRouter.get '/user/race_sync', user.race_sync
 
 	#
 	apiRouter.post '/message', notifications.message

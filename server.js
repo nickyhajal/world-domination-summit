@@ -1,7 +1,6 @@
 require('dotenv').config();
 Error.stackTraceLimit = Infinity;
 global.tk = console.log;
-require('coffee-script');
 require('coffee-script/register');
 require('coffee-trace');
 var Bookshelf = require('bookshelf');
@@ -42,11 +41,11 @@ if (process.env.DIR !== undefined) {
 process.knex = require('knex')(app.settings.db);
 db = process.db = app.settings.db;
 process.mail = app.settings.mail;
-process.year = '2019';
-process.yr = '19';
-process.tkyear = '2019';
-process.tkyr = '19';
-process.lastYear = '2018';
+process.year = '2020';
+process.yr = '20';
+process.tkyear = '2020';
+process.tkyr = '20';
+process.lastYear = '2019';
 process.dmn = process.env.DOMAIN;
 process.rsapp = 'mobile_logins';
 process.APN = new apn.Connection(app.settings.apn);

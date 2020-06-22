@@ -23,8 +23,7 @@ rds = redis.createClient()
 getters =
 	getMe: ->
 		dfr = Q.defer()
-#    @raceCheck()
-#    .then =>
+		@raceCheck().then ->
 		Q.all([
 			@getCurrentTickets()
 			@getAnswers()
@@ -128,7 +127,7 @@ getters =
 		.query('where', 'connections.user_id', @get('user_id'))
 		if this_year
 			q.query('where', 'created_at', '>', process.year+'-01-01 00:00:00')
-		q.query('where', 'attending'+process.yr, '1')
+		# q.query('where', 'attending'+process.yr, '1')
 		if include_user
 			columns = {columns: ['users.user_id', 'first_name', 'last_name', 'user_name', 'pic']}
 			q.query('join', 'users', 'connections.to_id', '=', 'users.user_id', 'inner')
@@ -148,7 +147,7 @@ getters =
 			q.query('where', 'created_at', '>', process.year+'-01-01 00:00:00')
 
 		# REMOVE AFTER EVENT TO SHOW ALL
-		q.query('where', 'attending'+process.yr, '1')
+		# q.query('where', 'attending'+process.yr, '1')
 		if include_user
 			columns = {columns: ['users.user_id', 'first_name', 'last_name', 'user_name', 'pic']}
 			q.query('join', 'users', 'connections.user_id', '=', 'users.user_id', 'inner')
@@ -334,7 +333,7 @@ getters =
 				@where('tickets.user_id', user.get('user_id'))
 				.orWhere('purchaser_id', user.get('user_id'))
 			# qb.where('year', process.year)
-			qb.where('year', '2019')
+			qb.where('year', '2020')
 			qb.leftJoin('users as p', 'p.user_id', '=', 'tickets.user_id')
 			qb.leftJoin('users as u', 'u.user_id', '=', 'tickets.user_id')
 		.fetch({columns: columns})

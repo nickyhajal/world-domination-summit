@@ -1,12 +1,15 @@
 crypto = require('crypto')
+moment = require('moment');
 Q = require('q')
 async = require('async')
 _s = require('underscore.string')
+knex = require('knex');
 redis = require("redis")
 rds = redis.createClient()
 
 ##
 
+raceRef = require '../../util/raceRef'
 [Ticket, Tickets] = require '../tickets'
 [Answer, Answers] = require '../answers'
 [UserInterest, UserInterests] = require '../user_interests'
@@ -31,14 +34,9 @@ race =
       return achs[task_id]
     else
       return false
-
   processPoints: ->
-    dfr = Q.defer()
-    Achievements.forge()
+    return Achievements.forge()
     .processPoints(@get('user_id'))
-    .then (points) ->
-      dfr.resolve(points)
-    return dfr.promise
 
   getAchievements: ->
     dfr = Q.defer()
@@ -50,15 +48,61 @@ race =
       .query('where', 'add_points', '<>', '-1')
       .query('join', 'racetasks', 'race_achievements.task_id', '=', 'racetasks.racetask_id', 'left')
       .fetch
-        columns: ['task_id', 'slug', 'points']
+        columns: ['task_id', 'slug', 'points', 'add_points', 'custom_points']
       .then (achs) ->
         out = {}
         for ach in achs.models
-          if not out[ach.get('slug')]?
-            out[ach.get('slug')] = 1
-          else
-            out[ach.get('slug')] += 1
+          out[ach.get('slug')] = (+ach.get('points') + +ach.get('add_points') + +ach.get('custom_points'))
+          
+          # else
+          #   out[ach.get('slug')] += 1
         dfr.resolve(out)
+    return dfr.promise
+
+  syncAchievements: (data) ->
+    user_id = @get('user_id')
+    achs = Achievements.forge()
+    Q.all([
+      @getAchievements(),
+      achs.achsSince(moment().startOf('year').format('YYYY-MM-DD HH:mm:ss'), user_id),
+      achs.achsSince(moment().utc().subtract(31, 'h').format('YYYY-MM-DD HH:mm:ss'), user_id),
+      achs.achsSince(moment().utc().subtract(8, 'h').format('YYYY-MM-DD HH:mm:ss'), user_id),
+    ])
+    .then ([achs, achsAll, achsDay, achsHour]) => 
+      x = 1
+      # process.fire.database().ref().child(raceRef()+'user/'+@get('user_id')).set({
+      #   achieved: achs
+      #   achs: {
+      #     all: achsAll
+      #     day: achsDay
+      #     hour: achsHour
+      #   }
+      #   points: data.points,
+      #   ranks: data.ranks,
+      # })
+
+  markAchievedSimple: (task_slug) ->
+    dfr = Q.defer()
+    RaceTask.forge({slug: task_slug})
+    .fetch()
+    .then (task) =>
+      task_id = task.get('racetask_id')
+      Achievements.forge()
+      .query('where', 'user_id', @get('user_id'))
+      .query('where', 'task_id', task_id)
+      .query('where', 'add_points', '>', '-1')
+      .fetch()
+      .then (existing) =>
+        if !existing.models.length
+          Achievement.forge
+            user_id: @get('user_id')
+            task_id: task_id
+            custom_points: 0
+          .save()
+          .then ->
+            dfr.resolve(true)
+        else
+          dfr.resolve(false)
     return dfr.promise
 
   markAchieved: (task_slug, custom_points = 0) ->
@@ -70,28 +114,33 @@ race =
       RaceTask.forge({slug: task_slug})
       .fetch()
       .then (task) =>
-        task_id = task.get('racetask_id')
-        times = achs[task.get('slug')] ? 0
-        if +times < +task.get('attendee_max')
-          Achievement.forge()
-          .set
-            user_id: @get('user_id')
-            task_id: task_id
-            custom_points: custom_points
-          .save()
-          .then (ach) =>
-            rsp = 
-              ach_id: ach.get('ach_id')
-            @processPoints()
-            .then (points) =>
-              # @set('points', points)
-              # .save()
-              # .then ->
-              rsp.points = points
-              dfr.resolve(rsp)
-          , (err) ->
-            console.error(err)
+        if task
+          task_id = task.get('racetask_id')
+          times = achs[task.get('slug')] ? 0
+          if +times < +task.get('attendee_max')
+            Achievement.forge
+              user_id: @get('user_id')
+              task_id: task_id
+              custom_points: custom_points
+            .save()
+            .then (ach) =>
+              rsp = 
+                ach_id: ach.get('ach_id')
+              @processPoints()
+              .then (points) =>
+                @set('points', points.all)
+                .save()
+                .then =>
+                  @syncAchievements(points).then ->
+                    rsp.points = points
+                    dfr.resolve(rsp)
+            , (err) ->
+              console.error(err)
+          else
+            tk 'Above attendee max: ' + task_slug
+            dfr.resolve(false)
         else
+          tk 'TASK NOT FOUND: ' + task_slug
           dfr.resolve(false)
       return dfr.promise
 
@@ -109,38 +158,41 @@ race =
         .set
           custom_points: custom_points
         .save()
-        .then (ach) ->
-          dfr.resolve(ach)
+        .then (ach) =>
+          @syncAchievements().then ->
+            dfr.resolve(ach)
       return dfr.promise
 
   raceCheck: ->
     dfr = Q.defer()
     user_key = @get('user_id')+'_racecheck'
     user = this
-    muts = []
     achs = []
     rds.get user_key, (err, check_done) =>
       if not check_done? or 1
         checks = getChecks()
         start = +(new Date())
-        user.getMutualFriends(true)
-        .then (rsp_muts) ->
-          muts = rsp_muts
-          user.getAchievements()
-          .then (rsp_achs) ->
-            achs = rsp_achs
-            user.achs = achs
-            async.each checks, (check, cb) ->
-              check.call(user, cb)
-            , ->
-              user.processPoints()
-              .then (points) ->
-                tk ('Race check took: '+((new Date()) - start )+' milliseconds')
-                #user.set('points', points)
-                #.save()
-                dfr.resolve(points)
-                rds.set user_key, 'true', ->
-                  rds.expire user_key, 90
+        user.getAchievements()
+        .then (rsp_achs) =>
+          achs = rsp_achs
+          user.achs = achs
+          async.each checks, (check, cb) =>
+            check.call(user, cb)
+          , =>
+            tk ('Race check took: '+((new Date()) - start )+' milliseconds')
+            dfr.resolve(true)
+            @processPoints()
+              .then (points) =>
+                @set('points', points.all)
+                .save()
+                .then =>
+                  @syncAchievements(points).then ->
+                    rsp.points = points
+            rds.set user_key, 'true', ->
+              if achs.length > 4
+                rds.expire user_key, 90
+              else
+                rds.expire user_key, 300
       else
         tk 'Skipped Race Check for '+@get('user_name')
         dfr.resolve()
@@ -150,8 +202,8 @@ race =
         # Profile 
         (cb) ->
           if not @achieved('profile', achs)
-            if +@get('intro') is 8
-              @markAchieved('profile')
+            if @get('intro') is '4,0'
+              @markAchievedSimple('profile')
           cb()
         ,
 
@@ -159,7 +211,7 @@ race =
         (cb) ->
           if not @achieved('pic', achs)
             if @get('pic').length > 1
-              @markAchieved('pic')
+              @markAchievedSimple('pic')
           cb()
         ,
         # Host
@@ -167,10 +219,11 @@ race =
           if not @achieved('host-meetup', achs)
             EventHosts.forge()
             .query('where', 'user_id', @get('user_id'))
+            .query('where', 'event_id', '>', '1237')
             .fetch()
             .then (rsp) =>
               if rsp.models.length
-                @markAchieved('host-meetup')
+                @markAchievedSimple('host-meetup')
               cb()
           else
             cb()
@@ -180,127 +233,130 @@ race =
         (cb) ->
           if not @achieved('rsvp', achs)
             EventRsvps.forge()
+            .query('join', 'events', 'events.event_id', 'event_rsvps.event_id')
             .query('where', 'user_id', @get('user_id'))
+            .query('where', 'type', 'meetup')
             .fetch()
             .then (rsp) =>
               if rsp.models.length
-                @markAchieved('rsvp')
+                @markAchievedSimple('rsvp')
               cb()
           else
             cb()
         ,
 
-        # Completed all drink tasks
-        (cb) ->
-          drink_tasks = ['drink-a-local-beer','drink-a-local-coffee','drink-a-local-spirit','drink-a-local-wine', 'drink-a-local-tea']
-          if not @achieved('bonus-point-for-completing-all-5-drinking-challenges', achs)
-            acheived = true
-            for task in drink_tasks
-              if not @achieved(task, achs)
-                acheived = false
-            if acheived
-              @markAchieved('bonus-point-for-completing-all-5-drinking-challenges')
-            cb()
-          else
-            cb()
+        # # Completed all drink tasks
+        # (cb) ->
+        #   drink_tasks = ['drink-a-local-beer','drink-a-local-coffee','drink-a-local-spirit','drink-a-local-wine', 'drink-a-local-tea']
+        #   if not @achieved('bonus-point-for-completing-all-5-drinking-challenges', achs)
+        #     acheived = true
+        #     for task in drink_tasks
+        #       if not @achieved(task, achs)
+        #         acheived = false
+        #     if acheived
+        #       @markAchieved('bonus-point-for-completing-all-5-drinking-challenges')
+        #     cb()
+        #   else
+        #     cb()
 
-        #Featured Tweet
-        (cb) ->
-          if not @achieved('get-one-of-your-tweets-featured-by-the-wds-team', achs)
-            Contents::getFeaturedTweeters()
-            .then (user_ids) =>
-              if user_ids.indexOf(@get('user_id')) > -1
-                @markAchieved('get-one-of-your-tweets-featured-by-the-wds-team')
-              cb()
-          else
-            cb()
-        ,
+        # #Featured Tweet
+        # (cb) ->
+        #   if not @achieved('get-one-of-your-tweets-featured-by-the-wds-team', achs)
+        #     Contents::getFeaturedTweeters()
+        #     .then (user_ids) =>
+        #       if user_ids.indexOf(@get('user_id')) > -1
+        #         @markAchieved('get-one-of-your-tweets-featured-by-the-wds-team')
+        #       cb()
+        #   else
+        #     cb()
+        # ,
 
         # Register
         (cb) ->
           if not @achieved('register-at-wds', achs)
             Registrations.forge()
             .query('where', 'user_id', @get('user_id'))
+            .query('where', 'event_id', '1')
+            .query('where', 'year', '19')
             .fetch()
             .then (rsp) =>
               if rsp.models.length
-                @markAchieved('register-at-wds')
+                @markAchievedSimple('register-at-wds')
               cb()
           else
             cb()
         ,
 
         # Ten Met
-        (cb) ->
-          if not @achieved('friend-10-attendees-on-wdsfm', achs)
-            Connections.forge()
-            .query('where', 'user_id', @get('user_id'))
-            .fetch()
-            .then (rsp) =>
-              if rsp.models.length > 9
-                @markAchieved('ten-met')
-              cb()
-          else
-            cb()
-        , 
+        # (cb) ->
+        #   if not @achieved('friend-10-attendees-on-wdsfm', achs)
+        #     Connections.forge()
+        #     .query('where', 'user_id', @get('user_id'))
+        #     .fetch()
+        #     .then (rsp) =>
+        #       if rsp.models.length > 9
+        #         @markAchieved('ten-met')
+        #       cb()
+        #   else
+        #     cb()
+        # , 
         # Five
-        (cb) ->
-            points = Math.floor(muts.length % 5)
-            if @achieved('1-point-for-every-5-mutually-friended-attendees-on-wdsfm', achs)
-              @updateAchieved('1-point-for-every-5-mutually-friended-attendees-on-wdsfm', points)
-            else
-              @markAchieved('1-point-for-every-5-mutually-friended-attendees-on-wdsfm', points)
-            cb()
-        ,    
+        # (cb) ->
+        #     points = Math.floor(muts.length % 5)
+        #     if @achieved('1-point-for-every-5-mutually-friended-attendees-on-wdsfm', achs)
+        #       @updateAchieved('1-point-for-every-5-mutually-friended-attendees-on-wdsfm', points)
+        #     else
+        #       @markAchieved('1-point-for-every-5-mutually-friended-attendees-on-wdsfm', points)
+        #     cb()
+        # ,    
 
         # Countries
-        (cb) ->
-            countries = []
-            for friend in muts
-              country = friend.get('country')
-              if countries.indexOf(country) is -1
-                countries.push country
-            points = countries.length
-            if @achieved('earn-1-point-for-each-attendee-you-mark-as-a-friend-from-a-different-country', achs)
-              @updateAchieved('earn-1-point-for-each-attendee-you-mark-as-a-friend-from-a-different-country', points)
-            else
-              @markAchieved('earn-1-point-for-each-attendee-you-mark-as-a-friend-from-a-different-country', points)
-            cb()
-        ,    
+        # (cb) ->
+        #     countries = []
+        #     for friend in muts
+        #       country = friend.get('country')
+        #       if countries.indexOf(country) is -1
+        #         countries.push country
+        #     points = countries.length
+        #     if @achieved('earn-1-point-for-each-attendee-you-mark-as-a-friend-from-a-different-country', achs)
+        #       @updateAchieved('earn-1-point-for-each-attendee-you-mark-as-a-friend-from-a-different-country', points)
+        #     else
+        #       @markAchieved('earn-1-point-for-each-attendee-you-mark-as-a-friend-from-a-different-country', points)
+        #     cb()
+        # ,    
         # Home Town
-        (cb) ->
-          if not @achieved('hometown', achs)
-            mytown = _s.slugify(@get('location'))
-            for friend in muts
-              if mytown is _s.slugify(friend.get('location'))
-                @markAchieved('hometown')
-                break
-          cb()
-        ,
+        # (cb) ->
+        #   if not @achieved('hometown', achs)
+        #     mytown = _s.slugify(@get('location'))
+        #     for friend in muts
+        #       if mytown is _s.slugify(friend.get('location'))
+        #         @markAchieved('hometown')
+        #         break
+        #   cb()
+        # ,
         # Furthest away
-        (cb) ->
-          if not @achieved('distance', achs)
-            Connection.forge
-              user_id: @get('user_id')
-              to_id: '2982'
-            .fetch()
-            .then (connection) =>
-              if connection
-                @markAchieved('distance')
-              cb()
-          else
-            cb()
-        , 
+        # (cb) ->
+        #   if not @achieved('distance', achs)
+        #     Connection.forge
+        #       user_id: @get('user_id')
+        #       to_id: '2982'
+        #     .fetch()
+        #     .then (connection) =>
+        #       if connection
+        #         @markAchieved('distance')
+        #       cb()
+        #   else
+        #     cb()
+        # , 
         # Post to Community
         (cb)->
-          if not @achieved('wds-community', achs)
+          if not @achieved('wds-dispatch', achs)
             Feeds.forge()
-            .query('where', 'channel_type', 'interest')
             .query('where', 'user_id', @get('user_id'))
             .fetch()
             .then (rsp) =>
               if rsp.models.length
-                @markAchieved('wds-community')
+                @markAchievedSimple('wds-dispatch')
               cb()
           else
             cb()

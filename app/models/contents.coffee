@@ -14,17 +14,17 @@ Contents = Shelf.Collection.extend
 	getFeaturedTweeters: ->
 		dfr = Q.defer()
 		rds.get 'featured_tweeters', (err, ids) ->
-			if ids? and typeof JSON.parse(ids) is 'object' and 0
+			if ids? and typeof JSON.parse(ids) is 'object'
 				dfr.resolve(JSON.parse(ids))
 			else
-		  	[User, Users] = require('./users')
-		  	ids = []
 				Contents.forge()
 				.query('where', 'type', 'featured_tweet')
 				.fetch()
 				.then (rsp) ->
+					ids = []
 					async.each rsp.models, (tweet, cb) ->
 						data = JSON.parse(tweet.get('data'))
+						[User, Users] = require('./users')
 						User.forge({twitter: data.tweeter})
 						.fetch()
 						.then (user) ->

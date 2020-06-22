@@ -124,7 +124,15 @@ PRE =
     dfr = Q.defer()
     dfr.resolve({})
     return dfr.promise
+  wds2020: (meta) ->
+    dfr = Q.defer()
+    dfr.resolve({})
+    return dfr.promise
   wds2019plan: (meta) ->
+    dfr = Q.defer()
+    dfr.resolve({})
+    return dfr.promise
+  wds2020plan: (meta) ->
     dfr = Q.defer()
     dfr.resolve({})
     return dfr.promise
@@ -272,7 +280,7 @@ POST =
           qb.where('type', '360')
         .fetch()
         .then (rsp) ->
-          process.fire.database().ref().child('state/sale_wave3_2018/sold').set(rsp.models.length)
+          process.fire.database().ref().child('state/sales_wave1_2020/sold').set(rsp.models.length)
         , (err) ->
           console.err(error)
         transaction.set('meta', JSON.stringify(tickets))
@@ -281,10 +289,37 @@ POST =
     dfr.resolve({})
     return dfr.promise
 
-  wds2019: (transaction, meta) -> return postProcessTicket(transaction, meta, '2019', 'sale_wave2_2019')
+  wds2019: (transaction, meta) -> return postProcessTicket(transaction, meta, '2019', 'sales_wave1_2020')
+  wds2020: (transaction, meta) -> return postProcessTicket(transaction, meta, '2020', 'sales_wave1_2020', true)
   wds2019plan: (transaction, meta) -> 
     dfr = Q.defer()
-    postProcessTicket(transaction, meta, '2019', 'sale_wave2_2019')
+    postProcessTicket(transaction, meta, '2019', 'sales_wave1_2020')
+    .then ->
+      [User, Users] = require('./users')
+      User.forge
+        user_id: transaction.get('user_id')
+      .fetch()
+      .then (user) ->
+        stripe = require('stripe')(process.env.STRIPE_SK)
+        pkg = {
+          customer: user.get('stripe'),
+          items: [{ plan: process.env.STRIPE_PLAN_ID, quantity: +transaction.get('quantity') }],
+          metadata: {installments_paid: 1},
+          trial_from_plan: true
+        }
+        stripe.subscriptions.create(pkg).then (created) ->
+          transaction.set({subscription_type: 'create_subscription', subscription_id: created.id})
+          transaction.save();
+          user.set({plan_installments: 1})
+          user.save();
+          dfr.resolve({})
+        .catch(e) ->
+          dfr.resolve({})
+          console.error(e)
+    return dfr.promise
+  wds2020plan: (transaction, meta) -> 
+    dfr = Q.defer()
+    postProcessTicket(transaction, meta, '2020', 'sales_wave1_2020')
     .then ->
       [User, Users] = require('./users')
       User.forge
@@ -373,6 +408,7 @@ POST =
           old_user.sendEmail('transfer-receipt', 'Your ticket transfer was successful!', {to_name: new_user.get('first_name')+' '+new_user.get('last_name')})
           xfer.set
             status: 'paid'
+            to_id: new_user.get('user_id')
           .save()
           .then ->
             dfr.resolve({rsp: {transfer_id: xfer.get('transfer_id')}})
@@ -473,13 +509,13 @@ POST =
   mealchicken: (meta) ->
     dfr = Q.defer()
     Transactions.forge().query('where', 'product_id', '19').query('where', 'status', 'paid').fetch().then (rows) ->
-      process.fire.database().ref().child('state/meals/sandwich_sales').set(rows.length)
+      process.fire.database().ref().child('state/meals/chicken_sales').set(rows.length)
       dfr.resolve({})
     return dfr.promise
   mealveggie: (meta) ->
     dfr = Q.defer()
     Transactions.forge().query('where', 'product_id', '20').query('where', 'status', 'paid').fetch().then (rows) ->
-      process.fire.database().ref().child('state/meals/sandwich_sales').set(rows.length)
+      process.fire.database().ref().child('state/meals/veggie_sales').set(rows.length)
       dfr.resolve({})
     return dfr.promise
 

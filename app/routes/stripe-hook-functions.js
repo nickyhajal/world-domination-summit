@@ -31,7 +31,7 @@ const updateTransaction = async (inv, sub, user, transaction) => {
   const row = {
     user_id: user.get('user_id'),
     status: 'paid',
-    product_id: '2011',
+    product_id: '2013',
     via: 'hook',
     stripe_id: inv.charge,
     paid_amount: inv.amount_paid,

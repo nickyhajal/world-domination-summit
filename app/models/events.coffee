@@ -41,13 +41,9 @@ Event = Shelf.Model.extend
     @saveChanging()
 
   saved: (obj, rsp, opts) ->
-    tk 'Event saved: ' + @get('slug')
-    tk 'Changed: ' + @lastDidChange
     @id = rsp
     addressChanged = @lastDidChange ['address']
-    tk addressChanged
     if (addressChanged and @get('address')?.length) || (@get('address')?.length && !@get('lat')?)
-      tk 'it changed'
       @processAddress()
     return true
 
@@ -57,8 +53,6 @@ Event = Shelf.Model.extend
       address += ', Portland'
     if address.indexOf('OR') < 0
       address += ', OR'
-    tk 'process addr'
-    tk address
     geocoder.geocode address, (err, data) =>
       tk data
       tk err
@@ -153,7 +147,7 @@ Event = Shelf.Model.extend
         subName = @get('what')
         if subName.length > 35
           subName = subName.substr(0, 32)+'...'
-        subject = "[Action Required] Your food options for the WDS Picnic!"
+        subject = "[WDS] Confirmed for Adventure: WDS Picnic"
         user.sendEmail promo, subject, params
         tk 'Send Picnic from Model'
       else

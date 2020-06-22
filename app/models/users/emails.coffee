@@ -23,31 +23,31 @@ emails =
       Email.forge(log).save().then()
 
   syncEmail: ->
-    if @get('attending'+process.yr) is '1'
+    if @get('attending'+process.tkyr) is '1'
       if @get('ticket_type')?.length
         if @get('ticket_type') is 'connect'
-          @addToList 'WDS '+process.year+' Connect'
-          @removeFromList 'WDS '+process.year+' Connect', @before_save['email']
+          @addToList 'WDS '+process.tkyear+' Connect'
+          @removeFromList 'WDS '+process.tkyear+' Connect', @before_save['email']
         else
-          @addToList 'WDS '+process.year+' Attendees'
-          @removeFromList 'WDS '+process.year+' Attendees', @before_save['email']
+          @addToList 'WDS '+process.tkyear+' Attendees'
+          @removeFromList 'WDS '+process.tkyear+' Attendees', @before_save['email']
       if @get('type') is 'friend'
-          @addToList 'WDS '+process.year+' Friends'
+          @addToList 'WDS '+process.tkyear+' Friends'
 
   syncEmailWithTicket: ->
-    if @get('attending'+process.yr) is '1'
+    if @get('attending'+process.tkyr) is '1'
       if @get('ticket_type')?.length
         if @get('ticket_type') is 'connect'
-          @addToList 'WDS '+process.year+' Connect'
+          @addToList 'WDS '+process.tkyear+' Connect'
         else
-          @addToList 'WDS '+process.year+' Attendees'
-        @removeFromList 'WDS '+process.year+' Canceled'
+          @addToList 'WDS '+process.tkyear+' Attendees'
+        @removeFromList 'WDS '+process.tkyear+' Canceled'
       if @get('type') is 'friend'
-          @addToList 'WDS '+process.year+' Friends'
+          @addToList 'WDS '+process.tkyear+' Friends'
     else
-      @removeFromList 'WDS '+process.year+' Attendees'
-      @removeFromList 'WDS '+process.year+' Connect'
-      @addToList 'WDS '+process.year+' Canceled'
+      @removeFromList 'WDS '+process.tkyear+' Attendees'
+      @removeFromList 'WDS '+process.tkyear+' Connect'
+      @addToList 'WDS '+process.tkyear+' Canceled'
   addToList: (list, custom = false) ->
     dfr = Q.defer()
     params =

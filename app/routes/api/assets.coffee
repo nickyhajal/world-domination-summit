@@ -58,7 +58,7 @@ routes = (app) ->
 				tasks: 5
 				places: 300
 				pages: 300
-				# achievements: 0
+				achievements: 0
 				admin_templates: 0
 
 			get: (req, res, next) ->
@@ -159,14 +159,14 @@ routes = (app) ->
 						tk 'CREATE reg atns'
 						Users.forge()
 						.query (qb) ->
-							qb.whereRaw('attending'+process.yr+' = ? OR (t.product_id = ? AND t.created_at > ?) GROUP BY users.user_id', ['1', '6', '2018-02-13 00:00:00'])
+							qb.whereRaw('attending'+process.yr+' = ? OR (t.product_id = ? AND t.created_at > ?) GROUP BY users.user_id', ['1', '6', '2019-02-13 00:00:00'])
 							qb.leftJoin('transactions as t', 'users.user_id', 't.user_id')
 							qb.orderBy('last_name')
 							# qb.orWhere('t.product_id', '6')
 							# qb.orWhere('t.created_at', '')
 						.fetch
 							columns: [
-								'users.user_id', 'type', 'first_name', 'last_name', 'location', 'ticket_type' #, 'pic' # , 'kinded'
+								'users.user_id', 'type', 'first_name', 'last_name', 'location', 'ticket_type', 'glb', 'gsp', 'nsp', 'bentos' #, 'pic' # , 'kinded'
 							]
 						.then (attendees) ->
 							atns = attendees.models

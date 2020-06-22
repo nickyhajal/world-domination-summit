@@ -11,9 +11,9 @@ ticket =
     ticket_ids = []
     type = @get('type')
     ticket_type = @get('ticket_type')
-    @set('pre'+process.tkyr,'1').save() #ONLY DURING PRESALE
-    if link20
-      @set('preDouble', '1').save()
+    # @set('pre'+process.tkyr,'1').save() #ONLY DURING PRESALE
+    # if link20
+    #   @set('preDouble', '1').save()
     if (!type || !type.length)
       @set('type','attendee').save()
     if (!ticket_type || !ticket_type.length)
@@ -51,14 +51,14 @@ ticket =
           cb()
     , =>
       if total > 0
-        if link20
-          @addToList('WDS 2020 Purchasers').then()
+        # if link20
+          # @addToList('WDS 2020 Purchasers').then()
           # @addToList('WDS 2020 Pre-Orders').then()
-          @addToList('WDS 2019 and 2020 Pre-Orders').then()
+          # @addToList('WDS 2019 and 2020 Pre-Orders').then()
         # @addToList('WDS 2019 Pre-Orders').then()
-        @addToList('WDS 2019 Purchasers')
+        @addToList('WDS 2020 Purchasers')
         .then =>
-          promo = if link20 then 'TicketDoubleReceipt' else 'TicketReceipt'
+          # promo = if link20 then 'TicketDoubleReceipt' else 'TicketReceipt'
           subject = "Aw yeah! Your purchase was successful!"
           tickets = 'ticket'
           tickets = 'tickets' if (quantity > 1)
@@ -135,8 +135,8 @@ ticket =
     .save()
     .then (upd_ticket) =>
       boughtMonth = ticket.get('created_at').getMonth()+1
-      if [6,7,8].indexOf(boughtMonth) > -1
-        @set 'pre'+yr, '1'
+      # if [6,7,8].indexOf(boughtMonth) > -1
+      #   @set 'pre'+yr, '1'
       @set 'attending'+yr, '1'
       @set 'ticket_type', type
       @save()

@@ -63,7 +63,7 @@ const Field = {
       posts: 0,
       pw: 0,
     };
-    const waveDate = '2019-03-03 00:00:00';
+    const waveDate = '2019-10-07 00:00:00';
     const posts = await Feeds.query(qb => {
       qb.where('created_at', '>', waveDate);
     }).fetch();
@@ -85,21 +85,21 @@ const Field = {
       qb.where('created_at', '>', waveDate);
     }).fetch();
     const paymentPlans = await Transactions.query(qb => {
-      qb.where('product_id', '17');
+      qb.where('product_id', '22');
       qb.where('paid_amount', '>', '5000');
     }).fetch();
     const paymentPlansThisWave = await Transactions.query(qb => {
-      qb.where('product_id', '17');
+      qb.where('product_id', '22');
       qb.where('created_at', '>', waveDate);
       qb.where('paid_amount', '>', '5000');
     }).fetch();
     const singleBuysThisWave = await Transactions.query(qb => {
-      qb.where('product_id', '15');
+      qb.where('product_id', '21');
       qb.where('created_at', '>', waveDate);
       qb.where('paid_amount', '>', '63000');
     }).fetch();
     const singleBuys = await Transactions.query(qb => {
-      qb.where('product_id', '15');
+      qb.whereIn('product_id', '21');
       qb.where('paid_amount', '>', '10000');
     }).fetch();
     const doubleBuys = await Transactions.query(qb => {
@@ -107,7 +107,7 @@ const Field = {
       qb.where('paid_amount', '>', '5000');
     }).fetch();
     const row = await Tickets.query(qb => {
-      qb.where('year', '2019');
+      qb.where('year', '2020');
     }).fetch();
     vals.current_wave_plans = paymentPlansThisWave.models.reduce((sum, row) => {
       return sum + +row.get('quantity');

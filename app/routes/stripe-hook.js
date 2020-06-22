@@ -12,7 +12,6 @@ const routes = app => {
   stripeHookRouter.all('/', (req, res) => {
     try {
       let sig = req.headers['stripe-signature'];
-      console.log(process.env.STRIPE_WHSEC);
       let ev = stripe.webhooks.constructEvent(
         req.body,
         sig,

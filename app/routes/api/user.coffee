@@ -33,6 +33,8 @@ routes = (app) ->
 	[Notification, Notifications] = require('../../models/notifications')
 	[Device, Devices] = require('../../models/devices')
 	[RaceSubmission, RaceSubmissions] = require('../../models/race_submissions')
+	[RacePrize, RacePrizes] = require('../../models/RacePrizes')
+	[RaceUserPrize, RaceUserPrizes] = require('../../models/RaceUserPrizes')
 	[Checkin, Checkins] = require('../../models/checkins')
 	[Card, Cards] = require('../../models/cards')
 
@@ -191,6 +193,23 @@ routes = (app) ->
 					exists = (!_.isNull(user))
 					res.r.exists = if exists then true else false
 					next()
+			else
+				next()
+		getsp: (req, res, next) ->
+			if req.query.user_id
+				User.forge({
+					user_id: req.query.user_id
+				})
+				.fetch()
+				.then (user) ->
+					if user
+						res.r.glb = user.get('glb')
+						res.r.gsp = user.get('gsp')
+						res.r.nsp = user.get('nsp')
+						res.r.bentos = user.get('bentos')
+						next()
+					else
+						next()
 			else
 				next()
 		get: (req, res, next) ->
@@ -362,6 +381,26 @@ routes = (app) ->
 				, (err) =>
 					console.error(err)
 			next()
+
+		prize_notification: (req, res, next) ->
+			tk 'tk: '+req.query
+			if req.query.user_id and req.query.submission_id
+				Notification.forge
+					type: 'prize'
+					user_id: req.query.user_id
+					channel_type: '0'
+					channel_id: '0'
+					content: '{"user_id":'+req.query.user_id+'}'
+					link: ''
+				.save()
+				.then ->
+					RaceUserPrize.forge
+						submission_id: req.query.submission_id
+						user_id: req.query.user_id
+					.fetch()
+					.then (p) ->
+						p.set('notified', 1).save()
+					next()
 
 		get_notifications: (req, res, next) ->
 			if req.me? and req.me
@@ -815,6 +854,35 @@ routes = (app) ->
 			else
 				res.status(401)
 
+		register_extra: (req, res, next) ->
+			cols = ['glb', 'gsp', 'bentos']
+			if req.query.col and cols.indexOf(req.query.col) > -1 && req.query.user_id && req.query.val
+				col = req.query.col
+				User.forge({user_id: req.query.user_id})
+				.fetch()
+				.then (user) ->
+					if (user)
+						user.set(col, req.query.val)
+						user.save().then -> 
+							User.forge({user_id: req.query.user_id})
+							.fetch()
+							.then (rs) ->
+								res.r[col] = rs.get(col)
+								next()
+					else
+						next()
+			else
+				next()
+
+		show_race_instructions: (req, res, next) ->
+			console.log('mark', req.me.get('user_id'))
+			if req.me
+				console.log('MARK')
+				req.me.markAchieved('race-guide')
+
+			next()
+
+
 		registrations: (req, res, next) ->
 			regs = req.query.regs ? []
 			successes = []
@@ -972,6 +1040,40 @@ routes = (app) ->
 			else
 				next()
 
+		get_prizes: (req, res, next) ->
+			if req.me
+				RaceUserPrizes.forge().query('where', 'user_id', req.me.get('user_id'))
+				.fetch()
+				.then (user_prizes) ->
+					res.r.user_prizes = user_prizes
+					RacePrizes.forge()
+					.fetch
+						columns: ['prize_id', 'description', 'name']
+					.then (prizes) ->
+						res.r.prizes = prizes
+						next()
+			else
+				next()
+		claim_prize: (req, res, next) ->
+			if req.me and req.query.prize_id
+				RaceUserPrize.forge
+					user_id: req.me.get('user_id')
+					race_user_prize_id: req.query.prize_id
+				.fetch()
+				.then (prize) ->
+					if prize
+						prize.set('redeemed', '1')
+						.save()
+						.then ->
+							res.r.redeemed = true
+							next()
+					else
+						tk 'Tried to claim a prize that doesn\'t exist for that user'
+						tk 'user_id: '+req.me.get('user_id')+', prize_id: '+req.query.prize_id
+						res.r.redeemed = false
+						next()
+			else
+				next()
 		task: (req, res, next) ->
 			task_slug = req.query.task_slug
 			RaceSubmissions.forge()
@@ -993,57 +1095,76 @@ routes = (app) ->
 			, (err) ->
 				console.error(err)
 
+		race_sync: (req, res, next) ->
+			if (req.query.user_id)
+				User.forge({user_id: req.query.user_id})
+				.fetch()
+				.then (user) ->
+					user.processPoints()
+					.then (points) ->
+						user.set('points', points.all)
+						.save()
+						.then ->
+							user.syncAchievements(points).then ->
+								next()
+			else
+				next()
 		race_submission: (req, res, next) ->
+			syncSubmission = (id, attempt = 0) ->
+				if attempt < 3
+					call =
+						url: 'https://us-central1-worlddominationsummit.cloudfunctions.net/notifySubmission?submission_id='+id
+						method: 'get'
+					request call, (err, rsp) ->
+						tk 'sub sync rsp for '+id+':'
+						if (err || rsp.statusCode != 200)
+							setTimeout ->
+								syncSubmission(id, attempt+1)
+							, 2000
 			if req.me and req.query.slug?.length
 				slug = req.query.slug
-				if req.files
-					req.me.markAchieved(slug)
-					.then (ach_rsp) ->
-						ext = req.files.pic.path.split('.')
-						ext = ext[ext.length - 1]
-						hash = crypto.createHash('md5').update((new Date().getTime())+'').digest("hex").substr(0, 5)
-						name = hash+'.'+ext
-						newPath = __dirname + '/../../../images/race_submissions/'+req.me.get('user_name')+'/'+slug
-						fullPath = newPath+'/'+name
-						smallPath = newPath+'/w600_'+name
-						mkdirp newPath, (err, path) ->
-							gm(req.files.pic.path)
-							.autoOrient()
-							.resize('1024^')
-							.write fullPath, (err) ->
-								gm(fullPath)
-								.resize('600^')
-								.write smallPath, (err) ->
-									RaceSubmission.forge
-										user_id: req.me.get('user_id')
-										ach_id: ach_rsp.ach_id
-										slug: slug
-										hash: hash
-										ext: ext
-									.save()
-									.then ->
-										req.me.getAchievedTasks()
-										.then (achievements) ->
-											short_achs = []
-											for ach in achievements.models
-												short_achs.push
-													t: ach.get('task_id')
-													c: ach.get('custom_points')
-													a: ach.get('add_points')
+				req.me.markAchieved(slug)
+				.then (ach_rsp) ->
+					RaceSubmission.forge
+						user_id: req.me.get('user_id')
+						ach_id: ach_rsp.ach_id
+						slug: slug
+						hash: req.query.media
+					.save()
+					.then (sub) ->
+						req.me.getAchievedTasks()
+						.then (achievements) ->
+							short_achs = []
+							for ach in achievements.models
+								short_achs.push
+									t: ach.get('task_id')
+									c: ach.get('custom_points')
+									a: ach.get('add_points')
 
-											rsp = JSON.stringify
-												points: ach_rsp.points
-												new_points: ach_rsp.points - req.query.cur_ponts
-												task_id: req.query.task_id
-												achievements: short_achs
+							rsp = JSON.stringify
+								points: ach_rsp.points
+								new_points: ach_rsp.points - req.query.cur_points
+								task_id: req.query.task_id
+								achievements: short_achs
 
-											# Expire rank cache so next rank request
-											# is recalculated
-											rds.expire 'ranks', 0
-											res.redirect('/upload-race?rsp='+rsp)
-									, (err) ->
-										console.error(err)
-										next()
+							# Expire rank cache so next rank request
+							# is recalculated
+							rds.expire 'ranks', 0
+							
+							res.r ={
+								points: ach_rsp.points
+								new_points: ach_rsp.points - req.query.cur_ponts
+								task_id: req.query.task_id
+								achievements: short_achs
+							}
+							# if sub.get("hash") != "submitted" and +sub.get("ach_id") != 0
+							# 	syncSubmission(sub.get('submission_id'), 0)
+							next()
+					, (err) ->
+						console.error(err)
+						next()
+			else
+				next()
 
 		add_checkin: (req, res, next) ->
 			if req.me and req.query.location_id and req.query.location_type

@@ -460,7 +460,7 @@ routes = (app) ->
 								subName = ev.get('what')
 								if subName.length > 35
 									subName = subName.substr(0, 32)+'...'
-								subject = "[Action Required] Your food options for the WDS Picnic!"
+								subject = "[WDS] Confirmed for Adventure: WDS Picnic"
 								req.me.sendEmail promo, subject, params
 								tk 'Send Picnic from Route'
 							else
