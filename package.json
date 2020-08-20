@@ -6,7 +6,7 @@
   "dependencies": {
     "apn": "^1.7.3",
     "async": "~0.7.0",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.16.0",
     "bookshelf": "~0.7.9",
     "chance": "^1.0.1",
