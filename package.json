@@ -33,7 +33,6 @@
     "graphql": "^0.9.6",
     "he": "^1.1.1",
     "helpscout": "^0.0.1",
-    "html-pdf": "^2.1.0",
     "instagram-node": "^0.4.2",
     "jade": "<1.0.0",
     "jest": "^23.6.0",

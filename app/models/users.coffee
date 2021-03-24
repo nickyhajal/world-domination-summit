@@ -314,7 +314,10 @@ User = Shelf.Model.extend
           long = data.results[0].address_components[4].long_name
           @set
             region: (if @get('country') == 'US' then short else long)
-      @save(null, {method: 'update'})
+      try
+        @save(null, {method: 'update'})
+      catch
+        console.log('no address update')
       if cb
         cb(@)
 

@@ -5,7 +5,7 @@ twitterAPI = require('node-twitter-api')
 moment = require('moment')
 crypto = require('crypto')
 async = require('async')
-pdf = require('html-pdf');
+# pdf = require('html-pdf');
 _s = require('underscore.string')
 fs = require 'fs'
 knex = require('knex')
@@ -630,11 +630,11 @@ routes = (app) ->
 				options =
 					format: 'Letter'
 					border: '.4in'
-				pdf.create(html, options).toFile './meetups-printable.pdf', (err, rsp) ->
-					if err
-						console.error err
-					else
-						next()
+				# pdf.create(html, options).toFile './meetups-printable.pdf', (err, rsp) ->
+				# 	if err
+				# 		console.error err
+				# 	else
+				# 		next()
 
 
 module.exports = routes

@@ -14,6 +14,8 @@ Vagrantfile
 pids
 logs
 results
+.history/
+node_modules_old
 
 npm-debug.log
 node_modules

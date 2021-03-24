@@ -364,6 +364,46 @@ routes = (app) ->
 			res.r.stories = rsp
 			next()
 
+	apiRouter.post '/tickettransfer', (req, res, next) ->
+		Q = require('q')
+		[User, Users] = require('../models/users')
+		[Transfer, Transfers] = require('../models/transfers')
+		console.log('ticket transfer')
+		if req.me and req.me.id and req.query.data
+			console.log(req.query, req.me.id)
+			Transfer.forge
+				new_attendee: JSON.stringify(req.query.data)
+				user_id: req.me.id
+				year: process.year
+				status: 'pending'
+			.save()
+			.then (xfer) ->
+				console.log(xfer)
+				new_attendee = req.query.data
+				new_attendee['attending'+process.yr] = '1'
+				console.log(new_attendee)
+				User.forge(new_attendee)
+				.markAsTransfer(xfer.get('transfer_id'))
+				.save()
+				.then (new_user) ->
+					uniqid = +(new Date()) + ''
+					new_user.processAddress()
+					User.forge({user_id: xfer.get('user_id')})
+					.fetch()
+					.then (old_user) ->
+						ticket_type = old_user.get('ticket_type')
+						new_user.set('ticket_type', ticket_type)
+						new_user.save()
+						old_user.cancelTicket()
+						old_user.sendEmail('transfer-receipt', 'Your ticket transfer was successful!', {to_name: new_user.get('first_name')+' '+new_user.get('last_name')})
+						xfer.set
+							status: 'paid'
+							to_id: new_user.get('user_id')
+						xfer.save()
+						.then ->
+							next()
+			, (err) ->
+				console.error(err)
 
 	apiRouter.get 'tpl', (req, res, next) ->
 		get_templates = require('../processors/templater')
