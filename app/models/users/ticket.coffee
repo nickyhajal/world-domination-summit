@@ -7,6 +7,7 @@ async = require('async')
 
 ticket =
   registerTicket: (quantity = 1, total = 0, transferFrom = null, link20=false) ->
+    tk 'REGISTER A TICKET'
     dfr = Q.defer()
     ticket_ids = []
     type = @get('type')
@@ -20,6 +21,7 @@ ticket =
       ticket_type = '360'
 
     async.each [0..quantity-1], (i, cb) =>
+      tk 'DO TICKET REG'
       Ticket.forge
         type: ticket_type
         user_id: @get('user_id')
@@ -67,7 +69,8 @@ ticket =
             price: (total/100)
             claim_url: 'https://worlddominationsummit.com/assign/'+@get('hash')
             tickets: tickets
-          @sendEmail(promo, subject, params)
+          if promo != 'WelcomeTransfer'
+            @sendEmail(promo, subject, params)
       dfr.resolve(ticket_ids)
     , (err) ->
       console.error err
