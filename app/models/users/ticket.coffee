@@ -86,9 +86,9 @@ ticket =
     .then (ticket) =>
       @addToList('WDS '+process.tkyear+ ' Attendees')
       .then =>
-        promo = 'Welcome'
-        subject = "You're coming to WDS! Awesome!"
-        @sendEmail(promo, subject)
+        # promo = 'Welcome'
+        # subject = "You're coming to WDS! Awesome!"
+        # @sendEmail(promo, subject)
     return dfr.promise
 
   connectTicket: (ticket, returning = false, transfer_from = null) ->
@@ -121,7 +121,8 @@ ticket =
           #   promo = 'WelcomeBack'
           if type is 'connect'
             promo = 'WelcomeConnect'
-          @sendEmail(promo, subject)
+          if !user.get('transferFrom')
+            @sendEmail(promo, subject)
           dfr.resolve({user: upd_user, ticket: upd_ticket})
     , (err) ->
       console.error err
