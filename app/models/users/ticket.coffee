@@ -121,7 +121,8 @@ ticket =
           #   promo = 'WelcomeBack'
           if type is 'connect'
             promo = 'WelcomeConnect'
-          if !user.get('transferFrom')
+          tk user.get('transferFrom')
+          if !transfer_from
             @sendEmail(promo, subject)
           dfr.resolve({user: upd_user, ticket: upd_ticket})
     , (err) ->

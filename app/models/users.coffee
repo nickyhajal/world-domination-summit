@@ -100,7 +100,7 @@ User = Shelf.Model.extend
           .fetch()
           .then (rsp) =>
             ticket = rsp.models[0]
-            @connectTicket(ticket)
+            @connectTicket(ticket, false, true)
       else if attending is '0'
         tk 'CANCEL'
         @cancelTicket()
