@@ -36,6 +36,7 @@ Place = Shelf.Model.extend
             lat: location.lat
             lon: location.lng
           place.save()
+    , {key: process.env.GEOCODE_KEY}
 
 Places = Shelf.Collection.extend
   model: Place
