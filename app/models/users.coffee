@@ -322,6 +322,7 @@ User = Shelf.Model.extend
         console.log('no address update')
       if cb
         cb(@)
+    , {key: process.env.GEOCODE_KEY} 
 
   similar_meetups: ->
     dfr = Q.defer()

@@ -108,6 +108,10 @@ PRE =
     dfr = Q.defer()
     dfr.resolve({})
     return dfr.promise
+  trex: (meta) ->
+    dfr = Q.defer()
+    dfr.resolve({})
+    return dfr.promise
   wds2017: (meta) ->
     dfr = Q.defer()
     dfr.resolve({})
@@ -260,6 +264,49 @@ POST =
             tk 'RSVP Conf from Prod'
             ev.sendRsvpConfirmation(user_id, '$'+(transaction.get('paid_amount') / 100))
             rds.expire('rsvps_'+user_id, 0)
+    return dfr.promise
+
+  trex: (transaction, meta) ->
+    tk 'Product: Trex'
+    [User, Users] = require('./users')
+    [Event, Events] = require('./events')
+    dfr = Q.defer()
+    event_id = 2012
+    user_id = transaction.get('user_id')
+    quantity = transaction.get('quantity')
+    rsvps = []
+    rsvp = EventRsvp.forge
+      user_id: user_id
+      event_id: event_id
+
+    finish = (sendBack) ->
+      Event.forge
+        event_id: event_id
+      .fetch()
+      .then (ev) ->
+        ev.updateRsvpCount()
+        ev.sendRsvpConfirmation(user_id, '$'+(transaction.get('paid_amount') / 100))
+        Transactions.forge()
+        .query('where', 'product_id', '2012')
+        .query('where', 'status', 'paid')
+        .fetch()
+        .then (xs) ->
+          total = 0
+          xs.each (x) ->
+            total += +x.get('quantity')
+          process.fire.database().ref().child('state/trex/tickets_sales').set(total)
+          rds.expire('rsvps_'+user_id, 0)
+          dfr.resolve(sendBack)
+    rsvp.fetch()
+    .then (existing) ->
+      if existing
+        finish({rsvp_id: existing.get('rsvp_id')})
+        dfr.resolve()
+      else
+        rsvp.save()
+        .then (rsp) ->
+          finish({rsvp_id: rsp.get('rsvp_id')})
+          
     return dfr.promise
 
   wds17test: (transaction, meta) ->
