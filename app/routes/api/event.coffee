@@ -39,7 +39,10 @@ routes = (app) ->
 				if not post.type?
 					post.type = 'meetup'
 
-				post.slug = _s.slugify(post.what)
+				if post.type === 'academy'
+					post.slug = _s.slugify(post.what.split(':')[0])
+				else
+					post.slug = _s.slugify(post.what)
 				Events.query (qb) ->
 					qb.where 'slug', post.slug
 				.fetch()
