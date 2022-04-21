@@ -39,7 +39,7 @@ routes = (app) ->
 				if not post.type?
 					post.type = 'meetup'
 
-				if post.type === 'academy'
+				if post.type is 'academy'
 					post.slug = _s.slugify(post.what.split(':')[0])
 				else
 					post.slug = _s.slugify(post.what)
