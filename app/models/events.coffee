@@ -174,6 +174,7 @@ Event = Shelf.Model.extend
     [User, Users] = require './users'
     dfr = Q.defer()
     Users.forge()
+    .select('first_name', 'last_name', 'user_id', 'host_type')
     .query('join', 'event_hosts', 'event_hosts.user_id', '=', 'users.user_id', 'inner')
     .query('join', 'events', 'events.event_id', '=', 'event_hosts.event_id', 'inner')
     .query("where", "events.event_id", @get('event_id'))
