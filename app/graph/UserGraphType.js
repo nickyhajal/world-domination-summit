@@ -38,6 +38,7 @@ const UserType = new GraphQLObjectType({
       pre18: {type: GraphQLString},
       pre19: {type: GraphQLString},
       pre20: {type: GraphQLString},
+      host_type: {type: GraphQLString},
       ticket_type: {type: GraphQLString},
       type: {type: GraphQLString},
       email: {type: GraphQLString},
