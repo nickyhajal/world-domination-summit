@@ -177,7 +177,7 @@ Event = Shelf.Model.extend
     .query('join', 'event_hosts', 'event_hosts.user_id', '=', 'users.user_id', 'inner')
     .query('join', 'events', 'events.event_id', '=', 'event_hosts.event_id', 'inner')
     .query("where", "events.event_id", @get('event_id'))
-    .fetch({columns: ['first_name', 'last_name', 'user_id', 'host_type']})
+    .fetch({columns: ['first_name', 'last_name', 'users.user_id', 'host_type']})
     .then (rsp) ->
       hosts = rsp.models
       dfr.resolve(hosts)
