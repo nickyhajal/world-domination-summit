@@ -234,6 +234,7 @@ POST =
           .fetch()
           .then (ev) ->
             ev.updateRsvpCount()
+            rds.expire('rsvps_'+user_id, 0)
             tk 'Academy Conf from Prod'
             ev.sendAcademyConfirmation(user_id, '$'+(transaction.get('paid_amount') / 100))
     return dfr.promise
