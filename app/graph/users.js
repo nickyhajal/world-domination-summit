@@ -5,160 +5,161 @@ const {
   GraphQLBoolean,
   GraphQLInt,
   GraphQLList,
-} = require('graphql');
-const _ = require('underscore');
-const [User, Users] = require('../models/users');
-const [Ticket, Tickets] = require('../models/tickets');
-const [Transaction, Transactions] = require('../models/transactions');
-const TransactionGraph = require('./transactions');
-const TicketGraph = require('./tickets');
-const UserGraphType = require('./UserGraphType');
+} = require('graphql')
+const _ = require('underscore')
+const [User, Users] = require('../models/users')
+const [Ticket, Tickets] = require('../models/tickets')
+const [Transaction, Transactions] = require('../models/transactions')
+const TransactionGraph = require('./transactions')
+const TicketGraph = require('./tickets')
+const UserGraphType = require('./UserGraphType')
 
-const Type = UserGraphType;
+const Type = UserGraphType
 const Search = {
   type: new GraphQLList(Type),
   args: {
-    years: { type: GraphQLString },
-    types: { type: GraphQLString },
-    search: { type: GraphQLString },
+    years: {type: GraphQLString},
+    types: {type: GraphQLString},
+    search: {type: GraphQLString},
   },
-  resolve: async (root, { search, years, types }, req) => {
+  resolve: async (root, {search, years, types}, req) => {
     const results = await Users.forge().search({
       search,
       years,
       types,
-    });
-    const final = results.map(v => (v.attributes ? v.attributes : v));
-    return final;
+    })
+    const final = results.map((v) => (v.attributes ? v.attributes : v))
+    return final
   },
-};
+}
 const Field = {
   type: Type,
   args: {
-    id: { type: GraphQLString },
+    id: {type: GraphQLString},
   },
-  resolve: async (root, { id }) => {
-    const row = await Users.forge().getUser(id);
-    return row.attributes;
+  resolve: async (root, {id}) => {
+    const row = await Users.forge().getUser(id)
+    return row.attributes
   },
-};
+}
 const Add = {
   type: Type,
   args: {
-    email: { type: GraphQLString },
-    type: { type: GraphQLString },
-    ticket_type: { type: GraphQLString },
-    first_name: { type: GraphQLString },
-    last_name: { type: GraphQLString },
-    address: { type: GraphQLString },
-    address2: { type: GraphQLString },
-    city: { type: GraphQLString },
-    region: { type: GraphQLString },
-    zip: { type: GraphQLString },
-    country: { type: GraphQLString },
+    email: {type: GraphQLString},
+    type: {type: GraphQLString},
+    ticket_type: {type: GraphQLString},
+    first_name: {type: GraphQLString},
+    last_name: {type: GraphQLString},
+    address: {type: GraphQLString},
+    address2: {type: GraphQLString},
+    city: {type: GraphQLString},
+    region: {type: GraphQLString},
+    zip: {type: GraphQLString},
+    country: {type: GraphQLString},
   },
   resolve: async (obj, args) => {
     const existing = await User.forge({
       email: args.email,
-    }).fetch();
+    }).fetch()
     if (existing) {
-      return Object.assign({}, existing.attributes, { existing: true });
+      return Object.assign({}, existing.attributes, {existing: true})
     }
-    const row = await User.forge(args).save();
-    return row.attributes;
+    const row = await User.forge(args).save()
+    return row.attributes
   },
-};
+}
 const RsvpAdd = {
   type: Type,
   args: {
-    user_id: { type: GraphQLString },
-    event_id: { type: GraphQLString },
+    user_id: {type: GraphQLString},
+    event_id: {type: GraphQLString},
   },
-  resolve: async (obj, { user_id, event_id }) => {
-    const [Event, Events] = require('../models/events');
-    const [EventRsvp, EventRsvps] = require('../models/event_rsvps');
+  resolve: async (obj, {user_id, event_id}) => {
+    const [Event, Events] = require('../models/events')
+    const [EventRsvp, EventRsvps] = require('../models/event_rsvps')
     const existing = await EventRsvp.forge({
       user_id,
       event_id,
-    }).fetch();
+    }).fetch()
     if (!existing) {
       const rsvp = await EventRsvp.forge({
         user_id,
         event_id,
-      }).save();
-      const event = await Event.forge({ event_id }).fetch();
-      event.sendRsvpConfirmation(user_id);
-      event.updateRsvpCount();
+      }).save()
+      const event = await Event.forge({event_id}).fetch()
+      event.sendRsvpConfirmation(user_id)
+      event.updateRsvpCount()
     }
-    return {};
+    return {}
   },
-};
+}
 const RsvpDelete = {
   type: Type,
   args: {
-    user_id: { type: GraphQLString },
-    event_id: { type: GraphQLString },
+    user_id: {type: GraphQLString},
+    event_id: {type: GraphQLString},
   },
   resolve: async (obj, args) => {
-    const [EventRsvp, EventRsvps] = require('../models/event_rsvps');
+    const [EventRsvp, EventRsvps] = require('../models/event_rsvps')
     const existing = await EventRsvp.forge({
       user_id: args.user_id,
       event_id: args.event_id,
-    }).fetch();
+    }).fetch()
     if (existing) {
-      console.log(existing);
-      await existing.destroy();
+      console.log(existing)
+      await existing.destroy()
     }
-    return {};
+    return {}
   },
-};
+}
 const ResendEmail = {
   type: Type,
   args: {
-    email_id: { type: GraphQLString },
+    email_id: {type: GraphQLString},
   },
   resolve: async (obj, args) => {
-    const [Email, Emails] = require('../models/emails');
+    const [Email, Emails] = require('../models/emails')
     const email = await Email.forge({
       email_id: args.email_id,
-    }).fetch();
+    }).fetch()
     if (email) {
-      await email.resend();
+      await email.resend()
     }
-    return {};
+    return {}
   },
-};
+}
 const Update = {
   type: Type,
   args: {
-    user_id: { type: GraphQLString },
-    type: { type: GraphQLString },
-    ticket_type: { type: GraphQLString },
-    email: { type: GraphQLString },
-    site: { type: GraphQLString },
-    facebook: { type: GraphQLString },
-    instagram: { type: GraphQLString },
-    first_name: { type: GraphQLString },
-    last_name: { type: GraphQLString },
-    user_name: { type: GraphQLString },
-    address: { type: GraphQLString },
-    address2: { type: GraphQLString },
-    city: { type: GraphQLString },
-    region: { type: GraphQLString },
-    zip: { type: GraphQLString },
-    country: { type: GraphQLString },
+    user_id: {type: GraphQLString},
+    type: {type: GraphQLString},
+    ticket_type: {type: GraphQLString},
+    email: {type: GraphQLString},
+    site: {type: GraphQLString},
+    facebook: {type: GraphQLString},
+    instagram: {type: GraphQLString},
+    first_name: {type: GraphQLString},
+    last_name: {type: GraphQLString},
+    title: {type: GraphQLString},
+    user_name: {type: GraphQLString},
+    address: {type: GraphQLString},
+    address2: {type: GraphQLString},
+    city: {type: GraphQLString},
+    region: {type: GraphQLString},
+    zip: {type: GraphQLString},
+    country: {type: GraphQLString},
   },
   resolve: async (obj, args) => {
-    const post = _.pick(args, User.prototype.permittedAttributes);
-    const { user_id } = args;
-    const user = await User.forge({ user_id }).fetch();
-    let update;
+    const post = _.pick(args, User.prototype.permittedAttributes)
+    const {user_id} = args
+    const user = await User.forge({user_id}).fetch()
+    let update
     if (user) {
-      update = await user.set(post).save();
+      update = await user.set(post).save()
     }
-    return update.attributes;
+    return update.attributes
   },
-};
+}
 const GiveTicket = {
   type: Type,
   args: {
@@ -166,18 +167,17 @@ const GiveTicket = {
       type: new GraphQLNonNull(GraphQLInt),
     },
   },
-  resolve: async (obj, { user_id }, req) => {
+  resolve: async (obj, {user_id}, req) => {
     const existing = await User.forge({
       user_id,
-    }).fetch();
+    }).fetch()
     if (existing) {
-      const admin_id =
-        req.me !== undefined ? req.me.get('user_id') : 'no-admin';
+      const admin_id = req.me !== undefined ? req.me.get('user_id') : 'no-admin'
       const hash = require('crypto')
         .createHash('md5')
         .update('' + +new Date())
         .digest('hex')
-        .substr(0, 5);
+        .substr(0, 5)
       const ticket = await Ticket.forge({
         type: existing.get('ticket_type'),
         eventbrite_id: `ADDED_BY_ADMIN_${hash}`,
@@ -185,23 +185,23 @@ const GiveTicket = {
         purchaser_id: user_id,
         status: 'unclaimed',
         year: process.year,
-      }).save();
-      existing.connectTicket(ticket);
-      return Object.assign({}, existing.attributes, { existing: true });
+      }).save()
+      existing.connectTicket(ticket)
+      return Object.assign({}, existing.attributes, {existing: true})
     }
-    return {};
+    return {}
   },
-};
+}
 const Fields = {
   type: new GraphQLList(Type),
   // args: {
   //   q: { type: GraphQLString },
   // },
   resolve: async (root, args) => {
-    const rows = await Events.forge().query();
-    return rows.models.map(row => row.attributes);
+    const rows = await Events.forge().query()
+    return rows.models.map((row) => row.attributes)
   },
-};
+}
 
 module.exports = {
   Type,
@@ -214,4 +214,4 @@ module.exports = {
   Update,
   GiveTicket,
   Fields,
-};
+}

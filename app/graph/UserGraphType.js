@@ -44,6 +44,7 @@ const UserType = new GraphQLObjectType({
       email: {type: GraphQLString},
       first_name: {type: GraphQLString},
       last_name: {type: GraphQLString},
+      title: {type: GraphQLString},
       user_name: {
         type: GraphQLString,
         resolve: (row) => {
