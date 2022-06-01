@@ -163,7 +163,7 @@ const getEventFromArgs = async (args) => {
   } = args
   const month = `-0${+date > 20 ? '6' : '7'}-`
   const start = moment.utc(
-    process.year + month + date + ' ' + hour + ':' + minute + ':00',
+    '2022' + month + date + ' ' + hour + ':' + minute + ':00',
     'YYYY-MM-DD HH:mm:ss'
   )
   if (hour === '12') {
@@ -174,7 +174,7 @@ const getEventFromArgs = async (args) => {
   // Parse End Time if we have one
   if (end_hour != null && end_minute != null) {
     const end = moment.utc(
-      process.year + month + date + ' ' + end_hour + ':' + end_minute + ':00',
+      '2022' + month + date + ' ' + end_hour + ':' + end_minute + ':00',
       'YYYY-MM-DD HH:mm:ss'
     )
     if (end_hour === '12') {
