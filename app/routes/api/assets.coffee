@@ -401,7 +401,7 @@ routes = (app) ->
 										if req.query.encode
 											attrs.descr = he.encode(attrs.descr)
 											attrs.who = he.encode(attrs.who)
-										evs.push _.omit(attrs, 'year', 'ignored', 'note', 'created_at', 'updated_at', 'end', 'active', 'outline')
+										evs.push _.omit(attrs, 'ignored', 'note', 'created_at', 'updated_at', 'end', 'active', 'outline')
 										cb()
 							, ->
 								dfr.resolve(evs)

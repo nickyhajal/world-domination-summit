@@ -89,8 +89,11 @@ routes = (app) ->
 
 	#
 	apiRouter.delete '/user/twitter', user.del_twitter
+	apiRouter.get '/user/twitter', user.del_twitter
 	apiRouter.delete '/user/connection', user.del_connection
+	apiRouter.get '/user/connection', user.del_connection
 	apiRouter.delete '/user/interest', user.del_interest
+	apiRouter.get '/user/interest', user.del_interest
 	apiRouter.post '/user/connection/delete', user.del_connection
 	apiRouter.post '/user/interest/delete', user.del_interest
 	apiRouter.post '/user/twitter/delete', user.del_twitter
@@ -161,6 +164,7 @@ routes = (app) ->
 	apiRouter.get '/feed/comments', feed.get_comments
 	apiRouter.post '/feed/like', feed.add_like
 	apiRouter.delete '/feed/like', feed.del_like
+	apiRouter.get '/feed/like', feed.del_like
 	apiRouter.post '/feed/like/delete', feed.del_like
 
 	# # Ticket Transfers
@@ -179,6 +183,7 @@ routes = (app) ->
 	# # Places
 	apiRouter.post '/place', places.add
 	apiRouter.delete '/place', places.del
+	apiRouter.get '/place', places.del
 	apiRouter.put '/place', places.upd
 	apiRouter.get '/places', places.get
 	apiRouter.get '/place_types', places.get_types
