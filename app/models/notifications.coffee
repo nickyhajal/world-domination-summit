@@ -68,6 +68,7 @@ Notification = Shelf.Model.extend
 						# d = new apn.Device(device.get('token'))
 						tk 'sending to'+device.get('token')
 						process.APN.send(note, device.get('token')).then (res) ->
+							tk res
 							response.sent.forEach( (token) -> 
 								console.log('sent to', token)
 							response.failed.forEach (failure) ->
@@ -75,7 +76,6 @@ Notification = Shelf.Model.extend
 									console.log('transport error', failuere.device, failure.error)
 								else
 									console.log('transport error', failuere.device, failure.response, failure.status)
-							tk res
 				Devices.forge()
 				.query('where', 'user_id', user_id)
 				.query('where', 'type', 'and')
