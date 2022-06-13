@@ -48,7 +48,8 @@ process.tkyr = '20';
 process.lastYear = '2019';
 process.dmn = process.env.DOMAIN;
 process.rsapp = 'mobile_logins';
-process.APN = new apn.Connection(app.settings.apn);
+// process.APN = new apn.Connection(app.settings.apn);
+process.APN = new apn.Provider(app.settings.apn);
 // function handleFeedback(feedbackData) {
 //   feedbackData.forEach(function(feedbackItem) {
 //     console.log(

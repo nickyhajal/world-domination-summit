@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "apn": "^1.7.3",
+    "apn": "^2.2.0",
     "async": "~0.7.0",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.16.0",
@@ -68,6 +68,7 @@
   "scripts": {
     "test": "./bin/test",
     "dev": "nodemon server.js",
+    "deploy": "git po",
     "start": "pm2 start -al /var/log/wds.log /var/www/world-domination-summit/server.js  --log-date-format 'YYYY-MM-DD HH:mm:ss'"
   }
 }
