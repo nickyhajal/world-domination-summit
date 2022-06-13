@@ -54,9 +54,9 @@ config = (app, express, RedisStore, mysql) ->
           message: err.message,
           error: {}
     app.set 'apn',
-      cert: process.env.APN_CERT
       key: process.env.APN_KEY
-      ca: process.env.APN_CA
+      keyId: process.env.APN_KEYID
+      teamId: process.env.APN_TEAMID
       production: true
     app.set 'db',
       client: 'mysql'
