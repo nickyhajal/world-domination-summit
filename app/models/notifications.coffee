@@ -67,7 +67,7 @@ Notification = Shelf.Model.extend
 					for device in devices
 						# d = new apn.Device(device.get('token'))
 						tk 'sending to'+device.get('token')
-						process.APN.send(note, device.get('token')).then (res) ->
+						process.APN.send(note, device.get('token')).then (response) ->
 							tk res
 							response.sent.forEach (token) -> 
 								console.log('sent to', token)
