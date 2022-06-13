@@ -53,11 +53,13 @@ config = (app, express, RedisStore, mysql) ->
       res.render 'error',
           message: err.message,
           error: {}
-    app.set 'apn',
-      key: process.env.APN_KEY
-      keyId: process.env.APN_KEYID
-      teamId: process.env.APN_TEAMID
-      production: true
+    app.set 'apn', {
+      token: 
+        key: process.env.APN_KEY
+        keyId: process.env.APN_KEYID
+        teamId: process.env.APN_TEAMID
+        production: true
+    }
     app.set 'db',
       client: 'mysql'
       connection:
