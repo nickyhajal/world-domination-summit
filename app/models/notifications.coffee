@@ -69,7 +69,7 @@ Notification = Shelf.Model.extend
 						tk 'sending to'+device.get('token')
 						process.APN.send(note, device.get('token')).then (res) ->
 							tk res
-							response.sent.forEach( (token) -> 
+							response.sent.forEach (token) -> 
 								console.log('sent to', token)
 							response.failed.forEach (failure) ->
 								if (failure.error)
