@@ -66,7 +66,9 @@ Notification = Shelf.Model.extend
 					note.expiry = Math.floor(Date.now() / 1000) + 3600;
 					for device in devices
 						# d = new apn.Device(device.get('token'))
-						process.APN.send(note, device.get('token'))
+						tk 'sending to'+device.get('token')
+						process.APN.send(note, device.get('token')).then (res) ->
+							tk res
 				Devices.forge()
 				.query('where', 'user_id', user_id)
 				.query('where', 'type', 'and')
