@@ -63,6 +63,7 @@ Notification = Shelf.Model.extend
 						note.alert.title = @get('title')
 					note.badge = -1
 					note.sound = 'wds_notify.wav'
+					note.topic = 'com.worlddominationsummit.wdsios'
 					note.expiry = Math.floor(Date.now() / 1000) + 3600;
 					for device in devices
 						# d = new apn.Device(device.get('token'))
