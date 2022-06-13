@@ -46,27 +46,27 @@ Notification = Shelf.Model.extend
 					count = -1
 				str = ntrsp[0]
 				user = ntrsp[1]
-				Devices.forge()
-				.query('where', 'user_id', user_id)
-				.query('where', 'type', 'ios')
-				.query('where', 'active', '1')
-				.fetch()
-				.then (rsp) =>
-					devices = rsp.models
-					tk 'ios #: '+devices.length
-					tokens = []
-					note = new apn.Notification()
-					note.alert = { body: str }
-					note.payload = {content: @get('content'), type: @get('type'), link: @get('link')}
-					if @get('title')?.length
-						note.payload.title = @get('title')
-						note.alert.title = @get('title')
-					note.badge = -1
-					note.sound = 'wds_notify.wav'
-					note.expiry = Math.floor(Date.now() / 1000) + 3600;
-					for device in devices
-						d = new apn.Device(device.get('token'))
-						process.APN.pushNotification(note, d)
+				# Devices.forge()
+				# .query('where', 'user_id', user_id)
+				# .query('where', 'type', 'ios')
+				# .query('where', 'active', '1')
+				# .fetch()
+				# .then (rsp) =>
+				# 	devices = rsp.models
+				# 	tk 'ios #: '+devices.length
+				# 	tokens = []
+				# 	note = new apn.Notification()
+				# 	note.alert = { body: str }
+				# 	note.payload = {content: @get('content'), type: @get('type'), link: @get('link')}
+				# 	if @get('title')?.length
+				# 		note.payload.title = @get('title')
+				# 		note.alert.title = @get('title')
+				# 	note.badge = -1
+				# 	note.sound = 'wds_notify.wav'
+				# 	note.expiry = Math.floor(Date.now() / 1000) + 3600;
+				# 	for device in devices
+				# 		d = new apn.Device(device.get('token'))
+				# 		process.APN.pushNotification(note, d)
 				Devices.forge()
 				.query('where', 'user_id', user_id)
 				.query('where', 'type', 'and')
