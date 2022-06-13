@@ -482,6 +482,7 @@ routes = (app) ->
 									dayStr = moment(start).format('dddd[,] MMMM Do')
 									params =
 										venue: ev.get('place')
+										venue_note: ev.get('venue_note')
 										event_name: ev.get('what')
 										event_url: 'http://wds.fm/meetup/'+ev.get('slug')
 										startStr: dayStr+' at '+timeStr
