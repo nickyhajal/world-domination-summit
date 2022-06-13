@@ -73,9 +73,9 @@ Notification = Shelf.Model.extend
 								console.log('sent to', token)
 							response.failed.forEach (failure) ->
 								if (failure.error)
-									console.log('transport error', failuere.device, failure.error)
+									tk 'transport error', failuere.device, failure.error
 								else
-									console.log('transport error', failuere.device, failure.response, failure.status)
+									tk 'transport error', failuere.device, failure.response, failure.status
 				Devices.forge()
 				.query('where', 'user_id', user_id)
 				.query('where', 'type', 'and')
