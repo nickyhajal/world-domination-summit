@@ -104,7 +104,6 @@ const Type = new GraphQLObjectType({
       description: 'Event Host',
       resolve: async (root) => {
         const hosts = await Event.forge({event_id: root.event_id}).hosts()
-        console.log('iii ', hosts)
         return hosts.map((row) => row.attributes)
       },
     },
