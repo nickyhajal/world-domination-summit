@@ -332,6 +332,8 @@ routes = (app) ->
 			page = req.query.page ? 1
 			channel_type = req.query.channel_type
 			columns = null
+			tk '>>> global'
+			tk channel_type
 			include = ['none']
 			if req.me.get("ticket_type") is '360'
 				include.push '360'
@@ -347,8 +349,11 @@ routes = (app) ->
 			#### REMOVE THIS ONCE WE HAVE EVENTS + FILTERS
 			# feeds.query('where', 'channel_type', '!=', 'meetup')
 
+
+			# {:include_author=>1, :channel_type=>"global", :since=>0, :feed_ids=>[], :filters=>{:twitter=>1, :following=>0, :communities=>0, :events=>0, :photos=>0}, "user_token"=>"2fbTnhSLppxllG5wVmHS5iPcuCfRSQlwdSsulAzMtQzlR9mOFYLCfFcZl4clb5tu", "nopic"=>1}
+
 			feeds.query('whereIn', 'restrict', include)
-			feeds.query('where', 'feed.created_at', '>', '2017-09-01 04:38:20')
+			feeds.query('where', 'feed.created_at', '>', '2021-09-01 04:38:20')
 
 			# Get a users feed
 			if channel_type is 'user'
@@ -363,6 +368,8 @@ routes = (app) ->
 
 			# Get a channel feed
 			else if channel_type isnt 'global'
+				tk 'ISNT GLOBAL WTF?'
+				tk req.query.channel_id
 				feeds.query('where', 'channel_type', '=', req.query.channel_type)
 				feeds.query('where', 'channel_id', '=', req.query.channel_id)
 			feeds.query('orderBy', 'feed_id',  'DESC')
