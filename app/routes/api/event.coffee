@@ -480,9 +480,12 @@ routes = (app) ->
 									start = start.format('YYYY-MM-DD HH:mm:ss')
 									timeStr = moment(start).format('h:mm a')
 									dayStr = moment(start).format('dddd[,] MMMM Do')
+									venue_note = ''
+									if ev.get('venue_note')
+										venue_note = ev.get('venue_note')
 									params =
 										venue: ev.get('place')
-										venue_note: ev.get('venue_note') ? ev.get('venue_note') : '',
+										venue_note: venue_note,
 										address: ev.get('address')
 										event_name: ev.get('what')
 										event_url: 'http://wds.fm/meetup/'+ev.get('slug')
