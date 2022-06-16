@@ -332,7 +332,6 @@ routes = (app) ->
 			page = req.query.page ? 1
 			channel_type = req.query.channel_type
 			columns = null
-			tk req.query
 			include = ['none']
 			if req.me.get("ticket_type") is '360'
 				include.push '360'
@@ -367,7 +366,6 @@ routes = (app) ->
 
 			# Get a channel feed
 			else if channel_type isnt 'global'
-				tk 'ISNT GLOBAL WTF?'
 				tk req.query.channel_id
 				feeds.query('where', 'channel_type', '=', req.query.channel_type)
 				feeds.query('where', 'channel_id', '=', req.query.channel_id)
@@ -430,12 +428,10 @@ routes = (app) ->
 								cb()
 					if filter.name is 'events'
 						if filter.val is '2'
-							tk 'filter events'
 							feeds.query 'where', 'channel_type', '!=', 'meetup'
 							cb()
 						else
 							if req.me? and req.me
-								tk 'filter my events'
 								req.me.getRsvps()
 								.then (rsp) ->
 									rsvps = rsp.get('rsvps')

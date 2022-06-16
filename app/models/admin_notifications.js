@@ -183,10 +183,10 @@ AND year = '` +
             hash: post.hash,
           }).fetch();
           if (!existing) {
-            const feed = Feed.forge(post);
-            const feed_rsp = await feed.save();
-            const feed_id = feed_rsp.get('feed_id');
-            // const feed_id = 99999;
+            // const feed = Feed.forge(post);
+            // const feed_rsp = await feed.save();
+            // const feed_id = feed_rsp.get('feed_id');
+            const feed_id = 99999;
             if (feed_id != null && feed_id > 0) {
               // console.log(devices.length);
               for (let device of Array.from(devices)) {
@@ -213,10 +213,24 @@ AND year = '` +
                   // console.log(user_id);
                   // console.log(note);
                   // console.log(tokens);
-                  const result = await process.APN.send(
-                    note,
-                    device.get('token')
-                  );
+                  console.log(device.get('token'))
+                  process.APN.send(note, device.get('token')).then((response) => {
+                    console.log('rs: ', response)
+                    response.sent.forEach((token) => {
+                      console.log('sent to', token)
+                    })
+                    response.failed.forEach((failure) => {
+                      if (failure.error)
+                        console.log('transport error', failure.device, failure.error)
+                      else
+                        console.log(
+                          'transport error',
+                          failure.device,
+                          failure.response,
+                          failure.status
+                        )
+                    })
+                  })
                   // console.log(result);
                   // console.log('error: ', result.failed[0].error);
                   // console.log('error: ', result.failed[0].response);
