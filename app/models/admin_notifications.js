@@ -207,12 +207,13 @@ AND year = '` +
                     type: 'feed_comment',
                     link,
                   };
+                  note.topic = 'com.worlddominationsummit.wdsios'
                   // tk note
                   // tk tokens
                   // console.log(user_id);
                   // console.log(note);
                   // console.log(tokens);
-                  const result = await process.APN.pushNotification(
+                  const result = await process.APN.send(
                     note,
                     device.get('token')
                   );
