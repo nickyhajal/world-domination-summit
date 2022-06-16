@@ -41,11 +41,11 @@ const AdminNotification = Shelf.Model.extend({
     if (test === 'yes') {
       devices.query('whereIn', 'devices.user_id', [
         '176',
-        // '6292',
-        // '6256',
-        // '179',
-        // '216',
-        // '6263',
+        '6292',
+        '6256',
+        '179',
+        '216',
+        '6263',
         // '8884',
       ]); //, '179', '216', '6292'])
     }
@@ -183,10 +183,10 @@ AND year = '` +
             hash: post.hash,
           }).fetch();
           if (!existing) {
-            // const feed = Feed.forge(post);
-            // const feed_rsp = await feed.save();
-            // const feed_id = feed_rsp.get('feed_id');
-            const feed_id = 99999;
+            const feed = Feed.forge(post);
+            const feed_rsp = await feed.save();
+            const feed_id = feed_rsp.get('feed_id');
+            // const feed_id = 99999;
             if (feed_id != null && feed_id > 0) {
               // console.log(devices.length);
               for (let device of Array.from(devices)) {
