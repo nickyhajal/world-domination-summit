@@ -332,8 +332,7 @@ routes = (app) ->
 			page = req.query.page ? 1
 			channel_type = req.query.channel_type
 			columns = null
-			tk '>>> global'
-			tk channel_type
+			tk req.query
 			include = ['none']
 			if req.me.get("ticket_type") is '360'
 				include.push '360'
@@ -431,16 +430,18 @@ routes = (app) ->
 								cb()
 					if filter.name is 'events'
 						if filter.val is '2'
-							feeds.query 'where', 'channel_type', '!=', 'event'
+							tk 'filter events'
+							feeds.query 'where', 'channel_type', '!=', 'meetup'
 							cb()
 						else
 							if req.me? and req.me
+								tk 'filter my events'
 								req.me.getRsvps()
 								.then (rsp) ->
 									rsvps = rsp.get('rsvps')
 									if rsvps.length
 										rsvps = rsp.get('rsvps').join(',')
-										feeds.query 'whereRaw', "(`channel_type` != 'event' OR (`channel_type` = 'event' AND `channel_id` IN ("+rsvps+")))"
+										feeds.query 'whereRaw', "(`channel_type` != 'meetup' OR (`channel_type` = 'meetup' AND `channel_id` IN ("+rsvps+")))"
 									cb()
 							else
 								cb()

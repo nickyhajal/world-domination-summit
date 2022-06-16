@@ -29,7 +29,7 @@ auth =
     rs.create
       app: process.rsapp
       id: @get('user_id')
-      ip: ip
+      ip: ip || '192.168.12.12'
       ttl: 31536000
     , (err, rsp) ->
       console.error err

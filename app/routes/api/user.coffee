@@ -490,6 +490,7 @@ routes = (app) ->
 					finish(user)
 			else
 				query = {user_name: req.query.username}
+				tk req.query.username
 				if req.query.username.indexOf('@') > -1
 					query = {email: req.query.username}
 				User.forge(query)

@@ -36,7 +36,7 @@ config = (app, express, RedisStore, mysql) ->
         key: process.env.APN_KEY
         keyId: process.env.APN_KEYID
         teamId: process.env.APN_TEAMID
-        production: true
+        production: false
     }
     app.set 'db',
       client: 'mysql'

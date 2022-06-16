@@ -74,8 +74,6 @@ Card = Shelf.Model.extend
 								price *= 	quantity
 								if @get('user_id') is '176' or @get('user_id') is '6292'
 									price = 30
-								tk 'PERFORM CHARGE ON:'
-								tk @get('token')
 								fireRef.update({status: 'stripe-charge'})
 								stripe.charges.create(
 									amount: price
@@ -118,6 +116,7 @@ Card = Shelf.Model.extend
 											dfr.resolve({transaction: transaction, rsp: {err: err, declined: true}})
 								)
 							.catch (err) ->
+								tk err
 								tk 'preprocess error'
 								Transaction.forge
 									transaction_id: transaction.get('transaction_id')
