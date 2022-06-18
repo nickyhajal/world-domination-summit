@@ -482,7 +482,7 @@ routes = (app) ->
 									dayStr = moment(start).format('dddd[,] MMMM Do')
 									venue_note = ''
 									if ev.get('venue_note')
-										venue_note = ev.get('venue_note')
+										venue_note = 'Venue Note: '+ev.get('venue_note')
 									params =
 										venue: ev.get('place')
 										venue_note: venue_note,
