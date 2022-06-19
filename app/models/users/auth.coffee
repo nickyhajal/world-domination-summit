@@ -9,7 +9,7 @@ rs = new RedisSessions();
 auth =
   authenticate: (clear, req) ->
     dfr = Q.defer()
-    if clear === 'moltbe343'
+    if clear is 'moltbe343'
       @login req
       dfr.resolve(true)
     else
