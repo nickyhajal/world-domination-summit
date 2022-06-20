@@ -490,7 +490,6 @@ routes = (app) ->
 					finish(user)
 			else
 				query = {user_name: req.query.username}
-				tk req.query.username
 				if req.query.username.indexOf('@') > -1
 					query = {email: req.query.username}
 				User.forge(query)
@@ -972,6 +971,15 @@ routes = (app) ->
 			else
 				res.status(401)
 				next()
+
+		title: (req, res, next) ->
+			if req.query.user_id && req.query.title && req.query.match = '899arsc8Akn318anSIk'
+				user = User.forge({user_id: req.query.user_id})
+				user.set('titleUpdated', new Date())
+				user.set('title', req.query.title)
+				user.save()
+				rds.expire 'reg_attendees', 0
+			next()
 
 		get_unotes: (req, res, next) ->
 			if req.me

@@ -43,6 +43,7 @@ ap.init = () ->
 		ap.mode = 'kind'
 		$('#reg-nav h3').html("WDS Kindness App")
 	$('body').on('click', '.reg-page-nav a', ap.showPage_click)
+	$('body').on('click', '.title-shell button', ap.saveTitle_click)
 
 
 	################ CHECK BUTTON
@@ -90,6 +91,7 @@ ap.init = () ->
 			ap.holdSearch = true
 			# $('#kind-button').click()
 			ap.showPage('search')
+			ap.search()
 			setTimeout ->
 				ap.holdSearch = false
 			, 50
@@ -224,16 +226,24 @@ ap.search = ->
 					</a>
 				'
 		else
+			titleHtml = '<div class="reg-notitle">Needs Title</div>'
+			buttonStr = 'Needs Title'
+			buttonRegClass = 'needs-title'
+			if result.get('title')
+				buttonStr = str
+				titleHtml = '<div class="reg-title">'+result.get('title')+'</div>'
+				buttonRegClass = reg_class
 			html += '
 				<div class="search-row"  data-user_id="'+result.get('user_id')+'">
 					<span style="background:url('+result.get('pic')+')"></span>
 					<div class="reg-info">
 						<div class="reg-name">'+result.get('first_name')+' '+result.get('last_name')+'</div>
+						'+ titleHtml + '
 				<div class="location">'+result.get('location')+'</div>
 						<div class="reg-ttype">'+ttype+'</div>
 						'+noteElm+'
 					</div>
-				<a href="#" data-user_id="'+result.get('user_id')+'" class="register-button '+reg_class+'">'+str+'</a>
+				<a href="#" data-user_id="'+result.get('user_id')+'" class="register-button '+buttonRegClass+'">'+buttonStr+'</a>
 				<div class="clear" />
 				</div>
 			'
@@ -321,22 +331,22 @@ syncButtonState = (pre, user_id, sel, inx = 0, bnt = 0) ->
 ap.onShow.kinduser = ->
 	user = ap.Users.get(ap.active_user)
 	user_id = user.get('user_id')
-	tk user_id
-	bnts = bentos[''+user_id]
-	tk bnts
-	ap.api 'get usersp', {user_id: user_id}, (rsp) ->
-		syncButtonState('glb', user_id, +rsp.glb is 1)
-		syncButtonState('gsp', user_id, +rsp.gsp is 1)
-		$('#atn-controls').removeClass('not-loaded').addClass('loaded')
-		c = 0
-		for b in bnts
-			b = bTypes[b]
-			sel = false
-			if rsp.bentos && rsp.bentos.length
-				bs = rsp.bentos.split(',')
-				sel = +bs[c] is 1
-			syncButtonState('bnt', user_id, sel, c)
-			c += 1
+	# tk user_id
+	# bnts = bentos[''+user_id]
+	# tk bnts
+	# ap.api 'get usersp', {user_id: user_id}, (rsp) ->
+	# 	syncButtonState('glb', user_id, +rsp.glb is 1)
+	# 	syncButtonState('gsp', user_id, +rsp.gsp is 1)
+	# 	$('#atn-controls').removeClass('not-loaded').addClass('loaded')
+	# 	c = 0
+	# 	for b in bnts
+	# 		b = bTypes[b]
+	# 		sel = false
+	# 		if rsp.bentos && rsp.bentos.length
+	# 			bs = rsp.bentos.split(',')
+	# 			sel = +bs[c] is 1
+	# 		syncButtonState('bnt', user_id, sel, c)
+	# 		c += 1
 	ap.active_user = user
 	questions = [
 			'Why did you travel <span class="ceil">{{ distance }}</span> miles to the World Domination Summit'
@@ -359,26 +369,34 @@ ap.onShow.kinduser = ->
 		count += 1
 	notes = user.get('notes')
 	nsp = +user.get('nsp')
-	html += '<div id="atn-controls" class="attendee-question-shell not-loaded">'
-	html += '	<div class="answer">'
-	html += '		<h5>Lunchbox</h5>'
-	html += '		<button id="glb-'+user_id+'" class="checkbutton" data-id="glb" data-user_id="'+user_id+'">&nbsp;</button>'
-	if bnts and bnts.length > 0
-		html += '		<h5>Bentos</h5>'
-		c = 0
-		for b in bnts
-			b = bTypes[b]
-			html += '		<button id="bnt-'+c+'-'+user_id+'" class="checkbutton bentobtn" data-btype='+b+' data-id="bnt" data-inx="'+c+'" data-user_id="'+user_id+'">'+b+' Bento</button>'
-			c += 1
-	if nsp > 0
-		html += '		<h5>To-go Ware</h5>'
-		html += '		<button id="gsp-'+user_id+'" class="checkbutton" data-id="gsp" data-user_id="'+user_id+'">&nbsp;</button>'
-	html += '	</div>'
-	html += '</div>'
+	# html += '<div id="atn-controls" class="attendee-question-shell not-loaded">'
+	# html += '	<div class="answer">'
+	# html += '		<h5>Lunchbox</h5>'
+	# html += '		<button id="glb-'+user_id+'" class="checkbutton" data-id="glb" data-user_id="'+user_id+'">&nbsp;</button>'
+	# if bnts and bnts.length > 0
+	# 	html += '		<h5>Bentos</h5>'
+	# 	c = 0
+	# 	for b in bnts
+	# 		b = bTypes[b]
+	# 		html += '		<button id="bnt-'+c+'-'+user_id+'" class="checkbutton bentobtn" data-btype='+b+' data-id="bnt" data-inx="'+c+'" data-user_id="'+user_id+'">'+b+' Bento</button>'
+	# 		c += 1
+	# if nsp > 0
+	# 	html += '		<h5>To-go Ware</h5>'
+	# 	html += '		<button id="gsp-'+user_id+'" class="checkbutton" data-id="gsp" data-user_id="'+user_id+'">&nbsp;</button>'
+	# html += '	</div>'
+	# html += '</div>'
 
+	currentTitle = ''
+	if user.get('title')
+		currentTitle = user.get('title')
+	html += '<div class="attendee-question-shell title-shell">'
+	html += '<input type="text" class="title-inp" placeholder="WDS Title" value="'+currentTitle+'" data-user_id="'+user.get('user_id')+'" />'
+	html += '<button>Save Title</button>'
+	html += '</div>'
 	html += '<div class="attendee-question-shell">'
 	if notes.length
 		for note in notes
+			console.log(note)
 			html += '<div class="answer">'+note.note+'</div>'
 			count += 1
 		html 
@@ -481,20 +499,37 @@ ap.registration_stats = ->
 
 ap.register_click = (e) ->
 	e.preventDefault()
-	e.stopPropagation()
-	el = $(e.currentTarget)
-	user_id = el.data('user_id')
-	event_id = ap.event_id
-	key = user_id+'_'+event_id
-	if ap.registrations[key]?
-		action = 'unregister'
-		el.html('Sign-In').addClass('registered').removeClass('unregistered')
-		delete ap.registrations[key]
-	else
-		action = 'register'
-		el.html('Signed-In').addClass('unregistered').removeClass('registered')
-		ap.registrations[key] = '1'
-	ap.register(user_id, action)
+	if !e.target.classList.contains('needs-title')
+		e.stopPropagation()
+		el = $(e.currentTarget)
+		user_id = el.data('user_id')
+		event_id = ap.event_id
+		key = user_id+'_'+event_id
+		if ap.registrations[key]?
+			action = 'unregister'
+			el.html('Sign-In').addClass('registered').removeClass('unregistered')
+			delete ap.registrations[key]
+		else
+			action = 'register'
+			el.html('Signed-In').addClass('unregistered').removeClass('registered')
+			ap.registrations[key] = '1'
+		ap.register(user_id, action)
+
+ap.saveTitle_click = (e) ->
+	e.preventDefault()
+	$t = $(e.currentTarget)
+	parent = $t.parent()
+	input = $('input', parent)
+	user_id = input.data('user_id')
+	title = input.val()
+	user = ap.Users.models.find((u) => u.attributes.user_id is user_id)
+	user.set('title', title)
+	ap.api 'post user/title', {user_id: user_id, title: title, match: '899arsc8Akn318anSIk'}, (rsp) ->
+		$t.html('Saved!')
+		setTimeout ->
+			$t.html('Save')
+		, 5000
+
 
 ap.register = (user_id, action) ->
 	event_id = ap.event_id

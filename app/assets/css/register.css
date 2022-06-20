@@ -17,6 +17,37 @@ div#search_start {
 .search-row:nth-child(2n) {
   background: rgb(255, 255, 254) none repeat scroll 0px 0px;
 }
+.reg-name {
+  font-weight: 700
+}
+.reg-title {
+  font-size: 1.15rem;
+}
+.reg-notitle {
+  font-size: 1.15rem;
+width: 13rem;
+text-align: center;
+background: #ffe8ec;
+color: #cd3333;
+border: 2px solid #ffd0d0;
+margin: 5px 0;
+}
+.title-shell {
+  display: flex;
+  gap: 1rem;
+}
+.title-shell button {
+  border: 0;
+background: rgb(226, 127, 28) none repeat scroll 0px 0px;
+color: #fff;
+width: 50%;
+height: 37px;
+margin-top: 2px;
+}
+.title-inp {
+  background: white !important;
+  border: 2px solid rgb(242, 239, 223) !important;
+}
 .search-row.is-kinded::before {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -36,9 +67,6 @@ div#search_start {
   content: '';
   height: 30px;
   width: 30px;
-}
-a.is-kinded {
-  background: rgb(250, 254, 197) none repeat scroll 0px 0px !important;
 }
 .kindness-row.not-registered {
   opacity: 0.6;

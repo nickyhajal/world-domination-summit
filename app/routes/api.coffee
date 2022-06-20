@@ -110,6 +110,7 @@ routes = (app) ->
 	apiRouter.get '/user/friends', user.get_friends
 	apiRouter.get '/user/friends_by_type', user.get_friends_special
 	apiRouter.post '/user/note', user.add_unote
+	apiRouter.post '/user/title', user.title
 	apiRouter.get '/user/notes', user.get_unotes
 	apiRouter.post '/user/checkin', user.add_checkin
 	apiRouter.get '/user/notification_tokens', user.get_notification_tokens
