@@ -40,13 +40,16 @@ const AdminNotification = Shelf.Model.extend({
     devices.query('where', `attending${process.yr}`, '1');
     if (test === 'yes') {
       devices.query('whereIn', 'devices.user_id', [
-        '176',
-        // '6292',
-        // '6256',
-        // '179',
-        // '216',
-        // '6263',
-        // '8884',
+        '176', 
+        '6292', // jedd
+        '6256', // tina
+        '179', // chris
+        '216', // jolie
+        '6263', // michelle
+        '4237', // david
+        '6557', // denise
+        '733', // wes
+        '734', // tera
       ]); //, '179', '216', '6292'])
     }
     if (device_type !== 'all') {
@@ -114,7 +117,9 @@ AND year = '` +
       );
       devices.query('where', 'event_rsvps.event_id', '=', event_id);
     }
+    console.log(devices.toString)
     const rsp = await devices.fetch();
+    console.log(rsp)
     const user_ids = {};
     let id_count = 0;
     console.log('devices', rsp)
