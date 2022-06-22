@@ -241,9 +241,12 @@ ap.search = ->
 						'+ titleHtml + '
 				<div class="location">'+result.get('location')+'</div>
 						<div class="reg-ttype">'+ttype+'</div>
+						<div class="reg-ttype" style="width: 200px; margin-left: 4px;">'+ap.registrations[result.get('user_id')+'_'+ap.event_id]+' - ' + result.get('user_id')+'_'+ap.event_id+'</div>
 						'+noteElm+'
 					</div>
+					<div>
 				<a href="#" data-user_id="'+result.get('user_id')+'" class="register-button '+buttonRegClass+'">'+buttonStr+'</a>
+				</div>
 				<div class="clear" />
 				</div>
 			'
