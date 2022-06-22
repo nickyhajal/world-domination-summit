@@ -296,10 +296,10 @@ const AdminNotifications = Shelf.Collection.extend({
   model: AdminNotification,
 
   async sendUnsent() {
-    console.log('>> Check notifications');
     const now = moment()
       .utc()
       .format('YYYY-MM-DD HH:mm:ss');
+    console.log('> Checking notifications that need to be sent before ', now)
     const unsent = await AdminNotifications.forge()
       .query(qb => {
         qb.whereNull('sent_on');
@@ -318,6 +318,6 @@ const AdminNotifications = Shelf.Collection.extend({
 });
 
 // console.log('>> Start watching notifications');
-// AdminNotifications.forge().watchNotifications();
+AdminNotifications.forge().watchNotifications();
 
 module.exports = [AdminNotification, AdminNotifications];
