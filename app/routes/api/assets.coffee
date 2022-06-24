@@ -157,8 +157,9 @@ routes = (app) ->
 					else
 						Users.forge()
 						.query (qb) ->
-							qb.whereRaw('attending'+process.yr+' = ? OR (t.product_id = ? AND t.created_at > ?) GROUP BY users.user_id', ['1', '6', '2022-02-13 00:00:00'])
+							qb.whereRaw('attending'+process.yr+' = ? OR (t.product_id = ? AND t.created_at > ?) OR (e.event_id = ?) GROUP BY users.user_id', ['1', '6', '2022-02-13 00:00:00', '2012'])
 							qb.leftJoin('transactions as t', 'users.user_id', 't.user_id')
+							qb.leftJoin('event_rsvps as e', 'users.user_id', 'e.user_id')
 							qb.orderBy('last_name')
 							# qb.orWhere('t.product_id', '6')
 							# qb.orWhere('t.created_at', '')
